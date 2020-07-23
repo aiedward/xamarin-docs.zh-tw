@@ -10,18 +10,18 @@ ms.date: 10/03/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a9f952da75e68e9ad39e0a15f57fbd0379233d7e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: dc54e30878bc58425aeb032fbd38c02d62728287
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137393"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935079"
 ---
 # <a name="xamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)定義下列屬性，當沒有可顯示的資料時，可以用來提供使用者意見反應：
 

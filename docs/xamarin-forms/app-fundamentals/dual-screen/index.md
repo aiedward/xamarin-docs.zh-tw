@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 967c38895faded88f7d102317f0d767daac738bd
-ms.sourcegitcommit: 60f475a3d6ca880aff34f1177f76eff0b0f96233
+ms.openlocfilehash: 737cb819cfd762e81536fba03f3ae5b563416a4e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86869831"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930737"
 ---
 # <a name="xamarinforms-dual-screen"></a>Xamarin.Forms雙畫面
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
 Microsoft Surface 雙核這類雙螢幕裝置可協助您的應用程式有新的使用者體驗。 Xamarin.Forms包含 `TwoPaneView` 和 `DualScreenInfo` 類別，讓您可以為雙畫面裝置開發應用程式。
 
@@ -53,7 +53,7 @@ Microsoft Surface 雙核這類雙螢幕裝置可協助您的應用程式有新�
 
 如需其他指引和參考的執行方式，請參閱[ Xamarin.Forms 雙重螢幕範例](https://docs.microsoft.com/dual-screen/xamarin/samples)。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 新增 NuGet 之後，請使用下列指導方針，在您的應用程式中新增雙畫面功能：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: cdb8505bd8c25b6e591dd86daf6a4d1e174012f6
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 177701b8b50edea965e97da225265912f1f0c198
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569032"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932323"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin 中的對應
 
@@ -30,7 +30,7 @@ View = map;
 
 `MKMapView`是 `UIView` 顯示對應的子類別。 只要使用上述程式碼新增對應，就會產生互動式地圖：
 
-![](images/00-map.png "A sample map")
+![範例對應](images/00-map.png)
 
 ## <a name="map-style"></a>地圖樣式
 
@@ -44,7 +44,7 @@ map.MapType = MKMapType.Hybrid;
 
 下列螢幕擷取畫面顯示可用的不同地圖樣式：
 
-![](images/01-mapstyles.png "This screenshot show the different map styles that are available")
+![這個螢幕擷取畫面顯示可用的不同地圖樣式](images/01-mapstyles.png)
 
 ## <a name="panning-and-zooming"></a>移動流覽和縮放
 
@@ -85,13 +85,13 @@ locationManager.RequestWhenInUseAuthorization();
 map.ShowsUserLocation = true;
 ```
 
- ![](images/02-location-alert.png "The allow location access alert")
+ ![允許位置存取警示](images/02-location-alert.png)
 
-## <a name="annotations"></a>註解
+## <a name="annotations"></a>標註
 
  `MKMapView`也支援在地圖上顯示影像，稱為「批註」。 這些可以是自訂影像或系統定義的各種色彩 pin。 例如，下列螢幕擷取畫面顯示具有 pin 和自訂影像的地圖：
 
- ![](images/03-annotations.png "This screenshot shows a map with a both a pin and a custom image")
+ ![此螢幕擷取畫面顯示具有 pin 和自訂影像的對應](images/03-annotations.png)
 
 ### <a name="adding-an-annotation"></a>加入批註
 
@@ -149,7 +149,7 @@ MKAnnotationView pinView = (MKPinAnnotationView)mapView.DequeueReusableAnnotatio
 
 如先前所述，批註可以選擇性地顯示標注。 若要在上顯示一個標注，請直接將設定 `CanShowCallout` 為 true `MKAnnotationView` 。 這會導致在按下注釋時顯示批註的標題，如下所示：
 
- ![](images/04-callout.png "The annotations title being displayed")
+ ![要顯示的注釋標題](images/04-callout.png)
 
 ### <a name="customizing-the-callout"></a>自訂標注
 
@@ -162,7 +162,7 @@ pinView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile ("monkey.png
 
 此程式碼會產生下列標注：
 
- ![](images/05-callout-accessories.png "An example callout")
+ ![範例標注](images/05-callout-accessories.png)
 
 若要處理使用者點擊正確的附件，只要 `CalloutAccessoryControlTapped` 在中執行方法 `MKMapViewDelegate` ：
 
@@ -215,7 +215,7 @@ public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject ove
 
 這會在地圖上顯示一個圓形，如下所示：
 
- ![](images/06-circle-overlay.png "A circle displayed on the map")
+ ![在地圖上顯示的圓形](images/06-circle-overlay.png)
 
 ## <a name="local-search"></a>本機搜尋
 
@@ -273,7 +273,7 @@ NavigationItem.TitleView = searchController.SearchBar;
 
 這會導致在地圖上顯示搜尋列，如下所示：
 
- ![](images/07-searchbar.png "A search bar displayed over the map")
+ ![在地圖上顯示的搜尋列](images/07-searchbar.png)
 
 ### <a name="displaying-the-search-results"></a>顯示搜尋結果
 
@@ -393,7 +393,7 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 
 上述的執行方式會在從結果中選取專案時，將批註新增至地圖，如下所示：
 
- ![](images/08-search-results.png "An annotation added to the map when an item is selected from the results")
+ ![從結果中選取專案時，新增至地圖的注釋](images/08-search-results.png)
 
 > [!IMPORTANT]
 > `UISearchController`已在 iOS 8 中執行。 如果您想要支援早于此的裝置，則必須使用 `UISearchDisplayController` 。

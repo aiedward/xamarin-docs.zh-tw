@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c751a1843479f1e98739964631999dfdb0e3b634
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3a65e9bb90f01bcb5e0b1182a21d998e2335da9a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569630"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934520"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms主版-詳細資料頁面
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 
 _Xamarin.FormsMasterDetailPage 是管理兩個相關資訊頁面的頁面–顯示專案的主版頁面，以及顯示主版頁面上專案相關詳細資料的詳細資料頁面。本文說明如何使用 MasterDetailPage，並在其資訊頁面之間流覽。_
 
@@ -27,7 +27,7 @@ _Xamarin.FormsMasterDetailPage 是管理兩個相關資訊頁面的頁面–顯�
 
 主版頁面通常會顯示一份項目清單，如下列螢幕擷取畫面所示：
 
-[![](master-detail-page-images/masterpage-components.png "Master Page Components")](master-detail-page-images/masterpage-components-large.png#lightbox "Master Page Components")
+[![主版頁面元件](master-detail-page-images/masterpage-components.png)](master-detail-page-images/masterpage-components-large.png#lightbox "主版頁面元件")
 
 項目清單的位置在每個平台上都相同，且選取其中一個項目會巡覽至對應的詳細資料頁面。 此外，主版頁面也會提供包含一個按鈕的導覽列，該按鈕可用來巡覽至作用中的詳細資料頁面：
 
@@ -37,7 +37,7 @@ _Xamarin.FormsMasterDetailPage 是管理兩個相關資訊頁面的頁面–顯�
 
 詳細資料頁面會顯示對應至主版頁面上所選取項目的資料，且會顯示詳細資料頁面的主要元件，如下列螢幕擷取畫面所示：
 
-![](master-detail-page-images/detailpage-components.png "Detail Page Components")
+![詳細資料頁面元件](master-detail-page-images/detailpage-components.png)
 
 詳細資料頁面包含導覽列，其內容會因平台而不同：
 
@@ -213,7 +213,7 @@ public class MasterPageCS : ContentPage
 
 下列螢幕擷取畫面顯示每個平台上的主版頁面：
 
-![](master-detail-page-images/masterpage.png "Master Page Example")
+![主版頁面範例](master-detail-page-images/masterpage.png)
 
 ### <a name="creating-and-displaying-the-detail-page"></a>建立和顯示詳細資料頁面
 
@@ -248,7 +248,7 @@ public partial class MainPage : MasterDetailPage
 
 下列螢幕擷取畫面顯示 `ContactPage` 詳細資料頁面，在主版頁面上選取它之後便會加以顯示：
 
-![](master-detail-page-images/detailpage.png "Detail Page Example")
+![詳細資料頁面範例](master-detail-page-images/detailpage.png)
 
 ### <a name="controlling-the-detail-page-display-behavior"></a>控制詳細資料頁面顯示行為
 
@@ -289,7 +289,7 @@ public class MainPageCS : MasterDetailPage
 
 不過，屬性的值 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 只會影響在平板電腦或桌面上執行的應用程式。 在手機上執行的應用程式一律為 *Popover* 行為。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ，並在其資訊頁面之間流覽。 Xamarin.Forms `MasterDetailPage` 是管理兩個相關資訊頁面的頁面–顯示專案的主版頁面，以及顯示主版頁面上專案相關詳細資料的詳細資料頁面。
 

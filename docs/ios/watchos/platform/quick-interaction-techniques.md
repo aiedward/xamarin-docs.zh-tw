@@ -1,28 +1,28 @@
 ---
-title: Quick Interaction Techniques for watchOS 3 in Xamarin
-description: This article covers the quick interaction techniques Apple has added in watchOS 3 and how to implement them in Xamarin.iOS for Apple Watch.
+title: Xamarin 中 watchOS 3 的快速互動技術
+description: 本文涵蓋 Apple 已在 watchOS 3 中新增的快速互動技術，以及如何在 Apple Watch 的 Xamarin 中執行。
 ms.prod: xamarin
 ms.assetid: 26697F68-AF7E-4A36-988F-85E2674A4DD1
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 8b851721aa5b2b993ad64b89d90d02b5f2bd0ee3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e57b6df0f0137d5a8a8f2c0ba68793008986ba18
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028193"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932180"
 ---
-# <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Quick Interaction Techniques for watchOS 3 in Xamarin
+# <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin 中 watchOS 3 的快速互動技術
 
-_This article covers the quick interaction techniques Apple has added in watchOS 3 and how to implement them in Xamarin.iOS for Apple Watch._
+_本文涵蓋 Apple 已在 watchOS 3 中新增的快速互動技術，以及如何在 Apple Watch 的 Xamarin 中執行。_
 
-Providing quick user interactions are essential to creating compelling Apple Watch apps and Complications. WatchOS 3 的新手新增了對手勢辨識器的支援、Digital Crown 的存取權，以及新的使用者通知和流覽技術。 這同時提供 SceneKit 和 SpriteKit 的支援，可讓開發人員輕鬆地建立既快速又迅速的豐富 glanceable 介面。
+提供快速的使用者互動，是建立引人注目的 Apple Watch 應用程式和複雜的必備要素。 WatchOS 3 的新手新增了對手勢辨識器的支援、Digital Crown 的存取權，以及新的使用者通知和流覽技術。 這同時提供 SceneKit 和 SpriteKit 的支援，可讓開發人員輕鬆地建立既快速又迅速的豐富 glanceable 介面。
 
 ## <a name="what-are-quick-interactions"></a>什麼是快速互動
 
-針對用來建立 iOS 或 macOS 應用程式的開發人員（其中使用者花費在數分鐘或數小時內進行與應用程式互動的時間量），設計成功的 Apple Watch 應用程式可能會是一項挑戰，而且需要不同的出價.
+針對用來建立 iOS 或 macOS 應用程式的開發人員（其中使用者花費在數分鐘或數小時內進行與應用程式互動的時間量），設計成功的 Apple Watch 應用程式可能會是一項挑戰，而且需要不同的方法。
 
 在 watchOS 中，使用者通常會想要提高手腕、快速地與應用程式互動（通常只需要短暫幾秒鐘），然後卸載手腕並繼續進行。
 
@@ -63,11 +63,11 @@ Apple 已將數個新功能和 Api 新增至 WatchKit，以協助開發人員新
 watchOS 3 將支援四個下列的手勢辨識器：
 
 - 離散手勢類型：
-  - 滑動手勢（`WKSwipeGestureRecognizer`）。
-  - 點一下手勢（`WKTapGestureRecognizer`）。
+  - 滑動手勢（ `WKSwipeGestureRecognizer` ）。
+  - 攻點手勢（ `WKTapGestureRecognizer` ）。
 - 連續手勢類型：
-  - 平移手勢（`WKPanGestureRecognizer`）。
-  - 長按手勢（`WKLongPressGestureRecognizer`）。
+  - 平移手勢（ `WKPanGestureRecognizer` ）。
+  - 長按手勢（ `WKLongPressGestureRecognizer` ）。
 
 若要執行其中一個新的手勢辨識器，只需將它拖曳到 iOS 設計工具的設計介面上 Visual Studio for Mac 並設定其屬性。
 
@@ -75,60 +75,60 @@ watchOS 3 將支援四個下列的手勢辨識器：
 
 #### <a name="discrete-gesture-states"></a>離散手勢狀態
 
-針對離散手勢，當手勢被辨識且狀態（`WKGestureRecognizerState`）指派為時，就會呼叫此動作：
+針對離散手勢，當手勢已辨識且狀態（）指派為時，就會呼叫此動作 `WKGestureRecognizerState` ：
 
-[![](quick-interaction-techniques-images/quick01.png "Discrete Gesture States")](quick-interaction-techniques-images/quick01.png#lightbox)
+[![離散手勢狀態](quick-interaction-techniques-images/quick01.png)](quick-interaction-techniques-images/quick01.png#lightbox)
 
-所有離散手勢會在 `Possible` 狀態開始，並轉換成 `Failed` 或 `Recognized` 狀態。 使用離散手勢時，開發人員通常不會直接處理狀態。 相反地，它們會依賴只辨識手勢時所呼叫的動作。
+所有的離散手勢都會以 `Possible` 狀態開始，並轉換成 `Failed` 或 `Recognized` 狀態。 使用離散手勢時，開發人員通常不會直接處理狀態。 相反地，它們會依賴只辨識手勢時所呼叫的動作。
 
 #### <a name="continuous-gesture-states"></a>連續手勢狀態
 
 連續手勢與離散手勢稍有不同，因為在辨識手勢時，會多次呼叫動作：
 
-[![](quick-interaction-techniques-images/quick02.png "Continuous Gesture States")](quick-interaction-techniques-images/quick02.png#lightbox)
+[![連續手勢狀態](quick-interaction-techniques-images/quick02.png)](quick-interaction-techniques-images/quick02.png#lightbox)
 
-同樣地，連續手勢會在 `Possible` 狀態下開始，但會透過多個更新進行。 在這裡，開發人員必須考慮辨識器的狀態，並在 `Changed` 階段期間更新應用程式的 UI，直到手勢最後 `Recognized` 或 `Canceled`為止。
+同樣地，連續手勢 `Possible` 會在狀態下開始，但它們會在多個更新中進行。 在這裡，開發人員必須考慮辨識器的狀態，並在階段期間更新應用程式的 UI， `Changed` 直到手勢最後 `Recognized` 或 `Canceled` 。
 
 #### <a name="gesture-recognizer-usage-tips"></a>手勢辨識器使用提示
 
 使用 watchOS 3 中的手勢辨識器時，Apple 建議下列各項：
 
-- 將手勢辨識器新增至群組元素，而不是個別的控制項。 Since the Apple Watch has a smaller physical screen size, Group Elements tend to be bigger and easier targets for the user to hit. Also, the Gesture Recognizers can conflict with built in gestures already in the native UI Controls.
-- Set dependency relationships in the watch app's Storyboard.
-- Some gesture take precedence over other gesture types, such as:
+- 將手勢辨識器新增至群組元素，而不是個別的控制項。 由於 Apple Watch 的實體螢幕大小較小，因此群組元素通常會是更大且更容易進行的目標，讓使用者得以點擊。 此外，筆勢辨識器可能會與已經在原生 UI 控制項中的內建手勢衝突。
+- 在監看式應用程式的分鏡腳本中設定相依性關聯性。
+- 有些手勢的優先順序高於其他手勢類型，例如：
   - 捲動
   - Force Touch
 
-### <a name="digital-crown-rotation"></a>Digital Crown Rotation
+### <a name="digital-crown-rotation"></a>Digital Crown 旋轉
 
-By implementing Digital Crown Support in their watchOS 3 apps, a developer can provide increased navigation speed and precision interactions for their users.
+藉由在 watchOS 3 應用程式中執行 Digital Crown 支援，開發人員可以為其使用者提供更高的流覽速度和精確度互動。
 
-Since watchOS 2, Apple Watch app's could use the `WKInterfacePicker` object to access the Digital Crown by providing a list of `WKPickerItems` and a Picker Style (List, Stacked or Image Sequence). watchOS then allowed the user to use the Digital Crown to select an item from the list.
+從 watchOS 2 開始，Apple Watch 應用程式可以藉 `WKInterfacePicker` 由提供 `WKPickerItems` 和選擇器樣式（清單、堆疊或影像序列）的清單，來使用物件來存取 Digital Crown。 然後，watchOS 會允許使用者使用 Digital Crown 從清單中選取專案。
 
-When using a `WKInterfacePicker`, WatchKit is handling most of the work by:
+使用時 `WKInterfacePicker` ，WatchKit 會處理大部分的工作，方法是：
 
-- Drawing the list and the individual interface elements.
-- Processing the Digital Crown events.
-- Calling an Action when an item is selected.
+- 繪製清單和個別介面元素。
+- 處理 Digital Crown 事件。
+- 在選取專案時呼叫動作。
 
-New to watchOS 3, the developer now has direct access to the Digital Crown rotation events which allows them to create their own UI elements that respond to rotation values.
+WatchOS 3 的新手，開發人員現在可以直接存取 Digital Crown 的輪替事件，讓他們能夠建立自己的 UI 元素來回應旋轉值。
 
-Digital Crown access is provided by the following elements:
+Digital Crown 存取是由下列元素所提供：
 
-- `WKCrownSequencer` - Provides access to rotations per second.
-- `WKCrownDelegate` - Provides access to rotational delta events.
+- `WKCrownSequencer`-提供每秒旋轉的存取權。
+- `WKCrownDelegate`-提供對旋轉 delta 事件的存取。
 
-#### <a name="rotations-per-second"></a>Rotations Per Second
+#### <a name="rotations-per-second"></a>每秒旋轉數
 
-Accessing the Rotations Per Second from the Digital Crown is useful when working with physics based animations. To access the Rotations Per Second, use the `CrownSequencer` property of the `WKInterfaceController` of the Watch Extension. 例如:
+當您使用以物理為基礎的動畫時，從 Digital Crown 存取每秒的旋轉就很有用。 若要存取每秒的旋轉，請使用 Watch 延伸模組之的 `CrownSequencer` 屬性 `WKInterfaceController` 。 例如：
 
 ```csharp
 var rotationsPerSecond = CrownSequencer.RotationsPerSecond;
 ```
 
-#### <a name="rotational-deltas"></a>Rotational Deltas
+#### <a name="rotational-deltas"></a>旋轉差異
 
-Use the Rotational Deltas from the Digital Crown to count the number of rotations. Use the `CrownDidRotate` override method of the `WKCrownDelegate` to access the Rotational Deltas. 例如:
+使用 Digital Crown 的旋轉差異來計算旋轉次數。 使用的覆 `CrownDidRotate` 寫方法 `WKCrownDelegate` 來存取旋轉的差異。 例如：
 
 ```csharp
 using System;
@@ -162,185 +162,185 @@ namespace MonkeyWatch.MonkeySeeExtension
 }
 ```
 
-Here the app maintains an accumulator (`AccumulatedRotations`) to determine the number of rotations. One full rotation of the Digital Crown is equal to an accumulated delta of `1.0` and a half rotation would be `0.5`.
+在這裡，應用程式會維護累計（ `AccumulatedRotations` ），以判斷旋轉的數目。 Digital Crown 的一個完整旋轉等於的累積差異 `1.0` ，而一半的旋轉則是 `0.5` 。
 
-Apple has left it up to the developer to determine how the rotation counts correspond to the sensitivity of changes on the UI element being updated.
+Apple 已將其留給開發人員，決定如何將旋轉計數對應至所要更新之 UI 元素上的變更敏感度。
 
-The sign (`+/-`) of the Rotational Delta indicates the direction that the user is turning the Digital Crown:
+旋轉差異的正負號（ `+/-` ）表示使用者正在開啟 Digital Crown 的方向：
 
-[![](quick-interaction-techniques-images/quick03.png "The sign of the Rotational Delta indicates the direction that the user is turning the Digital Crown")](quick-interaction-techniques-images/quick03.png#lightbox)
+[![旋轉差異的正負號表示使用者正在開啟的方向 Digital Crown](quick-interaction-techniques-images/quick03.png)](quick-interaction-techniques-images/quick03.png#lightbox)
 
-If the user is scrolling up, WatchKit will return positive deltas and if scrolling down, then negative deltas will be returned, no matter what orientation the user is wearing the watch in.
+如果使用者正在向上滾動，則 WatchKit 會傳回正面差異，而且如果向下滾動，則不論使用者在監看哪一個方向，都將傳回負面差異。
 
-#### <a name="digital-crown-focus"></a>Digital Crown Focus
+#### <a name="digital-crown-focus"></a>Digital Crown 焦點
 
-Just like any other interface elements, the Digital Crown has the concept of Focus. This Focus can be shifted away from the Digital Crown to other interface elements based on how the user is interacting with the watch. 
+就像任何其他介面元素一樣，Digital Crown 具有焦點的概念。 這個焦點可以根據使用者與 watch 互動的方式，從 Digital Crown 移至其他介面元素。 
 
-For example, any of the following controls could steal the Focus of the Digital Crown:
+例如，下列任何控制項可能會竊取 Digital Crown 的焦點：
 
 - Picker
 - 滑桿
-- Scrolling Controller
+- 滾動控制器
 
-It is up to the developer to determine when their custom interface element needs to be the Focus of the Digital Crown. Apple suggests using the new Gesture Recognizers to gain focus in the custom UI element.
+由開發人員決定其自訂介面元素何時必須是 Digital Crown 的焦點。 Apple 建議您使用新的手勢辨識器來取得自訂 UI 元素中的焦點。
 
-### <a name="vertical-paging"></a>Vertical Paging
+### <a name="vertical-paging"></a>垂直分頁
 
-The standard way that a user navigates a Table View in a watchOS app is to scroll to the desired piece of data, tap on a specific row to display the Detailed View, tap the back button when finished viewing the details and repeat the process for any other information that they are interested in from within the table:
+使用者在 watchOS 應用程式中流覽資料表視圖的標準方式，是滾動到所需的資料片段，並在特定的列上按一下以顯示詳細的視圖，然後在完成詳細資料的查看後，按 [上一頁] 按鈕，並針對資料表中感興趣的任何其他資訊重複處理常式：
 
-[![](quick-interaction-techniques-images/quick04.png "Moving between a table and the Detail view")](quick-interaction-techniques-images/quick04.png#lightbox)
+[![在資料表與詳細資料檢視之間移動](quick-interaction-techniques-images/quick04.png)](quick-interaction-techniques-images/quick04.png#lightbox)
 
-New to watchOS 3, the developer can enable Vertical Paging on their Table View controls. With this feature enabled, the user can scroll to find a Table View row and tap the row to view its detail as before. However, they can now swipe up to select the next row in the table or down to select the previous row (or use the Digital Crown), all without having to return to the Table View first:
+WatchOS 3 的新手，開發人員可以在其資料表視圖控制項上啟用垂直分頁。 啟用這項功能後，使用者可以滾動到尋找資料表查看列，然後按資料列來查看其詳細資料。 不過，他們現在可以向上滑動來選取資料表中的下一個資料列，或選取下一個資料列（或使用 Digital Crown），而不需要先回到資料表視圖：
 
-[![](quick-interaction-techniques-images/quick05.png "Moving between a table and the Detail view and swiping up and down to move between the other rows")](quick-interaction-techniques-images/quick05.png#lightbox)
+[![在資料表和詳細資料檢視之間移動，並向上和向下移動，以在其他資料列之間移動](quick-interaction-techniques-images/quick05.png)](quick-interaction-techniques-images/quick05.png#lightbox)
 
-To enable this mode, open the watchOS app's Storyboard in Xcode for editing, select the Table View and check the **Vertical Detail Paging** checkbox:
+若要啟用此模式，請在 Xcode 中開啟 watchOS 應用程式的腳本以進行編輯，選取資料表視圖並核取 [**垂直詳細資料分頁**] 核取方塊：
 
-[![](quick-interaction-techniques-images/quick06.png "Check the Vertical Detail Paging checkbox")](quick-interaction-techniques-images/quick06.png#lightbox)
+[![核取 [垂直詳細資料分頁] 核取方塊](quick-interaction-techniques-images/quick06.png)](quick-interaction-techniques-images/quick06.png#lightbox)
 
-Ensure that the Table is using Segues to display the Detailed View and Save the changes to the Storyboard and return to Visual Studio for Mac to sync.
+請確定資料表使用 Segue 來顯示詳細的視圖，並將變更儲存至分鏡腳本，並返回 Visual Studio for Mac 進行同步處理。
 
-The developer can programmatically engage Vertical Paging to a specific row using the following code against a Table View:
+開發人員可以使用下列針對資料表視圖的程式碼，以程式設計方式對特定資料列進行垂直分頁：
 
 ```csharp
 // Segue into Vertical Paging and select the first row
 MenuTable.PerformSegue (0);
 ```
 
-When using Vertical Paging, the developer needs to be aware that WatchKit will automatically handle the preloading of controllers and as a result, some controller lifecycle methods can be called before the UI is actually visible.
+使用垂直分頁時，開發人員必須注意，WatchKit 會自動處理控制器的預先載入，因此在實際顯示 UI 之前，可以呼叫某些控制器生命週期方法。
 
-### <a name="notification-enhancements"></a>Notification Enhancements
+### <a name="notification-enhancements"></a>通知增強功能
 
-Notification are the primary form of Quick Interaction that a user typically experiences on watchOS and have been available since the first Apple Watch and watchOS 1.
+通知是一種主要的快速互動形式，使用者通常會在 watchOS 時體驗，並在第一 Apple Watch 和 watchOS 1 之後提供。
 
-A typical Notification Quick Interaction is as follows:
+一般通知快速互動如下所示：
 
-1. The user feels the Notification Haptic when a new Notification is received.
-2. They raise their wrist to see the Short Look interface for the Notification.
-3. If they continue to keep their wrist raised, watchOS automatically transitions into the Long Look Notification interface.
+1. 當收到新通知時，使用者會感覺到通知 Haptic。
+2. 他們會引發手腕，以查看通知的簡短外觀介面。
+3. 如果他們繼續保持手腕，watchOS 會自動轉換成長時間的外觀通知介面。
 
-There are several ways that a user may respond to the Notification:
+有數種方式可讓使用者回應通知：
 
-- For a well defined and presented Notification, the user will do nothing and simply dismiss the Notification.
-- They might also tap of the Notification to launch the watchOS app.
-- For a Notification that supports Custom Actions, the user might select one of the custom actions. These can either be:
-  - **Foreground Actions** - These launch the app to perform the action.
-  - **Background Actions** - Were always routed to the iPhone in watchOS 2 but can be routed to the watchApp in watchOS 3.
+- 針對定義良好且呈現的通知，使用者不會執行任何動作，只會關閉通知。
+- 他們也可以按一下通知來啟動 watchOS 應用程式。
+- 對於支援自訂動作的通知，使用者可能會選取其中一個自訂動作。 這些可以是：
+  - **前景動作**-這些會啟動應用程式來執行動作。
+  - **背景動作**-一律會路由傳送至 watchOS 2 中的 iPhone，但可以路由至 watchOS 3 中的 watchApp。
 
-New for watchOS 3:
+WatchOS 3 的新內容：
 
-- Notification use a similar API across all platforms (iOS, watchOS, tvOS and macOS).
-- Local Notification can be scheduled on the Apple Watch.
-- Background Notification will be routed to the app's Extension if they were scheduled on the Apple Watch.
+- 通知會在所有平臺（iOS、watchOS、tvOS 和 macOS）上使用類似的 API。
+- 本機通知可以在 Apple Watch 上排程。
+- 背景通知會路由傳送至應用程式的延伸模組（如果已在 Apple Watch 上排程）。
 
-#### <a name="notification-scheduling-and-delivery"></a>Notification Scheduling and Delivery
+#### <a name="notification-scheduling-and-delivery"></a>通知排程和傳遞
 
-Notification from the user's iPhone will be forward to the Apple Watch when the following occurs:
+當下列情況發生時，來自使用者 iPhone 的通知將會轉送到 Apple Watch：
 
-- The iPhone's screen is off.
-- The Apple Watch is being worn and has been unlocked.
+- IPhone 的畫面已關閉。
+- Apple Watch 已磨損，而且已解除鎖定。
 
-In watchOS 3, Local Notifications can be scheduled on the Apple Watch and are only delivered on the watch. It is up the developer to schedule a corresponding iPhone Notification if it is required by the app.
+在 watchOS 3 中，本機通知可以在 Apple Watch 上排程，而且只會在監看式上傳遞。 開發人員必須排程對應的 iPhone 通知（如果應用程式需要的話）。
 
-By including the same Notification Identifier on both the Apple Watch and iPhone versions of the Notifications, it prevents duplicate Notifications from being displayed on the watch. The Apple Watch version of the Notification will take precedence over the iPhone version.
+藉由在 Apple Watch 和 iPhone 版本的通知上包含相同的通知識別碼，可防止在監看式上顯示重複的通知。 通知的 Apple Watch 版本將優先于 iPhone 版本。
 
-Since watchOS 3 uses the same `UINotification` API framework as iOS 10, please see our iOS 10 [User Notification Framework](~/ios/platform/user-notifications/index.md) documentation for more details.
+由於 watchOS 3 使用與 `UINotification` ios 10 相同的 API 架構，請參閱我們的 ios 10[使用者通知架構](~/ios/platform/user-notifications/index.md)檔，以取得更多詳細資料。
 
-### <a name="using-spritekit-and-scenekit"></a>Using SpriteKit and SceneKit
+### <a name="using-spritekit-and-scenekit"></a>使用 SpriteKit 和 SceneKit
 
-New to watchOS 3, the developer can now use both SpritKit and SceneKit objects in their app's User Interface design to present both 2D and 3D graphics.
+WatchOS 3 的新功能，開發人員現在可以在其應用程式的使用者介面設計中同時使用 SpritKit 和 SceneKit 物件，以同時呈現2D 和3D 圖形。
 
-Two new interface classes have been added to support this feature:
+已加入兩個新介面類別別來支援這項功能：
 
-- `WKInterfaceSKScene` - For working with SpriteKit 2D graphics.
-- `WKInterfaceSCNScene` - For working with SceneKit 3D graphics.
+- `WKInterfaceSKScene`-適用于使用 SpriteKit 2D 圖形。
+- `WKInterfaceSCNScene`-適用于使用 SceneKit 3D 圖形。
 
-To use these objects, simply drag them onto the design surface inside of the watch app's Storyboard in Xcode's Interface Builder and use the **Attributes Inspector** to configure them.
+若要使用這些物件，只要將其拖曳至 Xcode 的 Interface Builder 中監看式應用程式分鏡腳本內的設計介面，然後使用 [屬性] 偵測**器**加以設定即可。
 
-From this point, working with either the SpriteKit or SceneKit scenes works the same as it does inside of an iOS app. The watch app will present a `WKInterfaceSKScene` by calling one of the `Present` methods. For SceneKit, simply set the `Scene` property of the `WKInterfaceSCNScene` object.
+從這裡開始，使用 SpriteKit 或 SceneKit 場景，其運作方式與在 iOS 應用程式中相同。 Watch 應用程式會藉 `WKInterfaceSKScene` 由呼叫其中一個方法來呈現 `Present` 。 針對 SceneKit，只需設定 `Scene` 物件的屬性即可 `WKInterfaceSCNScene` 。
 
-## <a name="actionable-complications"></a>Actionable Complications
+## <a name="actionable-complications"></a>可操作的複雜性
 
-In watchOS 2, Apple introduced Complications for 3rd party apps. In watchOS 3, Apple has expanded the abilities that a developer can include in a WatchKit Complication. 
+在 watchOS 2 中，Apple 引進了協力廠商應用程式的複雜性。 在 watchOS 3 中，Apple 已擴充開發人員可以在 WatchKit 中包含的功能。 
 
-Additionally, more of the built in watch faces can now include Complications and existing watch faces that already supported Complications can now included even more Complications.
+此外，多個內建的監看式臉部現在可以包含複雜性，而且現有的監看表面已經支援複雜，現在也包含更複雜的功能。
 
-Also new is the ability for a user to quickly swipe left or right to transition through all of the watch faces they have installed on their Apple Watch. Using the new gallery on the Apple Watch's companion iPhone app, the user can add and customize new watch faces and any of the Complications that they can include.
+此外，使用者也可以快速地向左或向右滑動，以透過其 Apple Watch 上所安裝的所有監看面進行轉換。 使用 Apple Watch 隨附 iPhone 應用程式上的新圖庫，使用者可以新增和自訂新的監看面，以及他們可以包含的任何複雜資訊。
 
-Because of these new features, Apple suggests that every app on Apple Watch should also include at least one Complication and as such, all of the Native Apple Watch app now have Complications.
+基於這些新功能，Apple 建議 Apple Watch 上的每個應用程式也應該包含至少一個複雜的，因此，所有的原生 Apple Watch 應用程式現在都有複雜的複雜性。
 
-Complications provide the following features to an app:
+複雜性會將下列功能提供給應用程式：
 
-- They are highly glanceable since they are always present on the watch face.
-- Complications are frequently updated by watchOS. Any app that includes a Complication on the user's currently displayed watch face is updated at least twice an hour.
-- Any app with a Complication on the user's currently displayed watch face is kept in memory which makes the app launch quickly and improves the speed of responses from the app.
-- Complications make it easy for the user to launch specific functionality in a watchOS app.
+- 它們非常 glanceable，因為它們一定會出現在監看式臉部上。
+- WatchOS 經常會更新複雜的情況。 在使用者目前顯示的監看式臉部上，任何包含複雜的應用程式，至少會更新兩次。
+- 在使用者目前顯示的監看式表面上有複雜的任何應用程式都會保留在記憶體中，讓應用程式快速啟動，並提升應用程式回應的速度。
+- 複雜性可讓使用者輕鬆地在 watchOS 應用程式中啟動特定功能。
 
-## <a name="glanceable-notification"></a>Glanceable Notification
+## <a name="glanceable-notification"></a>Glanceable 通知
 
-Notification on Apple Watch provide a great, customizable way to quickly inform the user of events or new information such as incoming messages or achieving a goal in a workout app.
+Apple Watch 的通知提供了絕佳、可自訂的方式，可快速通知使用者事件或新資訊，例如內送訊息或在健身應用程式中達到目標。
 
-By using a Notification, valuable information can be quickly presented to the user. In many situations, a well-designed Notification can remove the necessity for the user to actually launch the app.
+藉由使用通知，您可以快速地向使用者呈現寶貴的資訊。 在許多情況下，設計良好的通知可以移除使用者實際啟動應用程式的必要。
 
-New to watchOS 3, all notifications now support:
+WatchOS 3 的新手，所有通知現在都支援：
 
 - SpriteKit
 - SceneKit
-- Inline Video
+- 內嵌影片
 
-## <a name="enhanced-ui-with-spritekit-and-scenekit"></a>Enhanced UI with SpriteKit and SceneKit
+## <a name="enhanced-ui-with-spritekit-and-scenekit"></a>具有 SpriteKit 和 SceneKit 的增強型 UI
 
-Typically, a developer might think of game UI when SpriteKit and SceneKit are mentioned. However, both SpriteKit and SceneKit can be useful for creating non-gaming UIs that include customized layouts, content and animations that are not otherwise possible in WatchKit alone.
+一般而言，開發人員可能會在提及 SpriteKit 和 SceneKit 時，考慮遊戲 UI。 不過，SpriteKit 和 SceneKit 可以用來建立非遊戲 Ui，其中包括不可能單獨 WatchKit 的自訂版面配置、內容和動畫。
 
-For example, a user notification from a photo sharing app can use SpriteKit to provide a rich user experience by including the user that posted the picture along with an actual image and other customized information that enriches the user experience.
+例如，來自相片分享應用程式的使用者通知可以使用 SpriteKit 來提供豐富的使用者體驗，方法是包含張貼圖片的使用者以及來擴充使用者體驗的其他自訂資訊。
 
-Additionally, both SpriteKit and SceneKit can be mixed with standard WatchKit UI elements in the app's User Interface design.
+此外，SpriteKit 和 SceneKit 都可以與應用程式的使用者介面設計中的標準 WatchKit UI 元素混合使用。
 
-## <a name="simple-navigation"></a>Simple Navigation
+## <a name="simple-navigation"></a>簡單導覽
 
-watchOS 3 presents several ways that a developer can simplify the navigation within their watchOS apps such as the new [Vertical Paging](#vertical-paging), [Gesture Recognizer Support](#gesture-recognizer-support) and [Digital Crown Rotation](#digital-crown-rotation) features presented above.
+watchOS 3 提供幾種方法，讓開發人員可以在其 watchOS 應用程式中簡化導覽，例如新的[垂直分頁](#vertical-paging)、[手勢辨識器支援](#gesture-recognizer-support)和以上所示的[Digital Crown 旋轉](#digital-crown-rotation)功能。
 
-The Digital Crown is unique to the Apple Watch and can be used in many different ways to simplify navigation. For example, a timer application can use the Digital Crown to scrub through available timer lengths.
+Digital Crown 對 Apple Watch 而言是唯一的，而且可以用許多不同的方式來簡化導覽。 例如，計時器應用程式可以使用 Digital Crown 來清理可用的計時器長度。
 
-Custom Gestures can present new and unique ways for the user to interact with a watch app and can also be used to simplify app navigation.
+自訂手勢可以提供全新且獨特的方式，讓使用者與 watch 應用程式互動，也可以用來簡化應用程式導覽。
 
-Apple suggest looking for ways to combine all of the new Quick Interaction features added in watchOS 3 to present rich, easy and quick to use watchOS app interfaces.
+Apple 建議尋找方法來結合 watchOS 3 中新增的所有快速互動功能，以提供豐富、簡單快速的 watchOS 應用程式介面。
 
-## <a name="finishing-the-quick-interaction"></a>Finishing the Quick Interaction
+## <a name="finishing-the-quick-interaction"></a>完成快速互動
 
-A well designed quick interaction experience will give the user the confidence to drop their wrist (and disengage with the app) when they have finished the current interaction.
+設計良好的快速互動體驗，可讓使用者在完成目前的互動時，安心卸載其手腕（並卸離應用程式）。
 
-Where this specifically becomes an issue is when the watch app is doing any type of network connection or sharing information with its companion iPhone app. This can often lead to a waiting indicator while the transaction is taking place, which is not desirable during a quick interaction. 請使用以下範例：
+當監看式應用程式正在執行任何類型的網路連線，或與隨附的 iPhone 應用程式共用資訊時，就會發生此問題。 當交易正在進行時，這通常會導致等候指示器，這在快速互動期間並不理想。 以下列範例為例：
 
-[![](quick-interaction-techniques-images/quick07.png "Diagram of the watch app doing a network connection and sharing information with its companion iPhone app")](quick-interaction-techniques-images/quick07.png#lightbox)
+[![監看式應用程式執行網路連線和與隨附 iPhone 應用程式共用資訊的圖表](quick-interaction-techniques-images/quick07.png)](quick-interaction-techniques-images/quick07.png#lightbox)
 
-1. The user chooses an item to purchase on the watch.
-2. They tap the buy button.
-3. The app starts the network transaction and displays a loading indicator.
-4. Some time later, the transaction completes and the app displays a purchase conformation.
-5. The user drops their wrist and disengages with the app.
+1. 使用者選擇要在 watch 上購買的專案。
+2. 他們會按一下 [購買] 按鈕。
+3. 應用程式會啟動網路交易，並顯示載入指示器。
+4. 稍後，交易會完成，而應用程式會顯示購買確認。
+5. 使用者透過應用程式卸載其手腕和 disengages。
 
-From the time the user taps the buy button until the transaction is completed, they have their wrist raised looking at a loading indicator. To solve this situation, Apple suggests that the developer should present instant feedback to the user instead of showing a loading indicator. 
+從使用者按下 [購買] 按鈕直到交易完成為止，他們會看到其手腕出現了一個載入指示器。 為了解決這種情況，Apple 建議開發人員應該向使用者呈現立即的意見反應，而不是顯示載入指示器。 
 
-Using Apple's suggested model, take a look at the same quick interaction again:
+使用 Apple 的建議模型，再次查看相同的快速互動：
 
-[![](quick-interaction-techniques-images/quick08.png "Apples suggested model diagram")](quick-interaction-techniques-images/quick08.png#lightbox)
+[![蘋果建議的模型圖表](quick-interaction-techniques-images/quick08.png)](quick-interaction-techniques-images/quick08.png#lightbox)
 
-1. The user chooses an item to purchase on the watch.
-2. They tap the buy button.
-3. The app starts the network transaction and displays a message saying that the purchase has successfully started.
-4. The user drops their wrist and disengages with the app.
-5. When the transaction successfully completes some time later, the app displays a Local Notification to inform the user of a successful purchase.
+1. 使用者選擇要在 watch 上購買的專案。
+2. 他們會按一下 [購買] 按鈕。
+3. 應用程式會啟動網路交易，並顯示一則訊息，指出已成功啟動購買。
+4. 使用者透過應用程式卸載其手腕和 disengages。
+5. 當交易成功完成一些時間之後，應用程式會顯示本機通知，通知使用者已成功購買。
 
-This time, as soon as the user taps the buy button they are shown a message stating that the purchase has started, so they can confidently drop their wrist and end the quick interaction at this point. Later they are informed of the success or failure of the transaction in a User Notification. In this way, the user is only interacting with the app during the "active" phases of the process.
+這次，只要使用者按下 [購買] 按鈕，就會顯示一則訊息，指出已開始購買，讓他們可以放心地放置手腕，並在此時結束快速互動。 之後，他們會收到使用者通知中交易成功或失敗的通知。 如此一來，使用者只會在程式的「作用中」階段與應用程式互動。
 
-For apps that are doing networking, they can use a background `NSURLSession` to handle the network communication with a download task. This will allow the app to be woken up in the background to process the downloaded information. For app that require background processing, use a Background Task Assertion to handle the required processing.
+對於正在進行網路功能的應用程式，他們可以使用背景 `NSURLSession` 來處理與下載工作的網路通訊。 這可讓應用程式在背景中喚醒，以處理下載的資訊。 針對需要背景處理的應用程式，請使用背景工作判斷提示來處理所需的處理。
 
-## <a name="quick-interaction-design-tips"></a>Quick Interaction Design Tips
+## <a name="quick-interaction-design-tips"></a>快速互動設計秘訣
 
-Since the desired length of a Quick Interaction is two seconds or less, the developer should focus on the design of the app's interactions from the very beginning of the design process. Find areas where those interactions can be simplified (using the technique presented above) and use the new features of watchOS 3 to make the app quick and responsive.
+由於快速互動所需的長度是兩秒或更少，因此開發人員應該將焦點放在應用程式從設計流程的一開始就進行的互動設計。 尋找可簡化這些互動的區域（使用上述的技術），並使用 watchOS 3 的新功能，讓應用程式快速且迅速回應。
 
-Apple suggests the following:
+Apple 建議下列各項：
 
 - 藉由將應用程式最常使用的功能帶往前，將焦點放在快速互動。
 - 使用複雜和使用者通知來呈現常用的功能和功能。

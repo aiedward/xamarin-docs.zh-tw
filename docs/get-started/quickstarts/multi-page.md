@@ -12,16 +12,16 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8858a66d2caeea815bf06d5d2741bfc3623598f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127877"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933727"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>在多頁應用程式中執行流覽 Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
 在本快速入門中，您將了解如何：
 
@@ -31,10 +31,10 @@ ms.locfileid: "84127877"
 
 本快速入門會逐步解說如何將單一頁面的跨平臺 Xamarin.Forms 應用程式（能夠儲存單一便箋）轉換成多頁應用程式，能夠儲存多個便箋。 最終的應用程式如下所示：
 
-[![](multi-page-images/screenshots1-sml.png "Notes Page")](multi-page-images/screenshots1.png#lightbox "Notes Page")
-[![](multi-page-images/screenshots2-sml.png "Note Entry Page")](multi-page-images/screenshots2.png#lightbox "Note Entry Page")
+[ ![ 附注頁面](multi-page-images/screenshots1-sml.png)](multi-page-images/screenshots1.png#lightbox "[備註] 頁面") 
+ [ ![ 筆記輸入頁面](multi-page-images/screenshots2-sml.png)](multi-page-images/screenshots2.png#lightbox "[備註輸入] 頁面")
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
 您應該先成功完成[先前的快速入門](single-page.md)，再嘗試本快速入門。 或者，下載[先前的快速入門範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)，並使用此範例作為本快速入門的起點。
 
@@ -44,23 +44,23 @@ ms.locfileid: "84127877"
 
 1. 啟動 Visual Studio。 在開始視窗中，按一下最近使用的專案/方案清單中的 **Notes** 方案，或按一下 [Open a project or solution] \(開啟專案或方案\)****，然後在 [開啟專案/方案]**** 對話方塊中，選取 Notes 專案的方案檔：
 
-    ![](multi-page-images/vs/open-solution.png "Open Project")
+    ![開啟專案](multi-page-images/vs/open-solution.png)
 
 2. 在 [方案總管]**** 中，以滑鼠右鍵按一下 **Notes** 專案，然後選取 [新增] > [新增資料夾]****：
 
-    ![](multi-page-images/vs/add-new-item.png "Add New Item")
+    ![新增項目](multi-page-images/vs/add-new-item.png)
 
 3. 在 [方案總管]**** 中，將新資料夾命名為 **Models**：
 
-    ![](multi-page-images/vs/name-folder.png "Models Folder")
+    ![Models 資料夾](multi-page-images/vs/name-folder.png)
 
 4. 在 [方案總管]**** 中，選取 **Models** 資料夾，按一下滑鼠右鍵，然後選取 [新增] > [新增項目]****：
 
-    ![](multi-page-images/vs/add-new-models-file.png "Add New File")
+    ![新增檔案](multi-page-images/vs/add-new-models-file.png)
 
 5. 在 [新增項目]**** 對話方塊中，選取 [Visual C# 項目] > [類別]****，將新檔案命名為 **Note**，然後按一下 [新增]**** 按鈕：
 
-    ![](multi-page-images/vs/add-note-class.png "Add Note Class")
+    ![新增備註類別](multi-page-images/vs/add-note-class.png)
 
     這會將名為 **Note** 的類別新增至 **Notes** 專案 **Models** 資料夾。
 
@@ -86,7 +86,7 @@ ms.locfileid: "84127877"
 
 7. 在**方案總管**中，以滑鼠右鍵按一下 [ **Notes** ] 專案，然後選取 [**加入 > 新增專案**...]在 [**加入新專案**] 對話方塊中，選取 [ **Visual c # 專案] > Xamarin.Forms > 內容] 頁面**，將新檔案命名為**NoteEntryPage**，然後按一下 [**新增**] 按鈕：
 
-    ![](multi-page-images/vs/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
+    ![新增 Xamarin.Forms ContentPage](multi-page-images/vs/add-note-entry-page.png)
 
     這會將名為 **NoteEntryPage** 的新頁面新增至專案根資料夾。 此頁面會是應用程式的第二個頁面。
 
@@ -327,23 +327,23 @@ ms.locfileid: "84127877"
 
 1. 啟動 Visual Studio for Mac。 在起始視窗中，按一下 [開啟]****，然後在對話方塊中選取適用於 Notes 專案的方案檔：
 
-    ![](multi-page-images/vsmac/open-solution.png "Open Solution")
+    ![開啟方案](multi-page-images/vsmac/open-solution.png)
 
 2. 在 **Solution Pad** 中，選取 **Notes** 專案，按一下滑鼠右鍵，然後選取 [新增] > [新增資料夾]****：
 
-    ![](multi-page-images/vsmac/add-new-folder.png "Add New Folder")
+    ![新增資料夾](multi-page-images/vsmac/add-new-folder.png)
 
 3. 在 **Solution Pad** 中，將新資料夾命名為 **Models**：
 
-    ![](multi-page-images/vsmac/name-folder.png "Models Folder")
+    ![Models 資料夾](multi-page-images/vsmac/name-folder.png)
 
 4. 在 **Solution Pad** 中，選取 **Models** 資料夾，按一下滑鼠右鍵，然後選取 [新增] > [新增檔案]****：
 
-    ![](multi-page-images/vsmac/add-new-models-file.png "Add New File")
+    ![新增檔案](multi-page-images/vsmac/add-new-models-file.png)
 
 5. 在 [新增檔案]**** 對話方塊中，選取 [一般] > [空的類別]****，將新檔案命名為 **Note**，然後按一下 [新增]**** 按鈕：
 
-    ![](multi-page-images/vsmac/add-note-class.png "Add Note Class")
+    ![新增備註類別](multi-page-images/vsmac/add-note-class.png)
 
     這會將名為 **Note** 的類別新增至 **Notes** 專案 **Models** 資料夾。
 
@@ -369,7 +369,7 @@ ms.locfileid: "84127877"
 
 7. 在 [ **Solution Pad**中，選取 [ **Notes** ] 專案，按一下滑鼠右鍵，然後選取 [**加入 > 新增**檔案 ...]。在 [**新增**檔案] 對話方塊中，選取 [**表單] > 表單 ContentPage XAML**，將新檔案命名為**NoteEntryPage**，然後按一下 [**新增**] 按鈕：
 
-    ![](multi-page-images/vsmac/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
+    ![新增 Xamarin.Forms ContentPage](multi-page-images/vsmac/add-note-entry-page.png)
 
     這會將名為 **NoteEntryPage** 的新頁面新增至專案根資料夾。 此頁面會是應用程式的第二個頁面。
 

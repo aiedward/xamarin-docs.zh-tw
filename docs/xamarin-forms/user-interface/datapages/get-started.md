@@ -10,25 +10,25 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bb08d359048d53639a700cc5ff526f26d6b077b6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 325aa7be9e8a1eb6da816ef4ec6403c2882c6ed4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571463"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928909"
 ---
 # <a name="getting-started-with-datapages"></a>使用 DataPages 消費者入門
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![此 API 目前為預覽狀態](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages 需要 Xamarin.Forms 呈現的主題參考。 這牽涉到安裝[ Xamarin.Forms 。主題。基底](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)NuGet 封裝到您的專案中，後面接著[ Xamarin.Forms 。主題 Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[ Xamarin.Forms 。主題. 深色](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet 套件。
 
 若要開始使用 DataPages Preview 建立簡單的資料驅動頁面，請遵循下列步驟。 本示範使用預覽組建中的硬式編碼樣式（「事件」），其僅適用于程式碼中的特定 JSON 格式。
 
-[![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
+[![DataPages 範例應用程式](get-started-images/demo-sml.png)](get-started-images/demo.png#lightbox "DataPages 範例應用程式")
 
 ## <a name="1-add-nuget-packages"></a>1. 新增 NuGet 套件
 
@@ -140,7 +140,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 上述步驟應會產生 [可運作的資料] 頁面：
 
-[![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
+[![DataPages 範例應用程式](get-started-images/demo-sml.png)](get-started-images/demo.png#lightbox "DataPages 範例應用程式")
 
 這是因為預先建立的樣式「**事件**」存在於淺色主題 NuGet 套件中，而且已定義符合資料來源的樣式（例如， 「標題」、「影像」、「展示者」）。
 
@@ -169,7 +169,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 藉由提供 `DataTemplate` ，此程式碼會覆寫 `StyleClass` ，而會改為使用的預設版面配置 `ListItemControl` 。
 
-[![](get-started-images/custom-sml.png "DataPages Sample Application")](get-started-images/custom.png#lightbox "DataPages Sample Application")
+[![DataPages 範例應用程式](get-started-images/custom-sml.png)](get-started-images/custom.png#lightbox "DataPages 範例應用程式")
 
 偏好 c # 至 XAML 的開發人員也可以建立資料來源系結（請務必包含 `using Xamarin.Forms.Pages;` 語句）：
 

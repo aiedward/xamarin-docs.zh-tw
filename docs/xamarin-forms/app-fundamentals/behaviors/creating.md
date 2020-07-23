@@ -10,18 +10,18 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135820"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933704"
 ---
 # <a name="create-xamarinforms-behaviors"></a>建立 Xamarin.Forms 行為
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
-_Xamarin：表單行為是由衍生自行為或行為 &lt; T 類別所建立 &gt; 。本文示範如何建立和使用 Xamarin.Forms 行為。_
+_Xamarin.Forms行為是由衍生自行為或行為 &lt; T 類別所建立 &gt; 。本文示範如何建立和使用 Xamarin.Forms 行為。_
 
 ## <a name="overview"></a>概觀
 
@@ -113,7 +113,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 在執行階段，行為會根據行為實作回應與控制項的互動。 下列螢幕擷取畫面示範行為如何回應無效的輸入：
 
-[![](creating-images/screenshots-sml.png "Sample Application with Xamarin.Forms Behavior")](creating-images/screenshots.png#lightbox "Sample Application with Xamarin.Forms Behavior")
+[![具有行為的範例應用程式 Xamarin.Forms](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "具有 [！的範例應用程式OP.無-LOC （Xamarin）] 行為")
 
 > [!NOTE]
 > 行為是針對特定的控制項類型 (或可套用至許多控制項的 Superclass) 所撰寫，且應該只新增至相容的控制項。 嘗試將行為附加至不相容的控制項會導致擲回例外狀況。
@@ -207,7 +207,7 @@ entry.Behaviors.Clear();
 
 另請注意，當頁面從導覽堆疊快顯時，控制項的行為不會以隱含方式移除。 而是必須在頁面超出範圍之前先明確移除它們。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範了如何建立和使用 Xamarin.Forms 行為。 Xamarin.Forms行為是藉由衍生自 [`Behavior`](xref:Xamarin.Forms.Behavior) 或類別來建立 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 。
 

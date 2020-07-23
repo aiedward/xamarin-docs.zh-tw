@@ -10,18 +10,18 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 279df31eeda506d6780533bac8ae190f799424a3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137742"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936028"
 ---
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsC # 標記
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
 C # 標記是一組可加入宣告的流暢 helper 方法和類別，以簡化 Xamarin.Forms 在 c # 中建立宣告式使用者介面的程式。 C # 標記提供的 Fluent API 可在 `Xamarin.Forms.Markup` 命名空間中取得。
 

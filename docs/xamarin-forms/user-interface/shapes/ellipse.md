@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 725f892a667b4e89d55266abcf69e5394b09b6a5
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: b4369fdb7c5a35d6b9a192d9222fd82670b7e3f3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243788"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933584"
 ---
 # <a name="xamarinforms-shapes-ellipse"></a>Xamarin.Forms圖形：橢圓形
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Ellipse`類別衍生自 `Shape` 類別，可用於繪製橢圓形和圓形。 如需 `Ellipse` 類別繼承自類別之屬性的詳細資訊 `Shape` ，請參閱[ Xamarin.Forms 圖形](index.md)。
 
@@ -58,7 +58,7 @@ ms.locfileid: "85243788"
 
 在此範例中，會繪製一個具有維度150x150 正方形（裝置獨立單位）的紅色圓圈：
 
-![圓心](ellipse-images/circle.png "Circle")
+![Circle](ellipse-images/circle.png "Circle")
 
 如需繪製虛線橢圓形的詳細資訊，請參閱[繪製虛線形狀](index.md#draw-dashed-shapes)。
 

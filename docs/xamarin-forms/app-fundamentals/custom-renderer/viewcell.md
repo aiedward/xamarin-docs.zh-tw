@@ -10,16 +10,16 @@ ms.date: 12/07/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c908da816352e8b3790ded0bef932e1485170abd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: bb6167eae394b41583195911bfac9d691e48d361
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573868"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929372"
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
 _Xamarin.FormsViewCell 是可以加入至 ListView 或 TableView 的資料格，其中包含開發人員定義的視圖。本文示範如何為裝載于 ListView 控制項內的 ViewCell 建立自訂轉譯器 Xamarin.Forms 。這會停止在 Xamarin.Forms ListView 滾動期間重複呼叫版面配置計算。_
 
@@ -27,7 +27,7 @@ _Xamarin.FormsViewCell 是可以加入至 ListView 或 TableView 的資料格，
 
 下圖說明 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 和執行它的對應原生控制項之間的關聯性：
 
-![](viewcell-images/viewcell-classes.png "Relationship Between the ViewCell Control and the Implementing Native Controls")
+![ViewCell 控制項與實作原生控制項之間的關聯性](viewcell-images/viewcell-classes.png)
 
 您可以 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 在每個平臺上建立的自訂轉譯器，利用呈現程式來執行平臺特定的自訂。 執行這項作業的流程如下：
 
@@ -164,11 +164,11 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控制項是用來顯示
 
 下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
 
-![](viewcell-images/solution-structure.png "NativeCell Custom Renderer Project Responsibilities")
+![NativeCell 自訂轉譯器專案責任](viewcell-images/solution-structure.png)
 
 `NativeCell` 自訂資料格是由平台特定轉譯器類別轉譯，其全部衍生自各平台的 `ViewCellRenderer` 類別。 這會導致每個 `NativeCell` 自訂資料格都使用平台特定配置轉譯，如下列螢幕擷取畫面所示：
 
-![](viewcell-images/screenshots.png "NativeCell on each Platform")
+![每個平台上的 NativeCell](viewcell-images/screenshots.png)
 
 `ViewCellRenderer` 類別會公開平台轉譯自訂資料格的特定方法。 這在 iOS 平台為 `GetCell` 方法、在 Android 平台為 `GetCellCore` 方法，在 UWP 為 `GetTemplate` 方法。
 
@@ -567,7 +567,7 @@ namespace CustomRenderer.UWP
 
 `DataTemplate` 指定顯示資料格內容及其配置和外觀所用的控制項。 透過資料繫結使用兩個 `TextBlock` 控制項和一個 `Image` 控制項來顯示資料格的內容。 此外，使用 `ConcatImageExtensionConverter` 的執行個體將 `.jpg` 副檔名串連到每個影像檔案名稱。 這可確保 `Image` 控制項在設定了 `Source` 屬性後，可以載入及轉譯影像。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何為裝載于控制項內的建立自訂轉譯器 [`ViewCell`](xref:Xamarin.Forms.ViewCell) Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 。 這會停止在 Xamarin.Forms 滾動期間重複呼叫版面配置計算 `ListView` 。
 

@@ -10,16 +10,16 @@ ms.date: 09/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cdede547e3ef7cf9f7b6d89751c7476a2ce66d3d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05a001d3b49f38b2cb5306d8a19a08b4f8392425
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129008"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935560"
 ---
 # <a name="customizing-listview-cell-appearance"></a>自訂 ListView 儲存格外觀
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
 
 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 類別是用來呈現可透過使用元素自訂的可滾動清單 `ViewCell` 。 `ViewCell`元素可以顯示文字和影像、表示 true/false 狀態，以及接收使用者輸入。
 
@@ -37,7 +37,7 @@ Xamarin.Forms隨附適用于許多應用程式的內建資料格：
 
 [`TextCell`](xref:Xamarin.Forms.TextCell)這是用來顯示文字的儲存格，選擇性地以第二行作為詳細資料文字。 下列螢幕擷取畫面顯示 `TextCell` iOS 和 Android 上的專案：
 
-![](customizing-cell-appearance-images/text-cell-default.png "Default TextCell Example")
+![預設 TextCell 範例](customizing-cell-appearance-images/text-cell-default.png)
 
 TextCells 在執行時間會轉譯為原生控制項，因此相較于自訂，效能會非常理想 `ViewCell` 。 TextCells 是可自訂的，可讓您設定下列屬性：
 
@@ -48,7 +48,7 @@ TextCells 在執行時間會轉譯為原生控制項，因此相較于自訂，�
 
 下列螢幕擷取畫面顯示 `TextCell` 具有自訂色彩屬性的專案：
 
-![](customizing-cell-appearance-images/text-cell-custom.png "Custom TextCell Example")
+![自訂 TextCell 範例](customizing-cell-appearance-images/text-cell-custom.png)
 
 ### <a name="imagecell"></a>ImageCell
 

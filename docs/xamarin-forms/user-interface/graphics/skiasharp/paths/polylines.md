@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8ffa7ab7c9d2cebb9854ed155c3a00fe65e497c9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140214"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936132"
 ---
 # <a name="polylines-and-parametric-equations"></a>聚合線條和參數化的方程式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用 SkiaSharp 轉譯任何可使用參數化方程式定義的線條_
 
 在本指南的[**SkiaSharp 曲線和路徑**](../curves/index.md)一節中，您將會看到 [`SKPath`](xref:SkiaSharp.SKPath) 定義來轉譯特定類型曲線的各種方法。 不過，有時必須繪製一種不受直接支援的曲線 `SKPath` 。 在這種情況下，您可以使用「折線」（連接線的集合）繪製任何可以數學方式定義的曲線。 如果您讓這幾行夠小且夠大，結果看起來會像是曲線。 這種螺旋實際上是3600行：
 
-![](polylines-images/spiralexample.png "A spiral")
+![螺旋狀](polylines-images/spiralexample.png)
 
 一般來說，最好是根據一對參數方程式來定義曲線。 這些是 X 和 Y 座標的方程式，視第三個變數而定，有時會 `t` 針對時間進行呼叫。 例如，下列參數化方程式會定義半徑為1的圓形，並在0到1的*t*點（0，0）上居中。
 
@@ -120,7 +120,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 結果也稱為*算術螺旋*，因為每個迴圈之間的位移是常數：
 
-[![](polylines-images/archimedeanspiral-small.png "Triple screenshot of the Archimedean Spiral page")](polylines-images/archimedeanspiral-large.png#lightbox "Triple screenshot of the Archimedean Spiral page")
+[![Archimedean 螺旋頁面的三重螢幕擷取畫面](polylines-images/archimedeanspiral-small.png)](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean 螺旋頁面的三重螢幕擷取畫面")
 
 請注意， `SKPath` 是在區塊中建立的 `using` 。 這 `SKPath` 會耗用比先前程式中的物件更多的記憶體 `SKPath` ，這表示 `using` 區塊較適合用來處置任何非受控資源。
 

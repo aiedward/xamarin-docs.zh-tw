@@ -10,18 +10,18 @@ ms.date: 03/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c1a958bd4cb56096f554acf26756019eeb0693c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b3063a644a48a8796b03b1a6acedbbcbfc7acbf7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572230"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934260"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>在中建立自訂版面配置Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
-_Xamarin 會定義五個版面配置類別，分別是 StackLayout、AbsoluteLayout、RelativeLayout、Grid 和 FlexLayout，而且每個都以不同的方式排列其子系。不過，有時候您必須使用不是由提供的版面配置來組織頁面內容 Xamarin.Forms 。本文說明如何撰寫自訂的版面配置類別，並示範面向方向的 WrapLayout 類別，它會在頁面上水準排列其子系，然後將後續子系的顯示包裝到其他資料列。_
+_Xamarin.Forms定義五個版面配置類別– StackLayout、AbsoluteLayout、RelativeLayout、Grid 和 FlexLayout，並以不同的方式排列其子系。不過，有時候您必須使用不是由提供的版面配置來組織頁面內容 Xamarin.Forms 。本文說明如何撰寫自訂的版面配置類別，並示範面向方向的 WrapLayout 類別，它會在頁面上水準排列其子系，然後將後續子系的顯示包裝到其他資料列。_
 
 在中 Xamarin.Forms ，所有版面配置類別都是衍生自 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 類別，並將泛型型別限制為 [`View`](xref:Xamarin.Forms.View) 和其衍生類型。 接著， `Layout<T>` 類別衍生自 [`Layout`](xref:Xamarin.Forms.Layout) 類別，它會提供定位和調整大小子項目的機制。
 
@@ -40,7 +40,7 @@ Xamarin.Forms若要建立自訂版面配置，必須徹底瞭解版面配置和�
 
 這個迴圈可確保頁面上的每個視覺專案都會收到 `Measure` 和方法的呼叫 `Layout` 。 下圖顯示此程式：
 
-![](custom-images/layout-cycle.png "Xamarin.Forms Layout Cycle")
+![Xamarin.Forms版面配置週期](custom-images/layout-cycle.png)
 
 > [!NOTE]
 > 請注意，如果變更會影響版面配置，版面配置週期也可能出現在視覺化樹狀結構的子集上。 這包括新增或移除集合中的專案，例如中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 、 [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) 元素的屬性變更，或元素大小的變更。
@@ -60,7 +60,7 @@ Xamarin.Forms具有或屬性的每個類別 `Content` `Children` 都有可覆寫
 
 [`Layout`](xref:Xamarin.Forms.Layout)類別 [`MeasureInvalidated`](xref:Xamarin.Forms.VisualElement.MeasureInvalidated) 會針對加入其屬性或集合的每個子節點設定事件的處理常式 `Content` `Children` ，並在移除子系時卸離處理常式。 因此，視覺樹狀結構中具有子系的每個專案都會在其中一個子系變更大小時收到警示。 下圖說明在視覺化樹狀結構中，元素大小的變更會如何導致在樹狀結構上出現變更：
 
-![](custom-images/invalidation.png "Invalidation in the Visual Tree")
+![視覺化樹狀結構中的失效](custom-images/invalidation.png)
 
 不過， `Layout` 類別會嘗試限制子系大小在頁面版面配置上的變更影響。 如果配置大小受到限制，則子大小變更不會影響任何高於視覺化樹狀結構中父配置的專案。 不過，配置大小的變更通常會影響版面配置如何排列其子系。 因此，配置大小的任何變更都會啟動配置的版面配置週期，而配置會接收其 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 和方法的呼叫 [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 。
 
@@ -400,13 +400,13 @@ async Task<ImageList> GetImageListAsync()
 
 當包含的頁面 `WrapLayout` 出現時，範例應用程式會以非同步方式存取包含相片清單的遠端 JSON 檔案、 [`Image`](xref:Xamarin.Forms.Image) 為每張相片建立一個專案，並將其新增至 `WrapLayout` 。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
-![](custom-images/portait-screenshots.png "Sample Application Portrait Screenshots")
+![範例應用程式垂直螢幕擷取畫面](custom-images/portait-screenshots.png)
 
 下列螢幕擷取畫面顯示 `WrapLayout` 已旋轉為橫向方向之後：
 
-![](custom-images/landscape-ios.png "Sample iOS Application Landscape Screenshot")
-![](custom-images/landscape-android.png "Sample Android Application Landscape Screenshot")
-![](custom-images/landscape-uwp.png "Sample UWP Application Landscape Screenshot")
+![範例 iOS 應用程式橫向螢幕擷取畫面 ](custom-images/landscape-ios.png)
+ ![ Android 應用程式橫向螢幕擷取畫面 ](custom-images/landscape-android.png)
+ ![ 範例 UWP 應用程式橫向螢幕擷取畫面](custom-images/landscape-uwp.png)
 
 每個資料列中的資料行數目取決於相片大小、螢幕寬度，以及每個裝置獨立單位的圖元數目。 專案 [`Image`](xref:Xamarin.Forms.Image) 會以非同步方式載入相片，因此， `WrapLayout` 類別會經常收到其方法的呼叫， [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 因為每個 `Image` 元素都會根據已載入的相片接收新的大小。
 
@@ -416,5 +416,5 @@ async Task<ImageList> GetImageListAsync()
 - [自訂配置](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [在中建立自訂版面配置 Xamarin.Forms （影片）](https://www.youtube.com/watch?v=sxjOqNZFhKU)
 - [Layout\<T>](xref:Xamarin.Forms.Layout`1)
-- [配置](xref:Xamarin.Forms.Layout)
+- [版面配置](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

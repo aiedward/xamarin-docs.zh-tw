@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 764be6319e95b16dc043bebd2abfb27ba0696457
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b0a45207ba036f73c2d1066ea292a02ebcc45064
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031411"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934624"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>逐步解說-在 Xamarin 中使用本機通知
 
@@ -25,10 +25,10 @@ _在本節中，我們將逐步解說如何在 Xamarin iOS 應用程式中使用
 
 讓我們建立一個簡單的應用程式，以顯示本機通知的實際運作方式。 此應用程式將會有單一按鈕。 當我們按一下按鈕時，它會建立本機通知。 經過指定的時間週期之後，我們會看到通知出現。
 
-1. 在 Visual Studio for Mac 中，建立新的單一視圖 iOS 解決方案，並 `Notifications`加以呼叫。
-1. 開啟 `Main.storyboard` 檔案，然後將按鈕拖曳到此視圖上。 將按鈕命名為**按鈕**，並提供標題 [**新增通知**]。 此時，您可能也會想要在按鈕上設定一些[條件約束](~/ios/user-interface/designer/designer-auto-layout.md)： 
+1. 在 Visual Studio for Mac 中，建立新的單一視圖 iOS 解決方案並呼叫它 `Notifications` 。
+1. 開啟檔案 `Main.storyboard` ，然後將按鈕拖曳到視圖上。 將按鈕命名為**按鈕**，並提供標題 [**新增通知**]。 此時，您可能也會想要在按鈕上設定一些[條件約束](~/ios/user-interface/designer/designer-auto-layout.md)： 
 
-    ![](local-notifications-in-ios-walkthrough-images/image3.png "Setting some constraints on the button")
+    ![在按鈕上設定一些條件約束](local-notifications-in-ios-walkthrough-images/image3.png)
 1. 編輯 `ViewController` 類別，並將下列事件處理常式新增至 ViewDidLoad 方法：
 
     ```csharp
@@ -57,7 +57,7 @@ _在本節中，我們將逐步解說如何在 Xamarin iOS 應用程式中使用
 
     此程式碼會建立使用音效的通知、將圖示徽章的值設定為1，並向使用者顯示警示。
 
-1. 接著，編輯 `AppDelegate.cs`的檔案，先將下列程式碼新增至 `FinishedLaunching` 方法。 我們已檢查裝置是否正在執行 iOS 8，如果需要，我們**必須**要求使用者取得通知的許可權：
+1. 接著，編輯檔案 `AppDelegate.cs` ，先將下列程式碼新增至 `FinishedLaunching` 方法。 我們已檢查裝置是否正在執行 iOS 8，如果需要，我們**必須**要求使用者取得通知的許可權：
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -69,7 +69,7 @@ _在本節中，我們將逐步解說如何在 Xamarin iOS 應用程式中使用
     }
     ```
 
-1. 仍然在 `AppDelegate.cs`中，新增下列方法，以在收到通知時呼叫：
+1. 仍然在中 `AppDelegate.cs` ，新增下列方法，這會在收到通知時呼叫：
 
     ```csharp
     public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
@@ -85,7 +85,7 @@ _在本節中，我們將逐步解說如何在 Xamarin iOS 應用程式中使用
     }
     ```
 
-1. 我們需要處理由於本機通知而啟動通知的情況。 編輯 `AppDelegate` 中的方法 `FinishedLaunching`，以包含下列程式碼片段：
+1. 我們需要處理由於本機通知而啟動通知的情況。 編輯中的方法 `FinishedLaunching` `AppDelegate` ，以包含下列程式碼片段：
 
     ```csharp
     // check for a notification
@@ -112,8 +112,7 @@ _在本節中，我們將逐步解說如何在 Xamarin iOS 應用程式中使用
 
 1. 最後，執行應用程式。 在 iOS 8 上，系統會提示您允許通知。 按一下 **[確定]** ，然後按一下 [**新增通知**] 按鈕。 短暫暫停之後，您應該會看到 [警示] 對話方塊，如下列螢幕擷取畫面所示：
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "確認傳送通知的能力") ![](local-notifications-in-ios-walkthrough-images/image1.png "[新增通知] 按鈕")
-    ![](local-notifications-in-ios-walkthrough-images/image2.png "The notification alert dialog")
+    ![確認傳送通知的能力 ](local-notifications-in-ios-walkthrough-images/image0.png) ![ [新增通知] 按鈕 ](local-notifications-in-ios-walkthrough-images/image1.png) ![ [通知警示] 對話方塊](local-notifications-in-ios-walkthrough-images/image2.png)
 
 ## <a name="summary"></a>總結
 

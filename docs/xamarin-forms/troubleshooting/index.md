@@ -11,12 +11,12 @@ ms.date: 04/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 237dfd637d5456636afd19ea0175cb388773d273
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5a84b7a5ca336b5823f1e0d2201e17cb4f152c27
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135911"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930841"
 ---
 # <a name="troubleshooting"></a>疑難排解
 
@@ -39,7 +39,7 @@ Unable to find a version of 'Xamarin.Forms' that is compatible with 'Xamarin.And
 
 Visual Studio for Mac （或 Visual Studio）可能表示更新適用于 Xamarin.Forms NuGet 套件*及其所有*相依性。 在 Xamarin Studio 中，解決方案的 [**套件**] 節點看起來可能像這樣（版本號碼可能不同）：
 
-![](images/updates-available.png "Android Project Packages Folder")
+![Android 專案套件資料夾](images/updates-available.png)
 
 如果您嘗試更新_所有_的封裝，可能會發生此錯誤。
 

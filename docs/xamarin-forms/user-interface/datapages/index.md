@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5e1ea94e42e98609b3f77f0198e125b94e2b437d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134312"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928831"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![此 API 目前為預覽狀態](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages 需要 Xamarin.Forms 呈現的主題參考。 這牽涉到安裝[ Xamarin.Forms 。主題。基底](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)NuGet 封裝到您的專案中，後面接著[ Xamarin.Forms 。主題 Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[ Xamarin.Forms 。主題. 深色](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet 套件。
@@ -30,7 +30,7 @@ DataPages 提供 API，可讓您快速且輕鬆地將資料來源系結至預先
 
 若要查看進化專題示範如何運作，請參閱[快速入門手冊](get-started.md)。
 
-[![](images/demo-sml.png "DataPages Sample Application")](images/demo.png#lightbox "DataPages Sample Application")
+[![DataPages 範例應用程式](images/demo-sml.png)](images/demo.png#lightbox "DataPages 範例應用程式")
 
 ## <a name="introduction"></a>簡介
 
@@ -38,7 +38,7 @@ DataPages 提供 API，可讓您快速且輕鬆地將資料來源系結至預先
 
 藉由包含，可將 DataPages 新增至 Xamarin.Forms 應用程式** Xamarin.Forms 。分頁**NuGet 套件。
 
-### <a name="data-sources"></a>資料來源
+### <a name="data-sources"></a>Data Sources
 
 預覽中有一些可供使用的預先建立資料來源：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 63d59d9f11932343c6ca57e0b3735077eabb6a9a
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a8259cf47f8af6e356c9a860c61ad0eea0c8927a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571814"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932973"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS 背景處理與工作
 
@@ -113,11 +113,11 @@ IOS 7 在背景工作方面的最大變更，不是工作的執行方式，而�
 
 回想一下，iOS 之前7，在背景中執行的工作有600秒的時間完成。 這項限制的其中一個原因是在背景執行的工作會讓裝置在工作期間處於喚醒狀態：
 
- [![](ios-backgrounding-with-tasks-images/ios6.png "Graph of the task keeping the app awake pre-iOS 7")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
+ [![讓應用程式在 iOS 前7之前保持喚醒的工作圖形](ios-backgrounding-with-tasks-images/ios6.png)](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
 iOS 7 背景處理已針對較長的電池壽命進行優化。 在 iOS 7 中，背景處理會變得很有機會：而不是讓裝置保持在作用中狀態，而是當裝置進入睡眠狀態時，以區塊方式進行處理，而當裝置喚醒以處理電話、通知、內送電子郵件和其他常見的中斷時，則會以區塊執行。 下圖提供如何中斷工作的深入解析：
 
- [![](ios-backgrounding-with-tasks-images/ios7.png "Graph of the task being broken into chunks post-iOS 7")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
+ [![在 iOS 7 之後分成區塊的工作圖形](ios-backgrounding-with-tasks-images/ios7.png)](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
 由於工作執行時間不會再持續，執行網路傳輸的工作必須在 iOS 7 中以不同的方式處理。 建議開發人員使用 `NSURlSession` API 來處理網路傳輸。 下一節是背景傳輸的總覽。
 

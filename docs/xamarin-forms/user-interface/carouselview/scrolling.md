@@ -10,18 +10,18 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cf5d3924a726247ea1884acc75720566d76c76e4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136488"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929212"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView 滾動
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)定義下列捲軸相關屬性：
 
@@ -145,7 +145,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 這個範例程式碼會導致專案滾動到視圖的開頭。
 
-### <a name="center"></a>中心
+### <a name="center"></a>Center
 
 [`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的中心：
 
@@ -265,7 +265,7 @@ CarouselView carouselView = new CarouselView
 
 [![在 iOS 和 Android 上具有開始貼齊點的 CarouselView 螢幕擷取畫面](scrolling-images/snappoints-start.png "具有開始貼齊點的 CarouselView")](scrolling-images/snappoints-start-large.png#lightbox "具有開始貼齊點的 CarouselView")
 
-#### <a name="center"></a>中心
+#### <a name="center"></a>Center
 
 `SnapPointsAlignment.Center`成員表示貼齊點對齊專案的中心。
 

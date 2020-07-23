@@ -10,16 +10,16 @@ ms.date: 08/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b0cbb7d26a2aea02a3255fc75947c20a3d803b86
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0964ad7d2bf517a6a4c7cf7965c346629716166
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131894"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936015"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>SkiaSharp 中的路徑和文字
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索路徑和文字的交集_
 
@@ -29,7 +29,7 @@ _探索路徑和文字的交集_
 
 除了使用路徑效果來對字元外框進行筆觸，您也可以根據從字元字串衍生的路徑建立路徑效果，甚至可以結合這兩種效果：
 
-![](text-paths-images/pathsandtextsample.png "Text Path Effect")
+![文字路徑效果](text-paths-images/pathsandtextsample.png)
 
 在前一篇有關[**路徑效果**](effects.md)的文章中，您已瞭解的 [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) 方法 `SKPaint` 可以如何取得繪製路徑的外框。 您也可以使用此方法搭配衍生自字元外框的路徑。
 
@@ -49,7 +49,7 @@ public SKPath GetTextPath (String text, Single x, Single y)
 
 其中一項工作是 [裁剪]。 [**裁剪文字**] 頁面會根據 "CODE" 一字的字元外框來建立裁剪路徑。 這個路徑會延伸到頁面的大小，以裁剪包含**裁剪文字**原始程式碼影像的點陣圖：
 
-[![](text-paths-images/clippingtext-small.png "Triple screenshot of the Clipping Text page")](text-paths-images/clippingtext-large.png#lightbox "Triple screenshot of the Clipping Text page")
+[![裁剪文字頁面的三重螢幕擷取畫面](text-paths-images/clippingtext-small.png)](text-paths-images/clippingtext-large.png#lightbox "裁剪文字頁面的三重螢幕擷取畫面")
 
 類別的函式 [`ClippingTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) 會將儲存為內嵌資源的點陣圖載入至方案的 [**媒體**] 資料夾中：
 
@@ -129,7 +129,7 @@ public class ClippingTextPage : ContentPage
 
 [**文字路徑效果**] 頁面會將單一符號字元轉換成路徑，以建立1d 路徑效果。 接著會使用具有此路徑效果的油漆物件，針對該相同字元之較大版本的外框進行筆觸：
 
-[![](text-paths-images/textpatheffect-small.png "Triple screenshot of the Text Path Effect page")](text-paths-images/textpatheffect-large.png#lightbox "Triple screenshot of the Text Path Effect page")
+[![[文字路徑效果] 頁面的三重螢幕擷取畫面](text-paths-images/textpatheffect-small.png)](text-paths-images/textpatheffect-large.png#lightbox "[文字路徑效果] 頁面的三重螢幕擷取畫面")
 
 類別中的大部分工作都 [`TextPathEffectPath`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) 是出現在欄位和函式中。 `SKPaint`定義為欄位的兩個物件會用於兩個不同的用途：第一個（名為 `textPathPaint` ）是用來將具有50的連字號轉換成 `TextSize` 1d 路徑效果的路徑。 第二個（ `textPaint` ）是用來顯示與該路徑效果較大的連字號版本。 基於這個理由， `Style` 這個第二個 paint 物件的會設定為 `Stroke` ，但 `StrokeWidth` 不會設定屬性，因為在使用1d 路徑效果時，不需要該屬性：
 
@@ -274,7 +274,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `PaintSurface`然後，處理常式會建立名為的新路徑 `outlinePath` 。 這會變成呼叫中的目的地路徑 `GetFillPath` 。 `StrokeWidth`25 的屬性會導致 `outlinePath` 描述文字字元的25圖元範圍路徑的外框。 此路徑接著會以紅色顯示，筆觸寬度為5：
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Triple screenshot of the Character Outline Outlines page")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Triple screenshot of the Character Outline Outlines page")
+[![字元外框大綱頁面的三向螢幕擷取畫面](text-paths-images/characteroutlineoutlines-small.png)](text-paths-images/characteroutlineoutlines-large.png#lightbox "字元外框大綱頁面的三向螢幕擷取畫面")
 
 仔細查看，而您會看到 [重迭]，其中路徑外框會加上尖角。 這些是此程式的一般構件。
 
@@ -327,7 +327,7 @@ public class CircularTextPage : ContentPage
 
 `TextSize` `textPaint` 然後會調整的屬性，讓文字寬度符合圓形的圓周：
 
-[![](text-paths-images/circulartext-small.png "Triple screenshot of the Circular Text page")](text-paths-images/circulartext-large.png#lightbox "Triple screenshot of the Circular Text page")
+[![圓形文字頁面的三重螢幕擷取畫面](text-paths-images/circulartext-small.png)](text-paths-images/circulartext-large.png#lightbox "圓形文字頁面的三重螢幕擷取畫面")
 
 文字本身也被選擇稍微迴圈：「圓形」一詞同時是句子的主旨和介係詞片語的物件。
 

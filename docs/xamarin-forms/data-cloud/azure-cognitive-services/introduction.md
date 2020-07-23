@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cce5b0fc9c3d1d04c20b1be242197e3bc9e4f901
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129710"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929333"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms和 Azure 認知服務簡介
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft 認知服務是一組可供開發人員使用的 Api、Sdk 和服務，藉由新增臉部辨識、語音辨識和語言理解等功能，讓其應用程式更聰明。本文提供範例應用程式的簡介，示範如何叫用一些 Microsoft 認知服務 Api。_
 
@@ -42,17 +42,17 @@ _Microsoft 認知服務是一組可供開發人員使用的 Api、Sdk 和服務�
 
 `TodoListPage`當應用程式啟動時，就會顯示。 此頁面會顯示儲存在本機資料庫中的任何工作清單，並可讓使用者建立新的工作或為應用程式評分：
 
-![](introduction-images/sample-application-1.png "TodoListPage")
+![TodoListPage](introduction-images/sample-application-1.png)
 
 您可以按一下 [] 按鈕來建立新專案 *+* ，以流覽至 `TodoItemPage` 。 藉由選取工作，也可以流覽至此頁面：
 
-![](introduction-images/sample-application-2.png "TodoItemPage")
+![TodoItemPage](introduction-images/sample-application-2.png)
 
 `TodoItemPage`允許建立、編輯、拼寫檢查、轉譯、儲存和刪除工作。 語音辨識可以用來建立或編輯工作。 這可以藉由按下 [麥克風] 按鈕開始錄製，然後按第二次按下相同的按鈕停止錄製（這會將記錄傳送至 Bing 語音辨識 API）來達成此目的。
 
 按一下上的 [smilies] 按鈕 `TodoListPage` ，即可導覽至 `RateAppPage` ，其可用來對臉部運算式的影像執行表情辨識：
 
-![](introduction-images/sample-application-3.png "RateAppPage")
+![RateAppPage](introduction-images/sample-application-3.png)
 
 `RateAppPage`可讓使用者拍攝臉部的相片，並將其提交至臉部 API，並顯示所傳回的表情。
 

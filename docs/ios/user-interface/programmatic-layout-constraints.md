@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 81ad57119ff7271094966cf9b0c372876646f81b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d8dcf64f9a905557bea69402bcaf7fcfb51fb10b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573426"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928571"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>在 Xamarin 中的程式設計版面配置條件約束
 
@@ -67,9 +67,9 @@ OrangeView.TrailingAnchor.ConstraintEqualTo (margins.TrailingAnchor).Active = tr
 OrangeView.HeightAnchor.ConstraintEqualTo (OrangeView.WidthAnchor, 2.0f);
 ```
 
-一般的版面配置條件約束可以表示為線性運算式。 請使用以下範例：
+一般的版面配置條件約束可以表示為線性運算式。 以下列範例為例：
 
-[![](programmatic-layout-constraints-images/graph01.png "A Layout Constraint expressed as a linear expression")](programmatic-layout-constraints-images/graph01.png#lightbox)
+[![以線性運算式表示的版面配置條件約束](programmatic-layout-constraints-images/graph01.png)](programmatic-layout-constraints-images/graph01.png#lightbox)
 
 這會使用版面配置錨點轉換成下列 c # 程式程式碼：
 

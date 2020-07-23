@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: f42c4a6dd2f4408d7b0ccf65e60851ebd29b76f6
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1581a58d9a6851ad880d2631660e261685260e40
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574534"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932791"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>將 watchOS 應用程式部署至 App Store
 
@@ -51,17 +51,17 @@ ms.locfileid: "84574534"
 
 如果您有萬用字元應用程式識別碼，則*只需要一個布建設定檔*;但如果您的每個專案都有個別的應用程式識別碼，則您需要每個應用程式識別碼的布建設定檔：
 
-![](appstore-images/provisioningprofile-distribution-sml.png "The App Store Distribution profile")
+![App Store 散發設定檔](appstore-images/provisioningprofile-distribution-sml.png)
 
 一旦您建立了這三個設定檔，它們就會出現在清單中。 請記得下載並安裝每一個檔案（藉由在上面按兩下）：
 
-![](appstore-images/provisioningprofiles-sml.png "The list of available profiles")
+![可用的配置檔案清單](appstore-images/provisioningprofiles-sml.png)
 
 您可以選取 [**組建 > [iOS**套件組合簽署] 畫面，然後選取 [ **AppStore | iPhone**設定]，以確認**專案選項**中的布建設定檔。
 
 [布建**設定檔**] 清單會顯示所有相符的設定檔，您應該會看到您在此下拉式清單中建立的相符設定檔。
 
-![](appstore-images/options-selectprofile-sml.png "The iOS Bundle Signing dialog")
+![[IOS 套件組合簽署] 對話方塊](appstore-images/options-selectprofile-sml.png)
 
 <a name="iTunes_Connect"></a>
 
@@ -74,7 +74,7 @@ ms.locfileid: "84574534"
 
 在 iTunes Connect 中設定應用程式時，別忘了新增監看式圖示和螢幕擷取畫面：
 
-![](appstore-images/itunesconnect-watch-sml.png "The Watch icon and screenshots in iTunes Connect")
+![ITunes Connect 中的監看式圖示和螢幕擷取畫面](appstore-images/itunesconnect-watch-sml.png)
 
 圖示檔案應該是1024x1024 圖元，而且會在顯示時套用迴圈遮罩。 圖示不應該有 Alpha 色板。
 
@@ -88,19 +88,19 @@ ms.locfileid: "84574534"
 
 1. 確認 iOS 應用程式是啟始專案。 如果沒有，請按一下滑鼠右鍵加以設定：
 
-   ![](appstore-images/xs-startup.png "Setting the startup project")
+   ![設定啟始專案](appstore-images/xs-startup.png)
 
 2. 選擇 [ **AppStore**組建設定]：
 
-   ![](appstore-images/xs-appstore.png "The AppStore build configuration")
+   ![AppStore 組建設定](appstore-images/xs-appstore.png)
 
 3. 選擇 [**組建 >** 封存] 功能表項目，以啟動封存程式：
 
-   ![](appstore-images/xs-archive.png "The Build menu")
+   ![[組建] 功能表](appstore-images/xs-archive.png)
 
 您也可以選擇 [ **View > 封存 ...** ] 功能表項目，以查看先前建立的封存。
 
-  ![](appstore-images/xs-archives-sml.png "The Archives view")
+  ![封存視圖](appstore-images/xs-archives-sml.png)
 
 <a name="xcode"></a>
 
@@ -110,21 +110,21 @@ Xcode 會自動顯示 Visual Studio for Mac 中建立的封存。
 
 1. 啟動 Xcode，然後選擇 [ **Window > 召集人]**：
 
-   ![](appstore-images/xc-organizer.png "The Window menu")
+   ![[視窗] 功能表](appstore-images/xc-organizer.png)
 
 2. 切換至 [**保存] 索引標籤，然後**選取使用 Visual Studio for Mac 建立的封存：
 
-   ![](appstore-images/xc-archives.png "The Archives tab")
+   ![[封存] 索引標籤](appstore-images/xc-archives.png)
 
 3. 選擇性地**驗證 ...** 封存，然後選擇 [**提交**]，將應用程式上傳至 iTunes Connect。
 
 4. 選擇 [開發小組] （如果您屬於一個以上），然後確認提交：
 
-   ![](appstore-images/xc-submit1.png "The development team section")
+   ![開發小組一節](appstore-images/xc-submit1.png)
 
 5. 再次流覽 iTunes Connect 以查看已上傳的二進位檔。 移至您應用程式的 [設定] 頁面，然後從頂端功能表中選擇 [**發行**前版本]，以查看**組建**清單：
 
-   [![](appstore-images/itc-prerelease-sml.png "The apps configuration page in iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
+   [![ITunes Connect 中的應用程式設定頁面](appstore-images/itc-prerelease-sml.png)](appstore-images/itc-prerelease.png#lightbox)
 
 然後，您可以在 [**版本**] 頁面上提交要核准的應用程式。 如需詳細資訊，請參閱[iOS 應用程式散發總覽](~/ios/deploy-test/app-distribution/index.md)。
 
@@ -172,12 +172,12 @@ Missing Icon. The watch application '...watchkitextension.appex/WatchApp.app'
 is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 ```
 
-請確定您有最新版本的 Visual Studio for Mac，而且您的**appicons.appiconset**包含一組完整的影像。 如果您仍然看到此錯誤，請查看**內容**的來源，以確認它包含所有必要映射的專案。 或者，一旦確定您使用的是最新版本的 Xamarin，請刪除並重新建立**appicons.appiconset**。
+請確定您有最新版本的 Visual Studio for Mac，而且您的**appicons.appiconset**包含一組完整的影像。 如果您仍然看到此錯誤，請**在上查看Contents.js**的來源，確認它包含所有必要影像的專案。 或者，一旦確定您使用的是最新版本的 Xamarin，請刪除並重新建立**appicons.appiconset**。
 
 > [!IMPORTANT]
 > Visual Studio for Mac 的監看式圖示支援有已知的錯誤：它預期影像的88x88 圖元影像 **29x29@3x** （應該是87x87 圖元）。
 
-您無法在 Visual Studio for Mac 中修正此問題-請在 Xcode 中編輯映射資產，或手動編輯**內容. json**檔案。
+您無法在 Visual Studio for Mac 中修正此問題-請在 Xcode 中編輯影像資產，或手動編輯檔案**Contents.js** 。
 
 ### <a name="invalid-watchkit-support"></a>不正確 WatchKit 支援
 

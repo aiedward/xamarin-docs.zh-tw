@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: 67e66d5d8f1023c0e7561791ff29ed2952ac040b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6508f7ec48d10196b47e0b51fc30e54e3c3668a6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571008"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930555"
 ---
 # <a name="binding-objective-c-libraries"></a>系結目標-C 程式庫
 
@@ -39,14 +39,14 @@ ms.locfileid: "84571008"
 建立系結最簡單的方式，就是建立一個 Xamarin. iOS 系結專案。
 您可以從 Visual Studio for Mac 選取專案類型 [ **iOS > 程式庫] >** 系結程式庫來執行此動作：
 
-[![](objective-c-libraries-images/00-sml.png "Do this from Visual Studio for Mac by selecting the project type, iOS Library Bindings Library")](objective-c-libraries-images/00.png#lightbox)
+[![從 Visual Studio for Mac 選取專案類型 [iOS 程式庫] [程式庫]，以執行這項操作。](objective-c-libraries-images/00-sml.png)](objective-c-libraries-images/00.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 建立系結最簡單的方式，就是建立一個 Xamarin. iOS 系結專案。
 您可以從 Windows 上的 Visual Studio 選取專案類型 [ **Visual c # > ios > 系結程式庫（ios）**] 來執行這項操作：
 
-[![](objective-c-libraries-images/00vs-sml.png "iOS Bindings Library iOS")](objective-c-libraries-images/00vs.png#lightbox)
+[![iOS 系結程式庫 iOS](objective-c-libraries-images/00vs-sml.png)](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
 > 注意：只有 Visual Studio for Mac 支援**Xamarin 的系**結專案。
@@ -104,7 +104,7 @@ namespace Cocos2D {
 
 此圖表顯示檔案之間的關聯性：
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "This chart shows the relationship between the files")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
+ [![此圖表顯示檔案之間的關聯性](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
 
 API 定義檔只會包含命名空間和介面定義（具有介面可以包含的任何成員），而且不應該包含類別、列舉、委派或結構。 API 定義檔只是將用來產生 API 的合約。
 
@@ -135,7 +135,7 @@ public partial class Camera {
 若要完成此系結，您應該將原生程式庫加入至專案。  若要這麼做，您可以將原生程式庫加入至您的專案，方法是將原生程式庫從搜尋工具拖放至方案 explorer 中的專案，或以滑鼠右鍵按一下專案，然後選擇 [**新增**] [新增檔案]  >  以選取原生**文檔**庫。
 依慣例的原生程式庫會以 "lib" 一字開頭，並以副檔名 ". a" 結尾。 當您這麼做時，Visual Studio for Mac 將會加入兩個檔案：檔案和自動填入的 c # 檔案，其中包含原生程式庫所包含內容的相關資訊：
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
+ [![依慣例的原生程式庫會以 lib 開頭，並以副檔名結尾。](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
 檔案的內容 `libMagicChord.linkwith.cs` 包含如何使用此程式庫的相關資訊，並指示您的 IDE 將此二進位檔封裝到產生的 DLL 檔案中：
 

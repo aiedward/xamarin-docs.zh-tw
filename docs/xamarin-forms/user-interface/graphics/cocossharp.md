@@ -10,16 +10,16 @@ ms.date: 05/03/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a3183997eb229fd3548a1afeccf82670cf651a71
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 31b82586b47ead1a851000d59c8271deec063020
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565300"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933769"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>使用中的 CocosSharpXamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)
 
 _CocosSharp 可以用來將精確的圖形、影像和文字轉譯新增至應用程式，以進行先進的視覺效果_
 
@@ -59,11 +59,11 @@ CocosSharp NuGet 套件包含 `CocosSharpView` 用來在中裝載 CocosSharp 的
 新增**CocosSharp。** NuGet 和**CocosSharp**也會自動新增。
 若要這麼做，請以滑鼠右鍵按一下 .NET Standard 程式庫專案中的 [**套件**] 資料夾，然後選取 [**新增套件**]。輸入搜尋詞彙**CocosSharp**， ** Xamarin.Forms 針對**選取 [CocosSharp]，然後按一下 [**新增套件**]。
 
-![](cocossharp-images/image1.png "Add Packages Dialog")
+![[新增封裝] 對話方塊](cocossharp-images/image1.png)
 
 **CocosSharp**和**CocosSharp**都會將 NuGet 套件新增至專案：
 
-![](cocossharp-images/image2.png "Packages Folder")
+![封裝資料夾](cocossharp-images/image2.png)
 
 針對平臺特定專案（例如 iOS 和 Android）重複上述步驟。
 
@@ -129,7 +129,7 @@ public HomePage ()
 
 在 iOS 上， `HomePage` 會出現，如下圖所示：
 
-![](cocossharp-images/image3.png "HomePage Screenshot")
+![首頁螢幕擷取畫面](cocossharp-images/image3.png)
 
 ### <a name="2-adding-a-cocossharpview"></a>2. 加入 CocosSharpView
 
@@ -181,7 +181,7 @@ void HandleViewCreated (object sender, EventArgs e)
 
 下圖可協助您將一般 CocosSharp 階層視覺化：
 
-![](cocossharp-images/image4.png "Typical CocosSharp Hierarchy")
+![一般 CocosSharp 階層](cocossharp-images/image4.png)
 
 一次只能有一個作用 `CCScene` 中。 大部分的遊戲會使用多個 `CCLayer` 實例來排序內容，但我們的應用程式只會使用一個。 同樣地，大部分的遊戲都使用多個視覺物件，但我們的應用程式中只會有一個。 您可以在[BouncingGame 逐步](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/bouncing-game.md)解說中找到有關 CocosSharp 視覺化階層的詳細討論。
 
@@ -207,7 +207,7 @@ GameScene gameScene;
 
 我們現在可以編譯專案並加以執行，以查看 CocosSharp 正在執行。 我們尚未將任何內容新增到我們 `GameScene,` 的頁面上半部，因此，CocosSharp 場景的預設色彩如下：
 
-![](cocossharp-images/image5.png "Blank GameScene")
+![空白 GameScene](cocossharp-images/image5.png)
 
 ### <a name="4-adding-a-circle"></a>4. 加入圓形
 
@@ -239,7 +239,7 @@ public class GameScene : CCScene
 
 執行應用程式現在會在 CocosSharp 顯示區域的左側顯示一個圓圈：
 
-![](cocossharp-images/image6.png "Circle in GameScene")
+![GameScene 中的圓形](cocossharp-images/image6.png)
 
 #### <a name="understanding-designresolution"></a>瞭解 DesignResolution
 
@@ -247,7 +247,7 @@ public class GameScene : CCScene
 
 `DesignResolution`代表用來放置和調整物件大小之 CocosSharp 區域的寬度和高度。 區域的實際解析是以*圖元*為單位來測量，而則 `DesignResolution` 是以世界*單位*測量。 下圖顯示在 iPhone 5 上以640x1136 圖元的螢幕解析度顯示的各種視圖部分的解決方式：
 
-![](cocossharp-images/image7.png "iPhone 5s Design Resolution")
+![iPhone 5 秒設計解決方案](cocossharp-images/image7.png)
 
 上圖會以黑色文字顯示畫面外部的圖元尺寸。 單位會以白色文字顯示在圖表的內部。 以下是上面顯示的一些重要詳細資料：
 
@@ -313,9 +313,9 @@ void CreateBottomHalf(Grid grid)
 
 CocosSharp 圓形現在會移動以回應按下的動作。 我們也可以清楚地看到 CocosSharp 畫布的界限，其方式是將圓形向左或向右移動夠遠：
 
-![](cocossharp-images/image8.png "GameScene with Moving Circle")
+![移動圓形的 GameScene](cocossharp-images/image8.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本指南說明如何將 CocosSharp 新增至現有的 Xamarin.Forms 專案、如何建立 Xamarin.Forms 和 CocosSharp 之間的互動，以及討論在 CocosSharp 中建立配置時的各種考慮。
 

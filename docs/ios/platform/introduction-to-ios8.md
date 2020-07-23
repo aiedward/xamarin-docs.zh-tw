@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 1fae83f60f819da9767e14612a7f778dc49ddf52
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6f2a188617b00a008dafa20012c0997bc399045d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564625"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930958"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 簡介
 
@@ -26,7 +26,7 @@ iOS 7 會以視覺化方式，從第一個 iPhone OS 直接變更整個 iOS 使�
 
 在 iOS 8 中也有幾個已淘汰的 Api，這在本檔的結尾有詳細說明。
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
 在 Visual Studio for Mac 中建立 iOS 8 應用程式需要下列各項：
 
@@ -48,7 +48,7 @@ iOS 8 已透過使用 HomeKit 和 HealthKit，協助您將 Apple 和 iOS 裝置�
 
 下圖顯示 HomeKit 配件設定的基本階層：
 
-![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
+![下圖顯示 HomeKit 配件設定的基本階層](introduction-to-ios8-images/image1.png)
 
 若要開始使用 HomeKit，開發人員必須確認其布建設定檔已選取 HomeKit 服務。 Apple 也為開發人員提供了適用于 Xcode 的 HomeKit 模擬器增益集。 這可以在[Apple 開發人員中心](https://developer.apple.com/downloads/index.action)的底下找到 `Hardware IO Tools for Xcode` 。 
 
@@ -70,7 +70,7 @@ HealthKit 是 iOS 8 中引進的一種架構，可為健康相關的資訊提供
 
 在 [**新增專案**] 對話方塊中，流覽至**c #**  >  **iOS**  >  **Unified API**  >  **延伸**模組，如下列螢幕擷取畫面所示：
 
-![](introduction-to-ios8-images/image2.png "Creating a new extension")
+![建立新的擴充功能](introduction-to-ios8-images/image2.png)
 
 [新增專案] 對話方塊提供了七個新的專案範本，可用來建立應用程式延伸模組，如下所述。 請注意，許多延伸模組與 iOS 中的其他新 Api 有關，例如檔選擇器：
 
@@ -101,7 +101,7 @@ HealthKit 是 iOS 8 中引進的一種架構，可為健康相關的資訊提供
 
 若要深入瞭解檔選擇器，並瞭解如何將它整合到 Xamarin iOS 應用程式，請參閱[檔選擇器指南簡介](~/ios/platform/document-picker.md)。
 
-### <a name="handoff"></a>Handoff
+### <a name="handoff"></a>遞交
 
 遞交（屬於較大的持續性功能的一部分）會進一步進一步整合 OS X 和 iOS。 這包括跨平臺 AirDrop、讓 iPhone 呼叫的能力、iPad 和 Mac 上的 SMS，以及 iPhone 的網際網路共用功能。
 
@@ -121,7 +121,7 @@ iOS 8 包含新的簡單易用機制來建立使用者介面，也就是整合�
 
 如果同時使用這兩個概念，結果會是 2 x 2 方格，定義可用於不同方向的各種可能大小，如下圖所示：
 
-![](introduction-to-ios8-images/image3.png "A diagram representing the 2 x 2 grid that defines the different possible sizes that can be used in both the differing orientations")
+![代表 2 x 2 方格的圖表，定義可用於不同方向的各種可能大小](introduction-to-ios8-images/image3.png)
 
 如需有關大小類別的詳細資訊，請參閱整合分鏡腳本[簡介](~/ios/user-interface/storyboards/unified-storyboards.md)。
 

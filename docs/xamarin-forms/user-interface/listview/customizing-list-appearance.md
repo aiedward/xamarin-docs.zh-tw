@@ -10,16 +10,16 @@ ms.date: 12/13/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: be8dd5d29aebf29395885d650fbd28082013d0d1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139915"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929160"
 ---
 # <a name="listview-appearance"></a>ListView 外觀
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 除了 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 清單中每個資料列的實例之外，還可讓您自訂清單的呈現方式。
 
@@ -114,7 +114,7 @@ static PageTypeGroup()
 
 下列螢幕擷取畫面顯示產生的 UI：
 
-![](customizing-list-appearance-images/grouping-depth.png "ListView Grouping Example")
+![ListView 群組範例](customizing-list-appearance-images/grouping-depth.png)
 
 ### <a name="customizing-grouping"></a>自訂群組
 
@@ -183,7 +183,7 @@ ListView HeaderList = new ListView()
 </ListView>
 ```
 
-![](customizing-list-appearance-images/header-default.png "ListView with Header and Footer")
+![具有頁首和頁尾的 ListView](customizing-list-appearance-images/header-default.png)
 
 若要建立自訂的頁首和頁尾，請定義頁首和頁尾的視圖：
 
@@ -204,7 +204,7 @@ ListView HeaderList = new ListView()
 </ListView.Footer>
 ```
 
-![](customizing-list-appearance-images/header-custom.png "ListView with Customized Header and Footer")
+![具有自訂頁首和頁尾的 ListView](customizing-list-appearance-images/header-custom.png)
 
 ## <a name="scrollbar-visibility"></a>捲軸可見度
 
@@ -235,7 +235,7 @@ XML
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
 ```
 
-![](customizing-list-appearance-images/separator-default.png "ListView with Default Row Separators")
+![包含預設資料列分隔符號的 ListView](customizing-list-appearance-images/separator-default.png)
 
 無：
 
@@ -251,7 +251,7 @@ XML
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="None" />
 ```
 
-![](customizing-list-appearance-images/separator-none.png "ListView without Row Separators")
+![ListView 不含資料列分隔符號](customizing-list-appearance-images/separator-none.png)
 
 您也可以透過屬性設定分隔線的色彩 `SeparatorColor` ：
 
@@ -267,7 +267,7 @@ XML
 <ListView x:Name="SeparatorDemoListView" SeparatorColor="Green" />
 ```
 
-![](customizing-list-appearance-images/separator-custom.png "ListView with Green Row Separators")
+![含有綠色資料列分隔符號的 ListView](customizing-list-appearance-images/separator-custom.png)
 
 > [!NOTE]
 > 在載入之後，在 Android 上設定其中一個屬性會產生 `ListView` 較大的效能負面影響。
@@ -295,7 +295,7 @@ XML
 <ListView x:Name="RowHeightDemoListView" RowHeight="100" />
 ```
 
-![](customizing-list-appearance-images/height-custom.png "ListView with Fixed Row Height")
+![具有固定資料列高度的 ListView](customizing-list-appearance-images/height-custom.png)
 
 ### <a name="uneven-rows"></a>不平均的資料列
 
@@ -313,7 +313,7 @@ XML
 <ListView x:Name="RowHeightDemoListView" HasUnevenRows="true" />
 ```
 
-![](customizing-list-appearance-images/height-uneven.png "ListView with Uneven Rows")
+![具有不平均資料列的 ListView](customizing-list-appearance-images/height-uneven.png)
 
 ### <a name="resize-rows-at-runtime"></a>在執行時間調整資料列的大小
 
@@ -334,7 +334,7 @@ void OnImageTapped (object sender, EventArgs args)
 
 `OnImageTapped`系統會執行事件處理常式，以回應 [`Image`](xref:Xamarin.Forms.Image) 所選儲存格中的，並增加 `Image` 儲存格中顯示的大小，以方便您查看。
 
-![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView with Runtime Row Resizing")
+![包含執行時間資料列調整大小的 ListView](customizing-list-appearance-images/dynamic-row-resizing.png)
 
 > [!WARNING]
 > 過度執行執行時間資料列調整大小可能會導致效能降低。

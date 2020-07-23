@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 61b7926f28253acbcc45bc204c466d76a00c72b0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bef29bfc526a5f378368390c1ec25b1bbf1d8a5a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010825"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932960"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>註冊要在背景中執行的 Xamarin iOS 應用程式
 
@@ -34,15 +34,15 @@ ms.locfileid: "73010825"
 
 您可以在應用程式的*plist*中設定必要的 [**背景模式**] 屬性來註冊應用程式。 應用程式可以視需要在多個類別中註冊：
 
- [![](registering-applications-to-run-in-background-images/bgmodes.png "Setting the background modes")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
+ [![設定背景模式](registering-applications-to-run-in-background-images/bgmodes.png)](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 如需註冊應用程式以取得背景位置更新的逐步指南，請參閱[背景位置](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md)逐步解說。
 
 ## <a name="application-does-not-run-in-background-property"></a>應用程式不會在 Background 屬性中執行
 
-另一個可在*Info. plist*中設定的屬性是*應用程式不會在背景中執行*，或 `UIApplicationExitsOnSuspend` 屬性：
+另一個可在*Info. plist*中設定的屬性是，*應用程式不會在背景*或 `UIApplicationExitsOnSuspend` 屬性中執行：
 
- [![](registering-applications-to-run-in-background-images/plist.png "Disabling Background Running")](registering-applications-to-run-in-background-images/plist.png#lightbox)
+ [![正在停用背景執行](registering-applications-to-run-in-background-images/plist.png)](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 這與在 iOS 7 + 中將 [背景應用程式重新整理] 設定設定為 [關閉] 的效果完全相同，不同之處在于它只能在開發人員端變更，並且適用于 iOS 4 和更新版本。 應用程式會在進入背景後立即暫停，而且將無法執行任何處理。
 

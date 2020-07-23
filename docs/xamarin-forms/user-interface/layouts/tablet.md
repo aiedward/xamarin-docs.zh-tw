@@ -10,12 +10,12 @@ ms.date: 02/01/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0ecbc850960465296dc4047277bdafe78ac800a4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8c53b1e58ad97f7d0e17972a2b232c16e05ecc1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573244"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934884"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>平板電腦和桌面應用程式的版面配置
 
@@ -43,7 +43,7 @@ Xamarin.Forms支援在支援的平臺上使用的所有裝置類型，因此除�
 在 iOS 9 之前，所有應用程式都會在裝置上佔用全螢幕，但有些 Ipad 現在可以執行[分割畫面的多工](~/ios/platform/multitasking.md)作業。
 這表示您的應用程式可能只佔用畫面側邊的超薄資料行、畫面寬度的50% 或整個畫面。
 
-[![](tablet-images/ipad-sml.png "iPad Split Screen Example")](tablet-images/ipad.png#lightbox "iPad Split Screen Example")
+[![iPad 分割畫面範例](tablet-images/ipad-sml.png)](tablet-images/ipad.png#lightbox "iPad 分割畫面範例")
 
 分割畫面功能表示您應該設計應用程式，使其在最少320圖元的情況下運作良好，或最多可達1366圖元的寬度。
 
@@ -60,7 +60,7 @@ Android 生態系統有多種支援的螢幕大小，從小型手機到大型平
 
 除了執行全螢幕外，在 Windows 平板電腦和桌面上執行的應用程式也可以調整為任意維度。
 
-[![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
+[![Windows 分割畫面範例](tablet-images/splitscreen-sml.png)](tablet-images/splitscreen.png#lightbox "Windows 分割畫面範例")
 
 ## <a name="optimize-for-tablet-and-desktop"></a>為平板電腦和桌面優化
 

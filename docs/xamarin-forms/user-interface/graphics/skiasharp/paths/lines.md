@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 87b97ad913e08c42d16bbf055f168c07b9bd60e8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 644e6ab4acffa7acf2d86733d68fed8db07a752a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137199"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932362"
 ---
 # <a name="lines-and-stroke-caps"></a>線條和筆觸端點
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解如何使用 SkiaSharp 以不同的筆觸帽繪製線條_
 
 在 SkiaSharp 中，轉譯單行與轉譯一系列連接的直線非常不同。 不過，即使繪製單行，通常還是必須提供特定筆劃寬度的線條。 當這些線條變寬時，線條末端的外觀也會變得很重要。 行尾的外觀稱為「*筆劃端點*」：
 
-![](lines-images/strokecapsexample.png "The three stroke caps options")
+![三個筆觸端點選項](lines-images/strokecapsexample.png)
 
 對於繪製單行，會 `SKCanvas` 定義一個簡單的 [`DrawLine`](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) 方法，其引數會以物件表示行的開始和結束座標 `SKPaint` 。
 
@@ -97,7 +97,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 針對列舉的每個成員 `SKStrokeCap` ，處理常式會繪製兩條線，其中一個具有50圖元的筆觸粗細，另一行則以兩個圖元的筆觸粗細放置在上方。 第二行的目的是要說明與線條粗細和筆劃端點無關的線條幾何起點和終點：
 
-[![](lines-images/strokecaps-small.png "Triple screenshot of the Stroke Caps page")](lines-images/strokecaps-large.png#lightbox "Triple screenshot of the Stroke Caps page")
+[![[筆觸端點] 頁面的三重螢幕擷取畫面](lines-images/strokecaps-small.png)](lines-images/strokecaps-large.png#lightbox "[筆觸端點] 頁面的三重螢幕擷取畫面")
 
 如您所見， `Square` 和 `Round` 筆觸端點會有效地將行的長度延伸到行首的最後一半的筆劃寬度，並在結尾處再次擴充。 當需要判斷轉譯之繪圖物件的維度時，此延伸模組會變得很重要。
 
@@ -231,7 +231,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 螢幕擷取畫面顯示各種 `Picker` 選項：
 
-[![](lines-images/multiplelines-small.png "Triple screenshot of the Multiple Lines page")](lines-images/multiplelines-large.png#lightbox "Triple screenshot of the Multiple Lines page")
+[![[多行] 頁面的三重螢幕擷取畫面](lines-images/multiplelines-small.png)](lines-images/multiplelines-large.png#lightbox "[多行] 頁面的三重螢幕擷取畫面")
 
 左側的 iPhone `SKPointMode.Points` 會顯示列舉成員如何導致將 `DrawPoints` 陣列中的每個點轉譯 `SKPoint` 為正方形（如果行端點為 `Butt` 或） `Square` 。 如果線條端點為，則會呈現圓形 `Round` 。
 

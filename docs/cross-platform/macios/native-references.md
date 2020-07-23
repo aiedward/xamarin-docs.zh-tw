@@ -6,12 +6,12 @@ ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: a06bc0cb91ff3d3894bb7be5bbb275aca35da07d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e2f874446b48726afc2218e5cdcac9b8736e1681
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570956"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930438"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>IOS、Mac 和系結專案中的原生參考
 
@@ -24,7 +24,7 @@ _原生參考可讓您將原生架構內嵌至 Xamarin 或 Xamarin 專案或系�
 
 <a name="Terminology"></a>
 
-## <a name="terminology"></a>術語
+## <a name="terminology"></a>詞彙
 
 在 iOS 8 （和更新版本）中，**內嵌**的架構可以是內嵌的靜態連結和動態連結的架構。 若要正確散發它們，您必須將它們設為「fat」架構，其中包含您想要使用應用程式_支援的每_個裝置架構的所有配量。
 
@@ -73,13 +73,13 @@ _原生參考可讓您將原生架構內嵌至 Xamarin 或 Xamarin 專案或系�
 1. 建立新的或開啟現有的 Xamarin. iOS、Xamarin 或 Binding 專案。
 2. 在 [**方案總管**中，以滑鼠右鍵按一下專案名稱，然後選取 [**新增**] [  >  **新增原生參考**]： 
 
-    [![](native-references-images/ref01.png "In the Solution Explorer, right-click on the project name and select Add Native Reference")](native-references-images/ref01.png#lightbox)
+    [![在 [方案總管中，以滑鼠右鍵按一下專案名稱，然後選取 [新增原生參考]](native-references-images/ref01.png)](native-references-images/ref01.png#lightbox)
 3. 在 [**開啟**] 對話方塊中，選取您想要內嵌的原生架構名稱，然後按一下 [**開啟**] 按鈕： 
 
-    [![](native-references-images/ref02.png "Select the name of the Native Framework to embed and click the Open button")](native-references-images/ref02.png#lightbox)
+    [![選取要內嵌的原生架構名稱，然後按一下 [開啟] 按鈕](native-references-images/ref02.png)](native-references-images/ref02.png#lightbox)
 4. 架構將會新增至專案的樹狀結構： 
 
-    [![](native-references-images/ref03.png "The framework will be added to the projects tree")](native-references-images/ref03.png#lightbox)
+    [![架構將會加入至 [專案] 樹狀結構](native-references-images/ref03.png)](native-references-images/ref03.png#lightbox)
 
 編譯專案時，原生架構會內嵌在應用程式的組合中。
 

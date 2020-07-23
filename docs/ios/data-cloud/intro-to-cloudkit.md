@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 29ccb919f68a45212bff3b66b4bc3fbdebd24faf
-ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
+ms.openlocfilehash: 3ff868ed10d59a7c1026a222f314a1166a8de45e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75663456"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930191"
 ---
 # <a name="cloudkit-in-xamarinios"></a>在 Xamarin 中 CloudKit
 
@@ -35,7 +35,7 @@ CloudKit 架構可簡化存取 iCloud 之應用程式的開發。 這包括抓�
 
 CloudKit 是將 iCloud 伺服器的存取權授與開發人員的方式。 它提供 iCloud 磁片磁碟機和 iCloud 相片 Library 的基礎。 MacOS 和 iOS 裝置都支援 CloudKit。
 
-[![macOS 和 iOS 裝置上支援 CloudKit 的方式](intro-to-cloudkit-images/image1.png)](intro-to-cloudkit-images/image1.png#lightbox)
+[![MacOS 和 iOS 裝置上的 CloudKit 支援方式](intro-to-cloudkit-images/image1.png)](intro-to-cloudkit-images/image1.png#lightbox)
 
 CloudKit 會使用 iCloud 帳戶基礎結構。 如果有使用者登入裝置上的 iCloud 帳戶，CloudKit 將會使用其識別碼來識別使用者。 如果沒有可用的帳戶，則會提供有限的唯讀存取權。
 
@@ -64,8 +64,8 @@ CloudKit 同時支援結構化和大量資料。 它可以順暢地處理大型�
 4. 以滑鼠右鍵按一下方案中的 iOS 專案，然後選取 [**選項**]。
 5. 選取 [IOS 套件組合**簽署**]，然後選取先前建立的**開發人員身分識別**和布建**設定檔**。
 6. 請確認**權利。 plist**包含**Enable iCloud**、 **Key-value storage**和**CloudKit**。
-7. 請確定應用程式的**無所不在容器**存在。 範例：`iCloud.com.your-company.CloudKitAtlas`
-8. 將變更儲存到檔案。
+7. 請確定應用程式的**無所不在容器**存在。 範例： `iCloud.com.your-company.CloudKitAtlas`
+8. 將變更儲存至檔案。
 
 備妥這些設定後，範例應用程式現在已可存取 CloudKit Framework Api，以及背景、位置和通知服務。
 
@@ -93,17 +93,17 @@ CloudKit 同時支援結構化和大量資料。 它可以順暢地處理大型�
 
 CloudKit 的設計目的是要提供與上述所列相同的優點，並將其套用至使用雲端式資訊：
 
- [![](intro-to-cloudkit-images/image31.png "CloudKit apps communicate using containers")](intro-to-cloudkit-images/image31.png#lightbox)
+ [![CloudKit apps 使用容器進行通訊](intro-to-cloudkit-images/image31.png)](intro-to-cloudkit-images/image31.png#lightbox)
 
 就像是在裝置上執行的應用程式一樣，應用程式是與 iCloud 一對多的通訊。 每個不同的通訊定址接收器稱為容器。
 
-容器會透過 `CKContainer` 類別在 CloudKit 架構中公開。 根據預設，一個應用程式會與一個容器交談，而此容器會都會隔離該應用程式的資料。 這表示有數個應用程式可以將資訊儲存到相同的 iCloud 帳戶，但這項資訊永遠不會混用。
+容器會透過類別在 CloudKit 架構中公開 `CKContainer` 。 根據預設，一個應用程式會與一個容器交談，而此容器會都會隔離該應用程式的資料。 這表示有數個應用程式可以將資訊儲存到相同的 iCloud 帳戶，但這項資訊永遠不會混用。
 
 ICloud 資料的容器化也可讓 CloudKit 封裝使用者資訊。 如此一來，應用程式將對 iCloud 帳戶和儲存在內的使用者資訊有一些有限的存取權，同時仍然保護使用者的隱私權與安全性。
 
 容器是由應用程式的開發人員透過 WWDR 入口網站完全管理。 容器的命名空間在所有的 Apple 開發人員中都是全域的，因此，容器不得只有特定開發人員的應用程式才能使用，而是對所有 Apple 開發人員和應用程式都是唯一的。
 
-Apple 建議在建立應用程式容器的命名空間時，使用反向 DNS 標記法。 範例：`iCloud.com.company-name.application-name`
+Apple 建議在建立應用程式容器的命名空間時，使用反向 DNS 標記法。 範例： `iCloud.com.company-name.application-name`
 
 雖然容器預設會系結至指定的應用程式，但它們可以在應用程式之間共用。 因此，多個應用程式可以在單一容器上協調。 單一應用程式也可以與多個容器交談。
 
@@ -111,17 +111,17 @@ Apple 建議在建立應用程式容器的命名空間時，使用反向 DNS 標
 
 CloudKit 的主要功能之一，就是採用應用程式的資料模型和複寫，以模型到 iCloud 伺服器。 某些資訊適用于建立該檔案的使用者、其他資訊是可由使用者建立以供公開使用的公用資料（例如餐廳評論），或可能是開發人員為應用程式發行的資訊。 不論是哪一種情況，物件都不只是單一使用者，而是一群人。
 
- [![](intro-to-cloudkit-images/image32.png "CloudKit Container Diagram")](intro-to-cloudkit-images/image32.png#lightbox)
+ [![CloudKit 容器圖表](intro-to-cloudkit-images/image32.png)](intro-to-cloudkit-images/image32.png#lightbox)
 
 在容器內，首先和最重要的是公用資料庫。 這就是所有公用資訊的存在和共同 mingles 的地方。 此外，應用程式的每個使用者都有數個個別的私用資料庫。
 
 在 iOS 裝置上執行時，應用程式只能存取目前已登入的 iCloud 使用者的資訊。 因此，應用程式的容器視圖會如下所示：
 
- [![](intro-to-cloudkit-images/image33.png "The applications view of the container")](intro-to-cloudkit-images/image33.png#lightbox)
+ [![容器的應用程式視圖](intro-to-cloudkit-images/image33.png)](intro-to-cloudkit-images/image33.png#lightbox)
 
 它只能看到公用資料庫和私人資料庫與目前登入的 iCloud 使用者相關聯。
 
-資料庫會透過 `CKDatabase` 類別，在 CloudKit 架構中公開。 每個應用程式都有兩個資料庫的存取權：公用資料庫和私用資料庫。
+資料庫會透過類別在 CloudKit 架構中公開 `CKDatabase` 。 每個應用程式都有兩個資料庫的存取權：公用資料庫和私用資料庫。
 
 容器是 CloudKit 的初始進入點。 下列程式碼可以用來從應用程式的預設容器存取公用和私用資料庫：
 
@@ -145,24 +145,24 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 |---|--- |--- |
 |**資料類型**|共用資料|目前使用者的資料|
 |**配額**|在開發人員的配額中列入考慮|在使用者的配額中列入考慮|
-|**預設許可權**|全球可讀取|使用者可讀取|
-|**編輯許可權**|透過記錄類別層級的 iCloud 儀表板角色|N/A|
+|**預設權限**|全球可讀取|使用者可讀取|
+|**編輯許可權**|透過記錄類別層級的 iCloud 儀表板角色|不適用|
 
-### <a name="records"></a>資料錄
+### <a name="records"></a>記錄
 
 容器會保存資料庫，而在資料庫內則是記錄。 記錄是將結構化資料移入和移出 CloudKit 的機制：
 
- [![](intro-to-cloudkit-images/image34.png "Containers hold databases, and inside databases are records")](intro-to-cloudkit-images/image34.png#lightbox)
+ [![容器會保存資料庫，而在資料庫內則是記錄](intro-to-cloudkit-images/image34.png)](intro-to-cloudkit-images/image34.png#lightbox)
 
-記錄會透過 `CKRecord` 類別在 CloudKit 架構中公開，這會包裝索引鍵/值組。 應用程式中物件的實例相當於 CloudKit 中的 `CKRecord`。 此外，每個 `CKRecord` 都擁有一個記錄類型，這相當於物件的類別。
+記錄會透過類別在 CloudKit 架構中公開 `CKRecord` ，這會包裝索引鍵/值組。 應用程式中物件的實例相當於 `CKRecord` CloudKit 中的。 此外，每個都 `CKRecord` 擁有一種記錄類型，相當於物件的類別。
 
 記錄具有及時的架構，因此在將資料交給處理之前，會先將其描述為 CloudKit。 CloudKit 會從該時間點解讀資訊，並處理儲存和抓取記錄的物流。
 
-`CKRecord` 類別也支援範圍廣泛的中繼資料。 例如，記錄包含建立時間和建立它的使用者相關資訊。 記錄也包含上次修改時間和修改它的使用者相關資訊。
+`CKRecord`類別也支援範圍廣泛的中繼資料。 例如，記錄包含建立時間和建立它的使用者相關資訊。 記錄也包含上次修改時間和修改它的使用者相關資訊。
 
 記錄包含變更標記的概念。 這是指定記錄的舊版修訂版本。 變更標記是用來判斷用戶端和伺服器是否具有相同的指定記錄版本的輕量方式。
 
-如上所述，`CKRecords` 包裝索引鍵/值組，因此可以將下列類型的資料儲存在記錄中：
+如上所述，將索引 `CKRecords` 鍵/值組換行，因此可以將下列類型的資料儲存在記錄中：
 
 1. `NSString`
 1. `NSNumber`
@@ -192,11 +192,11 @@ await CloudManager.SaveAsync (newRecord);
 
 記錄本身不會存在於指定的資料庫中-記錄群組會同時存在於記錄區域中。 您可以將記錄區域視為傳統關係資料庫中的資料表：
 
- [![](intro-to-cloudkit-images/image35.png "Groups of records exist together inside a Record Zone")](intro-to-cloudkit-images/image35.png#lightbox)
+ [![記錄區域中有一組記錄存在於一起](intro-to-cloudkit-images/image35.png)](intro-to-cloudkit-images/image35.png#lightbox)
 
 給定的記錄區域和指定資料庫內的多個記錄區域中可以有多個記錄。 每個資料庫都包含預設的記錄區域：
 
- [![](intro-to-cloudkit-images/image36.png "Every database contains a Default Record Zone and Custom Zone")](intro-to-cloudkit-images/image36.png#lightbox)
+ [![每個資料庫都包含預設的記錄區域和自訂區域](intro-to-cloudkit-images/image36.png)](intro-to-cloudkit-images/image36.png#lightbox)
 
 這是預設儲存記錄的位置。 此外，您可以建立自訂記錄區域。 記錄區域代表進行不可部分完成認可和變更追蹤的基本資料細微性。
 
@@ -212,21 +212,21 @@ await CloudManager.SaveAsync (newRecord);
 
 當開發人員建立新的記錄識別碼時，他們可以選擇指定每一筆記錄所屬的記錄區域。 如果未指定，則會使用預設的記錄區域。
 
-記錄識別碼會透過 `CKRecordID` 類別，在 CloudKit 架構中公開。 下列程式碼可以用來建立新的記錄識別碼：
+記錄識別碼會透過類別在 CloudKit 架構中公開 `CKRecordID` 。 下列程式碼可以用來建立新的記錄識別碼：
 
 ```csharp
 var recordID =  new CKRecordID("My Record");
 ```
 
-### <a name="references"></a>參考
+### <a name="references"></a>參考資料
 
 參考提供給定資料庫中相關記錄間的關聯性：
 
- [![](intro-to-cloudkit-images/image37.png "References provide relationships between related Records within a given Database")](intro-to-cloudkit-images/image37.png#lightbox)
+ [![參考提供給定資料庫中相關記錄間的關聯性](intro-to-cloudkit-images/image37.png)](intro-to-cloudkit-images/image37.png#lightbox)
 
 在上述範例中，父系擁有子系，因此子系是父記錄的子記錄。 關聯性會從子記錄移至父記錄，並稱為*反向參考*。
 
-參考會透過 `CKReference` 類別公開于 CloudKit 架構中。 這種方式可讓 iCloud 伺服器瞭解記錄之間的關聯性。
+參考會透過類別在 CloudKit 架構中公開 `CKReference` 。 這種方式可讓 iCloud 伺服器瞭解記錄之間的關聯性。
 
 參考會提供串聯式刪除背後的機制。 如果父記錄是從資料庫中刪除，則也會自動從資料庫中刪除任何子記錄（如關聯性中所指定）。
 
@@ -243,21 +243,21 @@ var recordID =  new CKRecordID("My Record");
 var reference = new CKReference(newRecord, new CKReferenceAction());
 ```
 
-### <a name="assets"></a>資產
+### <a name="assets"></a>Assets
 
 資產允許將大量的非結構化資料上傳到 iCloud，並與指定的記錄相關聯：
 
- [![](intro-to-cloudkit-images/image38.png "Assets allow for a file of large, unstructured data to be uploaded to iCloud and associated with a given Record")](intro-to-cloudkit-images/image38.png#lightbox)
+ [![資產允許將大型的非結構化資料上傳到 iCloud 並與指定的記錄相關聯的檔案](intro-to-cloudkit-images/image38.png)](intro-to-cloudkit-images/image38.png#lightbox)
 
-在用戶端上會建立 `CKRecord`，以描述即將上傳到 iCloud 伺服器的檔案。 建立 `CKAsset` 以包含檔案，並連結至描述該檔案的記錄。
+在用戶端上 `CKRecord` 會建立，以描述即將上傳到 iCloud 伺服器的檔案。 `CKAsset`會建立以包含檔案，並連結至描述該檔案的記錄。
 
 當檔案上傳到伺服器時，記錄會放在資料庫中，並將檔案複製到特殊的大量儲存資料庫中。 記錄指標和上傳的檔案之間會建立連結。
 
-資產會透過 `CKAsset` 類別在 CloudKit 架構中公開，並用來儲存大量的非結構化資料。 由於開發人員不想要在記憶體中有大型的非結構化資料，因此會使用磁片上的檔案來執行資產。
+資產會透過類別在 CloudKit 架構中公開 `CKAsset` ，並用來儲存大量的非結構化資料。 由於開發人員不想要在記憶體中有大型的非結構化資料，因此會使用磁片上的檔案來執行資產。
 
 資產是由記錄所擁有，可讓您使用記錄做為指標從 iCloud 中取出資產。 如此一來，當擁有資產的記錄遭到刪除時，伺服器就可以垃圾收集資產。
 
-由於 `CKAssets` 是用來處理大型資料檔案，因此 Apple 設計 CloudKit 以有效率地上傳和下載資產。
+因為 `CKAssets` 的用途是處理大型資料檔案，所以 Apple 設計 CloudKit 以有效率地上傳和下載資產。
 
 下列程式碼可用來建立資產，並將其與記錄建立關聯：
 
@@ -284,7 +284,7 @@ Apple 提供兩個不同的 API 集合來使用 CloudKit：
 
 ### <a name="common-setup-code"></a>一般設定程式碼
 
-開始使用 CloudKit 便利性 API 之前，需要一些標準設定程式碼。 一開始先修改應用程式的 `AppDelegate.cs` 檔案，讓它看起來如下所示：
+開始使用 CloudKit 便利性 API 之前，需要一些標準設定程式碼。 一開始先修改應用程式的檔案 `AppDelegate.cs` ，讓它看起來如下所示：
 
 ```csharp
 using System;
@@ -346,7 +346,7 @@ public AppDelegate ThisApp {
 }
 ```
 
-這會新增 `AppDelegate` 的快捷方式，並存取上面建立的公用和私用資料庫快捷方式。
+這會加入快捷方式，以取得 `AppDelegate` 並存取上述建立的公用和私用資料庫快捷方式。
 
 在此程式碼準備就緒之後，讓我們看看如何在 Xamarin iOS 8 應用程式中執行 CloudKit 便利性 API。
 
@@ -373,7 +373,7 @@ ThisApp.PublicDatabase.SaveRecord(newRecord, (record, err) => {
 
 關於上述程式碼，需要注意的三件事：
 
-1. 藉由呼叫 `PublicDatabase`的 `SaveRecord` 方法，開發人員不需要指定資料的傳送方式、其寫入的區域等。便利性 API 會負責所有這些詳細資料本身。
+1. 藉由呼叫的 `SaveRecord` 方法 `PublicDatabase` ，開發人員不需要指定資料的傳送方式、其寫入的區域等。便利性 API 會負責所有這些詳細資料本身。
 1. 呼叫是非同步，而且會在呼叫完成時（不論成功或失敗）提供回呼常式。 如果呼叫失敗，則會提供錯誤訊息。
 1. CloudKit 不提供本機儲存/持續性;這只是一個傳輸媒體。 因此當提出要求來儲存記錄時，它會立即傳送到 iCloud 伺服器。
 
@@ -423,7 +423,7 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 });
 ```
 
-如果呼叫成功，`PublicDatabase` 的 `FetchRecord` 方法會傳回 `CKRecord`。 然後，應用程式會修改記錄並再次呼叫 `SaveRecord`，將變更寫回資料庫。
+`FetchRecord` `PublicDatabase` 如果呼叫成功，的方法會傳回 `CKRecord` 。 然後，應用程式會修改記錄，然後 `SaveRecord` 再次呼叫，將變更寫回資料庫。
 
 本節已顯示應用程式在使用 CloudKit 便利性 API 時所將使用的一般週期。 應用程式會將記錄儲存至 iCloud、從 iCloud 抓取這些記錄、修改記錄，並將這些變更儲存回 iCloud。
 
@@ -442,13 +442,13 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 
 ### <a name="queries"></a>查詢
 
-如上所述，查詢可讓開發人員選取存在於雲端中較大資料集的一小部分。 查詢會透過 `CKQuery` 類別，在 CloudKit 架構中公開。
+如上所述，查詢可讓開發人員選取存在於雲端中較大資料集的一小部分。 查詢會透過類別在 CloudKit 架構中公開 `CKQuery` 。
 
-查詢結合了三個不同的專案：記錄類型（`RecordType`）、述詞（`NSPredicate`），以及選擇性地排序描述元（`NSSortDescriptors`）。 CloudKit 支援大部分的 `NSPredicate`。
+查詢結合了三個不同的專案：記錄類型（ `RecordType` ）、述詞（ `NSPredicate` ）和（選擇性）排序描述元（ `NSSortDescriptors` ）。 CloudKit 支援大部分的 `NSPredicate` 。
 
 #### <a name="supported-predicates"></a>支援的述詞
 
-使用查詢時，CloudKit 支援下列類型的 `NSPredicates`：
+使用查詢時，CloudKit 支援下列類型的 `NSPredicates` ：
 
 1. 符合名稱等於儲存在變數中之值的記錄：
 
@@ -475,13 +475,13 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
     var predicate = NSPredicate.FromFormat(string.Format("distanceToLocation:fromLocation(Location,{0}) < 100", location));
     ```
 
-5. CloudKit 支援標記化的搜尋。 此呼叫會建立兩個權杖，一個用於 `after`，另一個用於 `session`。 它會傳回包含這兩個權杖的記錄：
+5. CloudKit 支援標記化的搜尋。 此呼叫會建立兩個權杖，一個用於， `after` 另一個用於 `session` 。 它會傳回包含這兩個權杖的記錄：
 
     ```csharp
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
 
-6. CloudKit 支援使用 `AND` 運算子聯結的複合述詞。
+6. CloudKit 支援使用運算子聯結的複合述詞 `AND` 。
 
     ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
@@ -489,7 +489,7 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 
 #### <a name="creating-queries"></a>建立查詢
 
-您可以使用下列程式碼，在 Xamarin iOS 8 應用程式中建立 `CKQuery`：
+下列程式碼可 `CKQuery` 在 Xamarin iOS 8 應用程式中用來建立：
 
 ```csharp
 var recordName = "MyRec";
@@ -521,7 +521,7 @@ ThisApp.PublicDatabase.PerformQuery(query, CKRecordZone.DefaultRecordZone().Zone
 });
 ```
 
-上述程式碼會採用上面建立的查詢，並針對公用資料庫執行。 由於未指定任何記錄區域，因此會搜尋所有區域。 如果未發生任何錯誤，則會傳回 `CKRecords` 的陣列，以符合查詢的參數。
+上述程式碼會採用上面建立的查詢，並針對公用資料庫執行。 由於未指定任何記錄區域，因此會搜尋所有區域。 如果未發生任何錯誤，將會 `CKRecords` 傳回符合查詢參數的陣列。
 
 思考查詢的方式是它們會進行輪詢，而且很適合透過大型資料集來切割。 不過，查詢並不適合大型、大部分的靜態資料集，因為下列原因：
 
@@ -529,22 +529,22 @@ ThisApp.PublicDatabase.PerformQuery(query, CKRecordZone.DefaultRecordZone().Zone
 - 它們對網路流量而言是壞的。
 - 因為他們所看到的資訊受限於應用程式輪詢資料庫的頻率，所以不是使用者經驗的錯誤。 當使用者變更時，現在會預期推播通知。
 
-### <a name="subscriptions"></a>訂閱
+### <a name="subscriptions"></a>訂用帳戶
 
 處理大型且大部分的靜態資料集時，不應在用戶端裝置上執行查詢，它應該代表用戶端在伺服器上執行。 查詢應該在背景中執行，而且應該在每一筆記錄儲存之後執行，不論是由目前裝置或其他裝置觸及相同的資料庫。
 
 最後，當伺服器端查詢執行時，應該將推播通知傳送到連接至資料庫的每個裝置。
 
-訂用帳戶會透過 `CKSubscription` 類別，在 CloudKit 架構中公開。 它們結合了記錄類型（`RecordType`）、述詞（`NSPredicate`）和 Apple 推播通知（`Push`）。
+訂閱會透過類別在 CloudKit 架構中公開 `CKSubscription` 。 它們結合了記錄類型（ `RecordType` ）、述詞（ `NSPredicate` ）和 Apple 推播通知（ `Push` ）。
 
 > [!NOTE]
 > CloudKit 推送會稍微擴大，因為它們包含包含 CloudKit 特定資訊的裝載，例如造成推送發生的原因。
 
 #### <a name="how-subscriptions-work"></a>訂閱的工作方式
 
-在程式碼中C#執行訂用帳戶之前，讓我們快速概覽訂閱的工作方式：
+在 c # 程式碼中執行訂用帳戶之前，讓我們快速流覽訂閱的工作方式：
 
- [![](intro-to-cloudkit-images/image39.png "An overview of how subscriptions work")](intro-to-cloudkit-images/image39.png#lightbox)
+ [![概述訂閱的工作方式](intro-to-cloudkit-images/image39.png)](intro-to-cloudkit-images/image39.png#lightbox)
 
 上圖顯示典型的訂用帳戶程式，如下所示：
 
@@ -598,7 +598,7 @@ ThisApp.PublicDatabase.SaveSubscription(subscription, (s, err) => {
 
 如果開發人員先前已使用 Apple 推播通知（AP），則應該熟悉 CloudKit 所產生之通知的處理常式。
 
-在 `AppDelegate.cs`中，覆寫 `ReceivedRemoteNotification` 類別，如下所示：
+在中 `AppDelegate.cs` ，覆寫 `ReceivedRemoteNotification` 類別，如下所示：
 
 ```csharp
 public override void ReceivedRemoteNotification (UIApplication application, NSDictionary userInfo)
@@ -626,7 +626,7 @@ public override void ReceivedRemoteNotification (UIApplication application, NSDi
 
 如同本文開頭所述，CloudKit 是建立在現有的 iCloud 基礎結構之上。 下一節將詳細說明如何使用 CloudKit API 將帳戶公開給開發人員。
 
-### <a name="authentication"></a>驗證  (可能為英文網頁)
+### <a name="authentication"></a>驗證
 
 處理使用者帳戶時，第一個考慮是驗證。 CloudKit 支援透過裝置上目前登入的 iCloud 使用者進行驗證。 驗證會在幕後進行，並由 iOS 處理。 如此一來，開發人員就不需要擔心執行驗證的細節。 他們只會測試使用者是否已登入。
 
@@ -641,15 +641,15 @@ CloudKit 提供下列使用者資訊給開發人員：
 
 接下來，我們將詳細探討這些主題。
 
-#### <a name="identity"></a>Identity
+#### <a name="identity"></a>身分識別
 
 如上所述，CloudKit 提供了一種方法，讓應用程式可以唯一識別指定的使用者：
 
- [![](intro-to-cloudkit-images/image40.png "Uniquely identifing a given user")](intro-to-cloudkit-images/image40.png#lightbox)
+ [![唯一根本指定的使用者](intro-to-cloudkit-images/image40.png)](intro-to-cloudkit-images/image40.png#lightbox)
 
 在使用者裝置上執行的用戶端應用程式，以及 CloudKit 容器內的所有特定使用者私用資料庫。 用戶端應用程式將會連結到這些特定使用者的其中一個。 這是以裝置本機上登入 iCloud 的使用者為基礎。
 
-因為這是來自 iCloud，所以有豐富的使用者資訊備份存放區。 由於 iCloud 實際上是裝載容器，因此它可以讓使用者相互關聯。 在上圖中，iCloud 帳戶 `user@icloud.com` 的使用者已連結到目前的用戶端。
+因為這是來自 iCloud，所以有豐富的使用者資訊備份存放區。 由於 iCloud 實際上是裝載容器，因此它可以讓使用者相互關聯。 在上圖中，其 iCloud 帳戶 `user@icloud.com` 連結至目前用戶端的使用者。
 
 以容器為基礎的容器上，會建立唯一且隨機產生的使用者識別碼，並與使用者的 iCloud 帳戶（電子郵件地址）相關聯。 此使用者識別碼會傳回給應用程式，並可透過任何開發人員所看到的適當方式來使用。
 
@@ -680,11 +680,11 @@ CKContainer.DefaultContainer.FetchUserRecordId ((recordID, err) => {
 
 CloudKit 中的每個使用者都有特定的中繼資料來描述它們。 此中繼資料會表示為 CloudKit 記錄：
 
- [![](intro-to-cloudkit-images/image41.png "Each user in CloudKit has specific Metadata that describes them")](intro-to-cloudkit-images/image41.png#lightbox)
+ [![CloudKit 中的每個使用者都有特定的中繼資料來描述它們](intro-to-cloudkit-images/image41.png)](intro-to-cloudkit-images/image41.png#lightbox)
 
 在私人資料庫中查看容器的特定使用者，有一筆記錄會定義該使用者。 公用資料庫內有許多使用者記錄，容器的每個使用者都有一個。 其中一個記錄識別碼會符合目前登入之使用者的記錄識別碼。
 
-公用資料庫中的使用者記錄可供全球讀取。 在大部分的情況下，系統會將其視為一般記錄，並具有 `CKRecordTypeUserRecord`類型。 這些記錄是由系統所保留，無法供查詢使用。
+公用資料庫中的使用者記錄可供全球讀取。 在大部分的情況下，會將它們視為一般記錄，而且具有類型 `CKRecordTypeUserRecord` 。 這些記錄是由系統所保留，無法供查詢使用。
 
 使用下列程式碼來存取使用者記錄：
 
@@ -716,7 +716,7 @@ CloudKit 是預設的設計，用來保護目前登入之使用者的隱私權�
 
 假設使用者加入宣告以允許應用程式限制存取其使用者帳戶資訊，則應用程式的其他使用者就可以找到它們：
 
- [![](intro-to-cloudkit-images/image42.png "A user can be discoverable to other users of the application")](intro-to-cloudkit-images/image42.png#lightbox)
+ [![應用程式的其他使用者可以探索到使用者](intro-to-cloudkit-images/image42.png)](intro-to-cloudkit-images/image42.png#lightbox)
 
 用戶端應用程式正在與容器交談，且容器正在與 iCloud 交談以存取使用者資訊。 使用者可以提供電子郵件地址，而且可以使用探索來取得使用者的相關資訊。 （選擇性）使用者識別碼也可以用來探索使用者的相關資訊。
 
@@ -790,24 +790,24 @@ CloudKit 為應用程式的記錄類型和資料提供個別的開發和生產�
 
 在出貨使用 CloudKit 的應用程式之前，必須將它設定為以**生產 CloudKit 環境**為目標，否則 Apple 會拒絕應用程式。
 
-請執行下列動作：
+執行下列動作：
 
-1. 在 Ma 的 Visual Studio 中，為**Release** > **iOS 裝置**編譯應用程式：
+1. 在 Ma 的 Visual Studio 中，為**Release**  >  **iOS 裝置**編譯應用程式：
 
-    [![](intro-to-cloudkit-images/shipping01.png "Compile the application for Release")](intro-to-cloudkit-images/shipping01.png#lightbox)
+    [![編譯用於發行的應用程式](intro-to-cloudkit-images/shipping01.png)](intro-to-cloudkit-images/shipping01.png#lightbox)
 
 2. 從 [**建立**] 功能表中 **，選取 [** 封存]：
 
-    [![](intro-to-cloudkit-images/shipping02.png "Select Archive")](intro-to-cloudkit-images/shipping02.png#lightbox)
+    [![選取封存](intro-to-cloudkit-images/shipping02.png)](intro-to-cloudkit-images/shipping02.png#lightbox)
 
 3. 封存**將會**建立並顯示在 Visual Studio for Mac 中：
 
-    [![](intro-to-cloudkit-images/shipping03.png "The Archive will be created and displayed")](intro-to-cloudkit-images/shipping03.png#lightbox)
+    [![將會建立並顯示封存](intro-to-cloudkit-images/shipping03.png)](intro-to-cloudkit-images/shipping03.png#lightbox)
 
-4. 啟動 **Xcode**。
+4. 開始**Xcode**。
 5. 從 [**視窗]** 功能表中，選取 [**召集人**]：
 
-    [![](intro-to-cloudkit-images/shipping04.png "Select Organizer")](intro-to-cloudkit-images/shipping04.png#lightbox)
+    [![選取召集人](intro-to-cloudkit-images/shipping04.png)](intro-to-cloudkit-images/shipping04.png#lightbox)
 
 6. 選取應用程式的封存，然後按一下 [**匯出 ...** ] 按鈕：
 
@@ -815,21 +815,21 @@ CloudKit 為應用程式的記錄類型和資料提供個別的開發和生產�
 
 7. 選取匯出的方法，然後按 [**下一步]** 按鈕：
 
-    [![](intro-to-cloudkit-images/shipping06.png "Select a method for export")](intro-to-cloudkit-images/shipping06.png#lightbox)
+    [![選取匯出的方法](intro-to-cloudkit-images/shipping06.png)](intro-to-cloudkit-images/shipping06.png#lightbox)
 
 8. 從下拉式清單中選取 [**開發小組**]，然後按一下 [**選擇**] 按鈕：
 
-    [![](intro-to-cloudkit-images/shipping07.png "Select the Development Team from the dropdown list")](intro-to-cloudkit-images/shipping07.png#lightbox)
+    [![從下拉式清單中選取開發小組](intro-to-cloudkit-images/shipping07.png)](intro-to-cloudkit-images/shipping07.png#lightbox)
 
 9. 從下拉式清單中選取 [**生產**]，然後按 [**下一步]** 按鈕：
 
-    [![](intro-to-cloudkit-images/shipping08.png "Select Production from the dropdown list")](intro-to-cloudkit-images/shipping08.png#lightbox)
+    [![從下拉式清單中選取 [生產]](intro-to-cloudkit-images/shipping08.png)](intro-to-cloudkit-images/shipping08.png#lightbox)
 
 10. 檢查設定，然後按一下 [**匯出**] 按鈕：
 
-    [![](intro-to-cloudkit-images/shipping09.png "Review the setting")](intro-to-cloudkit-images/shipping09.png#lightbox)
+    [![檢查設定](intro-to-cloudkit-images/shipping09.png)](intro-to-cloudkit-images/shipping09.png#lightbox)
 
-11. 選擇要產生應用程式 `.ipa` 檔的位置。
+11. 選擇要產生應用程式檔的位置 `.ipa` 。
 
 此程式類似于直接將應用程式提交至 iTunes Connect，只要按一下 [**提交**] 按鈕，而不是 [匯出 ...]在 [召集人] 視窗中選取封存之後。
 

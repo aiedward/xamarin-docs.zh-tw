@@ -10,16 +10,16 @@ ms.date: 02/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6fa03cf5c18e21ce5ca9e7ea907f50c8de6f3e6c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1a3b9db435de49c438f458d1c4d85d3f81bbf749
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573257"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930672"
 ---
 # <a name="layout-options-in-xamarinforms"></a>中的版面配置選項Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 
 _每個 Xamarin.Forms view 都有 LayoutOptions 類型的 HorizontalOptions 和 VerticalOptions 屬性。本文說明每個 LayoutOptions 值對視圖對齊和展開的效果。_
 
@@ -94,7 +94,7 @@ Content = new StackLayout
 
 程式碼會產生下列螢幕擷取畫面中所示的版面配置：
 
-[![](layout-options-images/alignment.png "Alignment Layout Options")](layout-options-images/alignment-large.png#lightbox "Alignment Layout Options")
+[![對齊版面配置選項](layout-options-images/alignment.png)](layout-options-images/alignment-large.png#lightbox "對齊版面配置選項")
 
 ## <a name="expansion"></a>擴充
 
@@ -147,11 +147,11 @@ Content = new StackLayout
 
 程式碼會產生下列螢幕擷取畫面中所示的版面配置：
 
-[![](layout-options-images/expansion.png "Expansion Layout Options")](layout-options-images/expansion-large.png#lightbox "Expansion Layout Options")
+[![展開版面配置選項](layout-options-images/expansion.png)](layout-options-images/expansion-large.png#lightbox "展開版面配置選項")
 
 每個都 [`Label`](xref:Xamarin.Forms.Label) 佔用中相同的空間量 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 不過，最後的 `Label` 會將其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設為 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)，因此只有其大小不同。 此外，每個 `Label` 都以小型紅色分隔 [`BoxView`](xref:Xamarin.Forms.BoxView) ，可讓您 `Label` 輕鬆地查看所佔用的空間。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明每個 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 結構值對相對於其父項的對齊和擴充的效果。 `Start`、 `Center` 、 `End` 和 `Fill` 欄位是用來定義父配置內的視圖對齊，而 `StartAndExpand` 、 `CenterAndExpand` 、 `EndAndExpand` 和 `FillAndExpand` 欄位則是用來定義對齊喜好設定，以及判斷視圖是否會在中佔用更多的空間（如果有的話） [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
 

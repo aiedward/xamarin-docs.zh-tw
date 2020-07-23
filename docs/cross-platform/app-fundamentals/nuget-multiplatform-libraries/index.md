@@ -6,12 +6,12 @@ ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
 author: davidortinau
 ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 5744bb9947b196ee319535729338bcf64a5cd09e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ac8e4b2eef0905ba50cb24b9eb035d50a05dd84a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016754"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932235"
 ---
 # <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>NuGet 多平臺程式庫專案（Nugetizer 3000）
 
@@ -19,13 +19,13 @@ _使用 ' Nugetizer 3000 ' 自動建立 NuGet 套件，以跨平臺共用程式�
 
 您可以使用_Nugetizer 3000_，自動建立 NuGet 套件以跨平臺共用程式碼。 這可讓您從現有的程式庫專案建立 NuGet 封裝，或建立新的多**平臺程式庫專案**。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-Nugetizer 3000 隨附于 Visual Studio for Mac &ndash; 在檔案 **> 新**視窗中尋找連結**庫 > Mulitplatform 程式庫**專案類型：
+Nugetizer 3000 隨附于 Visual Studio for Mac 在檔案 &ndash; **> 新**視窗中尋找程式庫 **> Mulitplatform 程式庫**專案類型：
 
-[![](images/mulitplatform-library-sml.png "Create new Multiplatform Library window")](images/mulitplatform-library.png#lightbox)
+[![建立新的多平臺程式庫視窗](images/mulitplatform-library-sml.png)](images/mulitplatform-library.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中使用 Nugetizer 3000，請[下載並執行 VSIX 安裝程式](https://bit.ly/nugetizer-2017)。
 
@@ -63,4 +63,4 @@ NuGet 套件專案的設計討論（也稱為 NuGetizer 3000）可在[NuGet GitH
 
 - [NuGetizer-3000 使用案例](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
 - [手動建立適用于 Xamarin 的 NuGet 套件](~/cross-platform/app-fundamentals/nuget-manual.md)
-- [NuGet 檔](https://docs.microsoft.com/nuget/)
+- [NuGet 文件](https://docs.microsoft.com/nuget/)

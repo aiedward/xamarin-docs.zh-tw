@@ -10,16 +10,16 @@ ms.date: 09/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 931b8d0946f1af5e697e581a04c0feefb31ba2d3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4fee695a20cae26537beb30513423492114e5c77
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131920"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936223"
 ---
 # <a name="path-information-and-enumeration"></a>路徑資訊與列舉
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _取得路徑的相關資訊並列舉內容_
 
@@ -29,7 +29,7 @@ _取得路徑的相關資訊並列舉內容_
 
 它有時也很適合用來取得組成路徑的所有繪圖作業和點。 一開始，這種設備看起來可能不是必要的：如果您的程式已建立路徑，則程式已經知道內容。 不過，您已經看到路徑也可以透過[路徑效果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)來建立，並將[文字字串轉換成路徑](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)。 您也可以取得組成這些路徑的所有繪圖作業和點。 其中一個可能性是將演算法轉換套用到所有點，例如，將文字包裝在半球周圍：
 
-![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
+![包裝在半球上的文字](information-images/pathenumerationsample.png)
 
 ## <a name="getting-the-path-length"></a>取得路徑長度
 
@@ -115,7 +115,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Length`新建立之物件的屬性會取得 `SKPathMeasure` 路徑的長度。 路徑長度除以 `baseTextWidth` 值（這是以10的文字大小為基礎的文字寬度），然後乘以基底文字大小10。 結果是以新的文字大小顯示該路徑中的文字：
 
-[![](information-images/pathlength-small.png "Triple screenshot of the Path Length page")](information-images/pathlength-large.png#lightbox "Triple screenshot of the Path Length page")
+[![[路徑長度] 頁面的三重螢幕擷取畫面](information-images/pathlength-small.png)](information-images/pathlength-large.png#lightbox "[路徑長度] 頁面的三重螢幕擷取畫面")
 
 當貝茲曲線變長或較短時，您可以看到文字大小變更。
 
@@ -141,7 +141,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 **Unicycle 的半管道**頁面會在看起來像是以三次方貝茲曲線來回往返的 Unicycle 上繪製一個杆圖：
 
-[![](information-images/unicyclehalfpipe-small.png "Triple screenshot of the Unicycle Half-Pipe page")](information-images/unicyclehalfpipe-large.png#lightbox "Triple screenshot of the Unicycle Half-Pipe page")
+[![Unicycle 半管道頁面的三重螢幕擷取畫面](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Unicycle 半管道頁面的三重螢幕擷取畫面")
 
 `SKPaint`用來對半管道和 unicycle 進行筆劃的物件，會定義為類別中的欄位 `UnicycleHalfPipePage` 。 此外，也定義了 `SKPath` unicycle 的物件：
 
@@ -252,7 +252,7 @@ SKPathVerb pathVerb = rawIterator.Next(points);
 
 有時候，您可能會想要將演算法轉換套用至路徑，以便以某種方式 malform 它：
 
-![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
+![包裝在半球上的文字](information-images/pathenumerationsample.png)
 
 其中大部分的字母都是由直線組成，不過這些直線已明顯地轉換成曲線。 這是怎麼可行的？
 
@@ -441,7 +441,7 @@ static class PathExtensions
 
 **GlobularText**範例會使用此擴充方法，以3d 效果括住半球的文字：
 
-[![](information-images/globulartext-small.png "Triple screenshot of the Globular Text page")](information-images/globulartext-large.png#lightbox "Triple screenshot of the Globular Text page")
+[![Globular 文字頁面的三重螢幕擷取畫面](information-images/globulartext-small.png)](information-images/globulartext-large.png#lightbox "Globular 文字頁面的三重螢幕擷取畫面")
 
 類別的函式會 [`GlobularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) 執行這種轉換。 它會建立 `SKPaint` 文字的物件，然後 `SKPath` 從方法取得物件 `GetTextPath` 。 這是傳遞給 `CloneWithTransform` 擴充方法和轉換函式的路徑：
 

@@ -10,22 +10,22 @@ ms.date: 01/12/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b72564ebbb057c8154140c9845961d4c42e93db3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9df0b143bda18e0e56c3f6ea5b19c2bda21dee03
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573309"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929065"
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms頁面
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
-_[Xamarin] 代表跨平臺行動應用程式畫面。_
+_Xamarin.Forms頁面代表跨平臺行動應用程式畫面。_
 
 以下所述的所有頁面類型都衍生自 Xamarin.Forms [`Page`](xref:Xamarin.Forms.Page) 類別。 這些視覺元素會佔用所有或大部分的畫面。 `Page`物件代表 `ViewController` iOS 中的和 `Page` 通用 Windows 平臺中的。 在 Android 上，每個頁面都會佔用像這樣的畫面 `Activity` ，但 Xamarin.Forms 頁面並*不*是 `Activity` 物件。
 
-[![](pages-images/pages-sml.png "Xamarin.Forms Page Types")](pages-images/pages.png#lightbox "Xamarin.Forms Page Types")
+[![Xamarin.Forms頁面類型](pages-images/pages-sml.png)](pages-images/pages.png#lightbox "[!OP.無-LOC （Xamarin）] 頁面類型")
 
 ## <a name="pages"></a>頁面
 

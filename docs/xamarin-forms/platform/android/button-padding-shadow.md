@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5554341493b52d20c946a4bcfe2d1230e4a02759
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3efcd5cd7c2d00e9d646c937863fd7e55d17f240
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135560"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929866"
 ---
 # <a name="button-padding-and-shadows-on-android"></a>Android 上的按鈕填補和陰影
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定控制按鈕是否 Xamarin.Forms 使用 Android 按鈕的預設填補和陰影值。 它會在 XAML 中使用，方法是將 [`Button.UseDefaultPadding`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty) 和 [`Button.UseDefaultShadow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty) 附加屬性設定為 `boolean` 值：
 
@@ -49,7 +49,7 @@ button.On<Android>().SetUseDefaultPadding(true).SetUseDefaultShadow(true);
 
 結果是 Xamarin.Forms 按鈕可以使用 Android 按鈕的預設填補和陰影值：
 
-![](button-padding-shadow-images/button-padding-and-shadow.png "Default Padding and Shadow Values on Android Buttons")
+![Android 按鈕上的預設填補和陰影值](button-padding-shadow-images/button-padding-and-shadow.png)
 
 請注意，在上面的螢幕擷取畫面中，每個 [`Button`](xref:Xamarin.Forms.Button) 都有相同的定義，不同之處在于右側會 `Button` 使用 Android 按鈕的預設填補和陰影值。
 

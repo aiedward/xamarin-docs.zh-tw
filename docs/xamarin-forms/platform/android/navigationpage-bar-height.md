@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2dcabe3c0067734250834c2927fd4cbb83906943
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5f5e6311c79a88a6018526a2e1c0c06065eefb32
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128787"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929736"
 ---
 # <a name="navigationpage-bar-height-on-android"></a>Android 上的 NavigationPage 列高度
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定會設定上巡覽列的高度 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 。 將可系結 [`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) 屬性設定為整數值，即可在 XAML 中使用它：
 
@@ -51,7 +51,7 @@ public class AndroidNavigationPageCS : Xamarin.Forms.NavigationPage
 
 結果是可以設定上巡覽列的高度 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ：
 
-![](navigationpage-bar-height-images/navigationpage-barheight.png "NavigationPage navigation bar height")
+![NavigationPage 巡覽列高度](navigationpage-bar-height-images/navigationpage-barheight.png)
 
 ## <a name="related-links"></a>相關連結
 

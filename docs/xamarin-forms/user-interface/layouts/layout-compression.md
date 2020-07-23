@@ -10,16 +10,16 @@ ms.date: 12/13/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 40af5aeaa51025dae70113faa6f7ff83edf43c73
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5fa9c7592ecd2cb314ce12d7e303677447a5e104
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138021"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931166"
 ---
 # <a name="layout-compression"></a>版面配置壓縮
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
 
 _版面配置壓縮會從視覺化樹狀結構中移除指定的版面配置，以嘗試改善頁面轉譯效能。本文說明如何啟用版面配置壓縮，以及它可以帶來的好處。_
 
@@ -36,7 +36,7 @@ Xamarin.Forms使用兩個遞迴方法呼叫序列來執行版面配置：
 
 例如，針對登入 Facebook 的範例應用程式，請考慮下列按鈕：
 
-![](layout-compression-images/facebook-button.png "Facebook Button")
+![Facebook 按鈕](layout-compression-images/facebook-button.png)
 
 這個按鈕會指定為具有下列 XAML 視圖階層的自訂控制項：
 
@@ -60,7 +60,7 @@ Xamarin.Forms使用兩個遞迴方法呼叫序列來執行版面配置：
 
 您可以使用[Xamarin Inspector](~/tools/inspector/index.md)來檢查產生的嵌套視圖階層。 在 Android 上，嵌套視圖階層包含17個視圖：
 
-![](layout-compression-images/no-compression.png "View Hierarchy for Facebook Button")
+![[查看 Facebook 的階層] 按鈕](layout-compression-images/no-compression.png)
 
 配置壓縮適用于 Xamarin.Forms iOS 和 Android 平臺上的應用程式，目的是要從視覺化樹狀結構中移除指定的版面配置來壓平合併視圖，這樣可以改善頁面轉譯效能。 所提供的效能優勢會根據頁面的複雜度、使用的作業系統版本，以及執行應用程式的裝置而有所不同。 然而，較舊裝置將能獲得較大的效能提升。
 
@@ -101,7 +101,7 @@ CompressedLayout.SetIsHeadless(stackLayout, true);
 
 在 Android 上，這會產生14個視圖的嵌套視圖階層：
 
-![](layout-compression-images/layout-compression.png "View Hierarchy for Facebook Button with Layout Compression")
+![使用版面配置壓縮來查看 Facebook 按鈕的階層](layout-compression-images/layout-compression.png)
 
 相較于17個視圖的原始嵌套視圖階層，這表示減少17% 的視圖數目。 雖然這種縮減可能很重要，但整個頁面的視圖縮減也會更顯著。
 
@@ -111,13 +111,13 @@ CompressedLayout.SetIsHeadless(stackLayout, true);
 
 針對範例應用程式中的 Facebook 按鈕，結合版面配置壓縮和快速轉譯器會產生8個 views 的嵌套視圖階層：
 
-![](layout-compression-images/layout-compression-with-fast-renderers.png "View Hierarchy for Facebook Button with Layout Compression and Fast Renderers")
+![使用版面配置壓縮和快速轉譯器來查看 Facebook 按鈕的階層](layout-compression-images/layout-compression-with-fast-renderers.png)
 
 相較于17個視圖的原始嵌套視圖階層，這表示減少了52%。
 
 範例應用程式包含從實際應用程式解壓縮的頁面。 如果沒有版面配置壓縮和快速轉譯器，頁面會在 Android 上產生130視圖的嵌套視圖階層。 在適當的版面配置類別上啟用快速轉譯器和版面配置壓縮，可將嵌套視圖階層縮減為70個視圖，減少46%。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 版面配置壓縮會從視覺化樹狀結構中移除指定的版面配置，以嘗試改善頁面轉譯效能。 這所提供的效能優勢，會根據頁面的複雜性、所使用的作業系統版本，以及執行應用程式的裝置而有所不同。 然而，較舊裝置將能獲得較大的效能提升。
 

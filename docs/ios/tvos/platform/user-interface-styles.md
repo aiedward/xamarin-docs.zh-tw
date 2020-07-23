@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 1d64a212dae055d6a7a5ff1005b25dc48a10d52e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e779b874cda016a0cd6cc0444ff42a761ee7483e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566197"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934676"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>在 Xamarin 中 tvOS 使用者介面樣式
 
@@ -28,11 +28,11 @@ tvOS 10 現在支援深色和淺色使用者介面主題，所有的內建 UIKit
 
 使用者可以移至 [**設定**]  >  **[一般] [**  >  **外觀**]，並切換 [**淺色**] 和 [**深色**] 來切換此主題：
 
-[![](user-interface-styles-images/theme01.png "The Settings app")](user-interface-styles-images/theme01.png#lightbox)
+[![設定應用程式](user-interface-styles-images/theme01.png)](user-interface-styles-images/theme01.png#lightbox)
 
 選取**深色**主題時，所有使用者介面元素都會在深色背景上切換為淺文字：
 
-[![](user-interface-styles-images/theme02.png "The Dark theme")](user-interface-styles-images/theme02.png#lightbox)
+[![深色主題](user-interface-styles-images/theme02.png)](user-interface-styles-images/theme02.png#lightbox)
 
 使用者隨時都可選擇切換主題，而且可能會根據目前的活動（Apple TV 所在的位置或當天的時間）來執行此動作。
 
@@ -50,11 +50,11 @@ Light UI 主題是預設主題，而且任何現有的 tvOS 應用程式仍會�
 2. 選取 [**來源**] 視圖（從編輯器的底部）。
 3. 新增金鑰並呼叫它 `UIUserInterfaceStyle` ：
 
-    [![](user-interface-styles-images/theme03.png "The UIUserInterfaceStyle key")](user-interface-styles-images/theme03.png#lightbox)
+    [![UIUserInterfaceStyle 鍵](user-interface-styles-images/theme03.png)](user-interface-styles-images/theme03.png#lightbox)
 4. 將 [類型] 保留設定為 `String` ，並輸入 `Automatic` 下列值：
 
-    [![](user-interface-styles-images/theme04.png "Enter Automatic")](user-interface-styles-images/theme04.png#lightbox)
-5. 將變更儲存到檔案。
+    [![輸入自動](user-interface-styles-images/theme04.png)](user-interface-styles-images/theme04.png#lightbox)
+5. 將變更儲存至檔案。
 
 索引鍵有三個可能的值 `UIUserInterfaceStyle` ：
 
@@ -169,13 +169,13 @@ SetOverrideTraitCollection (trait, this);
 
 1. 以滑鼠右鍵按一下**方案總管**中的分鏡腳本檔案，然後選取 [**開啟方式**  >  **Xcode Interface Builder**：
 
-    [![](user-interface-styles-images/theme05.png "Open With Xcode Interface Builder")](user-interface-styles-images/theme05.png#lightbox)
+    [![使用 Xcode 開啟 Interface Builder](user-interface-styles-images/theme05.png)](user-interface-styles-images/theme05.png#lightbox)
 2. 若要啟用特性集合支援，請切換至 [檔案偵測**器**]，並選取 [ **Interface Builder**檔] 區段中的 [**使用特性變化**] 屬性：
 
-    [![](user-interface-styles-images/theme06.png "Enable Trait Collection support")](user-interface-styles-images/theme06.png#lightbox)
+    [![啟用特性集合支援](user-interface-styles-images/theme06.png)](user-interface-styles-images/theme06.png#lightbox)
 3. 確認變更以使用特性變化：
 
-    [![](user-interface-styles-images/theme07.png "The use Trait Variations alert")](user-interface-styles-images/theme07.png#lightbox)
+    [![使用特徵變化警示](user-interface-styles-images/theme07.png)](user-interface-styles-images/theme07.png#lightbox)
 4. 將變更儲存至分鏡腳本檔案。
 
 在 Interface Builder 中編輯 tvOS 分鏡腳本時，Apple 已加入下列功能：
@@ -184,20 +184,20 @@ SetOverrideTraitCollection (trait, this);
 
   - 現在有數個屬性 **+** 可供按一下以新增 UI 主題特定版本：
 
-    [![](user-interface-styles-images/theme08.png "Add a UI theme specific version")](user-interface-styles-images/theme08.png#lightbox)
+    [![新增 UI 主題特定版本](user-interface-styles-images/theme08.png)](user-interface-styles-images/theme08.png#lightbox)
 
   - 開發人員可以指定新的屬性，或按一下 [ **x** ] 按鈕將它移除：
 
-    [![](user-interface-styles-images/theme09.png "Specify a new property or click the x button to remove it")](user-interface-styles-images/theme09.png#lightbox)
+    [![指定新的屬性，或按一下 [x] 按鈕將它移除](user-interface-styles-images/theme09.png)](user-interface-styles-images/theme09.png#lightbox)
 - 開發人員可以在 Interface Builder 中，預覽淺色或深色主題中的 UI 設計：
 
   - Design Surface 的底部可讓開發人員切換目前的 UI 主題：
 
-    [![](user-interface-styles-images/theme10.png "The bottom of the Design Surface")](user-interface-styles-images/theme10.png#lightbox)
+    [![Design Surface 的底部](user-interface-styles-images/theme10.png)](user-interface-styles-images/theme10.png#lightbox)
 
   - 新的主題會顯示在 Interface Builder 中，而且會顯示任何特性集合特定的調整：
 
-    [![](user-interface-styles-images/theme11.png "The theme displayed in Interface Builder")](user-interface-styles-images/theme11.png#lightbox)
+    [![顯示在 Interface Builder 中的主題](user-interface-styles-images/theme11.png)](user-interface-styles-images/theme11.png#lightbox)
 
 此外，tvOS 模擬器現在具有鍵盤快速鍵，可讓開發人員在 tvOS 應用程式時，快速切換淺色和深色主題。 使用**命令-Shift-D**鍵盤順序，在淺色與深色之間切換。
 

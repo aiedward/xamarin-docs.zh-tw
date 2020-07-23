@@ -10,18 +10,18 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1d993afa7163beb0b24e496b0c876d903f2396e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139395"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934286"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>使用電子書的企業應用程式模式 Xamarin.Forms
 
 _開發可調整、可維護且可測試之 Xamarin.Forms 企業應用程式的架構指引_
 
-![](images/cover-sml.png "Enterprise Application Patterns using Xamarin.Forms eBook")
+![使用電子書的企業應用程式模式 Xamarin.Forms](images/cover-sml.png)
 
 此電子書提供如何執行模型 ViewModel （MVVM）模式、相依性插入、流覽、驗證和設定管理的指引，同時維持鬆散結合。 此外，也有指導方針，說明如何使用 IdentityServer 來執行驗證和授權、從容器化微服務存取資料，以及單元測試。
 
@@ -47,7 +47,7 @@ _開發可調整、可維護且可測試之 Xamarin.Forms 企業應用程式的�
 
 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 類別會執行發行-訂閱模式，允許不方便透過物件和類型參考連結的元件之間以訊息為基礎的通訊。 這項機制可讓發行者和訂閱者進行通訊，而不需要彼此的參考，協助減少元件之間的相依性，同時也允許獨立開發和測試元件。
 
-## <a name="navigation"></a>[瀏覽](navigation.md)
+## <a name="navigation"></a>[巡覽](navigation.md)
 
 Xamarin.Forms包含頁面導覽的支援，這通常是因使用者與 UI 的互動，或來自應用程式本身的結果，因為內部邏輯驅動狀態變更的結果。 不過，在使用 MVVM 模式的應用程式中執行流覽可能會很複雜。
 
@@ -59,7 +59,7 @@ Xamarin.Forms包含頁面導覽的支援，這通常是因使用者與 UI 的互
 
 在模型 ViewModel （MVVM）模式的內容中，通常需要視圖模型或模型來執行資料驗證，並向視圖發出任何驗證錯誤，讓使用者可以加以更正。
 
-## <a name="configuration-management"></a>[設定管理](configuration-management.md)
+## <a name="configuration-management"></a>[組態管理](configuration-management.md)
 
 設定可讓您從程式碼中區隔的資料，來設定應用程式的行為，以在不重建應用程式的情況下變更行為。 應用程式設定是應用程式所建立及管理的資料，而使用者設定則是應用程式的可自訂設定，會影響應用程式的行為，而不需要經常重新調整。
 

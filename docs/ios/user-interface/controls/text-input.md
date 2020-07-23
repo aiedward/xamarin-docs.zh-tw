@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 9f4e88cdc04431660376b885faef0a855e14efc2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b36ae9f9fe04ea060ef0238d5af25fb771cafe85
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572113"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932336"
 ---
 # <a name="text-input-in-xamarinios"></a>在 Xamarin 中輸入文字
 
@@ -20,9 +20,9 @@ ms.locfileid: "84572113"
 
 下列螢幕擷取畫面顯示這些控制項的圖示，位於 Visual Studio for Mac 的 [工具箱] 面板中：
 
- [![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png#lightbox)
+ [![UITextField](text-input-images/image11a.png)](text-input-images/image11a.png#lightbox)
 
- [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
+ [![UITextView](text-input-images/image13a.png)](text-input-images/image13a.png#lightbox)
 
 一旦您命名了「輸出口」並儲存分鏡腳本檔案之後，Visual Studio for Mac 將會更新 `.designer.cs` 部分類別，而且您可以將參考該控制項的 c # 程式碼加入至您的類別檔案。 每個控制項都有自己的唯一屬性和事件，可以在您的 c # 程式碼中存取。
 
@@ -32,7 +32,7 @@ ms.locfileid: "84572113"
 
 `UITextField`控制項最常用來接受單行文字輸入，例如使用者名稱或密碼。 有一些可供自訂控制項的選項如下所示：
 
- [![](text-input-images/image15a.png "UITextField Properties")](text-input-images/image15a.png#lightbox)
+ [![UITextField 屬性](text-input-images/image15a.png)](text-input-images/image15a.png#lightbox)
 
 這些控制項的說明如下：
 
@@ -74,7 +74,7 @@ View.Add(textfield1);
 
 `UITextView`控制項可以用來顯示唯讀文字，或接受多行文字輸入。 它有許多與相同的選項 `UITextField` （例如大小寫、更正等等）。
 
- [![](text-input-images/image16a.png "UITextView Properties")](text-input-images/image16a.png#lightbox)
+ [![UITextView 屬性](text-input-images/image16a.png)](text-input-images/image16a.png#lightbox)
 
 特定屬性包括：
 

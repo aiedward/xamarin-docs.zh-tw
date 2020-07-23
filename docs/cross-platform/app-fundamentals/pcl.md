@@ -6,12 +6,12 @@ ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: 1684bddaf5b418f63abc7ee528f646f7795396d8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 63ef7045051f21259e01c36fc5f702585b04a57b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016736"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934350"
 ---
 # <a name="portable-class-libraries-pcl"></a>可攜式類別庫 (PCL)
 
@@ -24,7 +24,7 @@ ms.locfileid: "73016736"
 有三個主要的程式碼共用方法可解決此問題： **.NET Standard 專案**、**共用的資產專案**，以及**可移植的類別庫（PCL）專案**。
 
 - **.NET Standard 專案**是共用 .net 程式碼的慣用方法，請參閱[.NET Standard 專案和 Xamarin](~/cross-platform/app-fundamentals/net-standard.md)的詳細資訊。
-- **共用的資產專案**會使用一組檔案，並提供快速且簡單的方法，讓您在方案中共用程式碼，並且通常會採用條件式編譯指示詞，為使用它的各種平臺指定程式碼路徑（適用于更多資訊請參閱[共用專案一文](~/cross-platform/app-fundamentals/shared-projects.md)）。
+- **共用的資產專案**會使用一組檔案，並提供快速且簡單的方法，讓您在方案中共用程式碼，而且通常會採用條件式編譯指示詞來指定用於使用它之各種平臺的程式碼路徑（如需詳細資訊，請參閱[共用專案一文](~/cross-platform/app-fundamentals/shared-projects.md)）。
 - **PCL**專案以支援一組已知 BCL 類別/功能的特定設定檔為目標。 不過，向下到 PCL 的是，它們通常需要額外的架構工作，才能將設定檔特定的程式碼分隔到自己的程式庫中。
 
 此頁面說明如何建立以特定設定檔為目標的**PCL**專案，然後可供多個平臺特定專案參考。
@@ -37,7 +37,7 @@ ms.locfileid: "73016736"
 
 下表顯示因 .NET 平臺而異的部分功能。 若要撰寫保證在特定裝置/平臺上執行的 PCL 元件，您只要選擇建立專案時所需的支援。
 
-|特殊功能|.NET Framework|UWP 應用程式|Silverlight|Windows Phone|Xamarin|
+|功能|.NET Framework|UWP 應用程式|Silverlight|Windows Phone|Xamarin|
 |---|---|---|---|---|---|
 |核心|Y|Y|Y|Y|Y|
 |LINQ|Y|Y|Y|Y|Y|
@@ -56,7 +56,7 @@ Xamarin 資料行反映了 Xamarin 和 Xamarin 支援 Visual Studio 隨附的所
 
 您可以閱讀更多有關[Microsoft 網站](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)上不同設定檔功能的資訊，並參閱另一個社區成員的[PCL 設定檔摘要](https://portablelibraryprofiles.stephencleary.com/)，其中包含支援的架構資訊和其他注意事項。
 
-**權益**
+**優點**
 
 1. 集中式程式碼共用–在可供其他程式庫或應用程式使用的單一專案中撰寫及測試程式碼。
 2. 重構作業會影響方案中載入的所有程式碼（便攜類別庫和平臺特定專案）。
@@ -74,9 +74,9 @@ Xamarin 資料行反映了 Xamarin 和 Xamarin 支援 Visual Studio 隨附的所
 
 此圖表顯示使用可移植類別庫來共用程式碼的跨平臺應用程式架構，但也使用相依性插入來傳遞與平臺相關的功能：
 
-[![](pcl-images/image1.png "This diagram shows the architecture of a cross-platform application using a Portable Class Library to share code, but also using Dependency Injection to pass in platform-dependent features")](pcl-images/image1.png#lightbox)
+[![此圖表顯示使用可移植類別庫來共用程式碼的跨平臺應用程式架構，但也使用相依性插入來傳遞與平臺相關的功能](pcl-images/image1.png)](pcl-images/image1.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac 逐步解說
 
@@ -98,9 +98,9 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 ### <a name="editing-pcl-settings"></a>編輯 PCL 設定
 
-若要查看和變更此專案的 PCL 設定，請以滑鼠右鍵按一下專案，然後選擇 **選項 > 組建 > 一般**，以查看如下所示的畫面：
+若要查看和變更此專案的 PCL 設定，請以滑鼠右鍵按一下專案，然後選擇 [**選項] > 組建 > 一般**]，以查看如下所示的畫面：
 
-[![PCL 專案選項來設定設定檔](pcl-images/image4-sml.png)](pcl-images/image4.png#lightbox)
+[![用來設定設定檔的 PCL 專案選項](pcl-images/image4-sml.png)](pcl-images/image4.png#lightbox)
 
 按一下 [**變更 ...** ]，以變更此可移植類別庫的目標設定檔。
 
@@ -108,13 +108,13 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 ## <a name="working-with-a-pcl"></a>使用 PCL
 
-當程式碼是以 PCL 程式庫撰寫時，[Visual Studio for Mac 編輯器] 將會辨識所選設定檔的限制，並據以調整自動完成選項。 例如，此螢幕擷取畫面顯示使用 Visual Studio for Mac 中使用的預設設定檔（Profile136）進行 System.IO 的自動完成選項-請注意，會顯示大約一半可用類別的捲軸（事實上，只有14個可用的類別）。
+當程式碼是以 PCL 程式庫撰寫時，[Visual Studio for Mac 編輯器] 將會辨識所選設定檔的限制，並據以調整自動完成選項。 例如，此螢幕擷取畫面顯示使用 Visual Studio for Mac 中使用的預設設定檔（Profile136）進行 System.IO 的自動完成選項-請注意，會顯示大約一半可用類別的捲軸（事實上，只有14個類別可用）。
 
-[在 PCL 的 System.IO 類別中![Intellisense 清單14個類別](pcl-images/image6.png)](pcl-images/image6.png#lightbox)
+[![PCL 的 System.IO 類別中之14個類別的 Intellisense 清單](pcl-images/image6.png)](pcl-images/image6.png#lightbox)
 
-將其與 Xamarin 或 Xamarin 專案中的 System.IO 自動完成進行比較-有40類別可用，包括常用的類別，例如 `File` 和 `Directory`，但不在任何 PCL 設定檔中。
+將其與 Xamarin 或 Xamarin 專案中的 System.IO 自動完成進行比較-有40類別可供使用，包括常用的類別 `File` ，例如和，而 `Directory` 不在任何 PCL 設定檔中。
 
-[在 .NET Framework System.IO 命名空間中![40 類別的 Intellisense 清單](pcl-images/image7.png)](pcl-images/image7.png#lightbox)
+[![.NET Framework System.IO 命名空間中40類別的 Intellisense 清單](pcl-images/image7.png)](pcl-images/image7.png#lightbox)
 
 這反映了使用 PCL 的基礎取捨–能夠在許多平臺上順暢地共用程式碼，表示某些 Api 無法供您使用，因為它們在所有可能的平臺上都沒有可比較的執行。
 
@@ -126,11 +126,11 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 下列螢幕擷取畫面顯示 TaskyPortable 範例應用程式的 Solution pad，其中顯示底部的 PCL 程式庫，以及在 Xamarin 專案中對該 PCL 程式庫的參考。
 
-[顯示 PCL 專案的![TaskyPortable 範例解決方案](pcl-images/image9.png)](pcl-images/image9.png#lightbox)
+[![顯示 PCL 專案的 TaskyPortable 範例解決方案](pcl-images/image9.png)](pcl-images/image9.png#lightbox)
 
 PCL （也就是產生的元件 DLL）的輸出也可以加入做為大部分專案的參考。 這讓 PCL 成為傳送跨平臺元件和程式庫的理想方式。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="visual-studio-walkthrough"></a>Visual Studio 逐步解說
 
@@ -149,7 +149,7 @@ PCL （也就是產生的元件 DLL）的輸出也可以加入做為大部分專
 
     [![選取程式庫的目標平臺](pcl-images/image11-sml.png "勾選您需要支援的平臺，然後按 [確定]")](pcl-images/image11.png#lightbox)
 
-3. PCL 專案會如方案總管所示出現，&ndash; 文字 **（便攜）** 出現在專案名稱旁邊，表示它是 PCL：
+3. PCL 專案會如方案總管所示，出現在 &ndash; 專案名稱旁邊的文字 **（可攜）** ，表示它是 PCL：
 
     ![PCL 設定檔所定義的 NET Framework](pcl-images/image12.png "PCL 設定檔所定義的 NET Framework")
 
@@ -172,9 +172,9 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 [![減少 PCL 中可用的 IO 類別數目](pcl-images/image14.png)](pcl-images/image14.png#lightbox)
 
-將它與一般專案中的 System.IO 自動完成進行比較-有40類別可用，包括常用的類別，例如 `File` 和 `Directory`，而不在任何 PCL 設定檔中。
+將它與一般專案中的 System.IO 自動完成進行比較-有40類別可用，包括常用的類別 `File` ，例如，而 `Directory` 不在任何 PCL 設定檔中。
 
-[![.NET Framework 中提供的多個 IO 類別](pcl-images/image15.png)](pcl-images/image15.png#lightbox)
+[![.NET Framework 中提供更多 IO 類別](pcl-images/image15.png)](pcl-images/image15.png#lightbox)
 
 這反映了使用 PCL 的基礎取捨–能夠在許多平臺上順暢地共用程式碼，表示某些 Api 無法供您使用，因為它們在所有可能的平臺上都沒有可比較的執行。
 
@@ -183,13 +183,13 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 ### <a name="using-pcl"></a>使用 PCL
 
-一旦建立了 PCL 專案，您就可以從任何相容的應用程式或程式庫專案加入其參考，就像平常加入參考一樣。 在 Visual Studio 中，以滑鼠右鍵按一下 參考 節點，然後選擇 `Add Reference...` 然後切換至 **方案 > 專案** 索引標籤，如下所示：
+一旦建立了 PCL 專案，您就可以從任何相容的應用程式或程式庫專案加入其參考，就像平常加入參考一樣。 在 Visual Studio 中，以滑鼠右鍵按一下 [參考] 節點，然後選擇 [ `Add Reference...` 切換至**方案 > 專案**] 索引標籤，如下所示：
 
 [![透過 [加入參考專案] 索引標籤新增 PCL 的參考](pcl-images/image16.png)](pcl-images/image16.png#lightbox)
 
 下列螢幕擷取畫面顯示 TaskyPortable 範例應用程式的 [解決方案] 窗格，並在底部顯示 PCL 程式庫，以及在 Xamarin 專案中顯示該 PCL 程式庫的參考。
 
-[顯示 PCL 程式庫的![TaskyPortable 範例解決方案](pcl-images/image17.png)](pcl-images/image17.png#lightbox)
+[![顯示 PCL 程式庫的 TaskyPortable 範例解決方案](pcl-images/image17.png)](pcl-images/image17.png#lightbox)
 
 PCL （也就是產生的元件 DLL）的輸出也可以加入做為大部分專案的參考。
 這讓 PCL 成為傳送跨平臺元件和程式庫的理想方式。
@@ -201,19 +201,19 @@ PCL （也就是產生的元件 DLL）的輸出也可以加入做為大部分專
 [TaskyPortable](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)範例應用程式會示範如何將可移植的類別庫與 Xamarin 搭配使用。
 以下是在 iOS 和 Android 上執行之應用程式的一些螢幕擷取畫面：
 
-[![](pcl-images/image18.png "Here are some screenshots of the resulting apps running on iOS, Android and Windows Phone")](pcl-images/image18.png#lightbox)
+[![以下是在 iOS、Android 和 Windows Phone 上執行之應用程式的一些螢幕擷取畫面](pcl-images/image18.png)](pcl-images/image18.png#lightbox)
 
 它會共用一些純粹是可移植程式碼的資料和邏輯類別，也會示範如何使用 SQLite 資料庫執行的相依性插入，來合併平臺特定的需求。
 
 解決方案結構如下所示（分別在 Visual Studio for Mac 和 Visual Studio 中）：
 
-[![](pcl-images/image19.png "The solution structure is shown here in Visual Studio for Mac and Visual Studio respectively")](pcl-images/image19.png#lightbox)
+[![解決方案結構會分別顯示在 Visual Studio for Mac 和 Visual Studio 中](pcl-images/image19.png)](pcl-images/image19.png#lightbox)
 
-由於 SQLite 程式碼具有平臺特定的部分（在每個不同的作業系統上使用 SQLite 執行），因此為了示範目的，它已重構成可編譯成可移植類別庫的抽象類別，而在 iOS 和 Android 專案中實作為子類別的實際程式碼。
+由於 SQLite 程式碼具有平臺特定的部分（在每個不同的作業系統上使用 SQLite 執行），因此為了示範目的，它已重構成可編譯成可移植類別庫的抽象類別，而實際的程式碼則會實作為 iOS 和 Android 專案中的子類別。
 
 ### <a name="taskyportablelibrary"></a>TaskyPortableLibrary
 
-可移植的類別庫在可支援的 .NET 功能中受到限制。 因為它編譯為在多個平臺上執行，所以無法利用 SQLite-NET 中使用的 `[DllImport]` 功能。 相反地，SQLite-NET 會實作為抽象類別，然後透過其餘的共用程式碼來參考。 抽象 API 的摘錄如下所示：
+可移植的類別庫在可支援的 .NET 功能中受到限制。 因為它編譯為在多個平臺上執行，所以無法利用 `[DllImport]` SQLite 中使用的功能。 相反地，SQLite-NET 會實作為抽象類別，然後透過其餘的共用程式碼來參考。 抽象 API 的摘錄如下所示：
 
 ```csharp
 public abstract class SQLiteConnection : IDisposable {
@@ -254,7 +254,7 @@ public abstract class SQLiteConnection : IDisposable {
 
 IOS 和 Android 應用程式專案包含使用者介面和其他平臺特定程式碼，用來連接 PCL 中的共用程式碼。
 
-這些專案也包含在該平臺上運作的抽象資料庫 API 的執行。 在 iOS 和 Android 上，Sqlite 資料庫引擎內建于作業系統中，因此執行可以使用所示的 `[DllImport]` 來提供資料庫連接的具體執行。 以下顯示平臺特定的實作為程式碼摘錄：
+這些專案也包含在該平臺上運作的抽象資料庫 API 的執行。 在 iOS 和 Android 上，Sqlite 資料庫引擎內建于作業系統中，因此，此執行可以使用 `[DllImport]` 來提供資料庫連接的具體執行方式。 以下顯示平臺特定的實作為程式碼摘錄：
 
 ```csharp
 [DllImport("sqlite3", EntryPoint = "sqlite3_open")]

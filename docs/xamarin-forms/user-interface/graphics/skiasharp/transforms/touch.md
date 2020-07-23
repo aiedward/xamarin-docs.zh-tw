@@ -10,22 +10,22 @@ ms.date: 09/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f5738f376e2a814ef1af455178c2e68135184402
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6de2caf95d4ce983f7e97e0bc017932df534aedb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140162"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931855"
 ---
 # <a name="touch-manipulations"></a>觸控操作
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用矩陣轉換來執行觸控拖曳、捏合和旋轉_
 
 在像是行動裝置上的多點觸控環境中，使用者通常會使用手指來操作螢幕上的物件。 一般手勢（例如單向拖曳和雙手指延展）可以移動和縮放物件，甚至是旋轉它們。 這些手勢通常會使用轉換矩陣來實行，而本文將說明如何執行這項操作。
 
-![](touch-images/touchmanipulationsexample.png "A bitmap subjected to translation, scaling, and rotation")
+![用於轉譯、縮放和旋轉的點陣圖](touch-images/touchmanipulationsexample.png)
 
 此處顯示的所有範例都會使用 Xamarin.Forms [**從效果**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)叫用事件一文所呈現的觸控追蹤效果。
 
@@ -920,7 +920,7 @@ public partial class TouchManipulationPage : ContentPage
 
 `PaintSurface`處理常式會藉由顯示 `MatrixDisplay` 物件顯示累積的觸控矩陣來結束：
 
-[![](touch-images/touchmanipulation-small.png "Triple screenshot of the Touch Manipulation page")](touch-images/touchmanipulation-large.png#lightbox "Triple screenshot of the Touch Manipulation page")
+[![觸控動作頁面的三重螢幕擷取畫面](touch-images/touchmanipulation-small.png)](touch-images/touchmanipulation-large.png#lightbox "觸控動作頁面的三重螢幕擷取畫面")
 
 ## <a name="manipulating-multiple-bitmaps"></a>操作多個點陣圖
 
@@ -1058,7 +1058,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 程式碼會在集合中迴圈，並顯示從集合開頭到結尾的一堆點陣圖：
 
-[![](touch-images/bitmapscatterview-small.png "Triple screenshot of the Bitmap Scatter View page")](touch-images/bitmapscatterview-large.png#lightbox "Triple screenshot of the Bitmap Scatter View page")
+[![點陣圖散佈圖視圖頁面的三重螢幕擷取畫面](touch-images/bitmapscatterview-small.png)](touch-images/bitmapscatterview-large.png#lightbox "點陣圖散佈圖視圖頁面的三重螢幕擷取畫面")
 
 ## <a name="single-finger-scaling"></a>單一手指調整
 

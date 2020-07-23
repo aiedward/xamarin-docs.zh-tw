@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 39d203cf0fb7fff026106d98cfb512aad42f83d2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c74f9bd17f8da5cd41a55f8b35a66e21df81a8d2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128241"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931179"
 ---
 # <a name="navigationpage-bar-separator-on-ios"></a>IOS 上的 NavigationPage Bar 分隔符號
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定會隱藏位於上巡覽列底部的分隔線和陰影 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 。 將可系結屬性設定為，即可在 XAML 中使用它 [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) `false` ：
 
@@ -50,7 +50,7 @@ public class iOSTitleViewNavigationPageCS : Xamarin.Forms.NavigationPage
 
 結果是，上的巡覽列分隔符號 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 可以隱藏起來：
 
-![](navigation-bar-separator-images/navigationpage-hideseparatorbar.png "NavigationPage navigation bar hidden")
+![NavigationPage 巡覽列已隱藏](navigation-bar-separator-images/navigationpage-hideseparatorbar.png)
 
 ## <a name="related-links"></a>相關連結
 

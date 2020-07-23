@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: cbbf8194505e9caa09587471020026d495f9f99b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 683ac99ba46d2e23b0190d411e4911725c409f23
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569688"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931569"
 ---
 # <a name="testing-on-apple-watch-devices"></a>在 Apple Watch 裝置上進行測試
 
@@ -28,11 +28,11 @@ ms.locfileid: "84569688"
 
 在實際的 iPhone 或 iPad 上測試 iOS 應用程式，一律需要在開發人員中心註冊裝置。 裝置清單看起來像這樣（按一下加號以新增 **+** 裝置）：
 
-![](device-images/devices-sml.png "The device list looks like this")
+![裝置清單看起來像這樣](device-images/devices-sml.png)
 
 監看式並無不同-您現在需要先新增您的 Apple Watch 裝置，然後再將應用程式部署到其中。 使用**Xcode**尋找監看式的 UDID （**Windows > 裝置**清單）。 當配對的電話連接時，也會顯示監看式的資訊：
 
-[![](device-images/xcode-devices-sml.png "Paired Watch Information")](device-images/xcode-devices.png#lightbox)
+[![配對的監看資訊](device-images/xcode-devices-sml.png)](device-images/xcode-devices.png#lightbox)
 
 當您知道監看式的 UDID 時，請將它新增至開發人員中心的裝置清單：
 
@@ -40,7 +40,7 @@ ms.locfileid: "84569688"
 
 新增 Watch 裝置之後，請確定已在您所建立的任何新的或現有的開發或臨機操作布建設定檔中選取它：
 
-![](device-images/devices-provisioning.png "Available device list")
+![可用的裝置清單](device-images/devices-provisioning.png)
 
 如果您編輯現有的布建設定檔以下載並重新安裝，請別忘了！
 
@@ -52,17 +52,17 @@ ms.locfileid: "84569688"
 
 如果您有萬用字元應用程式識別碼，則*只需要一個布建設定檔*;但如果您的每個專案都有個別的應用程式識別碼，則您需要每個應用程式識別碼的布建設定檔：
 
-![](device-images/provisioningprofile-development.png "The Development Provisioning Profile")
+![開發布建設定檔](device-images/provisioningprofile-development.png)
 
 一旦您建立了這三個設定檔，它們就會出現在清單中。 請記得下載並安裝每一個：
 
-![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
+![可用的開發布建設定檔](device-images/provisioningprofiles.png)
 
 您可以選取 [**組建 > [iOS**套件組合簽署] 畫面，然後選取 [**發行**] 或 [ **Debug] IPhone**設定，以確認**專案選項**中的布建設定檔。
 
 [布建**設定檔**] 清單會顯示所有相符的設定檔，您應該會看到您在此下拉式清單中建立的相符設定檔：
 
-![](device-images/options-selectprofile.png "The Provisioning Profile list")
+![布建配置檔案清單](device-images/options-selectprofile.png)
 
 <a name="testing"></a>
 
@@ -97,7 +97,7 @@ ms.locfileid: "84569688"
 
 若要*暫時*解決此問題，請停用 [監看式擴充功能專案選項] 中的 [累加**組建**] **> 組建 > watchOS 組建**] 視窗：
 
-[![](device-images/disable-incremental-sml.png "The Incremental Builds checkbox")](device-images/disable-incremental.png#lightbox)
+[![[增量組建] 核取方塊](device-images/disable-incremental-sml.png)](device-images/disable-incremental.png#lightbox)
 
 這會在未來的版本中修正，之後可以重新啟用累加式組建，以利用更快速的組建時間。
 
@@ -112,7 +112,7 @@ Failed to install [APPNAME]
 Invalid executable/Application Verification Failed
 ```
 
-![](device-images/invalid-application-executable.png "Invalid Application Executable alert")
+![應用程式可執行檔警示無效](device-images/invalid-application-executable.png)
 
 如果在應用程式嘗試安裝之後，這些訊息會出現*在監看式畫面上*，可能會有幾個問題：
 

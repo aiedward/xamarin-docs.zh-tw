@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dcbc20139b989ced11f2d1d890ca7dd99a780e96
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ffadcf5153938a812fffbcdee90ec12430ebe531
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137055"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931439"
 ---
 # <a name="navigationpage-bar-text-color-mode-on-ios"></a>IOS 上的 NavigationPage Bar 文字色彩模式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此平臺特定控制上的狀態列文字色彩是否 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 會調整為符合導覽列的亮度。 它會在 XAML 中使用，方法是將 [`NavigationPage.StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty) 附加屬性設為列舉的值 [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) ：
 
@@ -75,7 +75,7 @@ IsPresentedChanged += (sender, e) =>
 
 結果是可以調整上的狀態列文字色彩 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，以符合導覽列的亮度。 在此範例中，狀態列文字色彩會隨著使用者在的 [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) 和頁面之間切換而改變 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ：
 
-![](status-bar-text-color-images/status-bar-text-color-mode.png "Status Bar Text Color Mode Platform-Specific")
+![狀態列文字色彩模式平臺特定](status-bar-text-color-images/status-bar-text-color-mode.png)
 
 ## <a name="related-links"></a>相關連結
 

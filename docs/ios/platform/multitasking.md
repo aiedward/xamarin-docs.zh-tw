@@ -8,18 +8,18 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: e166f513a75faaa082e8557dc6f610f014547a25
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b86f3a159a144f02ea13663bfddb41ed0100f740
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574139"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931400"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin 中 iPad 的多工作業
 
 _iOS 9 使用 [滑過] 或 [分割] 視圖，同時支援兩個同時執行的應用程式。它也支援以圖片顯示圖片。_
 
-![](multitasking-images/about02-sml.png "分割畫面範例") ![](multitasking-images/about03-sml.png "圖片-圖片中的範例")
+![分割畫面範例](multitasking-images/about02-sml.png) ![圖片-圖片中的範例](multitasking-images/about03-sml.png)
 
 iOS 9 增加了多工支援，可在特定 iPad 硬體上同時執行兩個應用程式。 透過下列功能可支援 iPad 的多工作業：
 
@@ -64,7 +64,7 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 [滑過] 功能可讓使用者挑選第二個應用程式，並將它顯示在小型滑動面板中，以提供快速互動。 [滑過] 面板是暫時性的，而且會在使用者回到主應用程式再次使用時關閉。
 
-[![](multitasking-images/about01.png "The Slide Over panel")](multitasking-images/about01.png#lightbox)
+[![滑過面板](multitasking-images/about01.png)](multitasking-images/about01.png#lightbox)
 
 要記住的重點是，使用者決定哪兩個應用程式會並存執行，而開發人員也無法控制這個流程。 因此，您必須執行幾項工作，以確保您的 Xamarin iOS 應用程式在滑動面板上正確執行：
 
@@ -79,7 +79,7 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 在支援的 iPad 硬體上（僅限 ipad Air 2、iPad 迷你4和 iPad Pro），使用者可以挑選第二個應用程式，並在分割螢幕模式下與目前執行中的應用程式並存執行。 使用者可以藉由拖曳螢幕上的分隔線，控制每個應用程式所佔用主畫面的百分比。
 
-[![](multitasking-images/about02.png "The Split View")](multitasking-images/about02.png#lightbox)
+[![分割視圖](multitasking-images/about02.png)](multitasking-images/about02.png#lightbox)
 
 如同滑過，使用者會決定要並存執行的兩個應用程式，而開發人員無法控制此進程。 因此，分割視圖會將類似的需求放在 Xamarin iOS 應用程式上：
 
@@ -94,7 +94,7 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 [圖片] 功能中的新圖片（也稱為_PIP_）可讓使用者在小型的浮動視窗中觀看影片，使用者可以在畫面上的任何位置上放置其他執行中的應用程式。
 
-[![](multitasking-images/about03.png "An example Picture in Picture floating window")](multitasking-images/about03.png#lightbox)
+[![圖片浮動視窗中的範例圖片](multitasking-images/about03.png)](multitasking-images/about03.png#lightbox)
 
 如同 [滑過] 和 [分割視圖]，使用者可以完全控制圖片模式中的影片。 如果您應用程式的主要功能是觀看影片，則需要進行一些修改，才能在 PIP 模式中正確運作。 否則，不需要任何變更即可支援 PIP。
 
@@ -118,7 +118,7 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 在 iOS 9 之前，您可以針對特定裝置螢幕大小和方向來設計您的應用程式。 因為應用程式現在可以在 [滑出] 面板或 [分割視圖] 模式中執行，所以不論裝置的實體方向或螢幕大小為何，它都可以在 iPad 上的精簡或一般水準大小類別中尋找其本身。
 
-[![](multitasking-images/sizeclasses01.png "Screen Size and Orientation Considerations")](multitasking-images/sizeclasses01.png#lightbox)
+[![螢幕大小和方向考慮](multitasking-images/sizeclasses01.png)](multitasking-images/sizeclasses01.png#lightbox)
 
 在 iPad 上，全螢幕應用程式具有一般的水準和垂直大小類別。 所有 Iphone，但是 iPhone 6 加上 iPhone 6s Plus，都有各種方向的精簡型類別。 在橫向模式中的 iPhone 6 Plus 和 iPhone 6s Plus 具有一般的水準大小類別和精簡的垂直大小類別（非常類似 iPad 迷你）。
 
@@ -126,17 +126,17 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 | **旋轉** | **主要應用程式** | **次要應用程式** |
 |--- |--- |--- |
-| **縱向** |75% 的畫面<br />水準壓縮<br />一般垂直|25% 的畫面<br />水準壓縮<br />一般垂直|
+| **直向** |75% 的畫面<br />水準壓縮<br />一般垂直|25% 的畫面<br />水準壓縮<br />一般垂直|
 | **橫向** |75% 的畫面<br />一般水準<br />一般垂直|25% 的畫面<br />水準壓縮<br />一般垂直|
 | **橫向** |50% 的畫面<br />水準壓縮<br />一般垂直|50% 的畫面<br />水準壓縮<br />一般垂直|
 
 在範例[MuliTask](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)應用程式中，如果在 [橫向] 模式的 iPad 上以全螢幕方式執行，則會同時顯示清單和詳細資料檢視：
 
-[![](multitasking-images/sizeclasses03.png "The list and the detail view presented at the same time")](multitasking-images/sizeclasses03.png#lightbox)
+[![同時顯示的清單和詳細資料檢視](multitasking-images/sizeclasses03.png)](multitasking-images/sizeclasses03.png#lightbox)
 
 如果在滑動面板上執行相同的應用程式，則會將它配置為精簡的水準大小類別，而且只會顯示清單：
 
-[![](multitasking-images/sizeclasses04.png "Only the list presented when the device is horizontal")](multitasking-images/sizeclasses04.png#lightbox)
+[![只有當裝置為水準時所顯示的清單](multitasking-images/sizeclasses04.png)](multitasking-images/sizeclasses04.png#lightbox)
 
 為了確保您的應用程式在這些情況下的行為正確，您應該採用特性集合以及大小類別，並符合 `IUIContentContainer` 和 `IUITraitEnvironment` 介面。 如需詳細資訊，請參閱 Apple 的[UITraitCollection 類別參考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202)和我們的整合分鏡腳本指南[簡介](~/ios/user-interface/storyboards/unified-storyboards.md)。
 
@@ -154,11 +154,11 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 **命令**索引標籤會顯示應用程式切換器，讓使用者可以從鍵盤快速切換應用程式，就像 Mac OS：
 
-[![](multitasking-images/keyboard01.png "The app switcher")](multitasking-images/keyboard01.png#lightbox)
+[![應用程式切換器](multitasking-images/keyboard01.png)](multitasking-images/keyboard01.png#lightbox)
 
 如果 iOS 9 應用程式包含鍵盤快速鍵，則使用者可以按住**命令**、**選項**或**控制**鍵，在快顯視窗中顯示它們：
 
-[![](multitasking-images/keyboard02.png "The keyboard shortcuts popup")](multitasking-images/keyboard02.png#lightbox)
+[![鍵盤快速鍵快顯視窗](multitasking-images/keyboard02.png)](multitasking-images/keyboard02.png#lightbox)
 
 #### <a name="defining-custom-keyboard-shortcuts"></a>定義自訂鍵盤快速鍵
 
@@ -194,7 +194,7 @@ public void NewEntry() {
 
 如果我們在已連接硬體鍵盤的 iPad 上執行此應用程式，且使用者輸入**Command-N**，則會將新的專案新增至清單。 如果使用者按住**命令**鍵，將會顯示快捷方式清單：
 
-[![](multitasking-images/keyboard03.png "The keyboard shortcuts popup")](multitasking-images/keyboard03.png#lightbox)
+[![鍵盤快速鍵快顯視窗](multitasking-images/keyboard03.png)](multitasking-images/keyboard03.png#lightbox)
 
 如需範例的執行方式，請參閱範例工作[應用程式](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)。
 
@@ -228,7 +228,7 @@ public void NewEntry() {
 
 若要讓您的 Xamarin iOS 應用程式選擇不要在 [滑出面板] 或 [分割視圖] 模式中執行，請編輯專案的**plist**檔案，然後勾選 [**需要全螢幕**]：
 
-[![](multitasking-images/fullscreen01.png "Opting Out of Multitasking")](multitasking-images/fullscreen01.png#lightbox)
+[![退出多工作業](multitasking-images/fullscreen01.png)](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
 > 雖然選擇不執行多工作業可防止您的應用程式在 [滑出] 或 [分割] 視圖中執行，但它不會防止另一個應用程式在投影片中執行，也不會使圖片影片中的圖片與應用程式一起顯示。

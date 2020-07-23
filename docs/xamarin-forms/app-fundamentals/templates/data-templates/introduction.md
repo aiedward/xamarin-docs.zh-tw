@@ -10,18 +10,18 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f71e0a67b823d92a17158a076707f606f6a4c73f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3558352c9f43b8e301492077806bbb611e9b58cf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136106"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929307"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms資料範本簡介
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
-_Xamarin：表單資料範本提供了在支援的控制項上定義資料呈現方式的能力。本文提供資料範本的簡介，檢查為何需要它們。_
+_Xamarin.Forms資料範本提供了在支援的控制項上定義資料呈現方式的能力。本文提供資料範本的簡介，檢查為何需要它們。_
 
 請考慮 [`ListView`](xref:Xamarin.Forms.ListView) 會顯示物件集合的 `Person` 。 下列程式碼範例顯示 `Person` 類別的定義：
 
@@ -93,7 +93,7 @@ public WithoutDataTemplatePageCS()
 
 會 [`ListView`](xref:Xamarin.Forms.ListView) 在 `ToString` 顯示集合中的物件時呼叫。 由於沒有 `Person.ToString` 覆寫，因此 `ToString` 會傳回每個物件的類型名稱，如下列螢幕擷取畫面所示：
 
-![](introduction-images/no-data-template.png "ListView without a Data Template")
+![沒有資料範本的 ListView](introduction-images/no-data-template.png)
 
 `Person` 物件可以覆寫 `ToString` 方法來顯示有意義的資料，如下列程式碼範例所示：
 
@@ -110,7 +110,7 @@ public class Person
 
 這會導致在 [`ListView`](xref:Xamarin.Forms.ListView) `Person.Name` 集合中顯示每個物件的屬性值，如下列螢幕擷取畫面所示：
 
-![](introduction-images/override-tostring.png "ListView with a Data Template")
+![具有資料範本的 ListView](introduction-images/override-tostring.png)
 
 `Person.ToString` 覆寫可能會傳回由 `Name`、`Age` 和 `Location` 屬性組成的格式化字串。 不過，此方法只會提供對每個資料項目外觀有限的控制。 為了提供更大的彈性， [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 可以建立，以定義資料的外觀。
 

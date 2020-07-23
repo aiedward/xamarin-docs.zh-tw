@@ -6,14 +6,14 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: f496a831c226e377f62e2a6fab8ed328bf1be0b9
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: dab6d1ff573f0f74b3b230732aa4669ba9fda0d5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571063"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934858"
 ---
-# <a name="localization"></a>Localization
+# <a name="localization"></a>當地語系化
 
 本指南介紹*國際化*和*當地語系化*背後的概念，並提供如何使用這些概念來產生 Xamarin 行動應用程式之指示的連結。
 
@@ -59,7 +59,7 @@ ms.locfileid: "84571063"
 
 比較 iOS 主畫面上的幾個專案的字串長度（英文、德文和日文）：
 
-[![](localization-images/language-compare-sml.png "German vs Japanese string length")](localization-images/language-compare.png#lightbox)
+[![德文與日文字串長度](localization-images/language-compare-sml.png)](localization-images/language-compare.png#lightbox)
 
 請注意，英文（8個字元）的**設定**需要13個字元的德文翻譯，但日文只能有2個字元。
 

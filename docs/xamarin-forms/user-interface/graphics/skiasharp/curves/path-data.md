@@ -10,22 +10,22 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 680c924280f8f3a6080b2fcc1968ecaf308f33a0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2571375e7ad28acbf367870b5c48e19d3a7525e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138056"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931244"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp 中的 SVG 路徑資料
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用可調整向量圖形格式的文字字串來定義路徑_
 
 [`SKPath`](xref:SkiaSharp.SKPath)類別支援以可擴充向量圖形（SVG）規格所建立的格式，從文字字串定義整個路徑物件。 您稍後會在本文中看到如何在文字字串中表示整個路徑，例如：
 
-![](path-data-images/pathdatasample.png "A sample path defined with SVG path data")
+![以 SVG 路徑資料定義的範例路徑](path-data-images/pathdatasample.png)
 
 SVG 是以 XML 為基礎的 web 程式設計語言，適用于網頁。 因為 SVG 必須允許在標記中定義路徑，而不是一系列的函式呼叫，所以 SVG 標準包含非常簡潔的方法，可將整個圖形路徑指定為文字字串。
 
@@ -222,7 +222,7 @@ public class PathDataHelloPage : ContentPage
 
 路徑會填滿畫布，在橫向模式中觀看時看起來更合理：
 
-[![](path-data-images/pathdatahello-small.png "Triple screenshot of the Path Data Hello page")](path-data-images/pathdatahello-large.png#lightbox "Triple screenshot of the Path Data Hello page")
+[![路徑資料 Hello 頁面的三向螢幕擷取畫面](path-data-images/pathdatahello-small.png)](path-data-images/pathdatahello-large.png#lightbox "路徑資料 Hello 頁面的三向螢幕擷取畫面")
 
 [**路徑資料 Cat** ] 頁面類似。 Path 和 paint 物件都定義為類別中的欄位 [`PathDataCatPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) ：
 
@@ -293,7 +293,7 @@ public class PathDataCatPage : ContentPage
 
 以下是程式執行情況：
 
-[![](path-data-images/pathdatacat-small.png "Triple screenshot of the Path Data Cat page")](path-data-images/pathdatacat-large.png#lightbox "Triple screenshot of the Path Data Cat page")
+[![[路徑資料 Cat] 頁面的三重螢幕擷取畫面](path-data-images/pathdatacat-small.png)](path-data-images/pathdatacat-large.png#lightbox "[路徑資料 Cat] 頁面的三重螢幕擷取畫面")
 
 一般來說，將 `SKPath` 物件定義為欄位時，必須在此函式或其他方法中定義路徑的輪廓。 不過，使用 SVG 路徑資料時，您已看到路徑可以完全在欄位定義中指定。
 
@@ -430,7 +430,7 @@ public class PrettyAnalogClockPage : ContentPage
 
 不過，第二個東西是特別的。 由於時鐘會每隔16毫秒更新一次，因此 `Millisecond` 值的屬性 `DateTime` 可能會用來以動畫顯示清除的第二個手勢，而不是在第二個和第二個的離散跳躍中移動的。 但此程式碼不允許移動順暢。 相反地，它會使用 Xamarin.Forms [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn) 和 [`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut) 動畫緩動函式來進行不同類型的移動。 這些緩動函式會導致第二個手以 jerkier 的方式移動，然後再進行 &mdash; 移動，然後稍微過度轉移其目的地，這種效果在下列靜態螢幕擷取畫面中很難重現：
 
-[![](path-data-images/prettyanalogclock-small.png "Triple screenshot of the Pretty Analog Clock page")](path-data-images/prettyanalogclock-large.png#lightbox "Triple screenshot of the Pretty Analog Clock page")
+[![相當於類比時鐘頁面的三重螢幕擷取畫面](path-data-images/prettyanalogclock-small.png)](path-data-images/prettyanalogclock-large.png#lightbox "相當於類比時鐘頁面的三重螢幕擷取畫面")
 
 ## <a name="related-links"></a>相關連結
 

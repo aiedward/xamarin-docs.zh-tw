@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/03/2017
-ms.openlocfilehash: 139b58fd1953924d5a848fc79c3a1706afb760b0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e3ef2a667996f3fc38008521c2804cc644cfb328
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565631"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928601"
 ---
 # <a name="watchos-complications-in-xamarin"></a>Xamarin 中的 watchOS 複雜性
 
@@ -24,7 +24,7 @@ _watchOS 可讓開發人員針對監看臉部撰寫自訂的複雜功能_
 
 一開始請先閱讀[Apple 的](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)檔，以判斷您的應用程式是否適用于複雜的情況。 有 5 `CLKComplicationFamily` 種顯示類型可供選擇：
 
-[![](complications-images/all-complications-sml.png "The 5 CLKComplicationFamily types available: Circular Small, Modular Small, Modular Large, Utilitarian Small, Utilitarian Large")](complications-images/all-complications.png#lightbox)
+[![可用的5種 CLKComplicationFamily 類型：圓形小型、模組化小型、模組化大型、強調實際 Small、強調實際大型](complications-images/all-complications-sml.png)](complications-images/all-complications.png#lightbox)
 
 應用程式只能執行一種樣式，或全部都是五，視所顯示的資料而定。
 您也可以支援時間旅遊，在使用者輪流 Digital Crown 時，提供過去和/或未來時間的值。
@@ -41,7 +41,7 @@ _watchOS 可讓開發人員針對監看臉部撰寫自訂的複雜功能_
 
 [**新增專案 ...** ] wizard 包含一個核取方塊，會自動建立複雜的控制器類別，並設定**plist**檔案：
 
-![](complications-images/file-new-project-sml.png "The Include Complication checkbox")
+![[包含複雜的] 核取方塊](complications-images/file-new-project-sml.png)
 
 ### <a name="existing-projects"></a>現有的專案
 
@@ -83,7 +83,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 Watch 延伸模組的**plist**檔案應該指定的名稱 `CLKComplicationDataSource` 以及您想要支援的複雜系列：
 
-[![](complications-images/complications-config-sml.png "The complication family types")](complications-images/complications-config.png#lightbox)
+[![複雜的系列類型](complications-images/complications-config-sml.png)](complications-images/complications-config.png#lightbox)
 
 [**資料來源類別**] 專案清單會顯示類別名稱，其中 `CLKComplicationDataSource` 包含您的複雜邏輯的子類別化。
 

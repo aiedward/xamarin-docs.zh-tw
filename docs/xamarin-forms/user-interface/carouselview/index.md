@@ -10,16 +10,16 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 891f1ff8ad8f254ff3a2805d08d0f7e115bb0fff
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 40b918adff523fa446e69c064029311c54d01290
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137367"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935040"
 ---
 # <a name="xamarinforms-carouselview"></a>Xamarin.FormsCarouselView
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
 ## <a name="introduction"></a>[簡介](introduction.md)
 
@@ -29,7 +29,7 @@ ms.locfileid: "84137367"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)會藉由將資料的屬性設定 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) 為任何可執行檔集合，來填入資料 `IEnumerable` 。 將屬性設定為，即可定義每個專案的外觀 [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。
 
-## <a name="layout"></a>[配置](layout.md)
+## <a name="layout"></a>[版面配置](layout.md)
 
 根據預設， [`CarouselView`](xref:Xamarin.Forms.CarouselView) 會在水準清單中顯示其專案。 不過，它也可以存取與 CollectionView 相同的版面配置，包括垂直方向。
 

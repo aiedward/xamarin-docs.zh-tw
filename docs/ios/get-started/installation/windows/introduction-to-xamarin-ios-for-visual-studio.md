@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: ae32588d75ec3152a1b8b8558d40abbe2e76d1b4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2650bda7115cd132e87bf669914320f63214e295
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022480"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933220"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 簡介
 
@@ -53,7 +53,7 @@ Xamarin iOS for Visual Studio 會在標準工具列和新的 iOS 工具列中新
 
 以紅色圈起的是與 Xamarin iOS 開發相關的控制項：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "The controls relevant to Xamarin iOS development are circled in red")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "The controls relevant to Xamarin iOS development are circled in red")
+[![與 Xamarin iOS 開發相關的控制項以紅色圈起來](introduction-to-xamarin-ios-for-visual-studio-images/03.png)](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "與 Xamarin iOS 開發相關的控制項以紅色圈起來")
 
 - **開始** - 開始在選取的平台上進行應用程式偵錯或執行。 必須要有已連線的 Mac (請參閱 iOS 工具列中的狀態指標)。
 - **方案組態** – 可讓您選取要使用的組態 (例如 [偵錯]、[發行])。
@@ -63,7 +63,7 @@ Xamarin iOS for Visual Studio 會在標準工具列和新的 iOS 工具列中新
 
 Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來都相似。 這些全部顯示如下：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS Toolbar")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
+[![iOS 工具列](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png)](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 以下說明每個項目：
 
@@ -79,31 +79,31 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 下面的螢幕擷取畫面顯示可用的輸出視窗，這些可能會依據您的專案類型而有所不同：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "The available output windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
+[![可用的輸出視窗](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
 
 - **Xamarin** – 這包含僅與 Xamarin 相關的資訊，例如與 Mac 的連線和啟用狀態。
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Information relating solely to Xamarin, such as the connection to the Mac and activation status")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![僅與 Xamarin 相關的資訊，例如與 Mac 的連線和啟用狀態](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Xamarin 診斷** – 這會顯示 Xamarin 專案的更多相關詳細資訊，例如與 Android 的互動。
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Detailed information about the Xamarin project")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![Xamarin 專案的詳細資訊](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 其他預設的 Visual Studio [輸出] 窗格 (例如 [偵錯] 和 [建置]) 在 [輸出] 檢視內仍有提供，可用於「偵錯輸出」和「MSBuild 輸出」：
 
 - **偵錯**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Debugging Output")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
+  [![調試輸出](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
-- **產生** & **順序**
+- **組建**  & **組建順序**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild Output")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
+  [![MSBuild 輸出](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 ## <a name="ios-project-properties"></a>iOS 專案屬性
 
 若要存取 Visual Studio 的「專案屬性」，請在專案名稱上按一下滑鼠右鍵，然後選取操作功能表中的 [屬性]**。 這將可讓您設定 iOS 應用程式，如以下螢幕擷取畫面所示：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Configuring an iOS application")
+![設定 iOS 應用程式](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png)
 
 - iOS 套件組合簽署** – 連線到 Mac 以填入程式碼簽署身分識別和佈建設定檔：
 
@@ -133,11 +133,11 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 若要開始建立或編輯您的「分鏡腳本」，請按兩下 `Main.storyboard` 以在「iOS 設計工具」中開啟它：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "The Main.storyboard in the iOS Designer")
+![iOS 設計工具中的 Main.storyboard](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png)
 
 若要將物件新增到您的檢視中，請使用 [工具箱]**** 窗格將項目拖放到您的「設計介面」上。 您可以選取 [檢視] > [工具箱]**** 來新增 [工具箱] (如果尚未新增)。 您可以使用 [屬性]**** 窗格來修改物件屬性、調整其版面配置，以及建立事件，如下所示：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "The Properties pane")
+![[屬性] 窗格](introduction-to-xamarin-ios-for-visual-studio-images/properties.png)
 
  如需有關使用 iOS 設計工具的詳細資訊，請參閱[設計工具](~/ios/user-interface/designer/index.md)指南。
 
@@ -163,7 +163,7 @@ Visual Studio 的新 [裝置記錄檔] 工具視窗可允許顯示 Android 和 i
 
 您可以在應用程式中的任何一點設定中斷點，以向偵錯工具發出訊號來暫時停止程式執行。 若要在您的 Visual Studio 中設定中斷點，請按一下您想要中斷之程式碼行號旁邊的編輯器邊界區域：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/image18.png "Setting a debug point")
+![設定偵錯點](introduction-to-xamarin-ios-for-visual-studio-images/image18.png)
 
 開始偵錯，然後使用模擬器或裝置將應用程式巡覽至中斷點。 達到中斷點時，將會醒目提示程式碼行並啟用 Visual Studio 的一般偵錯行為：您可以逐步執行、不進入或跳離程式碼、檢查區域變數，或是使用「即時運算視窗」。
 
@@ -181,7 +181,7 @@ Visual Studio 的新 [裝置記錄檔] 工具視窗可允許顯示 Android 和 i
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.iOS 安裝](~/ios/get-started/installation/windows/index.md)
-- [裝置設定](~/ios/get-started/installation/device-provisioning/index.md)
+- [Xamarin iOS 安裝](~/ios/get-started/installation/windows/index.md)
+- [裝置布建](~/ios/get-started/installation/device-provisioning/index.md)
 - [以程式碼建立 iOS UI](~/ios/app-fundamentals/ios-code-only.md)
 - [使用 XMA 將 Mac 連線到 Visual Studio 環境 (影片)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)

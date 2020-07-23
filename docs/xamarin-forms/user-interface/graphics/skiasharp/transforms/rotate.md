@@ -10,22 +10,22 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 520c4c3b61049bf17c2c964523714db196da6839
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 533cb607cc2c47bf108d5e03733f31ebfc2fe475
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132180"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934130"
 ---
 # <a name="the-rotate-transform"></a>旋轉轉換
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索 SkiaSharp 旋轉轉換的可能效果和動畫_
 
 有了旋轉轉換，SkiaSharp 繪圖物件就不會有與水準和垂直軸對齊的條件約束：
 
-![](rotate-images/rotateexample.png "Text rotated around a center")
+![圍繞中央旋轉的文字](rotate-images/rotateexample.png)
 
 針對圍繞點（0，0）的繪圖物件旋轉，SkiaSharp 同時支援 [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) 方法和 [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) 方法：
 
@@ -63,7 +63,7 @@ using (SKPaint textPaint = new SKPaint
 
 由於旋轉是以畫布左上角為中心，因此，針對此程式中設定的大部分角度，文字會從螢幕旋轉：
 
-[![](rotate-images/basicrotate-small.png "Triple screenshot of the Basic Rotate page")](rotate-images/basicrotate-large.png#lightbox "Triple screenshot of the Basic Rotate page")
+[![基本旋轉頁面的三重螢幕擷取畫面](rotate-images/basicrotate-small.png)](rotate-images/basicrotate-large.png#lightbox "基本旋轉頁面的三重螢幕擷取畫面")
 
 通常，您會想要使用這些版本的和方法，在指定的資料透視點周圍旋轉某個專案 [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single)) [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single)) ：
 
@@ -91,7 +91,7 @@ using (SKPaint textPaint = new SKPaint
 
 現在文字會繞著用來放置文字的點旋轉，這是文字基線的水準中心：
 
-[![](rotate-images/centeredrotate-small.png "Triple screenshot of the Centered Rotate page")](rotate-images/centeredrotate-large.png#lightbox "Triple screenshot of the Centered Rotate page")
+[![中央旋轉頁面的三重螢幕擷取畫面](rotate-images/centeredrotate-small.png)](rotate-images/centeredrotate-large.png#lightbox "中央旋轉頁面的三重螢幕擷取畫面")
 
 如同方法的中央版本 `Scale` ，呼叫的中央版本 `RotateDegrees` 是快捷方式。 方法如下：
 
@@ -145,7 +145,7 @@ canvas.DrawText(Title, 0, 0, textPaint);
 
 通常有數種方式可以結合旋轉和轉譯。 [**旋轉的文字**] 頁面會建立下列顯示：
 
-[![](rotate-images/rotatedtext-small.png "Triple screenshot of the Rotated Text page")](rotate-images/rotatedtext-large.png#lightbox "Triple screenshot of the Rotated Text page")
+[![旋轉文字頁面的三重螢幕擷取畫面](rotate-images/rotatedtext-small.png)](rotate-images/rotatedtext-large.png#lightbox "旋轉文字頁面的三重螢幕擷取畫面")
 
 以下是 `PaintSurface` 類別的處理常式 [`RotatedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) ：
 
@@ -369,7 +369,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 雖然實際操作相當粗糙，但時鐘仍可正常運作：
 
-[![](rotate-images/uglyanalogclock-small.png "Triple screenshot of the Ugly Analog Clock Text page")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
+[![不美觀類比時鐘文字頁面的三向螢幕擷取畫面](rotate-images/uglyanalogclock-small.png)](rotate-images/uglyanalogclock-large.png#lightbox "不美觀類比頁面的三重螢幕擷取畫面")
 
 如需更具吸引力的時鐘，請參閱[**SkiaSharp 中的 SVG 路徑資料**](../curves/path-data.md)一文。
 

@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 06a3197cfcd3b49538cfa5fa97e40a9f50c7a244
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 164c059b60c1b5b2aadb2cb348c6b5407da63928
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84655096"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934702"
 ---
 # <a name="introduction-to-web-services"></a>Web 服務簡介
 
@@ -190,7 +190,7 @@ RESTful web 服務通常會使用 JSON 訊息將資料傳回給用戶端。 JSON
 
 <a name="Using_System.JSON"></a>
 
-### <a name="systemjson"></a>System. JSON
+### <a name="systemjson"></a>System.JS于
 
 Xamarin 平臺隨附了現成的 JSON 支援。 藉由使用 `JsonObject` ，可以抓取結果，如下列程式碼範例所示：
 
@@ -293,7 +293,7 @@ Web 服務 URL 可以是可透過路徑前置詞存取的託管遠端來源或�
 file:///Users/myUserName/projects/MyProjectName/service.wsdl
 ```
 
-[![](images/add-webreference-dialog.png "The web service URL can either be a hosted remote source or local file system resource accessible via the file path prefix")](images/add-webreference-dialog.png#lightbox)
+[![Web 服務 URL 可以是可透過檔案路徑前置詞存取的託管遠端來源或本機檔案系統資源](images/add-webreference-dialog.png)](images/add-webreference-dialog.png#lightbox)
 
 這會在專案的 [Web] 或 [服務參考] 資料夾中產生 proxy。 由於 proxy 是產生的程式碼，因此不應該修改。
 
@@ -301,7 +301,7 @@ file:///Users/myUserName/projects/MyProjectName/service.wsdl
 
 #### <a name="manually-adding-a-proxy-to-a-project"></a>手動將 Proxy 新增至專案
 
-如果您有使用相容工具產生的現有 proxy，則當您的專案包含時，可以使用此輸出。 在 Visual Studio for Mac 中，使用 [**新增檔案 ...** ] 用來新增 proxy 的功能表選項。 此外，這需要使用 [**加入參考 ...** ] 明確參考*system.web* 。 對話方塊中，新增使用者帳戶。
+如果您有使用相容工具產生的現有 proxy，則當您的專案包含時，可以使用此輸出。 在 Visual Studio for Mac 中，使用 [**新增檔案 ...** ] 用來新增 proxy 的功能表選項。 此外，這需要使用 [**加入參考**] 明確參考*System.Web.Services.dll* .。。 對話方塊中，新增使用者帳戶。
 
 ### <a name="consuming-the-proxy"></a>使用 Proxy
 
@@ -352,7 +352,7 @@ ASP.NET Web 服務（.ASMX）和 WCF 之間有差異，但請務必瞭解 WCF �
 
 必須產生*proxy*才能使用 WCF 服務，這可讓應用程式連接到服務。 Proxy 是藉由使用定義方法和相關聯服務設定的服務中繼資料所構成。 此中繼資料是以 web 服務所產生的 Web 服務描述語言（WSDL）檔的形式公開。 您可以使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 來建立 proxy，將 Web 服務的服務參考新增至 .NET Standard 程式庫。
 
-使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 來建立 proxy 的替代方法是使用 [System.servicemodel 中繼資料公用程式] 工具（svcutil .exe）。 如需詳細資訊，請參閱[System.servicemodel 中繼資料公用程式工具（Svcutil .exe）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)。
+使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 來建立 proxy 的替代方法是使用 [System.servicemodel 中繼資料公用程式] 工具（svcutil.exe）。 如需詳細資訊，請參閱[System.servicemodel 中繼資料公用程式工具（Svcutil.exe）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)。
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security"></a>
 
@@ -443,5 +443,5 @@ client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ## <a name="related-links"></a>相關連結
 
 - [Xamarin 中的 Web 服務](~/xamarin-forms/data-cloud/index.yml)
-- [System.servicemodel 中繼資料公用程式工具（svcutil .exe）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [System.servicemodel 中繼資料公用程式工具（svcutil.exe）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
 - [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

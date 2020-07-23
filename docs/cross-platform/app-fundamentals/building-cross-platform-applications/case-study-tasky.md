@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 71d5ed3512980086d244acc5a604d7b33a5dd77c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 87ba471dad102059788695f3fe50633bc1a3de0c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571346"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930178"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平臺應用程式案例研究： Tasky
 
@@ -25,7 +25,7 @@ ms.locfileid: "84571346"
 
  <a name="Requirements"></a>
 
-### <a name="requirements"></a>規格需求
+### <a name="requirements"></a>需求
 
 設計應用程式的第一個步驟是識別所需的功能。 這些可以是高階目標或詳細的使用案例。 Tasky 具有直接的功能性需求：
 
@@ -42,7 +42,7 @@ ms.locfileid: "84571346"
 從可在目標平臺上執行的高階設計開始。 請小心注意平臺特定的 UI 條件約束。 例如， `TabBarController` iOS 中的可以顯示五個以上的按鈕，而 Windows Phone 對等的則最多可以顯示四個。
 使用您選擇的工具（紙張工作）繪製螢幕流程。
 
- [![](case-study-tasky-images/taskydesign.png "Draw the screen-flow using the tool of your choice paper works")](case-study-tasky-images/taskydesign.png#lightbox)
+ [![使用您選擇的工具繪製螢幕流程工作](case-study-tasky-images/taskydesign.png)](case-study-tasky-images/taskydesign.png#lightbox)
 
  <a name="Data_Model"></a>
 
@@ -79,7 +79,7 @@ Tasky 需要為每個 ' TaskItem ' 儲存三個屬性：
 - **通用程式碼**–包含可重複使用的程式碼以儲存工作資料的通用專案;公開模型類別和 API，以管理資料的儲存和載入。
 - **平臺**專屬的程式碼–平臺特定的專案，為每個作業系統執行原生 UI，並利用通用程式碼做為「後端」。
 
-[![](case-study-tasky-images/taskypro-architecture.png "Platform-specific projects implement a native UI for each operating system, utilizing the common code as the back end")](case-study-tasky-images/taskypro-architecture.png#lightbox)
+[![平臺特定專案會針對每個作業系統執行原生 UI，並利用通用程式碼做為後端](case-study-tasky-images/taskypro-architecture.png)](case-study-tasky-images/taskypro-architecture.png#lightbox)
 
 下列各節將說明這兩個部分。
 
@@ -93,11 +93,11 @@ Tasky 可攜性會使用可移植的類別庫策略來共用通用程式碼。 �
 
 完整的 PCL 專案如下所示。 便攜媒體櫃中的所有程式碼都與每個目標平臺相容。 部署時，每個原生應用程式都會參考該程式庫。
 
-![](case-study-tasky-images/portable-project.png "When deployed, each native app will reference that library")
+![部署時，每個原生應用程式都會參考該程式庫](case-study-tasky-images/portable-project.png)
 
 下列類別圖顯示依圖層分組的類別。 `SQLiteConnection`類別是 SQLITE 網路套件中的重複程式碼。 其餘的類別是 Tasky 的自訂程式碼。 `TaskItemManager`和 `TaskItem` 類別代表對平臺特定應用程式公開的 API。
 
- [![](case-study-tasky-images/classdiagram-core.png "The TaskItemManager and TaskItem classes represent the API that is exposed to the platform-specific applications")](case-study-tasky-images/classdiagram-core.png#lightbox)
+ [![TaskItemManager 和 TaskItem 類別代表對平臺特定應用程式公開的 API。](case-study-tasky-images/classdiagram-core.png)](case-study-tasky-images/classdiagram-core.png#lightbox)
 
 使用命名空間來分隔圖層有助於管理每個圖層之間的參考。 平臺特定專案應該只需要包含 `using` 適用于商務層的語句。 資料存取層和資料層應封裝 `TaskItemManager` 在商務層中公開的 API。
 
@@ -255,11 +255,11 @@ path> /Documents/TaskDB.db3" （適用于 Android），或僅針對 Windows Phon
 
 使用一般 PCL 專案來儲存和抓取資料時，只需要少數幾個類別就可以執行 iOS Tasky 應用程式。 完整的 iOS Xamarin. iOS 專案如下所示：
 
- ![](case-study-tasky-images/taskyios-solution.png "iOS project is shown here")
+ ![iOS 專案顯示在這裡](case-study-tasky-images/taskyios-solution.png)
 
 此圖表中會顯示類別，並分組為圖層。
 
- [![](case-study-tasky-images/classdiagram-android.png "The classes are shown in this diagram, grouped into layers")](case-study-tasky-images/classdiagram-android.png#lightbox)
+ [![此圖表中會顯示類別，並分組為圖層](case-study-tasky-images/classdiagram-android.png)](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References"></a>
 
@@ -270,7 +270,7 @@ IOS 應用程式參考平臺特定的 SDK 程式庫–例如 [Xamarin] 和 [Mono
 它也必須參考 `TaskyPortableLibrary` PCL 專案。
 [參考] 清單如下所示：
 
- ![](case-study-tasky-images/taskyios-references.png "The references list is shown here")
+ ![參考清單如下所示](case-study-tasky-images/taskyios-references.png)
 
 應用層和使用者介面層會在此專案中使用這些參考來執行。
 
@@ -328,7 +328,7 @@ public class TaskDialog {
 
 [首頁] 畫面是一個 `MonoTouch.Dialog` 畫面，其中顯示 SQLite 資料庫中的工作清單。 它繼承自 `DialogViewController` 並執行程式碼，以將設定 `Root` 為包含要 `TaskItem` 顯示之物件的集合。
 
- [![](case-study-tasky-images/ios-taskylist.png "It inherits from DialogViewController and implements code to set the Root to contain a collection of TaskItem objects for display")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![它繼承自 DialogViewController 並執行程式碼，以將根設定為包含要顯示的 TaskItem 物件集合](case-study-tasky-images/ios-taskylist.png)](case-study-tasky-images/ios-taskylist.png#lightbox)
 
 與工作清單顯示和互動的兩個主要方法如下：
 
@@ -345,7 +345,7 @@ Tasky `MonoTouch.Dialog` 會使用的反映 API 來顯示畫面，因此不會�
 
 這個螢幕擷取畫面顯示一個空白畫面，示範在 `Entry` [**名稱**] 和 [**附注**] 欄位中設定浮水印文字的屬性：
 
- [![](case-study-tasky-images/ios-taskydetail.png "This screenshot shows an empty screen that demonstrates the Entry attribute setting the watermark text in the Name and Notes fields")](case-study-tasky-images/ios-taskydetail.png#lightbox)
+ [![這個螢幕擷取畫面顯示一個空白畫面，其中示範專案屬性設定 [名稱] 和 [附注] 欄位中的浮水印文字](case-study-tasky-images/ios-taskydetail.png)](case-study-tasky-images/ios-taskydetail.png#lightbox)
 
 [工作**詳細資料**] 畫面的功能（例如儲存或刪除工作）必須在類別中執行 `HomeScreen` ，因為這是建立的位置 `MonoTouch.Dialog.BindingContext` 。 下列 `HomeScreen` 方法支援 [工作詳細資料] 畫面：
 
@@ -359,11 +359,11 @@ Tasky `MonoTouch.Dialog` 會使用的反映 API 來顯示畫面，因此不會�
 
 完整的 Xamarin. Android 專案如下圖所示：
 
- ![](case-study-tasky-images/taskyandroid-solution.png "Android project is pictured here")
+ ![Android 專案的說明如下所示](case-study-tasky-images/taskyandroid-solution.png)
 
 類別圖，其中的類別依圖層分組：
 
- [![](case-study-tasky-images/classdiagram-android.png "The class diagram, with classes grouped by layer")](case-study-tasky-images/classdiagram-android.png#lightbox)
+ [![類別圖，其中的類別依圖層分組](case-study-tasky-images/classdiagram-android.png)](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References"></a>
 
@@ -373,7 +373,7 @@ Android 應用程式專案必須參考平臺特定的 Xamarin. Android 元件，
 
 它也必須參考 PCL 專案（例如 TaskyPortableLibrary）存取通用資料和商務層程式碼。
 
- ![](case-study-tasky-images/taskyandroid-references.png "TaskyPortableLibrary to access the common data and business layer code")
+ ![存取通用資料和商務層程式碼的 TaskyPortableLibrary](case-study-tasky-images/taskyandroid-references.png)
 
  <a name="Application_Layer_(AL)"></a>
 
@@ -399,7 +399,7 @@ Android 應用程式的使用者介面層是程式碼和 XML 標記的組合。
 
 [首頁] 畫面包含一個活動子類別 `HomeScreen` ，以及一個 `HomeScreen.axml` 定義版面配置（按鈕和工作清單的位置）的檔案。 畫面看起來像這樣：
 
- [![](case-study-tasky-images/android-taskylist.png "The screen looks like this")](case-study-tasky-images/android-taskylist.png#lightbox)
+ [![畫面看起來像這樣](case-study-tasky-images/android-taskylist.png)](case-study-tasky-images/android-taskylist.png#lightbox)
 
 主畫面程式碼會定義按一下按鈕並按一下清單中的專案，以及在方法中填入清單 `OnResume` （以便反映在 [工作詳細資料] 畫面中所做的變更）的處理常式。 資料是使用商務層 `TaskItemManager` 和應用層的來載入 `TaskListAdapter` 。
 
@@ -409,7 +409,7 @@ Android 應用程式的使用者介面層是程式碼和 XML 標記的組合。
 
 [工作詳細資料] 畫面也包含子 `Activity` 類別和 AXML 配置檔案。 版面配置會決定輸入控制項的位置，而 c # 類別則會定義載入和儲存物件的行為 `TaskItem` 。
 
- [![](case-study-tasky-images/android-taskydetail.png "The class defines the behavior to load and save TaskItem objects")](case-study-tasky-images/android-taskydetail.png#lightbox)
+ [![類別會定義載入和儲存 TaskItem 物件的行為](case-study-tasky-images/android-taskydetail.png)](case-study-tasky-images/android-taskydetail.png#lightbox)
 
 PCL 程式庫的所有參考都是透過 `TaskItemManager` 類別。
 
@@ -418,11 +418,11 @@ PCL 程式庫的所有參考都是透過 `TaskItemManager` 類別。
 ## <a name="windows-phone-app"></a>Windows Phone 應用程式
 完整的 Windows Phone 專案：
 
- ![](case-study-tasky-images/taskywp7-solution.png "Windows Phone App The complete Windows Phone project")
+ ![Windows Phone 應用程式完成完整的 Windows Phone 專案](case-study-tasky-images/taskywp7-solution.png)
 
 下圖顯示分組為圖層的類別：
 
- [![](case-study-tasky-images/classdiagram-wp7.png "This diagram presents the classes grouped into layers")](case-study-tasky-images/classdiagram-wp7.png#lightbox)
+ [![此圖顯示分組為圖層的類別](case-study-tasky-images/classdiagram-wp7.png)](case-study-tasky-images/classdiagram-wp7.png#lightbox)
 
  <a name="References"></a>
 
@@ -432,7 +432,7 @@ PCL 程式庫的所有參考都是透過 `TaskItemManager` 類別。
 
 它也必須參考 PCL 專案（例如 `TaskyPortableLibrary`）以利用 `TaskItem` 類別和資料庫。
 
- ![](case-study-tasky-images/taskywp7-references.png "TaskyPortableLibrary to utilize the TaskItem class and database")
+ ![要利用 TaskItem 類別和資料庫的 TaskyPortableLibrary](case-study-tasky-images/taskywp7-references.png)
 
  <a name="Application_Layer_(AL)"></a>
 
@@ -479,7 +479,7 @@ MainPage 類別會使用， `TaskListViewModel` 以使用 XAML 的資料系結�
 
 應用程式會使用 iOS 標準使用者介面設計，例如定位在導覽列中的 [新增] 按鈕，並使用內建的**加號（+）** 圖示。 它也會使用預設的 [ `UINavigationController` 返回] 按鈕行為，並支援資料表中的「滑動到刪除」。
 
- [![](case-study-tasky-images/ios-taskylist.png "它也會使用預設的 UINavigationController 上一頁按鈕行為，並支援資料表中的「刪除滑動」")](case-study-tasky-images/ios-taskylist.png#lightbox) [![](case-study-tasky-images/ios-taskylist.png "它也會使用預設的 UINavigationController 上一頁按鈕行為，並支援資料表中的「刪除滑動」")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [ ![ 它也會使用預設的 [UINavigationController 上一頁] 按鈕行為，並支援資料表中](case-study-tasky-images/ios-taskylist.png)](case-study-tasky-images/ios-taskylist.png#lightbox)的 [刪除] 功能， [ ![ 它也會使用預設的 [UINavigationController 上一頁] 按鈕行為，並支援資料表中](case-study-tasky-images/ios-taskylist.png)](case-study-tasky-images/ios-taskylist.png#lightbox)的 [刪除]。
 
  <a name="Android"></a>
 
@@ -487,7 +487,7 @@ MainPage 類別會使用， `TaskListViewModel` 以使用 XAML 的資料系結�
 
 Android 應用程式會使用內建控制項，包括需要顯示「滴答」的資料列內建版面配置。 除了螢幕上的 [上一頁] 按鈕，也支援硬體/系統返回行為。
 
- [![](case-study-tasky-images/android-taskylist.png "The hardware/system back behavior is supported in addition to an on-screen back button")](case-study-tasky-images/android-taskylist.png#lightbox)[![](case-study-tasky-images/android-taskylist.png "The hardware/system back behavior is supported in addition to an on-screen back button")](case-study-tasky-images/android-taskylist.png#lightbox)
+ [ ![ 除了螢幕上的上一頁按鈕以外，還支援硬體/系統返回](case-study-tasky-images/android-taskylist.png)](case-study-tasky-images/android-taskylist.png#lightbox)行為[ ![ ，除了螢幕上的 [上一頁] 按鈕以外，還支援硬體/系統返回行為](case-study-tasky-images/android-taskylist.png)](case-study-tasky-images/android-taskylist.png#lightbox)
 
  <a name="Windows_Phone"></a>
 
@@ -495,7 +495,7 @@ Android 應用程式會使用內建控制項，包括需要顯示「滴答」的
 
 Windows Phone 應用程式會使用標準版面配置，在畫面底部填入應用程式行，而不是頂端的導覽列。
 
- [![](case-study-tasky-images/wp-taskylist.png "Windows Phone 應用程式會使用標準版面配置，在畫面底部填入應用程式行，而不是頂端的導覽列。")](case-study-tasky-images/wp-taskylist.png#lightbox) [![](case-study-tasky-images/wp-taskylist.png "Windows Phone 應用程式會使用標準版面配置，在畫面底部填入應用程式行，而不是頂端的導覽列。")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ [ ![ Windows Phone 應用程式會使用標準版面配置，在畫面底部填入應用程式行，而不是](case-study-tasky-images/wp-taskylist.png)](case-study-tasky-images/wp-taskylist.png#lightbox)在 Windows Phone 應用程式頂端的導覽列[ ![ 中使用標準版面配置，在畫面底部填入應用程式行，而不](case-study-tasky-images/wp-taskylist.png)](case-study-tasky-images/wp-taskylist.png#lightbox)是在頂端顯示流覽列
 
  <a name="Summary"></a>
 

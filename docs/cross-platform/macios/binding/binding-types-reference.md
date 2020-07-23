@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: da6bf97bfc5769647c63b55c289293e63f50e5cb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8549e993bf46ffd3b24ad8ec495791eb25b25023
+ms.sourcegitcommit: bd49f28105218f04e978e58143bba8cdec9fd4a9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570995"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925980"
 ---
 # <a name="binding-types-reference-guide"></a>系結類型參考指南
 
@@ -30,7 +30,7 @@ interface MyType : [Protocol1, Protocol2] {
 }
 ```
 
-合約定義中的每個介面，具有宣告 [`[BaseType]`](#BaseTypeAttribute) 所產生物件之基底類型的屬性。 在上述宣告中， `MyType` 會產生類別 c # 型別，以系結至名為的目標-C 型別 `MyType` 。
+合約定義中具有屬性的每個介面都會宣告 [`[BaseType]`](#BaseTypeAttribute) 所產生之物件的基底類型。 在上述宣告中， `MyType` 會產生類別 c # 型別，以系結至名為的目標-C 型別 `MyType` 。
 
 如果您使用介面繼承語法指定 typename （在上述範例中為）後面的任何類型，則 `Protocol1` `Protocol2` 這些介面的內容將會內嵌，就好像它們已經是的合約的一部分一樣 `MyType` 。
 Xamarin iOS 介面類別型採用通訊協定的方式，是將通訊協定中宣告的所有方法和屬性內嵌到類型本身。
@@ -356,7 +356,7 @@ public partial class CBAdvertisement  {
 它們的差異在於，執行時間只會向目標-C 註冊實際已覆寫的方法。
 否則，將不會註冊方法。
 
-這通常表示當您將已使用標記的類別子類別化時 `ModelAttribute` ，不應該呼叫基底方法。   呼叫該方法將會擲回例外狀況，您應該針對您所覆寫的任何方法，在子類別上執行整個行為。
+這通常表示當您將已使用標記的類別子類別化時 `ModelAttribute` ，不應該呼叫基底方法。   呼叫該方法將會擲回下列例外狀況： Foundation. You_Should_Not_Call_base_In_This_Method。 您應該針對您覆寫的任何方法，在子類別上執行整個行為。
 
 <a name="AbstractAttribute"></a>
 

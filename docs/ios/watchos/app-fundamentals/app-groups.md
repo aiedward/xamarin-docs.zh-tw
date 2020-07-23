@@ -7,12 +7,12 @@ ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: e117fce77e9cdc8d9e9dc8b9ed7b3aa22eca4e39
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ee3897f14c460149e840fcea8b3fb533beeab935
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001706"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931621"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>在 Xamarin 中使用 watchOS 應用程式群組
 
@@ -28,15 +28,15 @@ ms.locfileid: "73001706"
 
 ### <a name="provisioning"></a>佈建
 
-應用程式群組會有識別碼，這通常是 `group.` 前置詞的套件組合識別碼。 例如，我們可以使用配套識別碼 `com.xamarin.WatchSettings` 和應用程式群組 `group.com.xamarin.WatchSettings`。
+應用程式群組會有識別碼，這通常是具有前置詞的套件組合識別碼 `group.` 。 例如，我們可以使用配套識別碼 `com.xamarin.WatchSettings` 和應用程式群組 `group.com.xamarin.WatchSettings` 。
 
-[![](app-groups-images/app-group-sml.png "Use the Bundle ID com.xamarin.WatchSettings and the app group   group.com.xamarin.WatchSettings")](app-groups-images/app-group.png#lightbox)
+[![使用 [套件組合識別碼] WatchSettings 和應用程式群組 WatchSettings。](app-groups-images/app-group-sml.png)](app-groups-images/app-group.png#lightbox)
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
 除了設定布建設定檔，請在 [ **plist** ] 中**啟用應用程式群組**，並輸入您所選擇的識別碼：
 
-[![](app-groups-images/entitlements-sml.png "Configure the plist and enter the ID")](app-groups-images/entitlements.png#lightbox)
+[![設定 plist 並輸入識別碼](app-groups-images/entitlements-sml.png)](app-groups-images/entitlements.png#lightbox)
 
 ### <a name="deployment"></a>部署
 

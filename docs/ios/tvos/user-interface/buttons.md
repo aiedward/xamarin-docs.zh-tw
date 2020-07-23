@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/07/2017
-ms.openlocfilehash: 63aa344ec94730ebe448aba090e2d91af9da64b5
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0de41379800d3f8fcb26e2bc58497010b8e3bf95
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574037"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931374"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>使用 Xamarin 中的 tvOS 按鈕
 
 使用類別的實例， `UIButton` 在 tvOS 視窗中建立可設定焦點的可選取按鈕。 當使用者選取按鈕時，它會將動作訊息傳送至目標物件，讓您的 tvOS 應用程式回應使用者的輸入。
 
-[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
+[![範例按鈕](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 如需有關使用焦點並使用 Siri 遠端流覽的詳細資訊，請參閱我們[使用導覽和焦點](~/ios/tvos/app-fundamentals/navigation-focus.md)和[Siri 遠端和藍牙控制器](~/ios/tvos/platform/remote-bluetooth.md)檔。
 
@@ -28,7 +28,7 @@ ms.locfileid: "84574037"
 
 在 tvOS 中，按鈕會用於應用程式特定的動作，而且可能包含標題、圖示或兩者。 當使用者使用[Siri 遠端](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)導覽應用程式的使用者介面時，焦點會轉移至指定的按鈕，使其變更文字和背景色彩。 陰影也會套用至加入3D 效果的按鈕，使其外觀高於使用者介面的其餘部分。
 
-[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
+[![範例按鈕](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 Apple 具有下列使用按鈕的建議：
 
@@ -66,19 +66,19 @@ Apple 建議您針對按鈕圖示使用簡單、可高度辨識的影像。 過�
 1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從連結**庫**拖曳**按鈕**，並將它放在視圖上： 
 
-    [![](buttons-images/storyboard01.png "A button")](buttons-images/storyboard01.png#lightbox)
+    [![A 按鍵](buttons-images/storyboard01.png)](buttons-images/storyboard01.png#lightbox)
 1. 在 [**屬性] 瀏覽器**中，您可以調整按鈕的數個屬性，例如其**標題**和**文字色彩**： 
 
-    [![](buttons-images/storyboard02.png "Button properties")](buttons-images/storyboard02.png#lightbox)
+    [![按鈕屬性](buttons-images/storyboard02.png)](buttons-images/storyboard02.png#lightbox)
 1. 接下來，切換至 [**事件]** 索引標籤，然後從**按鈕**連接**事件**並呼叫它 `ButtonPressed` ： 
 
-    [![](buttons-images/storyboard03.png "The Events Tab")](buttons-images/storyboard03.png#lightbox)
+    [![[事件] 索引標籤](buttons-images/storyboard03.png)](buttons-images/storyboard03.png#lightbox)
 1. 您將會自動切換至 [ `ViewController.cs` 觀看]，讓您可以使用**向上**和**向下**鍵，在程式碼中放置新動作： 
 
-    [![](buttons-images/storyboard04.png "Placing a new Action in code")](buttons-images/storyboard04.png#lightbox)
+    [![在程式碼中放置新動作](buttons-images/storyboard04.png)](buttons-images/storyboard04.png#lightbox)
 1. 按下**enter**鍵以選取位置： 
 
-    [![](buttons-images/storyboard05.png "The code editor")](buttons-images/storyboard05.png#lightbox)
+    [![程式碼編輯器](buttons-images/storyboard05.png)](buttons-images/storyboard05.png#lightbox)
 1. 將變更儲存至所有檔案。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -86,13 +86,13 @@ Apple 建議您針對按鈕圖示使用簡單、可高度辨識的影像。 過�
 1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從連結**庫**拖曳**按鈕**，並將它放在視圖上： 
 
-    [![](buttons-images/storyboard01vs.png "A button")](buttons-images/storyboard01vs.png#lightbox)
+    [![A 按鍵](buttons-images/storyboard01vs.png)](buttons-images/storyboard01vs.png#lightbox)
 1. 在 [**屬性] 瀏覽器**中，您可以調整按鈕的數個屬性，例如其**標題**和**文字色彩**： 
 
-    [![](buttons-images/storyboard02vs.png "The Properties Explorer")](buttons-images/storyboard02vs.png#lightbox)
+    [![屬性瀏覽器](buttons-images/storyboard02vs.png)](buttons-images/storyboard02vs.png#lightbox)
 1. 接下來，切換至 [**事件]** 索引標籤，然後從**按鈕**連接**事件**並呼叫它 `ButtonPressed` ： 
 
-    [![](buttons-images/storyboard03vs.png "The Events Tab")](buttons-images/storyboard03vs.png#lightbox)
+    [![[事件] 索引標籤](buttons-images/storyboard03vs.png)](buttons-images/storyboard03vs.png#lightbox)
 1. 將變更儲存至所有檔案。
 
 編輯您的 View Controller （範例 `ViewController.cs` ）檔案，並新增下列程式碼來處理所選取的按鈕：

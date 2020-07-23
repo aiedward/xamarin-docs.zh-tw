@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 74d6dfb2b6a722e5af4dc97cdf23b84aa4bd95d0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ddd46da0787f853e949d08c45dff5be17b9451fd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565040"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932752"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin 中的核心動畫
 
@@ -70,7 +70,7 @@ PresentViewController (vc2, true, null);
 
 下列螢幕擷取畫面顯示案例的轉換樣子 `PartialCurl` ：
 
- ![](core-animation-images/06-view-transitions.png "This screenshot shows the PartialCurl transition")
+ ![此螢幕擷取畫面顯示 PartialCurl 轉換](core-animation-images/06-view-transitions.png)
 
 ### <a name="view-transitions"></a>視圖轉換
 
@@ -92,7 +92,7 @@ UIView.Transition (
 
 下列螢幕擷取畫面顯示使用時，影像視圖之間的動畫轉換 `TransitionFlipFromTop` ：
 
- ![](core-animation-images/07-animated-transition.png "This screenshot shows the animated transition between the image views when TransitionFlipFromTop is used")
+ ![當使用 TransitionFlipFromTop 時，此螢幕擷取畫面顯示影像視圖之間的動畫轉換](core-animation-images/07-animated-transition.png)
 
 ### <a name="view-property-animations"></a>View 屬性動畫
 
@@ -100,7 +100,7 @@ UIKit 支援在類別上免費製作各種屬性的動畫 `UIView` ，包括：
 
 - Frame
 - Bounds
-- 中心
+- Center
 - Alpha
 - 轉換
 - 色彩
@@ -125,17 +125,17 @@ UIView.Animate (
 
 這會導致影像在畫面頂端來回動畫，如下所示：
 
- ![](core-animation-images/08-animate-center.png "An image animating back and forth across the top of the screen as the output")
+ ![影像在畫面頂端來回動畫作為輸出](core-animation-images/08-animate-center.png)
 
 如同 `Transition` 方法， `Animate` 允許設定持續時間，以及緩時函數。 這個範例也使用了 `UIViewAnimationOptions.Autoreverse` 選項，這會導致動畫以動畫顯示從值回到初始的動畫。 不過，此程式碼也會 `Center` 在完成處理常式中將設回其初始值。 當動畫在一段時間內插入屬性值時，屬性的實際模型值一律是已設定的最終值。 在此範例中，值是接近 superview 頂端右邊的點。 若未將設定 `Center` 為初始點（也就是動畫因設定而完成的位置）， `Autoreverse` 影像會在動畫完成後貼回右側，如下所示：
 
- ![](core-animation-images/09-animation-complete.png "Without setting the Center to the initial point, the image would snap back to the right side after the animation completes")
+ ![若不將置中設為初始點，影像會在動畫完成後貼回右側](core-animation-images/09-animation-complete.png)
 
 ## <a name="using-core-animation"></a>使用核心動畫
 
  `UIView`動畫允許很多的功能，而且應該在可能的情況下使用，因為這是容易執行的工作。 如先前所述，UIView 動畫會使用核心動畫架構。 不過，有些東西無法透過動畫來完成 `UIView` ，例如動畫無法以視圖動畫顯示的其他屬性，或是沿著非線性路徑進行插上。 在您需要更精細控制的情況下，也可以直接使用核心動畫。
 
-### <a name="layers"></a>層次
+### <a name="layers"></a>圖層
 
 使用核心動畫時，動畫會透過類型為的*圖層*進行 `CALayer` 。 圖層在概念上類似于「圖層」（layer）階層，與「視圖」階層很類似。 實際上，圖層會並排顯示，而此視圖會新增使用者互動的支援。 您可以透過視圖的屬性存取任何視圖的圖層 `Layer` 。 事實上，在的方法中使用的內容 `Draw` `UIView` 實際上是從圖層建立的。 就內部而言，支援的層級 `UIView` 會將其委派設定為 view 本身，也就是所呼叫的內容 `Draw` 。 因此，當繪製到時 `UIView` ，您實際上是繪製到其圖層。
 
@@ -184,11 +184,11 @@ public override void ViewDidAppear (bool animated)
 
 下圖顯示位置和錨點：
 
- ![](core-animation-images/10-postion-anchorpt.png "This figure shows the position and anchor point")
+ ![此圖顯示位置和錨點](core-animation-images/10-postion-anchorpt.png)
 
 執行此範例時，和會 `Position` `BorderWidth` `BorderColor` 以動畫顯示，如下列螢幕擷取畫面所示：
 
- ![](core-animation-images/11-implicit-animation.png "When the example is run, the Position, BorderWidth and BorderColor animate as shown")
+ ![執行此範例時，會顯示位置、BorderWidth 和顏色邊框的動畫，如下所示](core-animation-images/11-implicit-animation.png)
 
 ### <a name="explicit-animations"></a>明確動畫
 
@@ -229,7 +229,7 @@ public override void ViewDidAppear (bool animated)
 
 下列螢幕擷取畫面顯示包含影像的圖層，並透過指定的路徑製作動畫：
 
- ![](core-animation-images/12-explicit-animation.png "This screenshot shows the layer containing the image animating through the specified path")
+ ![此螢幕擷取畫面顯示包含影像的圖層，並透過指定的路徑製作動畫](core-animation-images/12-explicit-animation.png)
 
 ## <a name="summary"></a>總結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: bb1ef1e948c796e6b0d91230be3c82c5a8c7d366
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: dea08895b59626da97c1ca3d97464cfc80f42b88
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304832"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928701"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Xamarin.iOS 的裝置佈建
 
@@ -20,7 +20,7 @@ ms.locfileid: "79304832"
 
 下圖中醒目提示的區段說明 iOS 佈建所需的設定步驟：
 
-[![](images/provisioningdiagram.png "The highlighted sections in this image show the steps required to get set up for iOS provisioning")](images/provisioningdiagram.png#lightbox)
+[![此圖中反白顯示的區段會顯示設定 iOS 布建所需的步驟](images/provisioningdiagram.png)](images/provisioningdiagram.png#lightbox)
 
 在這之後，下一步就是散發應用程式。 如需有關部署的詳細資訊，請參閱[應用程式散發](~/ios/deploy-test/app-distribution/index.md)指南。
 
@@ -62,6 +62,6 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 ## <a name="related-links"></a>相關連結
 
 - [免費佈建](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
-- [套用分轉](~/ios/deploy-test/app-distribution/index.md)
+- [應用程式散發](~/ios/deploy-test/app-distribution/index.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
 - [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

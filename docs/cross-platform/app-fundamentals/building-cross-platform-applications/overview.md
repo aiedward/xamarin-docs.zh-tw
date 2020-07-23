@@ -6,12 +6,12 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: de8c66e6a89f035b8370a2139361d3e942aa9c09
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6924379f49a80733714a488851533f506e83b245
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571203"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930828"
 ---
 # <a name="building-cross-platform-applications-overview"></a>建立跨平臺應用程式總覽
 
@@ -53,7 +53,7 @@ Xamarin 不只是「寫入一次，隨處執行」平臺，因為其中一個優
 
 藉由將您的應用程式架構分層，然後將平臺中立的核心功能移至可重複使用的核心程式庫，將責任分離的原則納入考慮，您可以將跨平臺的程式碼共用最大化，如下圖所示：
 
- ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
+ ![藉由將您的應用程式架構分層，然後將平臺中立的核心功能移至可重複使用的核心程式庫，將責任分離的原則納入考慮，您可以將跨平臺的程式碼共用最大化](overview-images/layers2.png)
 
  <a name="Case_Studies"></a>
 

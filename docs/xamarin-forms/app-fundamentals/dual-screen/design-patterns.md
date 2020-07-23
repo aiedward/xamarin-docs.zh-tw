@@ -10,18 +10,18 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 277fb67eeea465239d9340e755240288286d2359
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 79c0f41e8ed0bffce0154ee618729316aab5e8e2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138784"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935274"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms雙畫面設計模式
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 本指南介紹我們針對雙螢幕裝置所建議的設計模式，其中包含程式碼和範例，可協助您建立介面來提供吸引人且實用的使用者體驗。
 
@@ -29,7 +29,7 @@ ms.locfileid: "84138784"
 
 延伸畫布模式會將兩個螢幕視為一個大型畫布，以便顯示地圖、影像、試算表，或其他利用延伸來取用最大空間的類似內容：
 
-![](design-patterns-images/extended-canvas-sample.png "Extended canvas sample")
+![延伸畫布模式](design-patterns-images/extended-canvas-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -59,7 +59,7 @@ ms.locfileid: "84138784"
 
 主要檢視與詳細檢視模式是指主要檢視 (通常是顯示在左側的清單) 提供內容，讓使用者從中選取項目，以在右側檢視其詳細資料：
 
-![](design-patterns-images/master-detail-sample.png "Master detail sample")
+![主要檢視與詳細檢視範例](design-patterns-images/master-detail-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -85,7 +85,7 @@ ms.locfileid: "84138784"
 
 雙頁模式適用於適合雙頁版面配置的內容，例如文件閱讀程式、筆記或畫板：
 
-![](design-patterns-images/two-page-sample.png "Two page sample")
+![雙頁範例](design-patterns-images/two-page-sample.png)
 
 ```xaml
 <Grid x:Name="layout">
@@ -126,7 +126,7 @@ ms.locfileid: "84138784"
 
 雙檢視模式看起來可能就像是「雙頁」檢視，但不同之處在於內容和使用者案例。 在此模式中，您會並排比較內容，可能是為了編輯文件或相片、比較不同的餐廳菜單，或區分程式碼檔案的合併衝突：
 
-![](design-patterns-images/dual-view-sample.png "Dual view sample")
+![雙檢視範例](design-patterns-images/dual-view-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -164,7 +164,7 @@ ms.locfileid: "84138784"
 
 附屬模式示範如何使用第二個螢幕來提供與主要檢視相關的第二層內容，例如繪圖應用程式、遊戲或媒體編輯：
 
-![](design-patterns-images/companion-pane-sample.png "Companion pane sample")
+![附屬窗格範例](design-patterns-images/companion-pane-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"

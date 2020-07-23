@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms導致
+title: Xamarin.Forms 觸發程序
 description: 本文說明如何使用觸發程式 Xamarin.Forms ，以 XAML 回應使用者介面變更。 觸發程序可讓您用 XAML 以宣告方式表達動作，根據事件或屬性變更改變控制項的外觀。
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
@@ -10,14 +10,14 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a287ff28ab62fcfcc00c88858cf3595ba2fa5118
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 2a71f48fb9911267188e7aa4b4124cd9b7488d31
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853145"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936470"
 ---
-# <a name="xamarinforms-triggers"></a>Xamarin.Forms導致
+# <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
@@ -257,7 +257,7 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 這些螢幕擷取畫面顯示上述兩個多重觸發程序範例之間的差異。 在畫面頂端的文字輸入，只需要有一個 `Entry` 即可啟用 [儲存]**** 按鈕。
 在畫面底部，[登入]**** 按鈕保持非使用中，直到兩個欄位都包含資料為止。
 
-![](triggers-images/multi-requireall.png "MultiTrigger Examples")
+![MultiTrigger 範例](triggers-images/multi-requireall.png)
 
 ## <a name="enteractions-and-exitactions"></a>EnterActions 和 ExitActions
 

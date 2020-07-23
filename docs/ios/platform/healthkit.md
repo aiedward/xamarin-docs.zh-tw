@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8090cb3c694083be4ef12294799d6aadf26b6038
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0c733789883c9752d63824d0bca7356a88d05659
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569123"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929658"
 ---
 # <a name="healthkit-in-xamarinios"></a>在 Xamarin 中 HealthKit
 
@@ -30,9 +30,9 @@ ms.locfileid: "84569123"
 
 在本文中，我們將建立範例應用程式來記錄使用者的核心速度：
 
-[![](healthkit-images/image01.png "A sample application to record the users heart rate")](healthkit-images/image01.png#lightbox)
+[![記錄使用者核心速率的範例應用程式](healthkit-images/image01.png)](healthkit-images/image01.png#lightbox)
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
 需要下列專案，才能完成本文中顯示的步驟：
 
@@ -66,21 +66,21 @@ ms.locfileid: "84569123"
 
 若要建立明確的**應用程式識別碼**，請按一下 **+** 右上角的按鈕，將您帶到 [**註冊 iOS 應用程式識別碼**] 頁面：
 
-[![](healthkit-images/image02.png "Registering an app on the Apple Developer Portal")](healthkit-images/image02.png#lightbox)
+[![在 Apple 開發人員入口網站上註冊應用程式](healthkit-images/image02.png)](healthkit-images/image02.png#lightbox)
 
 如上圖所示，在建立應用程式描述之後，請使用 [**明確應用程式識別碼**] 區段來建立應用程式的識別碼。 在 [**應用程式服務**] 區段中，勾選 [**啟用服務**] 區段中的 [**健康情況套件**]。
 
 當您完成時，請按 [**繼續**] 按鈕，在您的帳戶中註冊**應用程式識別碼**。 您將會回到 [憑證] **、[識別碼] 和 [設定檔**] 頁面。 按一下 [布建**設定檔**]，將您帶到目前的布建配置檔案清單中，然後按一下 **+** 右上角的按鈕，以帶您前往 [**新增 IOS 布建設定檔**] 頁面。 選取 [ **IOS 應用程式開發**] 選項，然後按一下 [**繼續**] 以進入 [**選取應用程式識別碼**] 頁面。 在這裡，選取您先前指定的明確**應用程式識別碼**：
 
-[![](healthkit-images/image03.png "Select the explicit App ID")](healthkit-images/image03.png#lightbox)
+[![選取明確的應用程式識別碼](healthkit-images/image03.png)](healthkit-images/image03.png#lightbox)
 
 按一下 [**繼續**] 並流覽其餘畫面，您將在其中指定您的**開發人員憑證**、**裝置**和此布建**設定檔**的**名稱**：
 
-[![](healthkit-images/image04.png "Generating the Provisioning Profile")](healthkit-images/image04.png#lightbox)
+[![產生布建設定檔](healthkit-images/image04.png)](healthkit-images/image04.png#lightbox)
 
 按一下 [**產生**]，並等待建立您的設定檔。 下載檔案，然後按兩下以安裝在 Xcode 中。 您可以在**Xcode > 喜好設定 > 帳戶 > 視圖詳細資料**] 下確認它是否已安裝。 您應該會看到剛安裝的布建設定檔，而且其**權利**列中應該有健康情況套件和任何其他特殊服務的圖示：
 
-[![](healthkit-images/image05.png "Viewing the profile in Xcode")](healthkit-images/image05.png#lightbox)
+[![在 Xcode 中查看設定檔](healthkit-images/image05.png)](healthkit-images/image05.png#lightbox)
 
 <a name="associating-appid"></a>
 
@@ -90,11 +90,11 @@ ms.locfileid: "84569123"
 
 請改為開啟附加至本文的範例應用程式（其中包含預先建立的腳本和程式碼），而不是手動建立 Xamarin iOS 8 專案的過程。 若要將範例應用程式與已啟用健康情況套件的布建**設定檔**產生關聯，請在 [ **Solution Pad**中，以滑鼠右鍵按一下您的專案，並顯示其 [**選項**] 對話方塊。 切換至 [ **IOS 應用程式**] 面板，並輸入您先前建立的應用程式套件組合**識別碼**的明確**應用程式**識別碼：
 
-[![](healthkit-images/image06.png "Enter the explicit App ID")](healthkit-images/image06.png#lightbox)
+[![輸入明確的應用程式識別碼](healthkit-images/image06.png)](healthkit-images/image06.png#lightbox)
 
 現在，切換至 [IOS 套件組合**簽署**] 面板。 您最近安裝的布建**設定檔**及其與明確**應用程式識別碼**的關聯，現在將可作為布建**設定檔**：
 
-[![](healthkit-images/image07.png "Select the Provisioning Profile")](healthkit-images/image07.png#lightbox)
+[![選取布建設定檔](healthkit-images/image07.png)](healthkit-images/image07.png#lightbox)
 
 如果無法使用布建**設定檔**，請在 [ **ios 應用程式**] 面板中，再次檢查與**ios 開發人員中心**所指定的配套**識別碼**，並安裝布建**設定檔**（**Xcode > 喜好設定 > 帳戶 > View Details**）。
 
@@ -141,11 +141,11 @@ ms.locfileid: "84569123"
 
 健康情況套件資料存放區中的 [類型] 可存放是的子類別 `HKObjectType` 。 `HKCharacteristicType`物件會儲存生物的性別、血壓類型和出生日期。 不過，更常見的是 `HKSampleType` 物件，代表在特定時間或一段時間內取樣的資料。 
 
-[![](healthkit-images/image08.png "HKSampleType objects chart")](healthkit-images/image08.png#lightbox)
+[![HKSampleType 物件圖表](healthkit-images/image08.png)](healthkit-images/image08.png#lightbox)
 
 `HKSampleType`是抽象的，而且有四個具體的子類別。 目前只有一種 `HKCategoryType` 資料類型，也就是睡眠分析。 健康情況套件中的大部分資料都屬於類型， `HKQuantityType` 並會將其資料儲存在 `HKQuantitySample` 物件中，而這些物件是使用熟悉的工廠設計模式所建立：
 
-[![](healthkit-images/image09.png "The large majority of data in Health Kit are of type HKQuantityType and store their data in HKQuantitySample objects")](healthkit-images/image09.png#lightbox)
+[![健康情況套件中的大部分資料都屬於 HKQuantityType 類型，並將其資料儲存在 HKQuantitySample 物件中](healthkit-images/image09.png)](healthkit-images/image09.png#lightbox)
 
 `HKQuantityType`類型的範圍從 `HKQuantityTypeIdentifier.ActiveEnergyBurned` 到 `HKQuantityTypeIdentifier.StepCount` 。 
 
@@ -155,11 +155,11 @@ ms.locfileid: "84569123"
 
 終端使用者必須採取正面步驟，才能讓應用程式讀取或寫入健康情況套件資料。 這是透過預先安裝在 iOS 8 裝置上的健全狀況應用程式來完成。 第一次執行健康情況套件應用程式時，使用者會看到系統控制的**健全狀況存取**對話方塊：
 
-[![](healthkit-images/image10.png "The user is presented with a system-controlled Health Access dialog")](healthkit-images/image10.png#lightbox)
+[![使用者會看到 [系統控制的健全狀況存取] 對話方塊](healthkit-images/image10.png)](healthkit-images/image10.png#lightbox)
 
 之後，使用者可以使用健全狀況應用程式的 [**來源**] 對話方塊來變更許可權：
 
-[![](healthkit-images/image11.png "The user can change permissions using Health apps Sources dialog")](healthkit-images/image11.png#lightbox)
+[![使用者可以使用 [健全狀況應用程式來源] 對話方塊變更許可權](healthkit-images/image11.png)](healthkit-images/image11.png#lightbox)
 
 由於健全狀況資訊非常敏感，因此應用程式開發人員應該會依舊撰寫, 撰寫其程式，並預期在應用程式執行時將會拒絕和變更許可權。 最常見的用法是在方法中要求許可權 `UIApplicationDelegate.OnActivated` ，然後適當地修改使用者介面。
 
@@ -404,11 +404,11 @@ IOS 模擬器不支援健康情況套件。 必須在執行 iOS 8 的實體裝�
 
 假設布建已正確設定，您的應用程式就會啟動。 當它到達其 `OnActivated` 方法時，它會要求健康情況套件授權。 第一次在作業系統遇到這種情況時，您的使用者將會看到下列對話方塊：
 
-[![](healthkit-images/image12.png "The user will be presented with this dialog")](healthkit-images/image12.png#lightbox)
+[![使用者將會看到此對話方塊](healthkit-images/image12.png)](healthkit-images/image12.png#lightbox)
 
 讓您的應用程式可以更新核心速率資料，您的應用程式將會重新出現。 `ReactToHealthCarePermissions`回呼會以非同步方式啟動。 這會導致 `HeartRateModel’s` `Enabled` 屬性變更，這會引發 `EnabledChanged` 事件，這會導致 `HKPermissionsViewController.OnEnabledChanged()` 事件處理常式執行，以啟用 `StoreData` 按鈕。 下圖顯示順序：
 
-[![](healthkit-images/image13.png "This diagram shows the sequence of events")](healthkit-images/image13.png#lightbox)
+[![此圖表顯示事件的順序](healthkit-images/image13.png)](healthkit-images/image13.png#lightbox)
 
 按下 [**錄製**] 按鈕。 這會導致 `StoreData_TouchUpInside()` 處理常式執行，這將會嘗試剖析 `heartRate` 文字欄位的值、透過先前討論的函式轉換成，並將 `HKQuantity` `HeartRateModel.HeartRateInBeatsPerMinute()` 該數量傳遞給 `HeartRateModel.StoreHeartRate()` 。 如先前所述，這會嘗試儲存資料，並將引發 `HeartRateStored` 或 `ErrorMessageChanged` 事件。
 

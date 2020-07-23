@@ -10,16 +10,16 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2abc255964df35fbdfeb4191911c57df9be99fd9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 20bf6d3d8c802c1d4919cd16885d3939cb0102aa
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128007"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930620"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>IOS 上的強制回應頁面呈現樣式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 這個 iOS 平臺特定是用來設定強制回應頁面的呈現樣式，此外還可以用來顯示具有透明背景的模式頁面。 它會在 XAML 中使用，方法是將可系結 `Page.ModalPresentationStyle` 屬性設定為 `UIModalPresentationStyle` 列舉值：
 
@@ -60,7 +60,7 @@ public class iOSModalFormSheetPageCS : ContentPage
 
 結果是可以設定上的強制回應呈現樣式 [`Page`](xref:Xamarin.Forms.Page) ：
 
-[![](page-presentation-style-images/modal-presentation-style-small.png "Modal Presentation Styles")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modal Presentation Styles")
+[![強制回應呈現樣式](page-presentation-style-images/modal-presentation-style-small.png)](page-presentation-style-images/modal-presentation-style-large.png#lightbox "強制回應呈現樣式")
 
 > [!NOTE]
 > 使用此平臺特定設定強制回應呈現樣式的頁面，必須使用強制回應導覽。 如需詳細資訊，請參閱強制回應[ Xamarin.Forms 頁面](~/xamarin-forms/app-fundamentals/navigation/modal.md)。

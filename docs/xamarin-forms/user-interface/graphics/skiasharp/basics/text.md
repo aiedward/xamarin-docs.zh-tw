@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a98c7210f2e71f6f26d53da3555f3f9b5e016952
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137679"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935976"
 ---
 # <a name="integrating-text-and-graphics"></a>整合文字與圖形
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解如何判斷呈現的文字字串大小，以整合文字與 SkiaSharp 圖形_
 
 本文示範如何測量文字、將文字調整為特定大小，以及將文字與其他圖形整合：
 
-![](text-images/textandgraphicsexample.png "Text surrounded by rectangles")
+![以矩形括住的文字](text-images/textandgraphicsexample.png)
 
 該影像也包含一個圓角矩形。 SkiaSharp `Canvas` 類別包含 [`DrawRect`](xref:SkiaSharp.SKCanvas.DrawRect*) 繪製矩形和方法的方法， [`DrawRoundRect`](xref:SkiaSharp.SKCanvas.DrawRoundRect*) 以繪製具有圓角的矩形。 這些方法可讓您將矩形定義為 `SKRect` 值或其他方式。
 
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 接下來，方法的其餘部分是直接的。 它會為框線建立另一個 `SKPaint` 物件，並呼叫 `DrawRoundRect` 兩次。 第二個呼叫會使用以另一個10圖元放大的矩形。 第一個呼叫指定了20圖元的圓角半徑。 第二個具有30圖元的圓角半徑，因此它們看起來是平行的：
 
- [![](text-images/framedtext-small.png "Triple screenshot of the Framed Text page")](text-images/framedtext-large.png#lightbox "Triple screenshot of the Framed Text page")
+ [![框文字頁面的三重螢幕擷取畫面](text-images/framedtext-small.png)](text-images/framedtext-large.png#lightbox "框文字頁面的三重螢幕擷取畫面")
 
 您可以將手機或模擬器旋轉一側，以查看大小增加的文字和畫面。
 
@@ -134,7 +134,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 文字的處理方式與任何其他繪圖物件很相似。 其中一個簡單的選項是顯示文字字元的外框：
 
-[![](text-images/outlinedtext-small.png "Triple screen shot of the Outlined Text page")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
+[![外框文字頁面的三重螢幕擷取畫面](text-images/outlinedtext-small.png)](text-images/outlinedtext-large.png#lightbox "外框文字頁面的三重螢幕擷取畫面")
 
 只要將物件的 normal `Style` 屬性 `SKPaint` 從的預設設定變更 `SKPaintStyle.Fill` 為 `SKPaintStyle.Stroke` ，然後指定筆觸寬度，就可以完成這項作業。 `PaintSurface`**大綱文字**頁面的處理常式會顯示其完成方式：
 

@@ -6,40 +6,40 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: e10e9f5330de3226fb0f08051ab135ea58900fe7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b010af4794c31e3dd3ccb85a81c9c05bcb6aec55
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016869"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930802"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第1部分–瞭解 Xamarin Mobile 平臺
 
 Xamarin 平臺包含幾個專案，可讓您開發適用于 iOS 和 Android 的應用程式：
 
-- language –可讓您使用熟悉的語法和複雜的功能，例如泛型、LINQ 和平行工作程式庫。 **C#**
+- **C # 語言**–可讓您使用熟悉的語法和複雜的功能，例如泛型、LINQ 和平行工作程式庫。
 - **Mono .net framework** –提供 Microsoft .net framework 中廣泛功能的跨平臺執行。
 - **編譯器**–視平臺而定，會產生原生應用程式（例如 iOS）或整合式 .NET 應用程式和執行時間（例如 Android）。 編譯器也會針對行動部署執行許多優化，例如連結掉未使用的程式碼。
 - **IDE 工具**– Mac 和 Windows 上的 Visual Studio 可讓您建立、建立及部署 Xamarin 專案。
 
-此外，由於基礎語言是C#使用 .net framework，因此可以結構化專案來共用程式碼，也可以部署到 Windows Phone。
+此外，由於基礎語言是使用 .NET framework 的 c #，因此可以結構化專案來共用程式碼，也可以部署到 Windows Phone。
 
 ## <a name="under-the-hood"></a>幕後
 
-雖然 Xamarin 可讓您在中撰寫C#應用程式，並在多個平臺上共用相同的程式碼，但每個系統上的實際實作為非常不同。
+雖然 Xamarin 可讓您以 c # 撰寫應用程式，並在多個平臺上共用相同的程式碼，但每個系統上的實際實作為非常不同。
 
 ## <a name="compilation"></a>編譯
 
-C#來源會在每個平臺上以非常不同的方式進入原生應用程式：
+C # 來源會在每個平臺上以非常不同的方式來進入原生應用程式：
 
-- **iOS** – C#是預先編譯為 ARM 元件語言的時間（AOT）。 包含 .NET framework，並在連結期間去除未使用的類別，以減少應用程式大小。 Apple 不允許在 iOS 上產生執行時間程式碼，因此有些語言功能無法使用（請參閱「 [Xamarin IOS 限制](~/ios/internals/limitations.md)」）。
-- **Android** – C#會編譯為 IL，並使用 MonoVM + JIT'ing 進行封裝。 在連結期間，會去除架構中未使用的類別。 應用程式會與 JAVA/美工（Android 執行時間）並存執行，並透過 JNI 與原生類型互動（請參閱「 [Xamarin Android 限制](~/android/internals/limitations.md)」）。
-- **Windows** – C#會編譯為 IL 並由內建執行時間執行，而且不需要 Xamarin 工具。 依照 Xamarin 的指導方針設計 Windows 應用程式，可讓您更輕鬆地在 iOS 和 Android 上重複使用程式碼。
+- **iOS** – c # 是預先編譯為 ARM 元件語言的時間（AOT）。 包含 .NET framework，並在連結期間去除未使用的類別，以減少應用程式大小。 Apple 不允許在 iOS 上產生執行時間程式碼，因此有些語言功能無法使用（請參閱「 [Xamarin IOS 限制](~/ios/internals/limitations.md)」）。
+- **Android** – c # 會編譯為 IL，並使用 MonoVM + JIT'ing 進行封裝。 在連結期間，會去除架構中未使用的類別。 應用程式會與 JAVA/美工（Android 執行時間）並存執行，並透過 JNI 與原生類型互動（請參閱「 [Xamarin Android 限制](~/android/internals/limitations.md)」）。
+- **Windows** – c # 會編譯為 IL 並由內建執行時間執行，而且不需要 Xamarin 工具。 依照 Xamarin 的指導方針設計 Windows 應用程式，可讓您更輕鬆地在 iOS 和 Android 上重複使用程式碼。
   請注意，通用 Windows 平臺也有一個 [ **.NET Native** ] 選項，其行為類似于 [Xamarin] 的 [AOT 編譯]。
 
 適用于[xamarin](~/ios/deploy-test/linker.md)和[xamarin](~/android/deploy-test/linker.md)的連結器檔集提供此部分編譯器的詳細資訊。
 
-執行時間 ' 編譯 ' –以 `System.Reflection.Emit` 動態產生程式碼–應該避免。
+執行時間 ' 編譯 ' –以動態方式產生程式碼 `System.Reflection.Emit` –應該避免。
 
 Apple 的核心可防止在 iOS 裝置上產生動態程式碼，因此在 Xamarin 中即時發出程式碼將無法運作。 同樣地，動態語言執行時間的功能無法搭配 Xamarin 工具使用。
 
@@ -47,15 +47,15 @@ Apple 的核心可防止在 iOS 裝置上產生動態程式碼，因此在 Xamar
 
 ## <a name="platform-sdk-access"></a>平臺 SDK 存取
 
-Xamarin 讓平臺特定 SDK 所提供的功能可輕鬆地透過熟悉C#的語法來存取：
+Xamarin 利用熟悉的 c # 語法，輕鬆存取平臺專屬 SDK 所提供的功能：
 
-- **ios** – Xamarin 會將 Apple 的 CocoaTouch SDK 架構公開為可供您參考的命名C#空間。 例如，包含所有使用者介面控制項的 UIKit 架構都可以包含在簡單的 `using UIKit;` 語句中。
-- **Android** – Xamarin 會公開 Google 的 Android SDK 做為命名空間，因此您可以使用 using 語句來參考支援的 SDK 的任何部分，例如存取使用者介面控制項的 `using Android.Views;`。
+- **ios** – Xamarin 會公開 Apple 的 CocoaTouch SDK 架構，做為您可以從 c # 參考的命名空間。 例如，包含所有使用者介面控制項的 UIKit 架構都可以包含在簡單的 `using UIKit;` 語句中。
+- **Android** – Xamarin 會公開 Google 的 Android SDK 做為命名空間，因此您可以使用 using 語句（例如）來參考支援的 SDK 的任何部分， `using Android.Views;` 以存取使用者介面控制項。
 - **Windows** – windows 應用程式是使用 Visual Studio 在 windows 上建立的。 專案類型包括 Windows Forms、WPF、WinRT 和通用 Windows 平臺（UWP）。
 
 ## <a name="seamless-integration-for-developers"></a>開發人員的順暢整合
 
-Xamarin 的優點是，雖然本質上的差異，但 Xamarin. iOS 和 Xamarin （結合 Microsoft 的 Windows Sdk）提供了一種順暢的程式碼撰寫C#體驗，可以在所有三個平臺重複使用。
+Xamarin 的優點是，雖然本質上的差異，但 Xamarin. iOS 和 Xamarin （結合 Microsoft 的 Windows Sdk）提供了一個順暢的方式來撰寫 c # 程式碼，可在所有三個平臺重複使用。
 
 商務邏輯、資料庫使用量、網路存取和其他一般函式都可以撰寫一次，然後在每個平臺上重複使用，為平臺特定的使用者介面提供基礎，讓您以原生應用程式的形式來執行。
 
@@ -90,7 +90,7 @@ Xamarin 提供整合的安裝程式，可使用必要的 JAVA、Android 和 Xama
 
 ### <a name="windows"></a>Windows
 
-Windows 應用程式（WinForms、WPF 或 UWP）是以 Visual Studio 建立。 它們不會直接使用 Xamarin。 不過， C#程式碼可以在 Windows、IOS 和 Android 之間共用。
+Windows 應用程式（WinForms、WPF 或 UWP）是以 Visual Studio 建立。 它們不會直接使用 Xamarin。 不過，您可以在 Windows、iOS 和 Android 之間共用 c # 程式碼。
 請造訪 Microsoft 的[開發人員中心](https://developer.microsoft.com/)，瞭解 Windows 開發所需的工具。
 
 ## <a name="creating-the-user-interface-ui"></a>建立使用者介面 (UI)
@@ -115,7 +115,7 @@ Windows 應用程式（WinForms、WPF 或 UWP）是以 Visual Studio 建立。 �
 
 這些螢幕擷取畫面顯示每個平臺上可用的視覺化螢幕設計工具：
 
- [![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "These screenshots show the visual screen designers available on each platform")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
+ [![這些螢幕擷取畫面顯示每個平臺上可用的視覺效果螢幕設計工具](understanding-the-xamarin-mobile-platform-images/designer-all1.png)](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
 
 在所有情況下，您可以在程式碼中參考您以視覺方式建立的元素。
 
@@ -137,13 +137,13 @@ Windows 應用程式（WinForms、WPF 或 UWP）是以 Visual Studio 建立。 �
 
 ## <a name="library-and-code-re-use"></a>程式庫和程式碼重複使用
 
-Xamarin 平臺允許在所有平臺上重複使用C#現有的程式碼，以及整合以原生方式為每個平臺撰寫的程式庫。
+Xamarin 平臺可讓您在所有平臺上重複使用現有的 c # 程式碼，以及整合以原生方式為每個平臺撰寫的程式庫。
 
-### <a name="c-source-and-libraries"></a>C#來源和程式庫
+### <a name="c-source-and-libraries"></a>C # 來源和程式庫
 
-因為 Xamarin 產品使用C#和 .net framework，所以許多現有的原始程式碼（開放原始碼和內部專案）都可以在 Xamarin 或 xamarin 專案中重複使用。 來源通常可以直接新增至 Xamarin 解決方案，而且會立即生效。 如果使用了不支援的 .NET framework 功能，可能需要進行一些調整。
+因為 Xamarin 產品使用 c # 和 .NET framework，所以許多現有的原始程式碼（開放原始碼和內部專案）都可以在 Xamarin 或 Xamarin 專案中重複使用。 來源通常可以直接新增至 Xamarin 解決方案，而且會立即生效。 如果使用了不支援的 .NET framework 功能，可能需要進行一些調整。
 
-可用於C# Xamarin 或 xamarin 的來源範例包括： SQLITE-NET、NewtonSoft 和 SharpZipLib。
+可以在 Xamarin 或 Xamarin 中使用的 c # 來源範例包括： SQLite-NET、NewtonSoft.JSON 和 SharpZipLib。
 
 ### <a name="objective-c-bindings--binding-projects"></a>目標-C 系結 + 系結專案
 
@@ -159,7 +159,7 @@ Xamarin 支援在 Xamarin 中使用現有的 JAVA 程式庫。 如需如何使�
 
 ### <a name="c-via-pinvoke"></a>C via PInvoke
 
-「平台叫用」技術（P/Invoke）可讓 managed 程式C#代碼（）呼叫原生程式庫中的方法，以及支援原生程式庫來回呼 managed 程式碼。
+「平台叫用」技術（P/Invoke）可讓 managed 程式碼（c #）呼叫原生程式庫中的方法，以及支援原生程式庫來回呼 managed 程式碼。
 
 例如， [SQLITE 網路](https://github.com/praeclarum/sqlite-net)程式庫會使用如下的語句：
 
@@ -169,8 +169,8 @@ public static extern Result Open (string filename, out IntPtr db);
 ```
 
 這會系結至 iOS 和 Android 中的原生 C 語言 SQLite 執行。
-熟悉現有 C API 的開發人員可以建立一組C#類別來對應至原生 API，並利用現有的平臺程式碼。 有檔可連結 Xamarin 中的[原生程式庫](~/ios/platform/native-interop.md)，類似的原則適用于 Xamarin. Android。
+熟悉現有 C API 的開發人員可以建立一組 c # 類別來對應至原生 API，並利用現有的平臺程式碼。 有檔可連結 Xamarin 中的[原生程式庫](~/ios/platform/native-interop.md)，類似的原則適用于 Xamarin. Android。
 
-### <a name="c-via-cppsharp"></a>C++via CppSharp
+### <a name="c-via-cppsharp"></a>C + + via CppSharp
 
-Miguel 會在他的[blog](https://tirania.org/blog/archive/2011/Dec-19.html)上說明 CXXI （現在稱為[CppSharp](https://github.com/mono/CppSharp)）。 直接系結至連結C++庫的替代方法是建立 C 包裝函式，並透過 P/Invoke 系結至。
+Miguel 會在他的[blog](https://tirania.org/blog/archive/2011/Dec-19.html)上說明 CXXI （現在稱為[CppSharp](https://github.com/mono/CppSharp)）。 直接系結至 c + + 程式庫的替代方法是建立 C 包裝函式，並透過 P/Invoke 系結至。

@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ceac2d866e67af5cf3496fcf8c072ae83ecfe38
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a7a4e8c4467438d1f732508a15bee7045310109b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140240"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931218"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp 中的路徑基本概念
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索 SkiaSharp SKPath 物件以合併連接的線條和曲線_
 
 圖形路徑最重要的功能之一，就是能夠定義何時應連接多行，以及它們何時不應該連接。 差別可能很大，因為這兩個三角形的頂端示範：
 
-![](paths-images/connectedlinesexample.png "Two triangles showing the difference between connected and disconnected lines")
+![兩個三角形，顯示已連接和中斷連接的行之間的差異](paths-images/connectedlinesexample.png)
 
 圖形路徑是由物件所封裝 [`SKPath`](xref:SkiaSharp.SKPath) 。 「路徑」（path）是一或多個*分佈*的集合。 每個輪廓都是*連接*的直線和曲線的集合。 等高線不會彼此連接，但可能會以視覺方式重迭。 有時候，單一輪廓可能會重迭。
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 第一個輪廓包含 [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo(System.Single,System.Single)) 使用 X 和 Y 座標而非值的呼叫 `SKPoint` ，後面接著三個呼叫來 [`LineTo`](xref:SkiaSharp.SKPath.LineTo(System.Single,System.Single)) 繪製三角形的三邊。 第二個輪廓只有兩個呼叫 `LineTo` ，但它會透過呼叫來完成輪廓 [`Close`](xref:SkiaSharp.SKPath.Close) ，這會關閉輪廓。 差異很大：
 
-[![](paths-images/twotrianglecontours-small.png "Triple screenshot of the Two Triangle Contours page")](paths-images/twotrianglecontours-large.png#lightbox "Triple screenshot of the Two Triangle Contours page")
+[![兩個三角形分佈頁的三向螢幕擷取畫面](paths-images/twotrianglecontours-small.png)](paths-images/twotrianglecontours-large.png#lightbox "兩個三角形分佈頁的三向螢幕擷取畫面")
 
 如您所見，第一條輪廓很明顯是一連串的三條線，但結尾不會與一開始進行連接。 這兩行會在頂端重迭。 第二個輪廓明顯地封閉，並使用較少的呼叫來完成， `LineTo` 因為 `Close` 方法會自動新增最後一行來關閉輪廓。
 
@@ -194,7 +194,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是程式執行情況：
 
-[![](paths-images/strokejoins-small.png "Triple screenshot of the Stroke Joins page")](paths-images/strokejoins-large.png#lightbox "Triple screenshot of the Stroke Joins page")
+[![[筆觸聯結] 頁面的三重螢幕擷取畫面](paths-images/strokejoins-small.png)](paths-images/strokejoins-large.png#lightbox "[筆觸聯結] 頁面的三重螢幕擷取畫面")
 
 「斜切聯結」是由線條連接的一個尖點所組成。 當兩條線以較小的角度聯結時，斜切聯結可能會變得相當長。 為避免過長的斜接聯結，斜接角聯接的長度會受到的屬性值所限制 [`StrokeMiter`](xref:SkiaSharp.SKPaint.StrokeMiter) `SKPaint` 。 超過此長度的斜接聯結會切碎為 off，使其成為斜面聯結。
 

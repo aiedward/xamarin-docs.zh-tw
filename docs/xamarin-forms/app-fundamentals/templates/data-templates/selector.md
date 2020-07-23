@@ -10,16 +10,16 @@ ms.date: 03/08/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 74650eb2c52f1da9d0c539b711784896267ed183
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7cbeeb9a0eed37ec109b2e71c46e3f04cd08822d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135950"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936444"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>建立 Xamarin.Forms DataTemplateSelector
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
 
 _DataTemplateSelector 可以用來根據資料系結屬性的值，在執行時間選擇 DataTemplate。這可讓多個 DataTemplates 套用至相同類型的物件，以自訂特定物件的外觀。本文示範如何建立和使用 DataTemplateSelector。_
 
@@ -94,7 +94,7 @@ public class PersonDataTemplateSelector : DataTemplateSelector
 
 下列螢幕擷取畫面顯示將套用 [`ListView`](xref:Xamarin.Forms.ListView) `PersonDataTemplateSelector` 至基礎集合中每個物件的結果：
 
-![](selector-images/data-template-selector.png "ListView with a Data Template Selector")
+![具有日期範本選取器的 ListView](selector-images/data-template-selector.png)
 
 任何 `DateOfBirth` 屬性值大於或等於 1980 的 `Person` 物件會顯示為綠色，其餘物件則顯示為紅色。
 
@@ -133,7 +133,7 @@ public class HomePageCS : ContentPage
 
 `PersonDataTemplateSelector`實例會將其 `ValidTemplate` 和 `InvalidTemplate` 屬性設定為方法所建立的適當 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 實例 `SetupDataTemplates` 。 在執行時間，會 [`ListView`](xref:Xamarin.Forms.ListView) `PersonDataTemplateSelector.OnSelectTemplate` 針對基礎集合中的每個專案呼叫方法，並以呼叫傳遞資料物件做為 `item` 參數。 由方法所傳回的 `DataTemplate` 接著會套用到該物件。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已示範如何建立和使用 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 。 `DataTemplateSelector`可以用來根據資料系結 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 屬性的值，在執行時間選擇。 這可將多個 `DataTemplate` 執行個體套用至相同類型的物件，以自訂特定物件的外觀。
 

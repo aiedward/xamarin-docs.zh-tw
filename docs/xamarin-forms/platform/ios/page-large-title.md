@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0db20620870340386ccd0cedf7f98cb2975527ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 88761472c4beae3f40f2ca6852eea4db8276c4c9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128028"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930676"
 ---
 # <a name="large-page-titles-on-ios"></a>IOS 上的大型頁面標題
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定是用來在的導覽列上，將頁面標題顯示為大型標題 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，適用于使用 iOS 11 或更新版本的裝置。 較大的標題會靠左對齊，並使用較大的字型，並在使用者開始滾動內容時轉換成標準標題，以便有效率地使用畫面的房地產。 不過，在橫向方向，標題會回到導覽列的中央，以優化內容配置。 它會在 XAML 中使用，方法是將 `NavigationPage.PrefersLargeTitles` 附加屬性設定為 `boolean` 值：
 
@@ -100,7 +100,7 @@ switch (On<iOS>().LargeTitleDisplay())
 
 結果是指定的會套用 `LargeTitleDisplayMode` 至 [`Page`](xref:Xamarin.Forms.Page) ，以控制大型標題列為：
 
-![](page-large-title-images/large-title.png "Blur Effect Platform-Specific")
+![模糊效果平臺特定](page-large-title-images/large-title.png)
 
 ## <a name="related-links"></a>相關連結
 

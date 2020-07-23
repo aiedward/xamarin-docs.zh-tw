@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5367d7933e70c59298faacff85c1d5f533bc0776
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139135"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929277"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin 熱重新開機 (預覽)
 
@@ -44,11 +44,11 @@ Xamarin 熱重新開機可讓您在開發期間快速測試應用程式的變更
 
 2. 選取並按一下工具列中的 [本機裝置]**** 以啟動安裝精靈：
 
-    [![](hot-restart-images/toolbar.png "Screenshot of the Visual Studio toolbar with local device set as the debug target.")](hot-restart-images/toolbar.png)
+    [![Visual Studio 工具列的螢幕擷取畫面，其中已將本機裝置設定為偵錯目標。](hot-restart-images/toolbar.png)](hot-restart-images/toolbar.png)
 
 3. 如果未安裝 iTunes，請按一下 [下載 iTunes]**** 來下載安裝程式。 iTunes 安裝完成後，請按一下 [下一步]****。
 
-4. 將 iOS 裝置連接到您的電腦。 如果裝置已插入，請將其拔下，然後重新連線。 裝置名稱會在偵測到時出現在精靈中。 按 [下一步] 。
+4. 將 iOS 裝置連接到您的電腦。 如果裝置已插入，請將其拔下，然後重新連線。 裝置名稱會在偵測到時出現在精靈中。 按一下 [下一步] 。
 
 5. 輸入您的 Apple 開發人員帳戶認證，然後按一下 [下一步]****。
 
@@ -62,7 +62,7 @@ Xamarin 熱重新開機可讓您在開發期間快速測試應用程式的變更
 
 您可以在偵錯時對程式碼檔案進行編輯，然後按下偵錯工具列中的 [重新啟動]**** 按鈕，或使用 **Ctrl+Shift+F5** 來重新啟動偵錯工作階段，並套用新變更：
 
-[![](hot-restart-images/restart.png "Screenshot of the debug toolbar with the restart button highlighted.")](hot-restart-images/toolbar.png)
+[![偵錯工具列的螢幕擷取畫面，其中已顯目提示重新開機按鈕。](hot-restart-images/restart.png)](hot-restart-images/toolbar.png)
 
 在 `HOTRESTART` 使用 Xamarin 熱重新開機進行偵錯工具時，您也可以使用預處理器符號來防止特定程式碼執行。
 

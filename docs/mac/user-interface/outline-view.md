@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: be867aa38b3e5ecda869784b31732cc4fb5e9503
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7f1ae2ecfa7d6dbed56b8009593fc172615fd051
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565511"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928792"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Xamarin 中的大綱視圖
 
@@ -22,7 +22,7 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 
 大綱視圖是一種可讓使用者展開或折迭階層式資料列的資料表類型。 就像資料表的視圖一樣，大綱視圖會顯示一組相關專案的資料，其中包含代表個別專案的資料列，以及代表這些專案屬性的資料行。 不同于資料表視圖，大綱視圖中的專案不是在一般清單中，而是在階層中組織，例如硬碟上的檔案和資料夾。
 
-[![](outline-view-images/populate03.png "An example app run")](outline-view-images/populate03.png#lightbox)
+[![範例應用程式執行](outline-view-images/populate03.png)](outline-view-images/populate03.png#lightbox)
 
 在本文中，我們將討論在 Xamarin. Mac 應用程式中使用大綱視圖的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在本文中使用的重要概念和技巧。
 
@@ -50,23 +50,23 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 
 當您建立新的 Xamarin Cocoa 應用程式時，預設會取得標準的空白視窗。 此視窗會在專案中自動包含的檔案中定義 `.storyboard` 。 若要編輯您的 windows 設計，請在 [**方案總管**中按兩下該檔案 `Main.storyboard` ：
 
-[![](outline-view-images/edit01.png "Selecting the main storyboard")](outline-view-images/edit01.png#lightbox)
+[![選取主要分鏡腳本](outline-view-images/edit01.png)](outline-view-images/edit01.png#lightbox)
 
 這會在 Xcode 的 Interface Builder 中開啟視窗設計：
 
-[![](outline-view-images/edit02.png "Editing the UI in Xcode")](outline-view-images/edit02.png#lightbox)
+[![在 Xcode 中編輯 UI](outline-view-images/edit02.png)](outline-view-images/edit02.png#lightbox)
 
 `outline`在 [連結**庫偵測器] 的**[搜尋] 方塊中鍵入，讓您更輕鬆地找到大綱視圖控制項：
 
-[![](outline-view-images/edit03.png "Selecting an Outline View from the Library")](outline-view-images/edit03.png#lightbox)
+[![從程式庫選取大綱視圖](outline-view-images/edit03.png)](outline-view-images/edit03.png#lightbox)
 
 將大綱視圖拖曳至 [**介面編輯器**] 中的 view controller，使其填滿 view controller 的內容區域，並將其設定為在 [**條件約束編輯器**] 中的視窗縮小和成長位置：
 
-[![](outline-view-images/edit04.png "Editing the constraints")](outline-view-images/edit04.png#lightbox)
+[![編輯條件約束](outline-view-images/edit04.png)](outline-view-images/edit04.png#lightbox)
 
 在 [**介面**階層架構] 中選取 [大綱] 視圖，並在**屬性偵測器**中提供下列屬性：
 
-[![](outline-view-images/edit05.png "The Attribute Inspector")](outline-view-images/edit05.png#lightbox)
+[![屬性偵測器](outline-view-images/edit05.png)](outline-view-images/edit05.png#lightbox)
 
 - **外框資料行**-顯示階層式資料的資料表資料行。
 - **自動儲存大綱資料行**-如果為 `true` ，則會在應用程式執行之間自動儲存和還原外框資料行。
@@ -101,7 +101,7 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 
 在 [**介面**階層架構] 中選取資料表資料行，並在屬性偵測**器**中提供下列屬性：
 
-[![](outline-view-images/edit06.png "The Attribute Inspector")](outline-view-images/edit06.png#lightbox)
+[![屬性偵測器](outline-view-images/edit06.png)](outline-view-images/edit06.png#lightbox)
 
 - **Title** -設定資料行的標題。
 - **對齊**-設定資料格內的文字對齊方式。
@@ -119,19 +119,19 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 
 在介面階層中選取資料表資料格視圖（ `NSTableViewCell` ），**屬性偵測器**中可使用下列屬性： **Interface Hierarchy**
 
-[![](outline-view-images/edit07.png "The Attribute Inspector")](outline-view-images/edit07.png#lightbox)
+[![屬性偵測器](outline-view-images/edit07.png)](outline-view-images/edit07.png#lightbox)
 
 這些是標準視圖的所有屬性。 您也可以選擇在這裡調整此資料行的資料列大小。
 
 在 [介面階層架構] 中選取 [資料表視圖] 資料格（根據預設，這是 `NSTextField` ），**屬性偵測器**中可使用下列屬性： **Interface Hierarchy**
 
-[![](outline-view-images/edit08.png "The Attribute Inspector")](outline-view-images/edit08.png#lightbox)
+[![屬性偵測器](outline-view-images/edit08.png)](outline-view-images/edit08.png#lightbox)
 
 您將會在這裡設定標準文字欄位的所有屬性。 根據預設，標準文字欄位是用來顯示資料行中儲存格的資料。
 
 在介面階層中選取資料表資料格視圖（ `NSTableFieldCell` ），**屬性偵測器**中可使用下列屬性： **Interface Hierarchy**
 
-[![](outline-view-images/edit09.png "The Attribute Inspector")](outline-view-images/edit09.png#lightbox)
+[![屬性偵測器](outline-view-images/edit09.png)](outline-view-images/edit09.png#lightbox)
 
 以下是最重要的設定：
 
@@ -145,7 +145,7 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 
 在介面階層架構的資料表資料行底部，選取資料表資料格視圖（ `NSTableFieldCell` ）： **Interface Hierarchy**
 
-[![](outline-view-images/edit11.png "Selecting the table cell view")](outline-view-images/edit10.png#lightbox)
+[![選取資料表資料格視圖](outline-view-images/edit11.png)](outline-view-images/edit10.png#lightbox)
 
 這可讓您針對針對指定資料行所建立的所有資料格，編輯當做基底_模式_使用的資料表資料格視圖。
 
@@ -159,14 +159,14 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 
 1. 切換至 [**助理編輯器**]，並確定 `ViewController.h` 已選取檔案：
 
-    [![](outline-view-images/edit11.png "Selecting the correct .h file")](outline-view-images/edit11.png#lightbox)
+    [![選取正確的 .h 檔案](outline-view-images/edit11.png)](outline-view-images/edit11.png#lightbox)
 2. 從**介面**階層中選取 [大綱] 視圖，並按一下 [控制項]，並將其拖曳至檔案 `ViewController.h` 。
 3. 建立名**Outlet**為的大綱視圖的輸出 `ProductOutline` ：
 
-    [![](outline-view-images/edit13.png "Configuring an Outlet")](outline-view-images/edit13.png#lightbox)
+    [![設定插座](outline-view-images/edit13.png)](outline-view-images/edit13.png#lightbox)
 4. 建立 [資料表] 資料行的**輸出**，也稱為 `ProductColumn` `DetailsColumn` ：
 
-    [![](outline-view-images/edit14.png "Configuring an Outlet")](outline-view-images/edit14.png#lightbox)
+    [![設定插座](outline-view-images/edit14.png)](outline-view-images/edit14.png#lightbox)
 5. 儲存您所做的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
 接下來，我們將撰寫程式碼，以在應用程式執行時顯示外框的一些資料。
@@ -179,7 +179,7 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 
 首先，讓我們建立新的 `Product` 類別，以保存個別資料列和子產品群組的資訊。 在 [**方案總管**中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新檔案 ...** ]。選取 **[一般] [**  >  **空白類別**]，輸入 `Product` 作為 [**名稱**]，然後按一下 [**新增**] 按鈕：
 
-[![](outline-view-images/populate01.png "Creating an empty class")](outline-view-images/populate01.png#lightbox)
+[![建立空的類別](outline-view-images/populate01.png)](outline-view-images/populate01.png#lightbox)
 
 使檔案 `Product.cs` 看起來如下所示：
 
@@ -390,11 +390,11 @@ public override void AwakeFromNib ()
 
 如果我們執行應用程式，則會顯示下列內容：
 
-[![](outline-view-images/populate02.png "The collapsed view")](outline-view-images/populate02.png#lightbox)
+[![折迭的視圖](outline-view-images/populate02.png)](outline-view-images/populate02.png#lightbox)
 
 如果我們展開大綱視圖中的節點，它看起來會像下面這樣：
 
-[![](outline-view-images/populate03.png "The expanded view")](outline-view-images/populate03.png#lightbox)
+[![展開的視圖](outline-view-images/populate03.png)](outline-view-images/populate03.png#lightbox)
 
 <a name="Sorting_by_Column"></a>
 
@@ -402,7 +402,7 @@ public override void AwakeFromNib ()
 
 讓我們藉由按一下資料行標頭，允許使用者排序大綱中的資料。 首先，按兩下檔案， `Main.storyboard` 在 Interface Builder 中開啟檔案進行編輯。 針對選取 `Product` 器選取資料行，並輸入做為 `Title` **排序關鍵字**， `compare:` 然後選取**Selector** `Ascending` **訂單**：
 
-[![](outline-view-images/sort01.png "Setting the sort key order")](outline-view-images/sort01.png#lightbox)
+[![設定排序關鍵字順序](outline-view-images/sort01.png)](outline-view-images/sort01.png#lightbox)
 
 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
@@ -435,7 +435,7 @@ public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDe
 
 如果我們執行應用程式並按一下資料行標頭，資料列就會依照該資料行排序：
 
-[![](outline-view-images/sort02.png "Example of sorted output")](outline-view-images/sort02.png#lightbox)
+[![排序輸出的範例](outline-view-images/sort02.png)](outline-view-images/sort02.png#lightbox)
 
 <a name="Row_Selection"></a>
 
@@ -443,7 +443,7 @@ public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDe
 
 如果您想要允許使用者選取單一資料列，請按兩下該檔案， `Main.storyboard` 在 Interface Builder 中開啟檔案進行編輯。 選取**介面**階層中的 [大綱] 視圖，然後取消核取**屬性偵測器**中的 [**多個**] 核取方塊：
 
-[![](outline-view-images/select01.png "The Attribute Inspector")](outline-view-images/select01.png#lightbox)
+[![屬性偵測器](outline-view-images/select01.png)](outline-view-images/select01.png#lightbox)
 
 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
@@ -465,7 +465,7 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 
 如果您想要允許使用者選取多個資料列，請按兩下該檔案， `Main.storyboard` 在 Interface Builder 中開啟檔案進行編輯。 選取**介面**階層中的 [大綱] 視圖，然後勾選 [屬性偵測**器**] 中的 [**多個**] 核取方塊：
 
-[![](outline-view-images/select02.png "The Attribute Inspector")](outline-view-images/select02.png#lightbox)
+[![屬性偵測器](outline-view-images/select02.png)](outline-view-images/select02.png#lightbox)
 
 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
@@ -487,7 +487,7 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 
 如果您想要允許使用者輸入已選取大綱視圖的字元，並選取含有該字元的第一個資料列，請按兩下該檔案， `Main.storyboard` 在 Interface Builder 中將其開啟以進行編輯。 選取**介面**階層中的 [大綱] 視圖，然後勾選 [**屬性偵測器**] 中的 [**類型選取**] 核取方塊：
 
-[![](outline-view-images/type01.png "Editing the row type")](outline-view-images/type01.png#lightbox)
+[![編輯資料列類型](outline-view-images/type01.png)](outline-view-images/type01.png#lightbox)
 
 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
@@ -515,7 +515,7 @@ public override NSObject GetNextTypeSelectMatch (NSOutlineView outlineView, NSOb
 
 如果您想要允許使用者拖曳大綱視圖中的 [重新排列資料行]，請按兩下該檔案， `Main.storyboard` 在 Interface Builder 中將其開啟以進行編輯。 選取**介面**階層中的 [大綱] 視圖，然後勾選**屬性偵測器**中的 [重新**排列**] 核取方塊：
 
-[![](outline-view-images/reorder01.png "The Attribute Inspector")](outline-view-images/reorder01.png#lightbox)
+[![屬性偵測器](outline-view-images/reorder01.png)](outline-view-images/reorder01.png#lightbox)
 
 如果我們提供 [**自動**儲存] 屬性的值，並核取 [資料**行資訊**] 欄位，則我們對資料表的版面配置所做的任何變更，都會在下次執行應用程式時自動儲存並還原。
 
@@ -534,7 +534,7 @@ public override bool ShouldReorder (NSOutlineView outlineView, nint columnIndex,
 
 如果我們執行應用程式，我們可以拖曳資料行標頭來重新排列資料行：
 
-[![](outline-view-images/reorder02.png "Example of reordering columns")](outline-view-images/reorder02.png#lightbox)
+[![重新排列資料行的範例](outline-view-images/reorder02.png)](outline-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells"></a>
 
@@ -596,7 +596,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 
 現在，如果我們執行應用程式，使用者就可以編輯資料表視圖中的資料格：
 
-[![](outline-view-images/editing01.png "An example of editing cells")](outline-view-images/editing01.png#lightbox)
+[![編輯資料格的範例](outline-view-images/editing01.png)](outline-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Outline_Views"></a>
 

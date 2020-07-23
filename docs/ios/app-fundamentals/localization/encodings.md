@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: 78c048d793fd792576e2482491ebf11460d5b511
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 88f95f797d1230c818a635376f7b17a2264afadf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571801"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930334"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin 中的國際化編碼
 
@@ -22,9 +22,9 @@ ms.locfileid: "84571801"
 
 做法是在 Visual Studio for Mac 或 Visual Studio 的 [iOS 組建]/[高級] 窗格中選取額外的編碼方式：
 
- [![](encodings-images/00.png "Selecting the extra encodings")](encodings-images/00.png#lightbox)
+ [![選取額外的編碼方式](encodings-images/00.png)](encodings-images/00.png#lightbox)
 
- [![](encodings-images/00a.png "Selecting the extra encodings")](encodings-images/00a.png#lightbox)
+ [![選取額外的編碼方式](encodings-images/00a.png)](encodings-images/00a.png#lightbox)
 
 您可以選取下列其中一項：
 

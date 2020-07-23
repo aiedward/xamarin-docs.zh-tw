@@ -10,16 +10,16 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a705eef2ecd240b8944117a67a90ebeebc382bcb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139421"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933740"
 ---
 # <a name="attached-behaviors"></a>附加的行為
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
 _附加的行為是具有一或多個附加屬性的靜態類別。本文示範如何建立和使用附加的行為。_
 
@@ -106,7 +106,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 在執行階段，行為會根據行為實作來回應與控制項的互動。 下列螢幕擷取畫面示範附加的行為如何回應無效的輸入：
 
-[![](attached-images/screenshots-sml.png "Sample Application with Attached Behavior")](attached-images/screenshots.png#lightbox "Sample Application with Attached Behavior")
+[![具有附加行為的範例應用程式](attached-images/screenshots-sml.png)](attached-images/screenshots.png#lightbox "具有附加行為的範例應用程式")
 
 > [!NOTE]
 > 附加的行為是針對特定控制項類型 (或可套用至許多控制項的子類別) 所撰寫，而且只應新增至相容的控制項。 嘗試將行為附加至不相容的控制項會導致行為不明，並會取決於行為實作。
@@ -128,7 +128,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, false);
 
 在執行階段，當 `AttachBehavior` 附加屬性的值設定為 `false` 時，將會執行 `OnAttachBehaviorChanged` 方法。 `OnAttachBehaviorChanged`方法接著會取消註冊事件的事件處理常式，以 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 確保在使用者與控制項互動時，不會執行此行為。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範了如何建立和使用附加的行為。 附加的行為是具有一或多個附加屬性的 `static` 類別。
 

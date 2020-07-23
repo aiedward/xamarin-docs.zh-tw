@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c35cd6e30e7843cda0431581025aa7440a21cc29
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0a43ce2d27c8152137101d616302f6e56a57bd39
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140045"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931972"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>在偶合程度低的元件之間通訊
 
@@ -29,7 +29,7 @@ Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 類別會�
 
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)類別提供多播發布-訂閱功能。 這表示可以有多個發佈單一訊息的發行者，而且可以有多個訂閱者接聽相同的訊息。 圖4-1 說明此關聯性：
 
-![](communicating-between-loosely-coupled-components-images/messagingcenter.png "Multicast publish-subscribe functionality")
+![多點傳送的發行-訂閱功能](communicating-between-loosely-coupled-components-images/messagingcenter.png)
 
 **圖4-1：** 多播發布-訂閱功能
 
@@ -123,7 +123,7 @@ MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys
 
 在此範例中， [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法語法會反映訂閱接收訊息時所指定的型別引數 `AddProduct` 。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 類別會執行發行-訂閱模式，允許不方便透過物件和類型參考連結的元件之間以訊息為基礎的通訊。 這項機制可讓發行者和訂閱者進行通訊，而不需要彼此的參考，協助減少元件之間的相依性，同時也允許獨立開發和測試元件。
 

@@ -10,16 +10,16 @@ ms.date: 12/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 33675fbb644c5967726fee29b3e235247aec633a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 29e73f4051eda9117663992af9e710483e4b772b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565353"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934091"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>使用 Azure 搜尋服務和來搜尋資料Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Azure 搜尋服務是一種雲端服務，可為上傳的資料提供索引編制和查詢功能。這會移除傳統上與在應用程式中執行搜尋功能相關聯的基礎結構需求和搜尋演算法複雜性。本文示範如何使用 Microsoft Azure 搜尋程式庫，將 Azure 搜尋服務整合到 Xamarin.Forms 應用程式中。_
 
@@ -222,7 +222,7 @@ var searchResults = await indexClient.Documents.SearchAsync<Monkey>(text, parame
 
 `SearchAsync`方法 `DocumentSearchResult` 會傳回包含查詢結果的物件。 系統會列舉此物件，並將每個 `Document` 物件建立為 `Monkey` 物件，並將其新增至 `Monkeys` `ObservableCollection` 以供顯示。 下列螢幕擷取畫面顯示從 Azure 搜尋服務傳回的搜尋查詢結果：
 
-![](azure-search-images/search.png "Search Results")
+![搜尋結果](azure-search-images/search.png)
 
 如需搜尋和篩選的詳細資訊，請參閱[使用 .NET SDK 查詢您的 Azure 搜尋服務索引](/azure/search/search-query-dotnet/)。
 
@@ -272,11 +272,11 @@ async Task AzureSuggestions(string text)
 
 `SuggestAsync`方法 `DocumentSuggestResult` 會傳回包含查詢結果的物件。 系統會列舉此物件，並將每個 `Document` 物件建立為 `Monkey` 物件，並將其新增至 `Monkeys` `ObservableCollection` 以供顯示。 下列螢幕擷取畫面顯示從 Azure 搜尋服務傳回的建議結果：
 
-![](azure-search-images/suggest.png "Suggestion Results")
+![建議結果](azure-search-images/suggest.png)
 
 請注意，在範例應用程式中， `SuggestAsync` 只有在使用者完成輸入搜尋字詞時，才會叫用方法。 不過，它也可以藉由在每個按鍵上執行，來支援自動完成搜尋查詢。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用 Microsoft Azure 搜尋程式庫，將 Azure 搜尋服務整合到 Xamarin.Forms 應用程式中。 Azure 搜尋服務是一種雲端服務，可為上傳的資料提供索引編制和查詢功能。 這會移除傳統上與在應用程式中執行搜尋功能相關聯的基礎結構需求和搜尋演算法複雜性。
 

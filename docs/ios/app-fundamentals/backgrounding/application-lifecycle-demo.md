@@ -7,25 +7,25 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/17/2018
-ms.openlocfilehash: 13f34f6287d68736ee509e6fb43e5fc47321b907
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bb3fd0623d0361a42c573cf2b2bcb8249d32181c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011193"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933164"
 ---
 # <a name="application-lifecycle-demo-for-xamarinios"></a>適用于 Xamarin 的應用程式生命週期示範
 
-本文和[範例程式碼](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)示範 iOS 中的四個應用程式狀態，以及當狀態變更時，`AppDelegate` 方法的角色來通知應用程式。 應用程式會在應用程式變更狀態時，將更新列印至主控台：
+本文和[範例程式碼](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)示範 iOS 中的四個應用程式狀態，以及 `AppDelegate` 在狀態變更時，通知應用程式的方法角色。 應用程式會在應用程式變更狀態時，將更新列印至主控台：
 
-[![](application-lifecycle-demo-images/image3-sml.png "The sample app")](application-lifecycle-demo-images/image3.png#lightbox)
+[![範例應用程式](application-lifecycle-demo-images/image3-sml.png)](application-lifecycle-demo-images/image3.png#lightbox)
 
-[![](application-lifecycle-demo-images/image4.png "The app will print updates to the console whenever the app changes state")](application-lifecycle-demo-images/image4.png#lightbox)
+[![應用程式會在應用程式變更狀態時，將更新列印到主控台](application-lifecycle-demo-images/image4.png)](application-lifecycle-demo-images/image4.png#lightbox)
 
 ## <a name="walkthrough"></a>逐步解說
 
 1. 在**LifecycleDemo**方案中開啟**生命週期**專案。
-1. 開啟 [`AppDelegate`] 類別。 記錄已新增至生命週期方法，以指出應用程式何時變更狀態：
+1. 開啟 `AppDelegate` 類別。 記錄已新增至生命週期方法，以指出應用程式何時變更狀態：
 
     ```csharp
     public override void OnActivated(UIApplication application)
@@ -51,11 +51,11 @@ ms.locfileid: "73011193"
     }
     ```
 
-1. 在模擬器或裝置上啟動應用程式。 當應用程式啟動時，將會呼叫 `OnActivated`。 應用程式_目前處於作用中狀態。_
-1. 按模擬器或裝置上的 [首頁] 按鈕，將應用程式帶到背景。 `OnResignActivation` 和 `DidEnterBackground` 將會在應用程式從 `Active` 轉換為 `Inactive` 並轉換成 `Backgrounded` 狀態時呼叫。 由於未將應用程式代碼集設定為在背景中執行，因此應用程式在記憶體中被視為已_暫停_。
-1. 流覽回到應用程式，使其回到前景。 同時會呼叫 `WillEnterForeground` 和 `OnActivated`：
+1. 在模擬器或裝置上啟動應用程式。 `OnActivated`會在應用程式啟動時呼叫。 應用程式_目前處於作用中狀態。_
+1. 按模擬器或裝置上的 [首頁] 按鈕，將應用程式帶到背景。 `OnResignActivation`和 `DidEnterBackground` 會在應用程式從轉換 `Active` 到 `Inactive` 並進入狀態時呼叫 `Backgrounded` 。 由於未將應用程式代碼集設定為在背景中執行，因此應用程式在記憶體中被視為已_暫停_。
+1. 流覽回到應用程式，使其回到前景。 `WillEnterForeground`同時也會 `OnActivated` 呼叫和：
 
-    ![](application-lifecycle-demo-images/image4.png "State changes printed to the console")
+    ![將狀態變更列印到主控台](application-lifecycle-demo-images/image4.png)
 
     當應用程式從背景進入前景，並變更螢幕上顯示的文字時，會執行 view controller 中的下列程式程式碼：
 
@@ -73,7 +73,7 @@ ms.locfileid: "73011193"
 
     [![向上滑動以移除正在執行的應用程式](application-lifecycle-demo-images/app-switcher-swipe-sml.png "向上滑動以移除正在執行的應用程式")](application-lifecycle-demo-images/app-switcher-swipe.png#lightbox)
 
-iOS 會終止應用程式。 請注意，因為應用程式已在背景中_暫停_，所以不會呼叫 `WillTerminate`。
+iOS 會終止應用程式。 請注意， `WillTerminate` 因為應用程式已在背景中_暫停_，所以不會呼叫。
 
 ## <a name="related-links"></a>相關連結
 

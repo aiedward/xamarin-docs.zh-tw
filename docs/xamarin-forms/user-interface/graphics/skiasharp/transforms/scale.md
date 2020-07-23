@@ -10,22 +10,22 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bdf33f499bf43d99436cef815c03d35b27866b80
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5cb43bfe572b98a6530dfeb8d923ac71b5b633a7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140175"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932037"
 ---
 # <a name="the-scale-transform"></a>縮放轉換
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索將物件調整成各種大小的 SkiaSharp 縮放轉換_
 
 如您在[**翻譯轉換**](translate.md)一文中所見，翻譯轉換可以將繪圖物件從一個位置移到另一個位置。 相反地，尺規轉換會變更繪圖物件的大小：
 
-![](scale-images/scaleexample.png "A tall word scaled in size")
+![大小調整的高文字](scale-images/scaleexample.png)
 
 縮放轉換通常也會導致圖形座標在變大時移動。
 
@@ -109,7 +109,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 如您所見，在呼叫之後繪製的所有專案 `Scale` 會按比例增加：
 
-[![](scale-images/basicscale-small.png "Triple screenshot of the Basic Scale page")](scale-images/basicscale-large.png#lightbox "Triple screenshot of the Basic Scale page")
+[![基本調整頁面的三重螢幕擷取畫面](scale-images/basicscale-small.png)](scale-images/basicscale-large.png#lightbox "基本調整頁面的三重螢幕擷取畫面")
 
 文字、虛線的寬度、該線條中的虛線長度、角落的圓角，以及畫布左邊和上邊緣和圓角矩形之間的10圖元邊界，全都受相同的縮放比例因素所影響。
 
@@ -171,7 +171,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 圓角矩形的左上角是 `margin` 從畫布左邊的圖元定位，而圖元則是從 `margin` 頂端開始。 方法的最後兩個引數 `Scale` 會設定為這些值加上文字的寬度和高度，也就是圓角矩形的寬度和高度。 這表示所有調整都是相對於該矩形的中心：
 
-[![](scale-images/centeredscale-small.png "Triple screenshot of the Centered Scale page")](scale-images/centeredscale-large.png#lightbox "Triple screenshot of the Centered Scale page")
+[![中央尺規頁面的三重螢幕擷取畫面](scale-images/centeredscale-small.png)](scale-images/centeredscale-large.png#lightbox "中央尺規頁面的三重螢幕擷取畫面")
 
 `Slider`此程式中的元素範圍為 &ndash; 10 到10。 如您所見，垂直縮放比例的負值（例如，在中央的 Android 螢幕上）會導致物件沿著水準軸翻轉，而其會通過縮放中心。 水準縮放的負數值（例如右側 UWP 畫面中的）會導致物件沿著垂直軸翻轉，而這會通過縮放中心。
 
@@ -252,7 +252,7 @@ using (SKPaint strokePaint = new SKPaint
 
 `pathBounds`此矩形會在此程式碼頂端附近取得，然後在稍後用於呼叫中畫布的寬度和高度。 `Scale` 該呼叫本身會在呼叫轉譯時調整路徑的座標， `DrawPath` 但星形會以畫布的右上角為中心。 它需要向下和向左移動。 這是呼叫的作業 `Translate` 。 這兩個屬性 `pathBounds` 大約是–100，因此轉譯因素大約是100。 因為 `Translate` 呼叫是在呼叫之後 `Scale` ，所以這些值會以縮放比例有效地調整，因此會將星形的中心移至畫布的中央：
 
-[![](scale-images/anisotropicscaling-small.png "Triple screenshot of the Anisotropic Scaling page")](scale-images/anisotropicscaling-large.png#lightbox "Triple screenshot of the Anisotropic Scaling page")
+[![三元縮放頁面的三重螢幕擷取畫面](scale-images/anisotropicscaling-small.png)](scale-images/anisotropicscaling-large.png#lightbox "三元縮放頁面的三重螢幕擷取畫面")
 
 另一種您可以思考和呼叫的方法， `Scale` `Translate` 是以反向順序來判斷效果：此 `Translate` 呼叫會轉移路徑，使其變成完全可見，但會在畫布的左上角導向。 `Scale`然後，方法會使該星形相對於左上角更大。
 
@@ -295,7 +295,7 @@ using (SKPaint textPaint = new SKPaint
 
 這是類似的邏輯，而且文字會根據所傳回的文字界限矩形 `MeasureText` （比實際的文字小一點），展開至頁面的大小：
 
-[![](scale-images/anisotropictext-small.png "Triple screenshot of the Anisotropic Test page")](scale-images/anisotropictext-large.png#lightbox "Triple screenshot of the Anisotropic Test page")
+[![[非測試] 頁面的三重螢幕擷取畫面](scale-images/anisotropictext-small.png)](scale-images/anisotropictext-large.png#lightbox "[非測試] 頁面的三重螢幕擷取畫面")
 
 如果您需要保留繪圖物件的長寬比，您會想要使用 isotropic 縮放。 **Isotropic 調整**頁面會針對11個指向的星號示範這一點。 在概念上，使用 isotropic 縮放在頁面中央顯示繪圖物件的步驟如下：
 
@@ -344,7 +344,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 此程式碼也會顯示星號10次，每次減少10% 的縮放比例，並逐漸將色彩從紅色變更為藍色：
 
-[![](scale-images/isotropicscaling-small.png "Triple screenshot of the Isotropic Scaling page")](scale-images/isotropicscaling-large.png#lightbox "Triple screenshot of the Isotropic Scaling page")
+[![Isotropic 縮放頁面的三重螢幕擷取畫面](scale-images/isotropicscaling-small.png)](scale-images/isotropicscaling-large.png#lightbox "Isotropic 縮放頁面的三重螢幕擷取畫面")
 
 ## <a name="related-links"></a>相關連結
 

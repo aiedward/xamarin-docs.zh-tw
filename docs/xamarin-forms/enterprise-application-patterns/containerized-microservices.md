@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3ebd3940cbd61342977bde60addc773460a08854
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f85c6528a1bf599c38a39b4e88400bc8b0c4f05
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569565"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931985"
 ---
 # <a name="containerized-microservices"></a>容器化的微服務
 
@@ -23,7 +23,7 @@ ms.locfileid: "84569565"
 
 特別是在雲端存在時，無法輕鬆調整個別元件。 整合型應用程式包含特定領域的功能，通常是由功能層（例如前端、商務邏輯和資料儲存）來劃分。 整合單一應用程式的方式是將整個應用程式複製到多部電腦，如圖8-1 所示。
 
-![](containerized-microservices-images/monolithicapp.png "Monolithic application scaling approach")
+![整合型應用程式調整方法](containerized-microservices-images/monolithicapp.png)
 
 **圖 8-1**：整合型應用程式調整方法
 
@@ -33,7 +33,7 @@ ms.locfileid: "84569565"
 
 相較于大規模的整合型應用程式，微服務可以獨立相應放大。 這表示需要更多處理能力或網路頻寬以支援需求的特定功能區域可以調整，而不是不必要地相應放大應用程式的其他區域。 圖8-2 說明此方法，其中微服務會獨立部署和調整，跨電腦建立服務的實例。
 
-![](containerized-microservices-images/microservicesapp.png "Microservices application scaling approach")
+![微服務應用程式調整方法](containerized-microservices-images/microservicesapp.png)
 
 **圖 8-2**：微服務應用程式調整方法
 
@@ -67,7 +67,7 @@ ms.locfileid: "84569565"
 
 容器和虛擬機器之間有許多相似之處，如圖8-3 所示。
 
-![](containerized-microservices-images/containersvsvirtualmachines.png "Microservices application scaling approach")
+![微服務應用程式調整方法](containerized-microservices-images/containersvsvirtualmachines.png)
 
 **圖 8-3**：虛擬機器和容器的比較
 
@@ -87,7 +87,7 @@ ms.locfileid: "84569565"
 
 EShopOnContainers reference 應用程式會使用 Docker 來裝載四個容器化後端微服務，如圖8-4 所示。
 
-![](containerized-microservices-images/microservicesarchitecture.png "eShopOnContainers reference application back-end microservices")
+![eShopOnContainers 參考應用程式後端微服務](containerized-microservices-images/microservicesarchitecture.png)
 
 **圖 8-4**： eShopOnContainers 參考應用程式後端微服務
 
@@ -101,7 +101,7 @@ EShopOnContainers reference 應用程式會使用 Docker 來裝載四個容器�
 
 EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊（如圖8-5 所示）與容器化後端微服務通訊。
 
-![](containerized-microservices-images/directclienttomicroservicecommunication.png "Microservices application scaling approach")
+![微服務應用程式調整方法](containerized-microservices-images/directclienttomicroservicecommunication.png)
 
 **圖 8-5**：直接用戶端對微服務通訊
 
@@ -120,19 +120,19 @@ EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊
 
 事件匯流排允許微服務之間的發佈-訂閱通訊，而不需要明確察覺元件，如圖8-6 所示。
 
-![](containerized-microservices-images/eventbus.png "Publish-subscribe with an event bus")
+![發佈-訂閱事件匯流排](containerized-microservices-images/eventbus.png)
 
 **圖8-6：** 發佈-訂閱事件匯流排
 
 從應用程式的觀點來看，事件匯流排只是透過介面公開的發佈-訂閱通道。 不過，事件匯流排的執行方式可能有所不同。 例如，事件匯流排執行可能會使用 RabbitMQ、Azure 服務匯流排或其他服務匯流排，例如 NServiceBus 和 MassTransit。 圖8-7 顯示如何在 eShopOnContainers 參考應用程式中使用事件匯流排。
 
-![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "Asynchronous event-driven communication in the reference application")
+![參考應用程式中的非同步事件驅動通訊](containerized-microservices-images/microservicesarchitecturewitheventbus.png)
 
 **圖8-7：** 參考應用程式中的非同步事件驅動通訊
 
 使用 RabbitMQ 所執行的 eShopOnContainers 事件匯流排提供一對多的非同步發佈訂閱功能。 這表示在發行事件之後，可以有多個訂閱者接聽相同的事件。 圖8-9 說明此關聯性。
 
-![](containerized-microservices-images/eventdrivencommunication.png "One-to-many communication")
+![一對多通訊](containerized-microservices-images/eventdrivencommunication.png)
 
 **圖 8-9**：一對多通訊
 
@@ -143,7 +143,7 @@ EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊
 
 如需事件匯流排執行的相關資訊，請參閱[.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 微服務提供應用程式開發和部署的方法，其適用于現代化雲端應用程式的靈活性、規模和可靠性需求。 微服務的主要優點之一，就是可以獨立地相應放大，這表示可以調整特定功能區域，而需要更多處理能力或網路頻寬來支援需求，而不需在不需要增加需求的情況下調整應用程式的區域。
 

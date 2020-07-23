@@ -10,12 +10,12 @@ ms.date: 11/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 99cac3c597cf1d7351d3214ce59fd0a0a0a46400
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8aea3ad36f6c35e9faf2771fc6b54c378c304afb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572347"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933597"
 ---
 # <a name="dependency-injection"></a>相依性插入
 
@@ -62,7 +62,7 @@ public class ProfileViewModel : ViewModelBase
 
 在 TinyIoC 中， `TinyIoCContainer` 類型會提供相依性插入容器。 [圖 3-1] 顯示使用此容器時的相依性，它會具現化 `IOrderService` 物件，並將其插入至 `ProfileViewModel` 類別。
 
-![](dependency-injection-images/dependencyinjection.png "Dependencies example when using dependency injection")
+![使用相依性插入時的相依性範例](dependency-injection-images/dependencyinjection.png)
 
 **圖3-1：** 使用相依性插入時的相依性
 
@@ -160,7 +160,7 @@ _container.Register<LoginViewModel>().AsSingleton();
 > [!NOTE]
 > 當處置容器時，會處置註冊為單次個體的類型。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 相依性插入可將具象的類型與依賴這些類型的程式碼分離。 它通常會使用容器來保存介面與抽象類別型之間的註冊和對應清單，以及用來執行或擴充這些類型的實體類型。
 

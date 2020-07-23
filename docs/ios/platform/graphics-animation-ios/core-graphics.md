@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ac746c8489dae600bc2d8c6d1752d8fb10d4e016
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 84e21378a8ac7b61bc1a389352eb53b75881592a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564715"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929645"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin 中的核心圖形
 
@@ -133,7 +133,7 @@ path.CloseSubpath ();
 
 產生的視圖如下所示：
 
- ![](core-graphics-images/00-bluetriangle.png "The sample output triangle")
+ ![範例輸出三角形](core-graphics-images/00-bluetriangle.png)
 
 ## <a name="creating-gradient-fills"></a>建立漸層填滿
 
@@ -167,7 +167,7 @@ g.Clip ();
 
 這些變更會產生漸層填滿，如下所示：
 
- ![](core-graphics-images/01-gradient-fill.png "The example with a gradient fill")
+ ![具有漸層填滿的範例](core-graphics-images/01-gradient-fill.png)
 
 ## <a name="modifying-line-patterns"></a>修改線條模式
 
@@ -180,7 +180,7 @@ g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 
 在任何繪圖作業之前加入此程式碼會產生以10個單位長的虛線筆觸，而虛線之間有4個間距，如下所示：
 
- ![](core-graphics-images/02-dashed-stroke.png "Adding this code before any drawing operations results in dashed strokes")
+ ![在任何繪製作業之前加入此程式碼會產生虛線筆劃](core-graphics-images/02-dashed-stroke.png)
 
 請注意，當您在 Xamarin 中使用 Unified API 時，陣列型別必須是 `nfloat` ，而且也需要明確轉換成 Math。
 
@@ -203,7 +203,7 @@ public override void Draw (CGRect rect)
 
 不過，這會產生一個上下繪製的影像，如下所示：
 
- ![](core-graphics-images/03-upside-down-monkey.png "An image drawn upside down")
+ ![朝下繪製的影像](core-graphics-images/03-upside-down-monkey.png)
 
 此情況的原因是影像繪圖的核心圖形原點位於左下方，而視圖的原點在左上方。 因此，若要正確顯示影像，則需要修改來源，這可以藉由修改*目前的轉換矩陣* *（cmt）* 來完成。 CMT 會定義點的上線位置，也稱為*使用者空間*。 將 y 方向的 CMT 反轉，並以負 y 方向的界限高度移位，可以翻轉影像。
 
@@ -225,7 +225,7 @@ public override void Draw (CGRect rect)
 
 產生的影像就會顯示為直立的：
 
- ![](core-graphics-images/04-upright-monkey.png "The sample image displayed upright")
+ ![以垂直顯示的範例影像](core-graphics-images/04-upright-monkey.png)
 
 > [!IMPORTANT]
 > 圖形內容的變更會套用至所有後續的繪製作業。 因此，轉換 CMT 時，它會影響任何其他繪圖。 例如，如果您在 [CMT] 轉換後繪製三角形，它會顯示為 [倒置]。
@@ -264,7 +264,7 @@ public override void Draw (RectangleF rect)
 
 產生的文字會與影像一起顯示，如下所示：
 
- ![](core-graphics-images/05-text-on-image.png "The resulting text is displayed with the image")
+ ![產生的文字會與影像一起顯示](core-graphics-images/05-text-on-image.png)
 
 ## <a name="memory-backed-images"></a>記憶體支援的映射
 

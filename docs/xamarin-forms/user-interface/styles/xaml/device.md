@@ -10,18 +10,18 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 04669479bb321da4fee6c45fd0f2c00deb5bbf1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140097"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929723"
 ---
 # <a name="device-styles-in-xamarinforms"></a>中的裝置樣式Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_在裝置中，Xamarin 包含六個動態樣式（稱為裝置樣式）。_
+_Xamarin.Forms在 Device. Styles 類別中包含六個動態樣式（稱為裝置樣式）。_
 
 *裝置*樣式如下：
 
@@ -70,7 +70,7 @@ _在裝置中，Xamarin 包含六個動態樣式（稱為裝置樣式）。_
 
 裝置樣式會使用標記延伸系結至 `DynamicResource` 。 您可以變更文字大小的**協助工具**設定，在 iOS 中看到樣式的動態性質。 在每個平臺上，*裝置*樣式的外觀會不同，如下列螢幕擷取畫面所示：
 
-![](device-images/device-styles.png "Device Styles on Each Platform")
+![每個平臺上的裝置樣式](device-images/device-styles.png)
 
 您也可以將屬性設定為裝置樣式的索引鍵名稱，衍生自*裝置*樣式 [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) 。 在上述程式碼範例中， `myBodyStyle` 繼承自 [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) 並設定重音文字色彩。 如需動態樣式繼承的詳細資訊，請參閱[動態樣式繼承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)。
 
@@ -114,17 +114,17 @@ public class DeviceStylesPageCS : ContentPage
 
 [`Style`](xref:Xamarin.Forms.NavigableElement.Style)每個實例的屬性 [`Label`](xref:Xamarin.Forms.Label) 會從類別設定為適當的屬性 [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) 。
 
-## <a name="accessibility"></a>Accessibility
+## <a name="accessibility"></a>協助工具選項
 
 *裝置*樣式會遵循協助工具喜好設定，因此當每個平臺上的協助工具喜好設定改變時，字型大小也會隨之變更。 因此，若要支援可存取的文字，請確定*裝置*樣式是用來作為應用程式內任何文字樣式的基礎。
 
 下列螢幕擷取畫面會示範每個平臺上的裝置樣式，以及可存取的最小字型大小：
 
-[![](device-images/minimum-size.png "Accessible Small Device Styles on Each Platform")](device-images/minimum-size-large.png#lightbox "Accessible Small Device Styles on Each Platform")
+[![每個平臺上可存取的小型裝置樣式](device-images/minimum-size.png)](device-images/minimum-size-large.png#lightbox "每個平臺上可存取的小型裝置樣式")
 
 下列螢幕擷取畫面會示範每個平臺上具有最大可存取字型大小的裝置樣式：
 
-![](device-images/maximum-size.png "Accessible Large Device Styles on Each Platform")
+![每個平臺上可存取的大型裝置樣式](device-images/maximum-size.png)
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d7491af1ced4e8e0309bb3e22298d33ee5a042be
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 25de402742978ed9d2a4e16e87d786a014f596a0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571541"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933768"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>iOS 6 中對 StoreKit 所做的變更
 
@@ -25,7 +25,7 @@ _iOS 6 對商店套件 API 引進了兩項變更：從您的應用程式中顯�
 
 如需 StoreKit Api 的詳細涵蓋範圍，請參閱[應用程式內購買](~/ios/platform/in-app-purchasing/index.md)指南。
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
 本檔中討論的商店套件功能需要 iOS 6 和 Xcode 4.5，以及 Xamarin. iOS 6.0。
 
@@ -34,7 +34,7 @@ _iOS 6 對商店套件 API 引進了兩項變更：從您的應用程式中顯�
 IOS 中新的應用程式內購買功能可讓使用者從您的應用程式中查看產品資訊，並購買或下載產品。
 先前的應用程式必須觸發 iTunes、App Store 或 iBookstore，這會導致使用者離開原始應用程式。 這項新功能會在完成時自動將使用者傳回您的應用程式。
 
-[![](changes-to-storekit-images/image1.png "Automatically returning to an app after purchase")](changes-to-storekit-images/image1.png#lightbox)
+[![購買後自動返回應用程式](changes-to-storekit-images/image1.png)](changes-to-storekit-images/image1.png#lightbox)
 
 如何使用此方法的範例包括：
 
@@ -88,7 +88,7 @@ void Buy (int productId)
 
 應用程式在執行時看起來會像下面的螢幕擷取畫面：完全在中進行下載或購買 `SKStoreProductViewController` 。
 
-[![](changes-to-storekit-images/image2.png "The app looks like this when running")](changes-to-storekit-images/image2.png#lightbox)
+[![執行時，應用程式看起來會像這樣](changes-to-storekit-images/image2.png)](changes-to-storekit-images/image2.png#lightbox)
 
 ### <a name="supporting-older-operating-systems"></a>支援舊版作業系統
 
@@ -107,7 +107,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
 }
 ```
 
-### <a name="errors"></a>Errors
+### <a name="errors"></a>錯誤
 
 如果您使用的 Apple ID 無效，將會發生下列錯誤，這可能會造成混淆，因為它暗示了某種類型的網路或驗證問題。
 
@@ -125,7 +125,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
 
 針對您發佈的應用程式，在 iTunes Connect 中可以輕鬆地找到**APPLE ID** ：
 
-[![](changes-to-storekit-images/image3.png "Finding the Apple ID in iTunes Connect")](changes-to-storekit-images/image3.png#lightbox)
+[![在 iTunes Connect 中尋找 Apple ID](changes-to-storekit-images/image3.png)](changes-to-storekit-images/image3.png#lightbox)
 
  <a name="Search_API"></a>
 
@@ -135,7 +135,7 @@ Apple 提供動態搜尋 API 來查詢 App Store、iTunes 和 iBookstore 中的�
 
 結果也會包含其他中繼資料，包括可在應用程式中用來呈現產品的顯示資訊和插圖 Url。
 
-以下是一些範例：
+這裡有一些範例：
 
 - **iBooks 應用程式**– [ https://itunes.apple.com/search?term=ibooks&amp ; 實體 = 軟體 &amp; 國家/地區 = us](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
 - **點和 Kangaroo ibook store** – [ https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp ; entity = 電子書 &amp; country = us](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
@@ -185,7 +185,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 在 iOS 6 中，Apple 提供了伺服器交付產品的變化：它們會在其伺服器上裝載您的內容檔案。 這可讓您更輕鬆地建立伺服器提供的產品，因為您不需要操作個別的伺服器，而且存放套件提供了您先前必須自行撰寫的背景下載功能。 若要利用 Apple 的裝載，請針對新的應用程式內購買產品啟用內容裝載，並修改您的商店套件程式碼以利用它。 接著會使用 Xcode 建立產品內容檔案，並將其上傳至 Apple 的伺服器，以供審查和發行。
 
-[![](changes-to-storekit-images/image4.png "The build and deliver process")](changes-to-storekit-images/image4.png#lightbox)
+[![組建和交付流程](changes-to-storekit-images/image4.png)](changes-to-storekit-images/image4.png#lightbox)
 
 使用 App Store 提供*託管內容*的應用程式內購買，需要進行下列安裝和設定：
 
@@ -198,11 +198,11 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 ### <a name="sample-code"></a>範例程式碼
 
-範例專案*HostedNonConsumables* （在 StoreKitiOS6 中）會使用裝載的內容。 此應用程式提供兩個「書籍章節」來銷售，其內容裝載于 Apple 的伺服器上。 內容是由文字檔和影像所組成，雖然在實際的應用程式中可以使用更複雜的內容。
+範例專案*HostedNonConsumables* （在 StoreKitiOS6.zip 中）會使用裝載的內容。 此應用程式提供兩個「書籍章節」來銷售，其內容裝載于 Apple 的伺服器上。 內容是由文字檔和影像所組成，雖然在實際的應用程式中可以使用更複雜的內容。
 
 在購買之前、期間和之後，應用程式看起來像這樣：
 
- [![](changes-to-storekit-images/image5.png "The app looks like this before, during and after a purchase")](changes-to-storekit-images/image5.png#lightbox)
+ [![應用程式在購買之前、期間和之後看起來像這樣：](changes-to-storekit-images/image5.png)](changes-to-storekit-images/image5.png#lightbox)
 
 系統會下載文字檔和影像，並將其複製到應用程式的 [檔] 目錄。 如需有關應用程式儲存區可用之不同目錄的詳細資訊，請參閱[檔案系統檔](~/ios/app-fundamentals/file-system.md)。
 
@@ -210,19 +210,19 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 建立將使用 Apple 內容裝載的新產品時，請務必選取 [**不可**使用] 產品類型。 其他產品類型則不支援內容裝載。 此外，您不應該為您銷售的*現有*產品啟用內容裝載;僅開啟新產品的內容裝載。
 
- [![](changes-to-storekit-images/image6.png "Select the Non-Consumable product type")](changes-to-storekit-images/image6.png#lightbox)
+ [![選取不可耗用的產品類型](changes-to-storekit-images/image6.png)](changes-to-storekit-images/image6.png#lightbox)
 
 輸入**產品識別碼**。 稍後當您建立此產品的內容時，將會需要此識別碼。
 
- [![](changes-to-storekit-images/image7.png "Enter a Product ID")](changes-to-storekit-images/image7.png#lightbox)
+ [![輸入產品識別碼](changes-to-storekit-images/image7.png)](changes-to-storekit-images/image7.png#lightbox)
 
 內容裝載會在 [詳細資料] 區段中設定。 在應用程式內購買上線之前，如果您想要取消，請取消核取 [**使用 Apple 主控內容**] 核取方塊（即使您已經上傳一些測試內容）。 不過，在應用程式內購買已上線之後，無法移除內容裝載。
 
- [![](changes-to-storekit-images/image8.png "Hosting content with Apple")](changes-to-storekit-images/image8.png#lightbox)
+ [![使用 Apple 裝載內容](changes-to-storekit-images/image8.png)](changes-to-storekit-images/image8.png#lightbox)
 
 一旦您開啟裝載內容，產品將會輸入**等待上傳**狀態並顯示此訊息：
 
- [![](changes-to-storekit-images/image9.png "The product will enter Waiting for Upload status and show this message")](changes-to-storekit-images/image9.png#lightbox)
+ [![產品會輸入等待上傳狀態並顯示此訊息](changes-to-storekit-images/image9.png)](changes-to-storekit-images/image9.png#lightbox)
 
 內容套件應該使用 Xcode 建立，並使用封存工具來上傳。 建立內容套件的指示會在下一節的**建立中提供。.PKG**檔案。
 
@@ -249,17 +249,17 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 首先從功能表中選取 [檔案] **> [新增專案**]，然後選擇 [**應用程式內購買內容**]：
 
- [![](changes-to-storekit-images/image10.png "Choose In-App Purchase Content")](changes-to-storekit-images/image10.png#lightbox)
+ [![選擇應用程式內購買內容](changes-to-storekit-images/image10.png)](changes-to-storekit-images/image10.png#lightbox)
 
 輸入 [**產品名稱**] 和 [**公司識別碼**]，讓 [套件組合**識別碼**] 符合您在 iTunes Connect 中為此產品輸入的**產品識別碼**。
 
-[![](changes-to-storekit-images/image11.png "Enter the  Name and Identifier")](changes-to-storekit-images/image11.png#lightbox)
+[![輸入 [名稱] 和 [識別碼]](changes-to-storekit-images/image11.png)](changes-to-storekit-images/image11.png#lightbox)
 
 現在您會有一個空白的**應用程式內購買內容**專案。 您可以用滑鼠右鍵按一下並**新增檔案 ...** 或將其拖曳至 [**專案導覽器**]。 請確定**ContentVersion**正確（從1.0 開始，但如果您稍後選擇更新內容，請記得將它遞增）。
 
 這個螢幕擷取畫面會顯示 Xcode，其中包含專案中的內容檔案，且 plist 專案會顯示在主視窗中：
 
-[![](changes-to-storekit-images/image12.png "This screenshot shows Xcode with the content files included in the project and the plist entries visible in the main window")](changes-to-storekit-images/image12.png#lightbox)
+[![這個螢幕擷取畫面顯示 Xcode，其中包含專案中的內容檔，以及在主視窗中顯示的 plist 專案](changes-to-storekit-images/image12.png)](changes-to-storekit-images/image12.png#lightbox)
 
 新增所有內容檔案之後，您可以儲存此專案，稍後再重新編輯，或開始上傳程式。
 
@@ -267,20 +267,20 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 上傳內容套件最簡單的方式是使用**Xcode Archive Tool**。 從功能表選擇 [**產品 >** 封存] 以開始：
 
-![](changes-to-storekit-images/image13.png "Choose Archiven")
+![選擇 Archiven](changes-to-storekit-images/image13.png)
 
 內容套件隨後會出現在封存中，如下所示。
 封存類型和圖示顯示這一行是**應用程式內購買內容**封存。 按一下 [**驗證 ...** ] 若要檢查我們的內容套件是否有錯誤，而不實際執行上傳。
 
-[![](changes-to-storekit-images/image14.png "Validate the package")](changes-to-storekit-images/image14.png#lightbox)
+[![驗證封裝](changes-to-storekit-images/image14.png)](changes-to-storekit-images/image14.png#lightbox)
 
 使用您的 iTunes Connect 認證登入：
 
-[![](changes-to-storekit-images/image15.png "Login with your iTunes Connect credentials")](changes-to-storekit-images/image15.png#lightbox)
+[![使用您的 iTunes Connect 認證登入](changes-to-storekit-images/image15.png)](changes-to-storekit-images/image15.png#lightbox)
 
 選擇正確的應用程式和應用程式內購買，以關聯此內容：
 
-[![](changes-to-storekit-images/image16.png "Choose the correct application and in-app purchase to associate this content with")](changes-to-storekit-images/image16.png#lightbox)
+[![選擇正確的應用程式和應用程式內購買，以關聯此內容](changes-to-storekit-images/image16.png)](changes-to-storekit-images/image16.png#lightbox)
 
 您應該會看到類似此螢幕擷取畫面的訊息：
 
@@ -296,23 +296,23 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 再次登入：
 
-[![](changes-to-storekit-images/image15.png "Login in")](changes-to-storekit-images/image15.png#lightbox)
+[![登入](changes-to-storekit-images/image15.png)](changes-to-storekit-images/image15.png#lightbox)
 
 選擇正確的應用程式和應用程式內購買記錄，將內容上傳至：
 
-[![](changes-to-storekit-images/image20.png "Choose the application and in-app purchase record")](changes-to-storekit-images/image20.png#lightbox)
+[![選擇應用程式和應用程式內購買記錄](changes-to-storekit-images/image20.png)](changes-to-storekit-images/image20.png#lightbox)
 
 等候您的檔案上傳：
 
-[![](changes-to-storekit-images/image21.png "The content upload dialog")](changes-to-storekit-images/image21.png#lightbox)
+[![[內容上傳] 對話方塊](changes-to-storekit-images/image21.png)](changes-to-storekit-images/image21.png#lightbox)
 
 上傳完成時，會出現一則訊息，通知您內容已提交至 App Store。
 
-[![](changes-to-storekit-images/image22.png "An example successful upload message")](changes-to-storekit-images/image22.png#lightbox)
+[![成功上傳訊息範例](changes-to-storekit-images/image22.png)](changes-to-storekit-images/image22.png#lightbox)
 
 完成後，當您返回 iTunes Connect 上的產品頁面時，它會顯示套件詳細資料，並**準備好提交**狀態。 當產品處於此狀態時，您可以在沙箱環境中開始測試。 您不需要在沙箱中「提交」產品來進行測試。
 
-[![](changes-to-storekit-images/image23.png "iTunes Connect it will show the package details and be in Ready to Submit status")](changes-to-storekit-images/image23.png#lightbox)
+[![iTunes Connect 它會顯示套件詳細資料，並準備好提交狀態](changes-to-storekit-images/image23.png)](changes-to-storekit-images/image23.png#lightbox)
 
 這可能需要一些時間（例如 幾分鐘），上傳封存和更新的 iTunes Connect 狀態。 您可以單獨提交產品進行審核，或將它與應用程式二進位檔一起提交。 只有在 Apple 正式核准之後，才會在生產 App Store 中提供內容，以便在您的應用程式中進行購買。
 
@@ -320,7 +320,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 使用 Xcode 和封存工具來建立並上傳裝載的內容套件，表示您永遠不會看到套件本身的內容。 針對範例應用程式所建立之套件中的檔案和目錄看起來像下面的螢幕擷取畫面，而根目錄中的**plist**檔案和**內容**子目錄中的產品檔案如下：
 
-[![](changes-to-storekit-images/image24.png "The plist file in the root and the product files in a Contents subdirectory")](changes-to-storekit-images/image24.png#lightbox)
+[![根目錄中的 plist 檔案，以及內容子目錄中的產品檔案](changes-to-storekit-images/image24.png)](changes-to-storekit-images/image24.png#lightbox)
 
 請注意套件的目錄結構（尤其是子目錄中的檔案位置）， `Contents` 因為您必須瞭解這項資訊，才能從裝置上的套件解壓縮檔案。
 
@@ -340,7 +340,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 當您購買並下載具有託管內容的產品時，所發生的事件順序如下圖所示：
 
-[![](changes-to-storekit-images/image25.png "The sequence of events that occurs when a product with hosted content is purchased and download")](changes-to-storekit-images/image25.png#lightbox)
+[![購買並下載具有託管內容的產品時所發生的事件順序](changes-to-storekit-images/image25.png)](changes-to-storekit-images/image25.png#lightbox)
 
 1. 新產品可在 iTunes Connect 中建立，並啟用託管內容。 實際的內容會在 Xcode 中分開建立（就像將檔案拖曳到資料夾中一樣），然後封存並上傳至 iTunes （不需要撰寫程式碼）。 然後，每個產品都會提交以供核准，之後就可以購買。 在範例程式碼中，這些產品識別碼已硬式編碼，但如果您將可用的產品清單儲存在遠端伺服器上，以便在將新的產品和內容提交至 iTunes Connect 時進行更新，則會更有彈性地裝載內容給 Apple。
 1. 當使用者購買產品時，會將交易放在付款佇列中進行處理。
@@ -376,7 +376,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 範例程式碼中的類別之間的互動會顯示在此圖中（裝載的內容購買的程式碼以綠色顯示）：
 
-[![](changes-to-storekit-images/image26.png "Hosted content purchases is shown in green in this diagram")](changes-to-storekit-images/image26.png#lightbox)
+[![此圖表中以綠色顯示託管的內容購買](changes-to-storekit-images/image26.png)](changes-to-storekit-images/image26.png#lightbox)
 
 本節的其餘部分會顯示已使用這些類別的範例程式碼：
 

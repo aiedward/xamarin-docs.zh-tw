@@ -10,24 +10,24 @@ ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c239955a093120c3a16ea3236946eb645ea9a4b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8215454f80614c0c7cca79af5cf51e2dd96453ae
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570800"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929476"
 ---
 # <a name="implementing-a-view"></a>實作檢視
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
 
-_Xamarin。表單自訂使用者介面控制項應從 View 類別衍生，用來在螢幕上放置版面配置和控制項。本文示範如何建立自訂控制項的自訂轉譯器 Xamarin.Forms ，以用來從裝置相機顯示預覽影片串流。_
+_Xamarin.Forms自訂使用者介面控制項應從 View 類別衍生，用來在螢幕上放置版面配置和控制項。本文示範如何建立自訂控制項的自訂轉譯器 Xamarin.Forms ，以用來從裝置相機顯示預覽影片串流。_
 
 每 Xamarin.Forms 個視圖都會針對每個建立原生控制項實例的平臺，隨附一個轉譯器。 當 [`View`](xref:Xamarin.Forms.View) Xamarin.Forms 應用程式在 iOS 中呈現時， `ViewRenderer` 類別會具現化，然後再具現化原生 `UIView` 控制項。 在 Android 平台上，`ViewRenderer` 類別會具現化原生 `View` 控制項。 在通用 Windows 平台 (UWP) 上，`ViewRenderer` 類別會具現化原生 `FrameworkElement` 控制項。 如需控制項對應之轉譯器和原生控制項類別的詳細資訊 Xamarin.Forms ，請參閱轉譯器[基類和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下圖說明 [`View`](xref:Xamarin.Forms.View) 和執行它的對應原生控制項之間的關聯性：
 
-![](view-images/view-classes.png "Relationship Between the View Class and its Implementing Native Classes")
+![View 類別與其實作原生類別之間的關聯性](view-images/view-classes.png)
 
 轉譯程式可以 [`View`](xref:Xamarin.Forms.View) 在每個平臺上建立的自訂轉譯器，用來執行平臺特定的自訂。 執行這項作業的流程如下：
 
@@ -118,11 +118,11 @@ public class MainPageCS : ContentPage
 
 下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
 
-![](view-images/solution-structure.png "CameraPreview Custom Renderer Project Responsibilities")
+![CameraPreview 自訂轉譯器專案責任](view-images/solution-structure.png)
 
 `CameraPreview` 自訂控制項是由平台特定轉譯器類別轉譯，其全部衍生自各平台的 `ViewRenderer` 類別。 這會導致每個 `CameraPreview` 自訂控制項都使用平台特定控制項轉譯，如下列螢幕擷取畫面所示：
 
-![](view-images/screenshots.png "CameraPreview on each Platform")
+![每個平台上的 CameraPreview](view-images/screenshots.png)
 
 `ViewRenderer`類別會公開 `OnElementChanged` 方法，這會在 Xamarin.Forms 建立自訂控制項以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的*was*專案，以及轉譯器 Xamarin.Forms 附加至的元素。 *is* 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CameraPreview` 執行個體的參考。
 
@@ -325,7 +325,7 @@ namespace CustomRenderer.UWP
 > [!NOTE]
 > 請務必停止並處置提供 UWP 應用程式中相機存取權的物件。 若未這樣做，則可能會干擾嘗試存取裝置相機的其他應用程式。 如需詳細資訊，請參閱[顯示相機預覽](/windows/uwp/audio-video-camera/simple-camera-preview-access/)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已示範如何建立自訂控制項的自訂轉譯器 Xamarin.Forms ，以用來從裝置相機顯示預覽影片串流。 Xamarin.Forms自訂使用者介面控制項應該衍生自 [`View`](xref:Xamarin.Forms.View) 類別，用來在螢幕上放置版面配置和控制項。
 

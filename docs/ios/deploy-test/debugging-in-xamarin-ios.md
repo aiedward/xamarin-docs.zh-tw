@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 141d268e7a5670f9ba8002ae9edda828538a01a4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8dc70cc8f1bf29a58cb20540fa538be2025b2ba4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571788"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935625"
 ---
 # <a name="debugging-xamarinios-apps"></a>偵錯 Xamarin.iOS 應用程式
 
@@ -33,11 +33,11 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging1.png "Setting Breakpoints")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
+[![設定中斷點](debugging-in-xamarin-ios-images/debugging1.png)](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging1a.png "Setting Breakpoints")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
+[![設定中斷點](debugging-in-xamarin-ios-images/debugging1a.png)](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
@@ -45,13 +45,13 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/image0a.png "The Breakpoints pad")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
+[![[中斷點] 面板](debugging-in-xamarin-ios-images/image0a.png)](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  如果 [中斷點] 面板未自動顯示，您可以選取 [檢視] > [偵錯 Windows] > [中斷點]__ 來顯示它
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/image0.png "The Breakpoints pad")](debugging-in-xamarin-ios-images/image0.png#lightbox)
+[![[中斷點] 面板](debugging-in-xamarin-ios-images/image0.png)](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  如果 [中斷點] 面板未自動顯示，您可以選取 [偵錯] > [Windows] > [中斷點]__ 來顯示它
 
@@ -61,13 +61,13 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging7.png "Debugging on simulator")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
-[![](debugging-in-xamarin-ios-images/debugging7a.png "Debugging on a physical device")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
+[ ![ ](debugging-in-xamarin-ios-images/debugging7.png)](debugging-in-xamarin-ios-images/debugging7.png#lightbox)在 
+ [ ![ 實體裝置上進行模擬器調試](debugging-in-xamarin-ios-images/debugging7a.png)](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)的調試
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging7c.png "Debugging on simulator")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
-[![](debugging-in-xamarin-ios-images/debugging7d.png "Debugging on a physical device")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
+[ ![ ](debugging-in-xamarin-ios-images/debugging7c.png)](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)在 
+ [ ![ 實體裝置上進行模擬器調試](debugging-in-xamarin-ios-images/debugging7d.png)](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)的調試
 
 -----
 
@@ -76,11 +76,11 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging7b.png "Select the target device")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
+[![選取目標裝置](debugging-in-xamarin-ios-images/debugging7b.png)](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging7e.png "Select the target device")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
+[![選取目標裝置](debugging-in-xamarin-ios-images/debugging7e.png)](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
@@ -88,11 +88,11 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 當您到達中斷點時，程式碼反白顯示為黃色：
 
-[![](debugging-in-xamarin-ios-images/image2.png "The code will be highlighted yellow")](debugging-in-xamarin-ios-images/image2.png#lightbox)
+[![程式碼會以黃色醒目提示](debugging-in-xamarin-ios-images/image2.png)](debugging-in-xamarin-ios-images/image2.png#lightbox)
 
 偵錯工具，例如用來檢查物件值的工具，可在此時用來取得程式碼中發生情況的詳細資訊：
 
-[![](debugging-in-xamarin-ios-images/image3.png "Displaying a color value")](debugging-in-xamarin-ios-images/image3.png#lightbox)
+[![顯示色彩值](debugging-in-xamarin-ios-images/image3.png)](debugging-in-xamarin-ios-images/image3.png#lightbox)
 
 ## <a name="conditional-breakpoints"></a>條件中斷點
 
@@ -104,25 +104,25 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 - 若要新增條件中斷點，請在您想要設定中斷點的程式碼行號左邊，以滑鼠右鍵按一下編輯器邊界，然後選取 [新增中斷點]：
 
-  [![](debugging-in-xamarin-ios-images/image4.png "Select New Breakpoint")](debugging-in-xamarin-ios-images/image4.png#lightbox)
+  [![選取新的中斷點](debugging-in-xamarin-ios-images/image4.png)](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
 - 若要為現有中斷點新增條件，請以滑鼠右鍵按一下中斷點，然後選取 [中斷點屬性]****，或在 [中斷點]**** 面板中選取 [屬性] 按鈕，如下所示：
 
-  [![](debugging-in-xamarin-ios-images/image5.png "The Breakpoints Pad")](debugging-in-xamarin-ios-images/image5.png#lightbox)
+  [![[中斷點] 面板](debugging-in-xamarin-ios-images/image5.png)](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 然後，您可以輸入想要中斷點發生的條件：
 
-[![](debugging-in-xamarin-ios-images/image6.png "Enter the condition for the breakpoint to occur")](debugging-in-xamarin-ios-images/image6.png#lightbox)
+[![輸入出現中斷點的條件](debugging-in-xamarin-ios-images/image6.png)](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中設定條件式中斷點，請先[設定一般中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)。 以滑鼠右鍵按一下中斷點，以顯示其快顯功能表：
 
- [![](debugging-in-xamarin-ios-images/image4vs.png "The breakpoint context menu")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
+ [![[中斷點] 操作功能表](debugging-in-xamarin-ios-images/image4vs.png)](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
 選取 [條件]**** 以顯示 [中斷點設定]__ 功能表：
 
- [![](debugging-in-xamarin-ios-images/image6vs.png "The Breakpoint Settings menu")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
+ [![[中斷點設定] 功能表](debugging-in-xamarin-ios-images/image6vs.png)](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
 
 然後，您可以輸入想要中斷點發生的條件
 
@@ -138,9 +138,9 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 在 Visual Studio for Mac 中，它們看起來像下面這樣：
 
- [![](debugging-in-xamarin-ios-images/image7.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7.png#lightbox)
+ [![偵錯工具可讓開發人員控制程式的執行](debugging-in-xamarin-ios-images/image7.png)](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
-它們是：
+這些節點為：
 
 - **執行/停止**：這會開始/停止執行程式碼，直到下一個中斷點。
 - **不進入函式**：這會執行下一行程式碼。 如果下一行是函式呼叫，不進入函式會執行函式，並會在函式_之後_的下一行程式碼停止。
@@ -151,9 +151,9 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 在 Visual Studio 中，它們看起來像下面這樣：
 
-[![](debugging-in-xamarin-ios-images/image7vs.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
+[![偵錯工具可讓開發人員控制程式的執行](debugging-in-xamarin-ios-images/image7vs.png)](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
-它們是：
+這些節點為：
 
 - **執行/停止**：這會開始/停止執行程式碼，直到下一個中斷點。
 - **不進入函式 (F11)**：這會執行下一行程式碼。 如果下一行是函式呼叫，不進入函式會執行函式，並會在函式_之後_的下一行程式碼停止。

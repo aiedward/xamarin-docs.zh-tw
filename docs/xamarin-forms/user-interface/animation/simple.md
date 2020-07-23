@@ -10,16 +10,16 @@ ms.date: 11/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 89f0182bfebc4d018eb083904595f0fbb211e3ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b13ec7ab079dcf7069b5f4b0dccbb52faf25f927
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573374"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933792"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>中的簡單動畫Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 
 _ViewExtensions 類別提供可用來建立簡單動畫的擴充方法。本文示範如何使用 ViewExtensions 類別來建立和取消動畫。_
 
@@ -53,7 +53,7 @@ _ViewExtensions 類別提供可用來建立簡單動畫的擴充方法。本文�
 
 中的每個擴充方法 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 都會執行單一動畫作業，以便在一段時間內將屬性從某個值逐漸變更為另一個值。 本節將探討每個動畫作業。
 
-### <a name="rotation"></a>旋轉
+### <a name="rotation"></a>輪替
 
 下列程式碼範例將示範如何使用 [ `RotateTo` ] （x： Xamarin.Forms 。ViewExtensions. RotateTo （ Xamarin.Forms 。VisualElement，System.object，， Xamarin.Forms 。緩動））方法，以建立的 [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) 屬性動畫 [`Image`](xref:Xamarin.Forms.Image) ：
 
@@ -66,7 +66,7 @@ image.Rotation = 0;
 
 下列螢幕擷取畫面顯示每個平臺上進行的輪替：
 
-![](simple-images/rotateto.png "Rotation Animation")
+![旋轉動畫](simple-images/rotateto.png)
 
 > [!NOTE]
 > 除了 [ `RotateTo` ] （x： Xamarin.Forms 。ViewExtensions. RotateTo （ Xamarin.Forms 。VisualElement，System.object，， Xamarin.Forms 。緩動））方法，也有 [ `RotateXTo` ] （x： Xamarin.Forms 。ViewExtensions. RotateXTo （ Xamarin.Forms 。VisualElement，System.object，， Xamarin.Forms 。緩動）和 [ `RotateYTo` ] （x： Xamarin.Forms 。ViewExtensions. RotateYTo （ Xamarin.Forms 。VisualElement，System.object，， Xamarin.Forms 。緩動））方法， [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) 分別建立和屬性的動畫 [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY) 。
@@ -83,7 +83,7 @@ await image.RelRotateTo (360, 2000);
 
 下列螢幕擷取畫面顯示每個平臺上進行的相對旋轉：
 
-![](simple-images/relrotateto.png "Relative Rotation Animation")
+![相對旋轉動畫](simple-images/relrotateto.png)
 
 ### <a name="scaling"></a>調整大小
 
@@ -97,7 +97,7 @@ await image.ScaleTo (2, 2000);
 
 下列螢幕擷取畫面顯示每個平臺上的調整進行中：
 
-![](simple-images/scaleto.png "Scaling Animation")
+![調整動畫](simple-images/scaleto.png)
 
 > [!NOTE]
 > 除了 [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) 方法之外，還有 `ScaleXTo` 和 `ScaleYTo` 方法可分別建立和屬性的動畫 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 。
@@ -126,7 +126,7 @@ await image.RotateTo(360, 2000);
 
 若要在 [`Image`](xref:Xamarin.Forms.Image) 版面配置中央旋轉實例， [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX) 必須將和 [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY) 屬性設定為相對於之寬度和高度的值 `Image` 。 在此範例中，的中心 `Image` 定義為位於版面配置的中央，因此預設 `AnchorX` 值0.5 不需要變更。 不過， `AnchorY` 屬性會重新定義為從頂端 `Image` 到版面配置中心點的值。 這可確保在 `Image` 版面配置的中心點進行完整的360度旋轉，如下列螢幕擷取畫面所示：
 
-![](simple-images/rotate-anchors.png "Rotation Animation with Anchors")
+![使用錨點旋轉動畫](simple-images/rotate-anchors.png)
 
 ### <a name="translation"></a>翻譯
 
@@ -140,7 +140,7 @@ await image.TranslateTo (-100, -100, 1000);
 
 下列螢幕擷取畫面顯示每個平臺上的轉譯進行中：
 
-![](simple-images/translateto.png "Translation Animation")
+![翻譯動畫](simple-images/translateto.png)
 
 > [!NOTE]
 > 如果某專案一開始是以螢幕配置，然後轉譯到螢幕上，則在轉譯之後，專案的輸入配置會保持關閉畫面，而且使用者無法與它互動。 因此，建議您在最後一個位置配置視圖，然後執行任何必要的翻譯。
@@ -158,7 +158,7 @@ await image.FadeTo (1, 4000);
 
 下列螢幕擷取畫面顯示每個平臺上的淡入進度：
 
-![](simple-images/fadeto.png "Fading Animation")
+![漸淡動畫](simple-images/fadeto.png)
 
 ## <a name="compound-animations"></a>複合動畫
 
@@ -218,7 +218,7 @@ await Task.WhenAll (
 
 下列螢幕擷取畫面顯示每個平臺上的多個輪替進行中：
 
-![](simple-images/multiple-rotations.png "Composite Animation")
+![複合動畫](simple-images/multiple-rotations.png)
 
 ## <a name="canceling-animations"></a>取消動畫
 
@@ -230,7 +230,7 @@ ViewExtensions.CancelAnimations (image);
 
 這會立即取消目前正在實例上執行的所有動畫 [`Image`](xref:Xamarin.Forms.Image) 。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用類別來建立和取消動畫 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 。 這個類別提供擴充方法，可用於建立旋轉、縮放、轉譯和淡化實例的簡單動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 

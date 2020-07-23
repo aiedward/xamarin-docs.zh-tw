@@ -12,16 +12,16 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a28e391c6bacd460f095c94e30b2d9433a5191e4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139798"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931790"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>將資料儲存在本機 SQLite.NET 資料庫中
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
 在本快速入門中，您將了解如何：
 
@@ -30,10 +30,10 @@ ms.locfileid: "84139798"
 
 快速入門會逐步說明如何將資料儲存在本機 SQLite.NET 資料庫中。 最終的應用程式如下所示：
 
-[![](database-images/screenshots1-sml.png "Notes Page")](database-images/screenshots1.png#lightbox "Notes Page")
-[![](database-images/screenshots2-sml.png "Note Entry Page")](database-images/screenshots2.png#lightbox "Note Entry Page")
+[ ![ 附注頁面](database-images/screenshots1-sml.png)](database-images/screenshots1.png#lightbox "[備註] 頁面") 
+ [ ![ 筆記輸入頁面](database-images/screenshots2-sml.png)](database-images/screenshots2.png#lightbox "[備註輸入] 頁面")
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 您應該先成功完成[先前的快速入門](multi-page.md)，再嘗試本快速入門。 或者，下載[先前的快速入門範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)，並使用此範例作為本快速入門的起點。
 
@@ -45,11 +45,11 @@ ms.locfileid: "84139798"
 
 2. 在 [方案總管]**** 中選取 **Notes** 專案，按一下滑鼠右鍵，然後選取 [管理 NuGet 套件]****：
 
-    ![](database-images/vs/add-nuget-packages.png "Add NuGet Packages")    
+    ![新增 NuGet 套件](database-images/vs/add-nuget-packages.png)    
 
 3. 在 [NuGet 套件管理員] 中選取 [瀏覽] 索引標籤，搜尋 **sqlite-net-pcl** NuGet 套件並加以選取，然後按一下 [安裝] 按鈕，將其新增至專案：
 
-    ![](database-images/vs/add-package.png "Add Package")
+    ![新增套件](database-images/vs/add-package.png)
 
     > [!NOTE]
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
@@ -262,11 +262,11 @@ ms.locfileid: "84139798"
 
 2. 在 **Solution Pad** 中，選取 **Notes** 專案，按一下滑鼠右鍵，然後選取 [新增] > [新增 NuGet 套件]****：
 
-    ![](database-images/vsmac/add-nuget-packages.png "Add NuGet Packages")    
+    ![新增 NuGet 套件](database-images/vsmac/add-nuget-packages.png)    
 
 3. 在 [新增套件] 視窗中，搜尋 **sqlite-net-pcl** NuGet 套件並加以選取，然後按一下 [新增套件] 按鈕，將其新增至專案：
 
-    ![](database-images/vsmac/add-package.png "Add Package")
+    ![新增套件](database-images/vsmac/add-package.png)
 
     > [!NOTE]
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：

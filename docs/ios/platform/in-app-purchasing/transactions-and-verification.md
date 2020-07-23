@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: d92de14dc42f7c20a1f25b6454623c7ad4441e8a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 605f82c90f98bb4b50e5b630a53721d186ff35a1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032291"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935755"
 ---
 # <a name="transactions-and-verification-in-xamarinios"></a>在 Xamarin 中的交易和驗證
 
@@ -29,7 +29,7 @@ ms.locfileid: "73032291"
 
 ### <a name="implementing-restore"></a>執行還原
 
-[使用者介面**還原**] 按鈕會呼叫下列方法，這會在 `SKPaymentQueue`上觸發 RestoreCompletedTransactions。
+[使用者介面**還原**] 按鈕會呼叫下列方法，這會在上觸發 RestoreCompletedTransactions `SKPaymentQueue` 。
 
 ```csharp
 public void Restore()
@@ -41,7 +41,7 @@ public void Restore()
 
 StoreKit 會以非同步方式將還原要求傳送至 Apple 的伺服器。   
    
-因為 `CustomPaymentObserver` 會註冊為交易觀察者，所以當 Apple 的伺服器回應時，就會收到訊息。 回應會包含此使用者曾在此應用程式中執行的所有交易（橫跨其所有裝置）。 程式碼會逐一查看每個交易，偵測還原狀態並呼叫 `UpdatedTransactions` 方法來處理它，如下所示：
+因為 `CustomPaymentObserver` 已註冊為交易觀察者，所以當 Apple 的伺服器回應時，將會接收訊息。 回應會包含此使用者曾在此應用程式中執行的所有交易（橫跨其所有裝置）。 程式碼會逐一查看每個交易、偵測還原狀態，並呼叫 `UpdatedTransactions` 方法來處理它，如下所示：
 
 ```csharp
 // called when the transaction status is updated
@@ -67,7 +67,7 @@ default:
 }
 ```
 
-如果使用者沒有可還原的產品，則不會呼叫 `UpdatedTransactions`。   
+如果使用者沒有可還原的產品， `UpdatedTransactions` 則不會呼叫。   
    
 在範例中還原指定交易最簡單的可能程式碼，會執行與購買時相同的動作，但 `OriginalTransaction` 屬性是用來存取產品識別碼：
 
@@ -86,7 +86,7 @@ public void RestoreTransaction (SKPaymentTransaction transaction)
 
 #### <a name="restore-completion"></a>還原完成
 
-`CustomPaymentObserver` 有兩個其他方法，會在還原程式完成（成功或失敗）時由 StoreKit 呼叫，如下所示：
+`CustomPaymentObserver`有兩個其他方法，會在還原程式完成（成功或失敗）時由 StoreKit 呼叫，如下所示：
 
 ```csharp
 public override void PaymentQueueRestoreCompletedTransactionsFinished (SKPaymentQueue queue)
@@ -105,11 +105,11 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
 
 本檔中的兩個範例使用 `NSUserDefaults` 來追蹤購買：   
    
- **耗材**–信用額度購買的「餘額」是簡單的 `NSUserDefaults` 整數值，會隨著每次購買而增加。   
+ **耗材**–信用額度購買的「餘額」是簡單 `NSUserDefaults` 的整數值，每次購買時都會遞增。   
    
- **非耗材**–每個相片篩選購買都會以索引鍵/值組的形式儲存在 `NSUserDefaults`中。
+ **非耗材**–每個相片篩選購買都會儲存為中的索引鍵/值組 `NSUserDefaults` 。
 
-使用 `NSUserDefaults` 可讓範例程式碼變得簡單，但不提供非常安全的解決方案，因為技術上意識的使用者可能會更新設定（略過付款機制）。   
+使用可 `NSUserDefaults` 讓範例程式碼變得簡單，但不提供非常安全的解決方案，因為技術上意識的使用者可能會更新設定（略過付款機制）。   
    
 注意：實際應用程式應該採用安全的機制，來儲存不受使用者篡改的已購買內容。 這可能牽涉到加密及（或）其他技術，包括遠端伺服器驗證。   
    
@@ -121,7 +121,7 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
 
 到目前為止，本檔中的範例只包含應用程式直接與 App Store 伺服器通訊，以進行購買交易，以解除鎖定應用程式中已編碼的功能或功能。   
    
-Apple 藉由允許另一部伺服器獨立驗證購買收據，提供額外的購買安全性等級，這對於在購買時傳遞數位內容（例如數位書籍或雜誌）。   
+Apple 藉由允許另一部伺服器獨立驗證購買收據，提供額外的購買安全性等級，這在購買數位內容（例如數位書籍或雜誌）之前，驗證要求會很有用。   
    
  **內建產品**-如同本檔中的範例，所購買的產品會以應用程式隨附的功能形式存在。 應用程式內購買可讓使用者存取功能。
 產品識別碼已硬式編碼。   
@@ -137,7 +137,7 @@ Apple 藉由允許另一部伺服器獨立驗證購買收據，提供額外的�
 
 由於產品已從遠端傳遞，因此您也可以在一段時間內新增更多產品（不需更新應用程式代碼），例如新增更多書籍或雜誌的新問題。 為了讓應用程式能夠探索這些新聞產品並向使用者顯示，其他伺服器應該儲存並傳遞這項資訊。   
    
-[![](transactions-and-verification-images/image38.png "Getting Prices for Server-Delivered Products")](transactions-and-verification-images/image38.png#lightbox)   
+[![取得伺服器交付產品的價格](transactions-and-verification-images/image38.png)](transactions-and-verification-images/image38.png#lightbox)   
    
 1. 產品資訊必須儲存在多個位置：在您的伺服器上和 iTunes Connect。 此外，每個產品都有相關聯的內容檔案。 這些檔案會在成功購買後傳遞。   
    
@@ -157,15 +157,15 @@ Apple 藉由允許另一部伺服器獨立驗證購買收據，提供額外的�
 
 由於遠端伺服器需要某種方式來驗證內容要求是否有效（即已針對付費），因此會傳遞回條資訊以進行驗證。 遠端伺服器會將該資料轉送到 iTunes 進行驗證，如果成功，則會在應用程式的回應中包含產品內容。   
    
- [![](transactions-and-verification-images/image39.png "Purchasing Server-Delivered Products")](transactions-and-verification-images/image39.png#lightbox)   
+ [![購買伺服器提供的產品](transactions-and-verification-images/image39.png)](transactions-and-verification-images/image39.png#lightbox)   
    
-1. 應用程式會將 `SKPayment` 新增至佇列。 如有需要，系統會提示使用者輸入其 Apple ID，並要求您確認付款。   
+1. 應用程式會將新增 `SKPayment` 至佇列。 如有需要，系統會提示使用者輸入其 Apple ID，並要求您確認付款。   
    
 2. StoreKit 會將要求傳送至伺服器以進行處理。   
    
 3. 當交易完成時，伺服器會以交易回條回應。   
    
-4. `SKPaymentTransactionObserver` 子類別會接收回條並加以處理。 因為產品必須從伺服器下載，所以應用程式會對遠端伺服器起始網路要求。   
+4. 子 `SKPaymentTransactionObserver` 類別會接收回條並加以處理。 因為產品必須從伺服器下載，所以應用程式會對遠端伺服器起始網路要求。   
    
 5. 下載要求會伴隨回條資料，讓遠端伺服器可以驗證它是否已獲授權存取內容。 應用程式的網路用戶端會等候此要求的回應。   
    
@@ -177,15 +177,15 @@ Apple 藉由允許另一部伺服器獨立驗證購買收據，提供額外的�
   
 9. 應用程式會接收並剖析回應，並將產品內容儲存至裝置的檔案系統。   
    
-10. 應用程式會啟用產品，然後呼叫 StoreKit 的 `FinishTransaction`。 然後，應用程式可能會選擇性地顯示已購買的內容（例如，顯示所購買書籍或雜誌問題的第一頁）。
+10. 應用程式會啟用產品，然後呼叫 StoreKit 的 `FinishTransaction` 。 然後，應用程式可能會選擇性地顯示已購買的內容（例如，顯示所購買書籍或雜誌問題的第一頁）。
 
-非常大型產品內容檔案的替代執行方式，可能只需要將交易回條儲存在步驟 #9，讓交易能夠快速完成，並提供使用者介面讓使用者下載實際的產品內容稍後的時間。 後續下載要求可以重新傳送儲存的回條，以存取所需的產品內容檔案。
+非常大型產品內容檔案的替代執行方式，可能只需要將交易回條儲存在步驟 #9，讓交易可以快速完成，並提供使用者介面讓使用者在稍後下載實際的產品內容。 後續下載要求可以重新傳送儲存的回條，以存取所需的產品內容檔案。
 
 ### <a name="writing-server-side-receipt-verification-code"></a>撰寫伺服器端接收驗證碼
 
 在伺服器端程式碼中驗證回條可以使用簡單的 HTTP POST 要求/回應來完成，其中包含在工作流程圖表中 #8 的步驟 #5。   
    
-將應用程式中的 `SKPaymentTansaction.TransactionReceipt` 屬性解壓縮。 這是需要傳送至 iTunes 以進行驗證的資料（步驟 #5）。
+`SKPaymentTansaction.TransactionReceipt`在應用程式中解壓縮屬性。 這是需要傳送至 iTunes 以進行驗證的資料（步驟 #5）。
 
 將交易回條資料（在步驟 #5 或 #6）編碼為 Base64。
 
@@ -197,7 +197,7 @@ Apple 藉由允許另一部伺服器獨立驗證購買收據，提供額外的�
 }
 ```
 
-HTTP 會將 JSON 張貼到[https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt) ，以供生產或[https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt)進行測試。   
+HTTP 會將 JSON 張貼至以 [https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt) 用於生產或 [https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt) 進行測試。   
    
  JSON 回應將包含下列索引鍵：
 
@@ -208,6 +208,6 @@ HTTP 會將 JSON 張貼到[https://buy.itunes.apple.com/verifyReceipt](https://b
 }
 ```
 
-狀態為零表示有效的回條。 您的伺服器可以繼續完成所購買產品的內容。 回條金鑰包含 JSON 字典，其屬性與應用程式所接收的 `SKPaymentTransaction` 物件相同，因此伺服器程式碼可以查詢此字典來抓取資訊，例如 product_id 和購買數量。
+狀態為零表示有效的回條。 您的伺服器可以繼續完成所購買產品的內容。 回條金鑰包含的 JSON 字典具有與 `SKPaymentTransaction` 應用程式所接收之物件相同的屬性，因此伺服器程式碼可以查詢此字典來抓取資訊，例如 product_id 和購買數量。
 
 如需其他資訊，請參閱 Apple 的[收據驗證程式設計指南](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html)檔。

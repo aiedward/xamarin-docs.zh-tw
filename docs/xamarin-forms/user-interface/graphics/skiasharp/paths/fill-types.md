@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e82572d88e380997fb2435179dba824c1b3f0c2f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139044"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936184"
 ---
 # <a name="the-path-fill-types"></a>路徑填滿類型
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用 SkiaSharp 路徑填滿類型探索可能的不同效果_
 
-路徑中的兩個輪廓可以重迭，而組成單一輪廓的線條可能會重迭。 任何封閉的區域都可能會填滿，但您可能不想要填滿所有封閉的區域。 以下是範例：
+路徑中的兩個輪廓可以重迭，而組成單一輪廓的線條可能會重迭。 任何封閉的區域都可能會填滿，但您可能不想要填滿所有封閉的區域。 以下為範例：
 
-![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
+![五個指向的星星部分 filles](fill-types-images/filltypeexample.png)
 
 您對此有一些控制。 填入演算法是由的屬性所控制 [`SKFillType`](xref:SkiaSharp.SKPath.FillType) `SKPath` ，您可以將它設定為列舉的成員 [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) ：
 
@@ -173,7 +173,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 一般來說，路徑填滿型別只會影響填滿，而不是筆劃，但這兩種 `Inverse` 模式會影響填滿和筆劃。 針對填滿，這兩個 `Inverse` 類型的填滿區域會 oppositely，讓星星外的區域填滿。 就筆劃而言，這兩個類型會對 `Inverse` 筆劃以外的所有專案進行色彩。 使用這些反填滿類型可能會產生一些奇怪的效果，如 iOS 螢幕擷取畫面所示：
 
-[![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
+[![五指星形頁面的三向螢幕擷取畫面](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "五指星形頁面的三向螢幕擷取畫面")
 
 Android 螢幕擷取畫面顯示一般的奇數和纏繞效果，但是筆劃和填滿的順序也會影響結果。
 
@@ -226,7 +226,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這是以最少的程式碼建立的有趣映射：
 
-[![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
+[![重迭圓圈頁面的三重螢幕擷取畫面](fill-types-images/overlappingcircles-small.png)](fill-types-images/overlappingcircles-large.png#lightbox "重迭圓圈頁面的三重螢幕擷取畫面")
 
 ## <a name="related-links"></a>相關連結
 

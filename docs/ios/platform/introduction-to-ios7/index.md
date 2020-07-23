@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: b405643096699e1d965f485bdc590afa178881d6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bd57232b183d5940a22915a0277a016cab36af8a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031827"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931608"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 簡介
 
@@ -22,14 +22,14 @@ iOS 7 是 iOS 的重大更新。 它引進全新的使用者介面設計，將�
 
 ## <a name="uiview-animation-enhancements"></a>UIView 動畫增強功能
 
-iOS 7 增強了 UIKit 中的動畫支援，讓應用程式能夠執行先前需要直接拖放至核心動畫架構的專案。 例如，`UIView` 現在可以執行彈簧動畫以及主要畫面格動畫，先前已將 `CAKeyframeAnimation` 套用至 `CALayer`。
+iOS 7 增強了 UIKit 中的動畫支援，讓應用程式能夠執行先前需要直接拖放至核心動畫架構的專案。 例如， `UIView` 現在可以執行春季動畫，以及先前套用至的主要畫面格動畫 `CAKeyframeAnimation` `CALayer` 。
 
 ### <a name="spring-animations"></a>彈簧動畫
 
- `UIView` 現在支援以彈簧效果建立屬性變更的動畫。 若要新增這項功能，請呼叫 `AnimateNotify` 或 `AnimateNotifyAsync` 方法，傳入彈簧阻尼比例和初始彈簧速度的值，如下所述：
+ `UIView`現在支援以彈簧效果建立屬性變更的動畫。 若要新增此項，請呼叫 `AnimateNotify` 或 `AnimateNotifyAsync` 方法，傳入彈簧阻尼比例和初始彈簧速度的值，如下所述：
 
-- `springWithDampingRatio` –介於0和1之間的值，其中的震盪會增加較小的值。
-- `initialSpringVelocity` –以每秒動畫距離總計的百分比表示的初始彈簧速度。
+- `springWithDampingRatio`–介於0和1之間的值，其中的震盪會增加較小的值。
+- `initialSpringVelocity`–初始彈簧速度，以每秒動畫距離總計的百分比表示。
 
 當影像視圖的中心變更時，下列程式碼會產生彈簧效果：
 
@@ -49,11 +49,11 @@ void AnimateWithSpring ()
 
 這個彈簧效果會使影像視圖在將其動畫完成至新的中心位置時顯示為跳動，如下所示：
 
- ![](images/spring-animation.png "This spring effect causes the image view to appear to bounce as it completes its animation to a new center location")
+ ![這個彈簧效果會使影像視圖在將其動畫完成至新的中心位置時出現跳動](images/spring-animation.png)
 
 ### <a name="keyframe-animations"></a>主要畫面格動畫
 
-`UIView` 類別現在包含 `AnimateWithKeyframes` 方法，可在 `UIView`上建立主要畫面格動畫。 這個方法類似于其他 `UIView` 動畫方法，不同之處在于會以參數的形式傳遞額外的 `NSAction` 以包含主要畫面格。 在 `NSAction` 中，會藉由呼叫 `UIView.AddKeyframeWithRelativeStartTime` 來新增主要畫面格。
+`UIView`類別現在包含在上建立主要畫面格 `AnimateWithKeyframes` 動畫的方法 `UIView` 。 這個方法類似于其他的 `UIView` 動畫方法，不同之處在于會以參數的形式傳遞額外的，以包含主要畫面格 `NSAction` 。 在中 `NSAction` ，會藉由呼叫來新增主要畫面格 `UIView.AddKeyframeWithRelativeStartTime` 。
 
 例如，下列程式碼片段會建立主要畫面格動畫，以動畫顯示視圖的中心，以及旋轉視圖：
 
@@ -82,26 +82,26 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-`AddKeyframeWithRelativeStartTime` 方法的前兩個參數分別指定主要畫面格的開始時間和持續時間，以整體動畫長度的百分比表示。 上述範例會導致影像視圖在第一秒以動畫方式繪製到其新中心，然後在下一秒旋轉90度。 因為動畫會將 `UIViewKeyframeAnimationOptions.Autoreverse` 指定為選項，所以這兩個主要畫面也會反向動畫。 最後，最後的值會設定為完成處理常式中的初始狀態。
+方法的前兩個參數 `AddKeyframeWithRelativeStartTime` 分別指定主要畫面格的開始時間和持續時間，以整體動畫長度的百分比表示。 上述範例會導致影像視圖在第一秒以動畫方式繪製到其新中心，然後在下一秒旋轉90度。 因為動畫會指定 `UIViewKeyframeAnimationOptions.Autoreverse` 為選項，所以這兩個主要畫面也會反向動畫。 最後，最後的值會設定為完成處理常式中的初始狀態。
 
 下列螢幕擷取畫面說明透過主要畫面格結合的動畫：
 
- ![](images/keyframes.png "This screenshots illustrates the combined animation through the keyframes")
+ ![此螢幕擷取畫面說明透過主要畫面格結合的動畫](images/keyframes.png)
 
 ## <a name="uikit-dynamics"></a>UIKit Dynamics
 
 UIKit Dynamics 是 UIKit 中的一組新 Api，可讓應用程式根據物理建立動畫互動。 UIKit Dynamics 會封裝2D 物理引擎以實現這種情況。
 
-API 本質上是宣告式。 您可以藉由建立稱為「*行為*」的物件來宣告物理互動的表現方式，以表達物理概念，例如引力、碰撞、彈簧等等。然後將行為附加至另一個物件，稱為*動態 animator*，其會封裝一個視圖。 動態 animator 的目的是將宣告的物理行為套用到*動態專案*-會執行 `IUIDynamicItem` 的專案，例如 `UIView`。
+API 本質上是宣告式。 您可以藉由建立稱為「*行為*」的物件來宣告物理互動的表現方式，以表達物理概念，例如引力、碰撞、彈簧等等。然後將行為附加至另一個物件，稱為*動態 animator*，其會封裝一個視圖。 動態 animator 的目的是將宣告的物理行為套用至*動態專案*-會執行的專案 `IUIDynamicItem` ，例如 `UIView` 。
 
 有幾個不同的基本行為可用於觸發複雜的互動，包括：
 
-- `UIAttachmentBehavior` –附加兩個動態專案，使其一起移動，或將動態專案附加至附加點。
-- `UICollisionBehavior` –允許動態專案參與衝突。
-- `UIDynamicItemBehavior` –指定一組要套用至動態專案的一般屬性，例如彈性、密度和摩擦。
-- `UIGravityBehavior`-將重心套用至動態專案，導致專案以 gravitational 方向加速。
-- `UIPushBehavior` –將 force 套用至動態專案。
-- `UISnapBehavior` –允許動態專案貼齊至具有彈簧效果的位置。
+- `UIAttachmentBehavior`–附加兩個動態專案，使其一起移動，或將動態專案附加至附加點。
+- `UICollisionBehavior`-允許動態專案參與衝突。
+- `UIDynamicItemBehavior`–指定一組要套用至動態專案的一般屬性，例如彈性、密度和摩擦。
+- `UIGravityBehavior`-將重心套用至動態專案，使專案以 gravitational 方向加速。
+- `UIPushBehavior`–將 force 套用至動態專案。
+- `UISnapBehavior`–允許動態專案貼齊至具有彈簧效果的位置。
 
 雖然有許多基本類型，但使用 UIKit Dynamics 將以物理為基礎的互動新增至視圖的一般程式，在行為上是一致的：
 
@@ -111,13 +111,13 @@ API 本質上是宣告式。 您可以藉由建立稱為「*行為*」的物件�
 
 ### <a name="dynamics-example"></a>Dynamics 範例
 
-讓我們來看一個範例，將重心和碰撞界限新增至 `UIView`。
+讓我們來看一個範例，將重心和碰撞界限新增至 `UIView` 。
 
 #### <a name="uigravitybehavior"></a>UIGravityBehavior
 
 將重心加入影像視圖中，會遵循上面所述的3個步驟。
 
-我們將在此範例的 `ViewDidLoad` 方法中工作。 首先，新增 `UIImageView` 實例，如下所示：
+我們將在 `ViewDidLoad` 此範例的方法中工作。 首先，新增 `UIImageView` 實例，如下所示：
 
 ```csharp
 image = UIImage.FromFile ("monkeys.jpg");
@@ -129,21 +129,21 @@ imageView = new UIImageView (new CGRect (new CGPoint (View.Center.X - image.Size
 View.AddSubview (imageView);
 ```
 
-這會建立以畫面上邊緣為中心的影像視圖。 若要讓影像「落」在重心，請建立 `UIDynamicAnimator` 的實例：
+這會建立以畫面上邊緣為中心的影像視圖。 若要讓影像「落」在引力的範圍內，請建立的實例 `UIDynamicAnimator` ：
 
 ```csharp
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-`UIDynamicAnimator` 會採用參考 `UIView` 或 `UICollectionViewLayout`的實例，其中包含將根據附加行為動畫的專案。
+`UIDynamicAnimator`會接受參考 `UIView` 或的實例 `UICollectionViewLayout` ，其中包含將根據附加行為動畫的專案。
 
-接下來，建立 `UIGravityBehavior` 實例。 您可以傳遞一個或多個執行 `IUIDynamicItem` 的物件，例如 `UIView`：
+接下來，建立 `UIGravityBehavior` 實例。 您可以傳遞一個或多個執行的物件 `IUIDynamicItem` ，例如 `UIView` ：
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
 ```
 
-此行為會傳遞 `IUIDynamicItem` 的陣列，在此案例中，會包含我們正在製作動畫的單一 `UIImageView` 實例。
+此行為會傳遞給的陣列 `IUIDynamicItem` ，在此案例中，會包含 `UIImageView` 我們正在製作動畫的單一實例。
 
 最後，將行為新增至動態 animator：
 
@@ -153,16 +153,16 @@ dynAnimator.AddBehavior (gravity);
 
 這會導致影像以引力向下動畫，如下所示：
 
-![](images/gravity2.png "The starting image location")
-![](images/gravity3.png "The ending image location")
+![開始映射位置 ](images/gravity2.png)
+ ![ 結束映射位置](images/gravity3.png)
 
-由於不會限制畫面的界限，因此影像視圖只會落在底部。 為了限制此影像與畫面邊緣的衝突，我們可以新增 `UICollisionBehavior`。 我們將在下一節中討論這一點。
+由於不會限制畫面的界限，因此影像視圖只會落在底部。 為了限制視圖，使影像與螢幕邊緣衝突，我們可以新增 `UICollisionBehavior` 。 我們將在下一節中討論這一點。
 
 #### <a name="uicollisionbehavior"></a>UICollisionBehavior
 
-我們會先建立 `UICollisionBehavior`，並將它新增至動態 animator，就像我們針對 `UIGravityBehavior` 所做的一樣。
+我們會先建立 `UICollisionBehavior` ，並將它加入至動態 animator，就像我們針對所做的一樣 `UIGravityBehavior` 。
 
-修改程式碼以包含 `UICollisionBehavior`：
+修改程式碼以包含 `UICollisionBehavior` ：
 
 ```csharp
 using (image = UIImage.FromFile ("monkeys.jpg")) {
@@ -187,19 +187,19 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-`UICollisionBehavior` 具有稱為 `TranslatesReferenceBoundsIntoBoundry`的屬性。 將此設定為 `true` 會導致參考視圖的界限當做衝突界限使用。
+`UICollisionBehavior`具有名為的屬性 `TranslatesReferenceBoundsIntoBoundry` 。 將此設定為， `true` 會將參考視圖的界限當做衝突界限使用。
 
 現在，當影像以引力向下動畫時，它會稍微偏離畫面底部，然後才會進行其他工作。
 
 <!--, as shown below:
 
- ![](images/bounce.png "Now, when the image animates downward with gravity, it bounces slightly off the bottom of the screen before settling to rest there")-->
+ ![Now, when the image animates downward with gravity, it bounces slightly off the bottom of the screen before settling to rest there](images/bounce.png)-->
 
 #### <a name="uidynamicitembehavior"></a>UIDynamicItemBehavior
 
-我們可以進一步控制具有其他行為之影像視圖的行為。 例如，我們可以新增 `UIDynamicItemBehavior` 來增加彈性，使影像視圖在與畫面底部發生衝突時跳動。
+我們可以進一步控制具有其他行為之影像視圖的行為。 例如，我們可以加入 `UIDynamicItemBehavior` 來增加彈性，使影像視圖在與畫面底部發生衝突時跳動。
 
-新增 `UIDynamicItemBehavior` 遵循與其他行為相同的步驟。 首先建立行為：
+新增會 `UIDynamicItemBehavior` 遵循與其他行為相同的步驟。 首先建立行為：
 
 ```csharp
 var dynBehavior = new UIDynamicItemBehavior (dynItems) {
@@ -241,4 +241,4 @@ iOS 7 會變更背景工作的執行時間和方式。 當工作在背景中執�
 
 - [IOS 7 簡介（範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
 - [iOS 7 使用者介面概觀](~/ios/platform/introduction-to-ios7/ios7-ui.md)
-- [背景](~/ios/app-fundamentals/backgrounding/index.md)
+- [背景處理](~/ios/app-fundamentals/backgrounding/index.md)

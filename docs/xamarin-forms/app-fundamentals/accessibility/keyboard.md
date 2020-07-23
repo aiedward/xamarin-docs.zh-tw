@@ -10,16 +10,16 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1590d0a4f9716541f18bc4f50a2c480c5e4478a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 47770b4f57da530677dead051fc657ab24e776f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129775"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933805"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>鍵盤協助工具Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 如果應用程式未提供適當的鍵盤存取，可能會讓需使用螢幕閱讀程式或行動不便的使用者遇到使用上的困難。 Xamarin.Forms應用程式可以指定預期的定位順序，以改善其可用性和協助工具。 指定控制項的定位順序時，可啟用鍵盤導覽、讓應用程式頁面做好以特定順序接收輸入的準備，以及允許螢幕閱讀程式向使用者朗讀可設定焦點的元素。
 
@@ -56,7 +56,7 @@ ms.locfileid: "84129775"
 
 下列螢幕擷取畫面顯示此程式碼範例的預設定位順序：
 
-![](keyboard-images/default-tab-order.png "Default Row-based Tab Order")
+![預設的資料列式定位順序](keyboard-images/default-tab-order.png)
 
 此處的定位順序是以資料列為主，即為 XAML 中列出的控制項順序。 因此，按下 Tab 鍵會流覽名字 [`Entry`](xref:Xamarin.Forms.Entry) 實例，接著是姓氏 `Entry` 實例。 不過，更直覺式的體驗就是使用資料行優先的定位導覽，以便在按下 Tab 鍵時巡覽名字與姓氏組合。 這可藉由指定輸入控制項的定位順序來完成。
 
@@ -113,7 +113,7 @@ ms.locfileid: "84129775"
 
 下列螢幕擷取畫面顯示此程式碼範例的定位順序：
 
-![](keyboard-images/correct-tab-order.png "Column-based Tab Order")
+![資料行式定位順序](keyboard-images/correct-tab-order.png)
 
 此處的定位順序是以資料行為基礎。 因此，按下 Tab 鍵會流覽名字-姓氏 [`Entry`](xref:Xamarin.Forms.Entry) 配對。
 

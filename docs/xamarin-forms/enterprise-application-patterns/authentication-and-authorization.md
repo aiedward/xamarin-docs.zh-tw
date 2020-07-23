@@ -10,12 +10,12 @@ ms.date: 08/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8b712b2a5d7eeb2ee5e71047b9e6c460eb10d72a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5550ea7a355492f724459449f3b37cdcb8d05b1e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573829"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932141"
 ---
 # <a name="authentication-and-authorization"></a>驗證和授權
 
@@ -42,7 +42,7 @@ OpenID Connect 和 OAuth 2.0 的組合結合了驗證和 API 存取的兩個基�
 
 在使用直接用戶端對微服務通訊的應用程式（例如 eShopOnContainers 參考應用程式）中，可使用專用的驗證微服務做為安全性權杖服務（STS）來驗證使用者，如圖9-1 所示。 如需直接用戶端對微服務通訊的詳細資訊，請參閱[用戶端與微服務之間的通訊](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication-between-client-and-microservices)。
 
-![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
+![專用驗證微服務的驗證](authentication-and-authorization-images/authentication.png)
 
 **圖9-1：** 專用驗證微服務的驗證
 
@@ -211,7 +211,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 - 隱含。 此流程已針對以瀏覽器為基礎的應用程式優化，而且應該用於僅供使用者驗證，或用於驗證和存取權杖要求。 所有權杖都是透過瀏覽器傳輸，因此不允許重新整理權杖等 advanced 功能。
 - 授權碼。 此流程可讓您在後通道上抓取權杖，而不是瀏覽器前端通道，同時也支援用戶端驗證。
-- 混合： 此流程是隱含和授權程式碼授與類型的組合。 身分識別權杖會透過瀏覽器通道傳輸，並包含已簽署的通訊協定回應以及其他成品，例如授權碼。 成功驗證回應之後，應該使用後端通道來抓取存取和重新整理權杖。
+- 混合式。 此流程是隱含和授權程式碼授與類型的組合。 身分識別權杖會透過瀏覽器通道傳輸，並包含已簽署的通訊協定回應以及其他成品，例如授權碼。 成功驗證回應之後，應該使用後端通道來抓取存取和重新整理權杖。
 
 > [!TIP]
 > 使用混合式驗證流程。 混合式驗證流程可減少適用于瀏覽器通道的各種攻擊，而且是建議的流程，適用于想要取得存取權杖（且可能會重新整理權杖）的原生應用程式。
@@ -224,7 +224,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 EShopOnContainers 行動應用程式會使用 IdentityServer 與混合式驗證流程進行驗證，如圖9-2 所示。
 
-![](authentication-and-authorization-images/sign-in.png "High-level overview of the sign-in process")
+![登入程式的高階總覽](authentication-and-authorization-images/sign-in.png)
 
 **圖9-2：** 登入程式的高階總覽
 
@@ -232,7 +232,7 @@ EShopOnContainers 行動應用程式會使用 IdentityServer 與混合式驗證�
 
 EShopOnContainers 行動應用程式會藉由將要求傳送至 `<base endpoint>:5105/connect/endsession` ，並使用其他參數來登出 IdentityServer。 登出之後，IdentityServer 會將登出後重新導向 URI 送回行動應用程式來回應。 圖9-3 說明此程式。
 
-![](authentication-and-authorization-images/sign-out.png "High-level overview of the sign-out process")
+![登出程式的高階總覽](authentication-and-authorization-images/sign-out.png)
 
 **圖9-3：** 登出程式的高階總覽
 
@@ -288,7 +288,7 @@ public string CreateAuthorizationRequest()
 
 傳回的 URI 會儲存在 `LoginUrl` 類別的屬性中 `LoginViewModel` 。 當 `IsLogin` 屬性變成時 `true` ， [`WebView`](xref:Xamarin.Forms.WebView) 中的 `LoginView` 會變成可見。 `WebView`資料會將其 [`Source`](xref:Xamarin.Forms.WebView.Source) 屬性系結至類別的 `LoginUrl` 屬性 `LoginViewModel` ，因此當 `LoginUrl` 屬性設定為 IdentityServer 的授權端點時，會提出登入要求來 IdentityServer。 當 IdentityServer 收到此要求且未驗證使用者時，將會重新 `WebView` 導向至已設定的登入頁面，如圖9-4 所示。
 
-![](authentication-and-authorization-images/login.png "Login page displayed by the WebView")
+![Web 工作顯示的登入頁面](authentication-and-authorization-images/login.png)
 
 **圖9-4：** Web 工作顯示的登入頁面
 
@@ -409,7 +409,7 @@ public class BasketController : Controller
 
 IdentityServer 可以整合到授權工作流程中，讓它提供控制授權。 這種方法如圖9-5 所示。
 
-![](authentication-and-authorization-images/authorization.png "Authorization by access token")
+![依存取權杖的授權](authentication-and-authorization-images/authorization.png)
 
 **圖9-5：** 依存取權杖的授權
 
@@ -471,7 +471,7 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValu
 
 如需 eShopOnContainers mobile 應用程式如何提出 web 要求的詳細資訊，請參閱[存取遠端資料](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 有許多方法可以將驗證和授權整合到 Xamarin.Forms 與 ASP.NET MVC web 應用程式通訊的應用程式中。 EShopOnContainers 行動應用程式會透過使用 IdentityServer 4 的容器化身分識別微服務來執行驗證和授權。 IdentityServer 是開放原始碼 OpenID Connect 和 OAuth 2.0 架構，適用于與 ASP.NET Core 身分識別整合以執行持有人權杖驗證的 ASP.NET Core。
 

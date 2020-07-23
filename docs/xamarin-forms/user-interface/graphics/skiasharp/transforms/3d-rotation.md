@@ -10,22 +10,22 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 855fde62483dcbc6f8769e7a8eb66d84aadfe1da
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140201"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934975"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的3D 旋轉
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用非仿射轉換來旋轉3D 空間中的2D 物件。_
 
 非仿射轉換的其中一個常見應用，是在3D 空間中模擬2D 物件的旋轉：
 
-![](3d-rotation-images/3drotationsexample.png "A text string rotated in 3D space")
+![3D 空間中旋轉的文字字串](3d-rotation-images/3drotationsexample.png)
 
 此作業牽涉到使用三維旋轉，然後衍生 `SKMatrix` 執行這些3d 旋轉的非仿射轉換。
 
@@ -412,7 +412,7 @@ public partial class Rotation3DPage : ContentPage
 
 當您試驗第四個滑杆時，您會注意到不同的深度設定並不會從檢視器進一步移動物件，而是改變觀點效果的範圍：
 
-[![](3d-rotation-images/rotation3d-small.png "Triple screenshot of the Rotation 3D page")](3d-rotation-images/rotation3d-large.png#lightbox "Triple screenshot of the Rotation 3D page")
+[![旋轉3D 頁面的三重螢幕擷取畫面](3d-rotation-images/rotation3d-small.png)](3d-rotation-images/rotation3d-large.png#lightbox "旋轉3D 頁面的三重螢幕擷取畫面")
 
 **動畫旋轉 3d**也會使用 `SKMatrix44` ，以動畫顯示3d 空間中的文字字串。 `textPaint`設定為欄位的物件會在函式中用來決定文字的界限：
 
@@ -536,7 +536,7 @@ public class AnimatedRotation3DPage : ContentPage
 
 此3D 旋轉會以數個2D 轉換來括住，以將旋轉中心移至螢幕的中央，並調整文字字串的大小，使其與螢幕的寬度相同：
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Triple screenshot of the Animated Rotation 3D page")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Triple screenshot of the Animated Rotation 3D page")
+[![動畫旋轉3D 頁面的三重螢幕擷取畫面](3d-rotation-images/animatedrotation3d-small.png)](3d-rotation-images/animatedrotation3d-large.png#lightbox "動畫旋轉3D 頁面的三重螢幕擷取畫面")
 
 ## <a name="related-links"></a>相關連結
 

@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f6f61503f619c08ed3e4eae2adf6ddb2c474f99f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6def31ebfe2a619f1d5db1e0fba071494afbcd3e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571476"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931959"
 ---
 # <a name="configuration-management"></a>組態管理
 
@@ -124,7 +124,7 @@ public class GlobalSetting
 
 在 eShopOnContainers 行動裝置應用程式中，會 `SettingsView` 公開兩個使用者設定。 這些設定可讓您設定應用程式是否應從部署為 Docker 容器的微服務中抓取資料，或應用程式是否應從不需要網際網路連線的模擬服務中抓取資料。 選擇從容器化微服務中取出資料時，必須指定微服務的基底端點 URL。 [圖 7-1] 顯示 `SettingsView` 使用者選擇從容器化微服務取得資料的時機。
 
-![](configuration-management-images/settings-endpoint.png "User settings exposed by the eShopOnContainers mobile app")
+![EShopOnContainers 行動應用程式所公開的使用者設定](configuration-management-images/settings-endpoint.png)
 
 **圖 7-1**： eShopOnContainers 行動應用程式所公開的使用者設定
 
@@ -182,7 +182,7 @@ public override Task InitializeAsync(object navigationData)
 
 此機制可確保每當使用者流覽至 SettingsView 時，就會從平臺特定的儲存體抓取使用者設定，並透過資料系結來呈現。 然後，如果使用者變更設定值，資料系結可確保它們會立即保存回平臺特定的儲存體。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 設定可讓您從程式碼中區隔的資料，來設定應用程式的行為，以在不重建應用程式的情況下變更行為。 應用程式設定是應用程式所建立及管理的資料，而使用者設定則是應用程式的可自訂設定，會影響應用程式的行為，而不需要經常重新調整。
 

@@ -10,12 +10,12 @@ ms.date: 01/22/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2a46d099520103ba6f1552d5bda3f619c07b743d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135716"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928519"
 ---
 # <a name="authenticate-a-restful-web-service"></a>驗證 RESTful Web 服務
 
@@ -31,11 +31,11 @@ _HTTP 支援使用數個驗證機制來控制資源的存取權。基本驗證�
 
 - 如果 web 服務收到受保護資源的要求，它會拒絕要求，HTTP 狀態碼為401（拒絕存取），並設定 WWW 驗證回應標頭，如下圖所示：
 
-![](rest-images/basic-authentication-fail.png "Basic Authentication Failing")
+![基本驗證失敗](rest-images/basic-authentication-fail.png)
 
 - 如果 web 服務收到受保護資源的要求，且 `Authorization` 標頭已正確設定，則 web 服務會以 HTTP 狀態碼200回應，這表示要求成功，且要求的資訊在回應中。 下圖顯示此案例：
 
-![](rest-images/basic-authentication-success.png "Basic Authentication Succeeding")
+![基本驗證成功](rest-images/basic-authentication-success.png)
 
 > [!NOTE]
 > 基本驗證只能透過 HTTPS 連接使用。 在 HTTP 連線上使用時， `Authorization` 如果 HTTP 流量是由攻擊者所捕捉，則可以輕鬆地將標頭解碼。

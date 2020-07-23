@@ -6,12 +6,12 @@ ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5e71ff86869c42d478fbf1ee3f6de5bff59431fc
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 858d2a2399e1d294767b8afad36502b809955224
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728209"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933265"
 ---
 # <a name="editing-nuget-metadata"></a>編輯 NuGet 中繼資料
 
@@ -25,7 +25,7 @@ _使用專案選項來編輯多平臺程式庫的 NuGet 中繼資料_
 
 [**一般**] 索引標籤包含四個必須輸入才能產生 NuGet 套件的欄位：
 
-[![](metadata-images/metadata-general-sml.png "NuGet package required metadata window")](metadata-images/metadata-general.png#lightbox)
+[![NuGet 套件需要的中繼資料視窗](metadata-images/metadata-general-sml.png)](metadata-images/metadata-general.png#lightbox)
 
 - **識別碼–套件**識別碼，在 NuGet.org 中（或封裝的散發位置）必須是唯一的。 遵循此[指引](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)，並只使用 URL 中有效的字元（不含空格，並避免大部分的特殊字元）。
 - **版本**-選擇與[NuGet 版本控制規則](https://docs.microsoft.com/nuget/create-packages/dependency-versions)一致的版本號碼。
@@ -44,7 +44,7 @@ _使用專案選項來編輯多平臺程式庫的 NuGet 中繼資料_
 
 [**詳細資料**] 索引標籤包含要包含在 NuGet 套件資訊清單檔案中的選擇性欄位。
 
-[![](metadata-images/metadata-detail-sml.png "NuGet package optional metadata window")](metadata-images/metadata-detail.png#lightbox)
+[![NuGet 套件選擇性中繼資料視窗](metadata-images/metadata-detail-sml.png)](metadata-images/metadata-detail.png#lightbox)
 
 如需必要和選擇性欄位的詳細資訊，請參閱[選擇性元素參考](https://docs.microsoft.com/nuget/schema/nuspec#optional-metadata-elements)。
 
@@ -53,4 +53,4 @@ _使用專案選項來編輯多平臺程式庫的 NuGet 中繼資料_
 
 ## <a name="related-links"></a>相關連結
 
-- [.nuspec 參考](https://docs.microsoft.com/nuget/schema/nuspec#general-form-and-schema)
+- [. nuspec 參考](https://docs.microsoft.com/nuget/schema/nuspec#general-form-and-schema)

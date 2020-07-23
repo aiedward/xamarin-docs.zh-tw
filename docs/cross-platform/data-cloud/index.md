@@ -1,62 +1,62 @@
 ---
-title: 微軟 Azure 和 Xamarin
-description: 本文件連結到有關 Mac、Azure 行動應用程式、活動目錄身份驗證和 WebAPI 視覺化工作室中已連接服務的文件。
+title: Microsoft Azure 和 Xamarin
+description: 本檔連結到有關 Visual Studio for Mac、Azure Mobile Apps、Active Directory Authentication 和 WebAPI 中的已連線的服務檔。
 ms.prod: xamarin
 ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: davidortinau
 ms.author: daortin
 ms.date: 10/09/2017
-ms.openlocfilehash: 2b6dfeb0de0fac59556280609dbf870c23a9298b
-ms.sourcegitcommit: 2a8eb8bce427e72d4e7edd06ce432e19f17dcdd7
+ms.openlocfilehash: 441ac213531c84aa3b7edfd6dfabab3f2c37d15d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80388521"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934780"
 ---
-# <a name="microsoft-azure-and-xamarin"></a>微軟 Azure 和 Xamarin
+# <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure 和 Xamarin
 
-[![](images/evolve-mikej-azure-sml.png "Azure App Services features are easy to add to Xamarin apps, including cloud data storage and cross-platform push notifications")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[![Azure App Services 功能很容易加入 Xamarin 應用程式，包括雲端資料儲存和跨平臺推播通知](images/evolve-mikej-azure-sml.png)](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
-[2016 年發展:使用 Azure 和 Xamarin 開發互聯應用](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[演進2016：使用 Azure 和 Xamarin 開發連線的應用程式](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
 ## <a name="connected-services-in-visual-studio-for-mac"></a>Visual Studio for Mac 中已連線的服務
 
-適用於 Mac 的 Visual Studio 新的[互聯服務](connected-services.md)功能可協助開發人員從 IDE 中快速輕鬆地將 Azure 功能添加到行動應用程式。 目前可在 Alpha 通道中進行測試。
+Visual Studio for Mac 的新[已連線的服務](connected-services.md)功能可協助開發人員快速且輕鬆地從 IDE 內將 Azure 功能新增至行動應用程式。 目前可在 Alpha 色板中進行測試。
 
 ## <a name="azure-app-services"></a>Azure App Service
 
-有一組[Azure 行動應用程式文件](~/cross-platform/data-cloud/mobile-apps.md),用於指導您完成實現[Azure 行動客戶端](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)的過程。
-Xamarin 還為[iOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/)和[Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/)提供了 Azure 訊息傳遞 NuGet 包,以説明跨平台實現推送通知。
+[Azure Mobile Apps 檔](~/cross-platform/data-cloud/mobile-apps.md)的集合會引導您完成[Azure 行動用戶端](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)的處理常式。
+Xamarin 也提供適用于[iOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/)和[Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/)的 Azure 訊息 NuGet 套件，以協助跨平臺執行推播通知。
 
-在[Azure 應用服務門戶](https://portal.azure.com/)上配置應用以存取行動應用、Web API、儲存等。 瞭解[應用程式服務是如何不同的](https://azure.microsoft.com/updates/whats-new-with-azure-app-service/),並觀看[這些影片從微軟](https://azure.microsoft.com/campaigns/azure-march-announcement/)。
+在[Azure App Services 入口網站](https://portal.azure.com/)上設定您的應用程式，以存取 Mobile Apps、Web Api、儲存體及其他更多功能。 深入瞭解[應用程式服務的差異](https://azure.microsoft.com/updates/whats-new-with-azure-app-service/)，並觀看[Microsoft 的這些](https://azure.microsoft.com/campaigns/azure-march-announcement/)影片。
 
 ## <a name="active-directory-authentication"></a>Active Directory 驗證
 
-[Azure 活動目錄](~/cross-platform/data-cloud/active-directory/index.md)可用於將使用者登錄到 Xamarin 應用。 然後,這些應用可以訪問 Office 365 等其他服務。
+[Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md)可以用來將使用者登入 Xamarin 應用程式。 然後，應用程式可以存取其他服務，例如 Office 365。
 
 ## <a name="webapi"></a>WebAPI
 
-微軟的 Web API 公開了一個類似 REST 的介面,Xamarin 應用程式可以輕鬆使用該介面。
-您可以輕鬆地啟動[Azure 網站](https://trywebsites.azurewebsites.net/)並建構基於 WebAPI 的應用以連接到 Xamarin 應用。
+Microsoft 的 Web API 會公開類似 REST 的介面，可供 Xamarin 應用程式輕鬆使用。
+您可以輕鬆地加速[Azure 網站](https://trywebsites.azurewebsites.net/)，並建立以 WebAPI 為基礎的應用程式來連線到 Xamarin 應用程式。
 
-### <a name="introduction-to-web-services"></a>[網路服務簡介](~/cross-platform/data-cloud/web-services/index.md)
+### <a name="introduction-to-web-services"></a>[Web 服務簡介](~/cross-platform/data-cloud/web-services/index.md)
 
-本教學介紹如何將 REST、WCF 和 SOAP Web 服務技術與 Xamarin 行動應用程式整合。 它檢查各種服務實現,評估用於集成它們的可用工具和庫,並提供用於使用服務數據的範例模式。 最後,它提供了使用 Xamarin 行動應用程式創建用於消費的 RESTful Web 服務的基本概述。
+本教學課程介紹如何整合 REST、WCF 和 SOAP web 服務技術與 Xamarin 行動應用程式。 它會檢查各種服務實現、評估可用的工具和程式庫來整合它們，並提供使用服務資料的範例模式。 最後，它提供了建立 RESTful web 服務以供使用 Xamarin 行動應用程式的基本總覽。
 
 ## <a name="samples"></a>範例
 
-除了[文件範例](https://github.com/xamarin/mobile-samples/tree/master/Azure)之外,以下完整應用程式展示了整合到 Xamarin 應用程式中的各種 Azure 功能:
+除了[檔範例](https://github.com/xamarin/mobile-samples/tree/master/Azure)以外，下列完整的應用程式會示範整合到 Xamarin 應用程式中的各種 Azure 功能：
 
-- [體育](https://github.com/xamarin/Sport)– 友好的體育聯賽跟蹤應用程式,使用數據存儲&推送通知。
-- [時刻](https://github.com/pierceboggan/Moments)– 使用 Azure 儲存的圖像的即時照片共用。
-- [Xamarin CRM](https://github.com/xamarin/app-crm) = 使用 Web API 作為後端介面。
-- [MyShoppe](https://github.com/jamesmontemagno/MyShoppe) - Azure 行動應用。
+- 適合[運動](https://github.com/xamarin/Sport)的運動-使用資料儲存體 & 推播通知的聯盟應用程式。
+- 時間[–使用](https://github.com/pierceboggan/Moments)影像 Azure 儲存體的立即相片分享。
+- [XAMARIN CRM](https://github.com/xamarin/app-crm) –使用 Web API 來進行後端。
+- [MyShoppe](https://github.com/jamesmontemagno/MyShoppe) -Azure Mobile Apps。
 
-- [eShop](https://github.com/dotnet-architecture/eShopOnContainers) –[架構結構系列](https://www.microsoft.com/net/learn/architecture)電子書的範例。
-- [MyDriving](https://azure.microsoft.com/campaigns/mydriving/) = Azure + IoT 示例來自 2016 年生成。
+- [eShop](https://github.com/dotnet-architecture/eShopOnContainers) –適用于電子書[架構系列](https://www.microsoft.com/net/learn/architecture)的範例。
+- [MyDriving](https://azure.microsoft.com/campaigns/mydriving/) –組建2016中的 Azure + IoT 範例。
 
 ## <a name="related-links"></a>相關連結
 
-- [Azure PCL@paulbatum範例 (按 ) (範例)](https://github.com/paulbatum/mobile-services-xamarin-pcl)
+- [Azure PCL 範例（依據 @paulbatum ）（範例）](https://github.com/paulbatum/mobile-services-xamarin-pcl)
 - [Azure 入口網站](https://azure.microsoft.com/)
-- [Xamarin 的行動客戶端 (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
+- [適用于 Xamarin 的行動用戶端（NuGet）](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

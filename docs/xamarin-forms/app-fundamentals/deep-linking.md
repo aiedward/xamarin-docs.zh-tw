@@ -11,16 +11,16 @@ ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7f5979b93ff35b14ec7c13418a4565604f46bd7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d2bd0bf696e652e95e0feb88cca7cf685b14433b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570631"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936496"
 ---
 # <a name="application-indexing-and-deep-linking"></a>應用程式索引和深層連結
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 
 _應用程式索引可讓一些應用程式在幾次使用之後忘記，藉由在搜尋結果中出現而保持相關。深層連結可讓應用程式回應包含應用程式資料的搜尋結果，通常是透過流覽至從深層連結參考的頁面。本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。_
 
@@ -32,7 +32,7 @@ Xamarin.Forms應用程式索引和深層連結提供 API，可在使用者流覽
 
 範例應用程式示範了待辦事項清單應用程式，其中資料儲存在本機 SQLite 資料庫中，如下列螢幕擷取畫面所示：
 
-![](deep-linking-images/screenshots.png "TodoList Application")
+![ToDoList 應用程式](deep-linking-images/screenshots.png)
 
 使用者建立的每個 `TodoItem` 執行個體都編製了索引。 平台專用的搜尋可用來從應用程式中找出已編製索引的資料。 當使用者點選應用程式的搜尋結果時，應用程式隨即啟動，然後瀏覽到 `TodoItemPage`，並顯示參考自深層連結的 `TodoItem`。
 
@@ -141,7 +141,7 @@ Application.Current.AppLinks.RegisterLink (appLink);
 
 [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry)註冊實例以供編制索引之後，它就會出現在搜尋結果中。 下列螢幕擷取畫面顯示了顯示 iOS 平台上搜尋結果中已編製索引的內容：
 
-![](deep-linking-images/ios-search.png "Indexed Content in Search Results on iOS")
+![iOS 上搜尋結果中已編製索引的內容](deep-linking-images/ios-search.png)
 
 ## <a name="de-registering-indexed-content"></a>取消註冊已編製索引的內容
 
@@ -245,7 +245,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 
 如需遞交的詳細資訊，請參閱 [Handoff 簡介](~/ios/platform/handoff.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。 應用程式索引讓經過少數幾次使用就遺忘的應用程式能出現在搜尋結果中，藉此保有關聯性。
 

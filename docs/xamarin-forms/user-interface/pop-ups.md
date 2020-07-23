@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a7ddd9134b7214b84a883e171d7b0cadaba3390b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 75cc3070f552ef05c3e8702d27caf7c353ac0a8f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136314"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931868"
 ---
 # <a name="display-pop-ups"></a>顯示快顯視窗
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
 顯示警示、要求使用者進行選擇，或顯示提示是常見的 UI 工作。 Xamarin.Forms在類別上有三個方法， [`Page`](xref:Xamarin.Forms.Page) 可透過快顯視窗與使用者互動： [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 和 `DisplayPromptAsync` 。 兩者會以適當的原生控制項轉譯在每個平台上。
 
@@ -31,7 +31,7 @@ ms.locfileid: "84136314"
 await DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![](pop-ups-images/alert.png "Alert Dialog with One Button")
+![具有一個按鈕的警示對話方塊](pop-ups-images/alert.png)
 
 此範例不會向使用者收集資訊。 警示會以強制回應的方式顯示，關閉後，使用者就可繼續與應用程式互動。
 
@@ -61,7 +61,7 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 }
 ```
 
-![](pop-ups-images/action.png "ActionSheet Dialog")
+![ActionSheet 對話方塊](pop-ups-images/action.png)
 
 `destroy` 按鈕的轉譯方式不同於其他按鈕，可以保留 `null`，也可以指定為第三個字串參數。 下列範例使用 `destroy` 按鈕︰
 

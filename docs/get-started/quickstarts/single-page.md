@@ -12,16 +12,16 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b9a3017fc8188d3669b64d95c968b2d0a5325358
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cc09f93a8d86b96324435bf63cd3d19b51242ed2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136067"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931799"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>建立單一頁面 Xamarin.Forms 應用程式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 在本快速入門中，您將了解如何：
 
@@ -31,11 +31,11 @@ ms.locfileid: "84136067"
 
 本快速入門會逐步解說如何建立跨平臺 Xamarin.Forms 應用程式，讓您輸入附注，並將它保存到裝置存放裝置。 最終的應用程式如下所示：
 
-[![](single-page-images/screenshots-sml.png "Notes Application")](single-page-images/screenshots.png#lightbox "Notes Application")
+[![Notes 應用程式](single-page-images/screenshots-sml.png)](single-page-images/screenshots.png#lightbox "Notes 應用程式")
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
 - 已安裝**使用 .NET 進行行動開發**工作負載的 Visual Studio 2019 (最新版本)。
 - C# 知識。
@@ -47,28 +47,28 @@ ms.locfileid: "84136067"
 
 1. 啟動 Visual Studio 2019，然後在起始視窗中按一下 [建立新專案]**** 以建立新的專案：
 
-    ![](single-page-images/vs/new-solution-2019.png "New Project")
+    ![新增專案](single-page-images/vs/new-solution-2019.png)
 
 2. 在 [**建立新專案**]**視窗中，選取 [** **專案類型**] 下拉式集中的 [行動]，選取 [行動**應用程式（ Xamarin.Forms ）** ] 範本，然後按 [**下一步]** 按鈕：
 
-    ![](single-page-images/vs/new-project-2019.png "Cross-Platform Project Templates")
+    ![跨平台專案範本](single-page-images/vs/new-project-2019.png)
 
 3. 在 [設定新專案]**** 視窗中，將 [方案名稱]**** 設定為 **Notes**，然後為專案選擇合適的位置，並按一下 [建立]**** 按鈕：
 
-    ![](single-page-images/vs/configure-project.png "Configure your Project")
+    ![設定專案](single-page-images/vs/configure-project.png)
 
     > [!IMPORTANT]
     > 本快速入門中的 C# 和 XAML 程式碼片段，要求將解決方案命名為 **Notes**。 當您從本快速入門將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
 
 4. 在 [New Cross Platform App] \(新增跨平台應用程式\)**** 對話方塊中，按一下 [空白應用程式]****，然後按一下 [確定]**** 按鈕：
 
-    ![](single-page-images/vs/new-app-2019.png "New Cross-Platform App")
+    ![新增跨平台應用程式](single-page-images/vs/new-app-2019.png)
 
     如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)中的[ Xamarin.Forms 應用程式的剖析](deepdive.md#anatomy-of-a-xamarinforms-application)。
 
 5. 在 [方案總管]**** 的 **Notes** 專案中，按兩下 **MainPage.xaml** 將其開啟：
 
-    ![](single-page-images/vs/open-mainpage-xaml-2019.png "Open MainPage.xaml")
+    ![開啟 MainPage.xaml](single-page-images/vs/open-mainpage-xaml-2019.png)
 
 6. 在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -105,7 +105,7 @@ ms.locfileid: "84136067"
 
 7. 在 [方案總管]**** 的 **Notes** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟：
 
-    ![](single-page-images/vs/open-mainpage-codebehind-2019.png "Open MainPage.xaml.cs")
+    ![開啟 MainPage.xaml.cs](single-page-images/vs/open-mainpage-codebehind-2019.png)
 
 8. 在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -155,15 +155,15 @@ ms.locfileid: "84136067"
 
 1. 在 Visual Studio 中，選取 [建置] > [建置方案]**** 功能表項目 (或按下 F6)。 系統將建置解決方案，且 Visual Studio 狀態列中將會出現成功訊息：
 
-      ![](single-page-images/vs/build-succeeded.png "Build Succeeded")
+      ![建置成功](single-page-images/vs/build-succeeded.png)
 
     如果發生錯誤，請重複上述步驟並更正任何錯誤，直到解決方案建置成功為止。
 
 2. 在 Visual Studio 工具列中，按下 [啟動]**** 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選擇 Android Emulator 中的應用程式：
 
-    ![](single-page-images/vs/android-start.png "Visual Studio Android Toolbar")
+    ![Visual Studio Android 工具列](single-page-images/vs/android-start.png)
 
-    [![](single-page-images/vs/notes-android.png "Notes in the Android Emulator")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![Android 模擬器中的 Notes](single-page-images/vs/notes-android.png)](single-page-images/vs/notes-android-large.png#lightbox "Android 模擬器中的 Notes")
 
     輸入附註，然後按 [儲存]**** 按鈕。
 
@@ -174,13 +174,13 @@ ms.locfileid: "84136067"
 
 3. 在 Visual Studio 工具列中，以滑鼠右鍵按一下 **Notes.iOS** 專案，然後選取 [設定為啟始專案]****。
 
-      ![](single-page-images/vs/set-as-startup-project-ios.png "Set iOS as Startup Project")
+      ![將 iOS 設定為啟始專案](single-page-images/vs/set-as-startup-project-ios.png)
 
 4. 在 Visual Studio 工具列中，按下 [啟動]**** 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選擇 [iOS 遠端模擬器](~/tools/ios-simulator/index.md)中的應用程式：
 
-    ![](single-page-images/vs/ios-start.png "Visual Studio iOS Toolbar")
+    ![Visual Studio iOS 工具列](single-page-images/vs/ios-start.png)
 
-    [![](single-page-images/vs/notes-ios.png "Notes in the iOS Simulator")](single-page-images/vs/notes-ios-large.png#lightbox "Notes in the iOS Simulator")
+    [![iOS 模擬器中的 Notes](single-page-images/vs/notes-ios.png)](single-page-images/vs/notes-ios-large.png#lightbox "iOS 模擬器中的 Notes")
 
     輸入附註，然後按 [儲存]**** 按鈕。
 
@@ -189,7 +189,7 @@ ms.locfileid: "84136067"
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
 - 已安裝**使用 .NET 進行行動開發**工作負載的 Visual Studio 2017。
 - C# 知識。
@@ -201,24 +201,24 @@ ms.locfileid: "84136067"
 
 1. 啟動 Visual Studio 2017，然後在起始頁面上按一下 [建立新專案]**** 以建立新的專案：
 
-    ![](single-page-images/vs/new-solution.png "New Project")
+    ![新增專案](single-page-images/vs/new-solution.png)
 
 2. 在 [**新增專案**] 對話方塊中，按一下 [**跨平臺**]、選取 [行動**應用程式（ Xamarin.Forms ）** ] 範本、將 [名稱] 設定為 [**附注**]、選擇專案的適當位置，然後按一下 [**確定]** 按鈕：
 
-    ![](single-page-images/vs/new-project.png "Cross-Platform Project Templates")
+    ![跨平台專案範本](single-page-images/vs/new-project.png)
 
     > [!IMPORTANT]
     > 本快速入門中的 C# 和 XAML 程式碼片段，要求將解決方案命名為 **Notes**。 當您從本快速入門將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
 
 3. 在 [新增跨平台應用程式]**** 對話方塊中，按一下 [空白應用程式]****，並選取 [.NET Standard]**** 作為 [程式碼共用策略]，然後按一下 [確定]**** 按鈕：
 
-    ![](single-page-images/vs/new-app.png "New Cross-Platform App")
+    ![新增跨平台應用程式](single-page-images/vs/new-app.png)
 
     如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)中的[ Xamarin.Forms 應用程式的剖析](deepdive.md#anatomy-of-a-xamarinforms-application)。
 
 4. 在 [方案總管]**** 的 **Notes** 專案中，按兩下 **MainPage.xaml** 將其開啟：
 
-    ![](single-page-images/vs/open-mainpage-xaml.png "Open MainPage.xaml")
+    ![開啟 MainPage.xaml](single-page-images/vs/open-mainpage-xaml.png)
 
 5. 在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -255,7 +255,7 @@ ms.locfileid: "84136067"
 
 6. 在 [方案總管]**** 的 **Notes** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟：
 
-    ![](single-page-images/vs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
+    ![開啟 MainPage.xaml.cs](single-page-images/vs/open-mainpage-codebehind.png)
 
 7. 在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -305,15 +305,15 @@ ms.locfileid: "84136067"
 
 1. 在 Visual Studio 中，選取 [建置] > [建置方案]**** 功能表項目 (或按下 F6)。 系統將建置解決方案，且 Visual Studio 狀態列中將會出現成功訊息：
 
-      ![](single-page-images/vs/build-succeeded.png "Build Succeeded")
+      ![建置成功](single-page-images/vs/build-succeeded.png)
 
     如果發生錯誤，請重複上述步驟並更正任何錯誤，直到解決方案建置成功為止。
 
 2. 在 Visual Studio 工具列中，按下 [啟動]**** 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選擇 Android Emulator 中的應用程式：
 
-    ![](single-page-images/vs/android-start.png "Visual Studio Android Toolbar")
+    ![Visual Studio Android 工具列](single-page-images/vs/android-start.png)
 
-    [![](single-page-images/vs/notes-android.png "Notes in the Android Emulator")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![Android 模擬器中的 Notes](single-page-images/vs/notes-android.png)](single-page-images/vs/notes-android-large.png#lightbox "Android 模擬器中的 Notes")
 
     輸入附註，然後按 [儲存]**** 按鈕。
 
@@ -324,13 +324,13 @@ ms.locfileid: "84136067"
 
 3. 在 Visual Studio 工具列中，以滑鼠右鍵按一下 **Notes.iOS** 專案，然後選取 [設定為啟始專案]****。
 
-      ![](single-page-images/vs/set-as-startup-project-ios.png "Set iOS as Startup Project")
+      ![將 iOS 設定為啟始專案](single-page-images/vs/set-as-startup-project-ios.png)
 
 4. 在 Visual Studio 工具列中，按下 [啟動]**** 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選擇 [iOS 遠端模擬器](~/tools/ios-simulator/index.md)中的應用程式：
 
-    ![](single-page-images/vs/ios-start.png "Visual Studio iOS Toolbar")
+    ![Visual Studio iOS 工具列](single-page-images/vs/ios-start.png)
 
-    [![](single-page-images/vs/notes-ios.png "Notes in the iOS Simulator")](single-page-images/vs/notes-ios-large.png#lightbox "Notes in the iOS Simulator")
+    [![iOS 模擬器中的 Notes](single-page-images/vs/notes-ios.png)](single-page-images/vs/notes-ios-large.png#lightbox "iOS 模擬器中的 Notes")
 
     輸入附註，然後按 [儲存]**** 按鈕。
 
@@ -339,7 +339,7 @@ ms.locfileid: "84136067"
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
 - 已安裝 iOS 和 Android 平台支援的 Visual Studio for Mac (最新版本)。
 - Xcode (最新版本)。
@@ -351,19 +351,19 @@ ms.locfileid: "84136067"
 
 1. 啟動 Visual Studio for Mac，然後在起始視窗中按一下 [新增]**** 以建立新專案：
 
-    ![](single-page-images/vsmac/new-project.png "New Solution")
+    ![新增方案](single-page-images/vsmac/new-project.png)
 
 2. 在 [為新專案選擇範本]**** 對話方塊中，按一下 [多平台] > [應用程式]****、選取 [空白的 Forms App]**** 範本，然後按 [下一步]**** 按鈕：
 
-    ![](single-page-images/vsmac/choose-template.png "Choose a Template")
+    ![選擇範本](single-page-images/vsmac/choose-template.png)
 
 3. 在 [設定空白的表單應用程式]**** 對話方塊中，將新的應用程式命名為 **Notes**、確保已選取 [使用 .NET Standard]**** 選項按鈕，然後按一下 [下一步]**** 按鈕：    
 
-    ![](single-page-images/vsmac/configure-app.png "Configure the Forms Application")
+    ![設定 Forms 應用程式](single-page-images/vsmac/configure-app.png)
 
 4. 在 [設定新的空白表單應用程式]**** 對話方塊中，將 [方案名稱] 和 [專案名稱] 設定為 **Notes**、選擇專案的合適位置，然後按一下 [建立]**** 按鈕以建立專案：
 
-    ![](single-page-images/vsmac/configure-project.png "Configure the Forms Project")
+    ![設定 Forms 專案](single-page-images/vsmac/configure-project.png)
 
     > [!IMPORTANT]
     > 本快速入門中的 C# 和 XAML 程式碼片段要求將解決方案和專案全都命名為 **Notes**。 當您從本快速入門將程式碼複製到專案時，使用不同的名稱會導致建置錯誤。
@@ -372,7 +372,7 @@ ms.locfileid: "84136067"
 
 5. 在 [Solution Pad]**** 的 **Notes** 專案中，按兩下 **MainPage.xaml** 將其開啟：
 
-    ![](single-page-images/vsmac/mainpage-xaml.png "MainPage.xaml")
+    ![MainPage.xaml](single-page-images/vsmac/mainpage-xaml.png)
 
 6. 在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -409,7 +409,7 @@ ms.locfileid: "84136067"
 
 7. 在 [Solution Pad]**** 的 **Notes** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟：
 
-    ![](single-page-images/vsmac/mainpage-xaml-cs.png "MainPage.xaml.cs")
+    ![MainPage.xaml.cs](single-page-images/vsmac/mainpage-xaml-cs.png)
 
 8. 在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -459,19 +459,19 @@ ms.locfileid: "84136067"
 
 1. 在 Visual Studio for Mac 中，選取 [建置] > [全部建置]**** 功能表項目 (或按下 **&#8984; + B**)。 系統將建置專案，且 Visual Studio for Mac 工具列中將會出現成功訊息。
 
-      ![](single-page-images/vsmac/build-successful.png "Build Successful")
+      ![建置成功](single-page-images/vsmac/build-successful.png)
 
     如果發生錯誤，請重複上述步驟並更正任何錯誤，直到專案建置成功為止。
 
 2. 在 **Solution Pad** 中選取 **Notes.iOS** 專案，按一下滑鼠右鍵，然後選取 [設定為啟始專案]****：
 
-      ![](single-page-images/vsmac/set-startup-project-ios.png "Set iOS as Startup Project")
+      ![將 iOS 設定為啟始專案](single-page-images/vsmac/set-startup-project-ios.png)
 
 3. 在 Visual Studio for Mac 工具列中，按下 [啟動]**** 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選擇 iOS 模擬器內的應用程式：
 
-      ![](single-page-images/vsmac/start.png "Visual Studio for Mac Toolbar")
+      ![Visual Studio for Mac 工具列](single-page-images/vsmac/start.png)
 
-      [![](single-page-images/vsmac/notes-ios.png "Notes in the iOS Simulator")](single-page-images/vsmac/notes-ios-large.png#lightbox "Notes in the iOS Simulator")
+      [![iOS 模擬器中的 Notes](single-page-images/vsmac/notes-ios.png)](single-page-images/vsmac/notes-ios-large.png#lightbox "iOS 模擬器中的 Notes")
 
     輸入附註，然後按 [儲存]**** 按鈕。
 
@@ -479,11 +479,11 @@ ms.locfileid: "84136067"
 
 4. 在 **Solution Pad** 中選取 **Notes.Droid** 專案，按一下滑鼠右鍵，然後選取 [設定為啟始專案]****：
 
-      ![](single-page-images/vsmac/set-startup-project-android.png "Set Android as Startup Project")
+      ![將 Android 設定為啟始專案](single-page-images/vsmac/set-startup-project-android.png)
 
 5. 在 Visual Studio for Mac 工具列中，按下 [啟動]**** 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選擇 Android Emulator 內的應用程式：
 
-      [![](single-page-images/vsmac/notes-android.png "Notes in the Android Emulator")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
+      [![Android 模擬器中的 Notes](single-page-images/vsmac/notes-android.png)](single-page-images/vsmac/notes-android-large.png#lightbox "Android 模擬器中的 Notes")
 
     輸入附註，然後按 [儲存]**** 按鈕。
 

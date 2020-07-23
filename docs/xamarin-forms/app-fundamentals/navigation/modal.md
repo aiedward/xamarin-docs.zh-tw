@@ -10,18 +10,18 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aecab26efaed9815ec6916877b5f42297821582c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ea0d38946a773dc7571a08f999be5eb6500bfc9b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569604"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934494"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms強制回應頁面
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
-_Xamarin 會提供模式頁面的支援。強制回應頁面會鼓勵使用者完成獨立的工作，在工作完成或取消之前無法流覽。本文示範如何流覽至模式頁面。_
+_Xamarin.Forms提供模式頁面的支援。強制回應頁面會鼓勵使用者完成獨立的工作，在工作完成或取消之前無法流覽。本文示範如何流覽至模式頁面。_
 
 本文章討論下列主題：
 
@@ -32,11 +32,11 @@ _Xamarin 會提供模式頁面的支援。強制回應頁面會鼓勵使用者�
 
 模式頁面可以是所支援的任何[頁面](~/xamarin-forms/user-interface/controls/pages.md)類型 Xamarin.Forms 。 若要顯示強制回應頁面，應用程式會將其推送到強制回應堆疊上，該頁面就會變成使用中頁面，如下圖所示：
 
-![](modal-images/pushing.png "Pushing a Page to the Modal Stack")
+![將頁面推送到強制回應堆疊](modal-images/pushing.png)
 
 若要返回上一頁，應用程式將會從強制回應堆疊中快顯目前的頁面，新的最上層頁面就會變成使用中頁面，如下圖所示：
 
-![](modal-images/popping.png "Popping a Page from the Modal Stack")
+![從強制回應堆疊中快顯頁面](modal-images/popping.png)
 
 ## <a name="performing-navigation"></a>執行導覽
 
@@ -64,7 +64,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 這會導致 `ModalPage` 實例推送至強制回應堆疊上，而它會變成使用中的頁面，前提是已在實例上的中 [`ListView`](xref:Xamarin.Forms.ListView) 選取專案 `MainPage` 。 `ModalPage` 執行個體如下列螢幕擷取畫面所示：
 
-![](modal-images/modalpage.png "Modal Page Example")
+![強制回應頁面範例](modal-images/modalpage.png)
 
 叫用時 [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) ，會發生下列事件：
 
@@ -249,7 +249,7 @@ public class DetailPageCS : ContentPage
 
 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/index.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範了如何巡覽至強制回應頁面。 強制回應頁面鼓勵使用者完成各自獨立且無法離開的工作，直到完成或取消工作為止。
 

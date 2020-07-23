@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 45b7c1081571b52bb8760b4207e3a05a4ffa77ae
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: fb63568adee9e89d08a0fc64168c865eeb271f10
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572308"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928883"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin 中的應用程式內購買基本概念和設定
 
 若要執行應用程式內購買，應用程式必須在裝置上使用 StoreKit API。 StoreKit 會管理與 Apple iTunes 伺服器的所有通訊，以取得產品資訊並執行交易。 必須針對應用程式內購買設定布建設定檔，而且必須在 iTunes Connect 中輸入產品資訊。
 
- [![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit manages all communication with Apple’s as shown in this chart")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
+ [![StoreKit 會管理與 Apple 的所有通訊，如下圖所示](in-app-purchase-basics-and-configuration-images/image1.png)](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
 使用 App Store 來提供應用程式內購買需要下列安裝和設定：
 
@@ -57,11 +57,11 @@ Apple 必須先核准每個產品，才會上線–需要「產品」的名稱�
 
 建立和散發免費的應用程式需要在[ITunes Connect](https://itunesconnect.apple.com)中設定非常少，不過若要銷售付費應用程式或應用程式內購買，您必須為 Apple 提供銀行和稅務資訊。 按一下主功能表中的 [**協定]、[稅務和銀行]，** 如下所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image2.png "Click on Agreements, Tax and Banking from the main menu")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
+ [![按一下主功能表上的 [協定]、[稅務和銀行]](in-app-purchase-basics-and-configuration-images/image2.png)](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
 您的開發人員帳戶應具有作用中的**IOS 付費應用程式**合約，如下列螢幕擷取畫面所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image3.png "Your Developer Account should have an iOS Paid Applications contract in effect")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
+ [![您的開發人員帳戶應該有 iOS 付費應用程式合約生效](in-app-purchase-basics-and-configuration-images/image3.png)](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
 在您擁有**IOS 付費應用程式**合約之前，您將無法測試任何 StoreKit 功能，除非 Apple 已處理您的**合約、稅務和銀行**資訊，否則您的程式碼中的 StoreKit 呼叫將會失敗。
 
@@ -73,7 +73,7 @@ Apple 必須先核准每個產品，才會上線–需要「產品」的名稱�
 
  如下所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image4.png "The form for creating new App IDs")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
+ [![用來建立新應用程式識別碼的表單](in-app-purchase-basics-and-configuration-images/image4.png)](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
 輸入適用于*描述*的內容，以便您可以在清單中輕鬆地識別此應用程式識別碼。 針對 [*應用程式識別碼] 前置*詞，選取 [小組識別碼]。
 
@@ -88,7 +88,7 @@ Apple 必須先核准每個產品，才會上線–需要「產品」的名稱�
 
 請注意，**應用程式內購買**會在 [服務] 清單中自動啟用：
 
- [![](in-app-purchase-basics-and-configuration-images/image5.png "In-App Purchase will be automatically enabled in the Services list")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
+ [![應用程式內購買會自動在服務清單中啟用](in-app-purchase-basics-and-configuration-images/image5.png)](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>佈建設定檔
 
@@ -98,16 +98,16 @@ Apple 必須先核准每個產品，才會上線–需要「產品」的名稱�
 
 按一下 iTunes Connect 中的 [**我的應用程式**]，以建立或編輯 iOS 應用程式專案。 [應用程式總覽] 頁面如下所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image6.png "The application overview page")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
+ [![應用程式總覽頁面](in-app-purchase-basics-and-configuration-images/image6.png)](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
 按一下 [**應用程式內購買**] 以建立或編輯您的產品以進行銷售。 此螢幕擷取畫面顯示已新增數個產品的範例應用程式：
 
- [![](in-app-purchase-basics-and-configuration-images/image7.png "The sample app with several products already added")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
+ [![已新增數個產品的範例應用程式](in-app-purchase-basics-and-configuration-images/image7.png)](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
 加入新產品的程式有兩個步驟：
 
-1. 選擇產品類型：[![](in-app-purchase-basics-and-configuration-images/image8.png "選擇產品類型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2. 輸入產品的屬性，包括產品識別碼、定價層和當地語系化的描述：[![](in-app-purchase-basics-and-configuration-images/image9.png "輸入 products 屬性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1. 選擇產品類型： [ ![ 選擇產品類型](in-app-purchase-basics-and-configuration-images/image8.png)](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2. 輸入產品的屬性，包括產品識別碼、定價層和當地語系化的描述： [ ![ 輸入 products 屬性](in-app-purchase-basics-and-configuration-images/image9.png)](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 以下說明每個應用程式內購買產品所需的欄位：
 
@@ -154,23 +154,23 @@ App Store 不會讓您為您的產品選擇任意價格– Apple 提供您可以
 
 Apple 提供價格對照表，協助您針對所需的貨幣/價格選取正確的層。 價格矩陣的摘錄（2012年8月）如下所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image10.png "An excerpt of the price matrix August 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
+ [![2012年8月價格對照表的摘錄](in-app-purchase-basics-and-configuration-images/image10.png)](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
 在撰寫本文時（2013年6月），有87層從美元0.99 到美元的999.99。 定價矩陣會顯示您的客戶將支付的價格，以及您將從 Apple 收到的金額–這少於30% 的費用，也會收取所需的任何當地稅金（請注意，美國和加拿大銷售人員接收70c 的99c 產品，而澳大利亞賣方僅收到63c，因為購物價的「貨物 &amp; 服務稅」已徵收）。
 
 您產品的定價可以隨時更新，包括在未來日期生效的排程價格變更。 此螢幕擷取畫面顯示如何新增未來的價格變更–從第1層到第3層的價格暫時變更為9月份：
 
- [![](in-app-purchase-basics-and-configuration-images/image11.png "A future-dated price change where the price is being temporarily changed from tier 1 to tier 3 for the month of September only")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
+ [![未來的價格變更，其價格將從第1層暫時改為9月份的第3層](in-app-purchase-basics-and-configuration-images/image11.png)](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
 ### <a name="free-products-not-supported"></a>不支援的免費產品
 
 雖然 Apple 已為 Newsstand apps 提供特殊的免費訂用帳戶選項，但不可能為任何其他應用程式內購買類型設定零（免費）的價格。 雖然您可以編輯（如較低）銷售促銷的價格，但無法透過 iTunes Connect 讓應用程式內購買「免費」。
 
-### <a name="localization"></a>Localization
+### <a name="localization"></a>當地語系化
 
 在 iTunes Connect 中，您可以為任何數目的支援語言輸入不同的名稱和描述文字。 在中，您可以透過快顯來新增/編輯每種語言：
 
- [![](in-app-purchase-basics-and-configuration-images/image12.png "Each language can be added/edited in via a popup")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
+ [![在中，您可以透過快顯來新增/編輯每種語言](in-app-purchase-basics-and-configuration-images/image12.png)](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
 
 當您在應用程式中顯示產品資訊時，可透過 StoreKit 顯示當地語系化的文字。 您也必須當地語系化貨幣顯示，以顯示正確的符號和十進位格式–此格式會在本檔稍後討論。
 
@@ -180,7 +180,7 @@ Apple 提供價格對照表，協助您針對所需的貨幣/價格選取正確�
 
 第一次提交應用程式時，若已啟用應用程式內購買（無論是新的應用程式，或是已新增功能），您也必須選擇要與它一起提交的產品。 ITunes Connect 入口網站會提示您執行這項操作，如下列螢幕擷取畫面所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image13.png "The iTunes Connect portal will prompt you to submit some products as well")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
+ [![ITunes Connect 入口網站也會提示您提交一些產品](in-app-purchase-basics-and-configuration-images/image13.png)](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
 
 應用程式和應用程式內購買將會一起審核，讓他們一次獲得核准（如此一來，應用程式就不會進入存放區，而不會有任何核准的產品！）。
 

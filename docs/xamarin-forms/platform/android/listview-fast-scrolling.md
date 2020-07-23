@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 30e6a39b1a7649fbb9e09dfeeb85ee889da68fc1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e52ee0a9b61a654ae048fd0fb4a14c402c932524
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128800"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929815"
 ---
 # <a name="listview-fast-scrolling-on-android"></a>ListView 在 Android 上快速滾動
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定是用來啟用透過中資料的快速滾動 [`ListView`](xref:Xamarin.Forms.ListView) 。 它會在 XAML 中使用，方法是將 `ListView.IsFastScrollEnabled` 附加屬性設定為 `boolean` 值：
 
@@ -59,7 +59,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 結果是可以啟用透過中的資料快速滾動 [`ListView`](xref:Xamarin.Forms.ListView) ，這會變更捲動方塊的大小：
 
-[![](listview-fast-scrolling-images/fastscroll.png "ListView FastScroll Platform-Specific")](listview-fast-scrolling-images/fastscroll-large.png#lightbox "ListView FastScroll Platform-Specific")
+[![ListView FastScroll 平臺特定](listview-fast-scrolling-images/fastscroll.png)](listview-fast-scrolling-images/fastscroll-large.png#lightbox "ListView FastScroll 平臺特定")
 
 ## <a name="related-links"></a>相關連結
 

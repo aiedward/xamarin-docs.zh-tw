@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f0f43f8f2113b6bd0a800ed3e0bd96b641575b1c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 38c7f11ecf65a2a9ec9ef54b5beb270f51d24dda
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139278"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929944"
 ---
 # <a name="text-translation-using-the-translator-api"></a>使用翻譯工具 API 進行文字翻譯
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Translator API 可透過 REST API 用來轉譯語音和文字。本文說明如何使用 Microsoft 翻譯工具文字 API，在應用程式中將文字翻譯成另一種語言 Xamarin.Forms 。_
 
@@ -143,9 +143,9 @@ API 回應會以 XML 格式傳回。 下列 XML 資料顯示一般成功的回�
 
 在範例應用程式中，會將 XML 回應剖析成 `XDocument` 實例，並將 xml 根值傳回給顯示的呼叫方法，如下列螢幕擷取畫面所示：
 
-![](text-translation-images/text-translation.png "Text Translation to German")
+![文字轉譯為德文](text-translation-images/text-translation.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何使用 Microsoft 翻譯工具文字 API，在應用程式中將文字翻譯成另一種語言的文字 Xamarin.Forms 。 除了翻譯文字，Microsoft Translator API 也可以將語音從一種語言轉譯成另一種語言的文字。
 

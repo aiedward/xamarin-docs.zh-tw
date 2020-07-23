@@ -10,16 +10,16 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 06ff88f1d4f272d9b77737d2168418c007afe8bc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4a9dca7556e9e08915e7e8915a0c01cd1ce6f676
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573894"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935716"
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
 
 _本文示範如何建立 Map 控制項的自訂轉譯器，該控制項會在每個平台上以釘選資料的自訂釘選和自訂檢視來顯示原生地圖。_
 
@@ -27,7 +27,7 @@ _本文示範如何建立 Map 控制項的自訂轉譯器，該控制項會在�
 
 下圖說明 [`Map`](xref:Xamarin.Forms.Maps.Map) 和執行它的對應原生控制項之間的關聯性：
 
-![](map-pin-images/map-classes.png "Relationship Between the Map Control and the Implementing Native Controls")
+![Map 控制項與實作原生控制項之間的關聯性](map-pin-images/map-classes.png)
 
 轉譯程式可以 [`Map`](xref:Xamarin.Forms.Maps.Map) 在每個平臺上建立的自訂轉譯器，用來執行平臺特定的自訂。 執行這項作業的流程如下：
 
@@ -135,11 +135,11 @@ public MapPage()
 
 下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
 
-![](map-pin-images/solution-structure.png "CustomMap Custom Renderer Project Responsibilities")
+![CustomMap 自訂轉譯器專案責任](map-pin-images/solution-structure.png)
 
 `CustomMap` 控制項是由平台特定轉譯器類別轉譯，其全部衍生自各平台的 `MapRenderer` 類別。 這會導致每個 `CustomMap` 控制項都使用平台特定控制項轉譯，如下列螢幕擷取畫面所示：
 
-![](map-pin-images/screenshots.png "CustomMap on each Platform")
+![每個平台上的 CustomMap](map-pin-images/screenshots.png)
 
 `MapRenderer`類別 `OnElementChanged` 會公開方法，這會在 Xamarin.Forms 建立自訂地圖以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的*was*專案，以及轉譯器 Xamarin.Forms 附加至的元素。 *is* 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CustomMap` 執行個體的參考。
 
@@ -174,7 +174,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 下列螢幕擷取畫面會顯示自訂前和自訂後的地圖：
 
-![](map-pin-images/map-layout-ios.png "Map Control Before and After Customization")
+![自訂前和自訂後的 Map 控制項](map-pin-images/map-layout-ios.png)
 
 在 iOS 上，釘選稱為「註釋」**，且可以是自訂影像或系統定義的各種顏色圖釘。 釘選可以選擇性地顯示「圖說文字」**，該文字會在回應選取註釋的使用者時顯示。 圖說文字會顯示 `Pin` 執行個體的 `Label` 和 `Address` 屬性，且可以選擇性的附帶左側或右側裝飾檢視。 在上方的螢幕擷取畫面中，左側裝飾檢視是一隻猴子的影像，右側裝飾檢視則是「資訊」** 按鈕。
 
@@ -347,7 +347,7 @@ void OnDidDeselectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 下列螢幕擷取畫面會顯示自訂前和自訂後的地圖：
 
-![](map-pin-images/map-layout-android.png "Map Control Before and After Customization")
+![自訂前和自訂後的 Map 控制項](map-pin-images/map-layout-android.png)
 
 在 Android 上，釘選稱為「標記」**，且可以是自訂影像或系統定義的各種顏色圖釘。 標記可以顯示「資訊視窗」**，該視窗會在回應點選標記的使用者時顯示。 資訊視窗會顯示 `Pin` 執行個體的 `Label` 及 `Address` 屬性，且可以進行自訂以包含其它內容。 但是，一次只能顯示一個資訊視窗。
 
@@ -510,7 +510,7 @@ void OnInfoWindowClick(object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 下列螢幕擷取畫面會顯示自訂前和自訂後的地圖：
 
-![](map-pin-images/map-layout-uwp.png "Map Control Before and After Customization")
+![自訂前和自訂後的 Map 控制項](map-pin-images/map-layout-uwp.png)
 
 在 UWP 上，釘選稱為「地圖圖示」**，且可以是自訂影像或系統定義的預設影像。 地圖圖示可以顯示 `UserControl`，該控制項會在回應點選地圖圖示的使用者時顯示。 `UserControl` 可以顯示任何內容，包括 `Pin` 執行個體的 `Label` 及 `Address` 屬性。
 

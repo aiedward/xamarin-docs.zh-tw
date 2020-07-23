@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 5fadd1ba556b15cb92134471f007e41f04fce69e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 60c62bf4d2887cec3d68d44e7d384daae35c066f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304608"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929039"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深度剖析
 
@@ -28,9 +28,9 @@ ms.locfileid: "79304608"
 
 Visual Studio for Mac 是一個免費的開放原始碼 IDE，結合了來自 Visual Studio 和 XCode 的功能。 其中包含完全整合的視覺化設計工具、具有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 本指南介紹一些基本的 Visual Studio for Mac 功能，但如果您還不熟悉 Visual Studio for Mac，請參閱 [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/) 文件。
 
-Mac 的可視化工作室遵循將代碼組織到*解決方案*和*專案中*的視覺工作室實踐。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android)、支援程式庫、測試應用程式等等。 在 Phoneword 應用程式中，使用了**單一檢視應用程式**範本來新增 iPhone 專案。 最初的方案看起來如下：
+Visual Studio for Mac 遵循將程式碼組織成*方案*和*專案*的 Visual Studio 實務。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android)、支援程式庫、測試應用程式等等。 在 Phoneword 應用程式中，使用了**單一檢視應用程式**範本來新增 iPhone 專案。 最初的方案看起來如下：
 
-![](hello-ios-deepdive-images/image30.png "A screenshot of the initial solution")
+![初始方案的螢幕擷取畫面](hello-ios-deepdive-images/image30.png)
 
 ::: zone-end
 ::: zone pivot="windows"
@@ -41,7 +41,7 @@ Visual Studio 是 Microsoft 所提供之功能強大的 IDE。 其中包含完�
 
 Visual Studio 會將程式碼組織成方案和專案。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android)、支援程式庫、測試應用程式等等。 在 Phoneword 應用程式中，使用了**單一檢視應用程式**範本來新增 iPhone 專案。 最初的方案看起來如下：
 
-![](hello-ios-deepdive-images/vs-image30.png "A screenshot of the initial solution")
+![初始方案的螢幕擷取畫面](hello-ios-deepdive-images/vs-image30.png)
 
 ::: zone-end
 
@@ -49,29 +49,29 @@ Visual Studio 會將程式碼組織成方案和專案。 方案是可以容納�
 
 ::: zone pivot="macos"
 
-左側是**解決方案 Pad**,其中包含目錄結構和與解決方案關聯的所有檔:
+左側是**Solution Pad**，其中包含目錄結構以及與方案相關聯的所有檔案：
 
-![](hello-ios-deepdive-images/image31.png "The solution Pad, which contains the directory structure and all the files associated with the solution")
+![Solution Pad，包含目錄結構以及與方案建立關聯的所有檔案](hello-ios-deepdive-images/image31.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
 右邊為**方案窗格**，其中包含目錄結構以及與方案建立關聯的所有檔案：
 
-![](hello-ios-deepdive-images/vs-image31.png "The solution Pane, which contains the directory structure and all the files associated with the solution")
+![方案窗格，包含目錄結構以及與方案建立關聯的所有檔案](hello-ios-deepdive-images/vs-image31.png)
 
 ::: zone-end
 
 在 [Hello, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) 逐步解說中，您已建立稱為 **Phoneword** 的方案，並在其中放置了一個 iOS 專案 (**Phoneword_iOS**)。 專案內的項目包括：
 
-- **引用**- 包含產生與執行應用程式所需的程式集。 展開目錄以查看對 .NET 組件的參考 (例如 [System](https://docs.microsoft.com/dotnet/api/system)、System.Core 和 [System.Xml](https://docs.microsoft.com/dotnet/api/system.xml))，以及對 Xamarin.iOS 組件的參考。
+- **References** -包含建立和執行應用程式所需的元件。 展開目錄以查看對 .NET 組件的參考 (例如 [System](https://docs.microsoft.com/dotnet/api/system)、System.Core 和 [System.Xml](https://docs.microsoft.com/dotnet/api/system.xml))，以及對 Xamarin.iOS 組件的參考。
 - **套件**：套件目錄包含現成的 NuGet 套件。
-- **資源**- 資源資料夾儲存其他媒體。
+- **資源**-resources 資料夾會儲存其他媒體。
 - **Main.cs**：這當中包含應用程式的主要進入點。 為了啟動應用程式，會傳入主應用程式類別 (`AppDelegate`) 的名稱。
 - **AppDelegate.cs**：這個檔案包含主應用程式類別，並負責建立視窗、建置使用者介面，以及接聽來自作業系統的事件。
 - **Main.storyboard**：分鏡腳本包含應用程式使用者介面的視覺化設計。 分鏡腳本檔案會在名為 iOS 設計工具的圖形化編輯器中開啟。
-- **ViewController.cs** = 檢視控制器為使用者查看和觸控的螢幕(檢視)供電。 檢視控制器會負責處理使用者和檢視之間的互動。
-- **ViewController.designer.cs** `designer.cs`= 是自動生成的檔,用作檢視中的控制件與其檢視控制器中的代碼表示之間的粘合。 由於這是內部連接檔案，因此，IDE 將覆寫任何手動變更，而且在大部分情況下均可忽略此檔案。 如需視覺化設計工具與支援程式碼之間關聯性的詳細資訊，請參閱 [iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
+- **ViewController.cs** –視圖控制器會提供使用者所見並觸及的畫面（view）。 檢視控制器會負責處理使用者和檢視之間的互動。
+- **ViewController.designer.cs** – `designer.cs` 是自動產生的檔案，可作為視圖中控制項與視圖控制器中的程式碼表示之間的粘連。 由於這是內部連接檔案，因此，IDE 將覆寫任何手動變更，而且在大部分情況下均可忽略此檔案。 如需視覺化設計工具與支援程式碼之間關聯性的詳細資訊，請參閱 [iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
 - **Info.plist**：**Info.plist** 為設定應用程式屬性 (例如應用程式名稱、圖示、啟動影像等) 的地方。 這是一個功能強大的檔案，您可以在[運用屬性清單](~/ios/app-fundamentals/property-lists.md)指南中找到它的完整介紹。
 - **Entitlements.plist**：權利屬性清單可讓我們指定應用程式「功能」**(也稱為 App Store 技術)，例如 iCloud、PassKit 等等。 有關 **Entitlements.plist** 的詳細資訊可在[運用屬性清單](~/ios/app-fundamentals/property-lists.md)指南中找到。 如需權利的一般簡介，請參閱[裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)指南。
 
@@ -81,7 +81,7 @@ Visual Studio 會將程式碼組織成方案和專案。 方案是可以容納�
 
 本節將探究下圖中所述的關聯性：
 
-[![](hello-ios-deepdive-images/image32.png "The Architecture and App Fundamentals relationships are illustrated in this diagram")](hello-ios-deepdive-images/image32.png#lightbox)
+[![此圖說明架構和應用程式基本概念的關聯性](hello-ios-deepdive-images/image32.png)](hello-ios-deepdive-images/image32.png#lightbox)
 
 ### <a name="main-method"></a>Main 方法
 
@@ -136,7 +136,7 @@ namespace Phoneword_iOS
 
 ## <a name="user-interface"></a>使用者介面
 
-iOS 應用程式的使用者介面就像一個店面：應用程式通常會取得一個視窗，但可在該視窗內填入其所需的物件數目，並根據應用程式想要顯示的內容來變更物件和排列方式。 此案例中的物件 (使用者所看見的內容) 稱為「檢視」。 要在應用程式中生成單個螢幕,檢視將堆疊在*內容檢視層次結構*中彼此之上,並且層次結構由單個視圖控制器管理。 具有多個畫面的應用程式會有多個內容檢視階層，每個都有它自己的檢視控制器，而應用程式會將檢視放置於視窗中，以根據使用者所在畫面建立不同的內容檢視階層。
+iOS 應用程式的使用者介面就像一個店面：應用程式通常會取得一個視窗，但可在該視窗內填入其所需的物件數目，並根據應用程式想要顯示的內容來變更物件和排列方式。 此案例中的物件 (使用者所看見的內容) 稱為「檢視」。 若要在應用程式中建立單一畫面，Views 會在*內容視圖*階層中堆疊在彼此之上，而階層則是由單一視圖控制器所管理。 具有多個畫面的應用程式會有多個內容檢視階層，每個都有它自己的檢視控制器，而應用程式會將檢視放置於視窗中，以根據使用者所在畫面建立不同的內容檢視階層。
 
 本節將藉由說明檢視、內容檢視階層及 iOS 設計工具來探討使用者介面。
 
@@ -146,28 +146,28 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image33.png "iOS Designer Interface")
+![iOS 設計工具介面](hello-ios-deepdive-images/image33.png)
 
-「分鏡腳本」** 是一個檔案，其中包含我們應用程式畫面的視覺化設計，以及畫面之間的轉換和關聯性。 分鏡腳本中應用程式畫面的表示法稱為「場景」__。 每個場景均代表一個檢視控制器，以及其所管理之檢視的堆疊 (內容檢視階層)。 當從範本創建新**的單視圖應用程式**專案時,Mac 的 Visual Studio`Main.storyboard`會自動生成一個稱為 "情節提要"的檔,並將其填充為單個場景,如下圖所示:
+「分鏡腳本」** 是一個檔案，其中包含我們應用程式畫面的視覺化設計，以及畫面之間的轉換和關聯性。 分鏡腳本中應用程式畫面的表示法稱為「場景」__。 每個場景均代表一個檢視控制器，以及其所管理之檢視的堆疊 (內容檢視階層)。 從範本建立新的**單一 View 應用程式**專案時，Visual Studio for Mac 會自動產生名為的分鏡腳本檔案， `Main.storyboard` 並填入單一場景，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
+![Visual Studio for Mac 會自動產生稱為 Main.storyboard 的分鏡腳本檔案並填入單一場景](hello-ios-deepdive-images/image34.png)
 
-您可以選取分鏡腳本畫面底部的黑色列來選擇適用於場景的檢視控制器。 檢視控制器是 `UIViewController` 類別的執行個體，其中包含支援內容檢視階層的程式碼。 可以在**屬性鍵盤**內檢視和設定此檢視控制器上的屬性,如下圖所示:
+您可以選取分鏡腳本畫面底部的黑色列來選擇適用於場景的檢視控制器。 檢視控制器是 `UIViewController` 類別的執行個體，其中包含支援內容檢視階層的程式碼。 此視圖控制器上的屬性可在**Properties Pad**內查看和設定，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/image35.png "The Properties Pane")
+![[屬性] 窗格](hello-ios-deepdive-images/image35.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image33.png "iOS Designer Interface")
+![iOS 設計工具介面](hello-ios-deepdive-images/vs-image33.png)
 
-「分鏡腳本」** 是一個檔案，其中包含我們應用程式畫面的視覺化設計，以及畫面之間的轉換和關聯性。 分鏡腳本中應用程式畫面的表示法稱為「場景」__。 每個場景均代表一個檢視控制器，以及其所管理之檢視的堆疊 (內容檢視階層)。 當從範本創建新**的單視圖應用程式**專案時,Visual Studio 會自動`Main.storyboard`生成一個稱為 "情節提要"的檔,並將其填充為單個場景,如下圖所示:
+「分鏡腳本」** 是一個檔案，其中包含我們應用程式畫面的視覺化設計，以及畫面之間的轉換和關聯性。 分鏡腳本中應用程式畫面的表示法稱為「場景」__。 每個場景均代表一個檢視控制器，以及其所管理之檢視的堆疊 (內容檢視階層)。 從範本建立新的**單一 View 應用程式**專案時，Visual Studio 會自動產生名為的分鏡腳本檔案， `Main.storyboard` 並填入單一場景，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/vs-image34.png "Visual Studio automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
+![Visual Studio 會自動產生稱為 Main.storyboard 的分鏡腳本檔案並填入單一場景](hello-ios-deepdive-images/vs-image34.png)
 
-您可以選取分鏡腳本畫面底部的列來選擇適用於場景的檢視控制器。 檢視控制器是 `UIViewController` 類別的執行個體，其中包含支援內容檢視階層的程式碼。 可以在**屬性窗格**中檢視和設定此檢視控制器上的屬性,如下圖所示:
+您可以選取分鏡腳本畫面底部的列來選擇適用於場景的檢視控制器。 檢視控制器是 `UIViewController` 類別的執行個體，其中包含支援內容檢視階層的程式碼。 您可以在 [**屬性] 窗格**內查看並設定此視圖控制器上的屬性，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/vs-image35.png "The Properties Pane")
+![[屬性] 窗格](hello-ios-deepdive-images/vs-image35.png)
 
 ::: zone-end
 
@@ -175,33 +175,33 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 場景左邊是具有旗標圖示的灰色箭號，如下列螢幕擷取畫面所示：
 
- [![](hello-ios-deepdive-images/image37.png "A gray arrow with a flag icon")](hello-ios-deepdive-images/image37.png#lightbox)
+ [![具有旗標圖示的灰色箭號](hello-ios-deepdive-images/image37.png)](hello-ios-deepdive-images/image37.png#lightbox)
 
-灰色箭頭表示稱為*Segue(* 發音為"seg-way")的情節提要過渡。 由於此 Segue 不具任何來源，因此稱為「無來源的 Segue」**。 無來源的 Segue 會指向第一個場景，其檢視會在應用程式啟動時載入至應用程式的視窗。 場景及其內部的檢視將是應用程式載入時，使用者看到的第一件事。
+灰色箭號代表名為*Segue*的分鏡腳本轉換（發音為「seg 方向」）。 由於此 Segue 不具任何來源，因此稱為「無來源的 Segue」**。 無來源的 Segue 會指向第一個場景，其檢視會在應用程式啟動時載入至應用程式的視窗。 場景及其內部的檢視將是應用程式載入時，使用者看到的第一件事。
 
-編譯使用者介面時,可以將其他檢視從**工具箱**拖到設計圖面的主檢視上,如下圖所示:
+建立使用者介面時，可以從 [**工具箱**] 將其他視圖拖曳至設計介面上的主視圖，如下列螢幕擷取畫面所示：
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image38.png "Additional Views can be dragged from the Toolbox onto the main View on the design surface")
+![[其他檢視] 可以從工具箱拖曳至設計介面上的主要檢視](hello-ios-deepdive-images/image38.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image38.png "Additional Views can be dragged from the Toolbox onto the main View on the design surface")
+![[其他檢視] 可以從工具箱拖曳至設計介面上的主要檢視](hello-ios-deepdive-images/vs-image38.png)
 
 ::: zone-end
 
-這些額外的檢視稱為「子檢視」**。 根視圖和子視圖一起是由 的內容*視圖層次結構*的一`ViewController`部分,由管理。 通過在 **「文檔大綱」** 鍵盤中檢查場景中的所有元素,可以查看其輪廓:
+這些額外的檢視稱為「子檢視」**。 同時，根視圖和子檢視是由管理的*內容視圖*階層的一部分 `ViewController` 。 您可以在 [**檔大綱**] 面板中檢查場景中所有元素的大綱，以加以查看：
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image39.png "The Document Outline pad")
+![[文件大綱] 面板](hello-ios-deepdive-images/image39.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image39.png "The Document Outline pad")
+![[文件大綱] 面板](hello-ios-deepdive-images/vs-image39.png)
 
 ::: zone-end
 
@@ -209,12 +209,12 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image40.png "The Subviews are highlighted in the diagram")
+![圖表中的子檢視已醒目提示](hello-ios-deepdive-images/image40.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image40.png "The Subviews are highlighted in the diagram")
+![圖表中的子檢視已醒目提示](hello-ios-deepdive-images/vs-image40.png)
 
 ::: zone-end
 
@@ -222,26 +222,26 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 ## <a name="content-view-hierarchy"></a>內容檢視階層
 
-_內容檢視層次結構_是由單一檢視控制器管理的檢視和子檢視堆疊,如下圖所示:
+_內容視圖_階層是由單一視圖控制器管理的一堆視圖和子檢視，如下圖所示：
 
- [![](hello-ios-deepdive-images/image41.png "The Content View Hierarchy")](hello-ios-deepdive-images/image41.png#lightbox)
+ [![內容檢視階層](hello-ios-deepdive-images/image41.png)](hello-ios-deepdive-images/image41.png#lightbox)
 
 我們可以在 **Properties Pad** 的 [檢視] 區段中，將根檢視的背景色彩暫時變更為黃色，讓 `ViewController` 的內容檢視階層變得更容易查看，如下列螢幕擷取畫面所示：
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image42.png "Changing the background color of the root View to yellow in the View section of the Properties Pad")
+![在 Properties Pad 的 [檢視] 區段中，將根檢視的背景色彩變更為黃色](hello-ios-deepdive-images/image42.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image42.png "Changing the background color of the root View to yellow in the View section of the Properties Pad")
+![在 Properties Pad 的 [檢視] 區段中，將根檢視的背景色彩變更為黃色](hello-ios-deepdive-images/vs-image42.png)
 
 ::: zone-end
 
 下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面：
 
-[![](hello-ios-deepdive-images/image43.png "The relationships between the Window, Views, Subviews, and view controller")](hello-ios-deepdive-images/image43.png#lightbox)
+[![視窗、檢視、子檢視及檢視控制器之間的關聯性](hello-ios-deepdive-images/image43.png)](hello-ios-deepdive-images/image43.png#lightbox)
 
 下一節將討論如何在程式碼中運用檢視，以及了解如何使用檢視控制器和檢視生命週期，針對使用者互動進行程式設計。
 
@@ -255,22 +255,22 @@ _內容檢視層次結構_是由單一檢視控制器管理的檢視和子檢視
 
 檢視控制器會在分鏡腳本中顯示為場景底部的列。 選取檢視控制器，會在 **Properties Pad** 中顯示其屬性：
 
-![](hello-ios-deepdive-images/image44.png "Selecting the view controller brings up its properties in the Properties Pane")
+![選取檢視控制器即會在 [屬性] 窗格中顯示其屬性](hello-ios-deepdive-images/image44.png)
 
 您可以在 **Properties Pad** 的 [身分識別]**** 區段中編輯 [類別]**** 屬性，來設定此場景所呈現內容檢視階層的自訂檢視控制器類別。 例如，我們的 **Phoneword** 應用程式會將 `ViewController` 設定為第一個畫面的檢視控制器，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/image45new.png "The Phoneword application sets the ViewController as the view controller")
+![Phoneword 應用程式會將 ViewController 設定為檢視控制器](hello-ios-deepdive-images/image45new.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-檢視控制器會在分鏡腳本中顯示為場景底部的列。 選擇檢視控制器在**屬性窗格**中會將其屬性開啟:
+檢視控制器會在分鏡腳本中顯示為場景底部的列。 選取 view controller 會在 [**屬性] 窗格**中顯示其屬性：
 
-![](hello-ios-deepdive-images/vs-image44.png "Selecting the view controller brings up its properties in the Properties Pane")
+![選取檢視控制器即會在 [屬性] 窗格中顯示其屬性](hello-ios-deepdive-images/vs-image44.png)
 
 您可以在 [屬性]**** 窗格的 [身分識別]**** 區段中編輯 [類別]**** 屬性，來設定此場景所呈現內容檢視階層的自訂檢視控制器類別。 例如，我們的 **Phoneword** 應用程式會將 `ViewController` 設定為第一個畫面的檢視控制器，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/vs-image45.png "The Phoneword application sets the ViewController as the view controller")
+![Phoneword 應用程式會將 ViewController 設定為檢視控制器](hello-ios-deepdive-images/vs-image45.png)
 
 ::: zone-end
 
@@ -297,14 +297,14 @@ public partial class ViewController : UIViewController
 
 以下為基本的週期方法及其函式：
 
-- **ViewDidLoad** - 首次將檢視控制器載入內容檢視層次結構到記憶體中一*次*。 這是執行初始安裝的好地方，因為它是程式碼中子檢視首次變成可用的時候。
-- **ViewWill 出現**- 每次檢視控制器的檢視即將添加到內容檢視層次結構並顯示在螢幕上時,都會調用。
-- **ViewWill 消失**- 每次檢視控制器的視圖即將從內容檢視層次結構中刪除並從螢幕中消失時,都會調用。 這個生命週期事件適用於清除和儲存狀態。
+- **ViewDidLoad** -第一次將其內容視圖階層載入至記憶體時呼叫*一次*。 這是執行初始安裝的好地方，因為它是程式碼中子檢視首次變成可用的時候。
+- **Viewwillappear: 每當**-每次視圖控制器的視圖即將新增至內容視圖階層並出現在螢幕上時呼叫。
+- **Viewwilldisappear: 每當**-每當視圖控制器的視圖即將從內容視圖階層中移除，並從畫面消失時呼叫。 這個生命週期事件適用於清除和儲存狀態。
 - **ViewDidAppear** 和 **ViewDidDisappear**：分別在從內容檢視階層新增或移除檢視時呼叫。
 
 將自訂程式碼新增至生命週期的任何階段時，必須「覆寫」** 該生命週期方法的「基底實作」**。 達成此目的的方法是點選至現有生命週期方法 (其中具有已經附加至該方法的一些程式碼)，並使用額外的程式碼加以擴充。 基底實作是從方法內部呼叫，以確定原始程式碼會在新的程式碼之前執行。 下一節將示範此範例。
 
-有關使用檢視控制器的詳細資訊,請參閱 Apple[的 iOS 檢視控制器編程指南](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457-CH2-SW1)和[UIViewController 參考](https://developer.apple.com/documentation/uikit/uiviewcontroller?language=objc), 1999 。
+如需使用 view controller 的詳細資訊，請參閱[適用于 iOS 的 Apple 視圖控制器程式設計指南](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457-CH2-SW1)和[UIViewController 參考](https://developer.apple.com/documentation/uikit/uiviewcontroller?language=objc)。
 
 ### <a name="responding-to-user-interaction"></a>回應使用者互動
 
@@ -313,7 +313,7 @@ public partial class ViewController : UIViewController
 讓我們來探索其運作方式。
 在 `Phoneword_iOS` 專案中，已將稱為 `TranslateButton` 的按鈕新增至內容檢視階層：
 
-[![](hello-ios-deepdive-images/image1.png "A button was added called TranslateButton to the Content View Hierarchy")](hello-ios-deepdive-images/image1.png#lightbox)
+[![稱為 TranslateButton 的按鈕已新增至 [內容檢視] 階層](hello-ios-deepdive-images/image1.png)](hello-ios-deepdive-images/image1.png#lightbox)
 
 將**名稱**指派給 **Properties Pad** 的**按鈕**控制項時，iOS 設計工具會自動將它對應到 **ViewController.designer.cs** 中的控制項，使 `TranslateButton` 在 `ViewController` 類別內部變成可供使用。 控制項會先在檢視生命週期的 `ViewDidLoad` 階段變成可供使用，因此可使用這個生命週期方法來回應使用者的觸控：
 
@@ -387,7 +387,7 @@ Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包
     }
     ```
 
-- **顯示警示**- 當使用者嘗試在不支援呼叫的裝置(例如模擬器或 iPod Touch)上撥打電話呼叫時,將顯示一個警報對話框,讓使用者知道無法撥打電話。 下列程式碼會建立並填入警示控制器：
+- **顯示警示**–當使用者嘗試在不支援通話的裝置（例如模擬器或 iPod touch）上撥打電話時，會顯示警示對話方塊，讓使用者知道無法撥打電話。 下列程式碼會建立並填入警示控制器：
 
     ```csharp
     if (!UIApplication.SharedApplication.OpenUrl (url)) {
@@ -420,22 +420,22 @@ iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image46new.png "Pressing Start/Play")
+![按 [啟動/播放]](hello-ios-deepdive-images/image46new.png)
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image46.png "Pressing Start/Play")
+![按 [啟動/播放]](hello-ios-deepdive-images/vs-image46.png)
 
 ::: zone-end
 
 應用程式將會部署到 iOS 裝置：
 
-[![](hello-ios-deepdive-images/image1.png "The app will deploy to the iOS device and run")](hello-ios-deepdive-images/image1.png#lightbox)
+[![應用程式將會部署到 iOS 裝置並執行](hello-ios-deepdive-images/image1.png)](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>產生自訂圖示和啟動影像
 
-並非每個人都有一個設計師可用於創建自定義圖示和啟動應用程式需要脫穎而出的圖像。以下是生成自訂應用圖稿的幾種替代方法:
+並非每個人都有設計工具可用來建立自訂圖示，以及啟動應用程式所需的映射。以下是一些產生自訂應用程式插圖的替代方法：
 
 ::: zone pivot="macos"
 
@@ -452,7 +452,7 @@ iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個
 
 如需有關圖示和啟動影像大小及需求的詳細資訊，請參閱[運用影像指南](~/ios/app-fundamentals/images-icons/index.md)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 恭喜！ 您現在已充分了解 Xamarin.iOS 應用程式的元件，以及用來建立它們的工具。
 在[快速入門系列的下一個教學課程](~/ios/get-started/hello-ios-multiscreen/index.md)中，您將會擴充我們的應用程式來處理多個畫面。 過程中，您將實作瀏覽控制器、了解 Storyboard Segue，並在您擴充應用程式以處理多個畫面時，導入 Model、View、Controller (MVC) 模式。

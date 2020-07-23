@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 2c5451b379968230d75599601052e3a33f5b5951
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c6e1faec24b62464efa1ffb5325844bfed41d110
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022448"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932765"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 Xamarin
 
@@ -20,7 +20,7 @@ Xamarin 能提供以 iOS 為目標的開發人員將其非使用者介面程式�
 
 除此之外，Xamarin 可讓您透過名為繫結的技術，運用現有的 Objective-C 資產。 您只需以 Objective-C 建立靜態程式庫，然後將它透過繫結向 C# 公開，如下列圖表所示：
 
- [![](images/01-bindings.png "A static library in Objective-C exposed to C# via a binding")](images/01-bindings.png#lightbox)
+ [![目標 C 中的靜態程式庫透過系結向 c # 公開](images/01-bindings.png)](images/01-bindings.png#lightbox)
 
 這不僅只限制於非 UI 程式碼。 繫結也可以公開以 Objective-C 開發的使用者介面程式碼。
 
