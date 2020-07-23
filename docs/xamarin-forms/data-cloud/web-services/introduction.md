@@ -10,16 +10,16 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cd9815c6448efae0bb0af982c8807c47263ae13e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139174"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938199"
 ---
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb 服務簡介
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _本主題提供 Xamarin.Forms 範例應用程式的逐步解說，示範如何與不同的 web 服務通訊。雖然每個 web 服務都使用個別的範例應用程式，但它們的功能類似，而且共用一般類別。_
 
@@ -34,8 +34,8 @@ _本主題提供 Xamarin.Forms 範例應用程式的逐步解說，示範如何�
 
 當應用程式啟動時，會顯示一個頁面，列出從 web 服務取得的任何工作，並允許使用者建立新的工作。 按一下工作會將應用程式流覽至第二頁，讓您可以編輯、儲存、刪除和讀出工作。 最終的應用程式如下所示：
 
-![](introduction-images/app-example-1.png "Todo application - first page")
-![](introduction-images/app-example-2.png "Todo application - second page")
+![Todo 應用程式-第一頁 ](introduction-images/app-example-1.png)
+ ![ todo 應用程式第二頁](introduction-images/app-example-2.png)
 
 本指南中的每個主題都會提供*另*一個應用程式版本的下載連結，以示範特定類型的 web 服務後端。 在與每個 web 服務樣式相關的頁面上下載相關的範例程式碼。
 

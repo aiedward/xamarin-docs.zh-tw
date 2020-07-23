@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/15/2018
-ms.openlocfilehash: 6366a51f18ae2af8a94cf60a82e31ff413180e2d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e2dcd5ea0f099ea84d7824eda4170df8efb22cb6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573946"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937211"
 ---
 # <a name="appearance-api-in-xamarinios"></a>Xamarin 中的外觀 API
 
@@ -20,7 +20,7 @@ _iOS 可讓您在靜態類別層級（而不是個別物件）套用視覺屬性
 
 這項功能會透過 `Appearance` 所有支援它的 UIKit 控制項上的靜態屬性，在 Xamarin 中公開。 因此，可以輕鬆地自訂視覺外觀（像是色調色彩和背景影像等屬性），讓您的應用程式具有一致的外觀。 外觀 API 是在 iOS 5 中引進，而其中某些部分在 iOS 9 中已被取代，但仍是在 Xamarin iOS 應用程式中達成一些樣式和主題效果的好方法。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 iOS 可讓您自訂許多 UIKit 控制項的外觀，使標準控制項符合您想要套用至應用程式的商標。
 
@@ -32,7 +32,7 @@ iOS 可讓您自訂許多 UIKit 控制項的外觀，使標準控制項符合您
 
 外觀範例應用程式會示範這三個方法，如下列螢幕擷取畫面所示：
 
-[![](introduction-to-the-appearance-api-images/appearance01-sml.png "The Appearance sample application demonstrates all three methods")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
+[![外觀範例應用程式會示範這三種方法](introduction-to-the-appearance-api-images/appearance01-sml.png)](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 從 iOS 8，外觀 proxy 已擴充至 TraitCollections。
  `AppearanceForTraitCollection`可以用來設定特定特性集合的預設面板。 您可以在分鏡腳本[簡介](~/ios/user-interface/storyboards/unified-storyboards.md)指南中閱讀更多相關資訊。
@@ -85,11 +85,11 @@ sg1.TintColor = UIColor.Magenta;
 
 或者，在設計工具的 [屬性] 面板中設定值：
 
-[![](introduction-to-the-appearance-api-images/propertiespadtint.png "Properties Pad Tint")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
+[![Properties Pad 淡色](introduction-to-the-appearance-api-images/propertiespadtint.png)](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
 下圖說明，這只會在名為 ' sg1 ' 的控制項上設定色調。
 
-[![](introduction-to-the-appearance-api-images/image53.png "Setting the individual control tint")](introduction-to-the-appearance-api-images/image53.png#lightbox)
+[![設定個別的控制項淡色](introduction-to-the-appearance-api-images/image53.png)](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
 若要以這種方式設定許多控制項，會完全沒有效率，因此我們可以改為在 `Appearance` 類別本身設定靜態屬性。 這會顯示在下列程式碼中：
 
@@ -99,7 +99,7 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 下圖說明兩個分割的控制項，並將其外觀設定為洋紅：
 
-[![](introduction-to-the-appearance-api-images/image54.png "Setting the Appearance control tint")](introduction-to-the-appearance-api-images/image54.png#lightbox)
+[![設定外觀控制項淡色](introduction-to-the-appearance-api-images/image54.png)](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
 `Appearance`屬性應該在應用程式生命週期的早期設定，例如在 AppDelegate 的 `FinishedLaunching` 事件中，或在顯示受影響控制項之前的 ViewController 中。
 

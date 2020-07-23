@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 263c48c5006ba0060756e1050497c38dfb7c8eae
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7769e3d02acc9f1522c6028f88f37c1f522866af
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567771"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936756"
 ---
 # <a name="linking-xamarinios-apps"></a>連結 Xamarin.iOS 應用程式
 
@@ -30,7 +30,7 @@ ms.locfileid: "84567771"
 
 您可以透過 [專案選項]**** 中的 [連結器行為] 下拉式清單自訂連結程序。 若要存取此清單，請對 iOS 專案按兩下，然後瀏覽至 [iOS 組建] > [連結器選項]****，如下所示：
 
-[![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
+[![連結器選項](linker-images/image1.png)](linker-images/image1.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -40,10 +40,10 @@ ms.locfileid: "84567771"
 
 1. 以滑鼠右鍵按一下 [**方案總管**中的**專案名稱**，然後選取 [**屬性**]：
 
-    ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
+    ![以滑鼠右鍵按一下 [方案總管] 中的專案名稱，然後選取 [屬性]](linker-images/linking01w.png)
 2. 在 [專案屬性]**** 中，選取 [iOS 組建]****：
 
-    ![](linker-images/linking02w.png "Select IOS Build")
+    ![選取 IOS 組建](linker-images/linking02w.png)
 3. 遵循下列指示來變更連結選項。
 
 -----

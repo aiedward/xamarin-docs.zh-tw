@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a97d3da4f451051dcb17c68da54cadf7d841fd50
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 3cdfad92362efa2974b214cac5d7fa424e9ba94d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566223"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938303"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>在 Xamarin 中 Siri 遠端和藍牙控制器以進行 tvOS
 
@@ -20,7 +20,7 @@ TvOS 應用程式的使用者不會與它直接與 iOS 互動，因為它會在�
 
 如果您的應用程式是遊戲，您可以選擇性地建立協力廠商的支援，也就是您應用程式中的 iOS （MFI）[藍牙遊戲控制器](#Bluetooth-Game-Controllers)。
 
-[![](remote-bluetooth-images/intro01.png "The Bluetooth Remote and Game Controller")](remote-bluetooth-images/intro01.png#lightbox)
+[![Bluetooth 遠端和遊戲控制器](remote-bluetooth-images/intro01.png)](remote-bluetooth-images/intro01.png#lightbox)
 
 本文說明[Siri 遠端](#The-Siri-Remote)、[觸控表面手勢](#Touch-Surface-Gestures)和[Siri 遠端按鈕](#Siri-Remote-Buttons)，並示範如何透過[手勢和](#Gestures-and-Storyboards)分鏡腳本、[手勢和程式碼](#Gestures-and-Code)，以及[低層級的事件處理](#Low-Level-Event-Handling)來使用它們。 最後，它會討論如何在 tvOS 應用程式中使用[遊戲控制器](#Working-with-Game-Controllers)。
 
@@ -32,14 +32,14 @@ TvOS 應用程式的使用者不會與它直接與 iOS 互動，因為它會在�
 
 您的 tvOS 應用程式開發人員所面臨的挑戰，就是建立快速、容易使用且視覺上吸引人的使用者介面，利用 Siri 遠端的觸控表面、加速計、陀螺儀和按鈕。
 
-[![](remote-bluetooth-images/remote01.png "The Siri Remote")](remote-bluetooth-images/remote01.png#lightbox)
+[![Siri 遠端](remote-bluetooth-images/remote01.png)](remote-bluetooth-images/remote01.png#lightbox)
 
 在您的 tvOS 應用程式中，Siri 遠端具有下列功能和預期的使用方式：
 
 |功能|一般應用程式使用方式|遊戲應用程式使用方式|
 |---|---|---|
 |**觸控介面**<br />滑動以導覽，並按下以選取並保存內容功能表。|**點擊/滑動**<br />可設定焦點的專案之間的 UI 導覽。<br /><br />**然後**<br />啟用選取的（聚焦）專案。|**點擊/滑動**<br />取決於遊戲設計，並可在邊緣上點擊以作為 D 板。<br /><br />**然後**<br />執行主要按鈕功能。|
-|**下拉式功能表**<br />按以返回上一個畫面或功能表。|回到上一個畫面，並從主要應用程式畫面結束至 Apple TV 首頁畫面。|暫停並繼續遊戲，返回上一個畫面，並從主要應用程式畫面結束至 Apple TV 首頁畫面。|
+|**功能表**<br />按以返回上一個畫面或功能表。|回到上一個畫面，並從主要應用程式畫面結束至 Apple TV 首頁畫面。|暫停並繼續遊戲，返回上一個畫面，並從主要應用程式畫面結束至 Apple TV 首頁畫面。|
 |**Siri/搜尋**<br />在具有 Siri 的國家/地區中，在所有其他國家/地區中按住語音控制以顯示搜尋畫面。|n/a|n/a|
 |**播放/暫停**<br />播放並暫停媒體，或在應用程式中提供次要功能。|啟動媒體播放，並暫停/繼續播放。|執行次要按鈕功能或略過簡介影片（如果有的話）。|
 |**首頁**<br />按以返回主畫面，按兩下以顯示執行中的應用程式，按住並按住進入睡眠裝置。|n/a|n/a|
@@ -85,14 +85,14 @@ Apple 提供下列使用觸控介面手勢的建議：
 1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案以編輯介面設計工具。
 2. 從連結**庫**拖曳點一下**手勢辨識器**，並將它放置在 View 上：
 
-    [![](remote-bluetooth-images/storyboard01.png "A Tap Gesture Recognizer")](remote-bluetooth-images/storyboard01.png#lightbox)
+    [![攻點手勢辨識器](remote-bluetooth-images/storyboard01.png)](remote-bluetooth-images/storyboard01.png#lightbox)
 3. 勾選 [**屬性偵測器**] 的 [**按鈕**] 區段中的 [**選取**]：
 
-    [![](remote-bluetooth-images/storyboard02.png "Check Select")](remote-bluetooth-images/storyboard02.png#lightbox)
+    [![核取 [選取]](remote-bluetooth-images/storyboard02.png)](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **選取**表示手勢會回應使用者按一下 Siri 遙控器上的**觸控介面**。 您也可以選擇回應**功能表**、[**播放/暫停**]、[**向上**]、[**向下**]、[**左**] 和 [**右**] 按鈕。
 5. 接下來，從點按手勢辨識**器**連線到**動作**，並加以呼叫 `TouchSurfaceClicked` ：
 
-    [![](remote-bluetooth-images/storyboard03.png "An Action from the Tap Gesture Recognizer")](remote-bluetooth-images/storyboard03.png#lightbox)
+    [![來自點手勢辨識器的動作](remote-bluetooth-images/storyboard03.png)](remote-bluetooth-images/storyboard03.png#lightbox)
 6. 儲存您的變更，並返回 Visual Studio for Mac。
 
 編輯您的 View Controller （範例 `FirstViewController.cs` ）檔案，並新增下列程式碼來處理所觸發的手勢：
@@ -271,7 +271,7 @@ namespace tvRemote
 
 除了隨附于 Apple TV、協力廠商、iOS （MFI）藍牙遊戲控制器的標準 Siri 遠端之外，也可以與 Apple TV 配對，並用來控制您的 tvOS 應用程式。
 
-[![](remote-bluetooth-images/game01.png "Bluetooth Game Controllers")](remote-bluetooth-images/game01.png#lightbox)
+[![藍牙遊戲控制器](remote-bluetooth-images/game01.png)](remote-bluetooth-images/game01.png#lightbox)
 
 遊戲控制器可以用來增強遊戲，並在遊戲中提供深度的意義。 它們也可以用來控制標準 Apple TV 介面，因此使用時不需要在遠端和控制器之間切換。
 
@@ -286,8 +286,8 @@ namespace tvRemote
 |**A**|啟用選取的（聚焦）專案。|執行主要按鈕功能並確認對話方塊動作。|
 |**B**|回到上一個畫面，如果在應用程式的主畫面上，則會離開主畫面。|執行次要按鈕函數或回到上一個畫面。|
 |**X**|啟動媒體播放或暫停/繼續播放。|視遊戲而定。|
-|**是**|n/a|視遊戲而定。|
-|**下拉式功能表**|回到上一個畫面，如果在應用程式的主畫面上，則會離開主畫面。|暫停/繼續遊戲，返回上一個畫面，如果在應用程式的主畫面上，則會離開主畫面。|
+|**Y**|n/a|視遊戲而定。|
+|**功能表**|回到上一個畫面，如果在應用程式的主畫面上，則會離開主畫面。|暫停/繼續遊戲，返回上一個畫面，如果在應用程式的主畫面上，則會離開主畫面。|
 |**左肩按鈕**|向左導覽。|視遊戲而定。|
 |**左方觸發程式**|向左導覽。|視遊戲而定。|
 |**右肩按鈕**|向右導覽。|視遊戲而定。|
@@ -329,7 +329,7 @@ Apple 提供下列使用遊戲控制器的建議：
 
 若要在您的 tvOS 應用程式中啟用遊戲控制器支援，請按兩下 `Info.plist` **方案總管**中的檔案以開啟它進行編輯：
 
-[![](remote-bluetooth-images/game02.png "The Info.plist editor")](remote-bluetooth-images/game02.png#lightbox)
+[![Plist 編輯器](remote-bluetooth-images/game02.png)](remote-bluetooth-images/game02.png#lightbox)
 
 在 [**遊戲控制器**] 區段底下，勾選 [**啟用遊戲控制器**]，然後檢查應用程式將支援的所有遊戲控制器類型。
 

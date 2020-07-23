@@ -10,16 +10,16 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0a105548f869eb448a990a1cc12e6feff4197d48
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7ecc094abf816f11dcb16d9eba7d715c8c4e4ab1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135781"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939148"
 ---
 # <a name="reusable-effectbehavior"></a>可重複使用的 EffectBehavior
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
 
 _行為是將效果新增至控制項的實用方法，會從程式碼後置檔案中移除定案的效果處理常式代碼。本文示範如何建立和使用 Xamarin.Forms 行為，以將效果新增至控制項。_
 
@@ -160,17 +160,17 @@ label.Behaviors.Add (new EffectBehavior {
 
 在執行時間，將行為附加至控制項時 [`Label`](xref:Xamarin.Forms.Label) ，將會 `Xamarin.LabelShadowEffect` 加入控制項的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合中。 這會導致將陰影新增至 `Label` 控制項所顯示的文字，如下列螢幕擷取畫面所示：
 
-![](effect-behavior-images/screenshots.png "Sample Application with EffectsBehavior")
+![使用 EffectsBehavior 的範例應用程式](effect-behavior-images/screenshots.png)
 
 使用此行為在控制項中新增和移除效果的優點是：可以從程式碼後置檔案中移除以定案效果方式處理的程式碼。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用行將效果新增至控制項。 `EffectBehavior`類別是可重複使用的 Xamarin.Forms 自訂行為，可在 [`Effect`](xref:Xamarin.Forms.Effect) 行為附加至控制項時，將實例新增至控制項，並在 `Effect` 行為與控制項中斷連結時，移除實例。
 
 ## <a name="related-links"></a>相關連結
 
-- [效應](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [效果](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [效果行為 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
 - [行為](xref:Xamarin.Forms.Behavior)
 - [行為 &lt; T&gt;](xref:Xamarin.Forms.Behavior`1)

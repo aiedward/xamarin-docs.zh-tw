@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 9a45e87165101a8e8afcfc51d15d085982b6499e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d4a1cab23b8d295d899c47edc5ffe77f6d20a467
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569929"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939759"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 頁面控制項
 
 有時候您可能需要在 tvOS 應用程式中顯示一系列的頁面或影像。 網頁控制項的設計，是為了清楚地顯示使用者已超出最大頁面數目的頁面。 頁面控制項會針對深色、橢圓形狀背景顯示一系列的點。 目前的頁面會顯示已填滿的點，而所有其他頁面則會顯示為空心點。 如果在其背景區域中有太多無法容納，頁面控制項將會裁剪外部最多點。
 
-[![](page-controls-images/page01.png "Sample Page control")](page-controls-images/page01.png#lightbox)
+[![範例頁面控制項](page-controls-images/page01.png)](page-controls-images/page01.png#lightbox)
 
 非互動式元素中的頁面控制項，其設計目的是只為使用者提供意見反應。 您將需要新增其他控制項，以變更目前的頁碼（例如手勢或按鈕）。
 
@@ -38,14 +38,14 @@ ms.locfileid: "84569929"
 1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳**頁面控制項**，並將它放在視圖上：
 
-    [![](page-controls-images/page02.png "A Page Control")](page-controls-images/page02.png#lightbox)
+    [![頁面控制項](page-controls-images/page02.png)](page-controls-images/page02.png#lightbox)
 1. 在**Properties Pad**的 [ **Widget]** 索引標籤中，您可以調整頁面控制項的數個屬性，例如其**目前頁面**和**頁數**：
 
-    [![](page-controls-images/page03.png "The Widget Tab")](page-controls-images/page03.png#lightbox)
+    [![[Widget] 索引標籤](page-controls-images/page03.png)](page-controls-images/page03.png#lightbox)
 1. 接下來，將控制項或手勢加入至視圖，以在頁面集合中向後和向前移動。
 1. 最後，將**名稱**指派給控制項，以便您可以在 c # 程式碼中對其進行回應。 例如：
 
-    [![](page-controls-images/page04.png "Name the control")](page-controls-images/page04.png#lightbox)
+    [![將控制項命名為](page-controls-images/page04.png)](page-controls-images/page04.png#lightbox)
 1. 儲存您的變更。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -53,14 +53,14 @@ ms.locfileid: "84569929"
 1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳**頁面控制項**，並將它放在視圖上：
 
-    [![](page-controls-images/page02-vs.png "A Page Control")](page-controls-images/page02-vs.png#lightbox)
+    [![頁面控制項](page-controls-images/page02-vs.png)](page-controls-images/page02-vs.png#lightbox)
 1. 在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中，您可以調整頁面控制項的數個屬性，例如其**目前頁面**和**頁數**：
 
-    [![](page-controls-images/page03-vs.png "The Widget tab")](page-controls-images/page03-vs.png#lightbox)
+    [![[Widget] 索引標籤](page-controls-images/page03-vs.png)](page-controls-images/page03-vs.png#lightbox)
 1. 接下來，將控制項或手勢加入至視圖，以在頁面集合中向後和向前移動。
 1. 最後，將**名稱**指派給控制項，以便您可以在 c # 程式碼中對其進行回應。 例如：
 
-    [![](page-controls-images/page04-vs.png "Name the control")](page-controls-images/page04-vs.png#lightbox)
+    [![將控制項命名為](page-controls-images/page04-vs.png)](page-controls-images/page04-vs.png#lightbox)
 1. 儲存您的變更。
 
 -----

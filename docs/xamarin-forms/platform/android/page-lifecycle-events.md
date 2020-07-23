@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 76724ff17613fcebe35cb68518a1c932eee8aad7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fb4d1e28fded70005ef23eb4f7540eccd2fba372
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128722"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939304"
 ---
 # <a name="page-lifecycle-events-on-android"></a>Android 上的頁面週期事件
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定是用來 [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) [`Appearing`](xref:Xamarin.Forms.Page.Appearing) 分別針對使用 AppCompat 的應用程式，停用應用程式暫停和繼續時的和頁面事件。 此外，它還可以控制是否要在恢復時顯示幕幕小鍵盤（如果是在暫停時顯示），前提是螢幕鍵盤的作業模式設定為 [`WindowSoftInputModeAdjust.Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize) 。
 
@@ -58,7 +58,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 結果是， [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) 和 [`Appearing`](xref:Xamarin.Forms.Page.Appearing) 頁面事件不會分別在應用程式暫停和繼續時引發，而且如果在應用程式暫停時顯示幕幕小鍵盤，則在應用程式繼續時也會顯示它：
 
-[![](page-lifecycle-events-images/keyboard-on-resume.png "Lifecycle Events Platform-Specific")](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "Lifecycle Events Platform-Specific")
+[![生命週期事件平臺特定](page-lifecycle-events-images/keyboard-on-resume.png)](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "生命週期事件平臺特定")
 
 ## <a name="related-links"></a>相關連結
 

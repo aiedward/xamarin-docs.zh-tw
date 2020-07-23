@@ -10,26 +10,26 @@ ms.date: 11/25/2015
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e9c6bc604368f36646260d6a3766cc5417a1ff52
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127186"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937783"
 ---
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 `RelativeLayout`是用來相對於版面配置或同級視圖的屬性來定位和調整視圖大小。 與不同的是 `AbsoluteLayout` ，沒有 `RelativeLayout` 移動錨點的概念，而且沒有功能可以相對於版面配置的底部或右邊邊緣來定位元素。 `RelativeLayout`支援將專案置於其本身的界限之外。
 
-[![](relative-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![Xamarin.Forms大綱](relative-layout-images/layouts-sml.png)](relative-layout-images/layouts.png#lightbox "[!OP.無-LOC （Xamarin）] 版面配置")
 
 ## <a name="purpose"></a>目的
 
 `RelativeLayout`可以用來將螢幕上的視圖放在相對於整體版面配置或其他視圖的畫面上。
 
-![](relative-layout-images/flag.png "RelativeLayout Exploration")
+![RelativeLayout 探索](relative-layout-images/flag.png)
 
 ## <a name="usage"></a>使用量
 
@@ -133,7 +133,7 @@ layout.Children.Add (blueBox, Constraint.RelativeToView (redBox, (Parent, siblin
 
 這會產生下列輸出，_並根據紅色_方塊的位置決定藍色方塊的位置：
 
-![](relative-layout-images/red-blue-box.png "RelativeLayout with Red and Blue BoxViews")
+![具有紅色和藍色 BoxViews 的 RelativeLayout](relative-layout-images/red-blue-box.png)
 
 ### <a name="sizing"></a>調整大小
 
@@ -226,7 +226,7 @@ Title="RelativeLayout">
 
 上述程式碼會產生下列版面配置：
 
-![](relative-layout-images/relative.png "Complex RelativeLayout")
+![複雜的 RelativeLayout](relative-layout-images/relative.png)
 
 請注意， `RelativeLayouts` 會進行嵌套，因為在某些情況下，相較于在相同的版面配置中呈現所有元素，嵌套配置可能會比較容易。 另請注意，某些專案是 `RelativeToView` ，因為這可讓您在 views guide 定位的關聯性時，提供更簡單且更直覺的版面配置。
 

@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 4f91e683b826657a9740de7e0b98137858130042
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 55830c21c178a13fd58b73b6920c21cfa3e9c945
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292270"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86940032"
 ---
 # <a name="using-jenkins-with-xamarin"></a>搭配 Xamarin 使用 Jenkins
 
@@ -40,7 +40,7 @@ Xamarin 行動應用程式的組建伺服器設定起來非常類似開發人員
 
 下圖說明一般 Jenkins 組建伺服器上的所有元素：
 
-[![](jenkins-walkthrough-images/image1.png "This diagram illustrates all of these elements on a typical Jenkins build server")](jenkins-walkthrough-images/image1.png#lightbox)
+[![下圖說明一般 Jenkins 組建伺服器上的所有元素](jenkins-walkthrough-images/image1.png)](jenkins-walkthrough-images/image1.png#lightbox)
 
 iOS 應用程式只能在執行 macOS 的電腦上建立和簽署。 Mac 迷你是合理的低成本選項，但任何能夠執行 OS X 10.10 （Yosemite）或更高版本的電腦都已足夠。
 
@@ -56,42 +56,42 @@ iOS 應用程式只能在執行 macOS 的電腦上建立和簽署。 Mac 迷你�
 - 在 servlet 容器內（例如 Tomcat、Jetty 或 JBoss）。
 - 做為在使用者帳戶下執行的一般進程。
 
-大部分傳統的持續整合應用程式都是在背景執行，可能是做為 daemon （在 OS X 或 \*nix 上）或做為服務（在 Windows 上）。 這適用于不需要 GUI 互動的情況，而且可以輕鬆地執行組建環境的設定。 行動應用程式也需要金鑰庫和簽署憑證，而當 Jenkins 做為 daemon 執行時，可能會有問題的存取權。 基於這些考慮，這份檔著重于第三個案例–在組建伺服器上的使用者帳戶下執行 Jenkins。
+大部分傳統的持續整合應用程式都是在背景執行，可能是做為 daemon （在 OS X 或 \* nix 上）或做為服務（在 Windows 上）。 這適用于不需要 GUI 互動的情況，而且可以輕鬆地執行組建環境的設定。 行動應用程式也需要金鑰庫和簽署憑證，而當 Jenkins 做為 daemon 執行時，可能會有問題的存取權。 基於這些考慮，這份檔著重于第三個案例–在組建伺服器上的使用者帳戶下執行 Jenkins。
 
 Jenkins 應用程式是安裝 Jenkins 的便利方式。 這是 AppleScript 的包裝函式，可簡化 Jenkins 伺服器的啟動和停止。 Jenkins 會在 Dock 中以具有圖示的應用程式執行，而不是在 bash shell 中執行，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image2.png "Instead of running in a bash shell, Jenkins runs as an app with icon in the Dock, as shown in this screenshot")](jenkins-walkthrough-images/image2.png#lightbox)
+[![Jenkins 不會在 bash shell 中執行，而是在 Dock 中以具有圖示的應用程式來執行，如下列螢幕擷取畫面所示](jenkins-walkthrough-images/image2.png)](jenkins-walkthrough-images/image2.png#lightbox)
 
 啟動或停止 Jenkins 就像啟動或停止 Jenkins 一樣簡單。
 
 若要安裝 Jenkins，請從專案的下載頁面下載最新版本，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image3.png "App, download the latest version from the projects download page, pictured in this screenshot")](jenkins-walkthrough-images/image3.png#lightbox)
+[![應用程式，從 [專案下載] 頁面下載最新版本，此螢幕擷取畫面中所示](jenkins-walkthrough-images/image3.png)](jenkins-walkthrough-images/image3.png#lightbox)
 
-將 zip 檔案解壓縮至組建伺服器上的 `/Applications` 資料夾，並啟動它，就像任何其他 OS X 應用程式一樣。
+將 zip 檔案解壓縮至 `/Applications` 組建伺服器上的資料夾，並啟動它，就像任何其他 OS X 應用程式一樣。
 當您第一次啟動 Jenkins 時，它會顯示一個對話方塊，通知您它會下載 Jenkins：
 
-[![](jenkins-walkthrough-images/image4.png "App, it will present a dialog informing you that it will download Jenkins")](jenkins-walkthrough-images/image4.png#lightbox)
+[![應用程式，它會顯示一個對話方塊，通知您它會下載 Jenkins](jenkins-walkthrough-images/image4.png)](jenkins-walkthrough-images/image4.png#lightbox)
 
 Jenkins 完成下載之後，它會顯示另一個對話方塊，詢問您是否要自訂 Jenkins 啟動，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image5.png "App has finished its download, it will display another dialog asking you if you would like to customize the Jenkins startup, as seen in this screenshot")](jenkins-walkthrough-images/image5.png#lightbox)
+[![應用程式已完成下載，它會顯示另一個對話方塊，詢問您是否要自訂 Jenkins 啟動，如此螢幕擷取畫面所示](jenkins-walkthrough-images/image5.png)](jenkins-walkthrough-images/image5.png#lightbox)
 
 自訂 Jenkins 是選擇性的，而且不需要在每次啟動應用程式時執行– Jenkins 的預設設定適用于大部分的情況。
 
 如果需要自訂 Jenkins，請按一下 [**變更預設值**] 按鈕。 這會顯示兩個連續的對話方塊：一個要求使用 JAVA 命令列參數，另一個則要求 Jenkins 命令列參數。 以下兩個螢幕擷取畫面顯示這兩個對話方塊：
 
-[![](jenkins-walkthrough-images/image6.png "This screenshot shows the dialogs")](jenkins-walkthrough-images/image6.png#lightbox)
+[![此螢幕擷取畫面顯示對話方塊](jenkins-walkthrough-images/image6.png)](jenkins-walkthrough-images/image6.png#lightbox)
 
-[![](jenkins-walkthrough-images/image7.png "This screenshot shows the dialogs")](jenkins-walkthrough-images/image7.png#lightbox)
+[![此螢幕擷取畫面顯示對話方塊](jenkins-walkthrough-images/image7.png)](jenkins-walkthrough-images/image7.png#lightbox)
 
-Jenkins 執行之後，您可能會想要將它設定為登入專案，以便在每次使用者登入電腦時啟動。 您可以用滑鼠右鍵按一下 [Dock] 中的 Jenkins 圖示，然後選擇 [選項 ...]，來執行此動作。 **> 在登入時開啟**，如下列螢幕擷取畫面所示：
+Jenkins 執行之後，您可能會想要將它設定為登入專案，以便在每次使用者登入電腦時啟動。 您可以用滑鼠右鍵按一下 Dock 中的 Jenkins 圖示，然後選擇 [**選項 ...] > 在登入時開啟**，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image8.png "You can do this by right-clicking on the Jenkins icon in the Dock and choosing OptionsOpen at Login, as shown in this screenshot")](jenkins-walkthrough-images/image8.png#lightbox)
+[![若要這麼做，請以滑鼠右鍵按一下 Dock 中的 Jenkins 圖示，然後選擇 [登入 OptionsOpen]，如下列螢幕擷取畫面所示](jenkins-walkthrough-images/image8.png)](jenkins-walkthrough-images/image8.png#lightbox)
 
 這會導致 Jenkins 在使用者每次登入時自動啟動，但不會在電腦開機時發生。 您可以指定 OS X 會在開機時用來自動登入的使用者帳戶。 開啟 [**系統偏好**設定]，然後選取 [**使用者 & 群組**] 圖示，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image9.png "Open the System Preferences, and select the User  Groups icon as shown in this screenshot")](jenkins-walkthrough-images/image9.png#lightbox)
+[![開啟 [系統偏好設定]，然後選取 [使用者群組] 圖示，如下列螢幕擷取畫面所示](jenkins-walkthrough-images/image9.png)](jenkins-walkthrough-images/image9.png#lightbox)
 
 按一下 [**登入選項**] 按鈕，然後選擇 OS X 在開機時將用來登入的帳戶。
 
@@ -99,17 +99,17 @@ Jenkins 執行之後，您可能會想要將它設定為登入專案，以便在
 
 ### <a name="installing-plugins"></a>安裝外掛程式
 
-當 Jenkins 安裝程式完成時，它會開始 Jenkins，並以 http://localhost:8080的 URL 啟動網頁瀏覽器，如下列螢幕擷取畫面所示：
+當 Jenkins 安裝程式完成時，它會開始 Jenkins，並以 URL 啟動網頁瀏覽器 http://localhost:8080 ，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image10.png "8080, as shown in this screenshot")](jenkins-walkthrough-images/image10.png#lightbox)
+[![8080，如下列螢幕擷取畫面所示](jenkins-walkthrough-images/image10.png)](jenkins-walkthrough-images/image10.png#lightbox)
 
 在此頁面中，從左上角的功能表中選取 [ **Jenkins] > [管理 Jenkins] > [管理外掛程式**]，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image11.png "From this page, select Jenkins  Manage Jenkins  Manage Plugins from the menu in the upper left hand corner")](jenkins-walkthrough-images/image11.png#lightbox)
+[![從這個頁面中，從左上角的功能表中選取 [Jenkins] [管理 Jenkins] [管理外掛程式]](jenkins-walkthrough-images/image11.png)](jenkins-walkthrough-images/image11.png#lightbox)
 
 這會顯示 [ **Jenkins 外掛程式管理員**] 頁面。 如果您按一下 [可用] 索引標籤，您會看到可供下載和安裝的超過600個外掛程式清單。 這會在下列螢幕擷取畫面中說明：
 
-[![](jenkins-walkthrough-images/image12.png "If you click on the Available tab, you will see a list of over 600 plugins that can be downloaded and installed")](jenkins-walkthrough-images/image12.png#lightbox)
+[![如果您按一下 [可用] 索引標籤，您會看到可供下載及安裝的超過600個外掛程式清單](jenkins-walkthrough-images/image12.png)](jenkins-walkthrough-images/image12.png#lightbox)
 
 所有600外掛程式的捲軸若要找出幾個，可能既繁瑣又容易出錯。 Jenkins 會在介面的右上角提供篩選搜尋欄位。 使用此篩選欄位來進行搜尋，將可簡化尋找並安裝下列其中一個或所有外掛程式的程式：
 
@@ -121,19 +121,19 @@ Jenkins 支援 Git，而不需要任何額外的外掛程式。
 
 安裝所有外掛程式之後，您會想要重新開機 Jenkins，並設定每個外掛程式的全域設定。 從左上角選取 [ **Jenkins] > [管理 Jenkins] > [設定系統**]，即可找到外掛程式的全域設定，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image13.png "The global settings for a plugin can be found by selecting Jenkins / Manage Jenkins / Configure System from the upper left hand corner")](jenkins-walkthrough-images/image13.png#lightbox)
+[![從左上角選取 [Jenkins]/[管理] [Jenkins]/[設定系統]，即可找到外掛程式的全域設定。](jenkins-walkthrough-images/image13.png)](jenkins-walkthrough-images/image13.png#lightbox)
 
 當您選取此功能表選項時，您將會進入 **[設定系統 [Jenkins]]** 頁面。 此頁面包含的區段可設定 Jenkins 本身，以及設定部分全域外掛程式值。  下列螢幕擷取畫面說明此頁面的範例：
 
-[![](jenkins-walkthrough-images/image14.png "This screenshot illustrates an example of this page")](jenkins-walkthrough-images/image14.png#lightbox)
+[![此螢幕擷取畫面說明此頁面的範例](jenkins-walkthrough-images/image14.png)](jenkins-walkthrough-images/image14.png#lightbox)
 
 #### <a name="configuring-the-msbuild-plugin"></a>設定 MSBuild 外掛程式
 
 MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/Commands/xbuild**來編譯 Visual Studio for Mac 方案和專案檔案。 在 [**新增 MSBuild** ] 按鈕出現之前，請向下滾動 **[設定系統 [Jenkins]]** 頁面，如下列螢幕擷取畫面所示：
 
- [![](jenkins-walkthrough-images/image15.png "Scroll down the Configure System Jenkins page until the Add MSBuild button appears")](jenkins-walkthrough-images/image15.png#lightbox)
+ [![在 [設定系統 Jenkins] 頁面上向下滾動，直到 [新增 MSBuild] 按鈕出現為止](jenkins-walkthrough-images/image15.png)](jenkins-walkthrough-images/image15.png#lightbox)
 
-按一下此按鈕，並在出現的表單上填入**MSBuild**欄位的**名稱**和**路徑**。 **Msbuild**安裝的名稱應該有意義，而**msbuild 的路徑**應該是 `xbuild`的路徑，通常是 **/Library/Frameworks/Mono.framework/Commands/xbuild**。 在我們按一下頁面底部的 [儲存] 或 [套用] 按鈕來儲存變更之後，Jenkins 就可以使用 `xbuild` 來編譯您的解決方案。
+按一下此按鈕，並在出現的表單上填入**MSBuild**欄位的**名稱**和**路徑**。 **Msbuild**安裝的名稱應該有意義，而**msbuild 的路徑**應該是的路徑 `xbuild` ，通常是 **/Library/Frameworks/Mono.framework/Commands/xbuild**。 在我們按一下頁面底部的 [儲存] 或 [套用] 按鈕來儲存變更之後，Jenkins 就可以使用 `xbuild` 來編譯您的解決方案。
 
 #### <a name="configuring-the-tfs-plugin"></a>設定 TFS 外掛程式
 
@@ -142,7 +142,7 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
 為了讓 macOS 工作站能夠與 TFS 伺服器互動， [Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/)必須安裝在工作站上。 Team Explorer Everywhere 是 Microsoft 提供的一組工具，其中包含用於存取 TFS 的跨平臺命令列用戶端。 Team Explorer Everywhere 可以從 Microsoft 下載並以三個步驟安裝：
 
 1. 將封存檔案解壓縮到使用者帳戶可存取的目錄。 例如，您可能會將檔案解壓縮至 **~/tee**。
-2. 設定 shell 或系統路徑，使其包含在上述步驟一中解壓縮的檔案資料夾。 例如，
+2. 設定 shell 或系統路徑，使其包含在上述步驟一中解壓縮的檔案資料夾。 例如
 
     ```
     echo export PATH~/tee/:$PATH' >> ~/.bash_profile
@@ -159,9 +159,9 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
 
 安裝 TFS 的命令列用戶端之後，必須使用 `tf` 命令列用戶端的完整路徑來設定 Jenkins。 在 **[設定系統 [Jenkins]]** 頁面上向下流覽，直到您找到 [Team Foundation Server] 區段，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image17.png "Scroll down the Configure System Jenkins page until you find the Team Foundation Server section")](jenkins-walkthrough-images/image17.png#lightbox)
+[![在 [設定系統 Jenkins] 頁面上向下，直到您找到 [Team Foundation Server] 區段](jenkins-walkthrough-images/image17.png)](jenkins-walkthrough-images/image17.png#lightbox)
 
-輸入 `tf` 命令的完整路徑，然後按一下 [**儲存**] 按鈕。
+輸入命令的完整路徑 `tf` ，然後按一下 [**儲存**] 按鈕。
 
 ### <a name="configure-jenkins-security"></a>設定 Jenkins 安全性
 
@@ -169,19 +169,19 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
 
 若要找到安全性設定，請選取 [ **Jenkins] > [管理 Jenkins > 設定全域安全性**]，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image18.png "Security settings can be found by selecting Jenkins / Manage Jenkins / Configure Global Security")](jenkins-walkthrough-images/image18.png#lightbox)
+[![藉由選取 [Jenkins/管理 Jenkins]/[設定全域安全性]，即可找到安全性設定。](jenkins-walkthrough-images/image18.png)](jenkins-walkthrough-images/image18.png#lightbox)
 
 在 [**設定全域安全性**] 頁面上，勾選 [**啟用安全性**] 核取方塊，[**存取控制**] 表單應該會出現，類似下一個螢幕擷取畫面：
 
-[![](jenkins-walkthrough-images/image19.png "On the Configure Global Security page, check the Enable Security checkbox and the Access Control form should appear, similar to this screenshot")](jenkins-walkthrough-images/image19.png#lightbox)
+[![在 [設定全域安全性] 頁面上，勾選 [啟用安全性] 核取方塊，[存取控制] 表單應該會出現，類似于此螢幕擷取畫面](jenkins-walkthrough-images/image19.png)](jenkins-walkthrough-images/image19.png#lightbox)
 
 在 [**安全性領域] 區段**中，切換**Jenkins [擁有的使用者資料庫**] 的選項按鈕，並確定也已核取 [**允許使用者註冊**]，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image20.png "Toggle the radio button for Jenkins own user database in the Security Realm Section, and ensure that Allow users to sign up is also checked")](jenkins-walkthrough-images/image20.png#lightbox)
+[![在 [安全性範圍] 區段中切換 Jenkins 自有使用者資料庫的選項按鈕，並確定也已核取 [允許使用者註冊]。](jenkins-walkthrough-images/image20.png)](jenkins-walkthrough-images/image20.png#lightbox)
 
 最後，重新開機 Jenkins，並建立新的帳戶。 第一個建立的帳戶是根帳號，而此帳戶會自動升級為系統管理員。 流覽回 [**設定全域安全性**] 頁面，然後勾選 [**矩陣型安全性**] 選項按鈕。 根帳號應被授與完整存取權，且匿名帳戶應獲得唯讀存取權，如下列螢幕擷取畫面所示：
 
-[![](jenkins-walkthrough-images/image21.png "The root account should be granted full access, and the anonymous account should be given read-only access")](jenkins-walkthrough-images/image21.png#lightbox)
+[![根帳號應被授與完整存取權，且匿名帳戶應獲得唯讀存取權](jenkins-walkthrough-images/image21.png)](jenkins-walkthrough-images/image21.png#lightbox)
 
 儲存這些設定並重新啟動 Jenkins 之後，安全性就會開啟。
 
@@ -194,8 +194,8 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
     ![停駐中的應用程式圖示，並從彈出的功能表中選取 [結束]](jenkins-walkthrough-images/image19.png)
 
 2. 在文字編輯器中開啟檔案 **~/.jenkins/config.xml** 。
-3. 將 `<usesecurity></usesecurity>` 元素的值從 `true` 變更為 `false`。
-4. 從檔案中刪除 `<authorizationstrategy></authorizationstrategy>` 和 `<securityrealm></securityrealm>` 元素。
+3. 將元素的值 `<usesecurity></usesecurity>` 從變更 `true` 為 `false` 。
+4. 從檔案 `<authorizationstrategy></authorizationstrategy>` 中刪除和 `<securityrealm></securityrealm>` 元素。
 5. 重新啟動 Jenkins。
 
 ## <a name="setting-up-a-job"></a>設定作業
@@ -204,15 +204,15 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
 
 建立作業的方式是從右上角的功能表中選取 [ **Jenkins] > [新增作業**]，如下列螢幕擷取畫面所示：
 
-![](jenkins-walkthrough-images/image22.png "Jobs are created by selecting Jenkins  New Job from the menu in the upper right hand corner")
+![建立作業的方式是從右上角的功能表中選取 [Jenkins 新增作業]。](jenkins-walkthrough-images/image22.png)
 
 這會顯示 **[新增作業 [Jenkins]]** 頁面。 輸入作業的名稱，然後選取 [**建立免費樣式的軟體專案**] 選項按鈕。 下列螢幕擷取畫面顯示這種情況的範例：
 
-![](jenkins-walkthrough-images/image23.png "Enter a name for the job, and select the Build a free-style software project radio button")
+![輸入作業的名稱，然後選取 [組建免費的軟體專案] 選項按鈕](jenkins-walkthrough-images/image23.png)
 
 按一下 [**確定]** 按鈕會顯示作業的 [設定] 頁面。 這應該類似下列螢幕擷取畫面：
 
-![](jenkins-walkthrough-images/image24.png "This should resemble this screenshot")
+![這應該類似此螢幕擷取畫面](jenkins-walkthrough-images/image24.png)
 
 Jenkins 會在位於下列路徑的硬碟目錄中組織工作： **~/.jenkins/jobs/[作業名稱]**
 
@@ -234,7 +234,7 @@ Jenkins 會在位於下列路徑的硬碟目錄中組織工作： **~/.jenkins/j
 
 Jenkins 支援現成的 Git –不需要額外的外掛程式。 若要使用 Git，請按一下 [ **git** ] 選項按鈕，然後輸入 git 存放庫的 URL，如下列螢幕擷取畫面所示：
 
-![](jenkins-walkthrough-images/image25.png "To use Git, click on the Git radio button and enter the URL for the Git repository")
+![若要使用 Git，請按一下 [Git] 選項按鈕，然後輸入 Git 存放庫的 URL](jenkins-walkthrough-images/image25.png)
 
 儲存變更之後，Git 設定就會完成。
 
@@ -244,31 +244,31 @@ Jenkins 支援現成的 Git –不需要額外的外掛程式。 若要使用 Gi
 
 按一下 [ **Team Foundation Server** ] 選項按鈕，[TFS 設定] 區段應該會出現，類似下列螢幕擷取畫面中的內容：
 
-![](jenkins-walkthrough-images/image26.png "Click on the Team Foundation Server radio button and the TFS configuration section should appear")
+![按一下 [Team Foundation Server] 選項按鈕，[TFS 設定] 區段應該會出現](jenkins-walkthrough-images/image26.png)
 
 提供 TFS 所需的資訊。 下列螢幕擷取畫面顯示已完成表單的範例：
 
-![](jenkins-walkthrough-images/image27.png "This screenshot shows an example of the completed form")
+![此螢幕擷取畫面顯示已完成表單的範例](jenkins-walkthrough-images/image27.png)
 
 #### <a name="testing-the-source-code-control-configuration"></a>測試原始程式碼控制設定
 
 設定適當的原始程式碼控制項之後，請按一下 [**儲存**] 以儲存變更。 這會讓您回到作業的首頁，這看起來會類似下列螢幕擷取畫面：
 
-![](jenkins-walkthrough-images/image28.png "This will return you to the home page for the job, which will resemble this screenshot")
+![這會讓您回到作業的首頁，這會類似于此螢幕擷取畫面](jenkins-walkthrough-images/image28.png)
 
 驗證原始程式碼控制項正確設定的最簡單方式，就是手動觸發組建，即使未指定任何組建動作也一樣。 若要手動啟動組建，作業的首頁在左側的功能表中有 [**立即建立**] 連結，如下列螢幕擷取畫面所示：
 
-![](jenkins-walkthrough-images/image29.png "To start a build manually, the home page of the job has a Build Now link in the menu on the left hand side")
+![若要手動啟動組建，作業的首頁在左側的功能表中有 [立即建立] 連結](jenkins-walkthrough-images/image29.png)
 
 當組建已啟動時，[組建歷程記錄] 對話方塊會顯示閃爍的藍色圓形、進度列、組建編號和組建開始的時間，類似下列螢幕擷取畫面：
 
-![](jenkins-walkthrough-images/image30.png "When a build has been started, the Build History dialog displays a flashing blue circle, a progress bar, the build number and the time that the build started")
+![當組建已啟動時，[組建歷程記錄] 對話方塊會顯示閃爍的藍色圓形、進度列、組建編號和組建開始的時間。](jenkins-walkthrough-images/image30.png)
 
 如果作業成功，將會顯示藍色圓圈。 如果作業失敗，則會顯示紅色圓圈。
 
 為了協助疑難排解可能會在組建中產生的問題，Jenkins 將會捕獲作業的所有主控台輸出。 若要查看主控台輸出，請按一下 [組建歷程**記錄**] 中的作業，然後在左側功能表中的 [**主控台輸出**] 連結上。 下列螢幕擷取畫面顯示**主控台輸出**連結，以及成功作業的部分輸出：
 
-![](jenkins-walkthrough-images/image31.png "This screenshot shows the Console Output link, as well as some of the output from a successful job")
+![此螢幕擷取畫面顯示主控台輸出連結，以及成功作業的部分輸出](jenkins-walkthrough-images/image31.png)
 
 #### <a name="location-of-build-artifacts"></a>組建成品的位置
 
@@ -278,11 +278,11 @@ Jenkins 會將整個原始程式碼捕獲到稱為*工作區*的特殊資料夾�
 ~/.jenkins/jobs/[JOB NAME]/workspace
 ```
 
-工作區的路徑將會儲存在名為 `$WORKSPACE`的環境變數中。
+工作區的路徑將會儲存在名為的環境變數中 `$WORKSPACE` 。
 
 流覽至作業的登陸頁面，然後按一下左側功能表中的 [**工作區**] 連結，就可以在 Jenkins 中流覽工作區資料夾。 下列螢幕擷取畫面顯示名為**HelloWorld**之作業的工作區範例：
 
-![](jenkins-walkthrough-images/image32.png "This screenshot shows an example of the workspace for a job named HelloWorld")
+![此螢幕擷取畫面顯示名為 HelloWorld 之作業的工作區範例](jenkins-walkthrough-images/image32.png)
 
 ### <a name="build-triggers"></a>組建觸發程式
 
@@ -296,11 +296,11 @@ Jenkins 會將整個原始程式碼捕獲到稱為*工作區*的特殊資料夾�
 定期組建通常用來建立可散發給測試人員的應用程式版本。 例如，定期組建可能會排程在星期五晚上，讓 QA 小組成員可以測試上一周的工作。
 
 ### <a name="compiling-a-xamarinios-applications"></a>編譯 Xamarin iOS 應用程式
-您可以使用 `xbuild` 或 `msbuild`，在命令列上編譯 Xamarin 專案。 Shell 命令會在執行 Jenkins 的使用者帳戶內容中執行。 使用者帳戶必須具有布建設定檔的存取權，才能正確封裝應用程式以供散發。 您可以將此 shell 命令新增至 [作業設定] 頁面。
+您可以使用或，在命令列上編譯 Xamarin 專案 `xbuild` 。 `msbuild` Shell 命令會在執行 Jenkins 的使用者帳戶內容中執行。 使用者帳戶必須具有布建設定檔的存取權，才能正確封裝應用程式以供散發。 您可以將此 shell 命令新增至 [作業設定] 頁面。
 
 向下流覽至 [**組建**] 區段。 按一下 [**新增組建步驟**] 按鈕，然後選取 [**執行命令**介面]，如下列螢幕擷取畫面所示：
 
-![](jenkins-walkthrough-images/image33.png "Click the Add build step button and select Execute shell")
+![按一下 [新增組建步驟] 按鈕，然後選取 [執行命令介面]](jenkins-walkthrough-images/image33.png)
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
@@ -317,13 +317,13 @@ Jenkins 會將整個原始程式碼捕獲到稱為*工作區*的特殊資料夾�
 
 按一下 [**新增組建步驟**] 按鈕，然後選取 [**使用 MSBuild 建立 Visual Studio 專案或方案**]，如下列螢幕擷取畫面所示：
 
-![](jenkins-walkthrough-images/image36.png "Creating the APK  Click on the Add build step button, and select Build a Visual Studio project or solution using MSBuild")
+![建立 APK 按一下 [新增組建步驟] 按鈕，然後選取 [使用 MSBuild 建立 Visual Studio 專案或方案]](jenkins-walkthrough-images/image36.png)
 
 將組建步驟加入至專案之後，請填寫出現的表單欄位。 下列螢幕擷取畫面是已完成表單的其中一個範例：
 
-![](jenkins-walkthrough-images/image37.png "Once the build step is added to the project, fill in the form fields that appear")
+![將組建步驟加入至專案之後，請填寫出現的表單欄位](jenkins-walkthrough-images/image37.png)
 
-此組建步驟會在 **$WORKSPACE**資料夾中執行 `xbuild`。 MSBuild 組建檔案會設定為 [ **Xamarin** ] 檔案。 **命令列引數**會指定目標**PackageForAndroid**的發行組建。 此步驟的產品將是位於下列位置的 APK：
+此組建步驟會 `xbuild` 在 **$WORKSPACE**資料夾中執行。 MSBuild 組建檔案會設定為 [ **Xamarin** ] 檔案。 **命令列引數**會指定目標**PackageForAndroid**的發行組建。 此步驟的產品將是位於下列位置的 APK：
 
 ```
 $WORKSPACE/[PROJECT NAME]/bin/Release
@@ -331,7 +331,7 @@ $WORKSPACE/[PROJECT NAME]/bin/Release
 
 下列螢幕擷取畫面顯示此 APK 的範例：
 
-![](jenkins-walkthrough-images/image38.png "This screenshot shows an example of this APK")
+![此螢幕擷取畫面顯示此 APK 的範例](jenkins-walkthrough-images/image38.png)
 
 此 APK 尚未準備好進行部署，因為它尚未以私人金鑰儲存區簽署，而且必須以 zip 對齊。
 
@@ -345,14 +345,14 @@ $WORKSPACE/[PROJECT NAME]/bin/Release
 |--- |--- |
 |KEYSTORE_FILE|這是用來簽署 APK 的金鑰儲存區路徑|
 |KEYSTORE_ALIAS|金鑰儲存區中的索引鍵，將用來簽署 APK。|
-|INPUT_APK|`xbuild`所建立的 APK。|
-|SIGNED_APK|`jarsigner`所產生的帶正負號的 APK。|
-|FINAL_APK|這是 `zipalign`所產生的 zip 對齊 APK。|
+|INPUT_APK|所建立的 APK `xbuild` 。|
+|SIGNED_APK|所產生的帶正負號的 APK `jarsigner` 。|
+|FINAL_APK|這是所產生的 zip 對齊 APK `zipalign` 。|
 |STORE_PASS|這是用來存取金鑰儲存區內容以唱歌檔案的密碼。|
 
 如需求一節所述，您可以使用 EnvInject 外掛程式，在組建期間設定這些環境變數。 作業應該根據插入環境變數加入新的組建步驟，如下列螢幕擷取畫面所示：
 
-![](jenkins-walkthrough-images/image39.png "The job should have a new build step added based on the Inject environment variables")
+![作業應該根據插入環境變數新增新的組建步驟](jenkins-walkthrough-images/image39.png)
 
 在顯示的 [**屬性內容**] 表單欄位中，會加入環境變數（每行一個），其格式如下：
 
@@ -362,26 +362,26 @@ ENVIRONMENT_VARIABLE_NAME = value
 
 下列螢幕擷取畫面顯示簽署 APK 所需的環境變數：
 
-![](jenkins-walkthrough-images/image40.png "This screenshot shows the environment variables that are required for signing the APK")
+![這個螢幕擷取畫面顯示簽署 APK 所需的環境變數。](jenkins-walkthrough-images/image40.png)
 
 請注意，APK 檔案的某些環境變數是建置於 `WORKSPACE` 環境變數上。
 
-最後的環境變數是用來存取金鑰儲存區內容的密碼： `STORE_PASS`。 密碼是應該在記錄檔中遮蔽或省略的敏感性值。 您可以設定 EnvInject 外掛程式來保護這些值，使其不會顯示在記錄中。
+最終環境變數是用來存取金鑰儲存區內容的密碼： `STORE_PASS` 。 密碼是應該在記錄檔中遮蔽或省略的敏感性值。 您可以設定 EnvInject 外掛程式來保護這些值，使其不會顯示在記錄中。
 
-[作業設定] 的 [**組建**] 區段前面緊接著 [**組建環境**] 區段。 切換 [**插入密碼**] 核取方塊時，會顯示某些表單欄位。 這些表單欄位是用來捕捉環境變數的名稱和值。 下列螢幕擷取畫面是新增 `STORE_PASS` 環境變數的範例：
+[作業設定] 的 [**組建**] 區段前面緊接著 [**組建環境**] 區段。 切換 [**插入密碼**] 核取方塊時，會顯示某些表單欄位。 這些表單欄位是用來捕捉環境變數的名稱和值。 下列螢幕擷取畫面是新增環境變數的範例 `STORE_PASS` ：
 
-![](jenkins-walkthrough-images/image41.png "This screenshot is an example of adding the STOREPASS environment variable")
+![這個螢幕擷取畫面是新增 STOREPASS 環境變數的範例](jenkins-walkthrough-images/image41.png)
 
-在初始化環境變數之後，下一個步驟是新增用於簽署和 zip 對齊 APK 的組建步驟。 緊接在要插入環境變數的組建步驟之後，將會是另一個**執行 shell**命令組建，會執行 `jarsigner` 並 `zipalign`。 每個命令都會佔用一行，如下列程式碼片段所示：
+在初始化環境變數之後，下一個步驟是新增用於簽署和 zip 對齊 APK 的組建步驟。 緊接在要插入環境變數的組建步驟之後，將會是會執行和的另一個**執行 shell**命令組建 `jarsigner` `zipalign` 。 每個命令都會佔用一行，如下列程式碼片段所示：
 
 ```
 jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore $KEYSTORE_FILE -storepass $STORE_PASS -signedjar $SIGNED_APK $INPUT_APK $KEYSTORE_ALIAS
 zipalign -f -v 4 $SIGNED_APK $FINAL_APK
 ```
 
-下列螢幕擷取畫面顯示如何在步驟中輸入 `jarsigner` 和 `zipalign` 命令的範例：
+下列螢幕擷取畫面顯示如何在 `jarsigner` 步驟中輸入和命令的範例 `zipalign` ：
 
-![](jenkins-walkthrough-images/image42.png "This screenshot shows an example of how to enter the jarsigner and zipalign commands into the step")
+![這個螢幕擷取畫面顯示如何在步驟中輸入 jarsigner 和 zipalign 命令的範例](jenkins-walkthrough-images/image42.png)
 
 當所有組建動作都已就緒之後，建議您觸發手動組建以確認一切運作正常。 如果組建失敗，應檢查**主控台輸出**，以取得導致組建失敗之原因的相關資訊。
 
@@ -389,7 +389,7 @@ zipalign -f -v 4 $SIGNED_APK $FINAL_APK
 
 您可以使用 shell 命令將自動化測試提交至測試雲端。 如需在 Xamarin Test Cloud 中設定測試回合的詳細資訊，請參閱[準備 Xamarin Android 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)和[準備 xamarin 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 在本指南中，我們在 macOS 上引進了 Jenkins 做為組建伺服器，並將其設定為編譯和準備要發行的 Xamarin 行動應用程式。 我們已在 macOS 電腦上安裝 Jenkins，並在其中包含數個外掛程式以支援組建程式。 我們已建立並設定將從 TFS 或 Git 提取程式碼的作業，然後將該程式碼編譯成發行準備就緒的應用程式。 我們也探討了兩種不同的方式來排程應執行作業的時間。
 

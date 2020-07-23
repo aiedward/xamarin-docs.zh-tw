@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 896f652d69bca0f186e53185926ee5c46d87fa7c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c234af1a5d47446149c92a71e9ce592dc0366b8f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570670"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937458"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms浮動切換頁面
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
 _Xamarin.FormsCarouselPage 是一種頁面，使用者可以從端對端滑動以流覽內容頁面，例如圖庫。本文示範如何使用 CarouselPage 來流覽一組頁面。_
 
@@ -28,15 +28,15 @@ _Xamarin.FormsCarouselPage 是一種頁面，使用者可以從端對端滑動�
 
 下列螢幕擷取畫面顯示 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 每個平臺上的：
 
-![](carousel-page-images/thirdpage.png "CarouselPage Third Item")
+![CarouselPage 第三個項目](carousel-page-images/thirdpage.png)
 
 的版面配置 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 在每個平臺上都相同。 頁面可以藉由從右至左撥動以向前巡覽集合，並藉由從左至右撥動以向後巡覽集合。 下列螢幕擷取畫面顯示實例中的第一個頁面 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) ：
 
-![](carousel-page-images/firstpage.png "CarouselPage First Item")
+![CarouselPage 第一個項目](carousel-page-images/firstpage.png)
 
 從右至左撥動以前往第二個頁面，如下列螢幕擷取畫面所示：
 
-![](carousel-page-images/secondpage.png "CarouselPage Second Item")
+![CarouselPage 第二個項目](carousel-page-images/secondpage.png)
 
 再次從右至左撥動可前往第三個頁面，而從左至右撥動會回到前一個頁面。
 

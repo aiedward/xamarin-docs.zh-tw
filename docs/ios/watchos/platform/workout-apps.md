@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 0b1827d8936343cbf977395a788a466f1c3f60ac
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c4fc1607667dd6201c28c4d00a2938760e429f0f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032747"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938979"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>在 Xamarin 中 watchOS 健身應用程式
 
@@ -28,7 +28,7 @@ WatchOS 3 的新功能：健身相關應用程式可在 Apple Watch 的背景中
 
 設計良好的健身或健身應用程式可協助使用者建立活動的圖表，以達到其健身目標。 藉由使用 Apple Watch，健身和健身應用程式就能立即存取核心費率、calorie 燒錄和活動偵測。
 
-[![](workout-apps-images/workout01.png "Fitness and workout app example")](workout-apps-images/workout01.png#lightbox)
+[![健身和健身應用程式範例](workout-apps-images/workout01.png)](workout-apps-images/workout01.png#lightbox)
 
 WatchOS 3 的新功能：_背景_執行可讓健身相關應用程式在 Apple Watch 的背景中執行，並取得 HealthKit 資料的存取權。
 
@@ -36,7 +36,7 @@ WatchOS 3 的新功能：_背景_執行可讓健身相關應用程式在 Apple W
 
 ## <a name="about-workout-sessions"></a>關於健身課程
 
-每個測驗應用程式的核心都是使用者可以啟動和停止的_健身會話_（`HKWorkoutSession`）。 健身會話 API 很容易實行，並為健身應用程式提供數個優點，例如：
+每個測驗應用程式的核心是_Workout Session_ `HKWorkoutSession` 使用者可以啟動和停止的健身會話（）。 健身會話 API 很容易實行，並為健身應用程式提供數個優點，例如：
 
 - 根據活動類型的動作和 calorie 燒錄偵測。
 - 使用者活動環形的自動投稿。
@@ -56,23 +56,23 @@ WatchOS 3 的新功能：_背景_執行可讓健身相關應用程式在 Apple W
 
 若要啟用背景，請執行下列動作：
 
-1. 在 **方案總管**中，按兩下 監看式 延伸模組隨附的 iPhone 應用程式 `Info.plist` 檔案，將其開啟以供編輯。
+1. 在 [**方案總管**中，按兩下 [監看式] 延伸模組的隨附 iPhone 應用程式檔案， `Info.plist` 將其開啟以供編輯。
 2. 切換至 [**來源**] 視圖： 
 
-    [![](workout-apps-images/plist01.png "The Source view")](workout-apps-images/plist01.png#lightbox)
-3. 新增名為 `WKBackgroundModes` 的新機碼，並將**類型**設定為 `Array`： 
+    [![來源視圖](workout-apps-images/plist01.png)](workout-apps-images/plist01.png#lightbox)
+3. 新增名為的新金鑰 `WKBackgroundModes` ，並將**類型**設定為 `Array` ： 
 
-    [![](workout-apps-images/plist02.png "Add a new key called WKBackgroundModes")](workout-apps-images/plist02.png#lightbox)
-4. 將新專案新增至**類型**為 `String` 的陣列，並將值設為 `workout-processing`： 
+    [![新增名為 WKBackgroundModes 的金鑰](workout-apps-images/plist02.png)](workout-apps-images/plist02.png#lightbox)
+4. 將新專案加入**至型別為的陣列** `String` ，並將值設為 `workout-processing` ： 
 
-    [![](workout-apps-images/plist03.png "Add a new item to the array with the Type of String and a value of workout-processing")](workout-apps-images/plist03.png#lightbox)
-5. 將變更儲存到檔案。
+    [![將新專案新增至具有字串類型的陣列和健身處理的值](workout-apps-images/plist03.png)](workout-apps-images/plist03.png#lightbox)
+5. 將變更儲存至檔案。
 
 ## <a name="starting-a-workout-session"></a>啟動健身會話
 
 啟動健身會話有三個主要步驟：
 
-[![](workout-apps-images/workout02.png "The three main steps to starting a Workout Session")](workout-apps-images/workout02.png#lightbox)
+[![啟動健身會話的三個主要步驟](workout-apps-images/workout02.png)](workout-apps-images/workout02.png#lightbox)
 
 1. 應用程式必須要求授權，才能存取 HealthKit 中的資料。
 2. 為正在啟動的健身類型建立健身設定物件。
@@ -86,24 +86,24 @@ WatchOS 3 的新功能：_背景_執行可讓健身相關應用程式在 Apple W
   - Workouts
 - 讀取資料的授權：
   - 燒錄的能源
-  - 長途電話
+  - 距離
   - 核心速率  
 
 在應用程式可以要求授權之前，必須先將它設定為存取 HealthKit。
 
-請執行下列動作：
+執行下列動作：
 
-1. 在方案總管中按兩下 `Entitlements.plist` 檔案將其開啟以進行編輯。
+1. 在方案總管**** 中按兩下 `Entitlements.plist` 檔案將其開啟以進行編輯。
 2. 向下流覽並核取 [**啟用 HealthKit**]： 
 
-    [![](workout-apps-images/auth01.png "Check Enable HealthKit")](workout-apps-images/auth01.png#lightbox)
-3. 將變更儲存到檔案。
+    [![勾選 [啟用 HealthKit]](workout-apps-images/auth01.png)](workout-apps-images/auth01.png#lightbox)
+3. 將變更儲存至檔案。
 4. 請遵循[明確應用程式識別碼和布建設定檔](~/ios/platform/healthkit.md)中的指示，並將[應用程式識別碼和布建設定檔與您](~/ios/platform/healthkit.md)的[HealthKit 文章簡介](~/ios/platform/healthkit.md)中的 Xamarin 應用程式章節建立關聯，以正確布建應用程式。
 5. 最後，請使用程式[設計健全狀況套件](~/ios/platform/healthkit.md)中的指示，並向[HealthKit 簡介](~/ios/platform/healthkit.md)文章的[使用者區段要求許可權](~/ios/platform/healthkit.md)，以要求授權存取使用者的 HealthKit 資料存放區。
 
 ### <a name="setting-the-workout-configuration"></a>設定健身設定
 
-您可以使用健身設定物件（`HKWorkoutConfiguration`）來建立健身會話，以指定健身類型（例如 `HKWorkoutActivityType.Running`）和健身位置（例如 `HKWorkoutSessionLocationType.Outdoor`）：
+健身會話是使用健身設定物件（）所建立 `HKWorkoutConfiguration` ，可指定健身類型（例如 `HKWorkoutActivityType.Running` ）和健身位置（例如 `HKWorkoutSessionLocationType.Outdoor` ）：
 
 ```csharp
 using HealthKit;
@@ -118,7 +118,7 @@ var configuration = new HKWorkoutConfiguration () {
 
 ### <a name="creating-a-workout-session-delegate"></a>建立健身會話委派 
 
-若要處理在健身會話期間可能發生的事件，應用程式將需要建立健身會話委派實例。 將新類別新增至專案，並以 `HKWorkoutSessionDelegate` 類別為基礎。 針對戶外執行的範例，它看起來可能如下所示：
+若要處理在健身會話期間可能發生的事件，應用程式將需要建立健身會話委派實例。 將新類別新增至專案，並以類別為基礎 `HKWorkoutSessionDelegate` 。 針對戶外執行的範例，它看起來可能如下所示：
 
 ```csharp
 using System;
@@ -210,7 +210,7 @@ namespace MonkeyWorkout.MWWatchExtension
 }
 ```
 
-此類別會建立數個事件，以在健身會話的狀態變更時引發（`DidChangeToState`），而且如果健身會話失敗（`DidFail`）。 
+此類別會建立數個事件，以在健身會話的狀態變更時引發（ `DidChangeToState` ），而且如果健身會話失敗（ `DidFail` ）。 
 
 ### <a name="creating-a-workout-session"></a>建立健身會話
 
@@ -271,7 +271,7 @@ private void StartOutdoorRun ()
 
 如果應用程式啟動此健身會話，而使用者切換回其監看面，表面上會顯示一個小綠色的「執行中」圖示：
 
-[![](workout-apps-images/workout03.png "A tiny green running man icon displayed above the face")](workout-apps-images/workout03.png#lightbox)
+[![表面上顯示的小綠色執行中的男士圖示](workout-apps-images/workout03.png)](workout-apps-images/workout03.png#lightbox)
 
 如果使用者按下此圖示，將會被帶回應用程式。
 
@@ -279,7 +279,7 @@ private void StartOutdoorRun ()
 
 設定並啟動測驗會話之後，應用程式將需要收集會話的相關資料（例如使用者的核心速率），並控制會話的狀態：
 
-[![](workout-apps-images/workout04.png "Data Collection and Control Diagram")](workout-apps-images/workout04.png#lightbox)
+[![資料收集與控制圖表](workout-apps-images/workout04.png)](workout-apps-images/workout04.png#lightbox)
 
 1. **觀察樣本**-應用程式將需要從 HealthKit 取得將會對使用者採取動作並向其顯示的資訊。
 2. **觀察事件**-應用程式必須回應 HealthKit 或應用程式 UI （例如，暫停測驗的使用者）所產生的事件。
@@ -331,13 +331,13 @@ private void ObserveHealthKitSamples ()
 }
 ```
 
-它會建立述詞，以設定要使用 `GetPredicateForSamples` 方法來取得資料的開始日期。 它會建立一組裝置，以使用 `GetPredicateForObjectsFromDevices` 方法來提取 HealthKit 資訊，在此案例中為僅限本機 Apple Watch （`HKDevice.LocalDevice`）。 這兩個述詞會使用 `CreateAndPredicate` 方法結合成複合述詞（`NSCompoundPredicate`）。
+它會建立述詞，以設定它想要使用方法取得資料的開始日期 `GetPredicateForSamples` 。 它會建立一組裝置，以使用方法從提取 HealthKit 資訊 `GetPredicateForObjectsFromDevices` ，在此案例中為僅限本機 Apple Watch （ `HKDevice.LocalDevice` ）。 使用方法，將兩個述詞結合成複合述詞（ `NSCompoundPredicate` ） `CreateAndPredicate` 。
 
-系統會針對所需的資料點（在此案例中為使用中的能源燒錄資料點 `HKQuantityTypeIdentifier.ActiveEnergyBurned`）建立新的 `HKAnchoredObjectQuery`，並不會限制傳回的資料量（`HKSampleQuery.NoLimit`），並定義更新處理常式來處理從 HealthKit 傳回到應用程式的資料。 
+`HKAnchoredObjectQuery`系統會針對所需的資料點（在此案例中 `HKQuantityTypeIdentifier.ActiveEnergyBurned` 為使用中的能源燒錄資料點）建立新的，並不會限制傳回的資料量（ `HKSampleQuery.NoLimit` ），而且會定義更新處理常式來處理從 HealthKit 傳回到應用程式的資料。 
 
 每當有新的資料傳遞給指定資料點的應用程式時，就會呼叫更新處理常式。 如果未傳回任何錯誤，應用程式可以安全地讀取資料、進行任何必要的計算，並視需要更新其 UI。
 
-程式碼會在 `addedObjects` 陣列中傳回的所有樣本（`HKSample`）上進行迴圈，並將它們轉換成數量範例（`HKQuantitySample`）。 然後，它會以 joule （`HKUnit.Joule`）的形式取得樣本的雙精度浮點數，並將其累積為適用于健身的總使用中能源，並更新使用者介面。
+程式碼會在陣列中傳回的所有樣本（）上迴圈 `HKSample` `addedObjects` ，並將它們轉換成數量範例（ `HKQuantitySample` ）。 然後，它會以 joule （）的形式取得樣本的雙精度浮點數 `HKUnit.Joule` ，並將其累積為適用于健身的總使用中能源，並更新使用者介面。
 
 ### <a name="achieved-goal-notification"></a>達到的目標通知
 
@@ -354,7 +354,7 @@ WKInterfaceDevice.CurrentDevice.PlayHaptic (WKHapticType.Notification);
 
 事件是一種時間戳記，應用程式可以用來在使用者的健身期間反白顯示特定點。 有些事件會直接由應用程式建立並儲存到健身中，而某些事件會由 HealthKit 自動建立。
 
-為了觀察 HealthKit 所建立的事件，應用程式將會覆寫 `HKWorkoutSessionDelegate`的 `DidGenerateEvent` 方法：
+為了觀察 HealthKit 所建立的事件，應用程式將會覆寫的 `DidGenerateEvent` 方法 `HKWorkoutSessionDelegate` ：
 
 ```csharp
 using System.Collections.Generic;
@@ -416,7 +416,7 @@ public void ReachedNextMile ()
 }
 ```
 
-此程式碼會建立標記事件（`HKWorkoutEvent`）的新實例，並將它儲存至事件的私用集合（稍後會寫入至健身會話），並透過 haptics 通知使用者事件。
+此程式碼會建立標記事件的新實例（ `HKWorkoutEvent` ），並將它儲存至事件的私用集合（稍後會寫入至健身會話），並透過 haptics 通知使用者事件。
 
 ### <a name="pausing-and-resuming-workouts"></a>暫停與繼續 Workouts
 
@@ -446,7 +446,7 @@ public void ResumeWorkout ()
 }
 ```
 
-藉由覆寫 `HKWorkoutSessionDelegate`的 `DidGenerateEvent` 方法，可以處理從 HealthKit 產生的暫停和繼續事件：
+您可以藉由覆寫的方法，來處理將從 HealthKit 產生的暫停和繼續事件 `DidGenerateEvent` `HKWorkoutSessionDelegate` ：
 
 ```csharp
 public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkoutEvent @event)
@@ -465,14 +465,14 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 
 ### <a name="motion-events"></a>動作事件
 
-此外，watchOS 3 的新手是動作已暫停（`HKWorkoutEventType.MotionPaused`）和動作繼續（`HKWorkoutEventType.MotionResumed`）事件。 當使用者開始並停止移動時，HealthKit 會在執行中的測驗期間自動引發這些事件。
+也是 watchOS 3 的新手，也就是動作已暫停（ `HKWorkoutEventType.MotionPaused` ）和動作繼續（ `HKWorkoutEventType.MotionResumed` ）事件。 當使用者開始並停止移動時，HealthKit 會在執行中的測驗期間自動引發這些事件。
 
 當應用程式收到「動作已暫停」事件時，它應該會停止收集資料，直到使用者繼續移動並收到「動作繼續」事件為止。 應用程式不應暫停健身會話，以回應動作暫停事件。
 
 > [!IMPORTANT]
-> 只有 RunningWorkout 活動類型（`HKWorkoutActivityType.Running`）支援動作已暫停和動作繼續事件。
+> 只有 RunningWorkout 活動類型（）支援動作已暫停和動作繼續事件 `HKWorkoutActivityType.Running` 。
 
-同樣地，您可以藉由覆寫 `HKWorkoutSessionDelegate`的 `DidGenerateEvent` 方法來處理這些事件：
+同樣地，您可以藉由覆寫的方法來處理這些事件 `DidGenerateEvent` `HKWorkoutSessionDelegate` ：
 
 ```csharp
 public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkoutEvent @event)
@@ -500,7 +500,7 @@ IOS 10 的新手，這也包括使用者 iPhone 上的健身活動清單清單�
 
 若要結束並儲存健身會話，必須執行下列步驟：
 
-[![](workout-apps-images/workout05.png "Ending and Saving the Workout Session Diagram")](workout-apps-images/workout05.png#lightbox)
+[![結束和儲存健身會話圖表](workout-apps-images/workout05.png)](workout-apps-images/workout05.png#lightbox)
 
 1. 首先，應用程式將需要結束健身會話。
 2. 健身會話會儲存至 HealthKit。
@@ -508,7 +508,7 @@ IOS 10 的新手，這也包括使用者 iPhone 上的健身活動清單清單�
 
 ### <a name="ending-the-session"></a>結束會話
 
-若要結束健身會話，請呼叫 `HKHealthStore` 傳入 `HKWorkoutSession`的 `EndWorkoutSession` 方法：
+若要結束健身會話，請呼叫 `EndWorkoutSession` 傳入的方法 `HKHealthStore` `HKWorkoutSession` ：
 
 ```csharp
 public HKHealthStore HealthStore { get; private set; }
@@ -522,7 +522,7 @@ public void EndOutdoorRun ()
 }
 ```
 
-這會將裝置感應器重設為正常模式。 當 HealthKit 完成測驗時，它會收到 `HKWorkoutSessionDelegate`之 `DidChangeToState` 方法的回呼：
+這會將裝置感應器重設為正常模式。 當 HealthKit 完成測驗時，它會收到的 `DidChangeToState` 方法回呼 `HKWorkoutSessionDelegate` ：
 
 ```csharp
 public override void DidChangeToState (HKWorkoutSession workoutSession, HKWorkoutSessionState toState, HKWorkoutSessionState fromState, NSDate date)
@@ -541,7 +541,7 @@ public override void DidChangeToState (HKWorkoutSession workoutSession, HKWorkou
 
 ### <a name="saving-the-session"></a>正在儲存會話
 
-一旦應用程式結束了測驗會話，就必須建立健身（`HKWorkout`），並將它（以及事件）儲存到 HealthKit 資料存放區（`HKHealthStore`）：
+一旦應用程式結束了測驗會話，就必須建立健身（ `HKWorkout` ）並將它（以及事件）儲存到 HealthKit 資料存放區（ `HKHealthStore` ）：
 
 ```csharp
 public HKHealthStore HealthStore { get; private set; }
@@ -586,13 +586,13 @@ private void SaveWorkoutSession ()
 }
 ```
 
-這段程式碼會建立 `HKQuantity` 物件的測驗所需的總能源量和距離。 會建立定義健身的元資料字典，並指定健身的位置：
+這段程式碼會建立需要將測驗的總能源和距離作為 `HKQuantity` 物件。 會建立定義健身的元資料字典，並指定健身的位置：
 
 ```csharp
 metadata.Add (new NSString ("HKMetadataKeyIndoorWorkout"), new NSString ("NO"));
 ```
 
-會建立新的 `HKWorkout` 物件，其 `HKWorkoutActivityType` 與 `HKWorkoutSession`、開始和結束日期、事件清單（從上述各節累積）、能源燒錄量、總距離和元資料字典相同。 此物件會儲存至健康狀態存放區，並處理任何錯誤。  
+新 `HKWorkout` 物件的建立方式，會與 `HKWorkoutActivityType` `HKWorkoutSession` 、開始和結束日期、事件清單（從上述各節累積）、能源燒錄量、總距離和元資料字典相同。 此物件會儲存至健康狀態存放區，並處理任何錯誤。  
 
 ### <a name="adding-samples"></a>新增範例
 
@@ -633,17 +633,17 @@ private void SaveWorkoutSamples (HKWorkout workout)
 
 ## <a name="workouts-and-ios-10"></a>Workouts 和 iOS 10
 
-每個 watchOS 3 健身應用程式都有以 iOS 10 為基礎的父系應用程式，而這是 iOS 10 的新手，此 iOS 應用程式可用來啟動將 Apple Watch 放在健身模式中的健身（不需要使用者介入），並在背景執行模式中執行 watchOS 應用程式[（請參閱](#about-background-running)如需詳細資訊，bout about 在上方執行的背景）。
+每個 watchOS 3 健身應用程式都有以 iOS 10 為基礎的父系應用程式，而這是 iOS 10 的新手，此 iOS 應用程式可用來啟動將 Apple Watch 放在健身模式中的健身（不需要使用者介入），並在背景執行模式中執行 watchOS 應用程式（如需詳細資訊，請參閱關於在上面執行的[背景](#about-background-running)）。
 
 當 watchOS 應用程式正在執行時，它可以使用 WatchConnectivity 來進行訊息處理，並與父系 iOS 應用程式通訊。
 
 請看一下這個程式的運作方式：
 
-[![](workout-apps-images/workout06.png "iPhone and Apple Watch communication diagram")](workout-apps-images/workout06.png#lightbox)
+[![iPhone 和 Apple Watch 通訊圖表](workout-apps-images/workout06.png)](workout-apps-images/workout06.png#lightbox)
 
 1. IPhone 應用程式會建立 `HKWorkoutConfiguration` 物件，並設定健身類型和位置。
-2. `HKWorkoutConfiguration` 物件會傳送 Apple Watch 的應用程式版本，如果尚未執行，則會由系統啟動。
-3. WatchOS 3 應用程式會使用傳入的健身設定，啟動新的健身會話（`HKWorkoutSession`）。
+2. `HKWorkoutConfiguration`物件會傳送 Apple Watch 版的應用程式，如果尚未執行，則會由系統啟動。
+3. WatchOS 3 應用程式會使用傳入的健身設定，啟動新的健身會話（ `HKWorkoutSession` ）。
 
 > [!IMPORTANT]
 > 為了讓父 iPhone 應用程式啟動 Apple Watch 的健身，watchOS 3 應用程式必須啟用背景。 如需詳細資訊，請參閱啟用上面的[背景](#enabling-background-running)執行。
@@ -697,9 +697,9 @@ if (ConnectivitySession.ActivationState == WCSessionActivationState.Activated &&
 }
 ```
 
-然後，它會照常建立 `HKWorkoutConfiguration`，並使用 `HKHealthStore` 的 `StartWatchApp` 方法將它傳送至 Apple Watch 並啟動應用程式和健身會話。
+然後，它會 `HKWorkoutConfiguration` 照常建立，並使用的 `StartWatchApp` 方法將 `HKHealthStore` 它傳送至 Apple Watch 並啟動應用程式和健身會話。
 
-在 watch OS 應用程式上，使用 `WKExtensionDelegate`中的下列程式碼：
+在監看式 OS 應用程式上，使用中的下列程式碼 `WKExtensionDelegate` ：
 
 ```csharp
 using WatchKit;
@@ -749,22 +749,22 @@ public override void HandleWorkoutConfiguration (HKWorkoutConfiguration workoutC
 }
 ```
 
-它會採用 `HKWorkoutConfiguration`，並建立新的 `HKWorkoutSession` 並附加自訂 `HKWorkoutSessionDelegate`的實例。 健身會話會針對使用者的 HealthKit 健康狀態存放區啟動。
+它會採用 `HKWorkoutConfiguration` ，並建立新的 `HKWorkoutSession` 並附加自訂的實例 `HKWorkoutSessionDelegate` 。 健身會話會針對使用者的 HealthKit 健康狀態存放區啟動。
 
 ## <a name="bringing-all-the-pieces-together"></a>將所有元件結合在一起
 
 採用本檔所提供的所有資訊，watchOS 3 型健身應用程式及其以父系 iOS 10 為基礎的健身應用程式可能包括下列部分：
 
-1. **iOS 10 `ViewController.cs`** -處理從監看式連線會話開始，以及 Apple Watch 上的健身。
-2. **watchOS 3 `ExtensionDelegate.cs`** -處理 watchOS 3 版的健身應用程式。
-3. **watchOS 3 `OutdoorRunDelegate.cs`** -用來處理健身事件的自訂 `HKWorkoutSessionDelegate`。
+1. **iOS 10 `ViewController.cs` **-處理從監看式連線會話開始，以及 Apple Watch 上的健身。
+2. **watchOS 3 `ExtensionDelegate.cs` **-處理 watchOS 3 版本的健身應用程式。
+3. **watchOS 3 `OutdoorRunDelegate.cs` **-用 `HKWorkoutSessionDelegate` 來處理健身事件的自訂。
 
 > [!IMPORTANT]
 > 下列各節所顯示的程式碼只包含在 watchOS 3 中執行提供給健身應用程式的新增強功能所需的元件。 不包含所有支援的程式碼和呈現和更新 UI 的程式碼，但可以遵循我們的其他 watchOS 檔來輕鬆建立。<p/>
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
-在測驗應用程式的父系 iOS 10 版本中，`ViewController.cs` 檔案會包含下列程式碼：
+`ViewController.cs`應用程式的父系 iOS 10 版本中的檔案會包含下列程式碼：
 
 ```csharp
 using System;
@@ -846,7 +846,7 @@ namespace MonkeyWorkout
 
 ### <a name="extensiondelegatecs"></a>ExtensionDelegate.cs
 
-在 watchOS 3 版的健身應用程式中，`ExtensionDelegate.cs` 檔案會包含下列程式碼：
+`ExtensionDelegate.cs`WatchOS 3 版本的健身應用程式中的檔案會包含下列程式碼：
 
 ```csharp
 using System;
@@ -947,7 +947,7 @@ namespace MonkeyWorkout.MWWatchExtension
 
 ### <a name="outdoorrundelegatecs"></a>OutdoorRunDelegate.cs
 
-在 watchOS 3 版的健身應用程式中，`OutdoorRunDelegate.cs` 檔案會包含下列程式碼：
+`OutdoorRunDelegate.cs`WatchOS 3 版本的健身應用程式中的檔案會包含下列程式碼：
 
 ```csharp
 using System;
@@ -1237,7 +1237,7 @@ namespace MonkeyWorkout.MWWatchExtension
 }
 ```
 
-## <a name="best-practices"></a>最佳作法
+## <a name="best-practices"></a>最佳做法
 
 在 watchOS 3 和 iOS 10 中設計和執行健身應用程式時，Apple 建議使用下列最佳作法：
 

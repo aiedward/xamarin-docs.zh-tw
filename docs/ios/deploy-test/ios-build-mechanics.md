@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 52a6c3c996e2d5df204b6d0df40368bc835e990f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026361"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936769"
 ---
 # <a name="ios-build-mechanics"></a>iOS 組建機制
 
@@ -32,8 +32,8 @@ Xamarin 建置速度也會受到各種容量和電腦功能所影響，進而影
 
 1. 按一下 [Visual Studio for Mac] > [喜好設定...]****
 2. 在左側樹狀檢視中，選取 [專案] > [建置]****
-3. 在右側面板中,將「日誌詳細度」下拉設定為**診斷**:[![](ios-build-mechanics-images/image2.png "設定記錄詳細資訊")](ios-build-mechanics-images/image2.png#lightbox)
-4. 按一下 [確定]****。
+3. 在右側面板中，將 [記錄詳細資訊] 下拉式設定設為 [**診斷**]： [ ![ 設定記錄詳細](ios-build-mechanics-images/image2.png)](ios-build-mechanics-images/image2.png#lightbox)資訊
+4. 按一下 [檔案] &gt; [新增] &gt; [專案] 
 5. 重新啟動 Visual Studio for Mac
 6. 清除並重建您的套件
 7. 按一下 [建置輸出] 按鈕，檢視錯誤板內的診斷輸出 ([檢視] > [板] > [錯誤])
@@ -44,8 +44,8 @@ Xamarin 建置速度也會受到各種容量和電腦功能所影響，進而影
 
 1. 按一下 [工具] > [選項...]****
 2. 在左側樹狀檢視中，選取 [專案和方案] > [建置並執行]****
-3. 在右邊面板中,將*MSBuild 產生輸出詳細度下拉下設定為***診斷**:[![](ios-build-mechanics-images/image2-vs.png "設定 MSBuild 建置輸出詳細資訊")](ios-build-mechanics-images/image2-vs.png#lightbox)
-4. 按一下 [確定]****。
+3. 在右側面板中，將 [ *msbuild 組建輸出詳細資訊] 下拉式清單*設定為 [**診斷**]： [ ![ 設定 [msbuild 組建輸出詳細](ios-build-mechanics-images/image2-vs.png)](ios-build-mechanics-images/image2-vs.png#lightbox)資訊]
+4. 按一下 [檔案] &gt; [新增] &gt; [專案] 
 5. 清除並重建您的套件。
 6. 診斷輸出會顯示在 [輸出] 面板中。
 
@@ -67,7 +67,7 @@ Total time: 1554 ms
 
 就技術上來說，Xamarin 工具能夠適用於任何可執行 OS X 10.10 Yosemite 或更新版本的 Mac。 不過，開發人員體驗和建置時間可能會因為 Mac 的效能而受到影響。
 
-在斷開連接狀態下,Windows 上的 Visual Studio 僅執行 C# 編譯階段,不會嘗試執行連結或 AOT 編譯、將應用打包到 _.app_ 捆綁包或對應用捆綁包進行簽名。 (C# 編譯階段很少是性能瓶頸。嘗試透過 Mac Visual Studio 中的 Mac 構建主機直接建構,來精確定位建構在管道中速度的變慢位置。
+在中斷連線的狀態下，Windows 上的 Visual Studio 只會執行 c # 編譯階段，而不會嘗試執行連結或 AOT 編譯、將應用程式封裝成 _應用_程式套件組合   ，或簽署應用程式配套。 （C # 編譯階段很少會造成效能瓶頸）。嘗試在 Visual Studio for Mac 中直接在 Mac 組建主機上建立，以找出組建在管線中的哪個位置變慢。
 
 此外，其中一個更常見會造成速度變慢的位置是 Windows 機器和 Mac 組建主機之間的網路連線。 這可能是因為網路上有實體阻礙，例如使用無線連線，或是必須行經飽和的機器 (例如 Mac-in-the-cloud 服務)。
 
@@ -97,7 +97,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 
 下列螢幕擷取畫面說明如何在 iOS 選項中設定模擬器的這些選項：
 
-[![](ios-build-mechanics-images/image3.png "Setting the options")](ios-build-mechanics-images/image3.png#lightbox)
+[![設定選項](ios-build-mechanics-images/image3.png)](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>裝置訣竅
 
@@ -148,7 +148,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 
 下列螢幕擷取畫面說明如何在 iOS 選項中設定模擬器的這些選項：
 
-[![](ios-build-mechanics-images/image4.png "Setting the options")](ios-build-mechanics-images/image4.png#lightbox)
+[![設定選項](ios-build-mechanics-images/image4.png)](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>使用連結器
 
@@ -165,7 +165,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
   - 不過，如果您選擇 [全部連結]****，應用程式可能會損毀，特別是使用了外部元件時。 這是因為某些元件會在特定類型上使用反映。
   - 靜態分析和反映無法一起運作。 
 
-可以使用[`[Preserve]`屬性](~/ios/deploy-test/linker.md)可以指示工具將內容保留在應用程式中。 
+您可以使用[ `[Preserve]` 屬性](~/ios/deploy-test/linker.md)，指示工具在應用程式中保留專案。 
 
 如果您沒有原始程式碼的存取權，或者原始程式碼是由工具產生且您沒有要加以變更，則仍可藉由建立 XML 檔案來描述需要保留的所有類型和成員來連結原始程式碼。 然後，您可以在專案選項中新增 `--xml={file.name}.xml` 旗標，以利用和使用屬性時相同的方式，來精確地處理程式碼。
 
@@ -278,6 +278,6 @@ L3 Cache: 4 MB
 
 ## <a name="related-links"></a>相關連結
 
-- [博客文章](https://blog.xamarin.com/xamarin-ios-build-improvements/)
+- [部落格文章](https://blog.xamarin.com/xamarin-ios-build-improvements/)
 - [在 iOS 上連結](~/ios/deploy-test/linker.md)
 - [自訂連結器設定](~/cross-platform/deploy-test/linker.md)

@@ -7,38 +7,38 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: ad2386d912dba28041c02c4fb4a8046d341a85ed
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8ad1bf746c129cfb5cfbc8b3e04b871224df486d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73002258"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936574"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>在 Xamarin 中使用 JSON 建立使用者介面
 
 _MonoTouch。對話方塊（MT。D）包含透過 JSON 資料產生動態 UI 的支援。在本教學課程中，我們將逐步解說如何使用 JSONElement 來建立 JSON 中的使用者介面，其包含在應用程式中，或從遠端 Url 載入。_
 
-MT.D 支援建立以 JSON 宣告的使用者介面。 使用 JSON、MT 宣告元素時。D 會自動為您建立相關聯的元素。 您可以從本機檔案、剖析的 `JsonObject` 實例，甚至是遠端 Url 來載入 JSON。
+MT.D 支援建立以 JSON 宣告的使用者介面。 使用 JSON、MT 宣告元素時。D 會自動為您建立相關聯的元素。 您可以從本機檔案、剖析的 `JsonObject` 實例或甚至是遠端 Url 來載入 JSON。
 
 MT.D 支援在使用 JSON 時，元素 API 中可用的完整功能範圍。 例如，下列螢幕擷取畫面中的應用程式是使用 JSON 來完全宣告：
 
-[![](json-element-walkthrough-images/01-load-from-file.png "例如，此螢幕擷取畫面中的應用程式是使用 JSON 完全宣告的")](json-element-walkthrough-images/01-load-from-file.png#lightbox)[![](json-element-walkthrough-images/01-load-from-file.png "例如，此螢幕擷取畫面中的應用程式是使用 JSON 完全宣告的")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+例如[ ![ ，此螢幕擷取畫面中的應用程式是使用 json 來完整](json-element-walkthrough-images/01-load-from-file.png)](json-element-walkthrough-images/01-load-from-file.png#lightbox)宣告[ ![ 的，例如，此螢幕擷取畫面中的應用程式是使用 json 來完全宣告的](json-element-walkthrough-images/01-load-from-file.png)](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 讓我們來回顧[ELEMENTS API 逐步](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)解說教學課程中的範例，示範如何使用 JSON 加入工作詳細資料畫面。
 
 ## <a name="setting-up-mtd"></a>設定 MT。D
 
-MT.D 與 Xamarin 一起散發。 若要使用它，請以滑鼠右鍵按一下 Visual Studio 2017 或 Visual Studio for Mac 中之 Xamarin 專案的 [**參考**] 節點，然後新增**MonoTouch**元件的參考。 然後，視需要在您的原始程式碼中加入 `using MonoTouch.Dialog` 語句。
+MT.D 與 Xamarin 一起散發。 若要使用它，請以滑鼠右鍵按一下 Visual Studio 2017 或 Visual Studio for Mac 中之 Xamarin 專案的 [**參考**] 節點，然後新增**MonoTouch**元件的參考。 然後， `using MonoTouch.Dialog` 視需要在您的原始程式碼中新增語句。
 
 ## <a name="json-walkthrough"></a>JSON 逐步解說
 
 此逐步解說的範例可讓您建立工作。 當第一個畫面上選取了工作時，會顯示詳細資料畫面，如下所示：
 
- [![](json-element-walkthrough-images/03-task-list.png "When a task is selected on the first screen, a detail screen is presented as shown")](json-element-walkthrough-images/03-task-list.png#lightbox)
+ [![當第一個畫面上選取了工作時，會顯示詳細資料畫面，如下所示](json-element-walkthrough-images/03-task-list.png)](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>建立 JSON
 
-在此範例中，我們會從名為 `task.json`的專案中的檔案載入 JSON。 MT.D 預期 JSON 必須符合會反映元素 API 的語法。 就像使用程式碼中的 Elements API 一樣，使用 JSON 時，我們會宣告區段，並在這些區段中新增元素。 為了在 JSON 中宣告區段和專案，我們分別使用字串 "sections" 和 "elements" 作為索引鍵。 針對每個專案，會使用 `type` 鍵來設定相關聯的元素類型。 每個其他專案屬性都是以屬性名稱做為索引鍵來設定。
+在此範例中，我們會從名為的專案中的檔案載入 JSON `task.json` 。 MT.D 預期 JSON 必須符合會反映元素 API 的語法。 就像使用程式碼中的 Elements API 一樣，使用 JSON 時，我們會宣告區段，並在這些區段中新增元素。 為了在 JSON 中宣告區段和專案，我們分別使用字串 "sections" 和 "elements" 作為索引鍵。 針對每個專案，會使用索引鍵來設定相關聯的元素類型 `type` 。 每個其他專案屬性都是以屬性名稱做為索引鍵來設定。
 
 例如，下列 JSON 描述工作詳細資料的區段和元素：
 
@@ -69,7 +69,7 @@ MT.D 與 Xamarin 一起散發。 若要使用它，請以滑鼠右鍵按一下 V
 
 ## <a name="loading-the-json-in-code"></a>在程式碼中載入 JSON
 
-定義 JSON 之後，我們需要將它載入至 MT。使用 `JsonElement` 類別的 D。 假設先前建立的 JSON 檔案已新增至名稱為 sample 的專案，並指定內容的建立動作，載入 `JsonElement` 就像呼叫下列這行程式碼一樣簡單：
+定義 JSON 之後，我們需要將它載入至 MT。使用類別的 D `JsonElement` 。 假設先前建立的 JSON 檔案已新增至名稱為 sample.js的專案，並在指定內容的組建動作時，載入 `JsonElement` 就像呼叫下列程式程式碼一樣簡單：
 
 ```csharp
 var taskElement = JsonElement.FromFile ("task.json");
@@ -121,7 +121,7 @@ _addButton.Clicked += (sender, e) => {
 
 ## <a name="loading-json-from-a-url"></a>從 url 載入 JSON
 
-MT.D 也支援從外部 Url 動態載入 JSON，只要將 Url 傳遞給 `JsonElement`的函式即可。 MT.當您在畫面之間流覽時，D 會視需要擴充 JSON 中所宣告的階層。 例如，假設有一個 JSON 檔案，如下所示，位於本機 web 伺服器的根目錄：
+MT.D 也支援透過直接將 Url 傳遞至的函式，從外部 Url 動態載入 JSON `JsonElement` 。 MT.當您在畫面之間流覽時，D 會視需要擴充 JSON 中所宣告的階層。 例如，假設有一個 JSON 檔案，如下所示，位於本機 web 伺服器的根目錄：
 
 ```json
 {
@@ -147,7 +147,7 @@ MT.D 也支援從外部 Url 動態載入 JSON，只要將 Url 傳遞給 `JsonEle
 }
 ```
 
-我們可以使用 `JsonElement` 來載入，如下列程式碼所示：
+我們可以使用來載入此， `JsonElement` 如下列程式碼所示：
 
 ```csharp
 _rootElement = new RootElement ("Json Example") {
@@ -159,7 +159,7 @@ _rootElement = new RootElement ("Json Example") {
 
 在執行時間，檔案將會由 MT 抓取和剖析。D 當使用者流覽至第二個視圖時，如下列螢幕擷取畫面所示：
 
- [![](json-element-walkthrough-images/04-json-web-example.png "The file will be retrieved and parsed by MT.D when the user navigates to the second view")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
+ [![檔案將會由 MT 抓取和剖析。D 當使用者流覽至第二個視圖時](json-element-walkthrough-images/04-json-web-example.png)](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
 ## <a name="summary"></a>總結
 

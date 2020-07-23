@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 86b526fff305b195221aca3fb6a86ad0823cb145
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e206c89de278c8b85848294e76e4431825eaee85
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569396"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938953"
 ---
 # <a name="datapages-controls-reference"></a>DataPages 控制項參考
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![此 API 目前為預覽狀態](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages 需要 Xamarin.Forms 呈現的主題參考。 這牽涉到安裝[ Xamarin.Forms 。主題。基底](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)NuGet 封裝到您的專案中，後面接著[ Xamarin.Forms 。主題 Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[ Xamarin.Forms 。主題. 深色](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet 套件。
@@ -62,11 +62,11 @@ Xamarin.FormsDataPages NuGet 包含一些可以利用資料來源系結的控制
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Android 上的 HeroImage 控制項") ![](controls-images/heroimage-dark-android.png "Android 上的 HeroImage 控制項")
+![Android 上的 HeroImage 控制項](controls-images/heroimage-light-android.png) ![Android 上的 HeroImage 控制項](controls-images/heroimage-dark-android.png)
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "IOS 上的 HeroImage 控制項") ![](controls-images/heroimage-dark-ios.png "IOS 上的 HeroImage 控制項")
+![IOS 上的 HeroImage 控制項](controls-images/heroimage-light-ios.png) ![IOS 上的 HeroImage 控制項](controls-images/heroimage-dark-ios.png)
 
 ### <a name="listitem"></a>ListItem
 
@@ -74,7 +74,7 @@ Xamarin.FormsDataPages NuGet 包含一些可以利用資料來源系結的控制
 
 有五個屬性：
 
-* Title
+* 標題
 * 詳細資料
 * ImageSource
 * PlaceholdImageSource
@@ -94,11 +94,11 @@ Xamarin.FormsDataPages NuGet 包含一些可以利用資料來源系結的控制
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Android 上的上個控制項") ![](controls-images/listitem-dark-android.png "Android 上的上個控制項")
+![Android 上的上個控制項](controls-images/listitem-light-android.png) ![Android 上的上個控制項](controls-images/listitem-dark-android.png)
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "IOS 上的上個控制項") ![](controls-images/listitem-dark-ios.png "IOS 上的上個控制項")
+![IOS 上的上個控制項](controls-images/listitem-light-ios.png) ![IOS 上的上個控制項](controls-images/listitem-dark-ios.png)
 
 ## <a name="custom-control-example"></a>自訂控制項範例
 
@@ -124,11 +124,11 @@ Xamarin.FormsDataPages NuGet 包含一些可以利用資料來源系結的控制
 
 **Android**
 
-![](controls-images/cardview-light-android.png "在 Android 上 CardView 自訂控制項") ![](controls-images/cardview-dark-android.png "在 Android 上 CardView 自訂控制項")
+![在 Android 上 CardView 自訂控制項](controls-images/cardview-light-android.png) ![在 Android 上 CardView 自訂控制項](controls-images/cardview-dark-android.png)
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "IOS 上的 CardView 自訂控制項") ![](controls-images/cardview-dark-ios.png "IOS 上的 CardView 自訂控制項")
+![IOS 上的 CardView 自訂控制項](controls-images/cardview-light-ios.png) ![IOS 上的 CardView 自訂控制項](controls-images/cardview-dark-ios.png)
 
 ### <a name="building-the-custom-cardview"></a>建立自訂 CardView
 

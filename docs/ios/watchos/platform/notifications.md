@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 85a55967446da5cf89e8ce19dadf88d0de16d80a
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 0358b2b422e4cc69faa15187ee24d72c7d02ca38
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291821"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937926"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>在 Xamarin 中 watchOS 通知
 
@@ -24,15 +24,15 @@ ms.locfileid: "78291821"
 
 在分鏡腳本通知控制器上，有特殊類型的 segue 觸發它們。 當您將新的**通知介面控制器**拖曳至分鏡腳本時，它會自動附加 segue：
 
-![](notifications-images/notification-storyboard1.png "A new Notification Interface Controller with a segue attached")
+![已附加 segue 的新通知介面控制器](notifications-images/notification-storyboard1.png)
 
 當您選取 [通知] segue 時，您可以編輯其屬性：
 
-![](notifications-images/notification-storyboard2.png "The notification segue selected")
+![已選取通知 segue](notifications-images/notification-storyboard2.png)
 
 自訂控制器之後，它可能會從 WatchKitCatalog 中看起來像這個範例：
 
-![](notifications-images/notifications-segue.png "The Notification Properties")
+![通知屬性](notifications-images/notifications-segue.png)
 
 通知的類型有兩種：
 
@@ -54,13 +54,13 @@ OS 會決定是否要根據數個因素來顯示靜態或動態視圖。 您必�
 
 靜態視圖應該簡單且快速地顯示。
 
-![](notifications-images/notification-static.png "The static view")
+![靜態視圖](notifications-images/notification-static.png)
 
 #### <a name="dynamic"></a>動態
 
 動態視圖可以顯示更多的資料，並提供更多的互動性。
 
-![](notifications-images/notification-dynamic.png "The dynamic view")
+![動態視圖](notifications-images/notification-dynamic.png)
 
 ## <a name="generating-notifications"></a>產生通知
 
@@ -68,11 +68,11 @@ OS 會決定是否要根據數個因素來顯示靜態或動態視圖。 您必�
 
 如需如何產生本機通知的範例，請參閱[IOS 通知逐步](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md)解說。
 
-本機通知必須將 `AlertTitle` 設定為要顯示在 Apple Watch 上，`AlertTitle` 字串會顯示在簡短外觀的介面中。 `AlertTitle` 和 `AlertBody` 都會顯示在 通知 清單中;而 `AlertBody` 會顯示在「長外觀」介面中。
+本機通知必須將 `AlertTitle` 設定顯示在 Apple Watch 上-此 `AlertTitle` 字串會顯示在簡短外觀的介面中。 `AlertTitle`和 `AlertBody` 都會顯示在 [通知] 清單中，而且 `AlertBody` 會顯示在「長時間尋找」介面中。
 
-此螢幕擷取畫面顯示 [通知] 清單中顯示的 `AlertTitle`，以及顯示在 [長期外觀] 介面中的 `AlertBody`：
+這個螢幕擷取畫面顯示顯示 `AlertTitle` 在 [通知] 清單中，並顯示在 [ `AlertBody` 長期外觀] 介面中：
 
-![](notifications-images/watch-notificationslist-sml.png "此螢幕擷取畫面顯示 [通知] 清單中顯示的 AlertTitle") ![](notifications-images/watch-notificationcontroller-sml.png "AlertBody 會顯示在「長外觀」介面中")
+![此螢幕擷取畫面顯示 [通知] 清單中顯示的 AlertTitle](notifications-images/watch-notificationslist-sml.png) ![AlertBody 會顯示在「長外觀」介面中](notifications-images/watch-notificationcontroller-sml.png)
 
 ## <a name="testing-notifications"></a>測試通知
 
@@ -97,33 +97,33 @@ OS 會決定是否要根據數個因素來顯示靜態或動態視圖。 您必�
 當監看式擴充功能設定為**啟始專案**時，Visual Studio for Mac 將會顯示其他選項。
 以滑鼠右鍵按一下 [監看式] 延伸模組專案，然後選擇 [以 **> 自訂參數執行**]：
 
-[![](notifications-images/runwith-customparams-sml.png "Running with Custom Properties")](notifications-images/runwith-customparams.png#lightbox)
+[![以自訂屬性執行](notifications-images/runwith-customparams-sml.png)](notifications-images/runwith-customparams.png#lightbox)
 
 這會開啟 [**執行引數**] 視窗，其中包含 [ **WatchKit** ] 索引標籤。選取 [**通知**] 並提供 JSON 承載，然後按 [**執行**] 以啟動模擬器中的監看式應用程式：
 
-[![](notifications-images/runwith-execargs-sml.png "Select Notification Payload Default")](notifications-images/runwith-execargs.png#lightbox)
+[![選取通知承載預設值](notifications-images/runwith-execargs-sml.png)](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在中設定測試通知承載 Visual Studio 以滑鼠右鍵按一下 [監看式] 延伸模組，以編輯**專案屬性**。 移至 [ **Debug** ] 區段，並從清單中選取通知 json 檔案（它會自動列出專案中包含的所有 json 檔案）。
 
-[![](notifications-images/runwith-execargs-sml-vs.png "Select a notifications JSON file")](notifications-images/runwith-execargs-vs.png#lightbox)
+[![選取通知 JSON 檔案](notifications-images/runwith-execargs-sml-vs.png)](notifications-images/runwith-execargs-vs.png#lightbox)
 
 當 [監看式] 延伸模組是**啟始專案**時，Visual Studio 會顯示其他選項，如下所示。 選擇其中一個**通知**選項，以**通知**模式啟動監看式應用程式（使用 [屬性] 視窗中選取的 JSON 檔案）：
 
-![](notifications-images/runwith-vs.png "The Device menu")
+![[裝置] 功能表](notifications-images/runwith-vs.png)
 
 -----
 
 使用預設承載 JSON 檔案在模擬器上進行測試時，預設通知控制器看起來會像這樣：
 
-![](notifications-images/notification-debug-sml.png "An example notification")
+![範例通知](notifications-images/notification-debug-sml.png)
 
 您也可以使用[命令列](~/ios/watchos/troubleshooting.md#command_line)來啟動 iOS 模擬器。
 
 ### <a name="example-notification-payload"></a>範例通知承載
 
-在「[監看套件目錄](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)」範例中，有一個範例承載 JSON 檔案**NotificationPayload** （如下所示）。
+在「[監看套件目錄](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)」範例中，有一個範例承載 JSON 檔案**NotificationPayload.js于**（如下所示）。
 
 ```json
 {

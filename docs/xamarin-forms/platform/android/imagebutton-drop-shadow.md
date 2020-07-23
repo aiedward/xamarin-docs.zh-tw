@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e2ad97eb5e7db3b832e8fb4340c86904b766b9a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d6f3304c9eeb87405ab303a80450a1cd8b2af267
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139995"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938056"
 ---
 # <a name="imagebutton-drop-shadows-on-android"></a>Android 上的 ImageButton 投影
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定是用來在上啟用投影 `ImageButton` 。 它會在 XAML 中使用，方法是將可系結 `ImageButton.IsShadowEnabled` 屬性設定為 `true` ，以及一些可控制投影的其他選擇性可系結屬性：
 
@@ -76,7 +76,7 @@ imageButton.On<Android>()
 
 結果是可以在上啟用投影 `ImageButton` ：
 
-![](imagebutton-drop-shadow-images/imagebutton-drop-shadow.png "ImageButton with drop shadow")
+![具有投影的 ImageButton](imagebutton-drop-shadow-images/imagebutton-drop-shadow.png)
 
 ## <a name="related-links"></a>相關連結
 

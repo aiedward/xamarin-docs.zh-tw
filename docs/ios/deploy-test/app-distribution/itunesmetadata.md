@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 65a89afb3f301fd88ac4819bb8c3658a2be5e29d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 76f5a10720505796e30079d6be3506bc66636f7e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573192"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938121"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 應用程式中的 iTunesMetadata.plist 檔案
 
@@ -300,26 +300,26 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 1. 在 [方案總管]**** 中，以滑鼠右鍵按一下 Xamarin.iOS 專案檔，然後選取 [新增]**** > [新增檔案]****
 2. 從 [新增檔案] 對話方塊中，選取 [ **iOS**  >  **屬性清單**]：
 
-    ![](itunesmetadata-images/image01.png "Select iOS Property List")
+    ![選取 iOS 屬性清單](itunesmetadata-images/image01.png)
 3. 輸入 `iTunesMetadata` 作為 [名稱]****，然後按一下 [新增]**** 按鈕。
 4. 在 [方案總管]**** 中，按兩下 `iTunesMetadata.plist` 檔案來開啟它以進行編輯：
 
-    ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
+    ![iTunesMetadata.plist 編輯器](itunesmetadata-images/image02.png)
 5. 按一下綠色 **+** 以建立新的專案，並輸入 `UIRequiredDeviceCapabilities` 作為索引鍵名稱：
 
-    ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
+    ![建立新的項目，並輸入 UIRequiredDeviceCapabilities 作為索引鍵名稱](itunesmetadata-images/image03.png)
 6. 按一下 [字串]**** 值類型，然後從快顯清單中選取 [字典]****：
 
-    ![](itunesmetadata-images/image04.png "Select Dictionary from the popup list")
+    ![從快顯清單中選取 [字典]](itunesmetadata-images/image04.png)
 7. 按一下屬性名稱左邊的向下箭頭以顯示字典的項目：
 
-    ![](itunesmetadata-images/image05.png "Reveal the dictionary entries")
+    ![顯示字典項目](itunesmetadata-images/image05.png)
 8. 按一下 [新增項目]**** 文字，然後按一下綠色的 **+** 來將項目新增至字典：
 
-    ![](itunesmetadata-images/image06.png "Add an entry to the dictionary")
+    ![將項目新增至字典](itunesmetadata-images/image06.png)
 9. 輸入 `armv7` 作為索引鍵名稱、選取一種 [布林值]**** 類型，然後輸入 **Yes** 作為值：
 
-    ![](itunesmetadata-images/image07.png "Enter armv7 for the key name, select a type of Boolean and enter Yes as the value")
+    ![輸入 armv7 作為索引鍵名稱，選取一種 [布林值] 類型，然後輸入 Yes 作為值](itunesmetadata-images/image07.png)
 10. 重複上述步驟，直到您已在 `iTunesMetadata.plist` 檔案中填入所需的所有索引鍵/值組為止 (如需詳細資料，請參閱 [iTunesMetadata.plist 內容](#iTunesMetadata_contents)一節)。
 
 11. 儲存對 plist 檔案所做的變更。

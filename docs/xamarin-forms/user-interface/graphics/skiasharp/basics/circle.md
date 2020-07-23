@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 785532d1a8fedfaef367c8fb8ae437220c3de9c4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137718"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938173"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>在 SkiaSharp 中繪製簡單的圓形
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解 SkiaSharp 繪圖的基本概念，包括畫布和油漆物件_
 
@@ -27,7 +27,7 @@ _瞭解 SkiaSharp 繪圖的基本概念，包括畫布和油漆物件_
 
 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)套裝程式含這一系列 SkiaSharp 文章的所有範例程式碼。 第一頁的標題是**簡單的 Circle** ，而且會叫用 page 類別 [`SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) 。 這段程式碼示範如何在頁面中央繪製一個半徑為100圖元的圓形。 圓形的外框是紅色，而圓形的內部是藍色。
 
-![](circle-images/circleexample.png "A blue circle outlined in red")
+![紅色的藍色圓圈](circle-images/circleexample.png)
 
 [`SimpleCircle`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)Page 類別衍生自 `ContentPage` ，並包含 `using` SkiaSharp 命名空間的兩個指示詞：
 
@@ -109,7 +109,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-預設值為 `Fill`。 使用第三個選項來繪製線條，並使用相同的色彩填滿內部。
+預設為 `Fill`。 使用第三個選項來繪製線條，並使用相同的色彩填滿內部。
 
 將 [`Color`](xref:SkiaSharp.SKPaint.Color) 屬性設定為類型的值 [`SKColor`](xref:SkiaSharp.SKColor) 。 取得值的其中一種方式 `SKColor` 是 Xamarin.Forms `Color` 使用擴充方法，將值轉換成 `SKColor` 值 [`ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*) 。 [`Extensions`](xref:SkiaSharp.Views.Forms.Extensions)命名空間中的 `SkiaSharp.Views.Forms` 類別包含在 Xamarin.Forms 值和 SkiaSharp 值之間轉換的其他方法。
 
@@ -146,7 +146,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是在 iOS 和 Android 上執行的程式：
 
-[![](circle-images/simplecircle-small.png "Triple screenshot of the Simple Circle page")](circle-images/simplecircle-large.png#lightbox "Triple screenshot of the Simple Circle page")
+[![簡單圓形頁面的三重螢幕擷取畫面](circle-images/simplecircle-small.png)](circle-images/simplecircle-large.png#lightbox "簡單圓形頁面的三重螢幕擷取畫面")
 
 當您自行執行程式時，您可以將手機或模擬器旋轉一側，以查看圖形的重繪方式。 每次圖形需要重新繪製時， `PaintSurface` 都會再次呼叫事件處理常式。
 

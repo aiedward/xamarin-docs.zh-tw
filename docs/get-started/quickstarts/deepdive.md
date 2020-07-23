@@ -13,12 +13,12 @@ ms.date: 11/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1bfb76f71a2ac9d8bc9ae84152501909000b9623
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d1670506fa78b39825368fc91d2452a44ddf8f03
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132518"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939915"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms快速入門深入探討
 
@@ -30,7 +30,7 @@ ms.locfileid: "84132518"
 
 Visual Studio 會將程式碼組織成*方案*和*專案*。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含四項專案的方案所組成，如下列螢幕擷取畫面所示：
 
-![](deepdive-images/vs/solution.png "Visual Studio Solution Explorer")
+![Visual Studio 方案總管](deepdive-images/vs/solution.png)
 
 這些專案包括：
 
@@ -43,7 +43,7 @@ Visual Studio 會將程式碼組織成*方案*和*專案*。 方案是可以容�
 
 下列螢幕擷取畫面顯示 Visual Studio 中 Note .NET Standard 程式庫專案的內容：
 
-![](deepdive-images/vs/net-standard-project.png "Phoneword .NET Standard Project Contents")
+![Phoneword .NET Standard 專案內容](deepdive-images/vs/net-standard-project.png)
 
 專案具有 [相依性 **]** 節點，其中包含**NuGet**和**SDK**節點：
 
@@ -57,7 +57,7 @@ Visual Studio 會將程式碼組織成*方案*和*專案*。 方案是可以容�
 
 [Visual Studio for Mac](/visualstudio/mac/)遵循將程式碼組織成*方案*和*專案*的 Visual Studio 實務。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含三項專案的方案所組成，如下列螢幕擷取畫面所示：
 
-![](deepdive-images/vsmac/solution.png "Visual Studio for Mac Solution Pane")
+![Visual Studio for Mac 方案窗格](deepdive-images/vsmac/solution.png)
 
 這些專案包括：
 
@@ -69,7 +69,7 @@ Visual Studio 會將程式碼組織成*方案*和*專案*。 方案是可以容�
 
 下列螢幕擷取畫面顯示 Visual Studio for Mac 中 Note .NET Standard 程式庫專案的內容：
 
-![](deepdive-images/vsmac/net-standard-project.png "Phoneword .NET Standard Library Project Contents")
+![Phoneword .NET Standard 程式庫專案內容](deepdive-images/vsmac/net-standard-project.png)
 
 專案具有 [相依性 **]** 節點，其中包含**NuGet**和**SDK**節點：
 
@@ -98,12 +98,12 @@ Xamarin.Forms應用程式的架構方式與傳統的跨平臺應用程式相同�
 
 ::: zone pivot="windows"
 
-![](deepdive-images/vs/architecture.png "Notes Architecture")
+![Notes 架構](deepdive-images/vs/architecture.png)
 
 ::: zone-end
 ::: zone pivot="macos"
 
-![](deepdive-images/vsmac/architecture.png "Notes Architecture")
+![Notes 架構](deepdive-images/vsmac/architecture.png)
 
 ::: zone-end
 
@@ -345,7 +345,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 
 如需類別的詳細資訊 [`ListView`](xref:Xamarin.Forms.ListView) ，請參閱[ListView](~/xamarin-forms/user-interface/listview/index.md)。
 
-## <a name="navigation"></a>瀏覽
+## <a name="navigation"></a>巡覽
 
 Xamarin.Forms會根據所使用的類型，提供許多不同的頁面導覽體驗 [`Page`](xref:Xamarin.Forms.Page) 。 若為 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 實例導覽，則可以是階層式或模式。 如需強制回應導覽的詳細資訊，請參閱強制回應[ Xamarin.Forms 頁面](~/xamarin-forms/app-fundamentals/navigation/modal.md)。
 
@@ -388,7 +388,7 @@ await Navigation.PopAsync();
 
 資料繫結會連接兩個物件，稱為*來源*和*目標*。 *來源*物件會提供資料。 *目標*物件將會取用 (而且通常會顯示) 來源物件中的資料。 例如， [`Editor`](xref:Xamarin.Forms.Editor) （*目標*物件）通常會將其屬性系結 [`Text`](xref:Xamarin.Forms.InputView.Text) 至 `string` *來源*物件中的公用屬性。 下圖說明繫結關聯性：
 
-![](deepdive-images/data-binding.png "Data Binding")
+![資料繫結](deepdive-images/data-binding.png)
 
 資料繫結的主要優點是您不再需要擔心檢視和資料來源之間的資料同步處理。 *來源*物件中的變更會在幕後，透過繫結架構自動推送至*目標*物件，而目標物件中的變更則可以選擇性地推送回*來源*物件。
 
@@ -532,7 +532,7 @@ Visual Studio for Mac 和 Visual Studio 都會提供許多選項來測試和部�
 - 效果也可以允許在每個平台上自訂原生控制項。 在平臺特定專案中，會藉由將類別子類別化來建立效果 [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) ，並將其附加至適當的控制項來使用 Xamarin.Forms 。 如需詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 - 共用程式碼可以透過類別存取原生功能 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 如需有關詳細資訊，請參閱[透過 DependencyService 存取原生功能](~/xamarin-forms/app-fundamentals/dependency-service/index.md)。
 
-或者，使用 Charles Petzold 的書籍[_建立 Mobile Apps_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)，是深入瞭解的絕佳位置 Xamarin.Forms 。 此書籍以 PDF 形式或多種電子書格式提供。
+或者，[_使用 Xamarin.Forms _](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)Charles Petzold 的書籍來建立 Mobile Apps，是深入瞭解的絕佳位置 Xamarin.Forms 。 此書籍以 PDF 形式或多種電子書格式提供。
 
 ## <a name="related-links"></a>相關連結
 

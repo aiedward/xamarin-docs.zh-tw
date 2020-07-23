@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: bf023543d3159f5d5baf7f7036a576b8a746cf9e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6002e5cc62dfe30c14f21943c690a5a1b15a0c12
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572126"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936587"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin 中的資料表元件和功能
 
@@ -21,12 +21,12 @@ UITableView 可以有「群組」或「純文字」樣式，並由下列部分�
 - [區段標頭](#Section_Header)
 - [儲存格](#Cells)（或資料列，如果您想要的話）
 - [區段頁尾](#Section_Footer)
-- [索引](#Index)
+- [Index](#Index)
 - [編輯模式](#Edit_Features)（包括 [滑動至刪除] 和 [拖曳控點] 以變更資料列順序） 
 
 這些螢幕擷取畫面顯示區段列、頁首、頁尾、編輯控制項和索引的顯示方式。
 
- [![](table-parts-and-functionality-images/image1a.png "These screenshots show how section rows, headers, footers, edit controls and the index are displayed")](table-parts-and-functionality-images/image1a.png#lightbox)
+ [![這些螢幕擷取畫面顯示區段列、頁首、頁尾、編輯控制項和索引的顯示方式](table-parts-and-functionality-images/image1a.png)](table-parts-and-functionality-images/image1a.png#lightbox)
 
 以下將更詳細地說明這些部分：
 
@@ -72,7 +72,7 @@ UITableView 可以有「群組」或「純文字」樣式，並由下列部分�
 
 用來顯示資料表視圖的主要類別如下所示：
 
-[![](table-parts-and-functionality-images/classdiagram.png "The primary classes used to display table views are shown here")](table-parts-and-functionality-images/classdiagram.png#lightbox)
+[![用來顯示資料表視圖的主要類別如下所示](table-parts-and-functionality-images/classdiagram.png)](table-parts-and-functionality-images/classdiagram.png#lightbox)
 
 每個類別的用途如下所述：
 

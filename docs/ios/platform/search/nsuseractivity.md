@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: cbf5f8c6f53b075f587a0e7763a4019d44352f14
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bbd3d1663c3d796768095a12e5048b18f447fa7a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568994"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937016"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>在 Xamarin 中使用 NSUserActivity 進行搜尋
 
@@ -21,7 +21,7 @@ ms.locfileid: "84568994"
 
 IOS 9 的新手， `NSUserActivity` 可以編制索引（公開或私下），並從焦點搜尋和 Safari 進行搜尋。 藉由將標示為可 `NSUserActivity` 搜尋並新增可編制索引的中繼資料，活動可以列在 iOS 裝置上的搜尋結果中。
 
-[![](nsuseractivity-images/apphistory01.png "The App History overview")](nsuseractivity-images/apphistory01.png#lightbox)
+[![應用程式歷程記錄總覽](nsuseractivity-images/apphistory01.png)](nsuseractivity-images/apphistory01.png#lightbox)
 
 如果使用者從您的應用程式選取屬於某個活動的搜尋結果，應用程式將會啟動，而所描述的活動 `NSUserActivity` 將會重新開機並呈現給使用者。
 
@@ -59,7 +59,7 @@ Apple 建議針對活動類型識別碼使用反向 DNS 樣式的標記法，以
 
 若要建立必要的活動類型識別碼以支援此行為，請編輯**plist**檔案，並切換至**來源**視圖。 新增 `NSUserActivityTypes` 金鑰，並以下列格式建立識別碼：
 
-[![](nsuseractivity-images/type01.png "The NSUserActivityTypes key and required identifiers in the plist editor")](nsuseractivity-images/type01.png#lightbox)
+[![Plist 編輯器中的 NSUserActivityTypes 索引鍵和所需的識別碼](nsuseractivity-images/type01.png)](nsuseractivity-images/type01.png#lightbox)
 
 在上述範例中，我們為搜尋活動（）建立了一個新的活動類型識別碼 `com.xamarin.platform` 。 建立您自己的應用程式時，請將陣列的內容取代為 `NSUserActivityTypes` 您的應用程式支援的活動特有的活動類型識別碼。
 
@@ -88,7 +88,7 @@ activity.BecomeCurrent();
 
 我們可以藉由設定的屬性來新增更多詳細資料 `ContentAttributeSet` `NSUserActivity` ，如下所示：
 
-[![](nsuseractivity-images/apphistory02.png "Addition Search Details overview")](nsuseractivity-images/apphistory02.png#lightbox)
+[![新增搜尋詳細資料總覽](nsuseractivity-images/apphistory02.png)](nsuseractivity-images/apphistory02.png#lightbox)
 
 藉由使用 `ContentAttributeSet` ，您可以建立豐富的搜尋結果，以吸引使用者與他們互動。
 
@@ -115,7 +115,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 請注意，這是用來回應遞交要求的相同方法覆寫。 現在，如果使用者在焦點搜尋結果中按一下來自應用程式的連結，我們的應用程式將會帶入前景（或已啟動（如果尚未執行），而且會顯示該連結所代表的內容、導覽或功能：
 
-[![](nsuseractivity-images/apphistory03.png "Restore Previous State from Search")](nsuseractivity-images/apphistory03.png#lightbox)
+[![從搜尋還原先前的狀態](nsuseractivity-images/apphistory03.png)](nsuseractivity-images/apphistory03.png#lightbox)
 
 <a name="indexing"></a>
 

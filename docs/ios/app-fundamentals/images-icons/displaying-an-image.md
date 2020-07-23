@@ -1,22 +1,22 @@
 ---
 title: 在 Xamarin 中顯示影像
-description: 本文說明如何在 Xamarin iOS 應用程式中包含影像資產，並使用C#程式碼或在 iOS 設計工具中將它指派給控制項，以顯示該影像。
+description: '本文說明如何在 Xamarin iOS 應用程式中包含映射資產，並使用 c # 程式碼或將它指派給 iOS 設計工具中的控制項，以顯示該影像。'
 ms.prod: xamarin
 ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2018
-ms.openlocfilehash: cda45f01dae2dc17c2517a7f013acacde7906a4b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1b8c18dfcc1a0eef1fd4837d34c4c0b080881edc
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73004487"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938134"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin 中顯示影像
 
-_本文說明如何在 Xamarin iOS 應用程式中包含影像資產，並使用C#程式碼或在 iOS 設計工具中將它指派給控制項，以顯示該影像。_
+_本文說明如何在 Xamarin iOS 應用程式中包含映射資產，並使用 c # 程式碼或將它指派給 iOS 設計工具中的控制項，以顯示該影像。_
 
 ## <a name="adding-and-organizing-images-in-a-xamarinios-app"></a>在 Xamarin iOS 應用程式中新增和組織影像
 
@@ -30,17 +30,17 @@ _本文說明如何在 Xamarin iOS 應用程式中包含影像資產，並使用
 
 若要建立新的映射集，並將影像新增至其中，請執行下列動作：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在 **方案總管**中，按兩下 `Assets.xcassets` 檔案以開啟它進行編輯：
+1. 在 [**方案總管**中，按兩下檔案 `Assets.xcassets` 以開啟它進行編輯：
 
-    ![](displaying-an-image-images/imageset01.png "The Assets.xcassets in the Solution Explorer")
+    ![方案總管中的資產. assets.xcassets](displaying-an-image-images/imageset01.png)
 2. 以滑鼠右鍵按一下 [**資產] 清單**，然後選取 [**新增映射集**]：
 
-    ![](displaying-an-image-images/imageset02.png "Adding a New Image Set")
+    ![加入新的映射集](displaying-an-image-images/imageset02.png)
 3. 選取新的映射集，就會顯示編輯器：
 
-    ![](displaying-an-image-images/imageset03.png "The Image Set editor")
+    ![影像集編輯器](displaying-an-image-images/imageset03.png)
 4. 從這裡，為每個不同的裝置和所需的解析度拖曳影像。
 5. 按兩下 [**資產] 清單**中的新映射集**名稱**以進行編輯：![](displaying-an-image-images/imageset04.png "編輯新影像集的名稱")
 
@@ -48,61 +48,61 @@ _本文說明如何在 Xamarin iOS 應用程式中包含影像資產，並使用
 
 ![](displaying-an-image-images/imageset06.png "Select an image set's name from the dropdown list")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 從 **方案總管**開啟 資產目錄，然後在左上角，按一下**加號**按鈕：
+1. 從 [**方案總管**開啟 [資產目錄]，然後在左上角，按一下**加號**按鈕：
 
-    ![](displaying-an-image-images/asset5.png "Click the Plus button")
+    ![按一下加號按鈕](displaying-an-image-images/asset5.png)
 
 2. 選取 [新增**映射集**]，就會顯示新影像集的 [影像集編輯器]。 從這裡，為每個不同的裝置和所需的解析度拖曳影像。
 
-    ![](displaying-an-image-images/asset7.png "The image set editor")
+    ![影像集編輯器](displaying-an-image-images/asset7.png)
 
 ### <a name="renaming-an-image-set"></a>重新命名映射集
 
 若要重新命名映射集，請執行下列動作：
 
-1. 在 **方案總管**中，按兩下**資產目錄**檔案以開啟它進行編輯：
+1. 在 [**方案總管**中，按兩下**資產目錄**檔案以開啟它進行編輯：
 
-    ![](displaying-an-image-images/rename01.png "The Asset Catalog in the Solution Explorer")
+    ![方案總管中的資產目錄](displaying-an-image-images/rename01.png)
 2. 選取要重新命名的**映射集**：
 
-    ![](displaying-an-image-images/rename02.png "Select the Image Set to rename")
+    ![選取要重新命名的映射集](displaying-an-image-images/rename02.png)
 3. 在 [**屬性] 瀏覽器**中，流覽至底部，然後選取 [**名稱**] （在 [**其他**] 區段下）：
 
-    ![](displaying-an-image-images/rename03.png "Select Name under the Misc section")
+    ![選取 [其他] 區段下的 [名稱]](displaying-an-image-images/rename03.png)
 4. 輸入**映射集**的新**名稱**，然後儲存變更。
 
 -----
 
-在程式碼中使用**影像集**時，藉由呼叫 `UIImage` 類別的 `FromBundle` 方法，依名稱來參考它。 例如：
+在程式碼中使用**影像集**時，藉由呼叫類別的方法，依名稱參考它 `FromBundle` `UIImage` 。 例如：
 
 ```csharp
 MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> 如果指派給映射集的映射未正確顯示，請確定使用的是正確的檔案名搭配 `FromBundle` 方法（**映射集**，而不是父**資產目錄**名稱）。 若為 PNG 影像，可以省略 `.png` 延伸模組。 若是其他影像格式，則需要擴充功能（例如 `PurpleMonkey.jpg`)。
+> 如果指派給映射集的映射未正確顯示，請確定使用 `FromBundle` 方法（**映射集**，而不是父**資產目錄**名稱）搭配正確的檔案名。 若是 PNG 影像， `.png` 可以省略副檔名。 若是其他影像格式，則需要擴充功能（例如 `PurpleMonkey.jpg`).
 
 ### <a name="using-vector-images-in-asset-catalogs"></a>在資產目錄中使用向量影像
 
-從 iOS 8 開始，特殊的**向量**類別已新增至**映射集**，可讓開發人員在卡帶中包含**PDF**格式的向量影像，而不會在不同的解析度上包括個別的點陣圖檔案。 使用此方法時，請為 `@1x` 解析度提供單一向量檔案（格式化為向量 PDF 檔案），而且檔案的 `@2x` 和 `@3x` 版本將會在編譯時期產生，並包含在應用程式的組合中。
+從 iOS 8 開始，特殊的**向量**類別已新增至**映射集**，可讓開發人員在卡帶中包含**PDF**格式的向量影像，而不會在不同的解析度上包括個別的點陣圖檔案。 使用此方法時，請提供單一向量檔案以供 `@1x` 解析（格式化為向量 PDF 檔案），而且檔案的 `@2x` 和 `@3x` 版本將會在編譯時期產生，並包含在應用程式的組合中。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-![](displaying-an-image-images/imageset05.png "Vector Images in the Asset Catalogs editor")
+![資產目錄編輯器中的向量影像](displaying-an-image-images/imageset05.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![](displaying-an-image-images/asset8.png "Vector Images in the Asset Catalogs editor")
+![資產目錄編輯器中的向量影像](displaying-an-image-images/asset8.png)
 
 -----
 
-例如，如果開發人員包含 `MonkeyIcon.pdf` 檔案作為資產目錄的向量，並具有 150px x 150px 的解析度，則下列點陣圖資產在編譯後會包含在最終的應用程式套件組合中：
+例如，如果開發人員將檔案包含 `MonkeyIcon.pdf` 為資產目錄的向量，而其解析為 150px x 150px，則下列點陣圖資產會在編譯時包含在最終的應用程式套件組合中：
 
-- `MonkeyIcon@1x.png` 150px x 150px 解析。
-- `MonkeyIcon@2x.png` 300px x 300px 解析。
-- `MonkeyIcon@3x.png` 450px x 450px 解析。
+- `MonkeyIcon@1x.png`-150px x 150px 解析。
+- `MonkeyIcon@2x.png`-300px x 300px 解析。
+- `MonkeyIcon@3x.png`-450px x 450px 解析。
 
 在資產目錄中使用 PDF 向量影像時，應該考慮下列事項：
 
@@ -116,25 +116,25 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 若要輕鬆達成此效果，請將影像資產的轉譯_模式_切換至**範本映射**：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](displaying-an-image-images/templateimage01.png "The Render Mode set to Template Image")](displaying-an-image-images/templateimage01.png#lightbox)
+[![呈現模式設定為範本影像](displaying-an-image-images/templateimage01.png)](displaying-an-image-images/templateimage01.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](displaying-an-image-images/templateimage01vs.png "The Render Mode set to Template")](displaying-an-image-images/templateimage01vs.png#lightbox)
+[![呈現模式設定為範本](displaying-an-image-images/templateimage01vs.png)](displaying-an-image-images/templateimage01vs.png#lightbox)
 
 -----
 
 從 iOS 設計工具中，將影像資產指派給 UI 控制項，然後設定**色調**以著色影像：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](displaying-an-image-images/templateimage03.png "Set the Tint to colorize the image")](displaying-an-image-images/templateimage03.png#lightbox)
+[![設定色調以著色影像](displaying-an-image-images/templateimage03.png)](displaying-an-image-images/templateimage03.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](displaying-an-image-images/templateimage03vs.png "Set the Tint to colorize the image")](displaying-an-image-images/templateimage03vs.png#lightbox)
+[![設定色調以著色影像](displaying-an-image-images/templateimage03vs.png)](displaying-an-image-images/templateimage03vs.png#lightbox)
 
 -----
 
@@ -155,59 +155,59 @@ if (MyIcon.Image != null) {
 }
 ```
 
-因為 `UIImage` 的 `RenderMode` 屬性是唯讀的，所以請使用 `ImageWithRenderingMode` 方法，以所需的呈現模式設定來建立影像的新實例。
+因為的 `RenderMode` 屬性 `UIImage` 是唯讀的，所以請使用 `ImageWithRenderingMode` 方法，以所需的呈現模式設定來建立影像的新實例。
 
-有三個可能的設定可透過 `UIImageRenderingMode` 列舉進行 `UIImage.RenderMode`：
+透過列舉有三個可能的設定 `UIImage.RenderMode` `UIImageRenderingMode` ：
 
 - `AlwaysOriginal`-強制影像轉譯為原始來源影像檔案，而不進行任何變更。
-- `AlwaysTemplate`-藉由上色具有指定 `Tint` 色彩的圖元，強制將影像轉譯為範本映射。
-- `Automatic`-將影像轉譯為範本，或根據其使用所在的環境以原始形式呈現。 例如，如果影像用於 `UIToolBar`中，`UINavigationBar``UITabBar` 或 `UISegmentControl` 會被視為範本。
+- `AlwaysTemplate`-藉由使用指定的色彩上色圖元，強制將影像轉譯為範本映射 `Tint` 。
+- `Automatic`-會將影像轉譯為範本，或根據所用的環境，以原始形式呈現。 例如，如果在、或中使用影像， `UIToolBar` `UINavigationBar` `UITabBar` `UISegmentControl` 則會將它視為範本。
 
 ## <a name="adding-new-assets-collections"></a>加入新的資產集合
 
-使用資產目錄中的影像時，有時可能需要新的集合，而不是將所有應用程式的影像新增至 `Assets.xcassets` 集合。 例如，在設計隨選資源時。
+使用資產目錄中的影像時，有時可能需要新的集合，而不是將所有應用程式的映射新增至 `Assets.xcassets` 集合。 例如，在設計隨選資源時。
 
 若要將新的資產目錄新增至專案：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 以滑鼠右鍵按一下 **方案總管**中的**專案名稱**，然後**選取** **新增 > 新檔案 ...**
-2. 選取 [ **iOS** > **資產目錄**]，輸入集合的**名稱**，然後按一下 [**新增**] 按鈕：
+1. 以滑鼠右鍵按一下**方案總管**中的**專案名稱**，然後選取 [**加入**  >  **新檔案 ...** ]。
+2. 選取 [ **iOS**  >  **資產目錄**]，輸入集合的**名稱**，然後按一下 [**新增**] 按鈕：
 
-    ![](displaying-an-image-images/asset01.png "Creating a new Asset Catalog")
+    ![建立新的資產目錄](displaying-an-image-images/asset01.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在 方案總管中，以滑鼠右鍵按一下 **資產目錄** 資料夾，然後選取 **新增 > 新資產目錄**。
+1. 在 [方案總管中，以滑鼠右鍵按一下 [**資產目錄**] 資料夾，然後選取 [**新增 > 新資產目錄**]。
 2. 為其命名，然後按一下 [**新增**]：
 
-    ![](displaying-an-image-images/asset1.png "Creating a new Asset Catalog")
+    ![建立新的資產目錄](displaying-an-image-images/asset1.png)
 
 -----
 
-從這裡開始，可以使用與專案中自動包含的預設 `Assets.xcassets` 集合相同的方式來處理集合。
+從這裡開始，可以使用與專案中自動包含的預設集合相同的方式來處理集合 `Assets.xcassets` 。
 
 ## <a name="using-images-with-controls"></a>使用影像搭配控制項
 
-除了使用影像來支援應用程式，iOS 也會使用影像與應用程式控制類型，例如索引標籤列、工具列、導覽列、表格和按鈕。 讓影像出現在控制項上的簡單方式，就是將 `UIImage` 實例指派給控制項的 `Image` 屬性。
+除了使用影像來支援應用程式，iOS 也會使用影像與應用程式控制類型，例如索引標籤列、工具列、導覽列、表格和按鈕。 讓影像出現在控制項上的簡單方式，就是將實例指派 `UIImage` 給控制項的 `Image` 屬性。
 
 ### <a name="frombundle"></a>FromBundle
 
-`FromBundle` 方法呼叫是一種同步（封鎖）呼叫，其中包含許多內建的影像載入和管理功能，例如快取支援和自動處理各種解析度的影像檔案。
+`FromBundle`方法呼叫是一種同步（封鎖）呼叫，其中包含數個內建的影像載入和管理功能，例如快取支援和自動處理各種解析度的影像檔案。
 
-下列範例顯示如何在 `UITabBar`上設定 `UITabBarItem` 的影像：
-
-```csharp
-TabBarItem.Image = UIImage.FromBundle ("MyImage");
-```
-
-假設 `MyImage` 是新增至上述資產目錄的影像資產名稱。 當工作資產目錄映射時，只需針對**PNG**格式的影像，在 `FromBundle` 方法中指定映射集的名稱：
+下列範例顯示如何在上設定的影像 `UITabBarItem` `UITabBar` ：
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
 ```
 
-針對任何其他影像格式，請包含名稱為的延伸模組。 例如:
+假設 `MyImage` 是已新增至上述資產目錄的影像資產名稱。 當工作資產目錄映射時，只需在 `FromBundle` 適用于**PNG**格式影像的方法中指定映射集的名稱：
+
+```csharp
+TabBarItem.Image = UIImage.FromBundle ("MyImage");
+```
+
+針對任何其他影像格式，請包含名稱為的延伸模組。 例如：
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
@@ -217,51 +217,51 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>在分鏡腳本中顯示影像
 
-一旦使用資產目錄將映射新增至 Xamarin iOS 專案，就可以使用 iOS 設計工具中的 `UIImageView`，輕鬆地在分鏡腳本上顯示。 例如，如果已新增下列影像資產：
+一旦使用資產目錄將映射新增至 Xamarin iOS 專案，就可以在 iOS 設計工具中使用，輕鬆地在分鏡腳本上顯示 `UIImageView` 。 例如，如果已新增下列影像資產：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-![](displaying-an-image-images/display01.png "A sample Image Asset has been added")
+![已新增範例影像資產](displaying-an-image-images/display01.png)
 
 執行下列動作，以將它顯示在分鏡腳本上：
 
-1. 按兩下**方案總管**中的 `Main.storyboard` 檔案，在 iOS 設計工具中開啟它進行編輯。
+1. 按兩下 `Main.storyboard` [**方案總管**中的檔案，在 iOS 設計工具中開啟檔案進行編輯。
 2. 從 [**工具箱**] 中選取**影像視圖**：
 
-     ![](displaying-an-image-images/display02.png "Select an Image View from the Toolbox")
+     ![從 [工具箱] 選取影像視圖](displaying-an-image-images/display02.png)
 3. 將 [影像視圖] 拖曳至設計介面上，並視需要調整其位置和大小：
 
-    ![](displaying-an-image-images/display03.png "A new Image View on the Design Surface")
+    ![Design Surface 上的新影像視圖](displaying-an-image-images/display03.png)
 4. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 區段中，選取要顯示的所需**影像**資產：
 
-    ![](displaying-an-image-images/display04.png "Select the desired Image asset to be displayed")
+    ![選取要顯示的所需影像資產](displaying-an-image-images/display04.png)
 5. 在 [ **View** ] 區段中，使用**模式**來控制影像**視圖**調整大小時影像大小的調整方式。
 6. 選取**影像視圖**後，再次按一下以新增**條件約束**：
 
-    ![](displaying-an-image-images/display05.png "Adding Constraints")
+    ![加入條件約束](displaying-an-image-images/display05.png)
 7. 將**影像視圖**的每個邊緣上的 "T" 形狀控點拖曳至畫面的對應側邊，以將影像「釘選」到側邊。 如此一來，當畫面調整大小時，**影像視圖**就會縮小並成長。
 8. 將變更儲存至分鏡腳本。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![](displaying-an-image-images/display01vs.png "A sample Image Asset has been added")
+![已新增範例影像資產](displaying-an-image-images/display01vs.png)
 
 執行下列動作，以將它顯示在分鏡腳本上：
 
-1. 按兩下**方案總管**中的 `Main.storyboard` 檔案，在 iOS 設計工具中開啟它進行編輯。
+1. 按兩下 `Main.storyboard` [**方案總管**中的檔案，在 iOS 設計工具中開啟檔案進行編輯。
 2. 從 [**工具箱**] 中選取**影像視圖**：
 
-     ![](displaying-an-image-images/display02vs.png "Select an Image View from the Toolbox")
+     ![從 [工具箱] 選取影像視圖](displaying-an-image-images/display02vs.png)
 3. 將 [影像視圖] 拖曳至設計介面上，並視需要調整其位置和大小：
 
-    ![](displaying-an-image-images/display03vs.png "A new Image View on the Design Surface")
+    ![Design Surface 上的新影像視圖](displaying-an-image-images/display03vs.png)
 4. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 區段中，選取要顯示的所需**影像**資產：
 
-    ![](displaying-an-image-images/display04vs.png "Select the desired Image asset to be displayed")
+    ![選取要顯示的所需影像資產](displaying-an-image-images/display04vs.png)
 5. 在 [ **View** ] 區段中，使用**模式**來控制影像**視圖**調整大小時影像大小的調整方式。
 6. 選取**影像視圖**後，再次按一下以新增**條件約束**：
 
-    ![](displaying-an-image-images/display05vs.png "Adding Constraints")
+    ![加入條件約束](displaying-an-image-images/display05vs.png)
 7. 將**影像視圖**的每個邊緣上的 "T" 形狀控點拖曳至畫面的對應側邊，以將影像「釘選」到側邊。 如此一來，當畫面調整大小時，**影像視圖**就會縮小並成長。
 8. 將變更儲存至分鏡腳本。
 
@@ -269,9 +269,9 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 ## <a name="displaying-an-image-in-code"></a>在程式碼中顯示影像
 
-就像在分鏡腳本中顯示影像一樣，一旦使用資產目錄將影像新增至 Xamarin iOS 專案，就可以使用C#程式碼輕鬆地顯示映射。
+就像在分鏡腳本中顯示影像一樣，一旦使用資產目錄將影像新增至 Xamarin iOS 專案，就可以使用 c # 程式碼輕鬆地顯示映射。
 
-請使用以下範例：
+以下列範例為例：
 
 ```csharp
 // Create an image view that will fill the
@@ -285,7 +285,7 @@ imageView.Image = UIImage.FromBundle ("Kemah");
 View.AddSubview (imageView);
 ```
 
-此程式碼會建立新的 `UIImageView`，並為其提供初始大小和位置。 然後，它會從新增至專案的影像資產載入影像，並將 `UIImageView` 新增至父 `UIView` 以顯示它。
+這段程式碼會建立新的 `UIImageView` ，並為它提供初始大小和位置。 然後，它會從新增至專案的影像資產載入影像，並將 `UIImageView` 其新增至父代 `UIView` 以顯示它。
 
 ## <a name="related-links"></a>相關連結
 

@@ -6,18 +6,18 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c8f55dd2d300da80a57c06f15cf185558cfc5e41
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c74c4bedc040ef8f01222b12ee3e6cb99bf5355a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015049"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938901"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>將繫結移轉至 Unified API
 
 _本文涵蓋更新現有 Xamarin 系結專案所需的步驟，以支援 Xamarin. IOS 和 Xamarin 應用程式的整合 Api。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 從2015年2月1日開始，對 iTunes 和 Mac App Store 的所有新提交都必須是64位應用程式。 因此，任何新的 Xamarin 或 Xamarin 應用程式都必須使用新的 Unified API，而不是現有的傳統 MonoTouch 和 MonoMac Api，以支援64位。
 
@@ -36,7 +36,7 @@ Windows 電腦上的 Visual studio 不支援系結專案。
 
 統一的 Api 可讓您比以往更輕鬆地在 Mac 和 iOS 之間共用程式碼，並可讓您使用相同的二進位檔來支援32和64位應用程式。 藉由卸載命名空間中的_MonoMac_和_MonoTouch_前置詞，可在 Xamarin. Mac 和 xamarin iOS 應用程式專案中進行更簡單的共用。
 
-如此一來，我們將需要修改系結合約（以及系結專案中的其他 `.cs` 檔案），以從我們的 `using` 語句中移除_MonoMac_和_MonoTouch_首碼。
+因此，我們需要修改系結合約（以及系 `.cs` 結專案中的其他檔案），以從我們的語句中移除_MonoMac_和_MonoTouch_首碼 `using` 。
 
 例如，假設在系結合約中有下列 using 語句：
 
@@ -48,7 +48,7 @@ using MonoTouch.UIKit;
 using MonoTouch.ObjCRuntime;
 ```
 
-我們會去除 `MonoTouch` 前置詞，產生下列結果：
+我們會去除前置詞， `MonoTouch` 產生下列結果：
 
 ```csharp
 using System;
@@ -58,61 +58,61 @@ using UIKit;
 using ObjCRuntime;
 ```
 
-同樣地，我們必須針對系結專案中的任何 `.cs` 檔案執行此動作。 進行這項變更後，下一個步驟是更新系結專案，以使用新的原生資料類型。
+同樣地，我們必須針對系結專案中的任何檔案執行此動作 `.cs` 。 進行這項變更後，下一個步驟是更新系結專案，以使用新的原生資料類型。
 
 如需 Unified API 的詳細資訊，請參閱[Unified API](~/cross-platform/macios/unified/index.md)檔。 如需支援32和64位應用程式的背景，以及架構的相關資訊，請參閱[32 和64位平臺考慮](~/cross-platform/macios/32-and-64/index.md)檔。
 
 ## <a name="update-to-native-data-types"></a>原生資料類型的更新
 
-Objective-C maps the `NSInteger` data type to `int32_t` on 32 bit systems and to `int64_t` on 64 bit systems. To match this behavior, the new Unified API replaces the previous uses of `int` (which in .NET is defined as always being `System.Int32`) to a new data type: `System.nint`.
+目標-C 會將 `NSInteger` 資料類型對應到 `int32_t` 32 位系統上的，以及 `int64_t` 64 位系統上的。 為了符合此行為，新的 Unified API 會將先前的使用 `int` （在 .net 中定義為 always as `System.Int32` ）取代為新的資料類型： `System.nint` 。
 
-Along with the new `nint` data type, the Unified API introduces the `nuint` and `nfloat` types, for mapping to the `NSUInteger` and `CGFloat` types as well.
+除了新的 `nint` 資料類型之外，Unified API `nuint` 也引進和 `nfloat` 類型，以便對應至 `NSUInteger` 和 `CGFloat` 類型。
 
-Given the above, we need to review our API and ensure that any instance of `NSInteger`, `NSUInteger` and `CGFloat` that we previously mapped to `int`, `uint` and `float` get updated to the new `nint`, `nuint` and `nfloat` types.
+在上述情況下，我們需要檢查我們的 API，並確定的任何實例 `NSInteger` ， `NSUInteger` 以及 `CGFloat` 我們先前已對應至 `int` ，並將其 `uint` `float` 更新為新的 `nint` 、 `nuint` 和 `nfloat` 類型。
 
-For example, given an Objective-C method definition of:
+例如，假設有個的目標-C 方法定義：
 
 ```csharp
 -(NSInteger) add:(NSInteger)operandUn and:(NSInteger) operandDeux;
 ```
 
-If the previous binding contract had the following definition:
+如果先前的系結合約具有下列定義：
 
 ```csharp
 [Export("add:and:")]
 int Add(int operandUn, int operandDeux);
 ```
 
-We would update the new binding to be:
+我們會更新新的系結，如下所示：
 
 ```csharp
 [Export("add:and:")]
 nint Add(nint operandUn, nint operandDeux);
 ```
 
-If we are mapping to a newer version 3rd party library than what we had initially linked to, we need to review the `.h` header files for the library and see if any exiting, explicit calls to `int`, `int32_t`, `unsigned int`, `uint32_t` or `float` have been upgraded to be an `NSInteger`, `NSUInteger` or a `CGFloat`. If so, the same modifications to the `nint`, `nuint` and `nfloat` types will need to be made to their mappings as well.
+如果我們對應的是較新的協力廠商程式庫，而不是我們最初連結的版本，則我們需要檢查連結 `.h` 庫的標頭檔，並查看是否已將 `int` 、 `int32_t` 、或的任何外顯呼叫 `unsigned int` `uint32_t` `float` 升級為 `NSInteger` ， `NSUInteger` 或 `CGFloat` 。 若是如此，也 `nint` 必須對、 `nuint` 和 `nfloat` 類型進行相同的修改。
 
-To learn more about these data type changes, see the [Native Types](~/cross-platform/macios/nativetypes.md) document.
+若要深入瞭解這些資料類型的變更，請參閱[原生類型](~/cross-platform/macios/nativetypes.md)檔。
 
-## <a name="update-the-coregraphics-types"></a>Update the CoreGraphics Types
+## <a name="update-the-coregraphics-types"></a>更新 CoreGraphics 類型
 
-The point, size and rectangle data types that are used with `CoreGraphics` use 32 or 64 bits depending on the device they are running on. When Xamarin originally bound the iOS and Mac APIs we used existing data structures that happened to match the data types in `System.Drawing` (`RectangleF` for example).
+使用32或64位時所使用的點、大小和矩形資料類型， `CoreGraphics` 取決於其執行所在的裝置。 當 Xamarin 最初系結 iOS 和 Mac Api 時，我們使用了現有的資料結構來符合中的資料類型 `System.Drawing` （例如 `RectangleF` ）。
 
-Because of the requirements to support 64 bits and the new native data types, the following adjustments will need to be made to existing code when calling `CoreGraphic` methods:
+由於支援64位和新原生資料類型的需求，在呼叫方法時，必須對現有的程式碼進行下列調整 `CoreGraphic` ：
 
-- **CGRect** - Use `CGRect` instead of `RectangleF` when defining floating point rectangular regions.
-- **CGSize** - Use `CGSize` instead of `SizeF` when defining floating point sizes (width and height).
-- **CGPoint** - Use `CGPoint` instead of `PointF` when defining a floating point location (X and Y coordinates).
+- **Rectanglef** - `CGRect` `RectangleF` 在定義浮點矩形區域時，使用而不是。
+- **CGSize** - `CGSize` `SizeF` 在定義浮點大小（寬度和高度）時使用，而不是。
+- **CGPoint** - `CGPoint` `PointF` 在定義浮點位置（X 和 Y 座標）時使用，而不是。
 
-Given the above, we will need to review our API and ensure that any instance of `CGRect`, `CGSize` or `CGPoint` that was previously bound to `RectangleF`, `SizeF` or `PointF` be changed to the native type `CGRect`, `CGSize` or `CGPoint` directly.
+在上述情況下，我們將需要檢查我們的 API，並確定任何實例 `CGRect` （ `CGSize` 或 `CGPoint` 先前已系結至原生類型，或已直接系結或）已系結或 `RectangleF` `SizeF` `PointF` 變更為原生類型 `CGRect` `CGSize` `CGPoint` 。
 
-For example, given an Objective-C initializer of:
+例如，假設指定了的目標-C 初始化運算式：
 
 ```csharp
 - (id)initWithFrame:(CGRect)frame;
 ```
 
-If our previous binding included the following code:
+如果先前的系結包含下列程式碼：
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -120,7 +120,7 @@ IntPtr Constructor (RectangleF frame);
 
 ```
 
-We would update that code to:
+我們會將該程式碼更新為：
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -128,17 +128,17 @@ IntPtr Constructor (CGRect frame);
 
 ```
 
-With all of the code changes now in place, we need to modify our binding project or make file to bind against the Unified APIs.
+現在所有的程式碼變更都已就緒，我們需要修改系結專案，或將檔案設為系結至統一的 Api。
 
-## <a name="modify-the-binding-project"></a>Modify the Binding Project
+## <a name="modify-the-binding-project"></a>修改系結專案
 
-As the final step to updating our binding project to use the Unified APIs, we need to either modify the `MakeFile` that we use to build the project or the Xamarin Project Type (if we are binding from within Visual Studio for Mac) and instruct _btouch_ to bind against the Unified APIs instead of the Classic ones.
+在更新系結專案以使用整合 Api 的最後一個步驟中，我們需要修改 `MakeFile` 用來建立專案或 Xamarin 專案類型的（如果是從 Visual Studio for Mac 內系結），並指示_btouch_系結至統一的 api，而不是傳統的 api。
 
-### <a name="updating-a-makefile"></a>Updating a MakeFile
+### <a name="updating-a-makefile"></a>更新 MakeFile
 
-If we are using a makefile to build our binding project into a Xamarin .DLL, we will need to include the `--new-style` command line option and call `btouch-native` instead of `btouch`.
+如果我們使用 makefile 將系結專案建立成 Xamarin。DLL，我們必須包含 `--new-style` 命令列選項並呼叫， `btouch-native` 而不是 `btouch` 。
 
-So given the following `MakeFile`:
+因此，請考慮下列 `MakeFile` 事項：
 
 <!--markdownlint-disable MD010 -->
 ```makefile
@@ -174,13 +174,13 @@ clean:
 ```
 <!--markdownlint-enable MD010 -->
 
-We need to switch from calling `btouch` to `btouch-native`, so we would adjust our macro definition as follows:
+我們需要從呼叫切換 `btouch` 到 `btouch-native` ，所以我們會調整巨集定義，如下所示：
 
 ```makefile
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch-native
 ```
 
-We would update the call to `btouch` and add the `--new-style` option as follows:
+我們會更新對的呼叫 `btouch` ，並新增 `--new-style` 選項，如下所示：
 
 <!--markdownlint-disable MD010 -->
 ```makefile
@@ -189,35 +189,35 @@ XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMB
 ```
 <!--markdownlint-enable MD010 -->
 
-We can now execute our `MakeFile` as normal to build the new 64 bit version of our API.
+我們現在可以照常執行 `MakeFile` ，以建立 API 的新64位版本。
 
-### <a name="updating-a-binding-project-type"></a>Updating a Binding Project Type
+### <a name="updating-a-binding-project-type"></a>更新系結專案類型
 
-If we are using a Visual Studio for Mac Binding Project Template to build our API, we'll need to update to the new Unified API version of the Binding Project Template. The easiest way to do this is to start a new Unified API Binding Project and copy over all of the existing code and settings.
+如果我們使用 Visual Studio for Mac 系結專案範本來建立我們的 API，則必須更新為新的 Unified API 版本的系結專案範本。 若要這麼做，最簡單的方法就是啟動新的 Unified API 系結專案，並複製所有現有的程式碼和設定。
 
-請執行下列動作：
+執行下列動作：
 
-1. Start Visual Studio for Mac.
-2. Select **File** > **New** > **Solution...**
-3. In the New Solution Dialog Box, select **iOS** > **Unified API** > **iOS Binding Project**: 
+1. 啟動 Visual Studio for Mac。
+2. 選取 **[** 檔案] [  >  **新增**  >  **方案**...]
+3. 在 [新增解決方案] 對話方塊中，選取 [ **ios**  >  **Unified API**  >  **ios**系結專案]： 
 
-    [![](update-binding-images/image01new.png "In the New Solution Dialog Box, select iOS / Unified API / iOS Binding Project")](update-binding-images/image01new.png#lightbox)
-4. On 'Configure your new project' dialog enter a **Name** for the new binding project and click the **OK** button.
-5. Include the 64 bit version of Objective-C library that you are going to be creating bindings for.
-6. Copy over the source code from your existing 32 bit Classic API binding project (such as the `ApiDefinition.cs` and `StructsAndEnums.cs` files).
-7. Make the above noted changes to the source code files.
+    [![在 [新增解決方案] 對話方塊中，選取 [iOS/Unified API/iOS 系結專案]](update-binding-images/image01new.png)](update-binding-images/image01new.png#lightbox)
+4. 在 [設定您的新專案] 對話方塊中，輸入新系結專案的**名稱**，然後按一下 [**確定]** 按鈕。
+5. 包含您要為其建立系結的64位版本的目標-C 程式庫。
+6. 將原始程式碼從現有的32位複製 Classic API 系結專案（例如 `ApiDefinition.cs` 和檔案 `StructsAndEnums.cs` ）。
+7. 對原始程式碼檔案進行上述已記錄的變更。
 
-With all of these changes in place, you can build the new 64 bit version of the API as you would the 32 bit version.
+當所有這些變更都備妥之後，您就可以建立新的64位版本的 API，就像是32位版本一樣。
 
 ## <a name="summary"></a>總結
 
-In this article we have shown the changes that need to be made to an existing Xamarin Binding Project to support the new Unified APIs and 64 bit devices and the steps required to build the new 64 bit compatible version of an API.
+在本文中，我們示範了需要對現有的 Xamarin 系結專案所做的變更，以支援新的統一 Api 和64位裝置，以及建立新的64位相容版本的 API 所需的步驟。
 
 ## <a name="related-links"></a>相關連結
 
-- [Mac and iOS](~/cross-platform/macios/index.md)
+- [Mac 和 iOS](~/cross-platform/macios/index.md)
 - [Unified API](~/cross-platform/macios/nativetypes.md)
-- [32/64 bit Platform Considerations](~/cross-platform/macios/32-and-64/index.md)
-- [Upgrading Existing iOS Apps](~/cross-platform/macios/unified/updating-ios-apps.md)
+- [32/64 位平臺考慮](~/cross-platform/macios/32-and-64/index.md)
+- [升級現有的 iOS 應用程式](~/cross-platform/macios/unified/updating-ios-apps.md)
 - [Unified API](~/cross-platform/macios/unified/index.md)
 - [BindingSample](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)

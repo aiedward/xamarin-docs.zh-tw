@@ -10,16 +10,16 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0ed11ccacec73dd3c5c220c41bffd090af6c5b27
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d1aead9297312e190a5a04ee0f33328d81f2547a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139382"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939954"
 ---
 # <a name="creating-an-effect"></a>建立效果
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
 
 _效果會簡化控制項的自訂。本文示範如何在控制項取得焦點時，建立變更 Entry 控制項背景色彩的效果。_
 
@@ -38,12 +38,12 @@ _效果會簡化控制項的自訂。本文示範如何在控制項取得焦點�
 
 範例應用程式示範 `FocusEffect`，在控制項獲得焦點時變更控制項的背景色彩。 下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
 
-![](creating-images/focus-effect.png "Focus Effect Project Responsibilities")
+![焦點效果專案責任](creating-images/focus-effect.png)
 
 [`Entry`](xref:Xamarin.Forms.Entry)上的控制項 `HomePage` 是由 `FocusEffect` 每個平臺特定專案中的類別自訂的。 每個 `FocusEffect` 類別都衍生自每個平台的 `PlatformEffect` 類別。 這會導致以平台特定背景色彩轉譯 `Entry` 控制項，在控制項取得焦點時變更，如下列螢幕擷取畫面所示：
 
-![](creating-images/screenshots-1.png "Focus Effect on each Platform")
-![](creating-images/screenshots-2.png "Focus Effect on each Platform")
+![每個平台上的焦點效果](creating-images/screenshots-1.png)
+![每個平台上的焦點效果](creating-images/screenshots-2.png)
 
 ## <a name="creating-the-effect-on-each-platform"></a>在每個平台上建立效果
 
@@ -265,7 +265,7 @@ public HomePageCS ()
 
 [`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String)) [`Effect`](xref:Xamarin.Forms.Effect) 會傳回指定名稱的，這是解析組名的串連（使用 [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 效果類別上的屬性指定），以及使用 [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 效果類別上的屬性指定的唯一識別碼。 如果某個平台不提供效果，則 `Effect.Resolve` 方法會傳回非 `null` 值。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何 [`Entry`](xref:Xamarin.Forms.Entry) 在控制項取得焦點時，建立變更控制項背景色彩的效果。
 

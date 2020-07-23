@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: b357a6e1531c8f587c8fc0f86e2b56d6fecc2923
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: bbb0dfbc9a6bf1396c8d517cc2c3289e2857a836
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488318"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938394"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>逐步解說-Xamarin 中的背景位置
 
@@ -22,7 +22,7 @@ ms.locfileid: "75488318"
 
 ## <a name="application-set-up"></a>應用程式設定
 
-1. 首先，建立新的**iOS > 應用程式 > 單一視圖應用C#程式（）** 。 呼叫 [_位置_]，並確定已選取 [iPad] 和 [iPhone]。
+1. 首先，建立新的**iOS > 應用程式 > 單一視圖應用程式（c #）**。 呼叫 [_位置_]，並確定已選取 [iPad] 和 [iPhone]。
 
 1. 位置應用程式會在 iOS 中限定為背景必要的應用程式。 藉由編輯專案的**plist**檔案，將應用程式註冊為位置應用程式。
 
@@ -30,7 +30,7 @@ ms.locfileid: "75488318"
 
     在 Visual Studio for Mac 中，它看起來會像這樣：
 
-    [![](location-walkthrough-images/image7.png "Place a check by both the Enable Background Modes and the Location Updates checkboxes")](location-walkthrough-images/image7.png#lightbox)
+    [![勾選 [啟用背景模式] 和 [位置更新] 核取方塊](location-walkthrough-images/image7.png)](location-walkthrough-images/image7.png#lightbox)
 
     在 Visual Studio 中，您必須新增下列索引鍵/值組來手動更新**plist** ：
 
@@ -41,9 +41,9 @@ ms.locfileid: "75488318"
     </array>
     ```
 
-1. 現在已註冊應用程式，它可以從裝置取得位置資料。 在 iOS 中，`CLLocationManager` 類別是用來存取位置資訊，而且可以引發提供位置更新的事件。
+1. 現在已註冊應用程式，它可以從裝置取得位置資料。 在 iOS 中， `CLLocationManager` 類別是用來存取位置資訊，而且可以引發提供位置更新的事件。
 
-1. 在程式碼中，建立稱為 `LocationManager` 的新類別，為各種螢幕和程式碼提供單一位置來訂閱位置更新。 在 `LocationManager` 類別中，建立名為 `LocMgr`的 `CLLocationManager` 實例：
+1. 在程式碼中，建立名 `LocationManager` 為的新類別，針對各種畫面和程式碼提供單一位置來訂閱位置更新。 在 `LocationManager` 類別中，建立名為的實例 `CLLocationManager` `LocMgr` ：
 
     ```csharp
     public class LocationManager
@@ -73,18 +73,18 @@ ms.locfileid: "75488318"
 
     上述程式碼會在[CLLocationManager](xref:CoreLocation.CLLocationManager)類別上設定一些屬性和許可權：
 
-    - `PausesLocationUpdatesAutomatically` –這是布林值，可以根據系統是否允許暫停位置更新來設定。 在某些裝置上，它會預設為 `true`，這可能會導致裝置在大約15分鐘後停止取得背景位置更新。
-    - `RequestAlwaysAuthorization`-您應該傳遞這個方法，為應用程式使用者提供允許在背景存取位置的選項。 如果您想要讓使用者選擇只在應用程式在前景時才存取位置，也可以傳遞 `RequestWhenInUseAuthorization`。
-    - `AllowsBackgroundLocationUpdates` –這是在 iOS 9 中引進的布林值屬性，可設定為允許應用程式在暫停時接收位置更新。
+    - `PausesLocationUpdatesAutomatically`–這是布林值，可以根據系統是否允許暫停位置更新來設定。 在某些裝置上，它會預設為 `true` ，這可能會導致裝置在大約15分鐘後停止取得背景位置更新。
+    - `RequestAlwaysAuthorization`-您應該傳遞這個方法，為應用程式使用者提供允許在背景存取位置的選項。 `RequestWhenInUseAuthorization`如果您想要讓使用者選擇只在應用程式位於前景時才允許存取位置，也可以傳遞。
+    - `AllowsBackgroundLocationUpdates`–這是在 iOS 9 中引進的布林值屬性，可設定為允許應用程式在暫停時接收位置更新。
 
     > [!IMPORTANT]
     > iOS 8 （和更新版本）也需要**plist**檔案中的專案，以在授權要求中顯示使用者。
 
-1. 針對應用程式所需的許可權類型（`NSLocationAlwaysUsageDescription`、`NSLocationWhenInUseUsageDescription`和/或 `NSLocationAlwaysAndWhenInUseUsageDescription`）新增**plist**金鑰，其中包含會向使用者顯示的字串，該警示會要求位置資料存取。
+1. 為應用程式所需的許可權類型新增**plist**金鑰– `NSLocationAlwaysUsageDescription` 、 `NSLocationWhenInUseUsageDescription` 和/或 `NSLocationAlwaysAndWhenInUseUsageDescription` –使用會對要求位置資料存取的警示中的使用者顯示的字串。
 
-1. iOS 9 會在使用 `AllowsBackgroundLocationUpdates` 資訊時要求 **。 plist**包含具有值 `location`的索引鍵 `UIBackgroundModes`。 如果您已完成本逐步解說的步驟2，這應該已經在您的 plist 檔案中。
+1. iOS 9 會在使用資訊時要求 `AllowsBackgroundLocationUpdates` **。 plist**包含 `UIBackgroundModes` 具有值的索引鍵 `location` 。 如果您已完成本逐步解說的步驟2，這應該已經在您的 plist 檔案中。
 
-1. 在 `LocationManager` 類別中，使用下列程式碼建立名為 `StartLocationUpdates` 的方法。 此程式碼示範如何從 `CLLocationManager`開始接收位置更新：
+1. 在 `LocationManager` 類別內，使用下列程式碼建立名為的方法 `StartLocationUpdates` 。 這段程式碼示範如何從開始接收位置更新 `CLLocationManager` ：
 
     ```csharp
     if (CLLocationManager.LocationServicesEnabled) {
@@ -99,20 +99,20 @@ ms.locfileid: "75488318"
     }
     ```
 
-    在此方法中，有幾個重要的事會發生。 首先，我們會執行檢查，確認應用程式是否能夠存取裝置上的位置資料。 我們會藉由呼叫 `CLLocationManager`上的 `LocationServicesEnabled` 來確認這一點。 如果使用者拒絕了存取位置資訊的應用程式，這個方法就會傳回**false** 。
+    在此方法中，有幾個重要的事會發生。 首先，我們會執行檢查，確認應用程式是否能夠存取裝置上的位置資料。 我們藉由在上呼叫來驗證這一點 `LocationServicesEnabled` `CLLocationManager` 。 如果使用者拒絕了存取位置資訊的應用程式，這個方法就會傳回**false** 。
 
-1. 接下來，告訴位置管理員要更新的頻率。 `CLLocationManager` 提供許多選項來篩選和設定位置資料，包括更新的頻率。 在此範例中，請將 `DesiredAccuracy` 設定為在每次由計量變更時進行更新。 如需設定位置更新頻率和其他喜好設定的詳細資訊，請參閱 Apple 檔中的[CLLocationManager 類別參考](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)。
+1. 接下來，告訴位置管理員要更新的頻率。 `CLLocationManager`提供許多用於篩選和設定位置資料的選項，包括更新的頻率。 在此範例中，請將設定 `DesiredAccuracy` 為在每次由計量變更時進行更新。 如需設定位置更新頻率和其他喜好設定的詳細資訊，請參閱 Apple 檔中的[CLLocationManager 類別參考](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)。
 
-1. 最後，在 `CLLocationManager` 實例上呼叫 `StartUpdatingLocation`。 這會告訴位置管理員取得目前位置的初始修正，並開始傳送更新
+1. 最後， `StartUpdatingLocation` 在實例上呼叫 `CLLocationManager` 。 這會告訴位置管理員取得目前位置的初始修正，並開始傳送更新
 
-到目前為止，已建立位置管理員，並以我們想要接收的資料類型來設定，並決定了初始位置。 現在程式碼必須將位置資料轉譯為使用者介面。 我們可以使用接受 `CLLocation` 做為引數的自訂事件來執行此動作：
+到目前為止，已建立位置管理員，並以我們想要接收的資料類型來設定，並決定了初始位置。 現在程式碼必須將位置資料轉譯為使用者介面。 我們可以使用接受做為引數的自訂事件來執行此動作 `CLLocation` ：
 
 ```csharp
 // event for the location changing
 public event EventHandler<LocationUpdatedEventArgs>LocationUpdated = delegate { };
 ```
 
-下一個步驟是訂閱 `CLLocationManager`的位置更新，並在有新的位置資料可用時，引發自訂的 `LocationUpdated` 事件，並傳入位置做為引數。 若要這麼做，請建立新的類別**LocationUpdateEventArgs.cs**。 此程式碼可在主要應用程式中存取，並會在事件引發時傳回裝置位置：
+下一個步驟是從訂閱位置更新 `CLLocationManager` ，並在 `LocationUpdated` 有新的位置資料可用時引發自訂事件，並傳入位置做為引數。 若要這麼做，請建立新的類別**LocationUpdateEventArgs.cs**。 此程式碼可在主要應用程式中存取，並會在事件引發時傳回裝置位置：
 
 ```csharp
 public class LocationUpdatedEventArgs : EventArgs
@@ -139,9 +139,9 @@ public class LocationUpdatedEventArgs : EventArgs
 
     版面配置應如下所示：
 
-    ![](location-walkthrough-images/image8.png "An example UI layout in the iOS Designer")
+    ![IOS 設計工具中的範例 UI 版面配置](location-walkthrough-images/image8.png)
 
-1. 在 Solution Pad 中，按兩下 `ViewController.cs` 檔案並加以編輯，以建立 LocationManager 的新實例，並在其上呼叫 `StartLocationUpdates`。
+1. 在 [Solution Pad 中，按兩下檔案 `ViewController.cs` 並加以編輯，以建立 LocationManager 的新實例，並 `StartLocationUpdates` 在其上呼叫。
   變更程式碼，如下所示：
 
     ```csharp
@@ -166,7 +166,7 @@ public class LocationUpdatedEventArgs : EventArgs
 
     這會在應用程式啟動時啟動位置更新，但不會顯示任何資料。
 
-1. 現在已收到位置更新，請使用位置資訊更新畫面。 下列方法會從我們的 `LocationUpdated` 事件取得位置，並在 UI 中顯示：
+1. 現在已收到位置更新，請使用位置資訊更新畫面。 下列方法會取得事件的位置 `LocationUpdated` ，並將其顯示在 UI 中：
 
     ```csharp
     #region Public Methods
@@ -186,7 +186,7 @@ public class LocationUpdatedEventArgs : EventArgs
     #endregion
     ```
 
-我們仍然需要訂閱 AppDelegate 中的 `LocationUpdated` 事件，並呼叫新的方法來更新 UI。 在 `StartLocationUpdates` 呼叫之後，在 `ViewDidLoad,` 中新增下列程式碼：
+我們仍然需要 `LocationUpdated` 在我們的 AppDelegate 中訂閱事件，並呼叫新的方法來更新 UI。 在呼叫之後的右側新增下列程式碼 `ViewDidLoad,` `StartLocationUpdates` ：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -202,11 +202,11 @@ public override void ViewDidLoad ()
 
 現在，當應用程式執行時，它看起來應該像這樣：
 
-[![](location-walkthrough-images/image5.png "An example app run")](location-walkthrough-images/image5.png#lightbox)
+[![範例應用程式執行](location-walkthrough-images/image5.png)](location-walkthrough-images/image5.png#lightbox)
 
 ## <a name="handling-active-and-background-states"></a>處理現用和背景狀態
 
-1. 當應用程式處於前景和作用中狀態時，就會輸出位置更新。 若要示範當應用程式進入背景時所發生的狀況，請覆寫追蹤應用程式狀態變更的 `AppDelegate` 方法，讓應用程式在前景和背景之間轉換時，寫入主控台：
+1. 當應用程式處於前景和作用中狀態時，就會輸出位置更新。 若要示範當應用程式進入背景時所發生的狀況，請覆寫 `AppDelegate` 追蹤應用程式狀態變更的方法，讓應用程式在前景和背景之間轉換時寫入主控台：
 
     ```csharp
     public override void DidEnterBackground (UIApplication application)
@@ -220,7 +220,7 @@ public override void ViewDidLoad ()
     }
     ```
 
-    在 `LocationManager` 中新增下列程式碼，以持續將更新的位置資料列印至應用程式輸出，以確認位置資訊仍然可在背景中使用：
+    在中新增下列程式碼 `LocationManager` ，以持續將更新的位置資料列印至應用程式輸出，以確認位置資訊仍然可在背景中使用：
 
     ```csharp
     public class LocationManager
@@ -248,7 +248,7 @@ public override void ViewDidLoad ()
 
     當應用程式即將轉換成不同的應用程式狀態時，iOS 會提供通知給我們。 在此情況下，我們可以訂閱 `ObserveDidEnterBackground` 通知。
 
-    下列程式碼片段顯示如何使用通知，讓此視圖知道何時會停止 UI 更新。 這會進入 `ViewDidLoad`：
+    下列程式碼片段顯示如何使用通知，讓此視圖知道何時會停止 UI 更新。 這會進入 `ViewDidLoad` ：
 
     ```csharp
     UIApplication.Notifications.ObserveDidEnterBackground ((sender, args) => {
@@ -258,7 +258,7 @@ public override void ViewDidLoad ()
 
     當應用程式正在執行時，輸出看起來會像這樣：
 
-    ![](location-walkthrough-images/image6.png "Example of the location output in the console")
+    ![主控台中位置輸出的範例](location-walkthrough-images/image6.png)
 
 1. 應用程式會在前景中操作時，將位置更新列印至螢幕，並在背景操作時繼續將資料列印至應用程式輸出視窗。
 

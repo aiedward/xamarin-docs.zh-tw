@@ -10,12 +10,12 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3045db1248aa16529d4e43b9a8afc97377cfd9cb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9e5aeedb7dd51717a9bb987e90dffdcd9b514da0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128937"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937939"
 ---
 # <a name="android-platform-features"></a>Android 平台功能
 
@@ -68,11 +68,11 @@ Xamarin.FormsAndroid 專案現在會使用 `FormsAppCompatActivity` 做為其主
 
 以下是具有預設值的**Todo**範例 `FormsApplicationActivity` ：
 
-[![](images/before-appcompat-sml.png "Todo Sample Application Without AppCompat")](images/before-appcompat.png#lightbox "Todo Sample Application Without AppCompat")
+[![待辦事項範例應用程式但不 AppCompat](images/before-appcompat-sml.png)](images/before-appcompat.png#lightbox "待辦事項範例應用程式但不 AppCompat")
 
 在升級要使用的專案之後，這會是相同的程式碼 `FormsAppCompatActivity` （並新增其他主題資訊）：
 
-[![](images/post-appcompat-sml.png "Todo Sample Application With AppCompat and Theming")](images/post-appcompat.png#lightbox "Todo Sample Application With AppCompat and Theming")
+[![使用 AppCompat 和主題的待辦事項範例應用程式](images/post-appcompat-sml.png)](images/post-appcompat.png#lightbox "使用 AppCompat 和主題的待辦事項範例應用程式")
 
 > [!NOTE]
 > 使用時 `FormsAppCompatActivity` ，[某些 Android 自訂](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)轉譯器的基類將會不同。

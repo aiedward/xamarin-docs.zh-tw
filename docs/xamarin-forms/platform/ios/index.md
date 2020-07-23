@@ -10,12 +10,12 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1008eab6e56be7a235498e01ffd3ea1b27d2bbae
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f11100b6e13a3ace2ae3a56bcfc279294089d842
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130165"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939031"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>中的 iOS 平臺功能Xamarin.Forms
 
@@ -76,7 +76,7 @@ Xamarin.Forms可設定跨平臺使用者介面樣式和色彩-但還有其他選
 
 [深入](formatting.md)瞭解如何使用 IOS 特定 api （例如**plist**設定和 API）來格式化使用者介面 `UIAppearance` 。
 
-![](images/status-white-sml.png "iOS Theming")
+![iOS 主題](images/status-white-sml.png)
 
 ## <a name="other-ios-features"></a>其他 iOS 功能
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a31b0bcf3a61b5a1ea7e84f35131e6ceca1eef82
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f9f1b09c5cbd5660018e8e8d346aa1d25e51dab2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569877"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937380"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 分段的控制項
 
 分段的控制項會提供一組線性專案，每個元素都可以包含一個圖示或文字，並用來提供一組相關的選項給使用者。
 
-[![](segmented-controls-images/segment01.png "Sample segment controls")](segmented-controls-images/segment01.png#lightbox)
+[![範例區段控制項](segmented-controls-images/segment01.png)](segmented-controls-images/segment01.png#lightbox)
 
 Apple 具有下列使用分段控制項的建議：
 
@@ -59,15 +59,15 @@ Apple 會針對使用區段文字提供下列建議：
 1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳**區段控制項**並放在視圖上： 
 
-    [![](segmented-controls-images/segment02.png "A Segment Control")](segmented-controls-images/segment02.png#lightbox)
+    [![區段控制項](segmented-controls-images/segment02.png)](segmented-controls-images/segment02.png#lightbox)
 1. 在**屬性 Pad**的 [ **Widget]** 索引標籤中，您可以調整區段控制項的數個屬性，例如其**樣式**和**狀態**： 
 
-    [![](segmented-controls-images/segment03.png "The Widget Tab")](segmented-controls-images/segment03.png#lightbox)
+    [![[Widget] 索引標籤](segmented-controls-images/segment03.png)](segmented-controls-images/segment03.png#lightbox)
 1. 使用 [**區段**] 欄位可控制控制器中的區段數目。
 1. 從 [**區段] 下拉式清單**中選取指定的區段，以調整其個別屬性（例如**標題**或**影像**），以及控制是否要在顯示控制項時**啟用**或**選取**特定區段。
 1. 最後，將**名稱**指派給控制項，以便您可以在 c # 程式碼中對其進行回應。 例如： 
 
-    [![](segmented-controls-images/segment04.png "Assign a Name")](segmented-controls-images/segment04.png#lightbox)
+    [![指派名稱](segmented-controls-images/segment04.png)](segmented-controls-images/segment04.png#lightbox)
 1. 儲存您的變更。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -75,15 +75,15 @@ Apple 會針對使用區段文字提供下列建議：
 1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳**區段控制項**並放在視圖上： 
 
-    [![](segmented-controls-images/segment02-vs.png "A Segment Control")](segmented-controls-images/segment02-vs.png#lightbox)
+    [![區段控制項](segmented-controls-images/segment02-vs.png)](segmented-controls-images/segment02-vs.png#lightbox)
 1. 在 [**屬性瀏覽器**] 的 [ **Widget]** 索引標籤中，您可以調整區段控制項的數個屬性，例如其**樣式**和**狀態**： 
 
-    [![](segmented-controls-images/segment03-vs.png "The Widget Tab")](segmented-controls-images/segment03-vs.png#lightbox)
+    [![[Widget] 索引標籤](segmented-controls-images/segment03-vs.png)](segmented-controls-images/segment03-vs.png#lightbox)
 1. 使用 [**區段**] 欄位可控制控制器中的區段數目。
 1. 從 [**區段] 下拉式清單**中選取指定的區段，以調整其個別屬性（例如**標題**或**影像**），以及控制是否要在顯示控制項時**啟用**或**選取**特定區段。
 1. 最後，將**名稱**指派給控制項，以便您可以在 c # 程式碼中對其進行回應。 例如： 
 
-    [![](segmented-controls-images/segment04-vs.png "Assign a Name")](segmented-controls-images/segment04-vs.png#lightbox)
+    [![指派名稱](segmented-controls-images/segment04-vs.png)](segmented-controls-images/segment04-vs.png#lightbox)
 1. 儲存您的變更。
 
 -----
@@ -214,7 +214,7 @@ SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIContr
 
 和會 `UIBarMetrics` 指定要用來做為的計量：
 
-- Default
+- 預設
 - 精簡
 - DefaultPrompt
 - CompactPrompt

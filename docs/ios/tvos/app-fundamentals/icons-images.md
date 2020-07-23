@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 72c10d10e65194171479d66845d597e313281cdf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c0f016898a18ca38b04d752f2ae4f26e583bb7f2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573777"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937406"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>在 Xamarin 中使用 tvOS 圖示和影像
 
@@ -38,7 +38,7 @@ ms.locfileid: "84573777"
 
 啟動映射不是 ads 或藝術運算式的機會，它們只是為了讓您的應用程式快速啟動並可供使用的印象。
 
-|啟動影像大小|注意|
+|啟動影像大小|附註|
 |---|---|
 |1920x1080px<br>|僅限非多層的 .png 檔案|
 
@@ -57,13 +57,13 @@ Apple 會針對設計應用程式的啟動映射提供下列建議：
 
 1. 在 [**方案總管**中，按兩下 `Assets.xcassets` 以開啟它進行編輯： 
 
-    [![](icons-images-images/asset01.png "The Assets.xcassets file")](icons-images-images/asset01.png#lightbox)
+    [![Assets.xcassets 檔案](icons-images-images/asset01.png)](icons-images-images/asset01.png#lightbox)
 2. 在 [**資產編輯器**] 中，按一下 `LaunchImages` 資產： 
 
-    [![](icons-images-images/asset02.png "The LaunchImages asset")](icons-images-images/asset02.png#lightbox)
+    [![LaunchImages 資產](icons-images-images/asset02.png)](icons-images-images/asset02.png#lightbox)
 3. 按一下 [ **1X APPLE TV** ] 專案，然後選取 [啟動] 影像，或選擇性地從檔案系統中拖曳新的影像： 
 
-    [![](icons-images-images/asset03.png "Select a Launch Image")](icons-images-images/asset03.png#lightbox)
+    [![選取啟動映射](icons-images-images/asset03.png)](icons-images-images/asset03.png#lightbox)
 4. 儲存您的變更。
 
 <a name="Layered-Images"></a>
@@ -74,7 +74,7 @@ Apple TV 的新功能，分層影像會與視差效果搭配使用，以產生3D
 
 多層式映射包含兩個（2）到五（5）個不同的階層，並結合以形成完整的影像。 除了背景層之外，每個圖層都會使用其迭置順序和透明度來建立深度的幻影。 當使用者與分層影像互動時，較高的 Z 排序圖層會縮放並重迭，以建立此效果。
 
-[![](icons-images-images/layered01.png "Layered Images Z-ordered diagram")](icons-images-images/layered01.png#lightbox)
+[![分層影像 Z 排序圖表](icons-images-images/layered01.png)](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
 > 您的應用程式圖示需要分層影像，而且對於其他可[設定焦點的專案](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)（例如最上層的影像）而言是選擇性的。 不過，Apple 建議針對可在應用程式中取得焦點的任何影像使用分層影像。
@@ -96,7 +96,7 @@ Apple 會針對設計您的分層影像提供下列建議：
 
 請務必記得將_安全區域_框線包含在將組成分層影像的每一層中。 因為可以在視差效果期間調整和裁剪個別圖層，所以如果圖層的內容太接近圖層的邊緣，則可以將它們裁剪掉：
 
-[![](icons-images-images/layered02.png "35 pixel border")](icons-images-images/layered02.png#lightbox)
+[![35圖元框線](icons-images-images/layered02.png)](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images"></a>
 
@@ -115,7 +115,7 @@ tvOS 適用于下列格式的多層式映射：
 
 Apple 已建立[視差](https://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg)預覽程式來預覽並建立應用程式圖示和選擇性可設定焦點專案所需的多層式映射。 預覽程式會顯示形成已完成分層影像的每個圖層：
 
-[![](icons-images-images/layered03.png "The Parallax Previewer")](icons-images-images/layered03.png#lightbox)
+[![視差預覽器](icons-images-images/layered03.png)](icons-images-images/layered03.png#lightbox)
 
 預覽分層影像時，您可以使用滑鼠來旋轉影像並預覽視差效果。 使用 **+** （加號）和 **-** （減號）按鈕來新增和移除圖層。
 
@@ -129,13 +129,13 @@ Apple 已建立[視差](https://itunespartner.apple.com/assets/downloads/Paralla
 
 您的 tvOS 應用程式不僅需要 Apple 電視首頁的應用程式圖示，也會要求 App Store 的圖示。 應用程式圖示是您第一次的變更，讓您對潛在的使用者有絕佳印象，而且應該一眼就能傳達您的應用程式用途。
 
-[![](icons-images-images/icon01.png "The App Icon")](icons-images-images/icon01.png#lightbox)
+[![應用程式圖示](icons-images-images/icon01.png)](icons-images-images/icon01.png#lightbox)
 
 每個應用程式都必須同時提供其應用程式圖示的小型和大型版本。 在安裝應用程式時，Apple TV 首頁畫面上會使用小型圖示。 應用程式存放區使用的是大型版本。 大型應用程式圖示應該模擬小圖示版本的外觀與風格。
 
 |小圖示||大圖示||
 |---|---|---|---|
-|實際大小|400x240px|大小|1280x768px|
+|實際大小|400x240px|Size|1280x768px|
 |安全區域大小|370x222px|||
 |未取得焦點大小|300x180px|||
 |焦點大小|370x222px|||
@@ -162,16 +162,16 @@ Apple 提供下列建議來建立您的應用程式圖示：
 
 1. 在 [**方案總管**中，按兩下 `Assets.xcassets` 以開啟它進行編輯： 
 
-    [![](icons-images-images/asset01.png "The Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
+    [![資產. assets.xcassets fileg](icons-images-images/asset01.png)](icons-images-images/asset01.png#lightbox)
 2. 在 [**資產編輯器**] 中，展開 `App Icon & Top Shelf Image` 資產： 
 
-    [![](icons-images-images/asset04.png "Expand the Top Shelf Image asset")](icons-images-images/asset04.png#lightbox)
+    [![展開頂端的貨位影像資產](icons-images-images/asset04.png)](icons-images-images/asset04.png#lightbox)
 3. 接下來，展開 `App Icon - Small` 資產： 
 
-    [![](icons-images-images/asset05.png "Expand the App Icon - Small asset")](icons-images-images/asset05.png#lightbox)
+    [![展開應用程式圖示-小型資產](icons-images-images/asset05.png)](icons-images-images/asset05.png#lightbox)
 4. 然後展開 `Back` 資產，並按一下該 `Contents` 專案： 
 
-    [![](icons-images-images/asset06.png "Then expand the Back asset")](icons-images-images/asset06.png#lightbox)
+    [![然後展開後端資產](icons-images-images/asset06.png)](icons-images-images/asset06.png#lightbox)
 5. 按一下 [ **1X APPLE TV] 專案**，然後選取影像檔案。
 6. 針對和資產重複上述步驟 `Front` `Middle` 。
 7. 然後重複相同的步驟來定義 `App Icon - Large` 資產。
@@ -183,11 +183,11 @@ Apple 提供下列建議來建立您的應用程式圖示：
 
 如果使用者已將您的 tvOS 應用程式放在 Apple 電視首頁螢幕上的頂端列，當使用者選取您的應用程式時，將會顯示較大的頂尖影像。 此影像應會反白顯示您應用程式的功能，或提供其內容的直接連結。
 
-[![](icons-images-images/topshelf01.png "Top Shelf Image example")](icons-images-images/topshelf01.png#lightbox)
+[![主要貨位影像範例](icons-images-images/topshelf01.png)](icons-images-images/topshelf01.png#lightbox)
 
 您可以將最上層映射當做單一靜態或檔案提供 `.png` `.lsr` （請參閱[建立分層映射](#Creating-Layered-Images)），或在執行時間動態建立為可設定焦點的專案的單一資料列（請參閱下面的[動態主要貨位內容](#Dynamic-Top-Shelf-Content)）。
 
-|主要貨位影像大小|注意|
+|主要貨位影像大小|附註|
 |---|---|
 |1920x720px|靜態 .png 或 lsr 檔案|
 
@@ -205,13 +205,13 @@ Apple 提供下列建議來建立您的最上層映射：
 
 1. 在 [**方案總管**中，按兩下 `Assets.xcassets` 以開啟它進行編輯： 
 
-    [![](icons-images-images/asset01.png "The Assets.xcassets file")](icons-images-images/asset01.png#lightbox)
+    [![Assets.xcassets 檔案](icons-images-images/asset01.png)](icons-images-images/asset01.png#lightbox)
 2. 在 [**資產編輯器**] 中，展開 `App Icon & Top Shelf Image` 資產： 
 
-    [![](icons-images-images/asset04.png "Expand the Top Shelf Image asset")](icons-images-images/asset04.png#lightbox)
+    [![展開頂端的貨位影像資產](icons-images-images/asset04.png)](icons-images-images/asset04.png#lightbox)
 3. 按一下 `Top Shelf Image` 資產： 
 
-    [![](icons-images-images/asset07.png "The Top Shelf Image asset")](icons-images-images/asset07.png#lightbox)
+    [![最高的貨位影像資產](icons-images-images/asset07.png)](icons-images-images/asset07.png#lightbox)
 4. 按一下 [ **1X APPLE TV] 專案**，然後選取影像檔案。
 5. 儲存您的變更。
 
@@ -305,10 +305,10 @@ Apple 針對捲軸的橫幅提供下列建議：
 
 1. 在 [**方案總管**中，按兩下 `Info.plist` 以開啟它進行編輯： 
 
-    [![](icons-images-images/info01.png "The Info.plist file")](icons-images-images/info01.png#lightbox)
+    [![Plist 檔案](icons-images-images/info01.png)](icons-images-images/info01.png#lightbox)
 2. 在 [ **Plist 編輯器**] 中，選取**應用程式圖示**的 [資產] 類別目錄（在 [[設定應用程式圖示](#Setting-the-App-Icons)] 區段中為上方所設定）： 
 
-    [![](icons-images-images/info02.png "The Info.Plist Editor")](icons-images-images/info02.png#lightbox)
+    [![Plist 編輯器](icons-images-images/info02.png)](icons-images-images/info02.png#lightbox)
 3. 接下來，在**啟動**映射的 [[設定啟動映射](#Setting-the-Launch-Image)] 區段中，選取 [資產] 目錄（如上方所設定）。
 4. 儲存您的變更。
 

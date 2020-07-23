@@ -10,12 +10,12 @@ ms.date: 06/27/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e86224ffb5da3f4b300c82a2821cee0a9b17469d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135703"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939330"
 ---
 # <a name="adding-appcompat-and-material-design"></a>新增 AppCompat 和材質設計
 
@@ -37,7 +37,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 確定 Android 專案的目標架構是 Android 6.0 （Marshmallow）。 檢查**Android 專案 > 選項 > 組建 > 一般**設定]，以確保已選取 corrent 架構：
 
- ![](appcompat-images/target-android-6-sml.png "Android General Build Configuration")
+ ![Android 一般組建設定](appcompat-images/target-android-6-sml.png)
 
 ### <a name="3-add-new-themes-to-support-material-design"></a>3. 新增主題以支援材質設計
 

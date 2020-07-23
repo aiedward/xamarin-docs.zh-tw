@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: f0d638d566290dd2ae0d8453133ee340d5b4ce3f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6ade57c60332f736e04b991bf83a7b12afa4cf54
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031587"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939460"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Xamarin 中的應用程式搜尋增強功能
 
@@ -34,9 +34,9 @@ IOS 10 中的核心焦點為應用程式搜尋提供了數項增強功能，例�
 
 ## <a name="crowdsourced-deep-link-popularity"></a>集結群眾力量深層連結的熱門程度
 
-iOS 10 提供了一種機制，可計算熱門的應用程式連結到使用者的頻率，並使用這項資訊來改善搜尋結果中應用程式內容的排名，同時仍可使用差異來保護使用者的身分識別。 *隱私權*。
+iOS 10 提供了一種機制，可計算熱門的應用程式連結的頻率，然後由使用者遵循，並使用這項資訊來改善搜尋結果中應用程式內容的排名，同時仍可使用*差異隱私權*來保護使用者的身分識別。
 
-對於使用 `NSUserActivity` 物件來提供深層連結 Url，並將 `EligibleForPublicIndexing` 屬性設定為 `true`的應用程式，iOS 10 會將*差異隱私權雜湊*的子集提交至 Apple 的伺服器。 這項資訊接著會用來在搜尋結果中升級熱門的應用程式內內容。
+若為應用程式，其使用 `NSUserActivity` 物件來提供深層連結 url，並將 `EligibleForPublicIndexing` 屬性設定為 `true` ，則 iOS 10 會將*差異隱私權雜湊*的子集提交至 Apple 的伺服器。 這項資訊接著會用來在搜尋結果中升級熱門的應用程式內內容。
 
 如需在 Xamarin iOS 應用程式中執行深層連結的詳細資訊，請參閱[使用 NSUserActivity 的搜尋](~/ios/platform/search/nsuseractivity.md)檔。
 
@@ -44,27 +44,27 @@ iOS 10 提供了一種機制，可計算熱門的應用程式連結到使用者�
 
 藉由執行新的[CSSearchQuery](https://developer.apple.com/reference/corespotlight/cssearchquery)類別，應用程式可以提供焦點的搜尋和比對規則技術，以尋找本身內的內容，而不需要使用者離開應用程式（類似于郵件、郵件和便箋應用程式的工作方式）。
 
-一般來說，支援 `CSSearchQuery` 的應用程式不需要維護自己的個別搜尋索引。
+一般而言，支援的應用程式 `CSSearchQuery` 將不需要維護自己的個別搜尋索引。
 
 ## <a name="search-continuation"></a>搜尋接續
 
-在 iOS 9 中，Apple 引進了搜尋 Api （例如核心焦點、`NSUserActivity` 和 web 標記），以在應用程式中提供內容的深度，讓使用者能夠使用焦點和 Safari 搜尋介面來搜尋該內容。 如需詳細資訊，請參閱我們的[新搜尋 api](~/ios/platform/search/index.md)檔。
+在 iOS 9 中，Apple 引進了搜尋 Api （例如核心焦點 `NSUserActivity` 和 web 標記），以在應用程式內提供內容的深度，讓使用者能夠使用焦點和 Safari 搜尋介面來搜尋該內容。 如需詳細資訊，請參閱我們的[新搜尋 api](~/ios/platform/search/index.md)檔。
 
 在 iOS 10 中，Apple 建基於這項功能，可讓使用者在焦點或 Safari 中開始搜尋，然後在開啟應用程式時繼續搜尋。
 
-若要執行這項功能，請編輯應用程式的 `Info.plist` 檔案、新增**Boolean**類型的 `CoreSpotlightContinuation` 機碼，並將其值設定為 `YES`：
+若要執行這項功能，請編輯應用程式的檔案 `Info.plist` 、新增 `CoreSpotlightContinuation` **布林**類型的索引鍵，並將其值設定為 `YES` ：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](app-search-enhancements-images/search01.png "Editing CoreSpotlightContinuation in the Info.plist file")](app-search-enhancements-images/search01.png#lightbox)
+[![編輯 plist 檔案中的 CoreSpotlightContinuation](app-search-enhancements-images/search01.png)](app-search-enhancements-images/search01.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](app-search-enhancements-images/searchw01.png "Editing CoreSpotlightContinuation in the Info.plist file")](app-search-enhancements-images/search01.png#lightbox)
+[![編輯 plist 檔案中的 CoreSpotlightContinuation](app-search-enhancements-images/searchw01.png)](app-search-enhancements-images/search01.png#lightbox)
 
 -----
 
-若要回應使用者繼續搜尋結果（`NSUserActivity`），請編輯 `AppDelegate.cs` 檔案，並覆寫 `ContinueUserActivity` 方法。 例如:
+若要回應使用者繼續搜尋結果（ `NSUserActivity` ），請編輯檔案 `AppDelegate.cs` ，並覆寫 `ContinueUserActivity` 方法。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -87,7 +87,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-此程式碼會尋找查詢接續動作類型（`userActivity.ActivityType == CSSearchQuery.ContinuationActionType`），然後從 `NSUserActivity` 類別的使用者資訊字典（`userActivity.UserInfo.KeyForValue(CSSearchQuery.QueryString)`）讀取使用者目前的查詢。 從這裡開始，應用程式必須採取動作，才能繼續進行使用者的搜尋。
+此程式碼會尋找查詢接續動作類型（ `userActivity.ActivityType == CSSearchQuery.ContinuationActionType` ），然後從 `NSUserActivity` 類別的使用者資訊字典（）讀取使用者目前的查詢 `userActivity.UserInfo.KeyForValue(CSSearchQuery.QueryString)` 。 從這裡開始，應用程式必須採取動作，才能繼續進行使用者的搜尋。
 
 如需在 Xamarin iOS 應用程式中使用搜尋的詳細資訊，請參閱[使用核心焦點的搜尋](~/ios/platform/search/corespotlight.md)檔。
 
@@ -106,8 +106,8 @@ Apple 的[應用程式搜尋 API 驗證工具](https://search.developer.apple.co
 若要啟用這項功能，請執行下列動作：
 
 1. 建立訊息應用程式延伸模組。
-2. 將 `com.apple.developer.associated-domains` 新增至應用程式的權利，並包含裝載訊息應用程式延伸模組所共用之影像的 web 網域清單。 針對每個網域，指定 `spotlight-image-search` 服務。
-3. 將 `apple-app-site-association` 檔案新增至裝載映射的網站。 此檔案包含 `spotlight-image-search` 服務的字典，並包含應用程式的識別碼，也就是小組識別碼或應用程式識別碼前置詞，後面接著套件組合識別碼。 此檔案最多可包含500個路徑和模式，其將以焦點編制索引，並包含在熱門影像搜尋中。 如需詳細資訊，請參閱 Apple 的[建立和上傳關聯檔案檔](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4)。
+2. 將新增 `com.apple.developer.associated-domains` 至應用程式的權利，並包含裝載訊息應用程式延伸模組所共用之影像的 web 網域清單。 針對每個網域，指定 `spotlight-image-search` 服務。
+3. 將檔案新增 `apple-app-site-association` 至裝載映射的網站。 此檔案包含服務的字典， `spotlight-image-search` 並包含應用程式的識別碼，也就是小組識別碼或應用程式識別碼前置詞，後面接著套件組合識別碼。 此檔案最多可包含500個路徑和模式，其將以焦點編制索引，並包含在熱門影像搜尋中。 如需詳細資訊，請參閱 Apple 的[建立和上傳關聯檔案檔](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4)。
 4. 允許 Applebot 對網站進行編目。 請參閱 Apple 的[關於 Applebot](https://support.apple.com/HT204683)檔。
 
 如需詳細資訊，請參閱我們的[訊息應用程式整合](~/ios/platform/message-app-integration/index.md)檔。

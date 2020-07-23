@@ -10,16 +10,16 @@ ms.date: 04/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8d11add988828fa4e26d3f6728dd0b4319b3630
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 020319761ba1274495b7595a0d18435f98a5f990
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133298"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937172"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩陣轉換
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用多功能轉換矩陣深入探索 SkiaSharp 轉換_
 
@@ -27,7 +27,7 @@ _使用多功能轉換矩陣深入探索 SkiaSharp 轉換_
 
 如您所見，您可以在 SkiaSharp 中使用轉換，而不需要知道轉換矩陣，但轉換矩陣對理論的觀點很重要，而且當使用轉換來修改路徑或處理複雜的觸控輸入時，這兩個專案都是在本文和下一個中示範。
 
-![](matrix-images/matrixtransformexample.png "A bitmap subjected to an affine transform")
+![對仿射轉換的點陣圖](matrix-images/matrixtransformexample.png)
 
 套用至的目前轉換矩陣隨時 `SKCanvas` 都可存取唯讀 [`TotalMatrix`](xref:SkiaSharp.SKCanvas.TotalMatrix) 屬性。 您可以使用方法來設定新的轉換矩陣 [`SetMatrix`](xref:SkiaSharp.SKCanvas.SetMatrix(SkiaSharp.SKMatrix)) ，而且可以藉由呼叫，將該轉換矩陣還原為預設值 [`ResetMatrix`](xref:SkiaSharp.SKCanvas.ResetMatrix) 。
 
@@ -407,7 +407,7 @@ public class PathTransformPage : ContentPage
 
 它會出現在畫布的左上角：
 
-[![](matrix-images/pathtransform-small.png "Triple screenshot of the Path Transform page")](matrix-images/pathtransform-large.png#lightbox "Triple screenshot of the Path Transform page")
+[![[路徑轉換] 頁面的三重螢幕擷取畫面](matrix-images/pathtransform-small.png)](matrix-images/pathtransform-large.png#lightbox "[路徑轉換] 頁面的三重螢幕擷取畫面")
 
 此程式的函式會將矩陣套用至具有下列呼叫的路徑：
 
@@ -444,7 +444,7 @@ SKRect transformedRect = matrix.MapRect(rect);
 
 有一種方式可以讓仿射轉型轉換，方法是以互動方式在螢幕上移動點陣圖的三個角落，並查看轉換結果。 這是 [**顯示仿射矩陣**] 頁面背後的概念。 此頁面需要其他兩個也用於其他示範的類別：
 
-[`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs)類別會顯示可以拖曳至螢幕周圍的半透明圓形。 `TouchPoint`需要 `SKCanvasView` 具有附加之父系的或元素 `SKCanvasView` [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) 。 將 `Capture` 屬性設為 `true`。 在 `TouchAction` 事件處理常式中，程式必須 `ProcessTouchEvent` 在中 `TouchPoint` 針對每個實例呼叫方法 `TouchPoint` 。 `true`如果觸控事件導致觸控點移動，此方法會傳回。 此外， `PaintSurface` 處理常式必須 `Paint` 在每個實例中呼叫方法 `TouchPoint` ，並將它傳遞至 `SKCanvas` 物件。
+[`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs)類別會顯示可以拖曳至螢幕周圍的半透明圓形。 `TouchPoint`需要 `SKCanvasView` 具有附加之父系的或元素 `SKCanvasView` [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) 。 將 `Capture` 屬性設定為 `true`。 在 `TouchAction` 事件處理常式中，程式必須 `ProcessTouchEvent` 在中 `TouchPoint` 針對每個實例呼叫方法 `TouchPoint` 。 `true`如果觸控事件導致觸控點移動，此方法會傳回。 此外， `PaintSurface` 處理常式必須 `Paint` 在每個實例中呼叫方法 `TouchPoint` ，並將它傳遞至 `SKCanvas` 物件。
 
 `TouchPoint`示範 SkiaSharp 視覺效果可以封裝在不同類別中的常見方式。 類別可以定義用來指定視覺效果特性的屬性，而且 `Paint` 以引數命名的方法 `SKCanvas` 可以呈現它。
 
@@ -593,7 +593,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 下列的 iOS 畫面會顯示第一次載入頁面時的點陣圖，而其他兩個畫面則會在某些操作之後顯示它：
 
-[![](matrix-images/showaffinematrix-small.png "Triple screenshot of the Show Affine Matrix page")](matrix-images/showaffinematrix-large.png#lightbox "Triple screenshot of the Show Affine Matrix page")
+[![[顯示仿射矩陣] 頁面的三重螢幕擷取畫面](matrix-images/showaffinematrix-small.png)](matrix-images/showaffinematrix-large.png#lightbox "[顯示仿射矩陣] 頁面的三重螢幕擷取畫面")
 
 雖然觸控點只會拖曳點陣圖的角落，但這只是一種假像。 從觸控點計算的矩陣會轉換點陣圖，讓角落與觸控點一致。
 

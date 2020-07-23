@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/12/2018
-ms.openlocfilehash: c9e5b2504fd8af8b4232eea0dcf39d9c4760b555
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a552b7c395634c264114a378ee3f5c67d164d9f3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010612"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937952"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Xamarin 中的檔案系統存取
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
 
-您可以使用 Xamarin 和 *.Net 基類庫（BCL）* 中的 `System.IO` 類別來存取 iOS 檔案系統。 `File` 類別可讓您建立、刪除和讀取檔案，而 `Directory` 類別可讓您建立、刪除或列舉目錄內容。 您也可以使用 `Stream` 子類別，其可提供更高程度的檔案作業控制（例如壓縮或檔案內的位置搜尋）。
+您可以使用 Xamarin 和 `System.IO` *.Net 基類庫（BCL）* 中的類別來存取 iOS 檔案系統。 `File` 類別可讓您建立、刪除和讀取檔案，而 `Directory` 類別可讓您建立、刪除或列舉目錄內容。 您也可以使用 `Stream` 子類別，以提供更高程度的檔案作業控制（例如壓縮或檔案內的位置搜尋）。
 
 iOS 對應用程式可對檔案系統執行哪些動作，以保留應用程式資料的安全性，以及保護使用者不受惡性應用程式的限制。 這些限制是*應用程式沙箱*的一部分–一組規則，可限制應用程式對檔案、喜好設定、網路資源、硬體等的存取權。應用程式只能在其主目錄（安裝的位置）中讀取和寫入檔案;它無法存取另一個應用程式的檔案。
 
@@ -30,7 +30,7 @@ iOS 也有一些檔案系統特有的功能：某些目錄在備份和升級方�
 
 ## <a name="general-file-access"></a>一般檔案存取
 
-在 ios 上，Xamarin 可讓您使用 .NET `System.IO` 類別進行檔案系統作業。
+在 ios 上，Xamarin 可讓您使用 .NET `System.IO` 類別來進行檔案系統作業。
 
 下列程式碼片段說明一些常見的檔案作業。 您會在本文的範例應用程式中的**SampleCode.cs**檔案中找到這些檔案。
 
@@ -57,7 +57,7 @@ Console.WriteLine(text);
 
 ### <a name="xml-serialization"></a>XML 序列化
 
-雖然使用完整的 `System.Xml` 命名空間不在本文的討論範圍內，但您可以使用類似下列程式碼片段的 StreamReader，輕鬆地從檔案系統還原序列化 XML 檔：
+雖然使用完整的 `System.Xml` 命名空間已超出本文的範圍，但您可以使用類似以下的 StreamReader，輕鬆地從檔案系統還原序列化 XML 檔：
 
 ```csharp
 using (TextReader reader = new StreamReader("./TestData/test.xml")) {
@@ -66,7 +66,7 @@ using (TextReader reader = new StreamReader("./TestData/test.xml")) {
 }
 ```
 
-如需詳細資訊，請參閱[system.web](xref:System.Xml)和[序列化](xref:System.Xml.Serialization)的檔。 請參閱連結器上的[Xamarin 檔](~/ios/deploy-test/linker.md)–通常您必須將 `[Preserve]` 屬性加入至您想要序列化的類別。
+如需詳細資訊，請參閱[System.Xml](xref:System.Xml)和[序列化](xref:System.Xml.Serialization)的檔。 請參閱連結器上的[Xamarin 檔](~/ios/deploy-test/linker.md)–通常您必須將 `[Preserve]` 屬性加入至您想要序列化的類別。
 
 ### <a name="creating-files-and-directories"></a>建立檔案和目錄
 
@@ -94,9 +94,9 @@ Directory.CreateDirectory(directoryname);
 
 [Json.NET](http://www.newtonsoft.com/json)是高效能的 Json 架構，適用于 Xamarin，並可在 NuGet 上取得。 使用 Visual Studio for Mac 中的 [**新增 nuget** ]，將 nuget 套件新增至您的應用程式專案：
 
-[![](file-system-images/json01.png "Adding the NuGet package to the applications project")](file-system-images/json01.png#lightbox)
+[![將 NuGet 套件新增至應用程式專案](file-system-images/json01.png)](file-system-images/json01.png#lightbox)
 
-接下來，新增類別作為序列化/還原序列化的資料模型（在此案例中 `Account.cs`）：
+接下來，新增類別作為序列化/還原序列化的資料模型（在此案例中為 `Account.cs` ）：
 
 ```csharp
 using System;
@@ -119,7 +119,7 @@ namespace FileSystem
 }
 ```
 
-最後，建立 `Account` 類別的實例，將它序列化為 json 資料，並將它寫入檔案：
+最後，建立類別的實例 `Account` ，將它序列化為 json 資料，並將它寫入檔案：
 
 ```csharp
 // Create a new record
@@ -149,13 +149,13 @@ File.WriteAllText(filename, json);
 
 根據預設，如果您將檔案新增至專案，它將不會包含在最終元件中，因此不會提供給您的應用程式使用。 若要在元件中包含檔案，您必須使用特殊的組建動作（稱為 Content）來標示檔案。
 
-若要將檔案標示為包含，請在檔案上按一下滑鼠右鍵，然後在 Visual Studio for Mac 中選擇 [**建立動作 &gt; 內容**]。 您也可以在檔案的**屬性**表中變更 [**建立] 動作**。
+若要將檔案標示為包含，請在檔案上按一下滑鼠右鍵，然後選擇 [Visual Studio for Mac 中的 [**組建動作 &gt; 內容**]。 您也可以在檔案的**屬性**表中變更 [**建立] 動作**。
 
 ### <a name="case-sensitivity"></a>區分大小寫
 
-請務必瞭解 iOS 檔案系統*區分大小寫*。 區分大小寫表示您的檔案和目錄名稱必須完全**相符– readme.txt 和 readme.txt 會**被視為不同的**檔案名。**
+請務必瞭解 iOS 檔案系統*區分大小寫*。 區分大小寫表示您的檔案和目錄名稱必須完全相符– **README.txt** ，且**readme.txt**會視為不同的檔案名。
 
-對於較熟悉 Windows 檔案系統的 .NET 開發人員而言，這可能會造成混淆，但不*區分大小寫* **–檔案** **、檔案和檔案**全都參考相同的目錄。
+對於較熟悉 Windows 檔案系統的 .NET 開發人員而言，這可能會造成混淆，但不*區分大小寫* **–檔案** **、檔案和檔案**全都參考相同的目錄。 **files**
 
 > [!WARNING]
 > IOS 模擬器不區分大小寫。
@@ -165,7 +165,7 @@ File.WriteAllText(filename, json);
 
 iOS 使用正斜線 '/' 做為路徑分隔符號（這與使用反斜線 ' \ ' 的 Windows 不同）。
 
-由於這種混亂的差異，因此最好使用 `System.IO.Path.Combine` 方法，它會針對目前的平臺進行調整，而不是硬式編碼特定的路徑分隔符號。 這是一個簡單的步驟，可讓您的程式碼更容易移植到其他平臺。
+由於這種混亂的差異，因此最好使用 `System.IO.Path.Combine` 方法，它會針對目前平臺進行調整，而不是硬式編碼特定的路徑分隔符號。 這是一個簡單的步驟，可讓您的程式碼更容易移植到其他平臺。
 
 ## <a name="application-sandbox"></a>應用程式沙箱
 
@@ -198,22 +198,22 @@ iOS 使用正斜線 '/' 做為路徑分隔符號（這與使用反斜線 ' \ ' �
 
 &nbsp;
 
-|Directory|描述|
+|目錄|描述|
 |---|---|
-|[ApplicationName]. app/|**在 iOS 7 和更早版本中**，這是儲存應用程式可執行檔的 `ApplicationBundle` 目錄。 您在應用程式中建立的目錄結構存在於此目錄中（例如，您在 Visual Studio for Mac 專案中標示為資源的影像和其他檔案類型）。<br /><br />如果您需要存取應用程式套件組合內的內容檔案，可以透過 [`NSBundle.MainBundle.BundlePath`] 屬性取得此目錄的路徑。|
+|[ApplicationName]. app/|**在 iOS 7 和更早版本中**，這是 `ApplicationBundle` 儲存應用程式可執行檔的目錄。 您在應用程式中建立的目錄結構存在於此目錄中（例如，您在 Visual Studio for Mac 專案中標示為資源的影像和其他檔案類型）。<br /><br />如果您需要存取應用程式套件組合內的內容檔案，可以透過屬性取得此目錄的路徑 `NSBundle.MainBundle.BundlePath` 。|
 |單據|使用此目錄來儲存使用者檔和應用程式資料檔。<br /><br />此目錄的內容可供使用者透過 iTunes 檔案共用使用（雖然預設為停用）。 將 `UIFileSharingEnabled` 布林值索引鍵新增至 plist 檔案，以允許使用者存取這些檔案。<br /><br />即使應用程式不會立即啟用檔案共用，您仍應避免將應該在此目錄中的使用者隱藏的檔案（例如資料庫檔案）放入，除非您想要共用這些檔案。 只要機密檔案保持隱藏，如果未來版本中已啟用檔案共用，則這些檔案不會公開（且可能會在 iTunes 中移動、修改或刪除）。<br /><br /> 您可以使用 `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` 方法來取得應用程式之檔目錄的路徑。<br /><br />ITunes 會備份此目錄的內容。|
 |機庫|程式庫目錄是儲存不是由使用者直接建立之檔案的好位置，例如資料庫或其他應用程式產生的檔案。 此目錄的內容永遠不會透過 iTunes 公開給使用者。<br /><br />您可以在程式庫中建立自己的子目錄;不過，這裡已經有一些系統建立的目錄，您應該要注意，包括喜好設定和快取。<br /><br />ITunes 會備份此目錄的內容（[快取] 子目錄除外）。 您在程式庫中建立的自訂目錄將會進行備份。|
 |媒體櫃/喜好設定/|應用程式特定的喜好設定檔案會儲存在這個目錄中。 請勿直接建立這些檔案。 請改用 `NSUserDefaults` 類別。<br /><br />ITunes 會備份此目錄的內容。|
 |程式庫/快取/|[快取] 目錄是儲存資料檔案的好地方，可協助您的應用程式執行，但可輕鬆地重新建立。 應用程式應該視需要建立和刪除這些檔案，並能夠在必要時重新建立這些檔案。 iOS 5 也可能會刪除這些檔案（在儲存空間不足的情況下），但在應用程式執行時不會這麼做。<br /><br />ITunes 不會備份此目錄的內容，這表示如果使用者還原裝置，它們將不會出現，而且在安裝應用程式的更新版本之後可能不會顯示。<br /><br />比方說，如果您的應用程式無法連線到網路，您可以使用 [快取] 目錄來儲存資料或檔案，以提供良好的離線體驗。 應用程式可以在等候網路回應時快速儲存和抓取此資料，但不需要進行備份，而且可以在還原或版本更新之後輕鬆地復原或重新建立。|
-|.tmp|應用程式可以在此目錄中儲存只需要短時間的暫存檔案。 若要節省空間，當不再需要檔案時，應該刪除檔案。 當應用程式未執行時，作業系統也可能會從這個目錄刪除檔案。<br /><br />ITunes 不會備份此目錄的內容。<br /><br />例如，tmp 目錄可能用來儲存下載以顯示給使用者的暫存檔案（例如 Twitter 虛擬人偶或電子郵件附件），但在流覽後（如果日後需要，再次下載）可能會刪除這些檔案.|
+|.tmp|應用程式可以在此目錄中儲存只需要短時間的暫存檔案。 若要節省空間，當不再需要檔案時，應該刪除檔案。 當應用程式未執行時，作業系統也可能會從這個目錄刪除檔案。<br /><br />ITunes 不會備份此目錄的內容。<br /><br />例如，tmp 目錄可能用來儲存下載以顯示給使用者的暫存檔（例如 Twitter 虛擬人偶或電子郵件附件），但在流覽後（如果日後需要，再次下載）可能會予以刪除。|
 
 這個螢幕擷取畫面顯示搜尋工具視窗中的目錄結構：
 
-[![](file-system-images/08-library-directory.png "This screenshot shows the directory structure in a Finder window")](file-system-images/08-library-directory.png#lightbox)
+[![這個螢幕擷取畫面顯示搜尋工具視窗中的目錄結構](file-system-images/08-library-directory.png)](file-system-images/08-library-directory.png#lightbox)
 
 ### <a name="accessing-other-directories-programmatically"></a>以程式設計方式存取其他目錄
 
-先前的目錄和檔案範例已存取 `Documents` 目錄。 若要寫入另一個目錄，您必須使用 "." 語法來建立路徑，如下所示：
+先前的目錄和檔案範例會存取 `Documents` 目錄。 若要寫入另一個目錄，您必須使用 ".." 語法來建立路徑，如下所示：
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -231,7 +231,7 @@ var directoryname = Path.Combine (library, "NewLibraryDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-`Caches` 和 `tmp` 目錄的路徑可如下所示：
+`Caches`和目錄的路徑 `tmp` 可以如下所示：
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -241,7 +241,7 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 ## <a name="sharing-with-the-files-app"></a>與檔案應用程式共用
 
-iOS 11 引進檔案**應用程式**-適用于 iOS 的檔案瀏覽器，可讓使用者在 iCloud 中查看其檔案並與其互動，也會由任何支援它的應用程式儲存。 若要允許使用者直接存取您應用程式中的檔案，請在**plist**檔案中建立新的布林值索引鍵 `LSSupportsOpeningDocumentsInPlace` 並將它設定為 `true`，如下所示：
+iOS 11 引進檔案**應用程式**-適用于 iOS 的檔案瀏覽器，可讓使用者在 iCloud 中查看其檔案並與其互動，也會由任何支援它的應用程式儲存。 若要允許使用者直接存取您應用程式中的檔案，請在**plist**檔案中建立新的布林值索引鍵， `LSSupportsOpeningDocumentsInPlace` 並將它設定為 `true` ，如下所示：
 
 ![在 Info. plist 中設定 LSSupportsOpeningDocumentsInPlace](file-system-images/51-supports-opening.png)
 
@@ -251,11 +251,11 @@ iOS 11 引進檔案**應用程式**-適用于 iOS 的檔案瀏覽器，可讓使
 
 ## <a name="sharing-files-with-the-user-through-itunes"></a>透過 iTunes 與使用者共用檔案
 
-使用者可以在**來源**視圖中編輯 `Info.plist` 並建立**支援 iTunes 共用**（`UIFileSharingEnabled`）專案的應用程式，以存取應用程式檔目錄中的檔案，如下所示：
+使用者可以在 `Info.plist` 來源視圖中編輯並建立**支援 iTunes 共用**（）專案的應用程式，以存取應用程式檔目錄中的檔案 `UIFileSharingEnabled` ，如下所示： **Source**
 
-[新增應用程式![支援 iTunes 共用屬性](file-system-images/09-uifilesharingenabled-plist-sml.png)](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
+[![新增應用程式支援 iTunes 共用屬性](file-system-images/09-uifilesharingenabled-plist-sml.png)](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
-當裝置連線且使用者選擇 [`Apps`] 索引標籤時，可以在 iTunes 中存取這些檔案。例如，下列螢幕擷取畫面顯示所選取應用程式中透過 iTunes 共用的檔案：
+當裝置連線且使用者選擇索引標籤時，可以在 iTunes 中存取這些檔案 `Apps` 。例如，下列螢幕擷取畫面顯示所選取應用程式中透過 iTunes 共用的檔案：
 
 [![此螢幕擷取畫面顯示所選取應用程式中透過 iTunes 共用的檔案](file-system-images/10-itunes-file-sharing-sml.png)](file-system-images/10-itunes-file-sharing.png#lightbox)
 
@@ -269,7 +269,7 @@ iOS 11 引進檔案**應用程式**-適用于 iOS 的檔案瀏覽器，可讓使
 
 如需如何為應用程式和您所建立的任何自訂檔案類型設定圖示的相關資訊，請參閱[使用影像](~/ios/app-fundamentals/images-icons/index.md)一文。
 
-如果 `UIFileSharingEnabled` 金鑰為 false 或不存在，則檔案共用預設為停用，使用者將無法與您的檔目錄互動。
+如果機 `UIFileSharingEnabled` 碼為 false 或不存在，則檔案共用預設為停用，使用者將無法與您的檔目錄互動。
 
 ## <a name="backup-and-restore"></a>備份與還原
 
@@ -290,15 +290,15 @@ iOS 11 引進檔案**應用程式**-適用于 iOS 的檔案瀏覽器，可讓使
 > [!NOTE]
 > 雖然這是 iOS 5 首度引進的原則（這似乎很長一段時間），但本指南仍會與目前的應用程式相關。
 
-Apple 引進了與 iOS 5 的*ICloud 備份*功能。 當 iCloud 備份啟用時，應用程式主目錄中的所有檔案（不包括通常不會備份的目錄，例如應用程式套件組合、`Caches`和 `tmp`）都會備份到 iCloud 伺服器。 這項功能可讓使用者在裝置遺失、遭竊或損毀時，擁有完整的備份。
+Apple 引進了與 iOS 5 的*ICloud 備份*功能。 當 iCloud 備份啟用時，您應用程式主目錄中的所有檔案（不包括通常不會備份的目錄，例如應用程式套件組合、 `Caches` 和 `tmp` ）都會備份到 iCloud 伺服器。 這項功能可讓使用者在裝置遺失、遭竊或損毀時，擁有完整的備份。
 
 因為 iCloud 只會為每位使用者提供 5 Gb 的可用空間，並避免不必要地使用頻寬，所以 Apple 預期應用程式只會備份重要的使用者所產生的資料。 若要遵守 iOS 資料儲存指導方針，您應該藉由遵循下列專案來限制備份的資料量：
 
 - 在 [檔] 目錄（已備份）中，只儲存使用者產生的資料或無法重新建立的資料。
-- 儲存可以在 `Library/Caches` 或 `tmp` 中輕鬆重新建立或重新下載的任何其他資料（不會備份，而且可能會「已清理」）。
-- 如果您的檔案可能適用于 `Library/Caches` 或 `tmp` 資料夾，但您不想要「清理」，請將其儲存在其他位置（例如 `Library/YourData`），並套用「不要備份」屬性，以防止檔案使用 iCloud 備份頻寬和 storage 空間。 此資料仍會使用裝置上的空間，因此您應該小心管理它，並盡可能刪除它。
+- 儲存可以在或中輕鬆重新建立或重新下載的任何其他資料 `Library/Caches` `tmp` （不會備份，也可以「已清理」）。
+- 如果您的檔案可能適用于 `Library/Caches` 或 `tmp` 資料夾，但您不想要「清理」，請將其儲存在其他位置（例如）， `Library/YourData` 並套用「不要備份」屬性，以防止檔案使用 iCloud 備份頻寬和儲存空間。 此資料仍會使用裝置上的空間，因此您應該小心管理它，並盡可能刪除它。
 
-「不要備份」屬性是使用 `NSFileManager` 類別來設定。 請確定您的類別 `using Foundation`，並呼叫 `SetSkipBackupAttribute`，如下所示：
+「不要備份」屬性是使用類別來設定 `NSFileManager` 。 請確定您的類別為 `using Foundation` ，並呼叫 `SetSkipBackupAttribute` 如下：
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -307,7 +307,7 @@ File.WriteAllText(filename, "This file will never get backed-up. It would need t
 NSFileManager.SetSkipBackupAttribute (filename, true); // backup will be skipped for this file
 ```
 
-當 `SetSkipBackupAttribute` 為 `true` 時，不論儲存在哪個目錄（甚至是 `Documents` 目錄），都不會備份該檔案。 您可以使用 `GetSkipBackupAttribute` 方法來查詢屬性，也可以使用 `false`呼叫 `SetSkipBackupAttribute` 方法來重設它，如下所示：
+當 `SetSkipBackupAttribute` 為時 `true` ，將不會備份檔案，不論其儲存在哪個目錄（甚至是 `Documents` 目錄）。 您可以使用方法來查詢屬性 `GetSkipBackupAttribute` ，也可以使用呼叫方法來重設它 `SetSkipBackupAttribute` `false` ，如下所示：
 
 ```csharp
 NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-up
@@ -323,7 +323,7 @@ NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-u
 
 如需建立和設定應用程式群組的相關資訊，請參閱[應用程式群組功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)指南。
 
-### <a name="files"></a>檔案
+### <a name="files"></a>檔案儲存體
 
 IOS 應用程式和延伸模組也可以使用通用檔案路徑來共用檔案（假設它們已正確設定正確的權利和布建）：
 
@@ -339,7 +339,7 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 ```
 
 > [!IMPORTANT]
-> 如果傳回的群組路徑是 `null`，請檢查權利和布建設定檔的設定，並確定其正確無誤。
+> 如果傳回的群組路徑是 `null` ，請檢查權利和布建設定檔的設定，並確定其正確無誤。
 
 ## <a name="application-version-updates"></a>應用程式版本更新
 

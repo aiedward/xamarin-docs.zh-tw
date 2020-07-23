@@ -6,12 +6,12 @@ ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 4590e5d987acbb5bd97b41477e6aafa7c17d7778
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 956d3285459d8ed93f2db84fa0bd2bb2880d3d7a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015311"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936509"
 ---
 # <a name="updating-existing-mac-apps"></a>更新現有的 Mac 應用程式
 
@@ -23,19 +23,19 @@ ms.locfileid: "73015311"
 
 Xamarin 提供 Visual Studio for Mac 和 Visual Studio 的工具，可將 Classic API 的遷移程式自動化至 Unified API，或者您可以手動轉換專案檔。 雖然強烈建議使用自動工具，但本文將涵蓋這兩種方法。
 
-### <a name="before-you-start"></a>開始之前 。
+### <a name="before-you-start"></a>開始之前 .。。
 
 在您將現有的程式碼更新為 Unified API 之前，強烈建議您排除所有的*編譯警告*。 當您遷移至整合之後，Classic API 中的許多*警告*都會變成錯誤。 在開始之前修正這些問題，會比較容易，因為來自 Classic API 的編譯器訊息通常會提供要更新之專案的提示。
 
 ## <a name="automated-updating"></a>自動更新
 
-解決警告之後，請在 Visual Studio for Mac 或 Visual Studio 中選取現有的 Mac 專案，然後從 [**專案**] 功能表選擇 [**遷移至 Xamarin. Mac Unified API** ]。 例如:
+解決警告之後，請在 Visual Studio for Mac 或 Visual Studio 中選取現有的 Mac 專案，然後從 [**專案**] 功能表選擇 [**遷移至 Xamarin. Mac Unified API** ]。 例如：
 
-![](updating-mac-apps-images/beta-tool1.png "Choose Migrate to Xamarin.Mac Unified API from the Project menu")
+![從 [專案] 功能表選擇 [遷移至 Xamarin. Mac Unified API](updating-mac-apps-images/beta-tool1.png)
 
 您必須先同意此警告，才會執行自動遷移（顯然，您應該先確定您擁有備份/原始檔控制，再于此登機上進行此動作）：
 
-![](updating-mac-apps-images/migrate01.png "Agree to this warning before the automated migration will run")
+![在執行自動遷移之前，請同意此警告](updating-mac-apps-images/migrate01.png)
 
 在 Xamarin. Mac 應用程式中使用 Unified API 時，可以選取兩種支援的目標架構類型：
 
@@ -52,15 +52,15 @@ Xamarin 提供 Visual Studio for Mac 和 Visual Studio 的工具，可將 Classi
 
 ### <a name="1-update-project-type--build-target"></a>1. 更新專案類型 & 組建目標
 
-將 **.csproj**檔案中的專案類別從 `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` 變更為 `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`。 在文字編輯器中編輯 **.csproj**檔案，取代 `<ProjectTypeGuids>` 元素中的第一個專案，如下所示：
+將您的 **.csproj**檔案中的專案類別，從變更 `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` 為 `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1` 。 在文字編輯器中編輯 **.csproj**檔案，取代元素中的第一個專案， `<ProjectTypeGuids>` 如下所示：
 
-![](updating-mac-apps-images/csproj.png "Edit the csproj file in a text editor, replacing the first item in the ProjectTypeGuids element as shown")
+![在文字編輯器中編輯 .csproj 檔案，取代 ProjectTypeGuids 元素中的第一個專案，如下所示](updating-mac-apps-images/csproj.png)
 
-將包含 `Xamarin.Mac.targets` 的**Import**元素變更為 `Xamarin.Mac.CSharp.targets`，如下所示：
+將包含的匯**入**元素變更為， `Xamarin.Mac.targets` `Xamarin.Mac.CSharp.targets` 如下所示：
 
-![](updating-mac-apps-images/csproj2.png "Change the Import element that contains Xamarin.Mac.targets to Xamarin.Mac.CSharp.targets as shown")
+![將包含 Xamarin .targets 目標的 Import 元素變更為 Xamarin.。](updating-mac-apps-images/csproj2.png)
 
-在 `<AssemblyName>` 元素後面新增下列程式程式碼：
+在元素後面新增下列程式程式碼 `<AssemblyName>` ：
 
 ```xml
 <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -70,39 +70,39 @@ Xamarin 提供 Visual Studio for Mac 和 Visual Studio 的工具，可將 Classi
 
 範例：
 
-![在 \<AssemblyName > 元素之後新增這些程式程式碼](updating-mac-apps-images/csproj3.png)
+![在 AssemblyName> 元素後面加入這些程式程式碼 \<](updating-mac-apps-images/csproj3.png)
 
 ### <a name="2-update-project-references"></a>2. 更新專案參考
 
 展開 [Mac 應用程式] 專案的 [**參考**] 節點。 它一開始會顯示 * 與此螢幕擷取畫面類似的**XamMac**參考（因為我們剛剛變更了專案類型）：
 
-![](updating-mac-apps-images/references.png "It will initially show a broken- XamMac reference similar to this screenshot")
+![它一開始會顯示類似此螢幕擷取畫面的 XamMac 參考](updating-mac-apps-images/references.png)
 
 按一下 [ **XamMac** ] 專案旁邊的**齒輪圖示**，然後選取 [**刪除**] 以移除中斷的參考。
 
 接下來，以滑鼠右鍵按一下**方案總管**中的 [**參考**] 資料夾，然後選取 [**編輯參考**]。 向下流覽至參考清單底部，並勾選 [ **Xamarin. Mac**除外]。
 
-![](updating-mac-apps-images/references2.png "Scroll to the bottom of the list of references and place a check besides Xamarin.Mac")
+![流覽至參考清單底部，並加上 Xamarin. Mac 以外的檢查](updating-mac-apps-images/references2.png)
 
 按 **[確定]** 以儲存專案參考變更。
 
 ### <a name="3-remove-monomac-from-namespaces"></a>3. 從命名空間移除 MonoMac
 
-從 `using` 語句中的命名空間移除**MonoMac**前置詞，或在 classname 已完整限定的任何位置（例如 `MonoMac.AppKit` 只會變成 `AppKit`）。
+從語句中的命名空間移除**MonoMac**前置詞， `using` 或在 classname 已完整限定的任何位置（例如 `MonoMac.AppKit`只會變成 `AppKit` ）。
 
 ### <a name="4-remap-types"></a>4. 重新對應類型
 
-引進的[原生類型](~/cross-platform/macios/nativetypes.md)會取代先前使用的某些類型，例如具有 `CoreGraphics.CGRect` 的 `System.Drawing.RectangleF` 實例（例如）。 您可以在 [[原生類型](~/cross-platform/macios/nativetypes.md)] 頁面上找到完整的類型清單。
+引進的[原生類型](~/cross-platform/macios/nativetypes.md)會取代先前使用的某些類型，例如具有的實例 `System.Drawing.RectangleF` （例如 `CoreGraphics.CGRect` ）。 您可以在 [[原生類型](~/cross-platform/macios/nativetypes.md)] 頁面上找到完整的類型清單。
 
 ### <a name="5-fix-method-overrides"></a>5. 修正方法覆寫
 
-某些 `AppKit` 方法的簽章已變更為使用新的[原生類型](~/cross-platform/macios/nativetypes.md)（例如 `nint`）。 如果自訂子類別覆寫這些方法，簽章將不再相符，而且會導致錯誤。 使用原生類型變更子類別，使其符合新的簽章，以修正這些方法覆寫。 
+某些 `AppKit` 方法的簽章已變更為使用新的[原生類型](~/cross-platform/macios/nativetypes.md)（例如 `nint` ）。 如果自訂子類別覆寫這些方法，簽章將不再相符，而且會導致錯誤。 使用原生類型變更子類別，使其符合新的簽章，以修正這些方法覆寫。 
 
 ## <a name="considerations"></a>考量
 
 將現有的 Xamarin. Mac 專案從 Classic API 轉換成新的 Unified API 時，如果該應用程式依賴一或多個元件或 NuGet 套件，則應該考慮下列事項。 
 
-### <a name="components"></a>元件
+### <a name="components"></a>單元
 
 您包含在應用程式中的任何元件也必須更新為 Unified API，否則當您嘗試編譯時，將會發生衝突。 針對任何包含的元件，以支援 Unified API 的 Xamarin 元件存放區中的新版本取代目前的版本，並執行全新的組建。 作者尚未轉換的任何元件，都只會在元件存放區中顯示32位的警告。
 
@@ -113,7 +113,7 @@ Xamarin 提供 Visual Studio for Mac 和 Visual Studio 的工具，可將 Classi
 在該時間之前，您必須將包含在專案中的任何 NuGet 套件，切換到支援統一 Api 的版本，之後再執行全新的組建。
 
 > [!IMPORTANT]
-> 如果您的錯誤格式為「_錯誤3不能同時在同一個 Xamarin. mac 專案中同時包含 ' monomac ' 和 ' xamarin '，則會明確參考 ' monomac '，而 ' ' 則是由 ' xxx，Version = 0.0.000，Culture = 中性，PublicKeyToken = null ' "_ 將您的應用程式轉換成統一的 api 之後，通常是因為專案中的元件或 NuGet 套件尚未更新為 Unified API。 您必須移除現有的元件/NuGet、更新為支援統一 Api 的版本，並執行全新的組建。
+> 如果您的錯誤格式為「_錯誤3不能同時在相同的 Xamarin 中同時包含 ' monomac.dll ' 和 ' Xamarin.Mac.dll '。 Mac 專案-' Xamarin.Mac.dll ' 已明確參考，而 ' monomac.dll ' 在將您的應用程式轉換為統一的 api 之後，由 ' xxx，Version = 0.0.000，Culture = 中性，PublicKeyToken = null ' "參考_，通常是因為專案中的元件或 NuGet 套件尚未更新至 Unified API。 您必須移除現有的元件/NuGet、更新為支援統一 Api 的版本，並執行全新的組建。
 
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>啟用 Xamarin. Mac 應用程式的64位組建
 
@@ -126,5 +126,5 @@ Xamarin 提供 Visual Studio for Mac 和 Visual Studio 的工具，可將 Classi
 ## <a name="related-links"></a>相關連結
 
 - [將程式碼更新至 Unified API 的祕訣](~/cross-platform/macios/unified/updating-tips.md)
-- [在跨平台應用程式中使用原生型別](~/cross-platform/macios/native-types-cross-platform.md)
+- [在跨平台應用程式中使用原生類型](~/cross-platform/macios/native-types-cross-platform.md)
 - [傳統與 Unified API 差異](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)

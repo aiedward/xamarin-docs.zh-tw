@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: bbb1e21139b5f073e2cc7e3d4781e8bc38334449
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4e4a231b6ae8dda3417cd32f95850a44d6c72260
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73006310"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939382"
 ---
 # <a name="inspecting-live-applications"></a>檢查即時應用程式
 
@@ -21,15 +21,15 @@ ms.locfileid: "73006310"
 1. 以偵錯模式執行您的應用程式。
 1. 按一下 IDE 工具列中的 [**檢查**] 按鈕（在 Visual Studio 中，您也可以從 [**工具**] 或 [**調試**程式] 功能表取得 [**檢查目前的應用程式 ...** ] 功能表項目）。
 
-[![](inspect-images/mac-heres-the-button.png "Click the Inspect button in the IDE toolbar")](inspect-images/mac-heres-the-button.png#lightbox)
+[![按一下 IDE 工具列中的 [檢查] 按鈕](inspect-images/mac-heres-the-button.png)](inspect-images/mac-heres-the-button.png#lightbox)
 
 新的 Xamarin Inspector 用戶端視窗隨即開啟，並出現全新的複寫提示。
 
-[![](inspect-images/inspector-0.7.0-map-inspect-small.png "A new Xamarin Inspector client window will open, with a fresh REPL prompt")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
+[![新的 Xamarin Inspector 用戶端視窗隨即開啟，並出現全新的複寫提示](inspect-images/inspector-0.7.0-map-inspect-small.png)](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
-這個視窗出現之後，您就會有C#一個互動式提示，可讓您用來C#執行和評估語句和運算式。 這是唯一的，那就是程式碼是在目標進程的內容中進行評估。 在此情況下，我們會顯示針對 iOS 應用程式所顯示的程式碼。
+這個視窗出現之後，您就會有一個互動式 c # 提示，可讓您用來執行和評估 c # 語句和運算式。 這是唯一的，那就是程式碼是在目標進程的內容中進行評估。 在此情況下，我們會顯示針對 iOS 應用程式所顯示的程式碼。
 
-您對應用程式狀態所做的任何變更實際上都是在目標進程上進行，因此您可以使用C#來即時變更應用程式，也可以檢查應用程式的即時狀態。
+您對應用程式狀態所做的任何變更實際上都是在目標進程上進行，因此您可以使用 c # 來變更應用程式的存留，或者可以檢查應用程式的狀態。
 
 例如，在 iOS 上，我們可能會想要找出我們的 UIApplication 委派類別，這是我們主要的驅動程式（我們會在其中儲存許多應用程式狀態）：
 
@@ -40,13 +40,13 @@ del.Database.GetAllCustomers ()
 del.Database.AddCustomer (...)
 ```
 
-（請注意，每次提交都會出現在多行編輯器中。 `Shift + Enter` 會建立新的一行，而 `Cmd + Enter` （Windows 上的`Ctrl + Enter`）會提交程式碼進行評估。 `Enter` 會在安全時自動提交）。
+（請注意，每次提交都會出現在多行編輯器中。 `Shift + Enter`會建立新的一行，而 `Cmd + Enter` （ `Ctrl + Enter` 在 Windows 上）會提交程式碼進行評估。 `Enter`當安全時自動提交）。
 
-若要取得應用程式的視覺元素，更方便的方式是使用 [檢查] 按鈕。 一旦您按下此按鈕，就可以按一下應用程式來選取 UI 元素。 系統會指派變數 `selectedView` 以指向螢幕上的實際元素。 在上述螢幕擷取畫面中，您可以看到我們在選取的 `UISearchBar` 上如何存取和編輯 `selectedView.BarTintColor`。
+若要取得應用程式的視覺元素，更方便的方式是使用 [檢查] 按鈕。 一旦您按下此按鈕，就可以按一下應用程式來選取 UI 元素。 `selectedView`系統會指派變數以指向螢幕上的實際元素。 在上述螢幕擷取畫面中，您可以看到我們在選取的之後，如何存取和編輯 `selectedView.BarTintColor` `UISearchBar` 。
 
-即時視覺化樹狀結構也非常有用。 它代表您的視圖階層目前的快照集。 您可以選取要在複寫中設定 `selectedView` 的資料列，並查看視圖的屬性值。 在 Mac 上，您可以與多層式視圖的3D 分解視覺效果互動。 在 Windows 上，您可以透過視覺化方式編輯檢視的屬性值。
+即時視覺化樹狀結構也非常有用。 它代表您的視圖階層目前的快照集。 您可以選取要在複寫中設定的資料列 `selectedView` ，並查看該視圖的屬性值。 在 Mac 上，您可以與多層式視圖的3D 分解視覺效果互動。 在 Windows 上，您可以透過視覺化方式編輯檢視的屬性值。
 
-## <a name="known-limitations"></a>已知的限制
+## <a name="known-limitations"></a>已知限制
 
 - 只有主顯示器才支援視圖選取。
 - Mac 無法使用屬性方格編輯，而在 Windows 上，則限制為少數資料類型。 使用複寫功能進行更強大的編輯。

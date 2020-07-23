@@ -10,16 +10,16 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8d7ae5eb16b8a94f16b6eca013b4ec7a93f427bd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 972a5ac99ff775ea7301f803c333d8239ae7f193
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198133"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938186"
 ---
 # <a name="consume-a-restful-web-service"></a>使用 RESTful Web 服務
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _將 web 服務整合到應用程式是常見的案例。本文示範如何從應用程式使用 RESTful web 服務 Xamarin.Forms 。_
 
@@ -43,7 +43,7 @@ REST 的簡單性讓它成為在行動應用程式中存取 web 服務的主要�
 
 執行範例應用程式時，它會連接到本機裝載的 REST 服務，如下列螢幕擷取畫面所示：
 
-![](rest-images/portal.png "Sample Application")
+![範例應用程式](rest-images/portal.png)
 
 > [!NOTE]
 > 在 iOS 9 和更新版本中，應用程式傳輸安全性（ATS）會強制執行網際網路資源（例如應用程式的後端伺服器）與應用程式之間的安全連線，藉此防止意外洩漏機密資訊。 由於預設會在針對 iOS 9 建立的應用程式中啟用 ATS，因此所有連線都將受限於 ATS 安全性需求。 如果連線不符合這些需求，則會失敗並產生例外狀況。

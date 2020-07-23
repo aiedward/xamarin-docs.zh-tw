@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 5c73f046f349598c9f0b0e8d7c7d6438c150c05c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: eb95970066f85bb62eb207f23cfc135dc1625a11
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566340"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937094"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 資料表視圖
 
@@ -22,7 +22,7 @@ _本文涵蓋在 tvOS 應用程式內設計和使用資料表視圖和資料表�
 
 資料表視圖通常會在[分割視圖](~/ios/tvos/user-interface/split-views.md)的一側顯示為導覽，而選取專案的詳細資料則會顯示在相反的位置：
 
-[![](table-views-images/intro01.png "Sample table view")](table-views-images/intro01.png#lightbox)
+[![範例資料表視圖](table-views-images/intro01.png)](table-views-images/intro01.png#lightbox)
 
 <a name="About-Table-Views"></a>
 
@@ -30,7 +30,7 @@ _本文涵蓋在 tvOS 應用程式內設計和使用資料表視圖和資料表�
 
 `UITableView`會以階層式清單的形式顯示可滾動資料列的單一資料行，以選擇性地組織成群組或區段： 
 
-[![](table-views-images/table01.png "A selected item")](table-views-images/table01.png#lightbox)
+[![選取的專案](table-views-images/table01.png)](table-views-images/table01.png#lightbox)
 
 Apple 具有下列使用資料表的建議：
 
@@ -72,86 +72,86 @@ Apple 對於使用資料表視圖儲存格有下列建議：
 
 1. 在 Visual Studio for Mac 中，啟動新的 tvOS 應用程式專案，然後選取 [ **tvOS**  >  **app**  >  **單一視圖應用程式**]，然後按 [**下一步]** 按鈕： 
 
-    [![](table-views-images/table02.png "Select Single View App")](table-views-images/table02.png#lightbox)
+    [![選取單一視圖應用程式](table-views-images/table02.png)](table-views-images/table02.png#lightbox)
 1. 輸入應用程式的**名稱**，然後按 **[下一步]**： 
 
-    [![](table-views-images/table03.png "Enter a Name for the app")](table-views-images/table03.png#lightbox)
+    [![輸入應用程式的名稱](table-views-images/table03.png)](table-views-images/table03.png#lightbox)
 1. 請調整 [**專案名稱**] 和 [**方案名稱**] 或接受預設值，然後按一下 [**建立**] 按鈕以建立新的方案： 
 
-    [![](table-views-images/table04.png "The Project Name and Solution Name")](table-views-images/table04.png#lightbox)
+    [![[專案名稱] 和 [方案名稱]](table-views-images/table04.png)](table-views-images/table04.png#lightbox)
 1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` 以在 iOS 設計工具中開啟檔案： 
 
-    [![](table-views-images/table05.png "The Main.storyboard file")](table-views-images/table05.png#lightbox)
+    [![主要的分鏡腳本檔案](table-views-images/table05.png)](table-views-images/table05.png#lightbox)
 1. 選取並刪除**預設的 View Controller**： 
 
-    [![](table-views-images/table06.png "Select and delete the Default View Controller")](table-views-images/table06.png#lightbox)
+    [![選取並刪除預設視圖控制器](table-views-images/table06.png)](table-views-images/table06.png#lightbox)
 1. 從 [**工具箱**] 中選取 [**分割視圖控制器**]，並將它拖曳至 [Design Surface]。
 1. 根據預設，您會在左側看到具有**流覽視圖控制器**的[分割視圖](~/ios/tvos/user-interface/split-views.md)，並在右側顯示 [**資料表視圖控制器**]，並在右手邊取得**視圖控制器**。 這是 Apple 在 tvOS 中使用資料表視圖的建議用法： 
 
-    [![](table-views-images/table08.png "Add a Split View")](table-views-images/table08.png#lightbox)
+    [![新增分割視圖](table-views-images/table08.png)](table-views-images/table08.png#lightbox)
 1. 您必須選取資料表視圖的每個部分，並在 [**屬性] 瀏覽器**的 [ **Widget** ] 索引標籤中指派自訂**類別名稱**，讓您稍後可以在 c # 程式碼中存取它。 例如，**資料表視圖控制器**： 
 
-    [![](table-views-images/table09.png "Assign a class name")](table-views-images/table09.png#lightbox)
+    [![指派類別名稱](table-views-images/table09.png)](table-views-images/table09.png#lightbox)
 1. 請確定您建立的是**資料表視圖控制器**、**資料表視圖**和任何**原型資料格**的自訂類別。 Visual Studio for Mac 會在建立自訂類別時，將其加入至專案樹狀結構中： 
 
-    [![](table-views-images/table10.png "The custom classes in the Project Tree")](table-views-images/table10.png#lightbox)
+    [![專案樹狀結構中的自訂類別](table-views-images/table10.png)](table-views-images/table10.png#lightbox)
 1. 接下來，選取 Design Surface 中的資料表視圖，並視需要調整它的屬性。 例如，**原型資料格**的數目和**樣式**（一般或群組）： 
 
-    [![](table-views-images/table11.png "The widget tab")](table-views-images/table11.png#lightbox)
+    [![[Widget] 索引標籤](table-views-images/table11.png)](table-views-images/table11.png#lightbox)
 1. 針對每個**原型資料格**，選取它，然後在 [屬性] **Explorer**的 [ **Widget** ] 索引標籤中指派唯一**識別碼**。 此步驟_非常重要_，因為您稍後會在填入資料表時需要此識別碼。 例如：`AttrCell`： 
 
-    [![](table-views-images/table12.png "The Widget Tab")](table-views-images/table12.png#lightbox)
+    [![[Widget] 索引標籤](table-views-images/table12.png)](table-views-images/table12.png#lightbox)
 1. 您也可以選擇透過 [**樣式**] 下拉式清單將資料格呈現為其中一個[預設資料表視圖資料格類型](#table-view-cell-types)，或將其設定為 [**自訂**]，並使用 [Design Surface]，從 [**工具箱**] 中拖曳其他 UI widget 來配置資料格： 
 
-    [![](table-views-images/table13.png "The cell layout")](table-views-images/table13.png#lightbox)
+    [![資料格版面配置](table-views-images/table13.png)](table-views-images/table13.png#lightbox)
 1. 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中，為原型資料格設計中的每個 UI 專案指派唯一的**名稱**，讓您可以稍後在 c # 程式碼中存取它們： 
 
-    [![](table-views-images/table14.png "Assign a name")](table-views-images/table14.png#lightbox)
+    [![指派名稱](table-views-images/table14.png)](table-views-images/table14.png#lightbox)
 1. 針對資料表視圖中的所有原型資料格，重複上述步驟。
 1. 接下來，將自訂類別指派給您的 UI 設計的其餘部分、配置詳細資料檢視，並將唯一**名稱**指派給詳細資料檢視中的每個 UI 元素，讓您也可以在 c # 中存取它們。 例如： 
 
-    [![](table-views-images/table15.png "The UI layout")](table-views-images/table15.png#lightbox)
+    [![UI 版面配置](table-views-images/table15.png)](table-views-images/table15.png#lightbox)
 1. 將您的變更儲存至分鏡腳本。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 在 Visual Studio 中，啟動新的 tvOS 應用程式專案，然後選取 [ **tvOS**  >  **單一視圖應用程式**]，並輸入您的應用程式名稱。 按一下 [**確定**] 按鈕以建立新的解決方案： 
 
-    [![](table-views-images/table02-vs.png "Select Single View App")](table-views-images/table02-vs.png#lightbox)
+    [![選取單一視圖應用程式](table-views-images/table02-vs.png)](table-views-images/table02-vs.png#lightbox)
 1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` 以在 iOS 設計工具中開啟檔案： 
 
-    [![](table-views-images/table05-vs.png "The Main.storyboard file")](table-views-images/table05-vs.png#lightbox)
+    [![主要的分鏡腳本檔案](table-views-images/table05-vs.png)](table-views-images/table05-vs.png#lightbox)
 1. 選取並刪除**預設的 View Controller**： 
 
-    [![](table-views-images/table06-vs.png "Select and delete the Default View Controller")](table-views-images/table06-vs.png#lightbox)
+    [![選取並刪除預設視圖控制器](table-views-images/table06-vs.png)](table-views-images/table06-vs.png#lightbox)
 1. 從 [**工具箱**] 中選取 [**分割視圖控制器**]，並將它拖曳至 [Design Surface： 
 
-    [![](table-views-images/table07-vs.png "A Split View Controller")](table-views-images/table07-vs.png#lightbox)
+    [![分割視圖控制器](table-views-images/table07-vs.png)](table-views-images/table07-vs.png#lightbox)
 1. 根據預設，您會在左側看到具有**流覽視圖控制器**的[分割視圖](~/ios/tvos/user-interface/split-views.md)，並在右側顯示 [**資料表視圖控制器**]，並在右手邊取得**視圖控制器**。 這是 Apple 在 tvOS 中使用資料表視圖的建議用法： 
 
-    [![](table-views-images/table08-vs.png "Layout the UI")](table-views-images/table08-vs.png#lightbox)
+    [![版面配置 UI](table-views-images/table08-vs.png)](table-views-images/table08-vs.png#lightbox)
 1. 您必須選取資料表視圖的每個部分，並在 [**屬性] 瀏覽器**的 [ **Widget** ] 索引標籤中指派自訂**類別名稱**，讓您稍後可以在 c # 程式碼中存取它。 例如，**資料表視圖控制器**： 
 
-    [![](table-views-images/table09-vs.png "The Widget Tab")](table-views-images/table09-vs.png#lightbox)
+    [![[Widget] 索引標籤](table-views-images/table09-vs.png)](table-views-images/table09-vs.png#lightbox)
 1. 請確定您建立的是**資料表視圖控制器**、**資料表視圖**和任何**原型資料格**的自訂類別。 Visual Studio for Mac 會在建立自訂類別時，將其加入至專案樹狀結構中： 
 
-    [![](table-views-images/table10-vs.png "The custom classes in the Project Tree")](table-views-images/table10-vs.png#lightbox)
+    [![專案樹狀結構中的自訂類別](table-views-images/table10-vs.png)](table-views-images/table10-vs.png#lightbox)
 1. 接下來，選取 Design Surface 中的資料表視圖，並視需要調整它的屬性。 例如，**原型資料格**的數目和**樣式**（一般或群組）： 
 
-    [![](table-views-images/table11-vs.png "The Widget Tab")](table-views-images/table11-vs.png#lightbox)
+    [![[Widget] 索引標籤](table-views-images/table11-vs.png)](table-views-images/table11-vs.png#lightbox)
 1. 針對每個**原型資料格**，選取它，然後在 [屬性] **Explorer**的 [ **Widget** ] 索引標籤中指派唯一**識別碼**。 此步驟_非常重要_，因為您稍後會在填入資料表時需要此識別碼。 例如：`AttrCell`： 
 
-    [![](table-views-images/table12-vs.png "Assign an Identifier")](table-views-images/table12-vs.png#lightbox)
+    [![指派識別碼](table-views-images/table12-vs.png)](table-views-images/table12-vs.png#lightbox)
 1. 您也可以選擇透過 [**樣式**] 下拉式清單將資料格呈現為其中一個[預設資料表視圖資料格類型](#table-view-cell-types)，或將其設定為 [**自訂**]，並使用 [Design Surface]，從 [**工具箱**] 中拖曳其他 UI widget 來配置資料格： 
 
-    [![](table-views-images/table13-vs.png "The Style dropdown")](table-views-images/table13-vs.png#lightbox)
+    [![樣式下拉式清單](table-views-images/table13-vs.png)](table-views-images/table13-vs.png#lightbox)
 1. 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中，為原型資料格設計中的每個 UI 專案指派唯一的**名稱**，讓您可以稍後在 c # 程式碼中存取它們： 
 
-    [![](table-views-images/table14-vs.png "The Widget Tab")](table-views-images/table14-vs.png#lightbox)
+    [![[Widget] 索引標籤](table-views-images/table14-vs.png)](table-views-images/table14-vs.png#lightbox)
 1. 針對資料表視圖中的所有原型資料格，重複上述步驟。
 1. 接下來，將自訂類別指派給您的 UI 設計的其餘部分、配置詳細資料檢視，並將唯一**名稱**指派給詳細資料檢視中的每個 UI 元素，讓您也可以在 c # 中存取它們。 例如： 
 
-    [![](table-views-images/table15.png "The UI Layout")](table-views-images/table15.png#lightbox)
+    [![UI 版面配置](table-views-images/table15.png)](table-views-images/table15.png#lightbox)
 1. 將您的變更儲存至分鏡腳本。
 
 -----
@@ -168,13 +168,13 @@ Apple 對於使用資料表視圖儲存格有下列建議：
 
 若要建立**遊樂設施**的資料模型，請以滑鼠右鍵按一下**Solution Pad**中的專案名稱，然後選取 [**加入**  >  **新**檔案 ...]。輸入 `AttractionInformation` 作為**名稱**，然後按一下 [**新增**] 按鈕： 
 
-[![](table-views-images/data01.png "Enter AttractionInformation for the Name")](table-views-images/data01.png#lightbox)
+[![在 [名稱] 中輸入 AttractionInformation](table-views-images/data01.png)](table-views-images/data01.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要建立**遊樂設施**的資料模型，請以滑鼠右鍵按一下**方案總管**中的專案名稱，然後選取 [**加入**  >  **新專案**]。選取 [**類別**] 並輸入 `AttractionInformation` 作為**名稱**，然後按一下 [**新增**] 按鈕： 
 
-[![](table-views-images/data01-vs.png "Select Class and enter AttractionInformation for the Name")](table-views-images/data01-vs.png#lightbox)
+[![選取 [類別]，然後輸入 AttractionInformation 作為 [名稱]](table-views-images/data01-vs.png)](table-views-images/data01-vs.png#lightbox)
 
 -----
 
@@ -216,13 +216,13 @@ namespace tvTable
 
 接下來，再次以滑鼠右鍵按一下 [ **Solution Pad**中的專案名稱，**然後選取 [**  >  **新增檔案 ...**]。輸入 `CityInformation` 作為**名稱**，然後按一下 [**新增**] 按鈕： 
 
-[![](table-views-images/data02.png "Enter CityInformation for the Name")](table-views-images/data02.png#lightbox)
+[![在 [名稱] 中輸入 CityInformation](table-views-images/data02.png)](table-views-images/data02.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 接下來，再次以滑鼠右鍵按一下 [**方案總管**中的專案名稱，然後選取 [**加入**  >  **新專案**]。輸入 `CityInformation` 作為**名稱**，然後按一下 [**新增**] 按鈕： 
 
-[![](table-views-images/data02-vs.png "Enter CityInformation for the Name")](table-views-images/data02-vs.png#lightbox)
+[![在 [名稱] 中輸入 CityInformation](table-views-images/data02-vs.png)](table-views-images/data02-vs.png#lightbox)
 
 -----
 
@@ -733,7 +733,7 @@ namespace tvTable
 
 如本檔開頭所述，資料表視圖通常會顯示在[分割視圖](~/ios/tvos/user-interface/split-views.md)的一側做為導覽，而選取專案的詳細資料則會顯示在相反的一邊。 例如： 
 
-[![](table-views-images/intro01.png "Sample app run")](table-views-images/intro01.png#lightbox)
+[![範例應用程式執行](table-views-images/intro01.png)](table-views-images/intro01.png#lightbox)
 
 由於這是 tvOS 中的標準模式，因此讓我們來看一下將所有專案結合在一起的最後步驟，並讓分割視圖的左邊和右邊彼此互動。
 

@@ -9,12 +9,12 @@ ms.date: 01/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4d644591ab85f185709e7bd53353580a6578d77
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1eae29e8531c9d401630f9d113b01eb3c2510689
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570106"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939161"
 ---
 # <a name="uninstall-xamarin-from-visual-studio"></a>從 Visual Studio 解除安裝 Xamarin 
 
@@ -30,25 +30,25 @@ ms.locfileid: "84570106"
 
 2. 按下您想要變更之執行個體的 [修改]**** 按鈕。
 
-    [![](uninstalling-xamarin-images/vs2017-02-sml.png "Press the modify button")](uninstalling-xamarin-images/vs2017-02.png#lightbox)
+    [![按下 [修改] 按鈕](uninstalling-xamarin-images/vs2017-02-sml.png)](uninstalling-xamarin-images/vs2017-02.png#lightbox)
 
 3. 在 [工作負載]**** 索引標籤中，取消選取 [使用 .NET 進行行動開發]**** 選項 (位於**行動與遊戲**區塊)。
 
-    [![](uninstalling-xamarin-images/vs2017-03-sml.png "Uncheck the Mobile Development workload")](uninstalling-xamarin-images/vs2017-03.png#lightbox)
+    [![取消選取 [行動裝置應用程式開發] 工作負載](uninstalling-xamarin-images/vs2017-03-sml.png)](uninstalling-xamarin-images/vs2017-03.png#lightbox)
 
 4. 按一下視窗右下角的 [修改]**** 按鈕。
 
 5. 安裝程式會移除取消選取的元件 (Visual Studio 2017 必須在安裝程式進行任何變更之前關閉)。
 
-    [![](uninstalling-xamarin-images/vs2017-04-sml.png "Press the Modify button")](uninstalling-xamarin-images/vs2017-04.png#lightbox)
+    [![按下 [修改] 按鈕](uninstalling-xamarin-images/vs2017-04-sml.png)](uninstalling-xamarin-images/vs2017-04.png#lightbox)
 
 藉由切換至步驟3中的 [**個別元件**] 索引標籤，並取消核取特定元件，可以卸載個別的 Xamarin 元件（例如 Profiler 或活頁簿）：
 
-[![](uninstalling-xamarin-images/vs2017-components-sml.png "Uninstall individual components")](uninstalling-xamarin-images/vs2017-components.png#lightbox)
+[![解除安裝個別元件](uninstalling-xamarin-images/vs2017-components-sml.png)](uninstalling-xamarin-images/vs2017-components.png#lightbox)
 
 若要完全解除安裝 Visual Studio 2017，請從 [啟動]**** 按鈕旁邊的三列功能表中選擇 [解除安裝]****。
 
-[![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Uninstall Visual Studio completely")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
+[![完全解除安裝 Visual Studio](uninstalling-xamarin-images/vs2017-uninstall-sml.png)](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
 > 若您並存 (SxS) 安裝兩個 (或更多個) Visual Studio 執行個體 (例如發行版和預覽版)，則將一個執行個體解除安裝可能會移除另一個 Visual Studio 執行個體中的一些 Xamarin 功能，包括：
@@ -70,7 +70,7 @@ ms.locfileid: "84570106"
 
 您可以透過**控制台**從 Windows 電腦解除安裝 Xamarin。 巡覽至 [程式和功能]**** 或 [程式] > [解除安裝程式]****，如下圖所示：
 
- [![](uninstalling-xamarin-images/image3.png "Navigate to Programs and Features or Programs  Uninstall a Program as illustrated here")](uninstalling-xamarin-images/image3.png#lightbox)
+ [![巡覽至 [程式和功能] 或 [程式集] &gt; [解除安裝程式]，如此圖所示](uninstalling-xamarin-images/image3.png)](uninstalling-xamarin-images/image3.png#lightbox)
 
 從 [控制台] 將以下存在的所有項目解除安裝：
 

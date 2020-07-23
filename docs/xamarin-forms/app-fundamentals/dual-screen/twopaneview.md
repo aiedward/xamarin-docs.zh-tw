@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e4805634addaf68ac91eea928b7476ba42fa36c4
-ms.sourcegitcommit: 60f475a3d6ca880aff34f1177f76eff0b0f96233
+ms.openlocfilehash: fb5474c7436cb985a1404b662fcf842f22cfdc0d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86869844"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937692"
 ---
 # <a name="xamarinforms-twopaneview-layout"></a>Xamarin.FormsTwoPaneView 版面配置
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 

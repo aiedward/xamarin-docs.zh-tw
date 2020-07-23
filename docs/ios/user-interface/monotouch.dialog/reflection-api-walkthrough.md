@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 1a6391c0e626c60fe35acee61f55f2f202f077b8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c087bb4a75664c4fae551b9288e7900c4c7fce4b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573439"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936990"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>使用反映 API 建立 Xamarin iOS 應用程式
 
@@ -106,7 +106,7 @@ window.RootViewController = nav;
 
 現在當我們執行應用程式時，標題會顯示在導覽列中， `UINavigationController’s` 如下列螢幕擷取畫面所示：
 
- [![](reflection-api-walkthrough-images/02-create-task.png "Now when we run the application, the title appears in the UINavigationControllers navigation bar")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
+ [![現在當我們執行應用程式時，標題會出現在 UINavigationControllers 巡覽列中](reflection-api-walkthrough-images/02-create-task.png)](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 藉由包含 `UINavigationController` ，我們現在可以利用 MT 的其他功能。需要導覽的 D。 例如，我們可以將列舉新增至類別 `Expense` ，以定義費用和 MT 的分類。D 會自動建立選取畫面。 若要示範，請修改 `Expense` 類別以包含 `ExpenseCategory` 欄位，如下所示：
 
@@ -129,11 +129,11 @@ public class Expense
 
 現在執行應用程式會在資料表中產生新的資料列，如下所示：
 
- [![](reflection-api-walkthrough-images/03-set-details.png "Running the application now results in a new row in the table for the category as shown")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
+ [![現在執行應用程式會在資料表中產生新的資料列，如下所示](reflection-api-walkthrough-images/03-set-details.png)](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 選取資料列會導致應用程式流覽至新的畫面，其中包含對應至列舉的資料列，如下所示：
 
- [![](reflection-api-walkthrough-images/04-set-category.png "Selecting the row results in the application navigating to a new screen with rows corresponding to the enumeration")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
+ [![選取資料列會導致應用程式流覽至新的畫面，其中包含對應至列舉的資料列](reflection-api-walkthrough-images/04-set-category.png)](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary"></a>
 

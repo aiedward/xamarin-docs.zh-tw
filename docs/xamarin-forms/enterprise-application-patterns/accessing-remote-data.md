@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cef3c2369bb4aee81a52ddd27d6ad732d7544dfa
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: df79a9b6a7b0ab44d4fcf03f12a7b4d8aabd0a82
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573842"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939265"
 ---
 # <a name="accessing-remote-data"></a>存取遠端資料
 
@@ -54,7 +54,7 @@ EShopOnContainers 行動應用程式會使用 `HttpClient` 類別，透過 HTTP 
 
 圖10-1 顯示從目錄微服務讀取目錄資料以供顯示的類別互動 `CatalogView` 。
 
-[![](accessing-remote-data-images/catalogdata.png "Retrieving data from the catalog microservice")](accessing-remote-data-images/catalogdata-large.png#lightbox "Retrieving data from the catalog microservice")
+[![從目錄微服務中抓取資料](accessing-remote-data-images/catalogdata.png)](accessing-remote-data-images/catalogdata-large.png#lightbox "從目錄微服務中抓取資料")
 
 **圖 10-1**：從目錄微服務中抓取資料
 
@@ -159,7 +159,7 @@ public async Task<IActionResult> Items(
 
 圖10-2 顯示將所顯示的購物籃資料傳送 `BasketView` 至購物籃微服務的類別互動。
 
-[![](accessing-remote-data-images/basketdata.png "Sending data to the basket microservice")](accessing-remote-data-images/basketdata-large.png#lightbox "Sending data to the basket microservice")
+[![將資料傳送至購物籃微服務](accessing-remote-data-images/basketdata.png)](accessing-remote-data-images/basketdata-large.png#lightbox "將資料傳送至購物籃微服務")
 
 **圖 10-2**：將資料傳送至購物籃微服務
 
@@ -232,7 +232,7 @@ public async Task<IActionResult> Post([FromBody]CustomerBasket value)
 
 圖10-3 顯示從購物籃微服務刪除購物籃資料之類別的互動 `CheckoutView` 。
 
-![](accessing-remote-data-images/checkoutdata.png "Deleteing data from the basket microservice")
+![從購物籃微服務刪除資料](accessing-remote-data-images/checkoutdata.png)
 
 **圖 10-3**：刪除購物籃微服務中的資料
 
@@ -401,7 +401,7 @@ EShopOnContainers 行動應用程式目前不會執行斷路器模式。 不過�
 
 如需斷路器模式的詳細資訊，請參閱[斷路器模式。](/azure/architecture/patterns/circuit-breaker/)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 許多現代化的 web 解決方案都會使用 web 伺服器所裝載的 web 服務，以提供遠端用戶端應用程式的功能。 Web 服務所公開的作業會構成 Web API，而且用戶端應用程式應該能夠利用 Web API，而不需要知道 API 所公開的資料或作業如何執行。
 

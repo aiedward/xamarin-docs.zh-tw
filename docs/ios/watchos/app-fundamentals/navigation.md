@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1ad4ecad90238436f8d2a02727596186c6205eeb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8b1ffe54ad199acbc7bf3918c187e198d96b51c8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572087"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939395"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>在 Xamarin 中使用 watchOS 導覽
 
@@ -49,7 +49,7 @@ DismissController();
 
 呈現可以流覽回到堆疊的場景，類似于在 `UINavigationController` iOS 上運作的方式。 場景可以推送到導覽堆疊上，並將其關閉（以程式設計方式或由使用者選擇）。
 
-![](navigation-images/hierarchy-1.png "場景可以推送至導覽堆疊") ![](navigation-images/hierarchy-2.png "可以從導覽堆疊中取出場景")
+![場景可以推送至導覽堆疊](navigation-images/hierarchy-1.png) ![可以從導覽堆疊中取出場景](navigation-images/hierarchy-2.png)
 
 如同 iOS，在階層式導覽堆疊中，左邊緣滑動會流覽回父控制器。
 
@@ -95,7 +95,7 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 以頁面為基礎的介面從左至右滑動，類似于 `UIPageViewController` iOS 的運作方式。 指標點會沿著畫面底部顯示，以顯示目前顯示的頁面。
 
-![](navigation-images/paged-1.png "範例第一頁") ![](navigation-images/paged-2.png "範例第二頁") ![](navigation-images/paged-5.png "第五頁範例")
+![範例第一頁](navigation-images/paged-1.png) ![範例第二頁](navigation-images/paged-2.png) ![第五頁範例](navigation-images/paged-5.png)
 
 若要讓以頁面為基礎的介面成為監看式應用程式的主要 UI，請搭配 `ReloadRootControllers` 介面控制器和內容的陣列使用：
 

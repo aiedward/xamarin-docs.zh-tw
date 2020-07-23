@@ -10,26 +10,26 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ec35b03e7e96f0730813918bdd96e1408cfabde7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0d6a18ec55b49da2b668ccc183646d5e4dde5849
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571489"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937224"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
 
 _NavigationPage 類別提供階層式導覽體驗，讓使用者能夠視需要，向前和向後流覽頁面。類別會將導覽實作為頁面物件的後進先出（LIFO）堆疊。本文示範如何使用 NavigationPage 類別，在一堆頁面中執行導覽。_
 
 若要從一頁移到另一頁，應用程式會將新的頁面推送到導覽堆疊上，該頁面就會變成使用中頁面，如下圖所示：
 
-![](hierarchical-images/pushing.png "Pushing a Page to the Navigation Stack")
+![將頁面推送到導覽堆疊](hierarchical-images/pushing.png)
 
 若要返回上一頁，應用程式將會從導覽堆疊中快顯目前的頁面，新的最上層頁面就會變成使用中頁面，如下圖所示：
 
-![](hierarchical-images/popping.png "Popping a Page from the Navigation Stack")
+![從導覽堆疊中快顯頁面](hierarchical-images/popping.png)
 
 導覽方法是由 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 任何衍生類型上的屬性所公開 [`Page`](xref:Xamarin.Forms.Page) 。 這些方法可讓您將頁面推送到導覽堆疊上、從導覽堆疊中快顯頁面，以及執行堆疊操作。
 
@@ -37,7 +37,7 @@ _NavigationPage 類別提供階層式導覽體驗，讓使用者能夠視需要�
 
 在階層式導覽中， [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 類別是用來流覽物件的堆疊 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。 下列螢幕擷取畫面顯示每個平台上 `NavigationPage` 的主要元件：
 
-![](hierarchical-images/navigationpage-components.png "NavigationPage Components")
+![NavigationPage 元件](hierarchical-images/navigationpage-components.png)
 
 的版面配置 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 取決於平臺：
 
@@ -63,7 +63,7 @@ public App ()
 
 這會使 `Page1Xaml` [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體推送至導覽堆疊上，而變成使用中頁面及應用程式的根頁面。 如下列螢幕擷取畫面所示：
 
-![](hierarchical-images/mainpage.png "Root Page of Navigation Stack")
+![導覽堆疊的根頁面](hierarchical-images/mainpage.png)
 
 > [!NOTE]
 > [`RootPage`](xref:Xamarin.Forms.NavigationPage.RootPage)實例的屬性 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 可讓您存取導覽堆疊中的第一頁。
@@ -81,7 +81,7 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 
 這會使 `Page2Xaml` 執行個體推送至導覽堆疊上，而變成使用中的頁面。 如下列螢幕擷取畫面所示：
 
-![](hierarchical-images/secondpage.png "Page Pushed onto Navigation Stack")
+![推送到導覽堆疊上的頁面](hierarchical-images/secondpage.png)
 
 叫用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法時，會發生下列事件：
 
@@ -181,7 +181,7 @@ public MainPage (string date)
 
 然後，藉由設定屬性在頁面上顯示資料 [`Label.Text`](xref:Xamarin.Forms.Label.Text) ，如下列螢幕擷取畫面所示：
 
-![](hierarchical-images/passing-data-constructor.png "Data Passed Through a Page Constructor")
+![透過頁面建構函式傳遞的資料](hierarchical-images/passing-data-constructor.png)
 
 ### <a name="passing-data-through-a-bindingcontext"></a>透過 BindingContext 傳遞資料
 
@@ -267,7 +267,7 @@ public class SecondPageCS : ContentPage
 
 然後，資料會由一系列的控制項顯示在頁面上 [`Label`](xref:Xamarin.Forms.Label) ，如下列螢幕擷取畫面所示：
 
-![](hierarchical-images/passing-data-bindingcontext.png "Data Passed Through a BindingContext")
+![透過 BindingContext 傳遞的資料](hierarchical-images/passing-data-bindingcontext.png)
 
 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
@@ -277,11 +277,11 @@ public class SecondPageCS : ContentPage
 
 方法會將 [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) 指定的頁面插入導覽堆疊的現有指定頁面前面，如下圖所示：
 
-![](hierarchical-images/insert-page-before.png "Inserting a Page in the Navigation Stack")
+![將頁面插入導覽堆疊](hierarchical-images/insert-page-before.png)
 
 [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*)方法會從導覽堆疊中移除指定的頁面，如下圖所示：
 
-![](hierarchical-images/remove-page.png "Removing a Page from the Navigation Stack")
+![從導覽堆疊中移除頁面](hierarchical-images/remove-page.png)
 
 這些方法會啟用自訂導覽體驗，例如在成功登入之後，以新頁面取代登入頁面。 下列程式碼範例將示範此情節：
 

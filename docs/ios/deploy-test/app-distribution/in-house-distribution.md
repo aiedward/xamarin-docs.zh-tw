@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 854fecd7945c1090b475b3571678388b8e1cf127
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1c70aca4812214b424820ecb5a769a871e7e703c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573231"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937900"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的內部作業散發
 
@@ -56,15 +56,15 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 3. 按一下 **+** 按鈕以建立新的憑證。
 4. 在 [生產環境] ** 標題下，選取 [內部作業和臨機操作]****：
 
-   [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
+   [![選取內部和特定的](in-house-distribution-images/createcertmanually01.png)](in-house-distribution-images/createcertmanually01.png#lightbox)
 
 5. 按一下 [繼續]，並遵循指示以透過 Keychain 存取來建立憑證簽署要求：
 
-   [![](in-house-distribution-images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](in-house-distribution-images/createcertmanually02.png#lightbox)
+   [![透過 Keychain 存取建立憑證簽署要求](in-house-distribution-images/createcertmanually02.png)](in-house-distribution-images/createcertmanually02.png#lightbox)
 
 6. 依指示建立 CSR 之後，請按一下 [繼續] 並將您的 CSR 上傳到 Member Center：
 
-   [![](in-house-distribution-images/createcertmanually03.png "Upload the CSR to the Member Center")](in-house-distribution-images/createcertmanually03.png#lightbox)
+   [![將 CSR 上傳到成員中心](in-house-distribution-images/createcertmanually03.png)](in-house-distribution-images/createcertmanually03.png#lightbox)
 
 7. 按一下 [產生] 以建立您的憑證。
 8. 下載完成的憑證，並按兩下檔案以進行安裝。
@@ -74,15 +74,15 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
 1. 選取您的小組，然後按一下 [檢視詳細資料]**：
 
-   [![](in-house-distribution-images/selectteam.png "Select your team")](in-house-distribution-images/selectteam.png#lightbox)
+   [![選取您的小組](in-house-distribution-images/selectteam.png)](in-house-distribution-images/selectteam.png#lightbox)
 
 2. 接著，按一下 [iOS Distribution Certificate] (iOS 散發憑證)**** 旁邊的 [建立]**** 按鈕：
 
-   [![](in-house-distribution-images/selectcert.png "Create the iOS Distribution Certificate")](in-house-distribution-images/selectcert.png#lightbox)
+   [![建立 iOS 散發憑證](in-house-distribution-images/selectcert.png)](in-house-distribution-images/selectcert.png#lightbox)
 
 3. 接著，按一下 [加號 (+)]**** 按鈕，然後選取 [iOS App Store]****：
 
-   [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
+   [![選取 iOS App Store](in-house-distribution-images/selectcert.png)](in-house-distribution-images/selectcert.png#lightbox)
 
 <a name="profile"></a>
 
@@ -104,23 +104,23 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
 1. 返回 Apple 布建入口網站，然後**選取 [** 布建] [  >  **散發**]：
 
-   [![](in-house-distribution-images/distribute01.png "Select Provisioning > Distribution")](in-house-distribution-images/distribute01.png#lightbox)
+   [![選取布建 > 散發](in-house-distribution-images/distribute01.png)](in-house-distribution-images/distribute01.png#lightbox)
 
 2. 按一下 [] **+** 按鈕，然後選取您想要建立為**內部**的散發配置檔案類型：
 
-   [![](in-house-distribution-images/distribute02.png "Create an In-House Distribution Profile")](in-house-distribution-images/distribute02.png#lightbox)
+   [![建立內部散發設定檔](in-house-distribution-images/distribute02.png)](in-house-distribution-images/distribute02.png#lightbox)
 
 3. 按一下 [繼續]**** 按鈕，並從您要建立散發設定檔的下拉式清單中選取應用程式識別碼：
 
-   [![](in-house-distribution-images/distribute03.png "Select App ID from the dropdown list")](in-house-distribution-images/distribute03.png#lightbox)
+   [![從下拉式清單中選取 [應用程式識別碼]](in-house-distribution-images/distribute03.png)](in-house-distribution-images/distribute03.png#lightbox)
 
 4. 按一下 [繼續]**** 按鈕，並選取簽署應用程式所需的散發憑證：
 
-   [![](in-house-distribution-images/distribute04.png "Select distribution certificate required to sign the application")](in-house-distribution-images/distribute04.png#lightbox)
+   [![選取簽署應用程式所需的散發憑證](in-house-distribution-images/distribute04.png)](in-house-distribution-images/distribute04.png#lightbox)
 
 5. 按一下 [繼續]**** 按鈕，並針對新的散發設定檔輸入**名稱**：
 
-   [![](in-house-distribution-images/distribute06.png "Enter a Name for the new Distribution Profile")](in-house-distribution-images/distribute06.png#lightbox)
+   [![輸入新散發設定檔的名稱](in-house-distribution-images/distribute06.png)](in-house-distribution-images/distribute06.png#lightbox)
 
 6. 按一下 [產生]**** 按鈕，以建立新的設定檔，並完成流程。
 

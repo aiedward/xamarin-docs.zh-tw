@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: def34efd1fd48cc0e7dd802a6d3e843be1e156a4
-ms.sourcegitcommit: 5ddb107b0a56bef8a16fce5bc6846f9673b3b22e
+ms.openlocfilehash: 4fe58dbc02da47d5791afbbfe0132fd21e774b63
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75558803"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939785"
 ---
 # <a name="photokit-in-xamarinios"></a>在 Xamarin 中 PhotoKit
 
-[![下載範例](~/media/shared/download.png) 下載程式代碼範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
+[![下載範例 ](~/media/shared/download.png) 下載程式代碼範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
 
 PhotoKit 是一種架構，可讓應用程式查詢系統映射庫，並建立自訂使用者介面來查看和修改其內容。 其中包含一些代表影像和影片資產的類別，以及一系列的資產，例如專輯和資料夾。
 
@@ -31,18 +31,18 @@ PhotoKit 是一種架構，可讓應用程式查詢系統映射庫，並建立�
 
 ## <a name="model-objects"></a>模型物件
 
-PhotoKit 會在其呼叫模型物件時，代表這些資產。 代表相片和影片本身的模型物件屬於 `PHAsset`類型。 `PHAsset` 包含資產媒體類型及其建立日期之類的中繼資料。
-同樣地，`PHAssetCollection` 和 `PHCollectionList` 類別分別包含資產集合和集合清單的相關中繼資料。 資產集合是一組資產，例如指定年份的所有相片和影片。 同樣地，集合清單是資產集合的群組，例如依年份分組的相片和影片。
+PhotoKit 會在其呼叫模型物件時，代表這些資產。 代表相片和影片本身的模型物件屬於類型 `PHAsset` 。 `PHAsset`包含中繼資料，例如資產的媒體類型及其建立日期。
+同樣地， `PHAssetCollection` 和 `PHCollectionList` 類別會分別包含資產集合和集合清單的中繼資料。 資產集合是一組資產，例如指定年份的所有相片和影片。 同樣地，集合清單是資產集合的群組，例如依年份分組的相片和影片。
 
 ## <a name="querying-model-data"></a>查詢模型資料
 
-PhotoKit 可讓您輕鬆地透過各種 fetch 方法來查詢模型資料。 例如，若要取出所有影像，您可以呼叫 `PHAsset.Fetch`，並傳遞 `PHAssetMediaType.Image` 媒體類型。
+PhotoKit 可讓您輕鬆地透過各種 fetch 方法來查詢模型資料。 例如，若要取出所有影像，您可以呼叫 `PHAsset.Fetch` ，傳遞 `PHAssetMediaType.Image` 媒體類型。
 
 ```csharp
 PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 ```
 
-`PHFetchResult` 實例會接著包含代表影像的所有 `PHAsset` 實例。 若要取得映射本身，您可以使用 `PHImageManager` （或快取版本，`PHCachingImageManager`）藉由呼叫 `RequestImageForAsset`來提出影像要求。 例如，下列程式碼會抓取 `PHFetchResult` 中每個資產的影像，以顯示在 [集合視圖] 儲存格中：
+`PHFetchResult`然後，實例會包含 `PHAsset` 代表影像的所有實例。 若要取得映射本身，您可以使用 `PHImageManager` （或快取版本），藉 `PHCachingImageManager` 由呼叫來對影像提出要求 `RequestImageForAsset` 。 例如，下列程式碼會針對中的每個資產抓取影像 `PHFetchResult` ，以顯示在 [集合視圖] 資料格中：
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -62,11 +62,11 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 這會產生影像方格，如下所示：
 
-![](photokit-images/image4.png "The running app displaying a grid of images")
+![顯示影像方格的執行中應用程式](photokit-images/image4.png)
 
 ## <a name="saving-changes-to-the-photo-library"></a>儲存相片媒體櫃的變更
 
-這就是處理查詢和讀取資料的方式。 您也可以將變更寫回程式庫。 因為有多個感興趣的應用程式可以與系統相片媒體櫃互動，所以您可以註冊觀察者，以使用 `PhotoLibraryObserver`來通知變更。 然後，當變更時，您的應用程式就可以據以更新。 例如，以下是重載上述收集視圖的簡單執行：
+這就是處理查詢和讀取資料的方式。 您也可以將變更寫回程式庫。 因為有多個感興趣的應用程式可以與系統相片媒體櫃互動，所以您可以註冊觀察者，以使用來通知變更 `PhotoLibraryObserver` 。 然後，當變更時，您的應用程式就可以據以更新。 例如，以下是重載上述收集視圖的簡單執行：
 
 ```csharp
 class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
@@ -89,7 +89,7 @@ class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
 }
 ```
 
-若要實際從您的應用程式寫回變更，您可以建立變更要求。 每個模型類別都有相關聯的變更要求類別。 例如，若要變更 `PHAsset`，請建立 `PHAssetChangeRequest`。 執行會寫回相片媒體櫃並傳送給觀察者的步驟如下所示：
+若要實際從您的應用程式寫回變更，您可以建立變更要求。 每個模型類別都有相關聯的變更要求類別。 例如，若要變更 `PHAsset` ，您可以建立 `PHAssetChangeRequest` 。 執行會寫回相片媒體櫃並傳送給觀察者的步驟如下所示：
 
 1. 執行編輯作業。
 2. 將篩選過的影像資料儲存至 `PHContentEditingOutput` 實例。
@@ -135,6 +135,6 @@ void ApplyNoirFilter (object sender, EventArgs e)
 
 ![兩個範例，顯示套用篩選前後的相片](photokit-images/image5.png)
 
-由於 `PHPhotoLibraryChangeObserver`，因此當使用者導覽回來時，變更會反映在 [集合] 視圖中：
+而且感謝 `PHPhotoLibraryChangeObserver` ，當使用者流覽回來時，此變更會反映在 [集合] 視圖中：
 
 ![顯示已修改相片的相片集合視圖](photokit-images/image6.png)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 5e1019417ff7ac93abfe2396a4acaa76c66d182f
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 534ecb6a2f779875a6934306c7f9956450d880ed
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292266"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938498"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin 中的訂閱和報告
 
@@ -48,19 +48,19 @@ ms.locfileid: "78292266"
 
 在您的伺服器上驗證自動可續訂訂閱時，必須在 JSON 要求中使用應用程式內購買共用密碼。 共用密碼是透過 iTunes Connect 建立/存取。
 
-從 iTunes Connect 首頁選取 **我的應用程式**：   
+從 iTunes Connect 首頁選取 [**我的應用程式**：   
 
- [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
+ [![選取我的應用程式](subscriptions-and-reporting-images/image2.png)](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 選取應用程式，然後按一下 [**在應用程式內購買**] 索引標籤：
 
-[![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
+[![按一下 [應用程式內購買] 索引標籤](subscriptions-and-reporting-images/image6.png)](subscriptions-and-reporting-images/image6.png#lightbox)
 
 從頁面底部，選取 [查看]**或 [產生共用密碼**]：
 
- [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
+ [![選取 [查看] 或 [產生共用密碼]](subscriptions-and-reporting-images/image40.png)](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
+ [![產生共用密碼](subscriptions-and-reporting-images/image41.png)](subscriptions-and-reporting-images/image41.png#lightbox)   
 
 若要使用共用密碼，請在驗證自動可續訂訂用帳戶的應用程式內購買回條時，將它包含在傳送至 Apple 伺服器的 JSON 承載中，如下所示：
 
@@ -108,8 +108,8 @@ iTunes Connect （ [itunesconnect.apple.com](https://itunesconnect.apple.com)）
 
 範例銷售和趨勢報表如下所示：   
 
- [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
+ [![範例銷售和趨勢報表](subscriptions-and-reporting-images/image42.png)](subscriptions-and-reporting-images/image42.png#lightbox)   
 
  另外還有一種**行楷 Connect**行動裝置 iOS 應用程式。 以下顯示一些可用統計資料的 iPhone 螢幕擷取畫面：   
 
- [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)
+ [![一些可用統計資料的 iPhone 螢幕擷取畫面](subscriptions-and-reporting-images/image43.png)](subscriptions-and-reporting-images/image43.png#lightbox)

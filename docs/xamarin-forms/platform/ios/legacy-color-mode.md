@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8bcd17658156694bfb0638d0ddc1a1ca3fe295c2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 401de4883c91c682d4734dd036ea87b6dc694edb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136037"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939044"
 ---
 # <a name="visualelement-legacy-color-mode-on-ios"></a>IOS 上的 VisualElement 舊版色彩模式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 有些 Xamarin.Forms views 功能是舊版色彩模式。 在此模式中，當 [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled) 視圖的屬性設定為時 `false` ，此視圖會覆寫使用者所設定的色彩，其預設原生色彩為停用狀態。 為了回溯相容性，這種舊版色彩模式仍然是支援的視圖的預設行為。
 
@@ -53,7 +53,7 @@ _legacyColorModeDisabledButton.On<iOS>().SetIsLegacyColorModeEnabled(false);
 
 結果是可以停用舊版色彩模式，讓使用者在視圖上設定的色彩即使停用視圖也會保留：
 
-![](legacy-color-mode-images/legacy-color-mode-disabled.png "Legacy color mode disabled")
+![舊版色彩模式已停用](legacy-color-mode-images/legacy-color-mode-disabled.png)
 
 > [!NOTE]
 > 在 [`VisualStateGroup`](xref:Xamarin.Forms.VisualStateGroup) 視圖上設定時，會完全忽略舊版色彩模式。 如需視覺狀態的詳細資訊，請參閱[ Xamarin.Forms 視覺狀態管理員](~/xamarin-forms/user-interface/visual-state-manager.md)。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ef54cebebb3881f5bb08aa6edfdc344169f179b4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 729289c1764746f9777ef3d720e77865c9a71389
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574089"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937250"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin 中建立使用者介面物件
 
@@ -42,17 +42,17 @@ using UIKit;
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
- [![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png#lightbox)
+ [![工具箱面板](creating-ui-objects-images/image2b.png)](creating-ui-objects-images/image2b.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
- [![](creating-ui-objects-images/image2b-vs.png "Toolbox Pad - Visual Stuio")](creating-ui-objects-images/image2b.png#lightbox)
+ [![工具箱 Pad-視覺效果 Studio](creating-ui-objects-images/image2b-vs.png)](creating-ui-objects-images/image2b.png#lightbox)
 
 -----
 
 在設計介面上選取控制項時， **Properties Pad**會顯示該控制項的屬性。 [**識別 > 名稱**] 欄位 > 的 Widget，會在下方的螢幕擷取畫面中填入，做為*輸出*的名稱。 這就是您可以在 c # 中參考控制項的方式：
 
- [![](creating-ui-objects-images/image3b.png "Properties Widget Pad")](creating-ui-objects-images/image3b.png#lightbox)
+ [![屬性 Widget 面板](creating-ui-objects-images/image3b.png)](creating-ui-objects-images/image3b.png#lightbox)
 
 如需使用 iOS 設計工具的深入探討，請參閱[Ios 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
 
@@ -64,27 +64,27 @@ using UIKit;
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
- [![](creating-ui-objects-images/imagexcode.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
+ [![分鏡腳本內容功能表-Xcode](creating-ui-objects-images/imagexcode.png)](creating-ui-objects-images/imagexcode.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](creating-ui-objects-images/imagexcode-vs.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
+[![分鏡腳本內容功能表-Xcode](creating-ui-objects-images/imagexcode-vs.png)](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 控制項可以從**物件程式庫**拖曳至 Design Surface，如下所示：
 
- [![](creating-ui-objects-images/image5a.png "Xcode Object Library")](creating-ui-objects-images/image5a.png#lightbox)
+ [![Xcode 物件程式庫](creating-ui-objects-images/image5a.png)](creating-ui-objects-images/image5a.png#lightbox)
 
 當您使用 Interface Builder 設計 UI 時，您必須為想要在 c # 中參考的每個控制項建立一個**插座**。 這是藉由使用 [Xcode] 工具列按鈕上的 [center**編輯器**] 按鈕開啟 [**助理編輯器**] 來完成：
 
- [![](creating-ui-objects-images/image6a.png "Assistant Editor button")](creating-ui-objects-images/image6a.png#lightbox)
+ [![[助理編輯器] 按鈕](creating-ui-objects-images/image6a.png)](creating-ui-objects-images/image6a.png#lightbox)
 
 按一下使用者介面物件;然後，**將控制項拖曳**到 .h 檔案中。 若要**控制拖曳**，請按住 control 鍵，然後按一下並按住您要為其建立輸出（或動作）的使用者介面物件。 當您拖曳至標頭檔時，請按住 Control 鍵。 完成在定義下拖曳 `@interface` 。 藍色線應該會出現，並顯示 [插入插座] 或 [插座] 集合，如下列螢幕擷取畫面所示。
 
 當您放開時，系統會提示您提供輸出的名稱，這將用來建立可在程式碼中參考的 c # 屬性：
 
- [![](creating-ui-objects-images/image8a.png "Creating an outlet")](creating-ui-objects-images/image8a.png#lightbox)
+ [![建立插座](creating-ui-objects-images/image8a.png)](creating-ui-objects-images/image8a.png#lightbox)
 
 如需有關 Xcode 的 Interface Builder 如何與 Visual Studio for Mac 整合的詳細資訊，請參閱[Xib 程式碼產生](~/ios/internals/xib-code-generation.md#generated)檔。
 
@@ -118,7 +118,7 @@ public override void ViewDidLoad () {
 
 當 View controller 新增至 Design Surface 時，會在專案中建立兩個對應的 c # 檔案。 在此範例中 `ControlsViewController.cs` ， `ControlsViewController.designer.cs` 已自動建立和：
 
- [![](creating-ui-objects-images/image9b.png "ViewController partial class")](creating-ui-objects-images/image9b.png#lightbox)
+ [![ViewController 部分類別](creating-ui-objects-images/image9b.png)](creating-ui-objects-images/image9b.png#lightbox)
 
 檔案適用 `ControlsViewController.cs` 于您的*程式碼*。 這就是開發 `View` 週期方法（例如和）的位置 `ViewDidLoad` `ViewWillAppear` ，您可以在其中新增自己的屬性、欄位和方法。
 

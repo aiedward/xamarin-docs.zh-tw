@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 82b739697705ac4c90390a36405d755a5f523159
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c503a312db640eb24b4fec24ba484c8e0382657e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028410"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936954"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>在 Xamarin 中使用 watchOS 當地語系化
 
 _針對多種語言調整 watchOS 應用程式_
 
-![](localization-images/both-languages-sml.png "Apple Watch displaying localized content")
+![顯示當地語系化內容 Apple Watch](localization-images/both-languages-sml.png)
 
 watchOS 應用程式會使用標準的 iOS 方法進行當地語系化：
 
@@ -35,7 +35,7 @@ iOS 和監看式作業系統會自動使用使用者的語言選擇來載入正�
 
 ## <a name="watch-app"></a>監看應用程式
 
-監看式應用程式包含說明應用程式使用者介面的分鏡腳本。 支援當地語系化的任何控制項（例如 `Label` 和 `Image`）都有**當地語系化識別碼**。
+監看式應用程式包含說明應用程式使用者介面的分鏡腳本。 支援當地語系化的任何控制項（例如 `Label` 和 `Image` ）都有**當地語系化識別碼**。
 
 每個語言特定**的 .lproj**目錄都應該包含含有每個元素翻譯的**字串**檔案（使用**當地語系化識別碼**），以及分鏡腳本所參考的影像。
 
@@ -48,7 +48,7 @@ iOS 和監看式作業系統會自動使用使用者的語言選擇來載入正�
 ## <a name="globalizing-the-watch-solution"></a>全球化監看式解決方案
 
 全球化是讓應用程式當地語系化的過程。
-對於監看式應用程式，這表示以不同的文字長度設計分鏡腳本，以確保每個螢幕佈局會根據所顯示的文字，適當地調整。 您也必須確定可以使用 `LocalizedString` 方法來轉譯 watch 擴充程式碼中所參考的任何字串。
+對於監看式應用程式，這表示以不同的文字長度設計分鏡腳本，以確保每個螢幕佈局會根據所顯示的文字，適當地調整。 您也必須確定可以使用方法來轉譯監看延伸模組程式碼中所參考的任何字串 `LocalizedString` 。
 
 ### <a name="watch-app"></a>監看應用程式
 
@@ -56,21 +56,21 @@ iOS 和監看式作業系統會自動使用使用者的語言選擇來載入正�
 
 1. 建立 **.lproj**目錄，並將**介面**移至其中。分鏡腳本。
 
-2. 針對您想要支援的每種語言，建立 **\<語言 >. .lproj 目錄。**
+2. 針對您想要支援的每種語言，建立** \<language> .lproj**目錄。
 
 3. **.Lproj**目錄應該包含**介面字串**文字檔（檔案名應符合 storboard 的名稱）。 您可以選擇性地將需要當地語系化的任何影像放在這些目錄中。
 
 進行這些變更之後，watch 應用程式專案看起來會像這樣（僅新增英文和西班牙文語言檔案）：
 
-  ![](localization-images/watchapp-solution.png "The watch app project with English and Spanish language files")
+  ![具有英文和西班牙文語言檔案的監看式應用程式專案](localization-images/watchapp-solution.png)
 
 #### <a name="storyboard-text"></a>分鏡腳本文字
 
 當您編輯腳本時，請選取每個元素，並注意出現在**Properties** pad 中的 [**當地語系化識別碼**]：
 
-  [![](localization-images/storyboard-sml.png "The Localization ID that appears in the Properties pad")](localization-images/storyboard.png#lightbox)
+  [![出現在 Properties pad 中的當地語系化識別碼](localization-images/storyboard-sml.png)](localization-images/storyboard.png#lightbox)
 
-在 **.lproj**資料夾中，建立如下所示的索引鍵/值組，其中的索引鍵是由**當地語系化識別碼**和控制項上的屬性名稱所組成，並以點（`.`）聯結。
+在 **.lproj**資料夾中，建立如下所示的索引鍵/值組，其中的索引鍵是由**當地語系化識別碼**和控制項上的屬性名稱所組成，並以點（ `.` ）聯結。
 
 ```csharp
 "AgC-eL-Hgc.title" = "WatchL10nEN"; // interface controller title
@@ -81,25 +81,25 @@ iOS 和監看式作業系統會自動使用使用者的語言選擇來載入正�
 "39.text" = "Second screen";
 ```
 
-請注意，在此範例中，**當地語系化識別碼**可以是簡單的數位字串（例如 "0"、"1" 等）或更複雜的字串（例如 "AgC-eL-Hgc"）。 `Label` 控制項具有 `Text` 屬性，而且 `Button`具有 `Title` 屬性，其會反映在其當地語系化值的設定方式中，請務必使用小寫屬性名稱，如上述範例所示。
+請注意，在此範例中，**當地語系化識別碼**可以是簡單的數位字串（例如 "0"、"1" 等）或更複雜的字串（例如 "AgC-eL-Hgc"）。 `Label`控制項具有 `Text` 屬性，而且的 `Button` `Title` 屬性會反映其當地語系化值的設定方式，請務必使用小寫屬性名稱，如上述範例所示。
 
 當腳本在 watch 上轉譯時，將會根據使用者選取的語言，自動解壓縮並顯示正確的值。
 
 #### <a name="storyboard-images"></a>分鏡腳本影像
 
-範例解決方案也會在每個語言資料夾中包含 **gradient@2x.png** 的影像。 每種語言的此映射可能不同（例如 它可能會有內嵌文字，需要翻譯或使用當地語系化的圖示）。
+範例解決方案也會 **gradient@2x.png** 在每個語言資料夾中包含一個影像。 每種語言的此映射可能不同（例如 它可能會有內嵌文字，需要翻譯或使用當地語系化的圖示）。
 
 只要在分鏡腳本中設定影像的**image**屬性，就會根據使用者選取的語言，在監看式上轉譯正確的影像。
 
-![](localization-images/storyboard-image.png "Set the images Image property in the storyboard")
+![在分鏡腳本中設定 images 影像屬性](localization-images/storyboard-image.png)
 
-注意：因為所有 Apple watch 都有 Retina 顯示，所以只需要影像的 **@2x** 版本。 您不需要在腳本中指定 **@2x** 。
+注意：因為所有 Apple watch 都有 Retina 顯示，所以只 **@2x** 需要影像的版本。 您不需要 **@2x** 在腳本中指定。
 
 ### <a name="watch-extension"></a>監看延伸模組
 
-監看式延伸模組需要類似的目錄結構來支援當地語系化，但沒有分鏡腳本。 延伸模組中的當地語系化字串只是程式C#代碼所參考的字串。
+監看式延伸模組需要類似的目錄結構來支援當地語系化，但沒有分鏡腳本。 延伸模組中的當地語系化字串只是 c # 程式碼所參考的字串。
 
-![](localization-images/watchextension-solution.png "The watch extension directory structure to support localization")
+![支援當地語系化的監看式延伸目錄結構](localization-images/watchextension-solution.png)
 
 #### <a name="strings-in-code"></a>程式碼中的字串
 
@@ -112,7 +112,7 @@ iOS 和監看式作業系統會自動使用使用者的語言選擇來載入正�
 "Bed time" = "Bed time!"; // night
 ```
 
-`NSBundle.MainBundle.LocalizedString` 方法是用來將字串解析成其已轉譯的對應專案，如下列程式碼所示。
+`NSBundle.MainBundle.LocalizedString`方法可用來將字串解析成其已轉譯的對應專案，如下列程式碼所示。
 
 ```csharp
 var display = "Breakfast time";
@@ -125,13 +125,13 @@ displayText.SetText (localizedDisplay);
 
 程式碼所填入的影像可以透過兩種方式來設定。
 
-1. 您可以變更 `Image` 控制項，方法是將其值設定為監看式應用程式中已存在之映射的字串名稱，例如
+1. 您可以變更 `Image` 控制項，其方式是將其值設定為監看式應用程式中已存在之映射的字串名稱，例如
 
     ```csharp
     displayImage.SetImage("gradient"); // image in Watch App (as shown above)
     ```
 
-2. 您可以使用 `FromBundle` 將影像從延伸模組移至監看式，應用程式會自動為使用者的語言選擇正確的影像。 在範例方案中，每個語言資料夾中都有一個影像 **language@2x.png** ，而且它會使用下列程式碼顯示在 `DetailController` 上：
+2. 您可以使用將影像從延伸模組移至監看式 `FromBundle` ，應用程式將會自動選擇正確的影像以用於使用者的語言選擇。 在範例方案中 **language@2x.png** ，每個語言資料夾中都會有一個影像，並 `DetailController` 使用下列程式碼顯示：
 
     ```csharp
     using (var image = UIImage.FromBundle ("language")) {
@@ -139,7 +139,7 @@ displayText.SetText (localizedDisplay);
     }
     ```
 
-    請注意，在參照影像的檔案名時，您不需要指定 **@2x** 。
+    請注意，在 **@2x** 參照影像的檔案名時，您不需要指定。
 
 如果您從遠端伺服器下載影像以在監看式上轉譯，第二種方法也適用。不過在此情況下，您應該確定您下載的影像已根據使用者的喜好設定正確當地語系化。
 
@@ -193,7 +193,7 @@ displayText.SetText (localizedDisplay);
 
 在模擬器上，選取要使用 iOS**設定**應用程式測試的語言（模擬器主畫面中的灰色齒輪圖示）。
 
-  ![](localization-images/sim-settings-sml.png "The iOS Settings app Localization settings")
+  ![IOS 設定應用程式當地語系化設定](localization-images/sim-settings-sml.png)
 
 ### <a name="watch-device"></a>監看裝置
 

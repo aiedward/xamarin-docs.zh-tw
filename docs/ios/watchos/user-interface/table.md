@@ -7,25 +7,25 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 015f0732e4d8cdf771af3e1d0b3cc3e31b6e806c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c9943842d71ffa19e0691e1f9c7dca0063749463
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572249"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936899"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Xamarin 中的 watchOS Table 控制項
 
 WatchOS `WKInterfaceTable` 控制項比它的 iOS 對應更簡單，但會執行類似的角色。 它會建立可具有自訂配置的資料列滾動清單，並回應觸控事件。
 
-![](table-images/table-list-sml.png "監看表清單") ![](table-images/table-detail-sml.png)
+![監看表清單 ](table-images/table-list-sml.png)![](table-images/table-detail-sml.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="adding-a-table"></a>新增資料表
 
 將 [**資料表**] 控制項拖曳到場景中。 根據預設，它看起來會像這樣（顯示單一未指定的資料列版面配置）：
 
-[![](table-images/add-table-sml.png "Adding a table")](table-images/add-table.png#lightbox)
+[![加入資料表](table-images/add-table-sml.png)](table-images/add-table.png#lightbox)
 
 在**Properties** pad 的 [**名稱**] 方塊中，為數據表命名，讓它可以在程式碼中參考。
 
@@ -35,7 +35,7 @@ WatchOS `WKInterfaceTable` 控制項比它的 iOS 對應更簡單，但會執行
 
 若要設定資料列控制器的**類別**，請在 [**檔大綱**] 中選取資料列，然後在**Properties** pad 中輸入類別名稱：
 
-[![](table-images/add-row-controller-sml.png "Entering a class name in the Properties pad")](table-images/add-row-controller.png#lightbox)
+[![在 Properties pad 中輸入類別名稱](table-images/add-row-controller-sml.png)](table-images/add-row-controller.png#lightbox)
 
 一旦設定了資料列控制器的類別，IDE 就會在專案中建立對應的 c # 檔案。 將控制項（例如標籤）拖曳到資料列上，並為其命名，讓它們可以在程式碼中參考。
 
@@ -107,11 +107,11 @@ public override NSObject GetContextForSegue (string segueIdentifier, WKInterface
 
 根據預設，資料表控制項有一個您可以設計的單一資料列類型。 若要加入更多資料列的「範本」，請使用**Properties** pad 中的 [資料**列**] 方塊來建立更多資料列控制器：
 
-![](table-images/prototype-rows1.png "Setting the number of Prototype rows")
+![設定原型資料列的數目](table-images/prototype-rows1.png)
 
 將**Rows**屬性設為**3** ，將會建立額外的資料列預留位置，讓您將控制項拖曳到其中。 針對每個資料列，在**Properties** pad 中設定**類別**名稱，以確保會建立資料列控制器類別。
 
-![](table-images/prototype-rows2.png "The prototype rows in the designer")
+![設計工具中的原型資料列](table-images/prototype-rows2.png)
 
 若要填入具有不同資料列類型的資料表，請使用 `SetRowTypes` 方法來指定要用於資料表中每個資料列的資料列控制器類型。 使用資料列的識別碼，指定每個資料列應該使用的資料列控制器。
 
@@ -142,14 +142,14 @@ for (var i = 0; i < rows.Count; i++) {
 
 watchOS 3 為數據表引進了一項新功能：能夠逐一查看與每個資料列相關的詳細頁面，而不需要回到資料表並選擇另一個資料列。 詳細資料畫面可以透過向上和向下或使用 Digital Crown 來滾動。
 
-![](table-images/table-scroll-sml.png "垂直詳細資料分頁範例") ![](table-images/table-detail-sml.png)
+![垂直詳細資料分頁範例 ](table-images/table-scroll-sml.png)![](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
 > 這項功能目前僅適用于在 Xcode Interface Builder 中編輯分鏡腳本。
 
 若要啟用這項功能，請選取 `WKInterfaceTable` 設計介面上的，並勾選 [**垂直詳細資料分頁**] 選項：
 
-![](table-images/vertical-detail-paging-sml.png "Selecting the Vertical Detail Paging option")
+![選取垂直詳細資料分頁選項](table-images/vertical-detail-paging-sml.png)
 
 如[Apple 所述](https://developer.apple.com/reference/watchkit/wkinterfacetable#1682023)，資料表導覽必須使用 segue，才能讓分頁功能正常執行。 請重新撰寫任何現有的程式碼，使用 `PushController` 來改用 segue。
 

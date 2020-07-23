@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ae08d7d2d8d9de700570311f2294df737240b73f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 2e5b7a65f565f8c4f3265c5c95e6e4a296e4681f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572152"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938095"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>在背景中更新 Xamarin iOS 應用程式
 
@@ -43,7 +43,7 @@ iOS 提供兩個具有背景處理功能的位置感知 Api：
 
 若要執行背景提取，請編輯*plist* ，然後勾選 [**啟用背景模式**] 和 [**背景提取**] 核取方塊：
 
- [![](updating-an-application-in-the-background-images/fetch.png "Edit the Info.plist and check the Enable Background Modes and Background Fetch check boxes")](updating-an-application-in-the-background-images/fetch.png#lightbox)
+ [![編輯 plist，然後勾選 [啟用背景模式] 和 [背景提取] 核取方塊](updating-an-application-in-the-background-images/fetch.png)](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
 接下來，在中 `AppDelegate` ，覆寫 `FinishedLaunching` 方法以設定最小提取間隔。 在此範例中，我們會讓 OS 決定提取新內容的頻率：
 
@@ -101,7 +101,7 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 
 若要執行遠端通知，請編輯*plist* ，然後勾選 [**啟用背景模式**和**遠端通知**] 核取方塊：
 
- [![](updating-an-application-in-the-background-images/remote.png "Background Mode set to Enable Background Modes and Remote notifications")](updating-an-application-in-the-background-images/remote.png#lightbox)
+ [![背景模式設定為啟用背景模式和遠端通知](updating-an-application-in-the-background-images/remote.png)](updating-an-application-in-the-background-images/remote.png#lightbox)
 
 接下來，將 `content-available` 推播通知本身的旗標設定為1。 這可讓應用程式知道在顯示警示之前，先提取新的內容：
 
@@ -147,7 +147,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 
 不過，APNs 會讓無訊息通知與一般的遠端通知或保持連線的回應一起「攜帶」。 由於一般通知不會受到速率限制，因此可以用來將儲存的無訊息通知從 APNs 推送至裝置，如下圖所示：
 
- [![](updating-an-application-in-the-background-images/silent.png "Regular notifications can be used to push stored silent notifications from the APNs to the device, as illustrated by this diagram")](updating-an-application-in-the-background-images/silent.png#lightbox)
+ [![一般通知可用來將儲存的無訊息通知從 APNs 推送至裝置，如下圖所示](updating-an-application-in-the-background-images/silent.png)](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > Apple 鼓勵開發人員在應用程式需要時傳送無訊息推播通知，並讓 APNs 排程其傳遞。

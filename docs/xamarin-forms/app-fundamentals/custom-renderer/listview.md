@@ -10,16 +10,16 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dc28cdaf78c72c219706a30c30af7f90ae7c4eec
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8892a49f2d7d93f8310293bc70d5e1acdfabe3f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569617"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937081"
 ---
 # <a name="customizing-a-listview"></a>自訂 ListView
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
 
 _Xamarin.FormsListView 是將資料集合顯示為垂直清單的視圖。本文示範如何建立自訂轉譯器，以封裝平臺特定清單控制項和原生資料格配置，讓您對原生清單控制效能有更大的控制權。_
 
@@ -27,7 +27,7 @@ _Xamarin.FormsListView 是將資料集合顯示為垂直清單的視圖。本文
 
 下圖說明 [`ListView`](xref:Xamarin.Forms.ListView) 控制項和執行它的對應原生控制項之間的關聯性：
 
-![](listview-images/listview-classes.png "Relationship Between the ListView Control and the Implementing Native Controls")
+![ListView 控制項與實作原生控制項之間的關聯性](listview-images/listview-classes.png)
 
 您可以 [`ListView`](xref:Xamarin.Forms.ListView) 在每個平臺上建立的自訂轉譯器，利用呈現程式來執行平臺特定的自訂。 執行這項作業的流程如下：
 
@@ -152,11 +152,11 @@ public class MainPageCS : ContentPage
 
 下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
 
-![](listview-images/solution-structure.png "NativeListView Custom Renderer Project Responsibilities")
+![NativeListView 自訂轉譯器專案責任](listview-images/solution-structure.png)
 
 `NativeListView` 自訂控制項是由平台特定轉譯器類別轉譯，其全部衍生自各平台的 `ListViewRenderer` 類別。 這會導致每個 `NativeListView` 自訂控制項都使用平台特定的清單控制項轉譯，如下列螢幕擷取畫面所示：
 
-![](listview-images/screenshots.png "NativeListView on each Platform")
+![每個平台上的 NativeListView](listview-images/screenshots.png)
 
 `ListViewRenderer`類別會公開 `OnElementChanged` 方法，這會在 Xamarin.Forms 建立自訂控制項以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的*was*專案，以及轉譯器 Xamarin.Forms 附加至的元素。 *is* 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `NativeListView` 執行個體的參考。
 
@@ -557,7 +557,7 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 
 方法會使用變更的資料重新填入原生 `ListView` 控制項，前提是可繫結的 `NativeListView.Items` 屬性已變更。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範了如何建立自訂轉譯器，其會封裝平台特定清單控制項和原生資料格配置，讓您對原生清單控制效能擁有更多掌控權。
 

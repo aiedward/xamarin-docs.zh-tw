@@ -10,22 +10,22 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9e763184f38719cda4526eb0a2dfdf39b2191a03
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 60f53fb00786b183f36f7cfefa6af9062bb682db
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137692"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938160"
 ---
 # <a name="integrating-with-xamarinforms"></a>與整合Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _建立回應觸控和元素的 SkiaSharp 圖形 Xamarin.Forms_
 
 SkiaSharp 圖形可以透過數種方式與其余部分整合 Xamarin.Forms 。 您可以將 SkiaSharp 畫布和元素結合在 Xamarin.Forms 相同頁面上，甚至將 Xamarin.Forms 元素放置在 SkiaSharp 畫布的頂端：
 
-![](integration-images/integrationexample.png "Selecting a color with sliders")
+![選取具有滑杆的色彩](integration-images/integrationexample.png)
 
 在中建立互動式 SkiaSharp 圖形的另一種方法 Xamarin.Forms 是透過觸控。
 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式中的第二個頁面有權**利用 [切換填滿**]。 它會以兩種方式繪製簡單的圓形 &mdash; ，而不需要填滿，並以點按方式切換填滿 &mdash; 。 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)類別會顯示如何改變 SkiaSharp 圖形，以回應使用者輸入。
@@ -240,7 +240,7 @@ public partial class ColorExplorePage : ContentPage
 
 但是要瞭解這兩個模型的最佳方式，就是自行試驗：
 
-[![](integration-images/colorexplore-large.png "Triple screenshot of the Color Explore page")](integration-images/colorexplore-small.png#lightbox "Triple screenshot of the Color Explore page")
+[![[色彩流覽] 頁面的三重螢幕擷取畫面](integration-images/colorexplore-large.png)](integration-images/colorexplore-small.png#lightbox "[色彩流覽] 頁面的三重螢幕擷取畫面")
 
 ## <a name="related-links"></a>相關連結
 

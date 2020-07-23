@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8698bacd7257df431b12166c749f5826e8d6fd3c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 47182578a6583dde34cb7f06e3433cdb2703f6ba
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138446"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937676"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>SkiaSharp 中的點和虛線
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _掌握在 SkiaSharp 中繪製虛線和虛線的複雜性_
 
 SkiaSharp 可讓您繪製不是實心的線條，而是由點和虛線組成：
 
-![](dots-images/dottedlinesample.png "Dotted line")
+![點線](dots-images/dottedlinesample.png)
 
 您可以使用*路徑效果*來執行此動作，這是 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 您設定為之屬性的類別實例 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 您可以使用所定義的其中一個靜態建立方法來建立路徑效果（或結合路徑效果） `SKPathEffect` 。 （ `SKPathEffect` 這是 SkiaSharp 所支援的六種效果之一; 其他則會在[**SkiaSharp 效果**](../effects/index.md)一節中說明）。
 
@@ -153,9 +153,9 @@ float[] GetPickerArray(Picker picker)
 
 在下列螢幕擷取畫面中，最左側的 iOS 畫面會顯示虛線：
 
-[![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
+[![點和虛線頁面的三重螢幕擷取畫面](dots-images/dotsanddashes-small.png)](dots-images/dotsanddashes-large.png#lightbox "點和虛線頁面的三重螢幕擷取畫面")
 
-不過，Android 螢幕也應該會使用陣列 {10，10} 顯示虛線，而線條則是實線。 發生什麼情形？ 問題在於 Android 螢幕也有的 [筆觸] 上限設定 `Square` 。 這會將所有的虛線以筆劃寬度的一半延伸，使其填滿間距。
+不過，Android 螢幕也應該會使用陣列 {10，10} 顯示虛線，而線條則是實線。 發生什麼事？ 問題在於 Android 螢幕也有的 [筆觸] 上限設定 `Square` 。 這會將所有的虛線以筆劃寬度的一半延伸，使其填滿間距。
 
 若要在使用或的筆劃端點時遇到此 `Square` 問題 `Round` ，您必須以筆劃長度減少陣列中的虛線長度（有時候會產生0的虛線長度），並依筆劃長度增加間距長度。 這是 XAML 檔案中最後三個虛線陣列的 `Picker` 計算方式：
 
@@ -214,7 +214,7 @@ public class AnimatedSpiralPage : ContentPage
 
 當然，您必須實際執行程式來查看動畫：
 
-[![](dots-images/animatedspiral-small.png "Triple screenshot of the Animated Spiral page")](dots-images/animatedspiral-large.png#lightbox "Triple screenshot of the Animated Spiral page")
+[![動畫螺旋頁面的三重螢幕擷取畫面](dots-images/animatedspiral-small.png)](dots-images/animatedspiral-large.png#lightbox "動畫螺旋頁面的三重螢幕擷取畫面")
 
 ## <a name="related-links"></a>相關連結
 

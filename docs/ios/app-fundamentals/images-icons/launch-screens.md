@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: a2f15c8385b7df7afc3f04e033a085cb00bc9005
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b4191ae3c25ee5d2eeccd44377177d7d0df6f19e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573855"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937367"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>適用于 Xamarin iOS 應用程式的啟動畫面
 
@@ -191,34 +191,34 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
 
 當更新現有應用程式以在其啟動畫面上使用分鏡腳本時，請以滑鼠右鍵按一下**方案總管**中的**專案名稱**，然後選取 [**加入**  >  **新**檔案 ...]。選取 [ **iOS**  >  **啟動畫面**]，然後按一下 [**新增**] 按鈕：
 
-![](launch-screens-images/storyboard02.png "Select an iOS Launch Screen")
+![選取 iOS 啟動畫面](launch-screens-images/storyboard02.png)
 
 接下來，按兩下 `Info.plist` **方案總管**中的檔案以開啟它進行編輯。 在 [**啟動畫面**] 底下，選取上方建立的新分鏡腳本檔案。
 
-![](launch-screens-images/storyboard09.png "Select the new Storyboard file created above")
+![選取上方建立的新分鏡腳本檔案](launch-screens-images/storyboard09.png)
 
 若要使用新的腳本做為啟動畫面，請執行下列動作：
 
 1. 按兩下 `Info.plist` [**方案總管**中的檔案以開啟它進行編輯。
 2. 在編輯器的 [**通用啟動映射**] 區段中，開啟 [**啟動畫面**] 下拉式清單，然後選取上方所建立之分鏡腳本的名稱： 
 
-    ![](launch-screens-images/storyboard08.png "Setting the launch screen to the storyboard")
+    ![將啟動畫面設定為分鏡腳本](launch-screens-images/storyboard08.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 以滑鼠右鍵按一下**方案總管**中的專案名稱，然後選取 [**加入**  >  **新**檔案]： 
 
-    ![](launch-screens-images/image012.png "Add new file")
+    ![加入新檔案](launch-screens-images/image012.png)
 2. 輸入啟動畫面的名稱，然後按一下 [**新增**] 按鈕： 
 
-    ![](launch-screens-images/image013.png "Enter a name for the launch screen")
+    ![輸入啟動畫面的名稱](launch-screens-images/image013.png)
 3. 在 [**方案總管**中，按兩下新建立的分鏡腳本檔案，將其開啟進行編輯。
 4. 確定 [**大小] 類別**設定為 [**任何： any** ] 和 **[** **一般**]： 
 
-    ![](launch-screens-images/image016.png "Ensure that the Size Class is set to any:any and the View As is Generic")
+    ![確定 [大小] 類別設定為 [任何：任何] 和 [一般]](launch-screens-images/image016.png)
 5. 從大小類別、簡單 UI 專案（例如 `UIImageView` ），以及您已包含在應用程式套件組合中的影像，組裝啟動畫面： 
 
-    ![](launch-screens-images/image017.png "Assembly the launch screen in the iOS Designer")
+    ![元件 iOS 設計工具中的啟動畫面](launch-screens-images/image017.png)
 6. 將變更儲存至分鏡腳本。
 
 -----

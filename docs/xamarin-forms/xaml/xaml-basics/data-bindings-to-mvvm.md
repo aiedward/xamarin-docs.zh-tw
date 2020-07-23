@@ -11,16 +11,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 047cf963394325e8f88759ffe9da7dcf2ca3ad12
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 805bdef812b33d3f4329346a437e1202a16fe3ae
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127526"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937315"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分： 從資料繫結到 MVVM
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Model View ViewModel （MVVM）架構模式是以 XAML 為出發點。此模式會強制執行三個軟體層級的分隔，也就是 XAML 使用者介面，稱為 View;基礎資料，稱為模型;以及視圖與模型之間的媒介，稱為 ViewModel。View 和 ViewModel 通常會透過 XAML 檔案中定義的資料系結來連接。視圖的 BindingCoNtext 通常是 ViewModel 的實例。_
 
@@ -65,7 +65,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 問題在於，當第一次建立頁面時，會將日期和時間設定一次，而且永遠不會變更：
 
-[![](data-bindings-to-mvvm-images/oneshotdatetime.png "View Displaying Date and Time")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "View Displaying Date and Time")
+[![顯示日期和時間的視圖](data-bindings-to-mvvm-images/oneshotdatetime.png)](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "顯示日期和時間的視圖")
 
 XAML 檔案可以顯示一律會顯示目前時間的時鐘，但它需要一些程式碼來協助您。以 MVVM 的角度來思考時，Model 和 ViewModel 是完全以程式碼撰寫的類別。 此視圖通常是一個 XAML 檔案，它會透過資料系結來參考 ViewModel 中定義的屬性。
 
@@ -148,7 +148,7 @@ Viewmodel 通常會執行 `INotifyPropertyChanged` 介面，這表示類別會�
 
 `Binding`屬性（property）上的標記延伸會 `Text` `Label` 格式化 `DateTime` 屬性（property）。 顯示如下：
 
-[![](data-bindings-to-mvvm-images/clock.png "View Displaying Date and Time via ViewModel")](data-bindings-to-mvvm-images/clock-large.png#lightbox "View Displaying Date and Time via ViewModel")
+[![透過 ViewModel 顯示日期和時間的視圖](data-bindings-to-mvvm-images/clock.png)](data-bindings-to-mvvm-images/clock-large.png#lightbox "透過 ViewModel 顯示日期和時間的視圖")
 
 您也可以 `DateTime` 使用句號分隔屬性，來存取 ViewModel 屬性的個別屬性：
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 每個上的系結 `Label` 都是預設值 `OneWay` 。 它只需要顯示值。 但每個上的系結 `Slider` 都是 `TwoWay` 。 這可讓 `Slider` 從 ViewModel 初始化。 請注意， `Color` `Aqua` 當 ViewModel 具現化時，屬性會設定為。 但是中的變更 `Slider` 也需要為 ViewModel 中的屬性設定新的值，然後計算新的色彩。
 
-[![](data-bindings-to-mvvm-images/hslcolorscroll.png "MVVM using Two-Way Data Bindings")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM using Two-Way Data Bindings")
+[![使用雙向資料系結的 MVVM](data-bindings-to-mvvm-images/hslcolorscroll.png)](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "使用雙向資料系結的 MVVM")
 
 ## <a name="commanding-with-viewmodels"></a>使用 Viewmodel 命令
 
@@ -559,7 +559,7 @@ namespace XamlSamples
 
 `Command` `Button` 出現在這個標記中第一個的屬性會系結至 `DeleteCharCommand` ; 其餘的會系結至，其 `AddCharCommand` 與 `CommandParameter` 臉部上出現的字元相同 `Button` 。 以下是作用中的程式：
 
-[![](data-bindings-to-mvvm-images/keypad.png "Calculator using MVVM and Commands")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "Calculator using MVVM and Commands")
+[![使用 MVVM 和命令的計算機](data-bindings-to-mvvm-images/keypad.png)](data-bindings-to-mvvm-images/keypad-large.png#lightbox "使用 MVVM 和命令的計算機")
 
 ### <a name="invoking-asynchronous-methods"></a>叫用非同步方法
 
@@ -684,7 +684,7 @@ public class PageDataViewModel
 
 頁面會顯示在可滾動清單中：
 
-[![](data-bindings-to-mvvm-images/mainpage.png "Scrollable list of pages")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "Scrollable list of pages")
+[![可滾動的頁面清單](data-bindings-to-mvvm-images/mainpage.png)](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "可滾動的頁面清單")
 
 當使用者選取專案時，就會觸發程式碼後置檔案中的處理常式。 處理常式會將的 `SelectedItem` 屬性設定 `ListBox` 回 `null` ，然後將選取的頁面具現化並加以流覽：
 
@@ -702,13 +702,13 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 }
 ```
 
-## <a name="video"></a>影片
+## <a name="video"></a>視訊
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
 **Xamarin 演進2016：使用和 Prism 的 MVVM 變得簡單 Xamarin.Forms**
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 XAML 是一種功能強大的工具，可在應用程式中定義使用者介面 Xamarin.Forms ，特別是在使用資料系結和 MVVM 時。 結果是全新、精緻且可能 toolable 的使用者介面標記法，其中包含程式碼中的所有背景支援。
 

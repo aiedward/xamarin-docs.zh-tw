@@ -10,16 +10,16 @@ ms.date: 12/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cc150ecffbf9b6b31ec2f533bcc33876100614dc
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136977"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936847"
 ---
 # <a name="invoking-events-from-effects"></a>從效果叫用事件
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 
 _效果可以定義並叫用事件，以通知基礎原生視圖中的變更。本文說明如何執行低層級的多點觸控手指追蹤，以及如何產生通知觸控活動的事件。_
 
@@ -456,7 +456,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 您可以使用不同的手指同時移動多個 `BoxView` 項目。
 
-[![](touch-tracking-images/boxviewdragging-small.png "Triple screenshot of the BoxView Dragging page")](touch-tracking-images/boxviewdragging-large.png#lightbox "Triple screenshot of the BoxView Dragging page")
+[![BoxView 拖曳頁面的三張一組螢幕擷取畫面](touch-tracking-images/boxviewdragging-small.png)](touch-tracking-images/boxviewdragging-large.png#lightbox "BoxView 拖曳頁面的三張一組螢幕擷取畫面")
 
 ### <a name="subclassing-the-view"></a>子類別化檢視
 
@@ -519,7 +519,7 @@ class DraggableBoxView : BoxView
 
 [橢圓形繪圖]**** 頁面可讓您在螢幕上撥動手指來繪製橢圓形。 根據您移動手指的方式而定，您可以使用從左上角到右下角，或從任何其他一角到對角的方式繪製橢圓形。 繪製的橢圓形具有隨機色彩且不透明。
 
-[![](touch-tracking-images/ellipsedrawing-small.png "Triple screenshot of the Ellipse Drawing page")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple screenshot of the Ellipse Drawing page")
+[![橢圓形繪圖頁面的三張一組螢幕擷取畫面](touch-tracking-images/ellipsedrawing-small.png)](touch-tracking-images/ellipsedrawing-large.png#lightbox "橢圓形繪圖頁面的三張一組螢幕擷取畫面")
 
 如果您接著觸控其中一個橢圓形，就可以將它拖曳到另一個位置。 這需要稱為「點擊測試」的技術，其牽涉到在特定一點搜尋圖形化物件。 SkiaSharp 的省略號不是 Xamarin.Forms 元素，因此無法執行自己的 `TouchEffect` 處理。 `TouchEffect` 必須套用到整個 `SKCanvasView` 物件。
 
@@ -691,7 +691,7 @@ case TouchActionType.Pressed:
 
 另一個 SkiaSharp 範例是 [手繪]**** 頁面。 您可以從兩個 `Picker` 檢視中選取筆觸色彩和筆觸寬度，然後用一或多個手指進行繪製：
 
-[![](touch-tracking-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](touch-tracking-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
+[![手指繪圖頁面的三張一組螢幕擷取畫面](touch-tracking-images/fingerpaint-small.png)](touch-tracking-images/fingerpaint-large.png#lightbox "手指繪圖頁面的三張一組螢幕擷取畫面")
 
 此範例也需要不同類別來表示螢幕上繪製的每一個線條：
 
@@ -799,11 +799,11 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 各種 `WhiteKey` 和 `BlackKey` 項目排列在頁面的 [XAML 檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/SilentKeyboardPage.xaml)中，當行動電話保持為橫向模式時，這看起來的效果最好：
 
-[![](touch-tracking-images/silentkeyboard-small.png "Triple screenshot of the Silent Keyboard page")](touch-tracking-images/silentkeyboard-large.png#lightbox "Triple screenshot of the Silent Keyboard page")
+[![無聲鍵盤頁面的三張一組螢幕擷取畫面](touch-tracking-images/silentkeyboard-small.png)](touch-tracking-images/silentkeyboard-large.png#lightbox "無聲鍵盤頁面的三張一組螢幕擷取畫面")
 
 如果您的手指在按鍵間劃過，您可透過色彩的稍微變化看到觸控事件正在從某個按鍵傳送到另一個按鍵。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已示範如何以效果叫用事件，以及如何撰寫和使用實作低層級多點觸控處理的效果。
 

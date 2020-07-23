@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: fd9bced0d2185fd9bd0d18932921c101b2ed207c
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 30501600e0b86498ae967340e2201a135b22d7ad
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292950"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939112"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
 _本文涵蓋適用于 iOS 9 的現有架構的其他、次要變更或增強功能。_
 
-[![](additional-framework-changes-images/ios9-sml.png "iOS 9 Logo")](additional-framework-changes-images/ios9.png#lightbox)
+[![iOS 9 標誌](additional-framework-changes-images/ios9-sml.png)](additional-framework-changes-images/ios9.png#lightbox)
 
 除了 iOS 的主要變更之外，Apple 也已針對 iOS 9 中的數個現有架構進行修改和改進。
 
@@ -32,7 +32,7 @@ _本文涵蓋適用于 iOS 9 的現有架構的其他、次要變更或增強功
 var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 ```
 
-然後您可以從清單中使用其中一個語音，其方式是將它設定為[AVSpeachUtterance](xref:AVFoundation.AVSpeechUtterance)類別之實例的 `Voice` 屬性。
+然後，您可以將它設定為 AVSpeachUtterance 類別之實例的屬性，以使用清單中的其中一個語音 `Voice` 。 [AVSpeachUtterance](xref:AVFoundation.AVSpeechUtterance)
 
 [AVQueuePlayer](xref:AVFoundation.AVQueuePlayer)類別現在支援在佇列中混合使用網際網路串流和以檔案為基礎的媒體。 先前的版本只能將相同類型的媒體排到佇列。
 
@@ -43,7 +43,7 @@ var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 若要使用新的相片圖片（PIP）功能，AVKit 架構包含新的 `AVPictureInPictureController` 和[AVPlayerViewController](xref:AVKit.AVPlayerViewController)類別：
 
 - **AVPictureInPictureController** -此類別可讓 iOS 9 應用程式回應使用者在 iPad 上浮動且可調整大小的 PIP 視窗中，啟動影片的播放。
-- **AVPlayerViewController** -管理用於在 iPad 上以浮動、可調整大小的 PIP 視窗呈現影片的 `AVPlayer` 控制器。
+- **AVPlayerViewController** -管理 `AVPlayer` 用來在 iPad 上以浮動且可調整大小的 PIP 視窗呈現影片的控制器。
 
 如需詳細資訊，請參閱我們[針對 iPad 的多工](~/ios/platform/introduction-to-ios9/index.md#multitasking)檔和 Apple 的[AVPictureInPictureController 參考](https://developer.apple.com/library/prerelease/ios/documentation/AVKit/Reference/AVPictureInPictureController_Class/index.html#//apple_ref/occ/cl/AVPictureInPictureController)和[AVPlayerViewController 參考](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerViewController_Class/index.html#//apple_ref/occ/cl/AVPlayerViewController)。
 
@@ -74,8 +74,8 @@ Apple 在 iOS 9 中的基礎架構包含下列變更：
 
 IOS 9 的[NSBundle](xref:Foundation.NSBundle)類別已進行下列變更：
 
-- `GetPreservationPriorityForTag (NSString tag)`-取得具有指定標記之資源的目前保留優先順序。 有效值在 `0.0` 要 `1.0`的範圍內，將會先清除優先順序最低的資源。
-- `SetPreservationPriorityForTag (double priority, NSSet tags)`-設定具有指定標記之資源的目前保留優先順序。 有效值在 `0.0` 要 `1.0`的範圍內，將會先清除優先順序最低的資源。
+- `GetPreservationPriorityForTag (NSString tag)`-取得具有指定標記之資源的目前保留優先順序。 有效值在範圍內 `0.0` `1.0` ，將會先清除優先順序最低的資源。
+- `SetPreservationPriorityForTag (double priority, NSSet tags)`-設定具有指定標記之資源的目前保留優先順序。 有效值在範圍內 `0.0` `1.0` ，將會先清除優先順序最低的資源。
 
 如需詳細資訊，請參閱 Apple 的[NSBundle 參考](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/cl/NSBundle)。
 
@@ -100,7 +100,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>回應低電源模式
 
-使用[NSProcessInfo](xref:Foundation.NSProcessInfo)類別的 `LowPowerModeEnabled` 屬性，判斷是否已在執行應用程式的 iOS 裝置上啟用低電源模式。 例如：
+使用 `LowPowerModeEnabled` [NSProcessInfo](xref:Foundation.NSProcessInfo)類別的屬性，判斷是否已在執行應用程式的 iOS 裝置上啟用低電源模式。 例如：
 
 ```csharp
 // Is the device in low power mode?
@@ -116,7 +116,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 Apple 在 iOS 9 中的[HealthKit](xref:HealthKit)架構包含下列變更：
 
 - 支援 HealthKit 資料庫中的專案大量刪除和刪除追蹤。 如需詳細資訊，請參閱 Apple 的[HKDeletedObject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject)、 [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery)和[HKHealthStore 類別參考](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708)。
-- 新的追蹤分類和特性已新增至 `HKQuantityTypeIdentifier` 類別（例如 `UVExposure`）和 `HKCategoryTypeIdentifier` 類別（例如 `OvulationTestResult`）。 
+- 新的追蹤分類和特性已新增至類別 `HKQuantityTypeIdentifier` （例如 `UVExposure` ）和 `HKCategoryTypeIdentifier` 類別（例如 `OvulationTestResult` ）。 
 
 如需在 Xamarin 中使用 HealthKit 的詳細資訊，請參閱我們的[HealthKit 簡介](~/ios/platform/healthkit.md)檔。
 
@@ -124,7 +124,7 @@ Apple 在 iOS 9 中的[HealthKit](xref:HealthKit)架構包含下列變更：
 
 Apple 在 iOS 9 中對[本機驗證](xref:LocalAuthentication)架構包含下列變更：
 
-- 使用[LACoNtext](xref:LocalAuthentication.LAContext)類別的 `EvaluateAccessControl` 和 `EvaluatePolicy` 方法，您現在可以重複使用先前成功的解除鎖定嘗試的觸控識別碼相符專案。
+- 使用 `EvaluateAccessControl` `EvaluatePolicy` [LACoNtext](xref:LocalAuthentication.LAContext)類別的和方法，您現在可以重複使用先前成功的解除鎖定嘗試的觸控識別碼相符專案。
 - 取得目前已註冊手指清單的能力。
 - 支援在從驗證新增或移除手指時進行追蹤。
 - 在 Keychain 呼叫中使用_驗證內容_，以及支援評估 Keychain 存取控制清單的能力。
@@ -142,7 +142,7 @@ IOS 9 的[LACoNtext](xref:LocalAuthentication.LAContext)類別已進行下列變
 - **TouchIdAuthenticationAllowableReuseDuration**取得或設定觸控識別碼驗證可以重複使用的時間量。
 - **EvaluateAccessControl** -以非同步方式評估驗證原則。
 - **失效**-使指定的 touch ID 驗證失效。
-- **IsCredentialSet** -如果目前已設定認證，則會傳回 `true`。
+- **IsCredentialSet** - `true` 如果認證目前已設定，則傳回。
 - **SetCredentialType**設定指定的認證類型。
 
 如需詳細資訊，請參閱 Apple 的[LACoNtext 參考](https://developer.apple.com/library/prerelease/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html#//apple_ref/occ/instm/LAContext/evaluatePolicy:localizedReason:reply:)。
@@ -153,7 +153,7 @@ Apple 在 iOS 9 中的[MapKit](xref:MapKit)架構包含下列變更：
 
 - MapKit 現在支援使用[MKLaunchOptions](xref:MapKit.MKLaunchOptions)和[MKDirections](xref:MapKit.MKLaunchOptions)類別，直接將地圖應用程式啟動至傳輸方向，以及查詢抵達的傳輸估計時間（ETA）。
 - MapKit 和[CLGeocoder](xref:CoreLocation.CLGeocoder)類別所傳回的搜尋結果也可以提供結果的時區。
-- 您現在可以使用[MKAnnotationView](xref:MapKit.MKAnnotationView)類別的 `DetailCalloutAccessoryView` 屬性，完全自訂 iOS 應用程式所呈現的地圖批註。
+- 您現在可以使用 MKAnnotationView 類別的屬性，完全自訂 iOS 應用程式所呈現的地圖批註 `DetailCalloutAccessoryView` 。 [MKAnnotationView](xref:MapKit.MKAnnotationView)
 
 請參閱我們的[IOS 地圖](~/ios/user-interface/controls/ios-maps/index.md)和[逐步解說-流覽 MapKit 檔中的注釋和重](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md)迭，以取得有關使用 Xamarin 和 Apple [CLGeocoder Reference](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder)中地圖和注釋的詳細資訊，以取得詳細資訊。
 
@@ -192,17 +192,17 @@ Apple 已包含許多適用于 iOS 9 的[UIKit](xref:UIKit) framework 元素的�
 
 ### <a name="3d-touch-events"></a>3D Touch 事件
 
-IOS 9 和 iPhone 6s 和 iPhone 6s Plus 的新手，3D Touch 將壓力機密手勢新增至您的 iOS 應用程式。 因此，如果您的應用程式在 iOS 9 （或更新版本）上執行，而且 iOS 裝置能夠支援 3D Touch，壓力的變更將導致引發 `TouchesMoved` 事件。
+IOS 9 和 iPhone 6s 和 iPhone 6s Plus 的新手，3D Touch 將壓力機密手勢新增至您的 iOS 應用程式。 因此，如果您的應用程式在 iOS 9 （或更新版本）上執行，而且 iOS 裝置能夠支援 3D Touch，壓力的變更將導致 `TouchesMoved` 引發事件。
 
-由於行為的變更，您的 iOS 應用程式應該準備好讓 `TouchesMoved` 事件更頻繁地叫用，即使 X/Y 座標並未變更也是一樣。
+由於行為的變更，您的 iOS 應用程式應該準備好讓 `TouchesMoved` 事件被叫用，即使 X/Y 座標並未變更也是一樣。
 
 如需詳細資訊，請參閱我們的[3D Touch 指南簡介](~/ios/platform/3d-touch.md)。
 
 ### <a name="document-open-in-place-functionality"></a>檔開放位置功能
 
-藉由使用[UIApplicationDelegate](xref:UIKit.UIApplicationDelegate)類別的 `FinishedLaunching (application, launchOptions)` 或 `WillFinishLaunching (Application, launchOptions)` 方法，您現在可以開啟檔並就地修改（而不是使用複本）。
+藉由使用 `FinishedLaunching (application, launchOptions)` `WillFinishLaunching (Application, launchOptions)` [UIApplicationDelegate](xref:UIKit.UIApplicationDelegate)類別的或方法，您現在可以開啟檔並就地修改（而不是使用複本）。
 
-若要支援新的開啟位置功能，請將 `LSSupportsOpeningDocumentsInPlace` 金鑰新增至您的**plist**檔案，其值為 `YES`。
+若要支援新的開啟位置功能，請將金鑰新增 `LSSupportsOpeningDocumentsInPlace` 至您的**plist**檔案，其值為 `YES` 。
 
 如需詳細資訊，請參閱 Apple 的[UIApplicationDelegate 參考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intf/UIApplicationDelegate)。
 
@@ -214,11 +214,11 @@ Apple 在 iOS 9 中提供了許多觸控事件的增強功能。 這些功能包
 
 ### <a name="fetching-tailored-content"></a>正在提取量身打造的內容
 
-新的 `NSDataAsset` 類別可讓 Xamarin iOS 應用程式提取專為其目前執行所在之 iOS 裝置的記憶體和圖形功能量身打造的內容。
+新的 `NSDataAsset` 類別可讓 Xamarin ios 應用程式提取專為目前正在執行之 iOS 裝置的記憶體和圖形功能量身打造的內容。
 
 ### <a name="new-layout-anchors"></a>新的版面配置錨點
 
-新的 `NSLayoutAnchor` 和 `NSLayoutDimension` 版面配置錨點類別會使用[UIView](xref:UIKit.UIView)類別的新錨點屬性（例如 `LeadingAnchor` 和 `WidthAnchor`），讓 iOS 9 中的版面配置變得更容易。
+新的 `NSLayoutAnchor` 和 `NSLayoutDimension` 版面配置錨點類別會使用[UIView](xref:UIKit.UIView)類別的新錨點屬性（例如 `LeadingAnchor` 和 `WidthAnchor` ），讓 iOS 9 中的版面配置變得更容易。
 
 如需有關在 Xamarin iOS 應用程式中使用自動調整和大小類別的詳細資訊，請參閱我們的[整合](~/ios/user-interface/storyboards/unified-storyboards.md)分鏡指令檔簡介和 Apple 的[NSLayoutAnchor 參考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)、 [NSLayoutDimension 參考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension)和[UIView 參考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)，以取得詳細資訊。
 
@@ -228,11 +228,11 @@ Apple 在 iOS 9 中提供了許多觸控事件的增強功能。 這些功能包
 
 ### <a name="text-input-in-notifications-modifications"></a>通知修改中的文字輸入
 
-[UIUserNotificationAction](xref:UIKit.UIUserNotificationAction)類別具有新的 `Behavior` 屬性，可用於支援來自通知的文字輸入。
+[UIUserNotificationAction](xref:UIKit.UIUserNotificationAction)類別具有新 `Behavior` 的屬性，可用於支援通知的文字輸入。
 
 ### <a name="uiapplicationdelegate-changes"></a>UIApplicationDelegate 變更
 
-雖然 Apple 不會正式淘汰，但會建議使用 `FinishedLaunching (UIApplication application, NSDictionary launchOptions)` 或 `WillFinishLaunching (UIApplication application, NSDictionary launchOptions)` 方法來取代[UIApplicationDelegate](xref:UIKit.UIApplicationDelegate)類別之 `FinishedLaunching (UIApplication application)` 方法的所有呼叫。
+雖然 Apple 不會正式淘汰，但會建議 `FinishedLaunching (UIApplication application)` 使用或方法來取代[UIApplicationDelegate](xref:UIKit.UIApplicationDelegate)類別之方法的所有呼叫 `FinishedLaunching (UIApplication application, NSDictionary launchOptions)` `WillFinishLaunching (UIApplication application, NSDictionary launchOptions)` 。
 
 如需詳細資訊，請參閱 Apple 的[UIApplicationDelegate 參考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intf/UIApplicationDelegate)。
 
@@ -241,8 +241,8 @@ Apple 在 iOS 9 中提供了許多觸控事件的增強功能。 這些功能包
 Apple 在 iOS 9 中的 UIKit Dynamics 包含下列變更：
 
 - Dynamics 現在提供非矩形衝突界限的支援。
-- 新的、可自訂的 `UIFieldBehavior` 類別是用來支援各種欄位類型。
-- 已將其他附件類型新增至 `UIAttachmentBehavior` 類別。
+- 可自訂的新 `UIFieldBehavior` 類別是用來支援各種欄位類型。
+- 其他附件類型已新增至 `UIAttachmentBehavior` 類別。
 
 如需詳細資訊，請參閱 Apple 的[UIAttachment 參考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIAttachmentBehavior_Class/index.html#//apple_ref/occ/cl/UIAttachmentBehavior)。
 
@@ -256,7 +256,7 @@ Apple 在 iOS 9 中的 UIKit Dynamics 包含下列變更：
 
 ### <a name="new-uitextinputassistantitem-class"></a>新增 UITextInputAssistantItem 類別
 
-在_快捷方式_列中，使用新的 `UITextInputAssistantItem` 類別來配置橫條圖按鈕群組。 快捷方式列是可在螢幕鍵盤上提供輸入快速鍵的新區域。
+`UITextInputAssistantItem`在_快捷方式_列中使用 [新增類別來配置橫條圖] 按鈕群組。 快捷方式列是可在螢幕鍵盤上提供輸入快速鍵的新區域。
 
 ## <a name="related-links"></a>相關連結
 

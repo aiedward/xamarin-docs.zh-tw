@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 6c2b5869f647f65b932b6ec92f359f8a79402c8f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 46954f989f4bafddf3f57d360096871b4a0f0b22
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569292"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939941"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>使用 Xamarin 中的屬性清單
 
@@ -24,7 +24,7 @@ Visual Studio for Mac 的特色是 plist 編輯器，可讓您更輕鬆地編輯
 
 資訊屬性清單（ `Info.plist` ）是必要的 iOS 檔案，可提供您的應用程式設定至系統的相關資訊。 Visual Studio for Mac 的自訂 `Info.plist` 編輯器有三個面板，由 [編輯器] 視窗左下方的索引標籤所控制：
 
- [![](property-lists-images/tabs.png "The Info.plist editor tabs at the bottom left of the editor window")](property-lists-images/tabs.png#lightbox)
+ [![編輯器視窗左下方的 [plist 編輯器] 索引標籤](property-lists-images/tabs.png)](property-lists-images/tabs.png#lightbox)
 
 每個面板都會控制不同的屬性，如下所述：
 
@@ -54,11 +54,11 @@ Visual Studio for Mac 具有圖形化介面，可用於編輯 `Info.plist` 應�
 本節包含描述應用程式的重要資訊。
 此處儲存的**識別碼**必須符合在 iTunes Connect （適用于 App Store 應用程式）中輸入的配套識別碼，以及 iOS 布建入口網站應用程式 id 清單和開發和散發憑證。
 
- [![](property-lists-images/image24.png "iOS Application Target")](property-lists-images/image24.png#lightbox)
+ [![iOS 應用程式目標](property-lists-images/image24.png)](property-lists-images/image24.png#lightbox)
 
 ### <a name="device-deployment"></a>裝置部署
 
- [![](property-lists-images/deployment.png "Device Deployment")](property-lists-images/deployment.png#lightbox)
+ [![裝置部署](property-lists-images/deployment.png)](property-lists-images/deployment.png#lightbox)
 
 [裝置**部署**資訊] 區段會選擇性地顯示，視上述 [**應用程式目標**] 區段的 [**裝置**] 下拉式清單中的選取專案而定。 **主要介面**下拉式會在分鏡腳本驅動的應用程式中設定為**mainstoryboard.storyboard** 。 如果使用者介面是以程式碼完整撰寫，則可以保留空白。
 
@@ -70,7 +70,7 @@ Visual Studio for Mac 具有圖形化介面，可用於編輯 `Info.plist` 應�
 
 **狀態列樣式**區段是用來編輯應用程式之的圖形化介面 `UIStatusBarStyle` ：
 
- [![](property-lists-images/status.png "Status Bar Styles")](property-lists-images/status.png#lightbox)
+ [![狀態列樣式](property-lists-images/status.png)](property-lists-images/status.png#lightbox)
 
  <a name="Icons"></a>
 
@@ -82,11 +82,11 @@ Visual Studio for Mac 具有圖形化介面，可用於編輯 `Info.plist` 應�
 
 `Info.plist`包含用來指定 maps 整合和背景處理模式的特殊區段。 選擇您想要支援的選項，就會為您將必要的屬性新增至您的應用程式。
 
- [![](property-lists-images/maps.png "Maps Integration")](property-lists-images/maps.png#lightbox)
+ [![Maps 整合](property-lists-images/maps.png)](property-lists-images/maps.png#lightbox)
 
 如需使用地圖的詳細資訊，請參閱 Xamarin [IOS 地圖](~/ios/user-interface/controls/ios-maps/index.md)指南。
 
- [![](property-lists-images/bging.png "Background Modes")](property-lists-images/bging.png#lightbox)
+ [![背景模式](property-lists-images/bging.png)](property-lists-images/bging.png#lightbox)
 
 如需背景模式的詳細資訊，請參閱《 [iOS 中](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md)的 Xamarin 背景處理指南》。
 
@@ -94,7 +94,7 @@ Visual Studio for Mac 具有圖形化介面，可用於編輯 `Info.plist` 應�
 
 [Advanced] 面板可控制應用程式支援的檔案類型和 URL 配置。
 
- [![](property-lists-images/image34.png "Advanced Panel")](property-lists-images/image34.png#lightbox)
+ [![[Advanced] 面板](property-lists-images/image34.png)](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types"></a>
 
@@ -108,7 +108,7 @@ Visual Studio for Mac 具有圖形化介面，可用於編輯 `Info.plist` 應�
 
 有時候應用程式必須支援開啟自訂檔案類型。 例如，我們可能會想要開啟具有自訂擴充功能的影像檔案 *。* 為了指定自訂檔案類型，我們將使用金鑰來建立自訂的 UTI-通用類型識別碼 `UIExportedTypeDeclarations` 。 下列螢幕擷取畫面說明如何建立適用于. xam 擴充功能的自訂 UTI：
 
- [![](property-lists-images/uti.png "UTIs Editor")](property-lists-images/uti.png#lightbox)
+ [![Uti 編輯器](property-lists-images/uti.png)](property-lists-images/uti.png#lightbox)
 
 就像匯出的類型 Uti 指定您的應用程式專屬的自訂 Uti，匯*入的類型 uti* （ `UIImportedTypeDeclarations` 金鑰）會指定您的應用程式支援但不擁有的自訂類型。
 
@@ -118,7 +118,7 @@ Visual Studio for Mac 具有圖形化介面，可用於編輯 `Info.plist` 應�
 
 URL 配置名稱（也稱為通訊協定）是 URL 的第一個部分。 例如， `http://` 和 `https://` 都是常見的 URL 配置。 您可以選擇為您的應用程式建立自訂 URL 配置。 自訂 URL 配置是用來與其他應用程式來回通訊和傳送資料。 下列螢幕擷取畫面說明如何建立名為的新自訂 URL 配置 `monkeys://` ：
 
- [![](property-lists-images/url.png "Custom URLs")](property-lists-images/url.png#lightbox)
+ [![自訂 URL](property-lists-images/url.png)](property-lists-images/url.png#lightbox)
 
 如需有關如何執行自訂 URL 配置的詳細資訊，請參閱[本指南的 Apple 的執行自訂 url 配置一節](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)。
 
@@ -126,15 +126,15 @@ URL 配置名稱（也稱為通訊協定）是 URL 的第一個部分。 例如�
 
 檔案的 [**來源**] 索引標籤可 `Info.plist` 讓您新增或編輯自訂值。 Visual Studio for Mac 提供最常見的屬性清單：
 
- [![](property-lists-images/image31.png "Adding a new property from a dropdown")](property-lists-images/image31.png#lightbox)
+ [![從下拉式清單新增屬性](property-lists-images/image31.png)](property-lists-images/image31.png#lightbox)
 
 若為已知屬性 Visual Studio for Mac 將會是有效值的清單，如下列螢幕擷取畫面所示：
 
- [![](property-lists-images/image32.png "Select a value from a know value list")](property-lists-images/image32.png#lightbox)
+ [![從 [知道值] 清單中選取一個值](property-lists-images/image32.png)](property-lists-images/image32.png#lightbox)
 
 Visual Studio for Mac 也會偵測屬性類型，如下所示：
 
- [![](property-lists-images/image33.png "The available property types")](property-lists-images/image33.png#lightbox)
+ [![可用的屬性類型](property-lists-images/image33.png)](property-lists-images/image33.png#lightbox)
 
 如需選擇性屬性的其他資訊，請參閱 Apple 的[應用程式相關資源](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)連結。
 

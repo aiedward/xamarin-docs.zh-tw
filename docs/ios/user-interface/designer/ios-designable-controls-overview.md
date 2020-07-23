@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: e8c38ec407d13a99e2990a6d4cf39b5a23728b1d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5c8a852a37e2cd5c679283bc4d078f19e6e5d241
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003982"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939681"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 中的自訂控制項
 
@@ -33,7 +33,7 @@ Xamarin Designer for iOS 是一種功能強大的工具，可讓您視覺化應�
 
 設計工具不支援載入協力廠商的目標 C 程式庫。
 
-## <a name="custom-properties"></a>自訂內容
+## <a name="custom-properties"></a>自訂屬性
 
 如果符合下列條件，自訂控制項所宣告的屬性就會出現在 [屬性] 面板中：
 
@@ -45,9 +45,9 @@ Xamarin Designer for iOS 是一種功能強大的工具，可讓您視覺化應�
 
 ## <a name="initialization"></a>初始化
 
-針對 `UIViewController` 子類別，您應該針對相依于您在設計工具中建立之視圖的程式碼使用[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)方法。
+針對子 `UIViewController` 類別，您應該使用[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)方法來執行與您在設計工具中建立之瀏覽器相依的程式碼。
 
-對於 `UIView` 和其他 `NSObject` 子類別， [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)方法是從配置檔案載入自訂控制項的建議位置。 這是因為在執行控制項的函式時，將不會設定在屬性面板中設定的任何自訂屬性，但會在呼叫 `AwakeFromNib` 之前設定它們：
+對於 `UIView` 和其他子 `NSObject` 類別， [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)方法是在從配置檔案載入自訂控制項之後，為其執行初始化的建議位置。 這是因為在執行控制項的函式時，將不會設定在屬性面板中設定的任何自訂屬性，但會在呼叫之前設定它們 `AwakeFromNib` ：
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -122,14 +122,14 @@ public class CustomView : UIView {
 }
 ```
 
-`CustomView` 元件會公開可由開發人員在 iOS 設計工具中設定的 `Counter` 屬性。 不過，不論在設計工具內設定的值為何，`Counter` 屬性的值一律會是零（0）。 原因如下：
+`CustomView`元件 `Counter` 會公開可由開發人員在 iOS 設計工具中設定的屬性。 不過，不論在設計工具內設定的值為何，屬性的值 `Counter` 一律會是零（0）。 原因如下：
 
-- `CustomControl` 的實例會從分鏡腳本檔案中放大。
-- 在 iOS 設計工具中修改的任何屬性（例如，將 `Counter` 的值設定為兩個（2））。
-- 會執行 `AwakeFromNib` 方法，並對元件的 `Initialize` 方法進行呼叫。
-- 在 `Initialize` `Counter` 屬性的值會重設為零（0）。
+- 的實例會從分鏡腳本檔案 `CustomControl` 中放大。
+- 在 iOS 設計工具中修改的任何屬性（例如，將的值設定 `Counter` 為二（2））都是如此。
+- `AwakeFromNib`會執行方法，並對元件的方法進行呼叫 `Initialize` 。
+- 在 `Initialize` 屬性值中，將 `Counter` 會重設為零（0）。
 
-若要修正上述情況，請在其他地方初始化 `Counter` 屬性（例如在元件的函式中），或不要覆寫 `AwakeFromNib` 方法，如果元件不需要在目前的內容中進行進一步的初始化，則請呼叫 `Initialize`由其程式的函式處理。
+若要修正上述情況，請在 `Counter` 其他地方初始化屬性（例如在元件的函式中），或不要覆寫 `AwakeFromNib` 方法，並 `Initialize` 在元件不需要在其其程式的目前正在處理的範圍以外進行進一步初始化時呼叫。
 
 ## <a name="design-mode"></a>設計模式
 
@@ -163,8 +163,8 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-在嘗試存取其任何成員之前，您應該一律檢查 `null` 的 `Site` 屬性。 如果 `null``Site`，則可以安全地假設此控制項不是在設計工具中執行。
-在設計模式中，`Site` 會在控制項的「函式」執行之後，以及呼叫 `AwakeFromNib` 之前設定。
+在 `Site` `null` 嘗試存取其任何成員之前，您應該一律檢查的屬性。 如果 `Site` 為 `null` ，則可以放心假設控制項不是在設計工具中執行。
+在設計模式中，會在控制項的「函式」 `Site` 執行之後和 `AwakeFromNib` 呼叫之前設定。
 
 ## <a name="debugging"></a>偵錯
 
@@ -173,14 +173,14 @@ public class DesignerAwareLabel : UILabel, IComponent {
 
 設計介面通常可以攔截個別控制項所擲回的例外狀況，同時繼續呈現其他控制項。 錯誤的控制項會取代成紅色的預留位置，而您可以按一下驚嘆號圖示來查看例外狀況追蹤：
 
- ![](ios-designable-controls-overview-images/exception-box.png "A faulty control as red placeholder and the exception details")
+ ![做為紅色預留位置和例外狀況詳細資料的錯誤控制項](ios-designable-controls-overview-images/exception-box.png)
 
 如果控制項有可用的偵錯工具符號，追蹤就會有檔案名和行號。
 按兩下堆疊追蹤中的一行，會跳至原始程式碼中的那一行。
 
 如果設計工具無法隔離錯誤的控制項，則會在設計介面的頂端顯示警告訊息：
 
- ![](ios-designable-controls-overview-images/info-bar.png "A warning message at the top of the design surface")
+ ![設計介面頂端的警告訊息](ios-designable-controls-overview-images/info-bar.png)
 
 從設計介面修正或移除錯誤的控制項時，將會繼續完整轉譯。
 

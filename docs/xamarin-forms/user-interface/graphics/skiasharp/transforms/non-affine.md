@@ -10,16 +10,16 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91a639b2d3c2f6a8437a09a70808dc6d793ba76b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b4c6569acbade7edf64c9aaf54237ebaa342ea54
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131751"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936639"
 ---
 # <a name="non-affine-transforms"></a>非仿射轉換
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用轉換矩陣的第三個數據行來建立透視圖和錐度效果_
 
@@ -27,7 +27,7 @@ _使用轉換矩陣的第三個數據行來建立透視圖和錐度效果_
 
 不過，SkiaSharp 也能夠進行非仿射轉換，其能夠將矩形轉換成任何凸四邊形：
 
-![](non-affine-images/nonaffinetransformexample.png "A bitmap transformed into a convex quadrilateral")
+![轉換成凸四邊形的點陣圖](non-affine-images/nonaffinetransformexample.png)
 
 凸四邊形是四邊的圖形，內部角度一律小於180度，而邊則不會彼此相交。
 
@@ -99,7 +99,7 @@ y ' = y/（0.01 · x + 1）
 
 當 x 為100時，z ' 分母為2，因此 x 和 y 座標實際上是減半。 方塊右側會比左邊更短：
 
-![](non-affine-images/nonaffinetransform.png "A box subjected to a non-affine transform")
+![對非仿射轉換的方塊](non-affine-images/nonaffinetransform.png)
 
 `Persp`這些儲存格名稱的部分指的是「透視圖」，因為透視量會建議方塊現在會向檢視器的右邊傾斜。
 
@@ -233,7 +233,7 @@ public partial class TestPerspectivePage : ContentPage
 
 以下是一些範例影像：
 
-[![](non-affine-images/testperspective-small.png "Triple screenshot of the Test Perspective page")](non-affine-images/testperspective-large.png#lightbox "Triple screenshot of the Test Perspective page")
+[![[測試透視圖] 頁面的三重螢幕擷取畫面](non-affine-images/testperspective-small.png)](non-affine-images/testperspective-large.png#lightbox "[測試透視圖] 頁面的三重螢幕擷取畫面")
 
 當您嘗試使用滑杆時，您會發現超過0.0066 或以下的值–0.0066 會導致映射突然被破裂並一致。 要轉換的點陣圖是 300-圖元正方形。 它會相對於其中心進行轉換，因此點陣圖的座標範圍從–150到150。 回想一下，z ' 的值是：
 
@@ -245,7 +245,7 @@ z ' = Persp0 · x + Persp1 · y + 1
 
 其中一個這類非仿射轉換是一個*錐度轉換*。 這種類型的非仿射轉換會保留矩形的整體維度，但 tapers 一側：
 
-![](non-affine-images/tapertransform.png "A box subjected to a taper transform")
+![對錐度轉換的方塊](non-affine-images/tapertransform.png)
 
 [`TaperTransform`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs)類別會根據這些參數來執行非仿射轉換的一般化計算：
 
@@ -395,15 +395,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-以下是一些範例：
+這裡有一些範例：
 
-[![](non-affine-images/tapertransform-small.png "Triple screenshot of the Taper Transform page")](non-affine-images/tapertransform-large.png#lightbox "Triple screenshot of the Taper Transform page")
+[![[錐度轉換] 頁面的三重螢幕擷取畫面](non-affine-images/tapertransform-small.png)](non-affine-images/tapertransform-large.png#lightbox "[錐度轉換] 頁面的三重螢幕擷取畫面")
 
 另一種一般化非仿射轉換是3D 旋轉，在下一篇文章中會示範[**3d**](3d-rotation.md)旋轉。
 
 非仿射轉換可以將矩形轉換成任何凸四邊形。 這是由 [**顯示非仿射矩陣**] 頁面所示範。 它與 [[**矩陣轉換**](matrix.md)] 文章中的 [**顯示仿射矩陣**] 頁面非常類似，不同之處在于它有第四個 `TouchPoint` 物件來操作點陣圖的第四個角落：
 
-[![](non-affine-images/shownonaffinematrix-small.png "Triple screenshot of the Show Non-Affine Matrix page")](non-affine-images/shownonaffinematrix-large.png#lightbox "Triple screenshot of the Show Non-Affine Matrix page")
+[![[顯示非仿射矩陣] 頁面的三重螢幕擷取畫面](non-affine-images/shownonaffinematrix-small.png)](non-affine-images/shownonaffinematrix-large.png#lightbox "[顯示非仿射矩陣] 頁面的三重螢幕擷取畫面")
 
 只要您未嘗試讓點陣圖的其中一個角落大於180度，或讓兩個邊彼此相交，程式就會使用這個方法，從類別成功計算轉換 [`ShowNonAffineMatrixPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) ：
 

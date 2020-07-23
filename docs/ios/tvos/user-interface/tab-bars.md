@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 0e6edaccb9e0c163ee46c59ed11769476037aa90
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a462e3adf4109cc9a7a2e17e775609e2c3c81906
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573543"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938875"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>使用 Xamarin 中的 [tvOS] 索引標籤列控制器
 
 針對許多類型的 tvOS 應用程式，主要導覽會以在畫面頂端執行的索引標籤列形式呈現。 使用者會在可能的類別清單和變更底下的內容區域之間撥動，以反映使用者的選取專案。
 
-[![](tab-bars-images/tab01.png "Sample Tab Bar")](tab-bars-images/tab01.png#lightbox)
+[![範例索引標籤列](tab-bars-images/tab01.png)](tab-bars-images/tab01.png#lightbox)
 
 索引標籤列預設為半透明，而且一律會出現在畫面頂端。 在焦點時，索引標籤列會涵蓋螢幕的前140圖元，但當焦點移到下方的內容區域時，將會快速地滑出。
 
@@ -62,22 +62,22 @@ Apple 具有下列使用索引標籤列的建議：
 
 1. 啟動新的 tvOS 應用程式，然後選取 [ **tvOS**  >  **應用程式**] 索引標籤  >  **式應用程式**： 
 
-    [![](tab-bars-images/tab02.png "Select Tabbed App")](tab-bars-images/tab02.png#lightbox)
+    [![選取索引標籤式應用程式](tab-bars-images/tab02.png)](tab-bars-images/tab02.png#lightbox)
 1. 遵循所有提示來建立新的 tvOS 方案。
 1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 若要變更指定分類的**圖示**或標題，請在 [**檔大綱**] 中選取**視圖控制器**的索引卷**標**列**專案**：
 
-    [![](tab-bars-images/tab03a.png "The Tab Bar Item for the View Controller in the Document Outline")](tab-bars-images/tab03a.png#lightbox)
+    [![[檔大綱] 中視圖控制器的索引標籤列專案](tab-bars-images/tab03a.png)](tab-bars-images/tab03a.png#lightbox)
 1. 然後在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中設定必要的屬性： 
 
-    [![](tab-bars-images/tab03.png "The Widget Tab")](tab-bars-images/tab03.png#lightbox)
+    [![[Widget] 索引標籤](tab-bars-images/tab03.png)](tab-bars-images/tab03.png#lightbox)
 1. 若要加入新的類別目錄（索引標籤），請將**視圖控制器**放在設計介面上： 
 
-    [![](tab-bars-images/tab04.png "A View Controller")](tab-bars-images/tab04.png#lightbox)
+    [![視圖控制器](tab-bars-images/tab04.png)](tab-bars-images/tab04.png#lightbox)
 1. 從 [索引標籤**視圖控制器]** 中，按一下並拖曳至新的**視圖控制器**。
 1. 從快顯中，選取 [ **view** controller]，將新的 view 新增為索引標籤（Category）： 
 
-    [![](tab-bars-images/tab05.png "Select Tab")](tab-bars-images/tab05.png#lightbox)
+    [![選取 Tab](tab-bars-images/tab05.png)](tab-bars-images/tab05.png#lightbox)
 1. 在 iOS 設計工具中新增 UI 元素，以將每個 Caterogies 內容區域的 UI 版面配置設計為正常。
 1. 公開任何必要的事件，以在 c # 程式碼中使用您的 UI 控制項。
 1. 為您想要在 c # 程式碼中公開的任何 UI 控制項命名。
@@ -87,22 +87,22 @@ Apple 具有下列使用索引標籤列的建議：
 
 1. 啟動新的 tvOS 應用程式，然後選取 [ **tvOS**  >  **應用程式**] 索引標籤  >  **式應用程式**： 
 
-    [![](tab-bars-images/tab02vs.png "Select Tabbed App")](tab-bars-images/tab02vs.png#lightbox)
+    [![選取索引標籤式應用程式](tab-bars-images/tab02vs.png)](tab-bars-images/tab02vs.png#lightbox)
 1. 遵循所有提示來建立新的 tvOS 方案。
 1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 若要變更指定分類的**圖示**或標題，請在 [**檔大綱**] 中選取**視圖控制器**的索引卷**標**列**專案**：
 
-    [![](tab-bars-images/tab03avs.png "The View Controller in the Document Outline")](tab-bars-images/tab03avs.png#lightbox)
+    [![檔大綱中的 View Controller](tab-bars-images/tab03avs.png)](tab-bars-images/tab03avs.png#lightbox)
 1. 然後在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中設定必要的屬性： 
 
-    [![](tab-bars-images/tab03vs.png "The Widget Tab")](tab-bars-images/tab03vs.png#lightbox)
+    [![[Widget] 索引標籤](tab-bars-images/tab03vs.png)](tab-bars-images/tab03vs.png#lightbox)
 1. 若要加入新的類別目錄（索引標籤），請從 [**工具箱**] 將 [ **View Controller** ] 拖曳至設計介面： 
 
-    [![](tab-bars-images/tab04vs.png "A View Controller")](tab-bars-images/tab04vs.png#lightbox)
+    [![視圖控制器](tab-bars-images/tab04vs.png)](tab-bars-images/tab04vs.png#lightbox)
 1. 從 [索引標籤**視圖控制器]** 中，按一下並拖曳至新的**視圖控制器**。
 1. 從快顯中，選取 [ **view** controller]，將新的 view 新增為索引標籤（Category）： 
 
-    [![](tab-bars-images/tab05vs.png "Select Tab")](tab-bars-images/tab05vs.png#lightbox)
+    [![選取 Tab](tab-bars-images/tab05vs.png)](tab-bars-images/tab05vs.png#lightbox)
 1. 在 iOS 設計工具中新增 UI 元素，以將每個 Caterogies 內容區域的 UI 版面配置設計為正常。
 1. 公開任何必要的事件，以在 c # 程式碼中使用您的 UI 控制項。
 1. 為您想要在 c # 程式碼中公開的任何 UI 控制項命名。
@@ -134,7 +134,7 @@ TabBar.Items [2].BadgeValue = "10";
 
 當執行時，會產生下列結果：
 
-[![](tab-bars-images/tab06.png "A Tab Bar Item with badge")](tab-bars-images/tab06.png#lightbox)
+[![具有徽章的索引標籤欄專案](tab-bars-images/tab06.png)](tab-bars-images/tab06.png#lightbox)
 
 使用的 `Title` 屬性 `UITabBarItem` 來變更標題和 `Image` 屬性，以變更圖示。
 

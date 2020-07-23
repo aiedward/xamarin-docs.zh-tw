@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0eb3b4a6b37d59363984c9248cc39de91a6819e0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ed20da1005447334a99ea40c177c8f88d59d71ce
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138251"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938464"
 ---
 # <a name="the-translate-transform"></a>平移轉換
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解如何使用轉譯轉換來移位 SkiaSharp 圖形_
 
@@ -27,7 +27,7 @@ SkiaSharp 中最簡單的轉換類型是「*轉譯*」或「*轉譯*」轉換。
 
 翻譯也適用于動畫以及簡單的文字效果：
 
-![](translate-images/translateexample.png "Text shadow, engraving, and embossing with translation")
+![翻譯的文字陰影、engraving 和浮雕](translate-images/translateexample.png)
 
 [`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single))中的方法 `SKCanvas` 有兩個參數，會導致後續繪製的繪圖物件以水準和垂直方式移動：
 
@@ -74,7 +74,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 後續的矩形會向下 trickle 頁面：
 
-[![](translate-images/accumulatedtranslate-small.png "Triple screenshot of the Accumulated Translate page")](translate-images/accumulatedtranslate-large.png#lightbox "Triple screenshot of the Accumulated Translate page")
+[![累積翻譯頁面的三重螢幕擷取畫面](translate-images/accumulatedtranslate-small.png)](translate-images/accumulatedtranslate-large.png#lightbox "累積翻譯頁面的三重螢幕擷取畫面")
 
 如果累積的轉譯因數是 `dx` 和 `dy` ，而且您在繪圖函式中指定的點是（ `x` ， `y` ），則繪圖物件會在點（ `x'` ，）上轉譯 `y'` ，其中：
 
@@ -131,7 +131,7 @@ using (SKPaint textPaint = new SKPaint())
 
 在這三個範例中， `Translate` 會呼叫來顯示文字，以從和變數所指定的位置位移 `x` `y` 。 然後再以另一種色彩顯示文字，而不會有任何轉譯效果：
 
-[![](translate-images/translatetexteffects-small.png "Triple screenshot of the Translate Text Effects page")](translate-images/translatetexteffects-large.png#lightbox "Triple screenshot of the Translate Text Effects page")
+[![[翻譯文字效果] 頁面的三重螢幕擷取畫面](translate-images/translatetexteffects-small.png)](translate-images/translatetexteffects-large.png#lightbox "[翻譯文字效果] 頁面的三重螢幕擷取畫面")
 
 這三個範例中的每一個都會顯示否定呼叫的不同方式 `Translate` ：
 
@@ -217,7 +217,7 @@ public class HendecagramArrayPage : ContentPage
 
 結果如下︰
 
-[![](translate-images/hendecagramarray-small.png "Triple screenshot of the Hendecagram Array page")](translate-images/hendecagramarray-large.png#lightbox "Triple screenshot of the Hendecagram Array page")
+[![Hendecagram 陣列頁面的三重螢幕擷取畫面](translate-images/hendecagramarray-small.png)](translate-images/hendecagramarray-large.png#lightbox "Hendecagram 陣列頁面的三重螢幕擷取畫面")
 
 動畫通常包含轉換。 [ **Hendecagram 動畫**] 頁面會將圓形中的11個星形向周圍移動。 類別會以 [`HendecagramAnimationPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) 一些欄位開始，並覆寫 `OnAppearing` 和 `OnDisappearing` 方法來啟動和停止 Xamarin.Forms 計時器：
 
@@ -302,7 +302,7 @@ public class HendecagramAnimationPage : ContentPage
 
 `PaintSurface`處理常式會呼叫 `Translate` 方法兩次，先轉譯成畫布的中央，然後轉譯成以（0，0）為中心的圓形圓周。 圓形的半徑設定為盡可能大，同時仍然保留頁面範圍內的星號：
 
-[![](translate-images/hendecagramanimation-small.png "Triple screenshot of the Hendecagram Animation page")](translate-images/hendecagramanimation-large.png#lightbox "Triple screenshot of the Hendecagram Animation page")
+[![[Hendecagram 動畫] 頁面的三重螢幕擷取畫面](translate-images/hendecagramanimation-small.png)](translate-images/hendecagramanimation-large.png#lightbox "[Hendecagram 動畫] 頁面的三重螢幕擷取畫面")
 
 請注意，星形會維持與頁面中央相同的方向。 完全不會旋轉。 這是旋轉轉換的作業。
 

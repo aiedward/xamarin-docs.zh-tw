@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 584b398deafd233fdbe6b24189a2047ae712fdcf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 01f95641a0cf65341479c51b2f6314a0ef3ea2de
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573517"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939070"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>在 Xamarin 中使用 UI 執行緒
 
@@ -36,7 +36,7 @@ InvokeOnMainThread ( () => {
 
 在進行 Xamarin iOS 應用程式的調試時，如果您的程式碼嘗試從錯誤的執行緒存取 UI 控制項，則會擲回錯誤。 這可協助您使用 InvokeOnMainThread 方法來追蹤並修正這些問題。 這只會在進行偵錯工具時發生，而且不會在發行組建中擲回錯誤。 錯誤訊息會如下所示：
 
- ![](ui-thread-images/image10.png "UI Thread Execution")
+ ![UI 執行緒執行](ui-thread-images/image10.png)
 
  <a name="Background_Thread_Example"></a>
 

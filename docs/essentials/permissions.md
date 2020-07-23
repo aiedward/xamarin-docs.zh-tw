@@ -9,12 +9,12 @@ ms.date: 01/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5de10511d73614570d6308b6f4deb7b4ca55549a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d594e627fed21c3c2a73770313fcae29695370c5
+ms.sourcegitcommit: a658de488a6da916145ed4aa016825565110e767
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802234"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86972554"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials：許可權
 
@@ -94,7 +94,7 @@ Xamarin.Essentials嘗試盡可能抽象化許可權。 不過，每個作業系�
 | 提醒事項 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | 感應器 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | Sms | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| 語音 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| Speech | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | StorageRead | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | StorageWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 
@@ -148,7 +148,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>擴充許可權
 
-針對需要不包含在中的其他驗證或許可權的應用程式，已建立許可權 API 以提供彈性且可擴充 Xamarin.Essentials 。 建立繼承自的新類別， `BasePermission` 並執行所需的抽象方法。 結果為
+針對需要不包含在中的其他驗證或許可權的應用程式，已建立許可權 API 以提供彈性且可擴充 Xamarin.Essentials 。 建立繼承自的新類別， `BasePermission` 並執行所需的抽象方法。
 
 ```csharp
 public class MyPermission : BasePermission
@@ -173,21 +173,10 @@ public class MyPermission : BasePermission
 }
 ```
 
-在特定平臺中執行許可權時， `BasePlatformPermission` 可以從繼承類別。 這會提供額外的平臺協助程式方法，以自動檢查宣告。 建立自訂許可權以進行群組時，這會很有説明。 例如，您可以使用下列自訂許可權要求對 Android 上的儲存體進行讀取和寫入存取。
-
-在您要從中呼叫許可權的專案中，建立新的許可權。
+在特定平臺中執行許可權時， `BasePlatformPermission` 可以從繼承類別。 這會提供額外的平臺協助程式方法，以自動檢查宣告。 這有助於建立執行分組的自訂許可權。 例如，您可以使用下列自訂許可權要求對 Android 上的儲存體進行讀取和寫入存取。
 
 ```csharp
-public partial class ReadWriteStoragePermission  : Xamarin.Essentials.Permissions.BasePlatformPermission
-{
-
-}
-```
-
-在您的 Android 專案中，使用您想要要求的許可權來擴充許可權。
-
-```csharp
-public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
+public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
 {
     public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
     {
@@ -197,10 +186,49 @@ public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions
 }
 ```
 
-然後，您可以從共用邏輯呼叫您的新許可權。
+接著，您可以從 Android 專案呼叫您的新許可權。
 
 ```csharp
 await Permissions.RequestAsync<ReadWriteStoragePermission>();
+```
+
+如果您想要從您的共用程式碼呼叫此 API，您可以建立介面，並使用相依性[服務](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/dependency-service/)來註冊並取得實作為。
+
+```csharp
+public interface IReadWritePermission
+{        
+    Task<PermissionStatus> CheckStatusAsync();
+    Task<PermissionStatus> RequestAsync();
+}
+```
+
+然後在您的平臺專案中執行介面：
+
+```csharp
+public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission, IReadWritePermission
+{
+    public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
+    {
+        (Android.Manifest.Permission.ReadExternalStorage, true),
+        (Android.Manifest.Permission.WriteExternalStorage, true)
+    }.ToArray();
+}
+```
+
+然後您可以註冊特定的執行：
+
+```csharp
+DependencyService.Register<IReadWritePermission, ReadWriteStoragePermission>();
+```
+接著，您可以從共用的專案解析並使用它：
+
+```csharp
+var readWritePermission = DependencyService.Get<IReadWritePermission>();
+var status = await readWritePermission.CheckStatusAsync();
+if (status != PermissionStatus.Granted)
+{
+    status = await readWritePermission.RequestAsync();
+}
 ```
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性

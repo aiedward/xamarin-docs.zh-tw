@@ -10,16 +10,16 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c4fc732082a77a2e471465af448a487862b513c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a15ca2e11dabb73054f5f0a1dc3f79342d8ce7f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136288"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938602"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>設定 Picker 的 ItemsSource 屬性
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
 
 _[選擇器] 視圖是從資料清單中選取文字專案的控制項。本文說明如何藉由設定 ItemsSource 屬性來填入選擇器的資料，以及如何回應使用者選取的專案。_
 
@@ -178,7 +178,7 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem)屬性資料會系結至已 `SelectedMonkey` 連接視圖模型的屬性，其類型為 `Monkey` 。 因此，當使用者在中選取專案時 [`Picker`](xref:Xamarin.Forms.Picker) ， `SelectedMonkey` 屬性將會設定為選取的 `Monkey` 物件。 `SelectedMonkey`物件資料會在使用者介面中顯示 [`Label`](xref:Xamarin.Forms.Label) ，以及 [`Image`](xref:Xamarin.Forms.Image) views：
 
-![](populating-itemssource-images/monkeys.png "Picker Item Selection")
+![Picker 項目選取](populating-itemssource-images/monkeys.png)
 
 > [!NOTE]
 > 請注意， [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) 和 [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) 屬性預設都支援雙向系結。

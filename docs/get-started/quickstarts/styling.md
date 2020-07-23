@@ -12,16 +12,16 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2d458bafc5bb1c8dcffc7858fd15734187f7612b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05560ae7c3d255140c0782e5f442dd2356d86cad
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134065"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937419"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>建立跨平臺 Xamarin.Forms 應用程式的樣式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
 在本快速入門中，您將了解如何：
 
@@ -29,10 +29,10 @@ ms.locfileid: "84134065"
 
 本快速入門會逐步解說如何使用 XAML 樣式來建立跨平臺 Xamarin.Forms 應用程式的樣式。 最終的應用程式如下所示：
 
-[![](styling-images/screenshots1-sml.png "Notes Page")](styling-images/screenshots1.png#lightbox "Notes Page")
-[![](styling-images/screenshots2-sml.png "Note Entry Page")](styling-images/screenshots2.png#lightbox "Note Entry Page")
+[ ![ 附注頁面](styling-images/screenshots1-sml.png)](styling-images/screenshots1.png#lightbox "[備註] 頁面") 
+ [ ![ 筆記輸入頁面](styling-images/screenshots2-sml.png)](styling-images/screenshots2.png#lightbox "[備註輸入] 頁面")
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
 您應該先成功完成[先前的快速入門](database.md)，再嘗試本快速入門。 或者，下載[先前的快速入門範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)，並使用此範例作為本快速入門的起點。
 

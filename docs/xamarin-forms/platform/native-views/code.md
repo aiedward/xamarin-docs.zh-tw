@@ -10,16 +10,16 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4cad46bdee1b49c316947bc56bdb69a3b9e9a270
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139590"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938204"
 ---
 # <a name="native-views-in-c"></a>C 中的原生視圖\#
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 
 _IOS、Android 和 UWP 的原生視圖可以直接從 Xamarin.Forms 使用 c # 建立的頁面參考。本文示範如何將原生視圖加入 Xamarin.Forms 使用 c # 建立的配置，以及如何覆寫自訂視圖的配置以更正其測量 API 的使用方式。_
 
@@ -29,7 +29,7 @@ Xamarin.Forms允許 `Content` 設定或具有集合的任何控制項， `Childr
 
 下列螢幕擷取畫面示範已新增至的平臺特定視圖 Xamarin.Forms [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
 
-[![](code-images/screenshots-sml.png "StackLayout Containing Platform-Specific Views")](code-images/screenshots.png#lightbox "StackLayout Containing Platform-Specific Views")
+[![包含平臺特定視圖的 StackLayout](code-images/screenshots-sml.png)](code-images/screenshots.png#lightbox "包含平臺特定視圖的 StackLayout")
 
 將平臺特定的視圖加入至版面配置的功能 Xamarin.Forms ，是由每個平臺上的兩個擴充方法所啟用：
 
@@ -132,7 +132,7 @@ stackLayout.Children.Add (customControl);
 
 不過，因為覆 `CustomControl.SizeThatFits` 寫一律會傳回高度150，所以此視圖會顯示在其上方和下方的空格，如下列螢幕擷取畫面所示：
 
-![](code-images/ios-bad-measurement.png "iOS CustomControl with Bad SizeThatFits Implementation")
+![具有錯誤 SizeThatFits 執行的 iOS CustomControl](code-images/ios-bad-measurement.png)
 
 此問題的解決方法是提供 `GetDesiredSizeDelegate` 執行，如下列程式碼範例所示：
 
@@ -163,7 +163,7 @@ stackLayout.Children.Add (customControl, FixSize);
 
 這會導致正確顯示自訂視圖，而不含其上方和下方的空白空間，如下列螢幕擷取畫面所示：
 
-![](code-images/ios-good-measurement.png "iOS CustomControl with GetDesiredSize Override")
+![使用 GetDesiredSize 覆寫的 iOS CustomControl](code-images/ios-good-measurement.png)
 
 ### <a name="android"></a>Android
 
@@ -201,7 +201,7 @@ stackLayout.Children.Add (customControl);
 
 不過，因為覆 `CustomControl.OnMeasure` 寫一律會傳回所要求寬度的一半，所以會顯示只佔用一半的裝置寬度，如下列螢幕擷取畫面所示：
 
-![](code-images/android-bad-measurement.png "Android CustomControl with Bad OnMeasure Implementation")
+![具有錯誤 OnMeasure 執行的 Android CustomControl](code-images/android-bad-measurement.png)
 
 此問題的解決方法是提供 `GetDesiredSizeDelegate` 執行，如下列程式碼範例所示：
 
@@ -230,7 +230,7 @@ stackLayout.Children.Add (customControl, FixSize);
 
 這會導致正確顯示自訂視圖，佔用裝置的寬度，如下列螢幕擷取畫面所示：
 
-![](code-images/android-good-measurement.png "Android CustomControl with Custom GetDesiredSize Delegate")
+![使用自訂 GetDesiredSize 委派的 Android CustomControl](code-images/android-good-measurement.png)
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
@@ -298,7 +298,7 @@ stackLayout.Children.Add(brokenControl);
 
 不過，因為覆 `CustomControl.ArrangeOverride` 寫一律會傳回所要求寬度的一半，所以此視圖會裁剪成裝置可用寬度的一半，如下列螢幕擷取畫面所示：
 
-![](code-images/winrt-bad-measurement.png "UWP CustomControl with Bad ArrangeOverride Implementation")
+![具有錯誤 ArrangeOverride 執行的 UWP CustomControl](code-images/winrt-bad-measurement.png)
 
 這個問題的解決方法是在 `ArrangeOverrideDelegate` 將視圖加入至時提供一個實作為， [`StackLayout`](xref:Xamarin.Forms.StackLayout) 如下列程式碼範例所示：
 
@@ -317,9 +317,9 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 這個方法會使用方法所提供的寬度 `CustomControl.ArrangeOverride` ，但會將它乘以二。 這會導致正確顯示自訂視圖，佔用裝置的寬度，如下列螢幕擷取畫面所示：
 
-![](code-images/winrt-good-measurement.png "UWP CustomControl with ArrangeOverride Delegate")
+![具有 ArrangeOverride 委派的 UWP CustomControl](code-images/winrt-good-measurement.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何將原生視圖加入 Xamarin.Forms 使用 c # 建立的配置，以及如何覆寫自訂視圖的配置以更正其測量 API 的使用方式。
 

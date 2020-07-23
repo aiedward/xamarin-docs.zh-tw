@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7410386e10f605fdeed452fe37755c1e48e6b9b9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b4772299421ad26f0fbe0fced8c80a7f633341c6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136990"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938446"
 ---
 # <a name="visualelement-drop-shadows-on-ios"></a>IOS 上的 VisualElement 投影
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 這個 iOS 平臺特定是用來啟用上的投影 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。 它會在 XAML 中使用，方法是將 [`VisualElement.IsShadowEnabled`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) 附加屬性設定為 `true` ，並使用一些額外的選擇性附加屬性來控制陰影：
 
@@ -74,7 +74,7 @@ boxView.On<iOS>()
 
 結果是可以在上啟用投影 [`VisualElement`](xref:Xamarin.Forms.VisualElement) ：
 
-![](drop-shadow-images/drop-shadow.png "Drop shadow enabled")
+![已啟用投影](drop-shadow-images/drop-shadow.png)
 
 ## <a name="related-links"></a>相關連結
 

@@ -6,12 +6,12 @@ ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 6cd5acb529d617c72d8c9e1bd642a831f90b2e8c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f1e230d8851545e890c806b58ddf26647764bce9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73013749"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938810"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>在安裝後遺漏 Visual Studio 延伸模組
 
@@ -29,11 +29,11 @@ ms.locfileid: "73013749"
 
 2. 以滑鼠右鍵按一下 [ **Xamarin** ] 專案，然後選取 [**變更**]。
 
-3. 按 **[下一步]** ，然後**變更**。
+3. 按 **[下一步]**，然後**變更**。
 
 4. 請確定 [ **Xamarin for Visual Studio 2013** ] 選項已設定為 [安裝]：
 
-    ![](missing-vs-extensions-images/installer.png "Enable Xamarin for Visual Studio 2013 installation option")
+    ![啟用 Xamarin for Visual Studio 2013 安裝選項](missing-vs-extensions-images/installer.png)
 
 5. 繼續執行安裝程式的其餘部分。
 
@@ -65,7 +65,7 @@ ms.locfileid: "73013749"
 
     * Xamarin for Visual Studio
 
-2. 在 Explorer 中，從 Xamarin Visual Studio 延伸模組資料夾中刪除任何剩餘的檔案（所有版本，包括**Program files**和**program files （x86）** ）：
+2. 在 Explorer 中，從 Xamarin Visual Studio 延伸模組資料夾中刪除任何剩餘的檔案（所有版本，包括**Program files**和**program files （x86）**）：
 
     `C:\Program Files*\Microsoft Visual Studio 1*.0\Common7\IDE\Extensions\Xamarin`
 
@@ -77,11 +77,11 @@ ms.locfileid: "73013749"
 
 5. 尋找此機碼：
 
-    _HKEY\_本機\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
+    _HKEY \_ 本機 \_ MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
 
 6. 尋找並刪除所有符合此模式的項目：
 
-    _C:\Program Files\*\Microsoft Visual Studio 1\*. 0 \ Common7\IDE\Extensions\Xamarin_
+    _C:\Program Files \* \Microsoft Visual Studio 1 \* . 0 \ Common7\IDE\Extensions\Xamarin_
 
 7. 尋找此機碼：
 

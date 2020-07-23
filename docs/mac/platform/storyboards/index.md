@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 395ac62cd4db62c02863e352ed5643958348dcff
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8b911be4b1bf547a9a1ad5d6b795894ddba3c26d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574386"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939057"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin 中的分鏡腳本簡介
 
@@ -20,7 +20,7 @@ _本文提供在 Xamarin. Mac 應用程式中使用分鏡腳本的簡介。其�
 
 分鏡腳本可讓您開發 Xamarin. Mac 應用程式的使用者介面，不僅包含視窗定義和控制項，還包含不同視窗之間的連結（透過 segue）和檢視狀態。
 
-[![](images/intro01.png "A sample UI in Xcode")](images/intro01.png#lightbox)
+[![Xcode 中的範例 UI](images/intro01.png)](images/intro01.png#lightbox)
 
 本文將提供使用分鏡腳本來定義 Xamarin 應用程式使用者介面的簡介。
 
@@ -36,11 +36,11 @@ _本文提供在 Xamarin. Mac 應用程式中使用分鏡腳本的簡介。其�
 
 如上所述，分鏡腳本會定義給定應用程式的所有 UI，並細分為其_視圖控制器_的功能總覽。 在 Xcode 的 Interface Builder 中，每個控制器都存在於自己的_場景_中。
 
-[![](images/intro02.png "An example view controller")](images/intro02.png#lightbox)
+[![範例視圖控制器](images/intro02.png)](images/intro02.png#lightbox)
 
 每個場景都代表一個給定的視圖和視圖控制器配對，其中包含一組線（稱為 Segue），可連接 UI 中的每個場景，進而顯示其關聯性。 某些 Segue 會定義一個 View Controller 如何包含一個或多個子視圖或視圖控制器。 其他 Segue，定義 View Controller （例如顯示 popover 或對話方塊）之間的轉換。 
 
-[![](images/intro03.png "A sample segue")](images/intro03.png#lightbox)
+[![範例 segue](images/intro03.png)](images/intro03.png#lightbox)
 
 最重要的一點是要注意的是，每個 Segue 都代表應用程式 UI 的指定元素之間某種形式的資料流程程。
 
@@ -50,7 +50,7 @@ _本文提供在 Xamarin. Mac 應用程式中使用分鏡腳本的簡介。其�
 
 視圖控制器會定義 Mac 應用程式內的特定資訊視圖與提供該資訊的資料模型之間的關聯性。 分鏡腳本中的每個最上層場景都代表 Xamarin 應用程式代碼中的一個 View Controller。
 
-[![](images/intro04.png "An example slips view controller")](images/intro04.png#lightbox)
+[![範例進度視圖控制器](images/intro04.png)](images/intro04.png#lightbox)
 
 如此一來，每個 View Controller 都是獨立、可重複使用的資訊的視覺標記法（View）和邏輯，以呈現及控制該資訊。
 

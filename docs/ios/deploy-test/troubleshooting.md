@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: b27608642ed04216b10767d37d26699a0aef7f3e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 12194eed21fc95aaadc194be8a57319cf5c3cd3d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573764"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937237"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS 測試及部署 - 疑難排解
 
@@ -22,7 +22,7 @@ ms.locfileid: "84573764"
 
 - 大型的團隊應該避免使用 Xcode 中的 [Fix issue] \(修正問題\) 按鈕，如下圖所示：
 
-    [![](troubleshooting-images/fixissue.png "The Fix Issues dialog")](troubleshooting-images/fixissue.png#lightbox)
+    [![[修正問題] 對話方塊](troubleshooting-images/fixissue.png)](troubleshooting-images/fixissue.png#lightbox)
 
     這將會建立新的佈建設定檔和憑證。 從好處想，這會在每次小組成員按一下佈建設定檔時建立一個佈建設定檔，造成設定檔混亂。 從壞處想，它將會撤銷公司內其他人的憑證，導致其應用程式停止運作。
 

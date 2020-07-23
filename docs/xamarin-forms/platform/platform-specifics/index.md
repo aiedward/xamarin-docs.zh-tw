@@ -10,16 +10,16 @@ ms.date: 10/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0c6e305287c97abac3500cba4771479b60381ac
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139499"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939798"
 ---
 # <a name="platform-specifics"></a>平台專用
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 _平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。_
 
@@ -58,7 +58,7 @@ _平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不�
 
 [範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)會示範 `Shadow` 平臺特定的，其會將陰影新增至控制項所顯示的文字 [`Label`](xref:Xamarin.Forms.Label) ：
 
-![](images/screenshots.png "Shadow Platform-Specific")
+![陰影平臺特定](images/screenshots.png)
 
 [範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)會 `Shadow` 在每個平臺上執行平臺特定，以方便您瞭解。 不過，除了每個平臺特定的效果實作為外，每個平臺的陰影類別的執行方式都大致相同。 因此，本指南著重了在單一平臺上執行陰影類別和相關聯的效果。
 

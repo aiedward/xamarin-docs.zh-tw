@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 17ccc67b2976b93fbb290a1d2425168cab50228e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 497096e7f422e8337498339737ab304b0d896dfe
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568785"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938992"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 疑難排解
 
@@ -36,7 +36,7 @@ ms.locfileid: "84568785"
 <a name="deploy"></a>
 
 - 舊版的 Visual Studio for Mac 不正確地將其中一個**AppleCompanionSettings**圖示顯示為88x88 圖元;如果您嘗試提交至 App Store，這會導致**遺失圖示錯誤**。
-    此圖示應該是87x87 圖元（Retina 螢幕的29個單位 **@3x** ）。 您無法在 Visual Studio for Mac 中修正此問題-請在 Xcode 中編輯映射資產，或手動編輯**內容. json**檔案。
+    此圖示應該是87x87 圖元（Retina 螢幕的29個單位 **@3x** ）。 您無法在 Visual Studio for Mac 中修正此問題-請在 Xcode 中編輯影像資產，或手動編輯檔案**Contents.js** 。
 
 - 如果 Watch 延伸模組專案的**Info. plist > WKApp 配套識別碼**未[正確設定](~/ios/watchos/get-started/project-references.md)為符合監看式應用程式的套件組合**識別碼**，偵錯工具將無法連線，而且 Visual Studio for Mac 會等候訊息「*正在等候偵錯工具*連線」。
 
@@ -47,7 +47,7 @@ ms.locfileid: "84568785"
 - 您不能將兩個加入 `WKNotificationControllers` 至分鏡腳本。
     因應措施：分鏡腳本 `notificationCategory` XML 中的元素一律會以相同的方式插入 `id` 。 若要解決這個問題，您可以加入兩個（或更多）通知控制器，在文字編輯器中開啟分鏡腳本檔案，然後手動將 `id` 元素變更為唯一的。
 
-    [![](troubleshooting-images/duplicate-id-sml.png "Opening the storyboard file in a text editor and manually change the id element to be unique")](troubleshooting-images/duplicate-id.png#lightbox)
+    [![在文字編輯器中開啟分鏡腳本檔案，並以手動方式將 id 元素變更為唯一](troubleshooting-images/duplicate-id-sml.png)](troubleshooting-images/duplicate-id.png#lightbox)
 
 - 嘗試啟動應用程式時，您可能會看到「應用程式尚未建立」錯誤。 當啟始專案設定為 watch 擴充功能專案時，這會在**清除**之後發生。
     修正方法是選取 [**組建] > [全部重建**]，然後重新開機應用程式。
@@ -74,7 +74,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 2. 出現的對話方塊會包含 Alpha 核取方塊（如果**有 Alpha 色板**的話）。
 
-    ![](troubleshooting-images/remove-alpha-sml.png "The dialog that appears will include an Alpha checkbox if an alpha channel is present")
+    ![出現的對話方塊會包含 Alpha 核取方塊（如果有 Alpha 色板）](troubleshooting-images/remove-alpha-sml.png)
 
 3. *Untick* [ **Alpha** ] 核取方塊，並將檔案**儲存**至正確的位置。
 
@@ -91,15 +91,15 @@ with an alpha channel. Icons should not have an alpha channel.
 
 1. 在**Xcode Interface Builder**中開啟監看式應用程式的**介面。**
 
-    ![](troubleshooting-images/add-6.png "Opening the storyboard in Xcode Interface Builder")
+    ![在 Xcode 中開啟腳本 Interface Builder](troubleshooting-images/add-6.png)
 
 2. 將新的拖曳至分鏡腳本 `InterfaceController` ：
 
-    ![](troubleshooting-images/add-1.png "A InterfaceController")
+    ![InterfaceController](troubleshooting-images/add-1.png)
 
 3. 您現在可以將控制項拖曳至介面控制器（例如， 標籤和按鈕），但因為沒有 **.h**標頭檔，所以您無法建立輸出或動作。 下列步驟將會建立所需的 **.h**標頭檔。
 
-    ![](troubleshooting-images/add-2.png "A button in the layout")
+    ![版面配置中的按鈕](troubleshooting-images/add-2.png)
 
 4. 關閉分鏡腳本，並返回 Visual Studio for Mac。 在**監看式應用程式擴充**功能專案中，建立新的 c # 檔案**MyInterfaceController.cs** （或任何您喜歡的名稱）（不是監看式應用程式本身的腳本）。 新增下列程式碼（更新命名空間、classname 和函數名稱）：
 
@@ -158,34 +158,34 @@ with an alpha channel. Icons should not have an alpha channel.
     > [!TIP]
     > 您可以（選擇性地）將此檔案設為第一個檔案的子節點，方法是將它拖曳至 Visual Studio for Mac Solution Pad 中的其他 c # 檔案。 它會如下所示：
 
-    ![](troubleshooting-images/add-5.png "The Solution pad")
+    ![Solution pad](troubleshooting-images/add-5.png)
 
 6. 選取 [**組建] > [組建全部**]，讓 Xcode 同步處理能夠辨識我們使用的新類別（透過 `Register` 屬性）。
 
 7. 以滑鼠右鍵按一下 [監看式應用程式分鏡腳本檔案]，然後選取 [**開啟方式] > Xcode Interface Builder，以**重新開啟分鏡腳本：
 
-    ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
+    ![在 Interface Builder 中開啟腳本](troubleshooting-images/add-6.png)
 
 8. 選取您的新介面控制器，並為它提供您在上方定義的 classname，例如 `MyInterfaceController`.
     如果一切都正常運作，它應該會自動出現在 [**類別：** ] 下拉式清單中，而且您可以從該處選取它。
 
-    ![](troubleshooting-images/add-4.png "Setting a custom class")
+    ![設定自訂類別](troubleshooting-images/add-4.png)
 
 9. 選擇 Xcode 中的 [**助理編輯器**] 視圖（具有兩個重迭圓形的圖示），讓您可以並排查看腳本和程式碼：
 
-    ![](troubleshooting-images/add-7.png "The Assistant Editor toolbar item")
+    ![[助理編輯器] 工具列專案](troubleshooting-images/add-7.png)
 
     當焦點在 [程式碼] 窗格中時，請確定您查看的是 **.h**標頭檔，如果不是以滑鼠右鍵按一下階層連結列，請選取正確的檔案（**MyInterfaceController .h**）
 
-    ![](troubleshooting-images/add-8.png "Select MyInterfaceController")
+    ![選取 MyInterfaceController](troubleshooting-images/add-8.png)
 
 10. 您現在可以從分鏡腳本中， **Ctrl + 拖曳**至 **.h**標頭檔，以建立輸出和動作。
 
-    ![](troubleshooting-images/add-9.png "Creating outlets and actions")
+    ![建立輸出和動作](troubleshooting-images/add-9.png)
 
     當您放開拖曳時，系統會提示您選取是否要建立輸出或動作，並選擇其名稱：
 
-    ![](troubleshooting-images/add-a.png "The outlet and an action dialog")
+    ![[輸出] 和 [動作] 對話方塊](troubleshooting-images/add-a.png)
 
 11. 儲存分鏡腳本變更並關閉 Xcode 之後，請返回 Visual Studio for Mac。 它會偵測標頭檔變更，並自動將程式碼新增至**designer.cs**檔案：
 

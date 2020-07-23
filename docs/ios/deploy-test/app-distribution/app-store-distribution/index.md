@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: ee8ff58566732c6a86a339d3080c7243be4b4a4e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c9882944938b2d5136d36304c4a400208a68663a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572191"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937328"
 ---
 # <a name="app-store-distribution"></a>App Store 散發
 
@@ -53,13 +53,13 @@ ms.locfileid: "84572191"
 3. 按一下 **+** 按鈕以建立新的憑證。
 4. 在「生產環境」** 標題下，選取 [App Store and Ad Hoc] (App Store 和臨機操作)****：
 
-    [![](images/createcertmanually01.png "Select App Store and Ad Hoc")](images/createcertmanually01.png#lightbox)
+    [![選取 App Store 和臨機操作](images/createcertmanually01.png)](images/createcertmanually01.png#lightbox)
 5. 按一下 [**繼續**]，並遵循指示以透過 Keychain 存取來建立憑證簽署要求：
 
-    [![](images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](images/createcertmanually02.png#lightbox)
+    [![透過 Keychain 存取建立憑證簽署要求](images/createcertmanually02.png)](images/createcertmanually02.png#lightbox)
 6. 依照指示建立 CSR 之後，請按一下 [**繼續**]，並將 CSR 上傳到成員中心：
 
-    [![](images/createcertmanually03.png "Upload the CSR to the Member Center")](images/createcertmanually03.png#lightbox)
+    [![將 CSR 上傳到成員中心](images/createcertmanually03.png)](images/createcertmanually03.png#lightbox)
 
 7. 按一下 [產生]**** 以建立您的憑證。
 8. 最後，**下載**完成的憑證，並按兩下檔案以進行安裝。
@@ -67,11 +67,11 @@ ms.locfileid: "84572191"
 
 或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請遵循下面的步驟：
 
-1. 選取您的小組，然後按一下 [**管理憑證 ...**]：[![](images/selectteam.png "選取小組並檢視詳細資料")](images/selectteam.png#lightbox)
+1. 選取您的小組，然後按一下 [**管理憑證 ...**]： [ ![ 選取小組並查看詳細資料](images/selectteam.png)](images/selectteam.png#lightbox)
 
-2. 接下來，按一下 [ **IOS 散發憑證**] 旁的 [**建立**] 按鈕：[![](images/selectcert.png "建立 iOS 散發憑證")](images/selectcert.png#lightbox)
+2. 接下來，按一下 [ **iOS 散發憑證**： [ ![ 建立 ios 散發憑證](images/selectcert.png)](images/selectcert.png#lightbox)] 旁的 [**建立**] 按鈕
 
-3. 根據您的小組許可權而定，將會產生簽署識別（如下所示），或者您可能必須等到小組代理程式或管理員核准它為止：[![](images/generated.png "將產生簽署識別和顯示對話方塊")](images/generated.png#lightbox)
+3. 根據您的小組許可權而定，將會產生簽署識別（如下所示），或者您可能必須等待小組代理程式或管理員核准它： [ ![ 將會產生簽署身分識別，並顯示對話方塊](images/generated.png)](images/generated.png#lightbox)
 
 <a name="creatingprofile"></a>
 
@@ -97,27 +97,27 @@ ms.locfileid: "84572191"
 
 1. 返回 Apple 布建入口網站，然後**選取 [** 布建] [  >  **散發**]：
 
-    [![](images/distribute01.png "RSelect Provisioning > Distribution")](images/distribute01.png#lightbox)
+    [![選取 [布建 > 散發](images/distribute01.png)](images/distribute01.png#lightbox)
 
 2. 按一下 [] **+** 按鈕，然後選取您想要建立為**App Store**的散發配置檔案類型：
 
-    [![](images/distribute02.png "Create an App Store distribution profile")](images/distribute02.png#lightbox)
+    [![建立 App Store 散發設定檔](images/distribute02.png)](images/distribute02.png#lightbox)
 
 3. 按一下 [繼續]**** 按鈕，並從您要建立散發設定檔的下拉式清單中選取應用程式識別碼：
 
-    [![](images/distribute03.png "Select App ID from the dropdown list")](images/distribute03.png#lightbox)
+    [![從下拉式清單中選取 [應用程式識別碼]](images/distribute03.png)](images/distribute03.png#lightbox)
 
 4. 按一下 [繼續]**** 按鈕，並選取簽署應用程式所需的憑證：
 
-    [![](images/distribute04.png "Select the certificate required to sign the application")](images/distribute04.png#lightbox)
+    [![選取簽署應用程式所需的憑證](images/distribute04.png)](images/distribute04.png#lightbox)
 
 5. 按一下 [繼續]**** 按鈕，然後選取允許執行 Xamarin.iOS 應用程式的 iOS 裝置：
 
-    [![](images/distribute05.png "Select the iOS devices that app will be allowed to run on")](images/distribute05.png#lightbox)
+    [![選取將允許應用程式在其上執行的 iOS 裝置](images/distribute05.png)](images/distribute05.png#lightbox)
 
 6. 按一下 [繼續]**** 按鈕，並針對新的散發設定檔輸入**名稱**：
 
-    [![](images/distribute06.png "Enter a Name for the new Distribution Profile")](images/distribute06.png#lightbox)
+    [![輸入新散發設定檔的名稱](images/distribute06.png)](images/distribute06.png#lightbox)
 
 7. 按一下 [產生]**** 按鈕，以建立新的設定檔，並完成流程。
 
@@ -144,13 +144,13 @@ ms.locfileid: "84572191"
 1. 在方案總管**** 中，按兩下專案名稱，將其開啟進行編輯。
 2. 從 [組態]**** 下拉式清單中選取 [iOS Bundle Signing] (iOS 套件組合簽署)**** 和 [發行 | iPhone]****：
 
-    ![](images/releasexs01.png "Select Release | iPhone from the Configuration dropdown")
+    ![從 [組態] 下拉式清單中選取 [發行 | iPhone]](images/releasexs01.png)
 3. 在大多數情況下，可以保留 [簽署識別]**** 和 [佈建設定檔]**** 的預設值為 [自動] ****，Visual Studio for Mac 會根據 Info.plist 中的套件組合識別碼選擇正確的設定檔：
 
-    ![](images/releasexs02.png "The Signing Identity and the Provisioning Profile set to the default values of Automatic")
+    ![預設值設為 [自動] 的 [簽署識別] 和 [佈建設定檔]](images/releasexs02.png)
 4. 視需要，可在下拉式清單中選取 [簽署識別] 和 [散發設定檔] (上面所建立的)：
 
-    ![](images/releasexs03.png "Select the Signing Identity and Distribution Profiles")
+    ![選取 [簽署識別] 和 [散發設定檔]](images/releasexs03.png)
 5. 按一下 [確定]**** 按鈕以儲存所做的變更。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -160,13 +160,13 @@ ms.locfileid: "84572191"
 1. 請以滑鼠右鍵按一下方案總管**** 中的專案名稱，並且選取 [屬性]****，將其開啟進行編輯。
 2. 從 [組態]**** 下拉式清單中選取 [iOS Bundle Signing] (iOS 套件組合簽署)**** 和 [發行 | iPhone]****：
 
-    ![](images/releasevs01.png "Select Release | iPhone from the Configuration dropdown")
+    ![從 [組態] 下拉式清單中選取 [發行 | iPhone]](images/releasevs01.png)
 3. 在大多數情況下，可以保留 [簽署識別]**** 和 [佈建設定檔]**** 的預設值為 [自動] ****，Visual Studio 會根據 Info.plist 中的應用程式套件組合識別碼選擇正確的設定檔。
 
-    ![](images/releasevs02.png "The Signing Identity and the Provisioning Profile set to the default values of Automatic")
+    ![預設值設為 [自動] 的 [簽署識別] 和 [佈建設定檔]](images/releasevs02.png)
 4. 視需要，可在下拉式清單中選取 [簽署識別] 和 [散發設定檔] (上面所建立的)：
 
-    ![](images/releasevs03.png "Select the Signing Identity and Distribution Profile")
+    ![選取 [簽署識別] 和 [散發設定檔]](images/releasevs03.png)
 5. 將您的變更儲存至專案屬性。
 
 -----

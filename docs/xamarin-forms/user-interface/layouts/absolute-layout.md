@@ -10,20 +10,20 @@ ms.date: 11/25/2015
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 110b01d6482fbe3e23a772c90194b6bf40d54877
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 923f7643bd1e137192bfb80dbbc7c5d2c25b5471
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570527"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938420"
 ---
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)將子專案的位置和大小與其本身的大小和位置或絕對值成正比。 子視圖可能會使用比例值或靜態值來定位和調整大小，而且可以混用比例和靜態值。
 
-[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![Xamarin.Forms大綱](absolute-layout-images/layouts-sml.png)](absolute-layout-images/layouts.png#lightbox "[!OP.無-LOC （Xamarin）] 版面配置")
 
 此文章將涵蓋︰
 
@@ -53,9 +53,9 @@ ms.locfileid: "84570527"
 
 請注意，在下列螢幕擷取畫面中，方塊的錨點是一個空白字元。 請注意，錨點和方塊在版面配置上移動時的關聯性：
 
-![](absolute-layout-images/anchor-start.png "Anchor at Start")
-![](absolute-layout-images/anchor-center.png "Anchor at Center")
-![](absolute-layout-images/anchor-end.png "Anchor at End")
+![位於 ](absolute-layout-images/anchor-start.png)
+ ![ 中央 ](absolute-layout-images/anchor-center.png)
+ ![ 錨點結尾處的錨點](absolute-layout-images/anchor-end.png)
 
 ### <a name="specifying-values"></a>指定值
 
@@ -109,7 +109,7 @@ Title="Absolute Layout Exploration">
 </ContentPage>
 ```
 
-![](absolute-layout-images/exploration.png "AbsoluteLayout Examples")
+![AbsoluteLayout 範例](absolute-layout-images/exploration.png)
 
 請注意：
 
@@ -275,7 +275,7 @@ Title="AbsoluteLayout">
 
 上述程式碼會產生下列版面配置：
 
-![](absolute-layout-images/abs.png "Complex AbsoluteLayout")
+![複雜的 AbsoluteLayout](absolute-layout-images/abs.png)
 
 請注意， `AbsoluteLayout` 會進行嵌套，因為在某些情況下，相較于在相同的版面配置中呈現所有元素，嵌套配置可能會比較容易。
 

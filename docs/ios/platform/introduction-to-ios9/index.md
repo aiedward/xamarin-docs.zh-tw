@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: de4b6e8b95eed33e7fb38baf51a0da73cef313c0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bfa2a74bf9cd30fb7b9888ecd7339a80fe472c9e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574128"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939083"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 簡介
 
 _本文介紹 iOS 9 中適用于 Xamarin iOS 開發人員的所有新的和修改過的 Api 和功能。_
 
-![](images/ios9-sml.png "The iOS 9 logo")
+![IOS 9 標誌](images/ios9-sml.png)
 
 Apple 在 iOS 9 中新增了數個新的 Api 和服務，以及現有功能的許多增強功能。
 
@@ -145,7 +145,7 @@ IOS 9 中的遞交已擴大，也支援新的增強型搜尋功能。 如需詳�
 
 ## <a name="right-to-left-language-support"></a>由右至左語言支援
 
-在 iOS 9 中，Apple 藉由提供從右至左語言的完整支援，讓您更輕鬆地呈現翻轉的使用者介面。 其中包括下列項目：
+在 iOS 9 中，Apple 藉由提供從右至左語言的完整支援，讓您更輕鬆地呈現翻轉的使用者介面。 這包括下列項目：
 
 - 標準[UIKit](xref:UIKit)控制項會根據 iOS 裝置地區設定和語言設定，從右至左自動翻轉。
 - [UIView](xref:UIKit.UIView)類別提供屬性，可讓您定義當從右至左翻轉時，應該如何顯示指定的視圖。

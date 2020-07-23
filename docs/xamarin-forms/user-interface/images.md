@@ -10,12 +10,12 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7ae6e5e764dc066940971dd9b5a8fdc36c7a1970
-ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
+ms.openlocfilehash: 3ad0981c0249bc81a97d5c48489167d81a1523de
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86225490"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938459"
 ---
 # <a name="images-in-xamarinforms"></a>中的影像Xamarin.Forms
 
@@ -32,7 +32,7 @@ _您可以透過在不同平臺之間共用映射 Xamarin.Forms ，也可以特�
 Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) view 在頁面上顯示影像。 它有幾個重要的屬性：
 
 - [`Source`](xref:Xamarin.Forms.Image.Source)- [`ImageSource`](xref:Xamarin.Forms.ImageSource) 實例，也就是檔案、Uri 或資源，可設定要顯示的影像。
-- [`Aspect`](xref:Xamarin.Forms.Image.Aspect)-如何在其顯示的範圍內調整影像大小， (是否要伸展、裁剪或黑邊) 。
+- [`Aspect`](xref:Xamarin.Forms.Image.Aspect)-如何在其顯示的範圍內調整影像大小（是否要延展、裁剪或黑邊）。
 
 [`ImageSource`](xref:Xamarin.Forms.ImageSource)您可以針對每種影像來源類型使用靜態方法來取得實例：
 
@@ -44,8 +44,8 @@ Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) view 在頁面上顯示�
 [`Aspect`](xref:Xamarin.Forms.Image.Aspect)屬性會決定如何縮放影像以符合顯示區域：
 
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill)-將影像完全伸展，完全填滿顯示區域。 這可能會導致影像失真。
-- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-將影像裁剪，使其填滿顯示區域，同時保留外觀 (也就是沒有失真) 。
-- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)-如有需要，Letterboxes 影像 () 使整個影像符合顯示區域，並根據影像為寬或高度，將空白空間加入至上/下或側邊。
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-將影像裁剪，使其填滿顯示區域，同時保留外觀（也就是沒有失真）。
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)-Letterboxes 影像（如有必要），使整個影像符合顯示區域，並根據影像是寬或高度，將空白空間加入至上/下或側邊。
 
 您可以從[本機](#local-images)檔案、[內嵌資源](#embedded-images)、[下載](#download-images)或從資料流程載入影像。 此外，您可以在 [`Image`](xref:Xamarin.Forms.Image) 物件中指定字型圖示資料，以顯示字型圖示 `FontImageSource` 。 如需詳細資訊，請參閱字型[指南中](~/xamarin-forms/user-interface/text/fonts.md)的[顯示字型圖示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
@@ -53,11 +53,11 @@ Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) view 在頁面上顯示�
 
 影像檔案可以加入至每個應用程式專案，並從 Xamarin.Forms 共用程式碼參考。 當影像是平台專用的 (例如，在不同平台上使用不同的解析度) 或屬於略微不同的設計時，就需要這種影像散發方法。
 
-若要在所有應用程式中使用單一映射，*必須在每個平臺上使用相同的檔案名*，而且它應該是有效的 Android 資源名稱 (也就是只允許小寫字母、數位、底線和句點) 。
+若要在所有應用程式中使用單一映射，*必須在每個平臺上使用相同的檔案名*，而且它應該是有效的 Android 資源名稱（也就是只允許小寫字母、數位、底線和句點）。
 
 - **ios** -自 ios 9 起，管理和支援映射的慣用方法是使用**資產目錄映射集**，其中應包含支援應用程式的各種裝置和調整因素所需的所有映射版本。 如需詳細資訊，請參閱[將影像新增至資產目錄映射集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
-- **Android** -將影像放在**資源/** 圖形目錄中，具有**組建動作： AndroidResource**。 您也可以在適當命名的**資源**子目錄（例如可**繪製-lDPI**、可**繪製-hDPI**和可**繪製-xhDPI**) ）中，提供影像的高和低 DPI 版本 (。
-- **通用 Windows 平臺 (UWP) ** -根據預設，映射應該放在應用程式的根目錄中，其**組建動作為： Content**。 或者，映射可以放在不同的目錄中，然後使用平臺特定的來指定。 如需詳細資訊，請參閱[Windows 上的預設影像目錄](~/xamarin-forms/platform/windows/default-image-directory.md)。
+- **Android** -將影像放在**資源/** 圖形目錄中，具有**組建動作： AndroidResource**。 也可以提供影像的高和低 DPI 版本（在適當命名的**資源**子目錄中，例如可**繪製的 lDPI**、可**繪製-hDPI**和可**繪製-xhDPI**）。
+- **通用 Windows 平臺（UWP）** -根據預設，映射應該放在應用程式的根目錄中，其**組建動作為： Content**。 或者，映射可以放在不同的目錄中，然後使用平臺特定的來指定。 如需詳細資訊，請參閱[Windows 上的預設影像目錄](~/xamarin-forms/platform/windows/default-image-directory.md)。
 
 > [!IMPORTANT]
 > 在 iOS 9 之前，映射通常會放在 [**資源**] 資料夾中，並具有**組建動作： BundleResource**。 不過，Apple 已淘汰在 iOS 應用程式中使用影像的這種方法。 如需詳細資訊，請參閱[影像大小和檔案名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
@@ -89,13 +89,13 @@ image.Source = Device.RuntimePlatform == Device.Android
 > [!IMPORTANT]
 > 若要在所有平臺上使用相同的映射檔案名，此名稱在所有平臺上都必須是有效的。 Android 可繪製資源有命名限制–只允許小寫字母、數位、底線和句點–而且針對跨平臺的相容性，也必須在所有其他平臺上遵循。 範例檔案名**waterfront.png**遵循規則，但無效檔案名的範例包括 "水 front.png"、"WaterFront.png"、"water-front.png" 和 "wåterfront.png"。
 
-### <a name="native-resolutions-retina-and-high-dpi"></a>原生解析度 (retina 和高 DPI) 
+### <a name="native-resolutions-retina-and-high-dpi"></a>原生解析度（retina 和高 DPI）
 
 iOS、Android 和 UWP 包含不同映射解析度的支援，其中作業系統會根據裝置的功能，在執行時間選擇適當的映射。 Xamarin.Forms會使用原生平臺的 Api 來載入本機影像，因此，如果檔案正確命名並位於專案中，它就會自動支援替代的解析度。
 
 在 iOS 9 之後管理映射的慣用方式，是將影像拖曳到適當的資產目錄映射集所需的每個解析度。 如需詳細資訊，請參閱[將影像新增至資產目錄映射集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
-在 iOS 9 之前，您可以將映射的 retina 版本放在**Resources**資料夾中，並在副檔名前面加上一個或尾碼，並將其設為 **@2x** 檔案名， **@3x** (例如。 **myimage@2x.png**). 不過，Apple 已淘汰在 iOS 應用程式中使用影像的這種方法。 如需詳細資訊，請參閱[影像大小和檔案名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
+在 iOS 9 之前，您可以將映射的 retina 版本放在**Resources**資料夾中，並在 **@2x** **@3x** 副檔名前面加上一個或尾碼（例如， **myimage@2x.png**). 不過，Apple 已淘汰在 iOS 應用程式中使用影像的這種方法。 如需詳細資訊，請參閱[影像大小和檔案名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
 Android 替代解析度映射應該放在 Android 專案中的[特殊命名目錄](https://developer.android.com/guide/practices/screens_support.html)中，如下列螢幕擷取畫面所示：
 
@@ -118,7 +118,7 @@ UWP 影像檔案名稱的[尾碼前面可以加上 `.scale-xxx` 副檔名](https
 
 ## <a name="embedded-images"></a>內嵌影像
 
-內嵌影像也會隨附于應用程式 (像是本機影像) 但不會在每個應用程式的檔案結構中有影像複本，而是將影像檔內嵌在元件中做為資源。 在每個平臺上使用相同的影像，且特別適合用來建立元件時，建議您使用這種散發映射的方法，因為映射會與程式碼配套。
+內嵌影像也會隨附于應用程式（例如本機影像），而不是在每個應用程式的檔案結構中擁有影像複本，而是將影像檔內嵌在元件中做為資源。 在每個平臺上使用相同的影像，且特別適合用來建立元件時，建議您使用這種散發映射的方法，因為映射會與程式碼配套。
 
 若要在專案中內嵌影像，請以滑鼠右鍵按一下以加入新專案，然後選取您想要新增的影像。 根據預設，映射會有**組建動作： None**;這必須設定為 [**建立動作： EmbeddedResource**]。
 
@@ -131,23 +131,23 @@ UWP 影像檔案名稱的[尾碼前面可以加上 `.scale-xxx` 副檔名](https
 您可以在檔案的 [**屬性**] 視窗中，查看和變更 [**建立] 動作**。
 
 在此範例中，資源識別碼是**WorkingWithImages.beach.jpg**。
-IDE 已藉由將此專案的**預設命名空間**與檔案名串連，而產生了這個預設值，使用句點 (. 在每個值之間 ) 。
+IDE 已藉由將此專案的**預設命名空間**與檔案名串連，來產生此預設值，並在每個值之間使用句號（.）。
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-![](images-images/xs-buildaction.png "Set Build Action: EmbeddedResource")
+![設定組建動作： EmbeddedResource](images-images/xs-buildaction.png)
 
 您也可以在檔案的**Properties** pad 中查看和變更 [**建立] 動作**。
 此面板會顯示在程式碼中用來參考資源的**資源識別碼**。 在下面的螢幕擷取畫面中，**資源識別碼**是**WorkingWithImages.beach.jpg**。
-IDE 已藉由將此專案的**預設命名空間**與檔案名串連，而產生了這個預設值，使用句點 (. 在每個值之間 ) 。
+IDE 已藉由將此專案的**預設命名空間**與檔案名串連，來產生此預設值，並在每個值之間使用句號（.）。
 您可以在**Properties** pad 中編輯此識別碼，但在這些範例中，將會使用**WorkingWithImages.beach.jpg**的值。
 
 [![內嵌資源屬性 pad](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 
-如果您將內嵌影像放到專案內的資料夾中，資料夾名稱也會以 ( 的句點分隔。在資源識別碼中 ) 。 將**beach.jpg**映射移至名為**MyImages**的資料夾，將會產生資源識別碼**WorkingWithImages.MyImages.beach.jpg**
+如果您將內嵌影像放到專案內的資料夾中，資料夾名稱也會在資源識別碼中以句點（.）分隔。 將**beach.jpg**映射移至名為**MyImages**的資料夾，將會產生資源識別碼**WorkingWithImages.MyImages.beach.jpg**
 
 載入內嵌影像的程式碼只會將**資源識別碼**傳遞給方法，如下 [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) 所示：
 
@@ -280,7 +280,7 @@ webImage.Source = "https://aka.ms/campus.jpg";
 
 [`UriImageSource`](xref:Xamarin.Forms.UriImageSource)也支援快取下載的影像，並透過下列屬性設定：
 
-- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled)-預設是否啟用快取 `true`)  (。
+- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled)-是否啟用快取（ `true` 預設為）。
 - [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity)- `TimeSpan` 定義影像儲存在本機的時間長度。
 
 預設會啟用快取，並在本機將映射儲存24小時。 若要停用特定映射的快取，請將映射來源具現化，如下所示：
@@ -289,7 +289,7 @@ webImage.Source = "https://aka.ms/campus.jpg";
 image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("https://server.com/image") };
 ```
 
-若要設定特定的快取期間 (例如，5天) 具現化映射來源，如下所示：
+若要設定特定的快取期間（例如5天），請將映射來源具現化，如下所示：
 
 ```csharp
 webImage.Source = new UriImageSource
@@ -300,7 +300,7 @@ webImage.Source = new UriImageSource
 };
 ```
 
-內建快取可讓您非常輕鬆地支援影像清單之類的案例，您可以在其中設定 (或系結) 每個資料格中的影像，並讓內建快取在資料格會在資料滾動回視野時，重新載入影像。
+內建快取可讓您非常輕鬆地支援影像清單之類的案例，您可以在其中設定（或系結）每個資料格中的影像，並讓內建快取在資料格向上滾動到視野時，負責重新載入影像。
 
 ## <a name="animated-gifs"></a>動畫 Gif
 
@@ -319,7 +319,7 @@ Xamarin.Forms包含顯示小型動畫 Gif 的支援。 這是藉由將 [`Image.S
 
 > [!NOTE]
 > 在 Android 上，動畫 GIF 支援需要您的應用程式使用快速轉譯器，如果您選擇使用舊版轉譯器，則無法使用。
-> 在 UWP 上，動畫 GIF 支援需要最低版本的 Windows 10 年度更新版 (版本 1607) 。
+> 在 UWP 上，動畫 GIF 支援需要最低版本的 Windows 10 年度更新版（版本1607）。
 
 ## <a name="icons-and-splash-screens"></a>圖示和啟動顯示畫面
 
@@ -335,13 +335,13 @@ Xamarin.Forms包含顯示小型動畫 Gif 的支援。 這是藉由將 [`Image.S
 
 ## <a name="splash-screens"></a>啟動顯示畫面
 
-只有 iOS 和 UWP 應用程式需要啟動顯示畫面 (也稱為啟動畫面或預設影像) 。
+只有 iOS 和 UWP 應用程式需要啟動顯示畫面（也稱為啟動畫面或預設影像）。
 
 請參閱 Windows 開發人員中心上的[使用影像](~/ios/app-fundamentals/images-icons/index.md)和[啟動](/windows/uwp/launch-resume/splash-screens/)顯示畫面的 iOS 檔。
 
 ## <a name="related-links"></a>相關連結
 
-- [WorkingWithImages (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
+- [WorkingWithImages （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 - [iOS 使用影像](~/ios/app-fundamentals/images-icons/index.md)
 - [Android 圖示](https://developer.android.com/design/style/iconography.html)
 - [磚和圖示資產的指導方針](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)

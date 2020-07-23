@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 2259566fc6342a40a8c0a94bacd1c146b6509d52
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e976f5bf0789ca6c703a14b667e75b05a7f47819
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574154"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937848"
 ---
 # <a name="accessibility-on-ios"></a>IOS 上的協助工具
 
@@ -29,7 +29,7 @@ iOS 提供 `AccessibilityLabel` 和 `AccessibilityHint` 屬性，讓開發人員
 
 **Properties Pad**包含一個輔助功能區段，可讓您在 IOS UI 設計工具中選取控制項時編輯這些設定：
 
-![](accessibility-images/ios-designer-sml.png "Accessibility Settings")
+![協助工具設定](accessibility-images/ios-designer-sml.png)
 
 **C#**
 
@@ -115,7 +115,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 流覽至 **[一般] > [協助工具 > VoiceOver**]，即可在 [**設定**] 應用程式中啟用 VoiceOver：
 
-![](accessibility-images/settings-sml.png "Setting the speaking rate")
+![設定說話速度](accessibility-images/settings-sml.png)
 
 [**協助工具**] 畫面也提供 [縮放]、[文字大小]、[色彩] & 對比選項]、[語音設定] 和其他設定選項的設定。
 
@@ -125,12 +125,12 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 在模擬器中測試時，**協助工具偵測器**可供使用，以協助驗證協助工具屬性和事件已正確設定。 流覽至 **[一般] > [協助工具] [> 輔助**功能偵測器]，在 [**設定**] 應用程式中開啟檢查
 
-![](accessibility-images/settings-inspector-sml.png "Enable Accessibility Inspector")
+![啟用協助工具偵測器](accessibility-images/settings-inspector-sml.png)
 
 啟用之後，[偵測器] 視窗會隨時停留在 iOS 畫面上。
 當選取資料表視圖資料列時，以下是輸出的範例-請注意，**標籤**包含的句子會提供資料列的內容，而且它也是「完成」（也就是顯示刻度）：
 
-![](accessibility-images/tableview-a11y-sml.png "Using Accessibility Inspector")
+![使用協助工具偵測器](accessibility-images/tableview-a11y-sml.png)
 
 當偵測器可見時，請使用左上角的 "X" 圖示來暫時顯示和隱藏重迭，並啟用/停用協助工具設定。
 

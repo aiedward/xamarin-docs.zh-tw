@@ -10,16 +10,16 @@ ms.date: 09/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 02749c9f8f55427bb1742e78464bbc003f1f7358
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 36f4946ffc6d5a42e1997f389501f921449d0259
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136167"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937588"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _多行文字輸入_
 
@@ -271,7 +271,7 @@ public partial class EditorPage : ContentPage
 </ContentPage>
 ```
 
-![](editor-images/textbackgroundcolor.png "Editor with BackgroundColor Example")
+![具有 BackgroundColor 範例的編輯器](editor-images/textbackgroundcolor.png)
 
 請確定您所選擇的背景和文字色彩可以在每個平臺上使用，而且不會遮蔽任何預留位置文字。
 
@@ -285,7 +285,7 @@ public partial class EditorPage : ContentPage
 > [!NOTE]
 > [`VisualElement`](xref:Xamarin.Forms.VisualElement) [`Entry`](xref:Xamarin.Forms.Entry) 繼承自的類別也具有 [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) 和 [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) 事件。
 
-### <a name="completed"></a>Completed
+### <a name="completed"></a>已完成
 
 `Completed`事件是用來回應與的互動完成 `Editor` 。 `Completed`當使用者在鍵盤上輸入 return 鍵（或按 UWP 上的 Tab 鍵）來結束具有欄位的輸入時，會引發。 事件的處理常式是一般事件處理常式，接受寄件者和 `EventArgs` ：
 

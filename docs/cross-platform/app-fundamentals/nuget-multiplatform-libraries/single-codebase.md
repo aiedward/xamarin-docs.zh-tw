@@ -6,12 +6,12 @@ ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5e63e6470a7dac0f9148147a0303d35cf33adb1b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 3226820dddbd6ecb83b87b29ef1991d19104b2a6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571127"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936977"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>建立適用于 NuGet 的新多平臺程式庫
 
@@ -30,25 +30,25 @@ ms.locfileid: "84571127"
 
 2. 從多**平臺 > 程式庫**區段選擇多**平臺程式庫**：
 
-   [![](single-codebase-images/mulitplatform-library-sml.png "Configure multi-platform library for a single code base")](single-codebase-images/mulitplatform-library.png#lightbox)
+   [![設定單一程式碼基底的多平臺程式庫](single-codebase-images/mulitplatform-library-sml.png)](single-codebase-images/mulitplatform-library.png#lightbox)
 
 3. 輸入 [**名稱**] 和 [**描述**]，然後**針對 [所有平臺**] 選擇 [單一]：
 
-   [![](single-codebase-images/single-configure-sml.png "Configure multi-platform library for a single code base")](single-codebase-images/single-configure.png#lightbox)
+   [![設定單一程式碼基底的多平臺程式庫](single-codebase-images/single-configure-sml.png)](single-codebase-images/single-configure.png#lightbox)
 
 4. 完成精靈。 解決方案中會建立單一程式庫專案。
 
 5. 以滑鼠右鍵按一下新的程式庫專案，然後選取 [**選項**]。 [**組建 > 一般**] 區段可讓您設定**目標 Framework** –選擇 .net 便攜 PCL 設定檔或 .NET Standard 版本：
 
-   [![](single-codebase-images/single-choose-type-sml.png "Choose PCL or .NET Standard for library type")](single-codebase-images/single-choose-type.png#lightbox)
+   [![選擇 [PCL] 或 [.NET Standard] 作為 [程式庫類型]](single-codebase-images/single-choose-type-sml.png)](single-codebase-images/single-choose-type.png#lightbox)
 
 6. 此外，在 [**專案選項**] 視窗中，開啟 [ **NuGet 封裝 > 中繼資料**] 區段，並輸入[必要的中繼資料](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)（以及任何選擇性的中繼資料）：
 
-   [![](single-codebase-images/single-metadata-sml.png "Enter required metadata")](single-codebase-images/single-metadata.png#lightbox)
+   [![輸入必要的中繼資料](single-codebase-images/single-metadata-sml.png)](single-codebase-images/single-metadata.png#lightbox)
 
 7. 以滑鼠右鍵按一下程式庫專案，然後選擇 [**建立 NuGet 套件**] （或 [建立或部署方案]）， **nupkg** NuGet 套件檔案將會儲存在 **/bin/** 資料夾中（視設定而定，[Debug] 或 [Release]）：
 
-   ![](single-codebase-images/create-nuget-package.png "The NuGet package file will be saved in the bin folder either Debug or Release, depending on configuration")
+   ![NuGet 套件檔案會儲存在 bin 資料夾中，視設定而定（Debug 或 Release）](single-codebase-images/create-nuget-package.png)
 
 ## <a name="verifying-the-output"></a>驗證輸出
 
@@ -56,7 +56,7 @@ NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構
 
 這個螢幕擷取畫面顯示 PCL 型 NuGet 的內容–只包含單一 PCL 元件：
 
-![](single-codebase-images/nuget-output.png "Files contained in the NuGet package")
+![NuGet 套件中包含的檔案](single-codebase-images/nuget-output.png)
 
 <a name="add-platforms"></a>
 
@@ -66,11 +66,11 @@ NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構
 
 如果現有的 PCL 專案或 .NET Standard 專案必須擴充以包含平臺特定的程式碼，您可以在專案上按一下滑鼠右鍵，然後選取 [新增] [ **> 新增平臺**]，來完成此動作：
 
-[![](single-codebase-images/add-later-sml.png "Add platform implementation menu")](single-codebase-images/add-later.png#lightbox)
+[![[新增平臺執行] 功能表](single-codebase-images/add-later-sml.png)](single-codebase-images/add-later.png#lightbox)
 
 一或多個平臺專案可以新增至方案，而現有的 PCL 或 .NET Standard 程式庫則可以選擇性地轉換成共用的專案：
 
-[![](single-codebase-images/add-later-platforms-sml.png "Add platform options such as iOS, Android, and Shared Project")](single-codebase-images/add-later-platforms-sml.png#lightbox)
+[![新增 iOS、Android 和共用專案等平臺選項](single-codebase-images/add-later-platforms-sml.png)](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
 轉換為共用專案之後，請造訪 **> NuGet 套件 > 參考元件**] 區段中的專案選項， 
  [section](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)並確定已選取所有必要的設定檔（讓 NuGet 繼續與先前用於的專案相容）。

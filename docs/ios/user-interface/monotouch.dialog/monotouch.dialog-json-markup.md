@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: fc6066155a4171b106e772c1fe6fe7ee3e5c67cf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 023a85451ca83df6c15e8b3bbc3169f2884a0a46
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573504"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936561"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 標記
 
@@ -77,7 +77,7 @@ ms.locfileid: "84573504"
 
 上述標記會產生下列 UI：
 
- [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "The UI created by the given markup")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
+ [![指定標記所建立的 UI](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png)](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
 
 樹狀結構中的每個元素都可以包含屬性 `"id"` 。 您可以在執行時間使用 JsonElement 索引子來參考個別區段或元素。 例如：
 
@@ -102,13 +102,13 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="url"></a>
 
-### <a name="url"></a>URL
+### <a name="url"></a>url
 
 如果 `"url"` 已設定屬性，則當使用者按下此 RootElement 時，程式碼將會從指定的 url 要求檔案，並讓內容顯示新的資訊。 您可以使用這個來根據使用者所按的內容，從伺服器擴充使用者介面。
 
  <a name="group"></a>
 
-### <a name="group"></a>群組
+### <a name="group"></a>group
 
 如果設定，這會設定根項目的組名。 組名是用來挑選摘要，其會顯示為元素中其中一個嵌套元素的根項目值。 這可能是核取方塊的值或選項按鈕的值。
 
@@ -330,7 +330,7 @@ class Foo {
 
 ## <a name="boolean-elements"></a>布林值元素
 
-布林值元素應將類型設定為 `"bool"` 、可以包含 `"caption"` 要顯示的，而且 `"value"` 會設定為 true 或 false。 如果 `"on"` `"off"` 已設定和屬性，則會假設為影像。 映射會相對於應用程式中目前的工作目錄來解析。 如果您想要參考配套相關的檔案，您可以使用 `"~"` 做為代表應用程式套件組合目錄的快捷方式。 例如， `"~/favorite.png"` 將會是包含在組合檔案中的最愛 .png。 例如：
+布林值元素應將類型設定為 `"bool"` 、可以包含 `"caption"` 要顯示的，而且 `"value"` 會設定為 true 或 false。 如果 `"on"` `"off"` 已設定和屬性，則會假設為影像。 映射會相對於應用程式中目前的工作目錄來解析。 如果您想要參考配套相關的檔案，您可以使用 `"~"` 做為代表應用程式套件組合目錄的快捷方式。 例如， `"~/favorite.png"` 將會是包含在組合檔案中的 favorite.png。 例如：
 
 ```json
 { 
@@ -358,7 +358,7 @@ class Foo {
 
 ## <a name="entry-elements"></a>Entry 元素
 
-您可以使用 entry 元素，讓使用者輸入資料。 Entry 元素的類型為 `"entry"` 或 `"password"` 。 `"caption"`屬性會設定為要在右側顯示的文字，而 `"value"` 會設定為初始值以將專案設定為。 `"placeholder"`是用來向使用者顯示空白專案的提示（顯示為灰色）。 以下是一些範例：
+您可以使用 entry 元素，讓使用者輸入資料。 Entry 元素的類型為 `"entry"` 或 `"password"` 。 `"caption"`屬性會設定為要在右側顯示的文字，而 `"value"` 會設定為初始值以將專案設定為。 `"placeholder"`是用來向使用者顯示空白專案的提示（顯示為灰色）。 這裡有一些範例：
 
 ```json
 {

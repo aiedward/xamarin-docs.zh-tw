@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 156a31e37d14ce3e3cbe7173ae97b608e9d4c32e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f523b6a028c8d9dcc0df772dc617c57bc947905d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032655"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936876"
 ---
 # <a name="working-with-watchos-text-input-in-xamarin"></a>在 Xamarin 中使用 watchOS 文字輸入
 
@@ -25,12 +25,12 @@ Apple Watch 不會提供使用者輸入文字的鍵盤，不過，它支援一�
 
 模擬器目前不支援聽寫，但您仍然可以測試文字輸入控制器的其他選項，例如「塗抹」，如下所示：
 
-![](text-input-images/textinput-sml.png "Testing the scribble option")
+![測試塗抹選項](text-input-images/textinput-sml.png)
 
 接受監看式應用程式中的文字輸入：
 
 1. 建立預先定義選項的字串陣列。
-2. 使用陣列呼叫 `PresentTextInputController`、是否允許表情，以及使用者完成時所呼叫的 `Action`。
+2. `PresentTextInputController`使用陣列呼叫、是否允許表情，以及 `Action` 使用者完成時所呼叫的。
 3. 在完成動作中，測試輸入結果，並在應用程式中採取適當動作（可能會設定標籤的文字值）。
 
 下列程式碼片段會向使用者呈現三個預先定義的選項：
@@ -49,13 +49,13 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 });
 ```
 
-`WKTextInputMode` 列舉有三個值：
+`WKTextInputMode`列舉有三個值：
 
-- 明顯
+- 一般紙張
 - AllowEmoji
 - AllowAnimatedEmoji
 
-## <a name="plain"></a>明顯
+## <a name="plain"></a>一般紙張
 
 當設定了 [一般] 模式時，使用者可以選擇：
 
@@ -63,9 +63,9 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 - 自由曲線，或
 - 來自應用程式提供的預先定義清單。
 
-[![](text-input-images/plain-scribble-sml.png "Dictation, Scribble, or from a pre-defined list that the app supplies")](text-input-images/plain-scribble.png#lightbox)
+[![聽寫、自由曲線，或來自應用程式提供的預先定義清單](text-input-images/plain-scribble-sml.png)](text-input-images/plain-scribble.png#lightbox)
 
-結果一律會當做可以轉換成 `string`的 `NSObject` 傳回。
+結果一律會當做 `NSObject` 可以轉換成的來傳回 `string` 。
 
 ## <a name="emoji"></a>Emoji
 
@@ -76,14 +76,14 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 
 當使用者選擇 Unicode 表情時，會以字串形式傳回。
 
-如果已選取動畫圖像表情，完成處理常式中的 `result` 將會包含包含表情 `UIImage`的 `NSData` 物件。
+如果已選取動畫圖像表情，則 `result` 完成處理常式中的將會包含 `NSData` 包含表情的物件 `UIImage` 。
 
 ## <a name="accepting-dictation-only"></a>僅接受聽寫
 
 若要將使用者直接帶到聽寫畫面，而不顯示任何建議（或自由繪製選項）：
 
 - 為建議清單傳遞空陣列，然後
-- 設定 `WatchKit.WKTextInputMode.Plain`。
+- 設定 `WatchKit.WKTextInputMode.Plain` 。
 
 ```csharp
 PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (result) => {
@@ -98,7 +98,7 @@ PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (resu
 
 當使用者說話時，[監看式] 畫面會顯示下列畫面，其中包含瞭解的文字（例如「這是測試」）：
 
-![](text-input-images/dictation.png "When the user is speaking, the watch screen displays the text as it is understood")
+![當使用者說話時，[監看式] 畫面會顯示已瞭解的文字](text-input-images/dictation.png)
 
 一旦按下 [**完成**] 按鈕，就會傳回文字。
 

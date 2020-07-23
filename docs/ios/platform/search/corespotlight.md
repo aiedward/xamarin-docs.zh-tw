@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 102c0e7dbd2f4c903793e83d7551a84a52cac4fb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 285243c832d080d93e557deada5bb824e03f8d89
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031580"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939421"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>在 Xamarin 中使用核心焦點進行搜尋
 
@@ -47,11 +47,11 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 這項資訊會在搜尋結果中顯示如下：
 
-[![](corespotlight-images/corespotlight01.png "Core Spotlight search result overview")](corespotlight-images/corespotlight01.png#lightbox)
+[![核心焦點搜尋結果總覽](corespotlight-images/corespotlight01.png)](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>還原專案
 
-當使用者透過應用程式的核心焦點來點擊新增至搜尋結果的專案時，會呼叫 `AppDelegate` 方法 `ContinueUserActivity` （這個方法也會用於 `NSUserActivity`）。 例如:
+當使用者透過應用程式的核心焦點來點擊新增至搜尋結果的專案時， `AppDelegate` `ContinueUserActivity` 會呼叫方法（此方法也會用於 `NSUserActivity` ）。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -74,14 +74,14 @@ public override bool ContinueUserActivity (UIApplication application,
 }
 ```
 
-請注意，這次我們檢查的活動是否具有 `CSSearchableItem.ActionType`的 `ActivityType`。
+請注意，這次我們要檢查的活動是否具有 `ActivityType` 的 `CSSearchableItem.ActionType` 。
 
 ## <a name="updating-an-item"></a>更新專案
 
 在某些情況下，必須修改以核心焦點建立的索引項目，例如，需要變更標題或縮圖影像。 若要進行這種變更，我們使用與最初建立索引時所使用的相同方法。
-我們會使用與建立專案時所用的相同識別碼來建立新的 `CSSearchableItem`，並附加包含修改屬性的新 `CSSearchableItemAttributeSet`：
+我們會使用與 `CSSearchableItem` 建立專案時所用的相同識別碼來建立新的，並附加 `CSSearchableItemAttributeSet` 包含修改屬性的新：
 
-[![](corespotlight-images/corespotlight02.png "Updating an Item overview")](corespotlight-images/corespotlight02.png#lightbox)
+[![更新專案總覽](corespotlight-images/corespotlight02.png)](corespotlight-images/corespotlight02.png#lightbox)
 
 當此專案寫入至可搜尋的索引時，會以新的資訊更新現有的專案。
 
@@ -101,7 +101,7 @@ CSSearchableIndex.DefaultSearchableIndex.Delete(new string[]{"1","16"},(error) =
 });
 ```
 
-接下來，您可以依功能變數名稱刪除索引項目的群組。 例如:
+接下來，您可以依功能變數名稱刪除索引項目的群組。 例如：
 
 ```csharp
 // Delete by Domain Name
@@ -129,8 +129,8 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 
 核心焦點具有下列功能，可協助您保持索引的精確度和最新狀態：
 
-- **批次更新支援**-如果您的應用程式需要同時建立或修改大型索引群組，則可以在一次呼叫中，將整個批次傳送至 `CSSearchableIndex` 類別的 `Index` 方法。
-- **回應索引變更**–使用 `CSSearchableIndexDelegate` 您的應用程式可以回應可搜尋索引中的變更和通知。
+- **批次更新支援**-如果您的應用程式需要同時建立或修改大型索引群組，則可以 `Index` `CSSearchableIndex` 在單一呼叫中，將整個批次傳送至類別的方法。
+- **回應索引變更**–使用您的 `CSSearchableIndexDelegate` 應用程式可以回應可搜尋索引中的變更和通知。
 - 套用**資料保護**–使用資料保護類別，您可以在使用核心焦點新增至可搜尋索引的專案上，執行安全性。
 
 ## <a name="related-links"></a>相關連結

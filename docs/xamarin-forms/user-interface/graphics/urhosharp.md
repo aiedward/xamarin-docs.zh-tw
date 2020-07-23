@@ -10,16 +10,16 @@ ms.date: 03/11/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fbf717092da7f77e265803fae87efb5bf0e9876f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fd1893a91d9d8e5d2c2581a9f3f9b5ef8ee59f1f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574362"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937666"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>使用中的 UrhoSharpXamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
 
 ## <a name="what-is-urhosharp"></a>什麼是 UrhoSharp？
 
@@ -28,8 +28,8 @@ ms.locfileid: "84574362"
 UrhoSharp 可以用來呈現應用程式中的圖形 Xamarin.Forms 。
 這個[範例](https://github.com/xamarin/urho-samples/tree/master/FormsSample)示範如何使用 UrhoSharp 來建立互動式的3d 圖表：
 
-![](urhosharp-images/ios-animation.gif "UrhoSharp 3D Interactive Chart on iOS")
-![](urhosharp-images/android-animation.gif "UrhoSharp 3D Interactive Chart on Android")
+![在 iOS 上 UrhoSharp 3D 互動式圖表 ](urhosharp-images/ios-animation.gif)
+ ![ UrhoSharp Android 上的3D 互動式圖表](urhosharp-images/android-animation.gif)
 
 ## <a name="adding-the-urhosharp-nuget-packages"></a>新增 UrhoSharp NuGet 套件
 
@@ -38,11 +38,11 @@ UrhoSharp 可以用來呈現應用程式中的圖形 Xamarin.Forms 。
 UrhoSharp NuGet 套件包含建立 UrhoSharp 物件所需的所有物件。 UrhoSharp NuGet 套件包含 `UrhoSurface` 用來在中裝載 UrhoSharp 的類別 Xamarin.Forms 。
 若要開始，請以滑鼠右鍵按一下 .NET Standard 程式庫專案中的 [**套件**] 資料夾，然後選取 [**新增套件**]。輸入搜尋詞彙**UrhoSharp**， ** Xamarin.Forms 針對**選取 [UrhoSharp]，然後按一下 [**新增套件**]。
 
-[![](urhosharp-images/add-package-sml.png "Add Packages Dialog")](urhosharp-images/add-package.png#lightbox "Add Packages Dialog")
+[![[新增封裝] 對話方塊](urhosharp-images/add-package-sml.png)](urhosharp-images/add-package.png#lightbox "[新增封裝] 對話方塊")
 
 UrhoSharp NuGet 套件會新增至專案：
 
-![](urhosharp-images/packages.png "Packages Folder")
+![封裝資料夾](urhosharp-images/packages.png)
 
 針對平臺特定專案（例如 iOS 和 Android）重複上述步驟。
 
@@ -213,7 +213,7 @@ selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 
 [頁面頂端](#what-is-urhosharp)的動畫會顯示執行中的範例。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 此頁面會顯示如何使用 UrhoSharp 將3D 資料視覺效果加入至 Xamarin.Forms 。 如需如何使用上述方法來建立可包含在應用程式中的 Urho 場景的詳細資訊，請參閱[UrhoSharp 檔](~/graphics-games/urhosharp/index.md) Xamarin.Forms 。
 

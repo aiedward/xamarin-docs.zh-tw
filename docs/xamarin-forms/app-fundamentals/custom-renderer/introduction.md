@@ -10,12 +10,12 @@ ms.date: 01/19/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0eb768f5d6cabbb41b07a5aad33269fc0f493237
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135317"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939525"
 ---
 # <a name="introduction-to-custom-renderers"></a>自訂轉譯器簡介
 
@@ -59,7 +59,7 @@ public class MyEntry : Entry
 
 然後，使用灰色背景在每個平台中轉譯 `MyEntry` 自訂控制項，如下列螢幕擷取畫面所示：
 
-![](introduction-images/screenshots.png "MyEntry Custom Control on each Platform")
+![每個平台上的 MyEntry 自訂控制項](introduction-images/screenshots.png)
 
 只要透過子類別化控制項，就能變更每個平台上的控制項背景色彩。 不過，這項技術僅限於其所能達到的程度，因為無法充分利用平台特定的增強功能和自訂。 有必要時，必須實作自訂轉譯器。
 
@@ -92,10 +92,10 @@ var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere
 
 這會建立 `ClassInPCL` 類型的參考，指出它在執行階段為必要。 如需詳細資訊，請參閱[保留程式碼](~/ios/deploy-test/linker.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已簡介自訂轉譯器，並概述建立自訂轉譯器的程序。 自訂轉譯器提供了一種強大的方法，可自訂控制項的外觀和行為 Xamarin.Forms 。 自訂轉譯器可用於小型樣式變更或複雜的平台特定版面配置，以及行為自訂。
 
 ## <a name="related-links"></a>相關連結
 
-- [效應](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [效果](~/xamarin-forms/app-fundamentals/effects/index.md)

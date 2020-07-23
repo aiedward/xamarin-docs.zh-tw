@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: ec63407189b635a9586b02e848647518aaf0170f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d95261a3b884507d3fc4a68018d57c5d3e3a2c84
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031555"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939408"
 ---
 # <a name="search-apis-in-xamarinios"></a>在 Xamarin 中搜尋 Api
 
@@ -22,7 +22,7 @@ IOS 9 中的搜尋功能已擴充，可提供絕佳的新方式來存取 Xamarin
 
 此外，新的搜尋 Api 可讓您更輕鬆地在應用程式中整合搜尋，而不需要預先搜尋的執行體驗。 因此，Apple 宣告通常需要幾個小時的時間，才能使用應用程式搜尋，讓 iOS 9 應用程式的內容可供通用搜尋。
 
-[![](images/intro01.png "An example of iOS 9 app content universally searchable using App Search")](images/intro01.png#lightbox)
+[![IOS 9 應用程式內容的範例，可使用應用程式搜尋進行通用搜尋](images/intro01.png)](images/intro01.png#lightbox)
 
 應用程式搜尋是由三個不同的 Api 所組成：
 
@@ -36,7 +36,7 @@ IOS 9 中的搜尋功能已擴充，可提供絕佳的新方式來存取 Xamarin
 
 決定要執行哪一種方法，取決於您的應用程式所提供的互動類型，以及它所呈現的內容類型。
 
-請使用下列指導方針：
+請使用下列指引：
 
 - [**NSUserActivity**](nsuseractivity.md) –使用此架構可提供公開和私人內容的搜尋能力，以及在您的應用程式中搜尋能力導覽點。
 

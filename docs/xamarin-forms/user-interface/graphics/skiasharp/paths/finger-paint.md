@@ -10,22 +10,22 @@ ms.date: 04/05/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 61ae651a2402204f69f642235d74d8d641b47988
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 074b782bfc5458cf89e593913b6f31de633ffd73
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139018"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938147"
 ---
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp 中的手指繪製
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用您的手指在畫布上繪製。_
 
 `SKPath`物件可以持續更新及顯示。 這項功能可讓路徑用於互動式繪圖，例如在手指繪製程式中。
 
-![](finger-paint-images/fingerpaintsample.png "An exercise in finger painting")
+![以手指繪製的練習](finger-paint-images/fingerpaintsample.png)
 
 中的觸控支援不 Xamarin.Forms 允許追蹤螢幕上的個別手指，因此已 Xamarin.Forms 開發觸控追蹤效果以提供額外的觸控支援。 這項效果會在[**從效果叫用事件**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)一文中說明。 範例程式[**觸控追蹤效果**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)示範包含兩個使用 SkiaSharp 的頁面，包括手指繪製程式。
 
@@ -168,7 +168,7 @@ public partial class FingerPaintPage : ContentPage
 
 您的手指畫作只受限於您的人才：
 
-[![](finger-paint-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](finger-paint-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
+[![手指繪圖頁面的三張一組螢幕擷取畫面](finger-paint-images/fingerpaint-small.png)](finger-paint-images/fingerpaint-large.png#lightbox "手指繪圖頁面的三張一組螢幕擷取畫面")
 
 您現在已瞭解如何繪製線條，以及如何使用參數化方來定義曲線。 [**SkiaSharp 曲線和路徑**](../curves/index.md)的後續章節涵蓋支援的各種曲線類型 `SKPath` 。 但有一項實用的必要條件是探索[**SkiaSharp 轉換**](../transforms/index.md)。
 

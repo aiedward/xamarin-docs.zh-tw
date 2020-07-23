@@ -10,16 +10,16 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f7a0d04d1e7b6abc9931c05c0e46ef49f8ba09c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: aa600974cdf25f8f85d9152edc4a377334cc8c78
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138459"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936548"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服務 (ASMX)
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _.ASMX 提供建立 web 服務的功能，可使用簡單的物件存取通訊協定（SOAP）來傳送訊息。SOAP 是一種與平臺無關且與語言無關的通訊協定，可用於建立和存取 web 服務。.ASMX 服務的取用者不需要知道用來執行服務的平臺、物件模型或程式設計語言等任何專案。他們只需要瞭解如何傳送和接收 SOAP 訊息。本文示範如何從應用程式取用 .ASMX SOAP 服務 Xamarin.Forms 。_
 
@@ -34,7 +34,7 @@ SOAP 可以透過許多傳輸通訊協定來運作，包括 HTTP、SMTP、TCP �
 
 這個範例包含在實體或模擬裝置上執行的行動應用程式，以及提供方法來取得、新增、編輯和刪除資料的一種 .ASMX 服務。 當行動應用程式執行時，它們會連接到本機裝載的 .ASMX 服務，如下列螢幕擷取畫面所示：
 
-![](asmx-images/portal.png "Sample Application")
+![範例應用程式](asmx-images/portal.png)
 
 > [!NOTE]
 > 在 iOS 9 和更新版本中，應用程式傳輸安全性（ATS）會強制執行網際網路資源（例如應用程式的後端伺服器）與應用程式之間的安全連線，藉此防止意外洩漏機密資訊。 由於預設會在針對 iOS 9 建立的應用程式中啟用 ATS，因此所有連線都將受限於 ATS 安全性需求。 如果連線不符合這些需求，則會失敗並產生例外狀況。
@@ -118,7 +118,7 @@ static TodoItem FromASMXServiceTodoItem (ASMXService.TodoItem item)
 
 這個方法會從 proxy 產生的型別 `TodoItem` 中抓取資料，並將它設定在新建立的 `TodoItem` 實例中。
 
-### <a name="retrieve-data"></a>抓取資料
+### <a name="retrieve-data"></a>取出資料
 
 `ISoapService`介面預期方法會傳回 `RefreshDataAsync` `Task` 具有專案集合的。 不過，此 `TodoService.GetTodoItemsAsync` 方法會傳回 void。 若要滿足介面模式，您必須呼叫 `GetTodoItemsAsync` ，等待 `GetTodoItemsCompleted` 事件引發，並填入集合。 這可讓您將有效的集合傳回到 UI。
 

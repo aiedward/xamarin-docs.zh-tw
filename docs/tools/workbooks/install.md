@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: a044169f86b46abff4158011e99320c528180ffc
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 99ecf661679f02bda6cfffa6093bd4a904676bce
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573881"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939343"
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝和需求
 
@@ -35,7 +35,7 @@ ms.locfileid: "84573881"
 
 -----
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
 #### <a name="supported-operating-systems"></a>支援的作業系統
 
@@ -44,7 +44,7 @@ ms.locfileid: "84573881"
 
 #### <a name="supported-app-platforms"></a>支援的應用程式平臺
 
-|應用程式平台|OS 支援|注意|
+|應用程式平台|OS 支援|附註|
 |--- |--- |--- |
 |Mac|僅在 Mac 上支援|
 |iOS|在 Mac 和 Windows 上支援|您必須在 Mac 上安裝 Xamarin. iOS 11.0 和 Xcode 9.0 或更新版本。 在 Windows 上執行 iOS 活頁簿需要 Mac 組建主機，並在 Windows 上安裝上述所有和[遠端 iOS](~/tools/ios-simulator/index.md)模擬器。|
@@ -128,7 +128,7 @@ Visual Studio
 
 > **開始 > 設定 > 系統 > 應用程式 & 功能**
 
-![](install-images/windows-remove.png "Xamarin Workbooks as listed in &quot;Apps &amp; features&quot;")
+![如 &quot; 應用程式功能中所列 Xamarin Workbooks &amp;&quot;](install-images/windows-remove.png)
 
 **您仍應遵循 Visual Studio 安裝程式的程式，以確保活頁簿不會在您不知情的情況下重新安裝。**
 

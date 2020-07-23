@@ -10,12 +10,12 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ae4116be99f076a7afd5ed9c2823bc12f445e18
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b8ba915f3bc701b6a100d206dc791f9572fa594b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137981"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936613"
 ---
 # <a name="margin-and-padding"></a>邊界和邊框間距
 
@@ -30,7 +30,7 @@ _邊界和填補屬性會在使用者介面中轉譯元素時，控制配置行�
 
 下圖說明兩個概念：
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "Margins and Padding Concepts")](margin-and-padding-images/margins-and-padding.png#lightbox "Margins and Padding Concepts")
+[![邊界和填補概念](margin-and-padding-images/margins-and-padding-sml.png)](margin-and-padding-images/margins-and-padding.png#lightbox "邊界和填補概念")
 
 請注意， [`Margin`](xref:Xamarin.Forms.View.Margin) 值是附加的。 因此，如果兩個連續的元素指定20圖元的邊界，元素之間的距離會是40圖元。 此外，當兩個都套用時，邊界和填補都是加總的，因為專案與任何內容之間的距離會是邊界加上填補。
 
@@ -68,12 +68,12 @@ var stackLayout = new StackLayout {
 > [!NOTE]
 > `Thickness`值可以是負數，通常會裁剪或 overdraws 內容。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範和屬性之間的差異 [`Margin`](xref:Xamarin.Forms.View.Margin) [`Padding`](xref:Xamarin.Forms.Layout.Padding) ，以及如何設定它們。 當專案在使用者介面中轉譯時，屬性會控制版面配置行為。
 
 ## <a name="related-links"></a>相關連結
 
 - [Margin](xref:Xamarin.Forms.View.Margin)
-- [邊框間距](xref:Xamarin.Forms.Layout.Padding)
+- [填補](xref:Xamarin.Forms.Layout.Padding)
 - [Thickness](xref:Xamarin.Forms.Thickness)

@@ -10,12 +10,12 @@ ms.date: 04/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 13b46fd06b0116332241b0d523aea707d56b39ec
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 06f7a138ee27fe095b99a55917267aaa6e01998e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573361"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939018"
 ---
 # <a name="setup-windows-projects"></a>設定 Windows 專案
 
@@ -35,21 +35,21 @@ UWP 在 Xamarin.Forms 2.1 和更新版本中提供，以及 Xamarin.Forms 。Xam
 
  sha-1. 以滑鼠右鍵按一下方案，然後選取 [**新增] > 新專案 ...** ]，然後新增 [**空白應用程式（通用 Windows）** ] 專案：
 
-  ![](universal-images/add-wu.png "Add New Project Dialog")
+  ![加入新的專案對話方塊](universal-images/add-wu.png)
 
  2. 在 [**新增通用 Windows 平臺專案**] 對話方塊中，選取應用程式將在其上執行的 Windows 10 最低和目標版本：
 
-  ![](universal-images/target-version.png "New Universal Windows Platform Project Dialog")
+  ![[新增通用 Windows 平臺專案] 對話方塊](universal-images/target-version.png)
 
  第. 以滑鼠右鍵按一下 UWP 專案，然後選取 [**管理 NuGet 套件 ...** ] 並新增 **Xamarin.Forms** 套件。 確定方案中的其他專案也會更新為相同版本的 Xamarin.Forms 套件。
 
  4gb. 請確定新的 UWP 專案會建立在**組建 > Configuration Manager** ] 視窗中（這可能不會在預設情況下發生）。 針對通用專案，勾選 [**組建**] 和 [**部署**] 方塊：
 
-  [![](universal-images/configuration-sml.png "Configuration Manager Window")](universal-images/configuration.png#lightbox "Configuration Manager Window")
+  [![Configuration Manager 視窗](universal-images/configuration-sml.png)](universal-images/configuration.png#lightbox "Configuration Manager 視窗")
 
  第. 以滑鼠右鍵按一下專案，然後選取 [**加入 > 參考**]，並建立 Xamarin.Forms 應用程式專案（.NET Standard 或共用專案）的參考。
 
-  ![](universal-images/addref-sml.png "Reference Manager Dialog")
+  ![[參考管理員] 對話方塊](universal-images/addref-sml.png)
 
  7. 在 UWP 專案中，編輯**App.xaml.cs**以在 `Init` 52 行的方法內包含方法呼叫 `OnLaunched` ：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: f05e763df58e6fafc4d4ed1d4007979859670c28
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 84a764054567bc504b3432a503a1072362e374dd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725458"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938485"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>使用開發人員識別碼簽署 Xamarin.Mac 應用程式
 
@@ -24,28 +24,28 @@ ms.locfileid: "76725458"
 
 若要建置可對使用者直接部署的應用程式 (不透過 Mac App Store)，請將**簽署設定**設為使用 [開發人員識別碼]****。 務必要編輯 [發行]**** 組態。
 
- [![](signing-images/config02.png "The Mac Signing options")](signing-images/config02.png#lightbox)
+ [![Mac 簽署選項](signing-images/config02.png)](signing-images/config02.png#lightbox)
 
 ## <a name="build"></a>Build
 
 建置之前，請務必選取正確的組態，並在 [Mac 組建]**** 設定中選擇要建立安裝套件：
 
-[![](signing-images/config03.png "The build options")](signing-images/config03.png#lightbox)
+[![建置選項](signing-images/config03.png)](signing-images/config03.png#lightbox)
 
 建置應用程式時，系統會提示開發人員使用這兩種憑證：
 
- [![](signing-images/image57.png "Allowing keychain access")](signing-images/image57.png#lightbox)
+ [![允許 Keychain 存取](signing-images/image57.png)](signing-images/image57.png#lightbox)
 
- [![](signing-images/image58.png "Allowing keychain access")](signing-images/image58.png#lightbox)
+ [![允許 Keychain 存取](signing-images/image58.png)](signing-images/image58.png#lightbox)
 
 建置應用程式之後，開發人員可在專案上按一下滑鼠右鍵，然後選擇 [開啟包含的資料夾]**** 即可找到套件檔案 (在 `bin/Release` 目錄中)。 此套件檔案包含應用程式的安裝程式，因此可散發給任何 macOS 使用者進行安裝。
 
- [![](signing-images/image59.png "Selecting the app package in Finder")](signing-images/image59.png#lightbox)
+ [![在 Finder 中選取應用程式套件](signing-images/image59.png)](signing-images/image59.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 
 - [安裝](~//mac/get-started/installation.md)
-- [您好,Mac 樣品](~//mac/get-started/hello-mac.md)
+- [Hello，Mac 範例](~//mac/get-started/hello-mac.md)
 - [在 Mac App Store 上散發應用程式](https://developer.apple.com/devcenter/mac/checklist/) \(英文\)
 - [工具指南：對應用程式進行程式碼簽署](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) \(英文\)
 - [開發人員識別碼和 GateKeeper](https://developer.apple.com/developer-id/) \(英文\)

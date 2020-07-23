@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: bd5217173e00de7d09e4ec14a5acf4d6a8389b10
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: fbd6e4a3b1c5cdb45a057f1ed664a0d5e71e224d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574440"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937887"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin. Mac 中的 Opentk 簡介簡介
 
 Opentk 簡介（開放工具組）是先進的低層級 c # 程式庫，可讓您更輕鬆地使用 OpenGL、OpenCL 和 OpenAL。 Opentk 簡介可用於需要3D 圖形、音訊或計算功能的遊戲、科學應用程式或其他專案。 這篇文章提供在 Xamarin. Mac 應用程式中使用 Opentk 簡介的簡介。
 
-[![](opentk-images/intro01.png "An example app run")](opentk-images/intro01.png#lightbox)
+[![範例應用程式執行](opentk-images/intro01.png)](opentk-images/intro01.png#lightbox)
 
 在本文中，我們將討論在 Xamarin. Mac 應用程式中 Opentk 簡介的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在本文中使用的重要概念和技巧。
 
@@ -54,11 +54,11 @@ Opentk 簡介可用於需要3D 圖形、音訊或計算功能的遊戲、科學�
 
 啟動 Visual Studio for Mac，並建立新的 Xamarin. Mac 解決方案。 選取 [ **Mac**  >  **應用程式**]  >  **[一般**  >  **Cocoa 應用程式**]：
 
-[![](opentk-images/sample01.png "Adding a new Cocoa App")](opentk-images/sample01.png#lightbox)
+[![新增新的 Cocoa 應用程式](opentk-images/sample01.png)](opentk-images/sample01.png#lightbox)
 
 `MacOpenTK`針對 [**專案名稱**] 輸入：
 
-[![](opentk-images/sample02.png "Setting the project name")](opentk-images/sample02.png#lightbox)
+[![設定專案名稱](opentk-images/sample02.png)](opentk-images/sample02.png#lightbox)
 
 按一下 [**建立**] 按鈕以建立新的專案。
 
@@ -70,7 +70,7 @@ Opentk 簡介可用於需要3D 圖形、音訊或計算功能的遊戲、科學�
 
 進行檢查 `OpenTK` ，然後按一下 [**確定]** 按鈕：
 
-[![](opentk-images/sample03.png "Editing the project references")](opentk-images/sample03.png#lightbox)
+[![編輯專案參考](opentk-images/sample03.png)](opentk-images/sample03.png#lightbox)
 
 <a name="Using_OpenTK"></a>
 
@@ -297,7 +297,7 @@ Game.Run(60.0);
 
 讓我們執行應用程式，並查看輸出：
 
-[![](opentk-images/intro01.png "A sample of the apps output")](opentk-images/intro01.png#lightbox)
+[![應用程式輸出的範例](opentk-images/intro01.png)](opentk-images/intro01.png#lightbox)
 
 如果我們調整視窗大小，遊戲視圖也會同時存在，而且三角形也會進行大小調整並即時更新。
 

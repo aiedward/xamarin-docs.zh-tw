@@ -10,16 +10,16 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a222c3ee2234904cce94b52a14654728a1aa6d1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ae3759c1e111906b82596af80d4bdcffd5d23305
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140123"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938524"
 ---
 # <a name="global-styles-in-xamarinforms"></a>中的全域樣式Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _您可以藉由將樣式新增至應用程式的資源字典，將其設為全域可供使用。這有助於避免跨頁面或控制項的樣式重複。_
 
@@ -65,7 +65,7 @@ _您可以藉由將樣式新增至應用程式的資源字典，將其設為全�
 
 這會導致下列螢幕擷取畫面中顯示的外觀：
 
-[![](application-images/application-styles-1.png "Global Styles Example")](application-images/application-styles-1-large.png#lightbox "Global Styles Example")
+[![全域樣式範例](application-images/application-styles-1.png)](application-images/application-styles-1-large.png#lightbox "全域樣式範例")
 
 如需在頁面中建立樣式的詳細資訊 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ，請參閱[明確樣式](~/xamarin-forms/user-interface/styles/explicit.md)和[隱含樣式](~/xamarin-forms/user-interface/styles/implicit.md)。
 
@@ -103,7 +103,7 @@ _您可以藉由將樣式新增至應用程式的資源字典，將其設為全�
 
 在 `buttonStyle` 應用層級定義的原始來源，會由 `buttonStyle` 在頁面層級定義的實例覆寫。 此外，頁面層級樣式會由控制項層級覆寫 `buttonStyle` 。 因此， [`Button`](xref:Xamarin.Forms.Button) 實例會以藍色文字顯示，如下列螢幕擷取畫面所示：
 
-[![](application-images/application-styles-2.png "Overriding Styles Example")](application-images/application-styles-2-large.png#lightbox "Overriding Styles Example")
+[![覆寫樣式範例](application-images/application-styles-2.png)](application-images/application-styles-2-large.png#lightbox "覆寫樣式範例")
 
 ## <a name="create-a-global-style-in-c35"></a>在 C&#35; 中建立全域樣式
 

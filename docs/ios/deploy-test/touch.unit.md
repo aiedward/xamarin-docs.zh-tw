@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 08ddf282c8839a6283b90c0736c0b4259bd01469
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f5796ee17e947494d1e22f750bc43ff823d56d55
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028449"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937276"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>單元測試 Xamarin.iOS 應用程式
 
@@ -23,11 +23,11 @@ ms.locfileid: "73028449"
 
 若要為您的專案設定單元測試架構，只需要將 [iOS 單元測試專案]**** 類型的專案新增至您的方案即可。 在您的方案上按一下滑鼠右鍵，然後選取 [新增] > [新增專案]**** 即可完成此動作。 從清單中選取 [iOS] > [測試] > [Unified API] > [iOS 單元測試專案]**** (您可以選擇 C# 或 F#)。
 
-![](touch.unit-images/00.png "Choose either C# or F#")
+![選擇 C# 或 F#](touch.unit-images/00.png)
 
 上面的動作將會建立其中包含基本執行器程式，並會參考新 MonoTouch.NUnitLite 組件的基本專案，您的專案看起來像這樣：
 
-![](touch.unit-images/01.png "The project in the Solution Explorer")
+![[方案總管] 中的專案](touch.unit-images/01.png)
 
 `AppDelegate.cs` 類別包含測試執行器，而且它看起來像這樣：
 
@@ -105,14 +105,14 @@ namespace Fixtures {
 
 測試執行器可讓您查看已登錄的測試，並個別選取可以執行的測試。
 
-[![](touch.unit-images/02-sml.png "The list of registered tests")](touch.unit-images/02.png#lightbox) 
-[![](touch.unit-images/03-sml.png "An individual text")](touch.unit-images/03.png#lightbox) 
+個別文字的[ ![ 已註冊測試清單](touch.unit-images/02-sml.png)](touch.unit-images/02.png#lightbox)  
+ [ ![ ](touch.unit-images/03-sml.png)](touch.unit-images/03.png#lightbox) 
 
-[![](touch.unit-images/04-sml.png "The run results")](touch.unit-images/04.png#lightbox)
+[![執行結果](touch.unit-images/04-sml.png)](touch.unit-images/04.png#lightbox)
 
 您可以透過從巢狀檢視中選取測試固件來執行個別的測試固件，或者您可以使用 [Run Everything] \(全部執行\) 來執行所有測試。 如果您執行預設測試，應該包括一個通過測試、一個失敗測試以及一個忽略測試。 這是報表的外觀，而且您可以直接向下切入失敗測試，並找出有關失敗的詳細資訊：
 
-[![](touch.unit-images/05-sml.png "範例報告")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/06-sml.png "範例報告")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "範例報告")](touch.unit-images/07.png#lightbox)
+[ ![ 範例報表](touch.unit-images/05-sml.png)](touch.unit-images/05.png#lightbox)範例報表[ ![ 範例報表](touch.unit-images/06-sml.png)](touch.unit-images/06.png#lightbox) [ ![ ](touch.unit-images/07-sml.png)](touch.unit-images/07.png#lightbox)
 
 您也可以查看 IDE 中的 [應用程式輸出] 視窗，以了解正在執行哪些測試及其目前狀態。
 

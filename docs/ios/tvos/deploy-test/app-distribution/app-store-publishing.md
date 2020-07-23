@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: dd453ab5397e409cc9a7ccef9b4b845d47f32a8b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1b2b9cdc08f20e2867d51c3b9c413f45c7cbdf69
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573725"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939317"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>發行至 Apple TV App Store
 
@@ -145,13 +145,13 @@ tvOS 會使用布建*設定檔*來控制特定應用程式組建的部署方式�
 
 1. 在 Visual Studio for Mac 中選取 [發行] | [裝置]**** 組態：
 
-    ![](app-store-publishing-images/buildxs01new.png "Select the Release configuration")
+    ![選取發行設定](app-store-publishing-images/buildxs01new.png)
 2. 從 [建置]**** 功能表選取 [Archive for Publishing] (封存以供發行)****：
 
-    [![](app-store-publishing-images/buildxs02new.png "Select Archive for Publishing")](app-store-publishing-images/buildxs02new.png#lightbox)
+    [![選取要發佈的封存](app-store-publishing-images/buildxs02new.png)](app-store-publishing-images/buildxs02new.png#lightbox)
 3. 建立封存後，[封存]**** 檢視會隨即顯示：
 
-    [![](app-store-publishing-images/buildxs03new.png "The Archives view")](app-store-publishing-images/buildxs03new.png#lightbox)
+    [![封存視圖](app-store-publishing-images/buildxs03new.png)](app-store-publishing-images/buildxs03new.png#lightbox)
 
 ### <a name="sign-and-distribute-your-app"></a>簽署並散發應用程式
 
@@ -163,19 +163,19 @@ tvOS 會使用布建*設定檔*來控制特定應用程式組建的部署方式�
 
 1. 選取 [**簽署並散發 ...**]，如下所示：
 
-    [![](app-store-publishing-images/buildxs04new.png ", Select theSign and Distribute...")](app-store-publishing-images/buildxs04new.png#lightbox)
+    [![，選取 [theSign 並散發 ...]](app-store-publishing-images/buildxs04new.png)](app-store-publishing-images/buildxs04new.png#lightbox)
 2. 如此將開啟發行精靈。 選取 [ **App Store** ] 散發通道以建立套件，然後開啟應用程式載入器：
 
-    [![](app-store-publishing-images/distribute01.png "Select the App Store distribution channel")](app-store-publishing-images/distribute01.png#lightbox)
+    [![選取 App Store 散發通道](app-store-publishing-images/distribute01.png)](app-store-publishing-images/distribute01.png#lightbox)
 3. 在 [布建設定檔] 畫面上，選取您的簽署身分識別和對應的布建設定檔，或以另一個身分識別重新簽署：
 
-    [![](app-store-publishing-images/distribute02.png "Select the signing identity and corresponding provisioning profile")](app-store-publishing-images/distribute02.png#lightbox)
+    [![選取簽署身分識別和對應的布建設定檔](app-store-publishing-images/distribute02.png)](app-store-publishing-images/distribute02.png#lightbox)
 4. 驗證套件的詳細資料，然後按一下 [發佈] **** 以儲存您的 `.ipa` 套件：
 
-    [![](app-store-publishing-images/distribute03.png "Verify the details of the package")](app-store-publishing-images/distribute03.png#lightbox)
+    [![確認套件的詳細資料](app-store-publishing-images/distribute03.png)](app-store-publishing-images/distribute03.png#lightbox)
 5. 儲存 `.ipa` 後，即可準備透過應用程式載入器將應用程式上傳至 iTunes Connect：
 
-    [![](app-store-publishing-images/distribute04.png "Uploaded to iTunes Connect via the Application Loader")](app-store-publishing-images/distribute04.png#lightbox)
+    [![已透過應用程式載入器上傳至 iTunes Connect](app-store-publishing-images/distribute04.png)](app-store-publishing-images/distribute04.png#lightbox)
 
 建立與封存散發組建後，即可準備將您的應用程式提交至 iTunes Connect。
 
@@ -189,15 +189,15 @@ tvOS 會使用布建*設定檔*來控制特定應用程式組建的部署方式�
 
 1. 選取 [Deliver Your App] (傳遞您的應用程式)**，並按一下 [選擇]** 按鈕：
 
-    [![](app-store-publishing-images/publishvs01.png "Select Deliver Your App")](app-store-publishing-images/publishvs01.png#lightbox)
+    [![選取 [傳遞您的應用程式]](app-store-publishing-images/publishvs01.png)](app-store-publishing-images/publishvs01.png#lightbox)
 
 2. 在上方選取您建立的 ZIP 或 IPA 檔案，並按一下 [確定]**** 按鈕。
 3. 應用程式載入器將會驗證檔案：
 
-    [![](app-store-publishing-images/publishvs02.png "The Application Loader validation screen")](app-store-publishing-images/publishvs02.png#lightbox)
+    [![應用程式載入器驗證畫面](app-store-publishing-images/publishvs02.png)](app-store-publishing-images/publishvs02.png#lightbox)
 4. 按一下 [下一步]** 按鈕後，就會對 App Store 驗證應用程式：
 
-    [![](app-store-publishing-images/publishvs03.png "The application being validated against the App Store")](app-store-publishing-images/publishvs03.png#lightbox)
+    [![針對 App Store 驗證的應用程式](app-store-publishing-images/publishvs03.png)](app-store-publishing-images/publishvs03.png#lightbox)
 5. 按一下 [傳送]**** 按鈕將應用程式傳送至 Apple 進行審查。
 6. 當檔案已成功上傳時，應用程式載入器會通知您。
 
@@ -207,7 +207,7 @@ tvOS 會使用布建*設定檔*來控制特定應用程式組建的部署方式�
 
 如果您重新登入 iTunes Connect，並從可用的應用程式清單中選取您的應用程式，iTunes Connect 中的狀態現在應該會顯示它正在**等待審核**（它可能會在處理時暫時讀取已**接收的上傳**）：
 
-[![](app-store-publishing-images/image21.png "The status in iTunes Connect showing Waiting for Review")](app-store-publishing-images/image21.png#lightbox)
+[![ITunes Connect 中顯示等待審核的狀態](app-store-publishing-images/image21.png)](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting"></a>
 

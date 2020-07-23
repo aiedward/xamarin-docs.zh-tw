@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: aed11ff8794f79ff7e16fbb8401a95a5697d2d4b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9280917f451d58ae864398088bec7faaf15ad96a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572061"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937341"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin 中的來源清單
 
@@ -22,7 +22,7 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用來源清單。其中�
 
 [來源清單] 是一種特殊類型的大綱視圖，用來顯示動作的來源，例如搜尋工具或 iTunes 中的側條。
 
-[![](source-list-images/source05.png "An example source list")](source-list-images/source05.png#lightbox)
+[![範例來源清單](source-list-images/source05.png)](source-list-images/source05.png#lightbox)
 
 在本文中，我們將討論在 Xamarin. Mac 應用程式中使用來源清單的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在本文中使用的重要概念和技巧。
 
@@ -50,7 +50,7 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用來源清單。其中�
 
 首先，讓我們建立新的 `SourceListItem` 類別來保存來源清單的資料。 在 [**方案總管**中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新檔案 ...** ]。選取 **[一般] [**  >  **空白類別**]，輸入 `SourceListItem` 作為 [**名稱**]，然後按一下 [**新增**] 按鈕：
 
-[![](source-list-images/source01.png "Adding an empty class")](source-list-images/source01.png#lightbox)
+[![加入空的類別](source-list-images/source01.png)](source-list-images/source01.png#lightbox)
 
 使檔案 `SourceListItem.cs` 看起來如下所示： 
 
@@ -532,19 +532,19 @@ namespace MacOutlines
 
 現在，讓我們在 Interface Builder 中設計來源清單。 按兩下檔案 `Main.storyboard` 以在 Interface Builder 中進行編輯，並從連結**庫偵測器**拖曳分割視圖，將它加入至 View 控制器，並將它設定為在 [**條件約束編輯器**] 中以視圖調整大小：
 
-[![](source-list-images/source00.png "Editing constraints")](source-list-images/source00.png#lightbox)
+[![編輯條件約束](source-list-images/source00.png)](source-list-images/source00.png#lightbox)
 
 接下來，從 [程式庫偵測**器**] 拖曳 [來源清單]，將它加入分割視圖的左側，並設定為在 [**條件約束編輯器**] 中以視圖調整大小：
 
-[![](source-list-images/source02.png "Editing constraints")](source-list-images/source02.png#lightbox)
+[![編輯條件約束](source-list-images/source02.png)](source-list-images/source02.png#lightbox)
 
 接下來，切換至 [**識別] 視圖**，選取 [來源] 清單，並將它的**類別**變更為 `SourceListView` ：
 
-[![](source-list-images/source03.png "Setting the class name")](source-list-images/source03.png#lightbox)
+[![設定類別名稱](source-list-images/source03.png)](source-list-images/source03.png#lightbox)
 
 最後，針對檔案中名為的來源清單建立一個**輸出** `SourceList` `ViewController.h` ：
 
-[![](source-list-images/source04.png "Configuring an Outlet")](source-list-images/source04.png#lightbox)
+[![設定插座](source-list-images/source04.png)](source-list-images/source04.png#lightbox)
 
 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
@@ -614,7 +614,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 如果我們執行應用程式，將會顯示下列內容：
 
-[![](source-list-images/source05.png "An example app run")](source-list-images/source05.png#lightbox)
+[![範例應用程式執行](source-list-images/source05.png)](source-list-images/source05.png#lightbox)
 
 <a name="Summary"></a>
 

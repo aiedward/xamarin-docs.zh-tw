@@ -10,16 +10,16 @@ ms.date: 11/09/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0967845ac61ddf5f8e1cc76664a50877d041f011
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135794"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939668"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重複使用的 EventToCommandBehavior
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 _行為可以用來將命令與未設計成與命令互動的控制項產生關聯。本文示範如何建立和使用 Xamarin.Forms 行為，以便在事件引發時叫用命令。_
 
@@ -201,11 +201,11 @@ selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 
 在執行階段，行為會回應與控制項的互動。 在中選取專案時 [`ListView`](xref:Xamarin.Forms.ListView) ， [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 將會引發事件，這會 `OutputAgeCommand` 在 ViewModel 中執行。 接著，這會更新系結 `SelectedItemText` 至的 ViewModel 屬性 [`Label`](xref:Xamarin.Forms.Label) ，如下列螢幕擷取畫面所示：
 
-[![](event-to-command-behavior-images/screenshots-sml.png "Sample Application with EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "Sample Application with EventToCommandBehavior")
+[![使用的 eventtocommandbehavior 的範例應用程式](event-to-command-behavior-images/screenshots-sml.png)](event-to-command-behavior-images/screenshots.png#lightbox "使用的 eventtocommandbehavior 的範例應用程式")
 
 使用此行為在事件引發時執行命令的優點為，可以將命令與未設計於要與命令互動的控制項建立關聯。 此外，這可從程式碼後置檔案中移除以定案效果方式處理的程式碼。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範 Xamarin.Forms 如何使用行為，在事件引發時叫用命令。 行為可用來將命令與未設計於與命令互動的控制項建立關聯。
 

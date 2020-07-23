@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: cc83fa65fd040b30d71a30fb703da866c5d0824c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 40640f903ad82c5f154dbb74307c0003d7271561
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570813"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936600"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>在 Xamarin 中使用資料列動作
 
@@ -175,7 +175,7 @@ table.Delegate = tableDelegate;
 
 當上述程式碼執行且使用者撥動在資料表資料列時，將會顯示 [ **Hi** ] 按鈕，而不是預設顯示的 [**刪除**] 按鈕：
 
-[![](row-action-images/action01.png "The Hi button being displayed instead of the Delete button")](row-action-images/action01.png#lightbox)
+[![顯示的是 [Hi] 按鈕，而不是 [刪除] 按鈕](row-action-images/action01.png)](row-action-images/action01.png#lightbox)
 
 如果使用者按下 [ **Hi** ] 按鈕，則 `Hello World!` 會在應用程式于 [debug] 模式中執行時，在 Visual Studio for Mac 或 Visual Studio 中寫出至主控台。
 

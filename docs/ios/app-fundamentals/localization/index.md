@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: c42b41f9b853fba58ef70b8bd2f8ab20a3369647
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1f5f9e13607d672a6fdec5ed8fb116466973a260
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569233"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938030"
 ---
 # <a name="localization-in-xamarinios"></a>在 Xamarin 中的當地語系化
 
@@ -24,7 +24,7 @@ _本檔涵蓋 iOS SDK 的當地語系化功能，以及如何使用 Xamarin 來�
 
 本節說明 iOS 中的一些當地語系化功能。 請跳到[下一節](#localization-basics-in-ios)，以查看特定的程式碼和範例。
 
-### <a name="language"></a>語言
+### <a name="language"></a>Language
 
 使用者在 [**設定**] 應用程式中選擇其語言。 此設定會影響作業系統和應用程式所顯示的語言字串和影像。
 
@@ -163,7 +163,7 @@ var lang = NSBundle.MainBundle.PreferredLocalizations[0];
 "Delete" = "Eliminar";
 ```
 
-### <a name="images"></a>影像
+### <a name="images"></a>映像
 
 若要在 iOS 中將映射當地語系化：
 
@@ -173,9 +173,9 @@ var lang = NSBundle.MainBundle.PreferredLocalizations[0];
     UIImage.FromBundle("flag");
     ```
 
-2. 將預設影像檔案**旗**標放在 **.lproj** （原生開發語言目錄）中。
+2. 將預設影像檔案**flag.png**放在 **.lproj** （原生開發語言目錄）中。
 
-3. 選擇性地將影像的當地語系化版本放在 **.lproj**資料夾中，以取得每種語言（例如 **es .lproj**， **ja-jp .lproj**）。 在每個語言目錄中使用相同的檔案名**旗標 .png** 。
+3. 選擇性地將影像的當地語系化版本放在 **.lproj**資料夾中，以取得每種語言（例如 **es .lproj**， **ja-jp .lproj**）。 請在每個語言目錄中使用相同的檔案名**flag.png** 。
 
 如果特定語言的映射不存在，iOS 會切換回預設的原生語言資料夾，並從該處載入影像。
 
@@ -255,9 +255,9 @@ iOS 提供一些功能，可協助您建立 RTL 感知應用程式：
 
 下列螢幕擷取畫面顯示阿拉伯文和希伯來文中的[當地語系化 Tasky 範例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)（雖然已在欄位中輸入英文）：
 
-[![](images/rtl-ar-sml.png "Localization in Arabic")](images/rtl-ar.png#lightbox "Arabic")
+[![阿拉伯文的當地語系化](images/rtl-ar-sml.png)](images/rtl-ar.png#lightbox "阿拉伯文")
 
-[![](images/rtl-he-sml.png "Localization in Hebrew")](images/rtl-he.png#lightbox "Hebrew")
+[![希伯來文中的當地語系化](images/rtl-he-sml.png)](images/rtl-he.png#lightbox "Hebrew")
 
 iOS 會自動反轉 `UINavigationController` ，而其他控制項則會置於自動設定內部 `UIStackView` 或對齊。
 RTL 文字是使用 **. 字串**檔案進行當地語系化，其方式與 LTR 文字相同。
@@ -270,7 +270,7 @@ RTL 文字是使用 **. 字串**檔案進行當地語系化，其方式與 LTR �
 
 ### <a name="project-structure"></a>專案結構
 
-![](images/solution-code.png "Resources tree")
+![資源樹狀結構](images/solution-code.png)
 
 ### <a name="localizablestrings-file"></a>可當地語系化的字串檔案
 
@@ -311,7 +311,7 @@ someControl.Text = localizedString;
 
 其他語言目錄包含程式碼中所參考之任何字串資源的可**當地語系化字串**，以及包含分鏡腳本中文字翻譯的**mainstoryboard.storyboard**字串檔案。
 
-![](images/solution-storyboard.png "Resources tree")
+![資源樹狀結構](images/solution-storyboard.png)
 
 語言目錄應包含任何已當地語系化之影像的複本，以覆寫 **.lproj**中的現有映射。
 
@@ -324,7 +324,7 @@ someControl.Text = localizedString;
 
 此字串值的格式通常為 "NF3-h8-xmR"，如下列螢幕擷取畫面所示：
 
-![](images/xs-designer-localization-id.png "Xcode view of Storyboard localization")
+![分鏡腳本當地語系化的 Xcode 視圖](images/xs-designer-localization-id.png)
 
 這個值會在**字串**檔案中用來將翻譯的文字自動指派給每個控制項。
 
@@ -347,7 +347,7 @@ someControl.Text = localizedString;
 > [!IMPORTANT]
 > 使用具有大小類別的分鏡腳本可能會導致翻譯不會出現在應用程式中。 [Apple 的 Xcode 版本](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)資訊表示如果有三個專案，則腳本或 XIB 將無法正確當地語系化：它使用大小類別，基底當地語系化和組建目標設定為通用，而組建則以 iOS 7.0 為目標。 修正方法是將您的分鏡腳本字串檔案複製到兩個相同的檔案： **mainstoryboard.storyboard ~ iphone. string**和**mainstoryboard.storyboard ~ ipad. string**，如下列螢幕擷取畫面所示：
 >
-> ![](images/xs-dup-strings.png "Strings files")
+> ![字串檔案](images/xs-dup-strings.png)
 
 <a name="appstore"></a>
 

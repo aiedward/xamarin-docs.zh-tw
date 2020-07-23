@@ -10,16 +10,16 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5142965216b328172ae7fa04cdc0c13590f5ff38
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 287b116d9ba2cb84e4e196fff080b8212e4eca3b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139882"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938407"
 ---
 # <a name="listview-interactivity"></a>ListView 互動性
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
 
 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 類別支援使用者與它所呈現的資料互動。
 
@@ -48,7 +48,7 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 類別支援使用者與
 
 下列螢幕擷取畫面顯示 [`ListView`](xref:Xamarin.Forms.ListView) 具有預設選取模式的：
 
-![](interactivity-images/selection-default.png "ListView with Selection Enabled")
+![已啟用選取範圍的 ListView](interactivity-images/selection-default.png)
 
 ### <a name="disable-selection"></a>停用選取範圍
 
@@ -66,7 +66,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 使用者通常會想要對中的專案採取動作 `ListView` 。 例如，請考慮郵件應用程式中的電子郵件清單。 在 iOS 上，您可以滑動以刪除訊息：
 
-![](interactivity-images/context-default.png "ListView with Context Actions")
+![含有內容動作的 ListView](interactivity-images/context-default.png)
 
 內容動作可透過 c # 和 XAML 來執行。 您可以在下面找到這兩者的特定指南，但首先讓我們來瞭解這兩者的一些重要的執行詳細資料。
 
@@ -181,11 +181,11 @@ listView.RefreshControlColor = Color.Red;
 
 下列螢幕擷取畫面顯示在使用者提取時的提取重新整理：
 
-![](interactivity-images/refresh-start.png "ListView Pull to Refresh In-Progress")
+![ListView 提取以重新整理進行中](interactivity-images/refresh-start.png)
 
 下列螢幕擷取畫面顯示在使用者釋放提取之後的提取重新整理，並在更新時顯示微調按鈕 [`ListView`](xref:Xamarin.Forms.ListView) ：
 
-![](interactivity-images/refresh-in-progress.png "ListView Pull to Refresh Complete")
+![ListView 提取以重新整理完成](interactivity-images/refresh-in-progress.png)
 
 [`ListView`](xref:Xamarin.Forms.ListView)引發 [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) 事件以起始重新整理，並將 [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) 屬性設定為 `true` 。 要重新整理之內容所需的任何 `ListView` 程式碼，都應該由事件的事件處理常式 `Refreshing` 或由執行的方法執行 [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) 。 重新整理之後 `ListView` ，應該將 `IsRefreshing` 屬性設定為 `false` ，或 [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) 應呼叫方法，以表示重新整理已完成。
 

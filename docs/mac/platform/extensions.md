@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 1d1e40de646362e9b573ad7040ab08ba6d01d6e8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ac4c8d7bbd28946b6089e7f22a36727d2d73ec18
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571606"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939200"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 延伸模組支援
 
@@ -42,7 +42,7 @@ ms.locfileid: "84571606"
 - 任何未攔截的例外狀況都會損毀延伸模組進程，在**系統記錄**檔中只提供少量有用的資訊。 在重新擲回 `try/catch` 之前，在（例外狀況）區塊中包裝麻煩的程式碼 `NSLog` 可能會很有用。
 - **系統記錄**可以從**應用程式**公用程式底下的**主控台**應用程式存取  >  ** **：
 
-    [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
+    [![系統記錄檔](extensions-images/extension02.png)](extensions-images/extension02.png#lightbox)
 - 如上所述，執行延伸模組主機應用程式會向系統註冊該擴充功能。 刪除已取消註冊的應用程式套件組合。 
 - 如果已註冊應用程式延伸模組的「偏離」版本，請使用下列命令來尋找它們（以予以刪除）：`plugin kit -mv`
 

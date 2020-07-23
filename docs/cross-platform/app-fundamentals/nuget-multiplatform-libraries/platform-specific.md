@@ -6,12 +6,12 @@ ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 925e08c600c695640c927ada26df376a252b3927
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b1c32d76f4f25298a8f0643e2e29707df7775736
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016717"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939222"
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>為 NuGet 建立新的平臺特定程式庫專案
 
@@ -27,33 +27,33 @@ NuGet 可以包含 iOS 和 Android 特有的程式碼，以及兩者通用的 .N
 
 2. 從多**平臺 > 程式庫**區段選擇多**平臺程式庫**：
 
-    [![](platform-specific-images/mulitplatform-library-sml.png "Configure multi-platform library for a single code base")](platform-specific-images/multiplatform-library.png#lightbox)
+    [![設定單一程式碼基底的多平臺程式庫](platform-specific-images/mulitplatform-library-sml.png)](platform-specific-images/multiplatform-library.png#lightbox)
 
 3. 輸入 [**名稱**] 和 [**描述**]，然後選擇 [**平臺特定**]：
 
-    [![](platform-specific-images/specific-configure-sml.png "Configure platform-specific library for iOS and Android")](platform-specific-images/specific-configure.png#lightbox)
+    [![設定適用于 iOS 和 Android 的平臺特定程式庫](platform-specific-images/specific-configure-sml.png)](platform-specific-images/specific-configure.png#lightbox)
 
 4. 完成精靈。 下列專案會新增至方案：
 
     - **Android 專案**–可以選擇性地將 android 特定程式碼新增至這個專案。
     - **Ios 專案**–可以選擇性地將 ios 特定程式碼新增至這個專案。
     - **NuGet 專案**–此專案中不會加入任何程式碼。 它會參考其他專案，並包含 NuGet 套件輸出的中繼資料設定。
-    - **共用專案**-通用程式碼應新增至這個專案，包括 `#if` 編譯器指示詞內的平臺特定程式碼。
+    - **共用專案**-通用程式碼應新增至這個專案，包括編譯器指示詞內的平臺特定程式碼 `#if` 。
 
 5. 以滑鼠右鍵按一下 NuGet 專案，並選擇 [**選項**]，然後開啟 [ **NuGet 套件 > 中繼資料**] 區段，並輸入[必要的中繼資料](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)（以及任何選擇性的中繼資料）：
 
-    [![](platform-specific-images/specific-metadata-sml.png "Enter required metadata")](platform-specific-images/specific-metadata.png#lightbox)
+    [![輸入必要的中繼資料](platform-specific-images/specific-metadata-sml.png)](platform-specific-images/specific-metadata.png#lightbox)
 
 6. 此外，在 [**專案選項**] 視窗中，開啟 [**參考元件**] 區段，並選擇共用程式庫會透過 "bait and SWITCH" 支援的 PCL 設定檔：
 
-    ![](platform-specific-images/specific-reference-assemblies.png "Also in the Project Options window, open the Reference Assemblies section and choose   which PCL profiles the shared library will support via bait and switch")
+    ![此外，在 [專案選項] 視窗中，開啟 [參考元件] 區段，並選擇共用程式庫會透過 bait 和交換器支援的 PCL 設定檔](platform-specific-images/specific-reference-assemblies.png)
 
     > [!NOTE]
     > 「Bait 和 switch」表示 PCL 元件只會包含程式庫所公開的 API （它不能包含平臺特定的程式碼）。 將 NuGet 新增至 Xamarin 專案時，會針對 PCL 編譯共用程式庫，但平臺特定元件則包含 iOS 或 Android 專案實際使用的程式碼。
 
 7. 以滑鼠右鍵按一下專案，然後選擇 [**建立 Nuget 套件**] （或 [建立或部署方案]）， **nupkg** NuGet 套件檔案將會儲存在 **/bin/** 資料夾中（視設定而定）。
 
-    ![](platform-specific-images/create-nuget-package.png "NuGet package file will be saved in the bin folder either Debug or Release, depending on configuration")
+    ![NuGet 套件檔案會儲存在 bin 資料夾中，視設定而定（Debug 或 Release）](platform-specific-images/create-nuget-package.png)
 
 ## <a name="verifying-the-output"></a>驗證輸出
 
@@ -61,7 +61,7 @@ NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構
 
 此螢幕擷取畫面顯示支援 iOS 和 Android 的平臺特定 NuGet 內容，並已選取兩個參考元件：
 
-![](platform-specific-images/nuget-output.png "Files contained in the NuGet package")
+![NuGet 套件中包含的檔案](platform-specific-images/nuget-output.png)
 
 ## <a name="related-links"></a>相關連結
 

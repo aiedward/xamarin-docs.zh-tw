@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 918030120e6b7d0e22abdf5ea3e57f3849b86616
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9a5ca5988bc5bf43af4837aa689c89a016829282
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572568"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939980"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Xamarin 中的連絡人和 ContactsUI
 
@@ -27,7 +27,7 @@ _本文涵蓋在 Xamarin iOS 應用程式中使用新的「連絡人」和「連
 
 - [**ContactsUI**](#contactsui) -提供 XAMARIN ios UI 元素，以顯示、編輯、選取及建立 ios 裝置上的連絡人。
 
-[![](contacts-images/add01.png "An example Contact Sheet on an iOS device")](contacts-images/add01.png#lightbox)
+[![IOS 裝置上的範例連絡人工作表](contacts-images/add01.png)](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
 > Ios `AddressBook` `AddressBookUI` 8 （和更早版本）所使用的現有和架構已于 ios 9 中淘汰，而且應該儘快以新的和架構取代 `Contacts` `ContactsUI` 現有的任何 Xamarin ios 應用程式。 新的應用程式應針對新的架構撰寫。
@@ -46,7 +46,7 @@ Contacts 架構會提供 Xamarin iOS 存取權給使用者的連絡人資訊。 
 
 `CNContact`類別提供安全線程的唯讀存取權給連絡人的屬性，例如名稱、位址或電話號碼。 `CNContact`之類的函 `NSDictionary` 式包含多個唯讀的屬性集合（例如位址或電話號碼）：
 
-[![](contacts-images/contactobjects.png "Contact Object overview")](contacts-images/contactobjects.png#lightbox)
+[![Contact 物件總覽](contacts-images/contactobjects.png)](contacts-images/contactobjects.png#lightbox)
 
 對於可以有多個值的任何屬性（例如電子郵件地址或電話號碼），它們會以物件的陣列表示 `NSLabeledValue` 。 `NSLabeledValue`是由一組唯讀的標籤和值組成的安全線程元組，其中標籤會定義使用者的值（例如，首頁或公司電子郵件）。 Contacts 架構提供預先定義的標籤（透過 `CNLabelKey` 和 `CNLabelPhoneNumberKey` 靜態類別）供您在應用程式中使用，或者您可以選擇為您的需求定義自訂標籤。
 
@@ -193,7 +193,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 
 使用者在其連絡人資料庫（例如 iCloud、Facebook 或 Google Mail）中，可能會有一個人連絡人資訊的不同來源。 在 iOS 和 OS X 應用程式中，此連絡人資訊會自動連結在一起，並以單一_整合連絡人_的身分向使用者顯示：
 
-[![](contacts-images/unified01.png "Unified Contacts overview")](contacts-images/unified01.png#lightbox)
+[![整合連絡人總覽](contacts-images/unified01.png)](contacts-images/unified01.png#lightbox)
 
 此整合連絡人是連結連絡人資訊的暫時性記憶體內部觀點，會提供自己唯一的識別碼（應該用來在必要時重新擷取連絡人）。 根據預設，Contact 架構會盡可能傳回整合的連絡人。
 
@@ -258,11 +258,11 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 使用者的連絡人可以存在於使用者的裝置本機上，或是從一或多個伺服器帳戶（例如 Facebook 或 Google）同步至裝置的連絡人。 每個連絡人集區都有自己的_容器_，而指定的連絡人只能存在於一個容器中。
 
-[![](contacts-images/containers01.png "Containers and Groups overview")](contacts-images/containers01.png#lightbox)
+[![容器和群組總覽](contacts-images/containers01.png)](contacts-images/containers01.png#lightbox)
 
 某些容器可讓連絡人排列成一或多個_群組_或_子群組_。 此行為取決於指定容器的備份存放區。 例如，iCloud 只有一個容器，但可以有許多群組（但沒有子群組）。 另一方面，Microsoft Exchange 並不支援群組，但可以有多個容器（每個 Exchange 資料夾各一個）。
 
-[![](contacts-images/containers02.png "Overlap within Containers and Groups")](contacts-images/containers02.png#lightbox)
+[![容器和群組內的重迭](contacts-images/containers02.png)](contacts-images/containers02.png#lightbox)
 
 <a name="contactsui"></a>
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 66d832f624bdd942f53c5f6d890457958969b1b7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c7cc3c74f5a26ec7e07636ebab865e9016409f89
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028427"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939174"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>使用 Instruments 分析 Xamarin.iOS 應用程式
 
@@ -35,13 +35,13 @@ Xcode Instruments 只能在 Mac 上執行。
 
 Instruments 現在將會開啟，並顯示下列對話方塊：
 
- [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Choosing a profiling template")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
+ [![選擇分析範本](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png)](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
 按一下以選取 [配置]**** 範本。 其他範本也有效，但是本文僅討論 [配置]**** 分析範本。
 
 接下來，使用視窗頂端的功能表選取裝置和應用程式：
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Select the device and application")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
+[![選取裝置和應用程式](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png)](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
 在視窗頂端的功能表中，應該選取了 iOS 裝置，而且旁邊應該選取了要分析的應用程式 (上方螢幕擷取畫面中的 **MemoryDemo**)。
 
@@ -49,13 +49,13 @@ Instruments 現在將會開啟，並顯示下列對話方塊：
 
 按一下 [選擇]**** 按鈕，下一個畫面應該就會出現：
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "The profiling interface")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
+[![分析介面](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png)](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 
 按一下 [錄製] 按鈕 (左上方的紅色圓形)，即可開始分析。
 
 下列螢幕擷取畫面顯示使用 **Instruments** 進行分析的範例：
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "An example of profiling using Instruments")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
+[![使用儀器進行分析的範例](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png)](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
 
 ## <a name="summary"></a>總結
 

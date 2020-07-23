@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: aa03ab7a3663fa5e0704a605116b19147f14a10b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: fd1bf68e45fa163588d91640147d9e9dbf8ff237
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572581"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939486"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 收集視圖
 
 集合視圖可讓您使用任意版面配置來顯示一組內容。 使用內建支援，可讓您輕鬆建立類似格線或線性版面配置，同時也支援自訂版面配置。
 
-[![](collection-views-images/collection01.png "Sample collection view")](collection-views-images/collection01.png#lightbox)
+[![範例集合視圖](collection-views-images/collection01.png)](collection-views-images/collection01.png#lightbox)
 
 集合視圖會使用委派和資料來源來維護專案的集合，以提供使用者互動和集合內容。 由於集合視圖是以獨立于 View 本身的版面配置子系統為基礎，因此提供不同的版面配置可以輕鬆地即時變更集合視圖資料的呈現。
 
@@ -100,36 +100,36 @@ public CityCollectionView (IntPtr handle) : base (handle)
 1. 在 [**方案總管**中，按兩下該檔案 `Main.storyboard` ，然後在 iOS 設計工具中開啟它。
 1. 將 [影像視圖]、[標籤] 和 [按鈕] 新增至現有的視圖，並將其設定為如下所示： 
 
-    [![](collection-views-images/collection02.png "Sample layout")](collection-views-images/collection02.png#lightbox)
+    [![範例版面配置](collection-views-images/collection02.png)](collection-views-images/collection02.png#lightbox)
 1. 在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中，將**名稱**指派給影像視圖和標籤。 例如： 
 
-    [![](collection-views-images/collection03.png "Setting the name")](collection-views-images/collection03.png#lightbox)
+    [![設定名稱](collection-views-images/collection03.png)](collection-views-images/collection03.png#lightbox)
 1. 接下來，將集合視圖控制器拖曳至分鏡腳本： 
 
-    [![](collection-views-images/collection04.png "A Collection View Controller")](collection-views-images/collection04.png#lightbox)
+    [![集合視圖控制器](collection-views-images/collection04.png)](collection-views-images/collection04.png#lightbox)
 1. 從按鈕控制項拖曳至集合視圖控制器，然後從快顯視窗中選取 [**推送**]： 
 
-    [![](collection-views-images/collection05.png "Select Push from the popup")](collection-views-images/collection05.png#lightbox)
+    [![從快顯視窗中選取 [推送]](collection-views-images/collection05.png)](collection-views-images/collection05.png#lightbox)
 1. 當應用程式執行時，每當使用者按一下按鈕時，就會顯示集合視圖。
 1. 選取 [集合] 視圖，然後在 [**屬性] Explorer**的 [配置 **]** 索引標籤中輸入下列值： 
 
-    [![](collection-views-images/collection06.png "The Properties Explorer")](collection-views-images/collection06.png#lightbox)
+    [![屬性瀏覽器](collection-views-images/collection06.png)](collection-views-images/collection06.png#lightbox)
 1. 這會控制個別資料格的大小，以及資料格和集合視圖外部邊緣之間的框線。
 1. 選取 [集合視圖控制器]，並將其類別設定為 `CityCollectionViewController` [ **Widget]** 索引標籤中的： 
 
-    [![](collection-views-images/collection07.png "Set the class to CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
+    [![將類別設定為 CityCollectionViewController](collection-views-images/collection07.png)](collection-views-images/collection07.png#lightbox)
 1. 選取 [集合] 視圖，並將其類別設定為 `CityCollectionView` [ **Widget]** 索引標籤中的： 
 
-    [![](collection-views-images/collection08.png "Set the class to CityCollectionView")](collection-views-images/collection08.png#lightbox)
+    [![將類別設定為 CityCollectionView](collection-views-images/collection08.png)](collection-views-images/collection08.png#lightbox)
 1. 選取 [集合視圖] 資料格，並將其類別設定為 `CityCollectionViewCell` [ **Widget]** 索引標籤中的： 
 
-    [![](collection-views-images/collection09.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
+    [![將類別設定為 CityCollectionViewCell](collection-views-images/collection09.png)](collection-views-images/collection09.png#lightbox)
 1. 在 [**小工具]** 索引標籤中，確定**版面**配置為 `Flow` ，且**捲軸方向**為 `Vertical` [集合視圖]： 
 
-    [![](collection-views-images/collection10.png "The Widget Tab")](collection-views-images/collection10.png#lightbox)
+    [![[Widget] 索引標籤](collection-views-images/collection10.png)](collection-views-images/collection10.png#lightbox)
 1. 選取 [集合視圖] 資料格， **Identity**並 `CityCell` 在 [ **Widget]** 索引標籤中將其識別設定為： 
 
-    [![](collection-views-images/collection11.png "Set the Identity to CityCell")](collection-views-images/collection11.png#lightbox)
+    [![將身分識別設定為 CityCell](collection-views-images/collection11.png)](collection-views-images/collection11.png#lightbox)
 1. 儲存您的變更。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -138,34 +138,34 @@ public CityCollectionView (IntPtr handle) : base (handle)
 1. 在 [**方案總管**中，按兩下該檔案 `Main.storyboard` ，然後在 iOS 設計工具中開啟它。
 1. 將 [影像視圖]、[標籤] 和 [按鈕] 新增至現有的視圖，並將其設定為如下所示： 
 
-    [![](collection-views-images/collection02vs.png "Configure the layout")](collection-views-images/collection02vs.png#lightbox)
+    [![設定版面配置](collection-views-images/collection02vs.png)](collection-views-images/collection02vs.png#lightbox)
 1. 在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中，將**名稱**指派給影像視圖和標籤。 例如： 
 
-    [![](collection-views-images/collection03vs.png "The Properties Explorer")](collection-views-images/collection03vs.png#lightbox)
+    [![屬性瀏覽器](collection-views-images/collection03vs.png)](collection-views-images/collection03vs.png#lightbox)
 1. 接下來，將集合視圖控制器拖曳至分鏡腳本： 
 
-    [![](collection-views-images/collection04vs.png "A Collection View Controller")](collection-views-images/collection04vs.png#lightbox)
+    [![集合視圖控制器](collection-views-images/collection04vs.png)](collection-views-images/collection04vs.png#lightbox)
 1. 從按鈕控制項拖曳至集合視圖控制器，然後從快顯視窗中選取 [**推送**]： 
 
-    [![](collection-views-images/collection05vs.png "Select Push from the popup")](collection-views-images/collection05vs.png#lightbox)
+    [![從快顯視窗中選取 [推送]](collection-views-images/collection05vs.png)](collection-views-images/collection05vs.png#lightbox)
 1. 當應用程式執行時，每當使用者按一下按鈕時，就會顯示集合視圖。
 1. 選取 [集合 **]** 視圖，然後在 [屬性] **Explorer**的 [配置] 索引標籤中，將**寬度**輸入為_361_ ，而**Height**則為_256_ 
 1. 這會控制個別資料格的大小，以及資料格和集合視圖外部邊緣之間的框線。
 1. 選取 [集合視圖控制器]，並將其類別設定為 `CityCollectionViewController` [ **Widget]** 索引標籤中的： 
 
-    [![](collection-views-images/collection07vs.png "Set the class to CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
+    [![將類別設定為 CityCollectionViewController](collection-views-images/collection07vs.png)](collection-views-images/collection07vs.png#lightbox)
 1. 選取 [集合] 視圖，並將其類別設定為 `CityCollectionView` [ **Widget]** 索引標籤中的： 
 
-    [![](collection-views-images/collection08vs.png "Set the class to CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
+    [![將類別設定為 CityCollectionView](collection-views-images/collection08vs.png)](collection-views-images/collection08vs.png#lightbox)
 1. 選取 [集合視圖] 資料格，並將其類別設定為 `CityCollectionViewCell` [ **Widget]** 索引標籤中的： 
 
-    [![](collection-views-images/collection09vs.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
+    [![將類別設定為 CityCollectionViewCell](collection-views-images/collection09vs.png)](collection-views-images/collection09vs.png#lightbox)
 1. 在 [**小工具]** 索引標籤中，確定**版面**配置為 `Flow` ，且**捲軸方向**為 `Vertical` [集合視圖]： 
 
-    [![](collection-views-images/collection10vs.png "Tthe Widget Tab")](collection-views-images/collection10vs.png#lightbox)
+    [![[Widget] 索引標籤](collection-views-images/collection10vs.png)](collection-views-images/collection10vs.png#lightbox)
 1. 選取 [集合視圖] 資料格， **Identity**並 `CityCell` 在 [ **Widget]** 索引標籤中將其識別設定為： 
 
-    [![](collection-views-images/collection11vs.png "Set the Identity to CityCell")](collection-views-images/collection11vs.png#lightbox)
+    [![將身分識別設定為 CityCell](collection-views-images/collection11vs.png)](collection-views-images/collection11vs.png#lightbox)
 1. 儲存您的變更。
 
 -----
@@ -797,17 +797,17 @@ public override void ViewWillAppear (bool animated)
 
 當所有專案都備妥時，如果您建立並執行應用程式，主視圖會顯示為預設城市：
 
-[![](collection-views-images/run01.png "The main screen")](collection-views-images/run01.png#lightbox)
+[![主畫面](collection-views-images/run01.png)](collection-views-images/run01.png#lightbox)
 
 如果使用者按一下 [**選取視圖**] 按鈕，將會顯示 [集合] 視圖：
 
-[![](collection-views-images/run02.png "The collection view")](collection-views-images/run02.png#lightbox)
+[![集合視圖](collection-views-images/run02.png)](collection-views-images/run02.png#lightbox)
 
 其 `CanSelect` 屬性設為的任何城市 `false` 都會顯示為灰色，使用者將無法對其設定焦點。 當使用者反白顯示專案時（將其設為焦點），會顯示標題，而且可以使用視差效果奧妙以3D 傾斜影像。
 
 當使用者按一下選取影像時，會關閉 [集合] 視圖，並以新的影像重新顯示主視圖：
 
-[![](collection-views-images/run03.png "A new image on the home screen")](collection-views-images/run03.png#lightbox)
+[![主畫面上的新影像](collection-views-images/run03.png)](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items"></a>
 

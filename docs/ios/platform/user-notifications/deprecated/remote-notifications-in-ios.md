@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 468d0e16a3bd5745a243b2d7c09e642e3aeffd1d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e89b24572d1581c83868b90a4da438f8fd7f91e4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031372"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936928"
 ---
 # <a name="push-notifications-in-ios"></a>IOS 中的推播通知
 
@@ -21,12 +21,12 @@ ms.locfileid: "73031372"
 
 推播通知應該保持簡短，而且只包含足夠的資料來通知行動應用程式，它應該與伺服器應用程式連線以進行更新。 例如，當新的電子郵件送達時，伺服器應用程式只會通知行動應用程式新的電子郵件已抵達。 通知不會包含新的電子郵件本身。 然後，行動應用程式會從伺服器取得適當的新電子郵件
 
-IOS 中推播通知的中心是*Apple 推播通知閘道服務（APNS）* 。 這是 Apple 提供的一項服務，負責將來自應用程式伺服器的通知路由傳送至 iOS 裝置。
-下圖說明適用于 iOS 的推播通知拓撲：![](remote-notifications-in-ios-images/image4.png "此圖說明適用于 iOS 的推播通知拓撲")
+IOS 中推播通知的中心是*Apple 推播通知閘道服務（APNS）*。 這是 Apple 提供的一項服務，負責將來自應用程式伺服器的通知路由傳送至 iOS 裝置。
+下圖說明適用于 iOS 的推播通知拓撲： ![ 此圖說明適用于 ios 的推播通知拓撲](remote-notifications-in-ios-images/image4.png)
 
-遠端通知本身是 JSON 格式字串，遵循 [IOS 開發人員檔](https://developer.apple.com/devcenter/ios/index.action)中[本機和推播通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)的[通知承載](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)一節中所指定的格式和通訊協定。
+遠端通知本身是 JSON 格式的字串，其遵循[iOS 開發人員檔](https://developer.apple.com/devcenter/ios/index.action)中《[本機和推播通知程式設計指南》](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)的[通知](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)承載一節中所指定的格式和通訊協定。
 
-Apple 會維護兩個 APNS 的環境：一個是*沙箱*和一個*生產*環境。 沙箱環境適用于在開發階段進行測試，而且可以在 TCP 通訊埠2195上的 `gateway.sandbox.push.apple.com` 找到。 生產環境是要在已部署的應用程式中使用，而且可以在 TCP 通訊埠2195上的 `gateway.push.apple.com` 中找到。
+Apple 會維護兩個 APNS 的環境：一個是*沙箱*和一個*生產*環境。 沙箱環境適用于在開發階段進行測試，而且可以在 `gateway.sandbox.push.apple.com` TCP 通訊埠2195上找到。 生產環境是要在已部署的應用程式中使用，而且可以在 `gateway.push.apple.com` TCP 通訊埠2195上找到。
 
 ## <a name="requirements"></a>需求
 
@@ -42,37 +42,37 @@ Apple 會維護兩個 APNS 的環境：一個是*沙箱*和一個*生產*環境�
 
 1. 若要建立憑證，請移至 Apple 網站上的 iOS 布建入口網站，如下列螢幕擷取畫面所示（請注意左側的 [應用程式識別碼] 功能表項目）：
 
-    [![](remote-notifications-in-ios-images/image5new.png "The iOS Provisioning Portal on Apples website")](remote-notifications-in-ios-images/image5new.png#lightbox)
+    [![蘋果網站上的 iOS 布建入口網站](remote-notifications-in-ios-images/image5new.png)](remote-notifications-in-ios-images/image5new.png#lightbox)
 
 2. 接下來，流覽至 [應用程式識別碼] 區段，並建立新的應用程式識別碼，如下列螢幕擷取畫面所示：
 
-    [![](remote-notifications-in-ios-images/image6new.png "Navigate to the App IDs section and create a new app ID")](remote-notifications-in-ios-images/image6new.png#lightbox)
+    [![流覽至 [應用程式識別碼] 區段，並建立新的應用程式識別碼](remote-notifications-in-ios-images/image6new.png)](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3. 當您按一下 **+**  按鈕，您將能夠應用程式識別碼中，輸入描述和套件組合識別碼，在下一步 的螢幕擷取畫面所示：
+3. 當您按一下按鈕時 **+** ，您將能夠輸入應用程式識別碼的描述和套件組合識別碼，如下一個螢幕擷取畫面所示：
 
-    [![](remote-notifications-in-ios-images/image7new.png "Enter the description and a Bundle Identifier for the app ID")](remote-notifications-in-ios-images/image7new.png#lightbox)
+    [![輸入應用程式識別碼的 [描述] 和 [套件組合識別碼]](remote-notifications-in-ios-images/image7new.png)](remote-notifications-in-ios-images/image7new.png#lightbox)
 
-4. 請務必選取 [**明確的應用程式**識別碼]，而 [套件組合識別碼] 結尾不會是 `*`。 這會建立適用于多個應用程式的識別碼，而推播通知憑證必須適用于單一應用程式。
+4. 請務必選取 [**明確的應用程式**識別碼]，而 [套件組合識別碼] 結尾不會是 `*` 。 這會建立適用于多個應用程式的識別碼，而推播通知憑證必須適用于單一應用程式。
 
 5. 在 [應用程式服務] 底下，選取 [**推播通知**]：
 
-    [![](remote-notifications-in-ios-images/image8new.png "Select Push Notifications")](remote-notifications-in-ios-images/image8new.png#lightbox)
+    [![選取推播通知](remote-notifications-in-ios-images/image8new.png)](remote-notifications-in-ios-images/image8new.png#lightbox)
 
 6. 然後按下 [**提交**] 來確認註冊新的應用程式識別碼：
 
-    [![](remote-notifications-in-ios-images/image9new.png "Confirm registration of the new App ID")](remote-notifications-in-ios-images/image9new.png#lightbox)
+    [![確認註冊新的應用程式識別碼](remote-notifications-in-ios-images/image9new.png)](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-7. 接下來，您必須建立應用程式識別碼的憑證。 在左側導覽中，流覽至 [**憑證] > [全部**]，然後選取 [`+`] 按鈕，如下列螢幕擷取畫面所示：
+7. 接下來，您必須建立應用程式識別碼的憑證。 在左側導覽中，流覽至 [**憑證] > [全部**]，然後選取 [] `+` 按鈕，如下列螢幕擷取畫面所示：
 
-    [![](remote-notifications-in-ios-images/image10new.png "Create the certificate for the app ID")](remote-notifications-in-ios-images/image8.png#lightbox)
+    [![建立應用程式識別碼的憑證](remote-notifications-in-ios-images/image10new.png)](remote-notifications-in-ios-images/image8.png#lightbox)
 
 8. 選取您是否想要使用開發或實際執行憑證：
 
-    [![](remote-notifications-in-ios-images/image11new.png "Select a Development or Production certificate")](remote-notifications-in-ios-images/image11new.png#lightbox)
+    [![選取開發或實際執行憑證](remote-notifications-in-ios-images/image11new.png)](remote-notifications-in-ios-images/image11new.png#lightbox)
 
 9. 然後選取剛才建立的新應用程式識別碼：
 
-    [![](remote-notifications-in-ios-images/image12new.png "Select the new App ID just created")](remote-notifications-in-ios-images/image12new.png#lightbox)
+    [![選取剛建立的新應用程式識別碼](remote-notifications-in-ios-images/image12new.png)](remote-notifications-in-ios-images/image12new.png#lightbox)
 
 10. 這會顯示指示，引導您使用 Mac 上的**Keychain Access**應用程式來建立*憑證簽署要求*。
 
@@ -81,10 +81,10 @@ Apple 會維護兩個 APNS 的環境：一個是*沙箱*和一個*生產*環境�
 12. 若要建立開發布建設定檔，請流覽至 [布建**設定檔**] 區段，並遵循步驟來建立它，並使用我們剛才建立的應用程式識別碼。
 
 13. 建立布建設定檔之後，請開啟**Xcode 召集人**並加以重新整理。 如果您建立的布建設定檔未出現，可能需要從 iOS 布建入口網站下載設定檔，並手動將它匯入。 下列螢幕擷取畫面顯示已新增布建設定檔的召集人範例：  
-    [![](remote-notifications-in-ios-images/image13new.png "This screen shot shows an example of the Organizer with the provision profile added")](remote-notifications-in-ios-images/image13new.png#lightbox)
+    [![這個螢幕擷取畫面顯示已新增布建設定檔的召集人範例](remote-notifications-in-ios-images/image13new.png)](remote-notifications-in-ios-images/image13new.png#lightbox)
 
 14. 此時，我們必須將 Xamarin iOS 專案設定為使用這個新建立的布建設定檔。 這是從 [IOS 套件組合**簽署**] 索引標籤下的 [**專案選項**] 對話方塊中完成，如下列螢幕擷取畫面所示：  
-    [![](remote-notifications-in-ios-images/image11.png "Configure the Xamarin.iOS project to use this newly created provisioning profile")](remote-notifications-in-ios-images/image11.png#lightbox)
+    [![將 Xamarin iOS 專案設定為使用這個新建立的布建設定檔](remote-notifications-in-ios-images/image11.png)](remote-notifications-in-ios-images/image11.png#lightbox)
 
 此時，應用程式會設定為使用推播通知。 不過，憑證仍然需要幾個步驟。 此憑證是與 PushSharp 不相容的 DER 格式，其需要個人資訊交換（PKCS12）憑證。 若要轉換憑證，使其可供 PushSharp 使用，請執行下列最後步驟：
 
@@ -101,9 +101,9 @@ Apple 會維護兩個 APNS 的環境：一個是*沙箱*和一個*生產*環境�
 
 理論上，每次 iOS 應用程式向 APNS 註冊本身時，裝置權杖可能會變更，但實際上不會發生這種情況。 做為優化，應用程式可能會快取最新的裝置權杖，而且只會在應用程式伺服器進行變更時進行更新。 下圖說明註冊和取得裝置權杖的程式：
 
- ![](remote-notifications-in-ios-images/image12.png "This diagram illustrates the process of registration and obtaining a device token")
+ ![此圖說明註冊和取得裝置權杖的程式](remote-notifications-in-ios-images/image12.png)
 
-藉由在目前的 `UIApplication` 物件上呼叫 `RegisterForRemoteNotificationTypes`，在應用程式委派類別的 `FinishedLaunching` 方法中處理 APNS 的註冊。 當 iOS 應用程式向 APNS 註冊時，它也必須指定要接收的遠端通知類型。 這些遠端通知類型會在列舉 `UIRemoteNotificationType`中宣告。 下列程式碼片段是 iOS 應用程式可以註冊以接收遠端警示和徽章通知的範例：
+透過在 `FinishedLaunching` 目前物件上呼叫，在應用程式委派類別的方法中處理 APNS 的註冊 `RegisterForRemoteNotificationTypes` `UIApplication` 。 當 iOS 應用程式向 APNS 註冊時，它也必須指定要接收的遠端通知類型。 這些遠端通知類型會在列舉型別中宣告 `UIRemoteNotificationType` 。 下列程式碼片段是 iOS 應用程式可以註冊以接收遠端警示和徽章通知的範例：
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -119,7 +119,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
 }
 ```
 
-APNS 註冊要求會在背景中進行-收到回應時，iOS 會呼叫 `AppDelegate` 類別中 `RegisteredForRemoteNotifications` 的方法，並傳遞已註冊的裝置權杖。 權杖會包含在 `NSData` 物件中。 下列程式碼片段示範如何取得 APNS 提供的裝置權杖：
+APNS 註冊要求會在背景中進行-收到回應時，iOS 會呼叫類別中的方法 `RegisteredForRemoteNotifications` `AppDelegate` ，並傳遞已註冊的裝置權杖。 權杖會包含在 `NSData` 物件中。 下列程式碼片段示範如何取得 APNS 提供的裝置權杖：
 
 ```csharp
 public override void RegisteredForRemoteNotifications (
@@ -145,7 +145,7 @@ UIApplication application, NSData deviceToken)
 }
 ```
 
-如果註冊因某種原因而失敗（例如裝置未連線到網際網路），iOS 將會在應用程式委派類別上呼叫 `FailedToRegisterForRemoteNotifications`。 下列程式碼片段顯示如何向使用者顯示警示，通知他們註冊失敗：
+如果註冊因某種原因而失敗（例如裝置未連線到網際網路），iOS 將會 `FailedToRegisterForRemoteNotifications` 在應用程式委派類別上呼叫。 下列程式碼片段顯示如何向使用者顯示警示，通知他們註冊失敗：
 
 ```csharp
 public override void FailedToRegisterForRemoteNotifications (UIApplication application , NSError error)
@@ -164,7 +164,7 @@ public override void FailedToRegisterForRemoteNotifications (UIApplication appli
 
 > 410-主題的裝置權杖已不再有效。
 
-此外，回應主體中會有新的 `timestamp` JSON 資料金鑰：
+此外， `timestamp` 回應主體中將會有新的 JSON 資料索引鍵：
 
 > 如果： status 標頭中的值是410，則此索引鍵的值是上次 APNs 確認該主題的裝置權杖不再有效的時間。
 >

@@ -10,16 +10,16 @@ ms.date: 04/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0b1a47d4dcc92fca4d280708a2cbbe9374c17da8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: de5ebf086af7fa8d7c6360bf3a1f48f57b834e44
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573284"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938433"
 ---
 # <a name="device-orientation"></a>裝置方向
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 
 請務必考慮您的應用程式的使用方式，以及如何併入橫向方向以改善使用者體驗。 個別的版面配置可以設計成容納多個方向，並充分利用可用的空間。 在應用層級，可以停用或啟用旋轉。
 
@@ -123,11 +123,11 @@ protected override void OnSizeAllocated(double width, double height)
 
 一旦偵測到裝置方向變更之後，您可能會想要在使用者介面中新增或移除其他視圖，以回應可用空間的變更。 例如，請考慮每個平臺上的內建計算機：
 
-![](device-orientation-images/calculator-portrait.png "Calculator Application in Portrait")
+![垂直計算機應用程式](device-orientation-images/calculator-portrait.png)
 
 和橫向：
 
-![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
+![橫向的計算機應用程式](device-orientation-images/calculator-landscape.png)
 
 請注意，應用程式會藉由在橫向新增更多功能來利用可用的空間。
 
@@ -147,11 +147,11 @@ protected override void OnSizeAllocated(double width, double height)
 
 請考慮下列以直向顯示的應用程式：
 
-![](device-orientation-images/photo-stack-portrait.png "Photo Application in Portrait")
+![縱向的相片應用程式](device-orientation-images/photo-stack-portrait.png)
 
 和橫向：
 
-![](device-orientation-images/photo-stack-landscape.png "Photo Application in Landscape")
+![橫向的相片應用程式](device-orientation-images/photo-stack-landscape.png)
 
 這會使用下列 XAML 來完成：
 
@@ -221,11 +221,11 @@ protected override void OnSizeAllocated (double width, double height){
 
 請考慮下列以直向顯示的應用程式：
 
-![](device-orientation-images/photo-abs-portrait.png "Photo Application in Portrait")
+![縱向的相片應用程式](device-orientation-images/photo-abs-portrait.png)
 
 和橫向：
 
-![](device-orientation-images/photo-abs-landscape.png "Photo Application in Landscape")
+![橫向的相片應用程式](device-orientation-images/photo-abs-landscape.png)
 
 這會使用下列 XAML 來完成：
 
@@ -273,11 +273,11 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 
 請考慮下列以直向顯示的應用程式：
 
-![](device-orientation-images/photo-rel-portrait.png "Photo Application in Portrait")
+![縱向的相片應用程式](device-orientation-images/photo-rel-portrait.png)
 
 和橫向：
 
-![](device-orientation-images/photo-rel-landscape.png "Photo Application in Landscape")
+![橫向的相片應用程式](device-orientation-images/photo-rel-landscape.png)
 
 這會使用下列 XAML 來完成：
 
@@ -360,15 +360,15 @@ BackgroundImageSource="deer.jpg">
 - 由於頁面的配置方式，因此不需要程式碼就能引進回應能力。
 - `ScrollView`是用來允許標籤顯示，即使螢幕的高度小於按鈕和影像的固定高度總和也一樣。
 
-### <a name="grid"></a>Grid
+### <a name="grid"></a>方格
 
 請考慮下列以直向顯示的應用程式：
 
-![](device-orientation-images/photo-grid-portrait.png "Photo Application in Portrait")
+![縱向的相片應用程式](device-orientation-images/photo-grid-portrait.png)
 
 和橫向：
 
-![](device-orientation-images/photo-grid-landscape.png "Photo Application in Landscape")
+![橫向的相片應用程式](device-orientation-images/photo-grid-landscape.png)
 
 這會使用下列 XAML 來完成：
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 98cedb1cf02f9688581946fa21a2cb40379f606f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 56b9f82fcc15afc8c75012b204588b4da65a32c4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566171"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939733"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>使用 Xamarin 中的 tvOS 分割視圖控制器
 
 分割視圖控制器會同時在螢幕上並排顯示並管理主要和詳細資料檢視控制器。 分割視圖控制器是用來在主要視圖（左邊較小的區段）中呈現持續性的可設定焦點內容，以及詳細資料檢視中的相關詳細資料（右邊的較大區段）。
 
-[![](split-views-images/intro01.png "Sample Split View")](split-views-images/intro01.png#lightbox)
+[![範例分割視圖](split-views-images/intro01.png)](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers"></a>
 
@@ -28,7 +28,7 @@ ms.locfileid: "84566171"
 
 此外，主 View 控制器可以隱藏或顯示為必要： 
 
-[![](split-views-images/intro02.png "The Master View Controller hidden")](split-views-images/intro02.png#lightbox)
+[![主要視圖控制器已隱藏](split-views-images/intro02.png)](split-views-images/intro02.png#lightbox)
 
 分割視圖控制器通常用來呈現可篩選內容的清單，其中的類別目錄位於主要視圖中，而篩選後的結果則位於詳細資料檢視中。 這通常會顯示為左側的資料表視圖，而右側則為[集合視圖](~/ios/tvos/user-interface/collection-views.md)。
 
@@ -51,18 +51,18 @@ Apple 對於使用分割視圖控制器有下列建議：
 1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳 [**分割視圖控制器**]，並將它放在視圖上： 
 
-    [![](split-views-images/activity01.png "A Split View Controller")](split-views-images/activity01.png#lightbox)
+    [![分割視圖控制器](split-views-images/activity01.png)](split-views-images/activity01.png#lightbox)
 1. 根據預設，iOS 設計工具會在主要視圖中安裝流覽控制器和視圖控制器。 如果這不符合您應用程式的需求，請直接刪除它們。
 1. 如果您移除預設的主畫面，請將新的 View Controller 拖曳至設計介面： 
 
-    [![](split-views-images/activity02.png "A View Controller")](split-views-images/activity02.png#lightbox)
+    [![視圖控制器](split-views-images/activity02.png)](split-views-images/activity02.png#lightbox)
 1. 按一下 [分割視圖控制器]，並將它拖曳至新的主要視圖控制器。 
 1. 從**快顯功能表**中選取 [ **Master** ]： 
 
-    [![](split-views-images/activity03.png "Select Master from the Popup Menu")](split-views-images/activity03.png#lightbox)
+    [![從快顯功能表中選取 [Master]](split-views-images/activity03.png)](split-views-images/activity03.png#lightbox)
 1. 設計主要和詳細資料檢視的內容： 
 
-    [![](split-views-images/activity04.png "Example layout")](split-views-images/activity04.png#lightbox)
+    [![範例版面配置](split-views-images/activity04.png)](split-views-images/activity04.png#lightbox)
 1. 在**Properties Pad**的 [ **Widget]** 索引標籤中指派**名稱**，以在 c # 程式碼中使用您的 UI 控制項。
 1. 儲存您的變更，並返回 Visual Studio for Mac。
 
@@ -71,18 +71,18 @@ Apple 對於使用分割視圖控制器有下列建議：
 1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳 [**分割視圖控制器**]，並將它放在視圖上： 
 
-    [![](split-views-images/activity01-vs.png "A Split View Controller")](split-views-images/activity01-vs.png#lightbox)
+    [![分割視圖控制器](split-views-images/activity01-vs.png)](split-views-images/activity01-vs.png#lightbox)
 1. 根據預設，iOS 設計工具會在主要視圖中新增 [流覽控制器] 和 [視圖控制器]。 如果這不符合您應用程式的需求，請直接刪除它們。
 1. 如果您移除預設的主畫面，請將新的 View Controller 拖曳至設計介面： 
 
-    [![](split-views-images/activity02-vs.png "A View Controller")](split-views-images/activity02-vs.png#lightbox)
+    [![視圖控制器](split-views-images/activity02-vs.png)](split-views-images/activity02-vs.png#lightbox)
 1. 按一下 [分割視圖控制器]，並將它拖曳至新的主要視圖控制器。 
 1. 從**快顯功能表**中選取 [ **Master** ]： 
 
-    [![](split-views-images/activity03-vs.png "Select Master from the Popup Menu")](split-views-images/activity03-vs.png#lightbox)
+    [![從快顯功能表中選取 [Master]](split-views-images/activity03-vs.png)](split-views-images/activity03-vs.png#lightbox)
 1. 設計主要和詳細資料檢視的內容： 
 
-    [![](split-views-images/activity04.png "Content layout")](split-views-images/activity04.png#lightbox)
+    [![內容版面配置](split-views-images/activity04.png)](split-views-images/activity04.png#lightbox)
 1. 在**屬性瀏覽器**的 [ **Widget]** 索引標籤中指派**名稱**，以在 c # 程式碼中使用您的 UI 控制項。
 1. 儲存您的變更。
 

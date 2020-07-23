@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 8d8ad5b5f79b90fc415c9e3cdf6809a4e196056f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a9d8b8fa1826c1a7dafb3d6c3e3ab45d05c1aaa8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022293"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938706"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Xamarin 中的新參考計數系統
 
@@ -22,23 +22,23 @@ ms.locfileid: "73022293"
 
 從 Xamarin 9.2.1 開始，預設會為**所有**應用程式啟用新的 ref 計數系統。
 
-如果您正在開發現有的應用程式，您可以檢查 .csproj 檔案，確保所有出現的 `MtouchUseRefCounting` 都設定為 `true`，如下所示：
+如果您正在開發現有的應用程式，您可以檢查 .csproj 檔案，以確保所有出現的 `MtouchUseRefCounting` 都已設定為 `true` ，如下所示：
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
 ```
 
-如果設定為 `false` 您的應用程式將不會使用新的工具。
+如果設定為， `false` 您的應用程式將不會使用新的工具。
 
 ### <a name="using-older-versions-of-xamarin"></a>使用舊版 Xamarin
 
-7\.2.1 和更新版本提供新的參考計算系統的增強預覽功能。
+7.2.1 和更新版本提供新的參考計算系統的增強預覽功能。
 
 **Classic API：**
 
 若要啟用這個新的參考計數系統，請核取您專案的**IOS 組建選項**之 [ **Advanced** ] 索引標籤中的 [**使用參考計數延伸**] 核取方塊，如下所示： 
 
-[![](newrefcount-images/image1.png "Enable the new Reference Counting System")](newrefcount-images/image1.png#lightbox)
+[![啟用新的參考計數系統](newrefcount-images/image1.png)](newrefcount-images/image1.png#lightbox)
 
 請注意，這些選項已在較新版本的 Visual Studio for Mac 中移除。
 
@@ -49,7 +49,7 @@ ms.locfileid: "73022293"
 > [!IMPORTANT]
 > 這項功能的較早版本已存在於 MonoTouch 5.2，但僅供**sgen**作為實驗性預覽之用。 這個新的增強版本現在也適用于**Boehm**垃圾收集行程。
 
-在過去，Xamarin 會管理兩種類型的物件：只是原生物件（對等物件）的包裝函式，以及擴充或併入新功能（衍生物件）的物件，通常是藉由保留額外的記憶體內部狀態。 之前，我們可以使用狀態（例如，藉由新增C#事件處理常式）來擴大對等物件，但我們會讓物件成為未參考，然後再進行收集。 這可能會導致稍後損毀（例如，如果目標-C 執行時間被回呼到 managed 物件）。
+在過去，Xamarin 會管理兩種類型的物件：只是原生物件（對等物件）的包裝函式，以及擴充或併入新功能（衍生物件）的物件，通常是藉由保留額外的記憶體內部狀態。 之前，我們可以使用狀態來擴大對等物件（例如，藉由新增 c # 事件處理常式），但我們會讓物件成為未參考，然後再進行收集。 這可能會導致稍後損毀（例如，如果目標-C 執行時間被回呼到 managed 物件）。
 
 當物件儲存任何額外的資訊時，新系統會自動將對等物件升級為由執行時間所管理的物件。
 
@@ -71,7 +71,7 @@ class MyTableSource : UITableViewSource {
 }
 ```
 
-如果沒有參考計數延伸，此程式碼會損毀，因為 `cell` 會變成可回收，因此它的 `TouchDown` 委派，這會轉譯成無關聯的指標。
+如果沒有參考計數延伸，此程式碼會損毀，因為會 `cell` 成為可回收，而其 `TouchDown` 委派會轉譯成無關聯的指標。
 
 參考計數延伸可確保 managed 物件維持運作狀態，並防止其集合，前提是機器碼會保留原生物件。
 

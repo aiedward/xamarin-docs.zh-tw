@@ -10,16 +10,16 @@ ms.date: 03/23/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38a895c9064fc012aec35b37eac78bb16ff009a9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1e5f3b6cb84081f5e167d9afe7e7f2f2dffce247
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131504"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938108"
 ---
 # <a name="listview-data-sources"></a>ListView 資料來源
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
 
 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 用於顯示資料的清單。 本文說明如何在中填入 `ListView` 資料，以及如何將資料系結至選取的專案。
 
@@ -63,7 +63,7 @@ listView.ItemsSource = new string[]
 };
 ```
 
-![](data-and-databinding-images/itemssource-simple.png "ListView Displaying List of Strings")
+![ListView 顯示字串清單](data-and-databinding-images/itemssource-simple.png)
 
 這個方法會將 `ListView` 字串清單填入。 根據預設， `ListView` 會呼叫 `ToString` 並顯示 `TextCell` 每個資料列的結果。 若要自訂資料的顯示方式，請參閱[儲存格外觀](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
 
@@ -144,7 +144,7 @@ public EmployeeListPage()
 
 此 XAML 範例會定義 `ContentPage` 包含的 `ListView` 。 `ListView` 的資料來源是透過 `ItemsSource` 屬性設定的。 `ItemsSource` 中每個資料列的配置都是在 `ListView.ItemTemplate` 元素內定義的。 這會導致下列螢幕擷取畫面：
 
-![](data-and-databinding-images/bound-data.png "ListView using Data Binding")
+![使用資料系結的 ListView](data-and-databinding-images/bound-data.png)
 
 > [!WARNING]
 > `ObservableCollection`不是安全線程。 修改 `ObservableCollection` 會導致 UI 更新在執行修改的相同執行緒上發生。 如果執行緒不是主要的 UI 執行緒，則會造成例外狀況。

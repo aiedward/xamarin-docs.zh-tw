@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 5aa3baa6aba76483866911d905687be6c3a5ae4e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 44297e32821721d483a265e7d2a69016f4e1a87b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569825"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86940019"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用 Xamarin Designer for iOS 的自動版面配置
 
@@ -20,7 +20,7 @@ ms.locfileid: "84569825"
 
 在本指南中，我們引進了條件約束，以及如何在 Xamarin iOS 設計工具中使用它們。 本指南未涵蓋以程式設計方式使用條件約束。 如需以程式設計方式使用自動設定的詳細資訊，請參閱[Apple 檔](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)。
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
 Xamarin Designer for iOS 適用于 Windows 上 Visual Studio 2017 和更新版本中的 Visual Studio for Mac。
 
@@ -45,13 +45,13 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 1. 按一下設計介面上的空白處。 這會取消設定任何元素，並顯示分鏡指令檔的屬性。
 1. 勾選或取消核取 [屬性] 面板中的 [**使用自動**功能] 核取方塊：
 
-    ![](designer-auto-layout-images/image01.png "The Use Autolayout checkbox in the property panel")
+    ![屬性面板中的 [使用自動版式] 核取方塊](designer-auto-layout-images/image01.png)
 
 根據預設，介面上不會建立或顯示任何條件約束。 相反地，它們會在編譯時期自動從框架資訊推斷出來。 若要加入條件約束，我們需要選取設計介面上的專案，並在其中加入條件約束。 我們可以使用**條件約束工具列**來執行此動作。
 
 ## <a name="constraints-toolbar"></a>條件約束工具列
 
- [![](designer-auto-layout-images/toolbarnew.png "The Context Menu Commands")](designer-auto-layout-images/toolbarnew.png#lightbox)
+ [![內容功能表命令](designer-auto-layout-images/toolbarnew.png)](designer-auto-layout-images/toolbarnew.png#lightbox)
 
 [條件約束] 工具列已更新，現在包含兩個主要部分：
 
@@ -93,7 +93,7 @@ IOS 設計工具提供兩種類型的控制項，用於操作設計介面上的�
 
 若要建立條件約束，請挑選一個控點，並將它拖曳至設計介面上的某個位置。 當您開始拖曳時，一系列的綠色線條/方塊會出現在介面上，告訴您可以限制的內容。 例如，在下面的螢幕擷取畫面中，我們會限制中間按鈕的頂端：
 
- [![](designer-auto-layout-images/image07.png "Constraining the top side of the middle button")](designer-auto-layout-images/image07.png#lightbox)
+ [![限制中間按鈕的頂端](designer-auto-layout-images/image07.png)](designer-auto-layout-images/image07.png#lightbox)
 
 請注意，在其他兩個按鈕中，三個虛線的綠色線條。 綠色線條表示*放置區域*，或是我們可以限制的其他元素的屬性。 在上方的螢幕擷取畫面中，其他兩個按鈕會提供3個垂直拖放區域（*底部*、 *centerY*、*頂端*）來限制按鈕。 視圖頂端的綠色虛線表示視圖控制器在視圖頂端提供條件約束，而綠色方塊表示 view controller 在頂端版面配置指南底下提供了條件約束。
 
@@ -106,13 +106,13 @@ IOS 設計工具提供兩種類型的控制項，用於操作設計介面上的�
 
 具有大小限制-*高度*和*寬度*-您有兩個選項。 第一個選項是拖曳控點來限制為鄰近的元素大小，如上述範例所示。 另一個選項是按兩下該控制碼，以建立自我條件約束。 這可讓我們指定常數大小值，如下列螢幕擷取畫面所示：
 
- [![](designer-auto-layout-images/sizec.png "Drag the handle to constrain to a neighbor element size, as illustrated here")](designer-auto-layout-images/sizec.png#lightbox)
+ [![拖曳控點以限制為鄰近的元素大小，如這裡所示](designer-auto-layout-images/sizec.png)](designer-auto-layout-images/sizec.png#lightbox)
 
 ### <a name="center-constraints"></a>中心條件約束
 
 視內容而定，方形控點會建立*system.windows.media.rotatetransform.centerx*或*centerY*條件約束。 拖曳方形控點會使其他元素變亮，以同時提供垂直和水準放置區，如下列螢幕擷取畫面所示：
 
- [![](designer-auto-layout-images/centerc.png "Center Constraints")](designer-auto-layout-images/centerc.png#lightbox)
+ [![中心條件約束](designer-auto-layout-images/centerc.png)](designer-auto-layout-images/centerc.png#lightbox)
 
 如果您選擇垂直放置區，將會建立*centerY*條件約束。 如果您選擇水準放置區，則條件約束會以*system.windows.media.rotatetransform.centerx*為基礎。
 
@@ -120,17 +120,17 @@ IOS 設計工具提供兩種類型的控制項，用於操作設計介面上的�
 
 若要在兩個元素之間建立對齊和大小相等條件約束，您可以從頂端工具列選取專案，以指定順序水準對齊、垂直對齊和大小 equalities，如下列螢幕擷取畫面所示：
 
- [![](designer-auto-layout-images/image06.png "Combinational Constraints")](designer-auto-layout-images/image06.png#lightbox)
+ [![Combinational 條件約束](designer-auto-layout-images/image06.png)](designer-auto-layout-images/image06.png#lightbox)
 
 ### <a name="visualizing-and-editing-constraints"></a>視覺化和編輯條件約束
 
 當您加入條件約束時，當您選取專案時，它會在設計介面上顯示為藍色線條：
 
- [![](designer-auto-layout-images/image09.png "Visualizing Constraints")](designer-auto-layout-images/image09.png#lightbox)
+ [![視覺化條件約束](designer-auto-layout-images/image09.png)](designer-auto-layout-images/image09.png#lightbox)
 
 您可以按一下藍線，並直接在屬性面板中編輯條件約束值，以選取條件約束。 或者，按兩下藍線會顯示一個 popover，讓您直接在設計介面上編輯值：
 
- [![](designer-auto-layout-images/image08.png "Editing Constraints")](designer-auto-layout-images/image08.png#lightbox)
+ [![編輯條件約束](designer-auto-layout-images/image08.png)](designer-auto-layout-images/image08.png#lightbox)
 
 ## <a name="constraint-issues"></a>條件約束問題
 
@@ -146,27 +146,27 @@ IOS 設計工具提供兩種類型的控制項，用於操作設計介面上的�
 
 衝突的條件約束會以紅色標示，並具有警告符號。 將滑鼠停留在警告符號上會顯示 popover，其中包含衝突的相關資訊：
 
- [![](designer-auto-layout-images/image11.png "Conflicting Constraints warning")](designer-auto-layout-images/image11.png#lightbox)
+ [![衝突的條件約束警告](designer-auto-layout-images/image11.png)](designer-auto-layout-images/image11.png#lightbox)
 
 ### <a name="underconstrained-items"></a>Underconstrained 專案
 
 Underconstrained 專案會以橙色顯示，並在 [view controller] 物件列中觸發橙色標記圖示的外觀：
 
- [![](designer-auto-layout-images/image02.png "Underconstrained items appear in orange")](designer-auto-layout-images/image02.png#lightbox)
+ [![Underconstrained 專案以橙色顯示](designer-auto-layout-images/image02.png)](designer-auto-layout-images/image02.png#lightbox)
 
 如果您按一下該標記圖示，您可以取得場景中 underconstrained 專案的相關資訊，並藉由完全限制它們或移除其條件約束來解決問題，如下列螢幕擷取畫面所示：
 
- [![](designer-auto-layout-images/image10.png "Fixing Underconstrained Items")](designer-auto-layout-images/image10.png#lightbox)
+ [![修正 Underconstrained 專案](designer-auto-layout-images/image10.png)](designer-auto-layout-images/image10.png#lightbox)
 
 ### <a name="frame-misplacement"></a>框架 Misplacement
 
 畫面格 misplacement 使用與 underconstrained 專案相同的色彩代碼。 專案一律會使用其原生框架轉譯在介面上，但在畫面格 misplacement 紅色矩形時，會標示在應用程式執行時專案最終的位置，如下列螢幕擷取畫面所示：
 
- [![](designer-auto-layout-images/image05.png "Sample Frame Misplacement view")](designer-auto-layout-images/image05.png#lightbox)
+ [![範例框架 Misplacement 視圖](designer-auto-layout-images/image05.png)](designer-auto-layout-images/image05.png#lightbox)
 
 若要解決畫面格 misplacement 錯誤，請從 [條件約束] 工具列（最右邊的按鈕）選取 [**根據條件約束更新畫面**格] 按鈕：
 
- [![](designer-auto-layout-images/image03.png "Update Frames based on Constraints toolbar button")](designer-auto-layout-images/image03.png#lightbox)
+ [![根據條件約束工具列按鈕更新框架](designer-auto-layout-images/image03.png)](designer-auto-layout-images/image03.png#lightbox)
 
 這會自動調整元素框架，使其符合控制項所定義的位置。
 
@@ -181,10 +181,10 @@ Underconstrained 專案會以橙色顯示，並在 [view controller] 物件列�
 1. 以一般方式建立條件約束（使用以上所列的任何方法）。
 2. 在 [**檔大綱] 瀏覽器**中，尋找所需的條件約束並加以選取：
 
-    [![](designer-auto-layout-images/modify01.png "The Document Outline Explorer")](designer-auto-layout-images/modify01.png#lightbox)
+    [![檔大綱瀏覽器](designer-auto-layout-images/modify01.png)](designer-auto-layout-images/modify01.png#lightbox)
 3. 接下來，在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中，將**名稱**指派給條件約束：
 
-    [![](designer-auto-layout-images/modify02.png "The Widget Tab")](designer-auto-layout-images/modify02.png#lightbox)
+    [![[Widget] 索引標籤](designer-auto-layout-images/modify02.png)](designer-auto-layout-images/modify02.png#lightbox)
 4. 儲存您的變更。
 
 就地變更之後，您就可以存取程式碼中的條件約束，並修改其屬性。 例如，您可以使用下列程式，將附加的視圖高度設定為零：
@@ -195,7 +195,7 @@ ViewInfoHeight.Constant = 0;
 
 針對 iOS 設計工具中的條件約束，提供下列設定：
 
-[![](designer-auto-layout-images/modify03.png "Editing a Constraint in the Property Explorer")](designer-auto-layout-images/modify03.png#lightbox)
+[![在屬性瀏覽器中編輯條件約束](designer-auto-layout-images/modify03.png)](designer-auto-layout-images/modify03.png#lightbox)
 
 ### <a name="the-deferred-layout-pass"></a>延遲的版面設定階段
 

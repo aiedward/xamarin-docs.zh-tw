@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 99565d7e61e8e8c1d28b67a6a6d25979c79fa387
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 2a883c85eede7f7600e5716dded71f3c90f49026
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566158"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939746"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 簡介
 
@@ -49,7 +49,7 @@ Apple 已發行第4代的 Apple TV 硬體，其中包含重新設計的觸控式
 - HealthKit
 - HomeKit
 - Inter-App 音訊
-- 地圖服務
+- 地圖
 - 個人 VPN
 - 推播通知
 - 電子錢包
@@ -90,7 +90,7 @@ Siri 遠端目前適用于下列國家/地區：
 
 所有其他國家/地區都會收到 Apple TV 遙控器，其會將 [Siri] 按鈕取代為 [搜尋] 按鈕，以顯示包含搜尋文字輸入的預設搜尋畫面：
 
-[![](tvos9-images/remote02.png "Siri Remote")](tvos9-images/remote02.png#lightbox)
+[![Siri 遠端](tvos9-images/remote02.png)](tvos9-images/remote02.png#lightbox)
 
 如需詳細資訊，請參閱我們的[Siri 遠端和藍牙控制器](~/ios/tvos/platform/remote-bluetooth.md)檔。
 
@@ -154,7 +154,7 @@ Apple TV 應用程式的大小上限為 200 MB，且可以使用隨選資源下�
 
 [Apple TV 首頁] 畫面會顯示已安裝的所有應用程式，並提供存取使用者喜好設定的方式：
 
-[![](tvos9-images/home01.png "The Home Screen")](tvos9-images/home01.png#lightbox)
+[![主畫面](tvos9-images/home01.png)](tvos9-images/home01.png#lightbox)
 
 使用者使用焦點在 Siri 遠端流覽應用程式圖示的方格，以選取並啟動應用程式。 應用程式圖示是您對潛在使用者有絕佳印象的第一次機會，而且應該一目了然地傳達應用程式的用途。
 
@@ -168,7 +168,7 @@ Apple TV 應用程式的大小上限為 200 MB，且可以使用隨選資源下�
 
 如果使用者已將您的 tvOS 應用程式放在 Apple 電視首頁螢幕上的頂端列，當使用者選取您的應用程式時，將會顯示較大的頂尖影像。 此影像應會反白顯示您應用程式的功能，或提供其內容的直接連結。
 
-[![](tvos9-images/topshelf01.png "The Top Shelf")](tvos9-images/topshelf01.png#lightbox)
+[![頂尖貨位](tvos9-images/topshelf01.png)](tvos9-images/topshelf01.png#lightbox)
 
 最上層的貨位映射可以當做單一靜態或檔案提供 `.png` ， `.lsr` 也可以在執行時間動態建立，做為可設定焦點專案的單一資料列。
 

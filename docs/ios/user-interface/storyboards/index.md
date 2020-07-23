@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 0eead476fe7842ac326b61771776a83c7a35461c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b61d851e793d3fb0ae5e97718b151dd87f37da61
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567381"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937042"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的分鏡腳本簡介
 
@@ -22,7 +22,7 @@ ms.locfileid: "84567381"
 
 您可以使用 Xamarin iOS 設計工具來建立、開啟和編輯腳本。 本指南也將逐步解說如何使用設計工具來建立您的分鏡腳本，同時使用 c # 來設計導覽的程式。
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
 分鏡腳本可以搭配 Xcode、Visual Studio for Mac 中的 iOS 設計工具，以及已安裝 Xamarin 工作負載的 Visual Studio 2019 來使用。
 
@@ -30,7 +30,7 @@ ms.locfileid: "84567381"
 
 分鏡腳本是應用程式中所有畫面的視覺標記法。 它包含一系列場景，其中每個場景都代表一個*視圖控制器*和其*Views*。 這些視圖可能包含物件和[控制項](~/ios/user-interface/controls/index.md)，可讓您的使用者與您的應用程式互動。 這組視圖和控制項（或*子檢視*）稱為「*內容視圖*」階層。 場景是透過 segue 物件進行連線，這代表視圖控制器之間的轉換。 這通常是藉由在初始視圖的物件與連接視圖之間建立 segue 來達成。 設計介面上的關聯性如下圖所示：
 
- [![](images/storyboardsview.png "The relationships on the design surface are illustrated in this image")](images/storyboardsview.png#lightbox)
+ [![此圖說明設計介面上的關聯性](images/storyboardsview.png)](images/storyboardsview.png#lightbox)
 
 如圖所示，分鏡腳本會配置已呈現內容的每個場景，並說明它們之間的連接。  此時值得注意的是，當我們討論 iPhone 上的場景時，可以安全地假設分鏡腳本上的一個*場景*等於裝置上的一個內容*畫面*。 不過，使用 iPad 時，可以一次顯示多個場景–例如，使用 Popover view 控制器。
 
@@ -45,22 +45,22 @@ ms.locfileid: "84567381"
 
 *Segue*（或*Segue 物件*）會在 iOS 開發中用來代表場景之間的轉換。 若要建立 segue，請按住**Ctrl**鍵，然後從一個場景中按一下滑鼠拖曳至另一個場景。 當我們拖曳滑鼠時，會出現藍色接頭，指出 segue 會在下圖中顯示的位置：
 
- [![](images/createsegue.png "A blue connector appears, indicating where the segue will lead as demonstrated in this image")](images/createsegue.png#lightbox)
+ [![藍色連接器隨即出現，指出此圖中所示的 segue 將由何處引導](images/createsegue.png)](images/createsegue.png#lightbox)
 
 當滑鼠開啟時，將會出現一個功能表，讓我們選擇 segue 的動作。 看起來可能會類似下列影像：
 
 **IOS 之前8和大小的類別**：
 
-[![](images/segue1.png "The Action Segue dropdown without Size Classes")](images/segue1.png#lightbox)
+[![動作 Segue 下拉式清單沒有大小類別](images/segue1.png)](images/segue1.png#lightbox)
 
 **當使用大小類別和彈性 Segue 時**：
 
-[![](images/16new.png "The Action Segue dropdown with Size Classes")](images/16new.png#lightbox)
+[![具有大小類別的 [動作 Segue] 下拉式清單](images/16new.png)](images/16new.png#lightbox)
 
 > [!IMPORTANT]
 > 如果您使用 VMWare 作為 Windows 虛擬機器，依預設，Ctrl + 按一下 [對應] 滑鼠_右鍵_。 若要建立 Segue，請透過**喜好**設定鍵盤編輯您的鍵盤喜好設定  >  **& 滑鼠**  >  **按鍵快捷方式**並重新對應**次要按鈕**，如下所示：
 >
-> [![](images/image22.png "Keyboard and Mouse preference settings")](images/image22.png#lightbox)
+> [![鍵盤和滑鼠喜好設定](images/image22.png)](images/image22.png#lightbox)
 >
 > 您現在應該能夠在您的視圖控制器之間，以正常方式加入 segue。
 
@@ -72,7 +72,7 @@ ms.locfileid: "84567381"
 - 回溯-回溯 segue 可以用來透過推送或強制回應 segue 進行**流覽（例如**，藉由關閉以模式呈現的視圖控制器）。 除此之外，您不只可以回溯到一個，而是一系列的推送和強制回應 segue，並使用單一回溯動作在流覽階層中返回多個步驟。 若要瞭解如何在 iOS 中使用回溯 segue，請閱讀[建立回溯 segue](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)配方。
 - **Segue** – segue segue 會指出包含初始 view controller 的場景，因此使用者會先看到該控制項。 其以 segue 表示，如下所示：  
 
-    [![](images/sourcelesssegue.png "A sourceless segue")](images/sourcelesssegue.png#lightbox)
+    [![Segue segue](images/sourcelesssegue.png)](images/sourcelesssegue.png#lightbox)
 
 ### <a name="adaptive-segue-types"></a>適應性 Segue 類型
 
@@ -80,7 +80,7 @@ ms.locfileid: "84567381"
 
 任何使用大小類別的應用程式也會使用新的調適型[*segue*](~/ios/user-interface/storyboards/unified-storyboards.md)。 使用大小類別時，請記住，我們不會直接指定使用 iPhone 或 iPad 的天氣。 換句話說，我們要建立一個總是看起來相同的 UI，而不論它必須使用多少實際資產。 調適型 Segue 的工作方式，是藉由判斷環境，以及判斷呈現內容的最佳方式。 調適型 Segue 如下所示：
 
-[![](images/adaptivesegue.png "The Adaptive Segues dropdown")](images/adaptivesegue.png#lightbox)
+[![[適應性 Segue] 下拉式清單](images/adaptivesegue.png)](images/adaptivesegue.png#lightbox)
 
 |Segue|描述|
 |--- |--- |
@@ -132,11 +132,11 @@ if (callHistoryController != null) {
 
 1. 流覽至檔案 **> 新檔案 > iOS >** 腳本，以建立新的分鏡腳本檔案，如下所示：
 
-    [![](images/new-storyboard-xs.png "The new file dialog")](images/new-storyboard-xs.png#lightbox)
+    [![[新增檔案] 對話方塊](images/new-storyboard-xs.png)](images/new-storyboard-xs.png#lightbox)
 
 2. 將您的分鏡腳本名稱新增至**plist**的**主要介面**區段，如下所示：
 
-    [![](images/infoplist.png "The Info.plist editor")](images/infoplist.png#lightbox)
+    [![Plist 編輯器](images/infoplist.png)](images/infoplist.png#lightbox)
 
     這相當於在 `FinishedLaunching` 應用程式委派內的方法中具現化初始視圖控制器。 設定此選項後，應用程式會具現化視窗（如下所示）、載入主要的分鏡腳本，並將腳本的初始視圖控制器（segue Segue 旁邊的）實例指派為 `RootViewController` 視窗的屬性，然後讓視窗顯示在螢幕上。
 
@@ -153,11 +153,11 @@ if (callHistoryController != null) {
 
 1. 以滑鼠右鍵按一下專案以建立新的分鏡腳本檔案，**將 > 新檔案 > iOS > 空白**分鏡腳本，如下所示：
 
-    [![](images/new-storyboard-vs.png "The new item dialog")](images/new-storyboard-vs.png#lightbox)
+    [![[新增專案] 對話方塊](images/new-storyboard-vs.png)](images/new-storyboard-vs.png#lightbox)
 
 2. 將您的分鏡腳本名稱新增至 iOS 應用程式的**主要介面**區段，如下所示：
 
-    [![](images/ios-app.png "The Info.plist editor")](images/ios-app.png#lightbox)
+    [![Plist 編輯器](images/ios-app.png)](images/ios-app.png#lightbox)
 
     這相當於在 `FinishedLaunching` 應用程式委派內的方法中具現化初始視圖控制器。 設定此選項後，應用程式會具現化視窗（如下所示）、載入主要的分鏡腳本，並將腳本的初始視圖控制器（segue Segue 旁邊的）實例指派為 `RootViewController` 視窗的屬性，然後讓視窗顯示在螢幕上。
 
@@ -184,37 +184,37 @@ if (callHistoryController != null) {
 
 1. 將_空白的 iPhone_分鏡腳本新增至現有的專案專案：
 
-    [![](images/add-storyboard2.png "Adding storyboard")](images/add-storyboard2.png#lightbox)
+    [![加入分鏡腳本](images/add-storyboard2.png)](images/add-storyboard2.png#lightbox)
 
 2. 以滑鼠右鍵按一下分鏡腳本檔案，然後選取 [**開啟方式] > Xcode Interface Builder**在 Xcode 中開啟它。
 
     *如果您想要依預設使用 Xcode 介面產生器，您可以在 [**專案 > iOS**] 底下的 [Visual Studio for Mac 喜好設定] 中選擇它：*
 
-![](images/set-preferred-designer-tool.png "Selecting the preferred designer tool")
+![選取慣用的設計工具](images/set-preferred-designer-tool.png)
 
 3. 在 Xcode 中，開啟 [程式庫] （**透過 View > Show library**或*Shift + Command + L*）來顯示可加入至分鏡腳本的物件清單。 將 `Navigation Controller` 物件從清單拖曳至分鏡腳本，以將加入至分鏡腳本。 根據預設， `Navigation Controller` 會提供兩個畫面，右側的畫面是以較 `TableViewController` 簡單的視圖取代，因此可以藉由按一下此視圖並按下 Delete 鍵來移除。
 
-    [![](images/add-navigation-controller.png "Adding a NavigationController from the Library")](images/add-navigation-controller.png#lightbox)
+    [![從程式庫新增 NavigationController](images/add-navigation-controller.png)](images/add-navigation-controller.png#lightbox)
 
 4. 此視圖控制器會有自己的自訂類別，而且它也需要自己的分鏡腳本識別碼。 當您按一下這個新加入的視圖上方的方塊時，將會有三個圖示，最左邊的圖示代表視圖的視圖控制器。 藉由選取此圖示，您可以在右窗格的 [身分識別] 索引標籤上設定 [類別] 和 [識別碼] 值。請將這些值設定為 `MainViewController` ，並確定檢查 `Use Storyboard ID` 。
 
-    [![](images/identity-panel.png "Setting the MainViewController in the identity panel")](images/identity-panel.png#lightbox)
+    [![在身分識別面板中設定 MainViewController](images/identity-panel.png)](images/identity-panel.png#lightbox)
 
 5. 再次使用程式庫，將 View Controller 拖曳到畫面上。 這會設定為根視圖控制器。 按住 Control 鍵，按一下左側的 [流覽控制器] 並拖曳至右邊的新加入視圖控制器，然後按一下功能表中的 [*根視圖控制器*]。
 
-    [![](images/add-view-controller.png "Adding a NavigationController from the Library and setting the MainViewController as a Root View Controller")](images/add-view-controller.png#lightbox)
+    [![從程式庫新增 NavigationController，並將 MainViewController 設定為根視圖控制器](images/add-view-controller.png)](images/add-view-controller.png#lightbox)
 
 6. 此應用程式將會流覽至另一個視圖，因此，請將一個以上的視圖加入至分鏡腳本，就像之前一樣。 我們會將此稱為 `PinkViewController` ，並以與相同的方式來設定這些值 `MainViewController` 。
 
-    [![](images/add-additional-view-controller.png "Adding an additional View Controller")](images/add-additional-view-controller.png#lightbox)
+    [![新增其他視圖控制器](images/add-additional-view-controller.png)](images/add-additional-view-controller.png#lightbox)
 
 7. 由於 View Controller 將會有粉紅色的背景，因此可以使用 [屬性] 面板中的下拉式清單來設定該屬性 `Background` 。
 
-    [![](images/set-pink-background.png "Adding an additional View Controller")](images/set-pink-background.png#lightbox)
+    [![新增其他視圖控制器](images/set-pink-background.png)](images/set-pink-background.png#lightbox)
 
 8. 因為我們想要 `MainViewController` 流覽至，所以 `PinkViewController` 前者需要一個按鈕來與互動。 使用程式庫時，我們可以將按鈕新增至 `MainViewController` 。
 
-    [![](images/add-button.png "Adding a Button to the MainViewController")](images/add-button.png#lightbox)
+    [![將按鈕新增至 MainViewController](images/add-button.png)](images/add-button.png#lightbox)
 
 分鏡腳本已完成，但如果我們現在部署專案，將會出現空白畫面。 這是因為我們仍然需要告訴 IDE 使用我們的分鏡腳本，並將根視圖控制器設定為第一個視圖。 一般來說，這可以透過我們的專案選項來完成，如上所示。 不過在此範例中，我們會將下列內容新增至**AppDelegate**，以在程式碼中達到相同的結果：
 
@@ -302,7 +302,7 @@ public partial class MainViewController : UIViewController
 
 執行應用程式會產生2個畫面的應用程式：
 
-![](images/finishedstoryboard.png "Sample app run screens")
+![範例應用程式執行畫面](images/finishedstoryboard.png)
 
 ## <a name="conditional-segues"></a>條件式 Segue
 
@@ -324,13 +324,13 @@ public partial class MainViewController : UIViewController
         - 行數：2
         - 已核取 [隱藏] 核取方塊    
 
-    [![](images/passwordvc.png "Center Lines")](images/passwordvc.png#lightbox)
+    [![置中線條](images/passwordvc.png)](images/passwordvc.png#lightbox)
 
 2. 在 [移至粉紅色] 按鈕和 [視圖控制器] 之間建立 Segue，方法是 Ctrl-從*PinkButton*拖曳至*PinkViewController*，然後選取 [在滑鼠上**推送**]。
 
 3. 按一下 Segue，並指定其*識別碼* `SegueToPink` ：
 
-    [![](images/namesegue.png "Click on the Segue and give it the Identifier SegueToPink")](images/namesegue.png#lightbox)  
+    [![按一下 Segue，並指定識別碼 SegueToPink](images/namesegue.png)](images/namesegue.png#lightbox)  
 
 4. 最後，將下列 ShouldPerformSegue 方法新增至 `MainViewController` 類別：
 
@@ -374,29 +374,29 @@ public partial class MainViewController : UIViewController
 
 1. 在 [**方案總管**中，以滑鼠右鍵按一下專案名稱，然後**選取 [**  >  **新增檔案 ...**  >  ]。**iOS**  > 分鏡**腳本。** 輸入新分鏡腳本的**名稱**，然後按一下 [**新增**] 按鈕：
 
-    [![](images/ref01.png "The New File Dialog")](images/ref01.png#lightbox)
+    [![[新增檔案] 對話方塊](images/ref01.png)](images/ref01.png#lightbox)
 
 2. 以您平常的方式設計新腳本的版面配置，並儲存您的變更：
 
-    [![](images/ref02.png "The layout of the new scene")](images/ref02.png#lightbox)
+    [![新場景的版面配置](images/ref02.png)](images/ref02.png#lightbox)
 
 3. 在 iOS 設計工具中，開啟您要加入參考的分鏡腳本。
 
 4. 從 [**工具箱**] 將 [分鏡腳本**參考**] 拖曳至 [Design Surface：
 
-    [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
+    [![分鏡腳本參考](images/ref03.png)](images/ref03.png#lightbox)
 
 5. 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中，選取您在上面**建立的分**鏡腳本名稱：
 
-    [![](images/ref04.png "The Widget tab")](images/ref04.png#lightbox)
+    [![[Widget] 索引標籤](images/ref04.png)](images/ref04.png#lightbox)
 
 6. 在現有的場景上，以滑鼠右鍵按一下 UI Widget （例如按鈕），並建立新的 Segue 至您剛才建立的分鏡腳本**參考**：
 
-    [![](images/ref05.png "Creating a segue")](images/ref05.png#lightbox)
+    [![建立 segue](images/ref05.png)](images/ref05.png#lightbox)
 
 7. 從快顯功能表選取 [**顯示**] 以完成 Segue：
 
-    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox)
+    [![選取 [顯示] 以完成 Segue](images/ref06.png)](images/ref06.png#lightbox)
 
 8. 將您的變更儲存至分鏡腳本。
 
@@ -412,29 +412,29 @@ public partial class MainViewController : UIViewController
 
 2. 加入新的場景，並以平常的方式設計它的版面配置：
 
-    [![](images/ref07.png "The new scene layout")](images/ref07.png#lightbox)
+    [![新場景版面配置](images/ref07.png)](images/ref07.png#lightbox)
 
 3. 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中，輸入新場景之 View 控制器的分鏡腳本**識別碼**：
 
-    [![](images/ref08.png "Enter a Storyboard ID for the new Scenes View Controller")](images/ref08.png#lightbox)
+    [![輸入新場景視圖控制器的分鏡腳本識別碼](images/ref08.png)](images/ref08.png#lightbox)
 
 4. 在 iOS 設計工具中，開啟您要加入參考的分鏡腳本。
 
 5. 從 [**工具箱**] 將 [分鏡腳本**參考**] 拖曳至 [Design Surface：
 
-    [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
+    [![分鏡腳本參考](images/ref03.png)](images/ref03.png#lightbox)
 
 6. 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中，選取腳本的名稱 **，以及您**先前建立之場景的**參考識別碼**（分鏡腳本識別碼）：
 
-    [![](images/ref09.png "The Widget tab ")](images/ref09.png#lightbox)
+    [![[Widget] 索引標籤](images/ref09.png)](images/ref09.png#lightbox)
 
 7. 在現有的場景上，以滑鼠右鍵按一下 UI Widget （例如按鈕），並建立新的 Segue 至您剛才建立的分鏡腳本**參考**：
 
-    [![](images/ref10.png "Creating a segue")](images/ref10.png#lightbox)
+    [![建立 segue](images/ref10.png)](images/ref10.png#lightbox)
 
 8. 從快顯功能表選取 [**顯示**] 以完成 Segue：
 
-    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox)
+    [![選取 [顯示] 以完成 Segue](images/ref06.png)](images/ref06.png#lightbox)
 
 9. 將您的變更儲存至分鏡腳本。
 
@@ -450,27 +450,27 @@ public partial class MainViewController : UIViewController
 
 2. 加入新的場景，並以平常的方式設計它的版面配置：
 
-    [![](images/ref11.png "The new scene layout")](images/ref11.png#lightbox)
+    [![新場景版面配置](images/ref11.png)](images/ref11.png#lightbox)
 
 3. 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中，輸入新場景之 View 控制器的分鏡腳本**識別碼**：
 
-    [![](images/ref12.png "The Widget tab")](images/ref12.png#lightbox)
+    [![[Widget] 索引標籤](images/ref12.png)](images/ref12.png#lightbox)
 
 4. 從 [**工具箱**] 將 [分鏡腳本**參考**] 拖曳至 [Design Surface：
 
-   [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
+   [![分鏡腳本參考](images/ref03.png)](images/ref03.png#lightbox)
 
 5. 在 [**屬性] 瀏覽器**的 [ **Widget** ] 索引標籤中，選取您先前建立之場景的 [**參考識別碼**（分鏡腳本識別碼）]：
 
-    [![](images/ref13.png "The Widget tab")](images/ref13.png#lightbox)
+    [![[Widget] 索引標籤](images/ref13.png)](images/ref13.png#lightbox)
 
 6. 在現有的場景上，以滑鼠右鍵按一下 UI Widget （例如按鈕），並建立新的 Segue 至您剛才建立的分鏡腳本**參考**：
 
-    [![](images/ref14.png "Creating a segue")](images/ref14.png#lightbox)
+    [![建立 segue](images/ref14.png)](images/ref14.png#lightbox)
 
 7. 從快顯功能表選取 [**顯示**] 以完成 Segue：
 
-    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox)
+    [![選取 [顯示] 以完成 Segue](images/ref06.png)](images/ref06.png#lightbox)
 
 8. 將您的變更儲存至分鏡腳本。
 

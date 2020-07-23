@@ -6,12 +6,12 @@ ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: b8be06b9da4561ffc0d628b53f8daf639b5e3179
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1a71b84d1068fef1730196bafb0f0d7e2a948c5c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571089"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936912"
 ---
 # <a name="shared-projects-code-sharing"></a>共用的專案程式碼共用
 
@@ -27,7 +27,7 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 不同于其他大部分的專案類型，共用專案不會有任何輸出（DLL 格式），而是會將程式碼編譯成參考它的每個專案。 下圖說明這一點-概念上，共用專案的完整內容會「複製到」每個參考專案，並以其本身的一部分進行編譯。
 
-![](shared-projects-images/sharedassetproject.png "Shared Project architecture")
+![共用的專案架構](shared-projects-images/sharedassetproject.png)
 
 共用專案中的程式碼可以包含編譯器指示詞，這會根據應用程式專案所使用的程式碼（由圖表中的彩色平臺方塊建議）來啟用或停用程式碼區段。
 
@@ -57,7 +57,7 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 將參考加入共用專案的方式，與參考一般程式庫專案的方法相同。 這個螢幕擷取畫面顯示了參考共用專案的 Xamarin. iOS 專案。
 
-![](shared-projects-images/xs-reference.png "Project reference to Shared Project")
+![共用專案的專案參考](shared-projects-images/xs-reference.png)
 
 當另一個程式庫或應用程式參考共用的專案之後，您就可以建立方案，並在程式碼中查看任何錯誤。 當_兩個或多個_其他專案參考共用的專案時，[原始程式碼編輯器] 的左上方會出現一個功能表，顯示選擇哪些專案參考此檔案。
 
@@ -67,7 +67,7 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 [**選項**] 畫面如下所示-[專案**名稱**] 和 [**預設命名空間**] 是您通常會變更的兩個設定。
 
-![](shared-projects-images/xs-sharedprojectoptions.png "Shared Project Options")
+![共用的專案選項](shared-projects-images/xs-sharedprojectoptions.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -87,13 +87,13 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 您也可以在方案檔上按一下滑鼠右鍵，然後選擇 [**加入] > [新增專案**]，將新的共用專案加入現有的方案中。 新的共用專案如下所示（在加入類別檔案之後）。 請注意，沒有任何參考或元件節點;這些不支援共用專案。
 
-![](shared-projects-images/vs-empty.png "Empty Shared Project")
+![空白的共用專案](shared-projects-images/vs-empty.png)
 
 若要讓共用專案有用，必須至少有一個可供組建專案（例如 iOS 或 Android 應用程式或程式庫，或 PCL 專案）參考。 當共用的專案沒有任何參考它時，就不會進行編譯，因此語法（或任何其他）錯誤將不會反白顯示，直到它被其他內容參考為止。
 
 將參考加入共用專案的方式，與參考一般程式庫專案的方法相同。 這個螢幕擷取畫面顯示了參考共用專案的 Xamarin. iOS 專案。
 
-![](shared-projects-images/vs-reference.png "Project reference to Shared Project")
+![共用專案的專案參考](shared-projects-images/vs-reference.png)
 
 當另一個程式庫或應用程式參考共用的專案之後，您就可以建立方案，並在程式碼中查看任何錯誤。 當_兩個或多個_其他專案參考共用專案時，原始程式碼編輯器的左上方會出現一個功能表，以查看哪些專案參考了目前的程式碼檔案。
 
@@ -103,7 +103,7 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 [**屬性**] 面板如下所示-**根命名空間**是您可以變更的唯一設定。
 
-![](shared-projects-images/vs-sharedprojectproperties.png "Shared Project Properties")
+![共用的專案屬性](shared-projects-images/vs-sharedprojectproperties.png)
 
 -----
 
@@ -117,11 +117,11 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-![](shared-projects-images/xs-examplesolution.png "Visual Studio for Mac solution")
+![Visual Studio for Mac 解決方案](shared-projects-images/xs-examplesolution.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![](shared-projects-images/vs-examplesolution.png "Visual Studio solution")
+![Visual Studio 解決方案](shared-projects-images/vs-examplesolution.png)
 
 -----
 
@@ -129,7 +129,7 @@ Windows Phone 專案可以從 Visual Studio for Mac 內流覽，即使 Visual St
 
 執行中的應用程式如下所示：
 
-![](shared-projects-images/example.png "iOS, Android, Windows Phone examples")
+![iOS、Android、Windows Phone 範例](shared-projects-images/example.png)
 
 ## <a name="summary"></a>總結
 

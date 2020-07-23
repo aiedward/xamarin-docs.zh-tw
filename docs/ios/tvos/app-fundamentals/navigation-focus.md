@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 69886a0da53d419a0c40bdf34f91d301c9efe504
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d9e8d91b03a5a82373012da215bd29a747e67d3e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573712"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939447"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>使用 Xamarin 中的 tvOS 導覽和焦點
 
@@ -20,7 +20,7 @@ _本文涵蓋焦點的概念，以及如何使用它來呈現和處理 tvOS 應�
 
 本文涵蓋[焦點](#Focus-and-Selection)的概念，以及如何使用它來處理 tvOS 應用程式使用者介面中的[導覽](#Navigation)。 我們將探討內建的 tvOS 導覽控制項如何使用焦點、反白顯示和選取，以提供您的 tvOS 應用程式的使用者介面流覽。
 
-[![](navigation-focus-images/intro01.png "tvOS apps User Interface Navigation")](navigation-focus-images/intro01.png#lightbox)
+[![tvOS apps 使用者介面流覽](navigation-focus-images/intro01.png)](navigation-focus-images/intro01.png#lightbox)
 
 接下來，我們將探討如何搭配[視差](#Focus-and-Parallax)和*分層影像*使用焦點，將目前導覽狀態的視覺線索提供給終端使用者。
 
@@ -28,13 +28,13 @@ _本文涵蓋焦點的概念，以及如何使用它來呈現和處理 tvOS 應�
 
 <a name="Navigation"></a>
 
-## <a name="navigation"></a>瀏覽
+## <a name="navigation"></a>巡覽
 
 TvOS 應用程式的使用者不會與它直接與 iOS 互動，因為它會在裝置的螢幕上使用影像，而是透過[Siri 遠端](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)在房間間間接進行。 在設計應用程式的使用者介面時，您必須牢記這一點，使其自然流動，同時讓使用者可以沉浸 Apple TV 體驗。
 
 成功的 tvOS 應用程式會以順暢地支援應用程式用途的方式來實行導覽，並在不需要留意到導覽本身的情況下提供資料結構。 設計您的導覽，使其既自然又熟悉，而不需要支配使用者介面或從內容和應用程式使用者體驗中繪製焦點。
 
-[![](navigation-focus-images/nav01.png "The tvOS settings app")](navigation-focus-images/nav01.png#lightbox)
+[![TvOS 設定應用程式](navigation-focus-images/nav01.png)](navigation-focus-images/nav01.png#lightbox)
 
 使用 Apple TV 時，使用者通常會流覽一組堆疊的螢幕，每個畫面都會呈現一組指定的內容。 接著，每個新的畫面可能會使用標準 UI[控制項（例如](~/ios/tvos/user-interface/tab-bars.md)[按鈕](~/ios/tvos/user-interface/buttons.md)、索引標籤列、表格、[集合視圖](~/ios/tvos/user-interface/collection-views.md)或[分割視圖](~/ios/tvos/user-interface/split-views.md)）來導致一或多個內容的子畫面。
 
@@ -57,7 +57,7 @@ TvOS 應用程式的使用者不會與它直接與 iOS 互動，因為它會在�
 
 在 Apple 電視上，當影像、按鈕或其他 UI 元素是目前導覽的目標時，會將其視為_焦點_。
 
-[![](navigation-focus-images/focus01.png "Focus and Selection example")](navigation-focus-images/focus01.png#lightbox)
+[![焦點和選取範例](navigation-focus-images/focus01.png)](navigation-focus-images/focus01.png#lightbox)
 
 不同于 iOS 裝置，使用者會直接與裝置的觸控螢幕上的專案互動，而使用者會使用 Siri 遠端與房間間的 tvOS 元素互動。 為了呈現及處理這種使用者互動，Apple TV 使用以_焦點_為基礎的模型。
 
@@ -134,7 +134,7 @@ playButton.PreferredFocusedView = true;
 
 如需範例，請採取下列 UI 版面配置：
 
- [![](navigation-focus-images/guide01.png "Working with Focus Guides example")](navigation-focus-images/guide01.png#lightbox)
+ [![使用焦點指南範例](navigation-focus-images/guide01.png)](navigation-focus-images/guide01.png#lightbox)
 
 因為 [**更多資訊**] 按鈕不會落在具有 [**購買**] 按鈕的水準和垂直格線上，所以使用者無法存取。 不過，您可以使用_焦點指南_輕鬆地修正這種情況，將移動提示提供給焦點引擎。 
 
@@ -166,7 +166,7 @@ public override void ViewDidLoad ()
 
 接下來，焦點指南的頂端、左側、寬度和高度錨點會相對於 [**詳細資訊**] 和 [**購買**] 按鈕進行調整，以便在兩者之間定位。 請參閱：
 
-[![](navigation-focus-images/guide02.png "Example Focus Guide")](navigation-focus-images/guide02.png#lightbox)
+[![範例焦點指南](navigation-focus-images/guide02.png)](navigation-focus-images/guide02.png#lightbox)
 
 也請務必注意，在建立新的條件約束時，會將其 `Active` 屬性設定為來加以啟動 `true` ：
 

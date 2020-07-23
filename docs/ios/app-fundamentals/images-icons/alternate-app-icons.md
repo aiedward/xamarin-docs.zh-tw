@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: e90ee165073dbbe792e4ca1916463517ad86255d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 39a18a775946c2f139b4c032d2c360bc5680a0e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572295"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937913"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Xamarin 中的替代應用程式圖示
 
@@ -25,7 +25,7 @@ Apple 已將數個增強功能新增至 iOS 10.3，讓應用程式可以管理�
 - `AlternateIconName`-傳回目前選取的替代圖示或 `null` 使用主要圖示的名稱。
 - `SetAlternameIconName`-使用此方法可將應用程式的圖示切換至指定的替代圖示。
 
-![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
+![應用程式變更其圖示時的範例警示](alternate-app-icons-images/icons04.png)
 
 <a name="Adding-Alternate-Icons"></a>
 
@@ -37,15 +37,15 @@ Apple 已將數個增強功能新增至 iOS 10.3，讓應用程式可以管理�
 
 1. 選取資料夾中的必要圖示影像，選取 [全部]，並將其拖曳至 [**方案總管**中的 [**資源**] 資料夾：
 
-    ![](alternate-app-icons-images/icons00.png "Select the icons images from a folder")
+    ![選取資料夾中的圖示影像](alternate-app-icons-images/icons00.png)
 
 2. 出現提示時，選取 [**複製**]，**對所有選取的檔案使用相同的動作**，然後按一下 [**確定]** 按鈕：
 
-    ![](alternate-app-icons-images/icons02.png "The Add File to Folder dialog box")
+    ![[將檔案新增至資料夾] 對話方塊](alternate-app-icons-images/icons02.png)
 
 3. 完成時， **Resources**資料夾應如下所示：
 
-    ![](alternate-app-icons-images/icons01.png "The Resources folder should look like this")
+    ![Resources 資料夾看起來應該像這樣](alternate-app-icons-images/icons01.png)
 
 <a name="Modifying-the-Info.plist-File"></a>
 
@@ -56,18 +56,18 @@ Apple 已將數個增強功能新增至 iOS 10.3，讓應用程式可以管理�
 執行下列動作：
 
 1. 在 [方案總管]**** 中，按兩下 [Info.plist]**** 檔案以開啟它進行編輯。
-2. 切換至 [**來源**] 視圖。
+2. 切換至 [來源] 檢視。
 3. 新增配套**圖示**金鑰，並將**類型**設定為 [**字典**]。
 4. 新增 `CFBundleAlternateIcons` 金鑰，並將**類型**設定為 [**字典**]。
 5. 新增 `AppIcon2` 金鑰，並將**類型**設定為 [**字典**]。 這會是新的替代應用程式圖示集的名稱。
 6. 加入索引 `CFBundleIconFiles` 鍵，並將**類型**設定為**陣列**
 7. 針對每個圖示檔，將新字串新增至 `CFBundleIconFiles` 陣列，以省略副檔名以及 `@2x` 、 `@3x` 等等尾碼（範例 `100_icon` ）。 針對組成替代圖示集的每個檔案重複此步驟。
 8. 將索引 `UIPrerenderedIcon` 鍵加入 `AppIcon2` 字典中，將**類型**設定為**布林**值，並將值設為 [**否**]。
-9. 將變更儲存到檔案。
+9. 將變更儲存至檔案。
 
 完成時，產生的**plist**檔案看起來應該如下所示：
 
-![](alternate-app-icons-images/icons03.png "The completed Info.plist file")
+![已完成的 plist 檔案](alternate-app-icons-images/icons03.png)
 
 或者，如果在文字編輯器中開啟，就像這樣：
 
@@ -158,11 +158,11 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 
 當應用程式執行且使用者選取替代圖示時，會顯示類似下列的警示：
 
-![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
+![應用程式變更其圖示時的範例警示](alternate-app-icons-images/icons04.png)
 
 如果使用者切換回主要圖示，將會顯示如下的警示：
 
-![](alternate-app-icons-images/icons05.png "A sample alert when an app changes to the primary icon")
+![當應用程式變更為主要圖示時的範例警示](alternate-app-icons-images/icons05.png)
 
 <a name="Summary"></a>
 

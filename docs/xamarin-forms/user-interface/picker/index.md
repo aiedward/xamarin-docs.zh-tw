@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 50f605f4ad9839521fd4169531ad46d197f20dbf
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5e3153e796f26ef150dccc79d8ea6f90127c6a26
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139648"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938680"
 ---
 # <a name="xamarinforms-picker"></a>Xamarin.Forms容器
 
@@ -38,15 +38,15 @@ Xamarin.Forms [`Picker`](xref:Xamarin.Forms.Picker) 會顯示專案的簡短清�
 
 [`Picker`](xref:Xamarin.Forms.Picker)當第一次顯示時，不會顯示任何資料。 相反地，其屬性的值 [`Title`](xref:Xamarin.Forms.Picker.Title) 會顯示為 iOS 和 Android 平臺上的預留位置：
 
-[![](images/picker-initial.png "Initial Picker Display")](images/picker-initial-large.png#lightbox "Initial Picker Display")
+[![初始選擇器顯示](images/picker-initial.png)](images/picker-initial-large.png#lightbox "初始選擇器顯示")
 
 [`Picker`](xref:Xamarin.Forms.Picker)取得焦點時，會顯示其資料，且使用者可以選取一個專案：
 
-[![](images/picker-selection.png "Picker Selecting an Item")](images/picker-selection-large.png#lightbox "Picker Selecting an Item")
+[![選擇器選取專案](images/picker-selection.png)](images/picker-selection-large.png#lightbox "選擇器選取專案")
 
 [`Picker`](xref:Xamarin.Forms.Picker) [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) 當使用者選取專案時，會引發事件。 選取專案之後，會顯示選取的專案 `Picker` ：
 
-![](images/picker-after-selection.png "Picker after Selection")
+![選取範圍後選擇器](images/picker-after-selection.png)
 
 有兩種方法可將 [`Picker`](xref:Xamarin.Forms.Picker) 資料填入：
 

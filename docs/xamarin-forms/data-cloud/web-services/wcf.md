@@ -10,16 +10,16 @@ ms.date: 03/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cee301178880a62695f4208161965b01bb6f522e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139148"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938576"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation （WCF） Web 服務
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
 
 _WCF 是 Microsoft 用來建立服務導向應用程式的統一架構。它可以讓開發人員建立安全、可靠、交易和互通的分散式應用程式。本文示範如何從應用程式取用 WCF 簡單物件存取通訊協定（SOAP）服務 Xamarin.Forms 。_
 
@@ -41,7 +41,7 @@ ASP.NET Web 服務（.ASMX）和 WCF 之間有差異，但 WCF 支援的功能�
 
 範例應用程式解決方案包含可在本機執行的 WCF 服務，如下列螢幕擷取畫面所示：
 
-![](wcf-images/portal.png "Sample Application")
+![範例應用程式](wcf-images/portal.png)
 
 > [!NOTE]
 > 在 iOS 9 和更新版本中，應用程式傳輸安全性（ATS）會強制執行網際網路資源（例如應用程式的後端伺服器）與應用程式之間的安全連線，藉此防止意外洩漏機密資訊。 由於預設會在針對 iOS 9 建立的應用程式中啟用 ATS，因此所有連線都將受限於 ATS 安全性需求。 如果連線不符合這些需求，則會失敗並產生例外狀況。
@@ -136,7 +136,7 @@ static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 
 這個方法只會從 proxy 產生的型別抓取資料 `TodoItem` ，並將它設定在新建立的 `TodoItem` 實例中。
 
-### <a name="retrieve-data"></a>抓取資料
+### <a name="retrieve-data"></a>取出資料
 
 `TodoServiceClient.BeginGetTodoItems`和 `TodoServiceClient.EndGetTodoItems` 方法是用來呼叫 `GetTodoItems` web 服務所提供的作業。 這些非同步方法會封裝在 `Task` 物件中，如下列程式碼範例所示：
 

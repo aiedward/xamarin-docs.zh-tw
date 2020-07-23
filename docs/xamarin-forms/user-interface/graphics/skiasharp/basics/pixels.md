@@ -10,22 +10,22 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6d01018f4393ac5562220fa1f9524bc0d9872c67
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c1ae9e05b6671d45d8df485a89cfc0dea86632d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137666"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937302"
 ---
 # <a name="pixels-and-device-independent-units"></a>像素與裝置獨立單位
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索 SkiaSharp 座標與座標之間的差異 Xamarin.Forms_
 
 本文將探討 SkiaSharp 和中所使用之座標系統的差異 Xamarin.Forms 。 您可以取得要在兩個座標系統之間轉換的資訊，同時繪製填滿特定區域的圖形：
 
-![](pixels-images/screenfillexample.png "An oval that fills the screen")
+![填滿螢幕的橢圓形](pixels-images/screenfillexample.png)
 
 如果您已經在中 Xamarin.Forms 進行程式設計，您可能會覺得 Xamarin.Forms 座標和大小。 這兩篇文章中所繪製的圓，對您而言可能有點小。
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是程式執行情況：
 
-[![](pixels-images/surfacesize-small.png "Triple screenshot of the Surface Size  page")](pixels-images/surfacesize-large.png#lightbox "Triple screenshot of the Surface Size  page")
+[![[介面大小] 頁面的三重螢幕擷取畫面](pixels-images/surfacesize-small.png)](pixels-images/surfacesize-large.png#lightbox "[介面大小] 頁面的三重螢幕擷取畫面")
 
 如您所見，在 `CanvasSize` `SKCanvasView` `Size` 報告圖元維度時，的屬性和 `SKImageInfo` 值的屬性是一致的。 的 `Height` 和 `Width` 屬性 `SKCanvasView` 是 Xamarin.Forms 屬性，並以平臺所定義的裝置獨立單位來報表檢視的大小。
 
@@ -147,7 +147,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 它正在執行：
 
-[![](pixels-images/ellipsefill-small.png "Triple screenshot of the Surface Size  page")](pixels-images/ellipsefill-large.png#lightbox "Triple screenshot of the Surface Size  page")
+[![[介面大小] 頁面的三重螢幕擷取畫面](pixels-images/ellipsefill-small.png)](pixels-images/ellipsefill-large.png#lightbox "[介面大小] 頁面的三重螢幕擷取畫面")
 
 另 [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(SkiaSharp.SKRect,SkiaSharp.SKPaint)) 一個方法有 [`SKRect`](xref:SkiaSharp.SKRect) 引數，這是根據其左上角和右下角的 X 和 Y 座標來定義的矩形。 橢圓形會填滿該矩形，這表示可以在**橢圓形填滿**頁中使用它，如下所示：
 

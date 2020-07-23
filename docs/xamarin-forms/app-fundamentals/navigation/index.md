@@ -10,18 +10,18 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c907cd8a4a1d14b936dee309610bffc67ef363f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 65aa0f060e4d48834017a334d69b2f21645825f3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137835"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937185"
 ---
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms導覽
 
-_Xamarin.Forms 會根據使用的頁面類型，提供多種不同的網頁導覽體驗。_
+_Xamarin.Forms會根據使用的頁面類型，提供多種不同的頁面導覽體驗。_
 
-![](images/page-types.png "Xamarin.Forms Page Types")
+![Xamarin.Forms頁面類型](images/page-types.png)
 
 或者， Xamarin.Forms Shell 應用程式會使用以 URI 為基礎的導覽體驗，而不會強制執行設定的導覽階層。 如需詳細資訊，請參閱[ Xamarin.Forms Shell 導覽](~/xamarin-forms/app-fundamentals/shell/navigation.md)。
 

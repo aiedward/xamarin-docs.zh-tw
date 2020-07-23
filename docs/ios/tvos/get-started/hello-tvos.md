@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: 7b254d3a7cfc04893b3b240d8d372f8df60c655c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 55e41c01421e2cd5a0bb5c3a0a9fe2d025c8a223
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571752"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938043"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS 快速入門指南
 
@@ -34,7 +34,7 @@ TvOS 可讓您使用在*Swift* （或*目標-C*）和*Xcode*中開發時使用�
 
 本文將為您介紹使用 tvOS 和 Visual Studio 建立 Apple TV 應用程式所需的重要概念，方法是逐步解說建立基本的**Hello，tvOS**應用程式來計算按鈕按下的次數：
 
-[![](hello-tvos-images/run05.png "Example app run")](hello-tvos-images/run05.png#lightbox)
+[![範例應用程式執行](hello-tvos-images/run05.png)](hello-tvos-images/run05.png#lightbox)
 
 我們將涵蓋下列概念：
 
@@ -51,21 +51,21 @@ TvOS 可讓您使用在*Swift* （或*目標-C*）和*Xcode*中開發時使用�
 
 1. 啟動 Visual Studio for Mac：
 
-    [![](hello-tvos-images/setup01.png "Visual Studio for Mac")](hello-tvos-images/setup01.png#lightbox)
+    [![Visual Studio for Mac](hello-tvos-images/setup01.png)](hello-tvos-images/setup01.png#lightbox)
 2. 按一下畫面左上角的 [**新增方案 ...** ] 連結，以開啟 [**新增專案**] 對話方塊。
 3. 選取 [ **tvOS**  >  **應用程式**  >  **單一視圖應用程式**]，然後按 [**下一步]** 按鈕：
 
-    [![](hello-tvos-images/setup02.png "Select Single View App")](hello-tvos-images/setup02.png#lightbox)
+    [![選取單一視圖應用程式](hello-tvos-images/setup02.png)](hello-tvos-images/setup02.png#lightbox)
 4. 輸入 `Hello, tvOS` 作為 [**應用程式名稱**]，輸入您的**組織識別碼**，然後按 [**下一步]** 按鈕：
 
-    [![](hello-tvos-images/setup04.png "Enter Hello, tvOS")](hello-tvos-images/setup04.png#lightbox)
+    [![輸入 Hello，tvOS](hello-tvos-images/setup04.png)](hello-tvos-images/setup04.png#lightbox)
 5. `Hello_tvOS`針對 [**專案名稱**] 輸入，然後按一下 [**建立**] 按鈕：
 
-    [![](hello-tvos-images/setup03.png "Enter HellotvOS")](hello-tvos-images/setup03.png#lightbox)
+    [![輸入 HellotvOS](hello-tvos-images/setup03.png)](hello-tvos-images/setup03.png#lightbox)
 
 Visual Studio for Mac 會建立新的 tvOS 應用程式，並顯示新增至您應用程式解決方案的預設檔案：
 
- [![](hello-tvos-images/project01.png "The default files view")](hello-tvos-images/project01.png#lightbox)
+ [![預設檔案視圖](hello-tvos-images/project01.png)](hello-tvos-images/project01.png#lightbox)
 
 Visual Studio for Mac 使用**方案**和**專案**，與 Visual Studio 的方式完全相同。 解決方案是可以保存一個或多個專案的容器;專案可以包含應用程式、支援程式庫、測試應用程式等。在此情況下，Visual Studio for Mac 已為您建立方案和應用程式專案。
 
@@ -253,11 +253,11 @@ namespace HellotvOS
 
 若要開始建立您的 UI，讓我們在 [ `Main.storyboard` **方案總管**中按兩下該檔案，在 iOS 設計工具中開啟它進行編輯：
 
-[![](hello-tvos-images/designer01.png "The Main.storyboard file in the Solution Explorer")](hello-tvos-images/designer01.png#lightbox)
+[![[方案總管] 中的 Main.storyboard 檔案](hello-tvos-images/designer01.png)](hello-tvos-images/designer01.png#lightbox)
 
 這應該會啟動設計工具，如下所示：
 
-[![](hello-tvos-images/designer02.png "The Designer")](hello-tvos-images/designer02.png#lightbox)
+[![設計工具](hello-tvos-images/designer02.png)](hello-tvos-images/designer02.png#lightbox)
 
 如需 iOS 設計工具及其運作方式的詳細資訊，請參閱[Xamarin Designer for iOS 指南簡介](~/ios/user-interface/designer/introduction.md)。
 
@@ -267,57 +267,57 @@ namespace HellotvOS
 
 1. 找出 [**工具箱**]，其應該位於設計介面的右邊：
 
-    [![](hello-tvos-images/designer03.png "The Toolbox")](hello-tvos-images/designer03.png#lightbox)
+    [![工具箱](hello-tvos-images/designer03.png)](hello-tvos-images/designer03.png#lightbox)
 
     如果您在這裡找不到它，請流覽以觀看 **> pad > 工具箱**來觀看。
 2. 將**標籤**從 [**工具箱**] 拖曳至設計介面：
 
-    [![](hello-tvos-images/designer04.png "Drag a Label from the Toolbox")](hello-tvos-images/designer04.png#lightbox)
+    [![從 [工具箱] 拖曳標籤](hello-tvos-images/designer04.png)](hello-tvos-images/designer04.png#lightbox)
 3. 按一下**屬性 pad**中的 [**標題**] 屬性，將按鈕的標題變更為 `Hello, tvOS` ，並將**字型大小**設為128：
 
-    [![](hello-tvos-images/designer05.png "Set the title to Hello, tvOS and set the Font Size to 128")](hello-tvos-images/designer05.png#lightbox)
+    [![將標題設定為 Hello，tvOS，並將字型大小設為128](hello-tvos-images/designer05.png)](hello-tvos-images/designer05.png#lightbox)
 4. 調整標籤的大小，讓所有單字都可見，並將它放在靠近視窗頂端的位置：
 
-    [![](hello-tvos-images/designer06.png "Resize and center the label")](hello-tvos-images/designer06.png#lightbox)
+    [![調整大小並置中標籤](hello-tvos-images/designer06.png)](hello-tvos-images/designer06.png#lightbox)
 5. 標籤現在必須限制為其位置，如此才會顯示為預期。 不論螢幕大小為何。 若要這樣做，請按一下標籤，直到出現*T 形狀控點*為止：
 
-    [![](hello-tvos-images/designer07.png "The T-shaped handle")](hello-tvos-images/designer07.png#lightbox)
+    [![T 形狀控點](hello-tvos-images/designer07.png)](hello-tvos-images/designer07.png#lightbox)
 6. 若要水準限制標籤，請選取中間方形並將它拖曳到垂直虛線：
 
-    [![](hello-tvos-images/designer08.png "Select the center square")](hello-tvos-images/designer08zoom.png#lightbox)
+    [![選取中央正方形](hello-tvos-images/designer08.png)](hello-tvos-images/designer08zoom.png#lightbox)
 
      標籤應該會變成橙色。
 7. 選取標籤頂端的 T 控點，並將它拖曳至視窗的上邊緣：
 
-    [![](hello-tvos-images/designer09.png "Drag the handle to the top edge of the window")](hello-tvos-images/designer09.png#lightbox)
+    [![將控點拖曳至視窗的上邊緣](hello-tvos-images/designer09.png)](hello-tvos-images/designer09.png#lightbox)
 8. 接下來，依序按一下 [寬度] 和 [高度]*骨骼控點*：
 
-    [![](hello-tvos-images/designer10.png "The width and the height bone handles")](hello-tvos-images/designer10.png#lightbox)
+    [![寬度和高度的骨骼控點](hello-tvos-images/designer10.png)](hello-tvos-images/designer10.png#lightbox)
 
      按一下每個*骨骼控制碼*時，分別選取 [寬度] 和 [高度] 來設定固定維度。
 9. 完成時，您的條件約束看起來應該類似于 Properties pad 的 [配置] 索引標籤中：
 
-    [![](hello-tvos-images/designer11.png "Example Constraints")](hello-tvos-images/designer11.png#lightbox)
+    [![範例條件約束](hello-tvos-images/designer11.png)](hello-tvos-images/designer11.png#lightbox)
 10. 從 [**工具箱**] 拖曳 [**按鈕**]，並將它放在標籤底下。
 11. 按一下**屬性 pad**中的 [**標題**] 屬性，將按鈕的標題變更為 `Click Me` ：
 
-    [![](hello-tvos-images/designer12.png "Change the buttons title to Click Me")](hello-tvos-images/designer12.png#lightbox)
+    [![將按鈕標題變更為按一下我](hello-tvos-images/designer12.png)](hello-tvos-images/designer12.png#lightbox)
 12. 重複上述的步驟5到8，以限制 [tvOS] 視窗中的按鈕。 不過，請將其拖曳至標籤的底部，而不是將 T-控制碼拖曳至視窗頂端（如步驟 #7）：
 
-    [![](hello-tvos-images/designer14.png "Constrain the button")](hello-tvos-images/designer14.png#lightbox)
+    [![限制按鈕](hello-tvos-images/designer14.png)](hello-tvos-images/designer14.png#lightbox)
 13. 拖曳按鈕底下的另一個標籤，將其大小調整為與第一個標籤相同的寬度，並將其**對齊**設定為 [**置**中]：
 
-    [![](hello-tvos-images/designer15.png "Drag another label under the button, size it to be the same width as the first label and set its Alignment to Center")](hello-tvos-images/designer15.png#lightbox)
+    [![拖曳按鈕底下的另一個標籤，將其大小調整為與第一個標籤相同的寬度，並將其對齊方式設定為 [置中]](hello-tvos-images/designer15.png)](hello-tvos-images/designer15.png#lightbox)
 14. 如同第一個標籤和按鈕，將此標籤設為置中並釘選到位置和大小：
 
-    [![](hello-tvos-images/designer16.png "Pin the label into location and size")](hello-tvos-images/designer16.png#lightbox)
+    [![將標籤釘選到位置和大小](hello-tvos-images/designer16.png)](hello-tvos-images/designer16.png#lightbox)
 15. 將您的變更儲存至使用者介面。
 
 當您調整大小和移動控制項時，您應該已經注意到設計工具會提供以[APPLE TV 人類介面指導方針](https://developer.apple.com/tvos/human-interface-guidelines/)為基礎的實用貼齊提示。 這些指導方針可協助您建立高品質的應用程式，對 Apple 電視使用者具有熟悉的外觀與風格。
 
 如果您查看 [**檔大綱**] 區段，請注意如何顯示構成使用者介面之元素的版面配置和階層：
 
-[![](hello-tvos-images/designer17.png "The Document Outline section")](hello-tvos-images/designer17.png#lightbox)
+[![檔大綱區段](hello-tvos-images/designer17.png)](hello-tvos-images/designer17.png#lightbox)
 
 您可以從這裡選取要編輯的專案，或視需要拖曳來重新排列 UI 元素。 例如，如果 UI 專案是由另一個元素所涵蓋，您可以將它拖曳到清單底部，使其成為視窗的最上層專案。
 
@@ -339,16 +339,16 @@ namespace HellotvOS
 1. 在 Xamarin iOS 設計工具中，選取 [視圖控制器] 上的 [] 按鈕。
 2. 在 Properties pad 中，選取 [**事件**] 索引標籤：
 
-    [![](hello-tvos-images/event1.png "The Events tab")](hello-tvos-images/event1.png#lightbox)
+    [![[事件] 索引標籤](hello-tvos-images/event1.png)](hello-tvos-images/event1.png#lightbox)
 3. 找出 TouchUpInside 事件，並為它提供名為的事件處理常式 `Clicked` ：
 
-    [![](hello-tvos-images/event2.png "The TouchUpInside event")](hello-tvos-images/event2.png#lightbox)
+    [![TouchUpInside 事件](hello-tvos-images/event2.png)](hello-tvos-images/event2.png#lightbox)
 4. 當您按下**enter**時，將會開啟**ViewController**，並在程式碼中建議事件處理常式的位置。 使用鍵盤上的方向鍵來設定位置：
 
-    [![](hello-tvos-images/event3.png "Setting the location")](hello-tvos-images/event3.png#lightbox)
+    [![設定位置](hello-tvos-images/event3.png)](hello-tvos-images/event3.png#lightbox)
 5. 這會建立部分方法，如下所示：
 
-    [![](hello-tvos-images/event4.png "The partial method")](hello-tvos-images/event4.png#lightbox)
+    [![部分方法](hello-tvos-images/event4.png)](hello-tvos-images/event4.png#lightbox)
 
 我們現在已準備好開始新增一些程式碼，讓按鈕能夠運作。
 
@@ -359,10 +359,10 @@ namespace HellotvOS
 1. 開啟腳本，然後選取視圖控制器底部的標籤。
 2. 在 Properties pad 中，選取 [ **Widget** ] 索引標籤：
 
-    [![](hello-tvos-images/name1.png "Select the Widget tab")](hello-tvos-images/name1.png#lightbox)
+    [![選取 [Widget] 索引標籤](hello-tvos-images/name1.png)](hello-tvos-images/name1.png#lightbox)
 3. 在 [身分**識別 > 名稱**] 底下，新增 `ClickedLabel` ：
 
-    [![](hello-tvos-images/name2.png "Set ClickedLabel")](hello-tvos-images/name2.png#lightbox)
+    [![設定 ClickedLabel](hello-tvos-images/name2.png)](hello-tvos-images/name2.png#lightbox)
 
 我們現在已準備好開始更新標籤！
 
@@ -370,7 +370,7 @@ namespace HellotvOS
 
 如果您在 `ViewController.designer.cs` **方案總管**中選取，就能夠看到 `ClickedLabel` 標籤和 `Clicked` 事件處理常式如何對應至 c # 中的**輸出**和**動作**：
 
-[![](hello-tvos-images/accesscontrol.png "Outlets and Actions")](hello-tvos-images/accesscontrol.png#lightbox)
+[![輸出和動作](hello-tvos-images/accesscontrol.png)](hello-tvos-images/accesscontrol.png#lightbox)
 
 您可能也會注意到， `ViewController.designer.cs` 是部分類別，因此 Visual Studio for Mac 不需要進行修改， `ViewController.cs` 這會覆寫對類別所做的任何變更。
 
@@ -386,7 +386,7 @@ namespace HellotvOS
 
 在我們的應用程式中，每次按一下第一個按鈕時，我們就會更新標籤，以顯示按鈕按了幾次。 若要完成這項操作，我們需要 `ViewController.cs` 在 [ **Solution Pad**中按兩下檔案以進行編輯：
 
-[![](hello-tvos-images/code01.png "The Solution Pad")](hello-tvos-images/code01.png#lightbox)
+[![Solution Pad](hello-tvos-images/code01.png)](hello-tvos-images/code01.png#lightbox)
 
 首先，我們需要在類別中建立類別層級變數， `ViewController` 以追蹤發生的點擊次數。 編輯類別定義，使它看起來如下所示：
 
@@ -440,7 +440,7 @@ partial void Clicked (UIButton sender)
 
 您可以從 [Visual Studio for Mac] 畫面左上角的設定選取**器**中，選取組建的類型：
 
-[![](hello-tvos-images/run01.png "Select the type of build")](hello-tvos-images/run01.png#lightbox)
+[![選取組建的類型](hello-tvos-images/run01.png)](hello-tvos-images/run01.png#lightbox)
 
 ### <a name="building-the-application"></a>建置應用程式
 
@@ -462,11 +462,11 @@ partial void Clicked (UIButton sender)
 
 從 [**硬體**] 功能表選取 [**顯示 Apple TV 遠端**]，讓您可以控制模擬器。
 
-[![](hello-tvos-images/run04.png "Select Show Apple TV Remote")](hello-tvos-images/run04.png#lightbox)
+[![選取 [顯示 Apple TV 遠端]](hello-tvos-images/run04.png)](hello-tvos-images/run04.png#lightbox)
 
 使用模擬器的遠端，如果您按下按鈕幾次，標籤應該會更新為下列計數：
 
-[![](hello-tvos-images/run05.png "The label with updated count")](hello-tvos-images/run05.png#lightbox)
+[![具有已更新計數的標籤](hello-tvos-images/run05.png)](hello-tvos-images/run05.png#lightbox)
 
 恭喜！ 這裡涵蓋了許多基礎，但如果您遵循本教學課程的開始到完成，您現在應該已充分瞭解 tvOS 應用程式的元件，以及用來建立它們的工具。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 321ea87bfa4f460c4eaab31ef2ede6f3eb1b927f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1e1a9f3cd601a9d469bb53cce412daf08a8140f6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573569"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938888"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆疊視圖
 
@@ -20,7 +20,7 @@ Stack 視圖控制項（ `UIStackView` ）會利用自動設定和大小類別�
 
 附加至堆疊視圖的所有子檢視的配置，都是由它以開發人員定義的屬性（例如軸、分佈、對齊和間距）為基礎來管理：
 
-[![](stacked-views-images/stacked01.png "Subview layout diagram")](stacked-views-images/stacked01.png#lightbox)
+[![子視圖版面配置圖表](stacked-views-images/stacked01.png)](stacked-views-images/stacked01.png#lightbox)
 
 `UIStackView`在 tvOS 應用程式中使用時，開發人員可以在 IOS 設計工具中的分鏡腳本內定義子檢視，或在 c # 程式碼中新增和移除子檢視。
 
@@ -97,21 +97,21 @@ Stack 視圖控制項（ `UIStackView` ）會利用自動設定和大小類別�
 1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 設計您要加入至堆疊視圖之個別元素的版面配置：
 
-    [![](stacked-views-images/layout01.png "Element layout example")](stacked-views-images/layout01.png#lightbox)
+    [![元素版面配置範例](stacked-views-images/layout01.png)](stacked-views-images/layout01.png#lightbox)
 1. 將任何必要的條件約束新增至專案，以確保它們能夠正確地進行調整。 將元素加入至堆疊視圖之後，這個步驟很重要。
 1. 建立所需的複本數目（在此案例中為四個）：
 
-    [![](stacked-views-images/layout02.png "The required number of copies")](stacked-views-images/layout02.png#lightbox)
+    [![所需的複本數目](stacked-views-images/layout02.png)](stacked-views-images/layout02.png#lightbox)
 1. 從 [**工具箱**] 拖曳 [**堆疊視圖**]，並將它放在視圖上：
 
-    [![](stacked-views-images/layout03.png "A Stack View")](stacked-views-images/layout03.png#lightbox)
+    [![堆疊視圖](stacked-views-images/layout03.png)](stacked-views-images/layout03.png#lightbox)
 1. 選取 [堆疊] 視圖，在**Properties Pad**的 [ **Widget]** 索引標籤中，選取 [**填滿****對齊**]，並針對 [**分佈**] 按 [**填滿**]，並輸入 `25` **間距**：
 
-    [![](stacked-views-images/layout04.png "The Widget Tab")](stacked-views-images/layout04.png#lightbox)
+    [![[Widget] 索引標籤](stacked-views-images/layout04.png)](stacked-views-images/layout04.png#lightbox)
 1. 將堆疊視圖放在您想要的畫面上，並加入條件約束以將其保留在所需的位置。
 1. 選取個別的專案，並將其拖曳至 [堆疊] 視圖：
 
-    [![](stacked-views-images/layout05.png "The individual elements in the Stack View")](stacked-views-images/layout05.png#lightbox)
+    [![堆疊視圖中的個別元素](stacked-views-images/layout05.png)](stacked-views-images/layout05.png#lightbox)
 1. 系統會調整配置，並根據您在上面設定的屬性，將元素排列在堆疊視圖中。
 1. 在**屬性瀏覽器**的 [ **Widget]** 索引標籤中指派**名稱**，以在 c # 程式碼中使用您的 UI 控制項。
 1. 儲存您的變更。
@@ -121,21 +121,21 @@ Stack 視圖控制項（ `UIStackView` ）會利用自動設定和大小類別�
 1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 設計您要加入至堆疊視圖之個別元素的版面配置：
 
-    [![](stacked-views-images/layout01.png "Example element layout")](stacked-views-images/layout01.png#lightbox)
+    [![範例元素版面配置](stacked-views-images/layout01.png)](stacked-views-images/layout01.png#lightbox)
 1. 將任何必要的條件約束新增至專案，以確保它們能夠正確地進行調整。 將元素加入至堆疊視圖之後，這個步驟很重要。
 1. 建立所需的複本數目（在此案例中為四個）：
 
-    [![](stacked-views-images/layout02.png "The required number of copies")](stacked-views-images/layout02.png#lightbox)
+    [![所需的複本數目](stacked-views-images/layout02.png)](stacked-views-images/layout02.png#lightbox)
 1. 從 [**工具箱**] 拖曳 [**堆疊視圖**]，並將它放在視圖上：
 
-    [![](stacked-views-images/layout03-vs.png "A Stack View")](stacked-views-images/layout03-vs.png#lightbox)
+    [![堆疊視圖](stacked-views-images/layout03-vs.png)](stacked-views-images/layout03-vs.png#lightbox)
 1. 選取 [堆疊] 視圖，在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中選取 [**填入****對齊方式**]、[針對**分佈****平均填滿**]，然後輸入 `25` 作為**間距**：
 
-    [![](stacked-views-images/layout04-vs.png "The Widget Tab")](stacked-views-images/layout04-vs.png#lightbox)
+    [![[Widget] 索引標籤](stacked-views-images/layout04-vs.png)](stacked-views-images/layout04-vs.png#lightbox)
 1. 將堆疊視圖放在您想要的畫面上，並加入條件約束以將其保留在所需的位置。
 1. 選取個別的專案，並將其拖曳至 [堆疊] 視圖：
 
-    [![](stacked-views-images/layout05-vs.png "The individual elements in the Stack View")](stacked-views-images/layout05-vs.png#lightbox)
+    [![堆疊視圖中的個別元素](stacked-views-images/layout05-vs.png)](stacked-views-images/layout05-vs.png#lightbox)
 1. 系統會調整配置，並根據您在上面設定的屬性，將元素排列在堆疊視圖中。
 1. 在**屬性瀏覽器**的 [ **Widget]** 索引標籤中指派**名稱**，以在 c # 程式碼中使用您的 UI 控制項。
 1. 儲存您的變更。
@@ -184,11 +184,11 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 當應用程式執行時，四個元素會平均分散在堆疊視圖中：
 
-[![](stacked-views-images/layout06.png "When the app is run, the four elements will equally be distributed in our Stack View")](stacked-views-images/layout06.png#lightbox)
+[![當應用程式執行時，四個元素會平均分散在堆疊視圖中](stacked-views-images/layout06.png)](stacked-views-images/layout06.png#lightbox)
 
 如果播放者數目減少，則不會顯示未使用的視圖，而且堆疊視圖會調整配置以符合：
 
-[![](stacked-views-images/layout07.png "If the number of players is decreased, the unused views are hidden and the Stack View adjust the layout to fit")](stacked-views-images/layout07.png#lightbox)
+[![如果播放者數目減少，則不會顯示未使用的視圖，而且堆疊視圖會調整版面配置以符合](stacked-views-images/layout07.png)](stacked-views-images/layout07.png#lightbox)
 
 <a name="Populate-a-Stack-View-from-Code"></a>
 

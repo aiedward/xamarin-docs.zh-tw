@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 75ef118b642a8c6a66205c6f7e3bc03089c6593c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f7149a818506611176f7c34a6fae4ec733cd2ad9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127890"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938563"
 ---
 # <a name="picker-item-selection-on-ios"></a>IOS 上的選擇器專案選擇
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 當專案選取發生在時，此 iOS 平臺特定的控制項 [`Picker`](xref:Xamarin.Forms.Picker) 可讓使用者指定在流覽控制項中的專案時，或只在按下 [**完成**] 按鈕時，才會發生選取專案。 它會在 XAML 中使用，方法是將 `Picker.UpdateMode` 附加屬性設為列舉的值 `UpdateMode` ：
 
@@ -66,7 +66,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 結果是會將指定的套用 `UpdateMode` 至，以 [`Picker`](xref:Xamarin.Forms.Picker) 控制專案選取的時機：
 
-[![](picker-selection-images/picker-updatemode.png "Picker UpdateMode Platform-Specific")](picker-selection-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Platform-Specific")
+[![選擇器 UpdateMode 平臺特定](picker-selection-images/picker-updatemode.png)](picker-selection-images/picker-updatemode-large.png#lightbox "選擇器 UpdateMode 平臺特定")
 
 ## <a name="related-links"></a>相關連結
 

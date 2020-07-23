@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 568d1e354d0ee840aeed980d6e8cc6b83068a1c8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 345c05a439423474644ac64ef86f9adc580ab0b1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001536"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937718"
 ---
 # <a name="working-with-watchos-layout-in-xamarin"></a>在 Xamarin 中使用 watchOS 版面配置
 
@@ -28,11 +28,11 @@ ms.locfileid: "73001536"
 
 - 專注于可讀性。 謹慎使用字型大小和色彩，以確保文字可供讀取。 使用內建的文字樣式來取得自動動態類型支援。
 
-![](layout-images/type.png "Example of Dynamic Type support")
+![動態類型支援的範例](layout-images/type.png)
 
 - 專注于觸控目標大小。 具有文字標籤的按鈕/tappable 資料表資料列應該橫跨整個畫面。 Apple 說「不要將三個以上的專案並存」，而且如果您使用圖示而不是文字標籤。
 
-- 使用[`Menu` 控制項](~/ios/watchos/user-interface/menu.md)來公開較不常使用的功能，讓您的應用程式設計更清楚且簡潔。
+- 使用[ `Menu` 控制項](~/ios/watchos/user-interface/menu.md)來公開較不常使用的功能，讓您的應用程式設計更清楚且簡潔。
 
 ## <a name="implementation"></a>實作
 
@@ -40,41 +40,41 @@ Watch 套件包含下列控制項，可協助您建立引人注目的監看式�
 
 ### <a name="interface-controller"></a>介面控制器
 
-`WKInterfaceController` 是您所有場景的基本類別。
+`WKInterfaceController`是您所有場景的基本類別。
 
 介面控制器的設計介面的行為就像垂直**群組**：您可以將其他控制項拖曳到介面控制器上，它們會自動設定在另一個上方：
 
-![](layout-images/controller-scene.png "Controls are automatically laid-out one above the other")
+![控制項會自動設定給另一個上方的](layout-images/controller-scene.png)
 
 您可以在每個控制項上設定 [**位置**] 和 [**大小**] 屬性，以控制其外觀：
 
-![](layout-images/positionsize-attributes.png "Set the Position and Size properties on each control")
+![設定每個控制項的位置和大小屬性](layout-images/positionsize-attributes.png)
 
 當 [大小] 設定為 [**相對於容器**] 時，您可以提供比例值和位移調整。 這個螢幕擷取畫面顯示已設定為使用 [監看式] 畫面寬度（**0.8**）80% 的按鈕：
 
-![](layout-images/button-attributes.png "Provide a proportional value and an offset adjustment")
+![提供比例值和位移調整](layout-images/button-attributes.png)
 
 ### <a name="group"></a>群組
 
-`WKInterfaceGroup` 是簡單的版面配置容器，可設定為垂直或水準堆疊控制項。 根據預設，它會包含每個控制項之間的間距，但是您可以在**屬性**偵測器中修改間距（和內凹）。
+`WKInterfaceGroup`是簡單的版面配置容器，可設定為垂直或水準堆疊控制項。 根據預設，它會包含每個控制項之間的間距，但是您可以在**屬性**偵測器中修改間距（和內凹）。
 
-![](layout-images/group-attributes.png "Modify the spacing and insets in the Attributes inspector")
+![修改屬性偵測器中的間距和內凹](layout-images/group-attributes.png)
 
 群組本身可以相對於其周圍的控制項調整大小和位置，而且可以嵌套群組來建立複雜的配置。
 
-![](layout-images/group-scene.png "Groups can be nested to create complex layouts")
+![群組可以進行嵌套以建立複雜的版面配置](layout-images/group-scene.png)
 
 ### <a name="separator"></a>Separator
 
 分隔符號控制項的目的是要協助您在版面配置中提供視覺指引。 使用分隔符號（或背景色彩或影像），協助使用者瞭解哪些內容與您的螢幕相關。
 
-![](layout-images/separator-scene.png "Example of Separator usage")
+![分隔符號使用方式的範例](layout-images/separator-scene.png)
 
 請注意，未使用畫面完整寬度的藍色和綠色分隔符號已設定為**固定**或**相對於容器**大小。
 
 ### <a name="content-controls"></a>內容控制項
 
-沒有 `Label`、`Image`、`Button`、`Switch`、`Slider`、`Map`和[其他控制項](~/ios/watchos/user-interface/index.md)，就不會完成任何版面配置。
+沒有 `Label` 、 `Image` 、、、、 `Button` `Switch` `Slider` `Map` 和[其他控制項](~/ios/watchos/user-interface/index.md)，就不會完成任何版面配置。
 您可以使用**群組**或每個控制項上的位置和大小設定，在您的版面配置中放置這些值。
 
 ## <a name="related-links"></a>相關連結

@@ -10,22 +10,22 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 440a078857a940f57f5700a18f91fc8b25bdfae8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137731"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937198"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 中的點陣圖基本概念
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _從各種來源載入點陣圖並加以顯示。_
 
 SkiaSharp 中的點陣圖支援相當廣泛。 本文只涵蓋 &mdash; 如何載入點陣圖和如何顯示它們的基本概念：
 
-![](bitmaps-images/basicbitmaps-small.png "The display of two bitmaps")
+![顯示兩個位圖](bitmaps-images/basicbitmaps-small.png)
 
 在[SkiaSharp 點陣圖](../bitmaps/index.md)一節中可以找到更深入的點陣圖探索。
 
@@ -208,7 +208,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 點陣圖會延展到矩形的維度，這就是在這些螢幕擷取畫面中，可將猴子水準延展的原因：
 
-[![](bitmaps-images/basicbitmaps-small.png "A triple screenshot of the Basic Bitmaps page")](bitmaps-images/basicbitmaps-large.png#lightbox "A triple screenshot of the Basic Bitmaps page")
+[![[基本點陣圖] 頁面的三重螢幕擷取畫面](bitmaps-images/basicbitmaps-small.png)](bitmaps-images/basicbitmaps-large.png#lightbox "[基本點陣圖] 頁面的三重螢幕擷取畫面")
 
 第三個影像 &mdash; ，只有在您執行程式並從自己的圖片庫載入相片時，才會 &mdash; 顯示在矩形中，但是矩形的位置和大小會調整以維持點陣圖的外觀比例。 這項計算比較複雜，因為它需要根據點陣圖和目的地矩形的大小來計算縮放比例，並將矩形置中在該區域內：
 

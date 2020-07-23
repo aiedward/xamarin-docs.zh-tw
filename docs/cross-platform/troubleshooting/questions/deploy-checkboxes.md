@@ -6,12 +6,12 @@ ms.assetid: aaf675cd-d885-4dac-9754-77dbcaea3be9
 author: davidortinau
 ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: edf471f1d9a2ee4adc11f09e0c7b7ad3cf6f78f1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 92fe421aee6b5add84a188468856172bf8c56d15
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014247"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939278"
 ---
 # <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>Configuration Manager 中的 [部署] 核取方塊無法使用
 
@@ -23,4 +23,4 @@ ms.locfileid: "73014247"
 
 當您未將 [Xamarin iOS 應用程式] 專案設定為 [部署] 時，這項變更會排除可能出現在舊版 Xamarin （版本3.3 和較舊版本）中的錯誤：
 
-![](deploy-checkboxes-images/error.png "Error dialog: The project iPhoneApp1 needs to be deployed before it can be started. Verify the project is selected to be deployed in the Solution Configuration Manager.")
+![錯誤對話方塊：專案 iPhoneApp1 必須先部署，才可以啟動。 確認已選取要在 [方案 Configuration Manager 中部署的專案。](deploy-checkboxes-images/error.png)

@@ -10,16 +10,16 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf03d0c32d80d7a1821e323acdc84a351413efec
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 71238775e9cc9d3e32ab9c9287e5b52c759ca9eb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138875"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939928"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>將效果參數傳遞為附加屬性
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
 _附加屬性可以用來定義會回應執行時間屬性變更的效果參數。本文示範如何使用附加屬性將參數傳遞至效果，以及在執行時間變更參數。_
 
@@ -38,11 +38,11 @@ _附加屬性可以用來定義會回應執行時間屬性變更的效果參數�
 
 範例應用程式會示範 `ShadowEffect` ，它會將陰影新增至控制項所顯示的文字 [`Label`](xref:Xamarin.Forms.Label) 。 此外，陰影的色彩可以在執行階段變更。 下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
 
-![](attached-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
+![陰影效果專案責任](attached-properties-images/shadow-effect.png)
 
 [`Label`](xref:Xamarin.Forms.Label)上的控制項 `HomePage` 是由 `LabelShadowEffect` 每個平臺特定專案中的所自訂。 透過 `ShadowEffect` 類別中的附加屬性，將參數傳遞至每個 `LabelShadowEffect`。 每個 `LabelShadowEffect` 類別都衍生自每個平台的 `PlatformEffect` 類別。 這會導致將陰影新增至 `Label` 控制項所顯示的文字，如下列螢幕擷取畫面所示：
 
-![](attached-properties-images/screenshots.png "Shadow Effect on each Platform")
+![每個平台上的陰影效果](attached-properties-images/screenshots.png)
 
 ## <a name="creating-effect-parameters"></a>建立效果參數
 
@@ -432,7 +432,7 @@ public class LabelShadowEffect : PlatformEffect
 
 `OnElementPropertyChanged` 方法會更新陰影的色彩或位移，前提是已變更適當的 `ShadowEffect` 附加屬性值。 因為此覆寫會呼叫多次，所以請一律檢查變更的屬性。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用附加屬性將參數傳遞給效果，並在執行階段變更參數。 附加屬性可用來定義會回應執行階段屬性變更的效果參數。
 

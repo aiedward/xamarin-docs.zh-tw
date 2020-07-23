@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a59f65655772768860ce29128f14a48641abc26
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 71e64f7b8286f22040a802336e9be756d932c0cd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134273"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936535"
 ---
 # <a name="basic-animation-in-skiasharp"></a>SkiaSharp 中的基本動畫
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索如何建立 SkiaSharp 圖形的動畫_
 
 您可以在中建立 SkiaSharp 圖形的動畫，其方式是 Xamarin.Forms `PaintSurface` 定期呼叫方法，每次繪製圖形的方式稍有不同。 以下是本文稍後所示的動畫，其中的同心圓形看起來從中央擴展：
 
-![](animation-images/animationexample.png "Several concentric circles seemingly expanding from the center")
+![數個同心圓形看似從中央展開](animation-images/animationexample.png)
 
 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式中的 [ **Pulsating 橢圓形**] 頁面會以動畫顯示橢圓形的兩個軸，使其看似 Pulsating，而且您甚至可以控制此 pulsation 的速率。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)會具現化和， Xamarin.Forms `Slider` `Label` 以顯示滑杆的目前值。 這是整合 `SKCanvasView` 與其他視圖的常見方法 Xamarin.Forms ：
 
@@ -144,7 +144,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 方法會根據顯示區域的大小，以及根據最大半徑的最小半徑來計算最大半徑。 `scale`值會在0和1之間產生動畫，並回到0，因此方法會使用它來計算 `xRadius` 和 `yRadius` ，範圍介於 `minRadius` 和之間 `maxRadius` 。 這些值用來繪製和填滿橢圓形：
 
-[![](animation-images/pulsatingellipse-small.png "Triple screenshot of the Pulsating Ellipse page")](animation-images/pulsatingellipse-large.png#lightbox "Triple screenshot of the Pulsating Ellipse page")
+[![Pulsating 橢圓形頁面的三重螢幕擷取畫面](animation-images/pulsatingellipse-small.png)](animation-images/pulsatingellipse-large.png#lightbox "Pulsating 橢圓形頁面的三重螢幕擷取畫面")
 
 請注意， `SKPaint` 物件是在區塊中建立的 `using` 。 就像許多 SkiaSharp 類別 `SKPaint` 衍生自 `SKObject` ，後者衍生自 `SKNativeObject` ，後者會執行 [`IDisposable`](xref:System.IDisposable) 介面。 `SKPaint`覆寫 `Dispose` 方法以釋放非受控資源。
 
@@ -247,7 +247,7 @@ public class ExpandingCirclesPage : ContentPage
 
 結果就是當等於0時，影像看起來會 `t` 像是 `t` 等於1，而圓圈似乎會繼續持續擴充：
 
-[![](animation-images/expandingcircles-small.png "Triple screenshot of the Expanding Circles page")](animation-images/expandingcircles-large.png#lightbox "Triple screenshot of the Expanding Circles page")
+[![[展開圓形] 頁面的三重螢幕擷取畫面](animation-images/expandingcircles-small.png)](animation-images/expandingcircles-large.png#lightbox "[展開圓形] 頁面的三重螢幕擷取畫面")
 
 ## <a name="related-links"></a>相關連結
 

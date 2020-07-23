@@ -1,18 +1,18 @@
 ---
 title: System.servicemodel 中的 system.object 資料
-description: 本檔說明如何使用 system.string 和 Mono 來存取 Xamarin iOS 應用程式中的 SQLite 資料。
+description: 本檔說明如何使用 System.web 和 Mono.Data.Sqlite.dll 來存取 Xamarin iOS 應用程式中的 SQLite 資料。
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 736d70aebcf861b5557d5f076a42ff0a3dcfc043
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: eb3453c3475fdc2e309a888a1aa1318eccc59228
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569945"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938732"
 ---
 # <a name="systemdata-in-xamarinios"></a>System.servicemodel 中的 system.object 資料
 
@@ -34,7 +34,7 @@ Xamarin. iOS 8.10 新增了對[system.string 的支援，包括](xref:System.Dat
 
 首先，以滑鼠右鍵按一下 [**參考**] 節點，然後選擇 [**編輯參考 ...** ]，然後選取 `System.Data` 和 `Mono.Data.Sqlite` ：
 
-[![](system.data-images/edit-references-sml.png "Adding new references")](system.data-images/edit-references.png#lightbox)
+[![加入新的參考](system.data-images/edit-references-sml.png)](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>範例程式碼
 
@@ -139,7 +139,7 @@ using (var addCmd = conn.CreateCommand ()) {
 
 ### <a name="systemdata"></a>System.Data
 
-**System.web**中遺漏的功能包含：
+**System.Data.dll**中遺漏的功能包含：
 
 - 任何需要[system.object 的](xref:System.CodeDom)專案（例如 [TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) ）
 - XML 設定檔案支援（例如 [System.web. DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) ）
@@ -152,7 +152,7 @@ using (var addCmd = conn.CreateCommand ()) {
 
 ### <a name="monodatasqlite"></a>Mono. Data. Sqlite
 
-同時， **Mono. Data. Sqlite**不會變更任何原始程式碼，而是會因為系結 Sqlite 3.5，而改為裝載一些*運行*時間問題 `Mono.Data.Sqlite.dll` 。 同時，iOS 8 隨附于 SQLite 3.8.5。 就夠了，這兩個版本之間有一些改變。
+同時， **Mono.Data.Sqlite.dll**不會變更任何原始程式碼，而是會因為系結 SQLite 3.5，而改為裝載一些*運行*時間問題 `Mono.Data.Sqlite.dll` 。 同時，iOS 8 隨附于 SQLite 3.8.5。 就夠了，這兩個版本之間有一些改變。
 
 較舊版本的 iOS 隨附下列版本的 SQLite：
 

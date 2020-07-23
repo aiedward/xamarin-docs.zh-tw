@@ -7,30 +7,30 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 9ab18e643038d4a61b3b201295d4298f2b5e1adc
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 3fd119828a953c002c7d66f248bf26b413018ae4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574180"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939694"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Xamarin 中的 watchOS 影像控制項
 
 watchOS 提供 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage) 可顯示影像和簡單動畫的控制項。 有些控制項也可以具有背景影像（例如按鈕、群組和介面控制器）。
 
-![](image-images/image-walkway.png "顯示圖片的 Apple Watch") ![](image-images/image-animation.png "具有簡單動畫的 Apple Watch")
+![Apple Watch 顯示 ](image-images/image-walkway.png) ![ 具有簡單動畫的圖片 Apple Watch](image-images/image-animation.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 使用資產類別目錄映射來新增影像以監看套件應用程式。
 只有 **@2x** 版本是必要的，因為所有監看式裝置都有 Retina 顯示。
 
-![](image-images/asset-universal-sml.png "Only 2x versions are required, since all watch devices have Retina displays")
+![只有2x 版本是必要的，因為所有監看式裝置都有 Retina 顯示](image-images/asset-universal-sml.png)
 
 最好的作法是確保影像本身是監看顯示的正確大小。 *避免*使用大小不正確的影像（特別是大型映射）和縮放比例，以顯示在監看式上。
 
 您可以使用資產目錄影像中的監看套件大小（38mm 和42mm），為每個顯示大小指定不同的影像。
 
-![](image-images/asset-watch-sml.png "You can use the Watch Kit sizes 38mm and 42mm in an asset catalog image to specify different images for each display size")
+![您可以使用資產目錄影像中的監看套件大小38mm 和42mm，為每個顯示大小指定不同的影像](image-images/asset-watch-sml.png)
 
 ## <a name="images-on-the-watch"></a>監看式上的影像
 
@@ -38,7 +38,7 @@ watchOS 提供 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage) 可顯示影
 
 例如， [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)範例在監看式應用程式專案中，已將許多影像新增至資產目錄：
 
-![](image-images/asset-whale-sml.png "The WatchKitCatalog sample has a number of images added to an asset catalog in the watch app project")
+![WatchKitCatalog 範例在監看式應用程式專案中，已將許多影像新增至資產目錄](image-images/asset-whale-sml.png)
 
 這些專案可以有效率地載入，並在 watch 上 `SetImage` 以字串名稱參數顯示：
 
@@ -59,7 +59,7 @@ myOtherImageControl.SetImage("Worry");
 
 例如， [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)範例在 watch 擴充功能專案中具有名為**黃蜂**的映射：
 
-![](image-images/asset-bumblebee-sml.png "The WatchKitCatalog sample has an image named Bumblebee in the watch extension project")
+![WatchKitCatalog 範例在 watch 擴充功能專案中具有名為黃蜂的映射](image-images/asset-bumblebee-sml.png)
 
 下列程式碼將會產生：
 
@@ -78,7 +78,7 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)範例在 watch 應用程式專案中有一系列具有**匯流排**前置詞的已編號影像：
 
-![](image-images/asset-bus-animation-sml.png "The WatchKitCatalog sample has a series of numbered images in the watch app project with the Bus prefix")
+![WatchKitCatalog 範例在 watch 應用程式專案中有一系列具有匯流排前置詞的已編號影像](image-images/asset-bus-animation-sml.png)
 
 若要將這些影像顯示為動畫，請先使用加上前置詞名稱來載入影像， `SetImage` 然後再呼叫 `StartAnimating` ：
 
