@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 4b7d3d19ce8766ccdbfc41163fcad44074e832b8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bec2bef92433320925c4179535c8371b69b9bf22
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80159755"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996548"
 ---
-# <a name="deployment-and-testing"></a>部署及測試
+# <a name="deployment-and-testing-of-xamarinandroid-apps"></a>部署和測試 Xamarin Android 應用程式
 
 本節所包含的指南說明如何測試應用程式、最佳化其效能、準備發行、使用憑證進行簽署，以及將它發佈至應用程式市集。
 
@@ -24,9 +24,9 @@ ms.locfileid: "80159755"
 
 ## <a name="apply-changes"></a>[套用變更](apply-changes.md)
 
-本指南介紹了"應用更改"功能,該功能允許您在不重新啟動應用的情況下將資源更改推送到正在運行的應用。
+本指南涵蓋 [套用變更] 功能，可讓您將資源變更推送至執行中的應用程式，而不需要重新開機應用程式。
 
-## <a name="building-apps"></a>[編譯應用](building-apps/index.md)
+## <a name="building-apps"></a>[建立應用程式](building-apps/index.md)
 
 此小節描述建置流程的運作方式，並說明如何建置 ABI 特定 APK。
 
@@ -66,7 +66,7 @@ ms.locfileid: "80159755"
 
 本指南說明如何使用分析工具來檢查 Android 應用程式的效能和記憶體使用量。
 
-## <a name="preparing-an-application-for-release"></a>[準備可供發行的應用程式](~/android/deploy-test/release-prep/index.md)
+## <a name="preparing-an-application-for-release"></a>[準備要發行的應用程式](~/android/deploy-test/release-prep/index.md)
 
 應用程式完成編碼和測試之後，必須準備可供散發的套件。 準備此套件的第一項工作是建置可供發行的應用程式，主要是設定一些應用程式屬性。
 

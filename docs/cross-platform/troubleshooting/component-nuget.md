@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: f81df8ac253e53b16c3ab09bf80d66a7b6324854
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b9b771efe338fbcc250aa6e7a83b73f35269d3bf
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571515"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996808"
 ---
 # <a name="updating-component-references-to-nuget"></a>正在更新 NuGet 的元件參考
 
@@ -27,7 +27,7 @@ ms.locfileid: "84571515"
 
 ## <a name="manually-removing-component-references"></a>手動移除元件參考
 
-15.6 版的 Visual Studio 和7.4 版的 Visual Studio for Mac 不再支援您專案中的元件。 
+15.6 版的 Visual Studio 和7.4 版的 Visual Studio for Mac 不再支援您專案中的元件。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -37,7 +37,7 @@ ms.locfileid: "84571515"
 
 若要從專案中移除元件：
 
-1. 開啟 .csproj  檔案。 若要這麼做，請在專案名稱上按一下滑鼠右鍵，然後選取 **[卸載專案**]。 
+1. 開啟 .csproj  檔案。 若要這麼做，請在專案名稱上按一下滑鼠右鍵，然後選取 **[卸載專案**]。
 
 2. 在卸載的專案上再次以滑鼠右鍵按一下，然後選取 [**編輯 {您的專案名稱} .csproj**]。
 
@@ -151,7 +151,7 @@ NuGet 套件會繼續列在 [**套件**] 節點中，且您的應用程式會如
 
 請注意，[**封裝**] 索引標籤可能會是空的：
 
-![](component-nuget-images/packages-tab-empty-sml.png)
+![套件索引標籤](component-nuget-images/packages-tab-empty-sml.png)
 
 _它可能包含 NuGet 相依性，但可以忽略這些相依性。_
 
@@ -179,7 +179,7 @@ _它可能包含 NuGet 相依性，但可以忽略這些相依性。_
 1. 以滑鼠右鍵按一下 [**套件**] 節點，然後選擇 [**新增套件**]。
 2. 依名稱或作者搜尋 NuGet 取代：
 
-    ![](component-nuget-images/nuget-search-sml.png)
+    ![NuGet 搜尋](component-nuget-images/nuget-search-sml.png)
 
 3. 按 [**新增套件**]。
 

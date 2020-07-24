@@ -8,24 +8,24 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 48060356014dc7600518b5de555ad3f346c50c35
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: a721f51d3f59bc166a48f5cc3a3eec9712ace837
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128540"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996678"
 ---
 # <a name="visualelement-elevation-on-android"></a>Android 上的 VisualElement 提高許可權
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定是用來控制以 API 21 或更新版本為目標之應用程式上的視覺元素的提高許可權或迭置順序。 視覺專案的高度會決定其繪製順序，而具有較高 Z 值的視覺元素則會 occluding 具有較低 Z 值的視覺元素。 它會在 XAML 中使用，方法是將 `VisualElement.Elevation` 附加屬性設定為 `boolean` 值：
 
 ```xaml
 <ContentPage ...
-             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:android="clr-namespace::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific;assembly=:::no-loc(Xamarin.Forms):::.Core"
              Title="Elevation">
     <StackLayout>
         <Grid>
@@ -43,8 +43,8 @@ ms.locfileid: "84128540"
 或者，您也可以使用 Fluent API，從 c # 取用它：
 
 ```csharp
-using Xamarin.Forms.PlatformConfiguration;
-using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using :::no-loc(Xamarin.Forms):::.PlatformConfiguration;
+using :::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific;
 ...
 
 public class AndroidElevationPageCS : ContentPage
@@ -82,15 +82,15 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>`方法會指定此平臺特定僅在 Android 上執行。 `VisualElement.SetElevation`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 會用來將視覺專案的提升許可權設定為可為 null `float` 。 此外， `VisualElement.GetElevation` 方法可以用來抓取視覺專案的提高許可權值。
+`Button.On<Android>`方法會指定此平臺特定僅在 Android 上執行。 `VisualElement.SetElevation`命名空間中的方法 [`:::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific`](xref::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific) 會用來將視覺專案的提升許可權設定為可為 null `float` 。 此外， `VisualElement.GetElevation` 方法可以用來抓取視覺專案的提高許可權值。
 
-結果是可以控制視覺專案的高度，讓具有較高 Z 值的視覺專案遮蔽具有較低 Z 值的視覺元素。 因此，在此範例中，第二個 [`Button`](xref:Xamarin.Forms.Button) 會呈現在上方， [`BoxView`](xref:Xamarin.Forms.BoxView) 因為它具有較高的提高許可權值：
+結果是可以控制視覺專案的高度，讓具有較高 Z 值的視覺專案遮蔽具有較低 Z 值的視覺元素。 因此，在此範例中，第二個 [`Button`](xref::::no-loc(Xamarin.Forms):::.Button) 會呈現在上方， [`BoxView`](xref::::no-loc(Xamarin.Forms):::.BoxView) 因為它具有較高的提高許可權值：
 
-![](visualelement-elevation-images/elevation.png)
+![VisualElement 提高許可權螢幕擷取畫面](visualelement-elevation-images/elevation.png)
 
 ## <a name="related-links"></a>相關連結
 
 - [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific API](xref::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific)
+- [AndroidSpecific. AppCompat API](xref::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific.AppCompat)

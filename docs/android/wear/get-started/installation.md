@@ -1,5 +1,5 @@
 ---
-title: '安裝和設定磨損作業系統 onXamarin '
+title: '在 Xamarin Android 上安裝和設定磨損作業系統 '
 description: 本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發所需的安裝步驟和設定詳細資料。 在本文結尾，您將會有一個整合到 Visual Studio for Mac 和/或 Microsoft Visual Studio 的已運作的 Xamarin Android 磨損安裝，而且您將可以開始建立您的第一個 Xamarin. Android 磨損應用程式。
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 83ec214ae1838959355e99322ce5a809ead004fa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ea54dcd1df800df1df855fc6b7efedecfda1a24f
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028735"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996860"
 ---
-# <a name="setup-and-installation"></a>設定與安裝
+# <a name="install-and-setup-wear-os-on-xamarinandroid"></a>在 Xamarin Android 上安裝和設定磨損作業系統
 
 _本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發所需的安裝步驟和設定詳細資料。在本文結尾，您將會有一個整合到 Visual Studio for Mac 和/或 Microsoft Visual Studio 的已運作的 Xamarin Android 磨損安裝，而且您將可以開始建立您的第一個 Xamarin. Android 磨損應用程式。_
 
@@ -22,13 +22,13 @@ _本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發�
 
 若要建立以 Xamarin 為基礎的 Android 磨損應用程式，您必須具備下列各項：
 
-- 需要**Visual Studio 或 Visual Studio for Mac** &ndash; Visual Studio 2017 的社區或更新版本。
+- **Visual Studio 或 Visual Studio for Mac** &ndash;需要 Visual Studio 2017 的社區或更新版本。
 
-- **&ndash; xamarin. android 4.17**或更新版本必須安裝，並以 Visual Studio 或 Visual Studio for Mac 設定。
+- **Xamarin.Android**您 &ndash; 必須安裝並設定 Visual Studio 或 Visual Studio for Mac 的 xamarin Android xamarin. android 4.17 或更新版本。
 
 - **Android SDK** Android SDK 5.0.1 （API 21）或更新版本必須透過 Android SDK 管理員進行安裝。
 
-- 如果您要針對 API 層級24或更高版本進行開發，則**JAVA 開發人員套件**&ndash; Xamarin Android 開發需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) （jdk 1.8 也支援早于24的 api 層級）。
+- **JAVA 開發人員套件** &ndash;如果您要針對 API 層級24或更高版本進行開發，則 Xamarin Android 開發需要[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) （jdk 1.8 也支援早于24的 api 層級）。
 
 如果您是特別針對 API 層級23或更早的版本進行開發，您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 。
 
@@ -37,23 +37,23 @@ _本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發�
 
 ## <a name="installation"></a>安裝
 
-安裝 Xamarin 之後，請執行下列步驟，讓您準備好建立和測試 Android 磨損應用程式： 
+安裝 Xamarin 之後，請執行下列步驟，讓您準備好建立和測試 Android 磨損應用程式：
 
 1. 安裝必要的 Android SDK 和工具。
 2. 設定測試裝置。
 3. 建立您的第一個 Android 磨損應用程式。
 
-下列各節將說明這些步驟。
+這些步驟將於下列各節中說明。
 
-### <a name="install-android-sdk-and-tools"></a>安裝 Android SDK 和工具 
+### <a name="install-android-sdk-and-tools"></a>安裝 Android SDK 和工具
 
-啟動**Android SDK 管理員**： 
+啟動**Android SDK 管理員**：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![如何在 Visual Studio 中啟動 Android SDK 管理員](installation-images/vs/sdk-menu.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![如何在 Visual Studio for Mac 中啟動 Android SDK 管理員](installation-images/xs/sdk-menu.png)
 
@@ -65,31 +65,31 @@ _本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發�
 - Android 4.4 W （API20），或
 - Android 5.0.1 （API21）或更高版本。
 
-如果您未安裝最新的 SDK 和工具，請下載所需的 SDK 工具*和*API 位（您可能需要稍微滾動一點來尋找它們，&ndash; API 選擇如下所示）： 
+如果您未安裝最新的 SDK 和工具，請下載所需的 SDK 工具*和*api 位（您可能需要逐一滾動以尋找 &ndash; api 選取專案，如下所示）：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![啟用 Android 5.0.1 元件的範例 SDK 管理員螢幕擷取畫面](installation-images/vs/sdk-select.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![啟用 Android 4.4 和5.0.1 元件的範例 SDK 管理員螢幕擷取畫面](installation-images/xs/sdk-select.png)
 
 -----
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>組態
 
-在您可以使用測試應用程式之前，您必須先設定 Android 磨損模擬器或實際的 Android 磨損裝置。 
+在您可以使用測試應用程式之前，您必須先設定 Android 磨損模擬器或實際的 Android 磨損裝置。
 
 ### <a name="android-wear-emulator"></a>Android 磨損模擬器
 
 您必須先使用**Google 模擬器管理員**來設定 Android 磨損 Android 虛擬裝置（AVD），才能使用 android 磨損模擬器：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![如何從 Visual Studio 啟動 Android Emulator 管理員](installation-images/vs/emulator-menu.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![如何從 Visual Studio for Mac 啟動 Android Emulator 管理員](installation-images/xs/emulator-menu.png)
 
@@ -107,9 +107,9 @@ _本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發�
 
 ## <a name="packaging-your-app"></a>封裝您的應用程式
 
-Android 磨損應用程式一律會與隨附的 Android 手機應用程式一起散發。 
+Android 磨損應用程式一律會與隨附的 Android 手機應用程式一起散發。
 
-當您新增 Android 磨損應用程式作為主要 Android 應用程式的參考時，會自動假設為 Android 磨損專案，並會為您產生所有必要的 XML 和中繼資料。 此外，它也會驗證套件和版本號碼是否相符，讓您可以輕鬆地將應用程式寄送到 Google Play。 
+當您新增 Android 磨損應用程式作為主要 Android 應用程式的參考時，會自動假設為 Android 磨損專案，並會為您產生所有必要的 XML 和中繼資料。 此外，它也會驗證套件和版本號碼是否相符，讓您可以輕鬆地將應用程式寄送到 Google Play。
 
 若要深入瞭解封裝磨損應用程式，請參閱[使用封裝](~/android/wear/deploy-test/packaging.md)。
 
