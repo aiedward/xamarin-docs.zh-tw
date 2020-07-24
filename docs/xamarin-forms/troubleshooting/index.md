@@ -1,5 +1,5 @@
 ---
-title: 疑難排解
+title: '疑難排解:::no-loc(Xamarin.Forms):::'
 description: 常見的錯誤狀況和解決方式
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -9,22 +9,22 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5a84b7a5ca336b5823f1e0d2201e17cb4f152c27
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 857c729ac7642003f40e34afa024c6cfcbaabb39
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930841"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996561"
 ---
-# <a name="troubleshooting"></a>疑難排解
+# <a name="troubleshooting-no-locxamarinforms"></a>疑難排解:::no-loc(Xamarin.Forms):::
 
 _常見的錯誤狀況和解決方式_
 
-## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>錯誤：「找不到相容的版本 ...」 Xamarin.Forms
+## <a name="error-unable-to-find-a-version-of-no-locxamarinforms-compatible-with"></a>錯誤：「找不到相容的版本 ...」 :::no-loc(Xamarin.Forms):::
 
-更新**Package Console** Xamarin.Forms 解決方案或 Xamarin.Forms Android 應用程式專案中的所有 NuGet 套件時，套件主控台視窗中可能會出現下列錯誤：
+更新**Package Console** :::no-loc(Xamarin.Forms)::: 解決方案或 :::no-loc(Xamarin.Forms)::: Android 應用程式專案中的所有 NuGet 套件時，套件主控台視窗中可能會出現下列錯誤：
 
 ```csharp
 Attempting to resolve dependency 'Xamarin.Android.Support.v7.AppCompat (= 23.3.0.0)'.
@@ -32,30 +32,30 @@ Attempting to resolve dependency 'Xamarin.Android.Support.v4 (= 23.3.0.0)'.
 Looking for updates for 'Xamarin.Android.Support.v7.MediaRouter'...
 Updating 'Xamarin.Android.Support.v7.MediaRouter' from version '23.3.0.0' to '23.3.1.0' in project 'Todo.Droid'.
 Updating 'Xamarin.Android.Support.v7.MediaRouter 23.3.0.0' to 'Xamarin.Android.Support.v7.MediaRouter 23.3.1.0' failed.
-Unable to find a version of 'Xamarin.Forms' that is compatible with 'Xamarin.Android.Support.v7.MediaRouter 23.3.0.0'.
+Unable to find a version of ':::no-loc(Xamarin.Forms):::' that is compatible with 'Xamarin.Android.Support.v7.MediaRouter 23.3.0.0'.
 ```
 
 ### <a name="what-causes-this-error"></a>造成此錯誤的原因為何？
 
-Visual Studio for Mac （或 Visual Studio）可能表示更新適用于 Xamarin.Forms NuGet 套件*及其所有*相依性。 在 Xamarin Studio 中，解決方案的 [**套件**] 節點看起來可能像這樣（版本號碼可能不同）：
+Visual Studio for Mac （或 Visual Studio）可能表示更新適用于 :::no-loc(Xamarin.Forms)::: NuGet 套件*及其所有*相依性。 在 Xamarin Studio 中，解決方案的 [**套件**] 節點看起來可能像這樣（版本號碼可能不同）：
 
 ![Android 專案套件資料夾](images/updates-available.png)
 
 如果您嘗試更新_所有_的封裝，可能會發生此錯誤。
 
-這是因為當 Android 專案設定為 Android 6.0 （API 23）的目標/編譯版本時，會對 Xamarin.Forms android 支援套件的*特定*版本進行硬相依性。 雖然這些封裝的更新版本可能可供使用，但 Xamarin.Forms 不一定會與其相容。
+這是因為當 Android 專案設定為 Android 6.0 （API 23）的目標/編譯版本時，會對 :::no-loc(Xamarin.Forms)::: android 支援套件的*特定*版本進行硬相依性。 雖然這些封裝的更新版本可能可供使用，但 :::no-loc(Xamarin.Forms)::: 不一定會與其相容。
 
-在此情況下，您應該_只_更新 **Xamarin.Forms** 封裝，因為這可確保相依性會維持在相容的版本上。 您已新增至專案的其他套件也可能會個別更新，只要它們不會導致 Android 支援套件更新。
+在此情況下，您應該_只_更新 **:::no-loc(Xamarin.Forms):::** 封裝，因為這可確保相依性會維持在相容的版本上。 您已新增至專案的其他套件也可能會個別更新，只要它們不會導致 Android 支援套件更新。
 
 > [!NOTE]
-> 如果您使用 Xamarin.Forms 2.3.4 或更高版本，**且**您的 android 專案的目標/編譯版本設定為 ANDROID 7.0 （API 24）或更高版本，則不會再套用上述的硬性相依性，而且您可能會在封裝之外獨立更新支援套件 Xamarin.Forms 。
+> 如果您使用 :::no-loc(Xamarin.Forms)::: 2.3.4 或更高版本，**且**您的 android 專案的目標/編譯版本設定為 ANDROID 7.0 （API 24）或更高版本，則不會再套用上述的硬性相依性，而且您可能會在封裝之外獨立更新支援套件 :::no-loc(Xamarin.Forms)::: 。
 
-### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>修正：移除所有封裝，然後重新加入Xamarin.Forms
+### <a name="fix-remove-all-packages-and-re-add-no-locxamarinforms"></a>修正：移除所有封裝，然後重新加入:::no-loc(Xamarin.Forms):::
 
 如果**支援**套件已更新為不相容的版本，最簡單的解決方法是：
 
 1. 手動刪除 Android 專案中的所有 NuGet 套件，然後
-2. 重新加入 **Xamarin.Forms** 套件。
+2. 重新加入 **:::no-loc(Xamarin.Forms):::** 套件。
 
 這會自動下載其他套件的*正確*版本。
 

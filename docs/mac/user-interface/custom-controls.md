@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: b319abba7cf14fe4aade35d232b5182cb202e707
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8ed83ee8f0bded6258b695f7a6383cda1929f542
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937705"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997081"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>在 Xamarin. Mac 中建立自訂控制項
 
@@ -342,7 +342,7 @@ if (this.Action !=null)
 
 在仍選取 [自訂視圖] 的情況下，切換至 [身分**識別偵測器**]，並將視圖的**類別**變更為 `NSFlipSwitch` ：
 
-[![](custom-controls-images/custom04.png "Setting the View's class")](custom-controls-images/custom04.png#lightbox)
+[![設定視圖的類別](custom-controls-images/custom04.png)](custom-controls-images/custom04.png#lightbox)
 
 切換至 [**助理編輯器**]，並建立自訂控制項的 [**輸出**] （請務必將它系結到檔案中 `ViewController.h` ，而不是檔案 `.m` ）：
 
@@ -383,7 +383,7 @@ partial void OptionTwoFlipped (Foundation.NSObject sender) {
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文深入探討如何在 Xamarin. Mac 應用程式中建立可重複使用的自訂使用者介面控制項。 我們已瞭解如何繪製自訂控制項 UI，這是回應滑鼠和使用者輸入的兩個主要方法，以及如何將新的控制項公開至 Xcode Interface Builder 中的動作。
 

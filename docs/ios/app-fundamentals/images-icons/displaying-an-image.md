@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2018
-ms.openlocfilehash: 1b8c18dfcc1a0eef1fd4837d34c4c0b080881edc
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f9de09065d7c26c9ae98ef664be63599becb4da5
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938134"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997445"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin 中顯示影像
 
@@ -42,11 +42,11 @@ _本文說明如何在 Xamarin iOS 應用程式中包含映射資產，並使用
 
     ![影像集編輯器](displaying-an-image-images/imageset03.png)
 4. 從這裡，為每個不同的裝置和所需的解析度拖曳影像。
-5. 按兩下 [**資產] 清單**中的新映射集**名稱**以進行編輯：![](displaying-an-image-images/imageset04.png "編輯新影像集的名稱")
+5. 按兩下 [**資產] 清單**中的新映射集**名稱**加以編輯： ![ 編輯新影像集的名稱](displaying-an-image-images/imageset04.png)
 
 在 iOS 設計工具中使用**映射集**時，只要從屬性編輯器的下拉式清單中選取集合的名稱即可：
 
-![](displaying-an-image-images/imageset06.png "Select an image set's name from the dropdown list")
+![從下拉式清單中選取映射集的名稱](displaying-an-image-images/imageset06.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 

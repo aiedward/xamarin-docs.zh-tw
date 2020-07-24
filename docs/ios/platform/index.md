@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: bcf293b29d6ddca10ab60ae061491b60f1e30520
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: a70095c5897163d3699d03ec42c33826f6d40419
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "78291818"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997146"
 ---
 # <a name="ios-platform-features-overview"></a>iOS 平臺功能總覽
 
@@ -20,9 +20,9 @@ ms.locfileid: "78291818"
 
 ## <a name="ios-releases"></a>iOS 版本
 
-|  |  |
+| 版本 | 描述 |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [IOS 13 簡介](~/ios/platform/ios13/index.md) | 本檔說明 Xamarin. iOS 13。|
+| [iOS 13 簡介](~/ios/platform/ios13/index.md) | 本檔說明 Xamarin. iOS 13。|
 | [iOS 12 簡介](~/ios/platform/introduction-to-ios12/index.md) | 本檔說明在建立 Xamarin iOS 應用程式時可使用的 iOS 12 功能。|
 | [iOS 11 簡介](~/ios/platform/introduction-to-ios11/index.md) | 本檔說明 iOS 11 和 Xcode 9 中的新增和更新功能，例如 ARKit、核心 ML、核心 NFC、拖放、MapKit、PDFKit、SiriKit 和願景。 它會連結至說明如何搭配使用這些功能與 Xamarin 的指南。 |
 | [iOS 10 簡介](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 包含數個新的 Api 和服務，可讓您使用新特性和功能開發應用程式。 使用 iOS 10，應用程式有新的功能，例如擴充地圖、訊息、電話和 Siri。 本節說明如何在 Xamarin iOS 應用程式中利用這些功能的方式。 |
@@ -39,9 +39,9 @@ Apple Pay 是與 iOS 8 一起引進，可讓使用者透過其 iOS 裝置支付�
 
 IOS 10 中新的 CallKit API 可讓 VOIP 應用程式與 iPhone UI 整合，並為使用者提供熟悉的介面和經驗。 有了這個 API，使用者就可以從 iOS 裝置的鎖定畫面觀看 VOIP 呼叫並與之**互動，並**使用電話應用程式的我的最愛和**最近專案**views 來管理連絡人。
 
-## <a name="contacts-and-contactsui"></a>[連絡人和 ContactsUI](~/ios/platform/contacts.md)
+## <a name="contacts-and-contactsui"></a>[Contacts 和 ContactsUI](~/ios/platform/contacts.md)
 
-隨著 iOS 9 的推出，Apple 發行了兩個新的架構，`Contacts` 和 `ContactsUI`，取代了 iOS 8 和更早版本所使用的現有通訊錄和通訊錄 UI 架構。
+隨著 iOS 9 的推出，Apple 發行了兩個新的架構， `Contacts` 並 `ContactsUI` 取代了 iOS 8 和更早版本所使用的現有通訊錄和通訊錄 UI 架構。
 
 ## <a name="document-picker"></a>[文件選擇器](~/ios/platform/document-picker.md)
 
@@ -53,13 +53,13 @@ iOS 有兩個內建的行事曆相關應用程式：行事曆應用程式和提�
 
 ## <a name="ios-extensions"></a>[iOS 延伸模組](~/ios/platform/extensions.md)
 
-IOS 8 中引進的擴充功能是 iOS 在標準內容（例如，在**通知中心**內）所提供的特製化 `UIViewControllers`，如同使用者用來執行特定輸入或其他內容的自訂鍵盤類型，像是編輯可提供特殊效果篩選的相片。
+IOS 8 中引進的延伸模組是 `UIViewControllers` 由 ios 在標準內容（例如，在**通知中心**內）提供的特製化，如同使用者用來執行特定輸入或其他內容的自訂鍵盤類型，像是編輯可提供特殊效果篩選的相片。
 
-## <a name="graphics-and-animation-in-ios"></a>[IOS 中的圖形和動畫](~/ios/platform/graphics-animation-ios/index.md)
+## <a name="graphics-and-animation-in-ios"></a>[iOS 中的圖形和動畫](~/ios/platform/graphics-animation-ios/index.md)
 
 IOS 中的圖形和動畫涵蓋 iOS 中的核心圖形概念，例如 CoreImage、核心圖形和核心動畫。
 
-## <a name="handoff"></a>[Handoff](~/ios/platform/handoff.md)
+## <a name="handoff"></a>[遞交](~/ios/platform/handoff.md)
 
 Apple 在 iOS 8 和 OS X Yosemite （10.10）中引進了移交，以提供一般機制，讓使用者將其中一個裝置上啟動的活動傳送至另一個執行相同應用程式的裝置，或另一個支援相同活動的應用程式。
 
@@ -99,7 +99,7 @@ Passbook 是適用于 Iphone 和 iPod 與 iOS 6 的應用程式。 它會儲存�
 
 ## <a name="request-app-review"></a>[要求應用程式審查](~/ios/platform/request-app-review.md)
 
-IOS 10.3 的新功能，`RequestReview()` 方法可讓 iOS 應用程式要求使用者對其進行評分或檢查。 當使用者已從 App Store 安裝的出貨應用程式中呼叫此方法時，iOS 10 將會處理開發人員的整個評等和審查流程。 由於此程式是由 App Store 原則所控管，因此不一定會顯示警示。
+IOS 10.3 的新功能， `RequestReview()` 方法可讓 ios 應用程式要求使用者對其進行評分或檢查。 當使用者已從 App Store 安裝的出貨應用程式中呼叫此方法時，iOS 10 將會處理開發人員的整個評等和審查流程。 由於此程式是由 App Store 原則所控管，因此不一定會顯示警示。
 
 ## <a name="search-apis"></a>[搜尋 API](~/ios/platform/search/index.md)
 
@@ -137,13 +137,13 @@ IOS 10 的新手，使用者通知架構允許傳遞和處理本機和遠端通�
 
 iOS 10 和 macOS Sierra 增強了擴充範圍像素格式的支援，以及整個系統的寬範圍色彩空間，包括核心圖形、核心影像、金屬和 AVFoundation 等架構。 在整個圖形堆疊中提供這種行為，即可進一步分階段減緩具有寬色彩顯示的裝置支援。
 
-## <a name="binding-objective-c"></a>[繫結 Objective-C](binding-objective-c/index.md)
+## <a name="binding-objective-c"></a>[繫結 Objective C](binding-objective-c/index.md)
 
-在 iOS 上工作時，您可能會遇到需要使用協力廠商目標-C 程式庫的情況。 在這些情況下，您可以使用 MonoTouch 的系結專案來C#建立原生目標 C 程式庫的系結。 專案會使用我們用來將 iOS Api 帶入的相同工具C#。 本檔說明如何系結目標-C Api。
+在 iOS 上工作時，您可能會遇到需要使用協力廠商目標-C 程式庫的情況。 在這些情況下，您可以使用 MonoTouch 的系結專案來建立原生目標 C 程式庫的 c # 系結。 專案會使用我們用來將 iOS Api 帶入 c # 的相同工具。 本檔說明如何系結目標-C Api。
 
-## <a name="bind-ios-swift-libraries"></a>[系結 iOS Swift 程式庫](binding-swift/index.md)
+## <a name="bind-ios-swift-libraries"></a>[繫結 iOS Swift 程式庫](binding-swift/index.md)
 
-本檔說明如何建立C# Swift 程式碼的系結，讓您可以在 Xamarin iOS 應用程式中使用原生程式庫和 CocoaPods。
+本檔描述如何建立 Swift 程式碼的 c # 系結，讓您可以在 Xamarin iOS 應用程式中使用原生程式庫和 CocoaPods。
 
 ## <a name="referencing-native-libraries"></a>[參考原生程式庫](native-interop.md)
 

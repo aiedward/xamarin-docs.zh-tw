@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 9a5ca5988bc5bf43af4837aa689c89a016829282
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0af77464f849971050246a1676f89fe4702737e8
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939980"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997289"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Xamarin 中的連絡人和 ContactsUI
 
@@ -110,7 +110,7 @@ else
 
 如果此程式碼是在 iOS 9 裝置上執行，則會將新的連絡人新增至使用者的集合。 例如：
 
-[![](contacts-images/add01.png "A new contact added to the user's collection")](contacts-images/add01.png#lightbox)
+[![新增至使用者集合的新連絡人](contacts-images/add01.png)](contacts-images/add01.png#lightbox)
 
 ### <a name="contact-formatting-and-localization"></a>連絡人的格式和當地語系化
 
@@ -353,7 +353,7 @@ var view = CNContactViewController.FromContact(contact);
 PresentViewController(view, true, null);
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已詳細探討如何在 Xamarin iOS 應用程式中使用 Contact 和 Contact UI 架構。 首先，它涵蓋了 Contact framework 提供的不同物件類型，以及您如何使用它們來建立新的或存取現有的連絡人。 它也會檢查連絡人 UI 架構，以選取現有的連絡人並顯示連絡人資訊。
 

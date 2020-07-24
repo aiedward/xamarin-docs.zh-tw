@@ -6,12 +6,12 @@ ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: f1e230d8851545e890c806b58ddf26647764bce9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 976d0882c5875c1d3e1c8f0ea1732de08df8e07f
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938810"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996171"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>在安裝後遺漏 Visual Studio 延伸模組
 
@@ -45,7 +45,7 @@ ms.locfileid: "86938810"
 
     如果已正確安裝延伸模組（針對版本3.1.228），資料夾中將會有60個專案：
 
-    ![](missing-vs-extensions-images/folder.png "List of 'Xamarin\3.1.228.0' folder contents in Explorer")
+    ![Explorer 中的 Xamarin\3.1.228.0 資料夾內容清單](missing-vs-extensions-images/folder.png)
 
 2. 確認此資料夾看起來正確之後，請告訴 Visual Studio 再次嘗試設定擴充功能：
 

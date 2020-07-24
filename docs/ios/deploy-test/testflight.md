@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: f020219f28ce9389c3f8d5157ddfddc32af07f0f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 1f86227573fc5e9dc39d4781125c49a067e8967d
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939967"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997484"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 散發 Xamarin.iOS 應用程式
 
@@ -75,8 +75,8 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 此表單應該反映您應用程式的 Info.plist 檔案中的確切資訊，如下所示：
 
-[![](testflight-images/infoplist.png "應用程式的資訊。 plist")](testflight-images/infoplist.png#lightbox)
-[![ITunes Connect 上的表單](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
+[ ![ 應用程式的資訊。 plist](testflight-images/infoplist.png)](testflight-images/infoplist.png#lightbox) 
+ [ ![ iTunes Connect 上的表單](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
 
 - **名稱**：設定應用程式套件組合時所使用的描述性名稱。 這必須完全符合您 `Info.plist` 中的**應用程式名稱**項目。
 - **主要語言**：應用程式內使用的基礎語言。 這通常是您本身所使用的語言。
@@ -227,7 +227,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 如果您有大量的外部測試人員，則可以使用 [匯入檔案]**** 連結來匯入每行皆包含下列格式的 `CSV` 檔案：
 
-``` 
+```
 first name, last name, email address
 ```
 
@@ -263,7 +263,7 @@ first name, last name, email address
 
 [![按一下 [提交以供審查] 按鈕](testflight-images/submit-for-review.png)](testflight-images/submit-for-review.png#lightbox)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已探討如何透過 iTunes Connect 使用 Apple 的 TestFlight Beta 測試。 其中已涵蓋如何將新組建上傳至 iTunes Connect，以及如何邀請內部和外部 Beta 測試人員使用該應用程式。
 

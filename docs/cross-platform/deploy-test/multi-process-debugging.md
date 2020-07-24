@@ -6,16 +6,16 @@ ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: f27a95481bc590814b6031cbdd9fc9606fe0e19f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9bdc5790133241ed30e903617541244a9d6ee06e
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932518"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996574"
 ---
 # <a name="multi-process-debugging"></a>多處理序偵錯
 
-以 Visual Studio for Mac 開發的現代解決方案有多個以不同平台為目標的專案是極普遍的。 例如，解決方案可能會有須仰賴 Web 服務專案提供之資料的行動應用程式專案。 在開發此解決方案時，開發人員可能需要同時執行兩個專案，以對錯誤進行疑難排解。 自 [Xamarin Cycle 9 版](https://releases.xamarin.com/stable-release-cycle-9/)開始，Visual Studio for Mac 現在能對多個同時執行的處理序進行偵錯。 這樣能夠設定中斷點、檢查變數以及檢視一個以上執行中專案的執行緒。 這也稱為「多處理序偵錯」__。 
+以 Visual Studio for Mac 開發的現代解決方案有多個以不同平台為目標的專案是極普遍的。 例如，解決方案可能會有須仰賴 Web 服務專案提供之資料的行動應用程式專案。 在開發此解決方案時，開發人員可能需要同時執行兩個專案，以對錯誤進行疑難排解。 自 [Xamarin Cycle 9 版](https://releases.xamarin.com/stable-release-cycle-9/)開始，Visual Studio for Mac 現在能對多個同時執行的處理序進行偵錯。 這樣能夠設定中斷點、檢查變數以及檢視一個以上執行中專案的執行緒。 這也稱為「多處理序偵錯」__。
 
 本指南會討論一些對 Visual Studio for Mac 所做的變更，以 支援對多處理序進行偵錯、如何設定解決方案以對多處理序進行偵錯，以及如何使用 Visual Studio for Mac 來附加至現有處理序。
 
@@ -74,7 +74,7 @@ ms.locfileid: "86932518"
 
 當兩個 (或多個) 專案有中斷點時，Visual Studio for Mac 會將兩個處理序都暫停。 只有在使用中執行緒中的程式碼才能進行**不進入函式**。 在範圍變更讓偵錯工具能夠切換使用中執行緒的焦點之後，另一個處理序才會暫停。 例如，請考量 Visual Studio for Mac 對兩個專案進行偵錯的下列螢幕擷取畫面：
 
-![](multi-process-debugging-images/mpd09-xs.png  "Visual Studio for Mac debugging two projects")
+![Visual Studio for Mac 對兩個專案進行偵錯](multi-process-debugging-images/mpd09-xs.png)
 
 在此螢幕擷取畫面中，每個解決方案都有自己的中斷點。 開始偵錯之後，所遇到的第一個中斷點是 **SecondProject** 中 `MainClass` 的**第 10 行**。 因為這兩個專案都有中斷點，所以會中止每一個處理序。 遇到中斷點之後，每次引動**不進入函式**都會造成 Visual Studio for Mac 不進入使用中執行緒中的程式碼。
 
@@ -92,7 +92,7 @@ ms.locfileid: "86932518"
 
 偵錯工具列的外觀會根據正在進行偵錯之專案的狀態而變更。 當多個專案正在執行時，偵錯工具列會在至少有一個專案在執行中且有一個專案處於暫停之處，顯示 [暫停]**** 和 [繼續]**** 按鈕：
 
-![](multi-process-debugging-images/mpd07-xs.png  "Debug toolbar")
+![偵錯工具列](multi-process-debugging-images/mpd07-xs.png)
 
 按一下 [偵錯工具列]**** 中的 [暫停]**** 按鈕，可將正在偵錯的所有處理序暫停，而按一下 [繼續]**** 按鈕則可讓所有暫停的處理序繼續執行。
 
@@ -100,7 +100,7 @@ ms.locfileid: "86932518"
 
 在由 Visual Studio for Mac 啟動第一個專案之後，您也能夠對第二個專案進行偵錯。 第一個專案啟動之後，*以滑鼠右鍵按一下** [Solution Pad]**** 中的專案，然後選取 [Start Debugging Item]**** \(開始針對項目進行偵錯\)：
 
-![](multi-process-debugging-images/mpd13-xs.png  "Start Debugging Item")
+![Start Debugging Item (開始針對項目進行偵錯)](multi-process-debugging-images/mpd13-xs.png)
 
 ## <a name="creating-a-solution-configuration"></a>建立解決方案組態
 
@@ -114,7 +114,7 @@ ms.locfileid: "86932518"
 
 2. 按一下 [新增]**** 按鈕，輸入新解決方案組態的名稱，然後按一下 [建立]****。 新的解決方案組態會出現在 [組態]**** 視窗中：
 
-    ![](multi-process-debugging-images/mpd11-xs.png  "Naming a new solution configuration")
+    ![為新的解決方案組態命名](multi-process-debugging-images/mpd11-xs.png)
 
 3. 選取組態清單中的新執行組態。 [解決方案選項]**** 對話方塊會顯示解決方案中的每個專案。 選取應在偵錯工作階段啟動時啟動的每個專案：
 
@@ -122,7 +122,7 @@ ms.locfileid: "86932518"
 
 現在 **MultipleProjects** 解決方案組態會出現在 [Debug toolbar]**** \(偵錯工具列\) 中，讓開發人員能夠同時對兩個專案進行偵錯。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南討論如何對 Visual Studio for Mac 中的多處理序進行偵錯。 文中涵蓋一些為了支援多處理序偵錯的 IDE 變更，並描述一些相關的行為。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8dc70cc8f1bf29a58cb20540fa538be2025b2ba4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a5135d9bb481afcaefc851e392196a87b8ef80dd
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935625"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997198"
 ---
 # <a name="debugging-xamarinios-apps"></a>偵錯 Xamarin.iOS 應用程式
 
@@ -216,13 +216,13 @@ Xamarin.iOS 隨附 Mono 類別庫的原始程式碼，您可以使用它從偵�
 
 若要啟用此功能，請確定 [Visual Studio for Mac] > [喜好設定] > [偵錯工具]__ 功能表下的 [只偵錯專案程式碼; 不涉及架構程式碼]**** 選項已取消選取，如下所示：
 
-[![](debugging-in-xamarin-ios-images/debugging6.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
+[![偵錯工具 Mono 的類別庫](debugging-in-xamarin-ios-images/debugging6.png)](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要針對 Visual Studio 中的類別庫進行偵錯，您必須停用 [偵錯] > [選項]__ 功能表下的 [Just My Code]****。 在 [偵錯] > [一般]__ 節點中，清除 [啟用 Just My Code]**** 核取方塊：
 
-[![](debugging-in-xamarin-ios-images/debugging6vs.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
+[![偵錯工具 Mono 的類別庫](debugging-in-xamarin-ios-images/debugging6vs.png)](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 

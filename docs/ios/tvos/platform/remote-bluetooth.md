@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 3cdfad92362efa2974b214cac5d7fa424e9ba94d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 743bdf4d843d9e427e2343bf58cc29b98ec07e2b
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938303"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997042"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>在 Xamarin 中 Siri 遠端和藍牙控制器以進行 tvOS
 
@@ -53,7 +53,7 @@ Siri 遠端的觸控介面能夠偵測您可以在 tvOS 應用程式中回應的
 
 |撥動|按一下 |點選|
 |---|---|---|
-|![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
+|![移動選取範圍](remote-bluetooth-images/Gesture01.png)|![在職員工選取的專案](remote-bluetooth-images/Gesture02.png)|![方向按鈕](remote-bluetooth-images/Gesture03.png)|
 |在螢幕上的 UI 元素之間移動選取範圍（焦點）（向上、向左、右）。 輕量可以用來使用慣性快速地流覽大型的內容清單。|啟動選取的（聚焦）專案，或作用類似遊戲中的主要按鈕。 按一下和按住可以啟用內容功能表或協助工具。|輕輕地點擊邊緣上的觸控介面，其作用就像是在 D 板上使用方向按鈕，視所選的區域而定，向上、向下、向左或向右移動焦點。 視應用程式而定，可以用來顯示隱藏的控制項。|
 
 Apple 提供下列使用觸控介面手勢的建議：
@@ -361,7 +361,7 @@ Apple TV 隨附的 Siri 遠端可用來做為有限的遊戲控制器。 就像�
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋了 Apple TV、觸控表面手勢和 Siri 遠端按鈕隨附的新 Siri 遠端。 接下來，它涵蓋了使用筆勢和分鏡腳本、手勢和程式碼，以及低層級事件。 最後，如果討論的是使用遊戲控制器。
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c9943842d71ffa19e0691e1f9c7dca0063749463
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0358e1570a5e38e008894a7eb9b6ca1985a0fed0
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936899"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997250"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Xamarin 中的 watchOS Table 控制項
 
 WatchOS `WKInterfaceTable` 控制項比它的 iOS 對應更簡單，但會執行類似的角色。 它會建立可具有自訂配置的資料列滾動清單，並回應觸控事件。
 
-![監看表清單 ](table-images/table-list-sml.png)![](table-images/table-detail-sml.png)
+![監看資料表清單 ](table-images/table-list-sml.png) ![ 監看表詳細資料](table-images/table-detail-sml.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="adding-a-table"></a>新增資料表
@@ -142,7 +142,7 @@ for (var i = 0; i < rows.Count; i++) {
 
 watchOS 3 為數據表引進了一項新功能：能夠逐一查看與每個資料列相關的詳細頁面，而不需要回到資料表並選擇另一個資料列。 詳細資料畫面可以透過向上和向下或使用 Digital Crown 來滾動。
 
-![垂直詳細資料分頁範例 ](table-images/table-scroll-sml.png)![](table-images/table-detail-sml.png)
+![垂直詳細資料分頁範例](table-images/table-scroll-sml.png) ![垂直分頁詳細資料](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
 > 這項功能目前僅適用于在 Xcode Interface Builder 中編輯分鏡腳本。

@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 57d7ef3578fd2f71e078e730de29c241b1b7fed7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a74996c0390191a4fef8d20ba3f46d0e2578d17a
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937835"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997172"
 ---
 # <a name="document-picker-in-xamarinios"></a>Xamarin 中的檔選擇器
 
-檔選擇器可讓您在應用程式之間共用檔。 這些檔可能會儲存在 iCloud 或不同的應用程式目錄中。 檔會透過使用者已安裝在其裝置上的一組[檔提供者延伸](~/ios/platform/extensions.md)模組來共用。 
+檔選擇器可讓您在應用程式之間共用檔。 這些檔可能會儲存在 iCloud 或不同的應用程式目錄中。 檔會透過使用者已安裝在其裝置上的一組[檔提供者延伸](~/ios/platform/extensions.md)模組來共用。
 
 由於在應用程式和雲端之間保持檔同步的困難，因此會造成一定的複雜性。
 
@@ -227,14 +227,14 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 IOS 8 中的下列新功能已新增至 `NSMetadataQuery` ：
 
 - `NSMetatadataQuery`現在可以列出儲存在雲端中的非本機檔。
-- 已新增 Api 以存取雲端架構檔上的中繼資料資訊。 
+- 已新增 Api 以存取雲端架構檔上的中繼資料資訊。
 - 有一個新的 `NSUrl_PromisedItems` API，可存取檔案的檔案屬性，這些檔案可能或可能沒有其內容可在本機上使用。
 - 使用 `GetPromisedItemResourceValue` 方法來取得指定檔案的相關資訊，或使用 `GetPromisedItemResourceValues` 方法一次取得一個以上的檔案資訊。
 
 已新增兩個新的檔案協調旗標來處理中繼資料：
 
-- `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly` 
-- `NSFileCoordinatorWriteContentIndependentMetadataOnly` 
+- `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly`
+- `NSFileCoordinatorWriteContentIndependentMetadataOnly`
 
 使用上述旗標，檔檔案的內容不需要在本機提供，即可供使用。
 
@@ -251,7 +251,7 @@ using ObjCRuntime;
 using System.IO;
 
 #region Static Properties
-public const string TestFilename = "test.txt"; 
+public const string TestFilename = "test.txt";
 #endregion
 
 #region Computed Properties
@@ -361,7 +361,7 @@ public void CreateNewDocument() {
     var docPath = Path.Combine (docsFolder, TestFilename);
     var ubiq = new NSUrl (docPath, false);
 
-    // Create new document at path 
+    // Create new document at path
     Console.WriteLine ("Creating Document at:" + ubiq.AbsoluteString);
     Document = new GenericTextDocument (ubiq);
 
@@ -421,7 +421,7 @@ Apple 認為列出應用程式檔的最佳使用者體驗是使用預覽。 這�
 
 在 iOS 8 之前，會顯示檔預覽，需要自訂的執行。 IOS 8 的新手是檔案系統屬性，可讓開發人員快速使用檔縮圖。
 
-#### <a name="retrieving-document-thumbnails"></a>正在抓取檔縮圖 
+#### <a name="retrieving-document-thumbnails"></a>正在抓取檔縮圖
 
 藉由呼叫 `GetPromisedItemResourceValue` 或 `GetPromisedItemResourceValues` 方法， `NSUrl_PromisedItems` `NSUrlThumbnailDictionary` 會傳回 API。 目前在此字典中的唯一索引鍵是 `NSThumbnial1024X1024SizeKey` 和其相符的 `UIImage` 。
 
@@ -433,7 +433,7 @@ Apple 認為列出應用程式檔的最佳使用者體驗是使用預覽。 這�
 
 ## <a name="enabling-icloud-in-xamarin"></a>在 Xamarin 中啟用 iCloud
 
-您必須在應用程式中和透過 Apple 啟用 iCloud 支援，才能在 Xamarin iOS 應用程式中使用檔選擇器。 
+您必須在應用程式中和透過 Apple 啟用 iCloud 支援，才能在 Xamarin iOS 應用程式中使用檔選擇器。
 
 下列步驟將逐步解說布建 iCloud 的程式。
 
@@ -449,7 +449,7 @@ Apple 認為列出應用程式檔的最佳使用者體驗是使用預覽。 這�
 
 1. 在 Visual Studio for Mac 或 Visual Studio 中開啟專案。
 2. 在 [**方案總管**中，以滑鼠右鍵按一下專案，然後選取 [選項]。
-3. 在 [選項] 對話方塊中，選取 [ **IOS 應用程式**]，確定 [套件組合**識別碼**] 符合針對應用程式所建立的 [**應用**程式識別碼] 中所定義的套件組合。 
+3. 在 [選項] 對話方塊中，選取 [ **IOS 應用程式**]，確定 [套件組合**識別碼**] 符合針對應用程式所建立的 [**應用**程式識別碼] 中所定義的套件組合。
 4. 選取 [IOS 套件組合**簽署**]，並選取 [**開發人員身分識別**] 和上面建立的布建**設定檔**。
 5. 按一下 [**確定]** 按鈕以儲存變更並關閉對話方塊。
 6. 在 `Entitlements.plist` [**方案總管**中，以滑鼠右鍵按一下 [開啟]，在編輯器中開啟它。
@@ -486,7 +486,7 @@ namespace DocPicker
     public partial class AppDelegate : UIApplicationDelegate
     {
         #region Static Properties
-        public const string TestFilename = "test.txt"; 
+        public const string TestFilename = "test.txt";
         #endregion
 
         #region Computed Properties
@@ -599,7 +599,7 @@ namespace DocPicker
             var docPath = Path.Combine (docsFolder, TestFilename);
             var ubiq = new NSUrl (docPath, false);
 
-            // Create new document at path 
+            // Create new document at path
             Console.WriteLine ("Creating Document at:" + ubiq.AbsoluteString);
             Document = new GenericTextDocument (ubiq);
 
@@ -689,15 +689,15 @@ namespace DocPicker
                 CheckingForiCloud = false;
 
             })).Start();
-                
+
         }
-        
+
         // This method is invoked when the application is about to move from active to inactive state.
         // OpenGL applications should use this method to pause.
         public override void OnResignActivation (UIApplication application)
         {
         }
-        
+
         // This method should be used to release shared resources and it should store the application state.
         // If your application supports background execution this method is called instead of WillTerminate
         // when the user quits.
@@ -729,7 +729,7 @@ namespace DocPicker
                 Console.WriteLine ("Error: {0}", e.Message);
             }
         }
-        
+
         // This method is called as part of the transition from background to active state.
         public override void WillEnterForeground (UIApplication application)
         {
@@ -758,7 +758,7 @@ namespace DocPicker
             }
 
         }
-        
+
         // This method is called when the application is about to terminate. Save data, if needed.
         public override void WillTerminate (UIApplication application)
         {
@@ -827,7 +827,7 @@ public AppDelegate ThisApp {
 
 在 iOS 8 中，應用程式可以輕鬆地存取自己的應用程式容器外的檔：
 
- [![](document-picker-images/image32.png "Discovering Documents Outside of an App's Container")](document-picker-images/image32.png#lightbox)
+ [![探索應用程式容器外的檔](document-picker-images/image32.png)](document-picker-images/image32.png#lightbox)
 
 使用新的 iCloud 檔選擇器（ `UIDocumentPickerViewController` ），iOS 應用程式可以直接在其應用程式容器外部探索和存取。 `UIDocumentPickerViewController`提供一種機制，讓使用者透過許可權授與和編輯這些探索到的檔。
 
@@ -1024,7 +1024,7 @@ if (Bookmark != null) {
 
 1. 首先，在本機或暫存位置中建立新的檔。
 1. 建立 `NSUrl` 指向新檔的。
-1. 開啟新的檔選擇器視圖控制器，並使用的模式將它傳遞給它 `NSUrl` `MoveToService` 。 
+1. 開啟新的檔選擇器視圖控制器，並使用的模式將它傳遞給它 `NSUrl` `MoveToService` 。
 1. 一旦使用者選擇新的位置，檔就會從其目前的位置移至新的位置。
 1. 參考檔將會寫入應用程式的應用程式容器，讓建立應用程式仍可存取該檔案。
 
@@ -1083,7 +1083,7 @@ if (Bookmark != null) {
 會發生下列進程：
 
 1. 應用程式即將進入背景，而且必須保存其狀態。 它會呼叫 `NSUrl` 來建立替代儲存體中檔案的書簽。
-1. `NSUrl`呼叫檔案提供者延伸模組，以取得檔的持續性 URL。 
+1. `NSUrl`呼叫檔案提供者延伸模組，以取得檔的持續性 URL。
 1. 檔案提供者延伸會以字串形式傳回的 URL `NSUrl` 。
 1. `NSUrl`會將 URL 組合成書簽，並將其傳回到應用程式。
 1. 當應用程式在背景 awakes，而且需要還原狀態時，它會將書簽傳遞至 `NSUrl` 。
@@ -1116,9 +1116,9 @@ if (Bookmark != null) {
 將使用者的帳戶遷移至 iCloud 磁片磁碟機之後，只有使用 iCloud 磁片磁碟機的裝置才能將變更傳播到這些裝置上的檔。
 
 > [!IMPORTANT]
-> 開發人員應該注意，只有在使用者的帳戶已遷移至 iCloud 磁片磁碟機時，本文中所涵蓋的新功能才可供使用。 
+> 開發人員應該注意，只有在使用者的帳戶已遷移至 iCloud 磁片磁碟機時，本文中所涵蓋的新功能才可供使用。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋支援 iCloud 磁片磁碟機和新檔選擇器視圖控制器所需的現有 iCloud Api 變更。 其涵蓋檔案協調，以及使用雲端式檔時的重要性。 其中涵蓋了在 Xamarin iOS 應用程式中啟用雲端式檔所需的設定，並提供使用檔選擇器視圖控制器在應用程式容器外使用檔的簡介外觀。
 

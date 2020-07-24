@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: cba171760673c5b5a87760d291550e6df82fe424
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 03e6a513f367be4c19f925427c8a896b1fc87107
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939580"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996327"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>在 Xamarin 中自動調整資料列高度大小
 
@@ -24,7 +24,7 @@ iOS 11 已加入資料列自動擴充的功能。 標頭、頁尾和資料格現
 
 在 iOS 設計工具中，開啟您想要讓資料列自動調整大小的資料表視圖的分鏡腳本，選取資料格的*原型*，並設計資料格的版面配置。 例如：
 
-[![](autosizing-row-height-images/table01.png "The Cell's Prototype design")](autosizing-row-height-images/table01.png#lightbox)
+[![資料格的原型設計](autosizing-row-height-images/table01.png)](autosizing-row-height-images/table01.png#lightbox)
 
 針對原型中的每個專案，加入條件約束，以將元素保留在正確的位置，因為資料表視圖會針對旋轉或不同的 iOS 裝置螢幕大小調整大小。 例如，將釘選 `Title` 到儲存格*內容視圖*的頂端、左側和右側：
 
@@ -53,7 +53,7 @@ iOS 11 已加入資料列自動擴充的功能。 標頭、頁尾和資料格現
 
 [![指派名稱以將其公開至 c # 程式碼](autosizing-row-height-images/table05.png)](autosizing-row-height-images/table05.png#lightbox)
 
-接下來，為 `UITableViewController` 、 `UITableView` 和 `UITableCell` （原型）新增自訂類別。 例如： 
+接下來，為 `UITableViewController` 、 `UITableView` 和 `UITableCell` （原型）新增自訂類別。 例如：
 
 [![新增 UITableViewController、UITableView 和 UITableCell 的自訂類別](autosizing-row-height-images/table06.png)](autosizing-row-height-images/table06.png#lightbox)
 

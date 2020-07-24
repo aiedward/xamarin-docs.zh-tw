@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 1b279b125ce88a37ddb3209cfe689a7fef50a256
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b937cc653275f509b7f759af5c3d995e84381cb2
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938745"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997341"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS 多重畫面 – 快速入門
 
@@ -67,7 +67,7 @@ ms.locfileid: "86938745"
 
 8. 按兩下 **Phoneword** 畫面的 [標題]**** 列，然後將**標題**變更為 **Phoneword**：
 
-    ![](hello-ios-multiscreen-quickstart-images/09.png "Change the Title to 'Phoneword'")
+    ![將標題變更為 Phoneword](hello-ios-multiscreen-quickstart-images/09.png)
 
 9. 從 [工具箱]**** 拖曳 [按鈕]****，並放置於 [通話按鈕]**** 下方。 拖曳控點，讓新的 [按鈕]**** 與 [通話按鈕]**** 等寬：
 
@@ -90,7 +90,7 @@ ms.locfileid: "86938745"
     ![Solution Pad 中的 CallHistoryController.cs 檔案](hello-ios-multiscreen-quickstart-images/14new.png)
 
 13. 按兩下 **CallHistoryController.cs** 檔案加以開啟，並使用下列程式碼來取代內容：
-    
+
     ```csharp
     using System;
     using Foundation;
@@ -314,7 +314,7 @@ ms.locfileid: "86938745"
 
 10. 在**屬性總管**中，將**按鈕**的**名稱**變更為 `CallHistoryButton`，並將**標題**變更為**通話記錄**：
 
-    ![](hello-ios-multiscreen-quickstart-images/image9.png "Change the Name of the Button to 'CallHistoryButton' and the Title to 'Call History'")
+    ![將按鈕的名稱變更為 CallHistoryButton，並將標題變更為通話記錄](hello-ios-multiscreen-quickstart-images/image9.png)
 
 11. 建立 [通話記錄]**** 畫面。 從 [**工具箱**] 中，將 [**資料表視圖控制器**] 拖曳至設計介面：
 

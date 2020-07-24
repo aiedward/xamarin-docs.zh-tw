@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1de157540011011be6d48db25414c8667195c679
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 90309fe8a9282110a685151455d0b1407b269128
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932704"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997354"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中設定應用程式
 
@@ -185,7 +185,7 @@ Apple 要求開發人員提供網站連結，當使用者遇到可能的應用�
 4. 捲動到**名稱**區段。
 5. 填寫所有必要資訊：
 
-    [![](itunesconnect-images/name01.png "Editing Name, Description, What's New, Keywords and URLs in iTunes Connect")](itunesconnect-images/name01.png#lightbox)
+    [![在 iTunes Connect 中編輯名稱、描述、新增功能、關鍵字和 Url](itunesconnect-images/name01.png)](itunesconnect-images/name01.png#lightbox)
 6. 按一下螢幕頂端的 [儲存]**** 按鈕以儲存變更。
 
 > [!IMPORTANT]
@@ -352,7 +352,7 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 
 [![觀看應用程式審查](itunesconnect-images/reviews01.png)](itunesconnect-images/reviews01.png#lightbox)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文描述如何使用 iTunes Connect 來準備 Xamarin.iOS 應用程式，進而發行至 App Store；以及如何維護在市集中顯示的應用程式資訊。
 

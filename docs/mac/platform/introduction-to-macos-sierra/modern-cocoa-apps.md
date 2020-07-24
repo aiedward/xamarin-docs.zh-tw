@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: f8c449045de292590aa833324d443579332be999
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5d10f1def56d73c6837587bbbd47299d208a345a
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935807"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997471"
 ---
 # <a name="building-modern-macos-apps"></a>建置現代化的 macOS 應用程式
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 您也可以在 Xcode 的 Interface Builder 中啟用這項功能，方法是選取視窗並檢查**完整大小的內容視圖**：
 
-[![](modern-cocoa-apps-images/content01.png "Editing the main storyboard in Xcode's Interface Builder")](modern-cocoa-apps-images/content01.png#lightbox)
+[![在 Xcode 的 Interface Builder 中編輯主要腳本](modern-cocoa-apps-images/content01.png)](modern-cocoa-apps-images/content01.png#lightbox)
 
 使用完整大小的內容視圖時，開發人員可能需要將標題和工具列區域底下的內容位移，讓特定內容（例如標籤）不會滑到其下。
 
@@ -163,7 +163,7 @@ public override void ViewWillAppear ()
 }
 ```
 
-這種效果通常用於_Shoebox 應用程式_（一個視窗應用程式），例如地圖、行事曆、附注和系統喜好設定。 
+這種效果通常用於_Shoebox 應用程式_（一個視窗應用程式），例如地圖、行事曆、附注和系統喜好設定。
 
 <a name="Using-Accessory-View-Controllers"></a>
 
@@ -178,13 +178,13 @@ public override void ViewWillAppear ()
 若要新增附屬視圖控制器，請執行下列動作：
 
 1. 在方案總管**** 中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
-2. 將**自訂視圖控制器**拖曳至視窗的階層： 
+2. 將**自訂視圖控制器**拖曳至視窗的階層：
 
     [![加入新的自訂視圖控制器](modern-cocoa-apps-images/content05.png)](modern-cocoa-apps-images/content05.png#lightbox)
-3. 配置配件視圖的 UI： 
+3. 配置配件視圖的 UI：
 
     [![設計新的視圖](modern-cocoa-apps-images/content06.png)](modern-cocoa-apps-images/content06.png#lightbox)
-4. 將 [配件] 視圖公開為 [**插座**]，以及其 UI 的任何其他**動作**或**輸出**： 
+4. 將 [配件] 視圖公開為 [**插座**]，以及其 UI 的任何其他**動作**或**輸出**：
 
     [![新增必要的輸出](modern-cocoa-apps-images/content07.png)](modern-cocoa-apps-images/content07.png#lightbox)
 5. 儲存變更。
@@ -302,7 +302,7 @@ namespace MacModern
 
             // Display
             controller.ShowWindow (this);
-        } 
+        }
         #endregion
     }
 }
@@ -496,7 +496,7 @@ namespace MacModern
         {
             base.UpdateLayer ();
 
-            // Draw view 
+            // Draw view
             Layer.BackgroundColor = NSColor.Red.CGColor;
         }
         #endregion
@@ -571,7 +571,7 @@ namespace MacModern
         {
             // Return required pasteboard writer
             ...
-            
+
             // Pasteboard writer failed
             return null;
         }
@@ -733,7 +733,7 @@ namespace MacModern
 
 <a name="Scroll-View-Enhancements"></a>
 
-## <a name="scroll-view-enhancements"></a>捲軸視圖增強功能 
+## <a name="scroll-view-enhancements"></a>捲軸視圖增強功能
 
 當直接使用捲軸（ `NSScrollView` ）或做為另一個控制項的一部分（例如 `NSTableView` ）時，捲軸的內容可以使用現代化的外觀和觀點，在 Xamarin 應用程式的標題和工具列區域下滑動。
 
@@ -760,9 +760,9 @@ Apple 在 Xcode 中包含數種技術，可讓開發人員輕鬆地建立國際�
 
 <a name="Implementing-Base-Internationalization"></a>
 
-### <a name="implementing-base-internationalization"></a>執行基底國際化 
+### <a name="implementing-base-internationalization"></a>執行基底國際化
 
-藉由實行「基底國際化」，開發人員可以提供單一分鏡腳本檔案來代表應用程式的 UI，並將所有的使用者面向字串分開。 
+藉由實行「基底國際化」，開發人員可以提供單一分鏡腳本檔案來代表應用程式的 UI，並將所有的使用者面向字串分開。
 
 當開發人員建立的初始分鏡腳本檔案（或檔案）定義應用程式的使用者介面時，就會在基底國際化（開發人員所說的語言）中建立。
 
@@ -865,7 +865,7 @@ namespace MacModern
     public partial class ViewController : NSViewController
     {
         ...
-    
+
         #region Override Methods
         public override void ViewWillAppear ()
         {
@@ -898,7 +898,7 @@ Apple 具有下列使用系統外觀的建議：
 
 控制器可讓開發人員將元素收集到組合的單位，並 Segue 抽象，並移除整個視圖階層中移動所需的一般「粘連程式碼」：
 
-[![](modern-cocoa-apps-images/content12.png "Editing the UI in Xcode's Interface Builder")](modern-cocoa-apps-images/content12.png#lightbox)
+[![在 Xcode 的 Interface Builder 中編輯 UI](modern-cocoa-apps-images/content12.png)](modern-cocoa-apps-images/content12.png#lightbox)
 
 如需詳細資訊，請參閱我們的分鏡指令檔[簡介](~/mac/platform/storyboards/index.md)。
 
@@ -948,7 +948,7 @@ Apple 在 macOS Sierra 中加入了數種面向使用者的功能，可讓開發
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋了開發人員可用來在 Xamarin 中建立新式 macOS 應用程式的數個秘訣、功能和技術。
 

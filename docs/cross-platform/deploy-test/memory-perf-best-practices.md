@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: d21394b3c33b3f415cbe45ae13c84cabab1ec30b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 89b5dc2ae296b9e9033c45bf93c87de83054f721
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571034"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996483"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -298,11 +298,11 @@ SGen 垃圾收集行程是9.2.1 和更新版本中的預設值，因此會自動
 
 下列螢幕擷取畫面顯示了 Visual Studio for Mac 中針對 Xamarin.iOS 專案的連結器選項：
 
-![](memory-perf-best-practices-images/linker-options-ios.png)
+![適用于 Xamarin 的連結器選項](memory-perf-best-practices-images/linker-options-ios.png)
 
 下列螢幕擷取畫面顯示了 Visual Studio for Mac 中針對 Xamarin.Android 專案的連結器選項：
 
-![](memory-perf-best-practices-images/linker-options-droid.png)
+![適用于 Xamarin 的連結器選項](memory-perf-best-practices-images/linker-options-droid.png)
 
 連結器提供了三種不同的設定，用來控制其行為：
 
@@ -367,7 +367,7 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 
 從 Web 服務擷取的資料應在本機進行快取，並使用快取後的資料，而非重複從 Web 服務擷取資料。 然而，當採用這個方法時，您應實作適當的快取策略，來在 Web 服務上的資料變更時更新本機快取內的資料。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已描述與討論用來增加以 Xamarin 平台建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 

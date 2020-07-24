@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 28dddc35ac829cb58a40a9296bb995e119b5b6e3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8a9a38c24af3e14cd6930cbb27717ba184dd0235
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937263"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996405"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS 多重畫面 – 深度剖析
 
@@ -78,7 +78,7 @@ MVC 完全不知道模型的「資料持續性」** 和「存取」**。 換句�
 
 - **選擇性地提供 [上一頁] 按鈕**：當我們將新的項目推送至瀏覽堆疊時，標題列可以自動顯示「[上一頁] 按鈕」**，讓使用者能夠向後瀏覽。 按 [上一步] 按鈕會從導覽堆疊中取出目前的 view controller，*然後將先前*的內容視圖階層載入到視窗中：  
 
-    [![](hello-ios-multiscreen-deepdive-images/03.png "This diagram illustrates 'popping' a card off the stack")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
+    [![此圖說明如何從堆疊中取出卡片](hello-ios-multiscreen-deepdive-images/03.png)](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 - **提供標題列**–流覽控制器的上半部稱為「*標題列*」。 它負責顯示檢視控制器標題，如下圖所示：  
 
@@ -193,7 +193,7 @@ Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包
 - **資料表視圖控制器**– `CallHistoryController` 是資料表視圖控制器。 資料表檢視控制器包含資料表檢視，這是 iOS 中最常見的版面配置與資料顯示工具。 資料表已超出本指南的範圍。 如需有關資料表視圖控制器的詳細資訊，請參閱[使用資料表和資料格](~/ios/user-interface/controls/tables/index.md)指南。
 - 分鏡腳本**識別碼**–設定分鏡腳本識別碼會在目標-C 中建立 view controller 類別，其中包含分鏡腳本中視圖控制器的程式碼後置。 我們使用分鏡腳本識別碼來尋找 Objective-C 類別，並將分鏡腳本中的檢視控制器具現化。 如需有關分鏡腳本識別碼的詳細資訊，請參閱[分鏡腳本簡介](~/ios/user-interface/storyboards/index.md)指南。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 恭喜您完成第一個多重畫面的 iOS 應用程式！
 

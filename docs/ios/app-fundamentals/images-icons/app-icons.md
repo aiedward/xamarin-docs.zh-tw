@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: 16ba6357c5ec31c14ecb881630d6a6b920da89c1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 65e42e824a888934fd0f0a01093a6549dcf3d99d
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929199"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997458"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin 中的應用程式圖示
 
@@ -28,13 +28,13 @@ ms.locfileid: "86929199"
 
 如同 Xamarin iOS 應用程式可以使用 UI 控制項的影像資產，以及做為檔圖示的相同方式，影像資產可以用來提供應用程式圖示。 IPad 的下列螢幕擷取畫面說明 iOS 中圖示的三種用法：
 
-- **應用程式圖示**-每個 iOS 應用程式都必須定義應用程式圖示。 這是使用者將從 iOS 主畫面中按一下以啟動應用程式的圖示。 此外，Game Center 會使用此圖示（如果適用的話）。 範例： 
+- **應用程式圖示**-每個 iOS 應用程式都必須定義應用程式圖示。 這是使用者將從 iOS 主畫面中按一下以啟動應用程式的圖示。 此外，Game Center 會使用此圖示（如果適用的話）。 範例：
 
     [![應用程式圖示](app-icons-images/000.png)](app-icons-images/000-full.png#lightbox)
-- **焦點圖示**-每當使用者在焦點搜尋中輸入應用程式的名稱時，就會顯示此圖示。 範例： 
+- **焦點圖示**-每當使用者在焦點搜尋中輸入應用程式的名稱時，就會顯示此圖示。 範例：
 
     [![焦點圖示](app-icons-images/000a.png)](app-icons-images/000a-full.png#lightbox)
-- **設定圖示**-如果使用者在其 iOS 裝置上輸入 [**設定**] 應用程式，此圖示將會顯示在應用程式的 [**設定**] 清單結尾。 範例： 
+- **設定圖示**-如果使用者在其 iOS 裝置上輸入 [**設定**] 應用程式，此圖示將會顯示在應用程式的 [**設定**] 清單結尾。 範例：
 
     [![設定圖示](app-icons-images/000b.png)](app-icons-images/000b-full.png#lightbox)
 
@@ -44,7 +44,7 @@ ms.locfileid: "86929199"
 
 - **iPhone： iOS 9 & 10 （iPhone 6 & 7 Plus）**
 
-    ||倍|
+    |圖示|倍|
     |---|---|
     |應用程式圖示|180x180|
     |焦點|120x120|
@@ -52,7 +52,7 @@ ms.locfileid: "86929199"
 
 - **iPhone： iOS 7 & 8**
 
-    ||1 倍|2x|
+    |圖示|1 倍|2x|
     |---|---|---|
     |應用程式圖示|iphones<sup>1</sup>|120x120|
     |焦點|40x40<sup>2</sup>|80x80|
@@ -60,7 +60,7 @@ ms.locfileid: "86929199"
 
 - **iPhone： iOS 5 & 6**
 
-    ||1 倍|2x|
+    |圖示|1 倍|2x|
     |---|---|---|
     |應用程式圖示|57x57|114x114|
     |焦點|29x29|58x58|
@@ -70,7 +70,7 @@ ms.locfileid: "86929199"
 
 - **iPad： iOS 9 & 10**
 
-    ||2x （iPad Pro）|
+    |圖示|2x （iPad Pro）|
     |---|---|
     |應用程式圖示|167x167<sup>6</sup>|
     |焦點|120x120<sup>6</sup>|
@@ -78,7 +78,7 @@ ms.locfileid: "86929199"
 
 - **iPad： iOS 7 & 8**
 
-    ||1 倍|2x|
+    |圖示|1 倍|2x|
     |---|---|---|
     |應用程式圖示|76x76|為152x152|
     |焦點|40x40|80x80|
@@ -86,7 +86,7 @@ ms.locfileid: "86929199"
 
 - **iPad： iOS 5 & 6**
 
-    ||1 倍|2x|
+    |圖示|1 倍|2x|
     |---|---|---|
     |應用程式圖示|72x72|144x144|
     |焦點|50x50|100x100|
@@ -117,7 +117,7 @@ ms.locfileid: "86929199"
 
     ![確定已選取 [AppIcon]](app-icons-images/migrate01.png)
 
-4. 在 [**方案總管**中，按兩下檔案 `Assets.xcassets` 以開啟它進行編輯： 
+4. 在 [**方案總管**中，按兩下檔案 `Assets.xcassets` 以開啟它進行編輯：
 
     ![方案總管中的 assets.xcassets 檔案](app-icons-images/asset01.png)
 
@@ -135,17 +135,17 @@ ms.locfileid: "86929199"
 
     ![選取 [Info] plist](app-icons-images/icon01w.png)
 
-2. 按一下 [**視覺資產**] 索引標籤，然後按一下 [**應用程式圖示**] 底下的 [**使用資產目錄**] 按鈕： 
+2. 按一下 [**視覺資產**] 索引標籤，然後按一下 [**應用程式圖示**] 底下的 [**使用資產目錄**] 按鈕：
 
     ![選取 [視覺資產] 索引標籤](app-icons-images/icon02w.png)
 
     如果沒有按鈕，而是下拉式清單，則表示資產目錄已經加入至這個專案。
 
-3. 從 [**方案總管**] 中，展開 [**資產目錄**] 資料夾： 
+3. 從 [**方案總管**] 中，展開 [**資產目錄**] 資料夾：
 
     ![展開資產目錄資料夾](app-icons-images/image009.png)
 
-4. 按兩下**媒體**檔案，在編輯器中開啟它： 
+4. 按兩下**媒體**檔案，在編輯器中開啟它：
 
     ![在編輯器中開啟媒體檔案](app-icons-images/image010.png)
 
@@ -169,7 +169,7 @@ ms.locfileid: "86929199"
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下 `Info.plist` [**方案總管**中的檔案以開啟它進行編輯。
-2. 流覽至編輯器的**ITunes 藝術品**區段： 
+2. 流覽至編輯器的**ITunes 藝術品**區段：
 
     ![流覽至編輯器的 iTunes 藝術品區段](app-icons-images/itunes01.png)
 3. 針對任何遺失的影像，按一下編輯器中的縮圖，從 [開啟檔案] 對話方塊中選取所需 iTunes 插圖的影像檔案，然後按一下 [**確定]** 按鈕。
@@ -179,7 +179,7 @@ ms.locfileid: "86929199"
 
 1. 按兩下 `Info.plist` [**方案總管**中的檔案以開啟它進行編輯。
 
-2. 按一下 [**視覺資產**] 索引標籤，然後展開**iTunes 插圖**： 
+2. 按一下 [**視覺資產**] 索引標籤，然後展開**iTunes 插圖**：
 
     ![編輯 Visual Studio 中的 iTunes 插圖](app-icons-images/itunes01w.png)
 3. 針對任何遺漏的影像，按一下編輯器中的縮圖，從 [開啟檔案] 對話方塊中選取所需 iTunes 插圖的影像檔案，然後按一下 [**開啟**] 按鈕。

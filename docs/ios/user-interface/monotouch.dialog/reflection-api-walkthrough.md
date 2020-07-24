@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: c087bb4a75664c4fae551b9288e7900c4c7fce4b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bdbff7760e7680173c57e5fc83cecb80967c0a51
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936990"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996093"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>使用反映 API 建立 Xamarin iOS 應用程式
 
@@ -27,12 +27,12 @@ MT.D 與 Xamarin 一起散發。 若要使用它，請以滑鼠右鍵按一下 V
 使用反映 API 的方式很簡單：
 
 1. 建立以 MT 裝飾的類別。D 屬性。
-1. 建立 `BindingContext` 實例，並將上述類別的實例傳遞給它。 
-1. 建立 `DialogViewController` ，並將它傳遞給它 `BindingContext’s` `RootElement` 。 
+1. 建立 `BindingContext` 實例，並將上述類別的實例傳遞給它。
+1. 建立 `DialogViewController` ，並將它傳遞給它 `BindingContext’s` `RootElement` 。
 
 讓我們來看一個範例，以說明如何使用反映 API。 在此範例中，我們將建立簡單的資料輸入畫面，如下所示：
 
- [![](reflection-api-walkthrough-images/01-expense-entry.png "In this example, we'll build a simple data entry screen as shown here")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
+ [![在此範例中，我們將建立簡單的資料輸入畫面，如下所示](reflection-api-walkthrough-images/01-expense-entry.png)](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>建立具有 MT 的類別。D 屬性
 
@@ -45,13 +45,13 @@ public class Expense
 
     [Entry("Enter expense name")]
     public string Name;
-        
+
     [Section("Expense Details")]
-  
+
     [Caption("Description")]
     [Entry]
     public string Details;
-        
+
     [Checkbox]
     public bool IsApproved = true;
 }
@@ -81,14 +81,14 @@ UIWindow window;
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 {   
     window = new UIWindow (UIScreen.MainScreen.Bounds);
-            
+
     var expense = new Expense ();
     var bctx = new BindingContext (null, expense, "Create a task");
     var dvc = new DialogViewController (bctx.Root);
-            
+
     window.RootViewController = dvc;
     window.MakeKeyAndVisible ();
-            
+
     return true;
 }
 ```
@@ -117,7 +117,7 @@ public enum Category
     Lodging,
     Books
 }
-        
+
 public class Expense
 {
     …
@@ -137,7 +137,7 @@ public class Expense
 
  <a name="Summary"></a>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文提供反映 API 的逐步解說。 我們示範了如何將屬性加入至類別，以控制要顯示的內容。 我們也討論了如何使用， `BindingContext` 將來自類別的資料系結至所建立的元素階層，以及如何使用 MT。具有的 D `UINavigationController` 。
 

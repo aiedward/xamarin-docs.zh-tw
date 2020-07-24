@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 3ff868ed10d59a7c1026a222f314a1166a8de45e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 588dadbfe63a46bc7658d5d29a052cebe52be65c
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930191"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997406"
 ---
 # <a name="cloudkit-in-xamarinios"></a>在 Xamarin 中 CloudKit
 
@@ -811,7 +811,7 @@ CloudKit 為應用程式的記錄類型和資料提供個別的開發和生產�
 
 6. 選取應用程式的封存，然後按一下 [**匯出 ...** ] 按鈕：
 
-    [![](intro-to-cloudkit-images/shipping05.png "The application's archive")](intro-to-cloudkit-images/shipping05.png#lightbox)
+    [![應用程式的封存](intro-to-cloudkit-images/shipping05.png)](intro-to-cloudkit-images/shipping05.png#lightbox)
 
 7. 選取匯出的方法，然後按 [**下一步]** 按鈕：
 
@@ -848,7 +848,7 @@ CloudKit 為應用程式的記錄類型和資料提供個別的開發和生產�
 
 請記住這些使用案例，開發人員應挑選正確的 iCloud 技術，以提供目前所需的應用程式功能，並針對未來成長提供良好的擴充性。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋了 CloudKit API 的快速簡介。 其中已示範如何布建和設定 Xamarin iOS 應用程式來使用 CloudKit。 其中涵蓋了 CloudKit 便利性 API 的功能。 它示範如何使用查詢和訂用帳戶，設計 CloudKit 啟用的應用程式來提供擴充性。 最後，它會顯示 CloudKit 對應用程式公開的使用者帳戶資訊。
 

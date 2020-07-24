@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
-ms.openlocfilehash: 767282516d9fc2ce097d13641697290dad7bd8ad
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fe052fee9bd72164ce0d739f01cc1c21a9517cc6
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938069"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997159"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac -  逐步解說
 
@@ -324,7 +324,7 @@ Interface Builder 是 Apple 建立的一種工具，屬於 Xcode 的一部分，
 
 3. 按一下 [屬性偵測器]**** 中的 [標題]**** 屬性，將按鈕的標題變更為 **按一下我**：
 
-    [![](hello-mac-images/xcode09.png "Setting the button's properties")](hello-mac-images/xcode09.png#lightbox)
+    [![設定按鈕的屬性](hello-mac-images/xcode09.png)](hello-mac-images/xcode09.png#lightbox)
 
 4. 從 [程式庫]**** 區段拖曳 [標籤]****：
 
@@ -585,7 +585,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 SourceWriter 程式碼有完整註解，在適當的情況下會提供從關鍵技術或方法到 Xamarin.Mac 文件中相關資訊的連結。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋標準 Xamarin.Mac 應用程式的基本概念。 其中涵蓋在 Visual Studio for Mac 中建立新的應用程式、在 Xcode 和 Interface Builder 中設計使用者介面、使用**輸出**和**動作**將 UI 元素公開到 C# 程式碼、加入程式碼搭配 UI 元素運作，最後建置和測試 Xamarin.Mac 應用程式。
 

@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms雙畫面版面配置
-description: 本指南說明如何使用 Xamarin.Forms TwoPaneView，將您的應用程式體驗優化，例如 Surface 雙核處理器技術和 Surface Neo 等雙畫面裝置。
+title: :::no-loc(Xamarin.Forms):::雙畫面版面配置
+description: '本指南說明如何使用 :::no-loc(Xamarin.Forms)::: TwoPaneView，將您的應用程式體驗優化，例如 Surface 雙核處理器技術和 Surface Neo 等雙畫面裝置。'
 ms.prod: xamarin
 ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
 ms.technology: xamarin-forms
@@ -8,16 +8,16 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fb5474c7436cb985a1404b662fcf842f22cfdc0d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 4f7fdc0bb18a49e601c00ce1e3eb13371bb80be3
+ms.sourcegitcommit: 3698b35c823225a74892a47139d19e8ae8e6d9ed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937692"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87113818"
 ---
-# <a name="xamarinforms-twopaneview-layout"></a>Xamarin.FormsTwoPaneView 版面配置
+# <a name="no-locxamarinforms-twopaneview-layout"></a>:::no-loc(Xamarin.Forms):::TwoPaneView 版面配置
 
 ![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
@@ -34,7 +34,7 @@ ms.locfileid: "86937692"
 
     ```xaml
     <ContentPage 
-        xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
+        xmlns:dualScreen="clr-namespace::::no-loc(Xamarin.Forms):::.DualScreen;assembly=:::no-loc(Xamarin.Forms):::.DualScreen">
         <dualScreen:TwoPaneView>
             <dualScreen:TwoPaneView.Pane1>
                 <StackLayout>
@@ -77,8 +77,8 @@ ms.locfileid: "86937692"
 
 下列屬性適用於 `TwoPaneView` 佔用單一螢幕或兩個螢幕時：
 
-- `TallModeConfiguration` 指出直向模式中的左/右排列，或您是否只要顯示 TwoPaneViewPriority 所定義的單一窗格。
-- `WideModeConfiguration` 指出橫向模式中的上/下排列，或您是否只要顯示 TwoPaneViewPriority 所定義的單一窗格。
+- `TallModeConfiguration`表示在 [高] 模式中，如果您只想要顯示 TwoPaneViewPriority 所定義的單一窗格，則為上/下的相片順序。
+- `WideModeConfiguration`表示在寬模式中，如果您只想要顯示 TwoPaneViewPriority 所定義的單一窗格，則為左/右相片順序。
 - `PanePriority` 決定在處於 SinglePane 模式中時，是否要顯示 Pane1 或 Pane2。
 
 ## <a name="related-links"></a>相關連結

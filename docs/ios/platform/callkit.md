@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 116ae63619aa90defb25db31b959e36b8b44edf2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 791ab82e0e5f47929eff561ac836ec87e6d6c134
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934728"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997315"
 ---
 # <a name="callkit-in-xamarinios"></a>在 Xamarin 中 CallKit
 
@@ -635,7 +635,7 @@ Provider = new CXProvider (Configuration);
 Provider.SetDelegate (this, null);
 ```
 
-使用 CallKit 時，應用程式將不再建立和處理自己的音訊會話，而是必須設定並使用系統將為其建立及處理的音訊會話。 
+使用 CallKit 時，應用程式將不再建立和處理自己的音訊會話，而是必須設定並使用系統將為其建立及處理的音訊會話。
 
 如果這是實際的應用程式，則會 `DidActivateAudioSession` 使用方法，以系統提供的預先設定來啟動呼叫 `AVAudioSession` ：
 
@@ -697,7 +697,7 @@ namespace MonkeyCall
             // Found?
             if (handle == null) {
                 // No, report to system
-                Console.WriteLine ("Unable to get call handle from URL: {0}", url); 
+                Console.WriteLine ("Unable to get call handle from URL: {0}", url);
                 return false;
             } else {
                 // Yes, start call and inform system
@@ -820,7 +820,7 @@ public override void PerformAnswerCallAction (CXProvider provider, CXAnswerCallA
 
 如果使用者希望在應用程式的 UI 中結束通話，則會發生下列情況：
 
-[![](callkit-images/callkit07.png "The user terminates the call from within the app's UI")](callkit-images/callkit07.png#lightbox)
+[![使用者在應用程式的 UI 中結束通話](callkit-images/callkit07.png)](callkit-images/callkit07.png#lightbox)
 
 1. 應用程式會建立 `CXEndCallAction` ，並將其捆綁至 `CXTransaction` 傳送至系統的，以通知它該呼叫正在結束。
 2. 系統會驗證「結束呼叫」意圖，並透過將 `CXEndCallAction` 傳回給應用程式 `CXProvider` 。
@@ -872,12 +872,12 @@ public override void PerformEndCallAction (CXProvider provider, CXEndCallAction 
 
 [![接收開始呼叫意圖](callkit-images/callkit08.png)](callkit-images/callkit08.png#lightbox)
 
-1. 應用程式會根據其從系統收到的開始呼叫意圖，建立_開始呼叫動作_。 
+1. 應用程式會根據其從系統收到的開始呼叫意圖，建立_開始呼叫動作_。
 2. 應用程式會使用 `CXCallController` 來向系統要求開始呼叫動作。
 3. 如果系統接受此動作，則會透過委派將其傳回到應用程式 `XCProvider` 。
 4. 應用程式會以其通訊網路啟動連出呼叫。
 
-如需意圖的詳細資訊，請參閱我們的[意圖和意圖 UI 延伸](~/ios/platform/sirikit/understanding-sirikit.md)模組檔。 
+如需意圖的詳細資訊，請參閱我們的[意圖和意圖 UI 延伸](~/ios/platform/sirikit/understanding-sirikit.md)模組檔。
 
 ### <a name="the-outgoing-call-lifecycle"></a>外寄呼叫生命週期
 
@@ -1025,7 +1025,7 @@ public void EndCall (ActiveCall call)
 }
 ```
 
-如果建立 `CXEndCallAction` 具有 end 呼叫之 UUID 的，則會將它組合在 `CXTransaction` 使用類別的方法傳送到系統的中 `RequestTransaction` `CXCallController` 。 
+如果建立 `CXEndCallAction` 具有 end 呼叫之 UUID 的，則會將它組合在 `CXTransaction` 使用類別的方法傳送到系統的中 `RequestTransaction` `CXCallController` 。
 
 ## <a name="additional-callkit-details"></a>其他 CallKit 詳細資料
 
@@ -1044,11 +1044,11 @@ public void EndCall (ActiveCall call)
 
 - 顯示當地語系化的名稱。
 - 啟用 video 通話支援。
-- 藉由呈現自己的範本影像圖示來自訂呼叫中 UI 上的按鈕。 使用者與自訂按鈕的互動會直接傳送至要處理的應用程式。 
+- 藉由呈現自己的範本影像圖示來自訂呼叫中 UI 上的按鈕。 使用者與自訂按鈕的互動會直接傳送至要處理的應用程式。
 
 ### <a name="action-errors"></a>動作錯誤
 
-使用 CallKit 的 iOS 10 VOIP 應用程式需要處理正常失敗的動作，並讓使用者隨時掌握動作狀態的通知。 
+使用 CallKit 的 iOS 10 VOIP 應用程式需要處理正常失敗的動作，並讓使用者隨時掌握動作狀態的通知。
 
 請考慮下列範例：
 
@@ -1082,7 +1082,7 @@ public class ProviderDelegate : CXProviderDelegate
         // Create update to describe the incoming call and caller
         var update = new CXCallUpdate ();
         update.RemoteHandle = new CXHandle (CXHandleType.Generic, handle);
-    
+
         // Report incoming call to system
         Provider.ReportNewIncomingCall (uuid, update, (error) => {
             // Was the call accepted
@@ -1134,21 +1134,21 @@ CallKit 提供數個優點，可處理 iOS 10 VOIP 應用程式在即時 VOIP �
 
 1. 在 Visual Studio for Mac 中開啟應用程式的解決方案。
 2. 以滑鼠右鍵按一下**方案總管**中的方案名稱，**然後選取 [新增]**[  >  **新增專案**]。
-3. 選取 [ **iOS**  >  **擴充**功能]  >  [**呼叫目錄延伸**]，然後按 [**下一步]** 按鈕 
+3. 選取 [ **iOS**  >  **擴充**功能]  >  [**呼叫目錄延伸**]，然後按 [**下一步]** 按鈕
 
     [![建立新的呼叫目錄延伸模組](callkit-images/calldir01.png)](callkit-images/calldir01.png#lightbox)
-4. 輸入擴充功能的**名稱**，然後按 [**下一步]** 按鈕： 
+4. 輸入擴充功能的**名稱**，然後按 [**下一步]** 按鈕：
 
     [![輸入延伸模組的名稱](callkit-images/calldir02.png)](callkit-images/calldir02.png#lightbox)
-5. 視需要調整 [**專案名稱**] 和/或 [**方案名稱**]，然後按一下 [**建立**] 按鈕： 
+5. 視需要調整 [**專案名稱**] 和/或 [**方案名稱**]，然後按一下 [**建立**] 按鈕：
 
-    [![建立專案](callkit-images/calldir03.png)](callkit-images/calldir03.png#lightbox) 
+    [![建立專案](callkit-images/calldir03.png)](callkit-images/calldir03.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 在 Visual Studio 中開啟應用程式的解決方案。
 2. 以滑鼠右鍵按一下**方案總管**中的方案名稱，**然後選取 [新增]**[  >  **新增專案**]。
-3. 選取 [ **iOS**  >  **擴充**功能]  >  [**呼叫目錄延伸**]，然後按 [**下一步]** 按鈕 
+3. 選取 [ **iOS**  >  **擴充**功能]  >  [**呼叫目錄延伸**]，然後按 [**下一步]** 按鈕
 
     [![建立新的呼叫目錄延伸模組](callkit-images/calldir01w.png)](callkit-images/calldir01.png#lightbox)
 4. 輸入擴充功能的**名稱**，然後按一下 [**確定]** 按鈕
@@ -1255,7 +1255,7 @@ namespace MonkeyCallDirExtension
 
 若要通知連絡人應用程式是否有 VOIP 應用程式已知的連絡人號碼，請使用 `AddIdentificationEntry` 類別的方法， `CXCallDirectoryExtensionContext` 並同時提供數位和識別標籤。 同樣地，提供給方法的數位_必須_以數位的遞增順序。 若要在有許多電話號碼時獲得最佳效能和記憶體使用量，請考慮只在指定的時間載入數位子集，並使用 autorelease 集區釋放載入的每個數位批次期間所配置的物件。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋 Apple 在 iOS 10 中發行的新 CallKit API，以及如何在 Xamarin iOS VOIP 應用程式中執行。 其中已示範 CallKit 如何讓應用程式與 iOS 系統整合，它如何提供與內建應用程式（例如電話）的功能同位檢查，以及如何透過 Siri 互動和透過 Contacts 應用程式來增加整個 iOS 的應用程式可見度。
 

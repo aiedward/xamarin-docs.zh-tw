@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/26/2018
-ms.openlocfilehash: b4eaca39470e44a3d9f686fde4eedc1800124557
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: e2beb12ea366918219d2c83532e8a62d94e688b5
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932739"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996262"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>使用 Xamarin 中的 watchOS 圖示
 
@@ -23,7 +23,7 @@ Apple Watch 解決方案需要兩組圖示：
 
 ## <a name="apple-watch-icons"></a>Apple Watch 圖示
 
-| | | |
+|圖示|描述|外觀|
 |-|-|-|
 |iOS 應用程式圖示|出現在 iPhone 上並啟動父系應用程式|![iOS 應用程式圖示](icons-images/icon-ios.png)|
 |監看應用程式圖示|出現在 Apple Watch 主畫面上|![watchOS 應用程式圖示](icons-images/icon-home.png)|

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 110aaf8d324a13a6ea2e4c5a354adbc74fd8df96
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 2f9b4dfac4909a5c68b6c53fc913925ee95313a3
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567576"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997510"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac 中的資料系結和索引鍵-值編碼
 
@@ -745,7 +745,7 @@ public override void AwakeFromNib ()
 
 First, let's add a new **View Controller** to our **Main.storyboard** file in Interface Builder and name its class `CollectionViewController`:
 
-![](databinding-images/collection01.png)
+![Add a View Controller](databinding-images/collection01.png)
 
 Next, let's edit the **CollectionViewController.cs** file (that was automatically added to our project) and expose an array (`NSArray`) of `PersonModel` classes that we will be data binding our form to. Add the following code:
 
@@ -812,7 +812,7 @@ public override void AwakeFromNib ()
 
 Now we need to create our Collection View, double-click the **Main.storyboard** file to open it for editing in Interface Builder. Layout the Collection View to look something like the following:
 
-![](databinding-images/collection02.png)
+![Create the CollectionView](databinding-images/collection02.png)
 
 When you add a Collection View to a User Interface design, two extra elements are also added:
 
@@ -821,38 +821,38 @@ When you add a Collection View to a User Interface design, two extra elements ar
 
 Select the view and make it look like the following using an Image View and two Text Fields:
 
-![](databinding-images/collection03.png)
+![Add controls](databinding-images/collection03.png)
 
 One thing to note here, a `NSBox` was added behind everything in the view with the following attributes:
 
-![](databinding-images/collection04.png)
+![NSBox](databinding-images/collection04.png)
 
 We'll be using this box to provide feedback to the user when an item is selected in the Collection View.
 
 We need to add an **Array Controller** to provide bound data to our collection, do the following:
 
-1. Drag an **Array Controller** from the **Library Inspector** onto the **Interface Editor**: <br/>![](databinding-images/table03.png)
-2. Select **Array Controller** in the **Interface Hierarchy** and switch to the **Attribute Inspector**: <br/>![](databinding-images/collection05.png)
-3. Enter `PersonModel` for the **Class Name**, click the **Plus** button and add four Keys. Name them `Icon`, `Name`, `Occupation` and `isManager`: <br/>![](databinding-images/table05.png)
+1. Drag an **Array Controller** from the **Library Inspector** onto the **Interface Editor**: <br/>![Array Controller](databinding-images/table03.png)
+2. Select **Array Controller** in the **Interface Hierarchy** and switch to the **Attribute Inspector**: <br/>![Attribute inspector](databinding-images/collection05.png)
+3. Enter `PersonModel` for the **Class Name**, click the **Plus** button and add four Keys. Name them `Icon`, `Name`, `Occupation` and `isManager`: <br/>![Set the class and key names](databinding-images/table05.png)
 4. This tells the Array Controller what it is managing an array of, and which properties it should expose (via Keys).
-5. Switch to the **Bindings Inspector** and under **Content Array** select **Bind to** and **File's Owner**. Enter a **Model Key Path** of `self.personModelArray`: <br/>![](databinding-images/table06.png)
+5. Switch to the **Bindings Inspector** and under **Content Array** select **Bind to** and **File's Owner**. Enter a **Model Key Path** of `self.personModelArray`: <br/>![Bindings inspector](databinding-images/table06.png)
 6. This ties the Array Controller to the array of `PersonModels` that we exposed on our View Controller.
 
 Now we need to bind our Collection View to the Array Controller, do the following:
 
-1. Select the Collection View and the **Binding Inspector**: <br/>![](databinding-images/collection06.png)
-2. Under the **Contents** turndown, select **Bind to** and **Array Controller**. Enter `arrangedObjects` for the **Controller Key** field: <br/>![](databinding-images/collection07.png)
-3. Under the **Selection Indexes** turndown, select **Bind to** and **Array Controller**. Enter `selectionIndexes` for the **Controller Key** field: <br/>![](databinding-images/collection08.png)
-4. Select the **Image View**. In the **Bindings Inspector** under the **Value** turndown, select **Bind to** and **Person** (the name of our Collection View Item). Enter `representedObject.Icon` for the **Model Key Path**: <br/>![](databinding-images/collection09.png)
+1. Select the Collection View and the **Binding Inspector**: <br/>![Binding inspector](databinding-images/collection06.png)
+2. Under the **Contents** turndown, select **Bind to** and **Array Controller**. Enter `arrangedObjects` for the **Controller Key** field: <br/>![Contents](databinding-images/collection07.png)
+3. Under the **Selection Indexes** turndown, select **Bind to** and **Array Controller**. Enter `selectionIndexes` for the **Controller Key** field: <br/>![Selection indexes](databinding-images/collection08.png)
+4. Select the **Image View**. In the **Bindings Inspector** under the **Value** turndown, select **Bind to** and **Person** (the name of our Collection View Item). Enter `representedObject.Icon` for the **Model Key Path**: <br/>![Binding inspector values](databinding-images/collection09.png)
 5. `representedObject` is the current `PersonModel` in the array being managed by the Array Controller.
-6. Select the first **Label**. In the **Bindings Inspector** under the **Value** turndown, select **Bind to** and **Collection View Item**. Enter `representedObject.Name` for the **Model Key Path**: <br/>![](databinding-images/collection10.png)
-7. Select the second **Label**. In the **Bindings Inspector** under the **Value** turndown, select **Bind to** and **Collection View Item**. Enter `representedObject.Occupation` for the **Model Key Path**: <br/>![](databinding-images/collection11.png)
-8. Select the `NSBox`. In the **Bindings Inspector** under the **Hidden** turndown, select **Bind to** and **Collection View Item**. Enter `selected` for the **Model Key Path** and `NSNegateBoolean` for the **Value Transformer**: <br/>![](databinding-images/collection12.png)
+6. Select the first **Label**. In the **Bindings Inspector** under the **Value** turndown, select **Bind to** and **Collection View Item**. Enter `representedObject.Name` for the **Model Key Path**: <br/>![Label value](databinding-images/collection10.png)
+7. Select the second **Label**. In the **Bindings Inspector** under the **Value** turndown, select **Bind to** and **Collection View Item**. Enter `representedObject.Occupation` for the **Model Key Path**: <br/>![Label value](databinding-images/collection11.png)
+8. Select the `NSBox`. In the **Bindings Inspector** under the **Hidden** turndown, select **Bind to** and **Collection View Item**. Enter `selected` for the **Model Key Path** and `NSNegateBoolean` for the **Value Transformer**: <br/>![NSBox value](databinding-images/collection12.png)
 9. Save your changes and return to Visual Studio for Mac to sync with Xcode.
 
 If we run the application, the table will be populated with our array of `PersonModels`:
 
-![](databinding-images/collection13.png)
+![Populated table](databinding-images/collection13.png)
 
 For more information on working with Collection Views, please see our [Collection Views](~/mac/user-interface/collection-view.md) documentation.-->
 
@@ -885,7 +885,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 這一行告訴我們，索引鍵 `Title` 不存在我們所系結的物件上。 如果我們將系結回到 `Name` Interface Builder、儲存、同步處理、重建和執行，則應用程式會如預期般執行，而不會發生問題。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已詳細探討如何在 Xamarin. Mac 應用程式中使用資料系結和索引鍵-值編碼。 首先，它探討了如何使用索引鍵/值編碼（KVC）和索引鍵-值觀察（KVO），將 c # 類別公開給目標-C。 接下來，它會示範如何使用 KVO 相容的類別，並將資料系結至 Xcode 的 Interface Builder 中的 UI 元素。 最後，它會使用**陣列控制器**和**樹狀結構**來顯示覆雜的資料系結。
 
@@ -897,7 +897,7 @@ For more information on working with Collection Views, please see our [Collectio
 - [標準控制項](~/mac/user-interface/standard-controls.md)
 - [資料表視圖](~/mac/user-interface/table-view.md)
 - [大綱視圖](~/mac/user-interface/outline-view.md)
-- [集合視圖](~/mac/user-interface/collection-view.md)
+- [集合檢視](~/mac/user-interface/collection-view.md)
 - [索引鍵/值編碼程式設計指南](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
 - [索引鍵/值簡介觀察程式設計指南](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html)
 - [Cocoa 系結程式設計主題簡介](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)

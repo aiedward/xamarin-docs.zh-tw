@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: bb6a88ad5197dfe0ec37160890760028d59ac47e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2ba5d6b99a32684fd53572e0db00b19a6841ed64
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937991"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996457"
 ---
 # <a name="understanding-sirikit-concepts"></a>了解 SiriKit 概念
 
@@ -136,7 +136,7 @@ Siri 知道除了收件者以外，需要更多的訊息，因此它會快速檢
 
 在上述範例中，使用者已回應「*請傳送更多香蕉*」，Siri 將會組合成結構化的**意圖**：
 
-[![](understanding-sirikit-images/monkeychat05.png "Siri will bundle the user's response into a structured Intent")](understanding-sirikit-images/monkeychat05.png#lightbox)
+[![Siri 會將使用者的回應組合成結構化的意圖](understanding-sirikit-images/monkeychat05.png)](understanding-sirikit-images/monkeychat05.png#lightbox)
 
 結構化的意圖將包含下列資訊：
 
@@ -457,7 +457,7 @@ Apple 建議的幾個步驟會將對話介面的設計波蘭文。 第一，是�
 
 努力與 Siri （代表應用程式）交談非常流暢、自然且「覺得直接」。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋使用 SiriKit 所需的重要概念，並顯示它可以與 Xamarin iOS 應用程式互動，以提供使用者可使用 Siri 和 iOS 裝置上的 Maps 應用程式來存取的服務。
 

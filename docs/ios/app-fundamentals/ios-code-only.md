@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 42d90175b6ddc005aa34b9fb7ae558741e4a4642
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: edd49cc891a86d3323bab319ab811e85f9148640
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930633"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997094"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin 的程式碼中建立 iOS 使用者介面
 
@@ -162,7 +162,7 @@ public class AppDelegate : UIApplicationDelegate
 
 每個控制器都有相關聯的視圖，可從 `View` 屬性存取。 上述程式碼會將視圖的 `BackgroundColor` 屬性變更為， `UIColor.LightGray` 使其可見，如下所示：
 
- [![](ios-code-only-images/image1.png "The View's background is a visible light gray")](ios-code-only-images/image1.png#lightbox)
+ [![視圖的背景是可見的淺灰色](ios-code-only-images/image1.png)](ios-code-only-images/image1.png#lightbox)
 
 我們 `UIViewController` 也可以用這種方式來設定任何子類別 `RootViewController` ，包括來自 UIKit 的控制器，以及我們自己撰寫的控制項。 例如，下列程式碼會將新增 `UINavigationController` 為 `RootViewController` ：
 
@@ -304,7 +304,7 @@ iOS 使用者介面是由一個視圖階層所組成。 其他視圖（例如標
 
 ### <a name="adding-the-text-fields"></a>加入文字欄位
 
-首先，移除 [[初始化視圖](#initializing-the-view)] 區段中新增的按鈕和事件處理常式。 
+首先，移除 [[初始化視圖](#initializing-the-view)] 區段中新增的按鈕和事件處理常式。
 
 藉由建立和初始化，然後將它加入至 view 階層，以加入使用者名稱的控制項 `UITextField` ，如下所示：
 
@@ -615,7 +615,7 @@ Apple 建議將 xib 或分鏡腳本檔案用於以 iOS 8 或更新版本為目�
 > [!IMPORTANT]
 > 如果您的應用程式沒有啟動畫面，您可能會注意到它並不完全符合畫面。 如果是這種情況，您應該確定至少包含名為的640x1136 影像 `Default-568@2x.png` 至您的 Info. plist。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 

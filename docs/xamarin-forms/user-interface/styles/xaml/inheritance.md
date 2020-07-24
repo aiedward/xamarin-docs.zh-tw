@@ -1,6 +1,6 @@
 ---
-title: 中的樣式繼承Xamarin.Forms
-description: 樣式可以繼承自其他樣式，以減少重複程度並讓重複使用。 本文說明如何在應用程式中執行樣式繼承 Xamarin.Forms 。
+title: '中的樣式繼承:::no-loc(Xamarin.Forms):::'
+description: '樣式可以繼承自其他樣式，以減少重複程度並讓重複使用。 本文說明如何在應用程式中執行樣式繼承 :::no-loc(Xamarin.Forms)::: 。'
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
@@ -8,26 +8,26 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 80cc419ae098f4a0cbbd782785c0ec5ba03fa703
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 9b374987ce7741c82c433b2e35261c3a23ef778f
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138953"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996730"
 ---
-# <a name="style-inheritance-in-xamarinforms"></a>中的樣式繼承Xamarin.Forms
+# <a name="style-inheritance-in-no-locxamarinforms"></a>中的樣式繼承:::no-loc(Xamarin.Forms):::
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _樣式可以繼承自其他樣式，以減少重複程度並讓重複使用。_
 
 ## <a name="style-inheritance-in-xaml"></a>XAML 中的樣式繼承
 
-將屬性設定為現有的，即可執行樣式繼承 [`Style.BasedOn`](xref:Xamarin.Forms.Style.BasedOn) [`Style`](xref:Xamarin.Forms.Style) 。 在 XAML 中，將 `BasedOn` 屬性設定為 `StaticResource` 參考先前所建立之的標記延伸，即可達成此目的 `Style` 。 在 c # 中，將屬性設定為實例即可達成此目的 `BasedOn` `Style` 。
+將屬性設定為現有的，即可執行樣式繼承 [`Style.BasedOn`](xref::::no-loc(Xamarin.Forms):::.Style.BasedOn) [`Style`](xref::::no-loc(Xamarin.Forms):::.Style) 。 在 XAML 中，將 `BasedOn` 屬性設定為 `StaticResource` 參考先前所建立之的標記延伸，即可達成此目的 `Style` 。 在 c # 中，將屬性設定為實例即可達成此目的 `BasedOn` `Style` 。
 
-繼承自基底樣式的樣式可以包含 [`Setter`](xref:Xamarin.Forms.Setter) 新屬性的實例，或使用它們來覆寫基底樣式的樣式。 此外，繼承自基底樣式的樣式必須以相同的類型為目標，或是衍生自基底樣式之目標型別的類型。 例如，如果基底樣式以實例為目標 [`View`](xref:Xamarin.Forms.View) ，根據基底樣式的樣式可以針對 `View` 衍生自類別的實例或類型（ `View` 例如 [`Label`](xref:Xamarin.Forms.Label) 和實例）進行目標 [`Button`](xref:Xamarin.Forms.Button) 。
+繼承自基底樣式的樣式可以包含 [`Setter`](xref::::no-loc(Xamarin.Forms):::.Setter) 新屬性的實例，或使用它們來覆寫基底樣式的樣式。 此外，繼承自基底樣式的樣式必須以相同的類型為目標，或是衍生自基底樣式之目標型別的類型。 例如，如果基底樣式以實例為目標 [`View`](xref::::no-loc(Xamarin.Forms):::.View) ，根據基底樣式的樣式可以針對 `View` 衍生自類別的實例或類型（ `View` 例如 [`Label`](xref::::no-loc(Xamarin.Forms):::.Label) 和實例）進行目標 [`Button`](xref::::no-loc(Xamarin.Forms):::.Button) 。
 
 下列程式碼示範 XAML 頁面中的*明確*樣式繼承：
 
@@ -65,9 +65,9 @@ _樣式可以繼承自其他樣式，以減少重複程度並讓重複使用。_
 </ContentPage>
 ```
 
-`baseStyle`目標 [`View`](xref:Xamarin.Forms.View) 實例，並設定 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性。 `baseStyle`不會直接在任何控制項上設定。 相反 `labelStyle` 地，和 `buttonStyle` 會從它繼承，設定其他可系結的屬性值。 然後 `labelStyle` `buttonStyle` 會藉 [`Label`](xref:Xamarin.Forms.Label) [`Button`](xref:Xamarin.Forms.Button) 由設定其屬性，將和套用至實例和實例 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。 這會導致下列螢幕擷取畫面中顯示的外觀：
+`baseStyle`目標 [`View`](xref::::no-loc(Xamarin.Forms):::.View) 實例，並設定 [`HorizontalOptions`](xref::::no-loc(Xamarin.Forms):::.View.HorizontalOptions) 和 [`VerticalOptions`](xref::::no-loc(Xamarin.Forms):::.View.VerticalOptions) 屬性。 `baseStyle`不會直接在任何控制項上設定。 相反 `labelStyle` 地，和 `buttonStyle` 會從它繼承，設定其他可系結的屬性值。 然後 `labelStyle` `buttonStyle` 會藉 [`Label`](xref::::no-loc(Xamarin.Forms):::.Label) [`Button`](xref::::no-loc(Xamarin.Forms):::.Button) 由設定其屬性，將和套用至實例和實例 [`Style`](xref::::no-loc(Xamarin.Forms):::.NavigableElement.Style) 。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
-[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
+[![樣式繼承螢幕擷取畫面](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
 > 隱含樣式可以衍生自明確樣式，但無法從隱含樣式衍生明確樣式。
@@ -113,7 +113,7 @@ _樣式可以繼承自其他樣式，以減少重複程度並讓重複使用。_
 
 ## <a name="style-inheritance-in-c35"></a>C&#35; 中的樣式繼承
 
-對等的 c # 頁面，其中 [`Style`](xref:Xamarin.Forms.Style) 實例會直接指派給 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 必要控制項的屬性，如下列程式碼範例所示：
+對等的 c # 頁面，其中 [`Style`](xref::::no-loc(Xamarin.Forms):::.Style) 實例會直接指派給 [`Style`](xref::::no-loc(Xamarin.Forms):::.NavigableElement.Style) 必要控制項的屬性，如下列程式碼範例所示：
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -156,13 +156,13 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-`baseStyle`目標 [`View`](xref:Xamarin.Forms.View) 實例，並設定 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性。 `baseStyle`不會直接在任何控制項上設定。 相反 `labelStyle` 地，和 `buttonStyle` 會從它繼承，設定其他可系結的屬性值。 然後 `labelStyle` `buttonStyle` 會藉 [`Label`](xref:Xamarin.Forms.Label) [`Button`](xref:Xamarin.Forms.Button) 由設定其屬性，將和套用至實例和實例 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。
+`baseStyle`目標 [`View`](xref::::no-loc(Xamarin.Forms):::.View) 實例，並設定 [`HorizontalOptions`](xref::::no-loc(Xamarin.Forms):::.View.HorizontalOptions) 和 [`VerticalOptions`](xref::::no-loc(Xamarin.Forms):::.View.VerticalOptions) 屬性。 `baseStyle`不會直接在任何控制項上設定。 相反 `labelStyle` 地，和 `buttonStyle` 會從它繼承，設定其他可系結的屬性值。 然後 `labelStyle` `buttonStyle` 會藉 [`Label`](xref::::no-loc(Xamarin.Forms):::.Label) [`Button`](xref::::no-loc(Xamarin.Forms):::.Button) 由設定其屬性，將和套用至實例和實例 [`Style`](xref::::no-loc(Xamarin.Forms):::.NavigableElement.Style) 。
 
 ## <a name="related-links"></a>相關連結
 
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [基本樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 - [使用樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
-- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary) \(英文\)
-- [Style](xref:Xamarin.Forms.Style)
-- [Setter](xref:Xamarin.Forms.Setter)
+- [ResourceDictionary](xref::::no-loc(Xamarin.Forms):::.ResourceDictionary) \(英文\)
+- [Style](xref::::no-loc(Xamarin.Forms):::.Style)
+- [Setter](xref::::no-loc(Xamarin.Forms):::.Setter)

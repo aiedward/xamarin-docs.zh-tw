@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 683ac99ba46d2e23b0190d411e4911725c409f23
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a1ff70349ca7d7b97431b2e3d07aa4c8028c38c0
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931569"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996353"
 ---
 # <a name="testing-on-apple-watch-devices"></a>在 Apple Watch 裝置上進行測試
 
@@ -36,7 +36,7 @@ ms.locfileid: "86931569"
 
 當您知道監看式的 UDID 時，請將它新增至開發人員中心的裝置清單：
 
-![](device-images/devices-watch-sml.png "The Watch's UDID in the device list")
+![裝置清單中的監看式 UDID](device-images/devices-watch-sml.png)
 
 新增 Watch 裝置之後，請確定已在您所建立的任何新的或現有的開發或臨機操作布建設定檔中選取它：
 

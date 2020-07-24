@@ -1,6 +1,6 @@
 ---
-title: 使用電子書的企業應用程式模式 Xamarin.Forms
-description: 此電子書提供開發可調整、可維護和可測試之 Xamarin.Forms 企業應用程式的架構指引。
+title: '使用電子書的企業應用程式模式 :::no-loc(Xamarin.Forms):::'
+description: '此電子書提供開發可調整、可維護和可測試之 :::no-loc(Xamarin.Forms)::: 企業應用程式的架構指引。'
 ms.prod: xamarin
 ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
 ms.technology: xamarin-forms
@@ -8,20 +8,20 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1d993afa7163beb0b24e496b0c876d903f2396e7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 549fe496cdb1d68d091d5fb3ed247ccef5a111a8
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934286"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996158"
 ---
-# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>使用電子書的企業應用程式模式 Xamarin.Forms
+# <a name="enterprise-application-patterns-using-no-locxamarinforms-ebook"></a>使用電子書的企業應用程式模式 :::no-loc(Xamarin.Forms):::
 
-_開發可調整、可維護且可測試之 Xamarin.Forms 企業應用程式的架構指引_
+_開發可調整、可維護且可測試之 :::no-loc(Xamarin.Forms)::: 企業應用程式的架構指引_
 
-![使用電子書的企業應用程式模式 Xamarin.Forms](images/cover-sml.png)
+![使用：：： no-loc （Xamarin）：：：電子書的企業應用程式模式](images/cover-sml.png)
 
 此電子書提供如何執行模型 ViewModel （MVVM）模式、相依性插入、流覽、驗證和設定管理的指引，同時維持鬆散結合。 此外，也有指導方針，說明如何使用 IdentityServer 來執行驗證和授權、從容器化微服務存取資料，以及單元測試。
 
@@ -45,11 +45,11 @@ _開發可調整、可維護且可測試之 Xamarin.Forms 企業應用程式的�
 
 ## <a name="communicating-between-loosely-coupled-components"></a>[在偶合程度低的元件之間通訊](communicating-between-loosely-coupled-components.md)
 
-Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 類別會執行發行-訂閱模式，允許不方便透過物件和類型參考連結的元件之間以訊息為基礎的通訊。 這項機制可讓發行者和訂閱者進行通訊，而不需要彼此的參考，協助減少元件之間的相依性，同時也允許獨立開發和測試元件。
+:::no-loc(Xamarin.Forms)::: [`MessagingCenter`](xref::::no-loc(Xamarin.Forms):::.MessagingCenter) 類別會執行發行-訂閱模式，允許不方便透過物件和類型參考連結的元件之間以訊息為基礎的通訊。 這項機制可讓發行者和訂閱者進行通訊，而不需要彼此的參考，協助減少元件之間的相依性，同時也允許獨立開發和測試元件。
 
 ## <a name="navigation"></a>[巡覽](navigation.md)
 
-Xamarin.Forms包含頁面導覽的支援，這通常是因使用者與 UI 的互動，或來自應用程式本身的結果，因為內部邏輯驅動狀態變更的結果。 不過，在使用 MVVM 模式的應用程式中執行流覽可能會很複雜。
+:::no-loc(Xamarin.Forms):::包含頁面導覽的支援，這通常是因使用者與 UI 的互動，或來自應用程式本身的結果，因為內部邏輯驅動狀態變更的結果。 不過，在使用 MVVM 模式的應用程式中執行流覽可能會很複雜。
 
 本章提供 `NavigationService` 類別，用來執行視圖模型的第一次導覽。 將導覽邏輯放在視圖模型類別中，表示邏輯可以透過自動化測試來執行。 此外，視圖模型接著可以執行邏輯來控制導覽，以確保強制執行特定商務規則。
 
@@ -69,7 +69,7 @@ Xamarin.Forms包含頁面導覽的支援，這通常是因使用者與 UI 的互
 
 ## <a name="authentication-and-authorization"></a>[驗證和授權](authentication-and-authorization.md)
 
-有許多方法可以將驗證和授權整合到 Xamarin.Forms 與 ASP.NET MVC web 應用程式通訊的應用程式中。 在這裡，會使用使用 IdentityServer 4 的容器化身分識別微服務來執行驗證和授權。 IdentityServer 是開放原始碼 OpenID Connect 和 OAuth 2.0 架構，適用于與 ASP.NET Core 身分識別整合以執行持有人權杖驗證的 ASP.NET Core。
+有許多方法可以將驗證和授權整合到 :::no-loc(Xamarin.Forms)::: 與 ASP.NET MVC web 應用程式通訊的應用程式中。 在這裡，會使用使用 IdentityServer 4 的容器化身分識別微服務來執行驗證和授權。 IdentityServer 是開放原始碼 OpenID Connect 和 OAuth 2.0 架構，適用于與 ASP.NET Core 身分識別整合以執行持有人權杖驗證的 ASP.NET Core。
 
 ## <a name="accessing-remote-data"></a>[存取遠端資料](accessing-remote-data.md)
 
@@ -79,7 +79,7 @@ Xamarin.Forms包含頁面導覽的支援，這通常是因使用者與 UI 的互
 
 從 MVVM 應用程式測試模型和視圖模型，與測試任何其他類別相同，而且可以使用相同的工具和技術。 不過，有些模式通常是模型和視圖模型類別，可受益于特定的單元測試技術。
 
-## <a name="feedback"></a>意見反應
+## <a name="community-site"></a>社區網站
 
 此專案有一個「社區網站」，您可以在其中張貼問題並提供意見反應。 此社區網站位於[GitHub](https://github.com/dotnet-architecture/eShopOnContainers)。 或者，電子書的意見反應可以透過電子郵件傳送至 [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com) 。
 

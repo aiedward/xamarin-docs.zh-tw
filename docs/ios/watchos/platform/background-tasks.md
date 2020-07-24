@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2017
-ms.openlocfilehash: 60e7c2b5771f7f65c07926b2fb5958fdc3f419fb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 84953ce2ec09cc757b5719991e499dc24b708cae
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931037"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996106"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>在 Xamarin 中 watchOS 背景工作
 
-有了 watchOS 3，監看式應用程式可將其資訊保持在最新狀態的主要方式有三種： 
+有了 watchOS 3，監看式應用程式可將其資訊保持在最新狀態的主要方式有三種：
 
-- 使用其中一項新的背景工作。 
-- 在監看表面上有其中一項複雜的問題（提供更多時間來更新）。 
-- 讓使用者將應用程式釘選到新的 Dock （其保留在記憶體中並經常更新）。 
+- 使用其中一項新的背景工作。
+- 在監看表面上有其中一項複雜的問題（提供更多時間來更新）。
+- 讓使用者將應用程式釘選到新的 Dock （其保留在記憶體中並經常更新）。
 
 ## <a name="keeping-an-app-up-to-date"></a>讓應用程式保持在最新狀態
 
@@ -43,7 +43,7 @@ ms.locfileid: "86931037"
 
 [![天氣複雜的範例](background-tasks-images/update01.png)](background-tasks-images/update01.png#lightbox)
 
-1. 應用程式會在特定時間由系統喚醒。 
+1. 應用程式會在特定時間由系統喚醒。
 2. 應用程式會提取產生更新所需的資訊。
 3. 應用程式會重新產生其使用者介面，以反映新的資料。
 4. 當使用者深入瞭解應用程式的複雜問題時，就會有最新的資訊，而不需要使用者等待更新。
@@ -190,7 +190,7 @@ WatchOS 應用程式在此生態系統中的工作，藉由限制其對系統共
 
 請查看下列案例：
 
-[![](background-tasks-images/update13.png "A watchOS app limits its drain on the system's shared resources")](background-tasks-images/update13.png#lightbox)
+[![WatchOS 應用程式會限制其在系統共用資源上的清空](background-tasks-images/update13.png)](background-tasks-images/update13.png#lightbox)
 
 1. 使用者會在下午1:00 啟動 watchOS 應用程式。
 2. 應用程式會排程工作，以在下午2:00 的一小時內喚醒並下載新的內容。
@@ -203,7 +203,7 @@ WatchOS 應用程式在此生態系統中的工作，藉由限制其對系統共
 
 ## <a name="implementing-background-tasks"></a>執行背景工作
 
-舉例來說，這份檔會使用向使用者報告足球分數的假 MonkeySoccer 運動應用程式。 
+舉例來說，這份檔會使用向使用者報告足球分數的假 MonkeySoccer 運動應用程式。
 
 請參閱下列一般使用案例：
 
@@ -215,7 +215,7 @@ WatchOS 應用程式在此生態系統中的工作，藉由限制其對系統共
 2. 應用程式會接收工作並更新其資料和 UI，然後在30分鐘後排程另一個背景工作。 開發人員必須記得排定另一個背景工作，否則應用程式永遠不會重新喚醒以取得更多更新。
 3. 同樣地，應用程式會收到工作並更新其資料、更新其 UI，並在30分鐘後排程另一個背景工作。
 4. 相同的程式會再次重複。
-5. 最後會收到背景工作，而應用程式會再次更新其資料和 UI。 因為這是最後的分數，所以不會針對新的背景重新整理進行排程。 
+5. 最後會收到背景工作，而應用程式會再次更新其資料和 UI。 因為這是最後的分數，所以不會針對新的背景重新整理進行排程。
 
 <a name="Scheduling-for-Background-Update"></a>
 
@@ -229,7 +229,7 @@ private void ScheduleNextBackgroundUpdate ()
   // Create a fire date 30 minutes into the future
   var fireDate = NSDate.FromTimeIntervalSinceNow (30 * 60);
 
-  // Create 
+  // Create
   var userInfo = new NSMutableDictionary ();
   userInfo.Add (new NSString ("LastActiveDate"), NSDate.FromTimeIntervalSinceNow(0));
   userInfo.Add (new NSString ("Reason"), new NSString ("UpdateScore"));
@@ -260,7 +260,7 @@ private void ScheduleNextBackgroundUpdate ()
 
 1. 在下午7:30:02，應用程式會由系統喚醒，並提供更新背景工作。 其第一個優先順序是從伺服器取得最新分數。 請參閱以下[的排程 NSUrlSession](#Scheduling-a-NSUrlSession) 。
 2. 在7:30:05，應用程式會完成原始工作，系統會讓應用程式進入睡眠狀態，並繼續在背景下載要求的資料。
-3. 當系統完成下載時，它會建立新的工作來喚醒應用程式，讓它可以處理下載的資訊。 請參閱以下的[處理背景](#Handling-Background-Tasks)[工作和處理下載的](#Handling-the-Download-Completing)作業。 
+3. 當系統完成下載時，它會建立新的工作來喚醒應用程式，讓它可以處理下載的資訊。 請參閱以下的[處理背景](#Handling-Background-Tasks)[工作和處理下載的](#Handling-the-Download-Completing)作業。
 4. 應用程式會儲存已更新的資訊，並將工作標示為已完成。 開發人員此時可能會想要更新應用程式的使用者介面，但 Apple 建議排程快照集工作來處理該進程。 請參閱下面[的排程快照集更新](#Scheduling-a-Snapshot-Update)。
 5. 應用程式會接收快照集工作、更新其使用者介面，並將工作標示為已完成。 請參閱下面[的處理快照集更新](#Handling-a-Snapshot-Update)。
 
@@ -308,7 +308,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
     #endregion
 
     ...
-    
+
     #region Public Methods
     public void CompleteTask (WKRefreshBackgroundTask task)
     {
@@ -316,7 +316,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
       task.SetTaskCompleted ();
       PendingTasks.Remove (task);
     }
-    #endregion 
+    #endregion
 
     #region Override Methods
     public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backgroundTasks)
@@ -341,7 +341,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
       }
     }
     #endregion
-    
+
     ...
   }
 }
@@ -521,7 +521,7 @@ snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
 
 ## <a name="working-efficiently"></a>有效率地工作
 
-如上述範例所示，MonkeySoccer 應用程式使用這五分鐘的時間範圍來更新其分數、有效率地使用新的 watchOS 3 背景工作，應用程式只會啟用15秒： 
+如上述範例所示，MonkeySoccer 應用程式使用這五分鐘的時間範圍來更新其分數、有效率地使用新的 watchOS 3 背景工作，應用程式只會啟用15秒：
 
 [![應用程式只在使用中總計15秒](background-tasks-images/update16.png)](background-tasks-images/update16.png#lightbox)
 
@@ -531,7 +531,7 @@ snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
 
 ## <a name="how-scheduling-works"></a>排程的運作方式
 
-當 watchOS 3 應用程式在前景時，它一律會排程執行，而且可以執行任何必要的處理類型，例如更新資料或重繪其 UI。 當應用程式移至背景時，通常會由系統暫停，而且所有執行時間作業都會停止。 
+當 watchOS 3 應用程式在前景時，它一律會排程執行，而且可以執行任何必要的處理類型，例如更新資料或重繪其 UI。 當應用程式移至背景時，通常會由系統暫停，而且所有執行時間作業都會停止。
 
 當應用程式在背景時，系統可能會將其設為目標，以快速執行特定工作。 因此，在 watchOS 2 中，系統可能會暫時喚醒背景應用程式來執行一些動作，例如處理長時間的外觀通知，或更新應用程式的複雜問題。 在 watchOS 3 中，有幾種新的方式可讓應用程式在背景中執行。
 
@@ -638,7 +638,7 @@ private void UpdateComplication ()
 
 <a name="Best-Practices"></a>
 
-## <a name="best-practices"></a>最佳做法 
+## <a name="best-practices"></a>最佳做法
 
 使用背景工作時，Apple 建議下列最佳作法：
 
@@ -651,7 +651,7 @@ private void UpdateComplication ()
   - 背景重新整理。
 - 用於 `ScheduleBackgroundRefresh` 一般用途的背景執行時間，例如：
   - 輪詢系統以取得相關資訊。
-  - 排程未來 `NSURLSessions` 要求背景資料。 
+  - 排程未來 `NSURLSessions` 要求背景資料。
   - 已知的時間轉換。
   - 觸發複雜的更新。
 
@@ -693,7 +693,7 @@ Apple 提供下列建議：
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋 Apple 對 watchOS 的增強功能，以及如何使用它們來保持監看應用程式的最新狀態。 首先，它涵蓋了 Apple 在 watchOS 3 中新增的所有新背景工作。 然後，它涵蓋背景 API 生命週期，以及如何在 Xamarin watchOS 應用程式中執行背景工作。 最後，它涵蓋了排程的運作方式，並提供一些最佳作法。
 
