@@ -10,16 +10,16 @@ ms.date: 09/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e38080fc9bc4ef0b74eb8c12c3a3f646c4888f53
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 874793975f027e1323dbf8a8acd30d19e980370b
+ms.sourcegitcommit: 562d4f2d51a43af21b7dc3ab892dd3a4264349a1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198070"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177641"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部份： 開始使用 XAML
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _在 Xamarin.Forms 應用程式中，XAML 主要是用來定義頁面的視覺內容，並與 c # 程式碼後置檔案搭配運作。_
 
@@ -148,7 +148,7 @@ namespace XamlSamples
 
 當您編譯和執行此程式時， `Label` 元素會出現在頁面的中央，如同 XAML 的建議：
 
-[![預設 Xamarin.Forms 顯示](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
+[![預設值：：： no-loc （Xamarin）：：： display](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
 
 針對更有趣的視覺效果，您只需要更有趣的 XAML。
 

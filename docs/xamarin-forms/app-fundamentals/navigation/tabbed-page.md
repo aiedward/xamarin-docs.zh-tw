@@ -10,16 +10,16 @@ ms.date: 11/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 733ec985f4d285f26aca62930868970026847825
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137510"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426873"
 ---
-# <a name="xamarinforms-tabbedpage"></a>Xamarin.FormsTabbedPage
+# <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.FormsTabbedPage
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
 包含索引標籤 Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 清單和較大的詳細資料區域，每個索引標籤都會將內容載入至詳細資料區域。 下列螢幕擷取畫面顯示 `TabbedPage` iOS 和 Android 上的：
 
@@ -33,7 +33,7 @@ ms.locfileid: "84137510"
 在 Android 上，索引標籤清單會出現在畫面頂端，而詳細資料區域如下。 每個索引標籤都是由一個標題和一個圖示組成，這應該是具有 Alpha 色板的 PNG 檔案。 不過，您可以使用平臺特定，將索引標籤移至畫面底部。 如果有五個以上的索引標籤，而且索引標籤清單位於畫面底部，則會出現 [*更多*] 索引標籤，可用來存取其他索引標籤。 如需圖示需求的相關資訊，[請參閱 material.io 上的索引](https://material.io/components/tabs/#)標籤和在 Developer.android.com 上[支援不同的圖元密度](https://developer.android.com/training/multiscreen/screendensities)。 如需將索引標籤移到畫面底部的詳細資訊，請參閱[設定 TabbedPage 工具列位置和色彩](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)。
 
 > [!TIP]
-> `TabbedPageRenderer`適用于 Android AppCompat 的可覆寫 `GetIconDrawable` 方法，可以用來從自訂載入索引標籤圖示 `Drawable` 。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示，且可使用頂端與底部索引標籤列。 或者，可覆寫的 `SetTabIcon` 方法能用來從自訂 `Drawable` 載入頂端索引標籤列的索引標籤圖示。
+> `TabbedPageRenderer`適用于 Android AppCompat 的可覆寫 `SetTabIconImageSource` 方法，可以用來從自訂載入索引標籤圖示 `Drawable` 。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示，且可使用頂端與底部索引標籤列。
 
 在 [通用 Windows 平臺（UWP）上，索引標籤清單會出現在畫面頂端，而 [詳細資料] 區域如下所示。 每個索引標籤都是由一個標題所組成。 不過，您可以將圖示新增至具有平臺特定的每個索引標籤。 如需詳細資訊，請參閱[TabbedPage Windows 上的圖示](~/xamarin-forms/platform/windows/tabbedpage-icons.md)。
 

@@ -10,14 +10,14 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2268f9034a4b09adce697f5fb7b6652baa4feed6
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: 021831da13a936fc5eb9d2e4cb63412484ceb465
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226816"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426860"
 ---
-# <a name="xamarinforms-local-databases"></a>Xamarin.Forms本機資料庫
+# <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms本機資料庫
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
@@ -40,9 +40,9 @@ SQLite 資料庫引擎可讓 Xamarin.Forms 應用程式將資料物件載入和�
 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
 
 - **識別碼：** sqlite-net-pcl
-- **撰寫 (的) ：** SQLite-net
-- **擁有者 (s) ：** praeclarum
-- **專案 URL：**https://github.com/praeclarum/sqlite-net
+- **作者：** SQLite-net
+- **擁有者：** praeclarum
+- **專案 URL:** https://github.com/praeclarum/sqlite-net
 - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
@@ -122,8 +122,8 @@ public class TodoItemDatabase
             if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(TodoItem).Name))
             {
                 await Database.CreateTablesAsync(CreateFlags.None, typeof(TodoItem)).ConfigureAwait(false);
-                initialized = true;
             }
+            initialized = true;
         }
     }
 
@@ -173,11 +173,11 @@ public static class TaskExtensions
 
 `SafeFireAndForget`方法會等候所提供物件的非同步執行 `Task` ，並可讓您附加 `Action` 呼叫（如果擲回例外狀況）。
 
-如需詳細資訊，請參閱以工作為[基礎的非同步模式 (點) ](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)。
+如需詳細資訊，請參閱以工作為[基礎的非同步模式（](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)點一下）。
 
 ### <a name="data-manipulation-methods"></a>資料操作方法
 
-`TodoItemDatabase`類別包含四種資料操作類型的方法： [建立]、[讀取]、[編輯] 和 [刪除]。 SQLite.NET 程式庫提供簡單的物件關聯式對應 (ORM) ，可讓您儲存和抓取物件，而不需要撰寫 SQL 語句。
+`TodoItemDatabase`類別包含四種資料操作類型的方法： [建立]、[讀取]、[編輯] 和 [刪除]。 SQLite.NET 程式庫提供簡單的物件關聯式對應（ORM），可讓您儲存和抓取物件，而不需要撰寫 SQL 語句。
 
 ```csharp
 public class TodoItemDatabase {
@@ -219,7 +219,7 @@ public class TodoItemDatabase {
 }
 ```
 
-## <a name="access-data-in-xamarinforms"></a>存取資料Xamarin.Forms
+## <a name="access-data-in-no-locxamarinforms"></a>存取資料Xamarin.Forms
 
 Xamarin.Forms `App` 類別會公開類別的實例 `TodoItemDatabase` ：
 
@@ -260,7 +260,7 @@ SQLite 提供健全的 API，其功能比本文和範例應用程式中所涵蓋
 
 根據預設，SQLite 會使用傳統的回復日誌。 未變更的資料庫內容複本會寫入個別的復原檔案中，然後這些變更會直接寫入資料庫檔案中。 刪除復原日誌時，就會發生認可。
 
-預先寫入記錄 (WAL) 會先將變更寫入個別的 WAL 檔案。 在 WAL 模式中，認可是特殊記錄，附加至 WAL 檔案，可讓單一 WAL 檔案中發生多個交易。 在稱為「_檢查點_」的特殊作業中，WAL 檔案會合並回資料庫檔案中。
+預先寫入記錄（WAL）會先將變更寫入另一個 WAL 檔案。 在 WAL 模式中，認可是特殊記錄，附加至 WAL 檔案，可讓單一 WAL 檔案中發生多個交易。 在稱為「_檢查點_」的特殊作業中，WAL 檔案會合並回資料庫檔案中。
 
 本機資料庫的 WAL 可能會比較快，因為讀取器和寫入器不會彼此封鎖，讓讀寫作業得以並行處理。 不過，WAL 模式不允許變更_頁面大小_、將其他檔案關聯新增至資料庫，以及加入額外的_檢查點_作業。
 
@@ -283,7 +283,7 @@ await Database.EnableWriteAheadLoggingAsync();
 一般來說，移動、重新命名或複製資料庫檔案與其他任何檔案類型相同，還有一些其他考慮：
 
 - 在嘗試移動資料庫檔案之前，應該先關閉所有資料庫連接。
-- 如果您使用預先[寫入記錄](#write-ahead-logging)，SQLite 會建立共用記憶體存取 (. 具有下列 shm) 檔案和 (寫)  ( 檔案的快取。 請確定您也將任何變更套用至這些檔案。
+- 如果您使用預先[寫入記錄](#write-ahead-logging)，SQLite 會建立共用記憶體存取（. 具有下列 shm）檔案和（寫入預先記錄）（. wal）檔案。 請確定您也將任何變更套用至這些檔案。
 
 如需詳細資訊，請參閱[中 Xamarin.Forms ](~/xamarin-forms/data-cloud/data/files.md)的檔案處理。
 
@@ -294,5 +294,5 @@ await Database.EnableWriteAheadLoggingAsync();
 - [SQLite 檔](https://www.sqlite.org/docs.html)
 - [搭配使用 SQLite 與 Android](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [搭配使用 SQLite 與 iOS](~/ios/data-cloud/data/using-sqlite-orm.md)
-- [以工作為基礎的非同步模式 (，請) ](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
+- [以工作為基礎的非同步模式（點一下）](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
 - [Lazy &lt; T &gt; 類別](xref:System.Lazy`1)

@@ -6,18 +6,18 @@ ms.assetid: 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
+ms.date: 07/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 321539f877a86804245d27a2d76d1edeb1abd1e9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 76f9b4e243af908e5d00ba8b812dfd143104fe65
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137783"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426847"
 ---
-# <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.FormsShell 自訂轉譯器
+# <a name="no-locxamarinforms-shell-custom-renderers"></a>Xamarin.FormsShell 自訂轉譯器
 
 Shell 應用程式的優點之一， Xamarin.Forms 是透過各種 Shell 類別所公開的屬性和方法，可高度自訂其外觀和行為。 不過，它也能夠在需要更複雜的平台專用自訂時，建立 Shell 自訂轉譯器。 如同其他自訂轉譯器，可以將 Shell 自訂轉譯器只加入至一個平台專案來自訂外觀和行為，同時在另一個平台上允許預設行為；或者，可將不同的 Shell 自訂轉譯器加入至每個平台專案，以自訂 iOS 和 Android 上的外觀與行為。
 
@@ -42,14 +42,14 @@ Shell 應用程式會在 iOS 和 Android 上使用 `ShellRenderer` 類別來轉�
 
 `ShellRenderer` 類別會公開下列可覆寫的方法：
 
-| iOS | Android |
-| --- | --- |
-| `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` |
+| iOS | Android | UWP |
+| --- | --- | --- |
+| `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` | `CreateShellFlyoutTemplateSelector`<br />`CreateShellHeaderRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateFlyoutBackdropColor`<br />`UpdateFlyoutBackgroundColor` |
 
 `FlyoutItem` 和 `TabBar` 類別為 `ShellItem` 類別的別名，而 `Tab` 類別則為 `ShellSection` 類別的別名。 因此，在為 `FlyoutItem` 物件建立自訂轉譯器時，應該覆寫 `CreateShellItemRenderer` 方法，而在為 `Tab` 物件建立自訂轉譯器時應該覆寫 `CreateShellSectionRenderer` 方法。
 
 > [!IMPORTANT]
-> iOS 和 Android 上有其他的 Shell 轉譯器類別，例如 `ShellSectionRenderer` 和 `ShellItemRenderer`。 不過，這些其他轉譯器類別都會透過在 `ShellRenderer` 類別中覆寫來建立。 因此，自訂這些其他轉譯器類別的行為可藉由將它們子類別化，並在子類別化之 `ShellRenderer` 類別的適當覆寫中建立該子類別的執行個體來實現。
+> `ShellSectionRenderer` `ShellItemRenderer` 在 IOS、ANDROID 和 UWP 上有其他的 Shell 轉譯器類別，例如和。 不過，這些其他轉譯器類別都會透過在 `ShellRenderer` 類別中覆寫來建立。 因此，自訂這些其他轉譯器類別的行為可藉由將它們子類別化，並在子類別化之 `ShellRenderer` 類別的適當覆寫中建立該子類別的執行個體來實現。
 
 ### <a name="ios-example"></a>iOS 範例
 

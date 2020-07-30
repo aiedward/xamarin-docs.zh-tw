@@ -10,16 +10,16 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa49cdb7944e3ab942ccda611af906e2822b072a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7c4ed503e0379c2c7f235bd91621a031bd660c85
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139954"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426886"
 ---
-# <a name="xamarinforms-shell-tabs"></a>Xamarin.FormsShell 索引標籤
+# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.FormsShell 索引標籤
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 當應用程式的導覽模式包含飛出視窗時，應用程式中的下一層導覽是底部索引標籤列。 此外，當飛出視窗關閉時，底部的索引標籤列可視為導覽的最上層。
 
@@ -268,7 +268,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 </Shell>
 ```
 
-此 XAML 會建立並顯示 `CatsPage`，因為它是子類別化 `Shell` 物件中宣告之內容的第一個項目。 透過底部索引標籤可以導覽至 `CatsPage` 和 `MonkeysPage`，而且只有在使用者導覽至這些項目時，才會建立這些頁面。 這種方法的優點是，可避免啟動經驗不佳，因為頁面是依需求建立以回應導覽的，而不是在應用程式啟動時建立。
+此 XAML 會建立並顯示 `CatsPage`，因為它是子類別化 `Shell` 物件中宣告之內容的第一個項目。 透過底部索引標籤可以導覽至 `DogsPage` 和 `MonkeysPage`，而且只有在使用者導覽至這些項目時，才會建立這些頁面。 這種方法的優點是，可避免啟動經驗不佳，因為頁面是依需求建立以回應導覽的，而不是在應用程式啟動時建立。
 
 ## <a name="tab-appearance"></a>索引標籤外觀
 
