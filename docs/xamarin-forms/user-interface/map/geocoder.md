@@ -10,18 +10,21 @@ ms.date: 10/22/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fe099235857f6bd0531539e3aa84e41bf59b50ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7e92385f3a82c2d12881be4ff3e54bc47533696d
+ms.sourcegitcommit: ea2abdc789d0e292c3e1700a2b53b92097e0e542
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139863"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517489"
 ---
-# <a name="xamarinforms-map-geocoding"></a>Xamarin.Forms地圖地理編碼
+# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Forms地圖地理編碼
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)命名空間提供的 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) 類別，會在字串位址與儲存于物件中的緯度和經度座標之間進行轉換 [`Position`](xref:Xamarin.Forms.Maps.Position) 。 如需結構的詳細資訊 [`Position`](xref:Xamarin.Forms.Maps.Position) ，請參閱[地圖位置和距離](position-distance.md)。
+
+> [!NOTE]
+> 替代的地理編碼 API 是在中 avalible Xamarin.Essentials 。 Xamarin.Essentials `Geocoding` 此 api 會在地理編碼位址時提供結構化位址資料，而不是此 api 所傳回的字串。 如需詳細資訊，請參閱[ Xamarin.Essentials ：地理編碼](~/essentials/geocoding.md)。
 
 ## <a name="geocode-an-address"></a>地理編碼位址
 
