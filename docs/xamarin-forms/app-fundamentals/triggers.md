@@ -10,14 +10,14 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a71f48fb9911267188e7aa4b4124cd9b7488d31
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fa907babc8dae0f466fd870f55b0e5be23114498
+ms.sourcegitcommit: 37ad3c1ef8faa5bfeeb305fde06e7b4654a643e1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936470"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87795990"
 ---
-# <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
+# <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
@@ -56,7 +56,7 @@ ms.locfileid: "86936470"
 
 ### <a name="applying-a-trigger-using-a-style"></a>使用樣式套用觸發程式
 
-觸發程序也可以新增至控制項的 `Style` 宣告、頁面上或應用程式 `ResourceDictionary`。 這個範例會宣告隱含樣式（也就 `Key` 是未設定任何），這表示它會套用至 `Entry` 頁面上的所有控制項。
+觸發程序也可以新增至控制項的 `Style` 宣告、頁面上或應用程式 `ResourceDictionary`。 這個範例會宣告隱含樣式 (也就 `Key` 是不會設定) 這表示它會套用至 `Entry` 頁面上的所有控制項。
 
 ```xaml
 <ContentPage.Resources>
@@ -276,7 +276,7 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
         <Trigger TargetType="Entry"
                  Property="Entry.IsFocused" Value="True">
             <Trigger.EnterActions>
-                <local:FadeTriggerAction StartsFrom="0"" />
+                <local:FadeTriggerAction StartsFrom="0" />
             </Trigger.EnterActions>
 
             <Trigger.ExitActions>
@@ -319,17 +319,17 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="state-triggers"></a>狀態觸發程式
 
-狀態觸發程式是一組特殊的觸發程式，用來定義應套用的條件 [`VisualState`](xref:Xamarin.Forms.VisualState) 。 
+狀態觸發程式是一組特殊的觸發程式，用來定義應套用的條件 [`VisualState`](xref:Xamarin.Forms.VisualState) 。
 
 狀態觸發程式會加入至的 [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) 集合 [`VisualState`](xref:Xamarin.Forms.VisualState) 。 這個集合可以包含單一狀態觸發程式或多個狀態觸發程式。 [`VisualState`](xref:Xamarin.Forms.VisualState)當集合中的任何狀態觸發程式為作用中時，將會套用。
 
-當使用狀態觸發程式來控制視覺狀態時， Xamarin.Forms 會使用下列優先順序規則來判斷哪個觸發程式（和對應的 [`VisualState`](xref:Xamarin.Forms.VisualState) ）將會作用：
+當使用狀態觸發程式來控制視覺狀態時， Xamarin.Forms 會使用下列優先順序規則來判斷哪個觸發程式 (和對應的 [`VisualState`](xref:Xamarin.Forms.VisualState)) 將會作用：
 
 1. 衍生自的任何觸發程式 [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) 。
 1. [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)因 [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowWidth) 符合條件而啟用的。
 1. [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)因 [`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight) 符合條件而啟用的。
 
-如果多個觸發程式同時處於作用中狀態（例如，兩個自訂觸發程式），則標記中宣告的第一個觸發程式會優先使用。
+如果多個觸發程式同時作用中 (例如，) 兩個自訂觸發程式，則會優先使用標記中宣告的第一個觸發程式。
 
 > [!NOTE]
 > 狀態觸發程式可以在中 [`Style`](xref:Xamarin.Forms.Style) 或直接在專案上設定。
