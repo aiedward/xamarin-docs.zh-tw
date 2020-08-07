@@ -6,20 +6,20 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/10/2020
+ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1a1d47b2b37fa532b3e2a64ada5f367e612f557d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 821eafab6896d8771ba38332a43c0cbc319797a7
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946256"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917834"
 ---
-# <a name="xamarinforms-shell-flyout"></a>Xamarin.FormsShell 飛出視窗
+# <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.FormsShell 飛出視窗
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 飛出視窗為 Shell 應用程式的根功能表，且可透過圖示或從螢幕側邊撥動來存取。 飛出視窗會由選用標頭、飛出視窗項目及選用功能表項目所組成：
 
@@ -234,6 +234,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 - `IsChecked`，屬於 `boolean` 類型，可定義項目目前是否在飛出視窗中反白顯示。
 - `IsEnabled`，屬於 `boolean` 類型，可定義在 Chrome 中是否可以選取項目。
 - 型別為 `bool` 的 `IsTabStop` 會指出 TAB 導覽中是否包含 `FlyoutItem`。 其預設值為 `true`，而當其值為 `false` 時，不論是否設定 `TabIndex`，TAB 導覽基礎結構均會略過 `FlyoutItem`。
+- `IsVisible`，屬於類型 `bool` ，表示在 `FlyoutItem` 飛出視窗功能表上是否隱藏。 其預設值為 `true`。
 - 型別為 `int` 的 `TabIndex` 屬性會指定當使用者按下 Tab 鍵來巡覽項目時，`FlyoutItem` 物件接收焦點的順序。 屬性的預設值為 0。
 - `Title`，屬於 `string` 類型，這是在 UI 中顯示的標題。
 - 型別為 `string` 的 `Route`，這是用來處理此項目的字串。
@@ -249,6 +250,46 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 - `OnTabStopPropertyChanged`，每當 `IsTabStop` 屬性變更時，就會呼叫。
 - `TabIndexDefaultValueCreator` 會傳回 `int`，並呼叫來設定 `TabIndex` 屬性的預設值。
 - `TabStopDefaultValueCreator` 會傳回 `bool`，並呼叫來設定 `TabStop` 屬性的預設值。
+
+## <a name="flyout-backdrop"></a>飛出視窗背景
+
+飛出視窗的背景，也就是飛出視窗重迭的外觀，可以藉由將 `Shell.FlyoutBackdrop` 附加屬性設定為來指定 `Brush` ：
+
+```xaml
+<Shell ...
+       FlyoutBackdrop="Silver">
+    ...
+</Shell>
+```
+
+在此範例中，飛出視窗的背景會以銀級繪製 `SolidColorBrush` 。
+
+> [!IMPORTANT]
+> 第一個 `FlyoutBackdrop` 附加屬性可以在任何 Shell 元素上設定，但只有在 `Shell` 、 `FlyoutItem` 或物件上設定時才會套用 `TabBar` 。
+
+下列範例會示範如何將中的飛出視窗背景設定 `FlyoutItem` 為 `LinearGradientBrush` ：
+
+```xaml
+<Shell ...>
+    <FlyoutItem ...>
+      <Shell.FlyoutBackdrop>
+          <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+              <GradientStop Color="#8A2387"
+                            Offset="0.1" />
+              <GradientStop Color="#E94057"
+                            Offset="0.6" />
+              <GradientStop Color="#F27121"
+                            Offset="1.0" />
+          </LinearGradientBrush>
+      </Shell.FlyoutBackdrop>
+      ...
+    </FlyoutItem>
+    ...
+</Shell>
+```
+
+如需筆刷的詳細資訊，請參閱[ Xamarin.Forms 筆刷](~/xamarin-forms/user-interface/brushes/index.md)。
 
 ## <a name="flyout-vertical-scroll"></a>飛出視窗垂直捲動
 
@@ -652,3 +693,4 @@ Shell 包含三個會自動套用至和物件的樣式類別 `FlyoutItem` `MenuI
 - [Xaminals (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms樣式類別](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
 - [Xamarin.Forms視覺狀態管理員](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms畫](~/xamarin-forms/user-interface/brushes/index.md)

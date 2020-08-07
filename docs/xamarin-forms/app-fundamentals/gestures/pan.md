@@ -1,5 +1,5 @@
 ---
-title: 新增平移手勢辨識器
+title: 新增 pan 手勢辨識器
 description: 本文說明如何使用平移手勢來水平及垂直平移影像，以便在用於顯示的檢視區小於影像大小時，可檢視所有影像內容。
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
@@ -10,16 +10,16 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 53122991811c06360e8d015a753096cb35c1cca0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 886191725421a754e696409deb7a3cca0f6ea923
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137627"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917698"
 ---
-# <a name="adding-a-pan-gesture-recognizer"></a>新增平移手勢辨識器
+# <a name="add-a-pan-gesture-recognizer"></a>新增 pan 手勢辨識器
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 
 _移動流覽手勢是用來偵測螢幕上的手指移動，並將該動作套用至內容，並使用類別來執行 `PanGestureRecognizer` 。移動流覽手勢的常見案例是以水準和垂直方式平移影像，讓所有影像內容在顯示于小於影像尺寸的視窗處時，都可以加以查看。這可以藉由在視口中移動影像來完成，如本文所示。_
 

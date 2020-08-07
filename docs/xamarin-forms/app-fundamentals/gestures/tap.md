@@ -1,5 +1,5 @@
 ---
-title: 新增點選手勢辨識器
+title: 新增攻絲手勢辨識器
 description: 本文說明如何在應用程式中使用點按手勢來偵測 Xamarin.Forms 。 點選偵測是使用 TapGestureRecognizer 類別實作。
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
@@ -10,16 +10,16 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f5b476ac83f801b4ccded3e18bb601c06e0d0ef
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fddee777ac74cb3ca50ebd0dca809d4a2f1412ab
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570605"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918421"
 ---
-# <a name="adding-a-tap-gesture-recognizer"></a>新增點選手勢辨識器
+# <a name="add-a-tap-gesture-recognizer"></a>新增攻絲手勢辨識器
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
 
 _點選手勢可用於點選偵測，並使用 TapGestureRecognizer 類別實作。_
 
@@ -33,17 +33,17 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-根據預設，影像會回應單一點選。 將 [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) 屬性設定為等候按兩下（或如有需要，請按其他按鍵）。
+根據預設，影像會回應單一點選。 將 [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) 屬性設定為等候按兩下 (或更多點按，視需要) 。
 
 ```csharp
 tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
-當 [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) 設定在一個以上時，只有在按下一段時間（這段期間無法設定）時，才會執行事件處理常式。 如果在該期間內未點第二下 (或後續幾下)，則會有效忽略並重新開始「點選計數」。
+當 [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) 設定在一個以上時，只會在一段設定的時間內發生點按時才執行事件處理常式， (此期間無法) 設定。 如果在該期間內未點第二下 (或後續幾下)，則會有效忽略並重新開始「點選計數」。
 
 ## <a name="using-xaml"></a>使用 XAML
 
-您可以在 XAML 中使用附加屬性將手勢辨識器新增至控制項。 將新增 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 至影像的語法如下所示（在此案例中，定義了「*分路*」事件）：
+您可以在 XAML 中使用附加屬性將手勢辨識器新增至控制項。 將新增 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 至影像的語法如下所示 (在此情況下，定義) 的*兩個按鍵*事件：
 
 ```xaml
 <Image Source="tapped.jpg">

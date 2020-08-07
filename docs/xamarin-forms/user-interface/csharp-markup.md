@@ -10,16 +10,16 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 279df31eeda506d6780533bac8ae190f799424a3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3e8c95e84dd525c274403290712260ba86abd677
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936028"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918561"
 ---
-# <a name="xamarinforms-c-markup"></a>Xamarin.FormsC # 標記
+# <a name="no-locxamarinforms-c-markup"></a>Xamarin.FormsC # 標記
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
@@ -231,7 +231,7 @@ new Label { Text = "Tap Me" }
 
 因為手勢辨識器是 `BindableObject` ，所以您可以在 `Bind` 初始化時使用和 `BindCommand` 擴充方法。 您也可以使用擴充方法來初始化自訂手勢辨識器類型 `Gesture<TGestureElement, TGestureRecognizer>` 。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>版面配置
 
 C # 標記包含一系列的版面配置擴充方法，可支援版面配置中的定位視圖，以及 views 中的內容：
 
@@ -247,7 +247,7 @@ C # 標記包含一系列的版面配置擴充方法，可支援版面配置中�
 
 ### <a name="left-to-right-and-right-to-left-support"></a>由左至右和由右至左支援
 
-針對支援由左至右（LTR）或由右至左（RTL）流程方向設計的 c # 標記，以上所列的擴充方法提供最具直覺性的名稱集合： `Left` 、 `Right` `Top` 和 `Bottom` 。
+針對支援從左至右 (LTR) 或由右至左的 c # 標記 (RTL) 流程方向，以上所列的擴充方法提供最具直覺性的名稱集合： `Left` 、 `Right` `Top` 和 `Bottom` 。
 
 若要提供正確的左和右擴充方法集合，並在程式中明確地決定標記的設計流程方向，請包含下列兩個指示詞的其中一個 `using` ： `using Xamarin.Forms.Markup.LeftToRight;` 、或 `using Xamarin.Forms.Markup.RightToLeft;` 。
 
@@ -394,7 +394,7 @@ using Xamarin.Forms.Markup;
 new ListView { } .Invoke (l => l.ItemTapped += OnListViewItemTapped)
 ```
 
-此外，您可以使用 `Assign` 擴充方法，從 ui 標記外部存取控制項（在 ui 邏輯檔案中）：
+此外，您可以使用 `Assign` 擴充方法，從 ui 邏輯檔案中的 ui 標記 (外部存取控制項) ：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -529,7 +529,7 @@ new ListView { } .iOSGroupHeaderStyle(PciOS.GroupHeaderStyle.Grouped)
 
 建議的順序和屬性和 helper 方法的群組如下：
 
-- **目的**：任何屬性或 helper 方法，其值可識別控制項的目的（例如 `Text` ，、 `Placeholder` 、 `Assign` ）。
+- **目的**：任何屬性或 helper 方法，其值可識別控制項的目的 (例如 `Text` ， `Placeholder` `Assign`) 。
 - **其他**：不是版面配置或系結的所有屬性或 helper 方法，位於同一行或多行。
 - **版面**配置：版面配置會向外排序：資料列和資料行、版面配置選項、邊界、大小、填補和內容對齊。
 - **Bind**：資料系結會在方法鏈的結尾執行，每一行有一個系結屬性。 如果 [*預設*可系結] 屬性已系結，則應該位於方法鏈的結尾。
@@ -553,7 +553,7 @@ new Label { }
 
 ## <a name="related-links"></a>相關連結
 
-- [CSharpForMarkupDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+- [CSharpForMarkupDemos (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 - [Android 平臺功能](~/xamarin-forms/platform/android/index.md)
 - [iOS 平臺功能](~/xamarin-forms/platform/ios/index.md)
 - [Windows 平臺功能](~/xamarin-forms/platform/windows/index.md)

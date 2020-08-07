@@ -6,25 +6,26 @@ ms.assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/15/2020
+ms.date: 07/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bd35722c76cce245701b7a548514d402cd978d38
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 6dafdc547e4673134e8ff3badc85a3527dfc55c4
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853080"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917425"
 ---
-# <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms實驗性旗標
+# <a name="no-locxamarinforms-experimental-flags"></a>Xamarin.Forms實驗性旗標
 
 當新 Xamarin.Forms 功能執行時，有時會放在實驗旗標後方。 這可讓工程小組更快速地為您提供新功能，同時仍可在將功能 Api 移至穩定版本之前加以變更。 一旦將功能移至穩定版本之後，就會移除實驗旗標。
 
 Xamarin.Forms包含下列實驗旗標：
 
-- `AppTheme_Experimental`
+- `Brush_Experimental`
 - `CarouselView_Experimental`
+- `DragAndDrop_Experimental`
 - `Expander_Experimental`
 - `Markup_Experimental`
 - `MediaElement_Experimental`

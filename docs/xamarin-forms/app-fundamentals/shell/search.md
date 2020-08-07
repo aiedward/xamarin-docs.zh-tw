@@ -6,20 +6,20 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/18/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc5e0c4cb8b474a1b7e23b476b0c5125eb2ba298
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 00dfec5b48507c83f43d0622c11770ecec304ea6
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138082"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917552"
 ---
-# <a name="xamarinforms-shell-search"></a>Xamarin.FormsShell 搜尋
+# <a name="no-locxamarinforms-shell-search"></a>Xamarin.FormsShell 搜尋
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.FormsShell 包含類別所提供的整合式搜尋功能 `SearchHandler` 。 將 `Shell.SearchHandler` 附加屬性設定為子類別化的 `SearchHandler` 物件，就可以將搜尋功能新增至網頁。 這會使搜尋方塊新增至頁面頂端：
 
@@ -224,6 +224,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 - 型別為 `TextAlignment` 的 `HorizontalTextAlignment` 是搜尋方塊文字的水平對齊。
 - 型別為 `Color` 的 `PlaceholderColor` 是預留位置搜尋方塊文字的色彩。
 - 型別為 `Color` 的 `TextColor` 是搜尋方塊文字的色彩。
+- `TextTransform`，屬於類型 `TextTransform` ，會決定搜尋方塊文字的大小寫。
 - `VerticalTextAlignment`，屬於類型 `TextAlignment` ，這是搜尋方塊文字的垂直對齊方式。
 
 ## <a name="searchhandler-keyboard"></a>SearchHandler 鍵盤
@@ -320,6 +321,7 @@ searchHandler.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFla
 - `SelectedItem`，屬於 `object` 類型，搜尋結果中選取的項目。 這是唯讀屬性，而且預設值為 `null`。
 - `ShowsResults`，屬於 `bool` 類型，表示文字輸入時，搜尋結果是否應該出現在建議區域中。 預設值是 `false`。
 - 型別為 `Color` 的 `TextColor` 是搜尋方塊文字的色彩。
+- `TextTransform`，屬於類型 `TextTransform` ，會決定搜尋方塊文字的大小寫。
 
 所有這些屬性都是以物件為後盾，也就是說，這些屬性 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 可以是資料系結的目標。
 

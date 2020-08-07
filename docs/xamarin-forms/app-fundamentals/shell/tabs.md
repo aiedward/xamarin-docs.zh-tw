@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c4ed503e0379c2c7f235bd91621a031bd660c85
-ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
+ms.openlocfilehash: 9ecdc3aca3264b52163d35e29659f434f521147f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426886"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918617"
 ---
 # <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.FormsShell 索引標籤
 
@@ -184,6 +184,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 - `Icon`，屬於 `ImageSource` 類型，可定義要顯示在不是飛出視窗的 Chrome 部分中的圖示。
 - `IsChecked`，屬於 `boolean` 類型，可定義項目目前是否在飛出視窗中反白顯示。
 - `IsEnabled`，屬於 `boolean` 類型，可定義在 Chrome 中是否可以選取項目。
+- `IsVisible`，屬於類型 `bool` ，表示 `ShellContent` 是否隱藏所有 UI 結構的。 其預設值為 `true`。
 - `MenuItems`，屬於 `MenuItemCollection` 類型，這是在此 `ShellContent` 為呈現的頁面時，顯示在飛出視窗中的功能表項目。
 - `Title`，屬於 `string` 類型，這是在 UI 中顯示的標題。
 

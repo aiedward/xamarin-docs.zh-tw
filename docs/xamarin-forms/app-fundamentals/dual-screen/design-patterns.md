@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 79c0f41e8ed0bffce0154ee618729316aab5e8e2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b6d2dd1d6bdfd071ffb8fc52396cb6b2d73416e2
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935274"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918446"
 ---
-# <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms雙畫面設計模式
+# <a name="no-locxamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms雙畫面設計模式
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 

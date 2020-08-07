@@ -6,20 +6,20 @@ ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 11/04/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d8ceb139b1b9cd77aa922f98c80884d5c3e1a474
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a4c782f95db0f8e777494c47e9e668e9af67a2cc
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127539"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917775"
 ---
-# <a name="xamarinforms-searchbar"></a>Xamarin.Forms搜尋列
+# <a name="no-locxamarinforms-searchbar"></a>Xamarin.Forms搜尋列
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
 Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) 是用來起始搜尋的使用者輸入控制項。 `SearchBar`控制項支援預留位置文字、查詢輸入、搜尋執行和取消。 下列螢幕擷取畫面顯示 `SearchBar` 查詢，其中顯示的結果 `ListView` 如下：
 
@@ -40,6 +40,7 @@ Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) 是用來起始搜尋�
 * [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)是 `object` ，它會指定應傳遞至的參數 `SearchCommand` 。
 * [`Text`](xref:Xamarin.Forms.InputView.Text)是， `string` 其中包含中的查詢文字 `SearchBar` 。
 * [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)是 `Color` 定義查詢文字色彩的。
+* `TextTransform`這是 `TextTransform` 決定文字大小寫的值 `SearchBar` 。
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示 `SearchBar` 可以自訂，並作為資料系結的目標。 在上指定字型屬性 `SearchBar` ，與在其他[ Xamarin.Forms 文字控制項](~/xamarin-forms/user-interface/text/index.md)上自訂文字是一致的。 如需詳細資訊，請參閱[中 Xamarin.Forms ](~/xamarin-forms/user-interface/text/fonts.md)的字型。
 
@@ -66,6 +67,7 @@ SearchBar searchBar = new SearchBar{ Placeholder = "Search items..." };
            CancelButtonColor="Orange"
            PlaceholderColor="Orange"
            TextColor="Orange"
+           TextTransform="Lowercase"
            HorizontalTextAlignment="Center"
            FontSize="Medium"
            FontAttributes="Italic" />
@@ -79,6 +81,7 @@ SearchBar searchBar = new SearchBar
     Placeholder = "Search items...",
     PlaceholderColor = Color.Orange,
     TextColor = Color.Orange,
+    TextTransform = TextTransform.Lowercase,
     HorizontalTextAlignment = TextAlignment.Center,
     FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(SearchBar)),
     FontAttributes = FontAttributes.Italic
@@ -129,7 +132,7 @@ void OnTextChanged(object sender, EventArgs e)
 
 ## <a name="perform-a-search-using-a-viewmodel"></a>使用 viewmodel 執行搜尋
 
-在不使用事件處理常式的情況下，您可以將和屬性系結至實作為執行搜尋 `SearchCommand` `SearchCommandParameter` `ICommand` 。 範例專案會使用 ViewModel （MVVM）模式來示範這些執行。 如需有關 MVVM 的資料系結的詳細資訊，請參閱[使用 mvvm 的資料](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)系結。
+在不使用事件處理常式的情況下，您可以將和屬性系結至實作為執行搜尋 `SearchCommand` `SearchCommandParameter` `ICommand` 。 範例專案會使用 ViewModel (MVVM) 模式的模型視圖來示範這些執行。 如需有關 MVVM 的資料系結的詳細資訊，請參閱[使用 mvvm 的資料](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)系結。
 
 範例應用程式中的 viewmodel 包含下列程式碼：
 

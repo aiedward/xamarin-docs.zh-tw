@@ -10,16 +10,16 @@ ms.date: 10/03/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dc54e30878bc58425aeb032fbd38c02d62728287
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0dd1f4a15d9a8c1315cd3f0f71b641c82bebe004
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935079"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918651"
 ---
-# <a name="xamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
+# <a name="no-locxamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
@@ -321,7 +321,7 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 ## <a name="related-links"></a>相關連結
 
-- [CarouselView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [CarouselView (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin.Forms資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Xamarin.Forms資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

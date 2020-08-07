@@ -6,18 +6,18 @@ ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 06/19/2020
+ms.date: 07/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9afad335de60e605ef6551b0878455674a40750f
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: b4c0ef44f528e3cbc56a27e98a1c38246736ff8c
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795031"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918349"
 ---
-# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms通用控制項屬性、方法和事件
+# <a name="no-locxamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms通用控制項屬性、方法和事件
 
 Xamarin.Forms `VisualElement` 類別是應用程式中大部分控制項所使用的基類 Xamarin.Forms 。 `VisualElement`類別會定義在衍生類別中使用的許多[屬性](#properties)、[方法](#methods)和[事件](#events)。
 
@@ -32,6 +32,10 @@ Xamarin.Forms `VisualElement` 類別是應用程式中大部分控制項所使�
 ### [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
 `AnchorY`屬性是一個 `double` 值，定義 X 軸上的中心點以進行轉換，例如縮放和旋轉。 預設值為0.5。
+
+### `Background`
+
+`Background`屬性是一個 `Brush` 值，可讓筆刷當做任何控制項的背景使用。 預設值是 `Brush.Default`。
 
 ### [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)
 
@@ -51,7 +55,7 @@ Xamarin.Forms `VisualElement` 類別是應用程式中大部分控制項所使�
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
-`Effects`屬性是物件的 `List` `Effect` ，繼承自 `Element` （x： Xamarin.Forms 。元素）類別。 效果可讓您自訂原生控制項，而且通常用於小型的樣式變更。 如需類別的詳細資訊 `Effect` ，請參閱[ Xamarin.Forms 效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+`Effects`屬性是物件的 `List` `Effect` ，繼承自 `Element` (x： Xamarin.Forms 。元素) 類別。 效果可讓您自訂原生控制項，而且通常用於小型的樣式變更。 如需類別的詳細資訊 `Effect` ，請參閱[ Xamarin.Forms 效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 ### [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)
 
@@ -71,7 +75,7 @@ Xamarin.Forms `VisualElement` 類別是應用程式中大部分控制項所使�
 
 ### [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled)
 
-`IsEnabled`屬性是一個 `bool` 值，可決定控制項是否會回應使用者輸入。 預設值為 `true`。 將此屬性設定為 false，將會讓控制項無法接受使用者輸入。
+`IsEnabled`屬性是一個 `bool` 值，可決定控制項是否會回應使用者輸入。 預設值是 `true`。 將此屬性設定為 false，將會讓控制項無法接受使用者輸入。
 
 ### [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused)
 

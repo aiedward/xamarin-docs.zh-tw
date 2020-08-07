@@ -6,20 +6,20 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/22/2019
+ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 425eb7abc14fb941dbfc28219907d98558cbfabb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 73e7ace96c17aea2b397f2706e128ea498338b09
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137428"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918261"
 ---
-# <a name="xamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView 版面配置
+# <a name="no-locxamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView 版面配置
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)定義下列控制配置的屬性：
 
@@ -97,7 +97,7 @@ ms.locfileid: "84137428"
 </CollectionView>
 ```
 
-不過，基於完整性，您可以將其屬性設定為，將 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 設定為以垂直清單顯示其專案 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `VerticalList` ：
+不過，基於完整性，您可以設定 XAML 中的專案，將其 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 屬性設定為，以在垂直清單中顯示其專案 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `VerticalList` ：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -133,7 +133,7 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="horizontal-list"></a>水準清單
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以將專案的屬性設定為，以將其專案顯示在水準清單中 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `HorizontalList` ：
+在 XAML 中， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以藉由將專案的屬性設定為，將其專案顯示在水準清單中 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `HorizontalList` ：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -197,14 +197,11 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="vertical-grid"></a>垂直格線
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以將專案的 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) 屬性設定為 [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) 屬性設為的物件，以在垂直方格中顯示其專案 `Vertical` ：
+在 XAML 中， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以將其專案的屬性設為，以在垂直方格中顯示其專案 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `VerticalGrid` ：
 
 ```xaml
-<CollectionView ItemsSource="{Binding Monkeys}">
-    <CollectionView.ItemsLayout>
-       <GridItemsLayout Orientation="Vertical"
-                        Span="2" />
-    </CollectionView.ItemsLayout>
+<CollectionView ItemsSource="{Binding Monkeys}"
+                ItemsLayout="VerticalGrid, 2">
     <CollectionView.ItemTemplate>
         <DataTemplate>
             <Grid Padding="10">
@@ -237,6 +234,18 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
+或者，您也可以將屬性設定為 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) 屬性設定為的物件，以完成此版面配置 [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) `Vertical` ：
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+       <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+    </CollectionView.ItemsLayout>
+    ...
+</CollectionView>
+```
+
 對等的 C# 程式碼為：
 
 ```csharp
@@ -253,14 +262,11 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="horizontal-grid"></a>水平格線
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以將專案的 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) 屬性設定為 [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) 屬性設為的物件，以水準方格顯示其專案 `Horizontal` ：
+在 XAML 中， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以藉由將專案的屬性設定為，在水準方格中顯示其專案 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `HorizontalGrid` ：
 
 ```xaml
-<CollectionView ItemsSource="{Binding Monkeys}">
-    <CollectionView.ItemsLayout>
-       <GridItemsLayout Orientation="Horizontal"
-                        Span="4" />
-    </CollectionView.ItemsLayout>
+<CollectionView ItemsSource="{Binding Monkeys}"
+                ItemsLayout="HorizontalGrid, 4">
     <CollectionView.ItemTemplate>
         <DataTemplate>
             <Grid Padding="10">
@@ -290,6 +296,18 @@ CollectionView collectionView = new CollectionView
             </Grid>
         </DataTemplate>
     </CollectionView.ItemTemplate>
+</CollectionView>
+```
+
+或者，您也可以將屬性設定為 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) 屬性設定為的物件，以完成此版面配置 [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) `Horizontal` ：
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+       <GridItemsLayout Orientation="Horizontal"
+                        Span="4" />
+    </CollectionView.ItemsLayout>
+    ...
 </CollectionView>
 ```
 
@@ -599,6 +617,6 @@ void OnImageTapped(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相關連結
 
-- [CollectionView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [CollectionView (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [由右至左當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
 - [Xamarin.FormsCollectionView 滾動](scrolling.md)

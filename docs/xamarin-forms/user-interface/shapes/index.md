@@ -6,24 +6,24 @@ ms.assetid: 4E749FE8-852C-46DA-BB1E-652936106357
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/22/2020
+ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 053da71fdd91af91f0a037e7573def91c36df503
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 6a0771ac0dbbbc89301aeca3812c3b49e14655a2
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935508"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918465"
 ---
-# <a name="xamarinforms-shapes"></a>Xamarin.Forms形狀
+# <a name="no-locxamarinforms-shapes"></a>Xamarin.Forms形狀
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 `Shape`是的一種類型 [`View`](xref:Xamarin.Forms.View) ，可讓您在螢幕上繪製圖形。 `Shape`物件可以在版面配置類別和大部分的控制項內使用，因為 `Shape` 類別衍生自 `View` 類別。
 
-Xamarin.Forms圖形適用于 `Xamarin.Forms.Shapes` iOS、Android、macOS、通用 Windows 平臺（UWP）和 Windows Presentation Foundation （WPF）的命名空間。
+Xamarin.Forms圖形適用于 `Xamarin.Forms.Shapes` iOS、Android、macOS 上的命名空間、通用 Windows 平臺 (UWP) ，以及 (WPF) 的 Windows Presentation Foundation。
 
 > [!IMPORTANT]
 > Xamarin.Forms圖形目前為實驗性，而且只能透過設定旗標來使用 `Shapes_Experimental` 。 如需詳細資訊，請參閱[實驗性旗標](~/xamarin-forms/internals/experimental-flags.md)。
@@ -31,13 +31,14 @@ Xamarin.Forms圖形適用于 `Xamarin.Forms.Shapes` iOS、Android、macOS、通�
 `Shape` 會定義下列屬性：
 
 - `Aspect`，屬於類型 `Stretch` ，描述圖形如何填滿其已配置的空間。 此屬性的預設值為 `Stretch.None`。
-- `Fill`，屬於類型 [`Color`](xref:Xamarin.Forms.Color) ，表示用來繪製圖形內部的色彩。
-- `Stroke`，屬於類型 [`Color`](xref:Xamarin.Forms.Color) ，表示用來繪製圖形外框的色彩。
+- `Fill`，屬於類型 `Brush` ，表示用來繪製圖形內部的筆刷。
+- `Stroke`，屬於類型 `Brush` ，表示用來繪製圖形外框的筆刷。
 - `StrokeDashArray`，屬於類型 `DoubleCollection` ，表示值的集合，表示 `double` 用來勾勒出圖形的虛線和間距模式。
 - `StrokeDashOffset`，屬於類型 `double` ，指定虛線模式內虛線開始的距離。 這個屬性的預設值為0.0。
 - `StrokeLineCap`，屬於類型 `PenLineCap` ，描述行或線段開頭和結尾的圖形。 此屬性的預設值為 `PenLineCap.Flat`。
 - `StrokeLineJoin`，屬於類型 `PenLineJoin` ，可指定用於圖形頂點的聯結類型。 此屬性的預設值為 `PenLineJoin.Miter`。
-- `StrokeThickness`，屬於類型 `double` ，表示圖形外框的寬度。 這個屬性的預設值為1.0。
+- `StrokeMiterLimit`，屬於類型 `double` ，可指定將斜接長度的比率限制為形狀的一半 `StrokeThickness` 。 這個屬性的預設值為10.0。
+- `StrokeThickness`，屬於類型 `double` ，表示圖形外框的寬度。 這個屬性的預設值為0.0。
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標，以及樣式化的。
 
@@ -45,7 +46,7 @@ Xamarin.Forms定義從類別衍生的一些物件 `Shape` 。 這些是 `Ellipse
 
 ## <a name="paint-shapes"></a>繪製圖案
 
-[`Color`](xref:Xamarin.Forms.Color)物件可用來繪製圖形的 `Stroke` 和 `Fill` ：
+`Brush`物件可用來繪製圖形的 `Stroke` 和 `Fill` ：
 
 ```xaml
 <Ellipse Fill="DarkBlue"
@@ -61,9 +62,11 @@ Xamarin.Forms定義從類別衍生的一些物件 `Shape` 。 這些是 `Ellipse
 ![繪製圖案](images/ellipse.png "繪製圖案")
 
 > [!IMPORTANT]
-> 如果您未指定的 [`Color`](xref:Xamarin.Forms.Color) 值 `Stroke` ，或者如果您將設定 `StrokeThickness` 為0，則不會繪製圖形周圍的框線。
+> `Brush`物件使用類型轉換子，可讓您為 [`Color`](xref:Xamarin.Forms.Color) 屬性指定值 `Stroke` 。
 
-如需有效值的詳細資訊 [`Color`](xref:Xamarin.Forms.Color) ，請參閱[ Xamarin.Forms 中的色彩](~/xamarin-forms/user-interface/colors.md)。
+如果您未指定的 `Brush` 物件 `Stroke` ，或將設定 `StrokeThickness` 為0，則不會繪製圖形周圍的框線。
+
+如需物件的詳細資訊 `Brush` ，請參閱[ Xamarin.Forms 筆刷](~/xamarin-forms/user-interface/brushes/index.md)。 如需有效值的詳細資訊 [`Color`](xref:Xamarin.Forms.Color) ，請參閱[ Xamarin.Forms 中的色彩](~/xamarin-forms/user-interface/colors.md)。
 
 ## <a name="stretch-shapes"></a>Stretch 圖形
 
@@ -81,6 +84,7 @@ Xamarin.Forms定義從類別衍生的一些物件 `Shape` 。 這些是 `Ellipse
 ```xaml
 <Path Aspect="Uniform"
       Stroke="Yellow"
+      StrokeThickness="1"
       Fill="Red"
       BackgroundColor="LightGray"
       HorizontalOptions="Start"
@@ -158,6 +162,9 @@ Xamarin.Forms定義從類別衍生的一些物件 `Shape` 。 這些是 `Ellipse
 - `Bevel`，代表斜角頂點。
 - `Round`，表示圓角頂點。
 
+> [!NOTE]
+> 當 `StrokeLineJoin` 屬性設定為時 `Miter` ，可以將 `StrokeMiterLimit` 屬性設定為， `double` 以限制圖形中線條聯結的斜切長度。
+
 下列 XAML 顯示如何設定 `StrokeLineJoin` 屬性：
 
 ```xaml
@@ -173,5 +180,6 @@ Xamarin.Forms定義從類別衍生的一些物件 `Shape` 。 這些是 `Ellipse
 
 ## <a name="related-links"></a>相關連結
 
-- [ShapeDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms畫](~/xamarin-forms/user-interface/brushes/index.md)
 - [色彩于Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)

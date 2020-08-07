@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 737cb819cfd762e81536fba03f3ae5b563416a4e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2b0290daedab4a6e825d2bab4bea9889b4966645
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930737"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918300"
 ---
-# <a name="xamarinforms-dual-screen"></a>Xamarin.Forms雙畫面
+# <a name="no-locxamarinforms-dual-screen"></a>Xamarin.Forms雙畫面
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 Microsoft Surface 雙核這類雙螢幕裝置可協助您的應用程式有新的使用者體驗。 Xamarin.Forms包含 `TwoPaneView` 和 `DualScreenInfo` 類別，讓您可以為雙畫面裝置開發應用程式。
 
@@ -41,7 +41,7 @@ Microsoft Surface 雙核這類雙螢幕裝置可協助您的應用程式有新�
 5. 更新 `Activity` Android 專案類別上的屬性 `MainActivity` ，使其包含_所有_這些 `ConfigurationChanges` 選項：
 
     ```@csharp
-    ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation 
+    ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation
         | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.UiMode
     ```
 

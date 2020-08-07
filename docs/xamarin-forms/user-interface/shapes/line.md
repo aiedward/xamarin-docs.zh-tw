@@ -10,16 +10,16 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9d79f232a77972b6abbce23ba65d9c277b090311
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a5d130922a9bd8f30b33b99f7f3dc512f056269f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935443"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918629"
 ---
-# <a name="xamarinforms-shapes-line"></a>Xamarin.Forms圖形：線條
+# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.Forms圖形：線條
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -50,21 +50,23 @@ ms.locfileid: "86935443"
       Y1="0"
       X2="0"
       Y2="120"
-      Stroke="Red" />
+      Stroke="Red"
+      StrokeThickness="1" />
 ```
 
-在此範例中，會從（40，0）到（0120）繪製紅色對角線：
+在此範例中，會從 (40，0) 繪製紅色對角線，以 (0120) ：
 
-![連線](line-images/line.png "折線圖")
+![連線](line-images/line.png "線")
 
 由於 `X1` 、 `Y1` 、 `X2` 和屬性的 `Y2` 預設值為0，因此您可以使用最少的語法來繪製一些行：
 
 ```xaml
 <Line Stroke="Red"
+      StrokeThickness="1"
       X2="200" />
 ```
 
-在此範例中，定義了200裝置獨立單位長度的水平線。 由於其他屬性預設為0，因此會從（0，0）到（200，0）繪製線條。
+在此範例中，定義了200裝置獨立單位長度的水平線。 因為其他屬性預設為0，所以會從 (0，0) 繪製線條到 (200，0) 。
 
 下列 XAML 範例顯示如何繪製虛線：
 
@@ -74,11 +76,12 @@ ms.locfileid: "86935443"
       X2="0"
       Y2="120"
       Stroke="DarkBlue"
+      StrokeThickness="1"
       StrokeDashArray="1,1"
       StrokeDashOffset="6" />
 ```
 
-在此範例中，深藍色虛線對角線會從（40，0）繪製到（0120）：
+在此範例中，深藍色虛線對角線是從 (40，0) 繪製到 (0120) ：
 
 ![虛線](line-images/dashed-line.png "虛線")
 
@@ -86,5 +89,5 @@ ms.locfileid: "86935443"
 
 ## <a name="related-links"></a>相關連結
 
-- [ShapeDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形狀](index.md)

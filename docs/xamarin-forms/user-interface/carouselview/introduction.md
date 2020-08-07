@@ -10,16 +10,16 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 49aa0ffcf7e7fa4d22024ee08f8bdf509cafd73a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a78536463b4966c38025d5c46a33aa07cb81bfdf
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937796"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918382"
 ---
-# <a name="xamarinforms-carouselview-introduction"></a>Xamarin.FormsCarouselView 簡介
+# <a name="no-locxamarinforms-carouselview-introduction"></a>Xamarin.FormsCarouselView 簡介
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)是以可滾動版面配置呈現資料的視圖，使用者可以在其中滑動以在專案集合之間移動。 根據預設， `CarouselView` 會以水準方向顯示其專案。 螢幕上會顯示單一專案，而滑動手勢會導致向前和向後流覽專案的集合。 此外，也可以顯示表示中每個專案的指標 `CarouselView` ：
 

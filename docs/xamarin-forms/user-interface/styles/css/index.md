@@ -1,28 +1,28 @@
 ---
-title: Xamarin.Forms使用階層式樣式表（CSS）設定應用程式的樣式
-description: Xamarin.Forms支援使用階層式樣式表（CSS）設定視覺元素的樣式。
+title: Xamarin.Forms使用階層式樣式表 (CSS) 設定應用程式的樣式
+description: Xamarin.Forms支援使用階層式樣式表 (CSS) 設定視覺元素的樣式。
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
 ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/20/2020
+ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9375c4078c75d8e4788cb31a3d6a6a3a10100f49
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 62c8fdd6a0dd2f07b17891346081ccbcebe26c77
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946217"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918580"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Forms使用階層式樣式表（CSS）設定應用程式的樣式
+# <a name="styling-no-locxamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Forms使用階層式樣式表 (CSS) 設定應用程式的樣式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
-_Xamarin 支援使用階層式樣式表（CSS）來設定視覺元素的樣式。_
+_Xamarin.Forms支援使用階層式樣式表 (CSS) 設定視覺元素的樣式。_
 
 Xamarin.Forms您可以使用 CSS 將應用程式樣式化。 樣式表單包含一份規則清單，其中每個規則都包含一個或多個選取器和一個宣告區塊。 宣告區塊包含以大括弧括住的宣告清單，其中每個宣告都包含一個屬性、一個冒號和一個值。 當區塊中有多個宣告時，會插入分號做為分隔符號。 下列程式碼範例顯示一些 Xamarin.Forms 符合標準的 CSS：
 
@@ -363,7 +363,7 @@ stacklayout>image {
 
 ## <a name="property-reference"></a>屬性參考
 
-支援下列 CSS 屬性 Xamarin.Forms （在 [**值] 資料**行中，[類型] 為 [_斜體_]，而字串常值為 `gray` ）：
+Xamarin.Forms[**值] 資料**行中的 (支援下列 CSS 屬性、[類型] 為 [_斜體_]，而字串常值則為 `gray`) ：
 
 |屬性|適用於|值|範例|
 |---|---|---|---|
@@ -371,87 +371,88 @@ stacklayout>image {
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_色彩_ \|`initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_字串_ \|`initial` |`background-image: bg.png;`|
+|`background-image`|`Page`|_string_ \| `initial` |`background-image: bg.png;`|
 |`border-color`|`Button`, `Frame`, `ImageButton`|_色彩_ \|`initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \|`initial` |`border-radius: 10;`|
-|`border-width`|`Button`, `ImageButton`|_double_ \|`initial` |`border-width: .5;`|
+|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
+|`border-width`|`Button`, `ImageButton`|_double_ \| `initial` |`border-width: .5;`|
 |`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_色彩_ \|`initial` |`color: rgba(255, 0, 0, 0.3);`|
-|`column-gap`|`Grid`|_double_ \|`initial`|`column-gap: 9;`|
+|`column-gap`|`Grid`|_double_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
 |`flex-basis`|`VisualElement`|_float_ \|`auto` \| `initial`. 此外，範圍0% 到100% 的百分比可以使用 `%` 正負號來指定。|`flex-basis: 25%;`|
-|`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
-|`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
+|`flex-grow`|`VisualElement`|_FLOAT_ \| `initial`|`flex-grow: 1.5;`|
+|`flex-shrink`|`VisualElement`|_FLOAT_ \| `initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字串_ \|`initial` |`font-family: Consolas;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_string_ \| `initial` |`font-family: Consolas;`|
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \|_namedsize_ \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
-|`height`|`VisualElement`|_double_ \|`initial` |`min-height: 250;`|
+|`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
-|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \|`initial`|`letter-spacing: 2.5;`|
-|`line-height`|`Label`, `Span`|_double_ \|`initial` |`line-height: 1.8;`|
+|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \| `initial`|`letter-spacing: 2.5;`|
+|`line-height`|`Label`, `Span`|_double_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_粗細_ \|`initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_粗細_ \|`initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_粗細_ \|`initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_粗細_ \|`initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_粗細_ \|`initial` |`margin-bottom: 6;`|
-|`max-lines`|`Label`|_int_ \|`initial`|`max-lines: 2;`|
-|`min-height`|`VisualElement`|_double_ \|`initial` |`min-height: 50;`|
-|`min-width`|`VisualElement`|_double_ \|`initial` |`min-width: 112;`|
-|`opacity`|`VisualElement`|_double_ \|`initial` |`opacity: .3;`|
-|`order`|`VisualElement`|_int_ \|`initial`|`order: -1;`|
+|`max-lines`|`Label`|_int_ \| `initial`|`max-lines: 2;`|
+|`min-height`|`VisualElement`|_double_ \| `initial` |`min-height: 50;`|
+|`min-width`|`VisualElement`|_double_ \| `initial` |`min-width: 112;`|
+|`opacity`|`VisualElement`|_double_ \| `initial` |`opacity: .3;`|
+|`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_粗細_ \|`initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \|`initial`|`padding-left: 3;`|
-|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-top: 4;`|
-|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-bottom: 6;`|
+|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \| `initial`|`padding-left: 3;`|
+|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-top: 4;`|
+|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
-|`row-gap`|`Grid`| _double_ \|`initial`|`row-gap: 12;`|
+|`row-gap`|`Grid`| _double_ \| `initial`|`row-gap: 12;`|
 |`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left``right`在由右至左的環境中應該避免和。| `text-align: right;`|
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
+|`text-transform`|`Button`,`Editor`, `Entry`, `Label`, `SearchBar`, `SearchHandler`|`none` \| `default` \| `uppercase` \| `lowercase` \| `initial` |`text-transform: uppercase;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _double_、 _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
-|`width`|`VisualElement`|_double_ \|`initial`|`min-width: 320;`|
+|`width`|`VisualElement`|_double_ \| `initial`|`min-width: 320;`|
 
 > [!NOTE]
-> `initial`是所有屬性的有效值。 它會清除從另一個樣式設定的值（重設為預設值）。
+> `initial`是所有屬性的有效值。 它會清除值， (重設為從另一個樣式所設定的預設) 。
 
 目前不支援下列屬性：
 
 - `all: initial`.
-- 版面配置屬性（box 或方格）。
+-  (方塊或方格) 的版面配置屬性。
 - 速記屬性，例如 `font` 、和 `border` 。
 
 此外，也沒有任何 `inherit` 值，因此不支援繼承。 例如，您無法 `font-size` 在配置上設定屬性，並預期版面配置中的所有 [`Label`](xref:Xamarin.Forms.Label) 實例都會繼承值。 其中一個例外狀況是 `direction` 屬性，其預設值為 `inherit` 。
 
-以專案為目標的已知問題，會使 `Span` 範圍無法以專案和名稱（使用符號）作為 CSS 樣式的目標 `#` 。 `Span`元素衍生自 `GestureElement` ，其不具有 `StyleClass` 屬性，因此跨越不支援 CSS 類別目標。 如需詳細資訊，請參閱[無法將 CSS 樣式套用至範圍控制](https://github.com/xamarin/Xamarin.Forms/issues/5979)。
+以專案為目標的 `Span` 已知問題，會導致無法透過專案和名稱 (使用符號) 的 CSS 樣式目標 `#` 。 `Span`元素衍生自 `GestureElement` ，其不具有 `StyleClass` 屬性，因此跨越不支援 CSS 類別目標。 如需詳細資訊，請參閱[無法將 CSS 樣式套用至範圍控制](https://github.com/xamarin/Xamarin.Forms/issues/5979)。
 
-### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms特定屬性
+### <a name="no-locxamarinforms-specific-properties"></a>Xamarin.Forms特定屬性
 
-Xamarin.Forms也支援下列特定的 CSS 屬性（在 [**值] 資料**行中，[類型] 為 [_斜體_]，而字串常值為 `gray` ）：
+Xamarin.Forms[**值] 資料**行中也支援下列特定 CSS 屬性 ([類型] 為 [_斜體_]，而字串常值則為 `gray`) ：
 
 |屬性|適用於|值|範例|
 |---|---|---|---|
 |`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_色彩_ \|`initial` |`-xf-bar-background-color: teal;`|
 |`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_色彩_ \|`initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \|`initial` |`-xf-max-length: 20;`|
+|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \| `initial` |`-xf-max-length: 20;`|
 |`-xf-max-track-color`|`Slider`|_色彩_ \|`initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_色彩_ \|`initial` |`-xf-min-track-color: yellow;`|
 |`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`只有在上才支援 `ScrollView` 。 |`-xf-orientation: horizontal;`|
 |`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_加上引號的文字_ \|`initial` |`-xf-placeholder: Enter name;`|
 |`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_色彩_ \|`initial` |`-xf-placeholder-color: green;`|
-|`-xf-spacing`|`StackLayout`|_double_ \|`initial` |`-xf-spacing: 8;`|
+|`-xf-spacing`|`StackLayout`|_double_ \| `initial` |`-xf-spacing: 8;`|
 |`-xf-thumb-color`|`Slider`, `Switch`|_色彩_ \|`initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_字串_ \|`initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_string_ \| `initial` |`-xf-visual: material;`|
 
-### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.FormsShell 特定屬性
+### <a name="no-locxamarinforms-shell-specific-properties"></a>Xamarin.FormsShell 特定屬性
 
-Xamarin.Forms也支援下列 Shell 特定的 CSS 屬性（在 [**值] 資料**行中，[類型] 為 [_斜體_]，而 [字串常值] 為 `gray` ）：
+Xamarin.Forms[**值] 資料**行中也支援下列 SHELL 特定的 CSS 屬性 ([類型] 為 [_斜體_]，而字串常值則為 `gray`) ：
 
 |屬性|適用於|值|範例|
 |---|---|---|---|
@@ -484,7 +485,7 @@ Xamarin.Forms也支援下列 Shell 特定的 CSS 屬性（在 [**值] 資料**�
 
 - 單一值表示一致的粗細。
 - 兩個值表示垂直和水準粗細。
-- 三個值表示 top、水準（左和右）和下粗細。
+- 三個值表示 top，然後水準 (左和右) ，然後是底部粗細。
 - 四個值表示上、右、下、向左粗細。
 
 > [!NOTE]
@@ -502,7 +503,11 @@ Xamarin.Forms也支援下列 Shell 特定的 CSS 屬性（在 [**值] 資料**�
 
 每個值的確切意義 `namedsize` 與平臺相依，而且與 view 相依。
 
-## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>Xamarin.Forms使用 Xamarin 的 CSS
+## <a name="functions"></a>函式
+
+您可以分別使用和 CSS 函式來指定線性和星形漸層 `linear-gradient()` `radial-gradient()` 。 這些函式的結果應該指派給控制項的 `background` 屬性。
+
+## <a name="css-in-no-locxamarinforms-with-xamarinuniversity"></a>Xamarin.Forms使用 Xamarin 的 CSS
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
@@ -510,6 +515,6 @@ Xamarin.Forms也支援下列 Shell 特定的 CSS 屬性（在 [**值] 資料**�
 
 ## <a name="related-links"></a>相關連結
 
-- [MonkeyAppCSS （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+- [MonkeyAppCSS (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 - [資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Xamarin.Forms使用 XAML 樣式設定應用程式的樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)

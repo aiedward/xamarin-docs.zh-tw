@@ -1,6 +1,6 @@
 ---
-title: :::no-loc(Xamarin.Forms):::雙畫面版面配置
-description: '本指南說明如何使用 :::no-loc(Xamarin.Forms)::: TwoPaneView，將您的應用程式體驗優化，例如 Surface 雙核處理器技術和 Surface Neo 等雙畫面裝置。'
+title: Xamarin.Forms雙畫面版面配置
+description: 本指南說明如何使用 Xamarin.Forms TwoPaneView，將您的應用程式體驗優化，例如 Surface 雙核處理器技術和 Surface Neo 等雙畫面裝置。
 ms.prod: xamarin
 ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
 ms.technology: xamarin-forms
@@ -8,18 +8,18 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
 no-loc:
-- ':::no-loc(Xamarin.Forms):::'
-- ':::no-loc(Xamarin.Essentials):::'
-ms.openlocfilehash: 4f7fdc0bb18a49e601c00ce1e3eb13371bb80be3
-ms.sourcegitcommit: 3698b35c823225a74892a47139d19e8ae8e6d9ed
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 734dea456af56f4103691e0368ae72202bce9556
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87113818"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918238"
 ---
-# <a name="no-locxamarinforms-twopaneview-layout"></a>:::no-loc(Xamarin.Forms):::TwoPaneView 版面配置
+# <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.FormsTwoPaneView 版面配置
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -33,8 +33,8 @@ ms.locfileid: "87113818"
 1. `TwoPaneView`使用下列 XAML 從基本開始：
 
     ```xaml
-    <ContentPage 
-        xmlns:dualScreen="clr-namespace::::no-loc(Xamarin.Forms):::.DualScreen;assembly=:::no-loc(Xamarin.Forms):::.DualScreen">
+    <ContentPage
+        xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
         <dualScreen:TwoPaneView>
             <dualScreen:TwoPaneView.Pane1>
                 <StackLayout>

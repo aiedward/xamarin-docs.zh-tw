@@ -6,24 +6,24 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/09/2020
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8bf6517e3624ad80c2fd4d209e5a77472460be76
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1fcfc2c3fbb91a7ee326db7aeef08459e05d834d
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570501"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917871"
 ---
-# <a name="xamarinforms-label"></a>Xamarin.Forms標誌
+# <a name="no-locxamarinforms-label"></a>Xamarin.Forms標誌
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_在 [Xamarin] 表單中顯示文字_
+_在中顯示文字Xamarin.Forms_
 
-此 [`Label`](xref:Xamarin.Forms.Label) 視圖會用於顯示文字，包括單行和多行。 標籤可以具有文字裝飾、彩色文字，並使用自訂字型（系列、大小和選項）。
+此 [`Label`](xref:Xamarin.Forms.Label) 視圖會用於顯示文字，包括單行和多行。 標籤可以具有文字裝飾、彩色文字，並使用自訂字型 (系列、大小和選項) 。
 
 ## <a name="text-decorations"></a>文字裝飾
 
@@ -55,6 +55,32 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 
 > [!NOTE]
 > 文字裝飾也可以套用至 [`Span`](xref:Xamarin.Forms.Span) 實例。 如需類別的詳細資訊 `Span` ，請參閱[格式化文字](#formatted-text)。
+
+## <a name="transform-text"></a>轉換文字
+
+[`Label`](xref:Xamarin.Forms.Entry)可以藉 `Text` 由將 `TextTransform` 屬性設定為列舉值，來轉換其文字的大小寫（儲存在屬性中） `TextTransform` 。 此列舉具有四個值：
+
+- `None`表示不會轉換文字。
+- `Default`表示將使用平臺的預設行為。 此為 `TextTransform` 屬性的預設值。
+- `Lowercase`表示文字將轉換成小寫。
+- `Uppercase`表示文字將轉換成大寫。
+
+下列範例顯示如何將文字轉換成大寫：
+
+```xaml
+<Label Text="This text will be displayed in uppercase."
+       TextTransform="Uppercase" />
+```
+
+對等的 C# 程式碼為：
+
+```csharp
+Label label = new Label
+{
+    Text = "This text will be displayed in uppercase.",
+    TextTransform = TextTransform.Uppercase
+};
+```
 
 ## <a name="character-spacing"></a>字元間距
 
@@ -320,7 +346,7 @@ public class LabelPageCode : ContentPage
 
 ## <a name="line-height"></a>行高
 
-您 [`Label`](xref:Xamarin.Forms.Label) [`Span`](xref:Xamarin.Forms.Span) 可以藉由設定 [`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight) 屬性或值來自訂和 [`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight) 的 `double` 垂直高度。 在 iOS 和 Android 上，這些值是原始行高的乘數，而在通用 Windows 平臺（UWP）上， `Label.LineHeight` 屬性值是標籤字型大小的乘數。
+您 [`Label`](xref:Xamarin.Forms.Label) [`Span`](xref:Xamarin.Forms.Span) 可以藉由設定 [`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight) 屬性或值來自訂和 [`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight) 的 `double` 垂直高度。 在 iOS 和 Android 上，這些值是原始行高的乘數，而在通用 Windows 平臺 (UWP) `Label.LineHeight` 屬性值是標籤字型大小的乘數。
 
 > [!NOTE]
 >
@@ -390,7 +416,7 @@ var label = new Label
 
 ![Span LineHeight 範例](label-images/span-lineheight.png)
 
-## <a name="padding"></a>邊框間距
+## <a name="padding"></a>填補
 
 填補代表專案和其子專案之間的間距，並用來分隔專案與本身的內容。 [`Label`](xref:Xamarin.Forms.Label)將 `Label.Padding` 屬性設定為值，即可將填補套用至實例 [`Thickness`](xref:Xamarin.Forms.Thickness) ：
 
@@ -547,8 +573,8 @@ public class HyperlinkSpan : Span
 
 ## <a name="related-links"></a>相關連結
 
-- [文字（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [超連結（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
+- [文字 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [ (範例) 的超連結](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
 - [建立 Mobile Apps Xamarin.Forms ，第3章](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [Label API](xref:Xamarin.Forms.Label)
 - [Span API](xref:Xamarin.Forms.Span)

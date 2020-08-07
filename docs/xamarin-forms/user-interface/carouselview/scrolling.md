@@ -10,16 +10,16 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf5d3924a726247ea1884acc75720566d76c76e4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5c15760919c2511ee24485ab7539463ec252d999
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929212"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918135"
 ---
-# <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView 滾動
+# <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView 滾動
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
@@ -337,4 +337,4 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="related-links"></a>相關連結
 
-- [CarouselView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [CarouselView (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)

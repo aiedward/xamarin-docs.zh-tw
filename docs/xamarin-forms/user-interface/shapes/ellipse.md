@@ -10,16 +10,16 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4369fdb7c5a35d6b9a192d9222fd82670b7e3f3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0796ba2a3b1ab28370fd8280e12df273223b9f4d
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933584"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917736"
 ---
-# <a name="xamarinforms-shapes-ellipse"></a>Xamarin.Forms圖形：橢圓形
+# <a name="no-locxamarinforms-shapes-ellipse"></a>Xamarin.Forms圖形：橢圓形
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -42,7 +42,7 @@ ms.locfileid: "86933584"
          HorizontalOptions="Start" />
 ```
 
-在此範例中，會繪製一個具有維度150x50 （裝置獨立單位）的紅色實心橢圓形：
+在此範例中，會繪製具有維度 150x50 (裝置獨立單位) 的紅色實心橢圓形：
 
 ![實心橢圓形](ellipse-images/filled.png "實心橢圓形")
 
@@ -56,7 +56,7 @@ ms.locfileid: "86933584"
          HorizontalOptions="Start" />
 ```
 
-在此範例中，會繪製一個具有維度150x150 正方形（裝置獨立單位）的紅色圓圈：
+在此範例中，會繪製一個具有維度150x150 正方形 (裝置獨立單位) 的紅色圓圈：
 
 ![Circle](ellipse-images/circle.png "Circle")
 
@@ -64,5 +64,5 @@ ms.locfileid: "86933584"
 
 ## <a name="related-links"></a>相關連結
 
-- [ShapeDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形狀](index.md)

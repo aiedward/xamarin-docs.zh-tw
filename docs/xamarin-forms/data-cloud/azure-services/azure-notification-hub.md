@@ -11,18 +11,18 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 5f7b83c1fc907de790b382aabde0c5a957e5a8bb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5fd657a3d55bd26b95e79e39540dcfe5b8bce08f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565417"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918588"
 ---
-# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>使用 Azure 通知中樞和來傳送和接收推播通知Xamarin.Forms
+# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>使用 Azure 通知中樞和來傳送和接收推播通知Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
-推播通知會將來自後端系統的資訊傳遞至行動應用程式。 Apple、Google 和其他平臺各有自己的推播通知服務（PNS）。 Azure 通知中樞可讓您集中跨平臺的通知，讓您的後端應用程式可以與單一中樞進行通訊，這會負責將通知散發到每個平臺特定的 PNS。
+推播通知會將來自後端系統的資訊傳遞至行動應用程式。 Apple、Google 和其他平臺各自有自己的推播通知服務 (PNS) 。 Azure 通知中樞可讓您集中跨平臺的通知，讓您的後端應用程式可以與單一中樞進行通訊，這會負責將通知散發到每個平臺特定的 PNS。
 
 遵循下列步驟，將 Azure 通知中樞整合到行動應用程式：
 
@@ -37,24 +37,24 @@ ms.locfileid: "84565417"
 > [!NOTE]
 > 如果您沒有 [Azure 訂用帳戶](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，請在開始前建立[免費帳戶](https://aka.ms/azfree-docs-mobileapps)。
 
-## <a name="set-up-push-notification-services-and-azure-notification-hub"></a>設定推播 Notification Services 和 Azure 通知中樞
+## <a name="set-up-push-notification-services-and-azure-notification-hub"></a>設定推播通知服務和 Azure 通知中樞
 
-將 Azure 通知中樞與行動裝置應用程式整合 Xamarin.Forms ，類似于整合 azure 通知中樞與 Xamarin 原生應用程式。 Firebase遵循 Firebase [使用 Azure 通知中樞將通知推送至 Xamarin](/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm#create-a-firebase-project-and-enable-firebase-cloud-messaging)中的主控台步驟，來設定雲端通訊（FCM）應用程式。 使用 Xamarin. Android 教學課程來完成下列步驟：
+將 Azure 通知中樞與行動裝置應用程式整合 Xamarin.Forms ，類似于整合 azure 通知中樞與 Xamarin 原生應用程式。 Firebase遵循 Firebase [使用 Azure 通知中樞將通知推送至 Xamarin](/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm#create-a-firebase-project-and-enable-firebase-cloud-messaging)的主控台步驟，來設定雲端通訊 (FCM) 應用程式。 使用 Xamarin. Android 教學課程來完成下列步驟：
 
 1. 定義範例中使用的 Android 套件名稱 `com.xamarin.notifysample` ，例如。
 1. `google-services.json`從主控台下載 Firebase 。 您會在未來的步驟中將此檔案新增至 Android 應用程式。
 1. 建立 Azure 通知中樞實例，並為其命名。 本文和範例會使用 `xdocsnotificationhub` 做為中樞名稱。
-1. 複製 FCM**伺服器金鑰**，並將它儲存為 Azure 通知中樞中**Google （GCM/FCM）** 下的**API 金鑰**。
+1. 複製 FCM**伺服器金鑰**，並將它儲存為 Azure 通知中樞中**Google (GCM/FCM) **下的**API 金鑰**。
 
 下列螢幕擷取畫面顯示 Azure 通知中樞的 Google 平臺設定：
 
 ![Azure 通知中樞 Google 設定的螢幕擷取畫面](azure-notification-hub-images/fcm-notification-hub-config.png "Azure 通知中樞 Google 設定")
 
-您將需要 macOS 機器，才能完成 iOS 裝置的設定。 遵循[使用 Azure 通知中樞推播通知至 Xamarin](/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started#generate-the-certificate-signing-request-file)的初始步驟，設定 Apple Push NOTIFICATION SERVICES （APNS）。 使用 Xamarin 教學課程來完成下列步驟：
+您將需要 macOS 機器，才能完成 iOS 裝置的設定。 遵循[使用 Azure 通知中樞將推播通知推送至 Xamarin](/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started#generate-the-certificate-signing-request-file)的初始步驟，設定 Apple Push NOTIFICATION SERVICES (APNS) 。 使用 Xamarin 教學課程來完成下列步驟：
 
 1. 定義 iOS 套件組合識別碼。 本文和範例會使用 `com.xamarin.notifysample` 做為套件組合識別碼。
-1. 建立憑證簽署要求（CSR）檔案，並使用它來產生推播通知憑證。
-1. 將推播通知憑證上傳至 Azure 通知中樞的**Apple （APNS）** 底下。
+1.  (CSR) 檔案中建立憑證簽署要求，並使用它來產生推播通知憑證。
+1. 將推播通知憑證上傳至 Azure 通知中樞內的**Apple (APNS) ** 。
 
 下列螢幕擷取畫面顯示 Azure 通知中樞的 Apple 平臺設定：
 
@@ -77,7 +77,7 @@ Azure 通知中樞需要行動應用程式向中樞註冊、定義範本和訂�
 
 針對[設定通知的 Android 應用程式](#configure-the-android-application-for-notifications)和[設定通知的 iOS](#configure-ios-for-notifications)一節中的每個平臺，會進一步詳細說明這些步驟。
 
-## <a name="xamarinforms-application-functionality"></a>Xamarin.Forms應用程式功能
+## <a name="no-locxamarinforms-application-functionality"></a>Xamarin.Forms應用程式功能
 
 範例 Xamarin.Forms 應用程式會顯示推播通知訊息的清單。 這是透過方法來達成，這會 `AddMessage` 將指定的推播通知訊息新增至 UI。 這個方法也可防止將重複的訊息加入至 UI，並在主執行緒上執行，以便從任何執行緒呼叫它。 下列程式碼顯示 `AddMessage` 方法：
 
@@ -169,7 +169,7 @@ public static class AppConstants
 </manifest>
 ```
 
-### <a name="override-firebasemessagingservice-to-handle-messages"></a>覆寫 `FirebaseMessagingService` 以處理訊息
+### <a name="override-no-locfirebasemessagingservice-to-handle-messages"></a>覆寫 `FirebaseMessagingService` 以處理訊息
 
 若要向註冊 Firebase 並處理訊息，請將類別子類別化 `FirebaseMessagingService` 。 範例應用程式會定義 `FirebaseService` 類別，以子類別化 `FirebaseMessagingService` 。 這個類別是以屬性標記 `IntentFilter` ，其中包含 `com.google.firebase.MESSAGING_EVENT` 篩選準則。 此篩選準則可讓 Android 將傳入訊息傳遞至這個類別以進行處理：
 
@@ -281,7 +281,7 @@ void SendMessageToMainPage(string body)
 > [!NOTE]
 > Android 應用程式只會在背景或前景中執行時，才會收到推播通知。 若要在主要未執行時接收推播通知 `Activity` ，您必須實作用於此範例範圍外的服務。 如需詳細資訊，請參閱[建立 Android 服務](/xamarin/android/app-fundamentals/services/)
 
-### <a name="add-incoming-notifications-to-the-xamarinforms-ui"></a>將傳入通知新增至 Xamarin.Forms UI
+### <a name="add-incoming-notifications-to-the-no-locxamarinforms-ui"></a>將傳入通知新增至 Xamarin.Forms UI
 
 `MainActivity`類別需要取得處理通知和管理傳入訊息資料的許可權。 下列程式碼顯示完整的 `MainActivity` 執行方式：
 
@@ -471,9 +471,9 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 ```
 
 > [!NOTE]
-> 註冊遠端通知可能會在沒有網路連線的情況下失敗。 您可以選擇覆寫 `FailedToRegisterForRemoveNotifications` 方法來處理註冊失敗。
+> 註冊遠端通知可能會在沒有網路連線的情況下失敗。 您可以選擇覆寫 `FailedToRegisterForRemoteNotifications` 方法來處理註冊失敗。
 
-### <a name="add-apns-notifications-to-xamarinforms-ui"></a>將 APNS 通知新增至 Xamarin.Forms UI
+### <a name="add-apns-notifications-to-no-locxamarinforms-ui"></a>將 APNS 通知新增至 Xamarin.Forms UI
 
 當裝置收到遠端通知時，iOS 會呼叫 `ReceivedRemoteNotification` 方法。 傳入訊息 JSON 會轉換成 `NSDictionary` 物件，而方法會 `ProcessNotification` 從字典中解壓縮值，並將其傳送至 Xamarin.Forms `MainPage` 實例。 `ReceivedRemoteNotifications`會覆寫方法以呼叫， `ProcessNotification` 如下列程式碼所示：
 

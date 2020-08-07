@@ -10,16 +10,16 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8e23e4151c4841dd4dce80ba0358471c64a26f39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 274ff08d7fffc1cd3a817906e14ebddfac2c9337
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937603"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918251"
 ---
-# <a name="xamarinforms-shapes-path"></a>Xamarin.Forms圖形：路徑
+# <a name="no-locxamarinforms-shapes-path"></a>Xamarin.Forms圖形：路徑
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -48,6 +48,7 @@ ms.locfileid: "86937603"
 ```xaml
 <Path Data="M 10,100 L 100,100 100,50Z"
       Stroke="Black"
+      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Start" />
 ```
@@ -71,6 +72,7 @@ ms.locfileid: "86937603"
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Start">
     <Path.Data>
@@ -93,7 +95,7 @@ ms.locfileid: "86937603"
 </Path>
 ```
 
-在此範例中，三角形的起點是（10100）。 從（10100）到（100100），以及從（100100）繪製到（100，50）的線段。 然後會連接到第一個和最後一個區段，因為 `PathFigure.IsClosed` 屬性設定為 `true` 。 結果為三角形：
+在此範例中，三角形的起點是 (10100) 。 從 (10100) 繪製線段到 (100100) ，以及從 (100100) 到 (100，50) 。 然後會連接到第一個和最後一個區段，因為 `PathFigure.IsClosed` 屬性設定為 `true` 。 結果為三角形：
 
 ![路徑三角形](path-images/triangle.png "路徑三角形")
 
@@ -101,7 +103,7 @@ ms.locfileid: "86937603"
 
 ## <a name="related-links"></a>相關連結
 
-- [ShapeDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形狀](index.md)
 - [Xamarin.Forms幾何圖形](geometries.md)
 - [Xamarin.Forms路徑標記語法](path-markup-syntax.md)

@@ -10,16 +10,16 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d245ebbf42333ad822e0d6ed8569cc8193f1b478
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b45b1375ab7676e96976951e10b903d25c88bc14
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936704"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918527"
 ---
-# <a name="xamarinforms-carouselview-layout"></a>Xamarin.FormsCarouselView 版面配置
+# <a name="no-locxamarinforms-carouselview-layout"></a>Xamarin.FormsCarouselView 版面配置
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
@@ -247,7 +247,7 @@ void OnImageTapped(object sender, EventArgs e)
 }
 ```
 
-`OnImageTapped`系統會執行事件處理常式，以回應 [`Image`](xref:Xamarin.Forms.Image) 所按下的物件，並變更影像的維度（及其父系 `Frame` ），以便更輕鬆地查看：
+`OnImageTapped`會執行事件處理常式來回應所按 [`Image`](xref:Xamarin.Forms.Image) 下的物件，並變更影像 (及其父系) 的維度 `Frame` ，以便更輕鬆地查看：
 
 [![在 iOS 和 Android 上具有動態專案大小的 CarouselView 螢幕擷取畫面](layout-images/runtime-resizing.png "CarouselView 動態專案大小")](layout-images/runtime-resizing-large.png#lightbox "CarouselView 動態專案大小")
 
@@ -273,6 +273,6 @@ void OnImageTapped(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相關連結
 
-- [CarouselView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [CarouselView (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [由右至左當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
 - [Xamarin.FormsCarouselView 滾動](scrolling.md)

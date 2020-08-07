@@ -10,16 +10,16 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91960c08640a412e02298ed051469a86c1a9f368
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 42ecfc9f09683ccc61640520975b3f50beedaaf5
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930568"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918499"
 ---
-# <a name="xamarinforms-shapes-rectangle"></a>Xamarin.Forms圖形：矩形
+# <a name="no-locxamarinforms-shapes-rectangle"></a>Xamarin.Forms圖形：矩形
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -51,7 +51,7 @@ ms.locfileid: "86930568"
            HorizontalOptions="Start" />
 ```
 
-在此範例中，會繪製具有維度150x50 （裝置獨立單位）的紅色填滿矩形：
+在此範例中，會繪製具有維度 150x50 (裝置獨立單位) 的紅色填滿矩形：
 
 ![填滿的矩形](rectangle-images/filled.png "填滿的矩形")
 
@@ -76,5 +76,5 @@ ms.locfileid: "86930568"
 
 ## <a name="related-links"></a>相關連結
 
-- [ShapeDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形狀](index.md)

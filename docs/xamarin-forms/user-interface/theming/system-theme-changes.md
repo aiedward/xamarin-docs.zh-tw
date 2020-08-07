@@ -6,18 +6,18 @@ ms.prod: xamarin
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/17/2020
+ms.date: 08/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b451fe004ca21c8770658f31c9c38253e073c259
-ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
+ms.openlocfilehash: efd9cabc9504a9fa56f1f7a763013e6852be9382
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100179"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918103"
 ---
-# <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>回應應用程式中的系統主題變更 Xamarin.Forms
+# <a name="respond-to-system-theme-changes-in-no-locxamarinforms-applications"></a>回應應用程式中的系統主題變更 Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
@@ -27,14 +27,11 @@ ms.locfileid: "86100179"
 
 Xamarin.Forms應用程式可以透過使用具有 `AppThemeBinding` 標記延伸的資源，以及 `SetAppThemeColor` 和擴充方法，來回應系統主題變更 `SetOnAppTheme<T>` 。
 
-> [!IMPORTANT]
-> 回應系統主題變更目前為實驗性，而且只能透過設定旗標來使用 `AppTheme_Experimental` 。 如需詳細資訊，請參閱[實驗性旗標](~/xamarin-forms/internals/experimental-flags.md)。
-
 Xamarin.Forms若要回應系統主題變更，必須符合下列需求：
 
 - Xamarin.Forms4.6.0.967 或更高版本。
 - iOS 13 或更新版本。
-- Android 10 （API 29）或更新版本。
+- Android 10 (API 29) 或更高版本。
 - UWP 組建14393或更新版本。
 
 下列螢幕擷取畫面顯示 iOS 和 Android 上的淺色和深色系統主題的主題頁面：
@@ -164,7 +161,7 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 
 ## <a name="related-links"></a>相關連結
 
-- [SystemThemes （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
+- [SystemThemes (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 - [AppThemeBinding 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
 - [資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Xamarin.Forms使用 XAML 樣式設定應用程式的樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)

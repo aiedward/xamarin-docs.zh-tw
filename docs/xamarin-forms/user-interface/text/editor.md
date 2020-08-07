@@ -6,31 +6,24 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/26/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 36f4946ffc6d5a42e1997f389501f921449d0259
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3a7dedad6fc33b75a687f94897b64d04a72a0b08
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937588"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918442"
 ---
-# <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
+# <a name="no-locxamarinforms-editor"></a>Xamarin.Forms 編輯器
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_多行文字輸入_
+[`Editor`](xref:Xamarin.Forms.Editor)控制項是用來接受多行輸入。
 
-[`Editor`](xref:Xamarin.Forms.Editor)控制項是用來接受多行輸入。 本文將說明：
-
-- **[自訂](#customization)** &ndash;鍵盤和色彩選項。
-- **[互動](#interactivity)** &ndash; 性可以聽取以提供互動性的事件。
-
-## <a name="customization"></a>自訂
-
-### <a name="setting-and-reading-text"></a>設定和讀取文字
+## <a name="set-and-read-text"></a>設定和讀取文字
 
 [`Editor`](xref:Xamarin.Forms.Editor)和其他文字呈現的視圖一樣，會公開 `Text` 屬性。 這個屬性可以用來設定和讀取所呈現的文字 `Editor` 。 下列範例示範如何 `Text` 在 XAML 中設定屬性：
 
@@ -50,7 +43,7 @@ var MyEditor = new Editor { Text = "I am an Editor" };
 var text = MyEditor.Text;
 ```
 
-### <a name="setting-placeholder-text"></a>設定預留位置文字
+## <a name="set-placeholder-text"></a>設定預留位置文字
 
 [`Editor`](xref:Xamarin.Forms.Editor)可以設定為在未儲存使用者輸入時顯示預留位置文字。 將屬性設定為，即可完成這 [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) `string` 項作業，通常用來表示適用于的內容類型 `Editor` 。 此外，您可以將屬性設定為，以控制預留位置文字色彩 [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor) [`Color`](xref:Xamarin.Forms.Color) ：
 
@@ -62,7 +55,7 @@ var text = MyEditor.Text;
 var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
 ```
 
-### <a name="preventing-text-entry"></a>防止文字輸入
+## <a name="prevent-text-entry"></a>防止文字輸入
 
 藉 [`Editor`](xref:Xamarin.Forms.Editor) 由將 `IsReadOnly` 屬性（具有的預設值 `false` ）設定為，可防止使用者修改中的文字 `true` ：
 
@@ -78,7 +71,33 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 > [!NOTE]
 > `IsReadonly`屬性不會改變的視覺外觀，不同于也會將的 [`Editor`](xref:Xamarin.Forms.Editor) `IsEnabled` 視覺外觀變更 `Editor` 為灰色的屬性。
 
-### <a name="limiting-input-length"></a>限制輸入長度
+## <a name="transform-text"></a>轉換文字
+
+[`Editor`](xref:Xamarin.Forms.Editor)可以藉 `Text` 由將 `TextTransform` 屬性設定為列舉值，來轉換其文字的大小寫（儲存在屬性中） `TextTransform` 。 此列舉具有四個值：
+
+- `None`表示不會轉換文字。
+- `Default`表示將使用平臺的預設行為。 此為 `TextTransform` 屬性的預設值。
+- `Lowercase`表示文字將轉換成小寫。
+- `Uppercase`表示文字將轉換成大寫。
+
+下列範例顯示如何將文字轉換成大寫：
+
+```xaml
+<Editor Text="This text will be displayed in uppercase."
+        TextTransform="Uppercase" />
+```
+
+對等的 C# 程式碼為：
+
+```csharp
+Editor editor = new Editor
+{
+    Text = "This text will be displayed in uppercase.",
+    TextTransform = TextTransform.Uppercase
+};
+```
+
+## <a name="limit-input-length"></a>限制輸入長度
 
 [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength)屬性可以用來限制允許的輸入長度 [`Editor`](xref:Xamarin.Forms.Editor) 。 此屬性應該設定為正整數：
 
@@ -92,7 +111,7 @@ var editor = new Editor { ... MaxLength = 10 };
 
 [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength)屬性值為0表示不允許輸入，而且的值為的 `int.MaxValue` 預設值 [`Editor`](xref:Xamarin.Forms.Editor) ，表示可以輸入的字元數沒有有效的限制，而不會有任何影響。
 
-### <a name="character-spacing"></a>字元間距
+## <a name="character-spacing"></a>字元間距
 
 [`Editor`](xref:Xamarin.Forms.Editor)將 `Editor.CharacterSpacing` 屬性設定為值，即可將字元間距套用至 `double` ：
 
@@ -112,7 +131,7 @@ Editor editor = new editor { CharacterSpacing = 10 };
 > [!NOTE]
 > `CharacterSpacing`屬性值會套用至和屬性所顯示的文字 `Text` `Placeholder` 。
 
-### <a name="auto-sizing-an-editor"></a>自動調整編輯器大小
+## <a name="auto-size-an-editor"></a>自動調整編輯器大小
 
 藉 [`Editor`](xref:Xamarin.Forms.Editor) 由將 [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) 屬性設定為 [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) （列舉的值），可以自動調整其內容的大小 [`EditoAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) 。 這個列舉有兩個值：
 
@@ -134,7 +153,7 @@ var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOpt
 > [!NOTE]
 > [`Editor`](xref:Xamarin.Forms.Editor)如果已設定屬性，將不會自動調整 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 。
 
-### <a name="customizing-the-keyboard"></a>自訂鍵盤
+## <a name="customize-the-keyboard"></a>自訂鍵盤
 
 當使用者與互動時所呈現的鍵盤 [`Editor`](xref:Xamarin.Forms.Editor) ，可以透過屬性，以程式設計方式設定 [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) 為類別的下列其中一個屬性 [`Keyboard`](xref:Xamarin.Forms.Keyboard) ：
 
@@ -193,7 +212,7 @@ var editor = new Editor();
 editor.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
 ```
 
-### <a name="enabling-and-disabling-spell-checking"></a>啟用和停用拼寫檢查
+## <a name="enable-and-disable-spell-checking"></a>啟用和停用拼寫檢查
 
 [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否啟用拼寫檢查。 根據預設，屬性會設定為 `true` 。 當使用者輸入文字時，會顯示拼寫錯誤。
 
@@ -210,7 +229,7 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 > [!NOTE]
 > 當 [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) 屬性設定為 `false` ，且未使用自訂鍵盤時，原生拼寫檢查將會停用。 不過，如果已 [`Keyboard`](xref:Xamarin.Forms.Keyboard) 設定停用拼寫檢查（例如 [`Keyboard.Chat`](xref:Xamarin.Forms.Keyboard.Chat) ），則 `IsSpellCheckEnabled` 會忽略屬性。 因此，屬性不能用來為明確停用的啟用拼寫檢查 `Keyboard` 。
 
-### <a name="enabling-and-disabling-text-prediction"></a>啟用和停用文字預測
+## <a name="enable-and-disable-text-prediction"></a>啟用和停用文字預測
 
 `IsTextPredictionEnabled`屬性控制是否啟用文字預測和自動文字更正。 根據預設，屬性會設定為 `true` 。 當使用者輸入文字時，會顯示文字預測。
 
@@ -227,7 +246,7 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 > [!NOTE]
 > 當 `IsTextPredictionEnabled` 屬性設定為 `false` ，且未使用自訂鍵盤時，會停用文字預測和自動文字更正。 不過，如果已 [`Keyboard`](xref:Xamarin.Forms.Keyboard) 設定停用文字預測，則 `IsTextPredictionEnabled` 會忽略屬性。 因此，屬性不能用來啟用明確停用之的文字預測 `Keyboard` 。
 
-### <a name="colors"></a>色彩
+## <a name="colors"></a>色彩
 
 `Editor`可以透過屬性設定為使用自訂背景色彩 `BackgroundColor` 。 必須特別小心，以確保每個平臺都能使用色彩。 因為每個平臺都有不同的文字色彩預設值，所以您可能需要為每個平臺設定自訂背景色彩。 如需優化每個平臺 UI 的詳細資訊，請參閱[使用平臺](~/xamarin-forms/platform/device.md)調整。
 
@@ -275,7 +294,7 @@ public partial class EditorPage : ContentPage
 
 請確定您所選擇的背景和文字色彩可以在每個平臺上使用，而且不會遮蔽任何預留位置文字。
 
-## <a name="interactivity"></a>互動
+## <a name="events-and-interactivity"></a>事件與互動性
 
 `Editor`公開兩個事件：
 
@@ -285,9 +304,9 @@ public partial class EditorPage : ContentPage
 > [!NOTE]
 > [`VisualElement`](xref:Xamarin.Forms.VisualElement) [`Entry`](xref:Xamarin.Forms.Entry) 繼承自的類別也具有 [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) 和 [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) 事件。
 
-### <a name="completed"></a>已完成
+### <a name="completed"></a>Completed
 
-`Completed`事件是用來回應與的互動完成 `Editor` 。 `Completed`當使用者在鍵盤上輸入 return 鍵（或按 UWP 上的 Tab 鍵）來結束具有欄位的輸入時，會引發。 事件的處理常式是一般事件處理常式，接受寄件者和 `EventArgs` ：
+`Completed`事件是用來回應與的互動完成 `Editor` 。 `Completed`當使用者在鍵盤上輸入 return 鍵 (或按 UWP) 上的 Tab 鍵來結束具有欄位的輸入時，就會引發。 事件的處理常式是一般事件處理常式，接受寄件者和 `EventArgs` ：
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -382,5 +401,5 @@ Title="Editor Demo">
 
 ## <a name="related-links"></a>相關連結
 
-- [文字（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [文字 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [編輯器 API](xref:Xamarin.Forms.Editor)

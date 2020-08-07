@@ -10,22 +10,22 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f1a015784dd87bc4c6da7daf99a6e463c1e65e5c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4a8ca74fc12b59100cc60b72d3c2287cffadfd18
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937159"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918110"
 ---
-# <a name="xamarinforms-mediaelement"></a>Xamarin.FormsMediaElement
+# <a name="no-locxamarinforms-mediaelement"></a>Xamarin.FormsMediaElement
 
-![發行前版本 API](~/media/shared/preview.png "此 API 目前是發行前版本")
+![發行前版本 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 
 [`MediaElement`](xref:Xamarin.Forms.MediaElement)是播放影片和音訊的視圖。 基礎平臺支援的媒體可以從下列來源進行播放：
 
-- Web，使用 URI （HTTP 或 HTTPS）。
+- Web，使用 URI (HTTP 或 HTTPS) 。
 - 使用 URI 配置，內嵌在平臺應用程式中的資源 `ms-appx:///` 。
 - 來自應用程式本機和暫存資料夾的檔案，使用 `ms-appdata:///` URI 配置。
 - 裝置的程式庫。
@@ -41,7 +41,7 @@ Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 ```
 
 > [!NOTE]
-> [`MediaElement`](xref:Xamarin.Forms.MediaElement)適用于 iOS、Android、通用 Windows 平臺（UWP）、macOS、Windows Presentation Foundation 和 Tizen。
+> [`MediaElement`](xref:Xamarin.Forms.MediaElement)適用于 iOS、Android、通用 Windows 平臺 (UWP) 、macOS、Windows Presentation Foundation 和 Tizen。
 
 [`MediaElement`](xref:Xamarin.Forms.MediaElement)定義下列屬性：
 
@@ -71,7 +71,7 @@ Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 
 此外， [`MediaElement`](xref:Xamarin.Forms.MediaElement) 包括 [`Play`](xref:Xamarin.Forms.MediaElement.Play) 、 [`Pause`](xref:Xamarin.Forms.MediaElement.Pause) 和 [`Stop`](xref:Xamarin.Forms.MediaElement.Stop) 方法。
 
-如需 Android 上支援之媒體格式的相關資訊，請參閱 developer.android.com 上[支援的媒體格式](https://developer.android.com/guide/topics/media/media-formats)。 如需通用 Windows 平臺（UWP）上支援之媒體格式的相關資訊，請參閱[支援的編解碼器](/windows/uwp/audio-video-camera/supported-codecs)。
+如需 Android 上支援之媒體格式的相關資訊，請參閱 developer.android.com 上[支援的媒體格式](https://developer.android.com/guide/topics/media/media-formats)。 如需通用 Windows 平臺 (UWP) 上支援之媒體格式的詳細資訊，請參閱[支援的編解碼器](/windows/uwp/audio-video-camera/supported-codecs)。
 
 ## <a name="play-remote-media"></a>播放遠端媒體
 
@@ -540,7 +540,7 @@ public class PositionSlider : Slider
 
 ## <a name="related-links"></a>相關連結
 
-- [MediaElementDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+- [MediaElementDemos (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 - [URI 配置](/windows/uwp/app-resources/uri-schemes)
 - [Xamarin.Forms導致](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin.Forms一直](~/xamarin-forms/user-interface/slider.md)

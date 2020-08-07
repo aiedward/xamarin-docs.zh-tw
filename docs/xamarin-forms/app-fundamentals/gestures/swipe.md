@@ -1,5 +1,5 @@
 ---
-title: 新增撥動手勢辨識器
+title: 新增滑動手勢辨識器
 description: 本文說明如何辨識檢視上發生的撥動手勢。
 ms.prod: xamarin
 ms.assetid: 164976C2-1429-49FB-9EB6-621E2681C19B
@@ -10,20 +10,20 @@ ms.date: 08/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 03663803313c870a3361c6e1ffc85cf1f8999068
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: db0beb59ed882d76288968a239f0a0dd735d9990
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137866"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918473"
 ---
-# <a name="adding-a-swipe-gesture-recognizer"></a>新增撥動手勢辨識器
+# <a name="add-a-swipe-gesture-recognizer"></a>新增滑動手勢辨識器
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
 
 _當手指以水準或垂直方向在畫面上移動時，就會發生滑動手勢，而且通常是用來起始內容的導覽。本文中的程式碼範例取自「[滑動手勢](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)」範例。_
 
-若要讓 [`View`](xref:Xamarin.Forms.View) 辨識滑動手勢，請建立 [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) 實例、將屬性設定 [`Direction`](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction) 為 [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection) 列舉值（ `Left` 、 `Right` 、 `Up` 或 `Down` ）、選擇性地設定 [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold) 屬性、處理 [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) 事件，以及將新的手勢辨識器加入至該 [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) 集合。 下列程式碼範例顯示 `SwipeGestureRecognizer` 附加至的 [`BoxView`](xref:Xamarin.Forms.BoxView) ：
+若要讓 [`View`](xref:Xamarin.Forms.View) 辨識滑動手勢，請建立 [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) 實例、將屬性設定 [`Direction`](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction) 為 [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection) 列舉值 (`Left` 、 `Right` 、 `Up` 或 `Down`) 、選擇性地設定 [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold) 屬性、處理 [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) 事件，以及將新的手勢辨識器新增至 [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) 視圖上的集合。 下列程式碼範例顯示 `SwipeGestureRecognizer` 附加至的 [`BoxView`](xref:Xamarin.Forms.BoxView) ：
 
 ```xaml
 <BoxView Color="Teal" ...>
