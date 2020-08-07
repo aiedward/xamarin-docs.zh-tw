@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b6fe37fda3fd54b4df5cb6f5dacce0d910ecb3f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 254a4433888be0e441ae37d41c24b1886040998b
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918959"
+ms.locfileid: "87919615"
 ---
 # <a name="no-locxamarinforms-brushes-gradients"></a>Xamarin.Forms筆刷：漸層
 
 ![預覽 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 `GradientBrush`類別衍生自 `Brush` 類別，而是描述漸層的抽象類別，這是由漸層停駐點所組成。 漸層筆刷會使用多種色彩繪製區域，這些色彩會沿著某個軸逐漸相互融合。 衍生自的類別 `GradientBrush` 描述了不同的解讀漸層停駐方式，並 Xamarin.Forms 提供下列漸層筆刷：
 
@@ -71,6 +71,6 @@ ms.locfileid: "87918959"
 
 ## <a name="related-links"></a>相關連結
 
-- [BrushesDemos (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [BrushesDemos (範例) ](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Xamarin.Forms筆刷：線性漸層](lineargradient.md)
 - [Xamarin.Forms筆刷：放射狀漸層](radialgradient.md)
