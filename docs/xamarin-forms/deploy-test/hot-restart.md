@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5367d7933e70c59298faacff85c1d5f533bc0776
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3240906cdf964bcf798137e640a82dbd1e2341d9
+ms.sourcegitcommit: a662910a6ba14d241e01047739eb1cd87aa7d884
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929277"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88029717"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin 熱重新開機 (預覽)
 
@@ -48,7 +48,7 @@ Xamarin 熱重新開機可讓您在開發期間快速測試應用程式的變更
 
 3. 如果未安裝 iTunes，請按一下 [下載 iTunes]**** 來下載安裝程式。 iTunes 安裝完成後，請按一下 [下一步]****。
 
-4. 將 iOS 裝置連接到您的電腦。 如果裝置已插入，請將其拔下，然後重新連線。 裝置名稱會在偵測到時出現在精靈中。 按一下 [下一步] 。
+4. 將 iOS 裝置連接到您的電腦。 如果裝置已插入，請將其拔下，然後重新連線。 裝置名稱會在偵測到時出現在精靈中。 按 [下一步]  。
 
 5. 輸入您的 Apple 開發人員帳戶認證，然後按一下 [下一步]****。
 
@@ -69,10 +69,11 @@ Xamarin 熱重新開機可讓您在開發期間快速測試應用程式的變更
 ## <a name="limitations"></a>限制
 
 - Xamarin.Forms目前僅支援使用和 ios 裝置建立的 ios 應用程式。
-- 僅支援64位的 iOS 裝置。 從 iOS 11 起，Apple 不再允許在32位架構（iPhone 5 秒之前的裝置）上執行 iOS 應用程式。
+- 僅支援64位的 iOS 裝置。 自 iOS 11 起，Apple 不再允許在32位架構上執行 iOS 應用程式， (iPhone 5 秒) 之前的裝置。
 - 不支援腳本和 XIB 檔案，如果應用程式嘗試在執行時載入這些，便可能損毀。 使用 `HOTRESTART` 預處理器符號來防止此程式碼執行。
 - 不支援靜態 iOS 程式庫和架構，如果您的應用程式嘗試載入，您可能會看到執行階段錯誤或當機。 使用 `HOTRESTART` 預處理器符號來防止此程式碼執行。 支援動態 iOS 程式庫。
 - 您無法使用 Xamarin 熱重新開機來建立用於發佈的應用程式套件組合。 您仍然需要 Mac 電腦，才能為應用程式進行完整編譯、簽署和部署到生產環境。
+- 目前不支援資產目錄。 使用熱重新開機時，您的應用程式會顯示 Xamarin 應用程式的預設圖示和啟動畫面。 當與 Mac 配對，或在 Mac 上進行開發時，您的資產目錄就會生效。
 
 ## <a name="troubleshoot"></a>疑難排解
 
