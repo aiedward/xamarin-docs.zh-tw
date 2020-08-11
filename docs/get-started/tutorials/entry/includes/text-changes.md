@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: deb3516cc134a8b2eecba8460931003de8bb312f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: d9834c2d2974787de989b640449fddae6c1ce39b
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "77135048"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87919364"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -46,7 +46,7 @@ ms.locfileid: "77135048"
 
     在兩個事件處理常式中設定中斷點，並將文字輸入 [`Entry`](xref:Xamarin.Forms.Entry)，然後觀察 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件的引發。
 
-    如需有關 [`Entry`](xref:Xamarin.Forms.Entry) 事件的詳細資訊，請參閱 [Xamarin.Forms 項目](~/xamarin-forms/user-interface/text/entry.md)指南中的[事件和互動功能](~/xamarin-forms/user-interface/text/entry.md#events-and-interactivity)。
+    如需 [`Entry`](xref:Xamarin.Forms.Entry) 事件的詳細資訊，請參閱 [Xamarin.Forms 項目](~/xamarin-forms/user-interface/text/entry.md)指南中的[事件與互動性](~/xamarin-forms/user-interface/text/entry.md#events-and-interactivity)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
