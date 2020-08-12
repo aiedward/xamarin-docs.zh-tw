@@ -10,22 +10,22 @@ ms.date: 08/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9a097d6dad067f209d3aad27bde382f28910324a
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138498"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130925"
 ---
-# <a name="choose-a-xamarinforms-layout"></a>選擇 Xamarin.Forms 版面配置
+# <a name="choose-a-no-locxamarinforms-layout"></a>選擇 Xamarin.Forms 版面配置
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控制項。 選擇版面配置類別需要知道版面配置如何放置其子專案，以及版面配置如何調整其子項目的大小。 此外，您可能需要嵌套配置，以建立您所需的版面配置。
 
 下圖顯示可使用主要版面配置類別來達成的一般配置 Xamarin.Forms ：
 
-[![中的主要版面配置類別Xamarin.Forms](images/layouts.png "[!OP.無 LOC （Xamarin）] 版面配置類別")](images/layouts-large.png#lightbox "[!OP.無 LOC （Xamarin）] 版面配置類別")
+[![：：： No-loc 中的主要版面配置類別 (Xamarin. Forms) ：：：](images/layouts.png "：：：無-loc (Xamarin. Forms) ：：： layout 類別")](images/layouts-large.png#lightbox "：：：無-loc (Xamarin. Forms) ：：： layout 類別")
 
 ## <a name="stacklayout"></a>StackLayout
 
@@ -78,7 +78,7 @@ Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控
 
 如需詳細資訊，請參閱[ Xamarin.Forms StackLayout](stacklayout.md)。
 
-## <a name="grid"></a>Grid
+## <a name="grid"></a>方格
 
 [`Grid`](xref:Xamarin.Forms.Grid)是用來在資料列和資料行中顯示專案，這些專案可以有比例或絕對大小。 方格的資料列和資料行會使用 [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) 和屬性來指定 [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) 。
 
@@ -151,7 +151,7 @@ Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控
 
 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)是用來定位和調整專案相對於版面配置或同級元素的屬性。 根據預設，專案位於版面配置的左上角。 `RelativeLayout`可以用來建立跨裝置大小按比例調整的 ui。
 
-在中 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) ，位置和大小會指定為條件約束。 條件約束具有 [`Factor`](xref:Xamarin.Forms.ConstraintExpression.Factor) 和 [`Constant`](xref:Xamarin.Forms.ConstraintExpression.Constant) 屬性，可用來將位置和大小定義為其他物件屬性的倍數（或分數），再加上常數。 此外，常數可以是負數。
+在中 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) ，位置和大小會指定為條件約束。 條件約束具有 [`Factor`](xref:Xamarin.Forms.ConstraintExpression.Factor) 和 [`Constant`](xref:Xamarin.Forms.ConstraintExpression.Constant) 屬性，可用來將位置和大小定義為倍數 (或其他物件屬性的分數) ，再加上常數。 此外，常數可以是負數。
 
 > [!NOTE]
 > 支援將專案 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 置於其本身的界限之外。
@@ -234,7 +234,7 @@ Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控
 > [!CAUTION]
 > 盡可能避免使用 [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) 屬性，因為這會導致版面配置引擎執行其他版面配置計算。
 
-如需詳細資訊，請參閱[ Xamarin.Forms AbsoluteLayout](absolute-layout.md)。
+如需詳細資訊，請參閱[ Xamarin.Forms AbsoluteLayout](absolutelayout.md)。
 
 ## <a name="input-transparency"></a>輸入透明度
 
@@ -250,12 +250,12 @@ Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控
 
 ## <a name="related-links"></a>相關連結
 
-- [版面配置（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [Xamarin.Forms版面配置（影片）](https://youtu.be/4HlLjTZQzjM)
+- [版面配置 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [Xamarin.Forms (影片) 的版面配置](https://youtu.be/4HlLjTZQzjM)
 - [Xamarin.FormsStackLayout](stacklayout.md)
 - [Xamarin.Forms格](grid.md)
 - [Xamarin.FormsFlexLayout](flex-layout.md)
-- [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
+- [Xamarin.FormsAbsoluteLayout](absolutelayout.md)
 - [Xamarin.FormsRelativeLayout](relative-layout.md)
 - [優化版面配置效能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [版面配置壓縮](layout-compression.md)

@@ -10,18 +10,18 @@ ms.date: 08/04/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b21c1c85a29717bd9e5b9e9f164ce8f058764865
-ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
+ms.openlocfilehash: 2d929043a6b4cd5dd8b06318df0d7a347708fe6c
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919641"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130912"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>新增拖放手勢辨識器
 
 ![發行前版本 API](~/media/shared/preview.png)
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/WorkingWithGestures/DragAndDropGesture)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
 
 拖放手勢可讓您使用連續手勢，將專案及其相關聯的資料封裝從一個螢幕位置拖曳至另一個位置。 拖放功能可以在單一應用程式中執行，也可以在一個應用程式中啟動，並以另一端結束。
 
@@ -312,4 +312,4 @@ void OnDrop(object sender, DropEventArgs e)
 
 ## <a name="related-links"></a>相關連結
 
-- [拖放手勢 (範例) ](https://github.com/xamarin/xamarin-forms-samples/tree/master/WorkingWithGestures/DragAndDropGesture)
+- [拖放手勢 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)

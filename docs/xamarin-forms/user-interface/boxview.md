@@ -10,16 +10,16 @@ ms.date: 07/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 06f1813bafb34a9c32603490e66f8caa6c6a6a22
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f4788c0201d2d286ff4de9b29ba6385d323a3b0
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573816"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130938"
 ---
-# <a name="xamarinforms-boxview"></a>Xamarin.FormsBoxView
+# <a name="no-locxamarinforms-boxview"></a>Xamarin.FormsBoxView
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
 [`BoxView`](xref:Xamarin.Forms.BoxView)呈現指定寬度、高度和色彩的簡單矩形。 您可以使用做 `BoxView` 為裝飾、基本圖形，以及透過觸控與使用者互動。
 
@@ -70,7 +70,7 @@ ms.locfileid: "84573816"
 
 如果 `VerticalOptions` 和 `HorizontalOptions` 屬性已從標記中移除， `BoxView` 或設定為 `Fill` ，則會受到 `BoxView` 頁面大小的限制，並展開以填滿頁面。
 
-`BoxView`也可以是的子系 `AbsoluteLayout` 。 在這種情況下，的位置和大小 `BoxView` 都是使用附加的可系結屬性來設定 `LayoutBounds` 。 `AbsoluteLayout` [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md)一文中會討論。
+`BoxView`也可以是的子系 `AbsoluteLayout` 。 在這種情況下，的位置和大小 `BoxView` 都是使用附加的可系結屬性來設定 `LayoutBounds` 。 `AbsoluteLayout` [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolutelayout.md)一文中會討論。
 
 您會在接下來的範例程式中，看到所有這些案例的範例。
 
@@ -139,7 +139,7 @@ ms.locfileid: "84573816"
 
 您不能使用這項技術，在較長的文字字串或段落中為個別文字加上底線。
 
-也可以使用 `BoxView` 來類似 HTML `hr` （水準規則）元素。 只要讓的寬度由 `BoxView` 其父容器決定，在此案例中為 `StackLayout` ：
+您也可以使用 `BoxView` 來類似 HTML `hr` (水準規則) 元素。 只要讓的寬度由 `BoxView` 其父容器決定，在此案例中為 `StackLayout` ：
 
 ```xaml
 <BoxView HeightRequest="3" />
@@ -764,10 +764,10 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [基本 BoxView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
-- [文字裝飾（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)
-- [ListView 色彩（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors/)
-- [生活遊戲（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)
-- [點矩陣時鐘（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)
-- [BoxView 時鐘（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock)
+- [基本 BoxView (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+- [文字裝飾 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)
+- [ListView 色彩 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors/)
+- [生命 (範例) 的遊戲](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)
+- [點矩陣時鐘 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)
+- [BoxView 時鐘 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock)
 - [BoxView](xref:Xamarin.Forms.BoxView)
