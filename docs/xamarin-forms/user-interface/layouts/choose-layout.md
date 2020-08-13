@@ -10,12 +10,12 @@ ms.date: 08/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a097d6dad067f209d3aad27bde382f28910324a
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: 38b44bbb8f01f090d286bb2203014455a32a2290
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88130925"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181481"
 ---
 # <a name="choose-a-no-locxamarinforms-layout"></a>選擇 Xamarin.Forms 版面配置
 
@@ -78,7 +78,7 @@ Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控
 
 如需詳細資訊，請參閱[ Xamarin.Forms StackLayout](stacklayout.md)。
 
-## <a name="grid"></a>方格
+## <a name="grid"></a>格線
 
 [`Grid`](xref:Xamarin.Forms.Grid)是用來在資料列和資料行中顯示專案，這些專案可以有比例或絕對大小。 方格的資料列和資料行會使用 [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) 和屬性來指定 [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) 。
 
@@ -194,7 +194,7 @@ Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控
 > [!WARNING]
 > 盡量避免使用 `RelativeLayout`。 它會導致 CPU 必須執行更多工作。
 
-如需詳細資訊，請參閱[ Xamarin.Forms RelativeLayout](relative-layout.md)。
+如需詳細資訊，請參閱[ Xamarin.Forms RelativeLayout](relativelayout.md)。
 
 ## <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -256,6 +256,6 @@ Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控
 - [Xamarin.Forms格](grid.md)
 - [Xamarin.FormsFlexLayout](flex-layout.md)
 - [Xamarin.FormsAbsoluteLayout](absolutelayout.md)
-- [Xamarin.FormsRelativeLayout](relative-layout.md)
+- [Xamarin.FormsRelativeLayout](relativelayout.md)
 - [優化版面配置效能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [版面配置壓縮](layout-compression.md)

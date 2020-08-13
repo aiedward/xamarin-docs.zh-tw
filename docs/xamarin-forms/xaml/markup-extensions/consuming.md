@@ -10,16 +10,16 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1429c3f39e37dc552d7f6ca8767058e5aec853b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b23aca29fa77b58183a1f09053bc2bb9ba66bb49
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84903101"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181507"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML 標記延伸可讓您從各種來源設定元素屬性，以增強 XAML 的強大功能和彈性。 數個 XAML 標記延伸是 XAML 2009 規格的一部分。 這些會以慣用的命名空間前置詞出現在 XAML 檔案中 `x` ，而且通常會使用此前置詞來參考。 本文討論下列標記延伸：
 
@@ -42,7 +42,7 @@ XAML 標記延伸可讓您從各種來源設定元素屬性，以增強 XAML 的
 - `TemplateBinding`-從控制項範本執行資料系結，如[** Xamarin.Forms 控制項範本**](~/xamarin-forms/app-fundamentals/templates/control-template.md)文章中所述。
 - `RelativeSource`-設定相對於系結目標之位置的系結來源，如[相關](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)系結一文所述。
 
-[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)版面配置會使用自訂標記延伸模組 [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) 。 此標記延伸會在[**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)一文中說明。
+[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)版面配置會使用自訂標記延伸模組 [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) 。 此標記延伸會在[**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relativelayout.md)一文中說明。
 
 ## <a name="xstatic-markup-extension"></a>x:Static 標記延伸
 
@@ -636,7 +636,7 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [標記延伸（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+- [ (範例) 的標記延伸](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [書籍中的 XAML 標記延伸章節 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動態樣式](~/xamarin-forms/user-interface/styles/dynamic.md)

@@ -10,12 +10,12 @@ ms.date: 08/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 696429e04775640d46add77ec6a4bbf6e69f675b
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: a6efa4615f0061c83243f2d00d2d141a51607301
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88134107"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181494"
 ---
 # <a name="no-locxamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
@@ -55,7 +55,7 @@ ms.locfileid: "88134107"
 
 ## <a name="absolute-positioning-and-sizing"></a>絕對位置和調整大小
 
-根據預設， [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 位置和大小的子系使用絕對值（以與裝置無關的單位指定），其明確定義在版面配置中應放置視圖的位置。 將子系加入至的 `Children` 集合 `AbsoluteLayout` ，並將每個子系的 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 附加屬性設定為絕對位置和/或大小值，即可達成此目的。
+根據預設， [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 位置和大小的子系使用絕對值（以與裝置無關的單位指定），其明確定義在配置中放置子系的位置。 將子系加入至的 `Children` 集合 `AbsoluteLayout` ，並將每個子系的 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 附加屬性設定為絕對位置和/或大小值，即可達成此目的。
 
 > [!WARNING]
 > 使用絕對值來定位和調整大小的子系可能會造成問題，因為不同的裝置有不同的螢幕大小和解析度。 因此，在一個裝置上，螢幕中心的座標可能會在其他裝置上位移。
@@ -190,7 +190,7 @@ public class StylishHeaderDemoPageCS : ContentPage
 
 下列螢幕擷取畫面顯示產生的版面配置：
 
-![使用比例 positino 值放在 AbsoluteLayout 中的子系](absolutelayout-images/proportional-position.png)
+![使用比例位置值放在 AbsoluteLayout 中的子系](absolutelayout-images/proportional-position.png)
 
 對等的 c # 程式碼如下所示：
 
