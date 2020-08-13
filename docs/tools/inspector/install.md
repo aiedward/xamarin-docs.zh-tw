@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 39e7a6c86a2d4ab4231a29c0e1014de702af01ac
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1545af984c0a409244c323048b448ec44e9be6a8
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573413"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186183"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspector 安裝和需求
 
@@ -36,7 +36,7 @@ ms.locfileid: "84573413"
 ### <a name="supported-operating-systems"></a>支援的作業系統
 
 - **Mac** -OS X 10.11 或更新版本
-- **Windows** -windows 7 或更新版本（包含 Internet Explorer 11 或更新版本，以及 .net 4.6.1 或更高版本）
+- **Windows** -windows 7 或更高版本的 (，其中包含 Internet Explorer 11 或更新版本，以及 .net 4.6.1 或更高的) 
 
 ### <a name="supported-ides"></a>支援的 Ide
 
@@ -49,10 +49,10 @@ ms.locfileid: "84573413"
 
 ### <a name="supported-app-platforms"></a>支援的應用程式平臺
 
-|應用程式平台|IDE 支援|注意|
+|應用程式平台|IDE 支援|備註|
 |--- |--- |--- |
 |Mac|僅 Visual Studio for Mac 中支援|
-|iOS|支援 Visual Studio 2017 和 Visual Studio for Mac| 連結器行為必須設定為 [**不要連結**] （在 [ **iOS 組建**專案] 選項底下） |
+|iOS|支援 Visual Studio 2017 和 Visual Studio for Mac| 連結器行為必須設定為 [[**不要連結**](~/ios/deploy-test/linker.md) **iOS 組建**專案選項 (])  |
 |Android|支援 Visual Studio 2017 和 Visual Studio for Mac|必須以 Android >= 4.0.3 為目標，且已啟用**fastdev** 。<br />必須使用 Google、Visual Studio 或 Xamarin Android 模擬器。 Android 7 模擬器目前可能不允許檢查。|
 |WPF|僅 Visual Studio 2017 中支援|
 
@@ -89,7 +89,7 @@ Visual Studio
 - Mac：`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
-1.4. x 也能夠直接從主功能表選取搜尋工具（macOS）或 Explorer （Windows）中的記錄檔：
+1.4. x 也提供在搜尋工具中選取記錄檔的功能 (macOS) 或 Explorer 直接從主功能表 (Windows) ：
 
 - **說明 > 顯示記錄檔**
 
@@ -117,6 +117,6 @@ Visual Studio
 - Android：確認您使用的是 x86 模擬器
 - Android：您所使用的模擬器平臺為何？ Google 模擬器？ Visual Studio Android Emulator 嗎？ Xamarin Android Player？
 - 您正在偵測的應用程式是否會在裝置中正確顯示和運作？
-- 裝置是否具有網路連線能力（透過網頁瀏覽器檢查）？
+- 裝置是否具有網路連線 (透過網頁瀏覽器) 檢查？
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new

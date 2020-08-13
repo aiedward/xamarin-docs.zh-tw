@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0a43ce2d27c8152137101d616302f6e56a57bd39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bf0315d2d077e06ff3ded4d66814afe050fdfad4
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931972"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186196"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>在偶合程度低的元件之間通訊
 
@@ -41,7 +41,7 @@ EShopOnContainers 行動應用程式會使用 [`MessagingCenter`](xref:Xamarin.F
 
 - `AddProduct` `CatalogViewModel` 當專案新增至購物籃時，類別會發佈此訊息。 在傳回時， `BasketViewModel` 類別會訂閱訊息，並遞增購物籃中的專案數以回應。 此外， `BasketViewModel` 類別也會從這個訊息取消訂閱。
 - `Filter` `CatalogViewModel` 當使用者將品牌或類型篩選套用至顯示在目錄中的專案時，類別會發佈訊息。 在傳回時， `CatalogView` 類別會訂閱訊息並更新 UI，因此只會顯示符合篩選準則的專案。
-- `ChangeTab` `MainViewModel` 當 `CheckoutViewModel` 流覽至 `MainViewModel` 下列成功建立和提交新訂單時，類別會發佈訊息。 在 [傳回] 中， `MainView` 類別會訂閱訊息並更新 UI，讓 [**我的設定檔**] 索引標籤為作用中狀態，以顯示使用者的訂單。
+- `ChangeTab` `MainViewModel` 當 `CheckoutViewModel` 流覽至 `MainViewModel` 下列成功建立和提交新訂單時，類別會發佈訊息。 在 [傳回] 中， `MainView` 類別會訂閱訊息並更新 UI，讓 [ **我的設定檔** ] 索引標籤為作用中狀態，以顯示使用者的訂單。
 
 > [!NOTE]
 > 雖然 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 類別允許鬆散結合類別之間的通訊，但它並不提供此問題的唯一架構解決方案。 例如，您也可以透過系結引擎和屬性變更通知來達成視圖模型和視圖之間的通訊。 此外，兩個視圖模型之間的通訊也可以藉由在導覽期間傳遞資料來達成。
@@ -51,14 +51,14 @@ EShopOnContainers 行動應用程式會使用 [`MessagingCenter`](xref:Xamarin.F
 > [!TIP]
 > 執行 UI 更新時封送處理至 UI 執行緒。 如果需要從背景執行緒傳送的訊息來更新 UI，請叫用方法，以在「訂閱者」端的 UI 執行緒上處理訊息 [`Device.BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) 。
 
-如需的詳細資訊 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) ，請參閱[MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md)。
+如需的詳細資訊 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) ，請參閱 [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md)。
 
 ## <a name="defining-a-message"></a>定義訊息
 
-[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)訊息是用來識別訊息的字串。 下列程式碼範例顯示在 eShopOnContainers 行動裝置應用程式中定義的訊息：
+[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 訊息是用來識別訊息的字串。 下列程式碼範例顯示在 eShopOnContainers 行動裝置應用程式中定義的訊息：
 
 ```csharp
-public class MessengerKeys  
+public class MessageKeys  
 {  
     // Add product to basket  
     public const string AddProduct = "AddProduct";  
@@ -78,7 +78,7 @@ public class MessengerKeys
 發行者會使用其中一個多載來通知訊息的訂閱者 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 。 下列程式碼範例將示範如何發佈 `AddProduct` 訊息：
 
 ```csharp
-MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
+MessagingCenter.Send(this, MessageKeys.AddProduct, catalogItem);
 ```
 
 在此範例中， [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 方法會指定三個引數：
@@ -118,16 +118,16 @@ MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(
 若訂閱者不想再接收訊息，則應從訊息中取消訂閱。 這是使用其中一個多載來達成 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) ，如下列程式碼範例所示：
 
 ```csharp
-MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
+MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessageKeys.AddProduct);
 ```
 
 在此範例中， [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法語法會反映訂閱接收訊息時所指定的型別引數 `AddProduct` 。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 類別會執行發行-訂閱模式，允許不方便透過物件和類型參考連結的元件之間以訊息為基礎的通訊。 這項機制可讓發行者和訂閱者進行通訊，而不需要彼此的參考，協助減少元件之間的相依性，同時也允許獨立開發和測試元件。
 
 ## <a name="related-links"></a>相關連結
 
-- [下載電子書（2 Mb 的 PDF）](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers （GitHub）（範例）](https://github.com/dotnet-architecture/eShopOnContainers)
+- [下載電子書 (2Mb PDF) ](https://aka.ms/xamarinpatternsebook)
+- [eShopOnContainers (GitHub)  (範例) ](https://github.com/dotnet-architecture/eShopOnContainers)

@@ -1,5 +1,5 @@
 ---
-title: 儲存和存取 Azure 儲存體中的資料Xamarin.Forms
+title: 儲存和存取 Azure 儲存體中的資料 Xamarin.Forms
 description: Azure 儲存體是可擴充的雲端儲存體解決方案，可用於儲存非結構化和結構化資料。 本文說明如何使用，將 Xamarin.Forms 文字和二進位資料儲存在 Azure 儲存體中，以及如何存取資料。
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
@@ -10,14 +10,14 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f67543a6c678e2c3a1395f816e020d69af4bf873
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d7b97f21e5184a445cfac85dc06a7da0e1a6a4c5
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936652"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186209"
 ---
-# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>儲存和存取 Azure 儲存體中的資料Xamarin.Forms
+# <a name="store-and-access-data-in-azure-storage-from-no-locxamarinforms"></a>儲存和存取 Azure 儲存體中的資料 Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
@@ -37,7 +37,7 @@ Azure 儲存體提供四種儲存體服務：
 
 本文和隨附的範例應用程式會示範如何將影像和文字檔上傳至 blob 儲存體，並下載這些檔案。 此外，它也會示範如何從 blob 儲存體中抓取檔案清單，以及如何刪除檔案。
 
-如需 Azure 儲存體的詳細資訊，請參閱[儲存體簡介](https://azure.microsoft.com/documentation/articles/storage-introduction/)。
+如需 Azure 儲存體的詳細資訊，請參閱 [儲存體簡介](https://azure.microsoft.com/documentation/articles/storage-introduction/)。
 
 > [!NOTE]
 > 如果您沒有 [Azure 訂用帳戶](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，請在開始前建立[免費帳戶](https://aka.ms/azfree-docs-mobileapps)。
@@ -61,7 +61,7 @@ Blob 是任何類型和大小的檔案。 Azure 儲存體支援三種不同的 b
 
 Blob 會上傳至 Azure 儲存體，並以位元組資料流程的形式從 Azure 儲存體下載。 因此，檔案必須先轉換成位元組資料流程，然後再上傳，並在下載後轉換回其原始表示。
 
-儲存在 Azure 儲存體中的每個物件都有唯一的 URL 位址。 儲存體帳戶名稱會形成該位址的子域，而子域和功能變數名稱的組合會形成儲存體帳戶的*端點*。 例如，如果您的儲存體帳戶名為*mystorageaccount*，則儲存體帳戶的預設 blob 端點會是 `https://mystorageaccount.blob.core.windows.net` 。
+儲存在 Azure 儲存體中的每個物件都有唯一的 URL 位址。 儲存體帳戶名稱會形成該位址的子域，而子域和功能變數名稱的組合會形成儲存體帳戶的 *端點* 。 例如，如果您的儲存體帳戶名為 *mystorageaccount*，則儲存體帳戶的預設 blob 端點會是 `https://mystorageaccount.blob.core.windows.net` 。
 
 用以存取儲存體帳戶中某物件的 URL，可藉由在端點後附加該物件在儲存體帳戶中的位置來建置。 例如，blob 位址的格式會是 `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob` 。
 
@@ -70,8 +70,8 @@ Blob 會上傳至 Azure 儲存體，並以位元組資料流程的形式從 Azur
 將 Azure 儲存體帳戶整合到應用程式的流程如下所示 Xamarin.Forms ：
 
 1. 建立儲存體帳戶。 如需詳細資訊，請參閱[建立儲存體帳戶](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
-1. 將[Azure 儲存體用戶端程式庫](https://www.nuget.org/packages/WindowsAzure.Storage/)新增至 Xamarin.Forms 應用程式。
-1. 設定儲存體連接字串。 如需詳細資訊，請參閱[連接到 Azure 儲存體](#connecting-to-azure-storage)。
+1. 將 [Azure 儲存體用戶端程式庫](https://www.nuget.org/packages/WindowsAzure.Storage/) 新增至 Xamarin.Forms 應用程式。
+1. 設定儲存體連接字串。 如需詳細資訊，請參閱 [連接到 Azure 儲存體](#connecting-to-azure-storage)。
 1. 將 `using` 和命名空間的指示詞加入 `Microsoft.WindowsAzure.Storage` `Microsoft.WindowsAzure.Storage.Blob` 至將會存取 Azure 儲存體的類別。
 
 ## <a name="connecting-to-azure-storage"></a>連線到 Azure 儲存體
@@ -81,14 +81,14 @@ Blob 會上傳至 Azure 儲存體，並以位元組資料流程的形式從 Azur
 - 共用金鑰。 此方法會使用 Azure 儲存體帳戶名稱和帳戶金鑰來存取儲存體服務。 儲存體帳戶會在建立時指派兩個可用於共用金鑰驗證的私密金鑰。
 - 共用存取簽章。 這是可以附加到 URL 的權杖，可讓您在有效的期間內，使用其指定的許可權來委派儲存體資源的存取權。
 
-您可以指定連接字串，其中包含從應用程式存取 Azure 儲存體資源所需的驗證資訊。 此外，連接字串可以設定為從 Visual Studio 連接到 Azure 儲存體模擬器。
+您可以指定連接字串，其中包含從應用程式存取 Azure 儲存體資源所需的驗證資訊。 此外，您可以將連接字串設定為從 Visual Studio 連接到 Azure 儲存體模擬器。
 
 > [!NOTE]
 > Azure 儲存體支援連接字串中的 HTTP 和 HTTPS。 不過，建議使用 HTTPS。
 
 ### <a name="connecting-to-the-azure-storage-emulator"></a>連接到 Azure 儲存體模擬器
 
-Azure 儲存體模擬器會提供一個模擬 Azure blob、佇列和表格服務的本機環境，以供開發之用。
+Azure 儲存體模擬器提供了模擬 Azure blob、佇列和表格服務的本機環境，以供開發之用。
 
 下列連接字串應該用來連接到 Azure 儲存體模擬器：
 
@@ -96,7 +96,7 @@ Azure 儲存體模擬器會提供一個模擬 Azure blob、佇列和表格服務
 UseDevelopmentStorage=true
 ```
 
-如需 Azure 儲存體模擬器的詳細資訊，請參閱[使用 Azure 儲存體模擬器進行開發和測試](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)。
+如需有關 Azure 儲存體模擬器的詳細資訊，請參閱 [使用 azure 儲存體模擬器進行開發和測試](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)。
 
 ### <a name="connecting-to-azure-storage-using-a-shared-key"></a>使用共用金鑰連接到 Azure 儲存體
 
@@ -106,7 +106,7 @@ UseDevelopmentStorage=true
 DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey
 ```
 
-`myAccountName`應取代為您的儲存體帳戶名稱，並 `myAccountKey` 應取代為您的兩個帳戶存取金鑰的其中一個。
+`myAccountName` 應取代為您的儲存體帳戶名稱，並 `myAccountKey` 應取代為您的兩個帳戶存取金鑰的其中一個。
 
 > [!NOTE]
 > 使用共用金鑰驗證時，您的帳戶名稱和帳戶金鑰會散發給每個使用您應用程式的人員，這會提供儲存體帳戶的完整讀取/寫入存取權。 因此，使用共用金鑰驗證僅供測試之用，而且永遠不會將金鑰散發給其他使用者。
@@ -117,12 +117,12 @@ DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAcc
 
 `BlobEndpoint=myBlobEndpoint;SharedAccessSignature=mySharedAccessSignature`
 
-`myBlobEndpoint`應取代為 blob 端點的 URL，並 `mySharedAccessSignature` 應取代為您的 SAS。 SAS 會提供通訊協定、服務端點，以及用來存取資源的認證。
+`myBlobEndpoint` 應取代為 blob 端點的 URL，並 `mySharedAccessSignature` 應取代為您的 SAS。 SAS 會提供通訊協定、服務端點，以及用來存取資源的認證。
 
 > [!NOTE]
 > 建議針對生產環境應用程式使用 SAS 驗證。 不過，在生產應用程式中，應該視需要從後端服務取出 SAS，而不是與應用程式配套。
 
-如需共用存取簽章的詳細資訊，請參閱[使用共用存取簽章（SAS）](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
+如需共用存取簽章的詳細資訊，請參閱 [使用共用存取簽章 (SAS) ](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 ## <a name="creating-a-container"></a>建立容器
 
@@ -154,7 +154,7 @@ var container = GetContainer(containerType);
 await container.CreateIfNotExistsAsync();
 ```
 
-根據預設，新建立的容器是私用的。 這表示必須指定儲存體存取金鑰，才能從容器中取出 blob。 如需將容器內的 blob 設為公用的詳細資訊，請參閱[建立容器](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)。
+根據預設，新建立的容器是私用的。 這表示必須指定儲存體存取金鑰，才能從容器中取出 blob。 如需將容器內的 blob 設為公用的詳細資訊，請參閱 [建立容器](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)。
 
 ## <a name="uploading-data-to-a-container"></a>將資料上傳至容器
 
@@ -264,8 +264,8 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 
 ## <a name="related-links"></a>相關連結
 
-- [Azure 儲存體（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+- [Azure 儲存體 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 - [儲存體簡介](https://azure.microsoft.com/documentation/articles/storage-introduction/)
 - [如何使用 Xamarin 的 Blob 儲存體](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
 - [使用共用存取簽章 (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
-- [Windows Azure 儲存體（NuGet）](https://www.nuget.org/packages/WindowsAzure.Storage/)
+- [Windows Azure 儲存體 (NuGet) ](https://www.nuget.org/packages/WindowsAzure.Storage/)
