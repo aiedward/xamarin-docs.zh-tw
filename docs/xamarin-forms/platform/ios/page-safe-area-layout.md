@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5bab1166ade7a5eeebbb720fa48f6116b4ec95d0
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 920246e9cbbe85c606969333ccb05d3c87dcef66
+ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933703"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88228582"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>IOS 上的安全區域版面配置指南
 
@@ -53,7 +53,7 @@ On<iOS>().SetUseSafeArea(true);
 > [!NOTE]
 > Apple 定義的安全區域用 Xamarin.Forms 來設定 [`Page.Padding`](xref:Xamarin.Forms.Page.Padding) 屬性，而且會覆寫這個屬性已設定的任何先前的值。
 
-您可以 [`Thickness`](xref:Xamarin.Forms.Thickness) 使用 `Page.SafeAreaInsets` 命名空間中的方法，來自訂 safe 區域 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 。 然後，您可以視需要修改它，然後重新指派至 `Padding` 頁面的「參數」中的屬性，或覆 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 寫：
+您可以 [`Thickness`](xref:Xamarin.Forms.Thickness) 使用 `Page.SafeAreaInsets` 命名空間中的方法，來自訂 safe 區域 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 。 然後，您可以視需要修改它，然後重新指派給覆 `Padding` 寫中的屬性 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) ：
 
 ```csharp
 protected override void OnAppearing()
@@ -68,6 +68,6 @@ protected override void OnAppearing()
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
