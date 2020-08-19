@@ -1,33 +1,33 @@
 ---
-title: Xamarin.Forms範例
-description: Xamarin.Forms範例應用程式和程式碼示範，可協助您開始使用並瞭解中的概念 Xamarin.Forms 。
+title: Xamarin.Forms 樣品
+description: Xamarin.Forms 範例應用程式和程式碼示範，可協助您開始使用並瞭解中的概念 Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: AB986E8E-E831-4E0A-9F1D-6C3D88F35E9C
 ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
+author: davidbritch
+ms.author: dabritch
 ms.date: 12/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 896b5880b92cecc7bd9eb360306d902ff0f876c5
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2edda90d1569d1a20d537dfa631163c41699596d
+ms.sourcegitcommit: 465f83b0e774862313c74494f87cb1b50f50f903
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135937"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88603749"
 ---
-# <a name="xamarinforms-samples"></a>Xamarin.Forms範例
+# <a name="no-locxamarinforms-samples"></a>Xamarin.Forms 樣品
 
-Xamarin.Forms範例應用程式和程式碼示範，可協助您開始使用並瞭解中的概念 Xamarin.Forms 。
+Xamarin.Forms 範例應用程式和程式碼示範，可協助您開始使用並瞭解中的概念 Xamarin.Forms 。
 
 [所有 Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 
 :::row:::
     :::column:::
-[![多](images/todo.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
+[![Todo](images/todo.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
 
-### <a name="todo"></a>[多](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
+### <a name="todo"></a>[Todo](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
 
 此範例示範待辦事項清單應用程式，資料將儲存在本機 SQLite 資料庫並從其中存取。
     :::column-end:::
@@ -60,17 +60,17 @@ RPN (反波蘭記法) 計算機允許輸入數字和運算而不包含括號或�
 
 ### <a name="xaml-samples"></a>[XAML 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
 
-XAML 是可延伸的應用程式標記語言，可讓開發人員使用標記來定義應用程式中的使用者介面， Xamarin.Forms 而不是透過程式碼。
+XAML-可延伸應用程式標記語言，可讓開發人員 Xamarin.Forms 使用標記而非程式碼，在應用程式中定義使用者介面。
     :::column-end:::
         :::column:::
 [![Xuzzle](images/xuzzle.png)](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/)
 
 ### <a name="xuzzle"></a>[Xuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/)
 
-這項遊戲是傳統14-15 謎題的變化，您可以透過將磚滑成正確的順序來解決此問題。
+這項遊戲是傳統14-15 謎題的變化，您可以藉由將磚滑成正確的順序來解決此問題。
     :::column-end:::
 :::row-end:::
 
 ## <a name="all-samples"></a>所有範例
 
-如需一組完整的 Xamarin.Forms 範例應用程式和程式碼示範，請參閱[所有 Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)。
+如需一組完整的 Xamarin.Forms 範例應用程式和程式碼示範，請參閱 [所有 Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)。
