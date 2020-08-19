@@ -5,17 +5,17 @@ ms.prod: xamarin
 ms.assetid: AB986E8E-E831-4E0A-9F1D-6C3D88F35E9C
 ms.technology: xamarin-forms
 author: davidbritch
-ms.author: dabritch
+ms.author: jusjohns
 ms.date: 12/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2edda90d1569d1a20d537dfa631163c41699596d
-ms.sourcegitcommit: 465f83b0e774862313c74494f87cb1b50f50f903
+ms.openlocfilehash: f69f19066759303529e67b98d85b245db585d97f
+ms.sourcegitcommit: 80bd4d74812d2c086a164323b72a14662276d302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/19/2020
-ms.locfileid: "88603749"
+ms.locfileid: "88608625"
 ---
 # <a name="no-locxamarinforms-samples"></a>Xamarin.Forms 樣品
 
