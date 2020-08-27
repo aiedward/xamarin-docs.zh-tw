@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: 09d20ef2e4fece36ce67a7891892defb05a5f3df
-ms.sourcegitcommit: ca1eca5bcf6c82bc4ec05db12ee1be585006d59f
+ms.openlocfilehash: 32d9142fb74cba637982438a2aa984adb759d847
+ms.sourcegitcommit: bb18e6b3b5d592374b17932efa1e85c3b5fbad57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88514625"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950712"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自動佈建
 
@@ -25,7 +25,7 @@ _成功安裝了 Xamarin 之後，iOS 開發的下一步就是布建您的 iOS �
 
 > [!NOTE]
 > 您也必須擁有付費的 Apple 開發人員帳戶，才能使用這項功能。 如需 Apple 開發人員帳戶的詳細資訊，請參考 [裝置](~/ios/get-started/installation/device-provisioning/index.md) 布建指南。
-> 如果您沒有付費的 Apple 開發人員帳戶，請參閱 [適用于 Xamarin 的免費布建] (~/ios/get-started/installation/device-provisioning/free-provisioning.md) 指南。
+> 如果您沒有付費的 Apple 開發人員帳戶，請參閱 [適用于 Xamarin 的免費](~/ios/get-started/installation/device-provisioning/free-provisioning.md) 布建指南。
 
 > [!NOTE]
 > 開始之前，請務必先接受 [Apple Developer 入口網站](https://developer.apple.com/account/) 或 [App Store Connect](https://appstoreconnect.apple.com/)中的任何授權合約。
