@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms命令介面
-description: 本文說明如何使用資料系結來執行命令屬性 Xamarin.Forms 。 命令介面可針對比較適合 MVVM 架構的命令實作，提供一種替代方法。
+description: 本文說明如何使用資料系結來執行 Command 屬性 Xamarin.Forms 。 命令介面可針對比較適合 MVVM 架構的命令實作，提供一種替代方法。
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
@@ -10,16 +10,16 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 253255f08cec6f08e03df94798c8572f7cf10f30
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ad36bd5efe09909753fed948a961a690feb0592a
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139720"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964658"
 ---
-# <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms命令介面
+# <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.Forms命令介面
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 在 Model-View-ViewModel (MVVM) 架構中，資料繫結是在 ViewModel (這通常是衍生自 `INotifyPropertyChanged` 的類別) 中屬性與檢視 (這通常是 XAML 檔案) 的屬性之間定義。 有時候應用程式需要超越這些屬性繫結，方法是要求使用者起始會影響 ViewModel 某些項目的命令。 這些命令通常是透過按鈕點擊或手指點選發出訊號，傳統上會以 `Button` 的 `Clicked` 事件處理常式或 `TapGestureRecognizer` 的 `Tapped` 事件處理常式在程式碼後置檔案中加以處理。
 
@@ -27,18 +27,18 @@ ms.locfileid: "84139720"
 
 為了允許 `Button` 與 ViewModel 之間的資料繫結，`Button` 會定義兩個屬性：
 
-- [`Command`](xref:Xamarin.Forms.Button.Command)類型為[`System.Windows.Input.ICommand`](xref:System.Windows.Input.ICommand)
-- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter)類型為`Object`
+- [`Command`](xref:Xamarin.Forms.Button.Command) 型別為 [`System.Windows.Input.ICommand`](xref:System.Windows.Input.ICommand)
+- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) 型別為 `Object`
 
 若要使用命令介面，您需要定義以 `Button` 的 `Command` 屬性為目標的資料繫結，其中來源是類型為 `ICommand` 的 ViewModel。 ViewModel 包含程式碼，這些程式碼與點擊按鈕時即會執行的 `ICommand` 屬性建立關聯。 如果程式碼全都繫結至 ViewModel 中的相同 `ICommand` 屬性，則您可將 `CommandParameter` 設定為任意資料來區別多個按鈕。
 
 下列類別也會定義 `Command` 和 `CommandParameter` 屬性：
 
-- [`MenuItem`](xref:Xamarin.Forms.MenuItem)因此， [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 衍生自`MenuItem`
-- [`TextCell`](xref:Xamarin.Forms.TextCell)因此， [`ImageCell`](xref:Xamarin.Forms.ImageCell) 衍生自`TextCell`
+- [`MenuItem`](xref:Xamarin.Forms.MenuItem) 因此，也 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 就是衍生自 `MenuItem`
+- [`TextCell`](xref:Xamarin.Forms.TextCell) 因此，也 [`ImageCell`](xref:Xamarin.Forms.ImageCell) 就是衍生自 `TextCell`
 - [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)
 
-[`SearchBar`](xref:Xamarin.Forms.SearchBar)定義 [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand) 類型的屬性 `ICommand` 和 [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) 屬性。 的 [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) 屬性 [`ListView`](xref:Xamarin.Forms.ListView) 也是型別 `ICommand` 。
+[`SearchBar`](xref:Xamarin.Forms.SearchBar) 定義 [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand) 型別和屬性（property）的屬性（property） `ICommand` [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) 。 的 [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) 屬性 [`ListView`](xref:Xamarin.Forms.ListView) 也是型別 `ICommand` 。
 
 所有這些命令都可以用不相依於檢視中特定使用者介面物件的方式，在 ViewModel 中進行處理。
 
@@ -83,9 +83,9 @@ ViewModel 還必須參考實作 `ICommand` 介面的類別。 稍後即會描述
 
 當您的 ViewModel 定義類型為 `ICommand` 的屬性時，ViewModel 必須也包含或參考實作 `ICommand` 介面的類別。 這個類別必須包含或參考 `Execute` 和 `CanExecute` 方法，而且只要 `CanExecute` 方法可能傳回不同的值時，就會引發 `CanExecuteChanged` 事件。
 
-您可以自行撰寫這種類別，也可以使用其他人所撰寫的類別。 由於 `ICommand` 屬於 Microsoft Windows 的一部分，因此它已在 Windows MVVM 應用程式中使用多年。 使用執行的 Windows 類別可 `ICommand` 讓您在 windows 應用程式和應用程式之間共用 viewmodel Xamarin.Forms 。
+您可以自行撰寫這種類別，也可以使用其他人所撰寫的類別。 由於 `ICommand` 屬於 Microsoft Windows 的一部分，因此它已在 Windows MVVM 應用程式中使用多年。 使用 implements 的 Windows 類別可 `ICommand` 讓您在 windows 應用程式與應用程式之間共用 viewmodel Xamarin.Forms 。
 
-如果在 Windows 與之間共用 Viewmodel Xamarin.Forms 不是問題，則您可以使用 [`Command`](xref:Xamarin.Forms.Command) [`Command<T>`](xref:Xamarin.Forms.Command`1) 包含在中的或類別 Xamarin.Forms 來執行 `ICommand` 介面。 這些類別可讓您在類別建構函式中指定 `Execute` 和 `CanExecute` 方法的主體。 當您使用 `CommandParameter` 屬性來區別多個繫結至相同 `ICommand` 屬性的檢視時，請使用 `Command<T>`，而在不需要這麼做時，請使用更簡單的 `Command` 類別。
+如果在 Windows 之間共用 Viewmodel，而 Xamarin.Forms 不是考慮，您可以使用 [`Command`](xref:Xamarin.Forms.Command) [`Command<T>`](xref:Xamarin.Forms.Command`1) 包含在中的或類別 Xamarin.Forms 來執行 `ICommand` 介面。 這些類別可讓您在類別建構函式中指定 `Execute` 和 `CanExecute` 方法的主體。 當您使用 `CommandParameter` 屬性來區別多個繫結至相同 `ICommand` 屬性的檢視時，請使用 `Command<T>`，而在不需要這麼做時，請使用更簡單的 `Command` 類別。
 
 ## <a name="basic-commanding"></a>基本命令
 
@@ -282,7 +282,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 以下是其運作方式：使用者第一次按下 **New** 按鈕。 這會啟用項目表單，但停用 **New** 按鈕。 使用者接著輸入姓名、年齡和技能。 在編輯期間的任何時間，使用者可以按下 **Cancel** (取消) 按鈕，以便從頭開始。 只有在已輸入姓名和有效的年齡時，才會啟用 **Submit** (提交) 按鈕。 按下此 **Submit** 按鈕，就會將人員資料傳送到 `ListView` 所顯示的集合。 按下 **Cancel** 或 **Submit** 按鈕之後，系統會清除項目表單，並再次啟用 **New** 按鈕。
 
-左側的 iOS 畫面會顯示輸入有效年齡之前的配置。 Android 螢幕會顯示在設定年齡之後啟用 [**提交**] 按鈕：
+左側的 iOS 畫面會顯示輸入有效年齡之前的配置。 Android 畫面會顯示已設定存留期之後啟用的 [ **提交** ] 按鈕：
 
 [![Person 專案](commanding-images/personentry-small.png "Person 專案")](commanding-images/personentry-large.png#lightbox "Person 專案")
 
@@ -426,7 +426,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 您可以針對這些共用的 `ICommand` 屬性繼續使用 `Command` 類別。 此類別可定義[替代的建構函式](xref:Xamarin.Forms.Command.%23ctor(System.Action{System.Object},System.Func{System.Object,System.Boolean}))，以接受所含參數的類型為 `Object` 的 `execute` 和 `canExecute` 方法。 這是 `CommandParameter` 傳遞給這些方法的方式。
 
-不過，使用時 `CommandParameter` ，最簡單的方法是使用泛型 [`Command<T>`](xref:Xamarin.Forms.Command`1) 類別來指定要設定為之物件的型別 `CommandParameter` 。 您指定的 `execute` 和 `canExecute` 方法具有該類型的參數。
+不過，在使用時， `CommandParameter` 最簡單的方法是使用泛型 [`Command<T>`](xref:Xamarin.Forms.Command`1) 類別來指定設定為的物件類型 `CommandParameter` 。 您指定的 `execute` 和 `canExecute` 方法具有該類型的參數。
 
 **Decimal Keyboard** (十進位鍵台) 頁面示範如何實作輸入十進位數字的鍵台，藉以說明這項技巧。 `Grid` 的 `BindingContext` 是 `DecimalKeypadViewModel`。 此 ViewModel 的 `Entry` 屬性會繫結至 `Label` 的 `Text` 屬性。 所有 `Button` 物件都會繫結至 ViewModel 中的各種命令：`ClearCommand`、`BackspaceCommand` 和 `DigitCommand`：
 
@@ -535,7 +535,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 以下是運作中的程式：
 
-[![十進位數鍵盤](commanding-images/decimalkeyboard-small.png "十進位數鍵盤")](commanding-images/decimalkeyboard-large.png#lightbox "十進位數鍵盤")
+[![十進位鍵盤](commanding-images/decimalkeyboard-small.png "十進位鍵盤")](commanding-images/decimalkeyboard-large.png#lightbox "十進位鍵盤")
 
 請注意，所有三個螢幕擷取畫面中小數點的按鈕已被停用，因為輸入的數字已包含小數點。
 
@@ -689,10 +689,6 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 所有 `execute` 方法都會呼叫 `RefreshCanExecutes`，後者接著會針對 `DigitCommand` 和 `ClearCommand` 這兩者呼叫 `ChangeCanExecute`。 這可確保小數點和退格鍵按鈕，都會根據目前的輸入數字序列啟用或停用。
 
-## <a name="adding-commands-to-existing-views"></a>將命令新增至現有的檢視
-
-如果您想要搭配不支援的視圖使用命令介面，可以使用 Xamarin.Forms 將事件轉換成命令的行為。 [**可重複使用的 EventToCommandBehavior**](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md) 一文將描述此資訊。
-
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>導覽功能表的非同步命令
 
 命令可讓實作導覽功能表更加方便，例如[**資料繫結示範**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)程式本身的導覽功能表。 以下是 **MainPage.xaml** 的一部分：
@@ -761,7 +757,7 @@ public partial class MainPage : ContentPage
 
 建構函式還會將頁面的 `BindingContext` 設定為其本身，以便繫結參考此類別中的 `NavigateCommand`。
 
-此建構函式中的程式碼順序有所不同：`InitializeComponent` 呼叫會導致剖析 XAML，但該時間無法解析名為 `NavigateCommand` 的屬性繫結，因為 `BindingContext` 設定為 `null`。 如果在 `BindingContext` 設定*之前*于函式中設定 `NavigateCommand` ，則可以在設定時解析系結 `BindingContext` ，但當時 `NavigateCommand` 仍為 `null` 。 在 `BindingContext` 之後設定 `NavigateCommand` 不會影響繫結，因為變更 `NavigateCommand` 並不會引發 `PropertyChanged` 事件，且繫結不知道 `NavigateCommand` 現在是有效的。
+此建構函式中的程式碼順序有所不同：`InitializeComponent` 呼叫會導致剖析 XAML，但該時間無法解析名為 `NavigateCommand` 的屬性繫結，因為 `BindingContext` 設定為 `null`。 如果在 `BindingContext` 設定 *之前先*在函式中設定，則在 `NavigateCommand` 設定時可以解析系結 `BindingContext` ，但在該時間， `NavigateCommand` 仍是 `null` 。 在 `BindingContext` 之後設定 `NavigateCommand` 不會影響繫結，因為變更 `NavigateCommand` 並不會引發 `PropertyChanged` 事件，且繫結不知道 `NavigateCommand` 現在是有效的。
 
 在呼叫 `InitializeComponent` 之前同時設定 `NavigateCommand` 和 `BindingContext` (依任意順序) 可正常運作，因為 XAML 剖析器遇到繫結定義時，已設定繫結的這兩個元件。
 
