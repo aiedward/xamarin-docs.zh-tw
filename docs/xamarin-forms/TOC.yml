@@ -171,13 +171,8 @@ items:
             href: app-fundamentals/behaviors/attached.md
           - name: Xamarin.Forms 行為
             href: app-fundamentals/behaviors/creating.md
-          - name: 可重複使用的行為
-            href: app-fundamentals/behaviors/reusable/index.md
-            items:
-              - name: EffectBehavior
-                href: app-fundamentals/behaviors/reusable/effect-behavior.md
-              - name: EventToCommandBehavior
-                href: app-fundamentals/behaviors/reusable/event-to-command-behavior.md
+          - name: 可重複使用的 EffectBehavior
+            href: app-fundamentals/behaviors/effect-behavior.md
       - name: 自訂轉譯器
         href: app-fundamentals/custom-renderer/index.md
         items:
