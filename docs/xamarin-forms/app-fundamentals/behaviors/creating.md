@@ -1,6 +1,6 @@
 ---
 title: 建立 Xamarin.Forms 行為
-description: Xamarin.Forms行為是透過衍生自行為或行為類別來建立 <T> 。 本文示範如何建立和使用 Xamarin.Forms 行為。
+description: Xamarin.Forms 行為是藉由衍生自行為或行為類別來建立 <T> 。 本文示範如何建立和使用 Xamarin.Forms 行為。
 ms.prod: xamarin
 ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
 ms.technology: xamarin-forms
@@ -11,25 +11,25 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
+ms.lasthandoff: 09/10/2020
 ms.locfileid: "86933704"
 ---
-# <a name="create-xamarinforms-behaviors"></a>建立 Xamarin.Forms 行為
+# <a name="create-no-locxamarinforms-behaviors"></a>建立 Xamarin.Forms 行為
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
-_Xamarin.Forms行為是由衍生自行為或行為 &lt; T 類別所建立 &gt; 。本文示範如何建立和使用 Xamarin.Forms 行為。_
+_Xamarin.Forms 行為是藉由衍生自行為或行為 &lt; T 類別來建立 &gt; 。本文示範如何建立和使用 Xamarin.Forms 行為。_
 
 ## <a name="overview"></a>概觀
 
-建立行為的流程如下所示 Xamarin.Forms ：
+建立行為的程式如下所示 Xamarin.Forms ：
 
 1. 建立繼承自或類別的類別 [`Behavior`](xref:Xamarin.Forms.Behavior) [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) ，其中 `T` 是應該套用行為的控制項類型。
-1. 覆寫 [ `OnAttachedTo` ] （x： Xamarin.Forms 。Behavior'1. OnAttachedTo （ Xamarin.Forms 。BindableObject））方法來執行任何必要的安裝程式。
-1. 覆寫 [ `OnDetachingFrom` ] （x： Xamarin.Forms 。Behavior'1. OnDetachingFrom （ Xamarin.Forms 。BindableObject））方法來執行任何必要的清除。
+1. 覆寫 [ `OnAttachedTo` ] (x： Xamarin.Forms 。Behavior'1. OnAttachedTo (Xamarin.Forms 。BindableObject) # A3 方法，以執行任何必要的設定。
+1. 覆寫 [ `OnDetachingFrom` ] (x： Xamarin.Forms 。Behavior'1. OnDetachingFrom (Xamarin.Forms 。BindableObject) # A3 方法，以執行任何必要的清除。
 1. 實作行為的核心功能。
 
 這會導致下列程式碼範例所示的結構：
@@ -53,15 +53,15 @@ public class CustomBehavior : Behavior<View>
 }
 ```
 
-[ `OnAttachedTo` ] （X： Xamarin.Forms 。Behavior'1. OnAttachedTo （ Xamarin.Forms 。BindableObject））方法會在行為附加至控制項之後立即引發。 這個方法會接收到其附加至控制項的參考，並可用來註冊事件處理常式，或執行其他支援行為功能的必要設定。 例如，您可以訂閱控制項上的事件。 然後，就可以用事件的事件處理常式來實作行為功能。
+[ `OnAttachedTo` ] (x： Xamarin.Forms 。Behavior'1. OnAttachedTo (Xamarin.Forms 。BindableObject) # A3 方法會在行為附加至控制項之後立即引發。 這個方法會接收到其附加至控制項的參考，並可用來註冊事件處理常式，或執行其他支援行為功能的必要設定。 例如，您可以訂閱控制項上的事件。 然後，就可以用事件的事件處理常式來實作行為功能。
 
-[ `OnDetachingFrom` ] （X： Xamarin.Forms 。Behavior'1. OnDetachingFrom （ Xamarin.Forms 。BindableObject））方法會在從控制項中移除行為時引發。 這個方法會接收到其附加至的控制項參考，並用以執行任何必要的清除。 例如，您可以取消訂閱控制項上的事件來防止記憶體流失。
+[ `OnDetachingFrom` ] (x： Xamarin.Forms 。Behavior'1. OnDetachingFrom (Xamarin.Forms 。BindableObject) # A3 方法會在從控制項移除行為時引發。 這個方法會接收到其附加至的控制項參考，並用以執行任何必要的清除。 例如，您可以取消訂閱控制項上的事件來防止記憶體流失。
 
-然後，將其附加至適當控制項的集合，即可取用此行為 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 。
+然後，您可以將行為附加至適當控制項的集合，藉以取用該行為 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 。
 
-## <a name="creating-a-xamarinforms-behavior"></a>建立 Xamarin.Forms 行為
+## <a name="creating-a-no-locxamarinforms-behavior"></a>建立 Xamarin.Forms 行為
 
-範例應用程式會示範 `NumericValidationBehavior` ，它會將使用者輸入的值反白顯示為 [`Entry`](xref:Xamarin.Forms.Entry) 紅色的控制項（如果不是） `double` 。 此行為會顯示在下列程式碼範例中：
+範例應用程式會示範 `NumericValidationBehavior` ，它會將使用者輸入的值反白顯示為 [`Entry`](xref:Xamarin.Forms.Entry) 紅色的控制項（如果不是的話） `double` 。 此行為會顯示在下列程式碼範例中：
 
 ```csharp
 public class NumericValidationBehavior : Behavior<Entry>
@@ -87,14 +87,14 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior`衍生自 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 類別，其中 `T` 是 [`Entry`](xref:Xamarin.Forms.Entry) 。 [ `OnAttachedTo` ] （X： Xamarin.Forms 。行為 `1.OnAttachedTo(Xamarin.Forms.BindableObject)) method registers an event handler for the [` TextChanged `](xref:Xamarin.Forms.InputView.TextChanged) event, with the [` OnDetachingFrom `](xref:Xamarin.Forms.Behavior` 1. OnDetachingFrom （ Xamarin.Forms 。BindableObject））方法會取消註冊 `TextChanged` 事件，以防止記憶體流失。 行為的核心功能是由方法所提供 `OnEntryTextChanged` ，它會剖析使用者輸入的值 `Entry` ，並將 [`TextColor`](xref:Xamarin.Forms.InputView.TextColor) 屬性設定為紅色（如果值不是） `double` 。
+`NumericValidationBehavior`衍生自 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 類別，其中 `T` 是 [`Entry`](xref:Xamarin.Forms.Entry) 。 [ `OnAttachedTo` ] (x： Xamarin.Forms 。行為 `1.OnAttachedTo(Xamarin.Forms.BindableObject)) method registers an event handler for the [` TextChanged `](xref:Xamarin.Forms.InputView.TextChanged) event, with the [` OnDetachingFrom `](xref:Xamarin.Forms.Behavior` 1. OnDetachingFrom (Xamarin.Forms 。BindableObject) # A3 方法取消註冊 `TextChanged` 事件，以避免記憶體流失。 行為的核心功能是由方法所提供，這個方法會將 `OnEntryTextChanged` 使用者輸入的值剖析為 `Entry` ， [`TextColor`](xref:Xamarin.Forms.InputView.TextColor) 如果值不是，則會將屬性設定為紅色 `double` 。
 
 > [!NOTE]
-> Xamarin.Forms不會設定 `BindingContext` 行為的，因為行為可以透過樣式共用和套用到多個控制項。
+> Xamarin.Forms 不會設定 `BindingContext` 行為的，因為可以透過樣式來共用行為，並將其套用至多個控制項。
 
-## <a name="consuming-a-xamarinforms-behavior"></a>使用 Xamarin.Forms 行為
+## <a name="consuming-a-no-locxamarinforms-behavior"></a>使用 Xamarin.Forms 行為
 
-每個 Xamarin.Forms 控制項都有一個 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 集合，可以加入一個或多個行為，如下列 XAML 程式碼範例所示：
+每個 Xamarin.Forms 控制項都有一個 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 集合，可新增一或多個行為，如下列 XAML 程式碼範例所示：
 
 ```xaml
 <Entry Placeholder="Enter a System.Double">
@@ -104,7 +104,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 </Entry>
 ```
 
-[`Entry`](xref:Xamarin.Forms.Entry)下列程式碼範例顯示 c # 中的對等用法：
+[`Entry`](xref:Xamarin.Forms.Entry)下列程式碼範例顯示 c # 中的對等專案：
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
@@ -113,14 +113,14 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 在執行階段，行為會根據行為實作回應與控制項的互動。 下列螢幕擷取畫面示範行為如何回應無效的輸入：
 
-[![具有行為的範例應用程式 Xamarin.Forms](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "具有 [！的範例應用程式OP.無-LOC （Xamarin）] 行為")
+[![範例應用程式搭配：：：非 loc (Xamarin. Forms) ：：：行為](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "範例應用程式搭配：：：非 loc (Xamarin. Forms) ：：：行為")
 
 > [!NOTE]
 > 行為是針對特定的控制項類型 (或可套用至許多控制項的 Superclass) 所撰寫，且應該只新增至相容的控制項。 嘗試將行為附加至不相容的控制項會導致擲回例外狀況。
 
-### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>使用 Xamarin.Forms 樣式的行為
+### <a name="consuming-a-no-locxamarinforms-behavior-with-a-style"></a>Xamarin.Forms使用樣式的行為
 
-行為也可以明確或隱含樣式來使用。 不過，不可能建立設定控制項屬性的樣式， [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 因為屬性是唯讀的。 解決方案是將附加屬性新增至會控制新增和移除行為的行為類別。 此程序如下：
+行為也可以明確或隱含樣式來使用。 但是，無法建立設定控制項屬性的樣式， [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 因為屬性是唯讀的。 解決方案是將附加屬性新增至會控制新增和移除行為的行為類別。 此程序如下：
 
 1. 將附加屬性新增至行為類別，其用於控制所要附加之控制項的行為新增與移除。 請確保此附加屬性會註冊 `propertyChanged` 委派，當屬性值變更時，就會執行此委派。
 1. 建立附加屬性的 `static` getter 和 setter。
@@ -177,7 +177,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 </Style>
 ```
 
-[`Style`](xref:Xamarin.Forms.Style)可以套用至 [`Entry`](xref:Xamarin.Forms.Entry) 控制項，方法是 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 使用標記延伸將其屬性設為 `Style` 實例 `StaticResource` ，如下列程式碼範例所示：
+[`Style`](xref:Xamarin.Forms.Style)可以套用至 [`Entry`](xref:Xamarin.Forms.Entry) 控制項，方法是 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 使用標記延伸將其屬性設定為 `Style` 實例 `StaticResource` ，如下列程式碼範例所示：
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" Style="{StaticResource NumericValidationStyle}">
@@ -190,7 +190,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 ### <a name="removing-a-behavior-from-a-control"></a>移除控制項的行為
 
-[ `OnDetachingFrom` ] （X： Xamarin.Forms 。行為 `1.OnDetachingFrom(Xamarin.Forms.BindableObject)) method is fired when a behavior is removed from a control, and is used to perform any required cleanup such as unsubscribing from an event to prevent a memory leak. However, behaviors are not implicitly removed from controls unless the control's [` 行為 `](xref:Xamarin.Forms.VisualElement.Behaviors) collection is modified by a ` 移除 ` or ` 清除 ` method. The following code example demonstrates removing a specific behavior from a control's ` 行為的集合：
+[ `OnDetachingFrom` ] (x： Xamarin.Forms 。行為 `1.OnDetachingFrom(Xamarin.Forms.BindableObject)) method is fired when a behavior is removed from a control, and is used to perform any required cleanup such as unsubscribing from an event to prevent a memory leak. However, behaviors are not implicitly removed from controls unless the control's [` 行為會 `](xref:Xamarin.Forms.VisualElement.Behaviors) collection is modified by a ` 移除 ` or ` 明確 ` method. The following code example demonstrates removing a specific behavior from a control's ` 行為的集合：
 
 ```csharp
 var toRemove = entry.Behaviors.FirstOrDefault (b => b is NumericValidationBehavior);
@@ -199,7 +199,7 @@ if (toRemove != null) {
 }
 ```
 
-或者， [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 可以清除控制項的集合，如下列程式碼範例所示：
+或者，您 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 可以清除控制項的集合，如下列程式碼範例所示：
 
 ```csharp
 entry.Behaviors.Clear();
@@ -207,13 +207,13 @@ entry.Behaviors.Clear();
 
 另請注意，當頁面從導覽堆疊快顯時，控制項的行為不會以隱含方式移除。 而是必須在頁面超出範圍之前先明確移除它們。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文示範了如何建立和使用 Xamarin.Forms 行為。 Xamarin.Forms行為是藉由衍生自 [`Behavior`](xref:Xamarin.Forms.Behavior) 或類別來建立 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 。
+本文示範如何建立和使用 Xamarin.Forms 行為。 Xamarin.Forms 行為是藉由衍生自 [`Behavior`](xref:Xamarin.Forms.Behavior) 或類別來建立 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 。
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms行為（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
-- [Xamarin.Forms使用樣式套用的行為（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
+- [Xamarin.Forms 行為 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+- [Xamarin.Forms 使用樣式 (範例套用的行為) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
 - [行為](xref:Xamarin.Forms.Behavior)
 - [行為\<T>](xref:Xamarin.Forms.Behavior`1)
