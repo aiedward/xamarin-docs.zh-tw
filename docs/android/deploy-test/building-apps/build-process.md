@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/11/2020
-ms.openlocfilehash: e047bb5acd341c665ad2ee9cfbb8f51cfa013646
-ms.sourcegitcommit: 0f92ef326ed2975ee735c8e98df42d5b23f4947a
+ms.openlocfilehash: d4c8e9ba717602aa30cb736957da5a61d2a91130
+ms.sourcegitcommit: e4a51ca35887dd3e45016cf10111cee68d343fbe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/11/2020
-ms.locfileid: "90026131"
+ms.locfileid: "90027603"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -231,7 +231,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   只有當設定為時，這個屬性才會相關 `$(AndroidPackageFormat)` `aab` 。
 
-  已在 Xamarin. Android 10.2 中新增。
+  已在 Xamarin. Android 10.3 中新增。
 
   [bundle-config-format]: https://developer.android.com/studio/build/building-cmdline#bundleconfig
 
@@ -680,7 +680,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 - **AndroidCodegenTarget** &ndash; 可控制程式碼產生目標 ABI 的字串屬性。 可能的值包括：
 
-  - **XamarinAndroid**：使用自 Mono for Android 1.0 起便存在的 JNI 繫結 API。 使用 Xamarin.Android 5.0 或更新版本所建置的繫結組件只可在 Xamarin.Android 5.0 或更新版本 (API/ABI 新增項目) 上執行，但「來源」** 與舊版產品相容。
+  - **XamarinAndroid**：使用自 Mono for Android 1.0 之後存在的 JNI 系結 API。 使用 Xamarin.Android 5.0 或更新版本所建置的繫結組件只可在 Xamarin.Android 5.0 或更新版本 (API/ABI 新增項目) 上執行，但「來源」** 與舊版產品相容。
 
   - **XAJavaInterop1**：在 JNI 引動過程使用 Java.Interop。 使用 `XAJavaInterop1` 的繫結組件只可使用 Xamarin.Android 6.1 或更新版本來建置及執行。 Xamarin.Android 6.1 及更新版本使用此值繫結 `Mono.Android.dll`。
 
@@ -706,13 +706,13 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   已在 Xamarin.Android 9.1 中新增。
 
-- **AndroidExplicitCrunch** &ndash; 在 Xamarin. Android 10.4 中已不再支援。
-
-- **AndroidResgenExtraArgs** &ndash; 指定要在處理 Android 資產和資源時傳遞給 **aapt** 命令的其他命令列選項。
+- **AndroidExplicitCrunch** &ndash; 在 Xamarin. Android 11.0 中已不再支援。
 
 - **AndroidR8IgnoreWarnings** &ndash; 自動指定的 `-ignorewarnings` proguard 規則 `r8` 。 這可讓您 `r8` 繼續進行 dex 編譯，即使遇到特定警告也是如此。 預設為 `True` ，但可以設定為， `False` 以強制執行更嚴格的行為。 如需詳細資訊，請參閱 [ProGuard 手冊](https://www.guardsquare.com/products/proguard/manual/usage) 。
 
-  已在 Xamarin. Android 10.4 中新增。
+  已在 Xamarin. Android 10.3 中新增。
+
+- **AndroidResgenExtraArgs** &ndash; 指定要在處理 Android 資產和資源時傳遞給 **aapt** 命令的其他命令列選項。
 
 - **AndroidResgenFile** &ndash; 指定要產生之資源檔的名稱。 預設範本會將此值設定為 `Resource.designer.cs`。
 
@@ -911,14 +911,6 @@ Enter key password for keystore.alias
 
 路徑探查會使用原生程式庫的父目錄名稱來指定程式庫的目標 ABI。 因此，如果您將 `lib/armeabi-v7a/libfoo.so` 新增至組建，則會以 `armeabi-v7a` 的形式來「探查」ABI。
 
-### <a name="androidresourceanalysisconfig"></a>AndroidResourceAnalysisConfig
-
-組建動作會將檔案 `AndroidResourceAnalysisConfig` 標示為 Xamarin Android Designer 配置診斷工具的嚴重性層級設定檔案。 這項功能目前僅適用于配置編輯器，不適用於組建訊息。
-
-如需詳細資訊，請參閱 [Android 資源分析檔](https://aka.ms/androidresourceanalysis) 。
-
-已在 Xamarin. Android 10.2 中新增。
-
 #### <a name="item-attribute-name"></a>項目屬性名稱
 
 **Abi** &ndash; 指定原生程式庫的 ABI。
@@ -967,6 +959,14 @@ Enter key password for keystore.alias
   </AndroidResource>
 </ItemGroup>
 ```
+
+### <a name="androidresourceanalysisconfig"></a>AndroidResourceAnalysisConfig
+
+組建動作會將檔案 `AndroidResourceAnalysisConfig` 標示為 Xamarin Android Designer 配置診斷工具的嚴重性層級設定檔案。 這項功能目前僅適用于配置編輯器，不適用於組建訊息。
+
+如需詳細資訊，請參閱 [Android 資源分析檔](https://aka.ms/androidresourceanalysis) 。
+
+已在 Xamarin. Android 10.2 中新增。
 
 ### <a name="content"></a>Content
 
