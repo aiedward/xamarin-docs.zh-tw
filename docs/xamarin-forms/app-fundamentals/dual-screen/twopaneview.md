@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms雙畫面版面配置
-description: 本指南說明如何使用 Xamarin.Forms TwoPaneView，將您的應用程式體驗優化，例如 Surface 雙核處理器技術和 Surface Neo 等雙畫面裝置。
+title: Xamarin.Forms 雙螢幕版面配置
+description: 本指南說明如何使用 Xamarin.Forms TwoPaneView 將雙螢幕裝置（例如 Surface 雙核和 Surface Neo）的應用程式體驗優化。
 ms.prod: xamarin
 ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
 ms.technology: xamarin-forms
@@ -10,16 +10,14 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 734dea456af56f4103691e0368ae72202bce9556
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: d4582a8c27f1fe63a60f48830113f3a5514c56f9
+ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918238"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832251"
 ---
-# <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.FormsTwoPaneView 版面配置
-
-![發行前版本 API](~/media/shared/preview.png)
+# <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.Forms TwoPaneView 版面配置
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -27,9 +25,9 @@ ms.locfileid: "87918238"
 
 ## <a name="set-up-twopaneview"></a>設定 TwoPaneView
 
-請依照下列指示，在您的應用程式中建立雙畫面版面配置：
+請遵循下列指示，在您的應用程式中建立雙螢幕版面配置：
 
-1. 依照開始[使用指示來](index.md)新增 NuGet，並設定 Android `MainActivity` 類別。
+1. 遵循 [快速](index.md) 入門指示來新增 NuGet 並設定 Android `MainActivity` 類別。
 1. `TwoPaneView`使用下列 XAML 從基本開始：
 
     ```xaml
@@ -51,15 +49,15 @@ ms.locfileid: "87918238"
     ```
 
 > [!TIP]
-> 上述 XAML 會省略元素中的許多通用屬性 `ContentPage` 。 將新增 `TwoPaneView` 至您的應用程式時，請記得宣告 `xmlns:dualScreen` 命名空間，如下所示。
+> 上述 XAML 會省略專案中的許多常見屬性 `ContentPage` 。 將加入 `TwoPaneView` 至您的應用程式時，請記得宣告 `xmlns:dualScreen` 命名空間，如下所示。
 
 ## <a name="understand-twopaneview-modes"></a>了解 TwoPaneView 模式
 
 只能啟用下列其中一項模式：
 
 - `SinglePane` 表示目前只會顯示一個窗格。
-- `Wide`：兩個窗格會水平配置。 窗格會一左一右擺放。 當使用雙螢幕而且裝置為直向時，會採用此模式。
-- `Tall`：兩個窗格會垂直配置。 窗格會一上一下擺放。 當使用雙螢幕而且裝置為橫向時，會採用此模式。
+- `Wide`：兩個窗格會水平配置。 其中一個窗格置於左邊，另一個則置於右邊。 當使用雙螢幕而且裝置為直向時，會採用此模式。
+- `Tall`：兩個窗格會垂直配置。 其中一個窗格置於上方，另一個則置於下方。 當使用雙螢幕而且裝置為橫向時，會採用此模式。
 
 ## <a name="control-twopaneview-when-its-only-on-one-screen"></a>當 TwoPaneView 只在一個螢幕上時進行控制
 
@@ -77,8 +75,8 @@ ms.locfileid: "87918238"
 
 下列屬性適用於 `TwoPaneView` 佔用單一螢幕或兩個螢幕時：
 
-- `TallModeConfiguration`表示在 [高] 模式中，如果您只想要顯示 TwoPaneViewPriority 所定義的單一窗格，則為上/下的相片順序。
-- `WideModeConfiguration`表示在寬模式中，如果您只想要顯示 TwoPaneViewPriority 所定義的單一窗格，則為左/右相片順序。
+- `TallModeConfiguration` 表示在高模式中，最上方/底部的相片順序，或您只想要顯示只要顯示 twopaneviewpriority 所定義的單一窗格。
+- `WideModeConfiguration` 表示在寬模式下的左/右排列，或您只想要顯示只要顯示 twopaneviewpriority 所定義的單一窗格。
 - `PanePriority` 決定在處於 SinglePane 模式中時，是否要顯示 Pane1 或 Pane2。
 
 ## <a name="related-links"></a>相關連結

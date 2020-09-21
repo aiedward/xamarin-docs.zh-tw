@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms雙畫面設計模式
+title: Xamarin.Forms 雙螢幕設計模式
 description: 本指南說明如何 Xamarin.Forms 支援針對雙螢幕裝置優化的各種不同設計模式。
 ms.prod: xamarin
 ms.assetid: 3176d792-6dba-4e00-b463-497c58678ee9
@@ -10,16 +10,14 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b6d2dd1d6bdfd071ffb8fc52396cb6b2d73416e2
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 74f06f88cd974d774d3b2527505bb45b3db03191
+ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918446"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832303"
 ---
-# <a name="no-locxamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms雙畫面設計模式
-
-![發行前版本 API](~/media/shared/preview.png)
+# <a name="no-locxamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms 雙螢幕設計模式
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -120,7 +118,7 @@ ms.locfileid: "87918446"
 </Grid>
 ```
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)，具有根據轉軸寬度分割的格線版面配置，可提供絕佳的方法來傳遞這種雙重螢幕體驗。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)具有根據轉軸寬度分割之方格配置的，會成為提供這種雙螢幕體驗的理想方法。
 
 ## <a name="dual-view-pattern"></a>雙檢視模式
 

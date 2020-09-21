@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms雙畫面裝置功能
-description: 本指南說明如何使用 Xamarin.Forms DualScreenInfo 類別，將您的應用程式體驗優化，例如 Surface 雙核處理器技術和 Surface Neo 等雙畫面裝置。
+title: Xamarin.Forms 雙螢幕裝置功能
+description: 本指南說明如何使用 Xamarin.Forms DualScreenInfo 類別，將雙螢幕裝置（例如 Surface 雙核和 Surface Neo）的應用程式體驗優化。
 ms.prod: xamarin
 ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
 ms.technology: xamarin-forms
@@ -10,16 +10,14 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1f0ee6b3c509fcdb15653789866a9ec2dc88791
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 8081eb604da0c9d2de07ee17abe05030efdc1005
+ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918216"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832290"
 ---
-# <a name="no-locxamarinforms-dualscreeninfo-helper-class"></a>Xamarin.FormsDualScreenInfo helper 類別
-
-![發行前版本 API](~/media/shared/preview.png)
+# <a name="no-locxamarinforms-dualscreeninfo-helper-class"></a>Xamarin.Forms DualScreenInfo helper 類別
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -27,20 +25,20 @@ ms.locfileid: "87918216"
 
 ## <a name="configure-dualscreeninfo"></a>設定 DualScreenInfo
 
-請依照下列指示，在您的應用程式中建立雙畫面版面配置：
+請遵循下列指示，在您的應用程式中建立雙螢幕版面配置：
 
-1. 依照開始[使用指示來](index.md)新增 NuGet，並設定 Android `MainActivity` 類別。
-1. 將新增 `using Xamarin.Forms.DualScreen;` 至您的類別檔案。
+1. 遵循 [快速](index.md) 入門指示來新增 NuGet 並設定 Android `MainActivity` 類別。
+1. 新增 `using Xamarin.Forms.DualScreen;` 至您的類別檔案。
 1. `DualScreenInfo.Current`在您的應用程式中使用類別。
 
 ## <a name="properties"></a>屬性
 
-- 當跨越兩個螢幕時，`SpanningBounds` 會傳回兩個矩形，表示每個可見區域的界限。 如果視窗未跨越兩個螢幕，則會傳回空陣列。
+- 當跨越兩個螢幕時，`SpanningBounds` 會傳回兩個矩形，表示每個可見區域的界限。 如果未跨越視窗，則會傳回空陣列。
 - `HingeBounds` 表示螢幕上的鉸鏈位置。
 - `IsLandscape`：指出裝置是否為橫向。 因為在應用程式跨越兩個螢幕時，原生方向 API 並不會正確回報方向，所以這會非常有幫助。
 - `SpanMode`：指出版面配置處於直向、橫向或單一窗格模式。
 
-此外， `PropertyChanged` 當任何屬性變更時，也會引發事件，而 `HingeAngleChanged` 當轉軸角度變更時，就會引發事件。
+此外， `PropertyChanged` 當任何屬性變更時，就會引發事件，而 `HingeAngleChanged` 當轉軸角度變更時，就會引發此事件。
 
 ## <a name="poll-hinge-angle-on-android-and-uwp"></a>在 Android 和 UWP 上輪詢轉軸角度
 
@@ -48,7 +46,7 @@ ms.locfileid: "87918216"
 
 - `GetHingeAngleAsync`：擷取裝置鉸鏈的目前角度。 使用模擬器時，可以藉由修改壓力感應器來設定 HingeAngle。
 
-您可以從 Android 和 UWP 上的自訂轉譯器叫用此方法。 下列程式碼顯示 Android 自訂轉譯器範例：
+您可以從 Android 和 UWP 的自訂轉譯器叫用此方法。 下列程式碼顯示 Android 自訂轉譯器範例：
 
 ```csharp
 public class HingeAngleLabelRenderer : Xamarin.Forms.Platform.Android.FastRenderers.LabelRenderer
