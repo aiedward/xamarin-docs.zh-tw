@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 822f2ae57241cd51f9e9c4eb2b63c75d30867d83
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1f556e7b63cabcb2a0909927df4970d367338694
+ms.sourcegitcommit: 2d41e287ccf937efa24813151e371298b2b4a582
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79190326"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91102280"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
 
@@ -53,10 +53,13 @@ ms.locfileid: "79190326"
 
 若要建立應用程式識別碼，並選取任何所需的權利，請瀏覽 [Apple Developer 入口網站](https://developer.apple.com/account/)，並遵循下列步驟：
 
-1. 在 [憑證、識別碼與設定檔]**** 區段中選取 [識別碼] > [應用程式識別碼]****。
-2. 按下這個**+** 按鈕並為新應用程式提供**名稱**和**捆綁包 ID。**
-3. 捲動至畫面底部並選取您 Xamarin.iOS 應用程式所需的所有**應用程式服務**。 應用程式服務進一步詳述於[使用 Xamarin.iOS 中的功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南。
-4. 按一下 [繼續]**** 按鈕，並遵循畫面上的指示來建立新的應用程式識別碼。
+1. 登入 [Apple Developer 入口網站](https://developer.apple.com/account/)。 如果您還沒有 Apple ID，請先 [建立 APPLE id](https://appleid.apple.com/account?appId=632&returnUrl=https%3A%2F%2Fdeveloper.apple.com%2Faccount%2F#!&page=create) 。
+2. 移至 [ **憑證、識別碼 & 設定檔** ] 區段，然後移至 [ **識別碼** ] 區段。
+3. 按一下 **+** 頁面頂端的 [識別碼] 標題旁的按鈕。
+4. 選取 **應用程式識別碼** ，然後按一下 [ **繼續**]。 
+5. 選取 [ **應用程式** ]，然後按一下 [ **繼續**]。
+6. 輸入新應用程式的 **描述** 和套件組合 **識別碼** ，然後選取您的 Xamarin iOS 應用程式所需的任何 **功能** 。 應用程式服務進一步詳述於[使用 Xamarin.iOS 中的功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南。 當您完成選擇時，請按一下 [ **繼續**]。
+7. 按一下 [ **註冊** ] 按鈕，完成建立新的應用程式識別碼的程式。
 
 定義應用程式識別碼時，除了選取並設定必要的應用程式服務之外，您也必須藉由編輯 **Info.plist** 和 **Entitlements.plist** 檔案，在 Xamarin.iOS 專案中設定應用程式識別碼和權利。 如需詳細資訊，請查看[使用 Xamarin.iOS 中的權利](~/ios/deploy-test/provisioning/entitlements.md)指南，該指南描述如何建立 **Entitlements.plist** 檔案，以及其所包含之各種權利設定的意義。
 
@@ -78,12 +81,13 @@ iOS 會使用佈建設定檔** 來控制特定應用程式組建的部署方式�
 若要建立並安裝 App Store 佈建設定檔，請遵循下列步驟：
 
 1. 登入 [Apple Developer 入口網站](https://developer.apple.com/account/)。
-2. 在 [憑證、識別碼與設定檔]**** 中，選取 [佈建設定檔] > [散發]****。
-3. 按下該**+** 按鈕,選擇**應用商店**,然後按下 **" 繼續**"。
+2. 移至 [ **憑證、識別碼 & 設定檔** ] 區段，然後移至 [ **設定檔** ] 區段。
+3. 按一下該 **+** 按鈕，選取 [ **IOS 應用程式開發** ] 和 [ **App Store**]，然後按一下 [ **繼續**]。
 4. 從清單中選取應用程式的 [應用程式識別碼]****，然後按一下 [繼續]****。
 5. 選取簽署憑證，然後按一下 [繼續]****。
-6. 輸入 [設定檔名稱]****，然後按一下 [繼續]**** 來產生設定檔。
-7. 使用 Xamarin 的 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)工具，將新建立的佈建設定檔下載至您的 Mac。 如果您是在 Mac 上，也可以直接從 Apple Developer 入口網站下載佈建設定檔，並按兩下該檔案來進行安裝。
+6. 選取要包含在此設定檔中的裝置，然後按一下 [ **繼續**]。
+7. 輸入布建 **設定檔名稱** ，然後按一下 [ **產生** ] 以產生設定檔。
+8. 使用 Xamarin 的 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)工具，將新建立的佈建設定檔下載至您的 Mac。 如果您是在 Mac 上，也可以直接從 Apple Developer 入口網站下載佈建設定檔，並按兩下該檔案來進行安裝。
 
 如需詳細指示，請參閱[建立散發設定檔](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile)與[在 Xamarin.iOS 專案中選取散發設定檔](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile)。
 
@@ -93,60 +97,70 @@ iOS 會使用佈建設定檔** 來控制特定應用程式組建的部署方式�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 從 [Solution Pad]**** 中開啟 **Info.plist**。 選取 [手動佈建]****。 儲存並關閉檔案。
-2. 以滑鼠右鍵按一下 [Solution Pad]**** 中的 [專案名稱]****，選取 [選項]****，然後巡覽至 [iOS 組建]**** 索引標籤。
-3. 將 [組態]**** 設定為 [發行]****，並將 [平台]**** 設定為 [iPhone]****。
-4. 若要使用特定的 iOS SDK 建置，請從 [SDK 版本]**** 清單中進行選取。 否則，請將此值保留為 [預設]****。
-5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大多數情況下,**連結器行為**應設置為**僅連結框架 SDK**的預設值。 使用 **"不連結**"選項可能會導致 Apple 拒絕應用,因為 Xamarin.iOS 中存在非公共 iOS API,該 API 將與**僅連結框架 SDK**選項連結出去。 **連結 All**應謹慎使用,因為它將從專案中的所有程式集(包括第三方庫)中剝離代碼,並且可以剝離第三方庫只能通過連結器無法檢測到的反射來使用的代碼,因為它執行靜態代碼分析以確定正在使用哪些庫代碼。 使用**Link All**時小心謹慎,因為您可能需要手動保留某些類和/或方法等,以避免因缺少代碼而導致的運行時故障。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
-6. 核取 [最佳化 PNG 影像]****，進一步減少您的應用程式大小。
-7. _不應_啟用調試,因為它會使生成不必要地大。
+1. 從 **Solution Pad**中，開啟位於 iOS 專案內的 **plist** 檔案。 
+2. 請確定您是在 **應用程式** 視圖中。 您可以按一下下方導覽列中的選項來設定此選項。
+3. 選取 [ **手動** 布建] 作為簽署選項。 儲存並關閉檔案。
+4. 以滑鼠右鍵按一下 [Solution Pad]**** 中的 [專案名稱]****，選取 [選項]****，然後巡覽至 [iOS 組建]**** 索引標籤。
+5. 將 [組態]**** 設定為 [發行]****，並將 [平台]**** 設定為 [iPhone]****。
+6. 若要使用特定的 iOS SDK 建置，請從 [SDK 版本]**** 清單中進行選取。 否則，請將此值保留為 [預設]****。
+7. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。
+   * 在大部分情況下， **連結器行為** 應該設定為 **僅限連結 Framework sdk**的預設值。
+   * 使用 [ **不要連結** ] 選項可能會導致 Apple 拒絕應用程式，因為在 Xamarin 中，會使用 [ **僅連結 Framework sdk** ] 選項連結的非公用 ios api
+   * **Link all** 應謹慎使用，因為它會從專案中的所有元件（包括協力廠商程式庫）中去除程式碼。 它可以去除協力廠商程式庫只能透過連結器無法偵測到的反映使用的程式碼，因為它會進行靜態程式碼分析，以判斷正在使用的程式庫程式碼。 請小心使用 **Link** ，因為您可能必須手動保留一些類別和（或）方法，以避免因為遺失程式碼而導致執行時間失敗。
+   * 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
 8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
 9. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
-10. 根據您的應用程式需求，也可以考慮調整要使用的 [記憶體回收]**** 類型與 [國際化]**** 設定。
+10. 核取 [最佳化 PNG 影像]****，進一步減少您的應用程式大小。
+11. 不應啟用調試，因為它會使組建 _不_ 必要的大小變大。
+12. 根據您的應用程式需求，也可以考慮調整要使用的**記憶體回收**類型與**國際化**設定。
+    
+    如上所述設定選項之後，您的組建設定看起來應該像這樣：
 
-    設定上述選項之後，您的組建設定看起來應該像這樣：
+    ![iOS 組建設定](publishing-to-the-app-store-images/build-m157.png "iOS 組建設定")
 
-    ![iOS 產生設定](publishing-to-the-app-store-images/build-m157.png "iOS 產生設定")
+    另請參閱《 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md) 指南》，此指南會進一步說明組建設定。
 
-    另請查看 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md)指南，該指南會進一步描述組建設定。
-
-11. 導航到**iOS 捆綁包簽名**選項卡。如果此欄位選項不可編輯,請確保在**Info.plist 檔中**選擇了**手動預配**。
-12. 確定 [組態]**** 設定為 [發行]****，且 [平台]**** 設定為 [iPhone]****。
-13. 將 [簽署身分識別]**** 設定為 [散發 (自動)]****。
-14. 針對 [佈建設定檔]****，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
+13. 流覽至 [ **iOS**套件組合簽署] 索引標籤。如果無法編輯此處的選項，請確定已在**plist**檔案中選取 [**手動**布建]。
+14. 確定 [組態]**** 設定為 [發行]****，且 [平台]**** 設定為 [iPhone]****。
+15. 將 [簽署身分識別]**** 設定為 [散發 (自動)]****。
+16. 針對 [佈建設定檔]****，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
 
     您的專案套件組合簽署選項現在看起來像這樣：
 
-    ![iOS 捆綁簽名](publishing-to-the-app-store-images/bundleSigning-m157.png "iOS 套件組合簽署")
+    ![iOS 套件組合簽署](publishing-to-the-app-store-images/bundleSigning-m157.png "iOS 套件組合簽署")
 
-15. 按一下 [確定]**** 儲存您對專案屬性進行的變更。
+17. 按一下 [確定]**** 儲存您對專案屬性進行的變更。
 
-# <a name="visual-studio-2019"></a>[視覺工作室 2019](#tab/windows)
+# <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/windows)
 
-1. 確保 Visual Studio 2019 已[與 Mac 建構主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+1. 請確定 Visual Studio 2019 已 [與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 以滑鼠右鍵按一下 [方案總管]**** 中的 [專案名稱]****，並選取 [屬性]****。
 3. 瀏覽至 [iOS 組建]**** 索引標籤，並將 [組態]**** 設定為 [發行]****，同時將 [平台]**** 設定為 [iPhone]****。
-4. 要使用特定的 iOS SDK 進行建構,請從**SDK 版本**清單中選擇它。 否則，請將此值保留為 [預設]****。
-5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大多數情況下,**連結器行為**應設置為**僅連結框架 SDK**的預設值。 使用 **"不連結**"選項可能會導致 Apple 拒絕應用,因為 Xamarin.iOS 中存在非公共 iOS API,該 API 將與**僅連結框架 SDK**選項連結出去。 **連結 All**應謹慎使用,因為它將從專案中的所有程式集(即第三方庫)中剝離代碼,並可以剝離第三方庫只能通過連結器無法檢測到的反射來使用的代碼,因為它執行靜態代碼分析以確定正在使用哪些庫代碼。 使用**Link All**時小心謹慎,因為您可能需要手動保留某些類和/或方法等,以避免因缺少代碼而導致的運行時故障。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
-6. 核取 [最佳化 PNG 影像]****，進一步減少您的應用程式大小。
-7. 因為偵錯會使組建產生不必要的大小，所以建議不要啟用。
-8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
-9. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
-10. 根據您的應用程式需求，也可以考慮調整要使用的 [記憶體回收]**** 類型與 [國際化]**** 設定。
+4. 若要使用特定的 iOS SDK 來建立，請從 [ **SDK 版本** ] 清單中選取它。 否則，請將此值保留為 [預設]****。
+5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。
+   * 在大部分情況下， **連結器行為** 應該設定為 **僅限連結 Framework sdk**的預設值。
+   * 使用 [ **不要連結** ] 選項可能會導致 Apple 拒絕應用程式，因為在 Xamarin 中，會使用 [ **僅連結 Framework sdk** ] 選項連結的非公用 ios api
+   * **Link all** 應謹慎使用，因為它會從專案中的所有元件（包括協力廠商程式庫）中去除程式碼。 它可以去除協力廠商程式庫只能透過連結器無法偵測到的反映使用的程式碼，因為它會進行靜態程式碼分析，以判斷正在使用的程式庫程式碼。 請小心使用 **Link** ，因為您可能必須手動保留一些類別和（或）方法，以避免因為遺失程式碼而導致執行時間失敗。
+   * 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
+6. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
+7. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
+8. 核取 [最佳化 PNG 影像]****，進一步減少您的應用程式大小。
+9. 不應啟用調試，因為它會使組建 _不_ 必要的大小變大。
+10. 根據您的應用程式需求，也可以考慮調整要使用的**記憶體回收**類型與**國際化**設定。
 
     設定上述選項之後，您的組建設定看起來應該像這樣：
 
-    ![iOS 產生設定](publishing-to-the-app-store-images/build-w157.png "iOS 產生設定")
+    ![iOS 組建設定](publishing-to-the-app-store-images/build-w157.png "iOS 組建設定")
 
-    另請查看 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md)指南，該指南會進一步描述組建設定。
+    另請參閱《 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md) 指南》，此指南會進一步說明組建設定。
 
-11. 導覽**到 iOS 捆綁套件簽名**選項卡。確保**設定**設定為 **「發布**」**設定**為**iPhone,** 並選擇了**手動預配**。
+11. 流覽至 [ **iOS** 套件組合簽署] 索引標籤。請確定設定 **已設定為** [ **發行**]、[ **平臺** ] 設定為 [ **IPhone**]，並已選取 [ **手動** 布建]。
 12. 將 [簽署身分識別]**** 設定為 [散發 (自動)]****。
 13. 針對 [佈建設定檔]****，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
 
     您的專案套件組合簽署選項現在看起來像這樣：
 
-    ![iOS 捆綁簽名設定](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS 捆綁簽名設定")
+    ![iOS 套件組合簽署設定](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS 套件組合簽署設定")
 
 14. 儲存組建組態並關閉它。
 
@@ -155,27 +169,31 @@ iOS 會使用佈建設定檔** 來控制特定應用程式組建的部署方式�
 1. 確定 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 以滑鼠右鍵按一下 [方案總管]**** 中的 [專案名稱]****，並選取 [屬性]****。
 3. 瀏覽至 [iOS 組建]**** 索引標籤，並將 [組態]**** 設定為 [發行]****，同時將 [平台]**** 設定為 [iPhone]****。
-4. 要使用特定的 iOS SDK 進行建構,請從**SDK 版本**清單中選擇它。 否則，請將此值保留為 [預設]****。
-5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大多數情況下,**連結器行為**應設置為**僅連結框架 SDK**的預設值。 使用 **"不連結**"選項可能會導致 Apple 拒絕應用,因為 Xamarin.iOS 中存在非公共 iOS API,該 API 將與**僅連結框架 SDK**選項連結出去。 **連結 All**應謹慎使用,因為它將從專案中的所有程式集(即第三方庫)中剝離代碼,並可以剝離第三方庫只能通過連結器無法檢測到的反射來使用的代碼,因為它執行靜態代碼分析以確定正在使用哪些庫代碼。 使用**Link All**時小心謹慎,因為您可能需要手動保留某些類和/或方法等,以避免因缺少代碼而導致的運行時故障。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
-6. 核取 [最佳化 PNG 影像]****，進一步減少您的應用程式大小。
-7. 因為偵錯會使組建產生不必要的大小，所以建議不要啟用。
-8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
-9. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
+4. 若要使用特定的 iOS SDK 來建立，請從 [ **SDK 版本** ] 清單中選取它。 否則，請將此值保留為 [預設]****。
+5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。
+   * 在大部分情況下， **連結器行為** 應該設定為 **僅限連結 Framework sdk**的預設值。
+   * 使用 [ **不要連結** ] 選項可能會導致 Apple 拒絕應用程式，因為在 Xamarin 中，會使用 [ **僅連結 Framework sdk** ] 選項連結的非公用 ios api
+   * **Link all** 應謹慎使用，因為它會從專案中的所有元件（包括協力廠商程式庫）中去除程式碼。 它可以去除協力廠商程式庫只能透過連結器無法偵測到的反映使用的程式碼，因為它會進行靜態程式碼分析，以判斷正在使用的程式庫程式碼。 請小心使用 **Link** ，因為您可能必須手動保留某些類別和（或）方法等，以避免因為遺失程式碼而導致執行時間失敗。
+   * 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
+6. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
+7. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
+8. 核取 [最佳化 PNG 影像]****，進一步減少您的應用程式大小。
+9. 不應啟用調試，因為它會使組建 _不_ 必要的大小變大。
 10. 根據您的應用程式需求，也可以考慮調整要使用的 [記憶體回收]**** 類型與 [國際化]**** 設定。
 
     設定上述選項之後，您的組建設定看起來應該像這樣：
 
-    ![iOS 產生設定](publishing-to-the-app-store-images/build-w157.png "iOS 產生設定")
+    ![iOS 組建設定](publishing-to-the-app-store-images/build-w157.png "iOS 組建設定")
 
-    另請查看 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md)指南，該指南會進一步描述組建設定。
+    另請參閱《 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md) 指南》，此指南會進一步說明組建設定。
 
-11. 導覽**到 iOS 捆綁套件簽名**選項卡。確保**設定**設定為 **「發布**」**設定**為**iPhone,** 並選擇了**手動預配**。
+11. 流覽至 [ **iOS** 套件組合簽署] 索引標籤。請確定設定 **已設定為** [ **發行**]、[ **平臺** ] 設定為 [ **IPhone**]，並已選取 [ **手動** 布建]。
 12. 將 [簽署身分識別]**** 設定為 [散發 (自動)]****。
 13. 針對 [佈建設定檔]****，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
 
     您的專案套件組合簽署選項現在看起來像這樣：
 
-    ![iOS 捆綁簽名設定](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS 捆綁簽名設定")
+    ![iOS 套件組合簽署設定](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS 套件組合簽署設定")
 
 14. 巡覽至 [iOS IPA 選項]**** 索引標籤。
 15. 確定 [組態]**** 設定為 [發行]****，且 [平台]**** 設定為 [iPhone]****。
@@ -186,7 +204,7 @@ iOS 會使用佈建設定檔** 來控制特定應用程式組建的部署方式�
 
 17. 若要指定不同於 Xamarin.iOS 專案名稱的 .ipa 檔名，請在 [套件名稱]**** 欄位中輸入它。
 
-    ![iOS 捆綁簽名設定](publishing-to-the-app-store-images/ipaOptions-w157.png "iOS 捆綁簽名設定")
+    ![iOS 套件組合簽署設定](publishing-to-the-app-store-images/ipaOptions-w157.png "iOS 套件組合簽署設定")
 
 18. 儲存組建組態並關閉它。
 
@@ -206,29 +224,29 @@ iOS 會使用佈建設定檔** 來控制特定應用程式組建的部署方式�
 
 1. 在 Visual Studio for Mac 中，選取 [發行]**** 組建組態及要為其建置的裝置 (不是模擬器)。
 
-    ![建構設定與平台選擇](publishing-to-the-app-store-images/chooseConfig-m157.png "建構設定與平台選擇")
+    ![組建設定和平臺選擇](publishing-to-the-app-store-images/chooseConfig-m157.png "組建設定和平臺選擇")
 
-2. 從 **"生成"** 選單中,選擇 **"存檔以進行發佈**"。
-3. 建立存檔後,將顯示 **「存檔」** 視圖。 按一下 [簽署並散發...]****，以開啟 [發佈精靈]。
+2. 從 [ **組建** ] 功能表中，選取 [封存 **以供發行**]。
+3. 封存建立之後，將會顯示 [封存 **] 視圖。** 按一下 [簽署並散發...]****，以開啟 [發佈精靈]。
 
-    !["存檔"檢視中"簽名和分發"按鈕位置的屏幕截圖。](publishing-to-the-app-store-images/archives-mac.png ""存檔"檢視中"簽名和分發"按鈕位置的屏幕截圖。")
+    ![[封存] 視圖中 [簽署並散發] 按鈕位置的螢幕擷取畫面。](publishing-to-the-app-store-images/archives-mac.png "[封存] 視圖中 [簽署並散發] 按鈕位置的螢幕擷取畫面。")
 
     > [!NOTE]
     > 根據預設，[封存]**** 檢視只會顯示已開啟方案的封存。 若要查看所有具有封存的方案，請按一下 [顯示所有封存]**** 核取方塊。 最好是保留舊的封存，以便在必要時，可以使用它們包含的偵錯資訊將當機報告符號化。
 
 4. 選取 [App Store]**** 散發通道。 按 [下一步]  。
 
-5. 選擇 **「上傳**」作為目標。 按 [下一步]  。
+5. 選取 [ **上傳** ] 作為目的地。 按 [下一步]  。
 
 6. 在 [佈建設定檔]**** 視窗中，選取您的簽署身分識別、應用程式和佈建設定檔。 按 [下一步]  。
 
-    ![預配設定檔精靈頁面的螢幕截圖,顯示有效的簽名標識、應用和預配配置檔選擇。](publishing-to-the-app-store-images/provProfileSelect-mac.png "選擇有效的簽名標識、應用和預配配置檔的預配配置檔的螢幕截圖。")
+    ![[布建設定檔] 頁面的螢幕擷取畫面，其中顯示有效的簽署身分識別、應用程式和布建設定檔選取專案。](publishing-to-the-app-store-images/provProfileSelect-mac.png "[布建設定檔] 頁面的螢幕擷取畫面，其中已選取有效的簽署身分識別、應用程式和布建設定檔。")
 
-7. 在**應用程式商店連接資訊**視窗中,從選單中選擇 Apple ID 使用者名稱,然後輸入[特定於應用的密碼](https://support.apple.com/ht204397)。 按 [下一步]  。
+7. 在 [ **連接資訊 App Store** ] 視窗中，從功能表中選取 Apple ID 使用者名稱，然後輸入 [應用程式特定的密碼](https://support.apple.com/ht204397)。 按 [下一步]  。
 
-    ![顯示所選 Apple ID 使用者名的應用商店連接資訊精靈頁面的螢幕截圖。](publishing-to-the-app-store-images/connectInfo-mac.png "顯示所選 Apple ID 使用者名的應用商店連接資訊精靈頁面的螢幕截圖。")
+    ![App Store Connect 資訊嚮導] 頁面的螢幕擷取畫面，其中顯示已選取的 Apple ID 使用者名稱。](publishing-to-the-app-store-images/connectInfo-mac.png "App Store Connect 資訊嚮導] 頁面的螢幕擷取畫面，其中顯示已選取的 Apple ID 使用者名稱。")
 
-8. 驗證包的詳細資訊,然後單擊 **「發佈**」。。 選擇保存 .ipa 檔的位置後,嚮導會將你的應用上載到應用商店連接。
+8. 確認套件的詳細資料，然後按一下 [ **發佈**]。 選取要儲存 ipa 檔案的位置之後，嚮導會將您的應用程式上傳至 App Store 連接。
 
     > [!NOTE]
     > Apple 會拒絕 .ipa 檔案中包含 **iTunesMetadata.plist** 的應用程式，因而導致發生如下錯誤：
@@ -237,45 +255,45 @@ iOS 會使用佈建設定檔** 來控制特定應用程式組建的部署方式�
     >
     > 如需這項錯誤的因應措施，請查看 [Xamarin 論壇中的這篇文章](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)。
 
-# <a name="visual-studio-2019"></a>[視覺工作室 2019](#tab/windows)
+# <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/windows)
 
 > [!NOTE]
-> Visual Studio 2019 版本 16.3 及更高版本支援發佈到應用商店。
+> Visual Studio 2019 16.3 版和更新版本支援發行至 App Store。
 
-1. 確保 Visual Studio 2019[與 Mac 建構主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
-2. 從**解決方案配置**下拉清單中選擇 **「發布」 從****解決方案平臺**下拉清單中選擇**iPhone。**
+1. 請確定 Visual Studio 2019 已與 [Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+2. 從 [**方案**設定] 下拉式清單中選取 [**發行**]，然後從 [**方案平臺**] 下拉式清單中選取**iPhone** 。
 
-    ![Visual Studio 工具列的螢幕截圖,顯示要發布的解決方案配置集、將解決方案平臺設置為 iPhone 以及目標設置為設備。](publishing-to-the-app-store-images/chooseConfig-w157.png "Visual Studio 工具列的螢幕截圖,顯示要發布的解決方案配置集、將解決方案平臺設置為 iPhone 以及目標設置為設備。")
+    ![顯示 [方案設定] 設為 [發行]、將 [方案平臺] 設定為 [iPhone] 和 [目標設定為裝置] 的 [Visual Studio] 工具列螢幕擷取畫面](publishing-to-the-app-store-images/chooseConfig-w157.png "顯示 [方案設定] 設為 [發行]、將 [方案平臺] 設定為 [iPhone] 和 [目標設定為裝置] 的 [Visual Studio] 工具列螢幕擷取畫面")
 
-3. 從 **"生成"** 菜單中,選擇 **"存檔..."** 這將打開**存檔管理器**並開始建立存檔。
+3. 從 [ **組建** ] 功能表中，選取 [封存 **...**]。這會開啟「封存 **管理員** 」並開始建立封存。
 
-4. 創建存檔後,單擊"**分發..."** 以打開發佈嚮導。
+4. 一旦建立封存，請按一下 [ **散發** ] 以開啟發佈嚮導。
 
-    ![存檔管理器檢視中分發按鈕位置的屏幕截圖。](publishing-to-the-app-store-images/archives-win.png "存檔管理器檢視中分發按鈕位置的屏幕截圖。")
+    ![封存管理員視圖中 [發佈] 按鈕位置的螢幕擷取畫面。](publishing-to-the-app-store-images/archives-win.png "封存管理員視圖中 [發佈] 按鈕位置的螢幕擷取畫面。")
 
 5. 選取 [App Store]**** 散發通道。
 
-6. 選擇您的簽名標識和預配配置檔。 按下 **「上載到應用商店**」。。
+6. 選取您的簽署身分識別和布建設定檔。 按一下 **[上傳] 以儲存**。
 
-    ![顯示有效簽名標識和預配配置檔選擇的發佈嚮導的屏幕截圖。](publishing-to-the-app-store-images/provProfileSelect-win.png "顯示有效簽名標識和預配配置檔選擇的發佈嚮導的屏幕截圖。")
+    ![顯示有效簽署身分識別和布建設定檔選取專案的 [發佈嚮導] 螢幕擷取畫面。](publishing-to-the-app-store-images/provProfileSelect-win.png "顯示有效簽署身分識別和布建設定檔選取專案的 [發佈嚮導] 螢幕擷取畫面。")
 
-7. 輸入您的 Apple ID 與[特定於應用程式的密碼](https://support.apple.com/ht204397)。 按下「**確定」** 開始將應用上載到應用商店連接。
+7. 輸入您的 Apple ID 和 [應用程式特定密碼](https://support.apple.com/ht204397)。 按一下 **[確定]** ，開始將您的應用程式上傳至 App Store 連接。
 
-    ![彈出視窗的螢幕截圖,以輸入您的 Apple ID 和應用特定密碼。](publishing-to-the-app-store-images/connectInfo-win.png "彈出視窗的螢幕截圖,以輸入您的 Apple ID 和應用特定密碼。")
+    ![快顯視窗的螢幕擷取畫面，可輸入您的 Apple ID 和應用程式特定密碼。](publishing-to-the-app-store-images/connectInfo-win.png "快顯視窗的螢幕擷取畫面，可輸入您的 Apple ID 和應用程式特定密碼。")
 
 # <a name="visual-studio-2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
 > [!NOTE]
-> Visual Studio 2017 不支援 Mac 和 Visual Studio 2019 可視化工作室中的完整發佈工作流。
+> Visual Studio 2017 不支援在 Visual Studio for Mac 和 Visual Studio 2019 中找到的完整發行工作流程。
 >
-> 以下步驟適用於 Xcode 10。
+> 下列步驟適用于 Xcode 10。
 >
-> 您仍然可以按照以下步驟產生 。IPA 檔案,但要使用 Xcode 11(iOS 13 支援是必需的)部署到應用商店,您應該[使用 Visual Studio 進行 Mac](?tabs=macos#build-and-submit-your-app)。
+> 您仍然可以遵循下列步驟來建立。IPA 檔案，但若要使用 Xcode 11 (部署到 App Store，則必須 [使用 Visual Studio for Mac](?tabs=macos#build-and-submit-your-app)的 iOS 13 支援) 。
 
 1. 確定 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 從 Visual Studio 2017 [方案組態]**** 下拉式清單中選取 [發行]****，並從 [方案平台]**** 下拉式清單中選取 [iPhone]****。
 
-    ![建構設定與平台選擇](publishing-to-the-app-store-images/chooseConfig-w157.png "建構設定與平台選擇")
+    ![組建設定和平臺選擇](publishing-to-the-app-store-images/chooseConfig-w157.png "組建設定和平臺選擇")
 
 3. 建置專案。 這會建立 .ipa 檔案。
 
@@ -287,9 +305,9 @@ iOS 會使用佈建設定檔** 來控制特定應用程式組建的部署方式�
 
     > [!TIP]
     >
-    > 以下步驟僅在使用 Xcode 10 和為 iOS 12 和更早版本構建時才有效。
+    > 只有當您使用 Xcode 10 並建立 iOS 12 及更早版本時，下列步驟才有效。
     >
-    > 要使用 Xcode 11(對於 iOS 13)部署到應用商店,應[使用 Mac 的 Visual Studio](?tabs=macos#build-and-submit-your-app)構建和上傳應用。 **應用程式載入程式**不適用於 Xcode 11。
+    > 若要使用適用于 iOS 13) 的 Xcode 11 (部署到 App Store，您應該 [使用 Visual Studio for Mac](?tabs=macos#build-and-submit-your-app) 來建立和上傳您的應用程式。 Xcode 11 將無法使用**應用程式載入**器。
 
 6. 在 Mac 組建主機上開啟 [應用程載入器]****。 在 Xcode 中，選取 [Xcode] > [開啟開發人員工具] > [應用程式載入器]****。
 
@@ -326,9 +344,9 @@ iOS 會使用佈建設定檔** 來控制特定應用程式組建的部署方式�
 
 若要查看您的應用程式提交狀態，請登入 iTunes Connect，並選取您的應用程式。 初始狀態應該是**等候審查**，但在處理時可能會暫時顯示**已收到上傳**。
 
-![等待檢閱](publishing-to-the-app-store-images/image21.png "等待檢閱")
+![等待審核](publishing-to-the-app-store-images/image21.png "等待審核")
 
-## <a name="tips-and-tricks"></a>秘訣與技巧
+## <a name="tips-and-tricks"></a>秘訣和訣竅
 
 ### <a name="customize-the-ipa-location"></a>自訂 .ipa 位置
 
@@ -381,7 +399,7 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 建立與封存散發組建後，即可準備將您的應用程式提交至 iTunes Connect。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文描述如何設定組建，並提交 iOS 應用程式以在 App Store 上發行。
 
@@ -391,8 +409,8 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 - [iTunes Connect (Apple)](https://itunesconnect.apple.com)
 - [App Store 審查指導方針 (Apple)](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [常見的應用程式拒絕案例 (Apple)](https://developer.apple.com/app-store/review/rejections/)
-- [使用 Xamarin.iOS 中的功能](~/ios/deploy-test/provisioning/capabilities/index.md)
-- [在 Xamarin.iOS 中處理權利](~/ios/deploy-test/provisioning/entitlements.md)
-- [在 iTunes 連接中設定應用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
+- [使用 Xamarin 中的功能](~/ios/deploy-test/provisioning/capabilities/index.md)
+- [在 Xamarin 中使用權利](~/ios/deploy-test/provisioning/entitlements.md)
+- [在 iTunes Connect 中設定應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [Xamarin.iOS 中的應用程式圖示](~/ios/app-fundamentals/images-icons/app-icons.md)
 - [Xamarin.iOS 應用程式的啟動畫面](~/ios/app-fundamentals/images-icons/launch-screens.md)
