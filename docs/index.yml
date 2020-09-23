@@ -9,15 +9,15 @@ metadata:
   author: conceptdev
   ms.author: crdun
   ms.date: 09/26/2019
-  ms.openlocfilehash: c28f849f772bb496b526552745a0aea1c2e08e62
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.openlocfilehash: 161b1570f668ed13f235b72fca064b1349e25d8b
+  ms.sourcegitcommit: 0c45e3f810947e3d43223aa01bf3e43a0defca65
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "76940712"
+  ms.lasthandoff: 09/21/2020
+  ms.locfileid: "90843534"
 highlightedContent:
   items:
-  - title: 設定及安裝
+  - title: 設定與安裝
     itemType: download
     url: ~/get-started/installation/index.md
   - title: 什麼是 Xamarin？
@@ -56,8 +56,8 @@ productDirectory:
     links:
     - url: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
       text: 建置 iOS 應用程式
-    - url: ~/ios/platform/ios13/index.md
-      text: iOS 13
+    - url: ~/ios/platform/ios14/index.md
+      text: iOS 14
     - url: ~/ios/index.yml
       text: 所有 iOS 文件
   - title: Mac
