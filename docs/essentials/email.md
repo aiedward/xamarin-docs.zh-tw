@@ -1,24 +1,51 @@
 ---
 title: Xamarin.Essentials：電子郵件
-description: 中的 [電子郵件] 類別 Xamarin.Essentials 可讓應用程式以指定的資訊開啟預設的電子郵件應用程式，包括主旨、本文和收件者（收件者、副本、密件副本）。
+description: 中的電子郵件類別 Xamarin.Essentials 可讓應用程式開啟預設電子郵件應用程式，其中包含指定的資訊，包括 [主旨]、[內文] 和 [收件者] (收件者、副本) 。
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.custom: video
 ms.author: jamont
-ms.date: 08/20/2019
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eba2b6decc74c63e6b2790287842e6cc9b237bd2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ddeba8e0d2d0f0894f7e43c5cf2501c942f7720a
+ms.sourcegitcommit: 3a15d9b29d65139b18dcf0871fe00cffb2a56357
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802378"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353391"
 ---
-# <a name="xamarinessentials-email"></a>Xamarin.Essentials：電子郵件
+# <a name="no-locxamarinessentials-email"></a>Xamarin.Essentials：電子郵件
 
 **電子郵件**類別使應用程式能夠開啟包含主題、本文和收件者 (收件者、副本、密件副本) 等指定資訊的預設電子郵件應用程式。
+
+若要存取 **電子郵件** 功能，需要下列平臺特定設定。
+
+# <a name="android"></a>[Android](#tab/android)
+
+如果您專案的目標 Android 版本設為 **android 11 (R API 30) ** 您必須使用與新的 [封裝可見度需求](https://developer.android.com/preview/privacy/package-visibility)搭配使用的查詢來更新 android 資訊清單。
+
+開啟 [Properties]**** 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest]**** 節點內新增下列內容：
+
+```xml
+<queries>
+  <intent>
+    <action android:name="android.intent.action.SENDTO" />
+    <data android:scheme="mailto" />
+  </intent>
+</queries>
+```
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+不需要進行額外設定。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+無平台差異。
+
+-----
 
 ## <a name="get-started"></a>開始使用
 
@@ -68,7 +95,7 @@ public class EmailTest
 
 ## <a name="file-attachments"></a>檔案附件
 
-這項功能可讓應用程式在裝置上的電子郵件客戶程式中以電子郵件傳送檔案。 Xamarin.Essentials會自動偵測檔案類型（MIME），並要求將檔案新增為附件。 每個電子郵件用戶端都不同，而且可能只支援特定的副檔名，或完全沒有。
+這項功能可讓應用程式在裝置上的電子郵件客戶程式中傳送電子郵件。 Xamarin.Essentials 會自動偵測檔案類型 (MIME) ，並要求將檔案新增為附件。 每個電子郵件客戶程式都不同，而且可能只支援特定的副檔名，或是完全不支援。
 
 下列範例示範如何將文字寫入磁碟，並將它新增為電子郵件附件：
 

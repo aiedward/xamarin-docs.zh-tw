@@ -1,28 +1,55 @@
 ---
 title: Xamarin.Essentials： SMS
-description: 中的 Sms 類別 Xamarin.Essentials 可讓應用程式使用指定的訊息來開啟預設 Sms 應用程式，以傳送給收件者。
+description: 中的 Sms 類別可 Xamarin.Essentials 讓應用程式使用指定的訊息來開啟預設 Sms 應用程式，以傳送給收件者。
 ms.assetid: 81A757F2-6F2A-458F-B9BE-770ADEBFAB58
 author: jamesmontemagno
 ms.custom: video
 ms.author: jamont
-ms.date: 11/04/2018
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c3518befc9f26895514bf582a763c1323f336277
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d981a7ed2bffbbff12cf69ee4d0cda27ce319040
+ms.sourcegitcommit: 3a15d9b29d65139b18dcf0871fe00cffb2a56357
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801838"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353378"
 ---
-# <a name="xamarinessentials-sms"></a>Xamarin.Essentials： SMS
+# <a name="no-locxamarinessentials-sms"></a>Xamarin.Essentials： SMS
 
 **Sms** 類別可讓應用程式使用傳送到收件者的指定訊息來開啟預設 SMS 應用程式。
 
 ## <a name="get-started"></a>開始使用
 
 [!include[](~/essentials/includes/get-started.md)]
+
+若要存取 **Sms** 功能，需要下列平臺特定設定。
+
+# <a name="android"></a>[Android](#tab/android)
+
+如果您專案的目標 Android 版本設為 **android 11 (R API 30) ** 您必須使用與新的 [封裝可見度需求](https://developer.android.com/preview/privacy/package-visibility)搭配使用的查詢來更新 android 資訊清單。
+
+開啟 [Properties]**** 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest]**** 節點內新增下列內容：
+
+```xml
+<queries>
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="smsto"/>
+  </intent>
+</queries>
+```
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+不需要進行額外設定。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+無平台差異。
+
+-----
 
 ## <a name="using-sms"></a>使用 Sms
 
