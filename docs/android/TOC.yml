@@ -18,9 +18,9 @@
               items:
                 - name: 硬體加速 (HYPER-V 和 HAXM)
                   href: get-started/installation/android-emulator/hardware-acceleration.md
-                - name: Device Manager
+                - name: 裝置管理員
                   href: get-started/installation/android-emulator/device-manager.md
-                - name: 裝置屬性
+                - name: 裝置內容
                   href: get-started/installation/android-emulator/device-properties.md
                 - name: 疑難排解
                   href: get-started/installation/android-emulator/troubleshooting.md
@@ -31,16 +31,16 @@
         - name: 'Hello, Android'
           href: get-started/hello-android/index.md
           items:
-            - name: 第 1 部份：快速入門
+            - name: 第 1 部分：快速入門
               href: get-started/hello-android/hello-android-quickstart.md
-            - name: 第 2 部分：深入了解
+            - name: 第 2 部分：深度剖析
               href: get-started/hello-android/hello-android-deepdive.md
         - name: 'Hello, Android 多重畫面'
           href: get-started/hello-android-multiscreen/index.md
           items:
-            - name: 第 1 部份：快速入門
+            - name: 第 1 部分：快速入門
               href: get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
-            - name: 第 2 部分：深入了解
+            - name: 第 2 部分：深度剖析
               href: get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md
         - name: 適用於 Java 開發人員的 Xamarin
           href: get-started/java-developers.md
@@ -103,7 +103,7 @@
           href: app-fundamentals/cpu-architectures.md
         - name: 處理旋轉
           href: app-fundamentals/handling-rotation.md
-        - name: 音效
+        - name: 音訊
           href: app-fundamentals/android-audio.md
         - name: 通知
           href: app-fundamentals/notifications/index.md
@@ -207,17 +207,17 @@
                   href: user-interface/controls/buttons/radio-button.md
                 - name: 切換按鈕
                   href: user-interface/controls/buttons/toggle-button.md
-                - name: 核取方塊
+                - name: CheckBox
                   href: user-interface/controls/buttons/check-box.md
                 - name: 自訂按鈕
                   href: user-interface/controls/buttons/custom-button.md
-            - name: 行事曆
+            - name: Calendar
               href: user-interface/controls/calendar.md
             - name: CardView
               href: user-interface/controls/card-view.md
             - name: EditText
               href: user-interface/controls/edit-text.md
-            - name: Gallery
+            - name: 主機庫
               href: user-interface/controls/gallery.md
             - name: 巡覽列
               href: user-interface/controls/navigation-bar.md
@@ -234,7 +234,7 @@
               href: user-interface/controls/ratingbar.md
             - name: Spinner
               href: user-interface/controls/spinner.md
-            - name: 參數
+            - name: 交換器
               href: user-interface/controls/switch.md
             - name: TextureView
               href: user-interface/controls/texture-view.md
@@ -359,7 +359,7 @@
               href: platform/java-integration/android-callable-wrappers.md
             - name: 使用 JNI
               href: platform/java-integration/working-with-jni.md
-            - name: '將 Java 移植到 C#'
+            - name: 將 Java 移植到 C#
               href: platform/java-integration/porting-java-to-csharp.md
         - name: 繫結 Java 程式庫
           href: platform/binding-java-library/index.md
@@ -504,11 +504,11 @@
         - name: Google 傳訊
           href: data-cloud/google-messaging/index.md
           items:
-            - name: Firebase 雲端傳訊
+            - name: Firebase Cloud Messaging
               href: data-cloud/google-messaging/firebase-cloud-messaging.md
             - name: FCM 通知逐步解說
               href: data-cloud/google-messaging/remote-notifications-with-fcm.md
-            - name: Google 雲端通訊
+            - name: Google Cloud Messaging
               href: data-cloud/google-messaging/google-cloud-messaging.md
             - name: GCM 通知逐步解說
               href: data-cloud/google-messaging/remote-notifications-with-gcm.md
@@ -526,6 +526,12 @@
           items:
             - name: 建置流程
               href: deploy-test/building-apps/build-process.md
+            - name: 組建項目
+              href: deploy-test/building-apps/build-items.md
+            - name: 組建屬性
+              href: deploy-test/building-apps/build-properties.md
+            - name: 建置目標
+              href: deploy-test/building-apps/build-targets.md
             - name: 建置特定 ABI 的 APK
               href: deploy-test/building-apps/abi-specific-apks.md
         - name: 命令列模擬器
@@ -674,7 +680,7 @@
               href: wear/deploy-test/debug-on-emulator.md
             - name: 在 Wear 裝置上偵錯
               href: wear/deploy-test/debug-on-device.md
-            - name: 封裝
+            - name: 包裝
               href: wear/deploy-test/packaging.md
     - name: 版本資訊
       href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
