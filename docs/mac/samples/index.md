@@ -7,38 +7,38 @@ ms.technology: xamarin-mac
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/31/2019
-ms.openlocfilehash: 3d3d32dcf48659f295c579fff6ffe8d09abf10d0
-ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
+ms.openlocfilehash: 816c60ee0c981775a5cd4c67acb02658b0a03a9d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75558702"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429576"
 ---
 # <a name="xamarinmac-samples"></a>Xamarin.Mac 範例
 
 Xamarin iOS 範例應用程式及程式碼示範可協助您開始使用 C# 與 Xamarin 建置行動應用程式。
 
-[所有的 Xamarin. Mac 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+[所有 Xamarin. Mac 範例](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 
 :::row:::
     :::column:::
-[!["Hello，Mac"](images/hellomac.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac/)
+[!["Hello，Mac"](images/hellomac.png)](/samples/xamarin/mac-samples/hello-mac/)
 
-### <a name="hello-machttpsdocsmicrosoftcomsamplesxamarinmac-sampleshello-mac"></a>[Hello, Mac](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac/)
+### <a name="hello-mac"></a>[Hello, Mac](/samples/xamarin/mac-samples/hello-mac/)
 
 Hello World 應用程式協助您開始 Mac 開發。
     :::column-end:::
     :::column:::
-[!["MacControls"](images/controls.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols/)
+[!["MacControls"](images/controls.png)](/samples/xamarin/mac-samples/maccontrols/)
 
-### <a name="maccontrolshttpsdocsmicrosoftcomsamplesxamarinmac-samplesmaccontrols"></a>[MacControls](https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols/)
+### <a name="maccontrols"></a>[MacControls](/samples/xamarin/mac-samples/maccontrols/)
 
 Mac 應用程式的 UI 控制項範例。
     :::column-end:::
     :::column:::
-[!["MacImages"](images/images.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages/)
+[!["MacImages"](images/images.png)](/samples/xamarin/mac-samples/macimages/)
 
-### <a name="macimageshttpsdocsmicrosoftcomsamplesxamarinmac-samplesmacimages"></a>[MacImages](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages/)
+### <a name="macimages"></a>[MacImages](/samples/xamarin/mac-samples/macimages/)
 
 Mac 應用程式的 UI 控制項範例。
     :::column-end:::
@@ -46,9 +46,9 @@ Mac 應用程式的 UI 控制項範例。
 
 :::row:::
     :::column:::
-[!["SourceWriter"](images/sourcewriter.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter/)
+[![SourceWriter](images/sourcewriter.png)](/samples/xamarin/mac-samples/sourcewriter/)
 
-### <a name="sourcewriterhttpsdocsmicrosoftcomsamplesxamarinmac-samplessourcewriter"></a>[SourceWriter](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter/)
+### <a name="sourcewriter"></a>[SourceWriter](/samples/xamarin/mac-samples/sourcewriter/)
 
 簡單易用的編輯器可協助您完成程式碼及反白語法。
     :::column-end:::
@@ -60,4 +60,4 @@ Mac 應用程式的 UI 控制項範例。
 
 ## <a name="all-samples"></a>所有範例
 
-如需一組完整的 Xamarin 範例應用程式和程式碼示範，請參閱[所有的 xamarin. mac 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)。
+如需一組完整的 Xamarin 範例應用程式和程式碼示範，請參閱 [所有的 xamarin. mac 範例](/samples/browse/?products=xamarin&term=Xamarin.Mac)。

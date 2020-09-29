@@ -8,12 +8,12 @@ ms.date: 02/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ab49d8fd86a8864ba45d8ab9f4bbac1ba83ef505
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: 0910c6467cb0efdf9477e245d138528852f81166
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91410632"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432292"
 ---
 # Xamarin.Essentials
 
@@ -76,7 +76,7 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 
 在您遇到問題時可尋找說明。
 
-## <a name="release-notes"></a>[版本資訊](https://docs.microsoft.com/xamarin/essentials/release-notes/)
+## <a name="release-notes"></a>[版本資訊](/xamarin/essentials/release-notes/)
 
 尋找每個版本的完整版本資訊 Xamarin.Essentials 。
 

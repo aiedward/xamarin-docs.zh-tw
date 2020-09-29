@@ -1,39 +1,39 @@
 ---
 title: 使用 Xamarin 的 Touch ID 和臉部識別碼
-description: 本檔提供 iOS 中生物識別驗證的高階說明。
+description: 本檔提供 iOS 中生物特徵辨識驗證的高階描述。
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
 ms.technology: xamarin-ios
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/16/2019
-ms.openlocfilehash: 744a07343b9da87f196c0664f57b7d950844ab04
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 526de99f32a8682cbe6862e46f90c674cf7d3dc6
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490294"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430369"
 ---
-# <a name="use-touch-id-and-face-id-with-xamarinios"></a>搭配使用 Touch ID 和臉部識別碼與 Xamarin. iOS
+# <a name="use-touch-id-and-face-id-with-xamarinios"></a>搭配使用 Touch ID 和臉部識別碼與 Xamarin
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-faceidsample/)
 
-iOS 支援兩種生物識別驗證系統：
+iOS 支援兩種生物特徵辨識驗證系統：
 
-1. **TOUCH ID**會使用 [首頁] 按鈕底下的指紋感應器。
-1. **臉部識別碼**會使用前方相機感應器，透過臉部掃描來驗證使用者。
+1. **TOUCH ID** 使用 [首頁] 按鈕下的指紋感應器。
+1. **臉部識別碼** 使用正面相機感應器來驗證具有臉部掃描的使用者。
 
-Touch ID 是在 iOS 7 中引進，而在 iOS 11 中是臉部識別碼。
+Touch ID 是在 iOS 7 和 iOS 11 中的臉部識別碼引進。
 
-這些驗證系統依賴以硬體為基礎的安全性處理器，稱為_安全記憶體保護區_。 安全記憶體保護區負責加密臉部和指紋資料的數學標記法，並使用這項資訊來驗證使用者。 根據 Apple，臉部和指紋資料不會離開裝置，也不會備份到 iCloud。 應用程式會透過_本機驗證_API 與安全記憶體保護區互動，而且無法取得臉部或指紋資料，或直接存取安全的記憶體保護區。
+這些驗證系統依賴以硬體為基礎的安全性處理器，稱為「 _安全記憶體保護區_」。 安全記憶體保護區負責加密臉部和指紋資料的數學標記法，並使用這項資訊來驗證使用者。 根據 Apple，臉部和指紋資料不會離開裝置，也不會備份到 iCloud。 應用程式會透過 _本機驗證_ API 與安全記憶體保護區互動，而且無法取出臉部或指紋資料，或直接存取安全的記憶體保護區。
 
 在提供受保護內容的存取權之前，應用程式可以使用 Touch ID 和臉部識別碼來驗證使用者。
 
 ## <a name="local-authentication-context"></a>本機驗證內容
 
-IOS 上的生物識別驗證依賴_本機驗證內容_物件，這是 `LAContext` 類別的實例。 `LAContext` 類別可讓您：
+IOS 上的生物特徵辨識驗證依賴 _本機驗證內容_ 物件，也就是類別的實例 `LAContext` 。 `LAContext`類別可讓您：
 
-- 檢查生物識別硬體的可用性。
+- 檢查生物特徵辨識硬體的可用性。
 - 評估驗證原則。
 - 評估存取控制。
 - 自訂和顯示驗證提示。
@@ -42,7 +42,7 @@ IOS 上的生物識別驗證依賴_本機驗證內容_物件，這是 `LAContext
 
 ## <a name="detect-available-authentication-methods"></a>偵測可用的驗證方法
 
-範例專案包含由 `AuthenticationViewController`所支援的 `AuthenticationView`。 此類別會覆寫 `ViewWillAppear` 方法，以偵測可用的驗證方法：
+範例專案包含的 `AuthenticationView` 支援 `AuthenticationViewController` 。 這個類別會覆寫 `ViewWillAppear` 方法來偵測可用的驗證方法：
 
 ```csharp
 partial class AuthenticationViewController: UIViewController
@@ -94,13 +94,13 @@ partial class AuthenticationViewController: UIViewController
 }
 ```
 
-當 UI 即將向使用者顯示時，會呼叫 `ViewWillAppear` 方法。 這個方法會定義 `LAContext` 的新實例，並使用 `CanEvaluatePolicy` 方法來判斷是否已啟用生物識別驗證。 若是如此，它會檢查系統版本並 `BiometryType` 列舉，以判斷可用的生物特徵辨識選項。
+`ViewWillAppear`當 UI 即將顯示給使用者時，會呼叫方法。 這個方法會定義的新實例 `LAContext` ，並使用 `CanEvaluatePolicy` 方法來判斷是否已啟用生物識別驗證。 如果是的話，它會檢查系統版本和 `BiometryType` 列舉，判斷有哪些生物特徵辨識選項可供使用。
 
-如果未啟用生物識別驗證，應用程式會嘗試切換回 PIN 驗證。 如果生物識別或 PIN 驗證都無法使用，則裝置擁有者尚未啟用安全性功能，而且無法透過本機驗證來保護內容。
+如果未啟用生物識別驗證，應用程式會嘗試切換回 PIN 碼驗證。 如果沒有生物特徵辨識或 PIN 驗證，則裝置擁有者未啟用安全性功能，而且內容無法透過本機驗證來保護。
 
 ## <a name="authenticate-a-user"></a>驗證使用者
 
-範例專案中的 `AuthenticationViewController` 包括 `AuthenticateMe` 方法，其負責驗證使用者：
+`AuthenticationViewController`範例專案中的 `AuthenticateMe` 會包含負責驗證使用者的方法：
 
 ```csharp
 partial class AuthenticationViewController: UIViewController
@@ -186,14 +186,14 @@ partial class AuthenticationViewController: UIViewController
 }
 ```
 
-會呼叫 `AuthenticateMe` 方法，以回應使用者點擊**登**入按鈕。 會具現化新的 `LAContext` 物件，並檢查裝置版本，以決定要在本機驗證內容上設定的屬性。
+`AuthenticateMe`呼叫方法是為了回應使用者點擊**登**入按鈕。 會具 `LAContext` 現化新的物件，並檢查裝置版本以判斷要在本機驗證內容上設定的屬性。
 
-系統會呼叫 `CanEvaluatePolicy` 方法來檢查是否已啟用生物識別驗證，並盡可能切換回 PIN 驗證，如果沒有可用的驗證，最後會提供不安全的模式。 如果有可用的驗證方法，則會使用 `EvaluatePolicy` 方法來顯示 UI，並完成驗證程式。
+`CanEvaluatePolicy`系統會呼叫此方法以檢查是否已啟用生物識別驗證、切換回 PIN 驗證（如果可能的話），最後提供不安全的模式（如果沒有可用的驗證）。 如果有可用的驗證方法，則 `EvaluatePolicy` 會使用方法來顯示 UI 並完成驗證程式。
 
-範例專案包含模擬資料，以及在驗證成功時顯示資料的視圖。
+範例專案包含 mock 資料，以及在驗證成功時顯示資料的視圖。
 
 ## <a name="related-links"></a>相關連結
 
-- [使用 Touch ID 或臉部識別碼範例進行本機驗證](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-faceidsample/)
+- [使用 Touch ID 或臉部識別碼的本機驗證範例](/samples/xamarin/ios-samples/ios11-faceidsample/)
 - 關於 support.apple.com 上的[TOUCH ID](https://support.apple.com/en-us/HT204587)
 - 關於 support.apple.com 上的[臉部識別碼](https://support.apple.com/en-us/HT208108)

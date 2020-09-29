@@ -9,14 +9,14 @@ ms.date: 08/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 82c54a72d0e0bc991644295f05136f89fd280d7f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0dc8981024105e24ef4dcd725284723060e7313c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802277"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432313"
 ---
-# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials： MainThread
+# <a name="no-locxamarinessentials-mainthread"></a>Xamarin.Essentials： MainThread
 
 **MainThread** 類別可讓應用程式在主執行緒上執行程式碼，並判斷特定程式碼區塊目前是否在主執行緒上執行。
 
@@ -24,7 +24,7 @@ ms.locfileid: "84802277"
 
 大部分的作業系統 (包括 iOS、Android 與通用 Windows 平台) 都為牽涉到使用者介面的程式碼使用單一執行緒處理模型。 需要此此模型才能適當地序列化使用者介面事件，包括按鍵點擊與觸控輸入。 此執行緒通常稱為「主執行緒」__ 或「使用者介面執行緒」__ 或「UI 執行緒」__。 此模型的缺點是存取使用者介面元素的所有程式碼都必須在應用程式的主執行緒上執行。
 
-應用程式有時候需要使用呼叫次要執行緒上之事件處理常式的事件。 （這些 Xamarin.Essentials 類別 [`Accelerometer`](accelerometer.md) 、 [`Compass`](compass.md) 、 [`Gyroscope`](gyroscope.md) 、 [`Magnetometer`](magnetometer.md) 和 [`OrientationSensor`](orientation-sensor.md) 都可能會在使用較快的速度時傳回次要執行緒上的資訊）。如果事件處理常式需要存取使用者介面元素，則必須在主執行緒上執行該程式碼。 **MainThread** 類別可讓應用程式在主執行緒上執行此程式碼。
+應用程式有時候需要使用呼叫次要執行緒上之事件處理常式的事件。  (Xamarin.Essentials 類別 [`Accelerometer`](accelerometer.md) 、 [`Compass`](compass.md) 、 [`Gyroscope`](gyroscope.md) 、 [`Magnetometer`](magnetometer.md) 和 [`OrientationSensor`](orientation-sensor.md) 都可能會在以較快的速度使用時，傳回次要執行緒的資訊。 ) 如果事件處理常式需要存取使用者介面元素，則必須在主執行緒上執行該程式碼。 **MainThread** 類別可讓應用程式在主執行緒上執行此程式碼。
 
 ## <a name="get-started"></a>開始使用
 
@@ -38,7 +38,7 @@ Xamarin.Essentials在您的類別中新增的參考：
 using Xamarin.Essentials;
 ```
 
-若要在主執行緒上執行程式碼，請呼叫靜態 `MainThread.BeginInvokeOnMainThread` 方法。 引數是 [`Action`](xref:System.Action) 物件，它只是不含任何引數且沒有傳回值的方法：
+若要在主執行緒上執行程式碼，請呼叫靜態 `MainThread.BeginInvokeOnMainThread` 方法。 引數是 [`Action`](xref:System.Action) 物件，它只是沒有引數且沒有傳回值的方法：
 
 ```csharp
 MainThread.BeginInvokeOnMainThread(() =>
@@ -63,9 +63,9 @@ MainThread.BeginInvokeOnMainThread(MyMainThreadCode);
 ```
 
 > [!NOTE]
-> Xamarin.Forms具有名為的方法[`Device.BeginInvokeOnMainThread(Action)`](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread)
+> Xamarin.Forms 有一個稱為的方法 [`Device.BeginInvokeOnMainThread(Action)`](/dotnet/api/xamarin.forms.device.begininvokeonmainthread)
 > 它會執行與 `MainThread.BeginInvokeOnMainThread(Action)` 相同的功能。
-> 雖然您可以在應用程式中使用任一種方法 Xamarin.Forms ，但請考慮呼叫程式碼是否有其他相依性需要的相依性 Xamarin.Forms 。 若沒有，`MainThread.BeginInvokeOnMainThread(Action)` 很可能是比較好的選項。
+> 雖然您可以在應用程式中使用這兩種方法 Xamarin.Forms ，但請考慮呼叫程式碼是否有任何其他需要相依于 Xamarin.Forms 。 若沒有，`MainThread.BeginInvokeOnMainThread(Action)` 很可能是比較好的選項。
 
 ## <a name="determining-if-code-is-running-on-the-main-thread"></a>判斷程式碼是否是在主執行緒上執行
 

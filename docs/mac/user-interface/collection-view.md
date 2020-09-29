@@ -1,50 +1,50 @@
 ---
 title: Xamarin 中的集合視圖
-description: 本文說明如何在 Xamarin. Mac 應用程式中使用集合視圖。 其中涵蓋在 Xcode 和 Interface Builder 中建立和維護收集視圖，並以程式設計方式使用它們。
+description: 本文說明如何在 Xamarin 應用程式中使用集合視圖。 其中涵蓋了在 Xcode 和 Interface Builder 中建立和維護收集視圖，並以程式設計方式使用它們。
 ms.prod: xamarin
 ms.assetid: 6EE32256-5948-4AE4-8133-6D0B3F4173E8
 ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 05/24/2017
-ms.openlocfilehash: f6e9a9338c0bce628cfd62d1106601ddc7a11490
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0d95ecb1997ba70a2994d74bacdedd334f2b4c61
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568629"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429731"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin 中的集合視圖
 
-_本文說明如何在 Xamarin. Mac 應用程式中使用集合視圖。其中涵蓋在 Xcode 和 Interface Builder 中建立和維護收集視圖，並以程式設計方式使用它們。_
+_本文說明如何在 Xamarin 應用程式中使用集合視圖。其中涵蓋了在 Xcode 和 Interface Builder 中建立和維護收集視圖，並以程式設計方式使用它們。_
 
-在 Xamarin. Mac 應用程式中使用 c # 和 .NET 時，開發人員可以存取相同的 AppKit 集合 View 控制項，而開發人員是以*目標-C*和*Xcode*進行操作。 因為 Xamarin 會直接與 Xcode 整合，所以開發人員會使用 Xcode 的_Interface Builder_來建立和維護集合視圖。
+在 Xamarin 應用程式中使用 c # 和 .NET 時，開發人員可以存取相同的 AppKit 收集視圖控制項，開發人員可在 *目標 C* 和 *Xcode* 中運作。 因為 Xamarin 與 Xcode 直接整合，所以開發人員會使用 Xcode 的 _Interface Builder_ 來建立和維護集合視圖。
 
-會 `NSCollectionView` 使用來顯示組織的子檢視方格 `NSCollectionViewLayout` 。 方格中的每個子視圖都是由所表示， `NSCollectionViewItem` 它會管理從檔案載入視圖內容的方式 `.xib` 。
+會 `NSCollectionView` 顯示使用子檢視組織的方格 `NSCollectionViewLayout` 。 格線中的每個子視圖都會以 `NSCollectionViewItem` 管理從檔案載入視圖內容的來表示 `.xib` 。
 
-[![範例應用程式執行](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
+[![執行範例應用程式](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
-本文涵蓋在 Xamarin. Mac 應用程式中使用集合視圖的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋本文中使用的重要概念和技術。
+本文涵蓋在 Xamarin 應用程式中使用集合視圖的基本概念。 強烈建議您先完成 [Hello，Mac](~/mac/get-started/hello-mac.md) 文章，特別是 [Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) 和 [輸出和動作](~/mac/get-started/hello-mac.md#outlets-and-actions) 章節的簡介，因為它涵蓋本文中所使用的重要概念和技術。
 
-您可能想要查看[Xamarin 內部](~/mac/internals/how-it-works.md)檔的將[c # 類別/方法公開至目標-C](~/mac/internals/how-it-works.md)一節，它會說明 `Register` `Export` 用來將 C # 類別連接至目標 C 物件和 UI 元素的和命令。
+您可能會想要看看如何將 [c # 類別/方法公開到](~/mac/internals/how-it-works.md) [Xamarin 內部](~/mac/internals/how-it-works.md) 檔的目標 C 區段，它會說明 `Register` `Export` 用來將 C # 類別連接到目標 c 物件和 UI 元素的和命令。
 
 <a name="About_Collection_Views"></a>
 
 ## <a name="about-collection-views"></a>關於集合視圖
 
-集合視圖（）的主要目標 `NSCollectionView` 是要使用集合視圖配置（）以組織的方式，以視覺化方式排列物件群組 `NSCollectionViewLayout` ，每個個別物件（）在 `NSCollectionViewItem` 較大的集合中取得自己的視圖。 集合視圖會透過資料系結和索引鍵/值編碼技術來執行，因此您應該先閱讀資料系結[和索引鍵-值編碼](~/mac/app-fundamentals/databinding.md)檔，再繼續進行本文。
+「收集視圖」 () 的主要目標 `NSCollectionView` 是使用集合視圖配置 () ，以組織方式排列一組物件 `NSCollectionViewLayout` ，而每個個別物件 (`NSCollectionViewItem`) 在較大的集合中取得自己的觀點。 集合視圖可透過資料系結和索引鍵/值編碼技術來運作，因此，您應該先閱讀資料系結 [和索引鍵-值的編碼](~/mac/app-fundamentals/databinding.md) 檔，再繼續進行本文。
 
-集合視圖沒有標準的內建集合視圖專案（例如大綱或資料表視圖），因此開發人員必須負責使用其他 AppKit 控制項（例如影像欄位、文字欄位、標籤等）來設計和執行_原型視圖_。這個原型視圖將用來顯示及使用由集合視圖所管理的每個專案，並儲存在檔案中 `.xib` 。
+集合視圖沒有任何標準的內建集合視圖專案 (例如大綱或資料表視圖) ，因此開發人員必須負責使用其他 AppKit 控制項（例如影像欄位、文字欄位、標籤等）來設計和執行 _原型視圖_ 。此原型視圖將用來顯示及使用集合視圖所管理的每個專案，並儲存在檔案中 `.xib` 。
 
-由於開發人員負責收集視圖專案的外觀與風格，因此 [集合] 視圖並沒有內建的支援，可反白顯示方格中選取的專案。 本文將涵蓋此功能的執行。
+由於開發人員會負責收集視圖專案的外觀和操作，因此，收集視圖沒有內建的支援，無法反白顯示方格中的選取專案。 本文將討論如何執行這項功能。
 
 <a name="Defining_your_Data_Model"></a>
 
 ## <a name="defining-the-data-model"></a>定義資料模型
 
-在 Interface Builder 系結集合視圖的資料之前，必須在 Xamarin. Mac 應用程式中定義索引鍵/值編碼（KVC）/Key-Value 觀察（KVO）相容的類別，以作為系結的_資料模型_。 資料模型會提供將顯示在集合中的所有資料，並接收使用者在執行應用程式時，在 UI 中對資料所做的任何修改。
+在資料系結 Interface Builder 中的收集視圖之前，您必須在 Xamarin 應用程式中定義索引鍵/值編碼 (KVC) /Key-Value 觀察 (KVO) 相容的類別，以作為系結的 _資料模型_ 。 資料模型會提供將顯示在集合中的所有資料，並在執行應用程式時，接收使用者在 UI 中所做資料的任何修改。
 
-如需管理一組員工的應用程式範例，可以使用下列類別來定義資料模型：
+採用管理一組員工的應用程式範例，下列類別可用來定義資料模型：
 
 ```csharp
 using System;
@@ -189,37 +189,37 @@ namespace MacDatabinding
 
 ## <a name="working-with-a-collection-view"></a>使用集合視圖
 
-具有集合視圖的資料系結與資料表視圖的系結非常類似，因為 `NSCollectionViewDataSource` 它是用來提供集合的資料。 由於集合視圖沒有預設的顯示格式，因此需要更多工具來提供使用者互動意見反應，並追蹤使用者選取專案。
+使用收集視圖的資料系結非常類似于資料表視圖的系結，因為 `NSCollectionViewDataSource` 它是用來提供集合的資料。 因為收集視圖沒有預設的顯示格式，所以需要更多工作來提供使用者互動意見反應，以及追蹤使用者選擇。
 
 <a name="Creating-the-Cell-Prototype"></a>
 
 ### <a name="creating-the-cell-prototype"></a>建立資料格原型
 
-由於集合視圖不包含預設的資料格原型，因此開發人員必須將一或多個檔案新增 `.xib` 至 Xamarin. Mac 應用程式，以定義個別資料格的配置和內容。
+由於收集視圖不包含預設資料格原型，因此開發人員必須將一個或多個檔案加入 `.xib` 至 Xamarin 應用程式，以定義個別儲存格的配置和內容。
 
 執行下列動作：
 
-1. 在 [**方案總管**中，以滑鼠右鍵按一下專案名稱，然後**選取 [**  >  **新增檔案 ...** ]。
-2. 選取 [ **Mac**  >  **View Controller**]，為它命名（例如 `EmployeeItem` 在此範例中為），然後按一下 [**新增**] 按鈕以建立： 
+1. 在 [**方案總管**中，以滑鼠右鍵按一下專案名稱，然後選取 [**加入**  >  **新**檔案]。
+2. 選取 [ **Mac**  >  **視圖控制器**]，為它命名 (例如 `EmployeeItem` 在此範例中) 然後按一下 [**新增**] 按鈕以建立： 
 
-    ![加入新的視圖控制器](collection-view-images/proto01.png)
+    ![新增視圖控制器](collection-view-images/proto01.png)
 
-    這會將 `EmployeeItem.cs` 、和檔案加入 `EmployeeItemController.cs` `EmployeeItemController.xib` 至專案的方案。
-3. 按兩下檔案將 `EmployeeItemController.xib` 其開啟，以在 Xcode 的 Interface Builder 中進行編輯。
-4. 將 `NSBox` 、 `NSImageView` 和兩個 `NSLabel` 控制項加入至視圖，並依照下列方式進行排列：
+    這會將 `EmployeeItem.cs` 和檔案 `EmployeeItemController.cs` 新增 `EmployeeItemController.xib` 至專案的方案。
+3. 按兩下檔案 `EmployeeItemController.xib` 將其開啟，以在 Xcode 的 Interface Builder 中進行編輯。
+4. 將 `NSBox` 、 `NSImageView` 和兩個 `NSLabel` 控制項新增至視圖，並將其配置如下：
 
     ![設計資料格原型的版面配置](collection-view-images/proto02.png)
-5. 開啟 [**助理編輯器**] 並建立的 [**輸出**]， `NSBox` 讓它可以用來表示資料格的選取狀態：
+5. 開啟 [ **助理編輯器** ]，並建立的 **輸出** ， `NSBox` 讓它可用來指出儲存格的選取狀態：
 
-    ![公開插座中的 NSBox](collection-view-images/proto03.png)
-6. 返回**標準編輯器**，然後選取影像視圖。
-7. 在系結偵測**器**中，選取 [系結**至**檔案  >  **的擁有**者]，然後輸入**模型索引鍵路徑** `self.Person.Icon` ：
+    ![在輸出中公開 NSBox](collection-view-images/proto03.png)
+6. 返回 [ **標準編輯器** ]，然後選取影像視圖。
+7. 在系結偵測**器**中，選取 [系結**至**檔案  >  **的擁有**者]，並輸入的**模型索引鍵路徑** `self.Person.Icon` ：
 
     ![系結圖示](collection-view-images/proto04.png)
-8. 選取第一個標籤，並在系結偵測**器**中選取 [系結**至**檔案  >  **的擁有**者]，然後輸入**模型索引鍵路徑** `self.Person.Name` ：
+8. 選取第一個標籤，然後在 [系結偵測**器**] 中，選取 [系結**至**檔案  >  **的擁有**者]，並輸入的**模型索引鍵路徑** `self.Person.Name` ：
 
     ![系結名稱](collection-view-images/proto05.png)
-9. 選取第二個標籤，並在系結偵測**器**中選取 [系結**至**檔案  >  **的擁有**者]，然後輸入**模型索引鍵路徑** `self.Person.Occupation` ：
+9. 選取第二個標籤，然後在 [系結偵測**器**] 中選取 [系結**至**檔案  >  **的擁有**者]，並輸入的**模型索引鍵路徑** `self.Person.Occupation` ：
 
     ![系結職業](collection-view-images/proto06.png)
 10. 將變更儲存至檔案 `.xib` ，並返回 Visual Studio 以同步處理變更。
@@ -344,7 +344,7 @@ namespace MacCollectionNew
 }
 ```
 
-查看此程式碼的詳細資訊，類別會繼承自， `NSCollectionViewItem` 使其可做為集合視圖儲存格的原型。 `Person`屬性會公開用來將資料系結至影像視圖的類別，以及 Xcode 中的標籤。 這是上述所建立的實例 `PersonModel` 。
+更詳細地查看此程式碼，類別繼承自， `NSCollectionViewItem` 因此可作為集合視圖儲存格的原型。 `Person`屬性會公開用來將資料系結至 Xcode 中之影像視圖和標籤的類別。 這是上面所建立的實例 `PersonModel` 。
 
 `BackgroundColor`屬性是控制項的快捷方式 `NSBox` `FillColor` ，將用來顯示儲存格的選取狀態。 藉由覆寫的 `Selected` 屬性 `NSCollectionViewItem` ，下列程式碼會設定或清除此選取狀態：
 
@@ -371,11 +371,11 @@ public override bool Selected
 
 <a name="Creating-the-Collection-View-Data-Source"></a>
 
-### <a name="creating-the-collection-view-data-source"></a>建立集合視圖資料來源
+### <a name="creating-the-collection-view-data-source"></a>建立收集視圖資料來源
 
-集合視圖資料來源（ `NSCollectionViewDataSource` ）會提供集合視圖的所有資料，並 `.xib` 根據集合中每個專案的需要，建立並填入集合視圖儲存格（使用原型）。
+集合視圖資料來源 (`NSCollectionViewDataSource`) 提供收集視圖的所有資料，並 `.xib` 根據集合中每個專案的需求，使用原型) 來建立和擴展集合視圖資料格 (。
 
-新增專案的新類別，並呼叫它， `CollectionViewDataSource` 使其看起來如下所示：
+在專案中加入新的類別，並呼叫它， `CollectionViewDataSource` 使其看起來如下所示：
 
 ```csharp
 using System;
@@ -462,11 +462,11 @@ namespace MacCollectionNew
 }
 ```
 
-查看此程式碼的詳細資訊，類別會繼承自， `NSCollectionViewDataSource` 並 `PersonModel` 透過其屬性公開實例清單 `Data` 。
+詳細查看此程式碼，類別繼承自， `NSCollectionViewDataSource` 並 `PersonModel` 透過其屬性公開實例清單 `Data` 。
 
-由於此集合只有一個區段，因此程式碼會覆寫 `GetNumberOfSections` 方法，並一律傳回 `1` 。 此外， `GetNumberofItems` 方法會在傳回屬性清單中的專案數時遭到覆寫 `Data` 。
+因為這個集合只有一個區段，所以程式碼會覆寫 `GetNumberOfSections` 方法，而且一律會傳回 `1` 。 此外， `GetNumberofItems` 方法會在傳回屬性清單中的專案數時遭到覆寫 `Data` 。
 
-`GetItem`每當需要新的儲存格時，就會呼叫方法，看起來如下所示：
+`GetItem`每當需要新的儲存格時，就會呼叫方法，如下所示：
 
 ```csharp
 public override NSCollectionViewItem GetItem(NSCollectionView collectionView, NSIndexPath indexPath)
@@ -478,21 +478,21 @@ public override NSCollectionViewItem GetItem(NSCollectionView collectionView, NS
 }
 ```
 
-`MakeItem`系統會呼叫集合視圖的方法，以建立或傳回的可重複使用實例 `EmployeeItemController` ，並 `Person` 將其屬性設定為在要求的儲存格中顯示的專案。 
+`MakeItem`系統會呼叫收集視圖的方法來建立或傳回可重複使用的實例 `EmployeeItemController` ，而且其 `Person` 屬性會設定為在要求的儲存格中顯示的專案。 
 
-`EmployeeItemController`必須使用下列程式碼，預先向集合視圖控制器註冊：
+`EmployeeItemController`必須使用下列程式碼，事先向收集視圖控制器註冊：
 
 ```csharp
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ``` 
 
-呼叫中使用的**識別碼**（ `EmployeeCell` ） `MakeItem` _必須_符合向集合視圖註冊的視圖控制器名稱。 下面將詳細說明此步驟。
+呼叫中所使用的 **識別碼** (`EmployeeCell`) `MakeItem` _必須_ 符合已向收集視圖註冊的視圖控制器名稱。 以下將詳細說明此步驟。
 
 <a name="Handling-Item-Selection"></a>
 
-### <a name="handling-item-selection"></a>處理專案選取
+### <a name="handling-item-selection"></a>處理專案選取專案
 
-若要處理集合中專案的選取和 deselection， `NSCollectionViewDelegate` 則需要。 由於此範例會使用內建的 `NSCollectionViewFlowLayout` 版面配置類型， `NSCollectionViewDelegateFlowLayout` 因此將需要此委派的特定版本。
+若要處理集合中專案的選取和 deselection， `NSCollectionViewDelegate` 則需要。 由於此範例將使用內建的 `NSCollectionViewFlowLayout` 版面配置類型，因此 `NSCollectionViewDelegateFlowLayout` 將需要此委派的特定版本。
 
 將新類別新增至專案，並呼叫它， `CollectionViewDelegate` 使其看起來如下所示：
 
@@ -565,35 +565,35 @@ namespace MacCollectionNew
 }
 ``` 
 
-`ItemsSelected`和 `ItemsDeselected` 方法會遭到覆寫，並用來設定或清除 `PersonSelected` 當使用者選取或取消選取專案時，處理集合視圖的視圖控制器屬性。 下面將詳細說明這一點。
+`ItemsSelected` `ItemsDeselected` 當使用者選取或取消選取專案時，和方法會被覆寫並用來設定或清除 `PersonSelected` 處理集合視圖的視圖控制器的屬性。 以下將詳細說明這一點。
 
 <a name="Creating-the-Collection-View-in-Interface-Builder"></a>
 
-### <a name="creating-the-collection-view-in-interface-builder"></a>在 Interface Builder 中建立集合視圖
+### <a name="creating-the-collection-view-in-interface-builder"></a>在 Interface Builder 中建立收集視圖
 
-當所有必要的支援部分都備妥時，可以編輯主要的分鏡腳本，並在其中加入集合視圖。
+有了所有必要的支援元件之後，就可以編輯主要的腳本，並在其中加入集合視圖。
 
 執行下列動作：
 
-1. 按兩下 `Main.Storyboard` [**方案總管**中的檔案，將它開啟，以在 Xcode 的 Interface Builder 中進行編輯。
-2. 將 [集合] 視圖拖曳到主視圖中，並調整其大小以填滿此視圖：
+1. 按兩下 `Main.Storyboard` **方案總管** 中的檔案，將其開啟，以在 Xcode 的 Interface Builder 中進行編輯。
+2. 將收集視圖拖曳至主視圖，並調整其大小以填滿視圖：
 
-    ![將集合視圖加入至版面配置](collection-view-images/collection01.png)
-3. 選取 [集合] 視圖後，使用 [條件約束編輯器]，在調整大小時將其釘選到視圖：
+    ![將收集視圖加入至版面配置](collection-view-images/collection01.png)
+3. 選取 [收集視圖] 之後，請使用 [條件約束編輯器]，在調整大小時將它釘選到視圖：
 
     ![加入條件約束](collection-view-images/collection02.png)
-4. 請確定已在 [ **Design Surface**中選取 [集合] 視圖（而不是以框出的**滾動**條或包含它的**剪切**視圖），切換至 [**助理編輯器**]，並建立 [集合] 視圖的 [**插座**]：
+4. 確定已在 [ **Design Surface** ] (中選取 [收集視圖]，而不是在包含它) 的上框線 **滾動** 條或 **剪切視圖** 中選取，請切換至 [ **助理編輯器** ]，並建立集合視圖的 **輸出** ：
 
     ![加入條件約束](collection-view-images/collection03.png)
-5. 儲存變更並返回 Visual Studio 以進行同步處理。
+5. 儲存變更並返回 Visual Studio 進行同步處理。
 
 <a name="Bringing-it-all-Together"></a>
 
-## <a name="bringing-it-all-together"></a>整合在一起
+## <a name="bringing-it-all-together"></a>全部整合
 
-所有支援的專案現在都已備妥一個類別，做為資料模型（ `PersonModel` ），已經 `NSCollectionViewDataSource` 加入來提供資料，一個是用 `NSCollectionViewDelegateFlowLayout` 來處理專案選取，而 `NSCollectionView` 已新增至主要的腳本，並公開為一條插座（ `EmployeeCollection` ）。
+所有的支援部分現在都已放在一個類別中，以做為資料模型 (`PersonModel`) 、已 `NSCollectionViewDataSource` 加入至提供資料、已 `NSCollectionViewDelegateFlowLayout` 建立用來處理專案選取專案，以及已新增至主要分鏡腳本， `NSCollectionView` 並公開為 () 的輸出 `EmployeeCollection` 。
 
-最後一個步驟是編輯包含集合視圖的 View Controller，並將所有元件全部整合在一起，以填入集合並處理專案選擇。
+最後一個步驟是編輯包含收集視圖的視圖控制器，並將所有元件結合在一起，以填入集合並處理專案選取專案。
 
 編輯檔案 `ViewController.cs` ，使其看起來如下所示：
 
@@ -736,28 +736,28 @@ namespace MacCollectionNew
 }
 ```
 
-查看此程式碼的詳細資訊，定義了一個 `Datasource` 屬性來保存的實例，以 `CollectionViewDataSource` 提供集合視圖的資料。 `PersonSelected`定義屬性，以保存 `PersonModel` 代表集合視圖中目前選取之專案的。 當選取範圍變更時，這個屬性也會引發 `SelectionChanged` 事件。
+仔細看一下此程式碼， `Datasource` 定義一個屬性來保存的實例，該實例 `CollectionViewDataSource` 會提供收集視圖的資料。 `PersonSelected`定義屬性，以保存 `PersonModel` 代表集合視圖中目前所選取專案的。 當選取專案變更時，這個屬性也會引發 `SelectionChanged` 事件。
 
-`ConfigureCollectionView`類別是用來向使用下列這一行的集合視圖，註冊做為資料格原型的視圖控制器：
+`ConfigureCollectionView`類別可用來註冊 View 控制器，以使用下列這一行的集合視圖作為資料格原型：
 
 ```csharp
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ```
 
-請注意， **Identifier** `EmployeeCell` 用來註冊原型的識別碼（）與 `GetItem` 上述所定義之方法中所呼叫的識別碼（）相符 `CollectionViewDataSource` ：
+請注意， **Identifier** `EmployeeCell` 用來註冊原型的識別碼 () 符合 `GetItem` 上述定義之方法中所呼叫的識別碼 `CollectionViewDataSource` ：
 
 ```csharp
 var item = collectionView.MakeItem("EmployeeCell", indexPath) as EmployeeItemController;
 ...
 ```
 
-此外，視圖控制器的類型**必須** `.xib` **完全**符合定義原型的檔案名。 在此範例中為 `EmployeeItemController` 和 `EmployeeItemController.xib` 。
+此外，視圖控制器的類型 **必須** `.xib` **完全**符合定義原型的檔案名。 在此範例中為 `EmployeeItemController` 和 `EmployeeItemController.xib` 。
 
-集合視圖中專案的實際配置是由集合視圖配置類別所控制，而且可以藉由將新的實例指派給屬性，在執行時間動態變更 `CollectionViewLayout` 。 變更此屬性會更新集合視圖外觀，而不會製作變更的動畫。
+集合視圖中專案的實際版面配置是由集合視圖配置類別所控制，而且可以在執行時間動態變更，方法是將新的實例指派給 `CollectionViewLayout` 屬性。 變更此屬性會更新集合視圖外觀，而不會將變更動畫。
 
-Apple 隨附兩個內建的版面配置類型，其中包含將處理最常見用法的集合視圖： `NSCollectionViewFlowLayout` 和 `NSCollectionViewGridLayout` 。 如果開發人員需要自訂格式，例如在圓形中設定項目，則可以建立的自訂實例，並覆 `NSCollectionViewLayout` 寫必要的方法以達到所要的效果。
+Apple 提供兩個內建的版面配置類型，以及將處理最常見用途的收集視圖： `NSCollectionViewFlowLayout` 和 `NSCollectionViewGridLayout` 。 如果開發人員需要自訂格式，例如將專案排放在圓形中，則可以建立的自訂實例， `NSCollectionViewLayout` 並覆寫必要的方法以達成所要的效果。
 
-這個範例會使用預設的流程配置，因此它會建立類別的實例 `NSCollectionViewFlowLayout` ，並如下所示設定它：
+此範例會使用預設流程配置，因此它會建立類別的實例 `NSCollectionViewFlowLayout` ，並依照下列方式進行設定：
 
 ```csharp
 var flowLayout = new NSCollectionViewFlowLayout()
@@ -769,9 +769,9 @@ var flowLayout = new NSCollectionViewFlowLayout()
 };
 ```
 
-`ItemSize`屬性會定義集合中每個個別資料格的大小。 `SectionInset`屬性會定義要配置資料格之集合邊緣的內建。 `MinimumInteritemSpacing`定義專案之間的最小間距，並 `MinimumLineSpacing` 定義集合中各行間的最小間距。
+`ItemSize`屬性會定義集合中每個個別資料格的大小。 `SectionInset`屬性會定義要在其中放置儲存格之集合邊緣的內建。 `MinimumInteritemSpacing` 定義專案之間的最小間距，並 `MinimumLineSpacing` 定義集合中各行之間的最小間距。
 
-配置會指派給 [集合] 視圖，而實例則 `CollectionViewDelegate` 會附加至 [處理專案] 選取範圍：
+配置會指派給集合視圖，並附加的實例 `CollectionViewDelegate` 以處理專案選取：
 
 ```csharp
 // Setup collection view
@@ -779,7 +779,7 @@ EmployeeCollection.CollectionViewLayout = flowLayout;
 EmployeeCollection.Delegate = new CollectionViewDelegate(this);
 ```
 
-`PopulateWithData`方法會建立的新實例 `CollectionViewDataSource` 、填入資料、將它附加至集合視圖，以及呼叫 `ReloadData` 方法來顯示專案：
+`PopulateWithData`方法會建立的新實例 `CollectionViewDataSource` ，並在其中填入資料、將其附加至集合視圖，然後呼叫 `ReloadData` 方法來顯示專案：
 
 ```csharp
 private void PopulateWithData()
@@ -796,7 +796,7 @@ private void PopulateWithData()
 }
 ```
 
-`ViewDidLoad`會覆寫方法，並呼叫 `ConfigureCollectionView` 和 `PopulateWithData` 方法，以向使用者顯示最終的集合視圖：
+`ViewDidLoad`方法會被覆寫並呼叫 `ConfigureCollectionView` 和 `PopulateWithData` 方法，以顯示最終的收集視圖給使用者：
 
 ```csharp
 public override void ViewDidLoad()
@@ -811,13 +811,13 @@ public override void ViewDidLoad()
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文已詳細探討如何在 Xamarin. Mac 應用程式中使用集合視圖。 首先，它探討了如何使用索引鍵/值編碼（KVC）和索引鍵-值觀察（KVO），將 c # 類別公開給目標-C。 接下來，它會示範如何使用 KVO 相容的類別，並將資料系結至 Xcode 的 Interface Builder 中的集合 Views。 最後，它會示範如何在 c # 程式碼中與集合流覽互動。
+本文詳細說明如何在 Xamarin 應用程式中使用集合視圖。 首先，它會探討如何使用索引鍵/值編碼 (KVC) 和索引鍵-值觀察 (KVO) ，將 c # 類別公開至目標 C。 接下來，它會示範如何使用符合 KVO 規範的類別，並將資料系結至 Xcode 的 Interface Builder 中的集合視圖。 最後，它會示範如何在 c # 程式碼中與集合視圖互動。
 
 ## <a name="related-links"></a>相關連結
 
-- [MacCollectionNew （範例）](https://docs.microsoft.com/samples/xamarin/mac-samples/maccollectionnew)
+- [MacCollectionNew (範例) ](/samples/xamarin/mac-samples/maccollectionnew)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [資料繫結和機碼值編碼](~/mac/app-fundamentals/databinding.md)
 - [NSCollectionView](https://developer.apple.com/reference/appkit/nscollectionview)
