@@ -9,12 +9,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 570e549af3f0c020087e65eec0f5edfe3807719b
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: 12631abacc56edf88d375d4be89e71a9a4588d03
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91410684"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436372"
 ---
 # <a name="no-locxamarinessentials-permissions"></a>Xamarin.Essentials：許可權
 
@@ -199,7 +199,7 @@ public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePla
 await Permissions.RequestAsync<ReadWriteStoragePermission>();
 ```
 
-如果您想要從共用程式碼呼叫此 API，您可以建立介面，並使用相依性 [服務](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/dependency-service/) 來註冊並取得執行。
+如果您想要從共用程式碼呼叫此 API，您可以建立介面，並使用相依性 [服務](../xamarin-forms/app-fundamentals/dependency-service/index.md) 來註冊並取得執行。
 
 ```csharp
 public interface IReadWritePermission
@@ -244,19 +244,19 @@ if (status != PermissionStatus.Granted)
 
 許可權必須在 Android 資訊清單檔中設定相符的屬性。 許可權狀態的預設值為 [拒絕]。
 
-在 [Xamarin. Android 檔中](https://docs.microsoft.com/xamarin/android/app-fundamentals/permissions) 深入瞭解許可權。
+在 [Xamarin. Android 檔中](../android/app-fundamentals/permissions.md) 深入瞭解許可權。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
 許可權在檔案中必須有相符的字串 `Info.plist` 。 要求並拒絕許可權之後，如果您第二次要求許可權，就不會再出現快顯視窗。 您必須提示使用者手動調整 iOS 中 [應用程式設定] 畫面的設定。 許可權狀態的預設值為 Unknown。
 
-深入瞭解 [IOS 安全性和隱私權功能](https://docs.microsoft.com/xamarin/ios/app-fundamentals/security-privacy) 檔。
+深入瞭解 [IOS 安全性和隱私權功能](../ios/app-fundamentals/security-privacy.md) 檔。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
 許可權必須具有在封裝資訊清單中宣告的相符功能。 在大部分的情況中，許可權狀態的預設值為 Unknown。
 
-深入瞭解 [應用程式功能聲明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) 檔。
+深入瞭解 [應用程式功能聲明](/windows/uwp/packaging/app-capability-declarations) 檔。
 
 --------------
 

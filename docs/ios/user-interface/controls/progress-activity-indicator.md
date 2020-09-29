@@ -1,101 +1,101 @@
 ---
 title: Xamarin 中的進度和活動指示器
-description: 本檔討論如何在 Xamarin 中使用進度和活動指示器。 其中說明如何以程式設計方式和分鏡腳本來使用它們。
+description: 本檔討論如何在 Xamarin 中使用進度和活動指示器。 它描述如何以程式設計方式和使用分鏡腳本來使用它們。
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 76e1ee54a5e1b729fdcb0b0a2c1f278703b2b4d6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a2e8e6d1fdf3f51f015dccf12a6a3b455ceff741
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021963"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432748"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Xamarin 中的進度和活動指示器
 
-您的應用程式很可能必須執行長時間執行的工作，例如載入或處理資料，而且這項延遲可能會導致更新 UI 的延遲。 在這段期間，您應該一律使用進度列指示器，以 reassure 系統正在執行工作的使用者。 這可讓使用者控制項應用程式正在處理其要求，而不會等候其輸入，而且可以提供一種方式來詳細說明他們必須等待的時間。
+您的應用程式很可能必須執行長時間執行的工作，例如載入或處理資料，而且此延遲可能會導致更新 UI 的延遲。 在這段期間，您應該一律使用進度指標來讓系統正在執行工作的使用者。 這可讓使用者控制應用程式正在處理其要求，但不會等待其輸入，並且可提供一種方式來詳細描述他們必須等待的時間長度。
 
-iOS 提供兩種主要方式，可在您的應用程式中提供此進度指示：活動指示器（包括特定的_網路_活動指標）和進度列。
+iOS 提供兩種主要方式，在您的應用程式中提供此進度指示：活動指標 (包括特定的 _網路_ 活動指標) 和進度列。
 
-## <a name="activity-indicator"></a>活動指標
+## <a name="activity-indicator"></a>活動指示器
 
-當您的應用程式正在執行較長的進程，但您不知道工作將需要的確切時間長度時，應該會顯示活動指示器。
+當您的應用程式執行較長的程式，但您不知道工作將需要的確切時間長度時，應該會顯示活動指示器。
 
-Apple 對於使用活動指示器有下列建議：
+Apple 針對使用活動指標有下列建議：
 
-- **可能的話，請改為使用進度**列，因為活動指示器會提供使用者對執行的程式所需時間的任何意見反應，如果長度知道，請一律使用進度列（例如，要在檔案中下載多少個位元組）。
-- **將指標保持動畫**-使用者會將固定的活動指標與停止的應用程式產生關聯，如此一來，在顯示指示器時，您應該一律有動畫。
-- **描述所處理的工作**-只顯示活動指示器本身不夠，使用者必須知道他們正在等候的進程。 包含清楚定義工作的有意義標籤（通常是單一、完整的句子）。
+- **可能的話，請改為使用進度** 列，因為活動指標讓使用者不會看到執行中程式所需的時間，請一律使用進度列，如果長度是已知的，則一律使用進度列 (例如，檔案) 中要下載的位元組數目。
+- **將指標保持在動畫** -使用者會將靜止的活動指標與停止的應用程式產生關聯，如此一來，當它顯示時，您應該一律將指標動畫。
+- **描述正在處理的工作** -只顯示活動指示器本身並不夠，使用者需要知道他們正在等待的進程。 包含有意義的標籤 (通常是明確定義工作的單一完整句子) 。
 
 ### <a name="implementing-an-activity-indicator"></a>執行活動指標
 
-活動指標會透過[`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView)類別來執行，以表示 `UIActivity` 正在進行中。
+活動指標是透過 [`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView) 類別來執行，以表示正在進行 `UIActivity` 。
 
-### <a name="activity-indicators-and-storyboards"></a>活動指示器和分鏡腳本
+### <a name="activity-indicators-and-storyboards"></a>活動指標和分鏡腳本
 
-如果您使用 iOS 設計工具來建立 UI，則可以從 [工具箱] 將活動指示器新增至您的版面配置。 下列屬性可以從 Properties Pad 進行調整：
+如果您使用 iOS 設計工具建立 UI，則可以從 [工具箱] 將活動指標加入至您的版面配置。 您可以從 Properties Pad 調整下列屬性：
 
 ![Properties Pad](progress-activity-indicator-images/progress-indicator1.png)
 
 ### <a name="managing-activity-indicator-behavior"></a>管理活動指標行為
 
-使用 `StartAnimating()` 和 `StopAnimating()` 方法來啟動和停止活動指示器動畫。
+使用 `StartAnimating()` 和 `StopAnimating()` 方法來啟動及停止活動指標動畫。
 
-將 [`HidesWhenStopped`] 屬性設定為 [`true`]，讓活動指示器在呼叫 `StopAnimating()` 之後消失。 根據預設，這會設定為 `true`。 您可以在任何時間點，檢查 [`IsAnimating`] 屬性，查看活動指標是否正在執行旋轉的動畫。 
+將 `HidesWhenStopped` 屬性設為， `true` 可讓活動指標在呼叫之後消失 `StopAnimating()` 。 根據預設，這會設為 `true` 。 在任何時間點，您都可以藉由檢查屬性來查看活動指標是否正在執行其旋轉動畫 `IsAnimating` 。 
 
-### <a name="managing-activity-indicator-appearances"></a>管理活動指示器外觀
+### <a name="managing-activity-indicator-appearances"></a>管理活動指標外觀
 
-當具現化活動指標時，可以將 `UIActivityIndicatorViewStyle` 列舉當做參數傳遞。 您可以使用這個來將視覺化樣式設定為 `Gray`、`White`或 `WhiteLarge`，例如：
+當具現 `UIActivityIndicatorViewStyle` 化活動指標時，可以將列舉傳遞為參數。 您可以使用這種方式，將視覺效果樣式設定為 `Gray` 、 `White` 或 `WhiteLarge` ，例如：
 
 ```csharp
 activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
 ```
 
-您可以藉由設定 `Color` 屬性來覆寫 `UIActivityIndicatorViewStyle` 所提供的色彩。
+您可以藉由設定屬性來覆寫提供的色彩 `UIActivityIndicatorViewStyle` `Color` 。
 
 ## <a name="progress-bar"></a>進度列
 
-進度列會顯示為填滿色彩的線條，以指出耗時工作的狀態和長度。 當工作的長度知道或可以計算時，應該一律使用進度列。
+進度列會顯示為填滿色彩的線條，以指出耗時工作的狀態和長度。 當工作的長度為已知或可計算時，應一律使用進度列。
 
-Apple 具有下列使用進度列的建議：
+Apple 針對使用進度列有下列建議：
 
-- **正確地報告進度**列：進度列應一律是完成工作所需時間的精確表示。 絕對不要將讓應用程式顯示為忙碌的時間。
-- 用於**定義良好的持續**時間-進度列不應該只會顯示有較長的工作正在進行中，而是提供使用者和指示完成的工作和剩餘時間的估計。
+- **正確地報告進度** ：進度列應一律精確表示完成工作所需的時間。 絕對不要讓應用程式看似忙碌的時間。
+- **使用於定義完善的持續** 時間（進度列）不只會顯示漫長的工作正在進行中，還可讓使用者和指出工作的完成程度，以及剩餘時間的估計。
 
 ### <a name="implementing-an-progress-bar"></a>執行進度列
 
-藉由具現化來建立進度列[`UIProgressView`](xref:UIKit.UIProgressView)
+藉由具現化來建立進度列 [`UIProgressView`](xref:UIKit.UIProgressView)
 
 ### <a name="progress-bars-and-storyboards"></a>進度列和分鏡腳本
 
-您也可以在使用 iOS 設計工具時，將進度列新增至 UI。 在 [**工具箱**] 中搜尋**進度視圖**，並將它拖曳至您的 view。
+使用 iOS 設計工具時，您也可以將進度列新增至 UI。 在 [**工具箱**] 中搜尋**進度視圖**，然後將它拖曳至您的視圖。
 
-您可以在 properties pad 上調整下列屬性：
+下列屬性可以在 properties pad 上調整：
 
 ![Properties Pad](progress-activity-indicator-images/progress-indicator3.png)
 
 ### <a name="managing-progress-bar-behavior"></a>管理進度列行為
 
-您可以使用 [`Progress`] 屬性一開始設定橫條的進度：
+您可以使用屬性一開始就設定橫條的進度 `Progress` ：
 
 ```csharp
 ProgressBar.Progress = 0f;
 ```
 
-您可以使用 `SetProgress` 方法來調整進度，並傳遞布林值宣告（如果您想要動畫變更的話）。
+`SetProgress`如果您想要動畫的變更，可以使用方法來調整進度，並傳遞布林值。
 
 ```csharp
 ProgressBar.SetProgress(1.0f, true);
 ```
 
-如需有關使用進度列的詳細資訊，請參閱[報告進度](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/networking/download_progress)配方和[UICatalog tvOS 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-uicatalog)。
+如需使用進度列的詳細資訊，請參閱 [報告進度](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/networking/download_progress) 配方和 [UICatalog tvOS 範例](/samples/xamarin/ios-samples/tvos-uicatalog)。
 
-### <a name="managing-progress-bar-appearance"></a>管理進度列的外觀
+### <a name="managing-progress-bar-appearance"></a>管理進度列外觀
 
-類似于活動指標，在具現化進度列時，可以將 `UIProgressViewStyle` 列舉當做參數傳遞。
+與活動指標類似，在具現 `UIProgressViewStyle` 化進度列時，可以將列舉傳遞為參數。
 
 您可以使用下列屬性來調整進度和追蹤影像和色調色彩：
 

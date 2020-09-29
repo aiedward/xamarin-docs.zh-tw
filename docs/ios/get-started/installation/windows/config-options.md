@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: c5c819221bc08f1c39bde9b5900c2f9f9889764d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0f57c10ea263a3dcf882d2cf75a57105e7f7d0d4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022515"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434528"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>設定 Visual Studio for iOS 開發
 
@@ -27,7 +27,7 @@ Visual Studio 2019 或 Visual Studio 2017 必須使用在 Mac 組建主機上安
 - 如果您使用 Visual Studio 2019 Preview，請選取 Visual Studio for Mac 中的 [Alpha]**** 更新通道。
 
 > [!NOTE]
-> 從 [Visual Studio 2017 15.6 版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 開始，Visual Studio 2017 會自動偵測 Mac 組建主機是否使用與 Windows 相同的 Xamarin.iOS 版本。 如果版本不符，則 Visual Studio 2017 會提供以在 Mac 組建主機上遠端安裝正確的版本。 如需詳細資訊，請參閱[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南的[自動 Mac 佈建](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)小節。
+> 從 [Visual Studio 2017 15.6 版](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 開始，Visual Studio 2017 會自動偵測 Mac 組建主機是否使用與 Windows 相同的 Xamarin.iOS 版本。 如果版本不符，則 Visual Studio 2017 會提供以在 Mac 組建主機上遠端安裝正確的版本。 如需詳細資訊，請參閱[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南的[自動 Mac 佈建](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)小節。
 
 ## <a name="ios-toolbar"></a>iOS 工具列
 
@@ -42,7 +42,7 @@ Visual Studio 2019 或 Visual Studio 2017 必須使用在 Mac 組建主機上安
 
 如果此工具列未出現，則請在 Visual Studio 2019 或 Visual Studio 2017 中開啟 [檢視]**** 功能表，然後選擇 [工具列] > [iOS]****：
 
-![開啟 iOS 工具列](config-options-images/ios-toolbar-enable.png "開啟 iOS 工具列")
+![啟用 iOS 工具列](config-options-images/ios-toolbar-enable.png "啟用 iOS 工具列")
 
 ## <a name="solution-platforms-drop-down-menu"></a>方案平台下拉式功能表
 
@@ -54,8 +54,8 @@ Visual Studio 2019 或 Visual Studio 2017 必須使用在 Mac 組建主機上安
 - 選擇 [新增或移除按鈕]**** 
 - 確定已核取 [方案平台]**** 項目：
 
-![啟用解決方案平台下拉選單](config-options-images/solution-platforms-enable.png "啟用解決方案平台下拉選單")
+![啟用 [方案平臺] 下拉式功能表](config-options-images/solution-platforms-enable.png "啟用 [方案平臺] 下拉式功能表")
 
 開啟 iOS 專案時，[標準]**** 和 [iOS]**** 工具列現在應該類似下列螢幕擷取畫面：
 
-![標準與 iOS 工具列](config-options-images/toolbars.png "標準與 iOS 工具列")
+![標準和 iOS 工具列](config-options-images/toolbars.png "標準和 iOS 工具列")

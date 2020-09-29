@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: a5135d9bb481afcaefc851e392196a87b8ef80dd
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 8d4b60a2e8e53b5b3f97a781b7f1888239541f1a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997198"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431861"
 ---
 # <a name="debugging-xamarinios-apps"></a>偵錯 Xamarin.iOS 應用程式
 
@@ -62,12 +62,12 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [ ![ ](debugging-in-xamarin-ios-images/debugging7.png)](debugging-in-xamarin-ios-images/debugging7.png#lightbox)在 
- [ ![ 實體裝置上進行模擬器調試](debugging-in-xamarin-ios-images/debugging7a.png)](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)的調試
+ [ ![ 實體裝置](debugging-in-xamarin-ios-images/debugging7a.png)](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)上對模擬器進行調試
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [ ![ ](debugging-in-xamarin-ios-images/debugging7c.png)](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)在 
- [ ![ 實體裝置上進行模擬器調試](debugging-in-xamarin-ios-images/debugging7d.png)](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)的調試
+ [ ![ 實體裝置](debugging-in-xamarin-ios-images/debugging7d.png)](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)上對模擬器進行調試
 
 -----
 
@@ -126,7 +126,7 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 然後，您可以輸入想要中斷點發生的條件
 
-如需有關在舊版 Visual Studio 中使用中斷點條件的詳細資訊，請參閱關於此主題的 [Visual Studio 文件](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints)。
+如需有關在舊版 Visual Studio 中使用中斷點條件的詳細資訊，請參閱關於此主題的 [Visual Studio 文件](/visualstudio/debugger/using-breakpoints)。
 
 -----
 
@@ -140,11 +140,11 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
  [![偵錯工具可讓開發人員控制程式的執行](debugging-in-xamarin-ios-images/image7.png)](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
-這些節點為：
+這些警告是：
 
 - **執行/停止**：這會開始/停止執行程式碼，直到下一個中斷點。
-- **不進入函式**：這會執行下一行程式碼。 如果下一行是函式呼叫，不進入函式會執行函式，並會在函式_之後_的下一行程式碼停止。
-- **逐步**執行–這也會執行下一行程式碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
+- **不進入函式**：這會執行下一行程式碼。 如果下一行是函式呼叫，[不進入函式] 會執行函式，並且會在函式 _之後_ 的下一行程式碼停止。
+- **逐步** 執行–這也會執行下一行程式碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
 - **跳離函式**：這會回到呼叫目前函式的行。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -153,14 +153,14 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 [![偵錯工具可讓開發人員控制程式的執行](debugging-in-xamarin-ios-images/image7vs.png)](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
-這些節點為：
+這些警告是：
 
 - **執行/停止**：這會開始/停止執行程式碼，直到下一個中斷點。
-- **不進入函式 (F11)**：這會執行下一行程式碼。 如果下一行是函式呼叫，不進入函式會執行函式，並會在函式_之後_的下一行程式碼停止。
+- **不進入函式 (F11)**：這會執行下一行程式碼。 如果下一行是函式呼叫，[不進入函式] 會執行函式，並且會在函式 _之後_ 的下一行程式碼停止。
 - **逐步執行 (F10)**：這也會執行下一行程式碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
 - **跳離函式 (Shift + F11)** 這會回到呼叫目前函式的行。
 
-如需更多關於偵錯的深入文件，請參閱[使用 Visual Studio 偵錯工具巡覽程式碼](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)。
+如需更多關於偵錯的深入文件，請參閱[使用 Visual Studio 偵錯工具巡覽程式碼](/visualstudio/debugger/navigating-through-code-with-the-debugger)。
 
 -----
 
@@ -216,13 +216,13 @@ Xamarin.iOS 隨附 Mono 類別庫的原始程式碼，您可以使用它從偵�
 
 若要啟用此功能，請確定 [Visual Studio for Mac] > [喜好設定] > [偵錯工具]__ 功能表下的 [只偵錯專案程式碼; 不涉及架構程式碼]**** 選項已取消選取，如下所示：
 
-[![偵錯工具 Mono 的類別庫](debugging-in-xamarin-ios-images/debugging6.png)](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
+[![調試 Mono 的類別庫](debugging-in-xamarin-ios-images/debugging6.png)](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要針對 Visual Studio 中的類別庫進行偵錯，您必須停用 [偵錯] > [選項]__ 功能表下的 [Just My Code]****。 在 [偵錯] > [一般]__ 節點中，清除 [啟用 Just My Code]**** 核取方塊：
 
-[![偵錯工具 Mono 的類別庫](debugging-in-xamarin-ios-images/debugging6vs.png)](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
+[![調試 Mono 的類別庫](debugging-in-xamarin-ios-images/debugging6vs.png)](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 

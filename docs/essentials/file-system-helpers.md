@@ -9,14 +9,14 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eb35750372c5ccb878c7b38f9d25898b09fd7f1e
-ms.sourcegitcommit: e412858ce431b3280c88241e324fcab33066eb58
+ms.openlocfilehash: 967fa5f54ec9ccbb1f8bac2a87d77dca63caba3a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865893"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434327"
 ---
-# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials：檔案系統協助程式
+# <a name="no-locxamarinessentials-file-system-helpers"></a>Xamarin.Essentials：檔案系統協助程式
 
 **FileSystem** 類別包含一系列協助程式，用於尋找應用程式的快取和資料目錄，並開啟應用程式套件內的檔案。
 
@@ -71,14 +71,14 @@ var mainDir = FileSystem.AppDataDirectory;
 - **AppDataDirectory** – 傳回透過 iTunes 與 iCloud 備份的[程式庫](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)目錄。
 
 > [!IMPORTANT]
-> 在 iOS 模擬器中，應用程式識別碼（這是目錄名稱的一部分）會在每個組建上變更，因此每次為模擬器建立應用程式時，您都必須取得正確的識別碼。
+> 在 iOS 模擬器中，應用程式識別碼 (是目錄名稱的一部分) 每個組建的變更，因此您每次為模擬器建立應用程式時，都必須取得正確的識別碼。
 
 將任何檔案新增至 iOS 專案的 [資源]**** 資料夾中，並將建置動作標記為 **BundledResource**，以將其與 `OpenAppPackageFileAsync` 搭配使用。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-- **CacheDirectory** – 傳回 [LocalCacheFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) 目錄...
-- **AppDataDirectory** – 傳回備份至雲端的 [LocalFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) 目錄。
+- **CacheDirectory** – 傳回 [LocalCacheFolder](/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) 目錄...
+- **AppDataDirectory** – 傳回備份至雲端的 [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) 目錄。
 
 將任何檔案新增至 UWP 專案的根目錄中，並將建置動作標記為**內容**，以將其與 `OpenAppPackageFileAsync` 搭配使用。
 

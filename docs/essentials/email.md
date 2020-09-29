@@ -9,12 +9,12 @@ ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ddeba8e0d2d0f0894f7e43c5cf2501c942f7720a
-ms.sourcegitcommit: 3a15d9b29d65139b18dcf0871fe00cffb2a56357
+ms.openlocfilehash: 059405d4e3219162022b3f8c0208ee5cc4ac2d38
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353391"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434545"
 ---
 # <a name="no-locxamarinessentials-email"></a>Xamarin.Essentials：電子郵件
 
@@ -129,7 +129,7 @@ await Email.ComposeAsync(message);
 
 因為嘗試傳送 `Html` 的 `BodyFormat` 會擲回 `FeatureNotSupportedException`，所以僅支援 `PlainText`。
 
-並非所有電子郵件用戶端都支援傳送附件。 如需詳細資訊，請參閱[文件](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email)。
+並非所有電子郵件用戶端都支援傳送附件。 如需詳細資訊，請參閱[文件](/windows/uwp/contacts-and-calendar/sending-email)。
 
 -----
 

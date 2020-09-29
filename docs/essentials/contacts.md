@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d88be99c32f7b969019305ec821a2dccbb6d5fda
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: bd239a8dcf192c0bdbc6265769208f4fc989bbbe
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414751"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434492"
 ---
 # <a name="no-locxamarinessentials-contacts"></a>Xamarin.Essentials：連絡人
 
@@ -25,7 +25,7 @@ Contact **類別可** 讓使用者挑選連絡人並取得其相關資訊。
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要存取 **FilePicker** 功能，需要下列平臺特定設定。
+若要存取「 **連絡人** 」功能，需要下列平臺特定設定。
 
 # <a name="android"></a>[Android](#tab/android)
 

@@ -1,72 +1,72 @@
 ---
 title: Xamarin 中的資料表元件和功能
-description: 本檔說明 iOS 中 UITableView 的各個部分。 它討論區段標頭、資料格、區段頁尾、索引和編輯模式。
+description: 本檔說明 iOS 中 Ios uitableview 範例的各種不同部分。 它會討論區段標題、資料格、頁尾、索引和編輯模式。
 ms.prod: xamarin
 ms.assetid: B4139C8B-28F2-4C0F-297F-BF5432C5A915
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 6002e5cc62dfe30c14f21943c690a5a1b15a0c12
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 55f471fe02618becbfc4a7ab8571d9690fe44843
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936587"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430587"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin 中的資料表元件和功能
 
-UITableView 可以有「群組」或「純文字」樣式，並由下列部分組成：
+Ios uitableview 範例可以有「分組」或「純文字」樣式，並包含下列部分：
 
-- [區段標頭](#Section_Header)
-- [儲存格](#Cells)（或資料列，如果您想要的話）
-- [區段頁尾](#Section_Footer)
+- [區段標題](#Section_Header)
+- 如果您想要) ，資料[格](#Cells) (或資料列
+- [頁尾](#Section_Footer)
 - [Index](#Index)
-- [編輯模式](#Edit_Features)（包括 [滑動至刪除] 和 [拖曳控點] 以變更資料列順序） 
+- [編輯模式](#Edit_Features) (包括「滑動至刪除」以及將控點拖曳至變更資料列順序)  
 
-這些螢幕擷取畫面顯示區段列、頁首、頁尾、編輯控制項和索引的顯示方式。
+這些螢幕擷取畫面顯示如何顯示區段列、頁首、頁尾、編輯控制項和索引。
 
- [![這些螢幕擷取畫面顯示區段列、頁首、頁尾、編輯控制項和索引的顯示方式](table-parts-and-functionality-images/image1a.png)](table-parts-and-functionality-images/image1a.png#lightbox)
+ [![這些螢幕擷取畫面顯示如何顯示區段列、頁首、頁尾、編輯控制項和索引](table-parts-and-functionality-images/image1a.png)](table-parts-and-functionality-images/image1a.png#lightbox)
 
 以下將更詳細地說明這些部分：
 
 <a name="Section_Header"></a>
 
-## <a name="section-header"></a>區段標頭
+## <a name="section-header"></a>區段標題
 
-資料格可以選擇性地分組為區段，並以自訂標頭標示，並（或）以頁尾標示。 您可以使用字串值來設定標頭，或提供自訂視圖來允許不同的版面配置或樣式。
+您可以選擇性地將資料格分組為區段，並以自訂標頭標示，並（或）以頁尾標記。 您可以使用字串值設定標頭，也可以提供自訂視圖來允許不同的配置或樣式。
 
 <a name="Cells"></a>
 
 ## <a name="cells"></a>資料格
 
-資料格是資料表的主要使用者介面元素。 正確執行時，會重複使用資料格來提升記憶體效率。 有四種內建的儲存格樣式，您可以在程式碼中建立自己的自訂資料格，或是在使用分鏡腳本時在設計工具中建立。
+資料格是資料表的主要使用者介面元素。 當正確執行時，會將資料格重複用於記憶體效率。 內建的儲存格樣式有四種，您可以在程式碼中建立自己的自訂資料格，或在使用分鏡腳本時，在設計工具中建立自己的資料格。
 
 <a name="Section_Footer"></a>
 
-## <a name="section-footer"></a>區段頁尾
+## <a name="section-footer"></a>頁尾
 
-選擇性區段頁尾可以使用字串值來設定，或者可以提供自訂視圖來允許不同的版面配置或樣式。 區段標頭和頁尾可以獨立設定。
+您可以使用字串值來設定選擇性頁尾頁尾，也可以提供自訂視圖來允許不同的版面配置或樣式。 區段標頭和頁尾可以個別設定。
 
 <a name="Index"></a>
 
 ## <a name="index"></a>索引
 
-索引會顯示為下表右邊緣的字元帶狀。
-在索引上觸及或拖曳可加速滾動到資料表的該部分。 索引是選擇性的，但建議用來協助導覽長清單。 索引通常不會與群組樣式一起使用。
+索引會顯示為數據表右邊緣下的字元帶。
+在索引上觸及或拖曳可加速滾動至資料表的那個部分。 索引是選擇性的，但建議用來協助流覽長清單。 索引通常不能與群組的樣式一起使用。
 
 <a name="Edit_Features"></a>
 
 ## <a name="editing-mode"></a>編輯模式
 
-有幾種不同的編輯功能可供使用：
+有幾個不同的編輯功能可供使用：
 
-- 滑動以刪除個別資料格。
-- 進入編輯模式以顯示每個資料列的刪除按鈕 
+- 滑動以刪除個別儲存格。
+- 進入編輯模式以顯示每個資料列上的刪除按鈕 
 - 進入編輯模式以顯示重新排序控制碼。 
-- 插入新的儲存格（含動畫）。
+- 使用動畫) 插入新的資料格 (。
 
-本檔的其餘部分將說明如何使用 Xamarin 來執行所有這些 UITableView 功能。
+本檔的其餘部分將說明如何使用 Xamarin 來執行所有這些 Ios uitableview 範例功能。
 
 ## <a name="classes-overview"></a>類別總覽
 
@@ -74,22 +74,22 @@ UITableView 可以有「群組」或「純文字」樣式，並由下列部分�
 
 [![用來顯示資料表視圖的主要類別如下所示](table-parts-and-functionality-images/classdiagram.png)](table-parts-and-functionality-images/classdiagram.png#lightbox)
 
-每個類別的用途如下所述：
+每個類別的目的如下所述：
 
-- **UITableView** –包含滾動容器內儲存格集合的視圖。 [資料表] 視圖通常會在 iPhone 應用程式中使用整個螢幕，但可能做為 iPad 上較大視圖的一部分（或出現在 popover 中）。 
-- **UITableViewCell** –代表資料表視圖中單一資料格（或資料列）的視圖。 有四個內建的儲存格類型，而且可以使用 c # 或 iOS 設計工具來建立自訂資料格。 
-- **UITableViewSource** – Xamarin. iOS-專有抽象類別，提供顯示資料表所需的所有方法，包括資料列計數、傳回每個資料列的資料格視圖、處理資料列選取，以及許多其他選擇性功能。 您*必須*將此設為子類別，才能讓 UITableView 運作。 
+- **Ios uitableview 範例** –包含滾動容器內儲存格集合的視圖。 表格視圖通常會使用 iPhone 應用程式中的整個畫面，但可能會在 iPad (的較大觀點中存在，或出現在 popover) 中。 
+- **UITableViewCell** –代表資料表視圖中單一資料格 (或資料列) 的視圖。 有四個內建資料格類型，而且可以使用 c # 或 iOS 設計工具來建立自訂儲存格。 
+- **UITableViewSource** – Xamarin-專屬抽象類別，提供顯示資料表所需的所有方法，包括資料列計數、傳回每個資料列的資料格視圖、處理資料列選取，以及許多其他選擇性功能。 您  *必須* 將此類別設為子類別，才能讓 ios uitableview 範例運作。 
 - **NSIndexPath** –包含資料列和區段屬性，可唯一識別資料表中資料格的位置。 
-- **UITableViewController** –一種立即可用的 UIViewController，其中的 UITableView 會硬式編碼為其觀點，並可透過 TableView 屬性加以存取。 
-- **UIViewController** –如果資料表不佔用整個螢幕，您可以將 UITableView 新增至任何 UIViewController，並適當地設定其框架。 
+- **UITableViewController** –一種立即可用的 UIViewController，它會將 ios uitableview 範例編碼為其視圖，並可透過 TableView 屬性存取。 
+- **UIViewController** –如果資料表不佔用整個畫面，您可以將 ios uitableview 範例新增至任何 UIViewController，並適當地設定其框架組。 
 
-UITableViewSource 會取代下列兩個類別，但它們仍可在 Xamarin 中使用，但通常不是必要的：
+UITableViewSource 會取代下列兩個類別，這些類別在 Xamarin 中仍可使用，但通常不是必要的：
 
-- **UITableViewDataSource** –以抽象類別形式在 Xamarin 中建立模型的目標 C 通訊協定。 必須進行子類別化，以提供資料表與每個資料格的 view，以及標頭、頁尾和資料表中的資料列和區段數目的相關資訊。 
-- **UITableViewDelegate** –以類別形式在 Xamarin 中建立模型的目標 C 通訊協定。 處理選取、編輯功能和其他選擇性資料表功能。 
+- **UITableViewDataSource** –在 Xamarin 中模型化為抽象類別的目標 C 通訊協定。 必須具子類別化，才能為資料表提供每個資料格的視圖，以及標頭、頁尾以及資料表中資料列和區段數目的相關資訊。 
+- **UITableViewDelegate** –在 Xamarin 中以類別模型化的目標 C 通訊協定。 處理選取專案、編輯功能和其他選擇性資料表功能。 
 
-在本檔中，所有範例都使用 UITableViewSource，並忽略這兩個類別。 這裡有提到，因為在 Apple 檔中找到的任何目標-C 範例都會參考它們，因此瞭解其用途（而且您可以改用 Xamarin 的 UITableViewSource）會很有説明。
+在本檔中，範例全都使用 UITableViewSource 並忽略這兩個類別。 這裡提及的是，因為在 Apple 的檔中找到的任何目標 C 範例都會參考這些範例，因此瞭解它們 (，以及您可以) 改為使用 Xamarin 的 UITableViewSource 時，是很有用的。
 
 ## <a name="related-links"></a>相關連結
 
-- [WorkingWithTables （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (範例) ](/samples/xamarin/ios-samples/workingwithtables)

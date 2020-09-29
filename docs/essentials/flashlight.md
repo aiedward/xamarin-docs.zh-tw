@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Essentials：上個
-description: 本檔說明中的閃光燈類別 Xamarin.Essentials ，它可以開啟或關閉裝置的相機閃光燈，使其變成閃光燈。
+title: Xamarin.Essentials：
+description: 本檔說明中的閃光燈類別 Xamarin.Essentials ，其可以開啟或關閉裝置的攝影機 flash，以將其轉換成閃光燈。
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.custom: video
@@ -9,14 +9,14 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7a8a90674b395c90f698a4a0854dc0dc3fc5fe15
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a7341137d7f7ddf1d0db47672af8810380805478
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802355"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434357"
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials：上個
+# <a name="no-locxamarinessentials-flashlight"></a>Xamarin.Essentials：
 
 **手電筒**類別可以開啟或關閉裝置相機閃光燈，將其變為手電筒。
 
@@ -39,7 +39,7 @@ ms.locfileid: "84802355"
 
 或更新 Android 資訊清單：
 
-開啟 [ **Properties** ] 資料夾下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
+開啟 [ **Properties** ] 資料夾底下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.FLASHLIGHT" />
@@ -120,7 +120,7 @@ catch (Exception ex)
 
 ### <a name="uwp"></a>[UWP](#tab/uwp)
 
-[Lamp](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamp) 用於偵測裝置背面的第一個燈是否開啟或關閉。
+[Lamp](/uwp/api/windows.devices.lights.lamp) 用於偵測裝置背面的第一個燈是否開啟或關閉。
 
 -----
 

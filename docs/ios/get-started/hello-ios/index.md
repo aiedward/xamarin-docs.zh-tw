@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: af0b9b4a73a82afbaef314384b10d6b9465a4b29
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f1a95bd49588077b6765eaec0a8e038f33f94109
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022821"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436418"
 ---
 # <a name="sample-app-hello-ios"></a>範例應用程式：Hello, iOS
 
@@ -27,4 +27,4 @@ ms.locfileid: "73022821"
 
 ## <a name="related-links"></a>相關連結
 
-- [Hello, iOS (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) \(英文\)
+- [Hello, iOS (範例)](/samples/xamarin/ios-samples/hello-ios) \(英文\)

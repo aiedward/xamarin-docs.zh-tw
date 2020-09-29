@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: d0acd44561b220507aafda7af05cd2862f6c9009
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: fdc132143905db6cc32ebd9aeb07268e69bf2070
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021708"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434689"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的應用程式圖示
 
@@ -24,7 +24,7 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 優良的圖示應會傳達 Xamarin.Mac 應用程式的用途，且提示使用者在使用應用程式時預期會有的體驗。 本文涵蓋建立圖示所需的影像資產、將這些資產封裝至 `AppIcon.appiconset` 檔案，以及在 Xamarin.Mac 應用程式中取用該檔案的所有必要步驟。
 
-![AppIcon.appiconset 編輯器](app-icon-images/intro01.png "AppIcon.appiconset 編輯器")
+![Appicons.appiconset 編輯器](app-icon-images/intro01.png "Appicons.appiconset 編輯器")
 
 ## <a name="application-icon"></a>應用程式圖示
 
@@ -50,8 +50,8 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 和開發人員即將用於 Xamarin.Mac 應用程式中的任何影像資源一樣，應用程式圖示也必須提供標準與 Retina 解析度版本。 同樣和任何其他影像一樣，命名圖示檔時，請使用 `@2x` 格式：
 
-- **標準解析度**  - _影像名稱_**。**_檔案名副檔名_(範例 **:icon_512x512.png)**
-- **高解析度**  - _影像名稱_**@2x。**_檔案名副檔名_(範**icon_512x512@2x.png**例: )
+- **標準解析度**   - _ImageName_**。**_檔案名-延伸_ (範例： **icon_512x512.png**) 
+- **高解析度**   - _ImageName_ ** @2x 。**_檔案名-延伸_ (範例： **icon_512x512@2x.png**) 
 
 例如，若要提供 512 x 512 版本的應用程式圖示，檔案會命名為 **icon_512x512.png** 和 **icon_512x512@2x.png**。
 
@@ -80,11 +80,11 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 1. 在 [Solution Pad]**** 中，開啟 [Assets.xcassets]**** > [AppIcons.appiconset]****： 
 
-    ![編輯 AppIcon.appicon 集](app-icon-images/intro01.png "編輯 AppIcon.appicon 集")
+    ![編輯 AppIcon. appicons.appiconset](app-icon-images/intro01.png "編輯 AppIcon. appicons.appiconset")
 2. 對於必要的各種圖示大小，按一下該圖示，然後選取依上述建立的對應影像檔案： 
 
     [![選取圖示影像](app-icon-images/intro02.png "選取圖示影像")](app-icon-images/intro02-large.png#lightbox)
-3. 儲存您的變更。
+3. 儲存變更。
 
 ## <a name="using-the-icon"></a>使用圖示
 
@@ -100,15 +100,15 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 當應用程式執行時，即會在 Dock 中顯示新圖示：
 
-![macOS 擴充站中應用圖示的範例](app-icon-images/icon04.png "macOS 擴充站中應用圖示的範例")
+![MacOS dock 中的應用程式圖示範例](app-icon-images/icon04.png "MacOS dock 中的應用程式圖示範例")
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文詳細說明了使用所需影像來建立 macOS 應用程式圖示、封裝圖示，以及將圖示納入 Xamarin.Mac 專案中。
 
 ## <a name="related-links"></a>相關連結
 
-- [MacImages (範例)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
+- [MacImages (範例)](/samples/xamarin/mac-samples/macimages)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [使用影像](~/mac/app-fundamentals/image.md)
 - [macOS 人性化介面指導方針 - 圖示和影像](https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/image-size-and-resolution/) \(英文\)
