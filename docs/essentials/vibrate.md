@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Essentials：震動
-description: 本檔說明中的震動類別 Xamarin.Essentials ，可讓您在所需的時間量內啟動和停止震動功能。
+title: Xamarin.Essentials：振動
+description: 本檔說明中的震動類別 Xamarin.Essentials ，可讓您在所需的時間內啟動和停止震動功能。
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.custom: video
@@ -9,14 +9,14 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2ed2dfdca6b6811089d4dbb5d6e90e794c79591
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 77ef074ab23532249e7a22bdd0cf8ecd429120a3
+ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801799"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91410671"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials：震動
+# <a name="no-locxamarinessentials-vibration"></a>Xamarin.Essentials：振動
 
 **震動**類別可讓您在所需的時間內啟動和停止震動功能。
 
@@ -38,7 +38,7 @@ ms.locfileid: "84801799"
 
 或更新 Android 資訊清單：
 
-開啟 [ **Properties** ] 資料夾下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
+開啟 [ **Properties** ] 資料夾底下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
@@ -52,7 +52,7 @@ ms.locfileid: "84801799"
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-無平台差異。
+不需要進行額外設定。
 
 -----
 

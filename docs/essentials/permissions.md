@@ -1,24 +1,24 @@
 ---
 title: Xamarin.Essentials：許可權
-description: 本檔描述中的許可權類別 Xamarin.Essentials ，其可提供檢查和要求執行時間許可權的功能。
+description: 本檔說明中的許可權類別 Xamarin.Essentials ，其提供檢查及要求執行時間許可權的能力。
 ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
-ms.date: 01/06/2020
+ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d594e627fed21c3c2a73770313fcae29695370c5
-ms.sourcegitcommit: a658de488a6da916145ed4aa016825565110e767
+ms.openlocfilehash: 570e549af3f0c020087e65eec0f5edfe3807719b
+ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86972554"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91410684"
 ---
-# <a name="xamarinessentials-permissions"></a>Xamarin.Essentials：許可權
+# <a name="no-locxamarinessentials-permissions"></a>Xamarin.Essentials：許可權
 
-**許可權**類別提供檢查和要求執行時間許可權的功能。
+**許可權**類別提供檢查及要求執行時間許可權的能力。
 
 ## <a name="get-started"></a>開始使用
 
@@ -36,15 +36,15 @@ using Xamarin.Essentials;
 
 ## <a name="checking-permissions"></a>檢查權限
 
-若要檢查許可權的目前狀態，請使用 `CheckStatusAsync` 方法以及特定許可權，以取得的狀態。
+若要檢查許可權的目前狀態，請使用 `CheckStatusAsync` 方法以及特定的許可權來取得的狀態。
 
 ```csharp
 var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
 ```
 
-`PermissionException`如果未宣告所需的許可權，就會擲回。
+`PermissionException`如果未宣告必要的許可權，就會擲回。
 
-建議您最好先檢查許可權的狀態，再提出要求。 如果使用者從未收到提示，則每個作業系統都會傳回不同的預設狀態。 iOS 會傳回 `Unknown` ，而其他則會返回 `Denied` 。
+建議您最好先檢查許可權的狀態，再要求它。 如果未曾提示使用者，每個作業系統都會傳回不同的預設狀態。 iOS 會傳回 `Unknown` ，而其他則會返回 `Denied` 。
 
 ## <a name="requesting-permissions"></a>要求權限
 
@@ -54,54 +54,61 @@ var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>()
 var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 ```
 
-`PermissionException`如果未宣告所需的許可權，就會擲回。
+`PermissionException`如果未宣告必要的許可權，就會擲回。
 
-請注意，在某些平臺上，許可權要求只能在單一時間啟用。 開發人員必須處理進一步的提示，以檢查許可權是否處於 `Denied` 狀態，並要求使用者以手動方式開啟它。
+請注意，在某些平臺上，只有一次只能啟用許可權要求。 開發人員必須處理進一步的提示，以檢查許可權是否處於 `Denied` 狀態，並要求使用者手動將其開啟。
 
 ## <a name="permission-status"></a>許可權狀態
 
-使用 `CheckStatusAsync` 或時 `RequestAsync` `PermissionStatus` ，將會傳回可用來決定後續步驟的：
+使用 `CheckStatusAsync` 或時 `RequestAsync` `PermissionStatus` ，將會傳回，可用來判斷後續步驟：
 
-* 不明-許可權處於不明狀態
-* 已拒絕-使用者已拒絕許可權要求
-* 已停用-已停用裝置上的功能
-* 已授與-使用者授與的許可權或已自動授與
-* 受限制-處於保留狀態
+* 未知-許可權處於未知狀態
+* 拒絕-使用者已拒絕許可權要求
+* 已停用-裝置上的功能已停用
+* 已授與-使用者授與的許可權或自動授與
+* 受限制-處於受限的狀態
+
+
+## <a name="explain-why-permission-is-needed"></a>說明為何需要許可權
+
+![發行前 API](~/media/shared/preview.png)
+
+最好的作法是解釋您的應用程式需要特定許可權的原因。 在 iOS 上，您必須指定向使用者顯示的字串。 Android 沒有這個功能，而且也預設的許可權狀態為停用。 這會限制知道使用者是否已拒絕許可權或第一次提示使用者的能力。 `ShouldShowRationale`方法可以用來判斷是否應該顯示教育使用者介面。 如果方法傳回， `true` 則是因為使用者已拒絕或停用過去的許可權。 `false`當呼叫這個方法時，其他平臺一律會傳回。
 
 ## <a name="available-permissions"></a>可用的許可權
 
-Xamarin.Essentials嘗試盡可能抽象化許可權。 不過，每個作業系統都有一組不同的執行時間許可權。 此外，針對某些許可權提供單一 API 時，會有一些差異。 以下是目前可用許可權的指南：
+Xamarin.Essentials 嘗試盡可能抽象化最多許可權。 不過，每個作業系統都有一組不同的執行時間許可權。 此外，為某些許可權提供單一 API 時，會有一些差異。 以下是目前可用許可權的指南：
 
 圖示指南：
 
-* ![完整支援](~/media/shared/yes.png "完整支援")-支援
-* ![不支援](~/media/shared/no.png "不支援或不需要")-不支援/不需要
+* 支援![完整支援](~/media/shared/yes.png "完整支援")
+* ![不支援](~/media/shared/no.png "不支援或不需要") -不支援/需要
 
 | 權限 | Android | iOS | UWP | watchOS | tvOS | Tizen |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---:
-| CalendarRead   | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| CalendarWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| 相機 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
-| ContactsRead | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| ContactsWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| 手電筒 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
-| LocationWhenInUse | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![支援的 tvOS](~/media/shared/yes.png "支援的 tvOS")  | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
-| LocationAlways | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
-| 媒體 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| 麥克風 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
-| 電話 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| 相片 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![支援的 tvOS](~/media/shared/yes.png "支援的 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| 提醒事項 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| 感應器 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| Sms | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| Speech | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| CalendarRead   | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| CalendarWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| 相機 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
+| ContactsRead | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| ContactsWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| 手電筒 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
+| LocationWhenInUse | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![支援 tvOS](~/media/shared/yes.png "支援 tvOS")  | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
+| LocationAlways | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
+| 媒體 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| 麥克風 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
+| 電話 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| 相片 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![支援 tvOS](~/media/shared/yes.png "支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| 提醒事項 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| 感應器 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| 短信 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| 語音 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | StorageRead | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | StorageWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 
-如果許可權標記為![不支援](~/media/shared/no.png "不支援")，則會 `Granted` 在核取或要求時一律傳回。
+如果許可權被標示為 ![不受支援](~/media/shared/no.png "不支援") ，則會 `Granted` 在選取或要求時一律傳回。
 
 ## <a name="general-usage"></a>一般使用方式
-以下是用來處理許可權的一般使用模式。
+以下是處理許可權的一般使用模式。
 
 ```csharp
 public async Task<PermissionStatus> CheckAndRequestLocationPermission()
@@ -118,7 +125,7 @@ public async Task<PermissionStatus> CheckAndRequestLocationPermission()
 }
 ```
 
-每個許可權類型都可以擁有它所建立的實例，以便可以直接呼叫方法。
+每個許可權類型都可以有它所建立的實例，可直接呼叫方法。
 
 ```csharp
 public async Task GetLocationAsync()
@@ -148,7 +155,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>擴充許可權
 
-針對需要不包含在中的其他驗證或許可權的應用程式，已建立許可權 API 以提供彈性且可擴充 Xamarin.Essentials 。 建立繼承自的新類別， `BasePermission` 並執行所需的抽象方法。
+針對需要額外驗證的應用程式或不包含在中的許可權，建立了許可權 API 來提供彈性且可擴充 Xamarin.Essentials 。 建立繼承自的新類別， `BasePermission` 並執行所需的抽象方法。
 
 ```csharp
 public class MyPermission : BasePermission
@@ -173,7 +180,7 @@ public class MyPermission : BasePermission
 }
 ```
 
-在特定平臺中執行許可權時， `BasePlatformPermission` 可以從繼承類別。 這會提供額外的平臺協助程式方法，以自動檢查宣告。 這有助於建立執行分組的自訂許可權。 例如，您可以使用下列自訂許可權要求對 Android 上的儲存體進行讀取和寫入存取。
+在特定平臺中執行許可權時， `BasePlatformPermission` 可以從繼承類別。 這會提供額外的平臺 helper 方法來自動檢查宣告。 這有助於建立可分組的自訂許可權。 例如，您可以使用下列自訂許可權，在 Android 上要求儲存體的讀取和寫入存取權。
 
 ```csharp
 public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
@@ -186,13 +193,13 @@ public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePla
 }
 ```
 
-接著，您可以從 Android 專案呼叫您的新許可權。
+然後，您可以從 Android 專案呼叫新的許可權。
 
 ```csharp
 await Permissions.RequestAsync<ReadWriteStoragePermission>();
 ```
 
-如果您想要從您的共用程式碼呼叫此 API，您可以建立介面，並使用相依性[服務](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/dependency-service/)來註冊並取得實作為。
+如果您想要從共用程式碼呼叫此 API，您可以建立介面，並使用相依性 [服務](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/dependency-service/) 來註冊並取得執行。
 
 ```csharp
 public interface IReadWritePermission
@@ -215,12 +222,12 @@ public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePla
 }
 ```
 
-然後您可以註冊特定的執行：
+然後您可以註冊特定的實作為：
 
 ```csharp
 DependencyService.Register<IReadWritePermission, ReadWriteStoragePermission>();
 ```
-接著，您可以從共用的專案解析並使用它：
+然後，您可以從共用的專案解析並使用它：
 
 ```csharp
 var readWritePermission = DependencyService.Get<IReadWritePermission>();
@@ -235,27 +242,27 @@ if (status != PermissionStatus.Granted)
 
 # <a name="android"></a>[Android](#tab/android)
 
-許可權必須在 Android 資訊清單檔案中設定相符的屬性。
+許可權必須在 Android 資訊清單檔中設定相符的屬性。 許可權狀態的預設值為 [拒絕]。
 
-如需詳細資訊，請參閱在[Xamarin 檔中的許可權](https://docs.microsoft.com/xamarin/android/app-fundamentals/permissions)。
+在 [Xamarin. Android 檔中](https://docs.microsoft.com/xamarin/android/app-fundamentals/permissions) 深入瞭解許可權。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-許可權在檔案中必須有相符的字串 `Info.plist` 。 要求和拒絕許可權後，如果您第二次要求許可權，就不會再出現快顯視窗。 您必須提示使用者手動調整 iOS 中 [應用程式設定] 畫面中的設定。
+許可權在檔案中必須有相符的字串 `Info.plist` 。 要求並拒絕許可權之後，如果您第二次要求許可權，就不會再出現快顯視窗。 您必須提示使用者手動調整 iOS 中 [應用程式設定] 畫面的設定。 許可權狀態的預設值為 Unknown。
 
-如需詳細資訊，請參閱[IOS 安全性和隱私權功能](https://docs.microsoft.com/xamarin/ios/app-fundamentals/security-privacy)檔。
+深入瞭解 [IOS 安全性和隱私權功能](https://docs.microsoft.com/xamarin/ios/app-fundamentals/security-privacy) 檔。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-許可權必須具有在封裝資訊清單中宣告的相符功能。
+許可權必須具有在封裝資訊清單中宣告的相符功能。 在大部分的情況中，許可權狀態的預設值為 Unknown。
 
-如需詳細資訊，請參閱[應用程式功能聲明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)檔。
+深入瞭解 [應用程式功能聲明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) 檔。
 
 --------------
 
 ## <a name="api"></a>API
 
-- [許可權原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Permissions)
+- [許可權來源程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Permissions)
 - [許可權 API 檔](xref:Xamarin.Essentials.Permissions)
 
 
