@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: 2650bda7115cd132e87bf669914320f63214e295
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c152579ef1458db50359551bc7ed6632daf3d92f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933220"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436874"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 簡介
 
@@ -37,7 +37,7 @@ ms.locfileid: "86933220"
 
 在上述任一情況中，您都應該依照下列步驟進行操作：
 
-- [安裝 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
+- [安裝 Visual Studio for Mac](/visualstudio/mac/installation)
 - [在 Windows 上安裝 Xamarin 工具](~/get-started/installation/windows.md)
 
 ## <a name="connecting-to-the-mac"></a>連線到 Mac
@@ -53,7 +53,7 @@ Xamarin iOS for Visual Studio 會在標準工具列和新的 iOS 工具列中新
 
 以紅色圈起的是與 Xamarin iOS 開發相關的控制項：
 
-[![與 Xamarin iOS 開發相關的控制項以紅色圈起來](introduction-to-xamarin-ios-for-visual-studio-images/03.png)](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "與 Xamarin iOS 開發相關的控制項以紅色圈起來")
+[![與 Xamarin iOS 開發相關的控制項會以紅色圓圈](introduction-to-xamarin-ios-for-visual-studio-images/03.png)](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "與 Xamarin iOS 開發相關的控制項會以紅色圓圈")
 
 - **開始** - 開始在選取的平台上進行應用程式偵錯或執行。 必須要有已連線的 Mac (請參閱 iOS 工具列中的狀態指標)。
 - **方案組態** – 可讓您選取要使用的組態 (例如 [偵錯]、[發行])。
@@ -175,7 +175,7 @@ Visual Studio 的新 [裝置記錄檔] 工具視窗可允許顯示 Android 和 i
 
 ![使用偵錯來檢查區域變數](introduction-to-xamarin-ios-for-visual-studio-images/image20.png)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文說明了如何使用 Xamarin iOS for Visual Studio。 其中列出了各種可用來從 Visual Studio 內建立、組建及測試 iOS 應用程式的功能，並且逐步解說如何組建簡單的 iOS 應用程式及對其進行偵錯。
 

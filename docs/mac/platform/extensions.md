@@ -1,24 +1,24 @@
 ---
 title: Xamarin.Mac 延伸模組支援
-description: 本檔說明 Xamarin 對搜尋工具、共用和今日延伸模組的支援。 它會檢查限制和已知問題、逐步解說和範例應用程式的連結，並提供使用延伸模組的秘訣。
+description: 本檔說明 Xamarin 支援 Finder、共用和 Today 延伸模組的功能。 它會檢查限制和已知問題、逐步解說和範例應用程式的連結，以及提供使用擴充功能的秘訣。
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
 ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: ac4c8d7bbd28946b6089e7f22a36727d2d73ec18
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: abb14f2074a2f519037ef2a9e85f2bf66613b836
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939200"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436796"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 延伸模組支援
 
-在 2.10 Xamarin 中，已為多個 macOS 擴充點新增支援：
+在 Xamarin 中，已為多個 macOS 擴充點新增了 Mac 2.10 支援：
 
-- 搜尋工具
+- 儀
 - 共用
 - 今天
 
@@ -28,40 +28,40 @@ ms.locfileid: "86939200"
 
 以下是在 Xamarin 中開發延伸模組時可能會發生的限制和已知問題：
 
-- Visual Studio for Mac 中目前沒有任何調試支援。 所有的調試作業都必須透過**NSLog**和**主控台**來完成。 如需詳細資訊，請參閱以下的秘訣一節。
-- 延伸模組必須包含在主應用程式中，當執行一次與系統的註冊時，就會發生此情況。 然後必須在 [**系統偏好**設定] 的 [**延伸**模組] 區段中啟用。 
-- 某些延伸模組損毀可能會使主機應用程式不穩定，並會造成奇怪的行為。 特別是，「搜尋者」和「**今天**」的「**通知中心**」區段可能會變成「卡住 **」，而且**會變成沒有回應。 這在 Xcode 的擴充專案中也有經驗，目前與 Xamarin 無關。 通常可以在系統記錄檔中看到這種情況（透過**主控台**，請參閱詳細資訊的秘訣）列印重複的錯誤訊息。 重新開機 macOS 會顯示修正此問題。
+- Visual Studio for Mac 目前沒有任何偵錯工具支援。 所有的調試都必須透過 **NSLog** 和 **主控台**完成。 如需詳細資訊，請參閱下面的秘訣一節。
+- 延伸模組必須包含在主機應用程式中，當執行一次時，即會向系統註冊。 然後必須在**系統喜好**設定的**擴充**區段中啟用。 
+- 某些擴充功能損毀可能會使主機應用程式不穩定，並導致奇怪的行為。 尤其是，「**通知中心**」的 [ **Finder** ] 和 [ **Today** ] 區段可能會變成「已卡住」，而且會變成沒有回應。 Xcode 中的擴充專案也有可能發生這種情況，目前與 Xamarin 無關。 通常，您可以透過 **主控台**在系統記錄檔 (中看到這種情況，請參閱詳細資料) 列印重複錯誤訊息的秘訣。 重新開機 macOS 會出現以修正此問題。
 
 <a name="Tips"></a>
 
 ## <a name="tips"></a>提示
 
-在 Xamarin. Mac 中使用擴充功能時，下列秘訣會很有説明：
+在 Xamarin 中使用延伸模組時，下列秘訣可能很有説明：
 
-- 因為 Xamarin 目前不支援調試延伸模組，所以調試經驗主要取決於執行和 `printf` 類似語句。 不過，延伸模組會在沙箱進程中執行，因此 `Console.WriteLine` 不會像在其他 Xamarin. Mac 應用程式中一樣。 [ `NSLog` 直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)叫用會將調試訊息輸出至系統記錄檔。
-- 任何未攔截的例外狀況都會損毀延伸模組進程，在**系統記錄**檔中只提供少量有用的資訊。 在重新擲回 `try/catch` 之前，在（例外狀況）區塊中包裝麻煩的程式碼 `NSLog` 可能會很有用。
-- **系統記錄**可以從**應用程式**公用程式底下的**主控台**應用程式存取  >  ** **：
+- 因為 Xamarin 目前不支援調試延伸模組，所以調試經驗主要取決於執行和 `printf` 類似語句。 不過，擴充功能會在沙箱進程中執行，因此 `Console.WriteLine` 不會像在其他 Xamarin 應用程式中一樣運作。 [ `NSLog` 直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)叫用會將調試訊息輸出到系統記錄檔。
+- 任何未攔截的例外狀況都會使擴充程式損毀，並在 **系統記錄**檔中只提供少量有用的資訊。 將有問題的程式碼包裝在 `try/catch` (例外狀況中，) 區塊在重新擲回 `NSLog` 之前都可能很有用。
+- 您可以從**應用**程式公用程式下的**主控台**應用程式存取**系統記錄**  >  ** **：
 
     [![系統記錄檔](extensions-images/extension02.png)](extensions-images/extension02.png#lightbox)
-- 如上所述，執行延伸模組主機應用程式會向系統註冊該擴充功能。 刪除已取消註冊的應用程式套件組合。 
-- 如果已註冊應用程式延伸模組的「偏離」版本，請使用下列命令來尋找它們（以予以刪除）：`plugin kit -mv`
+- 如上所述，執行擴充功能主機應用程式將會向系統註冊。 刪除應用程式套件組合並將其取消註冊。 
+- 如果已註冊應用程式擴充功能的「偏離」版本，請使用下列命令找出它們 (，以便) 刪除這些專案： `plugin kit -mv`
 
 <a name="Walkthrough-and-Sample-App"></a>
 
 ## <a name="walkthrough-and-sample-app"></a>逐步解說和範例應用程式
 
-由於開發人員會使用與 Xamarin 副檔名相同的方式來建立和使用 Xamarin 副檔名，請參閱我們的[擴充功能簡介](~/ios/platform/extensions.md)檔以取得詳細資料。
+由於開發人員會以和 Xamarin 副檔名相同的方式來建立和使用 Xamarin 延伸模組，如需詳細資料，請參閱我們的擴充功能檔 [簡介](~/ios/platform/extensions.md) 。
 
-您可以在[這裡](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)找到範例 Xamarin. Mac 專案，其中包含每個擴充類型的小型、可運作範例。
+您可以在 [這裡](/samples/xamarin/mac-samples/extensionsamples)找到範例 Xamarin 專案，其中包含每個延伸模組類型的小型、可運作範例。
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文已快速探討如何在 Xamarin 2.10 版（及更新版本）應用程式中使用擴充功能。
+本文將快速瞭解如何使用 Xamarin 2.10 版中的擴充功能 (以及更高的) 應用程式。
 
 ## <a name="related-links"></a>相關連結
 
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
-- [ExtensionSamples](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)
+- [ExtensionSamples](/samples/xamarin/mac-samples/extensionsamples)
 - [macOS Human Interface Guidelines (人性化介面指導方針)](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

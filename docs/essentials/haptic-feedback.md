@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 129501b5b622901d4347daf60d3cee6579bb115a
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: b1bf597874dc22a95ca9a3db239d9c7d2dd5658a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414747"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436727"
 ---
 # <a name="no-locxamarinessentials-haptic-feedback"></a>Xamarin.Essentials： Haptic 意見反應
 
@@ -25,7 +25,7 @@ ms.locfileid: "91414747"
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要存取**震動**功能，需要下列平台特定設定。
+若要存取 **HapticFeedback** 功能，需要下列平臺特定設定。
 
 # <a name="android"></a>[Android](#tab/android)
 

@@ -1,25 +1,25 @@
 ---
-title: Xamarin iOS API 總覽
-description: 本檔連結至 Xamarin API 參考檔、描述 Xamarin iOS API 設計的指南，以及可用於 Xamarin 開發的元件清單。
+title: Xamarin. iOS API 總覽
+description: 本檔連結到 Xamarin API 參考檔、描述 Xamarin API 設計的指南，以及可在 Xamarin 開發中使用的元件清單。
 ms.prod: xamarin
 ms.assetid: 4C1669A4-C12B-9C49-4A39-9046576D10DC
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 9d3f4388601c1bdf38f0446b4fa58cdf79b20612
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 244bce9fdf96083ba76347a38f6e302f7ed889d8
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022383"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437176"
 ---
-# <a name="xamarinios-api-overview"></a>Xamarin iOS API 總覽
+# <a name="xamarinios-api-overview"></a>Xamarin. iOS API 總覽
 
-Xamarin 會公開 CocoaTouch API C#的/CIL 系結，也會提供 ECMA CIL api 和其他各種 .net api 的存取權。
+Xamarin 會對 CocoaTouch API 公開 c #/CIL 系結，也會提供 ECMA CIL Api 和其他各種 .NET Api 的存取權。
 
- **Api 參考**： api 參考可在[docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)取得，請從原生 iPhone api 的 api 系結的 [Xamarin] 或 [移至基類連結[庫] 節點](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)取得相關檔的《 [iOS 參考](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12)》.NET API。
+ **Api 參考**：若要取得 api 參考，請參閱 [docs.microsoft.com/dotnet/api/](/dotnet/api/)，從原生 iPhone api 的 api 系結的「 [Xamarin. iOS 參考](/dotnet/api/?view=xamarin-ios-sdk-12) 」開始，或移至「 [基底類別庫」節點](/dotnet/api/?view=xamarinios-10.8) 以取得 .net API 的相關檔。
 
- **Api 設計**：如需瞭解適用于 CIL/目標-c 系結的[api 設計，](~/ios/internals/api-design/index.md)請說明如何從 CocoaTouch 系結目標 c 和 C api，並將其公開至C#/CIL 世界。
+ **Api 設計**：適用于 CIL/目標-C 系結的 api 設計涵蓋于 [XAMARIN. iOS API 設計](~/ios/internals/api-design/index.md) 檔中，並說明我們如何從 CocoaTouch 系結目標 C 和 C api，並將這些 Api 公開給 c #/CIL 世界。
 
- **元件**：請檢查我們的系結[元件清單](~/cross-platform/internals/available-assemblies.md)，以取得/CIL/ECMA 中C#可供在 Xamarin 上使用之 api 的詳細參考。
+ **元件**：請查看我們的系結 [元件清單](~/cross-platform/internals/available-assemblies.md) ，以取得可在 Xamarin 中使用的 c #/CIL/ECMA api 的詳細參考。

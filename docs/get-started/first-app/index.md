@@ -1,6 +1,6 @@
 ---
 title: 建立您的第一個 Xamarin.Forms 應用程式
-description: 示範如何在 Visual Studio 中建立第一個 Xamarin.Forms 應用程式的影片指南。
+description: 示範如何 Xamarin.Forms 在 Visual Studio 中建立您的第一個應用程式的影片指南。
 zone_pivot_groups: platform-dev16
 ms.prod: xamarin
 ms.assetid: 72B6AF82-4D98-47E5-AB54-0A35B3253468
@@ -12,14 +12,14 @@ ms.date: 05/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da56bde956a0ff7730ef6737e2802c3723d6d716
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e6670faf921248c007c20307fddb6a34057c5202
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133471"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436667"
 ---
-# <a name="build-your-first-xamarinforms-app"></a>建立您的第一個 Xamarin.Forms 應用程式
+# <a name="build-your-first-no-locxamarinforms-app"></a>建立您的第一個 Xamarin.Forms 應用程式
 
 _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 Xamarin.Forms 。_
 
@@ -29,7 +29,7 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
@@ -37,7 +37,7 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
     [![建立新專案](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
-2. 搜尋 "Xamarin"，或從 [專案類型]**** 功能表中選擇 [行動裝置]****。 選取 [行動**應用程式（ Xamarin.Forms ）** ] 專案類型：
+2. 搜尋 "Xamarin"，或從 [專案類型]**** 功能表中選擇 [行動裝置]****。 選取 [行動 **應用程式] (Xamarin.Forms) ** 專案類型：
 
     [![Xamarin 專案的篩選](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
@@ -47,7 +47,7 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 4. 按一下 [空白]**** 專案類型，並確定已選取 [**Android**] 及 [**iOS**]：
 
-    [![Android 和 iOS，含 .NET Standard](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
+    [![具有 .NET Standard 的 Android 和 iOS](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
 5. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
@@ -114,17 +114,17 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案] **> [新增 > 專案**...] 或按 [**建立新專案 ...** ] 按鈕，然後選取 **[Visual c #] > [跨平臺 > 行動應用程式（ Xamarin.Forms ）**]：
+1. 選擇 [檔案 **> 新的 > 專案** ]，或按 [ **建立新專案 ...** ] 按鈕，然後選取 [ **Visual c # > 跨平臺 > 行動應用程式] (Xamarin.Forms) **：
 
-    [![行動應用程式（ Xamarin.Forms ）](images/win/01-sml.png)](images/win/01.png#lightbox)
+    [![行動裝置應用程式 (：：：無 loc (Xamarin) ：：： ) ](images/win/01-sml.png)](images/win/01.png#lightbox)
 
 2. 確定已選取 [Android]**** 和 [iOS]****，並搭配 [.NET Standard]**** 程式碼共用：
 
-    [![Android 和 iOS，含 .NET Standard](images/win/02-sml.png)](images/win/02.png#lightbox)
+    [![具有 .NET Standard 的 Android 和 iOS](images/win/02-sml.png)](images/win/02.png#lightbox)
 
 3. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
@@ -161,7 +161,7 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 ## <a name="step-by-step-instructions-for-mac"></a>適用於 Mac 的逐步指示
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
@@ -171,7 +171,7 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 2. 確定已選取 [Android]**** 和 [iOS]****，並搭配 [.NET Standard]**** 程式碼共用：
 
-    [![Android 和 iOS，含 .NET Standard](images/02-sml.png)](images/02.png#lightbox)
+    [![具有 .NET Standard 的 Android 和 iOS](images/02-sml.png)](images/02.png#lightbox)
 
 3. 以滑鼠右鍵按一下方案來還原 NuGet 套件：
 
@@ -210,10 +210,10 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 ::: zone-end
 
-您可以從[範例庫](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)下載完整的程式碼，或在 [GitHub](https://github.com/xamarin/xamarin-forms-samples/tree/master/GetStarted/FirstApp) 上進行檢視。
+您可以從[範例庫](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)下載完整的程式碼，或在 [GitHub](https://github.com/xamarin/xamarin-forms-samples/tree/master/GetStarted/FirstApp) 上進行檢視。
 
 ## <a name="next-steps"></a>後續步驟
 
 - [單一頁面快速入門](~/get-started/quickstarts/single-page.md) &ndash; 建置功能更強大的應用程式。
 - [ Xamarin.Forms 範例](~/xamarin-forms/samples/index.md) &ndash;下載並執行程式碼範例和範例應用程式。
-- [建立 Mobile Apps 電子書](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash;教授開發的深入章節 Xamarin.Forms ，以 PDF 形式提供，並包含數百個額外的範例。
+- [建立 Mobile Apps 電子書](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash; 教授開發的深度章節 Xamarin.Forms ，以 PDF 形式提供，並包含數百個額外的範例。

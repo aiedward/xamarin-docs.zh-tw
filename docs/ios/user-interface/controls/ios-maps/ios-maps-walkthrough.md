@@ -1,32 +1,32 @@
 ---
-title: Xamarin 中的注釋和重迭
-description: 本文提供逐步解說，示範如何使用地圖套件的注釋和重迭功能。 它會示範如何將對應新增至應用程式，以在 Xamarin 演變2013會議的位置顯示注釋和重迭。
+title: Xamarin 中的注釋和覆迭
+description: 本文提供逐步解說，示範如何使用地圖套件的注釋和重迭功能。 它會顯示如何將地圖新增至應用程式，以在 Xamarin 演進2013會議的位置顯示注釋和重迭。
 ms.prod: xamarin
 ms.assetid: 1BC4F7FC-AE3C-46D7-A4D3-18E142F55B8E
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 59ad6a11eecf629fc2a815e21a29493f4a1a1397
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 56306b04b57295a3625804bdbbb6a9810675be2b
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932219"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436765"
 ---
-# <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注釋和重迭
+# <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注釋和覆迭
 
-我們將在本逐步解說中建立的應用程式如下所示：
+我們即將在此逐步解說中建立的應用程式如下所示：
 
  [![範例 MapKit 應用程式](ios-maps-walkthrough-images/00-map-overlay.png)](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
 
-您可以在[Maps 逐步解說範例](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)中找到完整的程式碼。
+您可以在 [Maps 逐步解說範例](/samples/xamarin/ios-samples/mapswalkthrough)中找到已完成的程式碼。
 
-首先，我們要建立新的**IOS 空白專案**，並為它提供相關的名稱。 我們一開始會先將程式碼新增至我們的視圖控制器以顯示 MapView，然後再為我們的 MapDelegate 建立新的類別，以及自訂注釋。 請遵循下列步驟來進行這項作業：
+首先，建立新的 **IOS 空白專案**，並為它提供相關的名稱。 首先我們會將程式碼新增至我們的 View 控制器來顯示 MapView，然後為 MapDelegate 和自訂批註建立新的類別。 請遵循下列步驟來進行這項作業：
 
 ## <a name="viewcontroller"></a>ViewController
 
-1. 將下列命名空間新增至 `ViewController` ：
+1. 將下列命名空間加入至 `ViewController` ：
 
     ```csharp
     using MapKit;
@@ -35,7 +35,7 @@ ms.locfileid: "86932219"
     using CoreGraphics
     ```
 
-1. 將 `MKMapView` 執行個體變數連同實例一起加入至類別 `MapDelegate` 。 我們很快就會建立 `MapDelegate` ：
+1. 將 `MKMapView` 執行個體變數連同實例加入至類別 `MapDelegate` 。 我們很快就會建立 `MapDelegate` ：
 
     ```csharp
     public partial class ViewController : UIViewController
@@ -45,7 +45,7 @@ ms.locfileid: "86932219"
         ...
     ```
 
-1. 在控制器的 `LoadView` 方法中，新增 `MKMapView` ，並將它設定為 `View` 控制器的屬性：
+1. 在控制器的 `LoadView` 方法中，新增， `MKMapView` 並將它設定為 `View` 控制器的屬性：
 
     ```csharp
     public override void LoadView ()
@@ -55,9 +55,9 @@ ms.locfileid: "86932219"
     }
     ```
 
-    接下來，我們會新增程式碼，以初始化 ' ViewDidLoad ' ' 方法中的對應。
+    接下來，我們將新增程式碼，以在 ' ViewDidLoad ' 方法中初始化對應。
 
-1. 在 [加入程式碼] 中 `ViewDidLoad` ，若要設定地圖類型，請顯示使用者位置，並允許縮放和移動：
+1. 在 `ViewDidLoad` [加入程式碼] 中，設定地圖類型，顯示使用者位置並允許縮放和移動：
 
     ```csharp
     // change map type, show user location and allow zooming and panning
@@ -68,7 +68,7 @@ ms.locfileid: "86932219"
 
     ```
 
-1. 接下來，新增程式碼以置中地圖，並將其設定為區域：
+1. 接下來，新增程式碼以將地圖置中，並設定其區域：
 
     ```csharp
     double lat = 30.2652233534254;
@@ -80,20 +80,20 @@ ms.locfileid: "86932219"
 
     ```
 
-1. 建立的新實例 `MapDelegate` ，並將它指派給的 `Delegate` `MKMapView` 。 同樣地，我們很快就會執行 `MapDelegate` ：
+1. 建立的新實例  `MapDelegate` ，並將它指派給的 `Delegate` `MKMapView` 。 同樣地，我們將很快地執行 `MapDelegate` ：
 
     ```csharp
     mapDelegate = new MapDelegate ();
     map.Delegate = mapDelegate;
     ```
 
-1. 從 iOS 8 開始，您應該向使用者要求授權以使用其位置，因此讓我們將其新增至我們的範例。 首先，定義 `CLLocationManager` 類別層級的變數：
+1. 從 iOS 8 開始，您應該向使用者要求授權以使用其位置，讓我們將其新增至範例。 首先，定義 `CLLocationManager` 類別層級的變數：
 
     ```csharp
     CLLocationManager locationManager = new CLLocationManager();
     ```
 
-1. 在 `ViewDidLoad` 方法中，我們想要檢查執行應用程式的裝置是否使用 iOS 8，如果是，我們會在應用程式使用中時要求授權：
+1. 在 `ViewDidLoad` 方法中，我們想要檢查執行應用程式的裝置是否使用 iOS 8，如果是，則在使用應用程式時，我們會要求授權：
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion(8,0)){
@@ -101,7 +101,7 @@ ms.locfileid: "86932219"
     }
     ```
 
-1. 最後，我們需要編輯**plist**檔案，以通知使用者要求其位置的原因。 在**plist**的 [**來源**] 功能表中，新增下列機碼：
+1. 最後，我們需要編輯 **plist** 檔案，以通知使用者要求其位置的原因。 在**plist**的 [**來源**] 功能表中，新增下列機碼：
 
     `NSLocationWhenInUseUsageDescription`
 
@@ -111,7 +111,7 @@ ms.locfileid: "86932219"
 
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs –自訂批註的類別
 
-1. 我們會將自訂類別用於名為的注釋 `ConferenceAnnotation` 。 將下列類別新增至專案：
+1. 我們將針對稱為的注釋使用自訂類別 `ConferenceAnnotation` 。 將下列類別新增至專案：
 
     ```csharp
     using System;
@@ -147,15 +147,15 @@ ms.locfileid: "86932219"
     }
     ```
 
-## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController-新增注釋和重迭
+## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController-新增注釋和覆迭
 
-1. 備妥之後， `ConferenceAnnotation` 我們可以將它新增至地圖。 回到的 `ViewDidLoad` 方法 `ViewController` ，在地圖的中心座標處新增注釋：
+1. `ConferenceAnnotation`我們可以將它新增至地圖。 回到的 `ViewDidLoad` 方法 `ViewController` ，在地圖的中心座標加入批註：
 
     ```csharp
     map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter));
     ```
 
-1. 我們也想要有一個飯店的重迭。 新增下列 `MKPolygon` 程式碼，以使用所提供之飯店的座標來建立，並藉由呼叫將其新增至地圖 `AddOverlay` ：
+1. 我們也想要有飯店的重迭。 新增下列 `MKPolygon` 程式碼，以使用所提供之旅館的座標來建立，並藉由呼叫將其新增至地圖 `AddOverlay` ：
 
     ```csharp
     // add an overlay of the hotel
@@ -176,11 +176,11 @@ ms.locfileid: "86932219"
     map.AddOverlay (hotelOverlay);
     ```
 
-這會完成中的程式碼 `ViewDidLoad` 。 現在，我們需要實 `MapDelegate` 作為類別來分別處理批註和重迭視圖的建立。
+這會完成中的程式碼 `ViewDidLoad` 。 現在，我們需要執行 `MapDelegate` 類別，分別處理批註和重迭視圖的建立。
 
 ## <a name="mapdelegate"></a>MapDelegate
 
-1. 建立一個名為 `MapDelegate` 的類別，它會繼承自 `MKMapViewDelegate` ，並包含 `annotationId` 要做為批註重複使用識別碼的變數：
+1. 建立一個名為 `MapDelegate` 的類別，這個類別繼承自 `MKMapViewDelegate` ，並且包含 `annotationId` 要作為批註重複使用識別碼的變數：
 
     ```csharp
     class MapDelegate : MKMapViewDelegate
@@ -190,9 +190,9 @@ ms.locfileid: "86932219"
     }
     ```
 
-    這裡只有一個批註，因此重複使用的程式碼並不是絕對必要的，但最好是將它納入。
+    這裡只有一個批註，因此重複使用的程式碼並不是絕對必要的，但最好的作法是將它納入。
 
-1. `GetViewForAnnotation` `ConferenceAnnotation` 使用本逐步解說中包含的**conference.png**影像，執行方法以傳回的視圖：
+1. `GetViewForAnnotation` `ConferenceAnnotation` 使用本逐步解說所附的**conference.png**映射，來執行方法以傳回的視圖：
 
     ```csharp
     public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
@@ -218,7 +218,7 @@ ms.locfileid: "86932219"
     }
     ```
 
-1. 當使用者按下注釋時，我們想要顯示顯示奧斯丁城市的影像。 將下列變數新增至影像的， `MapDelegate` 並將它顯示為：
+1. 當使用者按下批註時，我們想要顯示一個顯示奧斯丁城市的影像。 將下列變數加入影像的， `MapDelegate` 並將其顯示：
 
     ```csharp
     UIImageView venueView;
@@ -245,7 +245,7 @@ ms.locfileid: "86932219"
     }
     ```
 
-1. 若要在使用者藉由點擊地圖上的任何位置來取消選擇批註時隱藏影像，請依照下列方式執行 `DidDeselectAnnotationView` 方法：
+1. 若要在使用者透過點擊地圖上的任何位置來取消選擇批註時隱藏影像，請依照下列方式執行 `DidDeselectAnnotationView` 方法：
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -260,9 +260,9 @@ ms.locfileid: "86932219"
     }
     ```
 
-    我們現在已備妥批註的程式碼。 剩下的就是將程式碼新增至， `MapDelegate` 以建立飯店重迭的視圖。
+    我們現在已備妥批註的程式碼。 剩下的就是將程式碼加入至， `MapDelegate` 以建立旅館重迭的觀點。
 
-1. 將下列的實作為新增 `GetViewForOverlay` 至 `MapDelegate` ：
+1. 將下列的執行加入 `GetViewForOverlay` 至 `MapDelegate` ：
 
     ```csharp
     public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject overlay)
@@ -276,16 +276,16 @@ ms.locfileid: "86932219"
     }
     ```
 
-執行應用程式。 我們現在有一個互動式地圖，其中包含自訂注釋和重迭！ 按一下注釋，即會顯示 [奧斯丁] 的影像，如下所示：
+執行應用程式。 我們現在有一個具有自訂批註和重迭的互動式地圖！ 點一下注釋和奧斯丁的影像隨即顯示，如下所示：
 
- [![按一下注釋，即會顯示 [奧斯丁] 的影像](ios-maps-walkthrough-images/01-map-image.png)](ios-maps-walkthrough-images/01-map-image.png#lightbox)
+ [![點一下批註並顯示奧斯丁的影像](ios-maps-walkthrough-images/01-map-image.png)](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-在本文中，我們探討了如何將批註新增至地圖，以及如何為指定的多邊形加入重迭。 我們也示範了如何將觸控支援新增至注釋，以在地圖上建立影像的動畫。
+在本文中，我們探討了如何將批註新增至地圖，以及如何為指定的多邊形加入覆迭。 我們也示範了如何在批註中新增觸控支援，以在地圖上以動畫顯示影像。
 
 ## <a name="related-links"></a>相關連結
 
-- [Maps 逐步解說範例](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)
-- [地圖示范範例](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)
+- [Maps 逐步解說範例](/samples/xamarin/ios-samples/mapswalkthrough)
+- [地圖示范範例](/samples/xamarin/ios-samples/mapdemo)
 - [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md)
