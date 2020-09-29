@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2019
-ms.openlocfilehash: e27e73ac2c5164fa3431c8892b21a71c32fcd8ef
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 85efadaa88e8923f363bd92c0426d536b6ebd331
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724011"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454867"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核心裝置和 Xamarin.Android
 
-_Android 可以在多個不同的計算機體系結構上運行。本文件討論了 Xamarin.Android 應用程式可能採用的不同 CPU 體系結構。本文檔還將說明如何打包 Android 應用程式以支援不同的 CPU 體系結構。將介紹應用程式二進位介面 (ABI),並將提供有關在 Xamarin.Android 應用程式中使用哪些 AI 的指導。_
+_Android 可以在數種不同的電腦架構上執行。本檔討論適用于 Xamarin Android 應用程式的不同 CPU 架構。本檔也會說明如何封裝 Android 應用程式，以支援不同的 CPU 架構。將會引進 (ABI) 的應用程式二進位介面，並且會提供有關在 Xamarin Android 應用程式中使用 Abi 的指引。_
 
 ## <a name="overview"></a>概觀
 
@@ -87,19 +87,19 @@ Xamarin.Android 5.1 引進對此架構的支援 (如需詳細資訊，請簪參�
 
 Android 應用程式套件是保存了 Android 應用程式所需之所有程式碼、資產、資源和憑證的檔案格式。 此套件是 `.zip` 檔案，但所使用的副檔名卻是 `.apk`。 展開時，Xamarin.Android 所建立之 `.apk` 的內容如以下螢幕擷取畫面所示：
 
-[![.apk 的內容](multicore-devices-images/00.png)](multicore-devices-images/00.png#lightbox)
+[![Apk 的內容](multicore-devices-images/00.png)](multicore-devices-images/00.png#lightbox)
 
 `.apk` 檔案內容的簡短描述：
 
-- **AndroidManifest.xml**&ndash;這是`AndroidManifest.xml`檔 ,採用二進位 XML 格式。
+- **AndroidManifest.xml** &ndash; 這是 `AndroidManifest.xml` 以二進位 XML 格式的檔案。
 
-- **類.dex**&ndash;它包含應用程式代碼,編譯為 Android`dex`運行時 VM 使用的檔案格式。
+- **dex** &ndash; ，其中包含的應用程式程式碼會編譯為 `dex` Android 執行時間 VM 所使用的檔案格式。
 
-- **資源.arsc**&ndash;此檔包含應用程式的所有預編譯資源。
+- **資源。 arsc** &ndash; 此檔案包含應用程式所有的先行編譯資源。
 
 - **lib** &ndash; 此目錄保存每個 ABI 的編譯程式碼。 它會針對上一節所述的每個 ABI 各包含一個子資料夾。 在上述螢幕擷取畫面中，我們所討論的 `.apk` 同時具有 `armeabi-v7a` 和 `x86` 的原生程式庫。
 
-- **META-INF**&ndash;此目錄(如果存在)用於存儲簽名資訊、包和擴展配置數據。
+- **中繼 INF** &ndash; 此目錄 (（如果有) 的話）會用來儲存簽署資訊、封裝和延伸模組設定資料。
 
 - **res** &ndash; 此目錄保存未編譯為 `resources.arsc` 的資源。
 
@@ -110,7 +110,7 @@ Android 應用程式套件是保存了 Android 應用程式所需之所有程式
 
 每個 Android 裝置最多支援在兩個 ABI 中執行機器碼：
 
-- **"主"ABI**&ndash;這與系統映射中使用的機器代碼相對應。
+- 「**主要」 ABI** &ndash;這會對應到系統映射中使用的機器碼。
 
 - **「次要」ABI** &ndash; 這是系統映像也支援的選擇性 ABI。
 
@@ -190,7 +190,7 @@ $APP/lib/libtwo.so # armeabi, NOT armeabi-v7a!
 <AndroidSupportedAbis>armeabi,armeabi-v7a</AndroidSupportedAbis>
 ```
 
-因此,將首先`armeabi``libmonodroid.so``.apk`在中找到`armeabi``libmonodroid.so`, 和將是提取`armeabi-v7a``libmonodroid.so`的, 即使存在並針對目標進行了優化. 這也會導致令人費解的執行階段錯誤，因為 `armeabi` 不具備 SMP 安全性。
+因此， `armeabi` `libmonodroid.so` 會先在中找到 `.apk` ，而且將會是 `armeabi` `libmonodroid.so` 已解壓縮的，即使 `armeabi-v7a` `libmonodroid.so` 是存在且已針對目標優化也是一樣。 這也會導致令人費解的執行階段錯誤，因為 `armeabi` 不具備 SMP 安全性。
 
 ##### <a name="installing-native-libraries-android-404-and-later"></a>安裝原生程式庫：Android 4.0.4 和更新版本
 
@@ -226,7 +226,7 @@ Xamarin.Android 支援下列 32 位元架構：
 - `x86`
 
 > [!NOTE]
-> **^** 截至[Xamarin.Android 9.2,](https://docs.microsoft.com/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture)`armeabi`不再受支援。
+> **^** 從 [Xamarin. Android 9.2](/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture)， `armeabi` 已不再支援。
 
 Xamarin.Android 目前未提供 `mips` 的支援。
 
@@ -238,7 +238,7 @@ Xamarin.Android 目前未提供 `mips` 的支援。
 
 在 Visual Studio for Mac 中，可於 [專案選項]**** 之 [Android 組建]**** 頁面的 [進階]**** 索引標籤底下選取所支援的架構，如下列螢幕擷取畫面所示：
 
-[![Android 建構支援的 IS](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png#lightbox)
+[![支援 Android 組建 Abi](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png#lightbox)
 
 有時候您可能必須宣告其他 ABI 支援，例如在下列情況時：
 
@@ -246,7 +246,7 @@ Xamarin.Android 目前未提供 `mips` 的支援。
 
 - 將應用程式部署至 `armeabi-v7a` 裝置，以確保執行緒安全性。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文件討論了可作為 Android 應用程式執行所在的不同 CPU 架構。 文中介紹了應用程式二進位介面，以及 Android 如何使用此介面來支援不同的 CPU 架構。
 接著討論如何在 Xamarin.Android 應用程式中指定 ABI 支援，並點出在僅供 `armeabi` 使用的 `armeabi-v7a` 裝置上使用 Xamarin.Android 應用程式時會引發的問題。

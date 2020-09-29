@@ -8,16 +8,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: 199b9de670e424bdc21a05966cfdd73c7e2cbb42
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: d1272360656cb3c526b84fbad4219a715a4f0716
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020900"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454543"
 ---
 # <a name="hello-android-multiscreen"></a>Hello, Android 多重畫面
 
-_在此由兩部分組成的指南中,您可以展開您在 Hello,Android 指南中創建的 Phoneword 應用程式來處理第二個螢幕。一路上,本指南將介紹基本的Android應用程式構建基塊,並深入瞭解Android架構,因為您更好地瞭解了Android應用程式結構和功能。_
+_在這個兩部分的指南中，您會展開在 Hello，Android 指南中建立的 Phoneword 應用程式來處理第二個畫面。在過程中，本指南將介紹基本的 Android 應用程式組建區塊，並在您進一步瞭解 Android 應用程式結構和功能時深入探索 Android 架構。_
 
 ## <a name="part-1-quickstart"></a>[第 1 部分：快速入門](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
 
@@ -30,5 +30,5 @@ _在此由兩部分組成的指南中,您可以展開您在 Hello,Android 指南
 ## <a name="related-links"></a>相關連結
 
 - [Android 使用者入門](https://developer.android.com/training/index.html)
-- [Visual Studio 偵錯](https://docs.microsoft.com/visualstudio/debugger/)
+- [Visual Studio 偵錯](/visualstudio/debugger/)
 - [Visual Studio for Mac 配方 - 偵錯](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)

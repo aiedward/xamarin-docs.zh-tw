@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: jonpryor
 ms.author: jopryo
 ms.date: 09/21/2020
-ms.openlocfilehash: 25d1e7ba7cb3e74cb4bfed170662a3859823dfc5
-ms.sourcegitcommit: 38496cfd4d30fd40a011011f303a31de639bd699
+ms.openlocfilehash: aeb0cca9ead1a0f0a3f5b1dec88b2470289cd589
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247260"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454932"
 ---
 # <a name="build-properties"></a>組建屬性
 
 MSBuild 屬性會控制 [目標](~/android/deploy-test/building-apps/build-targets.md)的行為。
-這些專案是在[MSBuild PropertyGroup](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild)中的專案檔（例如**MyApp. .csproj**）內指定。
+這些專案是在[MSBuild PropertyGroup](/visualstudio/msbuild/propertygroup-element-msbuild)中的專案檔（例如**MyApp. .csproj**）內指定。
 
 ## <a name="adbtarget"></a>AdbTarget
 
@@ -353,7 +353,7 @@ Bool 屬性，可讓您產生 JNI 封送處理方法做為組建程式的一部�
 
 ## <a name="androidhttpclienthandlertype"></a>AndroidHttpClientHandlerType
 
-控制預設的函式 `System.Net.Http.HttpMessageHandler` 將使用的預設實作為 `System.Net.Http.HttpClient` 。 值是子類別的元件限定型別名稱 `HttpMessageHandler` ，適合搭配使用 [`System.Type.GetType(string)`](https://docs.microsoft.com/dotnet/api/system.type.gettype#System_Type_GetType_System_String_) 。
+控制預設的函式 `System.Net.Http.HttpMessageHandler` 將使用的預設實作為 `System.Net.Http.HttpClient` 。 值是子類別的元件限定型別名稱 `HttpMessageHandler` ，適合搭配使用 [`System.Type.GetType(string)`](/dotnet/api/system.type.gettype#System_Type_GetType_System_String_) 。
 此屬性最常見的值：
 
 - `Xamarin.Android.Net.AndroidClientHandler`：使用 Android JAVA Api 來執行網路要求。 這允許在基礎 Android 版本支援 TLS 1.2 時存取 TLS 1.2 URL。 只有 Android 5.0 及更新版本能夠可靠地透過 Java 提供 TLS 1.2 支援。
@@ -749,7 +749,7 @@ f `abi` 是 `x86_64` 和 `versionCode` 在資訊清單中 `44` 。 若 `544` `$(
 ## <a name="androidversioncodeproperties"></a>AndroidVersionCodeProperties
 
 字串屬性，可讓開發人員定義要與搭配使用的自訂專案 [`$(AndroidVersionCodePattern)`](#androidversioncodepattern) 。
-其格式為 `key=value` 組。 `value` 中的所有項目都應該是整數值。 例如：`screen=23;target=$(_AndroidApiLevel)`。 如您所見，您可以在字串中利用現有或自訂的 MSBuild 屬性。
+其格式為 `key=value` 組。 `value` 中的所有項目都應該是整數值。 例如： `screen=23;target=$(_AndroidApiLevel)` 。 如您所見，您可以在字串中利用現有或自訂的 MSBuild 屬性。
 
 已在 Xamarin.Android 7.2 中新增。
 
@@ -791,7 +791,7 @@ Xamarin.Android 9.4 已新增此支援。
 
 ## <a name="debugtype"></a>DebugType
 
-指定要產生為組建一部分的 [debug 符號類型](https://docs.microsoft.com/visualstudio/msbuild/csc-task) ，這也會影響應用程式是否可調試。 可能的值包括：
+指定要產生為組建一部分的 [debug 符號類型](/visualstudio/msbuild/csc-task) ，這也會影響應用程式是否可調試。 可能的值包括：
 
 - **完整**：產生完整符號。 如果 [`DebugSymbols`](#debugsymbols)
   MSBuild 屬性也是 `True` ，應用程式封裝是可調試的。
@@ -909,7 +909,7 @@ MSBuild 屬性也會控制要內嵌至的內容 `.apk` ，這可能會影響部�
 此為布林值屬性，可控制是否要建立成品以 `.mSYM` 供稍後使用 `mono-symbolicate` ，以 &ldquo; &rdquo; 從發行堆疊追蹤中解壓縮實際的檔案名和行號資訊。
 
 針對 &ldquo; &rdquo; 已啟用偵錯工具符號的發行應用程式 [`$(EmbedAssembliesIntoApk)`](#embedassembliesintoapk) ，預設為 true。 [`$(DebugSymbols)`](~/android/deploy-test/building-apps/build-properties.md#debugsymbols)
-為 True，且為 [`$(Optimize)`](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-properties)
+為 True，且為 [`$(Optimize)`](/visualstudio/msbuild/common-msbuild-project-properties)
 為 True。
 
 在 Xamarin.Android 7.1 中已新增。

@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/30/2018
-ms.openlocfilehash: 729dede97a9b153738ca72af499d4d1e9d77fae0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 3c42743a26ab4ec5388c1d3458d88ef4d161a1f3
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021449"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454841"
 ---
 # <a name="linking-on-android"></a>在 Android 上連結
 
 Xamarin.Android 應用程式會使用「連結器」** 來縮小應用程式的大小。 連結器會採用您應用程式的靜態分析來判斷實際使用到的組件、類型及成員。 連結器然後會像「記憶體回收行程」** 一樣，持續尋找參考的組件、類型及成員，直到整個參考組件、類型及成員終止為止。 然後，所有在此終止之外的項目便會遭到「捨棄」**。
 
-例如，[Hello, Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) 範例：
+例如，[Hello, Android](/samples/xamarin/monodroid-samples/hellom4a) 範例：
 
-|組態|1.2.0 大小|4.0.1 大小|
+|設定|1.2.0 大小|4.0.1 大小|
 |---|---|---|
 |沒有連結的版本：|14.0 MB|16.0 MB|
 |有連結的版本：|4.2 MB|2.9 MB|
@@ -178,8 +178,8 @@ class MyActivity {
 
 ### <a name="linkdescription"></a>LinkDescription
 
-生成操作 可用於可能包含[自訂連結器設定檔](~/cross-platform/deploy-test/linker.md)的檔。 **Build action** [`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md) 
-
+[`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md) 
+ **組建動作**可用於可包含[自訂連結器設定檔](~/cross-platform/deploy-test/linker.md)的檔案。
 檔的 SSDL 區段。 為保留需保留的 `internal` 或 `private` 成員，自訂連結器組態檔可能為必要項目。
 
 ### <a name="custom-attributes"></a>自訂屬性

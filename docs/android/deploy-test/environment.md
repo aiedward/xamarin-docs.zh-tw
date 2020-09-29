@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 54fc52c2f2460726fe1c22149d4e7cc0e8a92609
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: da0e3775f400c965ee59a762884e638e3379c8df
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028064"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454854"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 環境
 
@@ -44,11 +44,11 @@ Xamarin.Android 支援 `XA_HTTP_CLIENT_HANDLER_TYPE` 變數，可透過 `adb she
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
-組件限定類型，其必須從 [HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) 繼承並從 [`HttpClient()` 預設建構函式](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor)建構。
+組件限定類型，其必須從 [HttpMessageHandler](/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) 繼承並從 [`HttpClient()` 預設建構函式](/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor)建構。
 
-在 Xamarin.Android 6.1 中，預設不會設定環境變數，並且會使用 [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1)。
+在 Xamarin.Android 6.1 中，預設不會設定環境變數，並且會使用 [HttpClientHandler](/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1)。
 
-或者,可以指定`Xamarin.Android.Net.AndroidClientHandler`該值以使用[`java.net.URLConnection`](xref:Java.Net.URLConnection)
+或者，您也可以指定此值 `Xamarin.Android.Net.AndroidClientHandler` 來使用 [`java.net.URLConnection`](xref:Java.Net.URLConnection)
 「可」** 允許使用 TLS 1.2 (若 Android 支援它的話)。
 
 已在 Xamarin.Android 6.1 中新增。
@@ -105,8 +105,8 @@ Xamarin.Android 支援下列系統屬性，可透過 `adb shell setprop` 或 `$(
 `debug.mono.max_grefc` 系統屬性的值為一個整數。
 它的值會「覆寫」** 針對目標裝置預設偵測到的最大 GRF 計數。
 
-*請注意:* 這僅可用於,`adb shell setprop
-debug.mono.max_grefc`因為該值在**環境.txt**檔中不能及時使用。
+*請注意：* 這僅適用于， `adb shell setprop
+debug.mono.max_grefc` 因為值將無法在使用 **environment.txt** 檔案時使用。
 
 ### `debug.mono.profile`
 
@@ -131,7 +131,7 @@ debug.mono.max_grefc`因為該值在**環境.txt**檔中不能及時使用。
 `debug.mono.wref` 系統屬性會允許覆寫預設偵測到的 JNI 弱式參考機制。 有兩個支援的值：
 
 - `jni`：使用 JNI 弱式參考，由 `JNIEnv::NewWeakGlobalRef()` 建立並由 `JNIEnv::DeleteWeakGlobalREf()` 終結。
-- `java`:使用引用`java.lang.WeakReference`實例的 JNI 全域引用。
+- `java`：使用參考實例的 JNI 全域參考 `java.lang.WeakReference` 。
 
 直到 API-7 及啟用 ART 的 API-19 (Kit Kat) 都會預設使用 `java`。 (API-8 新增 `jni` 參考，ART 會*破壞* `jni` 參考。)
 

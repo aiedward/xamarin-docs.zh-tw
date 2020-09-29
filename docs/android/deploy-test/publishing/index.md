@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 3062afda82be2b45146687b9d77210a42f8f55fa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0b44cbf754e8d1be66b0f3bf09badb78852978eb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75487954"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454633"
 ---
 # <a name="publishing-an-application"></a>發行應用程式
 
@@ -27,7 +27,7 @@ Xamarin.Android 應用程式開發的最後一個步驟就是發行應用程式�
 
 下表說明發行 Xamarin.Android 應用程式所涉及的步驟：
 
-[![編譯並部署流程圖](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png#lightbox)
+[![組建和部署流程圖](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png#lightbox)
 
 如上圖所示，不論使用的散發方式是哪一種，準備工作都相同。 向使用者發行 Android 應用程式的方式有數種：
 
@@ -46,17 +46,17 @@ Amazon Mobile App Distribution Program (Amazon 行動應用程式散發計劃) �
 
 Google Play 可說是最全方位且最受歡迎的 Android 應用程式市集。 Google Play 讓使用者在其裝置或電腦上按一下單一圖示，即可進行應用程式探索、下載、評分及付費。 Google Play 也提供工具來協助分析銷售和市場趨勢，以及管制哪些裝置和使用者可以下載應用程式。 以下顯示在 Android 裝置上執行之 Google Play 的螢幕擷取畫面：
 
-[![谷歌播放截圖](images/google-play-app.png)](images/google-play-app.png#lightbox)
+[![Google Play 螢幕擷取畫面](images/google-play-app.png)](images/google-play-app.png#lightbox)
 
 本節說明如何將應用程式連同適當的宣傳資料上傳到商店 (例如 Google Play)。 其中說明 APK 擴充檔，提供有關擴充檔是什麼及其運作方式的概念性概觀。 此外，也說明「Google 授權」服務。 最後則是介紹替代的散發方式，包括使用 HTTP Web 伺服器、簡單電子郵件散發，以及 Amazon App Store for Android。
 
 ## <a name="related-links"></a>相關連結
 
-- [HelloWorldPublishing (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/helloworldpublishing)
+- [HelloWorldPublishing (範例)](/samples/xamarin/monodroid-samples/helloworldpublishing)
 - [建置流程](~/android/deploy-test/building-apps/build-process.md)
 - [連結](~/android/deploy-test/linker.md)
-- [取得谷歌地圖 API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [通過視覺化工作室應用中心部署](https://docs.microsoft.com/appcenter/distribution/stores/googleplay)
+- [取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
+- [透過 Visual Studio App Center 部署](/appcenter/distribution/stores/googleplay)
 - [Application Signing](https://source.android.com/security/apksigning/) (應用程式簽署)
 - [在 Google Play 上發行](https://developer.android.com/distribute/googleplay/publish/index.html)
 - [Google 應用程式授權](https://developer.android.com/guide/google/play/licensing/index.html)

@@ -8,16 +8,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: 2cb2e90355cf93903c7a3b7e1beb65528d09d82d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b5e089e488835de910626801e78dbd261456861f
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027977"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454490"
 ---
 # <a name="hello-android"></a>Hello, Android
 
-_在此兩部分指南中,您將使用 Mac 或 Visual Studio 的 Visual Studio 構建您的第一個 Xamarin.Android 應用程式,並使用 Xamarin 開發 Android 應用程式的基本原理。在此過程中,將介紹構建和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。_
+_在這份含有兩部分的指南中，您將使用 Visual Studio for Mac 或 Visual Studio 來建立您的第一個 Xamarin. Android 應用程式，並瞭解使用 Xamarin 進行 Android 應用程式開發的基本概念。在過程中，將會介紹建立和部署 Xamarin 應用程式所需的工具、概念和步驟。_
 
 ## <a name="part-1-quickstart"></a>[第 1 部分：快速入門](~/android/get-started/hello-android/hello-android-quickstart.md)
 
@@ -30,5 +30,5 @@ _在此兩部分指南中,您將使用 Mac 或 Visual Studio 的 Visual Studio �
 ## <a name="related-links"></a>相關連結
 
 - [Android 使用者入門](https://developer.android.com/training/index.html)
-- [Visual Studio 偵錯](https://docs.microsoft.com/visualstudio/debugger/)
+- [Visual Studio 偵錯](/visualstudio/debugger/)
 - [Visual Studio for Mac 配方 - 偵錯](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)

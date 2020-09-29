@@ -8,16 +8,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: ff68666d9f0385b159b9ac9908ff997f53715308
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 34416145fcf66f28d80a35a7d4dbc9b2fc2c6351
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571931"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454477"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator 疑難排解
 
-_本文說明設定和執行 Android Emulator 時最常見的警告訊息和問題。此外，它也會說明解決這些錯誤的解決方案，以及各種疑難排解秘訣，以協助您診斷模擬器的問題。_
+_本文說明在設定和執行 Android Emulator 時，最常見的警告訊息和問題。此外，它也會描述解決這些錯誤的解決方案，以及各種可協助您診斷模擬器問題的疑難排解提示。_
 
 ::: zone pivot="windows"
 
@@ -31,7 +31,7 @@ _本文說明設定和執行 Android Emulator 時最常見的警告訊息和問�
 
 1. 從 **Android Device Manager**啟動模擬器 (選取您的虛擬裝置並按一下 [啟動]****)。
 
-2. 開啟命令提示字元，並移至安裝**adb**的資料夾。 如果 Android SDK 安裝在其預設位置，則 **adb** 會位於 **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe**；如果不是，請將此路徑修改為您電腦上的 Android SDK 位置。
+2. 開啟命令提示字元，並移至安裝 **adb** 的資料夾。 如果 Android SDK 安裝在其預設位置，則 **adb** 會位於 **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe**；如果不是，請將此路徑修改為您電腦上的 Android SDK 位置。
 
 3. 輸入以下命令：
 
@@ -92,7 +92,7 @@ _本文說明設定和執行 Android Emulator 時最常見的警告訊息和問�
 
 此問題的常見原因是未在您的虛擬裝置 (AVD) 中使用 x86 型映像。 當您建立虛擬裝置時 (請參閱[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md))，請務必選取 x86 型系統映像：
 
-[![為虛擬裝置選取 x86 系統映射](troubleshooting-images/win/02-x86-virtual-device-w158-sml.png)](troubleshooting-images/win/02-x86-virtual-device-w158.png#lightbox)
+[![選取虛擬裝置的 x86 系統映射](troubleshooting-images/win/02-x86-virtual-device-w158-sml.png)](troubleshooting-images/win/02-x86-virtual-device-w158.png#lightbox)
 
 <a name="accel-issues-win"></a>
 
@@ -195,7 +195,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName HypervisorPlatform -All
 
 這些命令完成之後，請重新開機。 
 
-如需啟用 Hyper-V 的詳細資訊 (包括使用部署映像服務與管理工具啟用 Hyper-V 的技術)，請參閱[安裝 Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
+如需啟用 Hyper-V 的詳細資訊 (包括使用部署映像服務與管理工具啟用 Hyper-V 的技術)，請參閱[安裝 Hyper-V](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
 
 ### <a name="haxm-issues"></a>HAXM 問題
 
@@ -258,7 +258,7 @@ HAXM 可能與其他使用虛擬化的技術發生衝突，例如 Hyper-V、Wind
 
     ![正在 [Windows 功能] 對話方塊中停用 Hyper-V](troubleshooting-images/win/03-uncheck-hyper-v.png)
 
-3. 重新啟動電腦。
+3. 將電腦重新開機。
 
 或者，您可以使用下列 PowerShell 命令來停用 Hyper-V Hypervisor：
 
@@ -367,7 +367,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 1. 從 **Android Device Manager**啟動模擬器 (選取您的虛擬裝置並按一下 [啟動]****)。
 
-2. 開啟命令提示字元，並移至安裝**adb**的資料夾。 如果 Android SDK 安裝在其預設位置，則 **adb** 會位於 **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb**；如果不是，請將此路徑修改為您電腦上的 Android SDK 位置。
+2. 開啟命令提示字元，並移至安裝 **adb** 的資料夾。 如果 Android SDK 安裝在其預設位置，則 **adb** 會位於 **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb**；如果不是，請將此路徑修改為您電腦上的 Android SDK 位置。
 
 3. 輸入以下命令：
 
@@ -424,7 +424,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 此問題的常見原因是未在虛擬裝置中使用 x86 型映像。 當您建立虛擬裝置時 (請參閱[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md))，請務必選取 x86 型系統映像：
 
-[![為虛擬裝置選取 x86 系統映射](troubleshooting-images/mac/02-x86-virtual-device-m75-sml.png)](troubleshooting-images/mac/02-x86-virtual-device-m75.png#lightbox)
+[![選取虛擬裝置的 x86 系統映射](troubleshooting-images/mac/02-x86-virtual-device-m75-sml.png)](troubleshooting-images/mac/02-x86-virtual-device-m75.png#lightbox)
 
 <a name="accel-issues-mac"></a>
 

@@ -9,16 +9,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 2f8c6a80b00a4a91c40c70af05ac0ebe18daaed3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e07a7e6ea11cbf717db22dd46eaa5e28d907bafa
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571437"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454919"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android：深度剖析
 
-_在這份含有兩部分的指南中，您將建立您的第一個 Xamarin. Android 應用程式，並瞭解使用 Xamarin 進行 Android 應用程式開發的基本概念。在過程中，您將會引進建立和部署 Xamarin Android 應用程式所需的工具、概念和步驟。_
+_在這份含有兩部分的指南中，您將會建立第一個 Xamarin Android 應用程式，並瞭解使用 Xamarin 進行 Android 應用程式開發的基本概念。在過程中，您將會介紹建立和部署 Xamarin Android 應用程式所需的工具、概念和步驟。_
 
 在 [Hello, Android 快速入門](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)中，您已建置並執行您的第一個 Xamarin.Android 應用程式。 現在是時候更深入了解 Android 應用程式的運作方式，讓您能夠建置更複雜的程式。 本指南會檢閱您在 Hello, Android 逐步解說中所採取的步驟，讓您可以了解所執行的作業，並開始對 Android 應用程式開發有基本了解。
 
@@ -45,13 +45,13 @@ _在這份含有兩部分的指南中，您將建立您的第一個 Xamarin. And
 
 - **Xamarin.Android 應用程式的結構** &ndash; 導覽 Xamarin.Android 應用程式的基本組件。
 
-- **應用程式基礎與架構基本概念** &ndash;介紹活動、Android 資訊清單，以及 Android 開發的一般類別。
+- **應用程式基礎與架構基本概念** &ndash; 活動、Android 資訊清單及 Android 開發的一般類別簡介。
 
 - **使用者介面 (UI)** &ndash; 使用 Android Designer 來建立使用者介面。
 
-- **活動和活動生命週期** &ndash;活動生命週期的簡介，以及如何在程式碼中連接使用者介面。
+- **活動和活動生命週期** &ndash; 活動生命週期的簡介，並以程式碼連接使用者介面。
 
-- **測試、部署和最後的潤色** &ndash;透過測試、部署、產生作品等等的建議來完成您的應用程式。
+- **測試、部署及完成潤色** &ndash; 透過測試、部署、產生作品等建議來完成您的應用程式。
 
 ::: zone-end
 
@@ -63,14 +63,14 @@ _在這份含有兩部分的指南中，您將建立您的第一個 Xamarin. And
 
 Visual Studio 是 Microsoft 所提供之功能強大的 IDE。 其中包含完全整合的視覺化設計工具、含有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 在本指南中，您將了解如何搭配 Xamarin 外掛程式使用一些基本的 Visual Studio 功能。
 
-Visual Studio 會將程式碼組織成_方案_和_專案_。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
+Visual Studio 會將程式碼組織成 _方案_ 和 _專案_。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
 
 ::: zone-end
 ::: zone pivot="macos"
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac 簡介
 
-Visual Studio for Mac 是免費的開放原始碼 IDE，類似 Visual Studio。 其中包含完全整合的視覺化設計工具、具有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 在本指南中，您將了解如何使用一些基本的 Visual Studio for Mac 功能。 如果您還不熟悉 Visual Studio for Mac，您可能想要參閱更深入的 [Visual Studio for Mac 簡介](https://docs.microsoft.com/visualstudio/mac/)。
+Visual Studio for Mac 是免費的開放原始碼 IDE，類似 Visual Studio。 其中包含完全整合的視覺化設計工具、具有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 在本指南中，您將了解如何使用一些基本的 Visual Studio for Mac 功能。 如果您還不熟悉 Visual Studio for Mac，您可能想要參閱更深入的 [Visual Studio for Mac 簡介](/visualstudio/mac/)。
 
 Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「方案」__ 和「專案」__。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
 
@@ -197,7 +197,7 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 
 ::: zone-end
 
-這個 XML 原始程式碼應該包含四個控制項元素：兩個**TextView**s、一個**EditText**和一個**Button**元素。 如需 Android Designer 的更深入導覽，請參閱 Xamarin Android [Designer 概觀](~/android/user-interface/android-designer/index.md)指南。
+這個 XML 原始程式碼應該包含四個控制項元素：兩個 **TextView**s、一個 **EditText** 和一個 **Button** 元素。 如需 Android Designer 的更深入導覽，請參閱 Xamarin Android [Designer 概觀](~/android/user-interface/android-designer/index.md)指南。
 
 現在您已了解使用者介面之視覺部分背後的工具和概念。 接下來，您可以跳到提供使用者介面的程式碼，並探索活動與活動開發週期。
 
@@ -231,7 +231,7 @@ public class MainActivity : Activity
 
 在 Android 中，活動會根據其與使用者的互動，經過開發週期的不同階段。 您可以建立、啟動、暫停、繼續和終結活動，以及執行其他動作。 `Activity` 類別包含系統在畫面開發週期的特定點上所呼叫的方法。 下圖說明活動的典型開發週期，以及一些對應的開發週期方法：
 
-[![活動生命週期](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png#lightbox)
+[![活動開發週期](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png#lightbox)
 
 藉由覆寫 `Activity` 開發週期方法，您就可以控制活動的載入方式、回應使用者的方式，甚至是它從裝置螢幕消失之後所發生的情況。 例如，您可以覆寫上圖中的開發週期方法，來執行一些重要的工作：
 
@@ -372,7 +372,7 @@ Android 會選擇具有適當密度的圖示：
 
 ### <a name="generate-custom-icons"></a>產生自訂圖示
 
-並非每個人都有設計工具可用來建立自訂圖示，以及啟動應用程式需要執行的影像。以下是一些產生自訂應用程式插圖的替代方法：
+並非每個人都有設計工具可用來建立應用程式需要的自訂圖示和啟動影像。以下是一些產生自訂應用程式作品的替代方法：
 
 ::: zone pivot="windows"
 
@@ -416,7 +416,7 @@ _Google Play 服務_是一組附加元件程式庫，可讓 Android 開發人員
 
 ::: zone-end
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 恭喜！ 您現在應該已充分了解 Xamarin.Android 應用程式的元件，以及建立應用程式所需的工具。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/11/2020
-ms.openlocfilehash: 6a8e6b9e03cafe2ef40ae41114831b727010d12a
-ms.sourcegitcommit: 38496cfd4d30fd40a011011f303a31de639bd699
+ms.openlocfilehash: d89f686be99dc8ae8d1aada12dcbe94d857424d7
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91246903"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454958"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -141,7 +141,7 @@ Xamarin. Android 建置系統為想要在我們的建置系統中建立掛鉤的
 - [' $ (AfterGenerateAndroidManifest) ](~/android/deploy-test/building-apps/build-properties.md#aftergenerateandroidmanifest)
 - [' $ (BeforeGenerateAndroidManifest) ](~/android/deploy-test/building-apps/build-properties.md#beforegenerateandroidmanifest)
 
-擴充組建程式的注意事項：如果未正確寫入，組建延伸模組可能會影響您的組建效能，特別是在每個組建上執行時。 極力建議您先閱讀 MSBuild [文件](https://docs.microsoft.com/visualstudio/msbuild/msbuild)，然後再執行這類延伸模組。
+擴充組建程式的注意事項：如果未正確寫入，組建延伸模組可能會影響您的組建效能，特別是在每個組建上執行時。 極力建議您先閱讀 MSBuild [文件](/visualstudio/msbuild/msbuild)，然後再執行這類延伸模組。
 
 ## <a name="target-definitions"></a>目標定義
 

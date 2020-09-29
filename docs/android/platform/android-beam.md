@@ -6,39 +6,39 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/06/2017
-ms.openlocfilehash: aab121ed5f811baf38eed48cf891ccdf076eaf44
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 8132be3e709e6cfe519934ce6c16ae16ac7054c6
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78291955"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454217"
 ---
 # <a name="android-beam"></a>Android Beam
 
-Android 光束是 Android 4.0 中引入的近場通信 (NFC) 技術,允許應用程式在近距離通過 NFC 共用資訊。
+Android 橫樑是在 Android 4.0 中引進的近距離無線通訊 (NFC) 技術，可讓應用程式在接近時透過 NFC 共用資訊。
 
-[![圖說明兩個裝置在近距離分享資訊](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
+[![說明近距離共用資訊中兩個裝置的圖表](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
-Android 光束的工作原理是,當兩台設備在範圍內時,將消息推送到 NFC 上。 彼此距離約 4 釐米的設備可以使用 Android 光束共享數據。 一台設備上的活動將創建一條消息,並指定可以處理推送消息的活動(或活動)。 當指定的活動在前臺且設備處於範圍內時,Android 光束會將消息推送到第二個設備。 在接收設備上,將調用包含消息數據的意向。
+當兩個裝置在範圍內時，Android 橫樑的運作方式是透過 NFC 推播訊息。 彼此4cm 的裝置可以使用 Android 橫樑共用資料。 一部裝置上的活動會建立訊息，並指定活動 (或可處理推送它的活動) 。 當指定的活動在前景，且裝置在範圍內時，Android 橫樑會將訊息推送至第二個裝置。 在接收的裝置上，會叫用包含訊息資料的意圖。
 
-Android 支援使用 Android 光束設定消息的兩種方法:
+Android 支援兩種使用 Android 橫樑設定訊息的方式：
 
-- `SetNdefPushMessage`- 在 Android 光束啟動之前,應用程式可以調用 SetNdefPushMessage 來指定 NdefMessage 以推送 NFC 以及推動它的活動。 當應用程式正在使用時消息不更改時,最好使用此機制。
+- `SetNdefPushMessage` -在起始 Android 橫樑之前，應用程式可以呼叫 SetNdefPushMessage 來指定要在 NFC 中推送的 NdefMessage，以及推送它的活動。 當應用程式正在使用中時，當訊息未變更時，最適合使用此機制。
 
-- `SetNdefPushMessageCallback`- 啟動 Android 光束時,應用程式可以處理回調以創建 NdefMessage。 此機制允許延遲消息創建,直到設備在範圍內。 它支援消息可能因應用程式中發生的情況而異的情況。
+- `SetNdefPushMessageCallback` -當啟動 Android 橫樑時，應用程式可以處理回呼來建立 NdefMessage。 這項機制可讓訊息建立延遲，直到裝置在範圍內為止。 它支援的案例可能會根據應用程式中的情況而有所不同。
 
-在這兩種情況下,要使用 Android 光束發送數據,`NdefMessage`應用程式都會將數據打包`NdefRecords`到多個 中。 讓我們來看看在觸發 Android 光束之前必須解決的要點。 首先,我們將使用建立 回檔`NdefMessage`樣式 。
+在任一種情況下，若要使用 Android 橫樑傳送資料，應用程式會傳送，並將 `NdefMessage` 資料封裝在數個 `NdefRecords` 。 讓我們來看看在可以觸發 Android 橫樑之前必須先解決的重點。 首先，我們將使用建立的回呼樣式 `NdefMessage` 。
 
 ## <a name="creating-a-message"></a>建立訊息
 
-我們可以在活動`NfcAdapter``OnCreate`的方法中註冊回調。 例如,假設命名`NfcAdapter``mNfcAdapter`在活動中聲明為類變數,我們可以編寫以下代碼來創建將構造消息的回調:
+我們可以 `NfcAdapter` 在活動的方法中向註冊回呼 `OnCreate` 。 例如，假設在 `NfcAdapter` 活動中將名稱宣告為 `mNfcAdapter` 類別變數，我們可以撰寫下列程式碼來建立將會建立訊息的回呼：
 
 ```csharp
 mNfcAdapter = NfcAdapter.GetDefaultAdapter (this);
 mNfcAdapter.SetNdefPushMessageCallback (this, this);
 ```
 
-實現活動`NfcAdapter.ICreateNdefMessageCallback`將傳遞給`SetNdefPushMessageCallback`上述 方法。 啟動 Android 光束時,系統將`CreateNdefMessage`調用 ,活動可以從中構造`NdefMessage`如下所示 :
+實作為的活動 `NfcAdapter.ICreateNdefMessageCallback` 會傳遞至 `SetNdefPushMessageCallback` 上述方法。 當 Android 橫樑起始時，系統會呼叫 `CreateNdefMessage` ，活動可以在其中建立， `NdefMessage` 如下所示：
 
 ```csharp
 public NdefMessage CreateNdefMessage (NfcEvent evt)
@@ -65,17 +65,17 @@ public NdefRecord CreateMimeRecord (String mimeType, byte [] payload)
 
 ## <a name="receiving-a-message"></a>接收訊息
 
-在接收端,系統調用意圖與`ActionNdefDiscovered`操作,我們可以從中提取 NdefMessage 如下:
+在接收端，系統 `ActionNdefDiscovered` 會使用動作叫用意圖，我們可以從這裡將 NdefMessage 解壓縮，如下所示：
 
 ```csharp
 IParcelable [] rawMsgs = intent.GetParcelableArrayExtra (NfcAdapter.ExtraNdefMessages);
 NdefMessage msg = (NdefMessage) rawMsgs [0];
 ```
 
-有關使用 Android 光束的完整代碼範例(如下圖所示所示)請參閱範例庫中的[Android 光束示範](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)。
+如需使用 Android 橫樑的完整程式碼範例（如以下螢幕擷取畫面所示），請參閱範例庫中的 [Android 橫樑示範](/samples/xamarin/monodroid-samples/androidbeamdemo) 。
 
-[![來自 Android 光束示範的範例螢幕截圖](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
+[![Android 橫樑示範的範例螢幕擷取畫面](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 
-- [安卓光束演示(示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)
+- [Android 橫樑示範 (範例) ](/samples/xamarin/monodroid-samples/androidbeamdemo)

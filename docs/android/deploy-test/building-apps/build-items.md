@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: jonpryor
 ms.author: jopryo
 ms.date: 09/23/2020
-ms.openlocfilehash: 2d84152551b6c9ddfb2263dcd65e2def5ba20e33
-ms.sourcegitcommit: 38496cfd4d30fd40a011011f303a31de639bd699
+ms.openlocfilehash: 90efe2533f971180124d044ec39ddcf1591b9d36
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247255"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455036"
 ---
 # <a name="build-items"></a>組建項目
 
@@ -128,7 +128,7 @@ ms.locfileid: "91247255"
 
 組建動作會將檔案 `AndroidResourceAnalysisConfig` 標示為 Xamarin Android Designer 配置診斷工具的嚴重性層級設定檔案。 這項功能目前僅適用于配置編輯器，不適用於組建訊息。
 
-如需詳細資訊，請參閱 [Android 資源分析檔](https://aka.ms/androidresourceanalysis) 。
+如需詳細資訊，請參閱 [Android 資源分析檔](../../user-interface/android-designer/diagnostics.md) 。
 
 已在 Xamarin. Android 10.2 中新增。
 

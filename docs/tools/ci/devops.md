@@ -7,12 +7,12 @@ manager: crdun
 ms.workload:
 - xamarin
 ms.date: 10/23/2018
-ms.openlocfilehash: bd1a728dfe14ff9243402bedae74db7be93bf466
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 61a7017d2ba784770d1199b6332d781b36b6d0e0
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292637"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91452475"
 ---
 # <a name="devops-with-xamarin"></a>使用 Xamarin 應用程式進行 DevOps
 
@@ -26,11 +26,11 @@ Visual Studio 與 Azure DevOps Services 和 Team Foundation Server 共同提供�
 
 ## <a name="agile-tools"></a>Agile 工具
 
-參考連結： **[有關敏捷式工具和敏捷式專案管理](/azure/devops/boards/backlogs/backlogs-overview?view=azure-devops)**
+參考連結：**[有關敏捷式工具和敏捷式專案管理](/azure/devops/boards/backlogs/backlogs-overview?view=azure-devops)**
 
 一般註解：所有的計劃和追蹤功能都與專案類型和程式碼撰寫語言無關。
 
-|功能|支援 Xamarin|其他註解|
+|特徵|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|
 |管理待處理項目和衝刺 (Sprint)|是||
 |工作追蹤|是||
@@ -40,11 +40,11 @@ Visual Studio 與 Azure DevOps Services 和 Team Foundation Server 共同提供�
 
 ## <a name="modeling"></a>模型化
 
-參考連結： **[分析架構並製作架構模型](/visualstudio/modeling/analyze-and-model-your-architecture)**
+參考連結：**[分析架構並製作架構模型](/visualstudio/modeling/analyze-and-model-your-architecture)**
 
-設計功能與程式碼撰寫語言無關，或者它會使用如 C# 等 .NET 語言。 若要了解哪些層面與程式碼相關，請參閱[架構與模型圖表在軟體開發中的角色](/visualstudio/modeling/scenario-change-your-design-using-visualization-and-modeling#ModelingDiagramsTools)。
+設計功能與程式碼撰寫語言無關，或者它會使用如 C# 等 .NET 語言。 請參閱 [軟體發展中架構與模型圖表的角色](/visualstudio/modeling/scenario-change-your-design-using-visualization-and-modeling#ModelingDiagramsTools) ，以瞭解哪些層面與程式碼相關。
 
-|功能|支援 Xamarin|其他註解|
+|特徵|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|
 |順序圖表|是||
 |相依性圖形|是||
@@ -57,7 +57,7 @@ Visual Studio 與 Azure DevOps Services 和 Team Foundation Server 共同提供�
 
 ## <a name="code"></a>程式碼
 
-|功能|支援 Xamarin|其他註解|
+|特徵|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|
 |[使用 Team Foundation 版本控制 (TFVC)](/azure/devops/repos/tfvc/overview?view=vsts) 或 Azure Repos|是||
 |[開始使用 Azure Repos 中的 Git](/azure/devops/repos/git/gitquickstart?view=vsts&tabs=visual-studio)|是||
@@ -65,13 +65,13 @@ Visual Studio 與 Azure DevOps Services 和 Team Foundation Server 共同提供�
 |[尋找程式碼變更和其他記錄](/visualstudio/ide/find-code-changes-and-other-history-with-codelens)|是|除了跨越這些到執行階段仍未解析實作的平台特定界限以外。|
 |[使用 Code Map 偵錯您的應用程式](/visualstudio/modeling/use-code-maps-to-debug-your-applications)|是||
 
-## <a name="build"></a>Build
+## <a name="build"></a>組建
 
-參考連結： **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
+參考連結：**[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
-|功能|支援 Xamarin|其他註解|
+|特徵|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|
-|內部部署 TFS 伺服器|是|組建電腦必須安裝 Xamarin，而且必須可連結到 OSX 電腦，以便為 iOS 進行建置。 請參閱[使用 TFVC](/azure/devops/repos/tfvc/overview?view=vsts)|
+|內部部署 TFS 伺服器|是|組建電腦必須安裝 Xamarin，而且必須可連結到 OSX 電腦，以便為 iOS 進行建置。 請參閱 [使用 TFVC](/azure/devops/repos/tfvc/overview?view=vsts)|
 |連結至 Azure Pipelines 的內部部署組建伺服器|是|相關指示，請參閱[建置和發行代理程式](/azure/devops/pipelines/agents/agents?view=vsts)。|
 |Azure Pipelines 裝載的控制器服務|是|[建置您的 Xamarin 應用程式 (英文)](/azure/devops/pipelines/languages/xamarin?view=vsts&tabs=vsts)。|
 |具有預先定義和後置指令碼的組建定義|是||
@@ -79,7 +79,7 @@ Visual Studio 與 Azure DevOps Services 和 Team Foundation Server 共同提供�
 
 ## <a name="test"></a>測試
 
-|功能|支援 Xamarin|其他註解|
+|特徵|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|
 |規劃測試、建立測試案例和組織測試套件|是||
 |手動測試|是||
@@ -90,30 +90,30 @@ Visual Studio 與 Azure DevOps Services 和 Team Foundation Server 共同提供�
 
 ## <a name="improve-code-quality"></a>改善程式碼品質
 
-參考連結︰ **[改善程式碼品質](/visualstudio/test/improve-code-quality)**
+參考連結︰**[改善程式碼品質](/visualstudio/test/improve-code-quality)**
 
-|功能|支援 Xamarin|其他註解|
+|特徵|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|
-|[分析受控程式碼品質](/visualstudio/code-quality/analyzing-managed-code-quality-by-using-code-analysis)|是||
-|[使用程式碼複製品偵測來尋找重複程式碼](https://msdn.microsoft.com/library/hh205279.aspx)|是||
+|[分析受控碼品質](/visualstudio/code-quality/analyzing-managed-code-quality-by-using-code-analysis)|是||
+|[使用程式碼複製品偵測來尋找重複程式碼](/previous-versions/hh205279(v=vs.140))|是||
 |[測量受控程式碼的複雜度和維護性](/visualstudio/code-quality/measuring-complexity-and-maintainability-of-managed-code)|是||
-|[效能總管](/visualstudio/profiling/performance-explorer)|否|請改為透過 Visual Studio for Mac 使用[Xamarin Profiler](/xamarin/tools/profiler/) 。 請注意 Xamarin 分析工具目前為預覽狀態，而且尚未適用於 Windows 目標。|
-|[分析 .NET Framework 記憶體問題](https://msdn.microsoft.com/library/dn342825.aspx)|否|Visual Studio 工具並不會為程式碼剖析而連結 Mono 架構。|
+|[效能總管](/visualstudio/profiling/performance-explorer)|否|請改用 Visual Studio for Mac 的 [Xamarin Profiler](../profiler/index.md) 。 請注意 Xamarin 分析工具目前為預覽狀態，而且尚未適用於 Windows 目標。|
+|[分析 .NET Framework 記憶體問題](/visualstudio/misc/analyze-dotnet-framework-memory-issues)|否|Visual Studio 工具並不會為程式碼剖析而連結 Mono 架構。|
 
 ## <a name="release-management"></a>版本管理
 
-參考連結︰ **[在 Azure Pipelines 和 TFS 中建置和發行](/azure/devops/pipelines/overview?view=vsts)**
+參考連結： ** [AZURE PIPELINES 和 TFS 中的組建和發行](/azure/devops/pipelines/overview?view=vsts)**
 
-|功能|支援 Xamarin|其他註解|
+|特徵|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|
 |管理發行處理序|是||
 |部署至伺服器以便透過指令碼進行側面載入|是||
-|上傳至應用程式存放區|部分|您可以針對某些應用程式存放區，使用擴充功能來自動化此程序。  請參閱 [Extensions for Azure DevOps Services](https://marketplace.visualstudio.com/VSTS) (適用於 Azure DevOps Services 的延伸模組)；例如 [extension for Google Play](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play) (適用於 Google Play 的延伸模組)。|
+|上傳至應用程式存放區|Partial|您可以針對某些應用程式存放區，使用擴充功能來自動化此程序。  請參閱 [Extensions for Azure DevOps Services](https://marketplace.visualstudio.com/VSTS) (適用於 Azure DevOps Services 的延伸模組)；例如 [extension for Google Play](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play) (適用於 Google Play 的延伸模組)。|
 
 ## <a name="monitor-with-hockeyapp"></a>使用 HockeyApp 監視
 
-參考連結︰ **[使用 HockeyApp 監視 (英文)](https://www.hockeyapp.net/features/)**
+參考連結︰**[使用 HockeyApp 監視 (英文)](https://www.hockeyapp.net/features/)**
 
-|功能|支援 Xamarin|其他註解|
+|特徵|支援 Xamarin|其他註解|
 |-------------|----------------------------|-------------------------|
 |當機分析、遙測和 Beta 發佈|是||

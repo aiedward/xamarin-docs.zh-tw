@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 0520439b89458b7f73a025cd8d6b2cf8fc41dac0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0a066b9f1c75093257e364070e48f0cfbeb565ce
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940629"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455088"
 ---
 # <a name="building-abi-specific-apks"></a>建置特定 ABI 的 APK
 
@@ -60,7 +60,7 @@ Google 建議針對使用七位數版本代碼的版本代碼使用特定的演�
 
 下列圖表說明在上述清單中描述之每一個代碼的位置：
 
-[![八位元版本代碼格式圖,按顏色編碼](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
+[![八位數版本代碼格式的圖表，以色彩編碼](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
 Google Play 會根據 `versionCode` 及 APK 組態來確保傳遞到裝置的是正確的 APK。 具有最高版本代碼的 APK 會傳遞到裝置。 例如，應用程式可能會有三個 APK，並具有下列版本代碼：
 
@@ -95,19 +95,19 @@ Google Play 會根據 `versionCode` 及 APK 組態來確保傳遞到裝置的是
 
 下列清單說明每個命令列參數：
 
-- `/t:Package`&ndash;建立使用除錯金鑰儲存簽署的 Android APK
+- `/t:Package`&ndash;建立使用 debug 金鑰儲存區簽署的 ANDROID APK
 
-- `/p:AndroidSupportedAbis=<TARGET_ABI>`&ndash;這是ABI的目標。 必須為 `armeabi`、`armeabi-v7a`，或 `x86` 中的其中一個
+- `/p:AndroidSupportedAbis=<TARGET_ABI>`&ndash;要作為目標的 ABI。 必須為 `armeabi`、`armeabi-v7a`，或 `x86` 中的其中一個
 
-- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/`&ndash;這是保存作為生成一部分創建的中間文件的目錄。 若有必要，Xamarin.Android 會根據 ABI 的名稱建立目錄，例如 `obj.armeabi-v7a`。 通常建議針對每個 ABI 各自使用一個資料夾，因為這可以防止發生檔案從其中一個組建「洩漏」到另一個組建的問題。 請注意，這個值會使用目錄分隔符號來終止 (若為 OS X 則為 `/`)。
+- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/`&ndash;此目錄會保存建立為組建一部分的中繼檔案。 若有必要，Xamarin.Android 會根據 ABI 的名稱建立目錄，例如 `obj.armeabi-v7a`。 通常建議針對每個 ABI 各自使用一個資料夾，因為這可以防止發生檔案從其中一個組建「洩漏」到另一個組建的問題。 請注意，這個值會使用目錄分隔符號來終止 (若為 OS X 則為 `/`)。
 
 - `/p:AndroidManifest` &ndash; 此屬性會指定在建置期間將使用的 **AndroidManifest.XML** 檔案路徑。
 
-- `/p:OutputPath=bin.<TARGET_ABI>`&ndash;這是將容納最終 APK 的目錄。 Xamarin.Android 會根據 ABI 的名稱來建立目錄，例如 `bin.armeabi-v7a`。
+- `/p:OutputPath=bin.<TARGET_ABI>`&ndash;這是將用來存放最終 APK 的目錄。 Xamarin.Android 會根據 ABI 的名稱來建立目錄，例如 `bin.armeabi-v7a`。
 
-- `/p:Configuration=Release`&ndash;執行 APK 的發佈版本。 偵錯組建無法上傳至 Google Play。
+- `/p:Configuration=Release`&ndash;執行 APK 的發行組建。 偵錯組建無法上傳至 Google Play。
 
-- `<CS_PROJ FILE>`&ndash;這是 Xamarin.Android`.csproj`專案的檔路徑。
+- `<CS_PROJ FILE>`&ndash;這是 `.csproj` 適用于 Xamarin. Android 專案之檔案的路徑。
 
 ### <a name="sign-and-zipalign-the-apk"></a>針對 APK 進行簽署及 Zipalign
 
@@ -139,9 +139,9 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 
 1. [編譯 Xamarin.Android 專案的發行組建](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L63)，瞄準單一目標 ABI，並使用先前步驟中建立的 **AndroidManifest.XML**。
 
-1. 使用生產金鑰庫[對 APK 簽署 。](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66)
+1. 使用生產金鑰儲存區來[簽署 APK](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66) 。
 
-1. [Zipalign](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67) APK。
+1. [ZIPALIGN](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67) APK。
 
 若要建置應用程式的所有 APK，請從命令列執行 `build` Rake 工作：
 
@@ -154,17 +154,17 @@ $ rake build
 
 Rake 工作完成之後，便會有三個 `bin` 資料夾，以及一個 `xamarin.helloworld.apk` 檔案。 下一個螢幕擷取畫面顯示每個資料夾及其內容：
 
-[![包含 xamarin.helloworld.apk 的平臺特定資料夾的位置](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
+[![平臺特定資料夾的位置，包含 helloworld. apk](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 > [!NOTE]
-> 本指南中描述的建置過程可在許多不同建置系統的其中一個內實作。 雖然我們沒有預先寫出的例子,但它也應該有可能與[Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake)或[假](https://fsharp.github.io/FAKE/)。
+> 本指南中描述的建置過程可在許多不同建置系統的其中一個內實作。 雖然我們沒有預先撰寫的範例，但您也可以使用[Powershell](/powershell/)  /  [psake](https://github.com/psake/psake)或[假](https://fsharp.github.io/FAKE/)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南提供如何建立瞄準特定 ABI 之 Android APK 的一些建議。 它也討論建立 `android:versionCodes` 的一個可能配置，其可識別 APK 適用的 CPU 架構。 逐步解說則包含使用 Rake 為建置撰寫指令碼的範例專案。
 
 ## <a name="related-links"></a>相關連結
 
-- [OneABIPerAPK (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/oneabiperapk)
+- [OneABIPerAPK (範例)](/samples/xamarin/monodroid-samples/oneabiperapk)
 - [發行應用程式](~/android/deploy-test/publishing/index.md)
 - [Google Play 的多重 APK 支援](https://developer.android.com/google/play/publishing/multiple-apks.html) ()

@@ -9,22 +9,22 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: ab401c24fc486ba69fe01aff76e1a9b7d53122d0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: da074d5df9033e4a86c4b38ca76d7cb1373ab205
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028037"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455205"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入門
 
 _在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置您的第一個 Xamarin.Android 應用程式，並了解使用 Xamarin 進行 Android 應用程式開發的基礎。_
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)
 
 您會建立一個應用程式，將使用者輸入的英數字元電話號碼轉譯成數字電話號碼，然後將該數字電話號碼顯示給使用者。 最終的應用程式看起來如下：
 
-[![完成應用程式時的螢幕擷圖](hello-android-quickstart-images/vs/15-running-app-sml.png)](hello-android-quickstart-images/vs/15-running-app.png#lightbox)
+[![應用程式完成時的螢幕擷取畫面](hello-android-quickstart-images/vs/15-running-app-sml.png)](hello-android-quickstart-images/vs/15-running-app.png#lightbox)
 
 ::: zone pivot="windows"
 
@@ -34,7 +34,7 @@ _在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置�
 
 - Windows 10。
 
-- 視覺工作室 2019 或視覺工作室 2017 (版本 15.8 或更高版本): 社區, 專業, 或企業.
+- Visual Studio 2019 或 Visual Studio 2017 (15.8 版或更新版本) ：「社團」、「專業」或「企業」。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -64,11 +64,11 @@ _在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置�
 在 [新增專案]**** 對話方塊中，按一下 [Android 應用程式]**** 範本。
 將新專案命名為 `Phoneword`，然後按一下 [確定]****：
 
-[![新項目是電話文字](hello-android-quickstart-images/vs/01-new-project-name-w158-sml.png)](hello-android-quickstart-images/vs/01-new-project-name-w158.png#lightbox)
+[![新增專案 Phoneword](hello-android-quickstart-images/vs/01-new-project-name-w158-sml.png)](hello-android-quickstart-images/vs/01-new-project-name-w158.png#lightbox)
 
 在 [新增 Android 應用程式]**** 對話方塊中，按一下 [空白應用程式]****，然後按一下 [確定]**** 以建立新應用程式：
 
-[![選擇空白應用樣本](hello-android-quickstart-images/vs/02-blank-app-w158-sml.png)](hello-android-quickstart-images/vs/02-blank-app-w158.png#lightbox)
+[![選取空白應用程式範本](hello-android-quickstart-images/vs/02-blank-app-w158-sml.png)](hello-android-quickstart-images/vs/02-blank-app-w158.png#lightbox)
 
 ## <a name="create-a-layout"></a>建立版面配置
 
@@ -80,7 +80,7 @@ _在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置�
 建立新專案之後，請展開 [資源]**** 資料夾，然後在方案總管**** 中展開 [配置]**** 資料夾。
 按兩下 [activity_main.axml]**** 以在 Android Designer 中開啟它。 這是應用程式螢幕的配置檔案：
 
-[![開啟活動 axml 檔案](hello-android-quickstart-images/vs/03-open-layout-w158-sml.png)](hello-android-quickstart-images/vs/03-open-layout-w158.png#lightbox)
+[![開啟活動 .axml 檔](hello-android-quickstart-images/vs/03-open-layout-w158-sml.png)](hello-android-quickstart-images/vs/03-open-layout-w158.png#lightbox)
 
 > [!TIP]
 > 較新版的 Visual Studio 包含稍微不同的應用程式範本。
@@ -90,19 +90,19 @@ _在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置�
 
 從 [工具箱]**** (左側區域)，在搜尋欄位中輸入 `text`，然後將 [Text (Large)] (文字 (大型))**** 小工具拖曳至設計介面 (中央區域)：
 
-[![新增大型文字小元件](hello-android-quickstart-images/vs/04-large-text-w158-sml.png)](hello-android-quickstart-images/vs/04-large-text-w158.png#lightbox)
+[![新增大型文字小工具](hello-android-quickstart-images/vs/04-large-text-w158-sml.png)](hello-android-quickstart-images/vs/04-large-text-w158.png#lightbox)
 
 在設計介面上選取 [Text (Large)] \(文字 (大型)\)**** 控制項之後，使用 [屬性]**** 窗格將 [Text (Large)] \(文字 (大型)\)**** 小工具的 `Text` 屬性變更為 `Enter a Phoneword:`：
 
 [![設定大型文字屬性](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158.png#lightbox)
 
-將**純文字**小部件從**工具箱**拖動到設計圖面,並將其放置在**文本(大型)** 小部件下方。 在您將滑鼠指標移至版面配置中可接受小工具的位置之後，才會放置小工具。 在下列螢幕擷取畫面中，小工具會等到將滑鼠指標移至先前 `TextView` 的正下方之後才會放置 (如右圖所示)：
+將 **純文字** 小工具從 [ **工具箱** ] 拖曳至設計介面，然後將它放在 [ **大型) ** 小工具] (的文字下方。 在您將滑鼠指標移至版面配置中可接受小工具的位置之後，才會放置小工具。 在下列螢幕擷取畫面中，小工具會等到將滑鼠指標移至先前 `TextView` 的正下方之後才會放置 (如右圖所示)：
 
-[![滑鼠指示小元件可以放置的位置](hello-android-quickstart-images/vs/06a-cant-drop-w158-sml.png)](hello-android-quickstart-images/vs/06a-cant-drop-w158.png#lightbox)
+[![滑鼠表示小工具可放置的位置](hello-android-quickstart-images/vs/06a-cant-drop-w158-sml.png)](hello-android-quickstart-images/vs/06a-cant-drop-w158.png#lightbox)
 
 當 [純文字]**** (`EditText` 小工具) 正確放置之後，即會如下列螢幕擷取畫面所示：
 
-[![新增純文字小元件](hello-android-quickstart-images/vs/06b-plain-text-w158-sml.png)](hello-android-quickstart-images/vs/06b-plain-text-w158.png#lightbox)
+[![新增純文字小工具](hello-android-quickstart-images/vs/06b-plain-text-w158-sml.png)](hello-android-quickstart-images/vs/06b-plain-text-w158.png#lightbox)
 
 在設計介面上選取 [純文字]**** 小工具之後，使用 [屬性]**** 窗格將 [純文字]**** 小工具的 `Id` 屬性變更為 `@+id/PhoneNumberText`，並將 `Text` 屬性變更為 `1-855-XAMARIN`：
 
@@ -110,15 +110,15 @@ _在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置�
 
 從 [工具箱]**** 將 [按鈕]**** 拖曳到設計介面，並將其放置於 [純文字]**** 小工具下：
 
-[![將翻譯按鈕拖曳到設計](hello-android-quickstart-images/vs/08-drag-button-w158-sml.png)](hello-android-quickstart-images/vs/08-drag-button-w158.png#lightbox)
+[![將 [轉譯] 按鈕拖曳至設計](hello-android-quickstart-images/vs/08-drag-button-w158-sml.png)](hello-android-quickstart-images/vs/08-drag-button-w158.png#lightbox)
 
 在設計介面上選取 [按鈕]**** 之後，使用 [屬性]**** 窗格將其 `Text` 屬性變更為 `Translate`，並將其 `Id` 屬性變更為 `@+id/TranslateButton`：
 
-[![設定轉換按鈕屬性](hello-android-quickstart-images/vs/09-translate-button-w158-sml.png)](hello-android-quickstart-images/vs/09-translate-button-w158.png#lightbox)
+[![設定翻譯按鈕屬性](hello-android-quickstart-images/vs/09-translate-button-w158-sml.png)](hello-android-quickstart-images/vs/09-translate-button-w158.png#lightbox)
 
 從 [工具箱]**** 將 [文字檢視]**** 拖曳到設計介面，並將其放置於 [按鈕]**** 小工具下。 將 **TextView** 的 `Text` 屬性設定為空字串，並將其 `Id` 屬性設定為 `@+id/TranslatedPhoneword`：
 
-[![設置文本檢視上的屬性。](hello-android-quickstart-images/vs/10-textview-properties-w158-sml.png)](hello-android-quickstart-images/vs/10-textview-properties-w158.png#lightbox)
+[![設定文字視圖上的屬性。](hello-android-quickstart-images/vs/10-textview-properties-w158-sml.png)](hello-android-quickstart-images/vs/10-textview-properties-w158.png#lightbox)
 
 藉由按下 **CTRL + S** 儲存您的工作。
 
@@ -130,7 +130,7 @@ _在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置�
 
 在 [新增項目]**** 對話方塊中選取 [Visual C#] > [程式碼] > [程式碼檔案]**** 並將新的程式碼檔案命名為 **PhoneTranslator.cs**：
 
-[![新增PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-w158-sml.png)](hello-android-quickstart-images/vs/14-add-class-w158.png#lightbox)
+[![新增 PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-w158-sml.png)](hello-android-quickstart-images/vs/14-add-class-w158.png#lightbox)
 
 這會建立新的空白 C# 類別。 將下列程式碼插入這個檔案中：
 
@@ -273,7 +273,7 @@ translateButton.Click += (sender, e) =>
 在 Android 裝置或模擬器上執行應用程式來進行測試。
 點選 [轉譯]**** 按鈕，將 **1-855-XAMARIN** 轉譯為電話號碼：
 
-[![應用程式執行的螢幕擷取](hello-android-quickstart-images/vs/15-running-app-sml.png)](hello-android-quickstart-images/vs/15-running-app.png#lightbox)
+[![應用程式正在執行的螢幕擷取畫面](hello-android-quickstart-images/vs/15-running-app-sml.png)](hello-android-quickstart-images/vs/15-running-app.png#lightbox)
 
 若要在 Android裝置上執行應用程式，請參閱如何[設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)。
 
@@ -282,11 +282,11 @@ translateButton.Click += (sender, e) =>
 
 從 [Applications]**** 資料夾，或從 [Spotlight]****，啟動 Visual Studio for Mac。
 
-按一下 [新增專案...]**** 以建立新的專案。
+按一下 [ **新增專案** ] 以建立新專案。
 
 在 [Choose a template for your new project] (選擇新專案的範本)**** 對話方塊中，按一下 [Android] > [應用程式]****，然後選取 [Android 應用程式]**** 範本。 按 [下一步]  。
 
-[![選擇 Android 應用樣本](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png#lightbox)
+[![選擇 Android 應用程式範本](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png#lightbox)
 
 在 [Configure your Android app] (設定您的 Android 應用程式)**** 對話方塊中，將新的應用程式命名為 `Phoneword`，然後按一下 [下一步]****。
 
@@ -304,25 +304,25 @@ translateButton.Click += (sender, e) =>
 建立新專案之後，請展開 [資源]**** 資料夾，然後在 **Solution** Pad 中展開 [配置]**** 資料夾。
 按兩下 **Main.axml** 以在 Android Designer 中開啟它。 這是在 Android Designer 中檢視時，螢幕的配置檔案：
 
-[![開啟 Main.axml](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png#lightbox)
+[![開啟主要 .axml](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png#lightbox)
 
 在設計介面上選取 [Hello World, Click Me!]**** 按鈕****，然後按 **Delete** 鍵來移除它。 
 
 從 [工具箱]**** (右側區域)，在搜尋欄位中輸入 `text`，然後將 [Text (Large)] (文字 (大型))**** 小工具拖曳至設計介面 (中央區域)：
 
-[![新增大型文字小元件](hello-android-quickstart-images/xs/06-large-text-sml.png)](hello-android-quickstart-images/xs/06-large-text.png#lightbox)
+[![新增大型文字小工具](hello-android-quickstart-images/xs/06-large-text-sml.png)](hello-android-quickstart-images/xs/06-large-text.png#lightbox)
 
 在設計介面上選取 [Text (Large)] (文字 (大型))**** 小工具之後，您可以使用 **Properties** Pad 將 [Text (Large)] (文字 (大型))**** 小工具的 `Text` 屬性變更為 `Enter a Phoneword:`，如下所示：
 
-[![設定大型文字小元件屬性](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png#lightbox)
+[![設定大型文字小工具屬性](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png#lightbox)
 
 接下來，從 [工具箱]**** 將 [純文字]**** 小工具拖曳到設計介面，並將其放置於 [Text (Large)] (文字 (大型))**** 小工具下。 請注意，您可以使用搜尋欄位來協助依名稱尋找小工具：
 
-[![新增純文字小元件](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png#lightbox)
+[![新增純文字小工具](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png#lightbox)
 
 在設計介面上選取 [純文字]**** 小工具之後，您可以使用 **Properties** Pad 將 [純文字]**** 小工具的 `Id` 屬性變更為 `@+id/PhoneNumberText`，並將 `Text` 屬性變更為 `1-855-XAMARIN`：
 
-[![設定純文字小元件屬性](hello-android-quickstart-images/xs/09-add-properties-sml.png)](hello-android-quickstart-images/xs/09-add-properties.png#lightbox)
+[![設定純文字小工具屬性](hello-android-quickstart-images/xs/09-add-properties-sml.png)](hello-android-quickstart-images/xs/09-add-properties.png#lightbox)
 
 從 [工具箱]**** 將 [按鈕]**** 拖曳到設計介面，並將其放置於 [純文字]**** 小工具下：
 
@@ -330,11 +330,11 @@ translateButton.Click += (sender, e) =>
 
 在設計介面上選取 [按鈕]**** 之後，您可以使用 **Properties** Pad 將 [按鈕]**** 小工具的 `Id` 屬性變更為 `@+id/TranslateButton`，並將 `Text` 屬性變更為 `Translate`：
 
-[![設定為翻譯按鈕](hello-android-quickstart-images/xs/11-translate-button-sml.png)](hello-android-quickstart-images/xs/11-translate-button.png#lightbox)
+[![設定為 [翻譯] 按鈕](hello-android-quickstart-images/xs/11-translate-button-sml.png)](hello-android-quickstart-images/xs/11-translate-button.png#lightbox)
 
 從 [工具箱]**** 將 [文字檢視]**** 拖曳到設計介面，並將其放置於 [按鈕]**** 小工具下。 選取 **TextView** 之後，請將 **TextView** 的 `id` 屬性設定為 `@+id/TranslatedPhoneWord`，並將 `text` 變更為空字串：
 
-[![設置文本檢視上的屬性。](hello-android-quickstart-images/xs/12-textview-properties-sml.png)](hello-android-quickstart-images/xs/12-textview-properties.png#lightbox)    
+[![設定文字視圖上的屬性。](hello-android-quickstart-images/xs/12-textview-properties-sml.png)](hello-android-quickstart-images/xs/12-textview-properties.png#lightbox)    
 
 藉由按下 **&#8984; + S** 儲存您的工作。
 
@@ -342,7 +342,7 @@ translateButton.Click += (sender, e) =>
 
 現在，新增一些將電話號碼從英數字元翻譯為數字的程式碼。 按一下 **Solution** Pad 中的 **Phoneword** 專案旁的齒輪圖示，然後選擇 [新增] > [新增檔案...]****，將新檔案新增至專案：
 
-[![新增檔案](hello-android-quickstart-images/xs/14-add-new-file-sml.png)](hello-android-quickstart-images/xs/14-add-new-file.png#lightbox)
+[![將新檔案新增至專案](hello-android-quickstart-images/xs/14-add-new-file-sml.png)](hello-android-quickstart-images/xs/14-add-new-file.png#lightbox)
 
 在 [新增檔案]**** 對話方塊中，選取 [一般] > [空的類別]****、將新檔案命名為 **PhoneTranslator**，然後按一下 [新增]****。 這會建立新的空白 C# 類別。
 
@@ -495,11 +495,11 @@ namespace Phoneword
 
 現在是時候來設定應用程式圖示了。 根據預設，Visual Studio for Mac 會為專案提供預設圖示。 從方案刪除這些檔案，並將它們取代成不同的圖示。 在 **Solution Pad** 中展開 [Resources]**** 資料夾。 請注意，有五個資料夾前面會加上 **mipmap-**，且這些每個資料夾都包含一個 **Icon.png** 檔案：
 
-[![mipmap-資料夾與圖示.png 檔案](hello-android-quickstart-images/xs/23-mipmap-folders-sml.png)](hello-android-quickstart-images/xs/23-mipmap-folders.png#lightbox)
+[![mipmap-資料夾和 Icon.png 檔案](hello-android-quickstart-images/xs/23-mipmap-folders-sml.png)](hello-android-quickstart-images/xs/23-mipmap-folders.png#lightbox)
 
 必須從專案刪除這些圖示檔的每一個。 以滑鼠右鍵按一下每個 **Icon.png** 檔案，然後從捷徑功能表選取 [移除]****：
 
-[![移除預設圖示.png](hello-android-quickstart-images/xs/23-delete-icon-sml.png)](hello-android-quickstart-images/xs/23-delete-icon.png#lightbox)
+[![刪除預設 Icon.png](hello-android-quickstart-images/xs/23-delete-icon-sml.png)](hello-android-quickstart-images/xs/23-delete-icon.png#lightbox)
 
 在對話方塊中按一下 [刪除]**** 按鈕。
 
@@ -511,19 +511,19 @@ namespace Phoneword
 
 在 [Add File to Folder] (將檔案新增至資料夾)**** 對話方塊中，選取 [Copy the file into the directory] (將檔案複製到目錄)****，然後按一下 [確定]****：
 
-[![複製檔案到目錄對話框](hello-android-quickstart-images/xs/26-copy-to-directory-sml.png)](hello-android-quickstart-images/xs/26-copy-to-directory.png#lightbox)
+[![將檔案複製到目錄對話方塊](hello-android-quickstart-images/xs/26-copy-to-directory-sml.png)](hello-android-quickstart-images/xs/26-copy-to-directory.png#lightbox)
 
 針對每個 **mipmap-** 資料夾重複這些步驟，直到 **mipmap-** Xamarin App Icons 資料夾的內容複製到 **Phoneword** 專案中的對應 **mipmap-** 資料夾。
 
 所有的圖示複製到 Xamarin.Android 專案之後，請開啟 [專案選項]**** 對話方塊，方法是在 **Solution Pad** 中以滑鼠右鍵按一下專案。 選取 [建置] > [Android 應用程式]****，然後從 **應用程式圖示**下拉式方塊選取 `@mipmap/icon`：
 
-[![設定項目圖示](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
+[![設定專案圖示](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
 
 ## <a name="run-the-app"></a>執行應用程式
 
 最後，在 Android 裝置或模擬器上執行應用程式，然後翻譯 Phoneword 以測試應用程式：
 
-[![完成應用程式時的螢幕擷圖](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
+[![應用程式完成時的螢幕擷取畫面](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
 若要在 Android裝置上執行應用程式，請參閱如何[設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)。
 
@@ -535,4 +535,4 @@ namespace Phoneword
 ## <a name="related-links"></a>相關連結
 
 - [Xamarin Android 應用程式圖示 (ZIP)](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true)
-- [Phoneword (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)
+- [Phoneword (範例)](/samples/xamarin/monodroid-samples/phoneword)
