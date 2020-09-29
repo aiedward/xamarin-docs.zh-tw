@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: davidortinau
 ms.author: daortin
 ms.date: 10/16/2019
-ms.openlocfilehash: c4eaebc8d5f184b1108815c37e992fa97e67aa8f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: e732e4f04aa5a219a267502bd1aca11ccb2b72f8
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304587"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91458208"
 ---
 # <a name="system-requirements"></a>系統需求
 
@@ -70,7 +70,7 @@ Visual Studio 2019 和 Visual Studio 2017 安裝程式包括自動安裝 Xamarin
 
 ## <a name="installation-instructions"></a>安裝指示
 
-您可以使用 [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation) 下載適用於 macOS 的最新版 Xamarin。 針對 Windows，請遵循 [Visual Studio 安裝指示](https://docs.microsoft.com/visualstudio/install/install-visual-studio)。
+您可以使用 [Visual Studio for Mac](/visualstudio/mac/installation) 下載適用於 macOS 的最新版 Xamarin。 針對 Windows，請遵循 [Visual Studio 安裝指示](/visualstudio/install/install-visual-studio)。
 
 您可以在[新功能頁面](~/whats-new/index.yml)上取得目前產品版本的完整清單。 本頁面也會連結到版本資訊。
 
@@ -78,7 +78,7 @@ Visual Studio 2019 和 Visual Studio 2017 安裝程式包括自動安裝 Xamarin
 
 - [Xamarin.iOS](~/ios/get-started/installation/index.md)
 - [Xamarin.Android](~/android/get-started/installation/index.md)
-- [薩馬林.麥克](~/mac/get-started/installation.md)
+- [Xamarin.Mac](~/mac/get-started/installation.md)
 
 這裡也提供 [Xamarin.Forms 支援平台](~/get-started/supported-platforms.md)的其他資訊。
 

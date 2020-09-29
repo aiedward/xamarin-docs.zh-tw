@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 89b5dc2ae296b9e9033c45bf93c87de83054f721
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: f7f5d7daed42eeb3a36dd9b0d09b31a06b0de142
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996483"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457948"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -207,7 +207,7 @@ double Compute(double x)
 
 延遲初始化會在第一次存取 `Lazy<T>.Value` 屬性時發生。 包裝於其中的類型會在第一次存取時建立及傳回，並會儲存起來供任何未來的存取使用。
 
-如需延遲初始化的詳細資訊，請參閱[延遲初始設定](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx)。
+如需延遲初始化的詳細資訊，請參閱[延遲初始設定](/dotnet/framework/performance/lazy-initialization)。
 
 <a name="async"></a>
 
@@ -265,7 +265,7 @@ SGen 會利用三個堆積中的其中一個來為物件配置空間：
 
 SGen 的其中一個優點便是執行次要記憶體回收所需要的時間與自上一次次要記憶體回收之後建立的新作用中物件之數量成比例。 這可減少記憶體回收對應用程式效能造成的影響，因為通常這些次要記憶體回收所需要耗費的時間比主要記憶體回收少。 主要記憶體回收仍會發生，只是頻率較低。
 
-SGen 垃圾收集行程是9.2.1 和更新版本中的預設值，因此會自動使用。 請注意，變更垃圾收集行程的功能已從較新版本的 Visual Studio 中移除。 如需詳細資訊，請參閱[新的參考計數系統](~/ios/internals/newrefcount.md)。
+SGen 垃圾收集行程是9.2.1 和更新版本中的預設值，因此會自動使用。 請注意，變更垃圾收集行程的功能已從較新版本的 Visual Studio 中移除。 如需詳細資訊，請參閱 [新的參考計數系統](~/ios/internals/newrefcount.md)。
 
 ### <a name="reducing-pressure-on-the-garbage-collector"></a>降低記憶體回收行程的壓力
 

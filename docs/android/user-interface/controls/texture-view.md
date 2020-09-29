@@ -6,23 +6,23 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2017
-ms.openlocfilehash: 2ffa544789e0d605a241c8e038c790650a7fc6a3
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 3085131e251a787965c91216106becb6c954da85
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292867"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457701"
 ---
 # <a name="xamarinandroid-textureview"></a>Xamarin. Android TextureView
 
-`TextureView` 類別是使用硬體加速2D 轉譯的視圖，可讓您顯示影片或 OpenGL 內容串流。 例如，下列螢幕擷取畫面顯示從裝置相機顯示即時摘要的 `TextureView`：
+`TextureView`類別是使用硬體加速2d 轉譯的視圖，可讓影片或 OpenGL 內容資料流程顯示。 例如，下列螢幕擷取畫面顯示的是 `TextureView` 顯示來自裝置相機的實況饋送：
 
-[從裝置相機 ![即時影像的範例螢幕擷取畫面](texture-view-images/22-textureviewcamera.png)](texture-view-images/22-textureviewcamera.png#lightbox)
+[![裝置相機中的即時影像範例螢幕擷取畫面](texture-view-images/22-textureviewcamera.png)](texture-view-images/22-textureviewcamera.png#lightbox)
 
-不同于 `SurfaceView` 類別（也可以用來顯示 OpenGL 或影片內容），TextureView 不會轉譯成另一個視窗。
-因此，`TextureView` 可以像任何其他視圖一樣支援視圖轉換。 例如，您可以藉由設定其 [`Rotation`] 屬性、其透明度 `Alpha` 屬性等等來完成旋轉 `TextureView`。
+不同于 `SurfaceView` 也可用來顯示 OpenGL 或影片內容的類別，TextureView 不會轉譯成不同的視窗。
+因此， `TextureView` 能夠支援像任何其他視圖一樣的視圖轉換。 例如，您 `TextureView` 只要設定 `Rotation` 屬性（property）、設定其 `Alpha` 屬性（property），依此類推，就可以完成輪替。
 
-因此，在 `TextureView`，我們現在可以執行像是從相機顯示即時串流並加以轉換之類的動作，如下列程式碼所示：
+因此， `TextureView` 我們現在可以進行一些動作，像是顯示相機中的即時串流並進行轉換，如下列程式碼所示：
 
 ```csharp
 public class TextureViewActivity : Activity,
@@ -65,12 +65,12 @@ public class TextureViewActivity : Activity,
 }
 ```
 
-上述程式碼會在活動的 `OnCreate` 方法中建立 `TextureView` 實例，並將活動設定為 `TextureView`的 `SurfaceTextureListener`。 為 `SurfaceTextureListener`，活動會執行 `TextureView.ISurfaceTextureListener` 介面。 當 `SurfaceTexture` 已準備好可供使用時，系統將會呼叫 `OnSurfaceTextAvailable` 方法。 在此方法中，我們會採用傳入的 `SurfaceTexture`，並將它設定為相機的預覽材質。 然後，我們可以自由地執行以視圖為基礎的一般作業，例如設定 `Rotation` 和 `Alpha`，如上述範例所示。 產生的應用程式會在裝置上執行，如下所示：
+上述程式碼會 `TextureView` 在活動的方法中建立實例 `OnCreate` ，並將活動設定為 `TextureView` 的 `SurfaceTextureListener` 。 為，活動會實作為 `SurfaceTextureListener` `TextureView.ISurfaceTextureListener` 介面。 `OnSurfaceTextAvailable`當已備妥可供使用時，系統會呼叫方法 `SurfaceTexture` 。 在此方法中，我們會採用傳入的， `SurfaceTexture` 並將它設定為相機的預覽材質。 然後，我們可以自由執行以視圖為基礎的一般作業，例如設定 `Rotation` 和 `Alpha` ，如上述範例所示。 產生的應用程式會在裝置上執行，如下所示：
 
-[在裝置上執行之應用程式的 ![範例，顯示影像](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
+[![在裝置上執行的應用程式範例，顯示影像](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
 
-若要使用 `TextureView`，必須啟用硬體加速，其預設會是 API 層級14。 此外，由於此範例使用相機，因此必須在**androidmanifest.xml**中設定 `android.permission.CAMERA` 許可權和 `android.hardware.camera` 功能。
+若要使用 `TextureView` ，您必須啟用硬體加速，其預設會是 API 層級14。 此外，因為此範例使用相機，所以 `android.permission.CAMERA` `android.hardware.camera` 必須在 **AndroidManifest.xml**中設定許可權和功能。
 
 ## <a name="related-links"></a>相關連結
 
-- [TextureViewDemo （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)/）
+- [TextureViewDemo (範例) ](/samples/xamarin/monodroid-samples/textureviewdemo)/) 

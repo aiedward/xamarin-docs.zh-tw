@@ -1,57 +1,57 @@
 ---
 title: 使用檢視的 ViewPager
-description: ViewPager 是可讓您執行 gestural 導覽的版面建構管理員。 Gestural 導覽可讓使用者向左和向右滑動以逐步執行資料頁面。 本指南說明如何使用 ViewPager 和 PagerTabStrip 來執行 swipeable UI，並以 Views 作為資料頁（後續的指南會討論如何使用頁面的片段）。
+description: ViewPager 是一種版面建構管理員，可讓您執行手勢導覽。 手勢流覽可讓使用者向左和向右滑動，以逐步執行資料頁面。 本指南說明如何使用 ViewPager 和 PagerTabStrip 來執行 swipeable UI，並使用 view 作為資料頁面 (後續的指南會說明如何針對頁面) 使用片段。
 ms.prod: xamarin
 ms.assetid: 42E5379F-B0F4-4B87-A314-BF3DE405B0C8
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 7413fbe3f08988cfdb7c7b4e5237539aca250772
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: e4f4243c06d98eac6f3501c41b48508f260d4633
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78292620"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456986"
 ---
 # <a name="viewpager-with-views"></a>使用檢視的 ViewPager
 
-_ViewPager 是可讓您執行 gestural 導覽的版面建構管理員。Gestural 導覽可讓使用者向左和向右滑動以逐步執行資料頁面。本指南說明如何使用 ViewPager 和 PagerTabStrip 來執行 swipeable UI，並以 Views 作為資料頁（後續的指南會討論如何使用頁面的片段）。_
+_ViewPager 是一種版面建構管理員，可讓您執行手勢導覽。手勢流覽可讓使用者向左和向右滑動，以逐步執行資料頁面。本指南說明如何使用 ViewPager 和 PagerTabStrip 來執行 swipeable UI，並使用 view 作為資料頁面 (後續的指南會說明如何針對頁面) 使用片段。_
 
 ## <a name="overview"></a>概觀
 
-本指南提供逐步解說，說明如何使用 `ViewPager` 來實作為落葉和長時間樹狀結構的映射庫。 在此應用程式中，使用者會透過「樹狀目錄」向左和向右撥動以觀看樹狀結構影像。 在目錄的每一頁頂端，樹狀目錄的名稱會列在`PagerTabStrip`中，而樹狀結構的影像會顯示在 `ImageView`中。 介面卡是用來將 `ViewPager` 介面用於基礎資料模型。 此應用程式會實行衍生自 `PagerAdapter`的介面卡。 
+本指南提供逐步示範如何使用 `ViewPager` 來實作為落葉和長時間樹狀結構映射庫的逐步解說。 在此應用程式中，使用者會透過「樹狀目錄」向左和向右撥動以查看樹狀結構影像。 在目錄的每個頁面頂端，樹狀結構的名稱會列在中 `PagerTabStrip` ，而樹狀結構的影像會顯示在中 `ImageView` 。 介面卡可用來將與 `ViewPager` 基礎資料模型進行介面。 此應用程式會實作為衍生自的介面卡 `PagerAdapter` 。 
 
-雖然 `ViewPager`型應用程式通常是使用 `Fragment`來執行，但還是有一些相當簡單的使用案例，也就是 `Fragment`的額外複雜度不是必要的。 例如，本逐步解說中所述的基本映射庫應用程式不需要使用 `Fragment`s。 因為內容是靜態的，而且使用者只會在不同的影像之間來回撥動，所以使用標準的 Android 視圖和版面配置可讓您更輕鬆地執行此程式。 
+雖然 `ViewPager` 應用程式通常會使用來執行 `Fragment` ，但是有一些相當簡單的使用案例，其中不需要額外的複雜性 `Fragment` 。 例如，在此逐步解說中說明的基本映射庫應用程式不需要使用 `Fragment` 。 因為內容是靜態的，而且使用者只會在不同的映射之間來回撥動，所以可以使用標準的 Android 視圖和版面配置來更輕鬆地執行此程式。 
 
 ## <a name="start-an-app-project"></a>啟動應用程式專案
 
-建立名為**TreePager**的新 Android 專案（如需有關建立新 Android 專案的詳細資訊，請參閱[Hello，android](~/android/get-started/hello-android/hello-android-quickstart.md) ）。 接下來，啟動 NuGet 套件管理員。 （如需安裝 NuGet 套件的詳細資訊，請參閱[逐步解說：在您的專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)）。 尋找並安裝**Android 支援程式庫 v4**： 
+建立新的 Android 專案，稱為 **TreePager** (如需建立新 android 專案的詳細資訊，請參閱 [Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)) 。 接著，啟動 NuGet 封裝管理員。  (如需安裝 NuGet 套件的詳細資訊，請參閱 [逐步解說：在您的專案中包含 NuGet](/visualstudio/mac/nuget-walkthrough)) 。 尋找並安裝 **Android 支援程式庫 v4**： 
 
-[![在 NuGet 套件管理員中選取的支援 v4 NuGet 的螢幕擷取畫面](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
+[![NuGet 封裝管理員中選取的支援 v4 NuGet 螢幕擷取畫面](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
-這也會安裝**Android 支援程式庫 v4**所 reaquired 的任何其他套件。
+這也會安裝 **Android 支援程式庫 v4**所 reaquired 的任何其他套件。
 
 ## <a name="add-an-example-data-source"></a>新增範例資料來源
 
-在此範例中，樹狀目錄資料源（由 `TreeCatalog` 類別表示）會提供具有專案內容的 `ViewPager`。 
-`TreeCatalog` 包含現成的樹狀映射和樹狀目錄標題集合，介面卡將用來建立 `View`s。 `TreeCatalog` 的構造函式不需要任何引數：
+在此範例中，樹狀目錄資料源 (由類別表示 `TreeCatalog`) 提供 `ViewPager` 包含專案內容。 
+`TreeCatalog` 包含一組現成的樹狀映射，以及介面卡將用來建立的樹狀目錄標題 `View` 。 此 `TreeCatalog` 函數不需要任何引數：
 
 ```csharp
 TreeCatalog treeCatalog = new TreeCatalog();
 ```
 
-`TreeCatalog` 中的影像集合會進行組織，讓索引子可以存取每個影像。 例如，下列程式程式碼會針對集合中的第三個影像抓取映射資源識別碼： 
+中的影像集合 `TreeCatalog` 會組織，讓索引子可以存取每個影像。 例如，下面這行程式碼會針對集合中的第三個影像抓取影像資源識別碼： 
 
 ```csharp
 int imageId = treeCatalog[2].imageId;
 ```
 
-因為 `TreeCatalog` 的執行詳細資料與瞭解 `ViewPager`無關，所以此處不會列出 `TreeCatalog` 程式碼。 `TreeCatalog` 的原始程式碼可在[TreeCatalog.cs](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/TreePager/TreePager/TreeCatalog.cs)取得。 下載此原始程式檔（或將程式碼複製並貼到新的**TreeCatalog.cs**檔案），並將它新增至您的專案。 此外，將[影像檔](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/TreePager/Resources/tree-images.zip?raw=true)案下載並解壓縮至您的**資源/可繪製**資料夾，並將它們包含在專案中。 
+由於的執行詳細資料與 `TreeCatalog` 理解無關，因此 `ViewPager` 此 `TreeCatalog` 程式碼不會列在此處。 您可以 `TreeCatalog` 在 [TreeCatalog.cs](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/TreePager/TreePager/TreeCatalog.cs)取得的原始程式碼。 下載此原始程式檔 (，或將程式碼複製並貼到新的 **TreeCatalog.cs** 檔案) 並將其新增至您的專案。 此外，請將 [影像檔](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/TreePager/Resources/tree-images.zip?raw=true) 案下載並解壓縮至您的 **資源/可繪製** 資料夾中，並將它們包含在專案中。 
 
 ## <a name="create-a-viewpager-layout"></a>建立 ViewPager 版面配置
 
-開啟**Resources/layout/axml** ，並將其內容取代為下列 XML：
+開啟 **Resources/layout/Main. .axml** ，並將其內容取代為下列 XML：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -64,11 +64,11 @@ int imageId = treeCatalog[2].imageId;
 </android.support.v4.view.ViewPager>
 ```
 
-此 XML 會定義佔用整個螢幕的 `ViewPager`。 請注意，您必須使用完整名稱**ViewPager** ，因為 `ViewPager` 封裝在支援程式庫中。 `ViewPager` 僅適用于[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);Android SDK 中無法使用它。 
+這個 XML 會定義一個 `ViewPager` 佔用整個畫面的。 請注意，您必須使用完整名稱 **ViewPager** ，因為 `ViewPager` 封裝在支援程式庫中。 `ViewPager` 僅適用于 [Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);Android SDK 中無法使用。 
 
 ## <a name="set-up-viewpager"></a>設定 ViewPager
 
-編輯**MainActivity.cs**並新增下列 `using` 語句：
+編輯 **MainActivity.cs** 並加入下列 `using` 語句：
 
 ```csharp
 using Android.Support.V4.View;
@@ -88,33 +88,33 @@ protected override void OnCreate(Bundle bundle)
 
 此程式碼會執行以下動作：
 
-1. 設定**axml**版面配置資源的視圖。
+1. 設定 **.axml** 版面配置資源的視圖。
 
-2. 從版面配置中抓取 `ViewPager` 的參考。
+2. 從配置中抓取的參考 `ViewPager` 。
 
-3. 具現化新的 `TreeCatalog` 做為資料來源。
+3. 具現化新的 `TreeCatalog` 作為資料來源。
 
-當您建立並執行此程式碼時，您應該會看到類似下列螢幕擷取畫面的顯示： 
+當您建立並執行此程式碼時，應該會看到類似下列螢幕擷取畫面的顯示： 
 
-[![顯示空白 ViewPager 之應用程式的螢幕擷取畫面](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png#lightbox)
+[![顯示空白 ViewPager 的應用程式螢幕擷取畫面](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png#lightbox)
 
-此時，`ViewPager` 是空的，因為它缺少介面卡來存取**TreeCatalog**中的內容。 在下一節中，會建立**PagerAdapter**以將 `ViewPager` 連接到**TreeCatalog**。 
+此時， `ViewPager` 會是空的，因為缺少可存取 **TreeCatalog**內容的介面卡。 在下一節中，會建立 **PagerAdapter** 以將連線 `ViewPager` 到 **TreeCatalog**。 
 
 ## <a name="create-the-adapter"></a>建立介面卡
 
-`ViewPager` 使用位於 `ViewPager` 和資料來源之間的介面卡控制器物件（請參閱[介面卡](~/android/user-interface/controls/view-pager/index.md#adapter)中的圖例）。 若要存取此資料，`ViewPager` 需要提供衍生自 `PagerAdapter`的自訂介面卡。 此介面卡會在每個 `ViewPager` 頁面中填入資料來源的內容。 因為此資料來源是應用程式特定的，所以自訂介面卡是瞭解如何存取資料的程式碼。 當使用者透過 `ViewPager`的頁面撥動時，介面卡會從資料來源中提取資訊，並將其載入頁面中，供 `ViewPager` 顯示。 
+`ViewPager` 使用位於與資料來源之間的介面卡控制器物件 `ViewPager` (查看 [介面卡](~/android/user-interface/controls/view-pager/index.md#adapter)) 中的圖例。 若要存取此資料， `ViewPager` 您需要提供衍生自的自訂介面卡 `PagerAdapter` 。 此介面卡會在每個 `ViewPager` 頁面中填入資料來源的內容。 因為此資料來源是應用程式特有的，所以自訂介面卡是瞭解如何存取資料的程式碼。 當使用者透過的頁面撥動時 `ViewPager` ，介面卡會將資料來源中的資訊解壓縮，並將其載入至頁面，以便 `ViewPager` 顯示。 
 
-當您執行 `PagerAdapter`時，必須覆寫下列各項：
+當您執行時 `PagerAdapter` ，必須覆寫下列各項：
 
-- **InstantiateItem** &ndash; 會建立指定位置的頁面（`View`），並將其新增至 `ViewPager`的視圖集合。 
+- **InstantiateItem** &ndash; 為指定的位置建立 () 的頁面 `View` ，並將它加入至 [視圖] 的 `ViewPager` 集合。 
 
-- **DestroyItem** &ndash; 會從指定的位置移除頁面。
+- **DestroyItem** &ndash; 從指定的位置移除頁面。
 
-- **計數**&ndash; 唯讀屬性，可傳回可用的視圖（頁面）數目。 
+- **計數** &ndash; 唯讀屬性，可傳回 (頁面) 可用的視圖數目。 
 
-- **IsViewFromObject** &ndash; 會判斷頁面是否與特定的索引鍵物件相關聯。 （此物件是由 `InstantiateItem` 方法所建立）。在此範例中，索引鍵物件是 `TreeCatalog` 資料物件。
+- **IsViewFromObject** &ndash; 判斷頁面是否與特定的索引鍵物件相關聯。  (此物件是由方法建立的 `InstantiateItem` 。在此範例中，) 的索引鍵物件是 `TreeCatalog` 資料物件。
 
-新增名為**TreePagerAdapter.cs**的新檔案，並將其內容取代為下列程式碼： 
+加入名為 **TreePagerAdapter.cs** 的新檔案，並將其內容取代為下列程式碼： 
 
 ```csharp
 using System;
@@ -153,11 +153,11 @@ namespace TreePager
 }
 ```
 
-這段程式碼會將必要的 `PagerAdapter` 實作為存根。 在下列各節中，每個方法都會取代為工作程式碼。 
+此程式碼會將基本的執行程式程式碼端 `PagerAdapter` 。 在下列各節中，每個方法都會以工作程式碼取代。 
 
-### <a name="implement-the-constructor"></a>執行此函式
+### <a name="implement-the-constructor"></a>執行函式
 
-當應用程式具現化 `TreePagerAdapter`時，它會提供內容（`MainActivity`）和具現化的 `TreeCatalog`。 在**TreePagerAdapter.cs**中，將下列成員變數和函式新增至 `TreePagerAdapter` 類別的頂端： 
+當應用程式具現化時 `TreePagerAdapter` ，它會提供 (`MainActivity`) 和具現化的內容 `TreeCatalog` 。 `TreePagerAdapter`在**TreePagerAdapter.cs**中，將下列成員變數和函式新增至類別的頂端： 
 
 ```csharp
 Context context;
@@ -170,11 +170,11 @@ public TreePagerAdapter (Context context, TreeCatalog treeCatalog)
 }
 ```
 
-此函式的目的是要儲存 `TreePagerAdapter` 將使用的內容和 `TreeCatalog` 實例。 
+此函式的目的是要儲存將使用的內容和 `TreeCatalog` 實例 `TreePagerAdapter` 。 
 
 ### <a name="implement-count"></a>執行計數
 
-`Count` 的執行相當簡單：它會傳回樹狀目錄中的樹狀結構數目。 以下列程式碼取代 `Count`：
+此 `Count` 實值相當簡單：它會傳回樹狀目錄中的樹狀目錄數目。 以下列程式碼取代 `Count`：
 
 ```csharp
 public override int Count
@@ -183,11 +183,11 @@ public override int Count
 }
 ```
 
-`TreeCatalog` 的 `NumTrees` 屬性會傳回資料集內的樹狀結構（頁數）數目。
+的 `NumTrees` 屬性會傳回 `TreeCatalog` 資料集中)  (數目的樹狀目錄數目。
 
 ### <a name="implement-instantiateitem"></a>執行 InstantiateItem
 
-`InstantiateItem` 方法會建立指定位置的頁面。 它也必須將新建立的視圖加入至 `ViewPager`的 view 集合。 若要這麼做，`ViewPager` 會將本身當做容器參數傳遞。 
+`InstantiateItem`方法會建立指定位置的頁面。 它也必須將新建立的視圖新增至的 `ViewPager` view 集合。 若要這麼做，請將 `ViewPager` 本身傳遞為容器參數。 
 
 以下列程式碼取代 `InstantiateItem` 方法：
 
@@ -204,20 +204,20 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 
 此程式碼會執行以下動作：
 
-1. 具現化新的 `ImageView`，以在指定的位置顯示樹狀結構影像。 應用程式的 `MainActivity` 是將傳遞至 `ImageView` 的函式的內容。
+1. 具現化新的 `ImageView` ，以顯示位於指定位置的樹狀結構影像。 應用程式 `MainActivity` 是將傳遞給函式的內容 `ImageView` 。
 
-2. 將 `ImageView` 資源設定為指定位置的 `TreeCatalog` 映射資源識別碼。
+2. 將 `ImageView` 資源設定為 `TreeCatalog` 指定位置的影像資源識別碼。
 
-3. 將傳遞的容器 `View` 轉換成 `ViewPager` 參考。
-    請注意，您必須使用 `JavaCast<ViewPager>()` 來正確地執行此轉型（這是必要的，如此 Android 才會執行執行時間檢查類型轉換）。
+3. 將傳遞的容器轉換 `View` 為 `ViewPager` 參考。
+    請注意，您必須使用 `JavaCast<ViewPager>()` 來適當地執行這項轉換 (這是必要的，因此 Android 會) 執行執行時間檢查的類型轉換。
 
-4. 將具現化的 `ImageView` 新增至 `ViewPager`，並將 `ImageView` 傳回給呼叫者。
+4. 將具現化的加入 `ImageView` 至，並將傳回到 `ViewPager` `ImageView` 呼叫端。
 
-當 `ViewPager` 在 `position`顯示影像時，它會顯示此 `ImageView`。 一開始，會呼叫 `InstantiateItem` 兩次，將具有 views 的前兩個頁面填入其中。 當使用者進行滾動時，會再次呼叫它，以維護目前所顯示專案的後方和前方的視圖。 
+當 `ViewPager` 顯示影像時 `position` ，會顯示此影像 `ImageView` 。 一開始 `InstantiateItem` 會呼叫兩次，以將視圖填入前兩頁。 當使用者滾動時，就會再次呼叫它，以維護目前顯示專案的後方和前方的視圖。 
 
 ### <a name="implement-destroyitem"></a>執行 DestroyItem
 
-`DestroyItem` 方法會從指定的位置移除頁面。 在任何指定位置的視圖可以變更的應用程式中，`ViewPager` 必須先移除該位置的過時視圖，再以新的視圖取代。 在 `TreeCatalog` 範例中，每個位置的 view 不會變更，因此 `DestroyItem` 所移除的視圖只會在針對該位置呼叫 `InstantiateItem` 時重新加入。 （為了提高效率，您可以執行集區來回收會重新顯示在相同位置的 `View`。） 
+`DestroyItem`方法會從指定的位置移除頁面。 在任何指定位置的視圖可能變更的應用程式中， `ViewPager` 必須先移除該位置的過時視圖，才能將它取代為新的視圖。 在此 `TreeCatalog` 範例中，每個位置的視圖都不會變更，因此在 `DestroyItem` `InstantiateItem` 針對該位置呼叫時，會直接重新加入移除的視圖。  (為了獲得更好的效率，您可以將集區執行為回收，以在 `View` 相同位置重新顯示。 )  
 
 以下列程式碼取代 `DestroyItem` 方法： 
 
@@ -231,17 +231,17 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 
 此程式碼會執行以下動作：
 
-1. 將傳遞的容器 `View` 轉換成 `ViewPager` 參考。
+1. 將傳遞的容器轉換 `View` 成 `ViewPager` 參考。
 
-2. 將傳遞的 JAVA 物件（`view`）轉換成C# `View` （`view as View`）;
+2. 將傳遞的 JAVA 物件 (`view`) 轉換成 c # `View` (`view as View`) ;
 
-3. 從 `ViewPager`中移除此視圖。 
+3. 從移除視圖 `ViewPager` 。 
 
 ### <a name="implement-isviewfromobject"></a>執行 IsViewFromObject
 
-當使用者在內容頁面中向左或向右滑動時，`ViewPager` 會呼叫 `IsViewFromObject`，以確認指定位置的子 `View` 與該相同位置的介面卡物件相關聯（因此，介面卡的物件稱為物件索引*鍵*）。 對於相對簡單的應用程式，此關聯是識別的其中一個 &ndash; 介面卡的物件金鑰是先前透過 `InstantiateItem`傳回 `ViewPager` 的視圖。 不過，對於其他應用程式，物件索引鍵可能是與 `ViewPager` 在該位置顯示的子視圖相關聯的其他介面卡特定類別實例（但不是相同的）。 只有介面卡知道傳遞的視圖和物件金鑰是否相關聯。 
+當使用者在內容頁面中向左和向右滑動時， `ViewPager` `IsViewFromObject` 會呼叫以確認 `View` 指定位置的子系與介面卡的物件有關聯， (因此，該介面卡的物件稱為 *物件索引鍵*) 。 針對相對較簡單的應用程式，關聯是在 &ndash; 該實例上的介面卡物件索引鍵的識別之一 `ViewPager` `InstantiateItem` 。 不過，對於其他應用程式，物件索引鍵可能是與 (相關聯的其他特定介面卡類別實例，但與 `ViewPager` 顯示于該位置的子視圖) 不同。 只有介面卡知道傳遞的視圖和物件索引鍵是否相關聯。 
 
-必須執行 `IsViewFromObject`，`PagerAdapter` 才能正常運作。 如果 `IsViewFromObject` 傳回指定位置 `false`，`ViewPager` 將不會在該位置顯示視圖。 在 `TreePager` 應用程式中，由 `InstantiateItem` 傳回的物件索引鍵*是*樹狀結構的頁面 `View`，因此程式碼只需要檢查身分識別（亦即，物件索引鍵和視圖都是相同的）。 以下列程式碼取代 `IsViewFromObject`： 
+`IsViewFromObject` 必須執行 `PagerAdapter` 才能正常運作。 如果 `IsViewFromObject` `false` 傳回指定的位置， `ViewPager` 將不會在該位置顯示視圖。 在 `TreePager` 應用程式中，所傳回的物件索引鍵 `InstantiateItem` *是* 樹狀的頁面 `View` ，因此程式碼只需要檢查身分識別 (亦即，物件索引鍵和視圖都是一個和相同的) 。 以下列程式碼取代 `IsViewFromObject`： 
 
 ```csharp
 public override bool IsViewFromObject(View view, Java.Lang.Object obj)
@@ -252,23 +252,23 @@ public override bool IsViewFromObject(View view, Java.Lang.Object obj)
 
 ## <a name="add-the-adapter-to-the-viewpager"></a>將介面卡新增至 ViewPager
 
-既然 `TreePagerAdapter` 已經完成，現在可以將它新增至 `ViewPager`。 在**MainActivity.cs**中，將下列程式程式碼新增至 `OnCreate` 方法的結尾：
+現在已完成 `TreePagerAdapter` ，現在可以將它新增至 `ViewPager` 。 在 **MainActivity.cs**中，將下面這行程式碼加入至方法的結尾 `OnCreate` ：
 
 ```csharp
 viewPager.Adapter = new TreePagerAdapter(this, treeCatalog);
 ```
 
-此程式碼會具現化 `TreePagerAdapter`，傳入 `MainActivity` 做為內容（`this`）。 具現化的 `TreeCatalog` 會傳遞至函式的第二個引數。 `ViewPager`的 `Adapter` 屬性會設定為具現化的 `TreePagerAdapter` 物件。這會將 `TreePagerAdapter` 插入 `ViewPager`。 
+此程式碼會具現化 `TreePagerAdapter` ，並傳入 `MainActivity` 做為內容 (`this`) 。 具 `TreeCatalog` 現化會傳遞至函式的第二個引數。 的 `ViewPager` `Adapter` 屬性會設定為具現化的 `TreePagerAdapter` 物件; 這會將 `TreePagerAdapter` 插入至 `ViewPager` 。 
 
-核心執行現在已完成，&ndash; 建立並執行應用程式。 您應該會看到樹狀目錄的第一個影像顯示在畫面上，如下一個螢幕擷取畫面所示。 向左滑動以查看更多樹狀檢視，然後向右滑動以移回樹狀目錄： 
+核心執行現在已完成 &ndash; 組建並執行應用程式。 您應該會看到樹狀目錄的第一個影像顯示在畫面上，如下一個螢幕擷取畫面所示。 向左滑動以查看更多樹狀檢視，然後向右滑動以移回樹狀目錄： 
 
-[透過樹狀結構影像 ![TreePager 應用程式的螢幕擷取畫面](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
+[![透過樹狀映射 TreePager 應用程式輕量的螢幕擷取畫面](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
 
-## <a name="add-a-pager-indicator"></a>新增分頁指標
+## <a name="add-a-pager-indicator"></a>新增呼機指標
 
-此最小 `ViewPager` 執行會顯示樹狀目錄的映射，但不提供使用者在目錄中的任何指示。 下一個步驟是新增 `PagerTabStrip`。 `PagerTabStrip` 會通知使用者要顯示哪一個頁面，並顯示 [上一頁] 和 [下一頁] 的提示，以提供流覽內容。 `PagerTabStrip` 是用來做為 `ViewPager`目前頁面的指標;它會在使用者撥動每個頁面時進行滾動和更新。 
+這種最基本的 `ViewPager` 執行會顯示樹狀目錄的影像，但不會指出使用者在目錄中的位置。 下一步是加入 `PagerTabStrip` 。 `PagerTabStrip`會通知使用者所顯示的頁面，並顯示上一頁和下一頁的提示，以提供導覽內容。 `PagerTabStrip` 的目的是用來做為目前頁面的指標 `ViewPager` ; 它會在使用者撥動每個頁面時進行滾動和更新。 
 
-開啟**Resources/layout/axml** ，並將 `PagerTabStrip` 新增至版面配置：
+開啟 **Resources/layout/.axml** ，然後將加入 `PagerTabStrip` 至配置：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -289,13 +289,13 @@ viewPager.Adapter = new TreePagerAdapter(this, treeCatalog);
 </android.support.v4.view.ViewPager>
 ```
 
-`ViewPager` 和 `PagerTabStrip` 設計成搭配使用。 當您在 `ViewPager` 配置內宣告 `PagerTabStrip` 時，`ViewPager` 會自動尋找 `PagerTabStrip`，並將其連接到介面卡。 當您建立並執行應用程式時，您應該會看到顯示在每個畫面頂端的空白 `PagerTabStrip`： 
+`ViewPager` 和 `PagerTabStrip` 都是設計來一起使用。 當您在版面配置內宣告時 `PagerTabStrip` `ViewPager` ， `ViewPager` 會自動尋找， `PagerTabStrip` 並將其連接至介面卡。 當您建立並執行應用程式時，您應該會看到 `PagerTabStrip` 顯示在每個畫面頂端的空白： 
 
 [![特寫空白 PagerTabStrip 的螢幕擷取畫面](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png#lightbox)
 
 ### <a name="display-a-title"></a>顯示標題
 
-若要將標題加入至每個頁面索引標籤，請在 `PagerAdapter`衍生類別中執行 `GetPageTitleFormatted` 方法。 `ViewPager` 會呼叫 `GetPageTitleFormatted` （若已實作為），以取得描述指定位置之頁面的標題字串。 將下列方法新增至**TreePagerAdapter.cs**中的 `TreePagerAdapter` 類別： 
+若要將標題加入至每個頁面索引標籤，請 `GetPageTitleFormatted` 在衍生類別中執行方法 `PagerAdapter` 。 `ViewPager``GetPageTitleFormatted`如果實) 取得可在指定位置描述頁面的標題字串，則會呼叫 (。 將下列方法新增至 `TreePagerAdapter` **TreePagerAdapter.cs**中的類別： 
 
 ```csharp
 public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
@@ -304,24 +304,24 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 }
 ```
 
-此程式碼會從樹狀目錄中的指定頁面（位置）抓取樹狀標題字串，將它轉換成 JAVA `String`，並將它傳回給 `ViewPager`。 當您使用這個新的方法執行應用程式時，每個頁面都會在 `PagerTabStrip`中顯示樹狀標題。 您應該會在畫面頂端看到樹狀結構名稱，但不加底線： 
+這段程式碼會從指定的頁面抓取樹狀目錄標題字串， (位置) 在樹狀目錄中、將它轉換成 JAVA `String` ，然後將它傳回 `ViewPager` 。 當您使用這個新的方法來執行應用程式時，每個頁面都會在中顯示樹狀標題 `PagerTabStrip` 。 您應該會在畫面頂端看到不含底線的樹狀結構名稱： 
 
-[![具有文字填滿 PagerTabStrip 索引標籤的頁面螢幕擷取畫面](viewpager-and-views-images/05-final-pagetabstrip-sml.png)](viewpager-and-views-images/05-final-pagetabstrip.png#lightbox)
+[![具有文字填滿 PagerTabStrip 索引標籤之頁面的螢幕擷取畫面](viewpager-and-views-images/05-final-pagetabstrip-sml.png)](viewpager-and-views-images/05-final-pagetabstrip.png#lightbox)
 
 您可以來回滑動以查看目錄中的每個標題樹影像。 
 
 ### <a name="pagertitlestrip-variation"></a>PagerTitleStrip 變化
 
-`PagerTitleStrip` 與 `PagerTabStrip` 非常類似，不同之處在于 `PagerTabStrip` 會為目前選取的索引標籤加上底線。您可以使用上述版面配置中的 `PagerTitleStrip` 來取代 `PagerTabStrip`，然後再次執行應用程式，以查看其 `PagerTitleStrip`的外觀： 
+`PagerTitleStrip` 非常類似 `PagerTabStrip` ，但會 `PagerTabStrip` 加入目前所選索引標籤的底線。您可以 `PagerTabStrip` 使用 `PagerTitleStrip` 上述版面配置來取代，並再次執行應用程式以查看其外觀 `PagerTitleStrip` ： 
 
-[已從文字中移除底線的 ![PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
+[![從文字移除底線的 PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
 
-請注意，當您轉換成 `PagerTitleStrip`時，會移除底線。 
+請注意，當您轉換為時，會移除底線 `PagerTitleStrip` 。 
 
 ## <a name="summary"></a>摘要
 
-本逐步解說提供如何建立基本 `ViewPager`型應用程式，而不需要使用 `Fragment`的逐步範例。 它會呈現包含影像和標題字串的範例資料來源、用來顯示影像的 `ViewPager` 配置，以及將 `ViewPager` 連接至資料來源的 `PagerAdapter` 子類別。 為了協助使用者流覽資料集，其中包含說明如何新增 `PagerTabStrip` 或 `PagerTitleStrip`，以在每個頁面頂端顯示影像標題的指示。 
+本逐步解說提供如何在不使用的情況下建立基本架構應用程式的逐步範例 `ViewPager` `Fragment` 。 它會顯示包含影像和標題字串的範例資料來源、 `ViewPager` 顯示影像的版面配置，以及將 `PagerAdapter` 連接 `ViewPager` 到資料來源的子類別。 為了協助使用者流覽資料集，其中包含說明如何新增 `PagerTabStrip` 或 `PagerTitleStrip` 在每個頁面頂端顯示影像標題的指示。 
 
 ## <a name="related-links"></a>相關連結
 
-- [TreePager （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)
+- [TreePager (範例) ](/samples/xamarin/monodroid-samples/userinterface-treepager)

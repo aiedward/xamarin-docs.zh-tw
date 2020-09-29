@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: 32dec6b8fcdd5387e138a7812d8c3e2074673111
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f3de8f6bb5cc8cb717642ebc86cefe1a184f4a78
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939616"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456622"
 ---
 # <a name="mobile-software-development-lifecycle"></a>行動裝置軟體開發生命週期
 
@@ -19,7 +19,7 @@ ms.locfileid: "86939616"
 
 在本文件中，我們將詳盡介紹如何建置行動應用程式，包括：
 
-1. **流程** - 軟體開發的流程稱為軟體開發生命週期 (SDLC)。 我們會根據行動應用程式開發，檢查 SDLC 的所有階段，包括：開始、設計、開發、穩定、部署和維護。
+1. **流程** - 軟體開發的流程稱為軟體開發生命週期 (SDLC)。 我們將探討有關行動應用程式開發的所有 SDLC 階段，包括：開始、設計、開發、穩定、部署和維護。
 1. **考量** - 建置行動應用程式時需要考慮許多因素，特別是與傳統的 Web 應用程式或桌面應用程式相比。 我們將介紹這些考量事項以及它們會如何影響行動應用程式開發。
 
 本文件旨在為初學者和有經驗的應用程式開發人員，回答有關行動應用程式開發的基本問題。 採用了相當全面的方法來介紹在整個軟體開發生命週期 (SDLC) 過程中將會遇到的大多數概念。 然而，並不是每一位都適合使用本文件，如果您渴望立刻開始建置應用程式，則我們建議往前跳至[行動裝置應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)指南，並稍後再回來使用本文件。
@@ -70,7 +70,7 @@ ms.locfileid: "86939616"
 
 #### <a name="ux-design"></a>UX 設計
 
-UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com/windows/uwp/design/downloads/)的框線或原型來完成。 使用 UX 原型來設計 UX 可以不必擔心實際的 UI 設計：
+UX 通常會透過使用任何一種[設計工具組](/windows/uwp/design/downloads/)的框線或原型來完成。 使用 UX 原型來設計 UX 可以不必擔心實際的 UI 設計：
 
  [![UX 通常是使用 Balsamiq 等工具透過線框或原型製作而成](introduction-to-mobile-sdlc-images/balsamiq.png)](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
@@ -78,7 +78,7 @@ UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com
 
 1. **Apple**  -  [人類介面指導方針](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
 1. **Android** -  [Design Guidelines](https://developer.android.com/design/index.html) (設計指導方針)
-1. **UWP** –  [UWP 設計基本概念](https://docs.microsoft.com/windows/uwp/design/basics/)
+1. **UWP** –  [UWP 設計基本概念](/windows/uwp/design/basics/)
 
 例如，每個應用程式都有一個用來在應用程式各區段間進行切換的隱喻。 iOS 使用畫面底部的索引標籤，Android 使用畫面頂部的索引標籤，而 UWP 則使用[樞紐或索引標籤](/windows/uwp/design/controls-and-patterns/pivot)檢視。
 
@@ -117,13 +117,13 @@ UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com
 
 愈早開始測試應用程式愈好。 比方說，如果在原型階段中發現主要問題，仍可以修改應用程式的 UX 以便容納。 如果在初始階段中發現效能問題，則可以在大量程式碼建構於錯誤假設上之前，及早修改架構。
 
-一般而言，當應用程式在生命週期中進一步移動時，將會開放給更多人試用、測試、提供意見反應等等。比方說，原型應用程式可能只會顯示或提供給重要的專案關係人，而發行候選應用程式可能會散發給註冊早期存取的客戶。
+一般來說，當應用程式在生命週期中進一步移動時，就會開啟給更多人來試用、測試、提供意見反應等等。比方說，原型應用程式可能只會顯示或提供給重要的專案關係人，而發行候選的應用程式可能會散發給註冊搶先存取的客戶。
 
 針對早期測試和部署到相對較少的裝置，通常直接從開發電腦進行部署便足夠了。 但是，隨著受眾的擴大，可能很快會變得十分麻煩。 因此，有許多測試部署選項讓您可以邀請他人加入測試集區、透過 Web 發行組建、提供可以進行使用者意見反應的工具，大大降低此流程的難度。
 
 針對測試與部署，您可以使用 [App Center](https://appcenter.ms/) 持續對應用程式進行建置、測試、發行和監視。
 
-### <a name="distribution"></a>發行版本
+### <a name="distribution"></a>散發
 
 一旦應用程式處於穩定狀態，即可以散發出去。 有許多不同的散發選項，視平台而定。
 
@@ -153,7 +153,7 @@ Android 使用此資訊協助您在 Android OS 內運行的應用程式和元件
 
 #### <a name="uwp"></a>UWP
 
-UWP 應用程式會透過 Microsoft Store 散發給使用者。 開發人員會提交其應用程式來進行准核，之後應用程式就會出現在市集中。 如需發行 Windows 應用程式的詳細資訊，請參閱 UWP 的[發行](https://docs.microsoft.com/windows/uwp/publish/)文件。
+UWP 應用程式會透過 Microsoft Store 散發給使用者。 開發人員會提交其應用程式來進行准核，之後應用程式就會出現在市集中。 如需發行 Windows 應用程式的詳細資訊，請參閱 UWP 的[發行](/windows/uwp/publish/)文件。
 
 ## <a name="mobile-development-considerations"></a>行動裝置開發考量
 
@@ -243,9 +243,9 @@ UWP 中的多工也分為兩個部分：頁面與應用程式的生命週期和�
 
 #### <a name="security-considerations"></a>安全性考量
 
-如需 UWP 中重要安全性考量的資訊，請參閱[安全性](https://docs.microsoft.com/windows/uwp/security/)文件。
+如需 UWP 中重要安全性考量的資訊，請參閱[安全性](/windows/uwp/security/)文件。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南提供了 SDLC 簡介，因其與行動開發相關。 其介紹有關建置行動應用程式的一般考量，並檢視平台特定的考量，包括設計、測試和部署。
 

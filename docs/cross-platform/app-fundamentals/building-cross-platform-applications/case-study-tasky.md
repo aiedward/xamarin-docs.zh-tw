@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 96f5dd638de17569d105e95c44a539e652b35986
-ms.sourcegitcommit: d7c09c6cc2f479b8f14910ad2d20ec76800cd9c7
+ms.openlocfilehash: 803b42cfcc27dc86b0d4bc78fc4745af5565e8cb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91248122"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457545"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平臺應用程式案例研究： Tasky
 
@@ -164,7 +164,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 #### <a name="locking-to-prevent-concurrent-access"></a>鎖定以防止平行存取
 
-[鎖定](https://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx)會在類別內實作為 `TaskItemDatabase` ，以防止資料庫的平行存取。 這是為了確保會序列化不同執行緒的平行存取 (否則，UI 元件可能會在背景執行緒) 更新時，嘗試讀取資料庫。 如何實作為鎖定的範例如下所示：
+[鎖定](/previous-versions/visualstudio/visual-studio-2010/c5kehkcz(v=vs.100))會在類別內實作為 `TaskItemDatabase` ，以防止資料庫的平行存取。 這是為了確保會序列化不同執行緒的平行存取 (否則，UI 元件可能會在背景執行緒) 更新時，嘗試讀取資料庫。 如何實作為鎖定的範例如下所示：
 
 ```csharp
 static object locker = new object ();
