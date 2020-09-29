@@ -836,6 +836,8 @@ items:
         href: ~/essentials/platform-feature-support.md?context=xamarin/xamarin-forms
       - name: 加速計
         href: ~/essentials/accelerometer.md?context=xamarin/xamarin-forms
+      - name: 應用程式動作
+        href: ~/essentials/app-actions.md?context=xamarin/xamarin-forms
       - name: 應用程式資訊
         href: ~/essentials/app-information.md?context=xamarin/xamarin-forms
       - name: 應用程式主題
@@ -852,6 +854,8 @@ items:
         href: ~/essentials/compass.md?context=xamarin/xamarin-forms
       - name: 連線能力
         href: ~/essentials/connectivity.md?context=xamarin/xamarin-forms
+      - name: 連絡人
+        href: ~/essentials/contacts.md?context=xamarin/xamarin-forms
       - name: 偵測搖動
         href: ~/essentials/detect-shake.md?context=xamarin/xamarin-forms
       - name: 裝置顯示資訊
@@ -860,6 +864,8 @@ items:
         href: ~/essentials/device-information.md?context=xamarin/xamarin-forms
       - name: Email
         href: ~/essentials/email.md?context=xamarin/xamarin-forms
+      - name: 檔案選擇器
+        href: ~/essentials/file-picker.md?context=xamarin/xamarin-forms
       - name: 檔案系統協助程式
         href: ~/essentials/file-system-helpers.md?context=xamarin/xamarin-forms
       - name: 手電筒
@@ -870,6 +876,8 @@ items:
         href: ~/essentials/geolocation.md?context=xamarin/xamarin-forms
       - name: 迴轉儀
         href: ~/essentials/gyroscope.md?context=xamarin/xamarin-forms
+      - name: 觸覺回饋技術意見反應
+        href: ~/essentials/haptic-feedback.md?context=xamarin/xamarin-forms
       - name: 啟動器
         href: ~/essentials/launcher.md?context=xamarin/xamarin-forms
       - name: 磁力計
@@ -878,6 +886,8 @@ items:
         href: ~/essentials/main-thread.md?context=xamarin/xamarin-forms
       - name: 地圖
         href: ~/essentials/maps.md?context=xamarin/xamarin-forms
+      - name: 媒體選擇器
+        href: ~/essentials/media-picker.md?context=xamarin/xamarin-forms
       - name: 開啟瀏覽器
         href: ~/essentials/open-browser.md?context=xamarin/xamarin-forms
       - name: 方向感應器
@@ -890,6 +900,8 @@ items:
         href: ~/essentials/platform-extensions.md?context=xamarin/xamarin-forms
       - name: 偏好設定
         href: ~/essentials/preferences.md?context=xamarin/xamarin-forms
+      - name: 螢幕擷取畫面
+        href: ~/essentials/screenshot.md?context=xamarin/xamarin-forms
       - name: 安全存放裝置
         href: ~/essentials/secure-storage.md?context=xamarin/xamarin-forms
       - name: 共用
