@@ -9,12 +9,12 @@ ms.date: 03/20/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5ccd5a610ad41c0160a6778a63a367376bd200b3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c74c132a623388f1d0b3b467b73d948cf2a2022
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134013"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437259"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>安裝 Xamarin 預覽版 (Windows)
 
@@ -24,7 +24,7 @@ Visual Studio 2019 和 Visual Studio 2017 不會以與舊版相同的方式來�
 - **預覽** – 等同於 Visual Studio for Mac 中的 _Alpha_ 和_搶鮮版 (Beta)_ 通道
 
 > [!TIP]
-> 若要嘗試發行前版本功能，您應該[下載 Visual Studio Preview 安裝程式](https://visualstudio.microsoft.com/vs/preview/)，其可提供並存安裝 Visual Studio **Preview** 版與穩定 (發行) 版的選項。 如需 Visual Studio 2019 新功能的詳細資訊，請參閱[版本資訊](https://docs.microsoft.com/visualstudio/releases/2019/release-notes)。
+> 若要嘗試發行前版本功能，您應該[下載 Visual Studio Preview 安裝程式](https://visualstudio.microsoft.com/vs/preview/)，其可提供並存安裝 Visual Studio **Preview** 版與穩定 (發行) 版的選項。 如需 Visual Studio 2019 新功能的詳細資訊，請參閱[版本資訊](/visualstudio/releases/2019/release-notes)。
 
 Visual Studio 的預覽版本可能包含對應的 Xamarin 預覽版本功能，包括：
 

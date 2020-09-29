@@ -1,45 +1,45 @@
 ---
-title: Xamarin 中的 ARKit 簡介
-description: 本檔說明 iOS 11 與 ARKit 的增強現實。 它討論如何將3D 模型新增至應用程式、設定視圖、執行會話委派、將3D 模型放在世界中，以及暫停增強的現實會話。
+title: 在 Xamarin 中 ARKit 簡介
+description: 本檔說明使用 ARKit 的 iOS 11 增強型事實。 它會討論如何將3D 模型新增至應用程式、設定 view、執行會話委派、將3D 模型放在世界中，以及暫停增強的現實會話。
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 51b28ec05af91dea21b1291956de30c549b1868e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6803ecf2303ff2c91265f3ac8352a7aa15e74d40
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571671"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436205"
 ---
-# <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin 中的 ARKit 簡介
+# <a name="introduction-to-arkit-in-xamarinios"></a>在 Xamarin 中 ARKit 簡介
 
 _IOS 11 的增強現實_
 
-ARKit 可提供各種增強的現實應用程式和遊戲。 本節包含下列主題：
+ARKit 可提供各式各樣的增強現實應用程式和遊戲。 本節包含下列主題：
 
 - [使用 ARKit 消費者入門](#gettingstarted)
-- [搭配使用 ARKit 與 UrhoSharp](urhosharp.md)
+- [使用 ARKit 搭配 UrhoSharp](urhosharp.md)
 
 <a name="gettingstarted"></a>
 
 ## <a name="getting-started-with-arkit"></a>使用 ARKit 消費者入門
 
-若要開始使用增強的現實，下列指示會逐步解說一個簡單的應用程式：定位3D 模型，並讓 ARKit 保持模型與追蹤功能的位置。
+若要開始增強的現實，下列指示將逐步解說簡單的應用程式：定位3D 模型，並讓 ARKit 將模型與追蹤功能保持在原處。
 
 ![以相機影像浮動的 Jet 3D 模型](images/jet-sml.png)
 
-### <a name="1-add-a-3d-model"></a>1. 加入3D 模型
+### <a name="1-add-a-3d-model"></a>1. 新增3D 模型
 
-資產應該使用 [ **SceneKitAsset** ] [建立] 動作新增至專案。
+資產應使用 **SceneKitAsset** 組建動作加入至專案。
 
 ![SceneKit 專案中的資產](images/scene-assets.png)
 
-### <a name="2-configure-the-view"></a>2. 設定視圖
+### <a name="2-configure-the-view"></a>2. 設定 view
 
-在 view 控制器的 `ViewDidLoad` 方法中，載入場景資產，並 `Scene` 在此視圖上設定屬性：
+在 view 控制器的 `ViewDidLoad` 方法中，載入場景資產，並 `Scene` 在視圖上設定屬性：
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -53,7 +53,7 @@ SceneView.Scene = scene;
 
 ### <a name="3-optionally-implement-a-session-delegate"></a>3. 選擇性地執行會話委派
 
-雖然在簡單的情況下並不需要，但執行會話委派有助於偵測 ARKit 會話的狀態（在實際的應用程式中，提供意見反應給使用者）。 使用下列程式碼建立簡單的委派：
+雖然簡單的案例不需要這樣做，但是在實際的應用程式中，將 ARKit 會話的狀態 (和實際的應用程式中，提供意見反應給使用者) 會很有説明。 使用下列程式碼建立簡單委派：
 
 ```csharp
 public class SessionDelegate : ARSessionDelegate
@@ -66,7 +66,7 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-在方法的中，指派委派 `ViewDidLoad` ：
+在方法中指派委派 `ViewDidLoad` ：
 
 ```csharp
 // Track changes to the session
@@ -93,26 +93,26 @@ var ship = SceneView.Scene.RootNode.FindChildNode("ship", true);
 ship.Position = new SCNVector3(2f, -2f, -9f);
 ```
 
-每次應用程式執行或繼續時，3D 模型就會放在相機前方。 模型定位之後，移動相機並監看 ARKit，讓模型保持定位。
+每次執行或繼續執行應用程式時，3D 模型都會放置在相機前方。 一旦模型定位之後，移動攝影機並監看 ARKit 會讓模型保持定位。
 
 ### <a name="5-pause-the-augmented-reality-session"></a>5. 暫停增強的現實會話
 
-當看不到視圖控制器時（在方法中），是暫停 ARKit 會話的最佳做法 `ViewWillDisappear` ：
+在方法中 (看不到視圖控制器時，暫停 ARKit 會話是很好的作法 `ViewWillDisappear` ：
 
 ```csharp
 SceneView.Session.Pause();
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-上述程式碼會產生簡單的 ARKit 應用程式。 更複雜的範例會預期裝載增強型現實會話的 view controller 會執行 `IARSCNViewDelegate` ，並執行其他方法。
+上述程式碼會產生簡單的 ARKit 應用程式。 更複雜的範例會預期裝載增強型現實會話的 view 控制器會執行 `IARSCNViewDelegate` ，並執行其他方法。
 
-ARKit 提供許多更複雜的功能，例如 surface 追蹤和使用者互動。 如需結合 ARKit 追蹤與 UrhoSharp 的範例，請參閱[UrhoSharp 示範](urhosharp.md)。
+ARKit 提供許多更複雜的功能，例如面追蹤和使用者互動。 如需結合 ARKit 追蹤與 UrhoSharp 的範例，請參閱 [UrhoSharp 示範](urhosharp.md) 。
 
 ## <a name="related-links"></a>相關連結
 
-- [增強的現實（Apple）](https://developer.apple.com/arkit/)
-- [搭配使用 ARKit 與 UrhoSharp](urhosharp.md)
-- [Simple ARKit （Jet）範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
-- [ARKit 放置物件（範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
-- [適用于 iOS 的 ARKit 增強現實簡介（WWDC）（影片）](https://developer.apple.com/videos/play/wwdc2017/602/)
+- [ (Apple) 的擴充現實 ](https://developer.apple.com/arkit/)
+- [使用 ARKit 搭配 UrhoSharp](urhosharp.md)
+- [簡易 ARKit (Jet) 範例](/samples/xamarin/ios-samples/ios11-arkitsample)
+- [ARKit 將物件放 (範例) ](/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
+- [介紹 ARKit-增強的 iOS (WWDC)  (影片) ](https://developer.apple.com/videos/play/wwdc2017/602/)

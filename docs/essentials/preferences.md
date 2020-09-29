@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Essentials：喜好設定
-description: 本檔說明中的喜好設定類別 Xamarin.Essentials ，它會將應用程式喜好設定儲存在索引鍵/值存放區中。 會討論如何使用類別和可以儲存的資料類型。
+description: 本檔說明中的喜好設定類別 Xamarin.Essentials ，可將應用程式喜好設定儲存在索引鍵/值存放區中。 會討論如何使用類別和可以儲存的資料類型。
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
@@ -9,14 +9,14 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: acc0c48776c7a91e9e5a060928564bc6e0c1d775
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2dc00a10e70972429f123b0dfb7adb6a083a883d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801812"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433681"
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials：喜好設定
+# <a name="no-locxamarinessentials-preferences"></a>Xamarin.Essentials：喜好設定
 
 **喜好設定**類別可協助將應用程式喜好設定儲存於鍵/值存放區中。
 
@@ -44,7 +44,7 @@ Preferences.Set("my_key", "my_value");
 var myValue = Preferences.Get("my_key", "default_value");
 ```
 
-若要檢查指定的索引_鍵_是否存在於喜好設定中：
+若要檢查指定的索引 _鍵_ 是否存在於喜好設定中：
 
 ```csharp
 bool hasKey = Preferences.ContainsKey("my_key");
@@ -72,22 +72,22 @@ Preferences.Clear();
 - **double**
 - **int**
 - **float**
-- **前提**
+- **long**
 - **string**
 - **DateTime**
 
 ## <a name="integrate-with-system-settings"></a>與系統設定整合
 
-喜好設定會以原生方式儲存，讓您可以將您的設定整合到原生系統設定中。 遵循平臺 documetnation 和範例，與平臺整合：
+喜好設定是原生儲存的，可讓您將設定整合至原生系統設定。 遵循平臺 documetnation 和範例以與平臺整合：
 
-* Apple：[執行 IOS 設定](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)配套
-* [iOS 應用程式喜好設定範例](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
+* Apple：[執行 IOS 設定](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)套件組合
+* [iOS 應用程式喜好設定範例](/samples/xamarin/ios-samples/appprefs/)
 * [watchOS 設定](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
-* Android：[使用設定畫面消費者入門](https://developer.android.com/guide/topics/ui/settings.html)
+* Android： [具有設定畫面的消費者入門](https://developer.android.com/guide/topics/ui/settings.html)
 
 ## <a name="implementation-details"></a>實作詳細資料
 
-的值 `DateTime` 會使用類別所定義的兩個方法，以64位的二進位（長整數）格式儲存 `DateTime` ： [`ToBinary`](xref:System.DateTime.ToBinary) 方法是用來編碼 `DateTime` 值，而方法會將 [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) 值解碼。 請參閱這些方法的文件，以便在已儲存的 `DateTime` 並非國際標準時間 (UTC) 值時，對解碼值進行調整。
+的值 `DateTime` 會使用類別所定義的兩種方法，儲存在64位二進位 (長整數) 格式 `DateTime` ： [`ToBinary`](xref:System.DateTime.ToBinary) 方法是用來對值進行編碼 `DateTime` ，而方法會將值解碼 [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) 。 請參閱這些方法的文件，以便在已儲存的 `DateTime` 並非國際標準時間 (UTC) 值時，對解碼值進行調整。
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
@@ -97,13 +97,13 @@ Preferences.Clear();
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-[KeyChain](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) 用於在 iOS 裝置上儲存值。 如果未指定 `sharedName`，則會使用 `StandardUserDefaults`；否則該名稱會用於建立具有用於 `NSUserDefaultsType.SuiteName` 之指定名稱的新 `NSUserDefaults`。
+[KeyChain](../ios/app-fundamentals/user-defaults.md) 用於在 iOS 裝置上儲存值。 如果未指定 `sharedName`，則會使用 `StandardUserDefaults`；否則該名稱會用於建立具有用於 `NSUserDefaultsType.SuiteName` 之指定名稱的新 `NSUserDefaults`。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) 用於將值儲存在裝置上。 如果未指定 `sharedName`，則會使用 `LocalSettings`否則該名稱會用於建立 `LocalSettings` 內的容器。
+[ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) 用於將值儲存在裝置上。 如果未指定 `sharedName`，則會使用 `LocalSettings`否則該名稱會用於建立 `LocalSettings` 內的容器。
 
-`LocalSettings`也有下列限制，每個設定的名稱最多可以是255個字元的長度。 每個設定的大小最多可達8K 位元組，而且每個複合設定的大小最多可達64K 位元組。
+`LocalSettings` 也有下列限制，每個設定的名稱最多可以是255個字元。 每個設定的大小最多可有8K 個位元組，而每個複合設定的大小最多可達64K 個位元組。
 
 --------------
 

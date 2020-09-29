@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: a5a759ae9f156eec71706d9681fac2a94995848e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: a1649c4b8498f3e7ad3684cb4d119236b4ceaf57
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021680"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435482"
 ---
 # <a name="xamarinmac-performance"></a>Xamarin.Mac 效能
 
@@ -20,7 +20,7 @@ ms.locfileid: "73021680"
 
 Xamarin.Mac 應用程式和 Xamarin.iOS 類似，而且適用許多相同的效能建議：
 
-- [Xamarin.iOS 效能](~/ios/deploy-test/performance.md)
+- [Xamarin. iOS 效能](~/ios/deploy-test/performance.md)
 - [跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)
 
 但還有一些實用的 macOS 特有建議。
@@ -59,9 +59,9 @@ Xamarin.Mac 應用程式可以使用數個效能特性與功能各異的[目標 
 
 可能的話，請使用[非同步](~/cross-platform/platform/async.md)和執行緒以免阻礙 UI。
 
-對於長時間執行的作業，請考慮使用 [NSProgressIndicator](https://docs.microsoft.com/samples/xamarin/mac-samples/progressbarexample) 或 Apple 的 [HIG](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) \(英文\) 中記載的其他選項來通知使用者。
+對於長時間執行的作業，請考慮使用 [NSProgressIndicator](/samples/xamarin/mac-samples/progressbarexample) 或 Apple 的 [HIG](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) \(英文\) 中記載的其他選項來通知使用者。
 
 ## <a name="related-links"></a>相關連結
 
 - [跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)
-- [Xamarin.iOS 效能](~/ios/deploy-test/performance.md)
+- [Xamarin. iOS 效能](~/ios/deploy-test/performance.md)

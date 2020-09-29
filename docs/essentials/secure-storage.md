@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Essentials：安全存放裝置
-description: 本檔描述中的 SecureStorage 類別 Xamarin.Essentials ，這有助於安全地儲存簡單的索引鍵/值組。 此文件討論如何使用該類別、平台實作特性與限制。
+title: Xamarin.Essentials：安全的儲存體
+description: 本檔說明中的 SecureStorage 類別 Xamarin.Essentials ，它有助於安全地儲存簡單的索引鍵/值組。 此文件討論如何使用該類別、平台實作特性與限制。
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: jamesmontemagno
 ms.author: jamont
@@ -9,14 +9,14 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 061bc1cfe785ad080092ba21340f7d38bc499ed9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f4bb252448abe3c2987def143634d15b5cae194c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801942"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433502"
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials：安全存放裝置
+# <a name="no-locxamarinessentials-secure-storage"></a>Xamarin.Essentials：安全的儲存體
 
 **SecureStorage** 類別有助於安全地存放簡單的機碼/值組。
 
@@ -29,7 +29,7 @@ ms.locfileid: "84801942"
 # <a name="android"></a>[Android](#tab/android)
 
 > [!TIP]
-> [應用程式自動備份 (Auto Backup for Apps)](https://developer.android.com/guide/topics/data/autobackup) 是 Android 6.0 (API 層級 23) 與更新版本中的功能，可備份使用者的應用程式資料 (共用喜好設定、應用程式內部存放區中的檔案，以及其他特定檔案)。 當重新安裝應用程式或在新裝置上安裝應用程式時，會還原資料。 這會對 `SecureStorage` 造成影響，它利用備份的共用喜好設定，而且在進行還原時無法解密。 Xamarin.Essentials會藉由移除金鑰來自動處理這種情況，使其可以重設，但是您可以藉由停用自動備份來採取額外的步驟。
+> [應用程式自動備份 (Auto Backup for Apps)](https://developer.android.com/guide/topics/data/autobackup) 是 Android 6.0 (API 層級 23) 與更新版本中的功能，可備份使用者的應用程式資料 (共用喜好設定、應用程式內部存放區中的檔案，以及其他特定檔案)。 當重新安裝應用程式或在新裝置上安裝應用程式時，會還原資料。 這會對 `SecureStorage` 造成影響，它利用備份的共用喜好設定，而且在進行還原時無法解密。 Xamarin.Essentials 藉由移除金鑰以自動處理此案例，以便重設，但您可以停用自動備份來執行額外的步驟。
 
 ### <a name="enable-or-disable-backup"></a>啟用或停用備份
 您可以透過將 `AndroidManifest.xml` 檔案中的 `android:allowBackup` 設定設定為 false，以選擇停用整個應用程式的自動備份。 只有當您計畫以其他方式還原資料時，才建議使用此方式。
@@ -154,11 +154,11 @@ SecureStorage.RemoveAll();
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) 可用來安全地在 UWP 裝置上為值加密。
+[DataProtectionProvider](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) 可用來安全地在 UWP 裝置上為值加密。
 
 加密值會存放在 `ApplicationData.Current.LocalSettings` 中名為 **[YOUR-APP-ID].xamarinessentials** 的容器內。
 
-**SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 它也會使用， `LocalSettings` 其限制是每個設定的名稱最多可以是255個字元的長度。 每個設定的大小最多可達8K 位元組，而且每個複合設定的大小最多可達64K 位元組。
+**SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 它也會使用 `LocalSettings` 其限制，每個設定的名稱最多可以是255個字元。 每個設定的大小最多可有8K 個位元組，而每個複合設定的大小最多可達64K 個位元組。
 
 -----
 

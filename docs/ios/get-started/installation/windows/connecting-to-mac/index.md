@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: 7bc6a7ce1b8cd20aa782ddde42925e4e72374ec4
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 8cbed52524eac05cc4a737936fd6ee7d90279f8e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996942"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435454"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>為 Xamarin.iOS 開發與 Mac 配對
 
-_本指南說明如何使用 [與 Mac 配對]，將 Visual Studio 2019 連線到 Mac 組建主機。相同的指示適用于 Visual Studio 2017。_
+_本指南說明如何使用 [與 Mac 配對] 將 Visual Studio 2019 連線至 Mac 組建主機。相同的指示也適用于 Visual Studio 2017。_
 
 ## <a name="overview"></a>概觀
 
@@ -43,7 +43,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 > 遵循本指南中的指示，完成下列步驟：
 >
 > - 在 Windows 電腦上，[安裝 Visual Studio 2019](~/get-started/installation/windows.md)
-> - 在 Mac 上，[安裝 Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 和 [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
+> - 在 Mac 上，[安裝 Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 和 [Visual Studio for Mac](/visualstudio/mac/installation)
 >   - _Xcode 之後手動開啟它_，以便它可已新增任何額外元件。
 >
 > 如果您不想要安裝 Visual Studio for Mac，則 Visual Studio 2019 可以使用 Xamarin.iOS 和 Mono 來自動設定 Mac 組建主機。
@@ -101,7 +101,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 5. [與 Mac 配對] 會自動設定 Mac。
 
-    [從 Visual Studio 2019 15.6 版開始](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)，Visual Studio 2019 會視需要安裝或更新已連線 Mac 組建主機上的 Mono 和 Xamarin.iOS (請注意，Xcode 仍須靠您手動安裝)。 如需詳細資訊，請參閱[自動 Mac 佈建](#automatic-mac-provisioning)。
+    [從 Visual Studio 2019 15.6 版開始](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)，Visual Studio 2019 會視需要安裝或更新已連線 Mac 組建主機上的 Mono 和 Xamarin.iOS (請注意，Xcode 仍須靠您手動安裝)。 如需詳細資訊，請參閱[自動 Mac 佈建](#automatic-mac-provisioning)。
 
 6. 尋找連線狀態圖示。
 
@@ -160,7 +160,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ## <a name="automatic-mac-provisioning"></a>自動 Mac 佈建
 
-從[Visual Studio 2019 15.6 版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)開始，與 mac 配對會自動布建 mac，其中包含建立 Xamarin ios 應用程式所需的軟體： Mono、Xamarin、ios （軟體架構，而不是 Visual Studio for Mac IDE）和各種 Xcode 相關工具（但不 Xcode 本身）。
+從 [Visual Studio 2019 15.6 版](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)開始，[與 mac 配對] 會使用建立 Xamarin 的必要軟體自動布建 Mac。 ios 應用程式： Mono、Xamarin (軟體架構，而不是 Visual Studio for Mac IDE) ，以及各種 Xcode 相關工具 (但 Xcode 本身) 。
 
 > [!IMPORTANT]
 >
@@ -170,13 +170,13 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 [與 Mac 配對] 會在 Visual Studio 2019 [連線至 Mac](#connect-to-the-mac-from-visual-studio-2019) 時執行必要的軟體安裝/更新。
 
-### <a name="mono"></a>單聲道
+### <a name="mono"></a>Mono
 
 [與 Mac 配對] 將會確定已安裝 Mono。 如果未安裝，則 [與 Mac 配對] 將會在 Mac 下載和安裝 Mono 的最新穩定版本。
 
 進度是以各種提示指出，如下列螢幕擷取畫面所示 (按一下以縮放)：
 
-|單聲道|安裝檢查|正在下載|安裝中
+|Mono|安裝檢查|正在下載|安裝
 |---|---|---|---|
 ||[![遺漏 Mono 安裝](images/mono-missing.png "遺漏 Mono 安裝")](images/mono-missing-large.png#lightbox)|[![下載 Mono](images/mono-downloading.png "下載 Mono")](images/mono-downloading-large.png#lightbox)|[![安裝 Mono](images/mono-installing.png "安裝 Mono")](images/mono-installing-large.png#lightbox)|
 
@@ -185,14 +185,14 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 [與 Mac 配對] 會在 Mac 上升級 Xamarin.iOS，以符合 Windows 電腦上已安裝的版本。
 
 > [!IMPORTANT]
-> [與 Mac 配對] 不會將 Mac 上的 Xamarin.iOS 從 alpha/beta 降級至穩定。 如果您已安裝 Visual Studio for Mac，則請設定[發行通道](https://docs.microsoft.com/visualstudio/mac/update)，如下所示：
+> [與 Mac 配對] 不會將 Mac 上的 Xamarin.iOS 從 alpha/beta 降級至穩定。 如果您已安裝 Visual Studio for Mac，則請設定[發行通道](/visualstudio/mac/update)，如下所示：
 >
 > - 如果您使用 Visual Studio 2019，請選取 Visual Studio for Mac 中的 [穩定]**** 更新通道。
 > - 如果您使用 Visual Studio 2019 Preview，請選取 Visual Studio for Mac 中的 [Alpha]**** 更新通道。
 
 進度是以各種提示指出，如下列螢幕擷取畫面所示 (按一下以縮放)：
 
-|Xamarin.iOS|安裝檢查|正在下載|安裝中
+|Xamarin.iOS|安裝檢查|正在下載|安裝
 |---|---|---|---|
 ||[![遺漏 Xamarin.iOS 安裝](images/xamios-missing.png "遺漏 Xamarin.iOS 安裝")](images/xamios-missing-large.png#lightbox)|[![下載 Xamarin.iOS](images/xamios-downloading.png "下載 Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![安裝 Xamarin.iOS](images/xamios-installing.png "安裝 Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
 
@@ -236,7 +236,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 - `ServerPassword` - 要在登入 Mac 組建主機時使用的密碼。
 
 > [!NOTE]
-> Visual Studio 2019 儲存 `msbuild` 在下列目錄中： **C:\Program Files （x86） \Microsoft Visual Studio\2019 \\ &lt; Version &gt; \MSBuild\Current\Bin**
+> Visual Studio 2019 儲存 `msbuild` 在下列目錄中： **C:\Program Files (x86) \Microsoft Visual Studio\2019 \\ &lt; Version &gt; \MSBuild\Current\Bin**
 
 [與 Mac 配對] 第一次從 Visual Studio 2019 或命令列登入特定 Mac 組建主機時，會設定 SSH 金鑰。 如果使用這些金鑰，則未來的登入不需要使用者名稱或密碼。 新建立的金鑰會儲存在 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中。
 
@@ -246,7 +246,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 
 本文說明如何使用 [與 Mac 配對] 將 Visual Studio 2019 連線至 Mac 組建主機，並讓 Visual Studio 2019 開發人員使用 Xamarin.iOS 建置原生 iOS 應用程式。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 - [連線疑難排解](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
 - [Xamarin Mac 組建代理程式影片](https://www.youtube.com/watch?v=MBAPBtxkjFQ) \(英文\)

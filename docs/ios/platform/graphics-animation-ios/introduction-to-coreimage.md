@@ -1,24 +1,24 @@
 ---
 title: Xamarin 中的核心映射
-description: 核心映射是 iOS 5 引進的新架構，可提供影像處理和即時影片增強功能。 本文介紹這些功能與 Xamarin iOS 範例。
+description: 核心映射是 iOS 5 引進的新架構，可提供影像處理和即時影片增強功能。 本文介紹了 Xamarin. iOS 範例的功能。
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 9e0363f941784ecc488861c0d2f089a30c275a10
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7cb94956266a3094cc62ccc66c3d44e97884f04d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937393"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435297"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin 中的核心映射
 
-_核心映射是 iOS 5 引進的新架構，可提供影像處理和即時影片增強功能。本文介紹這些功能與 Xamarin iOS 範例。_
+_核心映射是 iOS 5 引進的新架構，可提供影像處理和即時影片增強功能。本文介紹了 Xamarin. iOS 範例的功能。_
 
-核心映射是 iOS 5 中引進的新架構，提供許多內建的篩選準則和效果，可套用至影像和影片，包括臉部偵測。
+核心映射是 iOS 5 中引進的新架構，可提供一些內建的篩選準則和效果，以套用至影像和影片，包括臉部偵測。
 
 本檔包含簡單的範例：
 
@@ -26,7 +26,7 @@ _核心映射是 iOS 5 引進的新架構，可提供影像處理和即時影片
 - 將篩選套用至影像
 - 列出可用的篩選準則。
 
-這些範例應協助您開始將核心映射功能整合到您的 Xamarin iOS 應用程式中。
+這些範例可協助您開始將核心映射功能併入您的 Xamarin iOS 應用程式。
 
 ## <a name="requirements"></a>需求
 
@@ -34,9 +34,9 @@ _核心映射是 iOS 5 引進的新架構，可提供影像處理和即時影片
 
 ## <a name="face-detection"></a>臉部偵測
 
-核心影像臉部偵測功能只會執行它所說的動作，它會嘗試識別相片中的臉部，並傳回它辨識之任何臉部的座標。 這項資訊可以用來計算影像中的人員人數、繪製影像上的指標（例如 適用于相片中的「標記」人員，或您可以想要的任何其他專案。
+核心影像臉部偵測功能只會執行它所說的內容，它會嘗試識別相片中的臉部，並傳回其辨識之任何臉部的座標。 這項資訊可以用來計算影像中的人員人數、在影像上繪製指標 (例如 針對相片中的「標記」人員) ，或您可以想像的任何其他東西。
 
-來自 CoreImage\SampleCode.cs 的這段程式碼示範如何在內嵌影像上建立和使用臉部偵測：
+CoreImage\SampleCode.cs 中的此程式碼示範如何在內嵌影像上建立和使用臉部偵測：
 
 ```csharp
 var image = new UIImage("photoFace.JPG");
@@ -46,16 +46,16 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-功能陣列將會填入 `CIFaceFeature` 物件（如果偵測到任何臉部）。 `CIFaceFeature`每個臉部都有一個。 `CIFaceFeature`具有下列屬性：
+如果) 偵測到任何臉部，功能陣列將會填入 `CIFaceFeature` 物件 (。 `CIFaceFeature`每個臉部都有一個。 `CIFaceFeature` 具有下列屬性：
 
 - HasMouthPosition –是否偵測到此臉部的嘴。
-- HasLeftEyePosition –是否已偵測到此臉部的向左眼睛。
-- HasRightEyePosition –是否在此臉部中偵測到適當的眼睛。 
-- MouthPosition –此臉部的嘴座標。
-- LeftEyePosition –此臉部的左邊眼座標。
+- HasLeftEyePosition –是否偵測到此臉部的眼睛。
+- HasRightEyePosition –是否針對此臉部偵測到正確的眼睛。 
+- MouthPosition –此臉部之嘴的座標。
+- LeftEyePosition –此臉部左右的座標。
 - RightEyePosition –此臉部的適當眼睛座標。
 
-所有這些屬性的座標在左下方都有其原點，與使用左上角作為原點的 UIKit 不同。 使用上的座標時， `CIFaceFeature` 請務必「翻轉」它們。 在 CoreImage\CoreImageViewController.cs 中，這個非常基本的自訂影像視圖會示範如何在影像上繪製「臉部指標」三角形（請注意 `FlipForBottomOrigin` 方法）：
+所有這些屬性的座標都有其在左下角的原點，不同于使用左上角作為來源的 UIKit。 使用座標時， `CIFaceFeature` 請務必將它們「翻轉」。 CoreImage\CoreImageViewController.cs 中這個非常基本的自訂影像視圖示範如何在影像上繪製「臉部指標」三角形 (請注意 `FlipForBottomOrigin`) 方法：
 
 ```csharp
 public class FaceDetectImageView : UIView
@@ -100,7 +100,7 @@ public class FaceDetectImageView : UIView
 }
 ```
 
-然後在 SampleCode.cs 檔案中，映射和功能會在重新繪製映射之前指派：
+然後，在 SampleCode.cs 檔案中，映射和功能會在重繪映射之前指派：
 
 ```csharp
 faceView.Image = image;
@@ -108,17 +108,17 @@ faceView.Features = features;
 faceView.SetNeedsDisplay();
 ```
 
-螢幕擷取畫面顯示範例輸出：偵測到的臉部特徵的位置會顯示在 UITextView 中，並使用 CoreGraphics 繪製到來源影像。
+螢幕擷取畫面顯示範例輸出：偵測到的臉部特徵的位置會顯示在 UITextView 中，並使用 CoreGraphics 繪製至來源影像。
 
-因為臉部辨識的運作方式，有時會偵測到人臉以外的事物（例如，這些玩具猴仔！）。
+由於臉部辨識的運作方式，有時會偵測人臉以外的事物 (例如這些玩具猴仔！ ) 。
 
 ## <a name="filters"></a>篩選器
 
-有超過50個不同的內建篩選準則，而架構是可擴充的，因此可以實作為新的篩選準則。
+有超過50個不同的內建篩選準則，而且架構是可擴充的，以便可以實作為新的篩選準則。
 
 ## <a name="using-filters"></a>使用篩選
 
-將篩選套用至影像有四個不同的步驟：載入影像、建立篩選、套用篩選，以及儲存（或顯示）結果。
+將篩選套用至映射有四個不同的步驟：載入影像、建立篩選、套用篩選和儲存 (或顯示) 結果。
 
 首先，將影像載入物件中 `CIImage` 。
 
@@ -127,7 +127,7 @@ var uiimage = UIImage.FromFile ("photo.JPG");
 var ciimage = new CIImage (uiimage);
 ```
 
-第二，建立篩選類別並設定其屬性。
+其次，建立篩選類別並設定其屬性。
 
 ```csharp
 var sepia = new CISepiaTone();
@@ -135,7 +135,7 @@ sepia.Image = ciimage;
 sepia.Intensity = 0.8f;
 ```
 
-第三，存取 `OutputImage` 屬性並呼叫 `CreateCGImage` 方法來呈現最終結果。
+第三，存取 `OutputImage` 屬性，然後呼叫 `CreateCGImage` 方法來呈現最終結果。
 
 ```csharp
 CIImage output = sepia.OutputImage;
@@ -143,16 +143,16 @@ var context = CIContext.FromOptions(null);
 var cgimage = context.CreateCGImage (output, output.Extent);
 ```
 
-最後，將影像指派給 view 以查看結果。 在真實世界的應用程式中，產生的影像可能會儲存到檔案系統、相片專輯、推文或電子郵件。
+最後，將影像指派給視圖，以查看結果。 在真實世界的應用程式中，產生的影像可能會儲存至檔案系統、相片專輯、推文或電子郵件。
 
 ```csharp
 var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-這些螢幕擷取畫面顯示 `CISepia` `CIHueAdjust` CoreImage.zip 範例程式碼中所示範之和篩選準則的結果。
+這些螢幕擷取畫面顯示 `CISepia` `CIHueAdjust` CoreImage.zip 範例程式碼中示範的和篩選結果。
 
-如需篩選準則的範例，請參閱[調整影像配方的合約和亮度](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) `CIColorControls` 。
+如需篩選的範例，請參閱 [調整影像配方的合約和亮度](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) `CIColorControls` 。
 
 ```csharp
 var uiimage = UIImage.FromFile("photo.JPG");
@@ -190,9 +190,9 @@ var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-### <a name="listing-filters-and-their-properties"></a>列出篩選器及其屬性
+### <a name="listing-filters-and-their-properties"></a>列出篩選和其屬性
 
-來自 CoreImage\SampleCode.cs 的此程式碼會輸出內建篩選準則及其參數的完整清單。
+CoreImage\SampleCode.cs 中的這個程式碼會輸出內建篩選器及其參數的完整清單。
 
 ```csharp
 var filters = CIFilter.FilterNamesInCategories(new string[0]);
@@ -208,21 +208,21 @@ foreach (var filter in filters){
 }
 ```
 
-[CIFilter 類別參考](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html)描述50內建篩選準則和其屬性。 使用上述程式碼，您可以查詢篩選準則類別，包括參數的預設值，以及允許的最大值和最小值（這可用來驗證輸入，然後再套用篩選）。
+[CIFilter 類別參考](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html)描述50內建篩選和其屬性。 您可以使用上述程式碼查詢篩選準則類別，包括參數的預設值，以及允許的最大值和最小值 (可在套用篩選) 之前用來驗證輸入。
 
-清單類別目錄輸出在模擬器上看起來像這樣，您可以在清單中滾動，以查看所有篩選和其參數。
+清單類別目錄輸出在模擬器上看起來像這樣-您可以在清單中滾動，以查看所有篩選和其參數。
 
- [![清單類別目錄輸出在模擬器上看起來像這樣](introduction-to-coreimage-images/coreimage05.png)](introduction-to-coreimage-images/coreimage05.png#lightbox)
+ [![清單類別輸出在模擬器上看起來像這樣：](introduction-to-coreimage-images/coreimage05.png)](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
-列出的每個篩選器都已公開為 Xamarin 中的類別，因此您也可以在 [元件瀏覽器] 中流覽 CoreImage API，或在 Visual Studio for Mac 或 Visual Studio 中使用自動完成功能。 
+列出的每個篩選器都會公開為在 Xamarin 中的類別，因此您也可以在元件瀏覽器中探索 CoreImage API，或在 Visual Studio for Mac 或 Visual Studio 中使用自動完成。 
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文示範如何使用一些新的 iOS 5 核心影像架構功能，例如臉部偵測，以及將篩選套用至影像。 架構中有數十種不同的影像篩選器可供您使用。
+本文顯示如何使用一些新的 iOS 5 核心影像架構功能，例如臉部偵測以及將篩選套用至映射。 架構中有數十種不同的影像篩選器可供您使用。
 
 ## <a name="related-links"></a>相關連結
 
-- [核心影像（範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/coreimage)
+- [核心映射 (範例) ](/samples/xamarin/ios-samples/coreimage)
 - [調整影像配方的合約和亮度](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
-- [使用核心影像篩選器](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
+- [使用核心影像篩選](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [CIFilter 類別參考](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

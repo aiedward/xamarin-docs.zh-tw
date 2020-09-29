@@ -7,29 +7,29 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 671b6c00a41d719a7ccb8247fd4a7bc008d91adf
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9189cfaee9c6cdebc8e269537993bc797509d9a4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031896"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435196"
 ---
 # <a name="notification-management-in-xamarinios"></a>Xamarin 中的通知管理
 
-在 iOS 12 中，作業系統可以從 [通知中心] 和 [設定] 應用程式深入連結至應用程式的 [通知管理] 畫面。 此畫面可讓使用者加入宣告或退出應用程式所傳送的各種類型通知。
+在 iOS 12 中，作業系統可以從通知中心和設定應用程式深層連結至應用程式的通知管理畫面。 此畫面應可讓使用者加入宣告並退出應用程式傳送的各種類型通知。
 
 ## <a name="sample-app-redgreennotifications"></a>範例應用程式： RedGreenNotifications
 
-若要查看通知管理如何運作的範例，請查看[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)範例應用程式。
+若要查看通知管理如何運作的範例，請查看 [RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications) 範例應用程式。
 
-這個範例應用程式會傳送兩種類型的通知–紅色和綠色–並提供螢幕，讓使用者加入宣告或退出任一種。
+此範例應用程式會傳送兩種類型的通知（紅色和綠色），並提供可讓使用者加入宣告或退出任一個類型的畫面。
 
 本指南中的程式碼片段來自此範例應用程式。
 
 ## <a name="notification-management-screen"></a>通知管理畫面
 
-在範例應用程式中，`ManageNotificationsViewController` 會定義使用者介面，讓使用者可以獨立啟用和停用紅色通知和綠色通知。 這是標準的[`UIViewController`](xref:UIKit.UIViewController)
-包含每個通知類型的[`UISwitch`](xref:UIKit.UISwitch) 。 切換任何一種通知類型的參數，在使用者預設的情況下，使用者對於該類型通知的喜好設定：
+在範例應用程式中， `ManageNotificationsViewController` 會定義使用者介面，以允許使用者獨立啟用和停用紅色通知和綠色通知。 它是標準的 [`UIViewController`](xref:UIKit.UIViewController)
+包含 [`UISwitch`](xref:UIKit.UISwitch) 每個通知類型的。 切換開關的其中一種類型的通知會儲存，使用者預設值是該類型通知的使用者喜好設定：
 
 ```csharp
 partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
@@ -39,13 +39,13 @@ partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
 ```
 
 > [!NOTE]
-> [通知管理] 畫面也會檢查使用者是否已完全停用應用程式的通知。 若是如此，它就會隱藏個別通知類型的切換。 若要這麼做，請在 [通知管理] 畫面中：
+> 通知管理畫面也會檢查使用者是否已完全停用應用程式的通知。 如果是，則會隱藏個別通知類型的切換。 若要這樣做，通知管理畫面：
 >
-> - 呼叫[`UNUserNotificationCenter.Current.GetNotificationSettingsAsync`](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync)並檢查[`AuthorizationStatus`](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus)屬性。
+> - 呼叫 [`UNUserNotificationCenter.Current.GetNotificationSettingsAsync`](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync) 並檢查 [`AuthorizationStatus`](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus) 屬性。
 > - 如果應用程式已完全停用通知，則隱藏個別通知類型的切換。
-> - 重新檢查每次應用程式移至前景時是否已停用通知，因為使用者可以隨時在 iOS 設定中啟用/停用通知。
+> - 重新檢查每次應用程式移至前景時是否已停用通知，因為使用者可以隨時啟用/停用 iOS 設定中的通知。
 
-範例應用程式的 `ViewController` 類別（會傳送通知）會先檢查使用者的喜好設定，然後再傳送本機通知，以確保通知是使用者實際想要接收的類型：
+範例應用程式的 `ViewController` 類別會傳送通知，先檢查使用者的喜好設定再傳送本機通知，以確保通知的類型是使用者實際想要接收的類型：
 
 ```csharp
 partial void HandleTapRedNotificationButton(UIButton sender)
@@ -58,16 +58,16 @@ partial void HandleTapRedNotificationButton(UIButton sender)
 
 ## <a name="deep-link"></a>深層連結
 
-iOS 深層連結：來自通知中心的代理程式更新管理畫面，以及 [設定] 應用程式的 [通知] 設定。 為了加速此動作，應用程式必須：
+iOS 深層連結至應用程式的通知管理畫面，從通知中心和應用程式在 [設定] 應用程式的通知設定。 為了加速此情況，應用程式必須：
 
-- 藉由將 `UNAuthorizationOptions.ProvidesAppNotificationSettings` 傳遞給應用程式的通知授權要求，表示有可用的通知管理畫面。
-- 從[`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)執行 `OpenSettings` 方法。
+- 藉由傳遞 `UNAuthorizationOptions.ProvidesAppNotificationSettings` 至應用程式的通知授權要求，表示有通知管理畫面可供使用。
+- 從執行 `OpenSettings` 方法 [`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate) 。
 
 ### <a name="authorization-request"></a>授權要求
 
-若要向作業系統指出 [通知管理] 畫面可供使用，應用程式應該將 [`UNAuthorizationOptions.ProvidesAppNotificationSettings`] 選項（以及所需的任何其他通知傳遞選項）傳遞至 `UNUserNotificationCenter`上的 `RequestAuthorization` 方法。
+若要向作業系統指出通知管理畫面可供使用，應用程式應該將 `UNAuthorizationOptions.ProvidesAppNotificationSettings` 選項 (連同任何其他需要) 至方法的通知傳遞選項一起傳遞 `RequestAuthorization` `UNUserNotificationCenter` 。
 
-例如，在範例應用程式的 `AppDelegate`：
+例如，在範例應用程式中 `AppDelegate` ：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -82,9 +82,9 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 
 ### <a name="opensettings-method"></a>OpenSettings 方法
 
-系統呼叫以深入連結代理程式更新管理畫面的 `OpenSettings` 方法，應直接將使用者流覽至該畫面。
+`OpenSettings`系統會呼叫此方法以深層連結至應用程式的通知管理畫面，應該直接將使用者流覽至該畫面。
 
-在範例應用程式中，這個方法會在必要時，執行 `ManageNotificationsViewController` 的 segue：
+在範例應用程式中，如果有必要，這個方法會執行 segue 至 `ManageNotificationsViewController` ：
 
 ```csharp
 [Export("userNotificationCenter:openSettingsForNotification:")]
@@ -105,9 +105,9 @@ public void OpenSettings(UNUserNotificationCenter center, UNNotification notific
 
 ## <a name="related-links"></a>相關連結
 
-- [範例應用程式-RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [範例應用程式-RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications)
 - [Xamarin 中的使用者通知架構](~/ios/platform/user-notifications/index.md)
-- [UserNotifications （Apple）](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [使用者通知的新功能（WWDC 2018）](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [最佳做法和使用者通知的新功能（WWDC 2017）](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [產生遠端通知（Apple）](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [UserNotifications (Apple) ](https://developer.apple.com/documentation/usernotifications?language=objc)
+- [使用者通知的新功能 (WWDC 2018) ](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [最佳做法和使用者通知的新功能 (WWDC 2017) ](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [ (Apple) 產生遠端通知 ](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

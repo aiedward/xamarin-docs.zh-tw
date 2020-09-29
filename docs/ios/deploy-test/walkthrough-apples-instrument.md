@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 6fa1357adc9cf2f545fbcdf3a30fef70280593bb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2458abc3363d847623a27a73626266dabe6a7a5c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938017"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437243"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>逐步解說：使用 Apple 的 Instrument 工具
 
-_本文逐步解說如何使用 Apple 的偵查工具來診斷以 Xamarin 建立的 iOS 應用程式中的記憶體問題。它會示範如何啟動檢測、採用堆積快照集，以及分析記憶體成長。它也會示範如何使用檢測來顯示及找出造成記憶體問題的確切程式程式碼。_
+_本文將逐步解說如何使用 Apple 的偵查工具來診斷以 Xamarin 建立的 iOS 應用程式中的記憶體問題。它會示範如何啟動檢測、取得堆積快照以及分析記憶體成長。它也會示範如何使用檢測來顯示及找出造成記憶體問題的確切程式程式碼。_
 
 此頁面會示範如何使用 **Xcode 的 Instruments 工具**來診斷 iOS 應用程式中的記憶體問題。
-首先，下載 [MemoryDemo 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)，並在 Visual Studio for Mac 中開啟 **before** 方案。
+首先，下載 [MemoryDemo 範例](/samples/xamarin/ios-samples/profiling-memorydemo)，並在 Visual Studio for Mac 中開啟 **before** 方案。
 
 ## <a name="diagnosing-the-memory-issues"></a>診斷記憶體問題
 
@@ -48,13 +48,13 @@ _本文逐步解說如何使用 Apple 的偵查工具來診斷以 Xamarin 建立
 12. 展開具有最大 [Growth] \(成長\)**** 的 [Generation] \(世代\)**** 節點，並依 [Growth] \(成長\)**** 排序 (遞減)。
 13. 將 [Inspector] \(檢查\)**** 窗格變更為 [Show Extended Detail] \(顯示延伸的詳細資料\)**** ("E")，如此會顯示 [Stack Trace] \(堆疊追蹤\)****。
 
-14. 請注意， ** &lt; 非物件>** 節點顯示過多的記憶體成長。 按一下此節點旁邊的箭號以查看更多詳細資料：在堆疊追蹤中按一下滑鼠右鍵，將 [Source Location] \(來源位置\)**** 新增至窗格：
+14. 請注意， ** &lt; 非物件>** 節點會顯示記憶體成長過多。 按一下此節點旁邊的箭號以查看更多詳細資料：在堆疊追蹤中按一下滑鼠右鍵，將 [Source Location] \(來源位置\)**** 新增至窗格：
 
     ![將 [Source Location] \(來源位置\) 新增至窗格](walkthrough-apples-instrument-images/03-mem-growth.png)
 
 15. 依 [Size] \(大小\)**** 排序，並顯示 [Extended Detail] \(延伸的詳細資料\)**** 檢視：
 
-    ![依大小排序並顯示延伸詳細資料檢視](walkthrough-apples-instrument-images/04-extended-detail.png)
+    ![依大小排序並顯示擴充詳細資料檢視](walkthrough-apples-instrument-images/04-extended-detail.png)
 
 16. 按一下呼叫堆疊中所需的項目，以查看相關的程式碼：
 
@@ -85,11 +85,11 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 ![顯示應用程式記憶體使用量](walkthrough-apples-instrument-images/06-reduced-memory.png)
 
-在 Visual Studio for Mac 的 **after** 方案中，會在 [MemoryDemo 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)內提供改良的程式碼。
+在 Visual Studio for Mac 的 **after** 方案中，會在 [MemoryDemo 範例](/samples/xamarin/ios-samples/profiling-memorydemo)內提供改良的程式碼。
 
 有關 [Xamarin.iOS 記憶體回收](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)的這個社群部落格在處理 Xamarin.iOS 記憶體問題方面，是一個實用的參考。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範如何使用 Instruments 來診斷記憶體問題。
 它說明如何從 Visual Studio for Mac 內啟動 Instruments、載入記憶體配置範本，並逐步使用快照鎖定記憶體問題。
@@ -97,5 +97,5 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 ## <a name="related-links"></a>相關連結
 
-- [MemoryDemo 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)
+- [MemoryDemo 範例](/samples/xamarin/ios-samples/profiling-memorydemo)
 - [Xamarin.iOS 記憶體回收 (部落格文章)](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

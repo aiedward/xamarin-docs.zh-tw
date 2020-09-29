@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 4c7ace8f2f1080126d019ed30a647ced98cbde56
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ed722cd794691e256ee90ab35d7ae524fe8ed8f3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022513"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435458"
 ---
 # <a name="installing-and-configuring-xamarinios-on-a-mac"></a>在 Mac 上安裝及設定 Xamarin.iOS
 
 > [!NOTE]
-> 本內容已移至 [docs.microsoft.com](https://docs.microsoft.com/visualstudio/mac/installation) 上的 Visual Studio for Mac 安裝指南。
+> 本內容已移至 [docs.microsoft.com](/visualstudio/mac/installation) 上的 Visual Studio for Mac 安裝指南。
 
 ## <a name="related-links"></a>相關連結
 

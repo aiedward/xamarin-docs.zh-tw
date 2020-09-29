@@ -7,36 +7,36 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 1264b28b2ee56ec5de610350a199668c67d5c33c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b7dae8afbb5db378687f9ecb9469236dc68831ae
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022095"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435496"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin 中顯示警示
 
-從 iOS 8 開始，UIAlertController 已完成取代的 UIActionSheet 和 UIAlertView，兩者現在已被取代。
+從 iOS 8 開始，UIAlertController 已完全取代 UIActionSheet 和 UIAlertView，兩者現在已被取代。
 
 不同于它所取代的類別（也就是 UIView 的子類別），UIAlertController 是 UIViewController 的子類別。
 
-使用 [`UIAlertControllerStyle`] 表示要顯示的警示類型。 這些警示類型包括：
+用 `UIAlertControllerStyle` 來指出要顯示的警示類型。 這些警示類型為：
 
 - **UIAlertControllerStyleActionSheet**
-  - 預先 iOS 8 這會是 UIActionSheet
+  - IOS 8 之前的 8 UIActionSheet
 - **UIAlertControllerStyleAlert**
-  - IOS 前8的 UIAlertView 
+  - IOS 8 之前的 8 UIAlertView 
 
-建立警示控制器時，需要採取下列三個步驟：
+建立警示控制器時需要執行三個步驟：
 
-- 使用下列方式建立和設定警示：
-  - 標題
+- 使用下列內容建立並設定警示：
+  - title
   - 訊息
   - preferredStyle
 
-- 選擇性加入文字欄位
+-  (選擇性) 新增文字欄位
 - 新增必要的動作
-- 呈現視圖控制器
+- 顯示視圖控制器
 
 最簡單的警示包含單一按鈕，如下列螢幕擷取畫面所示：
 
@@ -58,7 +58,7 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-顯示包含多個選項的警示，會以類似的方式完成，但會新增兩個動作。 例如，下列螢幕擷取畫面顯示具有兩個按鈕的警示：
+顯示具有多個選項的警示會以類似的方式完成，但會新增兩個動作。 例如，下列螢幕擷取畫面顯示具有兩個按鈕的警示：
 
  ![有兩個按鈕的警示](alerts-images/alert2.png)
 
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-警示也可以顯示動作表，類似以下的螢幕擷取畫面：
+警示也可以顯示動作表，類似于下列螢幕擷取畫面：
 
  ![動作表警示](alerts-images/alert3.png)
 
-按鈕會使用 `AddAction` 方法新增至警示：
+按鈕會使用方法新增至警示 `AddAction` ：
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>相關連結
 
-- [控制項（範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [控制項 (範例) ](/samples/xamarin/ios-samples/controls)
 - [警示控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

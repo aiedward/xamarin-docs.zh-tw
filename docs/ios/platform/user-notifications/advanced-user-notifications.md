@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: ce4614f7b21a42945a8541f2b18877e75a200f1a
-ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
+ms.openlocfilehash: c5a352ce2bdf4df5e19e49c52966c6230af1f4b2
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89052769"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435319"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin 中的 Advanced user 通知
 
@@ -254,7 +254,7 @@ namespace MonkeyChatNotifyExtension
 4. `UNNotificationExtensionCategory`使用延伸模組所屬類別的值，將索引鍵新增為類型**字串**， (在此範例中的「事件-邀請) ： 
 
     [![新增 UNNotificationExtensionCategory 金鑰](advanced-user-notifications-images/customui02.png)](advanced-user-notifications-images/customui02.png#lightbox)
-5. 儲存您的變更。
+5. 儲存變更。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -263,7 +263,7 @@ namespace MonkeyChatNotifyExtension
 3. `UNNotificationExtensionCategory`使用延伸模組所屬類別的值，將索引鍵新增為類型**字串**， (在此範例中的「事件-邀請) ： 
 
     [![新增 UNNotificationExtensionCategory 金鑰](advanced-user-notifications-images/customui02w.png)](advanced-user-notifications-images/customui02w.png#lightbox)
-4. 儲存您的變更。
+4. 儲存變更。
 
 -----
 
@@ -731,7 +731,7 @@ Server.PostEventResponse += (response) {
 
 ## <a name="related-links"></a>相關連結
 
-- [iOS 10 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [iOS 10 範例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)
 - [UserNotifications 架構參考](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
 - [本機和遠端通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html)

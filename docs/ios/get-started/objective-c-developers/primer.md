@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 451e69be771a1a3214a772f0f9afc48893a6fa8d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: acde83ee88ab17884cadd375f83efee8afb0385e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929580"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433389"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 C# Primer
 
-_Xamarin 可以讓以 c # 撰寫的平臺中立程式碼跨平臺共用。不過，現有的 iOS 應用程式可能會想要利用已建立的目標 C 程式碼。這篇文章可做為想要移至 Xamarin 和 c # 語言的目標-C 開發人員的簡短入門。_
+_Xamarin 可讓您跨平臺共用以 c # 撰寫的平臺中立程式碼。不過，現有的 iOS 應用程式可能會想要利用已建立的目標 C 程式碼。本文是針對想要移至 Xamarin 和 c # 語言的目標 C 開發人員提供的簡短入門。_
 
-在以 macOS 開發的 iOS 和應用程式可以從 Xamarin 獲益，方法是在不需要平臺特定程式碼的地方運用 c #，允許在非 Apple 裝置上使用這類程式碼。 例如 Web 服務、JSON 與 XML 剖析，以及自訂演算法等接著可以用於跨平台行為。
+以目標 C 開發的 iOS 和 macOS 應用程式，可在不需要平臺特定程式碼的情況下利用 c # 來受益于 Xamarin，讓這類程式碼可用於非 Apple 裝置。 例如 Web 服務、JSON 與 XML 剖析，以及自訂演算法等接著可以用於跨平台行為。
 
 為在維護現有 Objective-C 資產的情況化發揮 Xamarin 的優點，可以使用使用稱為繫結的 Xamarin 技術將 Xamarin 公開給 C#，這樣可讓 Objective-C 程式碼提供給受控 C# 環境。 此外，您也可以視需要將程式碼逐行移植為 C#。 不過，不論採用繫結或移植方法，必須同時熟悉 Objective-C 與 C#，才能有效地利用現有的 Objective-C 程式碼來搭配 Xamarin.iOS。
 
@@ -32,11 +32,11 @@ _Xamarin 可以讓以 c # 撰寫的平臺中立程式碼跨平臺共用。不過
 
 ## <a name="language-comparison"></a>語言比較
 
-不論是從語法的觀點或執行階段的觀點來看，Objective-C 與 C# 都是差異非常大的語言。 Objective-C 是動態語言，並使用訊息傳遞配置；C# 則是以靜態方式指定型別。 語法明智的目標-C 就像 Smalltalk，而 c # 則從 JAVA 衍生到它的基本語法，雖然它已經成熟成在過去幾年來包含 JAVA 以外的許多功能。
+不論是從語法的觀點或執行階段的觀點來看，Objective-C 與 C# 都是差異非常大的語言。 Objective-C 是動態語言，並使用訊息傳遞配置；C# 則是以靜態方式指定型別。 語法明智的目標 C 就像是 Smalltalk，而 c # 從 JAVA 衍生了許多基本語法，雖然它已成熟，在過去幾年來包含 JAVA 以外的許多功能。
 
 雖然如此，Objective-C 與 C# 有數種語言特色在功能方面都是相同的。 建立從 C# 到 Objective-C 程式碼的繫結或將 Objective-C 移植到 C# 時，了解這些相似性非常實用。
 
-### <a name="protocols-vs-interfaces"></a>通訊協定與介面的比較
+### <a name="protocols-vs-interfaces"></a>通訊協定與介面
 
 Objective-C 與 C# 都是單一繼承語言。 不過，這兩種語言都支援在給定類別中實作多個介面。 在 Objective-C 中，這些邏輯介面稱為「通訊協定」** 在 C# 中，它們稱為「介面」**。 關於在實作方面的智能，C# 介面與 Objective-C 通訊協定之間的主要差異是後者可以有選擇性方法。 如需詳細資訊，請參閱[事件、委派與通訊協定](~/ios/app-fundamentals/delegates-protocols-and-events.md)一文。
 
@@ -62,9 +62,9 @@ public static class UITextViewExtensions
 
 當擴充方法被呼叫時，該執行個體會被傳遞到引數，例如此範例中的 `textView`。
 
-### <a name="frameworks-vs-assemblies"></a>架構與元件的比較
+### <a name="frameworks-vs-assemblies"></a>架構與元件
 
-Objective-C 會將相關類別封裝在稱為架構的特殊目錄中。 不過在 C# 與 .NET 中，組件是用來提供可重複使用的預先編譯程式碼。 在 iOS 外部的環境中，組件包含中繼語言程式碼 (IL)，這在執行階段會透過 Just-In-Time (JIT) 來編譯。 不過，Apple 不允許在 App Store 上發行的 iOS 應用程式中執行 JIT 編譯程式碼。 因此，使用 Xamarin 開發且以 iOS 為目標的 C# 程式碼是預先編譯 (AOT)，這會產生單一 Unix 可執行檔，以及包含在應用程式套件組合中的中繼資料檔案。
+Objective-C 會將相關類別封裝在稱為架構的特殊目錄中。 不過在 C# 與 .NET 中，組件是用來提供可重複使用的預先編譯程式碼。 在 iOS 外部的環境中，組件包含中繼語言程式碼 (IL)，這在執行階段會透過 Just-In-Time (JIT) 來編譯。 不過，Apple 不允許在 App Store 上發行的 iOS 應用程式中執行 JIT 編譯的程式碼。 因此，使用 Xamarin 開發且以 iOS 為目標的 C# 程式碼是預先編譯 (AOT)，這會產生單一 Unix 可執行檔，以及包含在應用程式套件組合中的中繼資料檔案。
 
 ### <a name="selectors-vs-named-parameters"></a>選取器與具名引數的比較
 
@@ -143,8 +143,8 @@ Objective-C 使用「區塊」** 來建立終止 (Closure)，您可以在其中�
 };
 ```
 
-如需有關 Lambda 運算式的詳細資訊，請參閱 Microsoft 的 [C# 程式設計手冊](https://msdn.microsoft.com/library/vstudio/bb397687.aspx).
+如需有關 Lambda 運算式的詳細資訊，請參閱 Microsoft 的 [C# 程式設計手冊](/dotnet/csharp/language-reference/operators/lambda-expressions).
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 在此文章中，我們說明了 Objective-C 與 C# 中相同與相異的語言功能。 在某些案例中，我們說明了兩種語言中的類似功能，例如區塊與 Lambda 運算式，以及延伸方法的類別。 此外，我們也說明了兩種語言的相異之處，例如 C# 中的命名空間與 Static 關鍵字的意義。
