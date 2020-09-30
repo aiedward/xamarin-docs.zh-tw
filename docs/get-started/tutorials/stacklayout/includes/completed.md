@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cb03ad89c4fa7a8bed876a7210add68be06cf4a3
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.openlocfilehash: bfbe612f400681e1790b2c0b067b910fb8c3dd76
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83343389"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451356"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
@@ -23,7 +23,7 @@ ms.locfileid: "83343389"
 
 ## <a name="related-links"></a>相關連結
 
-- [StackLayoutTutorial (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-stacklayouttutorial/)
+- [StackLayoutTutorial (範例)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-stacklayouttutorial/)
 - [Xamarin.Forms StackLayout (指南)](~/xamarin-forms/user-interface/layouts/stacklayout.md)
 - [邊界和邊框距離 (指南)](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)
 - [Xamarin.Forms 中的版面配置選項 (指南)](~/xamarin-forms/user-interface/layouts/layout-options.md)

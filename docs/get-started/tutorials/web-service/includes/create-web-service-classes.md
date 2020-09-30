@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3b1603b6af5ebb5558c3cd764f41fdbe24351b9b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5fe6bab32a70c8af03bdca2151312d44fbf3834e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "68669572"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451413"
 ---
 REST 要求是使用網頁瀏覽器用來擷取頁面以及將資料傳送到伺服器的相同 HTTP 指令動詞，並透過 HTTP 提出。 在此練習中，您會建立一個類別，該類別會使用 GET 指令動詞從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取資料。 此 Web API 可用來擷取指定位置的天氣預報資料。 您需要註冊 API 金鑰，才能使用此 Web API。
 
@@ -82,7 +82,7 @@ REST 要求是使用網頁瀏覽器用來擷取頁面以及將資料傳送到伺
     此程式碼會定義四個類別，用於定型從 Web 服務擷取的 JSON 資料。 每個屬性 (property) 都會以 `JsonProperty` 屬性 (attribute) 裝飾，其中包含 JSON 欄位名稱。 Newtonsoft.Json 在將 JSON 資料還原序列化為模型物件時，會使用 JSON 欄位名稱與 CLR 屬性的這項對應。
 
     > [!NOTE]
-    > 上述類別定義已經簡化，並不會完全定型從 Web 服務擷取的 JSON 資料。 如需完整的資料模型範例，請參閱[天氣應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/weather/)範例。
+    > 上述類別定義已經簡化，並不會完全定型從 Web 服務擷取的 JSON 資料。 如需完整的資料模型範例，請參閱[天氣應用程式](/samples/xamarin/xamarin-forms-samples/weather/)範例。
 
 1. 在 [方案總管]  的 **WebServiceTutorial** 專案中，將名為 `RestService` 的新類別新增到此專案。 然後在 **RestService.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -202,7 +202,7 @@ REST 要求是使用網頁瀏覽器用來擷取頁面以及將資料傳送到伺
     此程式碼會定義四個類別，用於定型從 Web 服務擷取的 JSON 資料。 每個屬性 (property) 都會以 `JsonProperty` 屬性 (attribute) 裝飾，其中包含 JSON 欄位名稱。 Newtonsoft.Json 在將 JSON 資料還原序列化為模型物件時，會使用 JSON 欄位名稱與 CLR 屬性的這項對應。
 
     > [!NOTE]
-    > 上述類別定義已經簡化，並不會完全定型從 Web 服務擷取的 JSON 資料。 如需完整的資料模型範例，請參閱[天氣應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/weather/)範例。
+    > 上述類別定義已經簡化，並不會完全定型從 Web 服務擷取的 JSON 資料。 如需完整的資料模型範例，請參閱[天氣應用程式](/samples/xamarin/xamarin-forms-samples/weather/)範例。
 
 1. 在 [Solution Pad]  的 **WebServiceTutorial** 專案中，將名為 `RestService` 的新類別新增到此專案。 然後在 **RestService.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
