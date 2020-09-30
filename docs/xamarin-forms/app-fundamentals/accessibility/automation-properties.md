@@ -1,6 +1,6 @@
 ---
 title: 自動化屬性
-description: 本文說明如何在應用程式中使用 AutomationProperties 類別 Xamarin.Forms ，讓螢幕閱讀者可以讀出頁面上的元素。
+description: 本文說明如何在應用程式中使用 AutomationProperties 類別 Xamarin.Forms ，讓螢幕讀取器可以說出頁面上的元素。
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
@@ -10,20 +10,20 @@ ms.date: 12/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 341e1454c37d1fd20423204c95337e580eba7ecb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cadefcf4eb3fbc1c8e5c1e2545ef5f4a98eb64e7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573400"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561311"
 ---
-# <a name="automation-properties-in-xamarinforms"></a>中的自動化屬性Xamarin.Forms
+# <a name="automation-properties-in-no-locxamarinforms"></a>中的 Automation 屬性 Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
-_Xamarin 會使用 AutomationProperties 類別中的附加屬性來設定使用者介面專案上的協助工具值，而這會接著設定原生協助工具值。本文說明如何使用 AutomationProperties 類別，讓螢幕閱讀者可以讀出頁面上的元素。_
+_Xamarin.Forms 允許使用 AutomationProperties 類別中的附加屬性，在使用者介面專案上設定存取範圍值，進而設定原生協助工具值。本文說明如何使用 AutomationProperties 類別，讓螢幕讀取器可以說出頁面上的元素。_
 
-Xamarin.Forms允許透過下列附加屬性，在使用者介面元素上設定 automation 屬性：
+Xamarin.Forms 允許透過下列附加屬性，在使用者介面元素上設定 automation 屬性：
 
 - `AutomationProperties.IsInAccessibleTree` – 表示項目是否可供可存取的應用程式使用。 如需詳細資訊，請參閱 [AutomationProperties.IsInAccessibleTree](#automationpropertiesisinaccessibletree)。
 - `AutomationProperties.Name` – 作為項目可朗讀識別碼的項目簡短描述。 如需詳細資訊，請參閱 [AutomationProperties.Name](#automationpropertiesname)。
@@ -33,7 +33,7 @@ Xamarin.Forms允許透過下列附加屬性，在使用者介面元素上設定 
 這些附加屬性會設定原生協助工具值，讓螢幕助讀程式可以讀出項目。 如需附加屬性的詳細資訊，請參閱[附加屬性](~/xamarin-forms/xaml/attached-properties.md)。
 
 > [!IMPORTANT]
-> 使用 `AutomationProperties`，附加屬性可能會影響 Android 上的 UI 測試執行。 [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId)、 `AutomationProperties.Name` 和 `AutomationProperties.HelpText` 屬性會同時設定原生 `ContentDescription` 屬性， `AutomationProperties.Name` 而和 `AutomationProperties.HelpText` 屬性值的優先順序高於 `AutomationId` 值（如果同時 `AutomationProperties.Name` `AutomationProperties.HelpText` 設定和，則會串連值）。 這表示尋找 `AutomationId` 的任何測試將會失敗，如果 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 也在項目上設定的話。 在此案例中，UI 測試應該更改為尋找 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 的值，或是兩者的串連。
+> 使用 `AutomationProperties`，附加屬性可能會影響 Android 上的 UI 測試執行。 [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId)、 `AutomationProperties.Name` 和 `AutomationProperties.HelpText` 屬性都會設定原生 `ContentDescription` 屬性， `AutomationProperties.Name` 並將和 `AutomationProperties.HelpText` 屬性值的優先順序高於 `AutomationId` 值 (如果 `AutomationProperties.Name` 和 `AutomationProperties.HelpText` 都已設定，這些值將會串連) 。 這表示尋找 `AutomationId` 的任何測試將會失敗，如果 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 也在項目上設定的話。 在此案例中，UI 測試應該更改為尋找 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 的值，或是兩者的串連。
 
 每個平台都有不同的螢幕助讀程式，以敘述協助工具值：
 
@@ -67,7 +67,7 @@ AutomationProperties.SetIsInAccessibleTree(entry, true);
 ```
 
 > [!NOTE]
-> 請注意，[ `SetValue` ] （x： Xamarin.Forms 。BindableObject. SetValue （ Xamarin.Forms 。BindableProperty，System.object）方法也可以用來設定 `AutomationProperties.IsInAccessibleTree` 附加屬性–`entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
+> 請注意，[ `SetValue` ] (x： Xamarin.Forms 。BindableObject (Xamarin.Forms 。BindableProperty、System.object) # A3 方法也可以用來設定 `AutomationProperties.IsInAccessibleTree` 附加屬性– `entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
 
 ## <a name="automationpropertiesname"></a>AutomationProperties.Name
 
@@ -87,7 +87,7 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
 ```
 
 > [!NOTE]
-> 請注意，[ `SetValue` ] （x： Xamarin.Forms 。BindableObject. SetValue （ Xamarin.Forms 。BindableProperty，System.object）方法也可以用來設定 `AutomationProperties.Name` 附加屬性–`activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
+> 請注意，[ `SetValue` ] (x： Xamarin.Forms 。BindableObject (Xamarin.Forms 。BindableProperty、System.object) # A3 方法也可以用來設定 `AutomationProperties.Name` 附加屬性– `activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
 
 ## <a name="automationpropertieshelptext"></a>AutomationProperties.HelpText
 
@@ -108,13 +108,13 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 ```
 
 > [!NOTE]
-> 請注意，[ `SetValue` ] （x： Xamarin.Forms 。BindableObject. SetValue （ Xamarin.Forms 。BindableProperty，System.object）方法也可以用來設定 `AutomationProperties.HelpText` 附加屬性–`button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
+> 請注意，[ `SetValue` ] (x： Xamarin.Forms 。BindableObject (Xamarin.Forms 。BindableProperty、System.object) # A3 方法也可以用來設定 `AutomationProperties.HelpText` 附加屬性– `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
 
-在某些平臺上，針對之類的編輯控制項 [`Entry`](xref:Xamarin.Forms.Entry) ， `HelpText` 有時會省略屬性，並以預留位置文字取代。 例如，「在這裡輸入您的名稱」是屬性的理想候選，它會將 [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 文字放在控制項中的使用者實際輸入之前。
+在某些平臺上，如果是編輯控制項（例如 [`Entry`](xref:Xamarin.Forms.Entry) ），則 `HelpText` 有時可以省略屬性，並將其取代為預留位置文字。 例如，「在此輸入您的名稱」是在 [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 使用者實際輸入之前，將文字放在控制項中的屬性很好的候選。
 
 ## <a name="automationpropertieslabeledby"></a>AutomationProperties.LabeledBy
 
-`AutomationProperties.LabeledBy` 附加屬性可讓另一個項目定義目前項目的協助工具資訊。 例如，的 [`Label`](xref:Xamarin.Forms.Label) 旁邊 [`Entry`](xref:Xamarin.Forms.Entry) 可以用來描述所代表的內容 `Entry` 。 執行下列工作即可用 XAML 來達成這點：
+`AutomationProperties.LabeledBy` 附加屬性可讓另一個項目定義目前項目的協助工具資訊。 例如，的 [`Label`](xref:Xamarin.Forms.Label) 旁邊 [`Entry`](xref:Xamarin.Forms.Entry) 可以用來描述代表的內容 `Entry` 。 執行下列工作即可用 XAML 來達成這點：
 
 ```xaml
 <Label x:Name="label" Text="Enter your name: " />
@@ -132,7 +132,7 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 ```
 
 > [!NOTE]
-> 請注意，[ `SetValue` ] （x： Xamarin.Forms 。BindableObject. SetValue （ Xamarin.Forms 。BindableProperty，System.object）方法也可以用來設定 `AutomationProperties.IsInAccessibleTree` 附加屬性–`entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
+> 請注意，[ `SetValue` ] (x： Xamarin.Forms 。BindableObject (Xamarin.Forms 。BindableProperty、System.object) # A3 方法也可以用來設定 `AutomationProperties.IsInAccessibleTree` 附加屬性– `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
 
 ## <a name="accessibility-intricacies"></a>協助工具的複雜性
 
@@ -140,13 +140,13 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 ### <a name="navigationpage"></a>NavigationPage
 
-在 Android 上，若要設定螢幕閱讀程式在的動作列中，針對 [上一頁] 箭號讀取的文字 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，請 `AutomationProperties.Name` `AutomationProperties.HelpText` 在上設定和屬性 [`Page`](xref:Xamarin.Forms.Page) 。 但請注意，這對 OS [上一步] 按鈕沒有任何效果。
+在 Android 上，若要設定螢幕讀取器將在中動作列的上一頁箭號讀取的文字 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，請 `AutomationProperties.Name` `AutomationProperties.HelpText` 在上設定和屬性 [`Page`](xref:Xamarin.Forms.Page) 。 但請注意，這對 OS [上一步] 按鈕沒有任何效果。
 
 ### <a name="masterdetailpage"></a>MasterDetailPage
 
-在 iOS 和通用 Windows 平臺（UWP）上，若要設定螢幕閱讀程式會針對上的切換按鈕讀取的文字 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ，請在 `AutomationProperties.Name` `AutomationProperties.HelpText` 上 `MasterDetailPage` 或頁面的屬性上設定、和屬性 `IconImageSource` `Master` 。
+在 iOS 和通用 Windows 平臺 (UWP) 上，若要設定螢幕讀取器將在上的切換按鈕中讀取的文字，請在上 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 設定的 `AutomationProperties.Name` 、和 `AutomationProperties.HelpText` 屬性 `MasterDetailPage` ，或在 `IconImageSource` 頁面的屬性上設定 `Master` 。
 
-在 Android 上，若要設定螢幕閱讀程式將針對中的切換按鈕讀取的文字 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ，請將字串資源新增至 Android 專案：
+在 Android 上，若要設定螢幕讀取器將針對上的切換按鈕讀取的文字 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ，請將字串資源新增至 Android 專案：
 
 ```xml
 <resources>
@@ -165,7 +165,7 @@ master.IconImageSource.AutomationId = "btnMDPAutomationID";
 
 ### <a name="toolbaritem"></a>ToolbarItem
 
-在 iOS、Android 和 UWP 上， `Text` [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 如果 `AutomationProperties.Name` `AutomationProperties.HelpText` 未定義或值，螢幕閱讀程式會讀取實例的屬性值。
+在 iOS、Android 及 UWP 上， `Text` [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 如果 `AutomationProperties.Name` `AutomationProperties.HelpText` 未定義或值，螢幕讀取器將會讀取實例的屬性值。
 
 在 iOS 及 UWP 上，`AutomationProperties.Name` 屬性值會取代螢幕助讀程式所朗讀的 `Text` 屬性值。
 
@@ -174,4 +174,4 @@ master.IconImageSource.AutomationId = "btnMDPAutomationID";
 ## <a name="related-links"></a>相關連結
 
 - [附加屬性](~/xamarin-forms/xaml/attached-properties.md)
-- [Accessibility (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility) (協助工具 (範例))
+- [Accessibility (Samples)](/samples/xamarin/xamarin-forms-samples/userinterface-accessibility) (協助工具 (範例))

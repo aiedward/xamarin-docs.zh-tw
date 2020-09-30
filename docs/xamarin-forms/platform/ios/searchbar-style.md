@@ -1,6 +1,6 @@
 ---
-title: IOS 上的搜尋列樣式
-description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的來控制搜尋列是否有背景。
+title: IOS 上的 SearchBar 樣式
+description: 平臺專屬特性可讓您使用僅適用于特定平臺的功能，而不需要執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的，來控制 SearchBar 是否有背景。
 ms.prod: xamarin
 ms.assetid: 3D512DD6-078E-4BC6-926E-62BA6F4DE640
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e02ef600af761915d05c912b586e409dd6f46b85
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a9eacc76fb3da6296039a713e15c4eaa30828d44
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137081"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560958"
 ---
-# <a name="searchbar-style-on-ios"></a>IOS 上的搜尋列樣式
+# <a name="searchbar-style-on-ios"></a>IOS 上的 SearchBar 樣式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平臺專屬控制項是否 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 有背景。 它會在 XAML 中使用，方法是將可系結 `SearchBar.SearchBarStyle` 屬性設定為列舉的值 `UISearchBarStyle` ：
+這個 iOS 平臺特定的控制是否 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 有背景。 它是在 XAML 中使用，方法是將可系結 `SearchBar.SearchBarStyle` 屬性設定為 `UISearchBarStyle` 列舉值：
 
 ```xaml
 <ContentPage ...
@@ -34,7 +34,7 @@ ms.locfileid: "84137081"
 </ContentPage>
 ```
 
-或者，您也可以使用 Fluent API，從 c # 取用它：
+或者，您也可以使用流暢的 API，從 c # 中使用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -45,24 +45,24 @@ SearchBar searchBar = new SearchBar { Placeholder = "Enter search term" };
 searchBar.On<iOS>().SetSearchBarStyle(UISearchBarStyle.Minimal);
 ```
 
-`SearchBar.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 `SearchBar.SetSearchBarStyle`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 是用來控制是否 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 有背景。 `UISearchBarStyle`列舉提供三個可能的值：
+`SearchBar.On<iOS>`方法指定此平臺特定的只會在 iOS 上執行。 在 `SearchBar.SetSearchBarStyle` 命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 是用來控制是否 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 有背景。 `UISearchBarStyle`列舉提供三個可能的值：
 
-- `Default`表示 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 具有預設樣式。 這是可系結屬性的預設值 `SearchBar.SearchBarStyle` 。
-- `Prominent`表示 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 具有半透明的背景，而且搜尋欄位是不透明的。
-- `Minimal`表示沒有 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 背景，而且搜尋欄位是透明的。
+- `Default` 表示 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 具有預設樣式。 這是可系結屬性的預設值 `SearchBar.SearchBarStyle` 。
+- `Prominent` 指出 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 具有半透明背景，而且搜尋欄位是不透明的。
+- `Minimal` 指出沒有 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 背景，而且搜尋欄位是透明的。
 
 此外， `SearchBar.GetSearchBarStyle` 方法可以用來傳回套用 `UISearchBarStyle` 至的 `SearchBar` 。
 
-結果是將指定的 `UISearchBarStyle` 成員套用至 [`SearchBar`](xref:Xamarin.Forms.SearchBar) ，以控制是否 `SearchBar` 具有背景：
+結果是將指定的 `UISearchBarStyle` 成員套用至 [`SearchBar`](xref:Xamarin.Forms.SearchBar) ，以控制是否 `SearchBar` 有背景：
 
-![IOS 上搜尋列樣式的螢幕擷取畫面](searchbar-style-images/searchbar-styles.png "IOS 上的搜尋列樣式")
+![IOS 上 SearchBar 樣式的螢幕擷取畫面](searchbar-style-images/searchbar-styles.png "IOS 上的 SearchBar 樣式")
 
 下列螢幕擷取畫面顯示套用 `UISearchBarStyle` 至 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 已設定屬性之物件的成員 `BackgroundColor` ：
 
-![IOS 上具有背景色彩之搜尋列樣式的螢幕擷取畫面](searchbar-style-images/searchbar-background-styles.png "IOS 上具有背景色彩的搜尋列樣式")
+![在 iOS 上使用背景色彩 SearchBar 樣式的螢幕擷取畫面](searchbar-style-images/searchbar-background-styles.png "在 iOS 上使用背景色彩 SearchBar 樣式")
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

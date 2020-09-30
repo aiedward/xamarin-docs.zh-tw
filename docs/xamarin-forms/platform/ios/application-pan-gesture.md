@@ -1,6 +1,6 @@
 ---
-title: IOS 上的同時移動流覽手勢識別
-description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的，讓應用程式中使用同時移動流覽手勢辨識。
+title: IOS 上的同時移動流覽手勢辨識
+description: 平臺專屬特性可讓您使用僅適用于特定平臺的功能，而不需要執行自訂轉譯器或效果。 本文說明如何使用可讓您在應用程式中使用同時平移手勢辨識的 iOS 平臺特定。
 ms.prod: xamarin
 ms.assetid: 883D89DA-F8FF-4B97-9C3F-2DD05C96A495
 ms.technology: xamarin-forms
@@ -10,20 +10,20 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 125685150243ba8e8099cbfbdfec90e5a0b4d6b7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5bea8b58d8b80ced97856fc7c981afdd5c2102a7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138574"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562401"
 ---
-# <a name="simultaneous-pan-gesture-recognition-on-ios"></a>IOS 上的同時移動流覽手勢識別
+# <a name="simultaneous-pan-gesture-recognition-on-ios"></a>IOS 上的同時移動流覽手勢辨識
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-當 [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) 連接到捲軸內部的視圖時，所有的平移手勢都會由捕捉， `PanGestureRecognizer` 而且不會傳遞至 [捲軸] 視圖。 因此，捲軸不會再滾動。
+當 [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) 連接到滾動圖內的視圖時，所有的平移手勢都是由所捕捉， `PanGestureRecognizer` 而且不會傳遞到捲軸。 因此，[滾動] 視圖將不再滾動。
 
-這個 iOS 平臺特有的可讓 `PanGestureRecognizer` 在 [滾動] 視圖中，使用 [滾動] 視圖來捕捉和共用平移手勢。 它會在 XAML 中使用，方法是將 [`Application.PanGestureRecognizerShouldRecognizeSimultaneously`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty) 附加屬性設定為 `true` ：
+此 iOS 平臺特定可讓 `PanGestureRecognizer` 在滾動視圖中使用捲軸來捕捉和共用平移手勢。 它是在 XAML 中使用，方法是將 [`Application.PanGestureRecognizerShouldRecognizeSimultaneously`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty) 附加屬性設定為 `true` ：
 
 ```xaml
 <Application ...
@@ -33,7 +33,7 @@ ms.locfileid: "84138574"
 </Application>
 ```
 
-或者，您也可以使用 Fluent API，從 c # 取用它：
+或者，您也可以使用流暢的 API，從 c # 中使用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -43,12 +43,12 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
 ```
 
-`Application.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ] （X： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. SetPanGestureRecognizerShouldRecognizeSimultaneously （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。Application}，system.string）方法（在命名空間中） [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 是用來控制捲軸中的移動流覽手勢辨識器是否將捕捉平移手勢，或使用捲軸來捕捉和共用平移手勢。 此外，[ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. GetPanGestureRecognizerShouldRecognizeSimultaneously （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。應用程式}））方法，可以用來傳回移動流覽筆勢是否與包含的捲軸共用 [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) 。
+`Application.On<iOS>`方法指定此平臺特定的只會在 iOS 上執行。 [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. SetPanGestureRecognizerShouldRecognizeSimultaneously (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Application}、system.string) # A3 方法（在 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 命名空間中）是用來控制捲軸中的平移手勢辨識器是否會捕捉移動流覽手勢，或使用捲軸來捕捉和共用平移手勢。 此外，[ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. GetPanGestureRecognizerShouldRecognizeSimultaneously (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Application} ) # A3 方法可以用來傳回是否與包含的滾動視圖共用平移手勢 [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) 。
 
-因此，在已啟用此平臺特定的情況下，當 [`ListView`](xref:Xamarin.Forms.ListView) 包含時 [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) ， `ListView` 和 `PanGestureRecognizer` 都會接收平移手勢並加以處理。 不過，在此平臺特定的停用情況下，當包含時， `ListView` `PanGestureRecognizer` `PanGestureRecognizer` 將會捕捉移動流覽手勢並加以處理，而且 `ListView` 不會接收平移手勢。
+因此，在此平臺特定啟用的情況下，當包含時， [`ListView`](xref:Xamarin.Forms.ListView) [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) `ListView` 和 `PanGestureRecognizer` 都會接收平移手勢並進行處理。 不過，使用此平臺特定的停用時，當包含時， `ListView` `PanGestureRecognizer` 會捕捉移動流覽 `PanGestureRecognizer` 手勢並加以處理，而不會接收移動流覽 `ListView` 手勢。
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

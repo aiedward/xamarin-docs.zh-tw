@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms基本系結
+title: Xamarin.Forms 基本系結
 description: 本文說明如何使用資料系 Xamarin.Forms 結，這會連結兩個物件之間的一組屬性，其中至少一個通常是使用者介面物件。 這兩個物件稱為目標和來源。
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
@@ -11,18 +11,18 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9bedde64f0eda233c289cb31296854b5cbca54a1
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133519"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561114"
 ---
-# <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms基本系結
+# <a name="no-locxamarinforms-basic-bindings"></a>Xamarin.Forms 基本系結
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Xamarin.Forms資料系結會連結兩個物件之間的一組屬性，其中至少一個通常是使用者介面物件。 這兩個物件稱為「目標」** 和「來源」**：
+Xamarin.Forms資料系結會連結兩個物件之間的一組屬性，至少其中一個物件通常是使用者介面物件。 這兩個物件稱為「目標」** 和「來源」**：
 
 - 「目標」** 是資料繫結設定所在的物件 (和屬性)。
 - 「來源」** 是資料繫結參考的物件 (和屬性)。
@@ -56,14 +56,14 @@ Xamarin.Forms資料系結會連結兩個物件之間的一組屬性，其中至�
 
 如果沒有資料繫結，您會將 `Slider` 的 `ValueChanged` 事件設定為事件處理常式，以存取 `Slider` 的 `Value` 屬性，並將該值設定為 `Label` 的 `Rotation` 屬性。 資料繫結會自動執行該作業；已不再需要事件處理常式和其內的程式碼。
 
-您可以在衍生自的任何類別實例上設定系結 [`BindableObject`](xref:Xamarin.Forms.BindableObject) ，其中包括 `Element` 、 `VisualElement` 、 `View` 和衍生項 `View` 。  繫結一律會在目標物件上設定。 繫結會參考來源物件。 若要設定資料繫結，請使用目標類別的下列兩個成員：
+您可以在衍生自之任何類別的實例上設定系結 [`BindableObject`](xref:Xamarin.Forms.BindableObject) ，其中包括 `Element` 、 `VisualElement` 、 `View` 和 `View` 衍生。  繫結一律會在目標物件上設定。 繫結會參考來源物件。 若要設定資料繫結，請使用目標類別的下列兩個成員：
 
 - [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)屬性會指定來源物件。
-- [ `SetBinding` ] （X： Xamarin.Forms 。BindableObject. SetBinding （ Xamarin.Forms 。BindableProperty， Xamarin.Forms 。System.windows.data.bindingbase.delay））方法指定目標屬性和來源屬性。
+- [ `SetBinding` ] (x： Xamarin.Forms 。BindableObject. SetBinding (Xamarin.Forms 。BindableProperty， Xamarin.Forms 。System.windows.data.bindingbase.delay) # A3 方法會指定目標屬性和來源屬性。
 
 在此範例中，`Label` 是繫結目標，而 `Slider` 是繫結來源。 `Slider` 來源中的變更會影響 `Label` 目標的旋轉。 資料會從來源流向目標。
 
-所 `SetBinding` 定義的方法 `BindableObject` 具有類別衍生自的型別引數 [`BindingBase`](xref:Xamarin.Forms.BindingBase) [`Binding`](xref:Xamarin.Forms.Binding) ，但也有類別所 `SetBinding` 定義的其他方法 [`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions) 。 **基本程式碼繫結**範例中的程式碼後置檔案，使用來自此類別的較簡單 [`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) 延伸模組方法。
+`SetBinding`由定義的方法 `BindableObject` 具有 [`BindingBase`](xref:Xamarin.Forms.BindingBase) 類別所衍生類型的引數 [`Binding`](xref:Xamarin.Forms.Binding) ，但 `SetBinding` 類別會定義其他方法 [`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions) 。 **基本程式碼繫結**範例中的程式碼後置檔案，使用來自此類別的較簡單 [`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) 延伸模組方法。
 
 ```csharp
 public partial class BasicCodeBindingPage : ContentPage
@@ -129,7 +129,7 @@ label.SetBinding(RotationProperty, "Value");
 - 需要 `x:Reference` 標記延伸才能參考來源物件，也就是名為 `slider`的 `Slider`。
 - `Binding` 標記延伸會將 `Label` 的 `Rotation` 屬性連結至 `Slider` 的 `Value` 屬性。
 
-如需 XAML 標記延伸的詳細資訊，請參閱 [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)。 `x:Reference`類別支援標記延伸， [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) `Binding` [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) 類別支援。 隨著 XML 命名空間前置詞的指示， `x:Reference` 是 XAML 2009 規格的一部分，而 `Binding` 是的一部分 Xamarin.Forms 。 請注意，在大括弧內沒有出現引號。
+如需 XAML 標記延伸的詳細資訊，請參閱 [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)。 `x:Reference`類別支援標記延伸 [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) ; `Binding` [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) 類別支援。 當 XML 命名空間前置詞指出時， `x:Reference` 是 XAML 2009 規格的一部分，而 `Binding` 是的一部分 Xamarin.Forms 。 請注意，在大括弧內沒有出現引號。
 
 在設定 `BindingContext` 時，很容易就會忘記 `x:Reference` 標記延伸。 通常會錯誤地將屬性直接設定為如下的繫結來源名稱：
 
@@ -139,7 +139,7 @@ BindingContext="slider"
 
 但那是不對的。 該標記會將 `BindingContext` 屬性設定為 `string` 物件，其字元拼起來是 "slider"！
 
-請注意，source 屬性是使用的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 屬性所指定 `BindingExtension` ，它會對應至 [`Path`](xref:Xamarin.Forms.Binding.Path) 類別的屬性 [`Binding`](xref:Xamarin.Forms.Binding) 。
+請注意，source 屬性是使用的屬性來指定的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) `BindingExtension` ，它會對應至 [`Path`](xref:Xamarin.Forms.Binding.Path) 類別的屬性 [`Binding`](xref:Xamarin.Forms.Binding) 。
 
 [基本 XAML 繫結]**** 頁面上所顯示的標記可以簡化：XAML 標記延伸，例如 `x:Reference` 和 `Binding` 可以定義「內容屬性」** 屬性，這對於 XAML 標記延伸表示屬性名稱不需要出現。 `Name` 屬性是 `x:Reference` 的內容屬性，而 `Path` 屬性是 `Binding` 的內容屬性，這表示它們可以從運算式排除：
 
@@ -178,7 +178,7 @@ BindingContext="slider"
 </ContentPage>
 ```
 
-程式碼後置檔案會將系結設定為 [ `SetBinding` ] （x： Xamarin.Forms 。BindableObject. SetBinding （ Xamarin.Forms 。BindableProperty， Xamarin.Forms 。System.windows.data.bindingbase.delay））方法所定義 `BindableObject` 。 引數是一個 [構造函式] （x： Xamarin.Forms 。Binding .% 23ctor （ Xamarin.Forms system.string，）。BindingMode， Xamarin.Forms 。IValueConverter，系統物件，System.string，System.object），適用于 [`Binding`](xref:Xamarin.Forms.Binding) 類別：
+程式碼後端檔案會使用 [ `SetBinding` ] (x：來設定系結 Xamarin.Forms 。BindableObject. SetBinding (Xamarin.Forms 。BindableProperty， Xamarin.Forms 。System.windows.data.bindingbase.delay) # A3 方法定義 `BindableObject` 。 引數是 [函式] (x： Xamarin.Forms 。Binding .% 23ctor (System.string， Xamarin.Forms 。BindingMode， Xamarin.Forms 。類別的 IValueConverter、System.object、System.string、System.object) # A3 [`Binding`](xref:Xamarin.Forms.Binding) ：
 
 ```csharp
 public partial class AlternativeCodeBindingPage : ContentPage
@@ -200,12 +200,12 @@ public partial class AlternativeCodeBindingPage : ContentPage
 
 左側的 iOS 畫面會顯示頁面第一次出現時的螢幕外觀。 `Label` 在哪裡？
 
-問題在於 `Slider` 初始值為 0。 這會導致 `Label` 的 `Scale` 屬性也設定為 0，覆寫其預設值 1。 這導致一開始看不到 `Label`。 如 Android 螢幕擷取畫面所示，您可以操作， `Slider` 讓 `Label` 再次出現，但其初始消失是令人不安。
+問題在於 `Slider` 初始值為 0。 這會導致 `Label` 的 `Scale` 屬性也設定為 0，覆寫其預設值 1。 這導致一開始看不到 `Label`。 如 Android 螢幕擷取畫面所示，您可以操作 `Slider` 來讓 `Label` 再次出現，但其初始消失是令人不安。
 
 您將在[下一篇文章](binding-mode.md)中發現如何藉由從 `Scale` 屬性的預設值初始化 `Slider` 來避免這個問題。
 
 > [!NOTE]
-> [`VisualElement`](xref:Xamarin.Forms.VisualElement)類別也會定義 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) 和 [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 屬性，可以 `VisualElement` 在水準和垂直方向以不同的方式調整。
+> [`VisualElement`](xref:Xamarin.Forms.VisualElement)類別也會定義 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) 和 [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 屬性，以 `VisualElement` 水準和垂直方向來調整不同的大小。
 
 [替代 XAML 繫結]**** 頁面會顯示完全使用 XAML 的相等繫結：
 
@@ -334,7 +334,7 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 ## <a name="related-links"></a>相關連結
 
-- [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
+- [Data Binding Demos (Samples)](/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
 - [書籍中的資料系結章節 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 
 ## <a name="related-video"></a>相關影片

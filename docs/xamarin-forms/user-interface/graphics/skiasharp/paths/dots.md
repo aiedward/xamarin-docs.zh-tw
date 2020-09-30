@@ -1,6 +1,6 @@
 ---
 title: SkiaSharp 中的點和虛線
-description: 本文將探討如何在 SkiaSharp 中，以複雜的方式繪製虛線和虛線，並使用範例程式碼示範這點。
+description: 本文將探討如何在 SkiaSharp 中，以複雜的方式繪製虛線和虛線，並使用範例程式碼來示範這一點。
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
 ms.technology: xamarin-skiasharp
@@ -10,32 +10,32 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 47182578a6583dde34cb7f06e3433cdb2703f6ba
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5064a53b140c26acdc5149f5495cc002e657a9b0
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937676"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564000"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>SkiaSharp 中的點和虛線
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_掌握在 SkiaSharp 中繪製虛線和虛線的複雜性_
+_在 SkiaSharp 中以複雜的方式繪製虛線和虛線_
 
-SkiaSharp 可讓您繪製不是實心的線條，而是由點和虛線組成：
+SkiaSharp 可讓您繪製非實線的線條，而不是由點和虛線組成：
 
-![點線](dots-images/dottedlinesample.png)
+![虛線](dots-images/dottedlinesample.png)
 
-您可以使用*路徑效果*來執行此動作，這是 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 您設定為之屬性的類別實例 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 您可以使用所定義的其中一個靜態建立方法來建立路徑效果（或結合路徑效果） `SKPathEffect` 。 （ `SKPathEffect` 這是 SkiaSharp 所支援的六種效果之一; 其他則會在[**SkiaSharp 效果**](../effects/index.md)一節中說明）。
+您可以使用 *路徑效果*來完成這項作業，這是 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 您設定為屬性之類別的實例 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 您可以使用所定義的其中一個靜態建立方法， (或合併路徑效果) 來建立路徑效果 `SKPathEffect` 。  (`SKPathEffect` 是 SkiaSharp 所支援的六個效果之一; 其他則在 [**SkiaSharp 效果**](../effects/index.md)一節中說明。 ) 
 
-若要繪製點線或虛線，請使用 [`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) 靜態方法。 有兩個引數：第一個是值的陣列 `float` ，指出點和虛線的長度，以及它們之間的空格長度。 這個陣列必須有偶數的元素，而且應該至少有兩個元素。 （陣列中可以有零個元素，但這會導致實線）。如果有兩個元素，第一個是點或虛線的長度，而第二個是下一個點或虛線之前的間距長度。 如果有兩個以上的元素，則其順序如下：破折號長度、間距長度、破折號長度、間距長度等等。
+若要繪製虛線或虛線，請使用 [`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) 靜態方法。 有兩個引數：第一個是值的陣列 `float` ，表示點和連字號的長度，以及兩者之間的空格長度。 這個陣列必須有偶數的元素，而且至少要有兩個元素。  (陣列中可以有零個元素，但這會產生實線。 ) 如果有兩個元素，則第一個是點或虛線的長度，而第二個是下一個點或虛線之前的間距長度。 如果有兩個以上的元素，則會依下列順序排列：虛線長度、間隙長度、虛線長度、間隙長度等等。
 
-一般來說，您會想要讓虛線和間距長度成為筆劃寬度的倍數。 例如，如果筆觸寬度為10圖元，則陣列 {10，10} 會繪製虛線，其中的點和間距會與筆觸粗細的長度相同。
+一般而言，您會想要讓虛線和間隙長度成為筆劃寬度的倍數。 例如，如果筆劃寬度為10圖元，則陣列 {10，10} 會繪製虛線，其中的點和間距與筆觸粗細的長度相同。
 
-不過， `StrokeCap` 物件的設定 `SKPaint` 也會影響這些點和虛線。 您很快就會看到，這會影響此陣列的元素。
+但是， `StrokeCap` 物件的設定 `SKPaint` 也會影響這些點和虛線。 您很快就會看到這個陣列的元素有何影響。
 
-**點**和虛線頁面上會示範點線和虛線。 [**DotsAndDashesPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)會具現化兩個 `Picker` 視圖，一個用於讓您選取筆觸端點，而第二個則用來選取虛線陣列：
+**點**和虛線頁面上會示範點線和虛線。 [**DotsAndDashesPage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)檔案會具現化兩個 `Picker` 視圖，一個是讓您選取筆觸帽，而第二個則是選取虛線陣列：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -101,9 +101,9 @@ SkiaSharp 可讓您繪製不是實心的線條，而是由點和虛線組成：
 </ContentPage>
 ```
 
- 中的前三個專案 `dashArrayPicker` 假設筆劃寬度為10圖元。 {10，10} 陣列適用于虛線，{30，10} 適用于虛線，而 {10，10，30，10} 則適用于點和虛線。 （很快就會討論其他三個）。
+ 中的前三個專案 `dashArrayPicker` 假設筆劃寬度為10圖元。 {10，10} 陣列適用于虛線，{30，10} 適用于虛線，而 {10，10，30，10} 則適用于點線和虛線。  (稍後將討論其他三項。 ) 
 
-[`DotsAndDashesPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml.cs)程式碼後置檔案包含 `PaintSurface` 事件處理常式，以及用來存取 views 的幾個 helper 常式 `Picker` ：
+[`DotsAndDashesPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml.cs)程式碼後端檔案包含 `PaintSurface` 事件處理常式，以及用來存取 views 的一些 helper 常式 `Picker` ：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -151,23 +151,23 @@ float[] GetPickerArray(Picker picker)
 }
 ```
 
-在下列螢幕擷取畫面中，最左側的 iOS 畫面會顯示虛線：
+在以下螢幕擷取畫面中，最左邊的 iOS 畫面會顯示虛線：
 
 [![點和虛線頁面的三重螢幕擷取畫面](dots-images/dotsanddashes-small.png)](dots-images/dotsanddashes-large.png#lightbox "點和虛線頁面的三重螢幕擷取畫面")
 
-不過，Android 螢幕也應該會使用陣列 {10，10} 顯示虛線，而線條則是實線。 發生什麼事？ 問題在於 Android 螢幕也有的 [筆觸] 上限設定 `Square` 。 這會將所有的虛線以筆劃寬度的一半延伸，使其填滿間距。
+不過，Android 畫面也應該使用陣列 {10，10} 來顯示虛線，但線條是實心。 發生什麼事？ 問題在於 Android 螢幕也有的筆觸帽設定 `Square` 。 這會將所有的連字號延伸至筆劃寬度的一半，使其填滿間距。
 
-若要在使用或的筆劃端點時遇到此 `Square` 問題 `Round` ，您必須以筆劃長度減少陣列中的虛線長度（有時候會產生0的虛線長度），並依筆劃長度增加間距長度。 這是 XAML 檔案中最後三個虛線陣列的 `Picker` 計算方式：
+若要在使用或的筆劃端點時解決此 `Square` 問題 `Round` ，您必須將陣列中的虛線長度減少為筆劃長度， (有時會導致虛線長度為 0) ，並依筆劃長度增加間距長度。 以下是 XAML 檔案中最後三個虛線陣列的 `Picker` 計算方式：
 
-- {10，10} 變成點線的 {0，20}
-- {30，10} 變成一條虛線的 {20，20}
-- {10，10，30，10} 變成點和虛線的 {0，20，20，20}
+- {10，10} 會變成點線的 {0，20}
+- {30，10} 變成虛線的 {20，20}
+- {10，10，30，10} 會變成點線和虛線的 {0、20、20、20}
 
-UWP 畫面會針對的筆劃端點顯示虛線和虛線 `Round` 。 `Round`筆劃端點通常會在粗線中提供點和虛線的最佳外觀。
+UWP 畫面會顯示筆劃端點的點線和虛線 `Round` 。 `Round`筆劃端點通常會在粗線中提供點和虛線的最佳外觀。
 
-到目前為止，此方法的第二個參數並未提及 `SKPathEffect.CreateDash` 。 這個參數的名稱是 `phase` ，它是指行開頭的點和虛線模式中的位移。 例如，如果虛線陣列是 {10，10}，而 `phase` 是10，則行的開頭會是間距，而不是點。
+到目前為止，方法的第二個參數沒有提及 `SKPathEffect.CreateDash` 。 這個參數的名稱是 `phase` ，它是該行開頭的點和虛線模式內的位移。 例如，如果虛線陣列是 {10，10} 且 `phase` 為10，則該行的開頭會是間距而非點。
 
-有一個有趣的參數應用程式 `phase` 是在動畫中。 **動畫的螺旋狀**頁面類似于**Archimedean 螺旋**頁面，不同之處在于 [`AnimatedSpiralPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs) 類別會使用方法來繪製參數的動畫 `phase` Xamarin.Forms `Device.Timer` ：
+其中一個有趣的參數應用程式 `phase` 是在動畫中。 **動畫的螺旋線**頁面類似于**Archimedean 螺旋線**頁面，不同之處在于 [`AnimatedSpiralPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs) 類別會使用方法以動畫顯示 `phase` 參數 Xamarin.Forms `Device.Timer` ：
 
 ```csharp
 public class AnimatedSpiralPage : ContentPage
@@ -212,11 +212,11 @@ public class AnimatedSpiralPage : ContentPage
 }
 ```
 
-當然，您必須實際執行程式來查看動畫：
+當然，您必須實際執行程式才能看到動畫：
 
-[![動畫螺旋頁面的三重螢幕擷取畫面](dots-images/animatedspiral-small.png)](dots-images/animatedspiral-large.png#lightbox "動畫螺旋頁面的三重螢幕擷取畫面")
+[![動畫螺旋線頁面的三重螢幕擷取畫面](dots-images/animatedspiral-small.png)](dots-images/animatedspiral-large.png#lightbox "動畫螺旋線頁面的三重螢幕擷取畫面")
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (範例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

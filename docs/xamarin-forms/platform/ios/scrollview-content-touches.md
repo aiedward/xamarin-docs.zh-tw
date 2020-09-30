@@ -1,6 +1,6 @@
 ---
-title: IOS 上的 ScrollView 內容潤色
-description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的來控制 ScrollView 是否處理觸控手勢，或將其傳遞至其內容。
+title: IOS 上的 ScrollView 內容觸控
+description: 平臺專屬特性可讓您使用僅適用于特定平臺的功能，而不需要執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的，以控制 ScrollView 是否處理觸控手勢，或將其傳遞至其內容。
 ms.prod: xamarin
 ms.assetid: 99F823DB-B379-40F0-A343-A9783C341120
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1161600ad9b587c30ef28be1828fdb9e3b94f665
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 128d7271175846f415aa115c377bad0e0e2adaf5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938550"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563961"
 ---
-# <a name="scrollview-content-touches-on-ios"></a>IOS 上的 ScrollView 內容潤色
+# <a name="scrollview-content-touches-on-ios"></a>IOS 上的 ScrollView 內容觸控
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-當觸控筆勢在 iOS 上開始時，會觸發隱含計時器， [`ScrollView`](xref:Xamarin.Forms.ScrollView) 並 `ScrollView` 根據計時器範圍內的使用者動作決定是否應處理手勢，或將其傳遞至其內容。 根據預設，iOS 會 `ScrollView` 延遲內容的觸控，但在某些情況下，這可能會造成問題，而 `ScrollView` 內容不會在發生時獲勝。 因此，此平臺特定會控制是否 `ScrollView` 處理觸控手勢，或將其傳遞至其內容。 它會在 XAML 中使用，方法是將 `ScrollView.ShouldDelayContentTouches` 附加屬性設定為 `boolean` 值：
+當觸控手勢于 iOS 上開始時，會觸發隱含計時器， [`ScrollView`](xref:Xamarin.Forms.ScrollView) 並 `ScrollView` 根據計時器範圍內的使用者動作，決定是否應該處理手勢或將其傳遞至其內容。 根據預設，iOS 會 `ScrollView` 延遲內容的內容，但在某些情況下可能會造成問題，但在某些情況下，內容不會在應該的情況下 `ScrollView` 贏得手勢。 因此，此平臺特定會控制是否 `ScrollView` 處理觸控手勢，或將其傳遞至其內容。 它是在 XAML 中使用，方法是將 `ScrollView.ShouldDelayContentTouches` 附加屬性設定為 `boolean` 值：
 
 ```xaml
 <MasterDetailPage ...
@@ -42,7 +42,7 @@ ms.locfileid: "86938550"
 </MasterDetailPage>
 ```
 
-或者，您也可以使用 Fluent API，從 c # 取用它：
+或者，您也可以使用流暢的 API，從 c # 中使用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -52,7 +52,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 scrollView.On<iOS>().SetShouldDelayContentTouches(false);
 ```
 
-`ScrollView.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 `ScrollView.SetShouldDelayContentTouches`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 可用來控制是否 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 處理觸控手勢，或將它傳遞至其內容。 此外， `SetShouldDelayContentTouches` 方法可以藉由呼叫 `ShouldDelayContentTouches` 方法，以傳回是否延遲內容的觸控，來切換延遲內容的觸控：
+`ScrollView.On<iOS>`方法指定此平臺特定的只會在 iOS 上執行。 `ScrollView.SetShouldDelayContentTouches`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 是用來控制是否 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 處理觸控手勢，或將其傳遞至其內容。 此外， `SetShouldDelayContentTouches` 方法可以藉由呼叫 `ShouldDelayContentTouches` 方法來傳回是否延遲內容，來切換延遲的內容觸控：
 
 ```csharp
 scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDelayContentTouches());
@@ -64,6 +64,6 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

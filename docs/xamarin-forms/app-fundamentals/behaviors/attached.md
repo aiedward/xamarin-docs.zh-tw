@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 55c987ab9f9a95eaeacf648af11c3518a1c27c2a
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: 6c8c43a877a102d9e16070da00813b00e7ef1c38
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964645"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561361"
 ---
 # <a name="attached-behaviors"></a>附加的行為
 
@@ -128,10 +128,10 @@ NumericValidationBehavior.SetAttachBehavior (entry, false);
 
 在執行階段，當 `AttachBehavior` 附加屬性的值設定為 `false` 時，將會執行 `OnAttachBehaviorChanged` 方法。 `OnAttachBehaviorChanged`方法會接著取消註冊事件的事件處理常式，以 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 確保當使用者與控制項互動時，不會執行此行為。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範了如何建立和使用附加的行為。 附加的行為是具有一或多個附加屬性的 `static` 類別。
 
 ## <a name="related-links"></a>相關連結
 
-- [Attached Behaviors (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior) (附加的行為 (範例))
+- [Attached Behaviors (Samples)](/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior) (附加的行為 (範例))

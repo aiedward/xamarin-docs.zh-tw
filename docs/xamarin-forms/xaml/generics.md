@@ -1,6 +1,6 @@
 ---
 title: XAML 中的泛型 Xamarin.Forms
-description: Xamarin.FormsXAML 藉由將泛型條件約束指定為類型引數，來提供取用泛型 CLR 類型的支援。
+description: Xamarin.Forms XAML 藉由指定泛型條件約束做為型別引數，提供使用泛型 CLR 型別的支援。
 ms.prod: xamarin
 ms.assetid: 97B73048-4F90-41AD-AB48-8EB804C4998B
 ms.technology: xamarin-forms
@@ -10,32 +10,32 @@ ms.date: 04/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5a033e5feeefc41b97be29491a70632e767aa1b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e6856e0ef513905a6300dcaf661ea33f4a89852c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565196"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563909"
 ---
-# <a name="generics-in-xamarinforms-xaml"></a>XAML 中的泛型 Xamarin.Forms
+# <a name="generics-in-no-locxamarinforms-xaml"></a>XAML 中的泛型 Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 
-Xamarin.FormsXAML 藉由將泛型條件約束指定為類型引數，來提供取用泛型 CLR 類型的支援。 這項支援是由指示詞所提供，該指示詞會將 `x:TypeArguments` 泛型的條件約束類型引數傳遞至泛型型別的函式。
+Xamarin.Forms XAML 藉由指定泛型條件約束做為型別引數，提供使用泛型 CLR 型別的支援。 這項支援是由指示詞提供，此指示詞會將 `x:TypeArguments` 泛型的條件約束類型引數傳遞至泛型型別的函式。
 
 > [!IMPORTANT]
 > 不支援使用指示詞在 XAML 中定義泛型類別 Xamarin.Forms `x:TypeArguments` 。
 
-型別引數會指定為字串，而且通常會加上前置詞，例如 `sys:String` 和 `sys:Int32` 。 必須加上前置項，因為一般的 CLR 泛型條件約束類型來自未對應至預設命名空間的程式庫 Xamarin.Forms 。 不過，XAML 2009 內建類型（例如 `x:String` 和 `x:Int32` ）也可以指定為類型引數，其中 `x` 是 XAML 2009 的 xaml 語言命名空間。 如需 XAML 2009 內建類型的詳細資訊，請參閱[xaml 2009 語言基本](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)專案。
+型別引數會指定為字串，而且通常會加上前置詞，例如 `sys:String` 和 `sys:Int32` 。 因為 CLR 泛型條件約束的一般類型是來自未對應至預設命名空間的程式庫，所以必須加上首碼 Xamarin.Forms 。 不過，XAML 2009 內建類型（例如 `x:String` 和 `x:Int32` ）也可以指定為類型引數，其中 `x` 是 XAML 2009 的 xaml 語言命名空間。 如需 XAML 2009 內建類型的詳細資訊，請參閱 [xaml 2009 語言基本](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)類型。
 
-您可以使用逗號分隔符號來指定多個類型引數。 此外，如果泛型條件約束使用泛型型別，則嵌套的條件約束類型引數應該包含在括弧中。
+您可以使用逗號分隔符號來指定多個類型引數。 此外，如果泛型條件約束使用泛型型別，則應該將嵌套的條件約束型別引數包含在括弧內。
 
 > [!NOTE]
-> `x:Type`標記延伸模組會提供泛型型別的 CLR 類型參考，並 `typeof` 在 c # 中具有與運算子類似的功能。 如需詳細資訊，請參閱[x:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)。
+> `x:Type`標記延伸模組會提供泛型型別的 CLR 型別參考，且 `typeof` 在 c # 中具有與運算子類似的函式。 如需詳細資訊，請參閱 [x:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)。
 
 ## <a name="single-primitive-type-argument"></a>單一基本類型引數
 
-您可以使用指示詞，將單一基本類型引數指定為前置字串引數 `x:TypeArguments` ：
+您可以使用指示詞，將單一基本類型引數指定為首碼字串引數 `x:TypeArguments` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -58,9 +58,9 @@ Xamarin.FormsXAML 藉由將泛型條件約束指定為類型引數，來提供�
 </ContentPage>
 ```
 
-在此範例中， `System.Collections.Generic` 會定義為 `scg` XAML 命名空間。 `CollectionView.ItemsSource`屬性會 `List<T>` `string` 使用 XAML 2009 內建類型，設定為以類型引數具現化的 `x:String` 。 `List<string>`集合會使用多個專案進行初始化 `string` 。
+在此範例中， `System.Collections.Generic` 會定義為 `scg` XAML 命名空間。 `CollectionView.ItemsSource`屬性會設定為，其 `List<T>` `string` 使用型別引數具現化，並使用 XAML 2009 內建 `x:String` 類型。 `List<string>`集合會以多個 `string` 專案初始化。
 
-或者，您也 `List<T>` 可以使用 CLR 類型來具現化集合 `String` ：
+或者，您也 `List<T>` 可以使用 CLR 型別來具現化集合 `String` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -86,7 +86,7 @@ Xamarin.FormsXAML 藉由將泛型條件約束指定為類型引數，來提供�
 
 ## <a name="single-object-type-argument"></a>單一物件類型引數
 
-您可以使用指示詞，將單一物件類型引數指定為前置字串引數 `x:TypeArguments` ：
+您可以使用指示詞，將單一物件類型引數指定為首碼字串引數 `x:TypeArguments` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -139,11 +139,11 @@ Xamarin.FormsXAML 藉由將泛型條件約束指定為類型引數，來提供�
 </ContentPage>
 ```
 
-在此範例中， `GenericsDemo.Models` 會定義為 `models` xaml 命名空間，並 `System.Collections.Generic` 定義為 `scg` xaml 命名空間。 `CollectionView.ItemsSource`屬性會設定為以 `List<T>` 類型引數具現化的 `Monkey` 。 `List<Monkey>`集合會使用多個專案進行初始化 `Monkey` ，而 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定義每個物件外觀的會 `Monkey` 設定為 `ItemTemplate` 的 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。
+在此範例中， `GenericsDemo.Models` 會定義為 `models` xaml 命名空間，並 `System.Collections.Generic` 定義為 `scg` xaml 命名空間。 `CollectionView.ItemsSource`屬性會設定為以 `List<T>` 型別引數具現化的 `Monkey` 。 此 `List<Monkey>` 集合會使用多個 `Monkey` 專案來初始化，而會 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 將每個物件的外觀 `Monkey` 設定為的 `ItemTemplate` [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。
 
-## <a name="multiple-type-arguments"></a>多個類型引數
+## <a name="multiple-type-arguments"></a>多個型別引數
 
-您可以使用指示詞，將多個類型引數指定為加上前置詞的字串引數（以逗號分隔） `x:TypeArguments` 。 當泛型條件約束使用泛型型別時，嵌套的條件約束類型引數會包含在括弧內：
+您可以使用指示詞，將多個型別引數指定為前置字串引數（以逗號分隔） `x:TypeArguments` 。 當泛型條件約束使用泛型型別時，就會將嵌套的條件約束型別引數包含在括弧中：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -208,11 +208,11 @@ Xamarin.FormsXAML 藉由將泛型條件約束指定為類型引數，來提供�
 </ContentPage    
 ```
 
-在此範例中， `GenericsDemo.Models` 會定義為 `models` xaml 命名空間，並 `System.Collections.Generic` 定義為 `scg` xaml 命名空間。 `CollectionView.ItemsSource`屬性會設定為 `List<T>` 使用條件約束具現化的 `KeyValuePair<TKey, TValue>` ，並具有內部條件約束類型引數 `string` 和 `Monkey` 。 `List<KeyValuePair<string,Monkey>>`集合會使用非預設的處理常式，以多個專案進行初始化 `KeyValuePair` ， `KeyValuePair` 而 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定義每個物件外觀的會 `Monkey` 設定為 `ItemTemplate` 的 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 如需將引數傳遞至非預設的函式的詳細資訊，請參閱[傳遞函數引數](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)。
+在此範例中， `GenericsDemo.Models` 會定義為 `models` xaml 命名空間，並 `System.Collections.Generic` 定義為 `scg` xaml 命名空間。 `CollectionView.ItemsSource`屬性設定為 `List<T>` ，其使用 `KeyValuePair<TKey, TValue>` 條件約束（具有內部條件約束類型引數和）具現化 `string` `Monkey` 。 `List<KeyValuePair<string,Monkey>>`使用非預設的函式，將集合初始化為多個 `KeyValuePair` 專案， `KeyValuePair` 而 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定義每個物件之外觀的會 `Monkey` 設定為的 `ItemTemplate` [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 如需將引數傳遞至非預設的函式的詳細資訊，請參閱傳遞函式 [引數](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)。
 
 ## <a name="related-links"></a>相關連結
 
-- [XAML 中的泛型（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
+- [XAML 中的泛型 (範例) ](/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 - [XAML 2009 語言基本類型](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)
 - [x:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)
-- [傳遞函數引數](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)
+- [傳遞函式引數](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)

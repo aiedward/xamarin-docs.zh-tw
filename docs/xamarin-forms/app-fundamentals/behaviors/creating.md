@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
-ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
+ms.openlocfilehash: 53df681e79c4c233a8908764d31c8ee416c8a621
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "86933704"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561166"
 ---
 # <a name="create-no-locxamarinforms-behaviors"></a>建立 Xamarin.Forms 行為
 
@@ -213,7 +213,7 @@ entry.Behaviors.Clear();
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms 行為 (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
-- [Xamarin.Forms 使用樣式 (範例套用的行為) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
+- [Xamarin.Forms 行為 (範例) ](/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+- [Xamarin.Forms 使用樣式 (範例套用的行為) ](/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
 - [行為](xref:Xamarin.Forms.Behavior)
 - [行為\<T>](xref:Xamarin.Forms.Behavior`1)

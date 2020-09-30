@@ -10,31 +10,31 @@ ms.date: 08/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b9c89d4d426884d678e77687ffa226cced97be58
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 809477fe466ee7a8f0985308896c14341f2dd460
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136379"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561933"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp 色彩篩選
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-色彩篩選可以將點陣圖（或其他影像）中的色彩轉譯為其他色彩，以 posterization 效果：
+色彩篩選器可以轉譯點陣圖 (或其他影像) 的色彩以 posterization 效果的其他色彩：
 
 ![色彩篩選範例](color-filters-images/ColorFiltersExample.png "色彩篩選範例")
 
-若要使用色彩篩選，請將的 [`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter) 屬性設定 `SKPaint` 為 [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) 類別的其中一個靜態方法所建立之類型的物件。 本文示範： 
+若要使用色彩篩選，請將的 [`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter) 屬性設定 `SKPaint` 為 [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) 該類別中的其中一個靜態方法所建立之類型的物件。 本文示範： 
 
 - 使用方法建立的色彩轉換 [`CreateColorMatrix`](xref:SkiaSharp.SKColorFilter.CreateColorMatrix*) 。
 - 使用方法建立的色彩表 [`CreateTable`](xref:SkiaSharp.SKColorFilter.CreateTable*) 。
 
 ## <a name="the-color-transform"></a>色彩轉換
 
-色彩轉換牽涉到使用矩陣來修改色彩。 就像大部分2D 圖形系統一樣，SkiaSharp 會使用大部分的矩陣，將座標點轉換為 SkiaSharp 中發行項[**矩陣轉換中**](../transforms/matrix.md)的 iscussed。 [`SKColorFilter`](xref:SkiaSharp.SKColorFilter)也支援矩陣轉換，但矩陣會轉換 RGB 色彩。 若要瞭解這些色彩轉換，必須熟悉矩陣概念。 
+色彩轉換牽涉到使用矩陣來修改色彩。 和大部分2D 圖形系統一樣，SkiaSharp 使用的矩陣大多是在 SkiaSharp 的文章 [**矩陣轉換**](../transforms/matrix.md)中，將座標點轉換成 iscussed。 [`SKColorFilter`](xref:SkiaSharp.SKColorFilter)也支援矩陣轉換，但矩陣會轉換 RGB 色彩。 您必須熟悉矩陣概念，才能瞭解這些色彩轉換。 
 
-色彩轉換矩陣具有四個數據列和五個數據行的維度：
+色彩轉換矩陣的維度有四個數據列和五個數據行：
 
 <pre>
 | M11 M12 M13 M14 M15 |
@@ -43,9 +43,9 @@ ms.locfileid: "84136379"
 | M41 M42 M43 M44 M45 |
 </pre>
 
-它會將 RGB 來源色彩（R、G、B、A）轉換成目的地色彩（R '、G '、B '、A '）。 
+它會將 RGB 來源色彩轉換 (R、G、B、) 到目的地色彩 (R '、G '、B '、A ' ) 。 
 
-為了準備矩陣乘法，會將來源色彩轉換成5×1矩陣：
+為了準備矩陣乘法，來源色彩會轉換成5×1矩陣：
 
 <pre>
 | R |
@@ -55,9 +55,9 @@ ms.locfileid: "84136379"
 | 1 |
 </pre>
 
-這些 R、G、B 和值都是從0到255的原始位元組。 它們_不_會正規化為0到1範圍內的浮點值。
+這些 R、G、B 和值都是從0到255的原始位元組。 它們 _不_ 會正規化為範圍0到1的浮點值。
 
-轉譯因數需要額外的資料格。 這類似于使用3×3矩陣轉換二維座標點，如有關使用矩陣來轉換座標點一文中的「 [**3 到**](../transforms/matrix.md#the-reason-for-the-3-by-3-matrix)3」矩陣的原因一節中所述。
+轉譯因數需要額外的儲存格。 這類似于使用三×3矩陣來轉換二維座標點，如同使用矩陣來轉換座標點一節中的 [**3 x 3 矩陣的原因**](../transforms/matrix.md#the-reason-for-the-3-by-3-matrix) 所述。
 
 4×5矩陣乘以5×1矩陣，而產品是具有轉換色彩的4×1矩陣：
 
@@ -79,7 +79,7 @@ ms.locfileid: "84136379"
 
 `A' = M41·R + M42·G + M43·B + M44·A + M45` 
 
-大部分的矩陣都是由通常在0到2範圍內的乘法因數所組成。 不過，最後一個資料行（M15 到 M45）包含公式中新增的值。 這些值的範圍通常是從0到255。 結果會在0和255的值之間壓制。
+大部分的矩陣都是由通常介於0到2範圍的乘法因數所組成。 不過，最後一個資料行 (M15 至 M45) 包含在公式中加入的值。 這些值的範圍通常是從0到255。 結果會在0到255的值之間壓制。
 
 身分識別矩陣為：
 
@@ -90,7 +90,7 @@ ms.locfileid: "84136379"
 | 0 0 0 1 0 |
 </pre>
 
-這不會變更色彩。 轉換公式為：
+這樣就不會變更色彩。 轉換公式如下：
 
 `R' = R` 
 
@@ -100,13 +100,13 @@ ms.locfileid: "84136379"
 
 `A' = A`
 
-M44 資料格非常重要，因為它會保留不透明度。 一般來說，M41、M42 和 Imb-m43 都是零，因為您可能不想要以紅色、綠色和藍色值為基礎的不透明度。 但是，如果 M44 為零，則 ' 將為零，且不會顯示任何內容。
+M44 資料格很重要，因為它會保留不透明度。 一般而言，M41、M42 和 M43 都是零，因為您可能不想要以紅色、綠色和藍色值為基礎。 但是，如果 M44 為零，則 ' 將會是零，且不會顯示任何專案。
 
-色彩矩陣最常見的用途之一，就是將色彩點陣圖轉換成灰階點陣圖。 這牽涉到紅色、綠色和藍色值加權平均值的公式。 針對使用 sRGB （「標準紅色綠色藍色」）色彩空間的影片顯示，此公式為：
+色彩矩陣最常見的用途之一，就是將色彩點陣圖轉換成灰色縮放點陣圖。 這涉及紅色、綠色和藍色值的加權平均值公式。 針對使用 sRGB ( 「標準紅色綠色藍色」 ) 色彩空間的影片顯示，此公式為：
 
-灰色-網底 = 0.2126 ·R + 0.7152 ·G + 0.0722 ·位元組
+灰色-陰影 = 0.2126 ·R + 0.7152 ·G + 0.0722 ·B
 
-若要將色彩點陣圖轉換成灰階點陣圖，R '、G ' 和 B ' 結果必須全部等於相同的值。 矩陣如下：
+若要將色彩點陣圖轉換成灰階點陣圖，R '、G ' 和 B ' 結果全都必須等於相同的值。 矩陣為：
 
 <pre>
 | 0.21 0.72 0.07 0 0 |
@@ -115,7 +115,7 @@ M44 資料格非常重要，因為它會保留不透明度。 一般來說，M41
 | 0    0    0    1 0 |
 </pre>
 
-沒有對應至此矩陣的 SkiaSharp 資料類型。 相反地，您必須以資料列順序中的20個值陣列來表示矩陣 `float` ：第一列、第二列，依此類推。
+沒有對應至此矩陣的 SkiaSharp 資料類型。 相反地，您必須以資料列順序，將矩陣表示為20個值的陣列 `float` ：第一個資料列、第二個數據列等等。
 
 靜態 [`SKColorFilter.CreateColorMatrix`](xref:SkiaSharp.SKColorFilter.CreateColorMatrix*) 方法具有下列語法：
 
@@ -123,7 +123,7 @@ M44 資料格非常重要，因為它會保留不透明度。 一般來說，M41
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-其中 `matrix` 是20個值的陣列 `float` 。 在 c # 中建立陣列時，很容易就能將數位格式化，使其類似于4×5矩陣。 這會在[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的 [**灰階矩陣**] 頁面中示範：
+其中 `matrix` 是20個值的陣列 `float` 。 在 c # 中建立陣列時，很容易就能將數位格式化，使其類似于4×5矩陣。 這會在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的**灰色調整矩陣**頁面中示範：
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -166,19 +166,19 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-`DrawBitmap`這段程式碼中使用的方法是來自[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例所包含的**BitmapExtension.cs**檔案。 
+`DrawBitmap`此程式碼中使用的方法是來自[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例隨附的**BitmapExtension.cs**檔案。 
 
 以下是在 iOS、Android 和通用 Windows 平臺上執行的結果：
 
-[![灰階矩陣](color-filters-images/GrayScaleMatrix.png "灰階矩陣")](color-filters-images/GrayScaleMatrix-Large.png#lightbox)
+[![灰色縮放矩陣](color-filters-images/GrayScaleMatrix.png "灰色縮放矩陣")](color-filters-images/GrayScaleMatrix-Large.png#lightbox)
 
-留意第四個數據列和第四個數據行中的值。 這是重要的因素，乘以轉換色彩之 A 值的原始色彩值。 如果該儲存格為零，將不會顯示任何內容，而且可能很容易找到問題。
+請留意第四個數據列和第四個數據行中的值。 這是一項重要的因素，會乘以 A ' 轉換色彩值的原始色彩值。 如果該儲存格為零，則不會顯示任何內容，而且可能難以找出問題。
 
-使用色彩矩陣進行實驗時，您可以從來源的觀點或目的地的觀點來處理轉換。 來源的紅色圖元如何對目的地的紅色、綠色和藍色圖元造成影響？ 這是由矩陣的第一個資料_行_中的值所決定。 或者，目的地紅色圖元應該如何受到來源的紅色、綠色和藍色圖元的影響？ 這是由矩陣的第一個資料_列_所決定。
+使用色彩矩陣進行實驗時，您可以從來源的觀點或目的地的觀點來處理轉換。 來源的紅色圖元如何構成目的地的紅色、綠色和藍色圖元？ 這是由矩陣第一個資料 _行_ 中的值所決定。 或者，目的地紅色圖元應該如何受到來源的紅色、綠色和藍色圖元影響？ 這是由矩陣的第一個資料 _列_ 所決定。
 
-如需有關如何使用色彩轉換的一些概念，請參閱重新[**著色影像**](https://docs.microsoft.com/dotnet/framework/winforms/advanced/recoloring-images)頁面。 討論的顧慮 Windows Forms，而矩陣的格式不同，但概念也相同。
+如需有關如何使用色彩轉換的一些概念，請參閱重新 [**著色影像**](/dotnet/framework/winforms/advanced/recoloring-images) 頁面。 討論 Windows Forms 和矩陣是不同的格式，但概念相同。
 
-**蠟筆矩陣**會藉由 attenuating 來源紅色圖元來計算目的地紅色圖元，並稍微強調紅色和綠色圖元。 這個程式會以類似綠色和藍色圖元的方式發生：
+**蠟筆矩陣**會 attenuating 來源的紅色圖元來計算目的地紅色圖元，並稍微強調紅色和綠色圖元。 此程式會類似于綠色和藍色圖元：
 
 ```csharp
 public class PastelMatrixPage : ContentPage
@@ -221,7 +221,7 @@ public class PastelMatrixPage : ContentPage
 }
 ```
 
-結果是將色彩的濃度設為靜音，如下所示：
+結果是將色彩的濃度靜音，如下所示：
 
 [![蠟筆矩陣](color-filters-images/PastelMatrix.png "蠟筆矩陣")](color-filters-images/PastelMatrix-Large.png#lightbox)
 
@@ -235,7 +235,7 @@ public static SKColorFilter CreateTable (byte[] table);
 public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] tableG, byte[] tableB);
 ```
 
-陣列一律包含256專案。 在 `CreateTable` 具有一個資料表的方法中，相同的資料表會用於紅色、綠色和藍色元件。 這是一個簡單的查閱資料表：如果來源色彩是（R，G，B），而目的地色彩是（R '，B '，G '），則會使用來源元件編制索引來取得目的地元件 `table` ：
+陣列一律包含256個專案。 在 `CreateTable` 具有一個資料表的方法中，會針對紅色、綠色和藍色元件使用相同的資料表。 這是簡單的查閱資料表：如果來源色彩 (R、G、B) ，而目的色彩是 (R '、B '、G ' ) ，則會使用來源元件編制索引來取得目的地元件 `table` ：
 
 `R' = table[R]`
 
@@ -243,13 +243,13 @@ public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] ta
 
 `B' = table[B]`
 
-在第二個方法中，四個色彩元件都可以有個別的色彩表，或相同的色彩資料表可能會在兩個或多個元件之間共用。
+在第二個方法中，四個色彩元件中的每一個都可以有個別的色彩表，或相同的色彩表可能會在兩個或多個元件之間共用。
 
-如果您想要將第二個方法的其中一個引數設定 `CreateTable` 為包含順序值0到255的色彩資料表，您可以改用 `null` 。 呼叫通常會 `CreateTable` 有 Alpha 色板的 `null` 第一個引數。
+如果您想要將第二個方法的其中一個引數設定 `CreateTable` 為色彩資料表（順序中包含0到255的值），您可以 `null` 改用。 通常， `CreateTable` 呼叫會有 Alpha 色板的 `null` 第一個引數。
 
-在有關[存取 SkiaSharp 點陣圖圖元位](../bitmaps/pixel-bits.md#posterization)文章中的**Posterization**一節中，您已瞭解如何修改點陣圖的個別圖元位，以減少其色彩解析度。 這是一種稱為_posterization_的技術。 
+在有關[存取 SkiaSharp 點陣圖圖元位](../bitmaps/pixel-bits.md#posterization)的文章中的**Posterization**一節中，您已瞭解如何修改點陣圖的個別圖元位，以降低其色彩解析度。 這是一種稱為 _posterization_的技術。 
 
-您也可以使用色彩表來分離點陣圖。 [子**表資料表**] 頁面的 [程式集] 會建立一個色彩資料表，將其索引對應至將底部6個位設定為零的位元組：
+您也可以使用色彩表來分離點陣圖。 [重結合 **資料表** ] 頁面的函式會建立色彩表，將其索引對應至底部6位設為零的位元組：
 
 ```csharp
 public class PosterizeTablePage : ContentPage
@@ -294,13 +294,13 @@ public class PosterizeTablePage : ContentPage
 }
 ```
 
-程式會選擇僅針對綠色和藍色的通道使用此色彩表。 紅色通道會繼續具有完整的解析度：
+此程式只會針對綠色和藍色通道選擇使用此色彩表。 紅色通道會持續獲得完整的解決方式：
 
-[![色調分離表](color-filters-images/PosterizeTable.png "色調分離表")](color-filters-images/PosterizeTable-Large.png#lightbox)
+[![分離表](color-filters-images/PosterizeTable.png "分離表")](color-filters-images/PosterizeTable-Large.png#lightbox)
 
-您可以針對不同的色彩通道使用各種色彩表來進行各種效果。 
+您可以針對不同的色彩通道使用各種色彩表來產生各種效果。 
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (範例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

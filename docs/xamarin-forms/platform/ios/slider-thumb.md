@@ -1,6 +1,6 @@
 ---
-title: IOS 上的滑杆
-description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的，讓 Slider 的值屬性可透過在滑杆列上進行設定。
+title: 在 iOS 上點按滑動軸
+description: 平臺專屬特性可讓您使用僅適用于特定平臺的功能，而不需要執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的，藉由在滑動軸上點擊，來設定 [值] 屬性。
 ms.prod: xamarin
 ms.assetid: D0915D37-9A59-4728-BB6A-FE094A661275
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d8ca0dfb533dc5fb0b7442b85de41dcf7c18fec8
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c3e74d52eee5da11dffc3c8a778fa2f691f1ca02
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938537"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560932"
 ---
-# <a name="slider-thumb-tap-on-ios"></a>IOS 上的滑杆
+# <a name="slider-thumb-tap-on-ios"></a>在 iOS 上點按滑動軸
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平臺特定可讓您透過 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 在橫條上的位置上點擊 [`Slider`](xref:Xamarin.Forms.Slider) ，而不是拖曳捲動方塊來設定屬性 `Slider` 。 將可系結屬性設定為，即可在 XAML 中使用它 [`Slider.UpdateOnTap`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty) `true` ：
+此 iOS 平臺特定可讓您透過在 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 橫條上的位置來設定屬性 [`Slider`](xref:Xamarin.Forms.Slider) ，而不需要拖曳 `Slider` thumb。 它是在 XAML 中使用，方法是將可系結 [`Slider.UpdateOnTap`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty) 屬性設定為 `true` ：
 
 ```xaml
 <ContentPage ...
@@ -33,7 +33,7 @@ ms.locfileid: "86938537"
 </ContentPage>
 ```
 
-或者，您也可以使用 Fluent API，從 c # 取用它：
+或者，您也可以使用流暢的 API，從 c # 中使用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -44,14 +44,14 @@ var slider = new Xamarin.Forms.Slider();
 slider.On<iOS>().SetUpdateOnTap(true);
 ```
 
-`Slider.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 [ `Slider.SetUpdateOnTap` ] （X： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. SetUpdateOnTap （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。滑杆}、[system.string]）方法（在 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 命名空間中）是用來控制橫條上的點按是否要 `Slider` 設定 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 屬性。 此外，[ `Slider.GetUpdateOnTap` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. GetUpdateOnTap （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。滑杆}））方法，可以用來傳回是否要在橫條上 `Slider` 設定 `Slider.Value` 屬性。
+`Slider.On<iOS>`方法指定此平臺特定的只會在 iOS 上執行。 [ `Slider.SetUpdateOnTap` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. SetUpdateOnTap (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。滑杆}、system.string) # A3 方法（在 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 命名空間中）是用來控制是否要按下橫條來 `Slider` 設定 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 屬性。 此外，[ `Slider.GetUpdateOnTap` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. GetUpdateOnTap (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。滑杆} ) # A3 方法可以用來傳回點擊 `Slider` 線是否會設定 `Slider.Value` 屬性。
 
-結果就是，您 [`Slider`](xref:Xamarin.Forms.Slider) 可以在橫條上移動捲動方塊 `Slider` 並設定 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 屬性：
+結果是，按一下 [`Slider`](xref:Xamarin.Forms.Slider) 橫條可以移動 `Slider` thumb 並設定 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 屬性：
 
-![點按啟用的滑杆更新](slider-thumb-images/slider-updateontap.png)
+![啟用時滑動軸更新](slider-thumb-images/slider-updateontap.png)
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

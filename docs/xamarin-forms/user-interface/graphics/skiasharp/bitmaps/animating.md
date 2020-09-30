@@ -1,6 +1,6 @@
 ---
 title: 製作 SkiaSharp 點陣圖的動畫
-description: 瞭解如何藉由依序顯示一系列的點陣圖和呈現動畫 GIF 檔案，來執行點陣圖動畫。
+description: 瞭解如何依序顯示一連串點陣圖和轉譯動畫 GIF 檔案，以執行點陣圖動畫。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
@@ -10,40 +10,40 @@ ms.date: 07/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 763f44c26d653aa32429b2aa764989e18e8b8078
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d9a96de5520a03b2ef51426be2c589c736ca2396
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139967"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562388"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>製作 SkiaSharp 點陣圖的動畫
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-建立 SkiaSharp 圖形動畫的應用程式通常會 `InvalidateSurface` `SKCanvasView` 以固定的速率呼叫，通常是每16毫秒一次。 使表面失效會觸發呼叫 `PaintSurface` 處理常式來重新繪製顯示。 當視覺效果每秒重新繪製60次時，它們看起來會順暢地動畫。
+製作 SkiaSharp 圖形動畫的應用程式通常會 `InvalidateSurface` `SKCanvasView` 以固定的速率呼叫，通常是每16毫秒一次。 使介面失效會觸發對 `PaintSurface` 處理常式的呼叫，以重繪顯示。 當視覺效果每秒重新繪製60次時，它們看起來就像是流暢的動畫。
 
-不過，如果圖形太複雜而無法在16毫秒內轉譯，動畫可能會變得抖動。 程式設計人員可能會選擇將重新整理頻率減少為30倍或15次，但有時甚至還不夠。 有時候圖形很複雜，因此無法即時轉譯。
+但是，如果圖形太複雜而無法在16毫秒內轉譯，則動畫可能會變得更抖動。 程式設計師可能會選擇將重新整理頻率縮減為30次或15倍，但有時甚至還不夠。 有時候圖形很複雜，因為它們只是無法即時轉譯。
 
-其中一個解決方案是在一系列的點陣圖上轉譯動畫的個別畫面格，以便事先準備動畫。 若要顯示動畫，只需要以每秒60次的順序顯示這些點陣圖。
+其中一個解決方法是將動畫的個別畫面格轉譯成一系列的點陣圖，以預先準備動畫。 若要顯示動畫，只需要每秒將這些點陣圖顯示為60次。
 
-當然，這可能是很多的點陣圖，但這就是如何製作大預算的3D 動畫電影。 3D 圖形太複雜而無法即時轉譯。 轉譯每個畫面格需要許多處理時間。 當您觀看影片時，您看到的內容基本上是一系列的點陣圖。
+當然，這可能是很多的點陣圖，但這就是大型預算的3D 動畫製作影片的方式。 3D 圖形太複雜而無法即時轉譯。 需要大量的處理時間才能轉譯每個畫面格。 觀賞電影時所看到的內容基本上是一系列的點陣圖。
 
-您可以在 SkiaSharp 中執行類似的動作。 本文將示範兩種點陣圖動畫類型。 第一個範例是 Mandelbrot 集的動畫：
+您可以在 SkiaSharp 中做一些類似的動作。 本文示範兩種點陣圖動畫類型。 第一個範例是 Mandelbrot 集的動畫：
 
-![動畫範例](animating-images/AnimatingSample.png "動畫範例")
+![製作範例動畫](animating-images/AnimatingSample.png "製作範例動畫")
 
-第二個範例示範如何使用 SkiaSharp 呈現動畫 GIF 檔案。
+第二個範例示範如何使用 SkiaSharp 來呈現動畫 GIF 檔案。
 
 ## <a name="bitmap-animation"></a>點陣圖動畫
 
-Mandelbrot 集的視覺效果驚人，但 computionally 冗長。 （如需 Mandelbrot 集和此處所用數學的討論，請參閱使用從頁面666開始[_建立 Mobile Apps 與 Xamarin_的第20章](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)。 下列描述假設背景知識。）
+Mandelbrot 集以視覺化方式驚人，但 computionally 冗長。  (如需 Mandelbrot 集和此處所用數學的討論，請參閱從666頁面開始[_建立 Mobile Apps Xamarin.Forms _的第20章](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)。 下列描述假設背景知識。 ) 
 
-[**Mandelbrot 動畫**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)範例會使用點陣圖動畫來模擬 Mandelbrot 集中固定點的連續縮放。 放大會接著縮小，而迴圈會永遠重複，或直到您結束程式為止。
+[**Mandelbrot 動畫**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)範例會使用點陣圖動畫來模擬 Mandelbrot 集中固定點的連續縮放。 放大會接著縮小，然後迴圈會永久重複，或直到您結束程式為止。
 
-程式會藉由建立最多50個位圖並儲存在應用程式本機儲存體中，來準備此動畫。 每個點陣圖的寬度和高度，都與上一個點陣圖一樣複雜。 （在程式中，這些點陣圖稱為代表整數_縮放層級_）。接著會依序顯示點陣圖。 每個點陣圖的縮放比例都會以動畫的形式，從一個點陣圖到另一個點陣圖提供順暢的進展。
+程式會藉由建立最多50點陣圖（其儲存在應用程式本機儲存體中）來準備此動畫。 每個點陣圖都會包含複雜平面的一半寬度和高度，作為前一個點陣圖。  (在程式中，這些點陣圖表示為代表整數 _縮放層級_。 ) 接著會依序顯示點陣圖。 調整每個點陣圖的動畫，以提供從某個點陣圖到另一個點陣圖的流暢進展。
 
-如同使用 Mandelbrot 建立_Mobile Apps_一章所述的最後一個程式， **Mandelbrot 動畫**中的集計算是具有八個參數的非同步方法。 這些參數包括複雜的中心點，以及圍繞該中心點之複雜平面的寬度和高度。 接下來的三個參數是要建立之點陣圖的圖元寬度和高度，以及遞迴計算的反覆運算次數上限。 `progress`參數是用來顯示此計算的進度。 `cancelToken`此程式中不會使用參數：
+就像使用_建立 Mobile Apps Xamarin.Forms _的第20章中所述的最終程式一樣， **Mandelbrot 動畫**中的 Mandelbrot 集計算是具有8個參數的非同步方法。 這些參數包括複雜的中心點，以及圍繞該中心點之複雜平面的寬度和高度。 接下來的三個參數是要建立之點陣圖的圖元寬度和高度，以及遞迴計算的反覆運算次數上限。 `progress`參數是用來顯示此計算的進度。 `cancelToken`此程式未使用此參數：
 
 ```csharp
 static class Mandelbrot
@@ -110,7 +110,7 @@ static class Mandelbrot
 }
 ```
 
-方法會傳回類型的物件 `BitmapInfo` ，以提供建立點陣圖的資訊：
+方法會傳回型別的物件 `BitmapInfo` ，提供建立點陣圖的資訊：
 
 ```csharp
 class BitmapInfo
@@ -130,7 +130,7 @@ class BitmapInfo
 }
 ```
 
-**Mandelbrot 動畫**XAML 檔案包含兩個 `Label` 視圖 `ProgressBar` ：、和，以及 `Button` `SKCanvasView` 。
+**Mandelbrot 動畫**XAML 檔案包含兩個 `Label` 視圖：、 `ProgressBar` 和，以及 `Button` `SKCanvasView` ：
 
 ```csharp
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -162,7 +162,7 @@ class BitmapInfo
 </ContentPage>
 ```
 
-程式碼後置檔案一開始會定義三個重要常數和一組點陣圖：
+程式碼後端檔案一開始先定義三個重要的常數和一組點陣圖：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -182,11 +182,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-在某些時候，您可能會想要將 `COUNT` 值變更為50，以查看動畫的完整範圍。 50以上的值並不實用。 在縮放層級48或左右，雙精確度浮點數的解析度會變得不足以進行 Mandelbrot 集計算。 此問題會在_使用 Xamarin 建立 Mobile Apps_的第684頁中討論。
+在某個時間點，您可能會想要將 `COUNT` 值變更為50，以查看動畫的完整範圍。 50以上的值不實用。 在48或更高的縮放層級周圍，雙精確度浮點數的解析度會變得不足以進行 Mandelbrot 集計算。 此問題會在_建立 Mobile Apps 的 Xamarin.Forms _頁面684中討論。
 
-此 `center` 值非常重要。 這是動畫縮放的焦點。 檔案中的三個值是在第20章_建立 Mobile Apps 和_在684頁面上使用 Xamarin 的最後一個螢幕擷取畫面，但您可以試驗該章節中的程式，以使用您自己的其中一個值。
+`center`值相當重要。 這是動畫縮放的焦點。 檔案中的三個值是在第20章的三個最後一個螢幕擷取畫面中所使用的值，在684第20頁的第20章中_建立 Mobile Apps Xamarin.Forms _ ，但您可以在該章節中試驗程式，以使用您自己的其中一個值。
 
-**Mandelbrot 動畫**範例會將這些 `COUNT` 點陣圖儲存在本機應用程式儲存區中。 50點陣圖在您的裝置上需要超過 20 mb 的儲存空間，因此您可能會想要知道這些點陣圖佔用多少儲存空間，而且您可能會想要將它們全部刪除。 這是類別底部的這兩個方法的用途 `MainPage` ：
+**Mandelbrot 動畫**範例會將這些 `COUNT` 點陣圖儲存在本機應用程式儲存區中。 50點陣圖在您的裝置上需要超過 20 mb 的儲存空間，因此您可能會想要知道這些點陣圖所佔用的儲存體數量，而且在某個時間點，您可能會想要全部刪除。 這就是類別底部的這兩個方法的用途 `MainPage` ：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -216,9 +216,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-您可以刪除本機儲存區中的點陣圖，而程式會以動畫顯示相同的點陣圖，因為程式會將它們保留在記憶體中。 但下一次執行程式時，必須重新建立點陣圖。
+當程式製作相同點陣圖的動畫時，您可以刪除本機儲存區中的點陣圖，因為程式會將它們保留在記憶體中。 但是，當您下一次執行程式時，將需要重新建立點陣圖。
 
-儲存在本機應用程式儲存區中的點陣圖 `center` 會將值納入其檔案名中，因此，如果您變更此 `center` 設定，則不會在儲存區中取代現有的點陣圖，而且會繼續佔用空間。
+儲存在本機應用程式儲存體中的點陣圖 `center` 會將值併入其檔案名中，因此，如果您變更此 `center` 設定，將不會取代儲存區中的現有點陣圖，而且會繼續佔用空間。
 
 以下是 `MainPage` 用來建立檔案名的方法，以及 `MakePixel` 根據色彩元件定義圖元值的方法：
 
@@ -241,9 +241,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`zoomLevel`參數的 `FilePath` 範圍是從0到 `COUNT` 常數減1。
+`zoomLevel`參數的 `FilePath` 範圍從0到 `COUNT` 常數減1。
 
-此函式會 `MainPage` 呼叫 `LoadAndStartAnimation` 方法：
+此 `MainPage` 函數會呼叫 `LoadAndStartAnimation` 方法：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -259,7 +259,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`LoadAndStartAnimation`方法會負責存取應用程式本機儲存體，以載入先前執行程式時可能已建立的任何點陣圖。 它會迴圈處理 `zoomLevel` 從0到的值 `COUNT` 。 如果檔案存在，則會將它載入 `bitmaps` 陣列中。 否則，它需要藉由呼叫來建立特定 `center` 和值的點陣圖 `zoomLevel` `Mandelbrot.CalculateAsync` 。 該方法會取得每個圖元的反復專案計數，這個方法會將它轉換成色彩：
+`LoadAndStartAnimation`方法負責存取應用程式本機儲存體，以載入在先前執行程式時可能已建立的任何點陣圖。 它會透過 `zoomLevel` 0 到的值進行迴圈 `COUNT` 。 如果檔案存在，則會將它載入 `bitmaps` 陣列中。 否則，它必須藉由呼叫來建立特定 `center` 和值的點陣圖 `zoomLevel` `Mandelbrot.CalculateAsync` 。 該方法會取得每個圖元的反復專案計數，這個方法會轉換成色彩：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -377,13 +377,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-請注意，此程式會將這些點陣圖儲存在本機應用程式儲存區中，而不是裝置的相片媒體櫃中。 .NET Standard 2.0 程式庫可讓您使用熟悉的 `File.OpenRead` 和 `File.WriteAllBytes` 方法來進行這項工作。
+請注意，此程式會將這些點陣圖儲存在本機應用程式儲存區，而不是儲存在裝置的相片媒體櫃中。 .NET Standard 2.0 程式庫可讓您使用熟悉的 `File.OpenRead` 和 `File.WriteAllBytes` 方法來進行這項工作。
 
-在建立所有點陣圖或將其載入記憶體之後，方法會啟動 `Stopwatch` 物件並呼叫 `Device.StartTimer` 。 此 `OnTimerTick` 方法每16毫秒會呼叫一次。
+在將所有點陣圖建立或載入至記憶體後，方法會啟動 `Stopwatch` 物件並呼叫 `Device.StartTimer` 。 `OnTimerTick`方法會每16毫秒呼叫一次。
 
-`OnTimerTick`計算以 `time` 毫秒為單位的值，範圍從0到6000次 `COUNT` ，apportions 每個點陣圖的顯示六秒。 此 `progress` 值會使用 `Math.Sin` 值來建立 sinusoidal 動畫，在迴圈開始時將會變慢，而在結束時則會以相反方向的速度變慢。
+`OnTimerTick` 計算以 `time` 毫秒為單位的值，範圍從0到6000次 `COUNT` ，apportions 每個點陣圖的顯示為6秒。 `progress`值會使用此 `Math.Sin` 值來建立正弦曲線動畫，在迴圈開始時會變慢，並在其反轉方向時以較慢的方式結束。
 
-`progress`值的範圍是從 0 `COUNT` 到。 這表示的整數部分 `progress` 是陣列中的索引 `bitmaps` ，而的小數部分則 `progress` 表示該特定點陣圖的縮放層級。 這些值會儲存在 `bitmapIndex` 和 `bitmapProgress` 欄位中，並由 `Label` 和顯示 `Slider` 在 XAML 檔案中。 `SKCanvasView`失效以更新點陣圖顯示：
+`progress`值的範圍是從 0 `COUNT` 到。 這表示的整數部分 `progress` 是陣列中的索引 `bitmaps` ，而的小數部分則 `progress` 表示該特定點陣圖的縮放層級。 這些值會儲存在 `bitmapIndex` 和欄位中，而且會在 XAML 檔案中 `bitmapProgress` 顯示 `Label` `Slider` 。 `SKCanvasView`會失效以更新點陣圖顯示：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -424,7 +424,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-最後，的 `PaintSurface` 處理常式會 `SKCanvasView` 計算目的地矩形，盡可能地顯示點陣圖，同時維持外觀比例。 來源矩形是以值為基礎 `bitmapProgress` 。 `fraction`此處計算的值範圍為0，當 `bitmapProgress` 為0時，會顯示整個點陣圖0.25，而當 `bitmapProgress` 為1時，則會顯示點陣圖的一半寬度和高度，並有效地放大：
+最後，的 `PaintSurface` 處理常式會 `SKCanvasView` 計算目的地矩形，盡可能盡可能地顯示點陣圖，同時維持外觀比例。 來源矩形是以值為基礎 `bitmapProgress` 。 `fraction`此處所計算的值範圍從0，如果 `bitmapProgress` 是0，則會顯示整個點陣圖，而0.25 若為 `bitmapProgress` 1 則顯示點陣圖寬度和高度的一半，則會有效地縮放：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -470,9 +470,9 @@ public partial class MainPage : ContentPage
 
 ## <a name="gif-animation"></a>GIF 動畫
 
-圖形交換格式（GIF）規格包含一項功能，可讓單一 GIF 檔案包含一個場景的多個連續畫面格，這種情況通常會在迴圈中以連續方式顯示。 這些檔案就是所謂的_動畫 gif_。 網頁瀏覽器可以播放動畫 Gif，而 SkiaSharp 可讓應用程式從動畫 GIF 檔案中解壓縮框架，並依序顯示它們。
+圖形交換格式 (GIF) 規格包含的功能，可讓單一 GIF 檔案包含多個可連續顯示的場景（通常在迴圈中）的連續框架。 這些檔案稱為 _動畫 gif_。 Web 瀏覽器可以播放動畫 gif，而 SkiaSharp 可讓應用程式從動畫 GIF 檔案中解壓縮畫面格，並依序顯示它們。
 
-[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例包含名為**Newtons_cradle_animation_book_2.gif**的動畫 GIF 資源，由 DemonDeLuxe 建立並從維琪百科的[牛頓底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)頁面下載。 **動畫 GIF**頁面包含提供該資訊並具現化的 XAML 檔案 `SKCanvasView` ：
+[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例包含名為**Newtons_cradle_animation_book_2.gif**的動畫 GIF 資源，由 DemonDeLuxe 所建立，並從維琪百科的[牛頓底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)頁面下載。 **動畫 gif**頁面包含提供該資訊的 XAML 檔案，並具現化 `SKCanvasView` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -499,19 +499,19 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-程式碼後置檔案不會一般化來播放任何動畫 GIF 檔案。 它會忽略一些可用的資訊，特別是重複計數，而且只會在迴圈中播放動畫 GIF。
+程式碼後端檔案不會被一般化來播放任何動畫 GIF 檔案。 它會忽略一些可用的資訊，特別是重複計數，而且只會在迴圈中播放動畫 GIF。
 
-使用 SkisSharp 來解壓縮動畫 GIF 檔案的框架並不會在任何地方記載，因此後面的程式碼描述會比平常更詳細：
+使用 SkisSharp 來解壓縮動畫 GIF 檔案的框架似乎不會記錄在任何位置，因此下列程式碼的描述比平常更詳細：
 
-動畫 GIF 檔案的解碼會出現在頁面的函式中，而且需要 `Stream` 使用參考點陣圖的物件來建立 `SKManagedStream` 物件，然後是 [`SKCodec`](xref:SkiaSharp.SKCodec) 物件。 [`FrameCount`](xref:SkiaSharp.SKCodec.FrameCount)屬性會指出構成動畫的畫面格數目。
+動畫 GIF 檔案的解碼會在頁面的函式中進行，而且需要 `Stream` 使用參考點陣圖的物件來建立 `SKManagedStream` 物件和 [`SKCodec`](xref:SkiaSharp.SKCodec) 物件。 [`FrameCount`](xref:SkiaSharp.SKCodec.FrameCount)屬性指出組成動畫的框架數目。
 
-這些框架最後會儲存為個別的點陣圖，因此，此函式會使用 `FrameCount` 來配置類型的陣列，以及 `SKBitmap` `int` 每個畫面格持續時間的兩個數組，以及（以簡化動畫邏輯）累積的期間。
+這些框架最後會儲存為個別點陣圖，因此，此函 `FrameCount` 式會在每個畫面格的持續時間內使用配置類型的陣列以及 `SKBitmap` 兩個 `int` 陣列，並 (以簡化動畫邏輯) 累積的持續時間。
 
-[`FrameInfo`](xref:SkiaSharp.SKCodec.FrameInfo)類別的屬性 `SKCodec` 是值的陣列 [`SKCodecFrameInfo`](xref:SkiaSharp.SKCodecFrameInfo) ，每個框架各一個，但此程式從該結構取得的唯一專案是 [`Duration`](xref:SkiaSharp.SKCodecFrameInfo.Duration) 以毫秒為單位的畫面。
+[`FrameInfo`](xref:SkiaSharp.SKCodec.FrameInfo)類別的屬性 `SKCodec` 是值的陣列 [`SKCodecFrameInfo`](xref:SkiaSharp.SKCodecFrameInfo) ，每個框架各一個，但是這個程式從該結構所採用的唯一專案是 [`Duration`](xref:SkiaSharp.SKCodecFrameInfo.Duration) 以毫秒為單位的框架。
 
-`SKCodec`定義名為 [`Info`](xref:SkiaSharp.SKCodec.Info) 類型的屬性 [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) ，但該值 `SKImageInfo` 表示（至少為此影像）色彩類型為 `SKColorType.Index8` ，這表示每個圖元都是色彩類型的索引。 為了避免與色彩資料表中斷，程式 [`Width`](xref:SkiaSharp.SKImageInfo.Width) [`Height`](xref:SkiaSharp.SKImageInfo.Height) 會使用該結構的和資訊，來建立它自己的全顏色 `ImageInfo` 值。 每個 `SKBitmap` 都是從該建立。
+`SKCodec` 定義名為 [`Info`](xref:SkiaSharp.SKCodec.Info) 的屬性 [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) ，但是該值 `SKImageInfo` 表示至少 (此影像) 色彩類型為 `SKColorType.Index8` ，這表示每個圖元都是色彩類型的索引。 為了避免竟然想使用色彩表，程式會使用 [`Width`](xref:SkiaSharp.SKImageInfo.Width) 和 [`Height`](xref:SkiaSharp.SKImageInfo.Height) 資訊來自該結構，以建立其本身的全顏色 `ImageInfo` 值。 每個 `SKBitmap` 都是從該建立的。
 
-的 `GetPixels` 方法 `SKBitmap` `IntPtr` 會傳回參考該點陣圖圖元位的。 尚未設定這些圖元位。 `IntPtr`會傳遞至的其中一個 [`GetPixels`](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions)) 方法 `SKCodec` 。 該方法會將框架從 GIF 檔案複製到所參考的記憶體空間 `IntPtr` 。 此函式會 [`SKCodecOptions`](xref:SkiaSharp.SKCodecOptions) 指出框架編號：
+的 `GetPixels` 方法 `SKBitmap` `IntPtr` 會傳回參考該點陣圖圖元位的。 尚未設定這些圖元位。 `IntPtr`傳遞給的其中一個 [`GetPixels`](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions)) 方法 `SKCodec` 。 該方法會將框架從 GIF 檔案複製到所參考的記憶體空間中 `IntPtr` 。 此函式會 [`SKCodecOptions`](xref:SkiaSharp.SKCodecOptions) 指出畫面格編號：
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage
@@ -579,11 +579,11 @@ public partial class AnimatedGifPage : ContentPage
 }
 ```
 
-儘管 `IntPtr` 值，但不 `unsafe` 需要任何程式碼，因為永遠不會 `IntPtr` 轉換成 c # 指標值。
+即使 `IntPtr` 是值，也不需要任何程式 `unsafe` 代碼，因為永遠不會 `IntPtr` 轉換成 c # 指標值。
 
-在解壓縮每個框架之後，此函式會匯總所有框架的持續時間，然後初始化具有累積持續時間的另一個陣列。
+在解壓縮每個框架之後，此函式會計算所有框架的持續時間，然後以累積的期間初始化另一個陣列。
 
-程式碼後置檔案的其餘部分專供動畫之用。 `Device.StartTimer`方法可用來啟動計時器，而 `OnTimerTick` 回呼會使用 `Stopwatch` 物件來判斷經過的時間（以毫秒為單位）。 迴圈執行累積的持續時間陣列，足以找出目前的框架：
+程式碼後端檔案的其餘部分則專供動畫之用。 `Device.StartTimer`方法是用來啟動計時器，而 `OnTimerTick` 回呼會使用 `Stopwatch` 物件來判斷經過的時間（以毫秒為單位）。 迴圈執行累積的持續時間陣列，足以找出目前的畫面格：
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage
@@ -654,14 +654,14 @@ public partial class AnimatedGifPage : ContentPage
 }
 ```
 
-每次 `currentframe` 變數變更時， `SKCanvasView` 會失效，且會顯示新的畫面格：
+每次 `currentframe` 變數變更時， `SKCanvasView` 就會失效，並顯示新的框架：
 
 [![動畫 GIF](animating-images/AnimatedGif.png "動畫 GIF")](animating-images/AnimatedGif-Large.png#lightbox)
 
-當然，您會想要自行執行程式以查看動畫。
+當然，您會想要自行執行程式來查看動畫。
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [Mandelbrot 動畫（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (範例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Mandelbrot 動畫 (範例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)
