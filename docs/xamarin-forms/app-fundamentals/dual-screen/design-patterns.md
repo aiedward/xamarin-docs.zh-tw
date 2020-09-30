@@ -10,12 +10,12 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 74f06f88cd974d774d3b2527505bb45b3db03191
-ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
+ms.openlocfilehash: 9b553a2fc3dea0d2793cb337142eacf0419ad994
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832303"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556070"
 ---
 # <a name="no-locxamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms 雙螢幕設計模式
 
@@ -162,7 +162,7 @@ ms.locfileid: "90832303"
 
 附屬模式示範如何使用第二個螢幕來提供與主要檢視相關的第二層內容，例如繪圖應用程式、遊戲或媒體編輯：
 
-![附屬窗格範例](design-patterns-images/companion-pane-sample.png)
+![隨附窗格範例](design-patterns-images/companion-pane-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -271,5 +271,5 @@ ms.locfileid: "90832303"
 
 ## <a name="related-links"></a>相關連結
 
-- [DualScreen (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+- [DualScreen (範例)](/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 - [建立適用於雙螢幕裝置的應用程式](index.md)

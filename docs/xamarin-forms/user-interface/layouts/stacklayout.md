@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsStackLayout
+title: Xamarin.Forms StackLayout
 description: StackLayout 會以水準或垂直方式組織一維堆疊中的子視圖。
 ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
@@ -10,32 +10,32 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c8e7c0e3edb581e13944ce48e2241f035791574
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137965"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556850"
 ---
-# <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
+# <a name="no-locxamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
 
-[![Xamarin.FormsStackLayout](stacklayout-images/layouts.png "[!OP.無-LOC （Xamarin）] StackLayout")](stacklayout-images/layouts-large.png#lightbox "[!OP.無-LOC （Xamarin）] StackLayout")
+[![：：：非 loc (Xamarin. Forms) ：：： StackLayout](stacklayout-images/layouts.png "：：：非 loc (Xamarin. Forms) ：：： StackLayout")](stacklayout-images/layouts-large.png#lightbox "：：：非 loc (Xamarin. Forms) ：：： StackLayout")
 
-會 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 以水準或垂直方式組織一維堆疊中的子視圖。 根據預設， `StackLayout` 會垂直導向。 此外， `StackLayout` 也可以當做包含其他子版面配置的父配置使用。
+會以 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 水準或垂直方式組織一維堆疊中的子視圖。 依預設， `StackLayout` 會垂直導向。 此外， `StackLayout` 也可以當做包含其他子配置的父配置使用。
 
 [`StackLayout`](xref:Xamarin.Forms.StackLayout)類別會定義下列屬性：
 
-- [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)，屬於類型 [`StackOrientation`](xref:Xamarin.Forms.StackOrientation) ，表示子視圖的定位方向。 此屬性的預設值為 `Vertical`。
-- [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing)，屬於類型 `double` ，表示每個子視圖之間的空間量。 這個屬性的預設值是六個與裝置無關的單位。
+- [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)型別為的 [`StackOrientation`](xref:Xamarin.Forms.StackOrientation) ，代表子視圖的定位方向。 此屬性的預設值為 `Vertical`。
+- [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing)型別為的 `double` ，表示每個子視圖之間的空間量。 這個屬性的預設值為六個裝置獨立單位。
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示屬性可以是資料系結和樣式的目標。
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout)類別衍生自 `Layout<T>` 類別，其定義 `Children` 類型的屬性 `IList<T>` 。 `Children`屬性是類別的 `ContentProperty` `Layout<T>` ，因此不需要從 XAML 明確設定。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout)類別衍生自 `Layout<T>` 類別，該類別會定義 `Children` 型別的屬性 `IList<T>` 。 `Children`屬性是類別的 `ContentProperty` `Layout<T>` ，因此不需要從 XAML 明確設定。
 
 > [!TIP]
-> 若要取得最佳的版面配置效能，請遵循[優化版面配置效能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)中的指導方針。
+> 若要取得最佳的版面配置效能，請遵循將 [版面配置效能優化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)的指導方針。
 
 ## <a name="vertical-orientation"></a>垂直方向
 
@@ -91,11 +91,11 @@ public class VerticalStackLayoutPageCS : ContentPage
 ```
 
 > [!NOTE]
-> 屬性的值 [`Margin`](xref:Xamarin.Forms.View.Margin) 代表元素與其相鄰專案之間的距離。 如需詳細資訊，請參閱[邊界和邊框距離](margin-and-padding.md)。
+> 屬性的值 [`Margin`](xref:Xamarin.Forms.View.Margin) 代表元素與其相鄰元素之間的距離。 如需詳細資訊，請參閱[邊界和邊框距離](margin-and-padding.md)。
 
 ## <a name="horizontal-orientation"></a>水準方向
 
-下列 XAML 顯示如何 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 將其屬性設為，以建立水準方向 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) `Horizontal` ：
+下列 XAML 顯示如何將 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 其屬性設定為，以建立水準方向 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) `Horizontal` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -115,9 +115,9 @@ public class VerticalStackLayoutPageCS : ContentPage
 </ContentPage>
 ```
 
-這個範例會建立水準 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 包含 [`BoxView`](xref:Xamarin.Forms.BoxView) 物件，而子視圖之間有六個與裝置無關的空間單位：
+這個範例會建立一個水準 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 包含 [`BoxView`](xref:Xamarin.Forms.BoxView) 物件，而子視圖之間有六個與裝置無關的空間單位：
 
-[![水準方向 StackLayout 的螢幕擷取畫面](stacklayout-images/horizontal.png "水準導向 StackLayout")](stacklayout-images/horizontal-large.png#lightbox "水準導向 StackLayout")
+[![水準方向 StackLayout 的螢幕擷取畫面](stacklayout-images/horizontal.png "水準方向 StackLayout")](stacklayout-images/horizontal-large.png#lightbox "水準方向 StackLayout")
 
 對等的 C# 程式碼為：
 
@@ -145,7 +145,7 @@ public HorizontalStackLayoutPageCS()
 
 ## <a name="space-between-child-views"></a>子視圖之間的空間
 
-將 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 屬性設定為值，即可變更中子視圖間的間距 [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) `double` ：
+您 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 可以藉由將 [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) 屬性設定為值，來變更中子視圖之間的間距 `double` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -166,12 +166,12 @@ public HorizontalStackLayoutPageCS()
 </ContentPage>
 ```
 
-這個範例會建立一個 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 包含 [`Label`](xref:Xamarin.Forms.Label) 和 [`BoxView`](xref:Xamarin.Forms.BoxView) 物件的垂直，而且它們之間沒有間距：
+這個範例會建立垂直 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 包含 [`Label`](xref:Xamarin.Forms.Label) 和 [`BoxView`](xref:Xamarin.Forms.BoxView) 物件之間沒有間距的物件：
 
-[![沒有任何間距的 StackLayout 螢幕擷取畫面](stacklayout-images/spacing.png "不含任何間距的 StackLayout")](stacklayout-images/spacing-large.png#lightbox "不含任何間距的 StackLayout")
+[![StackLayout 沒有任何間距的螢幕擷取畫面](stacklayout-images/spacing.png "不含任何間距的 StackLayout")](stacklayout-images/spacing-large.png#lightbox "不含任何間距的 StackLayout")
 
 > [!TIP]
-> [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing)屬性可以設定為負值，讓子視圖重迭。
+> [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing)屬性可以設定為負數值，讓子視圖重迭。
 
 對等的 C# 程式碼為：
 
@@ -203,19 +203,19 @@ public class StackLayoutSpacingPageCS : ContentPage
 
 ## <a name="position-and-size-of-child-views"></a>子視圖的位置和大小
 
-中子視圖的大小和位置 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 取決於子視圖的 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 和 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 屬性值，以及其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和屬性的值 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。 在垂直的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 子視圖中，當其大小未明確設定時，會展開以填滿可用的寬度。 同樣地，在水準的 `StackLayout` 子視圖中，當其大小未明確設定時，會展開以填滿可用的高度。
+中子視圖的大小和位置 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，取決於子視圖的值和屬性的值 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) ，以及其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和屬性的值 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。 在垂直的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 情況下，當子視圖的大小未明確設定時，就會展開以填滿可用的寬度。 同樣地，在水準中 `StackLayout` ，子視圖會展開，以在其大小未明確設定時填滿可用的高度。
 
-的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性（及其 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 子視圖）可以設定為結構中的欄位 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) ，這會封裝兩個版面配置喜好設定：
+[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 其子視圖的和屬性 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 可以設定為結構中的欄位 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) ，此結構會封裝兩個版面配置喜好設定：
 
-- *對齊方式*會決定子視圖在其父系版面配置中的位置和大小。
-- *展開*表示子視圖是否應該使用額外的空間（如果有的話）。
+- *對齊* 會決定子視圖在其父配置內的位置和大小。
+- *展開* 會指出子視圖是否應該使用額外的空間（如果有的話）。
 
 > [!TIP]
-> [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) [`StackLayout`](xref:Xamarin.Forms.StackLayout) 除非您需要，否則請不要設定的和屬性。 `LayoutOptions.Fill` 和 `LayoutOptions.FillAndExpand` 的預設值可提供最優異的版面配置最佳化。 變更這些屬性會產生成本並耗用記憶體，即使將它們設定回預設值也一樣。
+> [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)除非您需要，否則請勿設定的和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 `LayoutOptions.Fill` 和 `LayoutOptions.FillAndExpand` 的預設值可提供最優異的版面配置最佳化。 變更這些屬性會產生成本並耗用記憶體，即使將它們設回預設值也一樣。
 
 ### <a name="alignment"></a>對齊
 
-下列 XAML 範例會在中設定每個子視圖的對齊喜好設定 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
+下列 XAML 範例會在中的每個子視圖上設定對齊喜好設定 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -239,15 +239,15 @@ public class StackLayoutSpacingPageCS : ContentPage
 </ContentPage>
 ```
 
-在此範例中，會在物件上設定對齊喜好設定， [`Label`](xref:Xamarin.Forms.Label) 以控制其在中的位置 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 [`Start`](xref:Xamarin.Forms.LayoutOptions.Start)、 [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) 、 [`End`](xref:Xamarin.Forms.LayoutOptions.End) 和 [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) 欄位是用來定義 [`Label`](xref:Xamarin.Forms.Label) 父系內物件的對齊方式 `StackLayout` ：
+在此範例中，會在物件上設定對齊喜好設定， [`Label`](xref:Xamarin.Forms.Label) 以控制其在中的位置 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 [`Start`](xref:Xamarin.Forms.LayoutOptions.Start)、、 [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) [`End`](xref:Xamarin.Forms.LayoutOptions.End) 和 [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) 欄位是用來定義父系內物件的對齊方式 [`Label`](xref:Xamarin.Forms.Label) `StackLayout` ：
 
-[![已設定對齊選項之 StackLayout 的螢幕擷取畫面](stacklayout-images/alignment.png "具有對齊選項的 StackLayout")](stacklayout-images/alignment-large.png#lightbox "具有對齊選項的 StackLayout")
+[![StackLayout 對齊選項設定的螢幕擷取畫面](stacklayout-images/alignment.png "具有對齊選項的 StackLayout")](stacklayout-images/alignment-large.png#lightbox "具有對齊選項的 StackLayout")
 
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 只會遵循子檢視上的對齊喜好設定，而這與 `StackLayout` 方向相反。 因此，垂直方向 `StackLayout` 中的 [`Label`](xref:Xamarin.Forms.Label) 子檢視會將其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性設定為其中一個對齊欄位：
 
-- [`Start`](xref:Xamarin.Forms.LayoutOptions.Start)，其會將置於的 [`Label`](xref:Xamarin.Forms.Label) 左邊 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
+- [`Start`](xref:Xamarin.Forms.LayoutOptions.Start)，將放置在的 [`Label`](xref:Xamarin.Forms.Label) 左邊 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
 - [`Center`](xref:Xamarin.Forms.LayoutOptions.Center)，這會將 [`Label`](xref:Xamarin.Forms.Label) 放在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的中心位置。
-- [`End`](xref:Xamarin.Forms.LayoutOptions.End)，其會將 [`Label`](xref:Xamarin.Forms.Label) 放在的右側 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
+- [`End`](xref:Xamarin.Forms.LayoutOptions.End)，將放置於 [`Label`](xref:Xamarin.Forms.Label) 右邊的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
 - [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)，這會確保 [`Label`](xref:Xamarin.Forms.Label) 填入 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的寬度。
 
 對等的 C# 程式碼為：
@@ -275,7 +275,7 @@ public class AlignmentPageCS : ContentPage
 
 ### <a name="expansion"></a>擴充
 
-下列 XAML 範例會針對中的每個設定擴充喜好設定 [`Label`](xref:Xamarin.Forms.Label) [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
+下列 XAML 範例會針對中的每一個設定擴充喜好設定 [`Label`](xref:Xamarin.Forms.Label) [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -309,9 +309,9 @@ public class AlignmentPageCS : ContentPage
 </ContentPage>
 ```
 
-在此範例中，會在物件上設定擴充喜好設定， [`Label`](xref:Xamarin.Forms.Label) 以控制其在中的大小 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 [`StartAndExpand`](xref:Xamarin.Forms.LayoutOptions.StartAndExpand)、 [`CenterAndExpand`](xref:Xamarin.Forms.LayoutOptions.CenterAndExpand) 、 [`EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand) 和 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) 欄位是用來定義對齊喜好設定，以及 `Label` 如果父系中有更多可用空間（如果有的話） `StackLayout` ：
+在此範例中，會在物件上設定展開喜好設定， [`Label`](xref:Xamarin.Forms.Label) 以控制其在中的大小 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 [`StartAndExpand`](xref:Xamarin.Forms.LayoutOptions.StartAndExpand)、、 [`CenterAndExpand`](xref:Xamarin.Forms.LayoutOptions.CenterAndExpand) [`EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand) 和 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) 欄位是用來定義對齊喜好設定，以及是否 `Label` 會在父系中有更多空間時佔用空間 `StackLayout` ：
 
-[![已設定擴充選項之 StackLayout 的螢幕擷取畫面](stacklayout-images/expansion.png "具有展開選項的 StackLayout")](stacklayout-images/expansion-large.png#lightbox "具有展開選項的 StackLayout")
+[![具有展開選項組之 StackLayout 的螢幕擷取畫面](stacklayout-images/expansion.png "具有展開選項的 StackLayout")](stacklayout-images/expansion-large.png#lightbox "具有展開選項的 StackLayout")
 
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 只會讓子檢視往其方向延展。 因此，垂直方向的 `StackLayout` 若要延展 [`Label`](xref:Xamarin.Forms.Label) 子檢視，其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性須設定為其中一個延展欄位。 這表示，在垂直對齊的情況下，每個 `Label` 會佔用 `StackLayout` 內相同數量的空間。 不過，最後的 `Label` 會將其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設為 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)，因此只有其大小不同。
 
@@ -346,11 +346,11 @@ public ExpansionPageCS()
 > [!IMPORTANT]
 > 如果 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的所有空間都已使用，則延展喜好設定不會有作用。
 
-如需對齊和擴充的詳細資訊，請參閱[中 Xamarin.Forms 的版面配置選項](layout-options.md)。
+如需對齊和展開的詳細資訊，請參閱[中 Xamarin.Forms 的版面配置選項](layout-options.md)。
 
-## <a name="nested-stacklayout-objects"></a>Nested StackLayout 物件
+## <a name="nested-stacklayout-objects"></a>嵌套 StackLayout 物件
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout)可以當做包含嵌套子 `StackLayout` 物件或其他子版面配置的父配置使用。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout)可用來做為父配置，其中包含嵌套的子 `StackLayout` 物件或其他子版面配置。
 
 下列 XAML 顯示的是嵌套物件的範例 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
 
@@ -396,12 +396,12 @@ public ExpansionPageCS()
 </ContentPage>
 ```
 
-在此範例中，父系 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 包含 `StackLayout` 物件內的嵌套物件 [`Frame`](xref:Xamarin.Forms.Frame) 。 父系 `StackLayout` 是垂直方向，而子物件則 `StackLayout` 是水準方向：
+在此範例中，父系 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 包含 `StackLayout` 物件內的嵌套物件 [`Frame`](xref:Xamarin.Forms.Frame) 。 父代 `StackLayout` 是垂直方向，而子 `StackLayout` 物件是水準方向：
 
-[![嵌套 StackLayout 物件的螢幕擷取畫面](stacklayout-images/combined.png "Nested StackLayouts")](stacklayout-images/combined-large.png#lightbox "Nested StackLayouts")
+[![嵌套 StackLayout 物件的螢幕擷取畫面](stacklayout-images/combined.png "嵌套 StackLayouts")](stacklayout-images/combined-large.png#lightbox "嵌套 StackLayouts")
 
 > [!IMPORTANT]
-> 您的嵌套 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 物件和其他配置越深入，嵌套的配置就會影響效能。 如需詳細資訊，請參閱[選擇正確的版面](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)配置。
+> 您可以更深入 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 地嵌套物件和其他配置，嵌套的版面配置會影響效能。 如需詳細資訊，請參閱 [選擇正確的版面](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)配置。
 
 對等的 C# 程式碼為：
 
@@ -471,7 +471,7 @@ public class CombinedStackLayoutPageCS : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [StackLayout 示範（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
-- [中的版面配置選項Xamarin.Forms](layout-options.md)
+- [StackLayout 示範 (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
+- [中的版面配置選項 Xamarin.Forms](layout-options.md)
 - [選擇 Xamarin.Forms 版面配置](choose-layout.md)
 - [改善 Xamarin.Forms 應用程式效能](~/xamarin-forms/deploy-test/performance.md)

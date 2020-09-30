@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsDependencyService 簡介
+title: Xamarin.Forms DependencyService 簡介
 description: 本文說明如何使用 Xamarin.Forms DependencyService 類別來叫用原生平臺功能。
 ms.prod: xamarin
 ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
@@ -10,29 +10,29 @@ ms.date: 06/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4d43a0c9c4878733d65b170c27e744b397aa4d0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2d63ac91031fc4a2cc127272a075f15a8ea81f4e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138355"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555278"
 ---
-# <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.FormsDependencyService 簡介
+# <a name="no-locxamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 簡介
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
-[`DependencyService`](xref:Xamarin.Forms.DependencyService)類別是一種服務定位器，可讓 Xamarin.Forms 應用程式從共用程式碼叫用原生平臺功能。
+[`DependencyService`](xref:Xamarin.Forms.DependencyService)類別是服務定位器，可讓 Xamarin.Forms 應用程式從共用程式碼叫用原生平臺功能。
 
 使用來叫用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 原生平臺功能的程式是：
 
 1. 在共用程式碼中建立原生平台功能的介面。 如需詳細資訊，請參閱[建立介面](#create-an-interface)。
 1. 在必要的平台專案中實作介面。 如需詳細資訊，請參閱[在每個平台上實作介面](#implement-the-interface-on-each-platform)。
-1. 使用註冊平臺的執行 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 這可讓 Xamarin.Forms 在執行時間找出平臺的實現。 如需詳細資訊，請參閱[登錄平台實作](#register-the-platform-implementations)。
+1. 使用註冊平臺執行 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 這可讓您 Xamarin.Forms 在執行時間找出平臺執行。 如需詳細資訊，請參閱[登錄平台實作](#register-the-platform-implementations)。
 1. 從共用程式碼解析平台實作並叫用它們。 如需詳細資訊，請參閱[解析平台實作](#resolve-the-platform-implementations)。
 
 下圖顯示如何在應用程式中叫用原生平臺功能 Xamarin.Forms ：
 
-![使用 DependencyService 類別的服務位置總覽 Xamarin.Forms](introduction-images/dependency-service.png "DependencyService 服務位置")
+![使用：：：非 loc (Xamarin. Forms) ：：： DependencyService 類別的服務位置總覽](introduction-images/dependency-service.png "DependencyService 服務位置")
 
 ## <a name="create-an-interface"></a>建立介面
 
@@ -114,9 +114,9 @@ namespace DependencyServiceDemos.UWP
 
 ## <a name="register-the-platform-implementations"></a>登錄平台實作
 
-在每個平臺專案中執行介面之後，平臺的程式必須向註冊 [`DependencyService`](xref:Xamarin.Forms.DependencyService) ，以便 Xamarin.Forms 在執行時間找到它們。 這通常會使用來執行 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) ，這表示指定的類型會提供介面的執行。
+在每個平臺專案中執行介面之後，必須向註冊平臺 [`DependencyService`](xref:Xamarin.Forms.DependencyService) ，使 Xamarin.Forms 其可在執行時間找到它們。 這通常是使用來執行 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) ，這表示指定的型別會提供介面的實作為。
 
-下列範例顯示 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 如何使用來註冊介面的 iOS 執行 `IDeviceOrientationService` ：
+下列範例顯示 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 如何使用註冊介面的 iOS 實作為 `IDeviceOrientationService` ：
 
 ```csharp
 using Xamarin.Forms;
@@ -134,15 +134,15 @@ namespace DependencyServiceDemos.iOS
 }
 ```
 
-在此範例中，會 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) `DeviceOrientationService` 向註冊 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 同樣地， `IDeviceOrientationService` 其他平臺上的介面的執行應該會向註冊 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 。
+在此範例中，會 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) `DeviceOrientationService` 向註冊 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 同樣地， `IDeviceOrientationService` 其他平臺上的介面實作為註冊 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 。
 
-如需使用註冊平臺部署的詳細資訊 [`DependencyService`](xref:Xamarin.Forms.DependencyService) ，請參閱[ Xamarin.Forms DependencyService 註冊與解決方法](registration-and-resolution.md)。
+如需使用註冊平臺的詳細資訊 [`DependencyService`](xref:Xamarin.Forms.DependencyService) ，請參閱[ Xamarin.Forms DependencyService 註冊和解決](registration-and-resolution.md)方式。
 
 ## <a name="resolve-the-platform-implementations"></a>解析平台實作
 
-使用在中註冊平臺的之後 [`DependencyService`](xref:Xamarin.Forms.DependencyService) ，必須先解析執行，然後再叫用。 這通常是使用方法在共用程式碼中執行 [`DependencyService.Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 。
+使用完成平臺執行的註冊之後 [`DependencyService`](xref:Xamarin.Forms.DependencyService) ，必須先解決這些必須解決的問題。 這通常是使用方法在共用程式碼中執行 [`DependencyService.Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 。
 
-下列程式碼顯示呼叫 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法以解析 `IDeviceOrientationService` 介面，然後叫用其方法的範例 `GetOrientation` ：
+下列程式碼顯示呼叫 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法來解析介面，然後叫用 `IDeviceOrientationService` 其方法的範例 `GetOrientation` ：
 
 ```csharp
 IDeviceOrientationService service = DependencyService.Get<IDeviceOrientationService>();
@@ -155,9 +155,9 @@ DeviceOrientation orientation = service.GetOrientation();
 DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>().GetOrientation();
 ```
 
-如需使用來解析平臺執行的詳細資訊 [`DependencyService`](xref:Xamarin.Forms.DependencyService) ，請參閱[ Xamarin.Forms DependencyService 註冊與解決方法](registration-and-resolution.md)。
+如需使用來解析平臺執行的詳細資訊 [`DependencyService`](xref:Xamarin.Forms.DependencyService) ，請參閱[ Xamarin.Forms DependencyService 註冊和解決](registration-and-resolution.md)方式。
 
 ## <a name="related-links"></a>相關連結
 
-- [DependencyService 示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
-- [Xamarin.FormsDependencyService 註冊與解決](registration-and-resolution.md)
+- [DependencyService 示範 (範例)](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+- [Xamarin.Forms DependencyService 註冊和解析](registration-and-resolution.md)

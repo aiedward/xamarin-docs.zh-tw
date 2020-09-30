@@ -9,12 +9,12 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2dc00a10e70972429f123b0dfb7adb6a083a883d
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 60a5fbaa8386d0ecdc5d205b3262e05406cec4a6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433681"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556239"
 ---
 # <a name="no-locxamarinessentials-preferences"></a>Xamarin.Essentials：喜好設定
 
@@ -62,7 +62,7 @@ Preferences.Remove("my_key");
 Preferences.Clear();
 ```
 
-除了這些方法之外，每個方法都有一個選擇性 `sharedName`，可用於建立其他容器以供選擇。 請閱讀以下平台實作細節。
+上述方法也會採用選擇性 `sharedName` 的，可用來建立其他用於喜好設定的容器。 請閱讀以下平台實作細節。
 
 ## <a name="supported-data-types"></a>支援的資料類型
 
@@ -78,7 +78,7 @@ Preferences.Clear();
 
 ## <a name="integrate-with-system-settings"></a>與系統設定整合
 
-喜好設定是原生儲存的，可讓您將設定整合至原生系統設定。 遵循平臺 documetnation 和範例以與平臺整合：
+喜好設定會以原生方式儲存，可讓您將設定整合至原生系統設定。 遵循平臺檔和範例以與平臺整合：
 
 * Apple：[執行 IOS 設定](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)套件組合
 * [iOS 應用程式喜好設定範例](/samples/xamarin/ios-samples/appprefs/)
@@ -93,7 +93,7 @@ Preferences.Clear();
 
 # <a name="android"></a>[Android](#tab/android)
 
-所有資料都會儲存於[共用的喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)中。 如果未指定 `sharedName`，則會使用預設的共用喜好設定，否則該名稱會用來取得具有指定名稱的**私人**共用喜好設定。
+所有資料都會儲存於[共用的喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)中。 如果未 `sharedName` 指定，則會使用預設的共用喜好設定，否則會使用名稱來取得具有指定名稱的 **私** 用共用喜好設定。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -101,7 +101,7 @@ Preferences.Clear();
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) 用於將值儲存在裝置上。 如果未指定 `sharedName`，則會使用 `LocalSettings`否則該名稱會用於建立 `LocalSettings` 內的容器。
+[ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) 用於將值儲存在裝置上。 如果未 `sharedName` 指定，則 `LocalSettings` 會使用，否則會使用名稱在中建立新的容器 `LocalSettings` 。
 
 `LocalSettings` 也有下列限制，每個設定的名稱最多可以是255個字元。 每個設定的大小最多可有8K 個位元組，而每個複合設定的大小最多可達64K 個位元組。
 
@@ -109,11 +109,11 @@ Preferences.Clear();
 
 ## <a name="persistence"></a>持續性
 
-解除安裝應用程式會移除所有「喜好設定」__。 但針對使用 [「自動備份」](https://developer.android.com/guide/topics/data/autobackup)____ 的 Android 6.0 (API 層級 23) 或更新版，並在其上執行的應用程式除外。 根據預設，此功能為啟用並保留應用程式資料，包括「共用喜好設定」____，這是**喜好設定** API 使用的內容。 您可以透過下列 Google [文件](https://developer.android.com/guide/topics/data/autobackup) 來停用此項目。
+卸載應用程式將會移除所有喜好設定，但在 Android 6.0 (API 層級 23) 或更新版本的應用程式會使用[__自動備份__](https://developer.android.com/guide/topics/data/autobackup)來移除所有的_喜好_設定。 根據預設，此功能為啟用並保留應用程式資料，包括「共用喜好設定」____，這是**喜好設定** API 使用的內容。 您可以透過下列 Google [文件](https://developer.android.com/guide/topics/data/autobackup) 來停用此項目。
 
 ## <a name="limitations"></a>限制
 
-儲存字串時，此 API 旨在存放少量文字。  若嘗試將其用來儲存大量文字，效能會欠佳。
+儲存字串時，此 API 旨在存放少量文字。 若嘗試將其用來儲存大量文字，效能會欠佳。
 
 ## <a name="api"></a>API
 

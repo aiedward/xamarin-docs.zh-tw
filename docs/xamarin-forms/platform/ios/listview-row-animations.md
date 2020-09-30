@@ -1,6 +1,6 @@
 ---
 title: IOS 上的 ListView 資料列動畫
-description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的來控制在更新 ListView 專案集合時是否停用資料列動畫。
+description: 平臺專屬特性可讓您使用僅適用于特定平臺的功能，而不需要執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的，控制在更新 ListView 專案集合時是否停用資料列動畫。
 ms.prod: xamarin
 ms.assetid: E8F5103F-4D8E-4A5A-A16C-7FA14EE786AC
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 02/21/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 594e436c9db7c123fea4f9aa262c9d27af765b07
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 53930f6b6b83ea855db9538f19e88482a4d1a82f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136002"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557448"
 ---
 # <a name="listview-row-animations-on-ios"></a>IOS 上的 ListView 資料列動畫
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平臺專屬的控制項會在專案集合更新時，是否要停用資料列動畫 [`ListView`](xref:Xamarin.Forms.ListView) 。 將可系結屬性設定為，即可在 XAML 中使用它 `ListView.RowAnimationsEnabled` `false` ：
+此 iOS 平臺特定的控制在更新專案集合時是否停用資料列動畫 [`ListView`](xref:Xamarin.Forms.ListView) 。 它是在 XAML 中使用，方法是將可系結 `ListView.RowAnimationsEnabled` 屬性設定為 `false` ：
 
 ```xaml
 <ContentPage ...
@@ -34,7 +34,7 @@ ms.locfileid: "84136002"
 </ContentPage>
 ```
 
-或者，您也可以使用 Fluent API，從 c # 取用它：
+或者，您也可以使用流暢的 API，從 c # 中使用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -44,13 +44,13 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 listView.On<iOS>().SetRowAnimationsEnabled(false);
 ```
 
-`ListView.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 `ListView.SetRowAnimationsEnabled`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 可用來控制更新專案集合時，是否要停用資料列動畫 [`ListView`](xref:Xamarin.Forms.ListView) 。 此外， `ListView.GetRowAnimationsEnabled` 方法可以用來傳回上的資料列動畫是否停用 `ListView` 。
+`ListView.On<iOS>`方法指定此平臺特定的只會在 iOS 上執行。 在 `ListView.SetRowAnimationsEnabled` 命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 可用來控制 [`ListView`](xref:Xamarin.Forms.ListView) 更新專案集合時，是否停用資料列動畫。 此外， `ListView.GetRowAnimationsEnabled` 方法也可以用來傳回是否停用資料列動畫 `ListView` 。
 
 > [!NOTE]
-> [`ListView`](xref:Xamarin.Forms.ListView)預設會啟用資料列動畫。 因此，在中插入新的資料列時，就會發生動畫 `ListView` 。
+> [`ListView`](xref:Xamarin.Forms.ListView) 預設會啟用資料列動畫。 因此，當新的資料列插入時，就會發生動畫 `ListView` 。
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

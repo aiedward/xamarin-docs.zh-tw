@@ -11,12 +11,12 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 727bac49c5bff522125a2f21a9742e428b81c924
-ms.sourcegitcommit: bb18e6b3b5d592374b17932efa1e85c3b5fbad57
+ms.openlocfilehash: fac41e57d13815dcd202521d16ae4730e1d99cfa
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88950738"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555862"
 ---
 # <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms 字串和影像當地語系化
 
@@ -26,7 +26,7 @@ ms.locfileid: "88950738"
 
 ![IOS 和 Android 上當地語系化應用程式的螢幕擷取畫面](text-images/localizationdemo-screenshots.png)
 
-.NET framework 包含內建機制，可使用 [Resx 資源檔](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)來當地語系化應用程式。 資源檔會將文字和其他內容儲存為名稱/值組，以允許應用程式取得所提供金鑰的內容。 資源檔可讓當地語系化的內容與應用程式程式碼分開。
+.NET framework 包含內建機制，可使用 [Resx 資源檔](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)來當地語系化應用程式。 資源檔會將文字和其他內容儲存為名稱/值組，以允許應用程式取得所提供金鑰的內容。 資源檔可讓當地語系化的內容與應用程式程式碼分開。
 
 使用資源檔將 Xamarin.Forms 應用程式當地語系化，需要執行下列步驟：
 
@@ -153,7 +153,7 @@ using System.Resources;
 
 一旦建立預設資源檔並在 **AssemblyInfo.cs** 檔中指定預設文化特性之後，應用程式就可以在執行時間取出當地語系化的字串。
 
-如需資源檔的詳細資訊，請參閱 [建立 .net 應用程式的資源檔](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)。
+如需資源檔的詳細資訊，請參閱 [建立 .net 應用程式的資源檔](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)。
 
 ## <a name="specify-supported-languages-on-ios"></a>在 iOS 上指定支援的語言
 
@@ -306,7 +306,7 @@ Image flag = new Image
 
 ## <a name="localize-the-application-name"></a>將應用程式名稱當地語系化
 
-應用程式名稱是在每個平臺上指定，且不會使用 Resx 資源檔。 若要將 Android 上的應用程式名稱當地語系化，請參閱 [在 android 上](~/android/app-fundamentals/localization.md#stringsxml-file-format)將應用程式名稱當地語系化。 若要將 iOS 上的應用程式名稱當地語系化，請參閱將 [ios 上的應用程式名稱當地語系化](~/ios/app-fundamentals/localization/index.md#app-name)。 若要在 UWP 上將應用程式名稱當地語系化，請參閱 [uwp 套件資訊清單中的當地語系化字串](https://docs.microsoft.com/windows/uwp/app-resources/localize-strings-ui-manifest)。
+應用程式名稱是在每個平臺上指定，且不會使用 Resx 資源檔。 若要將 Android 上的應用程式名稱當地語系化，請參閱 [在 android 上](~/android/app-fundamentals/localization.md#stringsxml-file-format)將應用程式名稱當地語系化。 若要將 iOS 上的應用程式名稱當地語系化，請參閱將 [ios 上的應用程式名稱當地語系化](~/ios/app-fundamentals/localization/index.md#app-name)。 若要在 UWP 上將應用程式名稱當地語系化，請參閱 [uwp 套件資訊清單中的當地語系化字串](/windows/uwp/app-resources/localize-strings-ui-manifest)。
 
 ## <a name="test-localization"></a>測試當地語系化
 
@@ -318,11 +318,11 @@ Image flag = new Image
 
 ## <a name="related-links"></a>相關連結
 
-- [當地語系化範例專案](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
-- [建立 .NET 應用程式的資源檔](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
+- [當地語系化範例專案](/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+- [建立 .NET 應用程式的資源檔](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
 - [跨平台當地語系化](~/cross-platform/app-fundamentals/localization.md)
-- [使用 CultureInfo 類別 (MSDN)](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo)
+- [使用 CultureInfo 類別 (MSDN)](/dotnet/api/system.globalization.cultureinfo)
 - [Android 當地語系化](~/android/app-fundamentals/localization.md)
 - [iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)
 - [UWP 當地語系化](/windows/uwp/design/globalizing/globalizing-portal/)
-- [找出和使用特定文化特性資源 (MSDN)](https://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
+- [找出和使用特定文化特性資源 (MSDN)](/previous-versions/visualstudio/visual-studio-2008/s9ckwb4b(v=vs.90))

@@ -1,6 +1,6 @@
 ---
 title: Windows 上的預設映射目錄
-description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Windows 平臺特定的來定義專案中將從中載入影像資產的目錄。
+description: 平臺專屬特性可讓您使用僅適用于特定平臺的功能，而不需要執行自訂轉譯器或效果。 本文說明如何使用 Windows 平臺特定的 Windows 平臺，在專案中定義映射資產的載入來原始目錄。
 ms.prod: xamarin
 ms.assetid: 537A032B-74DD-4D43-864E-7D7113286D0D
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d5c5e6db8ddcf3cef32bde5c387adc378afd0058
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d6a8674f0cffe534b1ee83f20ab255766fbfcbda
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135570"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557396"
 ---
 # <a name="default-image-directory-on-windows"></a>Windows 上的預設映射目錄
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此通用 Windows 平臺平臺特定會定義專案中將從中載入影像資產的目錄。 它是在 XAML 中使用，方法是將設定 `Application.ImageDirectory` 為 `string` ，其代表包含影像資產的專案目錄：
+此通用 Windows 平臺平臺特定會定義專案中的目錄，以從中載入映射資產。 它是在 XAML 中使用，方法是將設 `Application.ImageDirectory` 為 `string` ，代表包含影像資產的專案目錄：
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -33,7 +33,7 @@ ms.locfileid: "84135570"
 </Application>
 ```
 
-或者，您也可以使用 Fluent API，從 c # 取用它：
+或者，您也可以使用流暢的 API，從 c # 中使用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -42,12 +42,12 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 Application.Current.On<Windows>().SetImageDirectory("Assets");
 ```
 
-`Application.On<Windows>`方法會指定此平臺特定只會在通用 Windows 平臺上執行。 `Application.SetImageDirectory`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 用來指定要從中載入影像的專案目錄。 此外， `GetImageDirectory` 方法可以用來傳回 `string` ，其代表包含應用程式映射資產的專案目錄。
+`Application.On<Windows>`方法指定此平臺特定只會在通用 Windows 平臺上執行。 `Application.SetImageDirectory`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 是用來指定要載入映射的專案目錄。 此外， `GetImageDirectory` 方法可以用來傳回 `string` ，代表包含應用程式影像資產的專案目錄。
 
-結果是應用程式中使用的所有映射都會從指定的專案目錄載入。
+結果是會從指定的專案目錄載入應用程式中使用的所有映射。
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

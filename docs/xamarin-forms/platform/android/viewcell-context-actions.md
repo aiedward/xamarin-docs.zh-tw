@@ -1,6 +1,6 @@
 ---
 title: Android 上的 ViewCell 內容動作
-description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用可啟用 ViewCell 內容動作舊版模式的 Android 平臺特定。
+description: 平臺專屬特性可讓您使用僅適用于特定平臺的功能，而不需要執行自訂轉譯器或效果。 本文說明如何使用可啟用 ViewCell 內容動作舊版模式的 Android 平臺特定。
 ms.prod: xamarin
 ms.assetid: 8BD71B10-5037-443F-9975-B941CE393E5A
 ms.technology: xamarin-forms
@@ -10,20 +10,20 @@ ms.date: 09/24/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 053697921f1adacc102e9e9bee9dd17f8d44526b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6cbdea3656daa4df894a79edc70453c78e3844bc
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128553"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556746"
 ---
 # <a name="viewcell-context-actions-on-android"></a>Android 上的 ViewCell 內容動作
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-根據4.3 預設 Xamarin.Forms ，當 [`ViewCell`](xref:Xamarin.Forms.ViewCell) Android 應用程式中的為中的每個專案定義內容動作時 [`ListView`](xref:Xamarin.Forms.ListView) ，當中選取的專案變更時，就會更新內容動作功能表 `ListView` 。 不過，在舊版的 Xamarin.Forms 內容動作功能表並未更新，而且這種行為稱為 `ViewCell` 舊版模式。 如果 `ListView` 使用 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) `ItemTemplate` 從 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定義不同內容動作的物件設定其，則此舊版模式可能會導致不正確的行為。
+根據預設 Xamarin.Forms ，在4.3 中，當 [`ViewCell`](xref:Xamarin.Forms.ViewCell) Android 應用程式中的每個專案定義內容動作時 [`ListView`](xref:Xamarin.Forms.ListView) ，會在變更中選取的專案時更新內容動作功能表 `ListView` 。 不過，在舊版的 Xamarin.Forms 內容動作功能表中，並不會更新，而這種行為稱為 `ViewCell` 舊版模式。 如果 `ListView` 使用 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 來 `ItemTemplate` 從 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定義不同內容動作的物件進行設定，則舊版模式可能會導致不正確的行為。
 
-此 Android 平臺特定會啟用 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 內容動作功能表舊版模式，以提供回溯相容性，以便在變更中選取的專案時，不會更新內容動作功能表 [`ListView`](xref:Xamarin.Forms.ListView) 。 將可系結屬性設定為，即可在 XAML 中使用它 `ViewCell.IsContextActionsLegacyModeEnabled` `true` ：
+此 Android 平臺特定 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 會啟用內容動作功能表舊版模式，以提供回溯相容性，如此一來，當選取的專案變更時，就不會更新內容動作功能表 [`ListView`](xref:Xamarin.Forms.ListView) 。 它是在 XAML 中使用，方法是將可系結 `ViewCell.IsContextActionsLegacyModeEnabled` 屬性設定為 `true` ：
 
 ```xaml
 <ContentPage ...
@@ -46,7 +46,7 @@ ms.locfileid: "84128553"
 </ContentPage>
 ```
 
-或者，您也可以使用 Fluent API，從 c # 取用它：
+或者，您也可以使用流暢的 API，從 c # 中使用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -56,23 +56,23 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 viewCell.On<Android>().SetIsContextActionsLegacyModeEnabled(true);
 ```
 
-`ViewCell.On<Android>`方法會指定此平臺特定僅在 Android 上執行。 `ViewCell.SetIsContextActionsLegacyModeEnabled`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 可用來啟用 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 內容動作功能表舊版模式，因此當變更中的選取專案時，不會更新內容動作功能表 [`ListView`](xref:Xamarin.Forms.ListView) 。 此外， `ViewCell.GetIsContextActionsLegacyModeEnabled` 方法可以用來傳回是否已啟用內容動作的舊版模式。
+`ViewCell.On<Android>`方法指定此平臺特定的只會在 Android 上執行。 `ViewCell.SetIsContextActionsLegacyModeEnabled`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 是用來啟用 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 內容動作功能表舊版模式，如此一來，當選取的專案變更時，就不會更新內容動作功能表 [`ListView`](xref:Xamarin.Forms.ListView) 。 此外， `ViewCell.GetIsContextActionsLegacyModeEnabled` 方法可以用來傳回是否啟用內容動作舊版模式。
 
 下列螢幕擷取畫面顯示 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 已啟用的內容動作舊版模式：
 
-![在 Android 上啟用 ViewCell 舊版模式的螢幕擷取畫面](viewcell-context-actions-images/legacy-mode-enabled.png "ViewCell 舊版模式已啟用")
+![Android 上已啟用 ViewCell 舊版模式的螢幕擷取畫面](viewcell-context-actions-images/legacy-mode-enabled.png "ViewCell 舊版模式已啟用")
 
-在此模式中，儘管針對資料格2定義了不同的內容功能表項目，顯示的內容動作功能表項目與儲存格1和資料格2相同。
+在此模式中，即使針對儲存格2定義了不同的內容功能表項目，儲存格1和資料格2的顯示內容動作功能表項目也相同。
 
 下列螢幕擷取畫面顯示 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 已停用的內容動作舊版模式，這是預設 Xamarin.Forms 行為：
 
-![已停用 Android 上 ViewCell 舊版模式的螢幕擷取畫面](viewcell-context-actions-images/legacy-mode-disabled.png "已停用 ViewCell 舊版模式")
+![Android 上已停用 ViewCell 舊版模式的螢幕擷取畫面](viewcell-context-actions-images/legacy-mode-disabled.png "ViewCell 舊版模式已停用")
 
-在此模式中，會針對儲存格1和資料格2顯示正確的內容動作功能表項目。
+在此模式中，儲存格1和資料格2會顯示正確的內容動作功能表項目。
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
