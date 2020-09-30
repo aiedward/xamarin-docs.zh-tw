@@ -10,12 +10,12 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 01/27/2020
-  ms.openlocfilehash: 394812b5150f7bbea46dff476bd2f896083b9a74
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.openlocfilehash: 593d8d20433222e1b18fd65b86a7586aa5560933
+  ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77374080"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91454282"
 landingContent:
 - title: 開始使用
   linkLists:
@@ -23,7 +23,7 @@ landingContent:
     links:
     - text: Xamarin.Android 使用者入門
       url: ~/android/get-started/index.md
-    - text: 設定及安裝
+    - text: 設定與安裝
       url: ~/android/get-started/installation/index.md
     - text: 建置您的第一個應用程式
       url: ~/android/get-started/hello-android/index.md
@@ -35,7 +35,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Accessibility
+    - text: 協助工具選項
       url: ~/android/app-fundamentals/accessibility.md
     - text: Android API 層級
       url: ~/android/app-fundamentals/android-api-levels.md
@@ -53,7 +53,7 @@ landingContent:
       url: ~/android/app-fundamentals/permissions.md
     - text: 觸控與手勢
       url: ~/android/app-fundamentals/touch/index.md
-    - text: 更多資訊 >
+    - text: 查看更多 >
       url: ~/android/app-fundamentals/index.md
 - title: 使用者介面
   linkLists:
@@ -69,7 +69,7 @@ landingContent:
       url: ~/android/user-interface/splash-screen.md
     - text: 版面配置
       url: ~/android/user-interface/layouts/index.md
-    - text: 控制
+    - text: 控制項
       url: ~/android/user-interface/controls/index.md
 - title: 平台功能
   linkLists:
@@ -89,11 +89,11 @@ landingContent:
       url: ~/android/platform/fragments/index.md
     - text: Java 整合
       url: ~/android/platform/java-integration/index.md
-    - text: 工作排程器
+    - text: 作業排程器
       url: ~/android/platform/android-job-scheduler.md
-    - text: 地圖與位置
+    - text: 地圖和位置
       url: ~/android/platform/maps-and-location/index.md
-    - text: 更多資訊 >
+    - text: 查看更多 >
       url: ~/android/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
@@ -108,7 +108,7 @@ landingContent:
     - text: 疑難排解
       url: ~/essentials/troubleshooting.md?context=xamarin/android
     - text: 版本資訊
-      url: https://docs.microsoft.com/xamarin/essentials/release-notes/
+      url: /xamarin/essentials/release-notes/
 - title: 資料與雲端服務
   linkLists:
   - linkListType: concept
@@ -137,15 +137,15 @@ landingContent:
       url: ~/android/deploy-test/multicore-devices.md
     - text: 效能
       url: ~/android/deploy-test/performance.md
-    - text: 分析
+    - text: 程式碼剖析
       url: ~/android/deploy-test/profiling.md
-    - text: 為發行做好準備
+    - text: 為發行做準備
       url: ~/android/deploy-test/release-prep/index.md
     - text: 簽署 APK
       url: ~/android/deploy-test/signing/index.md
     - text: 發佈應用程式
       url: ~/android/deploy-test/publishing/index.md
-    - text: 更多資訊 >
+    - text: 查看更多 >
       url: ~/android/deploy-test/index.md
 - title: 進階概念與內部項目
   linkLists:

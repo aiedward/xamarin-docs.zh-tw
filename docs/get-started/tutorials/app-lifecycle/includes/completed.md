@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9f22de73ded5bce1a257ba22c288d58b09a18003
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 7c5c0cec8a4ffc6c1ca38708d21a0a27ee966cbb
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059600"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451516"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
@@ -22,7 +22,7 @@ ms.locfileid: "71059600"
 
 ## <a name="related-links"></a>相關連結
 
-- [AppLifecycleTutorial (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-applifecycletutorial/)
+- [AppLifecycleTutorial (範例)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-applifecycletutorial/)
 - [Xamarin.Forms App 生命週期 (指南)](~/xamarin-forms/app-fundamentals/app-lifecycle.md)
 - [Xamarin.Forms App 類別 (指南)](~/xamarin-forms/app-fundamentals/application-class.md)
 - [應用程式 API](xref:Xamarin.Forms.Application)

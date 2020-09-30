@@ -480,7 +480,7 @@
         - name: Web 驗證器
           href: ~/essentials/web-authenticator.md?context=xamarin/android
         - name: Xamarin.Essentials 版本資訊
-          href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
+          href: /xamarin/essentials/release-notes/
         - name: 疑難排解
           href: ~/essentials/troubleshooting.md?context=xamarin/android
     - name: 資料和雲端服務
@@ -695,6 +695,6 @@
             - name: 包裝
               href: wear/deploy-test/packaging.md
     - name: 版本資訊
-      href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
+      href: /xamarin/android/release-notes/
     - name: 範例
       href: samples/index.md

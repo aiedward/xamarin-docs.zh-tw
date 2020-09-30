@@ -15,7 +15,7 @@
     - name: 應用程式基本概念
       href: app-fundamentals/index.md
       items:
-        - name: Accessibility
+        - name: 協助工具選項
           href: app-fundamentals/accessibility.md
         - name: 常見模式和慣用語
           href: app-fundamentals/patterns.md
@@ -70,7 +70,7 @@
         - name: macOS Mojave 簡介
           href: platform/introduction-to-macos-mojave/index.md
           items:
-            - name: 開始使用
+            - name: 快速入門
               href: platform/introduction-to-macos-mojave/get-started.md
         - name: macOS High Sierra 簡介
           href: platform/introduction-to-macos-high-sierra/index.md
@@ -109,7 +109,7 @@
           href: deploy-test/linker.md
         - name: 效能
           href: deploy-test/performance.md
-        - name: 發行至 App Store
+        - name: 發佈至 App Store
           href: deploy-test/publishing-to-the-app-store/index.md
           items:
             - name: 憑證和識別碼
@@ -132,7 +132,7 @@
         - name: Unified API
           href: ~/cross-platform/macios/unified/index.md?context=xamarin/mac
           items:
-            - name: 概觀
+            - name: 總覽
               href: ~/cross-platform/macios/unified/overview.md?context=xamarin/mac
             - name: 更新現有的應用程式
               href: ~/cross-platform/macios/unified/updating-apps.md?context=xamarin/mac
@@ -149,7 +149,7 @@
         - name: 繫結 Objective C
           href: ~/cross-platform/macios/binding/index.md?context=xamarin/mac
           items:
-            - name: 概觀
+            - name: 總覽
               href: ~/cross-platform/macios/binding/overview.md?context=xamarin/mac
             - name: 繫結 Objective-C 程式庫
               href: ~/cross-platform/macios/binding/objective-c-libraries.md?context=xamarin/mac
@@ -158,11 +158,11 @@
             - name: Objective Sharpie
               href: ~/cross-platform/macios/binding/objective-sharpie/index.md?context=xamarin/mac
               items:
-                - name: 開始使用
+                - name: 快速入門
                   href: ~/cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin/mac
                 - name: 工具與命令
                   href: ~/cross-platform/macios/binding/objective-sharpie/tools.md?context=xamarin/mac
-                - name: 特性
+                - name: 功能
                   href: ~/cross-platform/macios/binding/objective-sharpie/platform/index.md?context=xamarin/mac
                   items:
                     - name: ApiDefinitions 與 StructsAndEnums
@@ -222,6 +222,6 @@
         - name: 錯誤訊息 (mmp)
           href: troubleshooting/mmp-errors.md
     - name: 版本資訊
-      href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
+      href: /xamarin/mac/release-notes/
     - name: 範例
       href: samples/index.md

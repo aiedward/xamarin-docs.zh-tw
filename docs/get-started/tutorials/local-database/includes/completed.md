@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a0f2e909d4c7003ba1314b848fd01e604d190a1b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c1d2900e31b76bb9f66bde55eb948d1f3f46e34e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107196"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451638"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
@@ -23,6 +23,6 @@ ms.locfileid: "71107196"
 
 ## <a name="related-links"></a>相關連結
 
-- [LocalDatabaseTutorial (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-localdatabasetutorial/)
+- [LocalDatabaseTutorial (範例)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-localdatabasetutorial/)
 - [Xamarin.Forms 本機資料庫 (指南)](~/xamarin-forms/data-cloud/data/databases.md)
 - [SQLite.NET NuGet 套件](https://www.nuget.org/packages/sqlite-net-pcl/)

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e01d661d5481c59175b5a9f747b2a11cb4a6301a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 03b54f479e9fcc3b332ab45594ac013a4eea6aa3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059602"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451551"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
@@ -22,6 +22,6 @@ ms.locfileid: "71059602"
 
 ## <a name="related-links"></a>相關連結
 
-- [PopupsTutorial (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-popupstutorial/)
+- [PopupsTutorial (範例)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-popupstutorial/)
 - [顯示快顯視窗 (指南)](~/xamarin-forms/user-interface/pop-ups.md)
 - [Page API](xref:Xamarin.Forms.Page)
