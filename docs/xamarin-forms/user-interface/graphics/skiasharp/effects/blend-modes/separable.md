@@ -10,26 +10,26 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0fd934a305e34bb7406a0379a0882873e3400fe8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139681"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558358"
 ---
 # <a name="the-separable-blend-modes"></a>分離的 blend 模式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-如您在[**SkiaSharp Porter-Duff blend 模式一**](porter-duff.md)文中所見，Porter-Duff blend 模式通常會執行裁剪作業。 可分離的 blend 模式有所不同。 可分離的模式會改變影像的個別紅色、綠色和藍色色彩元件。 可分離的 blend 模式可以混合色彩，以示範紅色、綠色和藍色的組合確實是白色：
+如您在 [**SkiaSharp Porter-Duff blend 模式一**](porter-duff.md)文所見，Porter-Duff blend 模式通常會執行裁剪作業。 可分離的 blend 模式不同。 可分離模式會改變影像的個別紅色、綠色和藍色色彩元件。 可分離的 blend 模式可以混合色彩，以示範紅色、綠色和藍色的組合的確是白色：
 
-![主要色彩](separable-images/SeparableSample.png "主要色彩")
+![原色](separable-images/SeparableSample.png "原色")
 
 ## <a name="lighten-and-darken-two-ways"></a>以兩種方式淡化和變暗 
 
-通常會有稍微暗或太淺的點陣圖。 您可以使用可分離的 blend 模式來淡化或加深 imabe。  事實上，列舉中的兩個可分離 blend 模式 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) 名為 `Lighten` 和 `Darken` 。 
+通常會有稍微太暗或太淺的點陣圖。 您可以使用可分離的 blend 模式，將 imabe 淡化或變暗。  的確，列舉中的兩個可分隔 blend 模式 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) 名為 `Lighten` 和 `Darken` 。 
 
-這兩種模式會在 [**淡化和變暗**] 頁面中示範。 XAML 檔案會具現化兩個 `SKCanvasView` 物件和兩個 `Slider` 視圖：
+這兩種模式會在 [ **淡化] 和 [變暗** ] 頁面中示範。 XAML 檔案會具現化兩個 `SKCanvasView` 物件和兩個 `Slider` 視圖：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -57,7 +57,7 @@ ms.locfileid: "84139681"
 </ContentPage>
 ```
 
-第一個 `SKCanvasView` 和 `Slider` 示範 `SKBlendMode.Lighten` ，第二組示範 `SKBlendMode.Darken` 。 這兩個 `Slider` 視圖會共用相同的 `ValueChanged` 處理常式，而這兩個會 `SKCanvasView` 共用相同的 `PaintSurface` 處理常式。 這兩個事件處理常式都會檢查哪個物件正在引發事件：
+第一個 `SKCanvasView` 和 `Slider` 示範 `SKBlendMode.Lighten` ，以及第二個配對示範 `SKBlendMode.Darken` 。 這兩個 `Slider` 視圖會共用相同的 `ValueChanged` 處理常式，而這兩個會 `SKCanvasView` 共用相同的 `PaintSurface` 處理常式。 這兩個事件處理常式都會檢查哪個物件正在引發事件：
 
 ```csharp
 public partial class LightenAndDarkenPage : ContentPage
@@ -124,67 +124,67 @@ public partial class LightenAndDarkenPage : ContentPage
 }
 ```
 
-`PaintSurface`處理常式會計算適合點陣圖的矩形。 處理常式會顯示該點陣圖，然後使用 `SKPaint` 物件，並 `BlendMode` 將其屬性設定為或，以在點陣圖上顯示一個矩形 `SKBlendMode.Lighten` `SKBlendMode.Darken` 。 `Color`屬性是以為基礎的灰色陰影 `Slider` 。 針對 `Lighten` 模式，色彩的範圍是從黑色到白色，但在 `Darken` 模式中，其範圍從白色到黑色。
+`PaintSurface`處理常式會計算適合點陣圖的矩形。 處理常式會顯示該點陣圖，然後使用 `SKPaint` 物件，並 `BlendMode` 將其屬性設定為或，以在點陣圖上顯示矩形 `SKBlendMode.Lighten` `SKBlendMode.Darken` 。 `Color`屬性是以灰色陰影為基礎 `Slider` 。 在此 `Lighten` 模式中，色彩的範圍是從黑色到白色，但在此 `Darken` 模式中，其範圍從白色到黑色。
 
-從左至右的螢幕擷取畫面會顯示越來越大的 `Slider` 值，因為頂端影像變得較淡，而下方影像則變暗：
+從左至右的螢幕擷取畫面會顯示越來越大的 `Slider` 值，因為最上層影像會變得較小，而底部影像會變暗：
 
 [![淡化和變暗](separable-images/LightenAndDarken.png "淡化和變暗")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-此程式示範使用可分離 blend 模式的一般方式：目的地是某種影像，通常是點陣圖。 來源是使用 `SKPaint` 物件的矩形，其 `BlendMode` 屬性設定為可分離的 blend 模式。 矩形可以是純色（如這裡所示）或漸層。 透明度通常_不_會與可分離的 blend 模式搭配使用。
+此程式示範使用可分隔 blend 模式的一般方式：目的地是某種影像，通常是點陣圖。 來源是使用 `SKPaint` 物件（其 `BlendMode` 屬性設定為可分隔 blend 模式）所顯示的矩形。 矩形可以是純色 (因為它在此) 或漸層。 透明效果通常 _不_ 會與可分隔的 blend 模式搭配使用。
 
-當您嘗試使用此程式時，您會發現這兩種 blend 模式不會將影像淡化並均勻變暗。 相反地， `Slider` 似乎會設定某種類型的臨界值。 例如，當您增加模式的 `Slider` `Lighten` 時，影像的較暗區域會先亮，而較亮的區域則維持不變。
+當您試驗這個程式時，您會發現這兩種混合模式不會將影像淡化並均勻地變暗。 相反地， `Slider` 似乎會設定某種類型的臨界值。 例如，當您增加 `Slider` `Lighten` 模式時，影像的較深區域會先亮，而較亮的區域則保持不變。
 
-針對 `Lighten` 模式，如果目的地圖元是 RGB 色彩值（Dr、Dg、Db），而來源圖元是色彩（Sr，Sg，Sb），則輸出為（或，Og，Ob），其計算方式如下：
+在此 `Lighten` 模式中，如果目的地圖元是 RGB 色彩值 (Dr、Dg、Db) 和來源圖元為 (Sr、Sg、Sb) 的色彩，則輸出為 (或 Og，Ob) 計算方式如下：
 
  `Or = max(Dr, Sr)` `Og = max(Dg, Sg)`
  `Ob = max(Db, Sb)`
 
-分別針對紅色、綠色和藍色，結果會是目的地和來源的較大。 這會產生將目的地的深色區域變亮的效果。
+針對紅色、綠色和藍色，結果會是目的地和來源的較大。 這會產生將目的地的暗灰色區域先亮的效果。
 
-此 `Darken` 模式類似，不同之處在于結果是目的地和來源的較小者：
+`Darken`模式類似，不同之處在于結果是目的地和來源的較小者：
 
  `Or = min(Dr, Sr)` `Og = min(Dg, Sg)`
  `Ob = min(Db, Sb)`
 
-紅色、綠色和藍色元件分別各自處理，這就是為什麼這些 blend 模式稱為可_分離_的 blend 模式。 基於這個理由，縮寫**Dc**和**Sc**可以用於目的地和來源色彩，並瞭解計算會分別套用到每個紅色、綠色和藍色元件。
+紅色、綠色和藍色的元件都是分開處理的，這就是為什麼這些 blend 模式稱為可 _分隔 blend 模式_ 的原因。 基於這個理由，縮寫 **Dc** 和 **Sc** 可用於目的地和來源色彩，並瞭解每個紅色、綠色和藍色元件的計算分別適用于每個紅色、綠色和藍色元件。
 
-下表顯示所有可分離的 blend 模式，並簡短說明其用途。 第二個數據行顯示不會產生變更的來源色彩：
+下表顯示所有可分隔的 blend 模式，以及其用途的簡短說明。 第二個數據行顯示不產生任何變更的來源色彩：
 
 | Blend 模式   | 沒有變更 | 作業 |
 | ------------ | --------- | --------- |
-| `Plus`       | 黑色     | 藉由新增色彩來將其變亮： Sc + Dc |
-| `Modulate`   | 白色     | 以乘以色彩來變暗： Sc ·Dc | 
-| `Screen`     | 黑色     | 補充產品： Sc + Dc &ndash; Sc ·Dc |
-| `Overlay`    | 灰色      | 反向`HardLight` |
-| `Darken`     | 白色     | 最小色彩： min （Sc，Dc） |
-| `Lighten`    | 黑色     | 最大色彩：最大值（Sc，Dc） |
+| `Plus`       | 黑色     | 藉由新增色彩來明暗： Sc + Dc |
+| `Modulate`   | 白色     | 使用乘法色來變暗： Sc ·直流 | 
+| `Screen`     | 黑色     | 補充產品的補充： Sc + Dc &ndash; Sc ·直流 |
+| `Overlay`    | 灰色      | 反向 `HardLight` |
+| `Darken`     | 白色     | 色彩的最小值： min (Sc，Dc)  |
+| `Lighten`    | 黑色     | 最大色彩：最大 (Sc、Dc)  |
 | `ColorDodge` | 黑色     | 根據來源的變亮目的地 |
-| `ColorBurn`  | 白色     | 根據來源變暗目的地 | 
+| `ColorBurn`  | 白色     | 根據來源將目的地變暗 | 
 | `HardLight`  | 灰色      | 類似于粗糙焦點的效果 |
-| `SoftLight`  | 灰色      | 類似于軟性焦點的效果 | 
-| `Difference` | 黑色     | 從較淺的： Abs （Dc Sc）減去較暗的 &ndash; | 
-| `Exclusion`  | 黑色     | 類似 `Difference` 但較低對比 |
-| `Multiply`   | 白色     | 以乘以色彩來變暗： Sc ·Dc |
+| `SoftLight`  | 灰色      | 類似于軟焦點的效果 | 
+| `Difference` | 黑色     | 從較淺的： Abs (Dc Sc 減去較深的： &ndash;)  | 
+| `Exclusion`  | 黑色     | 類似于 `Difference` 但較低對比度 |
+| `Multiply`   | 白色     | 使用乘法色來變暗： Sc ·直流 |
 
-如需更詳細的演算法，請參閱 W3C 撰寫[**和混合層級 1**](https://www.w3.org/TR/compositing-1/)規格和 Skia [**SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference)，雖然這兩個來源中的標記法並不相同。 請記住， `Plus` 通常會被視為 Porter Duff blend 模式，而 `Modulate` 不是 W3C 規格的一部分。
+您可以在 W3C [**複合和混合層級 1**](https://www.w3.org/TR/compositing-1/) 規格和 Skia [**SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference)中找到更詳細的演算法，雖然這兩個來源中的標記法不同。 請記住， `Plus` 通常視為 Porter Duff blend 模式， `Modulate` 不是 W3C 規格的一部分。
 
-如果來源是透明的，則針對所有可分離的 blend 模式 `Modulate` （除外），blend 模式不會有任何作用。 如先前所見， `Modulate` blend 模式會將 Alpha 色板納入乘法。 否則，與 `Modulate` 具有相同的效果 `Multiply` 。 
+如果來源是透明的，則除了以外的所有可分隔 blend 模式之外， `Modulate` blend 模式沒有任何作用。 如您先前所見， `Modulate` blend 模式會將 Alpha 色板併入乘法中。 否則，會 `Modulate` 有相同的效果 `Multiply` 。 
 
-請注意兩種模式 `ColorDodge` ，名為和 `ColorBurn` 。 在攝影暗房實務中，會以_減淡_和_燒錄_的字為來源。 放大鏡會透過一個負面的光源來進行相片列印。 如果沒有光線，列印就會是白色。 列印會變暗，因為列印有較長的一段時間。 列印人員通常會使用一或多個物件來封鎖部分列印的某些光線，讓該區域更亮。 這就是所謂的_躲過_。 相反地，有一個洞中的不透明材質（或手中大部分的光線），可以用來在特定位置將更多光源帶到變暗，稱為「_燒錄_」。
+請注意兩個名為和的模式 `ColorDodge` `ColorBurn` 。 在攝影暗房實務中，字組會 _減_ 到和 _燒錄_ 。 放大鏡會透過以光燈的方式來進行攝影列印。 如果沒有輕量，列印就是白色。 列印較長一段時間時，列印會變暗。 列印製作者通常會使用手或小型物件來封鎖某些光線落在列印的特定部分，使該區域變得更淺。 這就是所謂的 _躲過_。 相反地，在其中具有洞的不透明材質 (或手上封鎖大部分的燈光) 可用來將更多光線導向特定的位置，以使其變得更暗，稱為「 _燒錄_」。
 
-**減淡和燒錄**程式非常類似于**淡化和變暗**。 XAML 檔案的結構相同，但具有不同的元素名稱，而程式碼後置檔案同樣類似，但這兩種混合模式的效果相當不同：
+**減減和燒錄**程式非常類似于**淡化和變暗**。 XAML 檔案的結構相同，但具有不同的元素名稱，而程式碼後端檔案也相當類似，但是這兩種混合模式的效果相當不同：
 
-[![減淡和燒錄](separable-images/DodgeAndBurn.png "減淡和燒錄")](separable-images/DodgeAndBurn-Large.png#lightbox)
+[![減減和燒錄](separable-images/DodgeAndBurn.png "減減和燒錄")](separable-images/DodgeAndBurn-Large.png#lightbox)
 
-若為較小的 `Slider` 值， `Lighten` 模式會先使深色區域變亮，同時以 `ColorDodge` 更一致的方式來比較。
+針對較小的 `Slider` 值，此 `Lighten` 模式會先使深色區域變暗，同時 `ColorDodge` 更一致。
 
-影像處理應用程式通常可讓躲過和燒錄僅限於特定區域，就像在暗房中一樣。 這可以透過漸層或以灰色陰影的點陣圖來完成。
+影像處理應用程式通常可讓躲過和燒錄限制在特定區域，就像在暗房中一樣。 這可以透過漸層或具有不同灰色陰影的點陣圖來完成。
 
 ## <a name="exploring-the-separable-blend-modes"></a>探索分離的 blend 模式
 
-[可**分離的 Blend 模式**] 頁面，可讓您檢查所有可分離的 blend 模式。 它會使用其中一個 blend 模式來顯示點陣圖目的地和彩色矩形來源。 
+[可 **分離的 Blend 模式** ] 頁面可讓您檢查所有可分隔的 blend 模式。 它會使用其中一種 blend 模式來顯示點陣圖目的地和彩色矩形來源。 
 
-XAML 檔案會定義 `Picker` （以選取 blend 模式）和四個滑杆。 前三個滑杆可讓您設定來源的紅色、綠色和藍色元件。 第四個滑杆的目的是要藉由設定灰色網底來覆寫這些值。 系統不會識別個別的滑杆，但色彩會指出其功能：
+XAML 檔案會定義 `Picker` (來選取 blend 模式) 和四個滑杆。 前三個滑杆可讓您設定來源的紅色、綠色和藍色元件。 第四個滑杆的目的是要藉由設定灰色陰影來覆寫這些值。 未識別個別的滑杆，但色彩表示其功能：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -258,7 +258,7 @@ XAML 檔案會定義 `Picker` （以選取 blend 模式）和四個滑杆。 前
 </ContentPage>
 ```
 
-程式碼後置檔案會載入其中一個點陣圖資源，並將它繪製兩次，一次在畫布的上半部，並再次出現在畫布的下半部：
+程式碼後端檔案會載入其中一個點陣圖資源，並繪製兩次，一次在畫布的上半部，然後再次出現在畫布的下半部：
 
 ```csharp
 public partial class SeparableBlendModesPage : ContentPage
@@ -328,19 +328,19 @@ public partial class SeparableBlendModesPage : ContentPage
 }
 ```
 
-在處理常式的底部 `PaintSurface` ，會使用選取的 blend 模式和選取的色彩，在第二個位圖上繪製一個矩形。 您可以比較底端的已修改點陣圖和頂端的原始點陣圖：
+在 `PaintSurface` 處理常式底部，會使用選取的 blend 模式和選取的色彩，在第二個位圖上繪製一個矩形。 您可以比較底部的已修改點陣圖和頂端的原始點陣圖：
 
 [![可分隔的混合模式](separable-images/SeparableBlendModes.png "可分隔的混合模式")](separable-images/SeparableBlendModes-Large.png#lightbox)
 
-## <a name="additive-and-subtractive-primary-colors"></a>加法和 subtractive 主要色彩
+## <a name="additive-and-subtractive-primary-colors"></a>加法和 subtractive 的主要色彩
 
-[**主要色彩**] 頁面會繪製三個重迭的紅色、綠色和藍色圓形：
+[ **主要色彩** ] 頁面會以紅色、綠色和藍色繪製三個重迭的圓形：
 
-[![附加主要色彩](separable-images/PrimaryColors-Additive.png "附加主要色彩")](separable-images/PrimaryColors-Additive.png#lightbox)
+[![加法主要色彩](separable-images/PrimaryColors-Additive.png "加法主要色彩")](separable-images/PrimaryColors-Additive.png#lightbox)
 
-這些是附加的主要色彩。 任何兩個的組合都會產生青色、洋紅和黃色，而三個的組合則是白色。
+這些是附加的主要色彩。 任兩個的組合會產生青色、洋紅和黃色，且全部三個的組合都是白色。
 
-這三個圓圈是以 `SKBlendMode.Plus` 模式繪製，但是您也可以使用 `Screen` 、 `Lighten` 或 `Difference` 來取得相同的效果。 程式如下：
+這三個圓形是以模式繪製的 `SKBlendMode.Plus` ，但您也可以使用 `Screen` 、 `Lighten` 或 `Difference` 來取得相同效果。 程式如下：
 
 ```csharp
 public class PrimaryColorsPage : ContentPage
@@ -422,7 +422,7 @@ public class PrimaryColorsPage : ContentPage
 }
 ```
 
-套裝程式含 `TabGestureRecognizer` 。 當您點擊或按一下畫面時，程式會使用 `SKBlendMode.Multiply` 來顯示三個 subtractive 主要複本：
+此套裝程式含 `TabGestureRecognizer` 。 當您按一下或按一下螢幕時，程式會使用 `SKBlendMode.Multiply` 來顯示三個 subtractive 主要複本：
 
 [![Subtractive 主要色彩](separable-images/PrimaryColors-Subtractive.png "Subtractive 主要色彩")](separable-images/PrimaryColors-Subtractive-Large.png#lightbox)
 
@@ -430,5 +430,5 @@ public class PrimaryColorsPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (範例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

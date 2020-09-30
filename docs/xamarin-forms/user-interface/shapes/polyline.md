@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms圖形：折線
-description: 聚合 Xamarin.Forms 線條類別可以用來繪製一連串的連接直線。
+title: Xamarin.Forms 圖形：折線
+description: 聚合 Xamarin.Forms 線條類別可以用來繪製一系列連接的直線。
 ms.prod: xamarin
 ms.assetid: 15D02690-AC03-457E-8815-8E4C17E4D642
 ms.technology: xamarin-forms
@@ -10,40 +10,40 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5b7e6404dec40814b800aef696afd058cafb69e5
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 3926e063fcabf9c70103e3ee72a4723358f26b2a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918361"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558865"
 ---
-# <a name="no-locxamarinforms-shapes-polyline"></a>Xamarin.Forms圖形：折線
+# <a name="no-locxamarinforms-shapes-polyline"></a>Xamarin.Forms 圖形：折線
 
-![發行前版本 API](~/media/shared/preview.png)
+![發行前 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-`Polyline`類別衍生自 `Shape` 類別，可用於繪製一連串的連接直線。 除了折線中的最後一個點未連接到第一個點以外，折線類似于多邊形。 如需 `Polyline` 類別繼承自類別之屬性的詳細資訊 `Shape` ，請參閱[ Xamarin.Forms 圖形](index.md)。
+`Polyline`類別衍生自 `Shape` 類別，而且可以用來繪製一連串的連接直線。 聚合線條類似多邊形，但折線中的最後一個點未連接到第一個點。 如需 `Polyline` 類別繼承自類別之屬性的詳細資訊 `Shape` ，請參閱[ Xamarin.Forms 圖形](index.md)。
 
 `Polyline` 會定義下列屬性：
 
-- `Points`，屬於類型 `PointCollection` ，這是 `Point` 描述折線頂點的結構集合。
-- `FillRule`，屬於類型 `FillRule` ，指定如何結合折線中的交集區域。 此屬性的預設值為 `FillRule.EvenOdd`。
+- `Points`，屬於類型 `PointCollection` ，這是描述聚合線條 `Point` 頂點的結構集合。
+- `FillRule`，類型為 `FillRule` ，指定如何合併聚合線條中的交集區域。 此屬性的預設值為 `FillRule.EvenOdd`。
 
-這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標，以及樣式化的。
+這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標和樣式。
 
-`PointsCollection`型別是 `ObservableCollection` 物件的 [`Point`](xref:Xamarin.Forms.Point) 。 `Point`結構會定義 `X` `Y` 類型的和屬性，其 `double` 代表2d 空間中的 x 和 y 座標配對。 因此， `Points` 屬性應該設定為 x 座標和 y 座標配對的清單，描述以單一逗號和/或一或多個空格分隔的折線頂點點。 例如，「40，10 70，80」和「40 10，70 80」都是有效的。
+此 `PointsCollection` 類型是 `ObservableCollection` 物件的 [`Point`](xref:Xamarin.Forms.Point) 。 `Point`結構會定義 `X` 類型的和屬性，其 `Y` `double` 代表2d 空間中的 x 和 y 座標組。 因此，您 `Points` 應該將屬性設定為 x 座標和 y 座標組的清單，以描述以單一逗號和/或一或多個空格分隔的聚合線條頂點點。 例如，"40，10 70，80" 和 "40 10，70 80" 都有效。
 
 如需列舉的詳細資訊 `FillRule` ，請參閱[ Xamarin.Forms 圖形：填滿規則](fillrules.md)。
 
 ## <a name="create-a-polyline"></a>建立折線
 
-若要繪製一個折線，請建立一個 `Polyline` 物件，並將其 `Points` 屬性設定為圖形的頂點。 若要為折線提供外框，請將其 `Stroke` 屬性設為 [`Color`](xref:Xamarin.Forms.Color) 。 `StrokeThickness`屬性會指定 [折線外框] 的粗細。
+若要繪製折線，請建立 `Polyline` 物件，並將其 `Points` 屬性設定為圖形的頂點。 若要為聚合線條提供外框，請將其 `Stroke` 屬性設定為 [`Color`](xref:Xamarin.Forms.Color) 。 `StrokeThickness`屬性會指定折線大綱的粗細。
 
 > [!IMPORTANT]
-> 如果您將的 `Fill` 屬性設定 `Polyline` 為 [`Color`](xref:Xamarin.Forms.Color) ，即使起點和終點不相交，還是會繪製聚合線條的內部空間。
+> 如果您將的 `Fill` 屬性設定 `Polyline` 為 [`Color`](xref:Xamarin.Forms.Color) ，即使起點和終點不相交，也會繪製聚合線條的內部空間。
 
-下列 XAML 範例示範如何繪製一條折線：
+下列 XAML 範例顯示如何繪製聚合線條：
 
 ```xaml
 <Polyline Points="0,0 10,30, 15,0 18,60 23,30 35,30 40,0 43,60 48,30 100,30"
@@ -51,11 +51,11 @@ ms.locfileid: "87918361"
           StrokeThickness="1" />
 ```
 
-在此範例中，會繪製紅色的折線：
+在此範例中，會繪製紅色的聚合線條：
 
 ![聚合線條](polyline-images/stroke.png "聚合線條")
 
-下列 XAML 範例顯示如何繪製虛線的折線：
+下列 XAML 範例顯示如何繪製虛線的聚合線條：
 
 ```xaml
 <Polyline Points="0,0 10,30, 15,0 18,60 23,30 35,30 40,0 43,60 48,30 100,30"
@@ -69,9 +69,9 @@ ms.locfileid: "87918361"
 
 ![虛線折線](polyline-images/dashed.png "虛線折線")
 
-如需繪製虛線折線的詳細資訊，請參閱[繪製虛線形狀](index.md#draw-dashed-shapes)。
+如需繪製虛線折線的詳細資訊，請參閱 [繪製虛線圖形](index.md#draw-dashed-shapes)。
 
-下列 XAML 範例顯示使用預設填滿規則的折線：
+下列 XAML 範例顯示使用預設填滿規則的聚合線條：
 
 ```xaml
 <Polyline Points="0 48, 0 144, 96 150, 100 0, 192 0, 192 96, 50 96, 48 192, 150 200 144 48"
@@ -80,9 +80,9 @@ ms.locfileid: "87918361"
           StrokeThickness="3" />
 ```
 
-在此範例中，會使用填滿規則來決定折線的填滿行為 `EvenOdd` 。
+在此範例中，會使用填滿規則來決定聚合線條的填滿行為 `EvenOdd` 。
 
-![EvenOdd 的折線](polyline-images/evenodd.png "EvenOdd polyine")
+![EvenOdd 聚合線條](polyline-images/evenodd.png "EvenOdd polyine")
 
 下列 XAML 範例顯示使用 `Nonzero` 填滿規則的聚合線條：
 
@@ -94,12 +94,12 @@ ms.locfileid: "87918361"
           StrokeThickness="3" />
 ```
 
-![非零的折線](polyline-images/nonzero.png "非零的折線")
+![非零的聚合線條](polyline-images/nonzero.png "非零的聚合線條")
 
-在此範例中，會使用填滿規則來決定折線的填滿行為 `Nonzero` 。
+在此範例中，會使用填滿規則來決定聚合線條的填滿行為 `Nonzero` 。
 
 ## <a name="related-links"></a>相關連結
 
-- [ShapeDemos (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形狀](index.md)
-- [Xamarin.Forms圖形：填滿規則](fillrules.md)
+- [ShapeDemos (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 形狀](index.md)
+- [Xamarin.Forms 圖形：填滿規則](fillrules.md)

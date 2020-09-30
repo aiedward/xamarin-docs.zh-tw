@@ -1,6 +1,6 @@
 ---
 title: SkiaSharp blend 模式
-description: 使用 blend 模式定義當繪圖物件堆疊在另一個上時，會發生什麼事。
+description: 使用 blend 模式來定義繪圖物件堆疊在彼此上時所發生的情況。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
@@ -10,26 +10,26 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b5b03779b9f0847621456b25582fb8ea04f8386d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: dd1ef993fc2184561f01dad99aa01858251f8f73
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131699"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560672"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp blend 模式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-這些文章著重于的 [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) 屬性 [`SKPaint`](xref:SkiaSharp.SKPaint) 。 `BlendMode`屬性的類型是 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) ，具有29個成員的列舉。
+這些文章著重于的 [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) 屬性 [`SKPaint`](xref:SkiaSharp.SKPaint) 。 `BlendMode`屬性的類型為 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) ，具有29個成員的列舉。
 
-`BlendMode`屬性會決定當繪圖物件（通常稱為「_來源_」）呈現在現有繪圖物件（稱為「_目的地_」）之上時，會發生什麼事。 一般來說，我們預期新的繪圖物件會遮蔽其底下的物件。 但只有在預設 blend 模式為時才會發生， `SKBlendMode.SrcOver` 這表示來源是在目的地_上_繪製。 其他28個成員 `SKBlendMode` 會造成其他效果。 在圖形程式設計中，以各種方式結合繪圖物件的技巧稱為「_合成_」。
+`BlendMode`屬性（property）會決定當繪圖物件 (通常稱為「_來源_) 在現有繪圖物件上轉譯時所發生的情況， (稱為_目的地_) 。 一般來說，我們預期新的繪圖物件會混淆其下的物件。 但這種情況只是因為預設的 blend 模式為 `SKBlendMode.SrcOver` ，這表示來源是在目的地 _上_ 繪製。 另28個成員 `SKBlendMode` 會造成其他效果。 在圖形程式設計中，以各種方式結合繪圖物件的技巧稱為「 _複合_」（撰寫）。
 
 ## <a name="the-skblendmodes-enumeration"></a>SKBlendModes 列舉
 
-SkiaSharp blend 模式與 W3C 撰寫[**和混合層級 1**](https://www.w3.org/TR/compositing-1/)規格中所述的類似。 Skia [**SkBlendMode 總覽**](https://skia.org/user/api/SkBlendMode_Overview)也提供有用的背景資訊。 如需 blend 模式的一般簡介，維琪百科中的[**blend 模式**](https://en.wikipedia.org/wiki/Blend_modes)一文是不錯的開端。 Adobe Photoshop 支援 blend 模式，因此在該內容中有其他有關 blend 模式的線上資訊。
+SkiaSharp blend 模式會與 W3C 撰寫 [**和混合層級 1**](https://www.w3.org/TR/compositing-1/) 規格中所述的內容緊密對應。 Skia [**SkBlendMode 總覽**](https://skia.org/user/api/SkBlendMode_Overview) 也提供實用的背景資訊。 如需 blend 模式的一般簡介，維琪百科的 [**blend 模式**](https://en.wikipedia.org/wiki/Blend_modes) 文章是不錯的開端。 Adobe Photoshop 支援 blend 模式，因此在該內容中有許多關於 blend 模式的其他線上資訊。
 
-列舉的29個成員 `SKBlendMode` 可以分成三個類別：
+列舉的29個成員 `SKBlendMode` 可以分為三個類別：
 
 | Porter-Duff | 分離    | 不可分離 |
 | ----------- | ------------ | ------------- |
@@ -47,25 +47,25 @@ SkiaSharp blend 模式與 W3C 撰寫[**和混合層級 1**](https://www.w3.org/T
 | `Xor`       | `Multiply`   |               |
 | `Plus`      |              |               |
 
-這三個類別的名稱在後續討論中會採用更多意義。 成員在此列出的順序與列舉的定義相同 `SKBlendMode` 。 第一個資料行中的13個列舉成員，其整數值為0到12。 第二個數據行是對應到整數13到24的列舉成員，而第三個數據行中的成員具有25到28的值。
+這三個類別的名稱在後續討論中將會有更多意義。 成員在此列出的順序與列舉的定義中的順序相同 `SKBlendMode` 。 第一個資料行中的13個列舉成員具有整數值0到12。 第二個數據行是對應至整數13到24的列舉成員，而第三個數據行中的成員具有25到28之間的值。
 
-在 W3C 撰寫**和混合層級 1**檔中，這些 blend 模式的討論方式_大致_相同，但有一些差異：在 `Src` W3C 檔中稱為「_複製_」模式，並稱為「 `Plus` _較淺_」。 W3C 檔會定義不包含在中的_一般_blend 模式， `SKBlendModes` 因為它會與相同 `SrcOver` 。 `Modulate`Blend 模式（在第一個資料行的頂端）並未包含在 W3C 檔中，而模式的討論則在 `Multiply` 前面 `Screen` 。
+在 W3C 撰寫**和混合層級 1**檔中，這些 blend 模式的討論順序_大致_相同，但是有一些差異：在 `Src` W3c 檔中稱為「_複製_」模式，且稱為「 `Plus` _較淺_」。 W3C 檔會定義不包含在中的 _一般_ blend 模式， `SKBlendModes` 因為它會與相同 `SrcOver` 。 `Modulate`第一個資料) 行頂端的 blend 模式 (不包含在 W3C 檔中，而模式的討論則在 `Multiply` 前面 `Screen` 。
 
-因為 `Modulate` blend 模式對 Skia 而言是唯一的，所以會將其視為額外的 Porter Duff 模式，並作為可分離的模式加以討論。
+因為 `Modulate` blend 模式對 Skia 而言是唯一的，所以會被視為額外的 Porter Duff 模式，以及可分隔模式。
 
-## <a name="the-importance-of-transparency"></a>透明度的重要性
+## <a name="the-importance-of-transparency"></a>透明的重要性
 
-在過去，複合是與_Alpha_色板的概念一起開發。 在 `SKCanvas` 物件和全彩色點陣圖之類的顯示介面中，每個圖元都包含4個位元組：每個紅色、綠色和藍色元件各有1個位元組，另一個則用於透明度。 此 Alpha 元件為0代表完整透明度，而若為完全不透明度，則為0xFF，而這些值之間有不同的透明度層級。
+在過去，組合是與 _Alpha 通道_的概念一起開發。 在顯示介面（例如 `SKCanvas` 物件和全彩點陣圖）中，每個圖元都是由4個位元組組成：紅色、綠色和藍色元件的1個位元組，以及一個用於透明度的額外位元組。 此 Alpha 元件為0（適用于完整透明度）和0xFF （表示完全不透明度），這些值之間有不同的透明度層級。
 
-許多 blend 模式都依賴透明度。 通常，當 `SKCanvas` 第一次取得 `PaintSurface` 處理常式，或 `SKCanvas` 建立以在點陣圖上繪製時，第一個步驟就是這個呼叫：
+許多 blend 模式都依賴透明度。 通常會 `SKCanvas` 在處理常式中第一次取得 `PaintSurface` ，或在 `SKCanvas` 建立以在點陣圖上繪製時，第一個步驟是呼叫：
 
 ```csharp
 canvas.Clear();
 ```
 
-這個方法會將畫布的所有圖元以透明黑色圖元取代，相當於 `new SKColor(0, 0, 0, 0)` 或整數0x00000000。 所有圖元的所有位元組都會初始化為零。
+這個方法會以透明的黑色圖元取代畫布的所有圖元，相當於 `new SKColor(0, 0, 0, 0)` 或整數0x00000000。 所有圖元的所有位元組都會初始化為零。
 
-`SKCanvas`在處理常式中取得的繪圖介面 `PaintSurface` 可能看起來有白色背景，但這只是因為 `SKCanvasView` 本身具有透明背景，而且頁面具有白色背景。 您可以藉由將的 Xamarin.Forms `BackgroundColor` 屬性設定 `SKCanvasView` 為色彩來示範這個事實 Xamarin.Forms ：
+`SKCanvas`在處理常式中取得之的繪圖介面 `PaintSurface` 可能會有白色背景，但這只是因為 `SKCanvasView` 本身具有透明背景，而且頁面有白色背景。 您可以藉由將的 Xamarin.Forms `BackgroundColor` 屬性設定 `SKCanvasView` 為色彩，來示範這項事實 Xamarin.Forms ：
 
 ```csharp
 canvasView.BackgroundColor = Color.Red;
@@ -77,15 +77,15 @@ canvasView.BackgroundColor = Color.Red;
 BackgroundColor = Color.Red;
 ```
 
-您會在 SkiaSharp 圖形背後看到這個紅色背景，因為 SkiaSharp 畫布本身是透明的。
+您會看到 SkiaSharp 圖形背後的紅色背景，因為 SkiaSharp 畫布本身是透明的。
 
-[**SkiaSharp 透明度**](../../basics/transparency.md)一文顯示在複合影像中使用透明度來排列多個圖形的一些基本技巧。 Blend 模式超越了，但是對 blend 模式而言，透明度仍然很重要。
+[**SkiaSharp 透明度**](../../basics/transparency.md)一文示範了一些在複合影像中使用透明度來排列多個圖形的基本技巧。 Blend 模式超越了這一點，但透明度對 blend 模式而言仍然很重要。
 
 ## <a name="skiasharp-porter-duff-blend-modes"></a>[SkiaSharp Porter-Duff blend 模式](porter-duff.md)
 
-使用 Porter-Duff blend 模式，根據來源和目的地影像來撰寫場景。
+您可以使用 Porter-Duff blend 模式，根據來源和目的地影像來撰寫場景。
 
-## <a name="skiasharp-separable-blend-modes"></a>[SkiaSharp 能分離的 blend 模式](separable.md)
+## <a name="skiasharp-separable-blend-modes"></a>[SkiaSharp 分離的 blend 模式](separable.md)
 
 使用可分離的 blend 模式來改變紅色、綠色和藍色色彩。
 
@@ -95,5 +95,5 @@ BackgroundColor = Color.Red;
 
 ## <a name="related-links"></a>相關連結
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (範例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

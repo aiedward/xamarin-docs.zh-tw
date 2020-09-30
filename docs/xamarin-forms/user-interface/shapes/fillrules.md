@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms圖形：填滿規則
-description: Xamarin.Forms圖形填滿規則會決定某個點是否在圖形的填滿區域中。
+title: Xamarin.Forms 圖形：填滿規則
+description: Xamarin.Forms 圖形填滿規則可決定某個點是否位於圖形的填滿區域中。
 ms.prod: xamarin
 ms.assetid: 5CABB22B-C6BE-43D1-91D9-6E90A4BD5622
 ms.technology: xamarin-forms
@@ -10,31 +10,31 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 536992f5a8501f51e14dc15caa9825771e4ed950
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a1277b0acda598128e69b39a99910a468f6baa11
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918602"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559255"
 ---
-# <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.Forms圖形：填滿規則
+# <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.Forms 圖形：填滿規則
 
-![發行前版本 API](~/media/shared/preview.png)
+![發行前 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-有數個 Xamarin.Forms 圖形類別具有 `FillRule` 類型的屬性 `FillRule` 。 其中包括 `Polygon` 、 `Polyline` 和 `GeometryGroup` 。
+數個 Xamarin.Forms Shapes 類別具有 `FillRule` 類型的屬性 `FillRule` 。 其中包括 `Polygon` 、 `Polyline` 和 `GeometryGroup` 。
 
 `FillRule`列舉會定義 `EvenOdd` 和 `Nonzero` 成員。 每個成員都代表不同的規則，用來判斷某個點是否在圖形的填滿區域中。
 
 > [!IMPORTANT]
-> 所有圖形都會被視為針對填滿規則的目的而關閉。
+> 基於填滿規則的目的，所有圖形都會被視為已關閉。
 
 ## <a name="evenodd"></a>EvenOdd
 
-`EvenOdd`填滿規則會以任何方向從點到無限大繪製一個光線，並計算該光線相交之圖形內的線段數目。 如果這個數位是奇數，則點位於內部。 如果此數位為偶數，則此點為 [外部]。
+`EvenOdd`填滿規則會以任何方向從點到無限大繪製光線，並計算光線相交之形狀內的區段數目。 如果這個數位是奇數，則點是在內部。 如果這個數位為偶數，則點是在外部。
 
-下列 XAML 範例會建立並呈現複合圖形， `FillRule` 預設為 `EvenOdd` ：
+下列 XAML 範例會建立並轉譯複合圖形， `FillRule` 預設為 `EvenOdd` ：
 
 ```xaml
 <Path Stroke="Black"
@@ -62,21 +62,21 @@ ms.locfileid: "87918602"
 </Path>
 ```
 
-在此範例中，會顯示由一系列同心環形組成的複合圖形：
+在此範例中，會顯示一系列同心圓所組成的複合圖形：
 
 ![具有 EvenOdd 填滿規則的複合圖形](fillrule-images/evenodd.png "具有 EvenOdd 填滿規則的複合圖形")
 
-請注意，在 [複合] 圖形中，不會填滿中間和第三個環形。 這是因為從這兩個環形的任一點所繪製的光線會通過偶數的區段：
+在複合圖形中，請注意中央和第三個環形未填滿。 這是因為從這兩個環形中任何點所繪製的光線都會通過偶數的區段：
 
-![具有 EvenOdd 填滿規則的批註複合圖形](fillrule-images/evenodd-annotated.png "具有 EvenOdd 填滿規則的批註複合圖形")
+![具有 EvenOdd 填滿規則的標注複合圖形](fillrule-images/evenodd-annotated.png "具有 EvenOdd 填滿規則的標注複合圖形")
 
-在上圖中，紅色圓圈代表點，而線條代表任意光線。 就重點而言，兩個任意光線都會通過偶數的直線線段。 因此，不會填滿點所在的環形。 就較低的點而言，兩個任意光線都會通過奇數的直線線段。 因此，會填滿點所在的環形。
+在上圖中，紅色圓圈表示點，而線條則代表任意光線。 在上方，兩個任意光線都會通過偶數的線段。 因此，點不會填滿的環形。 針對較低點，每個任意光線都會通過奇數的線段。 因此，會填滿點所在的環形。
 
-## <a name="nonzero"></a>零下
+## <a name="nonzero"></a>零
 
-`Nonzero`填滿規則會以任何方向從點到無限大繪製光線，然後檢查圖形線段與光線相交的位置。 從零開始，計數會在每次區段從左至右與光線相交時遞增，並在每次區段從右至左時遞減。 計算交點之後，如果結果為零，則點會在多邊形外。 否則，它會在內。
+`Nonzero`填滿規則會以任何方向從點到無限大繪製一個光線，然後檢查圖案線段與光線相交的位置。 從零開始，計數會在每次區段從左至右時遞增，並在每次區段跨越光線的時候遞減時遞增。 計算交點之後，如果結果為零，則點位於多邊形之外。 否則，它會在內部。
 
-下列 XAML 範例會建立並呈現複合圖形，並將 `FillRule` 設定為 `Nonzero` ：
+下列 XAML 範例會建立並轉譯複合圖形，並將其 `FillRule` 設定為 `Nonzero` ：
 
 ```xaml
 <Path Stroke="Black"
@@ -103,17 +103,17 @@ ms.locfileid: "87918602"
 </Path>
 ```
 
-在此範例中，會顯示由一系列同心環形組成的複合圖形：
+在此範例中，會顯示一系列同心圓所組成的複合圖形：
 
 ![具有非零填滿規則的複合圖形](fillrule-images/nonzero.png "具有非零填滿規則的複合圖形")
 
-請注意，在 [複合] 圖形中，所有環形都會填滿。 這是因為所有區段都是以相同的方向執行，因此從任何點繪製的光線會跨越一個或多個區段，而交叉點的總和不會等於零：
+在複合圖形中，請注意所有環形都會填滿。 這是因為所有區段都是以相同的方向執行，因此從任何點繪製的光線會跨越一或多個區段，而交點的總和不等於零：
 
-![具有非零填滿規則的批註複合圖形](fillrule-images/nonzero-annotated.png "具有非零填滿規則的批註複合圖形")
+![具有非零填滿規則的標注複合圖形](fillrule-images/nonzero-annotated.png "具有非零填滿規則的標注複合圖形")
 
-在上方的影像中，紅色箭號代表線段的繪製方向，而黑色箭號代表從最內層環形的某個點執行的任意光線。 起始值為零，針對光線交會的每個線段，值會增加 1，因為線段由左至右與光線交會。
+在上方的影像中，紅色箭號代表繪製線段的方向，而黑色箭號代表從最內層環形的某個點執行的任意光線。 起始值為零，針對光線交會的每個線段，值會增加 1，因為線段由左至右與光線交會。
 
-具有以不同方向執行之區段的更複雜圖形，必須更清楚地示範 `Nonzero` 填滿規則的行為。 下列 XAML 範例會建立與上一個範例類似的圖形，不同之處在于它是使用而不是所建立的 `PathGeometry` `EllipseGeometry` ：
+需要以不同方向執行之區段的更複雜圖形，才能更清楚地展示 `Nonzero` 填滿規則的行為。 下列 XAML 範例會建立與上一個範例類似的圖形，不同之處在于它是使用來建立的， `PathGeometry` 而不是 `EllipseGeometry` ：
 
 ```xaml
 <Path Stroke="Black"
@@ -175,22 +175,22 @@ ms.locfileid: "87918602"
  </Path>
 ```
 
-在此範例中，會繪製一連串的弧線線段，而不會關閉：
+在此範例中，會繪製一連串的弧形區段，而不會關閉：
 
 ![具有非零填滿規則的複合圖形](fillrule-images/nonzero-gaps.png "具有非零填滿規則的複合圖形")
 
-在上圖中，不會填滿來自中央的第三個弧線。 這是因為指定光線中的值與其路徑中的區段之間的總和為零：
+在上圖中，不會填滿中間的第三個弧形。 這是因為指定光線與其路徑中的區段之間的值總和為零：
 
-![具有非零填滿規則的批註複合圖形](fillrule-images/nonzero-gaps-annotated.png "具有非零填滿規則的批註複合圖形")
+![具有非零填滿規則的標注複合圖形](fillrule-images/nonzero-gaps-annotated.png "具有非零填滿規則的標注複合圖形")
 
-在上圖中，紅色圓形代表一個點，黑色線條代表從非填滿區域中的點往外移動的任意光線，而紅色箭號代表線段繪製的方向。 如您所見，橫跨區段之光線值的總和為零：
+在上圖中，紅色圓圈表示點，黑色線條代表從未填滿區域中的點往外移動的任意光線，紅色箭號表示段落繪製的方向。 如您所見，與區段之間的光線之間的值總和為零：
 
-- 以對角線方式向右移動的任意光線會跨越以不同方向執行的兩個區段。 因此，區段會彼此取消，讓值為零。
-- 以對角線方向向左移動的任意光線會跨越總共六個區段。 不過，交點會彼此取消，因此零是最後的總和。
+- 以對角線方向移動的任意光線會跨越以不同方向執行的兩個區段。 因此，這些區段會取消彼此的值零。
+- 以對角線向左移動的任意光線會跨越總共六個區段。 但是，交點會彼此取消，因此零是最後的總和。
 
-零的總和會導致不會填滿環形。
+零的總和會導致無法填滿環形。
 
 ## <a name="related-links"></a>相關連結
 
-- [ShapeDemos (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形狀](index.md)
+- [ShapeDemos (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 形狀](index.md)
