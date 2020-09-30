@@ -10,12 +10,12 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ad36bd5efe09909753fed948a961a690feb0592a
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: 7edde81a926b142a5e792a203e96ee61b1fdfb7b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964658"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562700"
 ---
 # <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.Forms命令介面
 
@@ -89,7 +89,7 @@ ViewModel 還必須參考實作 `ICommand` 介面的類別。 稍後即會描述
 
 ## <a name="basic-commanding"></a>基本命令
 
-[**資料繫結示範**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)程式中之 **Person Entry** (人員輸入) 頁面會示範 ViewModel 中實作的一些簡單命令。
+[**資料繫結示範**](/samples/xamarin/xamarin-forms-samples/databindingdemos)程式中之 **Person Entry** (人員輸入) 頁面會示範 ViewModel 中實作的一些簡單命令。
 
 `PersonViewModel` 會定義三個定義人員的屬性，名稱為 `Name`、`Age` 和 `Skills`。 此類別「不」** 包含任何 `ICommand` 屬性：
 
@@ -691,7 +691,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>導覽功能表的非同步命令
 
-命令可讓實作導覽功能表更加方便，例如[**資料繫結示範**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)程式本身的導覽功能表。 以下是 **MainPage.xaml** 的一部分：
+命令可讓實作導覽功能表更加方便，例如[**資料繫結示範**](/samples/xamarin/xamarin-forms-samples/databindingdemos)程式本身的導覽功能表。 以下是 **MainPage.xaml** 的一部分：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -765,5 +765,5 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
+- [Data Binding Demos (Samples)](/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
 - [書籍中的資料系結章節 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

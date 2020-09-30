@@ -1,6 +1,6 @@
 ---
 title: 播放 Web 視訊
-description: 本文說明如何使用，在影片播放機應用程式中播放 web 影片 Xamarin.Forms 。
+description: 本文說明如何使用在影片播放程式應用程式中播放 web 影片 Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
 ms.technology: xamarin-forms
@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4269b768d6dd9a0eadbbe557f701f8a43b74c99
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 113265ffd26fcb1daf1cc85867e55f3e8ebd091f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133675"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557942"
 ---
 # <a name="playing-a-web-video"></a>播放 Web 視訊
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 `VideoPlayer` 類別會定義 `Source` 屬性，用於指定視訊檔案的來源，以及 `AutoPlay` 屬性。 `AutoPlay` 的預設設定為 `true`，表示視訊會在設定 `Source` 之後自動開始播放：
 
@@ -57,7 +57,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-`Source`屬性的類型是 `VideoSource` ，它是在 Xamarin.Forms [`ImageSource`](xref:Xamarin.Forms.ImageSource) 抽象類別後面，而它是三個衍生的、、 [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) [`FileImageSource`](xref:Xamarin.Forms.FileImageSource) 和 [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource) 。 但是，`VideoPlayer` 沒有任何可用的串流選項，因為 iOS 和 Android 不支援播放來自串流的視訊。
+`Source`屬性的型別是 `VideoSource` ，它是以抽象類別為依據， Xamarin.Forms [`ImageSource`](xref:Xamarin.Forms.ImageSource) 而它的三個衍生項、、 [`UriImageSource`](xref:Xamarin.Forms.UriImageSource) [`FileImageSource`](xref:Xamarin.Forms.FileImageSource) 和 [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource) 。 但是，`VideoPlayer` 沒有任何可用的串流選項，因為 iOS 和 Android 不支援播放來自串流的視訊。
 
 ## <a name="video-sources"></a>視訊來源
 
@@ -228,7 +228,7 @@ namespace FormsVideoLibrary.iOS
 
 之後，當 `Source` 屬性變更時，便會使用 "Source" 的 `PropertyName` 屬性呼叫 `OnElementPropertyChanged` 方法，並再次呼叫 `SetSource`。
 
-若要在 iOS 中播放影片檔案， [`AVAsset`](xref:AVFoundation.AVAsset) 首先會建立類型的物件來封裝影片檔案，然後用來建立 [`AVPlayerItem`](xref:AVFoundation.AVPlayerItem) ，然後將其遞交給 `AVPlayer` 物件。 以下是 `SetSource` 方法處理 `Source` 屬性的方式 (當其類型為 `UriVideoSource` 時)：
+若要在 iOS 中播放影片檔案， [`AVAsset`](xref:AVFoundation.AVAsset) 首先會建立類型的物件來封裝影片檔案，然後用它來建立 [`AVPlayerItem`](xref:AVFoundation.AVPlayerItem) ，然後將它遞交給 `AVPlayer` 物件。 以下是 `SetSource` 方法處理 `Source` 屬性的方式 (當其類型為 `UriVideoSource` 時)：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -452,7 +452,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>設定 URL 來源
 
-使用在三個轉譯器中這些屬性的實作，便可以播放來自 URL 來源的視訊。 [**VideoPlayDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程式中的 [Play Web Video] \(播放 Web 視訊\)**** 頁面會由下列 XAML 檔案定義：
+使用在三個轉譯器中這些屬性的實作，便可以播放來自 URL 來源的視訊。 [**VideoPlayDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程式中的 [Play Web Video] \(播放 Web 視訊\)**** 頁面會由下列 XAML 檔案定義：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -468,7 +468,7 @@ namespace FormsVideoLibrary.UWP
 
 `VideoSourceConverter` 類別會將字串轉換成 `UriVideoSource`。 當您巡覽到 [Play Web Video] \(播放 Web 視訊\)**** 頁面時，便會開始載入視訊，並在下載及緩衝的資料數量足夠時開始播放。 視訊的長度約 10 分鐘：
 
-[![播放網路影片](web-videos-images/playwebvideo-small.png "播放網路影片")](web-videos-images/playwebvideo-large.png#lightbox "播放網路影片")
+[![播放 Web 影片](web-videos-images/playwebvideo-small.png "播放 Web 影片")](web-videos-images/playwebvideo-large.png#lightbox "播放 Web 影片")
 
 在每個平台上，傳輸控制項會在未使用時淡出，但可以透過點選視訊來還原檢視。
 
@@ -524,4 +524,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [影片播放程式示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [影片播放程式示範 (範例)](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

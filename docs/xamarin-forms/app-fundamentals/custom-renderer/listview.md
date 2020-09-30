@@ -10,29 +10,29 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8892a49f2d7d93f8310293bc70d5e1acdfabe3f5
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7fec48c86e68d2115a919e620e8b0f4e46740a03
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937081"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562492"
 ---
 # <a name="customizing-a-listview"></a>自訂 ListView
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
 
-_Xamarin.FormsListView 是將資料集合顯示為垂直清單的視圖。本文示範如何建立自訂轉譯器，以封裝平臺特定清單控制項和原生資料格配置，讓您對原生清單控制效能有更大的控制權。_
+_Xamarin.FormsListView 是將資料集合顯示為垂直清單的視圖。本文示範如何建立自訂轉譯器，以封裝平臺特定清單控制項和原生資料格配置，讓您能夠更充分掌控原生清單控制效能。_
 
-每 Xamarin.Forms 個視圖都會針對每個建立原生控制項實例的平臺，隨附一個轉譯器。 當 [`ListView`](xref:Xamarin.Forms.ListView) Xamarin.Forms 應用程式轉譯時，在 iOS 中， `ListViewRenderer` 類別會具現化，然後再具現化原生 `UITableView` 控制項。 在 Android 平台上，`ListViewRenderer` 類別會具現化原生 `ListView` 控制項。 在通用 Windows 平台 (UWP) 上，`ListViewRenderer` 類別會具現化原生 `ListView` 控制項。 如需控制項對應之轉譯器和原生控制項類別的詳細資訊 Xamarin.Forms ，請參閱轉譯器[基類和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每個 Xamarin.Forms 視圖都有每個平臺的轉譯器，可建立原生控制項的實例。 當 [`ListView`](xref:Xamarin.Forms.ListView) Xamarin.Forms 應用程式轉譯時，在 iOS 中會具 `ListViewRenderer` 現化類別，進而將原生控制項具現化 `UITableView` 。 在 Android 平台上，`ListViewRenderer` 類別會具現化原生 `ListView` 控制項。 在通用 Windows 平台 (UWP) 上，`ListViewRenderer` 類別會具現化原生 `ListView` 控制項。 如需控制項對應之轉譯器和原生控制項類別的詳細資訊 Xamarin.Forms ，請參閱轉譯器 [基類和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
-下圖說明 [`ListView`](xref:Xamarin.Forms.ListView) 控制項和執行它的對應原生控制項之間的關聯性：
+下圖說明控制項之間的關聯性 [`ListView`](xref:Xamarin.Forms.ListView) ，以及執行它的對應原生控制項之間的關聯性：
 
 ![ListView 控制項與實作原生控制項之間的關聯性](listview-images/listview-classes.png)
 
-您可以 [`ListView`](xref:Xamarin.Forms.ListView) 在每個平臺上建立的自訂轉譯器，利用呈現程式來執行平臺特定的自訂。 執行這項作業的流程如下：
+藉由 [`ListView`](xref:Xamarin.Forms.ListView) 在每個平臺上建立的自訂轉譯器，即可利用轉譯程式來執行平臺特定的自訂。 執行這項作業的流程如下：
 
 1. [建立](#creating-the-custom-listview-control) Xamarin.Forms 自訂控制項。
-1. [使用](#consuming-the-custom-control)來自的自訂控制項 Xamarin.Forms 。
+1. [使用](#consuming-the-custom-control) 自訂控制項 Xamarin.Forms 。
 1. 在每個平台上[建立](#creating-the-custom-renderer-on-each-platform)控制項的自訂轉譯器。
 
 現在可以依次討論每個項目，以實作利用平台特定清單控制項和原生資料格配置的 `NativeListView` 轉譯器。 在移植包含清單和可重複使用之資料格程式碼的現有原生應用程式時，此案例可提供協助。 此外，也允許您精細自訂可能會影響效能的清單控制項功能，例如資料虛擬化。
@@ -135,7 +135,7 @@ public class MainPageCS : ContentPage
 `NativeListView` 自訂控制項使用平台特定的自訂轉譯器來顯示資料清單，該資料清單會透過 `Items` 屬性填入。 清單中的每個資料列都包含三個資料項目 – 名稱、類別和影像檔案名稱。 清單中每個資料列的配置，由平台特定的自訂轉譯器定義。
 
 > [!NOTE]
-> 由於 `NativeListView` 自訂控制項將會使用包含滾動功能的平臺特定清單控制項來呈現，因此自訂控制項不應裝載在可滾動的版面配置控制項中，例如 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 。
+> 由於 `NativeListView` 自訂控制項將會使用包含滾動功能的平臺特定清單控制項來呈現，因此自訂控制項不應裝載于可滾動的版面配置控制項中，例如 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 。
 
 自訂轉譯器現在可以新增至每個應用程式專案，來建立平台特定的清單控制項和原生資料格配置。
 
@@ -144,7 +144,7 @@ public class MainPageCS : ContentPage
 建立自訂轉譯器類別的程序如下：
 
 1. 建立轉譯自訂控制項之 `ListViewRenderer` 類別的子類別。
-1. 覆寫轉譯自訂控制項的 `OnElementChanged` 方法，並撰寫自訂方法的邏輯。 當對應的建立時，會呼叫這個方法 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 。
+1. 覆寫轉譯自訂控制項的 `OnElementChanged` 方法，並撰寫自訂方法的邏輯。 當對應的建立時，就會呼叫這個方法 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 。
 1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別，以指定它將用來呈現 Xamarin.Forms 自訂控制項。 這個屬性是用來向註冊自訂轉譯器 Xamarin.Forms 。
 
 > [!NOTE]
@@ -158,9 +158,9 @@ public class MainPageCS : ContentPage
 
 ![每個平台上的 NativeListView](listview-images/screenshots.png)
 
-`ListViewRenderer`類別會公開 `OnElementChanged` 方法，這會在 Xamarin.Forms 建立自訂控制項以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的*was*專案，以及轉譯器 Xamarin.Forms 附加至的元素。 *is* 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `NativeListView` 執行個體的參考。
+`ListViewRenderer`類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立自訂控制項以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的*was*專案，以及轉譯器 Xamarin.Forms 附加到的元素。 *is* 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `NativeListView` 執行個體的參考。
 
-在每個平台特定轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生控制項自訂的位置。 平台上所使用的原生控制項具型別參考可透過 `Control` 屬性存取。 此外，您 Xamarin.Forms 可以透過屬性取得所要轉譯之控制項的參考 `Element` 。
+在每個平台特定轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生控制項自訂的位置。 平台上所使用的原生控制項具型別參考可透過 `Control` 屬性存取。 此外，您 Xamarin.Forms 可以透過屬性取得正在轉譯之控制項的參考 `Element` 。
 
 在 `OnElementChanged` 方法中訂閱事件處理常式時必須留意，如下列程式碼範例中所示：
 
@@ -179,11 +179,11 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-只有在自訂轉譯器附加至新的專案時，才會設定原生控制項和訂閱的事件處理常式 Xamarin.Forms 。 同樣地，您應該只在轉譯器附加到的項目變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立不會發生記憶體流失的自訂轉譯器。
+只有在將自訂轉譯器附加至新的專案時，才應該設定原生控制項和訂閱的事件處理常式 Xamarin.Forms 。 同樣地，您應該只在轉譯器附加到的項目變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立不會發生記憶體流失的自訂轉譯器。
 
 `OnElementPropertyChanged`在每個平臺特定轉譯器類別中，方法的覆寫版本是回應自訂控制項上可系結屬性變更的位置 Xamarin.Forms 。 因為此覆寫會呼叫多次，所以請一律檢查變更的屬性。
 
-每個自訂轉譯器類別都會以向註冊轉譯器的 `ExportRenderer` 屬性裝飾 Xamarin.Forms 。 屬性會採用兩個參數– Xamarin.Forms 所呈現之自訂控制項的類型名稱，以及自訂轉譯器的類型名稱。 屬性的 `assembly` 前置詞會指定套用至整個組件的屬性。
+每個自訂轉譯器類別都會以註冊轉譯器的 `ExportRenderer` 屬性裝飾 Xamarin.Forms 。 屬性接受兩個參數：要轉譯之自訂控制項的型別名稱 Xamarin.Forms ，以及自訂轉譯器的類型名稱。 屬性的 `assembly` 前置詞會指定套用至整個組件的屬性。
 
 下列各節會討論每個平台特定自訂轉譯器類別的實作。
 
@@ -213,7 +213,7 @@ namespace CustomRenderer.iOS
 }
 ```
 
-藉 `UITableView` 由建立類別的實例來設定控制項 `NativeiOSListViewSource` ，前提是自訂轉譯器已附加至新的專案 Xamarin.Forms 。 此類別藉由從 `UITableViewSource` 類別覆寫 `RowsInSection` 和 `GetCell` 方法，以及公開包含要顯示之資料清單的 `Items` 屬性，來提供資料給 `UITableView` 控制項。 此類別也會透過叫用由 `NativeListView` 自訂控制項提供的 `ItemSelected` 事件，來提供 `RowSelected` 方法覆寫。 如需方法覆寫的詳細資訊，請參閱[子類別化 UITableViewSource](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)。 `GetCell` 方法會傳回以清單中每個資料列之資料填入的 `UITableCellView`，如下列程式碼範例所示：
+您可以藉 `UITableView` 由建立類別的實例來設定控制項 `NativeiOSListViewSource` ，前提是自訂轉譯器已附加至新的 Xamarin.Forms 元素。 此類別藉由從 `UITableViewSource` 類別覆寫 `RowsInSection` 和 `GetCell` 方法，以及公開包含要顯示之資料清單的 `Items` 屬性，來提供資料給 `UITableView` 控制項。 此類別也會透過叫用由 `NativeListView` 自訂控制項提供的 `ItemSelected` 事件，來提供 `RowSelected` 方法覆寫。 如需方法覆寫的詳細資訊，請參閱[子類別化 UITableViewSource](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)。 `GetCell` 方法會傳回以清單中每個資料列之資料填入的 `UITableCellView`，如下列程式碼範例所示：
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -357,7 +357,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`ListView`如果自訂轉譯器已附加至新的專案，則會設定原生控制項 Xamarin.Forms 。 此組態包含建立提供資料給原生 `ListView` 控制項的 `NativeAndroidListViewAdapter` 類別執行個體，並註冊事件處理常式來處理 `ItemClick` 事件。 接著，此處理常式將會叫用由 `NativeListView` 自訂控制項所提供的 `ItemSelected` 事件。 如果轉譯器附加的專案變更，則 `ItemClick` 會取消訂閱事件 Xamarin.Forms 。
+原生 `ListView` 控制項的設定前提是，自訂轉譯器已附加至新的 Xamarin.Forms 元素。 此組態包含建立提供資料給原生 `ListView` 控制項的 `NativeAndroidListViewAdapter` 類別執行個體，並註冊事件處理常式來處理 `ItemClick` 事件。 接著，此處理常式將會叫用由 `NativeListView` 自訂控制項所提供的 `ItemSelected` 事件。 如果轉譯器 `ItemClick` 附加到的元素變更，則會取消訂閱事件 Xamarin.Forms 。
 
 `NativeAndroidListViewAdapter` 衍生自 `BaseAdapter` 類別並會公開 `Items` 屬性，該屬性包含要顯示的資料清單，且會覆寫 `Count`、`GetView`、`GetItemId` 和 `this[int]` 方法。 如需這些方法覆寫的詳細資訊，請參閱[實作 ListAdapter](~/android/user-interface/layouts/list-view/populating.md)。 `GetView` 方法會傳回每資料列的檢視，其由資料填入，如下列程式碼範例所示：
 
@@ -510,7 +510,7 @@ namespace CustomRenderer.UWP
 }
 ```
 
-`ListView`如果自訂轉譯器已附加至新的專案，則會設定原生控制項 Xamarin.Forms 。 此組態包含設定原生 `ListView` 控制項將如何回應所選取的項目、填入由控制項顯示的資料、定義每個資料格的外觀，並註冊事件處理常式來處理 `SelectionChanged` 事件。 接著，此處理常式將會叫用由 `NativeListView` 自訂控制項所提供的 `ItemSelected` 事件。 如果轉譯器附加的專案變更，則 `SelectionChanged` 會取消訂閱事件 Xamarin.Forms 。
+原生 `ListView` 控制項的設定前提是，自訂轉譯器已附加至新的 Xamarin.Forms 元素。 此組態包含設定原生 `ListView` 控制項將如何回應所選取的項目、填入由控制項顯示的資料、定義每個資料格的外觀，並註冊事件處理常式來處理 `SelectionChanged` 事件。 接著，此處理常式將會叫用由 `NativeListView` 自訂控制項所提供的 `ItemSelected` 事件。 如果轉譯器 `SelectionChanged` 附加到的元素變更，則會取消訂閱事件 Xamarin.Forms 。
 
 每個原生 `ListView` 資料格的外觀和內容，由名為 `ListViewItemTemplate` 的 `DataTemplate` 所定義。 `DataTemplate` 儲存在應用程式層級的資源字典中，如下列程式碼範例所示：
 
@@ -557,10 +557,10 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 
 方法會使用變更的資料重新填入原生 `ListView` 控制項，前提是可繫結的 `NativeListView.Items` 屬性已變更。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範了如何建立自訂轉譯器，其會封裝平台特定清單控制項和原生資料格配置，讓您對原生清單控制效能擁有更多掌控權。
 
 ## <a name="related-links"></a>相關連結
 
-- [CustomRendererListView (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
+- [CustomRendererListView (範例)](/samples/xamarin/xamarin-forms-samples/customrenderers-listview)

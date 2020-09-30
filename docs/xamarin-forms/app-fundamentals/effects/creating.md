@@ -10,12 +10,12 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bb4e0c81fb3f2e58be9c44d1ec7fddcf4d72a656
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: b109459f583afd491b613b4e32e4e4530eeb5ca4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964593"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562687"
 ---
 # <a name="creating-an-effect"></a>建立效果
 
@@ -265,7 +265,7 @@ public HomePageCS ()
 
 [`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String)) [`Effect`](xref:Xamarin.Forms.Effect) 會傳回指定之名稱的，這是使用效果類別上的屬性 (指定的解析組名串連 [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute)) ，以及在 [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 效果類別上使用屬性指定的唯一識別碼。 如果某個平台不提供效果，則 `Effect.Resolve` 方法會傳回非 `null` 值。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範如何建立效果，以在 [`Entry`](xref:Xamarin.Forms.Entry) 控制項取得焦點時變更控制項的背景色彩。
 
@@ -274,5 +274,5 @@ public HomePageCS ()
 - [自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
 - [效果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
-- [Background Color Effect (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-backgroundcoloreffect) (背景色彩效果 (範例))
-- [Focus Effect (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect) (焦點效果 (範例))
+- [Background Color Effect (Samples)](/samples/xamarin/xamarin-forms-samples/effects-backgroundcoloreffect) (背景色彩效果 (範例))
+- [Focus Effect (Samples)](/samples/xamarin/xamarin-forms-samples/effects-focuseffect) (焦點效果 (範例))

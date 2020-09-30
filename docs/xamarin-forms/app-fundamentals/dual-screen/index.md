@@ -10,12 +10,12 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a414127c01d26db6bf7b462d6fc5a7f9ae44dddc
-ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
+ms.openlocfilehash: e1d2a443a6005050c518e21e4e0f2df64c2aab0c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832276"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562622"
 ---
 # <a name="no-locxamarinforms-dual-screen"></a>Xamarin.Forms 雙螢幕
 
@@ -49,7 +49,7 @@ ms.locfileid: "90832276"
 
 如果 `DualScreenInfo` 類別或 `TwoPaneView` 版面配置未如預期般運作，請仔細檢查此頁面上的設定指示。 省略或 misconfiguring `Init` 方法或 `ConfigurationChanges` 屬性值是常見的錯誤原因。
 
-請參閱[ Xamarin.Forms 雙重畫面範例](https://docs.microsoft.com/dual-screen/xamarin/samples)，以取得其他指引和參考實行。
+請參閱[ Xamarin.Forms 雙重畫面範例](/dual-screen/xamarin/samples)，以取得其他指引和參考實行。
 
 ## <a name="next-steps"></a>後續步驟
 
@@ -60,4 +60,4 @@ ms.locfileid: "90832276"
 - [DualScreenInfo](dual-screen-info.md) 協助程式類別- `DualScreenInfo` 類別可讓您判斷您的視圖所在的窗格、其大小、裝置所在的狀態、轉軸的角度等。
 - [雙螢幕觸發](triggers.md) 程式- [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) 命名空間包含兩個狀態觸發程式， [`VisualState`](xref:Xamarin.Forms.VisualState) 當附加配置或視窗的視圖模式變更時，就會觸發變更。
 
-如需詳細資訊，請流覽 [雙螢幕開發人員](https://docs.microsoft.com/dual-screen/) 檔。
+如需詳細資訊，請流覽 [雙螢幕開發人員](/dual-screen/) 檔。

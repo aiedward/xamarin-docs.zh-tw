@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsShell 頁面設定
-description: Shell 類別會定義可用於設定 Shell 應用程式中頁面外觀的附加屬性 Xamarin.Forms 。 這包括設定頁面色彩、停用導覽列、停用索引標籤列，以及在導覽列中顯示檢視。
+title: Xamarin.Forms Shell 頁面設定
+description: Shell 類別會定義可用來設定 Shell 應用程式中頁面外觀的附加屬性 Xamarin.Forms 。 這包括設定頁面色彩、停用導覽列、停用索引標籤列，以及在導覽列中顯示檢視。
 ms.prod: xamarin
 ms.assetid: 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 01/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 102070fc478b42e9fbc0c7d0006197c81a49c9b8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f3eca53f9f7347472a554b4ec30b83f40a96e0e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137497"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563298"
 ---
-# <a name="xamarinforms-shell-page-configuration"></a>Xamarin.FormsShell 頁面設定
+# <a name="no-locxamarinforms-shell-page-configuration"></a>Xamarin.Forms Shell 頁面設定
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-`Shell`類別會定義附加屬性，以用來設定 Shell 應用程式中頁面的外觀 Xamarin.Forms 。 這包括設定頁面色彩、設定頁面呈現模式、停用巡覽列、停用索引標籤列，以及在導覽列中顯示 views。
+`Shell`類別會定義可用於設定 Xamarin.Forms Shell 應用程式中頁面外觀的附加屬性。 這包括設定頁面色彩、設定頁面簡報模式、停用導覽列、停用索引標籤列，以及在導覽列中顯示視圖。
 
 ## <a name="set-page-colors"></a>設定頁面色彩
 
@@ -87,20 +87,20 @@ ms.locfileid: "84137497"
 </Style>
 ```
 
-如需 XAML 樣式的詳細資訊，請參閱[ Xamarin.Forms 使用 xaml 樣式設定應用程式的樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)。
+如需 XAML 樣式的詳細資訊，請參閱 [ Xamarin.Forms 使用 xaml 樣式設定應用程式](~/xamarin-forms/user-interface/styles/xaml/index.md)的樣式。
 
 ## <a name="set-page-presentation-mode"></a>設定頁面簡報模式
 
-根據預設，當頁面流覽至方法時，會發生小型導覽動畫 `GoToAsync` 。 不過，將 `Shell.PresentationMode` 上的附加屬性設定 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 為其中一個列舉成員，即可變更此行為 `PresentationMode` ：
+根據預設，當使用方法流覽至頁面時，會發生小型的流覽動畫 `GoToAsync` 。 不過，您可以藉由將 `Shell.PresentationMode` 中的附加屬性設定 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 為其中一個列舉成員，來變更此行為 `PresentationMode` ：
 
-- `NotAnimated`表示在沒有導覽動畫的情況下，會顯示頁面。
-- `Animated`指出頁面會以導覽動畫顯示。 這是附加屬性的預設值 `Shell.PresentationMode` 。
-- `Modal`表示頁面將會顯示為強制回應頁面。
-- `ModalAnimated`表示頁面將會顯示為具有導覽動畫的模式頁面。
-- `ModalNotAnimated`表示頁面將會顯示為強制回應頁面，而不需要導覽動畫。
+- `NotAnimated` 表示頁面將會顯示，而不會有導覽動畫。
+- `Animated` 表示頁面將會顯示流覽動畫。 這是附加屬性的預設值 `Shell.PresentationMode` 。
+- `Modal` 表示頁面將會顯示為強制回應頁面。
+- `ModalAnimated` 表示頁面將會顯示為具有導覽動畫的強制回應頁面。
+- `ModalNotAnimated` 表示頁面將會顯示為強制回應頁面，而不需要流覽動畫。
 
 > [!IMPORTANT]
-> `PresentationMode`類型是旗標列舉。 這表示可以在程式碼中套用列舉成員的組合。 不過，為了方便在 XAML 中使用， `ModalAnimated` 成員是 `Animated` 和成員的組合 `Modal` ，而 `ModalNotAnimated` 成員則是 `NotAnimated` 和成員的組合 `Modal` 。 如需旗標列舉的詳細資訊，請參閱[列舉類型做為位旗標](/dotnet/csharp/language-reference/builtin-types/enum#enumeration-types-as-bit-flags)。
+> 此 `PresentationMode` 類型為旗標列舉。 這表示可以在程式碼中套用列舉成員的組合。 不過，為了方便在 XAML 中使用，此 `ModalAnimated` 成員是和成員的組合 `Animated` `Modal` ，而 `ModalNotAnimated` 成員是 `NotAnimated` 和成員的組合 `Modal` 。 如需旗標列舉的詳細資訊，請參閱 [以位旗標列舉類型](/dotnet/csharp/language-reference/builtin-types/enum#enumeration-types-as-bit-flags)。
 
 下列 XAML 範例會 `Shell.PresentationMode` 在上設定附加屬性 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
 
@@ -111,13 +111,13 @@ ms.locfileid: "84137497"
 </ContentPage>
 ```
 
-在此範例中， [`ContentPage`](xref:Xamarin.Forms.ContentPage) 當頁面流覽至方法時，會設定為顯示為強制回應頁面 `GoToAsync` 。
+在此範例中， [`ContentPage`](xref:Xamarin.Forms.ContentPage) 當使用方法流覽至頁面時，會設定為顯示為強制回應頁面 `GoToAsync` 。
 
 ## <a name="enable-navigation-bar-shadow"></a>啟用導覽列陰影
 
-`Shell`類別 `NavBarHasShadow` 會定義類型的附加屬性， `bool` 以控制導覽列是否有陰影。 根據預設，屬性的值為 `false` iOS 和 Android 上的 `true` 。
+`Shell`類別會定義型別為的 `NavBarHasShadow` 附加屬性， `bool` 控制導覽列是否有陰影。 根據預設，屬性的值是 `false` 在 iOS 和 `true` Android 上。
 
-雖然可以在子類別化物件上設定這個屬性 `Shell` ，但它也可以在想要啟用導覽列陰影的任何頁面上設定。 例如，下列 XAML 會顯示如何啟用的導覽列陰影 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
+雖然可以在子類別化物件上設定此屬性 `Shell` ，但也可以在想要啟用導覽列陰影的任何頁面上設定此屬性。 例如，下列 XAML 顯示如何從啟用巡覽列陰影 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
 
 ```xaml
 <ContentPage ...
@@ -126,13 +126,13 @@ ms.locfileid: "84137497"
 </ContentPage>
 ```
 
-這會導致流覽列陰影被啟用。
+這會導致啟用巡覽列陰影。
 
 ## <a name="disable-the-navigation-bar"></a>停用瀏覽列
 
 `Shell` 類別定義 `NavBarIsVisible` 附加屬性 (`bool` 型別)，它會控制呈現頁面時是否應該顯示導覽列。 根據預設，該屬性的值為 `true`。
 
-雖然此屬性可以設定在子類別化 `Shell` 物件上，但通常會將它設定在想要隱藏導覽列的任何頁面上。 例如，下列 XAML 會顯示從中停用巡覽列 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
+雖然此屬性可以設定在子類別化 `Shell` 物件上，但通常會將它設定在想要隱藏導覽列的任何頁面上。 例如，下列 XAML 會顯示停用的導覽列 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
 
 ```xaml
 <ContentPage ...
@@ -143,13 +143,13 @@ ms.locfileid: "84137497"
 
 這會導致當該頁面呈現時，導覽列變成是隱藏的：
 
-![在 iOS 和 Android 上具有不可見巡覽列的 Shell 頁面螢幕擷取畫面](configuration-images/navigationbar-invisible.png "具有隱藏導覽列的 Shell 頁面")
+![IOS 和 Android 上具有隱藏巡覽列之 Shell 頁面的螢幕擷取畫面](configuration-images/navigationbar-invisible.png "具有隱藏巡覽列的 Shell 頁面")
 
 ## <a name="disable-the-tab-bar"></a>停用索引標籤列
 
 `Shell` 類別定義 `TabBarIsVisible` 附加屬性 (`bool` 型別)，它會控制呈現頁面時是否應該顯示索引標籤列。 根據預設，該屬性的值為 `true`。
 
-雖然這個屬性可以設定在子類別化 `Shell` 物件上，但通常會將它設定在想要隱藏索引標籤列的任何頁面上。 例如，下列 XAML 會顯示停用的索引標籤列 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
+雖然這個屬性可以設定在子類別化 `Shell` 物件上，但通常會將它設定在想要隱藏索引標籤列的任何頁面上。 例如，下列 XAML 會顯示停用索引標籤列 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
 
 ```xaml
 <ContentPage ...
@@ -160,13 +160,13 @@ ms.locfileid: "84137497"
 
 這會導致當該頁面呈現時，索引標籤列變成是隱藏的：
 
-![在 iOS 和 Android 上具有隱藏索引標籤列的 Shell 頁面螢幕擷取畫面](configuration-images/tabbar-invisible.png "具有隱藏索引標籤列的 Shell 頁面")
+![IOS 和 Android 上具有隱藏索引標籤列之 Shell 頁面的螢幕擷取畫面](configuration-images/tabbar-invisible.png "具有隱藏索引標籤列的 Shell 頁面")
 
 ## <a name="display-views-in-the-navigation-bar"></a>在導覽列中顯示檢視
 
-`Shell`類別會定義類型為的 `TitleView` 附加屬性 `View` ，可讓任何 Xamarin.Forms [`View`](xref:Xamarin.Forms.View) 顯示在導覽列中。
+`Shell`類別 `TitleView` 會定義型別的附加屬性，該附加屬性可 `View` 讓任何 Xamarin.Forms [`View`](xref:Xamarin.Forms.View) 顯示在導覽列中。
 
-雖然這個屬性可以設定在子類別化 `Shell` 物件上，但也可以將它設定在想要在導覽列中顯示檢視的任何頁面上。 例如，下列 XAML 會顯示 [`Image`](xref:Xamarin.Forms.Image) 在的巡覽列中顯示 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
+雖然這個屬性可以設定在子類別化 `Shell` 物件上，但也可以將它設定在想要在導覽列中顯示檢視的任何頁面上。 例如，下列 XAML 顯示 [`Image`](xref:Xamarin.Forms.Image) 在的巡覽列中顯示 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
 
 ```xaml
 <ContentPage ...>
@@ -181,21 +181,21 @@ ms.locfileid: "84137497"
 
 這會導致影像顯示在頁面上的導覽列中：
 
-![在 iOS 和 Android 上具有標題視圖的 Shell 頁面螢幕擷取畫面](configuration-images/titleview.png "具有標題視圖的 Shell 頁面")
+![IOS 和 Android 上具有標題視圖之 Shell 頁面的螢幕擷取畫面](configuration-images/titleview.png "具有標題視圖的 Shell 頁面")
 
 > [!IMPORTANT]
 > 如果已經將導覽列設定為隱藏 (使用 `NavBarIsVisible` 附加屬性)，就不會顯示標題檢視。
 
-除非您使用和屬性來指定視圖的大小 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) ，或使用和屬性指定視圖的位置，否則不會在導覽列中顯示許多視圖 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。
+除非使用和屬性指定視圖的大小 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) ，或使用和屬性指定視圖的位置，否則許多視圖都不會出現在巡覽列中 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。
 
-由於 [`Layout`](xref:Xamarin.Forms.Layout) 類別衍生自 [`View`](xref:Xamarin.Forms.View) 類別，因此 `TitleView` 可以設定附加屬性，以顯示包含多個視圖的版面配置類別。 同樣地，因為 [`ContentView`](xref:Xamarin.Forms.ContentView) 類別最終衍生自 [`View`](xref:Xamarin.Forms.View) 類別，所以 `TitleView` 可以設定附加屬性，以顯示 `ContentView` 包含單一視圖的。
+因為 [`Layout`](xref:Xamarin.Forms.Layout) 類別衍生自 [`View`](xref:Xamarin.Forms.View) 類別，所以 `TitleView` 可以將附加屬性設定為顯示包含多個視圖的版面配置類別。 同樣地，因為 [`ContentView`](xref:Xamarin.Forms.ContentView) 類別最終衍生自 [`View`](xref:Xamarin.Forms.View) 類別，所以 `TitleView` 附加的屬性可以設定為顯示 `ContentView` 包含單一視圖的。
 
 ## <a name="page-visibility"></a>頁面可見度
 
-Shell 會遵循頁面可見度，並使用 [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) 屬性來設定。 因此，當頁面的 `IsVisible` 屬性設定為時， `false` 不會顯示在 Shell 應用程式中，因此無法流覽至它。
+Shell 會遵循頁面可見度，以屬性進行設定 [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) 。 因此，當頁面的 `IsVisible` 屬性設定為時， `false` 不會顯示在 Shell 應用程式中，也無法流覽至該頁面。
 
 ## <a name="related-links"></a>相關連結
 
-- [Xaminals (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals (範例)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms使用 XAML 樣式設定應用程式的樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)
-- [Xamarin.FormsCSS Shell 特定屬性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)
+- [Xamarin.Forms CSS Shell 特定屬性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

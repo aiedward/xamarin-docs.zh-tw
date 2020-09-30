@@ -1,6 +1,6 @@
 ---
 title: 從右至左當地語系化
-description: 由右至左的當地語系化會將由右至左流程方向的支援新增至 Xamarin.Forms 應用程式。
+description: 從右至左的當地語系化可將由右至左流動方向的支援新增至 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429
 ms.technology: xamarin-forms
@@ -11,39 +11,39 @@ ms.date: 05/07/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 212674472706a36c66436a3955ab7b988f8e246b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fe27c00752723ac34d614c510f1305b197933715
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137549"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558163"
 ---
 # <a name="right-to-left-localization"></a>由右至左當地語系化
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
 
-_由右至左的當地語系化會將由右至左流程方向的支援新增至 Xamarin.Forms 應用程式。_
+_從右至左的當地語系化可將由右至左流動方向的支援新增至 Xamarin.Forms 應用程式。_
 
 > [!NOTE]
 > 從右至左當地語系化需要 iOS 9 或更新版本，以及 Android 的 API 17 或更新版本。
 
-文字方向即為眼睛瀏覽頁面 UI 項目的方向。 某些語言 (例如阿拉伯文和希伯來文) 需要將 UI 項目配置為從右至左的文字方向。 這可以藉由設定屬性來達成 [`VisualElement.FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。 這個屬性會取得或設定 UI 專案在控制其配置的任何父項目內流動的方向，而且應該設定為其中一個 [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) 列舉值：
+文字方向即為眼睛瀏覽頁面 UI 項目的方向。 某些語言 (例如阿拉伯文和希伯來文) 需要將 UI 項目配置為從右至左的文字方向。 這可以藉由設定屬性來達成 [`VisualElement.FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。 這個屬性會取得或設定 UI 專案在控制其版面配置的任何父項目內的流動方向，而且應該設定為其中一個 [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) 列舉值：
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
 - [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
-將專案 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 上的屬性設定為 [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) ，通常會將對齊方式設定為右邊、由右至左的讀取順序，以及從右至左流動的控制項版面配置：
+將 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性上的屬性設定為，通常會將靠右 [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) 對齊、由右至左的讀取順序，以及要從右至左流動的控制項版面配置：
 
 [![以由右至左流動方向的阿拉伯文 TodoItemPage](rtl-images/TodoItemPage-Arabic.png "以由右至左流動方向的阿拉伯文 TodoItemPage")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "以由右至左流動方向的阿拉伯文 TodoItemPage")
 
 > [!TIP]
-> 您應該只 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 在初始版面配置上設定屬性。 在執行階段變更此值時，會導致佔用大量資源的配置程序，而影響效能。
+> 您應該只 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 在初始配置上設定屬性。 在執行階段變更此值時，會導致佔用大量資源的配置程序，而影響效能。
 
-[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)沒有父系之元素的預設屬性值為 [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight) ，而具有父系之專案的預設值為 `FlowDirection` [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent) 。 因此，項目會從視覺化樹狀結構中的父代繼承 `FlowDirection` 屬性值，且任何項目都可以覆寫它從其父代所取得的值。
+沒有父系之專案的預設 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性值為 [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight) ，而父元素的預設值為 `FlowDirection` [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent) 。 因此，項目會從視覺化樹狀結構中的父代繼承 `FlowDirection` 屬性值，且任何項目都可以覆寫它從其父代所取得的值。
 
 > [!TIP]
-> 針對由右至左的語言當地語系化應用程式時，請 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 在頁面或根版面配置上設定屬性。 這可讓頁面上或根配置內含的所有項目適當地回應文字方向。
+> 針對由右至左的語言當地語系化應用程式時，請 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 在頁面或根配置上設定屬性。 這可讓頁面上或根配置內含的所有項目適當地回應文字方向。
 
 ## <a name="respecting-device-flow-direction"></a>遵守裝置的文字方向
 
@@ -57,7 +57,7 @@ _由右至左的當地語系化會將由右至左流程方向的支援新增至 
 this.FlowDirection = Device.FlowDirection;
 ```
 
-頁面的所有子專案（或根配置）預設會繼承 [`Device.FlowDirection`](xref:Xamarin.Forms.Device.FlowDirection) 值。
+頁面的所有子專案或根配置預設會繼承 [`Device.FlowDirection`](xref:Xamarin.Forms.Device.FlowDirection) 值。
 
 ## <a name="platform-setup"></a>平台設定
 
@@ -75,14 +75,14 @@ this.FlowDirection = Device.FlowDirection;
 </array>
 ```
 
-![Plist 支援的語言](rtl-images/ios-locales.png "Plist 支援的語言")
+![資訊： plist 支援的語言](rtl-images/ios-locales.png "資訊： plist 支援的語言")
 
-如需詳細資訊，請參閱[在 iOS 中的當地語系化基本概念](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios)。
+如需詳細資訊，請參閱[在 iOS 中的當地語系化基本概念](../../../ios/app-fundamentals/localization/index.md#localization-basics-in-ios)。
 
 您可以將 **Info.plist** 中所指定的裝置/模擬器語言和地區變更為由右至左地區設定，以測試由右至左當地語系化。
 
 > [!WARNING]
-> 請注意，當您在 iOS 上將語言和地區變更為由右至左的地區設定時， [`DatePicker`](xref:Xamarin.Forms.DatePicker) 如果您未包含地區設定所需的資源，任何視圖都會擲回例外狀況。 例如，當測試具有 `DatePicker` 的阿拉伯文應用程式時，請務必選取 [iOS 組建]**** 窗格 [國際化]**** 區段中的 [中東]****。
+> 請注意，當您將語言和區域變更為 iOS 上的由右至左地區設定時， [`DatePicker`](xref:Xamarin.Forms.DatePicker) 如果您未包含地區設定所需的資源，任何視圖都會擲回例外狀況。 例如，當測試具有 `DatePicker` 的阿拉伯文應用程式時，請務必選取 [iOS 組建]**** 窗格 [國際化]**** 區段中的 [中東]****。
 
 ### <a name="android"></a>Android
 
@@ -123,48 +123,48 @@ using System.Resources;
 
 ## <a name="limitations"></a>限制
 
-Xamarin.Forms由右至左的當地語系化目前有一些限制：
+Xamarin.Forms 由右至左當地語系化目前有一些限制：
 
-- [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)按鈕位置、工具列專案位置和轉換動畫由裝置的地區設定控制，而不是由 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性所控制。
-- [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)滑動方向不會翻轉。
-- [`Image`](xref:Xamarin.Forms.Image)視覺內容不會翻轉。
-- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String))和 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) 方向由裝置的地區設定控制，而不是 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
-- [`WebView`](xref:Xamarin.Forms.WebView)內容不遵守 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
+- [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 按鈕位置、工具列專案位置和轉換動畫是由裝置地區設定控制，而不是由 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性所控制。
+- [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 滑動方向不會翻轉。
+- [`Image`](xref:Xamarin.Forms.Image) 視覺內容不會翻轉。
+- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) 和 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) 方向是由裝置的地區設定控制，而不是由屬性所控制 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
+- [`WebView`](xref:Xamarin.Forms.WebView) 內容不遵守 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
 - 必須新增 `TextDirection` 屬性，以控制文字的對齊方式。
 
 ### <a name="ios"></a>iOS
 
-- [`Stepper`](xref:Xamarin.Forms.Stepper)方向由裝置的地區設定控制，而不是 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
-- [`EntryCell`](xref:Xamarin.Forms.EntryCell)文字對齊方式由裝置的地區設定控制，而不是 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
-- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions)筆勢和對齊不會反轉。
+- [`Stepper`](xref:Xamarin.Forms.Stepper) 方向由裝置的地區設定控制，而不是由屬性所控制 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
+- [`EntryCell`](xref:Xamarin.Forms.EntryCell) 文字對齊由裝置的地區設定控制，而不是由屬性所控制 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) 不反轉筆勢和對齊方式。
 
 ### <a name="android"></a>Android
 
-- [`SearchBar`](xref:Xamarin.Forms.SearchBar)方向由裝置的地區設定控制，而不是 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
-- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions)位置是由裝置地區設定控制，而不是 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
+- [`SearchBar`](xref:Xamarin.Forms.SearchBar) 方向由裝置的地區設定控制，而不是由屬性所控制 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) 放置是由裝置的地區設定控制，而不是由屬性所控制 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
 
 ### <a name="uwp"></a>UWP
 
-- [`Editor`](xref:Xamarin.Forms.Editor)文字對齊方式由裝置的地區設定控制，而不是 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
-- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)子系不會繼承屬性 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 。
-- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions)文字對齊方式由裝置的地區設定控制，而不是 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
+- [`Editor`](xref:Xamarin.Forms.Editor) 文字對齊由裝置的地區設定控制，而不是由屬性所控制 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
+- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 子系不會繼承屬性 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 。
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) 文字對齊由裝置的地區設定控制，而不是由屬性所控制 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
 
 ## <a name="force-right-to-left-layout"></a>強制由右至左的版面配置
 
-無論裝置設定為何，您都可以藉由修改個別的平臺專案，強制將 Android 應用程式一律使用由右至左的版面配置。
+無論裝置設定為何，都可以藉由修改個別的平臺專案，來強制使用由右至左配置的 Android 應用程式。
 
 ### <a name="ios"></a>iOS
 
-您可以藉由修改**AppDelegate**類別，強制一律使用由右至左的版面配置，如下所示：
+您可以藉由修改 **AppDelegate** 類別，強制將 iOS 應用程式一律使用由右至左的版面配置，如下所示：
 
-1. 將函式宣告 `IntPtr_objc_msgSend` 為類別中的第一行 `AppDelegate` ：
+1. 將 `IntPtr_objc_msgSend` 函數宣告為您類別中的第一行 `AppDelegate` ：
 
    ```csharp
    [System.Runtime.InteropServices.DllImport(ObjCRuntime.Constants.ObjectiveCLibrary, EntryPoint = "objc_msgSend")]
    internal extern static IntPtr IntPtr_objc_msgSend(IntPtr receiver, IntPtr selector, UISemanticContentAttribute arg1);
    ```
 
-1. 從方法呼叫函式 `IntPtr_objc_msgSend` `FinishedLaunching` ，然後從 `FinshedLaunching` 方法傳回：
+1. 從方法中呼叫函式 `IntPtr_objc_msgSend` `FinishedLaunching` ，然後從方法傳回 `FinshedLaunching` ：
 
    ```csharp
    bool result = base.FinishedLaunching(app, options);
@@ -175,26 +175,26 @@ Xamarin.Forms由右至左的當地語系化目前有一些限制：
    return result;
    ```
 
-這個方法適用于一律需要由右至左配置的應用程式，並移除設定屬性的需求 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
+這種方法適用于一律需要由右至左配置的應用程式，而且會移除設定屬性的需求 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
 
-如需方法的詳細資訊 `IntrPtr_objc_msgSend` ，請參閱[在 Xamarin 中的目標 C 選取器](~/ios/internals/objective-c-selectors.md)。
+如需此方法的詳細資訊 `IntrPtr_objc_msgSend` ，請參閱 [Xamarin 中的目標 C 選取器](~/ios/internals/objective-c-selectors.md)。
 
 ### <a name="android"></a>Android
 
-Xamarin Android 應用程式可以藉由修改**MainActivity**類別，強制一律使用由右至左的版面配置，以包含下列程式程式碼：
+Xamarin. Android 應用程式可以透過修改 **>mainactivity** 類別以包含下列程式碼，強制一律使用由右至左的版面配置：
 
 ```csharp
 Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
 ```
 
-這個方法適用于一律需要由右至左配置的應用程式，並移除設定屬性的需求 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
+這種方法適用于一律需要由右至左配置的應用程式，而且會移除設定屬性的需求 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
 
 ## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Xamarin.University 的由右至左語言支援
 
 > [!VIDEO https://youtube.com/embed/f2lQ5yw3iiU]
 
-**Xamarin.Forms3.0 由右至左支援影片**
+**Xamarin.Forms 3.0 由右至左支援影片**
 
 ## <a name="related-links"></a>相關連結
 
-- [TodoLocalizedRTL 範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
+- [TodoLocalizedRTL 範例應用程式](/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)

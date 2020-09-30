@@ -1,6 +1,6 @@
 ---
 title: 建立平台視訊播放程式
-description: 本文說明如何使用，在每個平臺上執行影片播放程式自訂轉譯器 Xamarin.Forms 。
+description: 本文說明如何使用在每個平臺上執行影片播放程式自訂轉譯器 Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d026ecc3288da155aefb0f68ee0c70721106c0da
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7de5f0ec67a4735b8157b539b80e193fa67256b1
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133740"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563480"
 ---
 # <a name="creating-the-platform-video-players"></a>建立平台視訊播放程式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-[**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)解決方案包含可為執行影片播放程式的所有程式碼 Xamarin.Forms 。 它也包含一系列頁面，示範如何在應用程式中使用視訊播放程式。 所有 `VideoPlayer` 及其平台轉譯器都位於名為 `FormsVideoLibrary` 的專案資料夾內，且使用 `FormsVideoLibrary` 命名空間。 這應該可讓您輕鬆地將檔案複製到您的應用程式並參考類別。
+[**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)解決方案包含用來執行影片播放程式的所有程式碼 Xamarin.Forms 。 它也包含一系列頁面，示範如何在應用程式中使用視訊播放程式。 所有 `VideoPlayer` 及其平台轉譯器都位於名為 `FormsVideoLibrary` 的專案資料夾內，且使用 `FormsVideoLibrary` 命名空間。 這應該可讓您輕鬆地將檔案複製到您的應用程式並參考類別。
 
 ## <a name="the-video-player"></a>視訊播放程式
 
@@ -46,9 +46,9 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-player-view-controller"></a>iOS 播放程式檢視控制器
 
-在 iOS 中實作視訊播放程式會涉及數個類別。 應用程式會先建立 [`AVPlayerViewController`](xref:AVKit.AVPlayerViewController) ，然後將 [`Player`](xref:AVKit.AVPlayerViewController.Player*) 屬性設定為類型的物件 [`AVPlayer`](xref:AVFoundation.AVPlayer) 。 將視訊來源指派給播放程式時，還需要其他類別。
+在 iOS 中實作視訊播放程式會涉及數個類別。 應用程式會先建立 [`AVPlayerViewController`](xref:AVKit.AVPlayerViewController) ，然後將 [`Player`](xref:AVKit.AVPlayerViewController.Player*) 屬性設定為型別的物件 [`AVPlayer`](xref:AVFoundation.AVPlayer) 。 將視訊來源指派給播放程式時，還需要其他類別。
 
-如同所有轉譯器，iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/FormsVideoLibrary/VideoPlayerRenderer.csVideoPlayerRenderer.cs) 包含一個 `ExportRenderer` 屬性，可使用轉譯器來識別此 `VideoPlayer` 視圖：
+如同所有轉譯器，iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/FormsVideoLibrary/VideoPlayerRenderer.csVideoPlayerRenderer.cs) 包含的 `ExportRenderer` 屬性會使用轉譯器來識別此 `VideoPlayer` 視圖：
 
 ```csharp
 using System;
@@ -76,7 +76,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-通常是設定平臺控制項衍生自類別的轉譯器 [`ViewRenderer<View, NativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs) ，其中 `View` 是衍生的 Xamarin.Forms `View` （在此案例中為 `VideoPlayer` ），而是轉譯器類別的 `NativeView` iOS `UIView` 衍生。 針對此轉譯器，泛型引數會直接設為 `UIView`；您會在稍後了解原因。
+通常是設定平臺控制項衍生自類別的轉譯器 [`ViewRenderer<View, NativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs) ，其中 `View` 是 Xamarin.Forms `View` 此案例中的衍生 (， `VideoPlayer`) ，而且是轉譯器類別的 `NativeView` iOS `UIView` 衍生。 針對此轉譯器，泛型引數會直接設為 `UIView`；您會在稍後了解原因。
 
 當轉譯器是以 `UIViewController` 衍生類別 (例如此物件) 為基礎時，類別應覆寫 `ViewController` 屬性，並傳回檢視控制器 (在此案例中為 `AVPlayerViewController`)。 這即為 `_playerViewController` 欄位的用途：
 
@@ -123,7 +123,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-video-view"></a>Android 視訊檢視
 
-的 Android 轉譯器 `VideoPlayer` 是以 android 類別為基礎 [`VideoView`](xref:Android.Widget.VideoView) 。 不過，如果 `VideoView` 單獨使用來播放應用程式中的影片 Xamarin.Forms ，影片就會填滿的區域分配， `VideoPlayer` 而不會維持正確的外觀比例。 基於此原因 (您會在稍後了解)，`VideoView` 會成為 Android `RelativeLayout` 的子系。 `using` `ARelativeLayout` 指示詞會定義來區別它與 Xamarin.Forms `RelativeLayout` ，這是中的第二個泛型引數 `ViewRenderer` ：
+的 Android 轉譯器 `VideoPlayer` 是以 android 類別為 [`VideoView`](xref:Android.Widget.VideoView) 基礎。 但是，如果 `VideoView` 本身用來在應用程式中播放影片 Xamarin.Forms ，則影片會填滿的區域分配， `VideoPlayer` 而不會維持正確的外觀比例。 基於此原因 (您會在稍後了解)，`VideoView` 會成為 Android `RelativeLayout` 的子系。 `using` `ARelativeLayout` 指示詞會定義以區別它 Xamarin.Forms `RelativeLayout` ，而這是中的第二個泛型引數 `ViewRenderer` ：
 
 ```csharp
 using System;
@@ -154,7 +154,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-從 Xamarin.Forms 2.5 開始，Android 轉譯器應包含具有引數的函式 `Context` 。
+從 Xamarin.Forms 2.5 開始，Android 轉譯器應該包含具有引數的函式 `Context` 。
 
 `OnElementChanged` 覆寫會建立 `VideoView` 和 `RelativeLayout`，並設定 `VideoView` 的配置參數來將其置於 `RelativeLayout` 內的中央。
 
@@ -222,7 +222,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-media-element"></a>UWP 媒體項目
 
-在通用 Windows 平臺（UWP）中，最常見的影片播放方式是 [`MediaElement`](xref:Windows.UI.Xaml.Controls.MediaElement) 。 的檔 `MediaElement` 指出， [`MediaPlayerElement`](xref:Windows.UI.Xaml.Controls.MediaPlayerElement) 只有在只需要支援從組建1607開始的 Windows 10 版本時，才應改用。
+在通用 Windows 平臺 (UWP) 中，最常見的影片播放程式是 [`MediaElement`](xref:Windows.UI.Xaml.Controls.MediaElement) 。 的檔 `MediaElement` 指出，只有在 [`MediaPlayerElement`](xref:Windows.UI.Xaml.Controls.MediaPlayerElement) 只需要支援從組建1607開始的 Windows 10 版本時，才應該改用。
 
 `OnElementChanged` 覆寫需要建立 `MediaElement`、設定幾個事件處理常式，並將 `MediaElement` 物件傳遞給 `SetNativeControl`：
 
@@ -311,7 +311,7 @@ namespace FormsVideoLibrary
 
 例如 `AreTransportControlsEnabled` 這類屬性會由平台轉譯器以兩種方式處理：
 
-- 第一次是在 Xamarin.Forms 建立專案時 `VideoPlayer` 。 這會在 `NewElement` 屬性並非 `null` 時，由轉譯器的 `OnElementChanged` 覆寫指出。 此時，轉譯器可從屬性的初始值設定其自身的平台視訊播放程式，如 `VideoPlayer` 中所定義。
+- 第一次是在 Xamarin.Forms 建立 `VideoPlayer` 元素時。 這會在 `NewElement` 屬性並非 `null` 時，由轉譯器的 `OnElementChanged` 覆寫指出。 此時，轉譯器可從屬性的初始值設定其自身的平台視訊播放程式，如 `VideoPlayer` 中所定義。
 
 - 若 `VideoPlayer` 中的屬性稍後發生變更，則會呼叫轉譯器中的 `OnElementPropertyChanged` 方法。 這可讓轉譯器根據新的屬性設定來更新平台視訊播放程式。
 
@@ -425,7 +425,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-transport-controls-property"></a>UWP 傳輸控制項屬性
 
-UWP `MediaElement` 會定義名為的屬性 [`AreTransportControlsEnabled`](xref:Windows.UI.Xaml.Controls.MediaElement.AreTransportControlsEnabled*) ，以便從 `VideoPlayer` 相同名稱的屬性設定屬性：
+UWP `MediaElement` 會定義名為的屬性 [`AreTransportControlsEnabled`](xref:Windows.UI.Xaml.Controls.MediaElement.AreTransportControlsEnabled*) ，因此會從相同名稱的屬性設定該屬性 `VideoPlayer` ：
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -467,4 +467,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [影片播放程式示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [影片播放程式示範 (範例)](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsShell 飛出視窗
+title: Xamarin.Forms Shell 飛出視窗
 description: 飛出視窗為 Shell 應用程式的根功能表，且可透過圖示或從螢幕側邊撥動來存取。 飛出視窗會由選用標題、飛出視窗項目及選用功能表項目所組成。
 ms.prod: xamarin
 ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
@@ -10,26 +10,26 @@ ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 821eafab6896d8771ba38332a43c0cbc319797a7
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a0ec978c1947cde4bd6f7fd619ad8cd2f0dbdbce
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917834"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563038"
 ---
-# <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.FormsShell 飛出視窗
+# <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms Shell 飛出視窗
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 飛出視窗為 Shell 應用程式的根功能表，且可透過圖示或從螢幕側邊撥動來存取。 飛出視窗會由選用標頭、飛出視窗項目及選用功能表項目所組成：
 
-![Shell 批註飛出視窗的螢幕擷取畫面](flyout-images/flyout-annotated.png "標注的飛出視窗")
+![Shell 批註飛出視窗的螢幕擷取畫面](flyout-images/flyout-annotated.png "批註式飛出視窗")
 
 如有需要，可以透過可系結屬性將飛出視窗的背景色彩設定為 [`Color`](xref:Xamarin.Forms.Color) `Shell.FlyoutBackgroundColor` 。 這個屬性也可以從階層式樣式表 (CSS) 進行設定。 如需詳細資訊，請參閱[ Xamarin.Forms Shell 特定屬性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)。
 
 ## <a name="flyout-icon"></a>飛出視窗圖示
 
-根據預設，Shell 應用程式有個漢堡圖示，按下圖示時，即會開啟飛出視窗。 將類型的可系結屬性設定 `Shell.FlyoutIcon` [`ImageSource`](xref:Xamarin.Forms.ImageSource) 為適當的圖示，即可變更此圖示：
+根據預設，Shell 應用程式有個漢堡圖示，按下圖示時，即會開啟飛出視窗。 您可以將類型的可系結 `Shell.FlyoutIcon` 屬性設定 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 為適當的圖示，以變更此圖示：
 
 ```xaml
 <Shell ...
@@ -98,7 +98,7 @@ Shell.Current.FlyoutIsPresented = false;
 
 ![飛出視窗標題的螢幕擷取畫面](flyout-images/flyout-header.png "飛出視窗標題")
 
-或者，將屬性設定為，即可定義飛出視窗標題的外觀 `Shell.FlyoutHeaderTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
+或者，您可以藉由將屬性設定為，來定義飛出視窗標題的外觀 `Shell.FlyoutHeaderTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
 
 ```xaml
 <Shell.FlyoutHeaderTemplate>
@@ -136,13 +136,13 @@ Shell.Current.FlyoutIsPresented = false;
 
 ## <a name="flyout-background-image"></a>飛出視窗背景影像
 
-飛出視窗可有選擇性的背景影像，它會出現在飛出視窗的標題下方，和所有飛出視窗項目和功能表項目的後方。 藉由將類型的可系結 `FlyoutBackgroundImage` 屬性設定為檔案 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 、內嵌資源、URI 或資料流程，即可指定背景影像。
+飛出視窗可有選擇性的背景影像，它會出現在飛出視窗的標題下方，和所有飛出視窗項目和功能表項目的後方。 您可以將類型的可系結 `FlyoutBackgroundImage` 屬性設定為檔案 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 、內嵌資源、URI 或資料流程，藉以指定背景影像。
 
-藉由將類型的可系結 `FlyoutBackgroundImageAspect` 屬性設定 [`Aspect`](xref:Xamarin.Forms.Aspect) 為其中一個列舉成員，即可設定背景影像的外觀比例 `Aspect` ：
+您可以設定背景影像的外觀比例，方法是將類型的可系結 `FlyoutBackgroundImageAspect` 屬性設定 [`Aspect`](xref:Xamarin.Forms.Aspect) 為其中一個 `Aspect` 列舉成員：
 
-- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-將影像裁剪，使其填滿顯示區域，同時保留外觀比例。
-- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)-letterboxes 影像（如有必要），使影像符合顯示區域，並根據影像是寬或高度，將空白空間加入至頂端/底部或側邊。
-- [`Fill`](xref:Xamarin.Forms.Aspect.Fill)-將影像完全伸展，完全填滿顯示區域。 這可能會導致影像失真。
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -裁剪影像，使其填滿顯示區域，同時保留外觀比例。
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -letterboxes 影像（如有必要），讓影像符合顯示區域，並根據影像的寬度或高度，將空格新增至頂端/底部或側邊。
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -將影像完全填滿，完全填滿顯示區域。 這可能會導致影像失真。
 
 根據預設，`FlyoutBackgroundImageAspect` 屬性會設定為 `AspectFit`。
 
@@ -194,9 +194,9 @@ Shell.Current.FlyoutIsPresented = false;
 </Shell>
 ```
 
-在此範例中，每個只能 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 透過飛出視窗專案來存取：
+在此範例中，每個都只能 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 透過飛出視窗專案來存取：
 
-[![在 iOS 和 Android 上具有飛出視窗專案的 Shell 兩頁應用程式螢幕擷取畫面](flyout-images/two-page-app-flyout.png "使用飛出視窗專案的 Shell 兩頁應用程式")](flyout-images/two-page-app-flyout-large.png#lightbox "使用飛出視窗專案的 Shell 兩頁應用程式")
+[![螢幕擷取畫面：在 iOS 和 Android 上具有飛出視窗專案的 Shell 兩頁應用程式](flyout-images/two-page-app-flyout.png "具有飛出視窗專案的 Shell 兩頁應用程式")](flyout-images/two-page-app-flyout-large.png#lightbox "具有飛出視窗專案的 Shell 兩頁應用程式")
 
 > [!NOTE]
 > 如果沒有飛出視窗標題，飛出視窗項目就會出現在飛出視窗頂端。 否則，它們會出現在飛出視窗標題下方。
@@ -217,10 +217,10 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 </Shell>
 ```
 
-這項隱含的轉換會自動將物件中的每個物件包裝在物件中，它們會包裝在物件中 [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ShellContent` `Tab` `FlyoutItem` 。
+這項隱含的轉換會自動 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 將物件中的每個物件包裝在物件中，而這些物件會包裝在物件中 `ShellContent` `Tab` `FlyoutItem` 。
 
 > [!IMPORTANT]
-> 在 Shell 應用程式中，屬於物件子系的每個都 [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ShellContent` 是在應用程式啟動期間建立的。 使用此方法新增其他 `ShellContent` 物件將會導致在應用程式啟動期間建立其他頁面，進而可能導致啟動經驗不佳。 不過，Shell 也能夠依需求建立頁面，以回應導覽。 如需詳細資訊，請參閱[ Xamarin.Forms Shell](tabs.md)索引標籤指南中的[有效率的頁面載入](tabs.md#efficient-page-loading)。
+> 在 Shell 應用程式中，每個都是物件的子系， [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ShellContent` 都會在應用程式啟動期間建立。 使用此方法新增其他 `ShellContent` 物件將會導致在應用程式啟動期間建立其他頁面，進而可能導致啟動經驗不佳。 不過，Shell 也能夠依需求建立頁面，以回應導覽。 如需詳細資訊，請參閱[ Xamarin.Forms Shell](tabs.md)索引標籤指南中的[有效率頁面載入](tabs.md#efficient-page-loading)。
 
 ### <a name="flyoutitem-class"></a>FlyoutItem 類別
 
@@ -234,12 +234,12 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 - `IsChecked`，屬於 `boolean` 類型，可定義項目目前是否在飛出視窗中反白顯示。
 - `IsEnabled`，屬於 `boolean` 類型，可定義在 Chrome 中是否可以選取項目。
 - 型別為 `bool` 的 `IsTabStop` 會指出 TAB 導覽中是否包含 `FlyoutItem`。 其預設值為 `true`，而當其值為 `false` 時，不論是否設定 `TabIndex`，TAB 導覽基礎結構均會略過 `FlyoutItem`。
-- `IsVisible`，屬於類型 `bool` ，表示在 `FlyoutItem` 飛出視窗功能表上是否隱藏。 其預設值為 `true`。
+- `IsVisible`型別為的， `bool` 表示 `FlyoutItem` 是否隱藏在飛出視窗功能表上。 其預設值為 `true`。
 - 型別為 `int` 的 `TabIndex` 屬性會指定當使用者按下 Tab 鍵來巡覽項目時，`FlyoutItem` 物件接收焦點的順序。 屬性的預設值為 0。
 - `Title`，屬於 `string` 類型，這是在 UI 中顯示的標題。
 - 型別為 `string` 的 `Route`，這是用來處理此項目的字串。
 
-除了屬性以外，所有這些屬性 `Route` 都是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示屬性可以是資料系結的目標。
+除了屬性以外的所有屬性 `Route` 都是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示屬性可以是資料系結的目標。
 
 > [!NOTE]
 > 子類別化的 Shell 物件中的所有 `FlyoutItem` 物件均會加入至 `Shell.Items` 集合，其會定義將顯示於飛出視窗中的項目清單。
@@ -251,9 +251,9 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 - `TabIndexDefaultValueCreator` 會傳回 `int`，並呼叫來設定 `TabIndex` 屬性的預設值。
 - `TabStopDefaultValueCreator` 會傳回 `bool`，並呼叫來設定 `TabStop` 屬性的預設值。
 
-## <a name="flyout-backdrop"></a>飛出視窗背景
+## <a name="flyout-backdrop"></a>飛出視窗的背景
 
-飛出視窗的背景，也就是飛出視窗重迭的外觀，可以藉由將 `Shell.FlyoutBackdrop` 附加屬性設定為來指定 `Brush` ：
+您可以藉由將附加屬性設定為，來指定飛出視窗的背景（飛出視窗重迭的外觀） `Shell.FlyoutBackdrop` `Brush` ：
 
 ```xaml
 <Shell ...
@@ -262,12 +262,12 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 </Shell>
 ```
 
-在此範例中，飛出視窗的背景會以銀級繪製 `SolidColorBrush` 。
+在此範例中，會以銀級繪製飛出視窗的背景 `SolidColorBrush` 。
 
 > [!IMPORTANT]
-> 第一個 `FlyoutBackdrop` 附加屬性可以在任何 Shell 元素上設定，但只有在 `Shell` 、 `FlyoutItem` 或物件上設定時才會套用 `TabBar` 。
+> 您 `FlyoutBackdrop` 可以在任何 Shell 元素上設定 Th 附加的屬性，但是只有在其設定為 `Shell` 、或物件時才會套用 `FlyoutItem` `TabBar` 。
 
-下列範例會示範如何將中的飛出視窗背景設定 `FlyoutItem` 為 `LinearGradientBrush` ：
+下列範例顯示將的飛出視窗背景設定 `FlyoutItem` 為 `LinearGradientBrush` ：
 
 ```xaml
 <Shell ...>
@@ -293,11 +293,11 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 ## <a name="flyout-vertical-scroll"></a>飛出視窗垂直捲動
 
-根據預設，當飛出視窗專案無法放入飛出視窗中時，飛出視窗可以垂直捲動。 將可系結 `Shell.FlyoutVerticalScrollMode` 屬性設定為其中一個列舉成員，即可變更此行為 `ScrollMode` ：
+根據預設，當飛出視窗專案不符合飛出視窗時，可以垂直捲動飛出視窗。 藉由將可系結屬性設定 `Shell.FlyoutVerticalScrollMode` 為其中一個列舉成員，即可變更此行為 `ScrollMode` ：
 
-- `Disabled`–表示垂直捲動將會停用。
-- `Enabled`–表示將會啟用垂直捲動。
-- `Auto`–表示如果飛出視窗專案無法放入飛出視窗中，則會啟用垂直捲動。 此為 `Shell.FlyoutVerticalScrollMode` 屬性的預設值。
+- `Disabled` –表示將停用垂直捲動。
+- `Enabled` –表示將啟用垂直捲動。
+- `Auto` –表示如果飛出視窗中的飛出視窗專案無法容納，則會啟用垂直捲動。 此為 `Shell.FlyoutVerticalScrollMode` 屬性的預設值。
 
 下列範例顯示如何停用垂直捲動：
 
@@ -361,7 +361,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 這會產生下列飛出視窗項目：
 
-[![IOS 和 Android 上包含 FlyoutItem 物件的飛出視窗螢幕擷取畫面](flyout-images/flyout-reduced.png "包含 FlyoutItem 物件的 Shell 飛出視窗")](flyout-images/flyout-reduced-large.png#lightbox "包含 FlyoutItem 物件的 Shell 飛出視窗")
+[![螢幕擷取畫面： iOS 和 Android 上包含 FlyoutItem 物件的飛出視窗](flyout-images/flyout-reduced.png "包含 FlyoutItem 物件的 Shell 飛出視窗")](flyout-images/flyout-reduced-large.png#lightbox "包含 FlyoutItem 物件的 Shell 飛出視窗")
 
 ## <a name="define-flyoutitem-appearance"></a>定義 FlyoutItem 外觀
 
@@ -397,13 +397,13 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 因為 `Shell.ItemTemplate` 是附加屬性，所以可以將不同的範本附加至特定 `FlyoutItem` 物件。
 
 > [!NOTE]
-> Shell 會將 `Title` 和 `FlyoutIcon` 屬性提供給的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) `ItemTemplate` 。
+> Shell 會提供的 `Title` 和 `FlyoutIcon` 屬性至的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) `ItemTemplate` 。
 
-此外，Shell 包含三個會自動套用至物件的樣式類別 `FlyoutItem` 。 如需詳細資訊，請參閱[FlyoutItem 和 MenuItem 樣式類別](#flyoutitem-and-menuitem-style-classes)。
+此外，Shell 還包含三個會自動套用至物件的樣式類別 `FlyoutItem` 。 如需詳細資訊，請參閱 [FlyoutItem 和 MenuItem 樣式類別](#flyoutitem-and-menuitem-style-classes)。
 
 ### <a name="default-template-for-flyoutitems"></a>FlyoutItems 的預設範本
 
-[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)每個使用的預設值 `FlyoutItem` 如下所示：
+每個使用的預設值如下 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) `FlyoutItem` 所示：
 
 ```xaml
 <DataTemplate x:Key="FlyoutTemplate">
@@ -480,12 +480,12 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 </DataTemplate>
 ```
 
-此範本可用來做為現有飛出視窗配置的改變基礎，同時也會顯示針對飛出視窗專案所實作為的視覺狀態。
+您可以使用這個範本做為現有飛出視窗版面配置的改變基礎，也會顯示針對飛出視窗專案所執行的視覺狀態。
 
-此外， [`Grid`](xref:Xamarin.Forms.Grid) 、和專案都 [`Image`](xref:Xamarin.Forms.Image) [`Label`](xref:Xamarin.Forms.Label) 具有 `x:Name` 值，因此可以使用視覺狀態管理員做為目標。 如需詳細資訊，請參閱[設定多個元素的狀態](~/xamarin-forms/user-interface/visual-state-manager.md#set-state-on-multiple-elements)。
+此外， [`Grid`](xref:Xamarin.Forms.Grid) 、 [`Image`](xref:Xamarin.Forms.Image) 和 [`Label`](xref:Xamarin.Forms.Label) 元素都具有 `x:Name` 值，因此可以使用視覺狀態管理員來設定目標。 如需詳細資訊，請參閱 [設定多個元素的狀態](~/xamarin-forms/user-interface/visual-state-manager.md#set-state-on-multiple-elements)。
 
 > [!NOTE]
-> 相同的範本也可以用於 `MenuItem` 物件。
+> 相同的範本也可用於 `MenuItem` 物件。
 
 ## <a name="flyoutitem-tab-order"></a>FlyoutItem 定位順序
 
@@ -524,13 +524,13 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 此程式碼會設定名為 `aboutItem` 的 `ShellContent` 物件作為 `CurrentItem` 屬性，從而顯示它。 在此範例中，隱含的轉換會用來將 `ShellContent` 物件包裝於 `Tab` 物件中，其包裝於 `FlyoutItem` 物件中。
 
-對等的 c # 程式碼，假設 `ShellContent` 名為的物件 `aboutItem` 為：
+對等的 c # 程式碼而言，假設有一個名為的 `ShellContent` 物件 `aboutItem` ，就是：
 
 ```csharp
 CurrentItem = aboutItem;
 ```
 
-在此範例中， `CurrentItem` 屬性是在子類別化的類別中設定 `Shell` 。 或者，您 `CurrentItem` 可以透過靜態屬性，在任何類別中設定屬性 `Shell.Current` ：
+在此範例中， `CurrentItem` 屬性是在子類別化 `Shell` 類別中設定。 或者，您 `CurrentItem` 可以透過靜態屬性在任何類別中設定屬性 `Shell.Current` ：
 
 ```csharp
 Shell.Current.CurrentItem = aboutItem;
@@ -538,12 +538,12 @@ Shell.Current.CurrentItem = aboutItem;
 
 ## <a name="menu-items"></a>功能表項目
 
-功能表項目可以選擇性地加入至飛出視窗，而每個功能表項目都是以 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件表示。 飛出視窗上 `MenuItem` 物件的位置，取決於其在 Shell 視覺階層中的宣告順序。 因此，在 `FlyoutItem` 物件之前宣告的任何 `MenuItem` 物件將出現在飛出視窗的頂端，而在 `FlyoutItem` 物件之後宣告的任何 `MenuItem` 物件將出現在飛出視窗的底部。
+您可以選擇性地將功能表項目加入至飛出視窗，每個功能表項目都由一個物件來表示 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 。 飛出視窗上 `MenuItem` 物件的位置，取決於其在 Shell 視覺階層中的宣告順序。 因此，在 `FlyoutItem` 物件之前宣告的任何 `MenuItem` 物件將出現在飛出視窗的頂端，而在 `FlyoutItem` 物件之後宣告的任何 `MenuItem` 物件將出現在飛出視窗的底部。
 
 > [!NOTE]
 > `MenuItem`類別具有 [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked) 事件和 [`Command`](xref:Xamarin.Forms.MenuItem.Command) 屬性。 因此，`MenuItem` 物件會啟用執行動作以回應點選 `MenuItem` 的案例。 這些案例包括執行導覽，以及在特定 Web 網頁上開啟網頁瀏覽器。
 
-[`MenuItem`](xref:Xamarin.Forms.MenuItem)物件可以加入至飛出視窗中，如下列範例所示：
+[`MenuItem`](xref:Xamarin.Forms.MenuItem) 您可以將物件加入至飛出視窗，如下列範例所示：
 
 ```xaml
 <Shell ...>
@@ -558,14 +558,14 @@ Shell.Current.CurrentItem = aboutItem;
 </Shell>
 ```
 
-此程式碼會將兩個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件加入至飛出視窗中，所有飛出視窗專案底下：
+此程式碼會將兩個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件加入至飛出視窗的所有飛出視窗專案底下：
 
 [![IOS 和 Android 上包含 MenuItem 物件的飛出視窗螢幕擷取畫面](flyout-images/flyout.png "包含 MenuItem 物件的 Shell 飛出視窗")](flyout-images/flyout-large.png#lightbox "包含 MenuItem 物件的 Shell 飛出視窗")
 
-第一個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件會執行 `ICommand` 名為的 `RandomPageCommand` ，它會導覽至應用程式中的隨機頁面。 第二個 `MenuItem` 物件會執行名為 `HelpCommand` 的 `ICommand`，這會在網頁瀏覽器中開啟 `CommandParameter` 屬性所指定的 URL。
+第一個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件會執行 `ICommand` 名為 `RandomPageCommand` 的，它會流覽至應用程式中的隨機頁面。 第二個 `MenuItem` 物件會執行名為 `HelpCommand` 的 `ICommand`，這會在網頁瀏覽器中開啟 `CommandParameter` 屬性所指定的 URL。
 
 > [!NOTE]
-> [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)每個的 `MenuItem` 會繼承自子類別化的 `Shell` 物件。
+> [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)每個都繼承自子類別化的 `MenuItem` `Shell` 物件。
 
 ## <a name="define-menuitem-appearance"></a>定義 MenuItem 的外觀
 
@@ -606,7 +606,7 @@ Shell.Current.CurrentItem = aboutItem;
 [![IOS 和 Android 上樣板化 MenuItem 物件的螢幕擷取畫面](flyout-images/menuitem-templated.png "Shell 樣板化 MenuItem 物件")](flyout-images/menuitem-templated-large.png#lightbox "Shell 樣板化 MenuItem 物件")
 
 > [!NOTE]
-> Shell 會將 [`Text`](xref:Xamarin.Forms.MenuItem.Text) 和 [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) 屬性提供給的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) `MenuItemTemplate` 。 您也可以使用 `Title` 取代 `Text` 和， `Icon` 以 `IconImageSource` 讓您針對功能表項目和飛出視窗專案重複使用相同的範本
+> Shell 會提供的 [`Text`](xref:Xamarin.Forms.MenuItem.Text) 和 [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) 屬性至的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) `MenuItemTemplate` 。 您也可以使用 `Title` 取代 `Text` 和取代， `Icon` `IconImageSource` 讓您針對功能表項目和飛出視窗專案重複使用相同的範本
 
 因為 `Shell.MenuItemTemplate` 是附加屬性，所以可以將不同的範本附加至特定 `MenuItem` 物件：
 
@@ -649,11 +649,11 @@ Shell.Current.CurrentItem = aboutItem;
 此範例會將 Shell 層級的 `MenuItemTemplate` 附加到第一個 `MenuItem` 物件，並將內嵌 `MenuItemTemplate` 附加到第二個 `MenuItem`。
 
 > [!NOTE]
-> 物件的預設範本 `FlyoutItem` 也可以用於 `MenuItem` 物件。 如需詳細資訊，請參閱[FlyoutItems 的預設範本](#default-template-for-flyoutitems)。
+> 物件的預設範本 `FlyoutItem` 也可用於 `MenuItem` 物件。 如需詳細資訊，請參閱 [FlyoutItems 的預設範本](#default-template-for-flyoutitems)。
 
 ## <a name="flyoutitem-and-menuitem-style-classes"></a>FlyoutItem 和 MenuItem 樣式類別
 
-Shell 包含三個會自動套用至和物件的樣式類別 `FlyoutItem` `MenuItem` 。 樣式類別名稱包括：
+Shell 包含三個樣式的類別，這些類別會自動套用至 `FlyoutItem` 和 `MenuItem` 物件。 樣式類別名稱如下：
 
 - `FlyoutItemLabelStyle`
 - `FlyoutItemImageStyle`
@@ -690,7 +690,7 @@ Shell 包含三個會自動套用至和物件的樣式類別 `FlyoutItem` `MenuI
 
 ## <a name="related-links"></a>相關連結
 
-- [Xaminals (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
-- [Xamarin.Forms樣式類別](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
-- [Xamarin.Forms視覺狀態管理員](~/xamarin-forms/user-interface/visual-state-manager.md)
-- [Xamarin.Forms畫](~/xamarin-forms/user-interface/brushes/index.md)
+- [Xaminals (範例)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xamarin.Forms 樣式類別](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
+- [Xamarin.Forms 視覺狀態管理員](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms 刷](~/xamarin-forms/user-interface/brushes/index.md)

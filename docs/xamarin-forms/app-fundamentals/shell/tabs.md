@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsShell 版面配置
+title: Xamarin.Forms Shell 版面配置
 description: 飛出視窗之後，Shell 應用程式中的下一個導覽層級是底部的索引標籤列。 或者，應用程式的導覽模式可以從底部索引標籤開始，而不使用飛出視窗。 在這兩種情況下，當底部索引標籤包含多個頁面時，頁面將可透過頂端索引標籤來導覽。
 ms.prod: xamarin
 ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
@@ -10,14 +10,14 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9ecdc3aca3264b52163d35e29659f434f521147f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 59c7435273d7c01f93ef0bbfb0240e3917f8b716
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918617"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563012"
 ---
-# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.FormsShell 索引標籤
+# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms Shell 索引標籤
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -28,13 +28,13 @@ ms.locfileid: "87918617"
 > [!NOTE]
 > `TabBar` 型別會停用飛出視窗。
 
-每個 `FlyoutItem` 物件或 `TabBar` 物件都可以包含一或多個 `Tab` 物件，其中每個 `Tab` 物件都表示底部索引標籤列上的一個索引標籤。 每個 `Tab` 物件都可以包含一或多個 `ShellContent` 物件，而且每個 `ShellContent` 物件都會顯示單一 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件。 當多個 `ShellContent` 物件出現在 `Tab` 物件中時，`ContentPage` 物件將可透過頂端索引標籤導覽。
+每個 `FlyoutItem` 物件或 `TabBar` 物件都可以包含一或多個 `Tab` 物件，其中每個 `Tab` 物件都表示底部索引標籤列上的一個索引標籤。 每個 `Tab` 物件都可以包含一個或多個 `ShellContent` 物件，而每個物件 `ShellContent` 會顯示單一 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件。 當多個 `ShellContent` 物件出現在 `Tab` 物件中時，`ContentPage` 物件將可透過頂端索引標籤導覽。
 
-在每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件中， `ContentPage` 可以流覽其他物件。 如需有關導覽的詳細資訊，請參閱[ Xamarin.Forms Shell 導覽](navigation.md)。
+在每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件中， `ContentPage` 都可以導覽至其他物件。 如需導覽的詳細資訊，請參閱[ Xamarin.Forms Shell 導覽](navigation.md)。
 
 ## <a name="single-page-application"></a>單一頁面應用程式
 
-最簡單的 Shell 應用程式是單一頁面應用程式，可以透過將單一 `Tab` 物件新增至 `TabBar` 物件來建立。 在 `Tab` 物件中， `ShellContent` 物件應設定為 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件：
+最簡單的 Shell 應用程式是單一頁面應用程式，可以透過將單一 `Tab` 物件新增至 `TabBar` 物件來建立。 在 `Tab` 物件中， `ShellContent` 物件應該設定為 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件：
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -53,10 +53,10 @@ ms.locfileid: "87918617"
 
 此程式碼範例會產生下列單一頁面應用程式：
 
-[![螢幕擷取畫面： iOS 和 Android 上的 Shell 單頁應用程式](tabs-images/single-page-app.png "Shell 單一頁面應用程式")](tabs-images/single-page-app-large.png#lightbox "Shell 單一頁面應用程式")
+[![螢幕擷取畫面： iOS 和 Android 上的 Shell 單一頁面應用程式](tabs-images/single-page-app.png "Shell 單一頁面應用程式")](tabs-images/single-page-app-large.png#lightbox "Shell 單一頁面應用程式")
 
 > [!NOTE]
-> 如果需要，您可以 `Shell.NavBarIsVisible` 在物件上將附加屬性設定為，以隱藏導覽列 `false` [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。
+> 若有需要，可以隱藏導覽列，方法是 `Shell.NavBarIsVisible` `false` 在物件上設定附加屬性 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。
 
 Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需要將其他檢視引進視覺化樹狀結構。 這是可能的，因為子類別化的 `Shell` 物件只能包含 `FlyoutItem` 物件或 `TabBar` 物件，其中只能包含 `Tab` 物件，且其中只能包含 `ShellContent` 物件。 這些隱含的轉換運算子可以用來移除上一個範例中的 `TabBar`、`Tab` 和 `ShellContent` 物件：
 
@@ -70,10 +70,10 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 </Shell>
 ```
 
-這項隱含的轉換會自動將物件包裝在物件中，該物件包裝在物件中，該物件包裝在物件中 [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ShellContent` `Tab` `FlyoutItem` 。 單一頁面應用程式中不需要有飛出視窗，因此 `Shell.FlyoutBehavior` 屬性會設定為 `Disabled`。
+這項隱含的轉換會自動將物件包裝在物件中，該物件會包裝在物件中，並包裝在物件中 [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ShellContent` `Tab` `FlyoutItem` 。 單一頁面應用程式中不需要有飛出視窗，因此 `Shell.FlyoutBehavior` 屬性會設定為 `Disabled`。
 
 > [!IMPORTANT]
-> 在 Shell 應用程式中，屬於物件子系的每個都 [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ShellContent` 是在應用程式啟動期間建立的。 使用此方法新增其他 `ShellContent` 物件將會導致在應用程式啟動期間建立其他頁面，進而可能導致啟動經驗不佳。 不過，Shell 也能夠依需求建立頁面，以回應導覽。 如需詳細資訊，請參閱[有效率的頁面載入](tabs.md#efficient-page-loading)。
+> 在 Shell 應用程式中，每個都是物件的子系， [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ShellContent` 都會在應用程式啟動期間建立。 使用此方法新增其他 `ShellContent` 物件將會導致在應用程式啟動期間建立其他頁面，進而可能導致啟動經驗不佳。 不過，Shell 也能夠依需求建立頁面，以回應導覽。 如需詳細資訊，請參閱[有效率的頁面載入](tabs.md#efficient-page-loading)。
 
 ## <a name="bottom-tabs"></a>底部索引標籤
 
@@ -103,11 +103,11 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 索引標籤標題和圖示是在每個 `Tab` 物件上設定的，並顯示在底部的索引標籤上：
 
-[![在 iOS 和 Android 上具有底部索引標籤的 Shell 兩頁應用程式螢幕擷取畫面](tabs-images/two-page-app-bottom-tabs.png "使用底部索引標籤的 Shell 兩頁應用程式")](tabs-images/two-page-app-bottom-tabs-large.png#lightbox "使用底部索引標籤的 Shell 兩頁應用程式")
+[![螢幕擷取畫面： iOS 和 Android 上有底部索引標籤的 Shell 兩頁應用程式](tabs-images/two-page-app-bottom-tabs.png "使用底部索引標籤的 Shell 兩頁應用程式")](tabs-images/two-page-app-bottom-tabs-large.png#lightbox "使用底部索引標籤的 Shell 兩頁應用程式")
 
-當有五個以上的索引標籤時，將會出現 [**更多**] 索引標籤，可用來存取額外的索引標籤：
+當有五個以上的索引標籤時，會出現 **更多** 索引標籤，可用來存取其他索引標籤：
 
-[![在 iOS 和 Android 上具有 [更多] 索引標籤之 Shell 應用程式的螢幕擷取畫面](tabs-images/more-tabs.png "具有更多索引標籤的 Shell 應用程式")](tabs-images/more-tabs-large.png#lightbox "具有更多索引標籤的 Shellapp")
+[![螢幕擷取畫面：在 iOS 和 Android 上有更多索引標籤的 Shell 應用程式](tabs-images/more-tabs.png "具有更多索引標籤的 Shell 應用程式")](tabs-images/more-tabs-large.png#lightbox "具有更多索引標籤的 Shellapp")
 
 或者，Shell 的隱含轉換運算子可以用來移除上一個範例中的 `ShellContent` 和 `Tab` 物件：
 
@@ -123,10 +123,10 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 </Shell>
 ```
 
-這項隱含的轉換會自動將每個物件包裝在物件 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 中 `ShellContent` ，然後再包裝在 `Tab` 物件中。
+這項隱含的轉換會自動將物件中的每個物件包裝在物件中 [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ShellContent` ，然後包裝在 `Tab` 物件中。
 
 > [!IMPORTANT]
-> 在 Shell 應用程式中，屬於物件子系的每個都 [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ShellContent` 是在應用程式啟動期間建立的。 使用此方法新增其他 `ShellContent` 物件將會導致在應用程式啟動期間建立其他頁面，進而可能導致啟動經驗不佳。 不過，Shell 也能夠依需求建立頁面，以回應導覽。 如需詳細資訊，請參閱[有效率的頁面載入](tabs.md#efficient-page-loading)。
+> 在 Shell 應用程式中，每個都是物件的子系， [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ShellContent` 都會在應用程式啟動期間建立。 使用此方法新增其他 `ShellContent` 物件將會導致在應用程式啟動期間建立其他頁面，進而可能導致啟動經驗不佳。 不過，Shell 也能夠依需求建立頁面，以回應導覽。 如需詳細資訊，請參閱[有效率的頁面載入](tabs.md#efficient-page-loading)。
 
 ### <a name="tab-class"></a>Tab 類別
 
@@ -145,7 +145,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 ## <a name="shell-content"></a>Shell 內容
 
-每個物件的子系 `Tab` 都是 `ShellContent` 物件，其 `Content` 屬性設定為 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
+每個物件的子系 `Tab` 都是 `ShellContent` 物件，其 `Content` 屬性會設定為 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -169,10 +169,10 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 </Shell>
 ```
 
-在每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件中， `ContentPage` 可以流覽其他物件。 如需有關導覽的詳細資訊，請參閱[ Xamarin.Forms Shell 導覽](navigation.md)。
+在每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件中， `ContentPage` 都可以導覽至其他物件。 如需導覽的詳細資訊，請參閱[ Xamarin.Forms Shell 導覽](navigation.md)。
 
 > [!NOTE]
-> [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)每個 `ShellContent` 物件的會繼承自父 `Tab` 物件。
+> [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)每個 `ShellContent` 物件的都會繼承自父 `Tab` 物件。
 
 ### <a name="shellcontent-class"></a>ShellContent 類別
 
@@ -184,15 +184,15 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 - `Icon`，屬於 `ImageSource` 類型，可定義要顯示在不是飛出視窗的 Chrome 部分中的圖示。
 - `IsChecked`，屬於 `boolean` 類型，可定義項目目前是否在飛出視窗中反白顯示。
 - `IsEnabled`，屬於 `boolean` 類型，可定義在 Chrome 中是否可以選取項目。
-- `IsVisible`，屬於類型 `bool` ，表示 `ShellContent` 是否隱藏所有 UI 結構的。 其預設值為 `true`。
+- `IsVisible`型別為的， `bool` 表示 `ShellContent` 是否隱藏所有 UI 結構。 其預設值為 `true`。
 - `MenuItems`，屬於 `MenuItemCollection` 類型，這是在此 `ShellContent` 為呈現的頁面時，顯示在飛出視窗中的功能表項目。
 - `Title`，屬於 `string` 類型，這是在 UI 中顯示的標題。
 
-所有這些屬性都是以物件為後盾，也就是說，這些屬性 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 可以是資料系結的目標。
+所有這些屬性都是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示屬性可以是資料系結的目標。
 
 ## <a name="bottom-and-top-tabs"></a>底部和頂端的索引標籤
 
-當物件中出現一個以上的物件時，頂端索引標籤列會加入至底部的索引標籤中，供您 `ShellContent` `Tab` 流覽 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件：
+當物件中有一個以上的物件時，會將頂端索引標籤列 `ShellContent` `Tab` 新增至底部索引標籤，以供 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件導覽：
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -221,7 +221,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 這會導致下列螢幕擷取畫面中顯示的版面配置：
 
-[![在 iOS 和 Android 上具有頂端和底部索引標籤的 Shell 兩頁應用程式螢幕擷取畫面](tabs-images/two-page-app-top-tabs.png "使用頂端和底部索引標籤的 Shell 兩頁應用程式")](tabs-images/two-page-app-top-tabs-large.png#lightbox "使用頂端和底部索引標籤的 Shell 兩頁應用程式")
+[![IOS 和 Android 上具有頂端和底部索引標籤的 Shell 兩頁應用程式螢幕擷取畫面](tabs-images/two-page-app-top-tabs.png "具有頂端和底部索引標籤的 Shell 兩頁應用程式")](tabs-images/two-page-app-top-tabs-large.png#lightbox "具有頂端和底部索引標籤的 Shell 兩頁應用程式")
 
 或者，Shell 的隱含轉換運算子可以用來移除上一個範例中的 `ShellContent` 物件和第二個 `Tab` 物件：
 
@@ -245,7 +245,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 ## <a name="efficient-page-loading"></a>有效率的頁面載入
 
-在 Shell 應用程式中， [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件中的每個物件 `ShellContent` 都是在應用程式啟動期間建立的，這可能會導致啟動經驗不佳。 但是，Shell 也允許依需求建立頁面，以回應導覽。 這可以藉由使用 `DataTemplate` 標記延伸來將每個轉換 `ContentPage` 成 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，然後將結果設定為 `ShellContent.ContentTemplate` 屬性值來完成：
+在 Shell 應用程式中， [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件中的每個物件 `ShellContent` 都是在應用程式啟動期間建立的，而這可能會導致啟動經驗不佳。 但是，Shell 也允許依需求建立頁面，以回應導覽。 您可以使用 `DataTemplate` 標記延伸將每個轉換 `ContentPage` 成 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，然後將結果設定為 `ShellContent.ContentTemplate` 屬性值，來完成這項作業：
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -281,7 +281,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 - 型別為 `Color` 的 `TabBarTitleColor`，用於定義索引標籤列的標題色彩。 如果未設定屬性，將會使用 `TitleColor` 屬性值。
 - 型別為 `Color` 的 `TabBarUnselectedColor`，用於定義索引標籤列未選取的色彩。 如果未設定屬性，則會使用 `UnselectedColor` 屬性值。
 
-所有這些屬性都是以物件為後盾，也就是說，這些屬性 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 可以是資料系結的目標，以及樣式化的。
+所有這些屬性都是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示這些屬性可以是資料系結的目標，並且具有樣式。
 
 下列範例顯示設定不同索引標籤色彩屬性的 XAML 樣式：
 
@@ -301,6 +301,6 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 ## <a name="related-links"></a>相關連結
 
-- [Xaminals (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
-- [Xamarin.FormsShell 導覽](navigation.md)
-- [Xamarin.FormsCSS Shell 特定屬性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)
+- [Xaminals (範例)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xamarin.Forms Shell 導覽](navigation.md)
+- [Xamarin.Forms CSS Shell 特定屬性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

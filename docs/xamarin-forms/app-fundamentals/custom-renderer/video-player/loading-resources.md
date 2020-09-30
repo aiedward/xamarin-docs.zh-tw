@@ -1,6 +1,6 @@
 ---
 title: 載入應用程式資源影片
-description: 本文說明如何使用，在影片播放機應用程式中載入儲存為應用程式資源的影片 Xamarin.Forms 。
+description: 本文說明如何使用，將儲存為應用程式資源的影片載入至影片播放程式應用程式 Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
 ms.technology: xamarin-forms
@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 472c6c2a7c5a084520aee6b8ae160d9329c3f593
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a1a0febfdb38e577363ba59e8d0a5ceda9464a26
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133759"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563493"
 ---
 # <a name="loading-application-resource-videos"></a>載入應用程式資源影片
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 用於 `VideoPlayer` 檢視的自訂轉譯器，可以播放內嵌在個別平台專案中作為應用程式資源的視訊檔案。 不過，目前的 `VideoPlayer` 版本無法存取內嵌在 .NET Standard 程式庫中的資源。
 
@@ -186,4 +186,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [影片播放程式示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [影片播放程式示範 (範例)](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

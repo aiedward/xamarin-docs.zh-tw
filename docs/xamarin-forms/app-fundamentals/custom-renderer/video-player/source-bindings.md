@@ -10,18 +10,18 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c02764d6160bb8ce2481a3cf67e357933d25934f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d417f5e0b2b0bea5a3e129c87e94b289dc7201ed
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133727"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562479"
 ---
 # <a name="binding-video-sources-to-the-player"></a>將影片來源繫結至播放程式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-當 `VideoPlayer` 檢視的 `Source` 屬性設定為新影片檔案時，會停止播放現有的影片並開始播放新影片。 如 [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 範例的 [Select Web Video] \(選取網路影片\)**** 頁面所示。 此頁面包含 `ListView`，以及從 **App.XAML** 檔案參考的三部影片標題：
+當 `VideoPlayer` 檢視的 `Source` 屬性設定為新影片檔案時，會停止播放現有的影片並開始播放新影片。 如 [**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 範例的 [Select Web Video] \(選取網路影片\)**** 頁面所示。 此頁面包含 `ListView`，以及從 **App.XAML** 檔案參考的三部影片標題：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -144,4 +144,4 @@ namespace VideoPlayerDemos
 
 ## <a name="related-links"></a>相關連結
 
-- [影片播放程式示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [影片播放程式示範 (範例)](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

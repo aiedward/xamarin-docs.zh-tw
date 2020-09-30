@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms系結路徑
-description: 本文說明如何使用資料系結，以系結 Xamarin.Forms 類別的 Path 屬性來存取子屬性和集合成員。
+title: Xamarin.Forms 系結路徑
+description: 本文說明如何使用資料系結 Xamarin.Forms ，以系結類別的 Path 屬性來存取子屬性和集合成員。
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 154219f58c22005de0a0a2171aeedd04ec9f9ff9
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570787"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557955"
 ---
-# <a name="xamarinforms-binding-path"></a>Xamarin.Forms系結路徑
+# <a name="no-locxamarinforms-binding-path"></a>Xamarin.Forms 系結路徑
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-在所有先前的資料系結範例中， [`Path`](xref:Xamarin.Forms.Binding.Path) 類別的屬性 `Binding` （或 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) `Binding` 標記延伸的屬性）已設定為單一屬性。 將 `Path` 設成「子屬性」**(屬性的屬性) 或集合成員實際上是可行的。
+在所有先前的資料系結範例中， [`Path`](xref:Xamarin.Forms.Binding.Path) 類別的屬性 `Binding` (或 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) `Binding` 標記延伸) 的屬性已設定為單一屬性。 將 `Path` 設成「子屬性」**(屬性的屬性) 或集合成員實際上是可行的。
 
 例如，假設您的頁面包含 `TimePicker`：
 
@@ -106,7 +106,7 @@ ms.locfileid: "84570787"
                       StringFormat='The middle day of the week is {0}'}" />
 ```
 
-來源設為靜態的 `CultureInfo.CurrentCulture` 屬性，其為類型 `CultureInfo` 的物件。 該類別會定義名為且 `DateTimeFormat` 包含集合之類型的屬性 [`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo) `DayNames` 。 索引會選取第四個項目。
+來源設為靜態的 `CultureInfo.CurrentCulture` 屬性，其為類型 `CultureInfo` 的物件。 該類別會定義一個名為 `DateTimeFormat` 的屬性，其中包含集合的型別 [`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo) `DayNames` 。 索引會選取第四個項目。
 
 第四個 `Label` 作用類似，但適用於與法國建立關聯的文化特性。 繫結的 `Source` 屬性設為具有建構函式的 `CultureInfo` 物件：
 
@@ -160,13 +160,13 @@ ms.locfileid: "84570787"
                       StringFormat='{0}'}" />
 ```
 
-`Content` 屬性的類型現顯示為 `Xamarin.Forms.StackLayout`。 將 `Children` 屬性加入至， `Path` 而類型為 `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]` ，這是的內部類別 Xamarin.Forms ，但明顯是集合類型。 將索引新增至該範例，且類型為 `Xamarin.Forms.Label`。 繼續以這種方式進行。
+`Content` 屬性的類型現顯示為 `Xamarin.Forms.StackLayout`。 將屬性加入至，而 `Children` `Path` 類型是 `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]` ，它是的內部類別 Xamarin.Forms ，但顯然是集合類型。 將索引新增至該範例，且類型為 `Xamarin.Forms.Label`。 繼續以這種方式進行。
 
-當 Xamarin.Forms 處理系結路徑時，它會在 `PropertyChanged` 路徑中執行介面的任何物件上安裝處理常式 `INotifyPropertyChanged` 。 例如，因為 `Text` 屬性變更，所以最後一個繫結回應第一個 `Label` 中的變更。
+如同 Xamarin.Forms 處理系結路徑，它會在執行 `PropertyChanged` 介面之路徑中的任何物件上安裝處理常式 `INotifyPropertyChanged` 。 例如，因為 `Text` 屬性變更，所以最後一個繫結回應第一個 `Label` 中的變更。
 
 如果繫結路徑中的屬性不實作 `INotifyPropertyChanged`，則忽略該屬性的所有變更。 某些變更可能會讓繫結路徑完全失效，所以您只有在屬性和子屬性的字串還未失效前，才使用這項技術。
 
 ## <a name="related-links"></a>相關連結
 
-- [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
+- [Data Binding Demos (Samples)](/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
 - [書籍中的資料系結章節 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

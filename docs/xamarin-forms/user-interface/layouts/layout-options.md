@@ -1,6 +1,6 @@
 ---
-title: 中的版面配置選項Xamarin.Forms
-description: 每個 Xamarin.Forms view 都有 LayoutOptions 類型的 HorizontalOptions 和 VerticalOptions 屬性。 本文說明每個 LayoutOptions 值對視圖對齊和展開的效果。
+title: 中的版面配置選項 Xamarin.Forms
+description: 每個 Xamarin.Forms 視圖都有 HorizontalOptions 和 VerticalOptions 屬性，類型為 LayoutOptions。 本文說明每個 LayoutOptions 值對視圖的對齊和展開有何影響。
 ms.prod: xamarin
 ms.assetid: 7CAB5631-5153-4DEF-8AD7-C6011CE44307
 ms.technology: xamarin-forms
@@ -10,27 +10,27 @@ ms.date: 02/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1a3b9db435de49c438f458d1c4d85d3f81bbf749
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bf85bb3bf6f694aa5eefa8512b8391084228598e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930672"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563519"
 ---
-# <a name="layout-options-in-xamarinforms"></a>中的版面配置選項Xamarin.Forms
+# <a name="layout-options-in-no-locxamarinforms"></a>中的版面配置選項 Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 
-_每個 Xamarin.Forms view 都有 LayoutOptions 類型的 HorizontalOptions 和 VerticalOptions 屬性。本文說明每個 LayoutOptions 值對視圖對齊和展開的效果。_
+_每個 Xamarin.Forms 視圖都有 HorizontalOptions 和 VerticalOptions 屬性，類型為 LayoutOptions。本文說明每個 LayoutOptions 值對視圖的對齊和展開有何影響。_
 
 ## <a name="overview"></a>概觀
 
 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions)結構會封裝兩個版面配置喜好設定：
 
-- **對齊**–視圖的慣用對齊方式，決定其在其父配置內的位置和大小。
-- **擴充**–僅供使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，並指出此視圖是否應該使用額外的空間（如果有的話）。
+- **對齊** ：視圖的慣用對齊方式，決定其在其父配置內的位置和大小。
+- **展開** –僅供使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，並指出視圖是否應該使用額外的空間（如果有的話）。
 
-這些版面配置喜好設定可以套用至 [`View`](xref:Xamarin.Forms.View) 相對於其父系的，方法是將的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 或 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設 `View` 為結構中的其中一個公用欄位 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 。 公用欄位如下所示：
+這些配置喜好設定可以套用至 [`View`](xref:Xamarin.Forms.View) 相對於其父系的，方法是將 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 的或 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設定 `View` 為結構中的其中一個公用欄位 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 。 公用欄位如下所示：
 
 - [`Start`](xref:Xamarin.Forms.LayoutOptions.Start)
 - [`Center`](xref:Xamarin.Forms.LayoutOptions.Center)
@@ -41,30 +41,30 @@ _每個 Xamarin.Forms view 都有 LayoutOptions 類型的 HorizontalOptions 和 
 - [`EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
 - [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-`Start`、 `Center` 、 `End` 和 `Fill` 欄位是用來定義視圖在父配置中的對齊方式：
+`Start`、、 `Center` `End` 和 `Fill` 欄位是用來定義父配置內的視圖對齊：
 
-- 針對水準對齊， [`Start`](xref:Xamarin.Forms.LayoutOptions.Start) 會將 [`View`](xref:Xamarin.Forms.View) 放在父配置的左邊，而對於垂直對齊，則會將放在父配置的 `View` 頂端。
-- 針對水準和垂直對齊， [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) 水準或垂直中央 [`View`](xref:Xamarin.Forms.View) 。
-- 針對水準對齊， [`End`](xref:Xamarin.Forms.LayoutOptions.End) 會將放在父配置的 [`View`](xref:Xamarin.Forms.View) 右手邊，而對於垂直對齊，則會將放在 `View` 父配置的底部。
-- 針對水準對齊， [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) 可確保 [`View`](xref:Xamarin.Forms.View) 填滿父配置的寬度，並在垂直對齊時確保 `View` 填滿父配置的高度。
+- 針對水準對齊，將放置在父配置的 [`Start`](xref:Xamarin.Forms.LayoutOptions.Start) [`View`](xref:Xamarin.Forms.View) 左側，而針對垂直對齊，則會將放置在父配置的 `View` 上方。
+- 針對水準和垂直對齊， [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) 水準或垂直對齊 [`View`](xref:Xamarin.Forms.View) 。
+- 若為水準對齊，請將放置在父配置的 [`End`](xref:Xamarin.Forms.LayoutOptions.End) [`View`](xref:Xamarin.Forms.View) 右邊，而針對垂直對齊，則會將放置在 `View` 父配置的底部。
+- 針對水準對齊， [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) 可確保 [`View`](xref:Xamarin.Forms.View) 填滿父配置的寬度，而針對垂直對齊，則可確保 `View` 填滿父配置的高度。
 
-`StartAndExpand`、 `CenterAndExpand` 、 `EndAndExpand` 和 `FillAndExpand` 值是用來定義對齊喜好設定，以及如果父系內有提供更多的空間（如果有的話） [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
+`StartAndExpand`、、 `CenterAndExpand` `EndAndExpand` 和 `FillAndExpand` 值是用來定義對齊喜好設定，以及如果在父系中有提供時，視圖是否會佔用更多空間 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
 
 > [!NOTE]
 > 檢視的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性預設值為 [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。
 
 ## <a name="alignment"></a>對齊
 
-對齊控制當父配置包含未使用的空間（亦即，父配置大於其所有子系的合併大小）時，該視圖在其父系版面配置內的位置。
+當父配置包含未使用的空間時，對齊方式會控制視圖在其父配置內的位置 (也就是說，父配置大於其所有子系) 的合併大小。
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout)只 `Start` `Center` 會遵循 `End` `Fill` [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 子視圖上相對於方向 `StackLayout` 方向的、、和欄位。 因此，垂直方向內的子視圖 `StackLayout` 可以將其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性設為其中一個 `Start` 、 `Center` 、 `End` 或 `Fill` 欄位。 同樣地，水準方向內的子視圖 `StackLayout` 可以將其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設為其中一個 `Start` 、 `Center` 、 `End` 或 `Fill` 欄位。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout)只會在與 `Start` `Center` `End` `Fill` [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 方向相反方向的子視圖上，使用、、和欄位 `StackLayout` 。 因此，垂直方向內的子視圖 `StackLayout` 可以將其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性設定為 `Start` 、 `Center` 、 `End` 或欄位的其中一個 `Fill` 。 同樣地，水準方向內的子視圖 `StackLayout` 可以將其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設定為 `Start` 、 `Center` 、 `End` 或欄位 `Fill` 的其中一個。
 
-不 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 遵守 `Start` 子視圖的、 `Center` 、 `End` 和欄位，其 `Fill` [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 方向與 `StackLayout` 方向相同。 因此，垂直方向 `StackLayout` `Start` 會忽略、 `Center` 、 `End` 或欄位， `Fill` 如果它們是在子視圖的屬性上設定的話 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。 同樣地，如果將 `StackLayout` `Start` 、 `Center` 、 `End` 或 `Fill` 欄位設定在子視圖的屬性上，則會將其忽略 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 。
+在與 [`StackLayout`](xref:Xamarin.Forms.StackLayout) `Start` `Center` `End` `Fill` [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 方向相同方向的子視圖上 `StackLayout` ，不會遵循、、和欄位。 因此， `StackLayout` `Start` 如果在 `Center` `End` `Fill` 子視圖的屬性上設定、、或欄位，垂直導向會忽略該 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性。 同樣地， `StackLayout` `Start` `Center` `End` `Fill` 如果是在子視圖的屬性上設定，則會忽略、、或欄位 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 。
 
 > [!NOTE]
-> [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)通常會覆寫使用和屬性指定的大小要求 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 。
+> [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) 通常會覆寫使用  [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 和屬性指定 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 的大小要求。
 
-下列 XAML 程式碼範例示範垂直方向 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，其中每個子系會 [`Label`](xref:Xamarin.Forms.Label) 將其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性設定為結構中四個對齊欄位的其中一個 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) ：
+下列 XAML 程式碼範例示範垂直方向 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，每個子系 [`Label`](xref:Xamarin.Forms.Label) 將其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性設定為結構中四個對齊欄位的其中一個 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) ：
 
 ```xaml
 <StackLayout Margin="0,20,0,0">
@@ -92,22 +92,22 @@ Content = new StackLayout
 };
 ```
 
-程式碼會產生下列螢幕擷取畫面中所示的版面配置：
+程式碼會產生下列螢幕擷取畫面所示的版面配置：
 
 [![對齊版面配置選項](layout-options-images/alignment.png)](layout-options-images/alignment-large.png#lightbox "對齊版面配置選項")
 
 ## <a name="expansion"></a>擴充
 
-展開可控制在中，視圖是否會佔用更多的空間（如果有的話） [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 如果 `StackLayout` 包含未使用的空間（亦即，大於 `StackLayout` 其所有子系的合併大小），則所有要求展開的子視圖都會以同樣的方式來共用未使用的空間，方法是將其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 或屬性設定 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 為 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 使用尾碼的欄位 `AndExpand` 。 請注意，當使用中的所有空間時 `StackLayout` ，展開選項不會有任何作用。
+展開可控制某個視圖在中是否會佔用更多的空間（如果有的話） [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 如果 `StackLayout` 包含未使用的空間 (也就是 `StackLayout` 大於其所有子系的合併大小) ，則所有子視圖都會平均共用未使用的空間，而要求展開的所有子視圖都將其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 或 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設定為 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 使用 `AndExpand` 尾碼的欄位。 請注意，當使用中的所有空間時 `StackLayout` ，展開選項沒有任何作用。
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout) 只會讓子檢視往其方向延展。 因此， `StackLayout` [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) `StartAndExpand` `CenterAndExpand` `EndAndExpand` `FillAndExpand` 如果 `StackLayout` 包含未使用的空間，垂直方向可以展開將其屬性設定為其中一個、、或欄位的子視圖。 同樣地， `StackLayout` [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) `StartAndExpand` `CenterAndExpand` `EndAndExpand` `FillAndExpand` 如果 `StackLayout` 包含未使用的空間，水準導向也可以展開將其屬性設定為其中一個、、或欄位的子視圖。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) 只會讓子檢視往其方向延展。 因此， `StackLayout` [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) `StartAndExpand` `CenterAndExpand` `EndAndExpand` `FillAndExpand` 如果 `StackLayout` 包含未使用的空間，垂直方向可以展開子視圖，將其屬性設定為其中一個、、或欄位。 同樣地， `StackLayout` [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) `StartAndExpand` `CenterAndExpand` `EndAndExpand` `FillAndExpand` 如果 `StackLayout` 包含未使用的空間，水準方向可以展開子視圖，將其屬性設定為其中一個、、或欄位。
 
-A [`StackLayout`](xref:Xamarin.Forms.StackLayout) 無法以相對於其方向的方向展開子視圖。 因此，在垂直方向上 `StackLayout` ，將 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 子視圖上的屬性設定為 [`StartAndExpand`](xref:Xamarin.Forms.LayoutOptions.StartAndExpand) 具有與將屬性設定為相同的效果 [`Start`](xref:Xamarin.Forms.LayoutOptions.Start) 。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout)無法以相對於方向的方向來展開子視圖。 因此，在垂直方向上 `StackLayout` ，將子視圖上的屬性設定為，與 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`StartAndExpand`](xref:Xamarin.Forms.LayoutOptions.StartAndExpand) 將屬性設為的效果相同 [`Start`](xref:Xamarin.Forms.LayoutOptions.Start) 。
 
 > [!NOTE]
 > 請注意，啟用展開並不會變更視圖的大小，除非它使用 [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) 。
 
-下列 XAML 程式碼範例會示範垂直方向 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，其中每個子系會 [`Label`](xref:Xamarin.Forms.Label) 將其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設為結構中四個擴充欄位的其中一個 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) ：
+下列 XAML 程式碼範例示範垂直方向 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，其中每個子系 [`Label`](xref:Xamarin.Forms.Label) 將其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設定為結構中四個擴充欄位的其中一個 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) ：
 
 ```xaml
 <StackLayout Margin="0,20,0,0">
@@ -145,17 +145,17 @@ Content = new StackLayout
 };
 ```
 
-程式碼會產生下列螢幕擷取畫面中所示的版面配置：
+程式碼會產生下列螢幕擷取畫面所示的版面配置：
 
-[![展開版面配置選項](layout-options-images/expansion.png)](layout-options-images/expansion-large.png#lightbox "展開版面配置選項")
+[![展開配置選項](layout-options-images/expansion.png)](layout-options-images/expansion-large.png#lightbox "展開配置選項")
 
-每個都 [`Label`](xref:Xamarin.Forms.Label) 佔用中相同的空間量 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 不過，最後的 `Label` 會將其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設為 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)，因此只有其大小不同。 此外，每個 `Label` 都以小型紅色分隔 [`BoxView`](xref:Xamarin.Forms.BoxView) ，可讓您 `Label` 輕鬆地查看所佔用的空間。
+每個都 [`Label`](xref:Xamarin.Forms.Label) 佔用中的相同空間量 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 不過，最後的 `Label` 會將其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設為 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)，因此只有其大小不同。 此外，每個 `Label` 都是以小紅色分隔 [`BoxView`](xref:Xamarin.Forms.BoxView) ，讓您能夠 `Label` 輕鬆地查看佔用的空間。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文說明每個 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 結構值對相對於其父項的對齊和擴充的效果。 `Start`、 `Center` 、 `End` 和 `Fill` 欄位是用來定義父配置內的視圖對齊，而 `StartAndExpand` 、 `CenterAndExpand` 、 `EndAndExpand` 和 `FillAndExpand` 欄位則是用來定義對齊喜好設定，以及判斷視圖是否會在中佔用更多的空間（如果有的話） [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
+本文說明每個 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 結構值對視圖的對齊和展開（相對於其父系）有何影響。 `Start`、、 `Center` `End` 和 `Fill` 欄位是用來定義父配置內的視圖對齊，而 `StartAndExpand` 、 `CenterAndExpand` 、 `EndAndExpand` 和 `FillAndExpand` 欄位則用來定義對齊喜好設定，以及判斷視圖是否會在中佔用更多的空間（如果有的話） [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
 
 ## <a name="related-links"></a>相關連結
 
-- [LayoutOptions （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
+- [LayoutOptions (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 - [LayoutOptions](xref:Xamarin.Forms.LayoutOptions)

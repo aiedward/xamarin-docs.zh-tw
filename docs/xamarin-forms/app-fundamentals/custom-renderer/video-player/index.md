@@ -1,6 +1,6 @@
 ---
 title: 實作影片播放程式
-description: 本文說明如何使用來執行影片播放機應用程式 Xamarin.Forms 。
+description: 本文說明如何使用來執行影片播放程式應用程式 Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
 ms.technology: xamarin-forms
@@ -10,20 +10,20 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 08bfb86f040bfbce834df5a5d98231afae92e78d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a4b092d90b3afa2197c1db576545d233eb6e208d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133755"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563506"
 ---
 # <a name="implementing-a-video-player"></a>實作影片播放程式
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-有時候在應用程式中播放影片檔案是很理想的做法 Xamarin.Forms 。 這一系列的文章討論如何為 iOS、Android 和通用 Windows 平臺（UWP）撰寫名為的類別的自訂轉譯器 Xamarin.Forms `VideoPlayer` 。
+有時候，在應用程式中播放影片檔案是很理想的做法 Xamarin.Forms 。 這一系列的文章會討論如何針對名為的類別，撰寫適用于 iOS、Android 和通用 Windows 平臺 (UWP) 的自訂轉譯器 Xamarin.Forms `VideoPlayer` 。
 
-在 [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 範例中，所有實作並支援 `VideoPlayer` 的檔案都位於名為 `FormsVideoLibrary` 的資料夾，以 `FormsVideoLibrary` 命名空間或以 `FormsVideoLibrary` 開頭的命名空間識別。 此組織和命名應可讓您輕鬆地將影片播放程式檔案複製到您自己的 Xamarin.Forms 解決方案中。
+在 [**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 範例中，所有實作並支援 `VideoPlayer` 的檔案都位於名為 `FormsVideoLibrary` 的資料夾，以 `FormsVideoLibrary` 命名空間或以 `FormsVideoLibrary` 開頭的命名空間識別。 此組織和命名應可讓您輕鬆地將影片播放程式檔案複製到您自己的 Xamarin.Forms 解決方案中。
 
 `VideoPlayer` 可以播放三種來源類型的影片檔案：
 
@@ -33,7 +33,7 @@ ms.locfileid: "84133755"
 
 影片播放程式需要*傳輸控制項*，即為播放和暫停影片的按鈕，以及可顯示影片進度並讓使用者快速跳至不同位置的定位列。 `VideoPlayer` 可以使用平台提供的傳輸控制項和定位列 (如下所示)，或者您也可以提供自訂傳輸控制項和定位列。 以下是在 iOS、Android 和通用 Windows 平台執行的程式：
 
-[![播放網路影片](web-videos-images/playwebvideo-small.png "播放網路影片")](web-videos-images/playwebvideo-large.png#lightbox "播放網路影片")
+[![播放 Web 影片](web-videos-images/playwebvideo-small.png "播放 Web 影片")](web-videos-images/playwebvideo-large.png#lightbox "播放 Web 影片")
 
 當然，您可以將手機轉為橫向以放大檢視。
 
@@ -53,7 +53,7 @@ ms.locfileid: "84133755"
 
 本文使用 `ListView` 呈現要播放的影片集合。 一個程式會顯示程式碼後置檔案可如何設定影片播放程式的影片來源，但第二個程式會顯示您可以如何使用 `ListView` 和影片播放程式之間的資料繫結。
 
-## <a name="loading-application-resource-videos"></a>[載入應用程式資源影片](loading-resources.md)
+## <a name="loading-application-resource-videos"></a>[正在載入應用程式資源影片](loading-resources.md)
 
 影片可以在平台專案中內嵌為資源。 本文說明如何儲存這些資源，並稍後將其載入程式，由影片播放程式播放。
 
@@ -71,4 +71,4 @@ ms.locfileid: "84133755"
 
 ## <a name="related-links"></a>相關連結
 
-- [影片播放程式示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [影片播放程式示範 (範例)](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

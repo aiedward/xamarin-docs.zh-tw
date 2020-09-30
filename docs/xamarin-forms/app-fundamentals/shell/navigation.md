@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsShell 導覽
-description: Xamarin.FormsShell 應用程式可以利用以 URI 為基礎的導覽體驗，允許導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。
+title: Xamarin.Forms Shell 導覽
+description: Xamarin.Forms Shell 應用程式可以利用以 URI 為基礎的流覽體驗，允許流覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。
 ms.prod: xamarin
 ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6cf4932c3265d1d66200ae12ba448a758586f11c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132388"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563142"
 ---
-# <a name="xamarinforms-shell-navigation"></a>Xamarin.FormsShell 導覽
+# <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Xamarin.FormsShell 包含以 URI 為基礎的導覽體驗，其使用路由導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。 此外，它還提供向後巡覽的能力，而不需瀏覽導覽堆疊上的所有頁面。
+Xamarin.Forms Shell 包含以 URI 為基礎的流覽體驗，可使用路由導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。 此外，它還提供向後巡覽的能力，而不需瀏覽導覽堆疊上的所有頁面。
 
 `Shell` 會定義下列導覽相關的屬性：
 
@@ -35,7 +35,7 @@ Xamarin.FormsShell 包含以 URI 為基礎的導覽體驗，其使用路由導�
 導覽是透過從 `Shell` 類別叫用 `GoToAsync` 方法執行的。 導覽即將執行時，會引發 `Navigating` 事件，而導覽完成時，則會引發 `Navigated` 事件。
 
 > [!NOTE]
-> 您仍然可以 Xamarin.Forms 使用[導覽](xref:Xamarin.Forms.NavigableElement.Navigation)屬性，在 Shell 應用程式中執行導覽。 如需詳細資訊，請參閱[階層式導覽](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)。
+> 在 Shell 應用程式中，仍然可以 Xamarin.Forms 使用 [導覽](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性來執行導覽。 如需詳細資訊，請參閱[階層式導覽](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)。
 
 ## <a name="routes"></a>路由
 
@@ -159,10 +159,10 @@ await Shell.Current.GoToAsync("monkeydetails");
 
 此外，支援下列相對路徑格式：
 
-| [格式] | 描述 |
+| 格式 | 描述 |
 | --- | --- |
-| //*料* | 將會從目前顯示的路由向上搜尋路由階層中指定的路由。 |
-| ///*料* | 將會從目前顯示的路由向下搜尋路由階層中指定的路由。 |
+| //*路線* | 將會從目前顯示的路由向上搜尋路由階層中指定的路由。 |
+| ///*路線* | 將會從目前顯示的路由向下搜尋路由階層中指定的路由。 |
 
 #### <a name="contextual-navigation"></a>關聯式導覽
 
@@ -179,13 +179,13 @@ bears
 
 ### <a name="backwards-navigation"></a>向後瀏覽
 
-您可以藉由指定 ".." 做為方法的引數來執行回溯導覽 `GotoAsync` ：
+您可以指定 "..." 做為方法的引數來執行回溯導覽 `GotoAsync` ：
 
 ```csharp
 await Shell.Current.GoToAsync("..");
 ```
 
-具有 ".." 的向後導覽也可以與路由結合，如下所示：
+具有 ".." 的回溯導覽也可以與路由結合，如下所示：
 
 ```csharp
 await Shell.Current.GoToAsync("../route");
@@ -194,9 +194,9 @@ await Shell.Current.GoToAsync("../route");
 在此範例中，整體效果是向後導覽，然後流覽至指定的路由。
 
 > [!IMPORTANT]
-> 只有在回溯導覽將您放在路由階層中的目前位置，才能流覽至指定的路由時，才可以回溯和到指定的路由。
+> 只有在向後導覽會將您放在路由階層中的目前位置，以流覽至指定的路由時，才可以向後導覽至指定的路由。
 
-同樣地，可以回溯多次流覽，然後流覽至指定的路由：
+同樣地，您可以向前流覽多次，然後流覽至指定的路由：
 
 ```csharp
 await Shell.Current.GoToAsync("../../route");
@@ -205,13 +205,13 @@ await Shell.Current.GoToAsync("../../route");
 在此範例中，整體效果是向後導覽兩次，然後流覽至指定的路由。
 
 > [!NOTE]
-> 使用 "..." 導覽時，也可以傳遞資料。 如需詳細資訊，請參閱[傳遞資料](#pass-data)。
+> 使用 "..." 流覽時，也可以傳遞資料。 如需詳細資訊，請參閱 [傳遞資料](#pass-data)。
 
 ### <a name="invalid-routes"></a>無效的路由
 
 下列路由格式無效：
 
-| [格式] | 說明 |
+| 格式 | 說明 |
 | --- | --- |
 | *route* 或 /*route* | 視覺階層中的路由無法推送到導覽堆疊上。 |
 | //*page* 或 ///*page* | 全域路由目前不得為導覽堆疊上的唯一頁面。 因此，不支援以絕對路由傳送至全域路由。 |
@@ -305,9 +305,9 @@ async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEvent
 }
 ```
 
-這個程式碼範例會抓取中目前選取的大象 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，並導覽至 `elephantdetails` 路由，以 `elephantName` 查詢參數的形式傳遞。 請注意，查詢參數將會是針對導覽編碼的 URL，因此 "Indian Elephant" 將會變成 "Indian%20Elephant"。
+這個程式碼範例會在中取出目前選取的大象 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，並流覽至 `elephantdetails` 路由，並以 `elephantName` 查詢參數的形式傳遞。 請注意，查詢參數將會是針對導覽編碼的 URL，因此 "Indian Elephant" 將會變成 "Indian%20Elephant"。
 
-若要接收資料，代表所流覽之頁面的類別，或頁面的類別 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ，必須使用 `QueryPropertyAttribute` for each 查詢參數來裝飾：
+若要接收資料，表示要導覽的頁面或頁面的類別 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ，必須使用 `QueryPropertyAttribute` for each query 參數裝飾：
 
 ```csharp
 [QueryProperty("Name", "name")]
@@ -324,7 +324,7 @@ public partial class ElephantDetailPage : ContentPage
 }
 ```
 
-的第一個引數 `QueryPropertyAttribute` 會指定將接收資料之屬性的名稱，而第二個引數會指定查詢參數識別碼。因此， `QueryPropertyAttribute` 上述範例中的 `Name` 會指定屬性將會接收在 `name` 方法呼叫中，從 URI 傳入查詢參數的資料 `GoToAsync` 。 `Name`接著，屬性 URL 會將查詢參數值解碼，並使用它將頁面的設定 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 為將顯示的物件。
+的第一個引數 `QueryPropertyAttribute` 會指定將接收資料之屬性的名稱，而第二個引數則指定查詢參數識別碼。因此， `QueryPropertyAttribute` 上述範例中的 `Name` 會指定屬性將 `name` 從方法呼叫中的 URI 接收查詢參數中傳遞的資料 `GoToAsync` 。 `Name`然後，屬性 URL 會將查詢參數值解碼，並使用它將頁面的設定為 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 將顯示的物件。
 
 > [!NOTE]
 > 類別可以使用多個 `QueryPropertyAttribute` 物件裝飾。
@@ -335,11 +335,11 @@ public partial class ElephantDetailPage : ContentPage
 
 - `Command`，屬於 `ICommand` 類型，會在按 [上一頁] 按鈕時執行。
 - `CommandParameter`，屬於 `object` 類型，這是傳遞至 `Command` 的參數。
-- `IconOverride`，屬於類型 [`ImageSource`](xref:Xamarin.Forms.ImageSource) ，這是用於 [上一頁] 按鈕的圖示。
+- `IconOverride`，類型為 [`ImageSource`](xref:Xamarin.Forms.ImageSource) ，用於 [上一頁] 按鈕的圖示。
 - `IsEnabled`，屬於 `boolean` 類型，可指出是否啟用上一頁按鈕。 預設值是 `true`。
 - `TextOverride`，屬於 `string` 類型，這是用於上一頁按鈕的文字。
 
-所有這些屬性都是以物件為後盾，也就是說，這些屬性 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 可以是資料系結的目標。
+所有這些屬性都是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示屬性可以是資料系結的目標。
 
 將 `Shell.BackButtonBehavior` 附加屬性設為 `BackButtonBehavior` 物件可以取用 `BackButtonBehavior` 類別：
 
@@ -368,8 +368,8 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 `Command` 屬性會設定要按 [上一頁] 按鈕時執行的 `ICommand`，而 `IconOverride` 屬性則會設定為用於 [上一頁] 按鈕的圖示：
 
-[![在 iOS 和 Android 上 Shell 上一頁按鈕圖示覆寫的螢幕擷取畫面](navigation-images/back-button.png "Shell 上一頁按鈕圖示覆寫")](navigation-images/back-button-large.png#lightbox "Shell 上一頁按鈕圖示覆寫")
+[![螢幕擷取畫面： iOS 和 Android 上的 Shell 上一頁按鈕圖示覆寫](navigation-images/back-button.png "Shell 上一頁按鈕圖示覆寫")](navigation-images/back-button-large.png#lightbox "Shell 上一頁按鈕圖示覆寫")
 
 ## <a name="related-links"></a>相關連結
 
-- [Xaminals (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals (範例)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
