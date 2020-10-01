@@ -919,7 +919,7 @@ items:
       - name: Web 驗證器
         href: ~/essentials/web-authenticator.md?context=xamarin/xamarin-forms
       - name: Xamarin.Essentials 版本資訊
-        href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
+        href: /xamarin/essentials/release-notes/
       - name: 疑難排解
         href: ~/essentials/troubleshooting.md?context=xamarin/xamarin-forms
   - name: 資料與 Azure 雲端服務
@@ -1033,7 +1033,7 @@ items:
           - name: '為什麼我的 Xamarin.Forms.Maps Android 專案因為 COMPILETODALVIK :UNEXPECTED TOP-LEVEL ERROR 而失敗？'
             href: troubleshooting/questions/maps-compiletodalvik-error.md
   - name: 版本資訊
-    href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
+    href: /xamarin/xamarin-forms/release-notes/
   - name: 範例
     href: samples/index.md
   - name: 使用 Xamarin.Forms Book 建立行動應用程式
