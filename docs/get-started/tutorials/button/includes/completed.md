@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 95067df17424d5b9367578e675d747317a827de9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 6316d1013a608a4e03c1cad73adaba96e1e37dc7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059594"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451464"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
@@ -23,6 +23,6 @@ ms.locfileid: "71059594"
 
 ## <a name="related-links"></a>相關連結
 
-- [ButtonTutorial (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-buttontutorial/)
+- [ButtonTutorial (範例)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-buttontutorial/)
 - [Xamarin.Forms 按鈕 (指南)](~/xamarin-forms/user-interface/button.md)
 - [Button API](xref:Xamarin.Forms.Button)
