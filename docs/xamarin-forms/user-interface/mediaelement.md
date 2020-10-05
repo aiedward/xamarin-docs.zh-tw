@@ -10,12 +10,12 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e868eccf446ab22879a66e6e507d810b7e0e13d7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 43702453d1defc3b5a63aba845231f514913d7c5
+ms.sourcegitcommit: 1649554b8c08369b713d20246154455c0ba7d1c0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559762"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712566"
 ---
 # <a name="no-locxamarinforms-mediaelement"></a>Xamarin.Forms MediaElement
 
@@ -534,7 +534,7 @@ public class PositionSlider : Slider
 在此範例中， [`Slider`](xref:Xamarin.Forms.Slider) 資料會將其屬性系結 `Value` 至的 [`Volume`](xref:Xamarin.Forms.MediaElement.Volume) 屬性 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 。 這是可能的，因為 `Volume` 屬性使用系結 `TwoWay` 。 因此，變更 `Value` 屬性將會導致 `Volume` 屬性變更。
 
 > [!NOTE]
-> [`Volume`](xref:Xamarin.Forms.MediaElement.Volume)屬性具有 vlidation 回呼，可確保其值大於或等於0.0，且小於或等於1.0。
+> [`Volume`](xref:Xamarin.Forms.MediaElement.Volume)屬性具有驗證回呼，可確保其值大於或等於0.0，且小於或等於1.0。
 
 如需使用 [查看] [`Slider`](xref:Xamarin.Forms.Slider) 、[ [ Xamarin.Forms 滑杆](~/xamarin-forms/user-interface/slider.md)] 的詳細資訊
 
