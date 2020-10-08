@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: 702ca70e220d8e4d28a1a2ddc6be40daae052d58
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 75edc03706908df365bfda05229a8081ef50a4ac
+ms.sourcegitcommit: db5173f26edbb94b0ec60ab9a708fa04478480f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91455845"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91853286"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>使用 Firebase 雲端傳訊進行遠端通知
 
@@ -476,7 +476,7 @@ if (Intent.Extras != null)
 Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
-`google_app_id`記錄至 [輸出] 視窗的值應符合 `mobilesdk_app_id` **google-services.js**中記錄的值。
+`google_app_id`記錄至 [輸出] 視窗的值應符合 `mobilesdk_app_id` **google-services.js**中記錄的值。 `Resource.String.google_app_id`處理**google-services.js**時，msbuild 會產生。 
 
 ### <a name="send-a-message"></a>傳送訊息
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: baeabf2cde7e0aabe3439d698e63636810069705
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 4956e0dc4961065650fc9289884c24cd5b5f702c
+ms.sourcegitcommit: 6d347e1d7641ac1d2b389fb1dc7a6882a08f7c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91454607"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851531"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)
 
@@ -22,7 +22,7 @@ _本文說明如何使用您電腦的硬體加速功能將 Android Emulator 提�
 Visual Studio 讓開發人員使用 Android Emulator，在 Android 裝置無法使用或不實用的情況下，更容易測試和偵錯其 Xamarin.Android 應用程式。
 不過，如果執行 Android 模擬器的電腦上無法使用硬體加速，Android 模擬器的執行速度會很慢。 使用特殊的 x86 虛擬裝置映像，結合電腦的虛擬化功能，可大幅提升 Android Emulator 的效能。
 
-| 狀況    | HAXM        | WHPX       | Hypervisor.Framework |
+| 案例    | HAXM        | WHPX       | Hypervisor.Framework |
 | ----------- | ----------- | -----------| ----------- |
 | 您有 Intel 處理器 | X | X | X |
 | 您有 AMD 處理器   |   | X |   |
@@ -115,9 +115,11 @@ systeminfo
 
 當您建立虛擬裝置時 (參閱 [管理具有 Android 裝置管理員) 的虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md) ，請務必選取 **x86**型系統映射。 如果您使用 ARM 型系統映像，則虛擬裝置不會加速，且執行速度會變慢。
 
+Hyper-v 現在應已啟用，而且您可以執行加速的 Android 模擬器。
+
 ## <a name="accelerating-with-haxm"></a>使用 HAXM 加速
 
-如果您的電腦不支援 Hyper-V，請使用 HAXM 來加速 Android Emulator。 如果您想要使用 HAXM，您必須[停用 Device Guard](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vswin#disable-devguard)。
+如果您的電腦不支援 Hyper-v，您可以使用 HAXM 來加速 Android 模擬器。 如果您想要使用 HAXM，您必須[停用 Device Guard](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vswin#disable-devguard)。
 
 ### <a name="verifying-haxm-support"></a>確認 HAXM 支援
 

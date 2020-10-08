@@ -7,26 +7,29 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/21/2018
-ms.openlocfilehash: 49d1eea60f766f4cb61484a6e441506cf8f046ff
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 336fb2ae1f1619994b11b630a6cb6726f17d0758
+ms.sourcegitcommit: 6d347e1d7641ac1d2b389fb1dc7a6882a08f7c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78291562"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851518"
 ---
 # <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>從 Windows VM 連線到在 Mac 上執行的 Android 模擬器是否可行？
 
-要連接到從 Windows 虛擬機器在 Mac 上執行的 Android 模擬程式,請使用以下步驟:
+若要從 Windows 虛擬機器連接至 Mac 上執行的 Android Emulator，請使用下列步驟：
+
+> [!NOTE]
+> 我們建議使用不包含 Google Play 商店的 Android Emulator。
 
 1. 在 Mac 上啟動模擬器。
 
-2. 在`adb`Mac 上殺死伺服器:
+2. 終止 `adb` Mac 上的伺服器：
 
     ```bash
     adb kill-server
     ```
 
-3. 請注意,模擬器正在迴圈回網介面上的 2 個 TCP 連接埠上偵聽:
+3. 請注意，模擬器會在回送網路介面上的2個 TCP 埠上接聽：
 
     ```bash
     lsof -iTCP -sTCP:LISTEN -P | grep 'emulator\|qemu'
@@ -35,9 +38,9 @@ ms.locfileid: "78291562"
     emulator6 94105 macuser   21u  IPv4 0xa8dacfb1d845a51f      0t0  TCP localhost:5554 (LISTEN)
     ```
 
-    奇數埠是用於連接到`adb`的埠。 另請參閱[https://developer.android.com/tools/devices/emulator.html#emulatornetworking](https://developer.android.com/tools/devices/emulator.html#emulatornetworking)。
+    奇數通訊埠是用來連接的通訊埠 `adb` 。 另請參閱 [https://developer.android.com/tools/devices/emulator.html#emulatornetworking](https://developer.android.com/tools/devices/emulator.html#emulatornetworking) 。
 
-4. _選項 1:_ 用於`nc`將連接埠 5555(或您喜歡的任何其他埠)上外部接收的入站 TCP 資料包轉發到環回介面上的奇數埠(本例中**為 127.0.0.1 5555),** 並另行將出站數據包轉發:
+4. _選項 1_：用 `nc` 來轉送在埠5555上外部接收的輸入 TCP 封包 (或您喜歡的任何其他埠) 回送介面上的奇數埠 (此範例) 的 **127.0.0.1 5555** ，並以另一種方式將輸出的封包轉送回來：
 
     ```bash
     cd /tmp
@@ -45,60 +48,60 @@ ms.locfileid: "78291562"
     nc -kl 5555 0<backpipe | nc 127.0.0.1 5555 > backpipe
     ```
 
-    只要`nc`命令在終端視窗中保持運行,數據包將按預期轉發。 您可以在終端視窗中鍵入 Control-C,在使用模擬器`nc`完成後退出命令。
+    只要 `nc` 命令仍在終端機視窗中執行，就會如預期般轉寄封包。 您可以在終端機視窗中輸入 Control-C，以在 `nc` 使用模擬器完成後結束命令。
 
-    (選項 1 通常比選項 2 更容易,尤其是在**打開防火牆>防火牆>安全&隱私**時。
+     (選項1通常比選項2更簡單，特別是當 **系統偏好設定 > 安全性 & 隱私權 > 防火牆** 開啟時。 ) 
 
-    _選項 2_ `pfctl` : 用於將`127.0.0.1:5555`[分享網路](https://kb.parallels.com/en/4948)介面上的連接埠`5555`(或您喜歡的任何其他埠)重定向到環回介面上的奇數連接埠(請顯示例中):
+    _選項 2_：用 `pfctl` 來將 TCP 封包從埠 `5555` (或您喜歡的任何其他埠（您想要) 在  [共用網路](https://kb.parallels.com/en/4948) 介面上）重新導向至回送介面上的奇數埠 (`127.0.0.1:5555` 在此範例中) ：
 
     ```bash
     sed '/rdr-anchor/a rdr pass on vmnet8 inet proto tcp from any to any port 5555 -> 127.0.0.1 port 5555' /etc/pf.conf | sudo pfctl -ef -
     ```
 
-    此命令使用`pf packet filter`系統服務設置埠轉發。 換行符很重要。 複製粘貼時,請確保保持其完整。 如果使用 Parallels,還需要從*vmnet8*調整介面名稱。 `vmnet8`是 VMWare 融合中*共用網路*模式的特殊*NAT 設備*的名稱。 並行中的相應網路介面可能是[vnic0](https://download.parallels.com/doc/psbm/en/Parallels_Server_Bare_Metal_Users_Guide/29258.htm)。
+    此命令會使用系統服務來設定埠轉送 `pf packet filter` 。 分行符號是很重要的。 複製貼上時，請務必將它們保持不變。 如果您使用的是並列的，您也需要調整 *vmnet8* 中的介面名稱。 `vmnet8`是 VMWare 融合中*共用網路*模式的特殊*NAT 裝置*名稱。 在中，適當的網路介面可能會 [vnic0](https://download.parallels.com/doc/psbm/en/Parallels_Server_Bare_Metal_Users_Guide/29258.htm)。
 
-5. 從 Windows 電腦連接到模擬器:
+5. 從 Windows 電腦連接到模擬器：
 
     ```cmd
     C:\> adb connect ip-address-of-the-mac:5555
     ```
 
-    將「mac ip 位址」替換為 Mac 的`ifconfig vmnet8 | grep 'inet '`IP 位址,例如, 如果需要,`5555`請取代為步驟 4 中其他喜歡的連接埠\. (注意:獲得命令列存取的一種`adb`方法 是透過[**工具>Android>Android在視覺工作室中的Android Adb命令提示**](~/cross-platform/troubleshooting/questions/version-logs.md#adb-logcat)。
+    以 Mac 的 IP 位址取代「ip-位址-mac」，例如，如下所示 `ifconfig vmnet8 | grep 'inet '` 。 如有需要，請將取代 `5555` 為您在步驟4中所需的其他埠\.  (注意：取得命令列存取的其中一種方式 `adb` 是在 Visual Studio 中透過 [**Tools > Android > Android Adb 命令提示**](~/cross-platform/troubleshooting/questions/version-logs.md#adb-logcat) 字元。 ) 
 
-### <a name="alternate-technique-using-ssh"></a>使用備用技術`ssh`
+### <a name="alternate-technique-using-ssh"></a>使用的替代技巧 `ssh`
 
-如果您在 Mac 上啟用了_遠端登錄_`ssh`,則可以使用連接埠轉接連接到模擬器。
+如果您已在 Mac 上啟用 _遠端登入_ ，則可以使用 `ssh` 埠轉送來連接至模擬器。
 
-1. 在 Windows 上安裝 SSH 用戶端。 選項是安裝[Git 的 Windows](https://git-for-windows.github.io/)。 然後`ssh`,該命令將在 Git **Bash**命令提示符中可用。
+1. 在 Windows 上安裝 SSH 用戶端。 其中一個選項是安裝 [Git For Windows](https://git-for-windows.github.io/)。 `ssh`然後，命令會出現在**Git Bash**命令提示字元中。
 
-2. 按照上面的步驟 1-3 啟動模擬器,在`adb`Mac 上 殺死伺服器,並標識模擬器埠。
+2. 遵循上述的步驟1-3 來啟動模擬器、終止  `adb` Mac 上的伺服器，以及識別模擬器埠。
 
-3. 在`ssh`Windows 上執行以在 Windows 上的`localhost:15555`本地端埠( 在此範例) 和 Mac 回環介面上的奇數模擬器連接埠之間設定`127.0.0.1:5555`雙向連接埠轉送( 請您範例中為):
+3. 在 `ssh` windows 上執行，以在此範例中的本機埠之間設定雙向埠轉送 (在此範例 `localhost:15555` 中，) 和 Mac 回送介面上的奇數模擬器埠 (`127.0.0.1:5555` 在此範例中) ：
 
     ```cmd
     C:\> ssh -L localhost:15555:127.0.0.1:5555 mac-username@ip-address-of-the-mac
     ```
 
-    替換為`mac-username`您列`whoami`出的 Mac 使用者名稱。 替換為`ip-address-of-the-mac`Mac 的 IP 位址。
+    以所 `mac-username` 列的 Mac 使用者名稱取代 `whoami` 。 `ip-address-of-the-mac`以 Mac 的 IP 位址取代。
 
-4. 使用 Windows 上的本地埠連接到模擬器:
+4. 使用 Windows 上的本機埠連接到模擬器：
 
     ```cmd
     C:\> adb connect localhost:15555
     ```
 
-    (注意:獲得命令行訪問的`adb`一個簡單方法是通過[**工具>Android>Android Adb命令提示在**視覺工作室](~/cross-platform/troubleshooting/questions/version-logs.md#adb-logcat)。)
+     (注意：取得命令列存取的一個簡單方法 `adb` 是[在 Visual Studio 中透過**Tools > Android > Android Adb 命令提示**](~/cross-platform/troubleshooting/questions/version-logs.md#adb-logcat)字元。 ) 
 
-一個小警告:如果您對本地埠`5555`使用連接埠,`adb`則認為模擬器在 Windows 上本地運行。 這不會在 Visual Studio 中造成任何麻煩,但在 Mac 的 Visual Studio 中,它會導致應用程式在啟動後立即退出。
+請特別注意：如果您使用埠 `5555` 作為本機埠，則 `adb` 會認為模擬器是在本機 Windows 上執行。 這不會造成 Visual Studio 中的任何問題，但 Visual Studio for Mac 它會導致應用程式在啟動後立即結束。
 
-### <a name="alternate-technique-using-adb--h-is-not-yet-supported"></a>不支援使用`adb -H`的替代技術
+### <a name="alternate-technique-using-adb--h-is-not-yet-supported"></a>`adb -H`尚不支援使用的替代技巧
 
-從理論上講,另一種方法是使用`adb`內置功能連接到在遠端電腦上運行`adb`的 伺服器[https://stackoverflow.com/a/18551325](https://stackoverflow.com/a/18551325)(例如 ,請參閱 )。
-但是 Xamarin.Android IDE 擴展目前無法提供配置該選項的方法。
+理論上，另一種方法是使用 `adb` 的內建功能來連線到 `adb` 遠端電腦上執行的伺服器 (如) 所示 [https://stackoverflow.com/a/18551325](https://stackoverflow.com/a/18551325) 。
+但 Xamarin. Android IDE 延伸模組目前未提供設定該選項的方式。
 
 ## <a name="contact-information"></a>連絡人資訊
 
-本文件討論截至 2016 年 3 月的當前行為。 本文檔中描述的技術不是 Xamarin 穩定測試套件的一部分,因此將來可能會中斷。
+本檔將討論目前的行為，從2016年3月起。 本檔中所述的技術不是適用于 Xamarin 的穩定測試套件的一部分，因此未來可能會中斷。
 
-如果您注意到此技術不再有效,或者您注意到文件中的任何其他錯誤,請隨時新增到以下論壇主題的討論: [http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm](https://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm)。
+如果您注意到該技術已無法運作，或是您注意到檔中有任何其他錯誤，請隨時在下列論壇往來文章中新增討論： [http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm](https://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm) 。
 感謝您！
