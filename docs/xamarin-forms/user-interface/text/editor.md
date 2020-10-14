@@ -10,12 +10,12 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 42f89f09bd84127fd19bc3ab64794bdac7f145d7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 257962516b8a183e63c49b22bc2be108364d9425
+ms.sourcegitcommit: e7d6f8bb074c08d87f7507ad5f1377cfacefa32a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561621"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92041882"
 ---
 # <a name="no-locxamarinforms-editor"></a>Xamarin.Forms 編輯器
 
@@ -133,7 +133,7 @@ Editor editor = new editor { CharacterSpacing = 10 };
 
 ## <a name="auto-size-an-editor"></a>自動調整編輯器的大小
 
-您 [`Editor`](xref:Xamarin.Forms.Editor) 可以藉由將 [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) 屬性設定為 [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) （列舉的值），對其內容進行自動調整大小 [`EditoAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) 。 此列舉有兩個值：
+您 [`Editor`](xref:Xamarin.Forms.Editor) 可以藉由將 [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) 屬性設定為 [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) （列舉的值），對其內容進行自動調整大小 [`EditorAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) 。 此列舉有兩個值：
 
 - [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) 指出自動調整大小已停用，而且是預設值。
 - [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 表示已啟用自動調整大小。
