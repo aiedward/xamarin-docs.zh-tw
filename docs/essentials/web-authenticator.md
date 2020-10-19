@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c4437f05eddd6885f88fc57ddc108f4fc9f4376d
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 6f67ca1ff260c342de8686f24dffe396c591c171
+ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433521"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92169952"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
@@ -74,7 +74,23 @@ protected override void OnResume()
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-在 iOS 上，您必須將應用程式的回呼 URI 模式新增至 plist。
+在 iOS 上，您必須將應用程式的回呼 URI 模式新增至 plist，例如：
+
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleURLName</key>
+        <string>xamarinessentials</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>xamarinessentials</string>
+        </array>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+    </dict>
+</array>
+```
 
 > [!NOTE]
 > 您應該考慮使用 [通用應用程式連結](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content) ，來註冊應用程式的回呼 URI 作為最佳作法。
@@ -195,14 +211,18 @@ var accessToken = r?.AccessToken;
 3. `.AddCookie()`在 Startup.cs 呼叫中使用 `.AddAuthentication()` 。
 4. 所有提供者都必須使用進行設定 `.SaveTokens = true;` 。
 
+
+' ' csharp 服務。AddAuthentication (o => {o. DefaultScheme = CookieAuthenticationDefaults. AuthenticationScheme;}) 。AddCookie ( # A3。AddFacebook (fb => {fb。AppId = Configuration ["FacebookAppId"];Fb。>appsecret = Configuration ["FacebookAppSecret"];Fb。SaveTokens = true;} ) ;
+```
+
 > [!TIP]
-> 如果您想要包含 Apple 登入，您可以使用 `AspNet.Security.OAuth.Apple` NuGet 套件。  您可以在 Essentials GitHub 存放庫中查看完整的 [Startup.cs 範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Startup.cs#L32-L60) 。
+> If you'd like to include Apple Sign In, you can use the `AspNet.Security.OAuth.Apple` NuGet package.  You can view the full [Startup.cs sample](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Startup.cs#L32-L60) in the Essentials GitHub repository.
 
-### <a name="add-a-custom-mobile-auth-controller"></a>新增自訂行動驗證控制器
+### Add a custom mobile auth controller
 
-使用行動驗證流程時，通常會想要直接對使用者所選擇的提供者起始流程 (例如，在應用程式) 的 [登入] 畫面上，按一下 [Microsoft] 按鈕。  也很重要的是，要能夠在特定的回呼 URI 將相關的資訊傳回您的應用程式，以結束驗證流程。
+With a mobile authentication flow it is usually desirable to initiate the flow directly to a provider that the user has chosen (e.g. by clicking a "Microsoft" button on the sign in screen of the app).  It is also important to be able to return relevant information to your app at a specific callback URI to end the authentication flow.
 
-若要達成此目的，請使用自訂 API 控制器：
+To achieve this, use a custom API Controller:
 
 ```csharp
 [Route("mobileauth")]

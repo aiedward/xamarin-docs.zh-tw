@@ -9,12 +9,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 12631abacc56edf88d375d4be89e71a9a4588d03
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 01902942c750a3cd278d648fa82499af4c5d3ab6
+ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436372"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92169965"
 ---
 # <a name="no-locxamarinessentials-permissions"></a>Xamarin.Essentials：許可權
 
@@ -44,7 +44,7 @@ var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>()
 
 `PermissionException`如果未宣告必要的許可權，就會擲回。
 
-建議您最好先檢查許可權的狀態，再要求它。 如果未曾提示使用者，每個作業系統都會傳回不同的預設狀態。 iOS 會傳回 `Unknown` ，而其他則會返回 `Denied` 。
+建議您最好先檢查許可權的狀態，再要求它。 如果未曾提示使用者，每個作業系統都會傳回不同的預設狀態。 iOS 會傳回 `Unknown` ，而其他則會返回 `Denied` 。 如果狀態為，則不 `Granted` 需要進行其他呼叫。 在 iOS 上，如果狀態是 `Denied` ，您應該提示使用者變更設定中的許可權，而在 Android 上，您可以呼叫 `ShouldShowRationale` 來偵測使用者過去是否已拒絕許可權。
 
 ## <a name="requesting-permissions"></a>要求權限
 
@@ -56,7 +56,7 @@ var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 
 `PermissionException`如果未宣告必要的許可權，就會擲回。
 
-請注意，在某些平臺上，只有一次只能啟用許可權要求。 開發人員必須處理進一步的提示，以檢查許可權是否處於 `Denied` 狀態，並要求使用者手動將其開啟。
+請注意，在某些平臺上，只有一次只能啟用許可權要求。 開發人員必須處理進一步的提示，以檢查許可權是否處於 `Denied` 狀態，並要求使用者手動將其開啟。 
 
 ## <a name="permission-status"></a>許可權狀態
 
@@ -91,7 +91,7 @@ Xamarin.Essentials 嘗試盡可能抽象化最多許可權。 不過，每個作
 | 相機 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
 | ContactsRead | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | ContactsWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| 手電筒 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
+| Flashlight | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
 | LocationWhenInUse | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![支援 tvOS](~/media/shared/yes.png "支援 tvOS")  | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
 | LocationAlways | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
 | 媒體 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
@@ -114,12 +114,24 @@ Xamarin.Essentials 嘗試盡可能抽象化最多許可權。 不過，每個作
 public async Task<PermissionStatus> CheckAndRequestLocationPermission()
 {
     var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
-    if (status != PermissionStatus.Granted)
+    
+    if (status == PermissionStatus.Granted)
+        return status;
+        
+    
+    if (status == PermissionStatus.Denied && DeviceInfo.Platform == DevicePlatform.iOS)
     {
-        status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+        // Prompt the user to turn on in settings
+        // On iOS once a permission has been denied it may not be requested again from the application
+        return status;
     }
+    
+    if (Permissions.ShouldShowRationale<Permissions.LocationWhenInUse>())
+    {
+        // Prompt the user with additional information as to why the permission is needed
+    }   
 
-    // Additionally could prompt the user to turn on in settings
+    status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 
     return status;
 }

@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Essentials：共用
-description: 中的共用類別 Xamarin.Essentials 可讓應用程式將資料（例如文字和 web 連結）共用至裝置上的其他應用程式。
+description: 中的共用類別可 Xamarin.Essentials 讓應用程式將資料（例如文字和 web 連結）共用至裝置上的其他應用程式。
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
@@ -9,14 +9,14 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ef4c9961e7e1fac20084247f4c85e87b79bcc427
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 93ad745790a746924f7037e490985c53c332c089
+ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801908"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92169913"
 ---
-# <a name="xamarinessentials-share"></a>Xamarin.Essentials：共用
+# <a name="no-locxamarinessentials-share"></a>Xamarin.Essentials：共用
 
 **Share** 類別能讓應用程式將資料 (例如文字和 Web 連結) 共用於裝置上的其他應用程式。
 
@@ -62,9 +62,9 @@ public class ShareTest
 
 ![共用](images/share.png)
 
-## <a name="files"></a>檔案
+## <a name="files"></a>檔案儲存體
 
-這項功能可讓應用程式與裝置上的其他應用程式共用檔案。 Xamarin.Essentials會自動偵測檔案類型（MIME）並要求共用。 每個平台可能只支援特定的副檔名。
+這項功能可讓應用程式與裝置上的其他應用程式共用檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME) 和要求共用。 每個平台可能只支援特定的副檔名。
 
 下列範例示範如何將文字寫入磁碟，並共用到其他應用程式：
 
@@ -82,7 +82,7 @@ await Share.RequestAsync(new ShareFileRequest
 
 ## <a name="presentation-location"></a>展示位置
 
-在 iPadOS 上要求共用時，您可以在快顯視窗控制項中顯示。 您可以使用屬性來指定位置 `PresentationSourceBounds` ：
+要求 iPadOS 上的共用時，您可以在快顯視窗中顯示。 這會指定顯示快顯視窗的位置，並將箭號直接指向。 這個位置通常是啟動動作的控制項。 您可以使用屬性來指定位置 `PresentationSourceBounds` ：
 
 ```csharp
 await Share.RequestAsync(new ShareFileRequest
@@ -93,6 +93,72 @@ await Share.RequestAsync(new ShareFileRequest
                             ? new System.Drawing.Rectangle(0, 20, 0, 0)
                             : System.Drawing.Rectangle.Empty
 });
+```
+
+如果您使用的是， Xamarin.Forms 您可以傳入 `View` 並計算界限：
+
+
+```
+public static class ViewHelpers
+{
+    public static Rectangle GetAbsoluteBounds(this Xamarin.Forms.View element)
+    {
+        Element looper = element;
+
+        var absoluteX = element.X + element.Margin.Top;
+        var absoluteY = element.Y + element.Margin.Left;
+
+        // Add logic to handle titles, headers, or other non-view bars
+
+        while (looper.Parent != null)
+        {
+            looper = looper.Parent;
+            if (looper is Xamarin.Forms.View v)
+            {
+                absoluteX += v.X + v.Margin.Top;
+                absoluteY += v.Y + v.Margin.Left;
+            }
+        }
+
+        return new Rectangle(absoluteX, absoluteY, element.Width, element.Height);
+    }
+
+    public static System.Drawing.Rectangle ToSystemRectangle(this Rectangle rect) =>
+        new System.Drawing.Rectangle((int)rect.X, (int)rect.Y, (int)rect.Width, (int)rect.Height);
+}
+```
+
+這可在呼叫時使用 `RequstAsync` ：
+
+```csharp
+public Command<Xamarin.Forms.View> ShareCommand { get; } = new Command<Xamarin.Forms.View>(Share);
+async void Share(Xamarin.Forms.View element)
+{
+    try
+    {
+        Analytics.TrackEvent("ShareWithFriends");
+        var bounds = element.GetAbsoluteBounds();
+
+        await Share.RequestAsync(new ShareTextRequest
+        {
+            PresentationSourceBounds = bounds.ToSystemRectangle(),
+            Title = "Title",
+            Text = "Text"
+        });
+    }
+    catch (Exception)
+    {
+        // Handle exception that share failed
+    }
+}
+```
+
+當觸發時，您可以撥入電話的元素 `Command` ：
+
+```xml
+<Button Text="Share"
+        Command="{Binding ShareWithFriendsCommand}"
+        CommandParameter="{Binding Source={RelativeSource Self}}"/>
 ```
 
 ## <a name="platform-differences"></a>平台差異
