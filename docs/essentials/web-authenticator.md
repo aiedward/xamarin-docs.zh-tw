@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6f67ca1ff260c342de8686f24dffe396c591c171
-ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
+ms.openlocfilehash: 8f36dd37d670da5245fbc649a8235d4fb9c327c6
+ms.sourcegitcommit: 31bdc3809b1b71865cdc596f0a67fa45a71d0838
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2020
-ms.locfileid: "92169952"
+ms.locfileid: "92171088"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
@@ -95,7 +95,7 @@ protected override void OnResume()
 > [!NOTE]
 > 您應該考慮使用 [通用應用程式連結](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content) ，來註冊應用程式的回呼 URI 作為最佳作法。
 
-您也需要覆寫您 `AppDelegate` 的 `OpenUrl` 方法以呼叫 Essentials：
+您也需要覆寫您 `AppDelegate` 的 `OpenUrl` 和方法， `ContinueUserActivity` 以呼叫 Essentials：
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -104,6 +104,13 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         return true;
 
     return base.OpenUrl(app, url, options);
+}
+
+public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
+{
+    if (Xamarin.Essentials.Platform.ContinueUserActivity(application, userActivity, completionHandler))
+        return true;
+    return base.ContinueUserActivity(application, userActivity, completionHandler);
 }
 ```
 
