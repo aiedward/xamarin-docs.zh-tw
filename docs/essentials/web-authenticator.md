@@ -8,18 +8,18 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8f36dd37d670da5245fbc649a8235d4fb9c327c6
-ms.sourcegitcommit: 31bdc3809b1b71865cdc596f0a67fa45a71d0838
+ms.openlocfilehash: f373b8c249d4dba11db3b8445648afe2c61d273f
+ms.sourcegitcommit: eda6acc7471acc2f95df498e747376006e3d3f2a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171088"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92214819"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
 **WebAuthenticator**類別可讓您起始以瀏覽器為基礎的流程，此流程會接聽對應用程式註冊之特定 URL 的回呼。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 許多應用程式都需要新增使用者驗證，這通常表示讓您的使用者能夠登入其現有的 Microsoft、Facebook、Google 和現在的 Apple 登入帳戶。
 
@@ -213,7 +213,7 @@ var accessToken = r?.AccessToken;
 
 您可以使用 `WebAuthenticator` API 搭配任何 web 後端服務。  若要搭配 ASP.NET core 應用程式使用它，您必須先使用下列步驟來設定 web 應用程式：
 
-1. 在 ASP.NET Core web 應用程式中設定所需的 [外部社交驗證提供者](/aspnet/core/security/authentication/social/?tabs=visual-studio&view=aspnetcore-3.1) 。
+1. 在 ASP.NET Core web 應用程式中設定所需的 [外部社交驗證提供者](/aspnet/core/security/authentication/social/?tabs=visual-studio) 。
 2. 在您的呼叫中將預設驗證配置設定為 `CookieAuthenticationDefaults.AuthenticationScheme` `.AddAuthentication()` 。
 3. `.AddCookie()`在 Startup.cs 呼叫中使用 `.AddAuthentication()` 。
 4. 所有提供者都必須使用進行設定 `.SaveTokens = true;` 。
@@ -255,6 +255,9 @@ public class AuthController : ControllerBase
 有時您可能會想要將資料（例如提供者） `access_token` 傳回給應用程式，您可以透過回呼 URI 的查詢參數來完成此動作。 或者，您可能會想要改為在伺服器上建立自己的身分識別，並將您自己的權杖傳回給應用程式。 您可以自行決定如何處理此部分？
 
 查看 Essentials 存放庫中的 [完整控制器範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Controllers/MobileAuthController.cs) 。
+
+> [!NOTE]
+> 上述範例示範如何從協力廠商驗證 (ie： OAuth) 提供者傳回存取權杖。 若要取得權杖，讓您可以用來授權 web 後端本身的 web 要求，您應該在 web 應用程式中建立自己的權杖，並改為傳回該權杖。  [ASP.NET Core authentication 的總覽](/aspnet/core/security/authentication)有 ASP.NET Core 中 advanced authentication 案例的詳細資訊。
 
 -----
 ## <a name="api"></a>API
