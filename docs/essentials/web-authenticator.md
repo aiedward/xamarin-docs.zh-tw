@@ -8,18 +8,18 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f373b8c249d4dba11db3b8445648afe2c61d273f
-ms.sourcegitcommit: eda6acc7471acc2f95df498e747376006e3d3f2a
+ms.openlocfilehash: 3df31f500290189bb9ce36148729a7b1d22df3ae
+ms.sourcegitcommit: 9bf375b43907384551188ec6f0ebd3290b3e9295
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92214819"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92436956"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
 **WebAuthenticator**類別可讓您起始以瀏覽器為基礎的流程，此流程會接聽對應用程式註冊之特定 URL 的回呼。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 許多應用程式都需要新增使用者驗證，這通常表示讓您的使用者能夠登入其現有的 Microsoft、Facebook、Google 和現在的 Apple 登入帳戶。
 
@@ -219,17 +219,28 @@ var accessToken = r?.AccessToken;
 4. 所有提供者都必須使用進行設定 `.SaveTokens = true;` 。
 
 
-' ' csharp 服務。AddAuthentication (o => {o. DefaultScheme = CookieAuthenticationDefaults. AuthenticationScheme;}) 。AddCookie ( # A3。AddFacebook (fb => {fb。AppId = Configuration ["FacebookAppId"];Fb。>appsecret = Configuration ["FacebookAppSecret"];Fb。SaveTokens = true;} ) ;
+```csharp
+services.AddAuthentication(o =>
+    {
+        o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    })
+    .AddCookie()
+    .AddFacebook(fb =>
+    {
+        fb.AppId = Configuration["FacebookAppId"];
+        fb.AppSecret = Configuration["FacebookAppSecret"];
+        fb.SaveTokens = true;
+    });
 ```
 
 > [!TIP]
-> If you'd like to include Apple Sign In, you can use the `AspNet.Security.OAuth.Apple` NuGet package.  You can view the full [Startup.cs sample](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Startup.cs#L32-L60) in the Essentials GitHub repository.
+> 如果您想要包含 Apple 登入，您可以使用 `AspNet.Security.OAuth.Apple` NuGet 套件。  您可以在 Essentials GitHub 存放庫中查看完整的 [Startup.cs 範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Startup.cs#L32-L60) 。
 
-### Add a custom mobile auth controller
+### <a name="add-a-custom-mobile-auth-controller"></a>新增自訂行動驗證控制器
 
-With a mobile authentication flow it is usually desirable to initiate the flow directly to a provider that the user has chosen (e.g. by clicking a "Microsoft" button on the sign in screen of the app).  It is also important to be able to return relevant information to your app at a specific callback URI to end the authentication flow.
+使用行動驗證流程時，通常會想要直接對使用者所選擇的提供者起始流程 (例如，在應用程式) 的 [登入] 畫面上，按一下 [Microsoft] 按鈕。  也很重要的是，要能夠在特定的回呼 URI 將相關的資訊傳回您的應用程式，以結束驗證流程。
 
-To achieve this, use a custom API Controller:
+若要達成此目的，請使用自訂 API 控制器：
 
 ```csharp
 [Route("mobileauth")]
