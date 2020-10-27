@@ -10,12 +10,12 @@ ms.date: 06/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da3c6c2f55f1cdbed1b3c4e1bb16c4f78e32cf23
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9e8c0eeb70393cd3a5c6db7b99146b69b79ec14d
+ms.sourcegitcommit: 01ccefd54c0ced724784dbe1aec9ecfc9b00e633
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556044"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630240"
 ---
 # <a name="no-locxamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms DependencyService 註冊和解析
 
@@ -36,7 +36,7 @@ ms.locfileid: "91556044"
 
 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)可以用來向註冊平臺執行 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 該屬性表示所指定型別會提供介面的具體實作。
 
-下列範例顯示 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 如何使用註冊介面的 iOS 實作為 `IDeviceOrientationService` ：
+下列範例會使用 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 來註冊介面的 iOS 實作為 `IDeviceOrientationService` ：
 
 ```csharp
 using Xamarin.Forms;
@@ -65,7 +65,7 @@ namespace DependencyServiceDemos.iOS
 
 您 [`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*) 可以使用方法和 `RegisterSingleton` 方法，在中註冊平臺執行 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。
 
-下列範例顯示 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 如何使用方法來註冊介面的 iOS 實作為 `IDeviceOrientationService` ：
+下列範例會使用 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法來註冊介面的 iOS 實作為 `IDeviceOrientationService` ：
 
 ```csharp
 [Register("AppDelegate")]

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/11/2020
-ms.openlocfilehash: d89f686be99dc8ae8d1aada12dcbe94d857424d7
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 4a89cfbb2406b6a5cda125044d43736dfa02d791
+ms.sourcegitcommit: 01ccefd54c0ced724784dbe1aec9ecfc9b00e633
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91454958"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630227"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -22,15 +22,15 @@ Xamarin. Android build process 負責將所有專案互相對應： [ `Resource.
 
 廣泛來說，Xamarin.Android 建置系統可以產生的 Android 應用程式套件 (`.apk` 檔案) 類型有兩種：
 
-- **發行**組建，完全獨立的組建，不需要額外的套件就能執行。 這些組建是會提供至 App Store 的套件。
+- **發行** 組建，完全獨立的組建，不需要額外的套件就能執行。 這些組建是會提供至 App Store 的套件。
 
-- **偵錯**組建則非如此。
+- **偵錯** 組建則非如此。
 
 這些組建理所當然地符合會產生套件的 MSBuild `Configuration`。
 
 ## <a name="shared-runtime"></a>共用執行階段
 
-共用執行階段** 是成對的其他 Android 套件，這些套件可提供基底類別庫 (`mscorlib.dll` 等) 和 Android 繫結程式庫 (`Mono.Android.dll` 等)。 偵錯組建依賴共用執行階段來取代在 Android 應用程式套件內納入基底類別庫和繫結組件，讓偵錯套件能夠小一些。
+共用執行階段  是成對的其他 Android 套件，這些套件可提供基底類別庫 (`mscorlib.dll` 等) 和 Android 繫結程式庫 (`Mono.Android.dll` 等)。 偵錯組建依賴共用執行階段來取代在 Android 應用程式套件內納入基底類別庫和繫結組件，讓偵錯套件能夠小一些。
 
 您可以藉由設定，在 Debug 組建中停用共用執行時間。 [`$(AndroidUseSharedRuntime)`](~/android/deploy-test/building-apps/build-properties.md#androidusesharedruntime)
 屬性設為 `False` 。
@@ -39,7 +39,7 @@ Xamarin. Android build process 負責將所有專案互相對應： [ `Resource.
 
 ## <a name="fast-deployment"></a>快速部署
 
-快速部署** 會與共用執行階段搭配運作，以進一步縮減 Android 應用程式套件的大小。 其作法並非是將應用程式的組件全部塞入套件內。 而是透過 `adb push` 將組件複製到目標。 此程序可加快建置/部署/偵錯循環的速度，原因是如果變更的項目「只有」** 組件，就不會重新安裝套件。 而是只有更新的組件會重新同步至目標裝置。
+快速部署  會與共用執行階段搭配運作，以進一步縮減 Android 應用程式套件的大小。 其作法並非是將應用程式的組件全部塞入套件內。 而是透過 `adb push` 將組件複製到目標。 此程序可加快建置/部署/偵錯循環的速度，原因是如果變更的項目「只有」  組件，就不會重新安裝套件。 而是只有更新的組件會重新同步至目標裝置。
 
 我們已經知道如果裝置會封鎖 `adb`，不讓其同步至 `/data/data/@PACKAGE_NAME@/files/.__override__` 目錄的話，就無法在裝置上進行快速部署。
 
@@ -77,7 +77,7 @@ Xamarin.Android 建置程序是以 MSBuild 作為基礎，而這也是 Visual St
 
 ## <a name="signing-properties"></a>簽署屬性
 
-簽署屬性可控制應用程式套件的簽署方式，以便能夠將它安裝到 Android 裝置。 為了加快建置反覆運算，Xamarin.Android 工作不會在建置程序進行期間簽署套件，因為簽署作業很慢。 相反地，會在安裝前或匯出期間由 IDE 或安裝** 建置目標簽署套件 (如有必要)。 叫用 SignAndroidPackage** 目標會在輸出目錄中產生後置詞為 `-Signed.apk` 的套件。
+簽署屬性可控制應用程式套件的簽署方式，以便能夠將它安裝到 Android 裝置。 為了加快建置反覆運算，Xamarin.Android 工作不會在建置程序進行期間簽署套件，因為簽署作業很慢。 相反地，會在安裝前或匯出期間由 IDE 或安裝  建置目標簽署套件 (如有必要)。 叫用 SignAndroidPackage  目標會在輸出目錄中產生後置詞為 `-Signed.apk` 的套件。
 
 根據預設，簽署目標會產生新的偵錯簽署金鑰 (如有必要)。 如果您想要使用特定的金鑰（例如在組建伺服器上），則會使用下列 MSBuild 屬性：
 
@@ -145,7 +145,7 @@ Xamarin. Android 建置系統為想要在我們的建置系統中建立掛鉤的
 
 ## <a name="target-definitions"></a>目標定義
 
-建置程序的 Xamarin.Android 特有組件會定義在 `$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets` 中，但還需要有一般的語言特有目標 (例如 Microsoft.CSharp.targets**) 才能建置組件。
+建置程序的 Xamarin.Android 特有組件會定義在 `$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets` 中，但還需要有一般的語言特有目標 (例如 Microsoft.CSharp.targets  ) 才能建置組件。
 
 在匯入任何語言目標之前，必須先設定下列組建屬性：
 
@@ -157,7 +157,7 @@ Xamarin. Android 建置系統為想要在我們的建置系統中建立掛鉤的
 </PropertyGroup>
 ```
 
-藉由匯入 Xamarin.Android.CSharp.targets**，即可針對 C# 納入這些目標和屬性：
+藉由匯入 Xamarin.Android.CSharp.targets  ，即可針對 C# 納入這些目標和屬性：
 
 ```xml
 <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
