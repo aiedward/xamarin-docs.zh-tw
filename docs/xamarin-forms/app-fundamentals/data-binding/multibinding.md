@@ -6,13 +6,13 @@ ms.assetid: E73AE622-664C-4A90-B5B2-BD47D0E7A1A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/18/2020
-ms.openlocfilehash: 0c10e73d8d6c2dcafacbb069eaf905a227030b87
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.date: 10/26/2020
+ms.openlocfilehash: 6a3154d159c491c6460e118395286aa33cfa7e7e
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557526"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897451"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Xamarin 多系結
 
@@ -155,6 +155,33 @@ public class AllTrueMultiConverter : IMultiValueConverter
 
 根據預設，屬性會使用系結 [`CheckBox.IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) 。 因此， `ConvertBack` `AllTrueMultiConverter` 當使用者取消選取時，會執行實例的方法 [`CheckBox`](xref:Xamarin.Forms.CheckBox) ，將來源系結值設定為屬性的值 `CheckBox.IsChecked` 。
 
+對等的 c # 程式碼如下所示：
+
+```csharp
+public class MultiBindingConverterCodePage : ContentPage
+{
+    public MultiBindingConverterCodePage()
+    {
+        BindingContext = new GroupViewModel();
+
+        CheckBox checkBox = new CheckBox();
+        checkBox.SetBinding(CheckBox.IsCheckedProperty, new MultiBinding
+        {
+            Bindings = new Collection<BindingBase>
+            {
+                new Binding("Employee1.IsOver16"),
+                new Binding("Employee1.HasPassedTest"),
+                new Binding("Employee1.IsSuspended", converter: new InverterConverter())
+            },
+            Converter = new AllTrueMultiConverter()
+        });
+
+        Title = "MultiBinding converter demo";
+        Content = checkBox;
+    }
+}
+```
+
 ## <a name="format-strings"></a>格式字串
 
 `MultiBinding`可以使用屬性，將顯示為字串的任何多系結結果格式化 `StringFormat` 。 這個屬性可以設定為標準的 .NET 格式化字串（含預留位置），以指定如何格式化多系結結果：
@@ -172,6 +199,22 @@ public class AllTrueMultiConverter : IMultiValueConverter
 ```
 
 在此範例中， `StringFormat` 屬性會將三個系結值結合成所顯示的單一字串 [`Label`](xref:Xamarin.Forms.Label) 。
+
+對等的 c # 程式碼如下所示：
+
+```csharp
+Label label = new Label();
+label.SetBinding(Label.TextProperty, new MultiBinding
+{
+    Bindings = new Collection<BindingBase>
+    {
+        new Binding("Employee1.Forename"),
+        new Binding("Employee1.MiddleName"),
+        new Binding("Employee1.Surname")
+    },
+    StringFormat = "{0} {1} {2}"
+});
+```
 
 > [!IMPORTANT]
 > 在中，複合字串格式的參數數目不能超過子物件的數目 `Binding` `MultiBinding` 。

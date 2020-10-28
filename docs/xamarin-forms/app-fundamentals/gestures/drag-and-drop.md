@@ -6,16 +6,16 @@ ms.assetid: 4CB2F270-908A-4A89-B852-70BC04066E8C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/04/2020
+ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d3eb7edbb24c7e28ee375e1de85f6a7597ec63ac
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: af56e84598f73693a8cb0e93573b789a716c194a
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561011"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897464"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>新增拖放手勢辨識器
 
@@ -30,7 +30,7 @@ ms.locfileid: "91561011"
 >
 > IOS、Android 和通用 Windows 平臺 (UWP) 支援拖放手勢的識別。 不過，在 iOS 上，需要最基本的 iOS 11 平臺。
 
-*拖曳來源*（即起始拖曳手勢的元素）可以藉由填入資料封裝物件來提供要傳送的資料。 當拖曳來源釋出時，就會發生 drop。 *放置目標*，也就是拖曳來源下的元素，然後處理資料套件。
+*拖曳來源* （即起始拖曳手勢的元素）可以藉由填入資料封裝物件來提供要傳送的資料。 當拖曳來源釋出時，就會發生 drop。 *放置目標* ，也就是拖曳來源下的元素，然後處理資料套件。
 
 在應用程式中啟用拖放的程式如下所示：
 
@@ -50,7 +50,7 @@ ms.locfileid: "91561011"
 - `CanDrag`型別 `bool` ，表示手勢辨識器附加的專案是否可以是拖曳來源。 此屬性的預設值為 `false`。
 - `DragStartingCommand`，類型為 `ICommand` ，其會在第一次辨識拖曳手勢時執行。
 - `DragStartingCommandParameter`，屬於 `object` 類型，這是傳遞至 `DragStartingCommand` 的參數。
-- `DropCompletedCommmand`，類型為 `ICommand` ，其會在卸載拖曳來源時執行。
+- `DropCompletedCommand`，類型為 `ICommand` ，其會在卸載拖曳來源時執行。
 - `DropCompletedCommandParameter`，屬於 `object` 類型，這是傳遞至 `DropCompletedCommand` 的參數。
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標和樣式。
@@ -79,6 +79,8 @@ ms.locfileid: "91561011"
 
 > [!TIP]
 > 在 iOS、Android 及 UWP 上，拖曳手勢會以長按的方式啟動，後面接著拖曳。
+
+如需使用命令的範例 `DragGestureRecognizer` ，請參閱 [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)。
 
 ## <a name="build-a-data-package"></a>建立資料封裝
 
@@ -211,6 +213,8 @@ void OnDragStarting(object sender, DragStartingEventArgs e)
 ```
 
 在此範例中，當拖曳來源放在放置目標上時，如果 [`Image`](xref:Xamarin.Forms.Image) 拖曳來源為，則會將拖曳來源複製到放置目標 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 。 這是因為 Xamarin.Forms 自動將拖曳的影像和文字複製到相容的放置目標。
+
+如需使用命令的範例 `DropGestureRecognizer` ，請參閱 [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)。
 
 ## <a name="handle-the-dragover-event"></a>處理 DragOver 事件
 

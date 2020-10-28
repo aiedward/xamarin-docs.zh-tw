@@ -6,22 +6,25 @@ ms.assetid: B5DE7507-B565-4EE5-9897-27E5733FD173
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 10/25/2019
+ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 47b459945aec4ef8f1c3fa9729efd82461aec0e0
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e1474167d3bb56f0e5eb7ee0a8d321a5d4367ef2
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561959"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897555"
 ---
 # <a name="no-locxamarinforms-reusable-roundeffect"></a>Xamarin.Forms 可重複使用的的 roundeffect
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
-的 roundeffect 可簡化以圓形形式衍生自 VisualElement 的任何控制項。 此效果可以用來建立圓形影像、按鈕和其他控制項：
+> [!IMPORTANT]
+> 您不再需要使用來將控制項轉譯 `RoundEffect` 為圓形。 最新的建議方法是使用來裁剪控制項 `EllipseGeometry` 。 如需詳細資訊，請參閱 [具有幾何的剪輯](~/xamarin-forms/user-interface/shapes/geometries.md#clip-with-a-geometry)。
+
+的 roundeffect 可簡化從衍生為圓形的任何控制項 `VisualElement` 。 此效果可以用來建立圓形影像、按鈕和其他控制項：
 
 [![的 roundeffect iOS 和 Android 上的螢幕擷取畫面](example-roundeffect-images/round-effect-cropped.png)](example-roundeffect-images/round-effect.png#lightbox)
 

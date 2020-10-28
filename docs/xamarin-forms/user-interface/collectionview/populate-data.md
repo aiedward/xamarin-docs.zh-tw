@@ -6,16 +6,16 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/29/2020
+ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 089fb69dfc12b23bb594d5f88a50b37f9694c778
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 77f47af2ed2cce787cf0f66e524c2314ef4c9452
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563376"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897496"
 ---
 # <a name="no-locxamarinforms-collectionview-data"></a>Xamarin.Forms CollectionView 資料
 
@@ -35,56 +35,10 @@ ms.locfileid: "91563376"
 
 ## <a name="populate-a-collectionview-with-data"></a>使用資料填入 CollectionView
 
-藉 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 由將資料的屬性設定為任何執行的集合，來填入資料 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `IEnumerable` 。 從字串陣列初始化屬性，即可在 XAML 中加入專案 `ItemsSource` ：
-
-```xaml
-<CollectionView>
-  <CollectionView.ItemsSource>
-    <x:Array Type="{x:Type x:String}">
-      <x:String>Baboon</x:String>
-      <x:String>Capuchin Monkey</x:String>
-      <x:String>Blue Monkey</x:String>
-      <x:String>Squirrel Monkey</x:String>
-      <x:String>Golden Lion Tamarin</x:String>
-      <x:String>Howler Monkey</x:String>
-      <x:String>Japanese Macaque</x:String>
-    </x:Array>
-  </CollectionView.ItemsSource>
-</CollectionView>
-```
-
-> [!NOTE]
-> 請注意，`x:Array` 項目需要 `Type` 屬性，以指出陣列中的項目類型。
-
-對等的 C# 程式碼為：
-
-```csharp
-CollectionView collectionView = new CollectionView();
-collectionView.ItemsSource = new string[]
-{
-    "Baboon",
-    "Capuchin Monkey",
-    "Blue Monkey",
-    "Squirrel Monkey",
-    "Golden Lion Tamarin",
-    "Howler Monkey",
-    "Japanese Macaque"
-};
-```
-
-> [!WARNING]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 如果 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) UI 執行緒已更新，將會擲回例外狀況。
-
-依預設，會 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 在垂直清單中顯示專案，如下列螢幕擷取畫面所示：
-
-[![螢幕擷取畫面：在 iOS 和 Android 上包含文字專案的 CollectionView](populate-data-images/text.png "CollectionView 中的文字專案")](populate-data-images/text-large.png#lightbox "CollectionView 中的文字專案")
+藉 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 由將資料的屬性設定為任何執行的集合，來填入資料 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `IEnumerable` 。 依預設，會 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 在垂直清單中顯示專案。
 
 > [!IMPORTANT]
 > 如果在 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 基礎集合中加入、移除或變更專案時需要重新整理，則基礎集合應該是傳送 `IEnumerable` 屬性變更通知的集合，例如 `ObservableCollection` 。
-
-如需有關如何變更版面配置的詳細資訊 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，請參閱[ Xamarin.Forms CollectionView 版面](layout.md)配置。 如需如何在中定義每個專案之外觀的詳細資訊 `CollectionView` ，請參閱 [定義專案外觀](#define-item-appearance)。
-
-### <a name="data-binding"></a>資料繫結
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 您可以使用資料系結，將其屬性系結至集合，以填入資料 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `IEnumerable` 。 在 XAML 中，這是利用 `Binding` 標記延伸來達成：
 
@@ -104,7 +58,10 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 > [!NOTE]
 > 您可以啟用編譯的系結，以改善應用程式中的資料系結效能 Xamarin.Forms 。 如需詳細資訊，請參閱[編譯繫結](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。
 
-如需資料系結的詳細資訊，請參閱[ Xamarin.Forms 資料](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結。
+如需有關如何變更版面配置的詳細資訊 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，請參閱[ Xamarin.Forms CollectionView 版面](layout.md)配置。 如需如何在中定義每個專案之外觀的詳細資訊 `CollectionView` ，請參閱 [定義專案外觀](#define-item-appearance)。 如需資料系結的詳細資訊，請參閱[ Xamarin.Forms 資料](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結。
+
+> [!WARNING]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 如果 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) UI 執行緒已更新，將會擲回例外狀況。
 
 ## <a name="define-item-appearance"></a>定義專案外觀
 

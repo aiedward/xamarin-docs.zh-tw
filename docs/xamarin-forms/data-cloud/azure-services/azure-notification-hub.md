@@ -11,12 +11,12 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 721785fe2eeb35f0ef04d1a7854afe4039a66849
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6135d8caec196ded385bc0f962f007c41d20e2cb
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561829"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897490"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>使用 Azure 通知中樞傳送及接收推播通知 Xamarin.Forms
 
@@ -44,7 +44,7 @@ ms.locfileid: "91561829"
 1. 定義範例中使用的 Android 套件名稱 `com.xamarin.notifysample` ，例如。
 1. `google-services.json`從主控台下載 Firebase 。 您將在未來的步驟中，將此檔案新增至 Android 應用程式。
 1. 建立 Azure 通知中樞實例，並為其命名。 此文章和範例會用 `xdocsnotificationhub` 來作為中樞名稱。
-1. 複製 FCM**伺服器金鑰**，並將它儲存為**Google (GCM/FCM) **在 Azure 通知中樞內的**API 金鑰**。
+1. 複製 FCM **伺服器金鑰** ，並將它儲存為 **Google (GCM/FCM)** 在 Azure 通知中樞內的 **API 金鑰** 。
 
 下列螢幕擷取畫面顯示 Azure 通知中樞中的 Google platform 設定：
 
@@ -54,7 +54,7 @@ ms.locfileid: "91561829"
 
 1. 定義 iOS 套件組合識別碼。 本文和範例會用 `com.xamarin.notifysample` 來做為套件組合識別碼。
 1.  (CSR) 檔案建立憑證簽署要求，並使用它來產生推播通知憑證。
-1. 在您的 Azure 通知中樞內，將推播通知憑證上傳至 **Apple (APNS) ** 。
+1. 在您的 Azure 通知中樞內，將推播通知憑證上傳至 **Apple (APNS)** 。
 
 下列螢幕擷取畫面顯示 Azure 通知中樞中的 Apple platform configuration：
 
@@ -122,7 +122,7 @@ public static class AppConstants
 自訂中的下列值 `AppConstants` ，以將範例應用程式連接到您的 Azure 通知中樞：
 
 * `NotificationHubName`：使用您在 Azure 入口網站中建立的 Azure 通知中樞名稱。
-* `ListenConnectionString`：在 Azure 通知中樞的 [ **存取原則**] 下找到此值。
+* `ListenConnectionString`：在 Azure 通知中樞的 [ **存取原則** ] 下找到此值。
 
 下列螢幕擷取畫面顯示這些值位於 Azure 入口網站中的位置：
 
@@ -278,9 +278,6 @@ void SendMessageToMainPage(string body)
 
 本機通知和 `Intent` 範例會要求使用者採取動作來點擊通知。 當使用者應該在應用程式狀態變更之前採取動作時，這是很好的做法。 不過，在某些情況下，您可能會想要存取訊息資料，而不需要使用者動作。 先前的範例也會使用方法，將訊息直接傳送至目前的 `MainPage` 實例 `SendMessageToMainPage` 。 在生產環境中，如果您針對單一訊息類型來執行這兩種方法， `MainPage` 當使用者按下通知時，物件會收到重複的訊息。
 
-> [!NOTE]
-> Android 應用程式只會在背景或前景中執行時，才會收到推播通知。 若要在主要未執行的情況下接收推播通知 `Activity` ，您必須先執行服務，這已超出此範例的範圍。 如需詳細資訊，請參閱 [建立 Android 服務](../../../android/app-fundamentals/services/index.md)
-
 ### <a name="add-incoming-notifications-to-the-no-locxamarinforms-ui"></a>將傳入通知新增至 Xamarin.Forms UI
 
 `MainActivity`類別需要取得許可權，才能處理通知及管理傳入的訊息資料。 下列程式碼顯示完整的 `MainActivity` 實作為：
@@ -396,7 +393,7 @@ void RegisterForRemoteNotifications()
     if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
     {
         UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert |
-            UNAuthorizationOptions.Sound |
+            UNAuthorizationOptions.Badge |
             UNAuthorizationOptions.Sound,
             (granted, error) =>
             {
@@ -537,7 +534,7 @@ public static class DispatcherConstants
 }
 ```
 
-您必須將檔案設定 `DispatcherConstants.cs` 為符合您的 Azure 通知中樞設定。 屬性的值 `SubscriptionTags` 應該符合用戶端應用程式中所使用的值。 `NotificationHubName`屬性是 Azure 通知中樞實例的名稱。 `FullAccessConnectionString`屬性是在您的通知中樞**存取原則**中找到的存取金鑰。 下列螢幕擷取畫面顯示 `NotificationHubName` `FullAccessConnectionString` Azure 入口網站中的和屬性位置：
+您必須將檔案設定 `DispatcherConstants.cs` 為符合您的 Azure 通知中樞設定。 屬性的值 `SubscriptionTags` 應該符合用戶端應用程式中所使用的值。 `NotificationHubName`屬性是 Azure 通知中樞實例的名稱。 `FullAccessConnectionString`屬性是在您的通知中樞 **存取原則** 中找到的存取金鑰。 下列螢幕擷取畫面顯示 `NotificationHubName` `FullAccessConnectionString` Azure 入口網站中的和屬性位置：
 
 ![Azure 通知中樞名稱和 FullAccessConnectionString 的螢幕擷取畫面](azure-notification-hub-images/notification-hub-full-access-policy.png "Azure 通知中樞名稱和 FullAccessConnectionString")
 

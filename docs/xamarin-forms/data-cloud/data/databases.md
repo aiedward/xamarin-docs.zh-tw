@@ -10,12 +10,12 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6c5390057baf48634056101d44540020648ea709
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: afa5ccf8f4d4485ae7a9a45bcbc745bddee20f5c
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563103"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897477"
 ---
 # <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms 本機資料庫
 
@@ -42,7 +42,6 @@ SQLite 資料庫引擎可讓 Xamarin.Forms 應用程式在共用程式碼中載�
 - **識別碼：** sqlite-net-pcl
 - **作者：** SQLite-net
 - **擁有者：** praeclarum
-- **專案 URL:** https://github.com/praeclarum/sqlite-net
 - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
@@ -256,13 +255,13 @@ SQLite 提供的強大 API 具有比本文和範例應用程式中涵蓋的功�
 
 如需詳細資訊，請參閱 sqlite.org 上的 [SQLite 檔](https://www.sqlite.org/docs.html) 。
 
-### <a name="write-ahead-logging"></a>預先寫入記錄
+### <a name="write-ahead-logging"></a>Write-Ahead 記錄
 
 根據預設，SQLite 會使用傳統的復原日誌。 未變更資料庫內容的複本會寫入個別的復原檔案，然後這些變更會直接寫入資料庫檔案中。 刪除復原日誌時，就會發生認可。
 
-預先寫入記錄 (WAL) 會先將變更寫入個別的 WAL 檔。 在 WAL 模式中，認可是一種特殊記錄，會附加至 WAL 檔案，以允許在單一 WAL 檔中發生多筆交易。 WAL 檔案會在稱為 _檢查點_的特殊作業中，合併回資料庫檔案中。
+Write-Ahead 記錄 (WAL) 會先將變更寫入個別的 WAL 檔。 在 WAL 模式中，認可是一種特殊記錄，會附加至 WAL 檔案，以允許在單一 WAL 檔中發生多筆交易。 WAL 檔案會在稱為 _檢查點_ 的特殊作業中，合併回資料庫檔案中。
 
-本機資料庫的 WAL 可能會更快，因為讀取器和寫入器不會彼此封鎖，允許並行讀取和寫入作業。 但是，WAL 模式不允許變更 _頁面大小_、將其他檔案關聯加入至資料庫，以及加入額外的 _檢查點_ 作業。
+本機資料庫的 WAL 可能會更快，因為讀取器和寫入器不會彼此封鎖，允許並行讀取和寫入作業。 但是，WAL 模式不允許變更 _頁面大小_ 、將其他檔案關聯加入至資料庫，以及加入額外的 _檢查點_ 作業。
 
 若要在 SQLite.NET 中啟用 WAL，請 `EnableWriteAheadLoggingAsync` 在實例上呼叫方法 `SQLiteAsyncConnection` ：
 
@@ -270,7 +269,7 @@ SQLite 提供的強大 API 具有比本文和範例應用程式中涵蓋的功�
 await Database.EnableWriteAheadLoggingAsync();
 ```
 
-如需詳細資訊，請參閱 sqlite.org 上的 [SQLite 預先寫入記錄](https://www.sqlite.org/wal.html) 。
+如需詳細資訊，請參閱 sqlite.org 上的 [SQLite Write-Ahead 記錄](https://www.sqlite.org/wal.html) 。
 
 ### <a name="copying-a-database"></a>複製資料庫
 
