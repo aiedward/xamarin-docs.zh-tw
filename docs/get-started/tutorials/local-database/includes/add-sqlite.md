@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: eda3fa134d318ca787432cf5c5a2115b93c3614e
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: 876bfc3b1abe04c61aad025f08178f766195f200
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86277806"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897801"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -13,7 +13,7 @@ ms.locfileid: "86277806"
 1. 啟動 Visual Studio，然後建立名為 **LocalDatabaseTutorial** 的新空白 Xamarin.Forms 應用程式。 確定該應用程式使用 .NET Standard 作為共用程式碼機制。
 
     > [!IMPORTANT]
-    > 本教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **LocalDatabaseTutorial**。 當您從本教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
+    > 本教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **LocalDatabaseTutorial** 。 當您從本教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
 
     如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱 [Xamarin.Forms 快速入門深度剖析](~/get-started/first-app/index.md)中的 [Xamarin.Forms 應用程式的結構](~/get-started/first-app/index.md)。
 
@@ -27,11 +27,9 @@ ms.locfileid: "86277806"
 
     > [!NOTE]
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
-    > - **識別碼：** sqlite-net-pcl
-    > - **作者：** SQLite-net
     > - **擁有者：** praeclarum
-    > - **專案 URL:** https://github.com/praeclarum/sqlite-net
-    > - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+    > - **作者：** SQLite-net
+    > - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > 不論套件名稱為何，此 NuGet 套件可用於 .NET Standard 專案。
 
@@ -46,7 +44,7 @@ ms.locfileid: "86277806"
 1. 啟動 Visual Studio for Mac，然後建立名為 **LocalDatabaseTutorial** 的新空白 Xamarin.Forms 應用程式。 確定該應用程式使用 .NET Standard 作為共用程式碼機制。
 
     > [!IMPORTANT]
-    > 本教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **LocalDatabaseTutorial**。 當您從本教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
+    > 本教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **LocalDatabaseTutorial** 。 當您從本教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
 
     如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱 [Xamarin.Forms 快速入門深度剖析](~/get-started/first-app/index.md)中的 [Xamarin.Forms 應用程式的結構](~/get-started/first-app/index.md)。
 
@@ -60,8 +58,8 @@ ms.locfileid: "86277806"
 
     > [!NOTE]
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
-    > - **作者：** Frank A. Krueger
-    > - **識別碼：** sqlite-net-pcl
+    > - **擁有者：** praeclarum
+    > - **作者：** SQLite-net
     > - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > 不論套件名稱為何，此 NuGet 套件可用於 .NET Standard 專案。
