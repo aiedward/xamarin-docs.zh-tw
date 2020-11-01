@@ -10,10 +10,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 255c870407f1657196abd826b46c7e9b114285c9
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 11/01/2020
 ms.locfileid: "91433321"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>在 Visual Studio 2019 中安裝 Xamarin
@@ -26,11 +26,11 @@ ms.locfileid: "91433321"
 
 [!include[](~/cross-platform/includes/install-xamarin-windows-2019.md)]
 
-在 Visual Studio 2019 中，按一下 [說明]**** 功能表，以驗證已安裝 Xamarin。 如果已安裝 Xamarin，您應會看見 [Xamarin]**** 功能表項目，如此螢幕擷取畫面所示：
+在 Visual Studio 2019 中，按一下 [說明]  功能表，以驗證已安裝 Xamarin。 如果已安裝 Xamarin，您應會看見 [Xamarin]  功能表項目，如此螢幕擷取畫面所示：
 
 ![[說明] 功能表上的 Xamarin 功能表項目](windows-images/12-xamarin-menu-item.png "[說明] 功能表上的 Xamarin 功能表項目")
 
-您也可以按一下 [說明] > [關於 Microsoft Visual Studio]****，然後捲動已安裝產品清單，查看是否已安裝 Xamarin：
+您也可以按一下 [說明] > [關於 Microsoft Visual Studio]  ，然後捲動已安裝產品清單，查看是否已安裝 Xamarin：
 
 ![Visual Studio 2019 已安裝產品的畫面](windows-images/13-xamarin-is-installed.png "Visual Studio 2019 已安裝產品的畫面")
 
