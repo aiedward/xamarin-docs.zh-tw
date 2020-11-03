@@ -8,16 +8,16 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b3ee20de5534329f9e4686c908fe923ba94f3fff
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: e997ae3137110e18df9eed90ef07bfa2703e8088
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414752"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629596"
 ---
 # <a name="no-locxamarinessentials-file-picker"></a>Xamarin.Essentials：檔案選擇器
 
-**FilePicker**類別可讓使用者從裝置挑選單一或多個檔案。
+**FilePicker** 類別可讓使用者從裝置挑選單一或多個檔案。
 
 ![發行前 API](~/media/shared/preview.png)
 
@@ -31,7 +31,7 @@ ms.locfileid: "91414752"
 
 需要 `ReadExternalStorage` 權限，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟 [Properties]**** 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
+開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.ReadExternalStorage)]
@@ -39,7 +39,7 @@ ms.locfileid: "91414752"
 
 或更新 Android 資訊清單：
 
-開啟 [ **Properties** ] 資料夾底下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
+開啟 [ **Properties** ] 資料夾底下的 **AndroidManifest.xml** 檔案，並在 **資訊清單** 節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -56,6 +56,9 @@ ms.locfileid: "91414752"
 不需要進行額外設定。
 
 -----
+
+> [!TIP]
+> 您必須在 UI 執行緒上呼叫所有方法，因為系統會自動處理許可權檢查和要求 Xamarin.Essentials 。
 
 ## <a name="pick-file"></a>挑選檔案
 
