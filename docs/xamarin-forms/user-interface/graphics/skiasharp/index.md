@@ -9,12 +9,12 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ca08815e422b9ec96dcb11d6b069a227bf62866
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 733f640a18196e6bf31eadfa1c632a7202fc1ccc
+ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555264"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281270"
 ---
 # <a name="skiasharp-graphics-in-no-locxamarinforms"></a>SkiaSharp 圖形 Xamarin.Forms
 
@@ -22,7 +22,7 @@ ms.locfileid: "91555264"
 
 _在您的應用程式中使用2D 圖形的 SkiaSharp Xamarin.Forms_
 
-SkiaSharp 是 .NET 和 c # 的2D 圖形系統，由可在 Google 產品中廣泛使用的開放原始碼 Skia 圖形引擎提供技術支援。 您可以在應用程式中使用 SkiaSharp Xamarin.Forms 來繪製2d 向量圖形、點陣圖和文字。 如需更多有關 SkiaSharp 程式庫和其他教學課程的一般資訊，請參閱 [2D 繪圖](~/graphics-games/skiasharp/index.md) 指南。
+SkiaSharp 是 .NET 和 c # 的2D 圖形系統，由可在 Google 產品中廣泛使用的開放原始碼 Skia 圖形引擎提供技術支援。 您可以在應用程式中使用 SkiaSharp Xamarin.Forms 來繪製2d 向量圖形、點陣圖和文字。
 
 本指南假設您已經熟悉程式 Xamarin.Forms 設計。
 

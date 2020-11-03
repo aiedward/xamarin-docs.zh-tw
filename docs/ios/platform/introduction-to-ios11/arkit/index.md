@@ -7,21 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 6803ecf2303ff2c91265f3ac8352a7aa15e74d40
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 6e96a57d2425d99839b723520ac24bafa57cc1a3
+ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436205"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281257"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>在 Xamarin 中 ARKit 簡介
 
 _IOS 11 的增強現實_
 
-ARKit 可提供各式各樣的增強現實應用程式和遊戲。 本節包含下列主題：
-
-- [使用 ARKit 消費者入門](#gettingstarted)
-- [使用 ARKit 搭配 UrhoSharp](urhosharp.md)
+ARKit 可提供各式各樣的擴充現實應用程式和遊戲
 
 <a name="gettingstarted"></a>
 
@@ -103,16 +100,15 @@ ship.Position = new SCNVector3(2f, -2f, -9f);
 SceneView.Session.Pause();
 ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 上述程式碼會產生簡單的 ARKit 應用程式。 更複雜的範例會預期裝載增強型現實會話的 view 控制器會執行 `IARSCNViewDelegate` ，並執行其他方法。
 
-ARKit 提供許多更複雜的功能，例如面追蹤和使用者互動。 如需結合 ARKit 追蹤與 UrhoSharp 的範例，請參閱 [UrhoSharp 示範](urhosharp.md) 。
+ARKit 提供許多更複雜的功能，例如面追蹤和使用者互動。
 
 ## <a name="related-links"></a>相關連結
 
 - [ (Apple) 的擴充現實 ](https://developer.apple.com/arkit/)
-- [使用 ARKit 搭配 UrhoSharp](urhosharp.md)
 - [簡易 ARKit (Jet) 範例](/samples/xamarin/ios-samples/ios11-arkitsample)
 - [ARKit 將物件放 (範例) ](/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
 - [介紹 ARKit-增強的 iOS (WWDC)  (影片) ](https://developer.apple.com/videos/play/wwdc2017/602/)

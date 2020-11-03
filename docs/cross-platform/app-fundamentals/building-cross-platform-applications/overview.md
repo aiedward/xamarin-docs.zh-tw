@@ -6,18 +6,18 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 72b41854160d0810bbc4a58972f638ef920a4068
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: bdf641ca15919958627850e000c117eeedd12de9
+ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457480"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281244"
 ---
 # <a name="building-cross-platform-applications-overview"></a>建立跨平臺應用程式總覽
 
 本指南介紹 Xamarin 平臺，以及如何設計跨平臺應用程式，以充分利用程式碼重複使用，並在所有主要行動平臺上提供高品質的原生體驗： iOS、Android 及 Windows Phone。
 
-本檔中使用的方法通常適用于生產力應用程式和遊戲應用程式，但焦點在於生產力和公用程式 (非遊戲應用程式) 。 如需跨平臺遊戲開發指引，請參閱 [MonoGame 檔的簡介](~/graphics-games/monogame/introduction/index.md) 或查看 [Visual Studio Tools for Unity](/visualstudio/cross-platform/visual-studio-tools-for-unity) 。
+本檔中使用的方法通常適用于生產力應用程式和遊戲應用程式，但焦點在於生產力和公用程式 (非遊戲應用程式) 。 如需跨平臺遊戲開發的指引，請參閱 [Visual Studio Tools for Unity](/visualstudio/cross-platform/visual-studio-tools-for-unity) 。
 
 「只寫入一次，隨處執行」一詞通常用來讚揚在多個平臺上執行未修改的單一程式碼基底的優點。 雖然它有重複使用程式碼的優點，但這種方法通常會導致應用程式具有最低標準的功能集，以及不適合任何目標平臺的一般使用者介面。
 
@@ -34,7 +34,7 @@ Xamarin 並不只是「一次就能在任何地方執行」平臺，因為它的
 1. 在 Windows 上，您將會使用 XAML 做為展示層，並在 Visual Studio 或 Blend 的 UI 設計工具中建立。
 1. 在 Mac 上，您將使用在 Xcode 中建立之展示層的分鏡腳本。
 
-所有平臺都支援 Xamarin 專案，並可讓您建立可使用 Xamarin XAML 跨平臺共用的使用者介面。 
+所有平臺都支援 Xamarin 專案，並可讓您建立可使用 Xamarin XAML 跨平臺共用的使用者介面。
 
 程式碼重複使用的數量主要取決於共用核心中保留的程式碼數量，以及使用者介面特定的程式碼數量。 核心程式代碼是指不會直接與使用者互動的任何內容，而是會提供應用程式元件的服務，以收集和顯示這項資訊。
 
@@ -59,4 +59,4 @@ Xamarin 並不只是「一次就能在任何地方執行」平臺，因為它的
 
 ## <a name="case-studies"></a>個案研究
 
-本檔中有一份個案研究– *Tasky Pro*。 每個案例研究都會討論在真實世界範例中，這份檔中所述概念的實作為。 程式碼是開放原始碼，並可在 [github](https://github.com/xamarin/mobile-samples/)上取得。
+本檔中有一份個案研究– *Tasky Pro* 。 每個案例研究都會討論在真實世界範例中，這份檔中所述概念的實作為。 程式碼是開放原始碼，並可在 [github](https://github.com/xamarin/mobile-samples/)上取得。

@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/19/2017
-ms.openlocfilehash: 35de7c5cf8fdb46f5bba0552e767ac00ee0fe34f
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 09b3ef1446f489b8f9077d59f74fee7cf157ca50
+ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437353"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281283"
 ---
 # <a name="introduction-to-ios-11"></a>iOS 11 簡介
 
-![ARKit 範例](images/arkit.png) ![AR 放置物件](images/arkit2.png) ![CoreML 範例](images/coreml.png) ![MapKit 範例](images/mapkit.png) ![視覺矩形範例](images/vision1.png) ![視覺臉部範例](images/vision2.png) ![拖放範例](images/drag-drop.png) ![拖放範例](images/drag-drop2.png) ![SiriKit 範例](images/sirikit.png)
+![ARKit 範例](images/arkit.png) ![AR 放置物件](images/arkit2.png) ![CoreML 範例](images/coreml.png) ![MapKit 範例](images/mapkit.png) ![視覺矩形範例](images/vision1.png) ![視覺臉部範例](images/vision2.png) ![拖放範例1](images/drag-drop.png) ![拖放範例2](images/drag-drop2.png) ![SiriKit 範例](images/sirikit.png)
 
 iOS 11 包含許多全新的功能和跨各種架構的增強功能：
 
@@ -27,7 +27,6 @@ Apple 推出了架構更新、新的視覺效果變更，以及適用于 iOS 11 
 ## <a name="arkit"></a>[ARKit](arkit/index.md)
 
 ARKit 將增強的現實帶入 iOS，讓使用者能夠透過裝置的相機與世界互動。
-有了 Xamarin，您也可以搭配使用 [ARKit 與 UrhoSharp](arkit/urhosharp.md)。
 
 ## <a name="coreml"></a>[CoreML](coreml.md)
 
@@ -53,7 +52,7 @@ PDFKit 現已在 iOS 11 上推出，讓您的應用程式能夠使用 PDF 建立
 
 Siri 現在支援更多互動，包括清單和附注，以及其他增強功能，例如替代的應用程式名稱。
 
-## <a name="vision"></a>[願景](vision.md)
+## <a name="vision"></a>[視覺](vision.md)
 
 為 iOS 帶來各種影像處理和分析功能，包括臉部偵測和辨識、CoreML 模型、新的條碼偵測 Api、文字和範圍偵測，以及更一般的物件偵測和追蹤。
 
@@ -63,7 +62,6 @@ Siri 現在支援更多互動，包括清單和附注，以及其他增強功能
 
 - [ARKit 範例](/samples/xamarin/ios-samples/ios11-arkitsample)
 - [ARKit 放置物件](/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
-- [ARKit 和 UrhoSharp](arkit/urhosharp.md)
 - [CoreML 影像辨識範例](/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
 - [使用 Azure 自訂模型 CoreML](/samples/xamarin/ios-samples/ios11-coremlazuremodel)
 - [CoreNFC 標記讀取器範例](/samples/xamarin/ios-samples/ios11-nfctagreader)
