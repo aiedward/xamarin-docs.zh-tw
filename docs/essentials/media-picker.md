@@ -8,16 +8,16 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c4299abf9c461a16f67ccf3d8caf03d5e568f13
-ms.sourcegitcommit: 827daa78c090bf79a1b55da45bb8012a1723b720
+ms.openlocfilehash: 32d05208250a4e9927aac50caa5a42c1c6c59bcb
+ms.sourcegitcommit: 4f0223cf13e14d35c52fa72a026b1c7696bf8929
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997508"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278360"
 ---
 # <a name="no-locxamarinessentials-media-picker"></a>Xamarin.Essentials：媒體選擇器
 
-**MediaPicker**類別可讓使用者在裝置上挑選或拍攝相片或影片。
+**MediaPicker** 類別可讓使用者在裝置上挑選或拍攝相片或影片。
 
 ![發行前 API](~/media/shared/preview.png)
 
@@ -31,7 +31,7 @@ ms.locfileid: "91997508"
 
 以下是必要的許可權，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟 [Properties]**** 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
+開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 // Needed for Picking photo/video
@@ -41,14 +41,14 @@ ms.locfileid: "91997508"
 [assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
 [assembly: UsesPermission(Android.Manifest.Permission.Camera)]
 
-// Add these properties if you would like to filter out cameras that do not have cameras or set to false to make them optional
+// Add these properties if you would like to filter out devices that do not have cameras, or set to false to make them optional
 [assembly: UsesFeature("android.hardware.camera", Required = true)]
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = true)]
 ```
 
 或更新 Android 資訊清單：
 
-開啟 [ **Properties** ] 資料夾底下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
+開啟 [ **Properties** ] 資料夾底下的 **AndroidManifest.xml** 檔案，並在 **資訊清單** 節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -91,6 +91,9 @@ ms.locfileid: "91997508"
 * `CaptureVideoAsync`：開啟相機以拍攝影片。
 
 每個方法都可選擇性地接受 `MediaPickerOptions` 參數， `Title` 以允許在顯示給使用者的某些作業系統上設定。
+
+> [!TIP]
+> 您必須在 UI 執行緒上呼叫所有方法，因為系統會自動處理許可權檢查和要求 Xamarin.Essentials 。
 
 ## <a name="general-usage"></a>一般使用方式
 
