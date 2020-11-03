@@ -9,16 +9,16 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60a5fbaa8386d0ecdc5d205b3262e05406cec4a6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 07bfcabc7ffef20bee43531bfab3e78155beb9a9
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556239"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629570"
 ---
 # <a name="no-locxamarinessentials-preferences"></a>Xamarin.Essentials：喜好設定
 
-**喜好設定**類別可協助將應用程式喜好設定儲存於鍵/值存放區中。
+**喜好設定** 類別可協助將應用程式喜好設定儲存於鍵/值存放區中。
 
 ## <a name="get-started"></a>開始使用
 
@@ -32,7 +32,7 @@ Xamarin.Essentials在您的類別中新增的參考：
 using Xamarin.Essentials;
 ```
 
-將指定「鍵」__ 的值儲存在喜好設定中：
+將指定「鍵」的值儲存在喜好設定中：
 
 ```csharp
 Preferences.Set("my_key", "my_value");
@@ -50,7 +50,7 @@ var myValue = Preferences.Get("my_key", "default_value");
 bool hasKey = Preferences.ContainsKey("my_key");
 ```
 
-從喜好設定中移除「鍵」__：
+從喜好設定中移除「鍵」：
 
 ```csharp
 Preferences.Remove("my_key");
@@ -62,11 +62,12 @@ Preferences.Remove("my_key");
 Preferences.Clear();
 ```
 
-上述方法也會採用選擇性 `sharedName` 的，可用來建立其他用於喜好設定的容器。 請閱讀以下平台實作細節。
+> [!TIP]
+> 上述方法會採用稱為的選擇性 `string` 參數 `sharedName` 。 這個參數是用來為喜好設定建立額外的容器，在某些使用案例中很有用。 一個使用案例是當您的應用程式需要在延伸模組或監看式應用程式之間共用喜好設定時。 請參閱下方的平臺執行細節。
 
 ## <a name="supported-data-types"></a>支援的資料類型
 
-**喜好設定**支援下列資料類型：
+**喜好設定** 支援下列資料類型：
 
 - **bool**
 - **double**
@@ -109,7 +110,7 @@ Preferences.Clear();
 
 ## <a name="persistence"></a>持續性
 
-卸載應用程式將會移除所有喜好設定，但在 Android 6.0 (API 層級 23) 或更新版本的應用程式會使用[__自動備份__](https://developer.android.com/guide/topics/data/autobackup)來移除所有的_喜好_設定。 根據預設，此功能為啟用並保留應用程式資料，包括「共用喜好設定」____，這是**喜好設定** API 使用的內容。 您可以透過下列 Google [文件](https://developer.android.com/guide/topics/data/autobackup) 來停用此項目。
+卸載應用程式將會移除所有喜好設定，但在 Android 6.0 (API 層級 23) 或更新版本的應用程式會使用 [__自動備份__](https://developer.android.com/guide/topics/data/autobackup)來移除所有的 _喜好_ 設定。 根據預設，此功能為啟用並保留應用程式資料，包括「共用喜好設定」，這是 **喜好設定** API 使用的內容。 您可以透過下列 Google [文件](https://developer.android.com/guide/topics/data/autobackup) 來停用此項目。
 
 ## <a name="limitations"></a>限制
 

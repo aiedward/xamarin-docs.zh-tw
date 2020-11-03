@@ -9,12 +9,12 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4bb252448abe3c2987def143634d15b5cae194c
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 4a5190ef3e9f61fdb6d08f9cd68202e55a4faead
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433502"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629582"
 ---
 # <a name="no-locxamarinessentials-secure-storage"></a>Xamarin.Essentials：安全的儲存體
 
@@ -68,9 +68,9 @@ ms.locfileid: "91433502"
 
 當您在 **iOS 模擬器** 上開發時，請啟用 **Keychain** 權利並為應用程式的套件組合識別碼新增金鑰鏈存取群組。
 
-開啟 iOS 專案中的 **Entitlements.plist**，並尋找 **Keychain** 權利並予以啟用。 這會自動將應用程式的識別碼新增為群組。
+開啟 iOS 專案中的 **Entitlements.plist** ，並尋找 **Keychain** 權利並予以啟用。 這會自動將應用程式的識別碼新增為群組。
 
-在專案屬性中的 [iOS 套件組合簽署]**** 下，將 [自訂權利]**** 設定為 **Entitlements.plist**。
+在專案屬性中的 [iOS 套件組合簽署] 下，將 [自訂權利] 設定為 **Entitlements.plist** 。
 
 > [!TIP]
 > 當部署到 iOS 裝置時，不需要此權利且應該移除。
@@ -89,7 +89,7 @@ Xamarin.Essentials在您的類別中新增的參考：
 using Xamarin.Essentials;
 ```
 
-若要將給定「機碼」__ 的值儲存在安全的存放區中：
+若要將給定「機碼」的值儲存在安全的存放區中：
 
 ```csharp
 try
@@ -130,11 +130,14 @@ SecureStorage.Remove("oauth_token");
 SecureStorage.RemoveAll();
 ```
 
+> [!TIP]
+> 呼叫或時，可能會擲回例外狀況 `GetAsync` `SetAsync` 。 這可能是因為裝置不支援安全存放裝置、加密金鑰變更或資料損毀所致。 最好是在可能的情況下移除並重新新增設定，以進行處理。
+
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
 # <a name="android"></a>[Android](#tab/android)
 
-[Android KeyStore](https://developer.android.com/training/articles/keystore.html) 是用來存放在將值以檔案名稱 **[YOUR-APP-PACKAGE-ID].xamarinessentials** 儲存到[共用喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)之前用於加密值的密碼編譯金鑰。  在共用喜好設定檔案中使用的金鑰 (不是密碼編譯金鑰，適用於「值」__ 的「金鑰」__) 是傳遞到 `SecureStorage` API 之金鑰的「MD5 雜湊」__。
+[Android KeyStore](https://developer.android.com/training/articles/keystore.html) 是用來存放在將值以檔案名稱 **[YOUR-APP-PACKAGE-ID].xamarinessentials** 儲存到 [共用喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)之前用於加密值的密碼編譯金鑰。  在共用喜好設定檔案中使用的金鑰 (不是密碼編譯金鑰，適用於「值」的「金鑰」) 是傳遞到 `SecureStorage` API 之金鑰的「MD5 雜湊」。
 
 **API 層級 23 與更高版本**
 
@@ -144,7 +147,7 @@ SecureStorage.RemoveAll();
 
 在較舊的 API 層級上，Android KeyStore 只支援存放 **RSA** 金鑰，此金鑰會搭配 **RSA/ECB/PKCS1Padding** 密碼編譯使用以加密 **AES** 金鑰 (在執行階段隨機產生) 並存放在機碼 _SecureStorageKey_ 下的共用喜好設定檔案中 (若尚未產生)。
 
-**SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 若裝置從 API 層級 22 或較低的層級升級到 API 層級 23 與更高版本，將會繼續使用此類型的加密，除非將應用程式解除安裝或呼叫 **RemoveAll**。
+**SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 若裝置從 API 層級 22 或較低的層級升級到 API 層級 23 與更高版本，將會繼續使用此類型的加密，除非將應用程式解除安裝或呼叫 **RemoveAll** 。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
