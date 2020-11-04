@@ -9,12 +9,12 @@ metadata:
   author: conceptdev
   ms.author: crdun
   ms.date: 09/26/2019
-  ms.openlocfilehash: c478d4f7f93d7ddeeb307aa87f324127f98ec6f4
-  ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+  ms.openlocfilehash: 4ca300805c51c6394ed39fb96a7e178a62e72856
+  ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 09/29/2020
-  ms.locfileid: "91453229"
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "93281190"
 highlightedContent:
   items:
   - title: 設定與安裝
@@ -128,8 +128,8 @@ additionalContent:
       summary: 了解應用程式如何啟動和移至背景。
       url: ~/xamarin-forms/app-fundamentals/app-lifecycle.md
     - title: 顯示資料的清單
-      summary: 使用 ListView 來捲動和選取資料。
-      url: ~/xamarin-forms/user-interface/listview/index.md
+      summary: 使用 CollectionView 來捲動及選取資料。
+      url: ~/xamarin-forms/user-interface/collectionview/index.md
     - title: 使用 XAML 與資料繫結
       summary: 使用 MVVM 模式在 UI 中顯示資料。
       url: ~/xamarin-forms/xaml/xaml-basics/index.md
@@ -148,20 +148,6 @@ additionalContent:
     - title: 轉譯 SkiaSharp 圖形
       summary: 轉譯跨平台 2D 向量圖形。
       url: ~/xamarin-forms/user-interface/graphics/skiasharp/index.md
-  - title: 行動開發人員工具
-    items:
-    - title: 適用於 Windows 的 iOS 模擬器
-      summary: 在 Windows 上使用 Visual Studio 與 iOS 模擬器互動。
-      url: ~/tools/ios-simulator/index.md
-    - title: 分析工具
-      summary: 識別並修正效能問題。
-      url: ~/tools/profiler/index.md
-    - title: .NET 內嵌
-      summary: 可從其他程式設計語言取用您現有的 .NET 程式碼。
-      url: ~/tools/dotnet-embedding/index.md
-    - title: MonoGame
-      summary: 使用 C# 建置桌上型電腦、行動裝置與主機遊戲。
-      url: ~/graphics-games/monogame/introduction/index.md
   - title: Xamarin 平台概觀
     items:
     - title: Xamarin.Forms 跨平台
