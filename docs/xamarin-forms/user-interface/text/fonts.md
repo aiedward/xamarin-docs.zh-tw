@@ -6,151 +6,110 @@ ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/01/2020
+ms.date: 11/04/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb32d3248b1dbbe633a99afd8de14b4fb4f0ba09
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6dea987a5c4d9562a4a202e7f73aba979137676b
+ms.sourcegitcommit: 72abbb8f793333b8640c90d2f9c41353fbb38293
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562193"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93343466"
 ---
 # <a name="fonts-in-no-locxamarinforms"></a>中的字型 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 
-本文描述如何 Xamarin.Forms 讓您指定字型屬性 (包括顯示文字之控制項的權數和大小) 。 您可以在程式 [代碼中指定](#set-the-font-in-code) 字型資訊，或 [在 XAML 中指定](#set-the-font-in-xaml)。 也可以使用 [自訂字型](#use-a-custom-font)，並 [顯示字型圖示](#display-font-icons)。
+依預設，會 Xamarin.Forms 使用每個平臺所定義的系統字型。 但是，顯示文字的控制項會定義您可以用來變更這個字型的屬性：
 
-## <a name="set-the-font-in-code"></a>在程式碼中設定字型
+- `FontAttributes`，類型 `FontAttributes` 為，其為具有三個成員的列舉： `None` 、 `Build` 和 `Italic` 。 此屬性的預設值為 `None`。
+- 類型為 `double` 的 `FontSize`。
+- 類型為 `string` 的 `FontFamily`。
 
-使用顯示文字之任何控制項的三個字型相關屬性：
+這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標和樣式。
 
-- **FontFamily** &ndash;`string`字型名稱。
-- **FontSize** &ndash; 的字型大小 `double` 。
-- **FontAttributes** &ndash; 使用 c # ) 中的列舉來指定樣式資訊（例如 *斜體* 和 **粗體字** (）的字串 `FontAttributes` 。
+## <a name="set-font-attributes"></a>設定字型屬性
 
-這段程式碼會示範如何建立標籤，並指定要顯示的字型大小和粗細：
+顯示文字的控制項可以設定 `FontAttributes` 屬性來指定字型屬性：
+
+```xaml
+<Label Text="Italics"
+       FontAttributes="Italic" />
+<Label Text="Bold and italics"
+       FontAttributes="Bold, Italic" />
+```
+
+對等的 C# 程式碼為：
 
 ```csharp
-var about = new Label
+Label label1 = new Label
 {
-    FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
-    FontAttributes = FontAttributes.Bold,
-    Text = "Medium Bold Font"
+    Text = "Italics",
+    FontAttributes = FontAttributes.Italic
+};
+
+Label label2 = new Label
+{
+    Text = "Bold and italics",
+    FontAttributes = FontAttributes.Bold | FontAttributes.Italic
+};    
+```
+
+## <a name="set-the-font-size"></a>設定字型大小
+
+顯示文字的控制項可以設定 `FontSize` 屬性來指定字型大小。 `FontSize`屬性可以直接設定為 `double` 值，或是由 [`NamedSize`](xref:Xamarin.Forms.NamedSize) 列舉值設定：
+
+```xaml
+<Label Text="Font size 24"
+       FontSize="24" />
+<Label Text="Large font size"
+       FontSize="Large" />
+```
+
+對等的 C# 程式碼為：
+
+```csharp
+Label label1 = new Label
+{
+    Text = "Font size 24",
+    FontSize = 24
+};
+
+Label label2 = new Label
+{
+    Text = "Large font size",
+    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
 };
 ```
 
-### <a name="font-size"></a>字型大小
-
-您 `FontSize` 可以將屬性設定為雙精度值，例如：
+或者， `Device.GetNamedSize` 方法有一個覆寫，將第二個引數指定為 [`Element`](xref:Xamarin.Forms.Element) ：
 
 ```csharp
-label.FontSize = 24;
-```
-
-大小值是以與裝置無關的單位來測量。 如需詳細資訊，請參閱 [測量單位](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement)。
-
-Xamarin.Forms 也會在列舉中定義 [`NamedSize`](xref:Xamarin.Forms.NamedSize) 表示特定字型大小的欄位。 如需有關命名字型大小的詳細資訊，請參閱 [命名字型大小](#named-font-sizes)。
-
-### <a name="font-attributes"></a>字型屬性
-
-可以在屬性上設定 **粗體** 和 *斜體* 等字型樣式 `FontAttributes` 。 目前支援下列值：
-
-- **None**
-- **粗體**
-- **斜體**
-
-`FontAttribute`列舉可如下所示使用 (您可以指定單一屬性或將 `OR` 其設定) ：
-
-```csharp
-label.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
-```
-
-### <a name="set-font-info-per-platform"></a>設定每個平臺的字型資訊
-
-或者，您也 `Device.RuntimePlatform` 可以在每個平臺上使用屬性來設定不同的字型名稱，如下列程式碼所示：
-
-```csharp
-label.FontFamily = Device.RuntimePlatform == Device.iOS ? "MarkerFelt-Thin" :
-   Device.RuntimePlatform == Device.Android ? "Lobster-Regular.ttf#Lobster-Regular" : "Assets/Fonts/ArimaMadurai-Black.ttf#Arima Madurai",
-label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
-   Device.RuntimePlatform == Device.Android ? Device.GetNamedSize(NamedSize.Medium, label) : Device.GetNamedSize(NamedSize.Large, label);
-```
-
-適用于 iOS 的良好字型資訊來源為 [iosfonts.com](http://iosfonts.com)。
-
-## <a name="set-the-font-in-xaml"></a>在 XAML 中設定字型
-
-Xamarin.Forms 顯示文字的控制項都具有 `FontSize` 可在 XAML 中設定的屬性。 在 XAML 中設定字型最簡單的方式是使用命名的大小列舉值，如下列範例所示：
-
-```xaml
-<Label Text="Login" FontSize="Large"/>
-<Label Text="Instructions" FontSize="Small"/>
-```
-
-屬性有內建的轉換器，可 `FontSize` 讓所有字型設定以 XAML 中的字串值表示。 此外， `FontAttributes` 也可以使用屬性來指定字型屬性：
-
-```xaml
-<Label Text="Italics are supported" FontAttributes="Italic" />
-<Label Text="Biggest NamedSize" FontSize="Large" />
-<Label Text="Use size 72" FontSize="72" />
-```
-
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#provide-platform-specific-values)屬性也可以在 XAML 中用來在每個平臺上呈現不同的字型。 下列範例會在每個平臺上使用不同的字型：
-
-```xaml
-<Label Text="Hello Forms with XAML">
-    <Label.FontFamily>
-        <OnPlatform x:TypeArguments="x:String">
-                <On Platform="iOS" Value="MarkerFelt-Thin" />
-                <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP" Value="Assets/Fonts/ArimaMadurai-Black.ttf#Arima Madurai" />
-        </OnPlatform>
-    </Label.FontFamily>
-</Label>
-```
-
-## <a name="named-font-sizes"></a>具名字型大小
-
-Xamarin.Forms 定義 [`NamedSize`](xref:Xamarin.Forms.NamedSize) 列舉中表示特定字型大小的欄位。 下表顯示成員及其 `NamedSize` 在 iOS、Android 和通用 Windows 平臺 (UWP) 的預設大小：
-
-| member | iOS | Android | UWP |
-| --- | --- | --- | --- |
-| `Default` | 16 | 14 | 14 |
-| `Micro` | 11 | 10 | 15.667 |
-| `Small` | 13 | 14 | 18.667 |
-| `Medium` | 16 | 17 | 22.667 |
-| `Large` | 20 | 22 | 32 |
-| `Body` | 17 | 16 | 14 |
-| `Header` | 17 | 96 | 46 |
-| `Title` | 28 | 24 | 24 |
-| `Subtitle` | 22 | 16 | 20 |
-| `Caption` | 12 | 12 | 12 |
-
-大小值是以與裝置無關的單位來測量。 如需詳細資訊，請參閱 [測量單位](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement)。
-
-您可以透過 XAML 和程式碼來設定命名字型大小。 此外，您 `Device.GetNamedSize` 可以呼叫方法，以傳回 `double` 代表命名字型大小的。
-
-```csharp
-label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
+Label myLabel = new Label
+{
+    Text = "Large font size",
+};
+myLabel.FontSize = Device.GetNamedSize(NamedSize.Large, myLabel);
 ```
 
 > [!NOTE]
-> 在 iOS 和 Android 上，命名字型的大小會根據作業系統協助工具選項自動調整。 您可以在 iOS 上使用平臺特定來停用此行為。 如需詳細資訊，請參閱 [iOS 上的命名字型大小的協助工具調整](~/xamarin-forms/platform/ios/named-font-size-scaling.md)。
+> `FontSize`當指定為時 `double` ，值會以與裝置無關的單位來測量。 如需詳細資訊，請參閱 [測量單位](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement)。
 
-## <a name="use-a-custom-font"></a>使用自訂字型
+如需有關命名字型大小的詳細資訊，請參閱 [瞭解已命名的字型大小](#understand-named-font-sizes)。
+
+## <a name="set-the-font-family"></a>設定字型系列
+
+顯示文字的控制項可以將 `FontFamily` 屬性設定為字型家族名稱，例如「Times Roman」。 不過，只有在特定平臺上支援該字型家族時，才能使用此功能。
+
+有一些技術可以用來嘗試衍生平臺上可用的字型。 不過，TTF (True 類型格式) 字型檔案不一定代表字型家族，而且通常會包含不適合在應用程式中使用的 TTFs。 此外，平臺上安裝的字型也可以隨著平臺版本而變更。 因此，指定字型家族最可靠的方法是使用自訂字型。
 
 您可以將自訂字型加入至您 Xamarin.Forms 的共用專案，並由平臺專案取用，而不需要任何額外的工作。 完成此動作的程序如下所示：
 
-1. 將字型新增到您 Xamarin.Forms 的共用專案，做為內嵌資源 (**組建動作： EmbeddedResource**) 。
-1. 使用屬性，在檔案（例如 **AssemblyInfo.cs**）中向元件註冊字型檔案 `ExportFont` 。 也可以指定選擇性的別名。
+1. 將字型新增到您 Xamarin.Forms 的共用專案，做為內嵌資源 ( **組建動作： EmbeddedResource** ) 。
+1. 使用屬性，在檔案（例如 **AssemblyInfo.cs** ）中向元件註冊字型檔案 `ExportFont` 。 也可以指定選擇性的別名。
 
-> [!IMPORTANT]
-> 內嵌字型需要使用 Xamarin.Forms 4.5.0.530 或更高版本。
-
-下列範例顯示在元件中註冊的 Lobster 一般字型，以及別名：
+下列範例顯示在元件中註冊的 Lobster-Regular 字型，以及別名：
 
 ```csharp
 using Xamarin.Forms;
@@ -160,6 +119,8 @@ using Xamarin.Forms;
 
 > [!NOTE]
 > 字型可以位於共用專案的任何資料夾中，而不需要在向元件註冊字型時指定資料夾名稱。
+>
+> 在 Windows 上，字型檔案名和字型名稱可能會不同。 若要在 Windows 上探索字型名稱，請在 ttf 檔案上按一下滑鼠右鍵，然後選取 [ **預覽** ]。 然後您可以從 [預覽] 視窗判斷字型名稱。
 
 然後您可以在每個平臺上使用該字型，方法是參考其名稱，而不需要副檔名：
 
@@ -200,7 +161,62 @@ Label label2 = new Label
 [![IOS 和 Android 上的自訂字型](fonts-images/custom-sml.png "自訂字型範例")](fonts-images/custom.png#lightbox "自訂字型範例")
 
 > [!IMPORTANT]
-> 在 Windows 上，字型檔案名和字型名稱可能會不同。 若要在 Windows 上探索字型名稱，請在 ttf 檔案上按一下滑鼠右鍵，然後選取 [ **預覽**]。 然後您可以從 [預覽] 視窗判斷字型名稱。
+> 針對 Windows 上的發行組建，請確定包含自訂字型的元件是以方法呼叫中的引數形式傳遞 `Forms.Init` 。 如需詳細資訊，請參閱[疑難排解](~/xamarin-forms/platform/windows/installation/index.md#troubleshooting)。
+
+## <a name="set-font-properties-per-platform"></a>設定每個平臺的字型屬性
+
+[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)和 [`On`](xref:Xamarin.Forms.On) 類別可以在 XAML 中用來設定每個平臺的字型屬性。 下列範例會在每個平臺上設定不同的字型系列和大小：
+
+```xaml
+<Label Text="Different font properties on different platforms"
+       FontSize="{OnPlatform iOS=20, Android=Medium, UWP=24}">
+    <Label.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+            <On Platform="iOS" Value="MarkerFelt-Thin" />
+            <On Platform="Android" Value="Lobster-Regular" />
+            <On Platform="UWP" Value="ArimaMadurai-Black" />
+        </OnPlatform>
+    </Label.FontFamily>
+</Label>
+```
+
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#provide-platform-specific-values)屬性可以在程式碼中用來設定每個平臺的字型屬性
+
+```csharp
+Label label = new Label
+{
+    Text = "Different font properties on different platforms"
+};
+
+label.FontSize = Device.RuntimePlatform == Device.iOS ? 20 :
+    Device.RuntimePlatform == Device.Android ? Device.GetNamedSize(NamedSize.Medium, label) : 24;
+label.FontFamily = Device.RuntimePlatform == Device.iOS ? "MarkerFelt-Thin" :
+   Device.RuntimePlatform == Device.Android ? "Lobster-Regular" : "ArimaMadurai-Black";
+```
+
+如需有關提供平臺特定值的詳細資訊，請參閱 [提供平臺特定值](~/xamarin-forms/platform/device.md#provide-platform-specific-values)。 如需標記延伸的詳細資訊 `OnPlatform` ，請參閱 [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
+
+## <a name="understand-named-font-sizes"></a>瞭解命名字型大小
+
+Xamarin.Forms 定義 [`NamedSize`](xref:Xamarin.Forms.NamedSize) 列舉中表示特定字型大小的欄位。 下表顯示成員及其 `NamedSize` 在 iOS、Android 和通用 Windows 平臺 (UWP) 的預設大小：
+
+| 成員 | iOS | Android | UWP |
+| --- | --- | --- | --- |
+| `Default` | 16 | 14 | 14 |
+| `Micro` | 11 | 10 | 15.667 |
+| `Small` | 13 | 14 | 18.667 |
+| `Medium` | 16 | 17 | 22.667 |
+| `Large` | 20 | 22 | 32 |
+| `Body` | 17 | 16 | 14 |
+| `Header` | 17 | 96 | 46 |
+| `Title` | 28 | 24 | 24 |
+| `Subtitle` | 22 | 16 | 20 |
+| `Caption` | 12 | 12 | 12 |
+
+大小值是以與裝置無關的單位來測量。 如需詳細資訊，請參閱 [測量單位](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement)。
+
+> [!NOTE]
+> 在 iOS 和 Android 上，命名字型的大小會根據作業系統協助工具選項自動調整。 您可以在 iOS 上使用平臺特定來停用此行為。 如需詳細資訊，請參閱 [iOS 上的命名字型大小的協助工具調整](~/xamarin-forms/platform/ios/named-font-size-scaling.md)。
 
 ## <a name="display-font-icons"></a>顯示字型圖示
 
@@ -249,4 +265,6 @@ image.Source = new FontImageSource
 - [FontsSample](/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 - [Text (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [ (範例) 的可系結版面配置 ](/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
+- [提供平臺特定值](~/xamarin-forms/platform/device.md#provide-platform-specific-values)
+- [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)
 - [可繫結的版面配置](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
