@@ -118,10 +118,5 @@
           href: effects/image-filters.md
         - name: 色彩濾鏡
           href: effects/color-filters.md
-    - name: 不限於平台的範例
-      href: ~/graphics-games/skiasharp/introduction.md
-      items:
-        - name: 平台專屬的注意事項
-          href: ~/graphics-games/skiasharp/platform.md
-    - name: API 參考資料
+    - name: 應用程式開發介面參考
       href: /dotnet/api/skiasharp/
