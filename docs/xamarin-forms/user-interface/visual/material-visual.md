@@ -10,16 +10,16 @@ ms.date: 11/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 753644b372fafc7c3ea22008267844251527050d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ecda3c6d0806894ce1ce657bc9e1c31cdfca7bf2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556473"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374403"
 ---
 # <a name="no-locxamarinforms-material-visual"></a>Xamarin.Forms 材質視覺效果
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
 「[材質設計](https://material.io)」是 Google 所建立的固定設計系統，可針對視圖和版面配置的外觀和行為，規定大小、色彩、間距及其他方面。
 
@@ -65,7 +65,7 @@ global::Xamarin.Forms.Forms.Init();
 global::Xamarin.Forms.FormsMaterial.Init();
 ```
 
-在 Android 上，在方法之後叫用方法，就會在**MainActivity.cs**中進行這項 `Xamarin.Forms.FormsMaterial.Init` *after* `Xamarin.Forms.Forms.Init` 操作：
+在 Android 上，在方法之後叫用方法，就會在 **MainActivity.cs** 中進行這項 `Xamarin.Forms.FormsMaterial.Init` *after* `Xamarin.Forms.Forms.Init` 操作：
 
 ```csharp
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a62d8f8e04d97b45fff779739d817defce1414f2
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3b73aabd184060e273d7a1e3e20f6e78eb0ba0d1
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556863"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373545"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 中的點陣圖基本概念
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _從各種來源載入點陣圖，並加以顯示。_
 
@@ -31,7 +31,7 @@ SkiaSharp 中的點陣圖支援相當廣泛。 本文只涵蓋 &mdash; 如何載
 
 SkiaSharp 點陣圖是類型的物件 [`SKBitmap`](xref:SkiaSharp.SKBitmap) 。 有許多方式可以建立點陣圖，但是本文會將自己限制為 [`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) 方法，從 .net 物件載入點陣圖 `Stream` 。
 
-**SkiaSharpFormsDemos**程式中的**基本點陣圖**頁面示範如何從三個不同的來源載入點陣圖：
+**SkiaSharpFormsDemos** 程式中的 **基本點陣圖** 頁面示範如何從三個不同的來源載入點陣圖：
 
 - 從網際網路
 - 從可執行檔中內嵌的資源
@@ -104,9 +104,9 @@ protected override async void OnAppearing()
 
 ## <a name="loading-a-bitmap-resource"></a>載入點陣圖資源
 
-就程式碼而言，載入點陣圖最簡單的方法就是直接在您的應用程式中包含點陣圖資源。 **SkiaSharpFormsDemos**套裝程式含名為**Media**的資料夾，其中包含數個位圖檔案，包括一個名為**monkey.png**的點陣圖檔案。 針對儲存為程式資源的點陣圖，您必須使用 [**屬性**] 對話方塊為檔案提供**Embedded 資源**的**組建動作**！
+就程式碼而言，載入點陣圖最簡單的方法就是直接在您的應用程式中包含點陣圖資源。 **SkiaSharpFormsDemos** 套裝程式含名為 **Media** 的資料夾，其中包含數個位圖檔案，包括一個名為 **monkey.png** 的點陣圖檔案。 針對儲存為程式資源的點陣圖，您必須使用 [ **屬性** ] 對話方塊為檔案提供 **Embedded 資源** 的 **組建動作** ！
 
-每個內嵌資源都有一個 *資源識別碼* ，其中包含專案名稱、資料夾和檔案名，並以句點連接： **SkiaSharpFormsDemos.Media.monkey.png**。 您可以藉由指定該資源識別碼作為 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) 類別之方法的引數，來取得此資源的存取權 [`Assembly`](xref:System.Reflection.Assembly) ：
+每個內嵌資源都有一個 *資源識別碼* ，其中包含專案名稱、資料夾和檔案名，並以句點連接： **SkiaSharpFormsDemos.Media.monkey.png** 。 您可以藉由指定該資源識別碼作為 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) 類別之方法的引數，來取得此資源的存取權 [`Assembly`](xref:System.Reflection.Assembly) ：
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -124,7 +124,7 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 
 使用者也可以從裝置的圖片庫載入相片。 這項功能本身並不提供 Xamarin.Forms 。 作業需要相依性服務，例如 [從圖片媒體櫃挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)的文章中所述。
 
-**SkiaSharpFormsDemos**專案中的**IPhotoLibrary.cs**檔案，以及平臺專案中的三個**PhotoLibrary.cs**檔案已從該文章中調整。 此外，Android **MainActivity.cs** 檔已如文章所述修改過，而且 iOS 專案已獲得存取相片媒體櫃的許可權，並有兩行指向 **plist** 檔案的底部。
+**SkiaSharpFormsDemos** 專案中的 **IPhotoLibrary.cs** 檔案，以及平臺專案中的三個 **PhotoLibrary.cs** 檔案已從該文章中調整。 此外，Android **MainActivity.cs** 檔已如文章所述修改過，而且 iOS 專案已獲得存取相片媒體櫃的許可權，並有兩行指向 **plist** 檔案的底部。
 
 此函式 `BasicBitmapsPage` 會將加入至， `TapGestureRecognizer` 以在點擊時 `SKCanvasView` 收到通知。 收到點一下時， `Tapped` 處理常式會取得圖片選擇器相依性服務的存取權，並呼叫 `PickPhotoAsync` 。 如果 `Stream` 傳回物件，則會將它傳遞給 `SKBitmap.Decode` 方法：
 

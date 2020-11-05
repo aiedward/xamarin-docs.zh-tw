@@ -10,16 +10,16 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ec84ac906ac146f37ba5b161a898582ce483bc95
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: db2baea124f013d3b35451e62bd67c32dcebc470
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556668"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373597"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp 圓形漸層
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 [`SKShader`](xref:SkiaSharp.SKShader)類別會定義靜態方法，以建立四種不同類型的漸層。 [**SkiaSharp 線性**](linear-gradient.md)漸層文章會討論 [`CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) 方法。 本文涵蓋其他三種類型的漸層，這些都是以圓形為基礎。
 
@@ -57,7 +57,7 @@ public static SKShader CreateRadialGradient (SKPoint center,
 
 如果您使用 `CreateRadialGradient` 填滿圓形，則可以將漸層的中心設定為圓形的中心，並將漸層的半徑設定為圓形半徑。 在此情況下，引數對漸層轉譯 `SKShaderTileMode` 沒有任何作用。 但是，如果漸層填滿的區域大於漸層所定義的圓形，則引數會對圓圈以外的部分產生 `SKShaderTileMode` 重大影響。
 
-的效果 `SKShaderMode` 會在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的**Radial Gradient**星形漸層頁面中示範。 此頁面的 XAML 檔案具現化 `Picker` ，可讓您選取列舉的三個成員之一 `SKShaderTileMode` ：
+的效果 `SKShaderMode` 會在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的 **Radial Gradient** 星形漸層頁面中示範。 此頁面的 XAML 檔案具現化 `Picker` ，可讓您選取列舉的三個成員之一 `SKShaderTileMode` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -147,7 +147,7 @@ public partial class RadialGradientPage : ContentPage
 
 右側的通用 Windows 平臺畫面會顯示如何讓漸層成為 `SKShaderTileMode.Mirror` 替代方向。 第一個漸層是從中央到白色的黑色，半徑為100圖元。 下一步是在200圖元半徑的 100-圖元半徑至黑色的白色，並再次反轉下一個漸層。
 
-您可以在星形漸層中使用兩個以上的色彩。 **彩虹弧線**漸層範例會建立八個色彩的陣列，其對應至彩虹的色彩，並以紅色結束，也是八個位置值的陣列：
+您可以在星形漸層中使用兩個以上的色彩。 **彩虹弧線** 漸層範例會建立八個色彩的陣列，其對應至彩虹的色彩，並以紅色結束，也是八個位置值的陣列：
 
 ```csharp
 public class RainbowArcGradientPage : ContentPage
@@ -215,9 +215,9 @@ public class RainbowArcGradientPage : ContentPage
 
 ## <a name="radial-gradients-for-masking"></a>遮罩的放射漸層
 
-如同線性漸層，放射狀漸層可以併入透明或部分透明的色彩。 這項功能適用于稱為 _遮罩_的進程，它會隱藏部分影像以強調影像的另一個部分。
+如同線性漸層，放射狀漸層可以併入透明或部分透明的色彩。 這項功能適用于稱為 _遮罩_ 的進程，它會隱藏部分影像以強調影像的另一個部分。
 
-**放射狀**漸層遮罩頁面會顯示範例。 此程式會載入其中一個資源點陣圖。 `CENTER`和 `RADIUS` 欄位是由點陣圖檢查和參考應該反白顯示的區域所決定。 `PaintSurface`處理常式一開始會先計算矩形以顯示點陣圖，然後將它顯示在該矩形中：
+**放射狀** 漸層遮罩頁面會顯示範例。 此程式會載入其中一個資源點陣圖。 `CENTER`和 `RADIUS` 欄位是由點陣圖檢查和參考應該反白顯示的區域所決定。 `PaintSurface`處理常式一開始會先計算矩形以顯示點陣圖，然後將它顯示在該矩形中：
 
 ```csharp
 public class RadialGradientMaskPage : ContentPage
@@ -289,11 +289,11 @@ public class RadialGradientMaskPage : ContentPage
 
 ## <a name="radial-gradients-for-specular-highlights"></a>放射反白顯示的星形漸層
 
-當光線出現圓角表面時，它會以許多方向反映燈光，但有些光線會直接進入檢視器的眼睛。 這通常會在表面上建立一個模糊白色區域的外觀，稱為 _反射醒目_提示。
+當光線出現圓角表面時，它會以許多方向反映燈光，但有些光線會直接進入檢視器的眼睛。 這通常會在表面上建立一個模糊白色區域的外觀，稱為 _反射醒目_ 提示。
 
 在三維圖形中，高光通常是由用來判斷淺色路徑和陰影的演算法所產生。 在二維圖形中，有時會新增高光，以建議3D 介面的外觀。 反光可將平面紅色圓形轉換成圓形紅色球形。
 
-**放射放射狀醒目**提示頁面會使用星形漸層來精確處理。 `PaintSurface`處理常式是藉由計算圓形的半徑，以及 `SKPoint` &mdash; `center` `offCenter` 中間與圓形左上角中間的兩個值。
+**放射放射狀醒目** 提示頁面會使用星形漸層來精確處理。 `PaintSurface`處理常式是藉由計算圓形的半徑，以及 `SKPoint` &mdash; `center` `offCenter` 中間與圓形左上角中間的兩個值。
 
 ```csharp
 public class RadialSpecularHighlightPage : ContentPage
@@ -592,7 +592,7 @@ UWP 畫面會顯示當較小的圓形完全移至較大的圓形內部時，會�
 
 非對稱的外觀更能建議物件的圓角表面。 
 
-**圓錐狀醒目**提示頁面中的繪圖程式碼與星形**高光**頁面相同（著色器除外）：
+**圓錐狀醒目** 提示頁面中的繪圖程式碼與星形 **高光** 頁面相同（著色器除外）：
 
 ```csharp
 public class ConicalSpecularHighlightPage : ContentPage

@@ -10,16 +10,16 @@ ms.date: 06/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fed80f0954613a6bff49d0611d56549405c78333
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f7cb79b5b90d586980f2e74cd6d2f04b82a8fdf3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564091"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373688"
 ---
 # <a name="no-locxamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
 
 _Xamarin.Forms可讓使用者選取日期的視圖。_
 

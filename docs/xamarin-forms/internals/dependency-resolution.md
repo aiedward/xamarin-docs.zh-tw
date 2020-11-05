@@ -10,16 +10,16 @@ ms.date: 07/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6d4c9be2166881824e798e9cb801a5720ab55178
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 58210aaaa7c017c50ba3e2aee3e8402c1b76be16
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557852"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373922"
 ---
 # <a name="dependency-resolution-in-no-locxamarinforms"></a>中的相依性解析 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
 _本文說明如何將相依性解析方法插入， Xamarin.Forms 讓應用程式的相依性插入容器能夠控制自訂轉譯器、效果和 DependencyService 執行的建立和存留期。本文中的程式碼範例取自 [使用容器](/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo) 的相依性解析範例。_
 

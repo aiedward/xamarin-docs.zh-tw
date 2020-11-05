@@ -11,16 +11,16 @@ ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c5d95c3d326961db9d56631a0d7190d64ede72a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 99da232d13202aadc338ff419042998f646b7c28
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556057"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373064"
 ---
 # <a name="application-indexing-and-deep-linking"></a>應用程式索引和深層連結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/deeplinking)
 
 _應用程式編制索引可讓應用程式在幾個用途之後忘記，以在搜尋結果中出現時保持相關。深層連結可讓應用程式回應包含應用程式資料的搜尋結果，通常是藉由流覽至深層連結所參考的頁面。本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。_
 
@@ -41,7 +41,7 @@ Xamarin.Forms 應用程式索引和深層連結提供 API，可在使用者流�
 > [!NOTE]
 > Xamarin.Forms 應用程式索引和深層連結功能僅適用于 iOS 和 Android 平臺，而且至少需要 iOS 9 和 API 23。
 
-## <a name="setup"></a>安裝程式
+## <a name="setup"></a>設定
 
 以下章節提供在 iOS 和 Android 平台使用此功能的任何額外設定指示。
 
@@ -73,7 +73,7 @@ Xamarin.Forms 應用程式索引和深層連結提供 API，可在使用者流�
 1. 在網頁瀏覽器中，透過 [Firebase 控制台](https://console.firebase.google.com/)建立新專案。
 1. 在 Firebase 控制台中，將 Firebase 新增到您的 Android 應用程式，然後輸入必填資料。
 1. 下載產生的 **google-services.json** 檔案。
-1. 將 **google-services.json** 檔案新增到 Android 專案的根目錄，並將其 [建置動作]**** 設為 **GoogleServicesJson**。
+1. 將 **google-services.json** 檔案新增到 Android 專案的根目錄，並將其 [建置動作] 設為 **GoogleServicesJson** 。
 1. 在 `MainActivity.OnCreate` 覆寫中，在 `Forms.Init(this, bundle)` 下方新增下列程式碼：
 
 ```csharp
@@ -81,7 +81,7 @@ FirebaseApp.InitializeApp(this);
 AndroidAppLinks.Init(this);
 ```
 
-當 **google-services.json** 新增到專案 (並已設定 *GoogleServicesJson** 建置動作) 時，建置流程會擷取用戶端識別碼和 API 金鑰，然後將這些認證新增到所產生的資訊清單檔。
+當 **google-services.json** 新增到專案 (並已設定 *GoogleServicesJson* * 建置動作) 時，建置流程會擷取用戶端識別碼和 API 金鑰，然後將這些認證新增到所產生的資訊清單檔。
 
 > [!NOTE]
 > 在此文章中，「應用程式連結」與「深層連結」這兩個詞彙通常會交替使用。 不過，在 Android 上，這些詞彙有不同的意義。 在 Android 上，「深層連結」是意圖篩選條件，可讓使用者直接進入應用程式中的特定活動。 按一下深層連結可能會開啟去除混淆對話方塊，讓使用者選取可處理 URL 的多個應用程式之一。 Android 應用程式連結是以您的網站 URL 為基礎的深層連結，其已驗證為屬於您的網站。 按一下應用程式連結會開啟您的應用程式 (如果已安裝)，而不會開啟去除混淆對話方塊。
@@ -245,7 +245,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 
 如需遞交的詳細資訊，請參閱 [Handoff 簡介](~/ios/platform/handoff.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。 應用程式索引讓經過少數幾次使用就遺忘的應用程式能出現在搜尋結果中，藉此保有關聯性。
 

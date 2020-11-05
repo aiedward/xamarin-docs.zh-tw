@@ -10,16 +10,16 @@ ms.date: 12/07/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 20de91e7a9d0acf5c5aacfb7a05088aec2c20c71
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e4d1cb15812ca95a33196960c22574c0fada223f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558293"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373506"
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
 _Xamarin.FormsViewCell 是可以加入至 ListView 或 TableView 的資料格，其中包含開發人員定義的觀點。本文示範如何為裝載于 ListView 控制項內的 ViewCell 建立自訂轉譯器 Xamarin.Forms 。這會停止在 Xamarin.Forms ListView 滾動期間重複呼叫版面配置計算。_
 
@@ -567,7 +567,7 @@ namespace CustomRenderer.UWP
 
 `DataTemplate` 指定顯示資料格內容及其配置和外觀所用的控制項。 透過資料繫結使用兩個 `TextBlock` 控制項和一個 `Image` 控制項來顯示資料格的內容。 此外，使用 `ConcatImageExtensionConverter` 的執行個體將 `.jpg` 副檔名串連到每個影像檔案名稱。 這可確保 `Image` 控制項在設定了 `Source` 屬性後，可以載入及轉譯影像。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何為裝載于控制項內的建立自訂轉譯器 [`ViewCell`](xref:Xamarin.Forms.ViewCell) Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 。 這會停止在 Xamarin.Forms 滾動期間重複呼叫的版面配置計算 `ListView` 。
 

@@ -10,22 +10,22 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f783dcc9d0070e8e816f378d261191444822841b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 69a9ddc0096b0a351a7f190f428040b5092c5154
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561946"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373298"
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp 曲線和路徑
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解如何使用 SkiaSharp 繪製曲線和使用路徑功能_
 
-[`SKPath`](xref:SkiaSharp.SKPath)方法和屬性的探索開始于[**SkiaSharp 行和路徑**](../paths/index.md)文章中。 這裡的文章會繼續使用將曲線新增至物件的方法 `SKPath` ，並利用其他強大的路徑功能。 您將瞭解如何以簡潔的文字字串來指定整個路徑、如何使用路徑效果，以及如何深入探討路徑內部。
+[`SKPath`](xref:SkiaSharp.SKPath)方法和屬性的探索開始于 [**SkiaSharp 行和路徑**](../paths/index.md)文章中。 這裡的文章會繼續使用將曲線新增至物件的方法 `SKPath` ，並利用其他強大的路徑功能。 您將瞭解如何以簡潔的文字字串來指定整個路徑、如何使用路徑效果，以及如何深入探討路徑內部。
 
-本節中的所有範例程式都可以在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式的 [ **SkiaSharp 曲線和路徑**] 頁面，以及方案的 [[**曲線**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)] 資料夾中找到。
+本節中的所有範例程式都可以在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式的 [ **SkiaSharp 曲線和路徑** ] 頁面，以及方案的 [ [**曲線**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)] 資料夾中找到。
 
 ## <a name="three-ways-to-draw-an-arc"></a>[繪製弧形的三種方式](arcs.md)
 

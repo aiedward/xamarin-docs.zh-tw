@@ -10,24 +10,24 @@ ms.date: 08/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60c58ee17f68a12e3e51170f143adc9dc204e275
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 90d97e690c4d1fcdb22f17bbc856f9f9b2d0900c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562765"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374650"
 ---
 # <a name="controls-reference"></a>控制項參考
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 應用程式的使用者介面 Xamarin.Forms 是用來建立對應至每個目標平臺之原生控制項的物件。 這可讓 iOS、Android 和通用 Windows 平臺的平臺特定應用程式使用 .NET Standard 連結 Xamarin.Forms [庫](~/cross-platform/app-fundamentals/net-standard.md)中包含的程式碼。
 
 用來建立應用程式使用者介面的四個主要控制項群組如下所示 Xamarin.Forms ：
 
-- [**頁面**](pages.md)
+- [**Pages**](pages.md)
 - [**版面配置**](layouts.md)
-- [**檢視**](views.md)
+- [**視圖**](views.md)
 - [**資料格**](cells.md)
 
 Xamarin.Forms頁面通常會佔用整個畫面。 頁面通常會包含配置，其中包含視圖，以及其他可能的版面配置。 資料格是與和連接時所使用的特製化元件 [`TableView`](xref:Xamarin.Forms.TableView) [`ListView`](xref:Xamarin.Forms.ListView) 。 在 Xamarin.Forms [ Xamarin.Forms 控制項類別](~/xamarin-forms/internals/class-hierarchy.md)階層架構中，顯示通常用來建立使用者介面之類型階層的類別圖表。

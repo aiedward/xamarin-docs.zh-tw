@@ -10,16 +10,16 @@ ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1474167d3bb56f0e5eb7ee0a8d321a5d4367ef2
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 74df5809576745903f978862ddc8a1e98aa1c973
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897555"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374260"
 ---
 # <a name="no-locxamarinforms-reusable-roundeffect"></a>Xamarin.Forms 可重複使用的的 roundeffect
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
 > [!IMPORTANT]
 > 您不再需要使用來將控制項轉譯 `RoundEffect` 為圓形。 最新的建議方法是使用來裁剪控制項 `EllipseGeometry` 。 如需詳細資訊，請參閱 [具有幾何的剪輯](~/xamarin-forms/user-interface/shapes/geometries.md#clip-with-a-geometry)。

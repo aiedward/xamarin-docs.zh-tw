@@ -10,16 +10,16 @@ ms.date: 04/05/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 98722d29a674e4d69f31a670a541eaabb550898e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2ff6b838ec7a3b1231e350dcb308e648a297fc0c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555641"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373753"
 ---
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp 中的手指繪製
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用您的手指在畫布上繪製。_
 
@@ -31,7 +31,7 @@ _使用您的手指在畫布上繪製。_
 
 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)解決方案包含此觸控追蹤事件。 .NET Standard 程式庫專案包含 `TouchEffect` 類別、 `TouchActionType` 列舉、 `TouchActionEventHandler` 委派以及 `TouchActionEventArgs` 類別。 每個平臺專案都包含 `TouchEffect` 該平臺的類別，而 iOS 專案也包含 `TouchRecognizer` 類別。
 
-**SkiaSharpFormsDemos**中的**手指油漆**頁面是一種簡化的手指繪製執行。 它不允許選取 [色彩] 或 [筆觸寬度]，也無法清除畫布，當然您無法儲存您的圖稿。
+**SkiaSharpFormsDemos** 中的 **手指油漆** 頁面是一種簡化的手指繪製執行。 它不允許選取 [色彩] 或 [筆觸寬度]，也無法清除畫布，當然您無法儲存您的圖稿。
 
 [**FingerPaintPage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FingerPaintPage.xaml)檔案會將放 `SKCanvasView` 入單一儲存格中， `Grid` 並將附加 `TouchEffect` 至 `Grid` ：
 

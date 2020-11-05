@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b8be4610a327fb9902d62efb061406bff16de484
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8a856dd74bb319436dbe1c8506d34dfcdb268834
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557474"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374169"
 ---
 # <a name="listview-group-header-style-on-ios"></a>IOS 上的 ListView 群組標題樣式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定的控制 [`ListView`](xref:Xamarin.Forms.ListView) 標頭儲存格是否在滾動時浮動。 它是在 XAML 中使用，方法是將可系結 `ListView.GroupHeaderStyle` 屬性設定為 `GroupHeaderStyle` 列舉值：
 

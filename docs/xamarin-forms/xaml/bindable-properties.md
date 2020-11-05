@@ -10,16 +10,16 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: df2cf99ef0ea1fcbb1b52dda7abb6c8cfdd2d2e7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f50dde4bb96f43c6487cb40889746514f23d9d44
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561530"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374078"
 ---
 # <a name="no-locxamarinforms-bindable-properties"></a>Xamarin.Forms 可系結屬性
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 可系結屬性會藉由以類型來支援屬性來擴充 CLR 屬性功能 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，而不是使用欄位來支援屬性。 可系結屬性的目的是要提供支援資料系結的屬性系統、樣式、範本，以及透過父子式關聯性設定的值。 此外，可系結屬性可以提供預設值、屬性值的驗證，以及監視屬性變更的回呼。
 
@@ -69,7 +69,7 @@ public static readonly BindableProperty EventNameProperty =
 
 （選擇性）建立 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 實例時，可以指定下列參數：
 
-- 繫結模式。 這是用來指定屬性值變更將傳播的方向。 在預設系結模式中，變更將會從 *來源* 傳播至 *目標*。
+- 繫結模式。 這是用來指定屬性值變更將傳播的方向。 在預設系結模式中，變更將會從 *來源* 傳播至 *目標* 。
 - 設定屬性值時，將叫用的驗證委派。 如需詳細資訊，請參閱 [驗證回呼](#validation-callbacks)。
 - 屬性值變更時，將會叫用的屬性已變更委派。 如需詳細資訊，請參閱偵測 [屬性變更](#detect-property-changes)。
 - 屬性值將會變更時，將會叫用的屬性變更委派。 這個委派與屬性變更的委派具有相同的簽章。

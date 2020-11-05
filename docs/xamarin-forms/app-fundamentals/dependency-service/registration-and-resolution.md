@@ -10,16 +10,16 @@ ms.date: 06/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9e8c0eeb70393cd3a5c6db7b99146b69b79ec14d
-ms.sourcegitcommit: 01ccefd54c0ced724784dbe1aec9ecfc9b00e633
+ms.openlocfilehash: a3112191b7392ee3fcc0f383682acf40cf8f65cd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92630240"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373467"
 ---
 # <a name="no-locxamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms DependencyService 註冊和解析
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 使用來叫用 Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.DependencyService) 原生平臺功能時，必須向註冊平臺， `DependencyService` 然後從共用程式碼解析以叫用它們。
 

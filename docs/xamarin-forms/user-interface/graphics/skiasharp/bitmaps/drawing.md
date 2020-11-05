@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91051b1ffc859d4e3deb62d41709db0c587b2789
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3ca546f69dd8c4995747ad352c54e9ba184b2425
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560828"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373493"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>在 SkiaSharp 點陣圖上建立和繪製
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 您已瞭解應用程式如何從 Web、應用程式資源和使用者的相片媒體櫃載入點陣圖。 您也可以在應用程式中建立新的點陣圖。 最簡單的方法牽涉到下列其中一個函式 [`SKBitmap`](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)) ：
 
@@ -59,7 +59,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 然後可以顯示點陣圖。 稍後，程式可以根據相同的點陣圖來建立新的 `SKCanvas` 物件，然後再進一步繪製。
 
-**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中的**Hello Bitmap**頁面會寫入文字 "Hello，Bitmap！" 在點陣圖上，然後多次顯示該點陣圖。
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中的 **Hello Bitmap** 頁面會寫入文字 "Hello，Bitmap！" 在點陣圖上，然後多次顯示該點陣圖。
 
 的函式會 `HelloBitmapPage` 從建立用 `SKPaint` 來顯示文字的物件開始。 它會決定文字字串的維度，並建立具有這些維度的點陣圖。 然後，它會 `SKCanvas` 根據該點陣圖、呼叫，然後 `Clear` 再呼叫來建立物件 `DrawText` 。 使用新的點陣圖來呼叫是很好的主意， `Clear` 因為新建立的點陣圖可能包含亂數據。
 
@@ -271,11 +271,11 @@ public partial class MonkeyMoustachePage : ContentPage
 
 ![山區 Climbers](drawing-images/MountainClimbers.jpg "山區 Climbers")
 
-假設您尚未從左邊的猴子取得許可權來發佈此相片。 其中一個解決方法是使用稱為 _pixelization_的技術來遮蔽猴子的臉部。 臉部的圖元會取代為色彩的區塊，因此您無法使用這些功能。 色彩的區塊通常衍生自原始影像，方法是將對應至這些區塊的圖元色彩平均。 但您不需要自行執行這種計算。 當您將點陣圖複製到較小的圖元維度時，它就會自動發生。
+假設您尚未從左邊的猴子取得許可權來發佈此相片。 其中一個解決方法是使用稱為 _pixelization_ 的技術來遮蔽猴子的臉部。 臉部的圖元會取代為色彩的區塊，因此您無法使用這些功能。 色彩的區塊通常衍生自原始影像，方法是將對應至這些區塊的圖元色彩平均。 但您不需要自行執行這種計算。 當您將點陣圖複製到較小的圖元維度時，它就會自動發生。
 
 左邊的猴子臉部大約占著 72-圖元的正方形區域，其左上角為 (112，238) 。 讓我們將該 72-圖元的正方形區域取代為具有 9 x 9 的彩色區塊陣列，其中每個都是 8 x 8 圖元的正方形。
 
-**Pixelize 影像**頁面會在該點陣圖中載入，並先建立一個小9圖元的正方形點陣圖，稱為 `faceBitmap` 。 這是只複製猴子臉部的目的地。 目的地矩形只是9個圖元的正方形，但來源矩形是 72-圖元的正方形。 每 8 x 8 個來源圖元的區塊會平均地向下合併至一個圖元。
+**Pixelize 影像** 頁面會在該點陣圖中載入，並先建立一個小9圖元的正方形點陣圖，稱為 `faceBitmap` 。 這是只複製猴子臉部的目的地。 目的地矩形只是9個圖元的正方形，但來源矩形是 72-圖元的正方形。 每 8 x 8 個來源圖元的區塊會平均地向下合併至一個圖元。
 
 下一步是將原始點陣圖複製到稱為的相同大小的新點陣圖 `pixelizedBitmap` 。 然後， `faceBitmap` 會使用 72-圖元的正方形目的地矩形將小小的位置複製到上面，如此一來，的每個圖元 `faceBitmap` 就會展開為其大小的8倍：
 
@@ -386,7 +386,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-這兩種方法會用於[**裁剪 SkiaSharp 點陣圖**](cropping.md#cropping-skiasharp-bitmaps)文章中所述的**相片謎題**頁面。
+這兩種方法會用於 [**裁剪 SkiaSharp 點陣圖**](cropping.md#cropping-skiasharp-bitmaps)文章中所述的 **相片謎題** 頁面。
 
 一種程式，可讓使用者以90度的增量來旋轉點陣圖，只需要執行一個函式以90度旋轉。 然後，使用者可以重複執行這一個函式，以90度的任何增量來旋轉。
 
@@ -495,9 +495,9 @@ public partial class BitmapRotatorPage : ContentPage
 
 ## <a name="flipping-bitmaps"></a>翻轉點陣圖
 
-通常在點陣圖上執行的另一項作業稱為「 _翻轉_」。 就概念而言，點陣圖是沿著垂直軸或水準軸的三個維度旋轉到點陣圖的中心。 垂直翻轉會建立鏡像影像。
+通常在點陣圖上執行的另一項作業稱為「 _翻轉_ 」。 就概念而言，點陣圖是沿著垂直軸或水準軸的三個維度旋轉到點陣圖的中心。 垂直翻轉會建立鏡像影像。
 
-**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中的**點陣圖擋板**頁面會示範這些處理常式。 XAML 檔案包含 `SKCanvasView` 和兩個按鈕，可垂直和水準翻轉：
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中的 **點陣圖擋板** 頁面會示範這些處理常式。 XAML 檔案包含 `SKCanvasView` 和兩個按鈕，可垂直和水準翻轉：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

@@ -11,16 +11,16 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 39a6dbcbd5e825c6630bfb60b61bf00a308fdc0e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 656a9dbec5f0520b4167c482b227ea863eb4c412
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562778"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373532"
 ---
 # <a name="styling-no-locxamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Forms使用階層式樣式表 (CSS) 設定應用程式的樣式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
 _Xamarin.Forms 支援使用階層式樣式表 (CSS) 設定視覺元素樣式。_
 
@@ -90,7 +90,7 @@ stacklayout>image {
 將樣式表單加入至方案的程式如下所示：
 
 1. 在 .NET Standard 程式庫專案中加入空白的 CSS 檔案。
-1. 將 CSS 檔案的 [組建] 動作設定為 [ **EmbeddedResource**]。
+1. 將 CSS 檔案的 [組建] 動作設定為 [ **EmbeddedResource** ]。
 
 ### <a name="loading-a-style-sheet"></a>載入樣式表單
 
@@ -114,7 +114,7 @@ stacklayout>image {
 屬性會將 [`StyleSheet.Source`](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) 樣式表單指定為相對於封入 XAML 檔案位置的 URI，如果 uri 的開頭是，則為相對於專案根目錄的相對路徑 `/` 。
 
 > [!WARNING]
-> 如果 CSS 檔案的組建動作未設定為  **EmbeddedResource**，將無法載入該檔案。
+> 如果 CSS 檔案的組建動作未設定為  **EmbeddedResource** ，將無法載入該檔案。
 
 或者，您也可以在將樣式表單 [`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) 內嵌于區段中之前，使用類別來載入和剖析樣式表單 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `CDATA` ：
 
@@ -297,7 +297,7 @@ listview image {
 ```
 
 > [!NOTE]
-> `element element`選取器不需要子項目做為父系的_直接_子系–子項目可能會有不同的父系。 如果上階是指定的第一個元素，就會發生選取專案。
+> `element element`選取器不需要子項目做為父系的 _直接_ 子系–子項目可能會有不同的父系。 如果上階是指定的第一個元素，就會發生選取專案。
 
 ### <a name="selecting-direct-child-elements"></a>選取直接子項目
 
@@ -328,7 +328,7 @@ stacklayout>image {
 ```
 
 > [!NOTE]
-> `element>element`選取器要求子項目必須是父系的_直接_子系。
+> `element>element`選取器要求子項目必須是父系的 _直接_ 子系。
 
 ## <a name="selector-reference"></a>選取器參考
 
@@ -363,7 +363,7 @@ stacklayout>image {
 
 ## <a name="property-reference"></a>屬性參考
 
-在 Xamarin.Forms [ **值] 資料** 行中 (支援下列 CSS 屬性，類型為 _斜體_，而字串常值 `gray`) ：
+在 Xamarin.Forms [ **值] 資料** 行中 (支援下列 CSS 屬性，類型為 _斜體_ ，而字串常值 `gray`) ：
 
 |屬性|適用於|值|範例|
 |---|---|---|---|
@@ -411,7 +411,7 @@ stacklayout>image {
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`text-transform`|`Button`,`Editor`, `Entry`, `Label`, `SearchBar`, `SearchHandler`|`none` \| `default` \| `uppercase` \| `lowercase` \| `initial` |`text-transform: uppercase;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
-|`transform-origin`|`VisualElement`| _double_、 _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
+|`transform-origin`|`VisualElement`| _double_ 、 _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
 |`width`|`VisualElement`|_double_ \|`initial`|`min-width: 320;`|
@@ -431,7 +431,7 @@ stacklayout>image {
 
 ### <a name="no-locxamarinforms-specific-properties"></a>Xamarin.Forms 特定屬性
 
-在 Xamarin.Forms [ **值] 資料** 行中也支援下列特定的 CSS 屬性 (在 [值] 資料行中，類型為 _斜體_，而字串常值 `gray`) ：
+在 Xamarin.Forms [ **值] 資料** 行中也支援下列特定的 CSS 屬性 (在 [值] 資料行中，類型為 _斜體_ ，而字串常值 `gray`) ：
 
 |屬性|適用於|值|範例|
 |---|---|---|---|
@@ -452,7 +452,7 @@ stacklayout>image {
 
 ### <a name="no-locxamarinforms-shell-specific-properties"></a>Xamarin.Forms Shell 特定屬性
 
-在 Xamarin.Forms [ **值] 資料** 行中，也支援下列 SHELL 專屬的 CSS 屬性 (在 [值] 資料行中，類型為 _斜體_，而字串常值 `gray`) ：
+在 Xamarin.Forms [ **值] 資料** 行中，也支援下列 SHELL 專屬的 CSS 屬性 (在 [值] 資料行中，類型為 _斜體_ ，而字串常值 `gray`) ：
 
 |屬性|適用於|值|範例|
 |---|---|---|---|

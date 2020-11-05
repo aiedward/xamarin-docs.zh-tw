@@ -10,16 +10,16 @@ ms.date: 03/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9923a7f0605a7ca5d9d81269c3d855e92fbccaf4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b934885369882dea2c3a5de1954b428fcfcbac59
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564078"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374598"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分： XAML 標記延伸
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML 標記延伸是在 XAML 中構成一項重要功能，可讓您將屬性設定為從其他來源間接參考的物件或值。XAML 標記延伸對於共用物件和參考整個應用程式中使用的常數而言特別重要，但它們會在資料系結中找到最大的公用程式。_
 
@@ -74,7 +74,7 @@ _XAML 標記延伸是在 XAML 中構成一項重要功能，可讓您將屬性�
 
 如果需要變更其中一個屬性，您可能會想要只變更一次，而不是三次。 如果這是程式碼，您可能會使用常數和靜態唯讀物件來協助保持這類值的一致且容易修改。
 
-在 XAML 中，其中一個熱門的解決方案是將這類值或物件儲存在 *資源字典*中。 `VisualElement`類別會定義名為 `Resources` 的屬性 `ResourceDictionary` ，它是具有類型之索引鍵 `string` 和類型值的字典 `object` 。 您可以將物件放入此字典中，然後從標記中參考它們，而這些都是在 XAML 中。
+在 XAML 中，其中一個熱門的解決方案是將這類值或物件儲存在 *資源字典* 中。 `VisualElement`類別會定義名為 `Resources` 的屬性 `ResourceDictionary` ，它是具有類型之索引鍵 `string` 和類型值的字典 `object` 。 您可以將物件放入此字典中，然後從標記中參考它們，而這些都是在 XAML 中。
 
 若要在頁面上使用資源字典，請包含一對 `Resources` 屬性元素標記。 將這些內容放在頁面頂端最方便：
 
@@ -108,7 +108,7 @@ _XAML 標記延伸是在 XAML 中構成一項重要功能，可讓您將屬性�
 </ContentPage>
 ```
 
-現在可將各種類型的物件和值新增至資源字典。 這些類型必須是可具現化的。 例如，它們不能是抽象類別。 這些類型也必須有公用無參數的函式。 每個專案都需要以屬性指定的字典索引鍵 `x:Key` 。 例如：
+現在可將各種類型的物件和值新增至資源字典。 這些類型必須是可具現化的。 例如，它們不能是抽象類別。 這些類型也必須有公用無參數的函式。 每個專案都需要以屬性指定的字典索引鍵 `x:Key` 。 例如︰
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -398,7 +398,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-您也可以在 .NET Standard 程式庫所參考的任何元件中，為 .NET 命名空間定義 XML 命名空間宣告。 例如，以下是 `sys` 標準 .net 命名空間的前置詞 `System` ，它位於 **netstandard** 元件中。 因為這是另一個元件，所以您也必須指定元件名稱，在此案例中為 **netstandard**：
+您也可以在 .NET Standard 程式庫所參考的任何元件中，為 .NET 命名空間定義 XML 命名空間宣告。 例如，以下是 `sys` 標準 .net 命名空間的前置詞 `System` ，它位於 **netstandard** 元件中。 因為這是另一個元件，所以您也必須指定元件名稱，在此案例中為 **netstandard** ：
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=netstandard"
@@ -557,7 +557,7 @@ Xaml 檔案內建數個標記延伸，並支援 xaml 檔案 Xamarin.Forms 。 �
 
 [![使用條件約束的相對版面配置](xaml-markup-extensions-images/relativelayout.png)](xaml-markup-extensions-images/relativelayout-large.png#lightbox)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 此處所示的 XAML 標記延伸提供 XAML 檔案的重要支援。 但最有價值的 XAML 標記延伸是 `Binding` ，在本系列的下一個部分中， [第4部分。資料](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)系結的基本概念。
 

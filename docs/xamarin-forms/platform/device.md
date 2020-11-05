@@ -10,16 +10,16 @@ ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8eff115e894f77aeacff0f6c072bfd338fa19844
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c28f10441e624a316762c5e677f613335a3f0f94
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560503"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373259"
 ---
 # <a name="no-locxamarinforms-device-class"></a>Xamarin.Forms 裝置類別
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
 [`Device`](xref:Xamarin.Forms.Device)類別包含數個屬性和方法，可協助開發人員以每個平臺為基礎來自訂版面配置和功能。
 
@@ -247,7 +247,7 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () =>
 
 ## <a name="interact-with-the-ui-from-background-threads"></a>從背景執行緒與 UI 互動
 
-大部分的作業系統（包括 iOS、Android 和通用 Windows 平臺）都會針對牽涉到使用者介面的程式碼使用單一執行緒模型。 這個執行緒通常稱為 *主執行緒* 或 *UI 執行緒*。 這個模型的結果是，所有存取使用者介面專案的程式碼都必須在應用程式的主執行緒上執行。
+大部分的作業系統（包括 iOS、Android 和通用 Windows 平臺）都會針對牽涉到使用者介面的程式碼使用單一執行緒模型。 這個執行緒通常稱為 *主執行緒* 或 *UI 執行緒* 。 這個模型的結果是，所有存取使用者介面專案的程式碼都必須在應用程式的主執行緒上執行。
 
 應用程式有時會使用背景執行緒來執行可能長時間執行的作業，例如從 web 服務中取出資料。 如果在背景執行緒上執行的程式碼需要存取使用者介面元素，它必須在主執行緒上執行該程式碼。
 

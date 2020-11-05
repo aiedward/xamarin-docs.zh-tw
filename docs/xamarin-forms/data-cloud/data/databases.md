@@ -10,16 +10,16 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: afa5ccf8f4d4485ae7a9a45bcbc745bddee20f5c
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 4331b29c54b5f7c59daf0a9e04cd398693e79201
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897477"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374702"
 ---
 # <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms 本機資料庫
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/todo)
 
 SQLite 資料庫引擎可讓 Xamarin.Forms 應用程式在共用程式碼中載入和儲存資料物件。 範例應用程式會使用 SQLite 資料庫資料表來儲存 todo 專案。 本文描述如何在共用程式碼中使用 SQLite.Net，以在本機資料庫中儲存和取出資訊。
 
@@ -237,7 +237,7 @@ public static TodoItemDatabase Database
 }
 ```
 
-這個屬性可讓 Xamarin.Forms 元件呼叫實例上的資料抓取和操作方法， `Database` 以回應使用者互動。 例如：
+這個屬性可讓 Xamarin.Forms 元件呼叫實例上的資料抓取和操作方法， `Database` 以回應使用者互動。 例如︰
 
 ```csharp
 var saveButton = new Button { Text = "Save" };

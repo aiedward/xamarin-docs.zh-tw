@@ -10,16 +10,16 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a6e19d25cefb4b8fcd870a9b590f129b2d9d85b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: eb0c8bd01c9cab8a4048c0ee3deacad7afd56899
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557877"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373883"
 ---
 # <a name="the-rotate-transform"></a>旋轉轉換
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索 SkiaSharp 旋轉轉換可以使用的效果和動畫_
 
@@ -45,7 +45,7 @@ x ' = x • cos (α) – y • sin (α)
 
 y ' = x • sin (α) + y • cos (α) 
 
-**基本的旋轉**頁面會示範 `RotateDegrees` 方法。 [**BasicRotate.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)檔案會顯示部分文字，其基準位於頁面上，並根據 `Slider` 範圍為–360到360的進行旋轉。 以下是處理常式的相關部分 `PaintSurface` ：
+**基本的旋轉** 頁面會示範 `RotateDegrees` 方法。 [**BasicRotate.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)檔案會顯示部分文字，其基準位於頁面上，並根據 `Slider` 範圍為–360到360的進行旋轉。 以下是處理常式的相關部分 `PaintSurface` ：
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -73,7 +73,7 @@ public void RotateDegrees (Single degrees, Single px, Single py)
 public void RotateRadians (Single radians, Single px, Single py)
 ```
 
-**中央旋轉**頁面就像**基本旋轉**一樣，不同之處在于擴充的版本 `RotateDegrees` 是用來將旋轉中心設定成用來放置文字的相同點：
+**中央旋轉** 頁面就像 **基本旋轉** 一樣，不同之處在于擴充的版本 `RotateDegrees` 是用來將旋轉中心設定成用來放置文字的相同點：
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -143,7 +143,7 @@ canvas.DrawText(Title, 0, 0, textPaint);
 
 就概念而言，這兩個轉換會依照其在程式碼中出現的順序來套用。 `DrawText`呼叫會顯示畫布左上角的文字。 此 `RotateDegrees` 呼叫會旋轉相對於左上角的文字。 然後，此 `Translate` 呼叫會將文字移至畫布的中心。
 
-通常有數種方式可以結合旋轉和轉譯。 **旋轉的文字**頁面會建立下列顯示：
+通常有數種方式可以結合旋轉和轉譯。 **旋轉的文字** 頁面會建立下列顯示：
 
 [![旋轉文字頁面的三重螢幕擷取畫面](rotate-images/rotatedtext-small.png)](rotate-images/rotatedtext-large.png#lightbox "旋轉文字頁面的三重螢幕擷取畫面")
 
@@ -258,7 +258,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`revolveDegrees`和 `rotateDegrees` 欄位會以動畫顯示。 此程式使用以類別為基礎的不同動畫技術 Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) 。  (此類別會在[*建立) Mobile Apps Xamarin.Forms *的第22章](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)中說明，而覆寫會使用 `OnAppearing` 回呼方法建立兩個 `Animation` 物件，然後 `Commit` 在其上呼叫以取得動畫持續時間：
+`revolveDegrees`和 `rotateDegrees` 欄位會以動畫顯示。 此程式使用以類別為基礎的不同動畫技術 Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) 。  (此類別會在 [*建立) Mobile Apps Xamarin.Forms* 的第22章](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)中說明，而覆寫會使用 `OnAppearing` 回呼方法建立兩個 `Animation` 物件，然後 `Commit` 在其上呼叫以取得動畫持續時間：
 
 ```csharp
 protected override void OnAppearing()

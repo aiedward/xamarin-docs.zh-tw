@@ -10,20 +10,20 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af1747a19af6c715d1594122393e500d1f73c79b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 837d58508c3f5b14c4c36a867a2aa974a5bf397c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562518"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374312"
 ---
 # <a name="skiasharp-transparency"></a>SkiaSharp 透明度
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 如您所見， [`SKPaint`](xref:SkiaSharp.SKPaint) 類別包含 [`Color`](xref:SkiaSharp.SKPaint.Color) 型別的屬性 [`SKColor`](xref:SkiaSharp.SKColor) 。 `SKColor` 包含 Alpha 色板，因此您以值色彩的任何動作都 `SKColor` 可以部分透明。 
 
-SkiaSharp 文章的 [**基本動畫**](animation.md) 中示範了一些透明度。 本文會稍微深入探討如何在單一場景中結合多個物件，這種技術有時也稱為 _混色_。 [**SkiaSharp 著色**](../effects/shaders/index.md)器一節中的文章會討論更先進的混合技巧。
+SkiaSharp 文章的 [**基本動畫**](animation.md) 中示範了一些透明度。 本文會稍微深入探討如何在單一場景中結合多個物件，這種技術有時也稱為 _混色_ 。 [**SkiaSharp 著色**](../effects/shaders/index.md)器一節中的文章會討論更先進的混合技巧。
 
 當您第一次使用四個參數的函式建立色彩時，可以設定透明度層級 [`SKColor`](xref:SkiaSharp.SKColor.%23ctor(System.Byte,System.Byte,System.Byte,System.Byte)) ：
 
@@ -39,7 +39,7 @@ Alpha 值為0是完全透明的，而 Alpha 值則是完全不透明。 這兩�
 SKColor halfTransparentBlue = SKColors.Blue.WithAlpha(0x80);
 ```
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的程式**代碼更多程式碼**頁面會示範如何使用部分透明文字。 此頁面會在值中併入透明度，以將兩個文字字串淡化 `SKColor` ：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的程式 **代碼更多程式碼** 頁面會示範如何使用部分透明文字。 此頁面會在值中併入透明度，以將兩個文字字串淡化 `SKColor` ：
 
 ```csharp
 public class CodeMoreCodePage : ContentPage

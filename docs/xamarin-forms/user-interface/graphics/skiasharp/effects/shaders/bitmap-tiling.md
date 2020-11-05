@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c6d139e47974247ce4af6bfa6c32331fcf7c824
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 92bcdd2c86387f229b9acf066456985c4a7ad514
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563129"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373662"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp 點陣圖平鋪
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/catclock)
 
 如您在先前的兩篇文章中所見， [`SKShader`](xref:SkiaSharp.SKShader) 類別可以建立線性或圓形漸層。 本文著重于 `SKShader` 使用點陣圖來並排顯示區域的物件。 點陣圖可以水準和垂直方式以水準和垂直方式重複，或是水準和垂直翻轉。 翻轉可避免磚之間的不連續：
 
@@ -45,7 +45,7 @@ public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShade
 
 ## <a name="exploring-the-tile-modes"></a>探索磚模式
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例之 [著色器]**和 [其他效果**] 頁面的 [**點陣圖**並排顯示] 區段中的第一個程式，會示範這兩個 `SKShaderTileMode` 引數的效果。 **點陣圖磚翻轉模式**的 XAML 檔案具現化 `SKCanvasView` ，以及兩個可 `Picker` 讓您選取 `SKShaderTilerMode` 水準和垂直並排顯示值的視圖。 請注意， `SKShaderTileMode` 一節中定義了成員的陣列 `Resources` ：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例之 [著色器] **和 [其他效果** ] 頁面的 [ **點陣圖** 並排顯示] 區段中的第一個程式，會示範這兩個 `SKShaderTileMode` 引數的效果。 **點陣圖磚翻轉模式** 的 XAML 檔案具現化 `SKCanvasView` ，以及兩個可 `Picker` 讓您選取 `SKShaderTilerMode` 水準和垂直並排顯示值的視圖。 請注意， `SKShaderTileMode` 一節中定義了成員的陣列 `Resources` ：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -303,7 +303,7 @@ public class PhotographicBrickWallPage : ContentPage
 
 需要一些工作才能取得磚的適當點陣圖。 因為較深的基礎構件太多，所以這種情況並不適合。 它會定期出現在重複的影像中，並顯示這個基礎構件牆是從較小的點陣圖所建立的事實。
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的**Media**資料夾也包含此石頭牆的影像：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的 **Media** 資料夾也包含此石頭牆的影像：
 
 ![石頭牆磚](bitmap-tiling-images/StoneWallTile.jpg "石頭牆磚")
 
@@ -369,7 +369,7 @@ SKMatrix.PostConcat(ref matrix, SKMatrix.MakeRotationDegrees(15));
 
 在圖格 [**對齊**](#tile-alignment)的區段中，您會看到套用至著色器的轉譯轉換範例。
 
-獨立的 [**貓時鐘**](/samples/xamarin/xamarin-forms-samples/catclock) 範例 (不是 **SkiaSharpFormsDemos**) 的一部分，會根據這個240圖元的正方形點陣圖，使用點陣圖平鋪來模擬木材的背景：
+獨立的 [**貓時鐘**](/samples/xamarin/xamarin-forms-samples/catclock) 範例 (不是 **SkiaSharpFormsDemos** ) 的一部分，會根據這個240圖元的正方形點陣圖，使用點陣圖平鋪來模擬木材的背景：
 
 ![木頭顆粒](bitmap-tiling-images/WoodGrain.png "木頭顆粒")
 
@@ -521,7 +521,7 @@ SKMatrix matrix = SKMatrix.MakeTranslation(info.Rect.MidX, info.Rect.MidY);
 
 ## <a name="simplification-through-rotation"></a>透過旋轉簡化
 
-有時使用方法中的旋轉轉換 `SKShader.CreateBitmap` 可以簡化點陣圖磚。 當您嘗試定義連鎖鏈接範圍的磚時，這會變得很明顯。 **ChainLinkTile.cs**檔案會建立如下所示的圖格 (加上粉紅色的背景，以利清楚) ：
+有時使用方法中的旋轉轉換 `SKShader.CreateBitmap` 可以簡化點陣圖磚。 當您嘗試定義連鎖鏈接範圍的磚時，這會變得很明顯。 **ChainLinkTile.cs** 檔案會建立如下所示的圖格 (加上粉紅色的背景，以利清楚) ：
 
 ![硬鏈-連結磚](bitmap-tiling-images/HardChainLinkTile.png "硬鏈-連結磚")
 
@@ -655,7 +655,7 @@ public class ChainLinkFencePage : ContentPage
 
 請注意，著色器的旋轉是45度，因此它的方向類似于真實的連鎖鏈接範圍：
 
-[![鏈-連結隔離](bitmap-tiling-images/ChainLinkFence.png "鏈-連結隔離")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
+[![鏈-連結隔離](bitmap-tiling-images/ChainLinkFence.png "Chain-Link 範圍")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
 
 ## <a name="animating-bitmap-tiles"></a>製作點陣圖磚的動畫
 
@@ -663,7 +663,7 @@ public class ChainLinkFencePage : ContentPage
 
 您也可以在小型點陣圖上進行繪製，或以每秒60次的速率操作點陣圖的圖元位。 該點陣圖接著可以用於並排顯示，而整個並排顯示的模式似乎會以動畫顯示。 
 
-**動畫點陣圖磚**頁面會示範這種方法。 點陣圖會具現化為 64-圖元正方形的欄位。 此函 `DrawBitmap` 式會呼叫以提供初始外觀。 如果 `angle` 欄位是零 (就是第一次呼叫方法) 時，點陣圖會包含兩行，並以 X 表示。這幾行的長度足以永遠觸及點陣圖邊緣，不論 `angle` 值為何： 
+**動畫點陣圖磚** 頁面會示範這種方法。 點陣圖會具現化為 64-圖元正方形的欄位。 此函 `DrawBitmap` 式會呼叫以提供初始外觀。 如果 `angle` 欄位是零 (就是第一次呼叫方法) 時，點陣圖會包含兩行，並以 X 表示。這幾行的長度足以永遠觸及點陣圖邊緣，不論 `angle` 值為何： 
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage

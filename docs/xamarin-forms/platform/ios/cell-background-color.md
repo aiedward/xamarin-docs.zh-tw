@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a9ab12b5aabee03d84c58580ec200de4b63d5106
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 38bc85cb06f89ecbc673d8f159c716136d183570
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562427"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373220"
 ---
 # <a name="cell-background-color-on-ios"></a>IOS 上的儲存格背景色彩
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定會設定實例的預設背景色彩 [`Cell`](xref:Xamarin.Forms.Cell) 。 它是在 XAML 中使用，方法是將可系結 `Cell.DefaultBackgroundColor` 屬性設定為 [`Color`](xref:Xamarin.Forms.Color) ：
 

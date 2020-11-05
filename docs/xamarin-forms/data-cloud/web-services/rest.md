@@ -10,16 +10,16 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6af0641fe1f8f9be772b25c26825232b6bdba9b7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3146d1c1de66c0b2bc2e9c2d86a7a50d406ecd7e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562375"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373363"
 ---
 # <a name="consume-a-restful-web-service"></a>使用 RESTful Web 服務
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _將 web 服務整合至應用程式是常見的情況。本文示範如何從應用程式使用 RESTful web 服務 Xamarin.Forms 。_
 
@@ -59,7 +59,7 @@ REST 服務是使用 ASP.NET Core 撰寫的，並提供下列作業：
 |取得待辦事項的清單|GET|/api/todoitems/|
 |建立新的待辦事項專案|POST|/api/todoitems/|JSON 格式的 TodoItem|
 |更新待辦事項|PUT|/api/todoitems/|JSON 格式的 TodoItem|
-|刪除待辦事項|DELETE|/api/todoitems/{識別碼}|
+|刪除待辦事項|刪除|/api/todoitems/{識別碼}|
 
 大部分的 Uri 都包含 `TodoItem` 路徑中的識別碼。 例如，若要刪除 `TodoItem` 識別碼為的 `6bb8a868-dba1-4f1a-93b7-24ebce87e243` ，用戶端會將刪除要求傳送至 `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243` 。 如需範例應用程式中所使用之資料模型的詳細資訊，請參閱 [建立資料](~/xamarin-forms/data-cloud/web-services/introduction.md)模型。
 
@@ -162,9 +162,9 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 
 REST 服務會在屬性中傳送 HTTP 狀態碼 `HttpResponseMessage.IsSuccessStatusCode` ，以指出 HTTP 要求是否成功或失敗。 這種作業的常見回應如下：
 
-- **201 (建立) ** –要求在傳送回應之前，會產生新的資源。
-- **400 (錯誤的要求) ** –伺服器無法理解要求。
-- **409 (衝突) ** –因為伺服器發生衝突，所以無法執行要求。
+- **201 (建立)** –要求在傳送回應之前，會產生新的資源。
+- **400 (錯誤的要求)** –伺服器無法理解要求。
+- **409 (衝突)** –因為伺服器發生衝突，所以無法執行要求。
 
 ### <a name="updating-data"></a>更新資料
 
@@ -183,9 +183,9 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 
 REST 服務會在屬性中傳送 HTTP 狀態碼 `HttpResponseMessage.IsSuccessStatusCode` ，以指出 HTTP 要求是否成功或失敗。 這種作業的常見回應如下：
 
-- **204 (沒有內容) ** -已成功處理要求，而且回應是刻意空白的。
-- **400 (錯誤的要求) ** –伺服器無法理解要求。
-- **404 (找不到) ** –要求的資源不存在於伺服器上。
+- **204 (沒有內容)** -已成功處理要求，而且回應是刻意空白的。
+- **400 (錯誤的要求)** –伺服器無法理解要求。
+- **404 (找不到)** –要求的資源不存在於伺服器上。
 
 ### <a name="deleting-data"></a>刪除資料
 
@@ -207,9 +207,9 @@ public async Task DeleteTodoItemAsync (string id)
 
 REST 服務會在屬性中傳送 HTTP 狀態碼 `HttpResponseMessage.IsSuccessStatusCode` ，以指出 HTTP 要求是否成功或失敗。 這種作業的常見回應如下：
 
-- **204 (沒有內容) ** -已成功處理要求，而且回應是刻意空白的。
-- **400 (錯誤的要求) ** –伺服器無法理解要求。
-- **404 (找不到) ** –要求的資源不存在於伺服器上。
+- **204 (沒有內容)** -已成功處理要求，而且回應是刻意空白的。
+- **400 (錯誤的要求)** –伺服器無法理解要求。
+- **404 (找不到)** –要求的資源不存在於伺服器上。
 
 ## <a name="related-links"></a>相關連結
 

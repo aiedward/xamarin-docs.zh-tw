@@ -10,16 +10,16 @@ ms.date: 06/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f8d81e037d63a7144263ce4b3520647e6829bd57
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 11f33c07d2a98e326717f284f0b5d6308a65a693
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557253"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374715"
 ---
 # <a name="file-handling-in-no-locxamarinforms"></a>檔案處理 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
 _使用 .NET Standard 連結 Xamarin.Forms 庫中的程式碼或使用內嵌的資源，即可完成檔案處理。_
 
@@ -63,7 +63,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 ## <a name="loading-files-embedded-as-resources"></a>載入內嵌為資源的檔案
 
-若要將檔案內嵌至 **.NET Standard** 組件，請建立或新增檔案，並確保**建置動作：EmbeddedResource**。
+若要將檔案內嵌至 **.NET Standard** 組件，請建立或新增檔案，並確保 **建置動作：EmbeddedResource** 。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -75,7 +75,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 -----
 
-`GetManifestResourceStream` 用以存取使用其**資源識別碼**的內嵌檔案。 根據預設，資源識別碼是前置詞為其內嵌專案的預設命名空間的前置詞，在此案例中是 **WorkingWithFiles** 元件，而檔案名是 **LibTextResource.txt**，因此資源識別碼為 `WorkingWithFiles.LibTextResource.txt` 。
+`GetManifestResourceStream` 用以存取使用其 **資源識別碼** 的內嵌檔案。 根據預設，資源識別碼是前置詞為其內嵌專案的預設命名空間的前置詞，在此案例中是 **WorkingWithFiles** 元件，而檔案名是 **LibTextResource.txt** ，因此資源識別碼為 `WorkingWithFiles.LibTextResource.txt` 。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -113,7 +113,7 @@ listView.ItemsSource = monkeys;
 
 共用專案的這個問題有兩個解決方案：
 
-- **同步專案** - 編輯每個平台的專案屬性，使用**相同的**組件名稱和預設命名空間。 然後，這個值就會「硬式編碼」為共用專案的內嵌資源識別碼前置詞。
+- **同步專案** - 編輯每個平台的專案屬性，使用 **相同的** 組件名稱和預設命名空間。 然後，這個值就會「硬式編碼」為共用專案的內嵌資源識別碼前置詞。
 - **#if 編譯器指示詞** - 使用編譯器指示詞設定正確的資源識別碼前置詞，並使用該值以動態方式建構正確的資源識別碼。
 
 以下為示範第二個選項的程式碼。 編譯器指示詞用以選取硬式編碼的資源前置詞 (一般和參考專案的預設命名空間相同)。 然後串連資源前置詞與內嵌的資源檔案名稱，使用 `resourcePrefix` 變數建立有效的資源識別碼。
@@ -137,11 +137,11 @@ Stream stream = assembly.GetManifestResourceStream
 
 上述範例假設該檔案內嵌在 .NET Standard 程式庫專案的根目錄中；在這種情況下，資源識別碼就是表單 **Namespace.Filename.Extension** 的資源識別碼，例如 `WorkingWithFiles.LibTextResource.txt` 和 `WorkingWithFiles.iOS.SharedTextResource.txt`。
 
-您可以使用資料夾組織內嵌的資源。 當內嵌的資源放置在某個資料夾中時，資料夾名稱會成為資源識別碼的一部分 (以句點分隔)，以致資源識別碼格式變成 **Namespace.Folder.Filename.Extension**。 將範例應用程式所用的檔案放到資料夾 **MyFolder** 中，對應的資源識別碼就會變成 `WorkingWithFiles.MyFolder.LibTextResource.txt` 和 `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`。
+您可以使用資料夾組織內嵌的資源。 當內嵌的資源放置在某個資料夾中時，資料夾名稱會成為資源識別碼的一部分 (以句點分隔)，以致資源識別碼格式變成 **Namespace.Folder.Filename.Extension** 。 將範例應用程式所用的檔案放到資料夾 **MyFolder** 中，對應的資源識別碼就會變成 `WorkingWithFiles.MyFolder.LibTextResource.txt` 和 `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`。
 
 ### <a name="debugging-embedded-resources"></a>偵錯內嵌資源
 
-因為有時很難了解為什麼未載入特定的資源，所以下列偵錯程式碼會暫時新增至應用程式，協助確認已正確設定資源。 它會將內嵌在指定組件中的所有已知資源輸出到 [錯誤]**** 板，協助偵錯資源載入問題。
+因為有時很難了解為什麼未載入特定的資源，所以下列偵錯程式碼會暫時新增至應用程式，協助確認已正確設定資源。 它會將內嵌在指定組件中的所有已知資源輸出到 [錯誤] 板，協助偵錯資源載入問題。
 
 ```csharp
 using System.Reflection;
@@ -153,7 +153,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 }
 ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已示範在裝置上儲存及載入文字，以及載入內嵌資源等一些簡單的檔案作業。 使用 .NET Standard 2.0 就可以在 .NET Standard 程式庫中共用檔案存取碼。
 

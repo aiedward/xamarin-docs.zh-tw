@@ -10,16 +10,16 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 824d5ca711495c8a8ad663034e77506468efd397
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2ea65a646add3f42ee88e5cd884e80131b9964bf
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556187"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373831"
 ---
 # <a name="images-in-no-locxamarinforms"></a>中的影像 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithimages)
 
 _您可以使用跨平臺共用映射 Xamarin.Forms ，也可以特別為每個平臺載入，也可以下載這些映射以供顯示。_
 
@@ -38,7 +38,7 @@ Xamarin.Forms 使用 [`Image`](xref:Xamarin.Forms.Image) 視圖在頁面上顯�
 
 - [`FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String)) -需要可在每個平臺上解析的檔案名或 filepath。
 - [`FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) -需要 Uri 物件，例如  `new Uri("http://server.com/image.jpg")` .
-- [`FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) -需要資源識別碼以內嵌在應用程式或 .NET Standard 程式庫專案中的影像檔案，並具有 **組建動作： EmbeddedResource**。
+- [`FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) -需要資源識別碼以內嵌在應用程式或 .NET Standard 程式庫專案中的影像檔案，並具有 **組建動作： EmbeddedResource** 。
 - [`FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream})) -需要提供影像資料的資料流程。
 
 [`Aspect`](xref:Xamarin.Forms.Image.Aspect)屬性會決定如何調整影像以符合顯示區域：
@@ -53,14 +53,14 @@ Xamarin.Forms 使用 [`Image`](xref:Xamarin.Forms.Image) 視圖在頁面上顯�
 
 影像檔案可以加入至每個應用程式專案，並從 Xamarin.Forms 共用程式碼參考。 當影像是平台專用的 (例如，在不同平台上使用不同的解析度) 或屬於略微不同的設計時，就需要這種影像散發方法。
 
-若要在所有應用程式上使用單一映射，您 *必須在每個平臺上使用相同的檔案名*，其應為有效的 Android 資源名稱 (亦即，) 只允許小寫字母、數位、底線和期間。
+若要在所有應用程式上使用單一映射，您 *必須在每個平臺上使用相同的檔案名* ，其應為有效的 Android 資源名稱 (亦即，) 只允許小寫字母、數位、底線和期間。
 
-- **ios** -自 ios 9 起，管理及支援映射的慣用方式是使用 **資產目錄映射集**，其中應該包含支援各種裝置的所有映射版本，以及應用程式的規模調整因素。 如需詳細資訊，請參閱 [將影像新增至資產目錄映射集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
-- 使用**組建動作： AndroidResource**的**資源/繪製**目錄中的**Android**預留位置影像。 您也可以在適當命名的 **資源** 子目錄（例如可 **繪製 lDPI**、可 **繪製 hDPI**和可 **繪製的 xhDPI**) ）中 (提供映射的高和低 DPI 版本。
-- **通用 Windows 平臺 (UWP) ** -根據預設，映射應該放在應用程式的根目錄中，並包含 **組建動作： Content**。 或者，您可以將影像放在不同的目錄中，然後以平臺特定的方式指定。 如需詳細資訊，請參閱 [Windows 上的預設映射目錄](~/xamarin-forms/platform/windows/default-image-directory.md)。
+- **ios** -自 ios 9 起，管理及支援映射的慣用方式是使用 **資產目錄映射集** ，其中應該包含支援各種裝置的所有映射版本，以及應用程式的規模調整因素。 如需詳細資訊，請參閱 [將影像新增至資產目錄映射集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
+- 使用 **組建動作： AndroidResource** 的 **資源/繪製** 目錄中的 **Android** 預留位置影像。 您也可以在適當命名的 **資源** 子目錄（例如可 **繪製 lDPI** 、可 **繪製 hDPI** 和可 **繪製的 xhDPI** ) ）中 (提供映射的高和低 DPI 版本。
+- **通用 Windows 平臺 (UWP)** -根據預設，映射應該放在應用程式的根目錄中，並包含 **組建動作： Content** 。 或者，您可以將影像放在不同的目錄中，然後以平臺特定的方式指定。 如需詳細資訊，請參閱 [Windows 上的預設映射目錄](~/xamarin-forms/platform/windows/default-image-directory.md)。
 
 > [!IMPORTANT]
-> 在 iOS 9 之前，映射通常會放在 [ **資源** ] 資料夾中，並具有 **組建動作：套件套件**。 不過，Apple 已淘汰此方法來處理 iOS 應用程式中的影像。 如需詳細資訊，請參閱 [影像大小和檔案名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
+> 在 iOS 9 之前，映射通常會放在 [ **資源** ] 資料夾中，並具有 **組建動作：套件套件** 。 不過，Apple 已淘汰此方法來處理 iOS 應用程式中的影像。 如需詳細資訊，請參閱 [影像大小和檔案名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
 遵循這些規則來進行檔案命名和放置，可讓下列 XAML 在所有平臺上載入和顯示影像：
 
@@ -95,13 +95,13 @@ iOS、Android 和 UWP 包含不同映射解析度的支援，其中作業系統�
 
 在 iOS 9 之後管理映射的慣用方式是將影像拖曳至適當的資產目錄映射集所需的每個解析度。 如需詳細資訊，請參閱 [將影像新增至資產目錄映射集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
-在 iOS 9 之前，您可以將映射的 retina 版本放在 **Resources** 資料夾中，在副檔名前面加上一個或後置詞，然後 **@2x** **@3x** 在副檔名 (例如。 **myimage@2x.png**). 不過，Apple 已淘汰此方法來處理 iOS 應用程式中的影像。 如需詳細資訊，請參閱 [影像大小和檔案名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
+在 iOS 9 之前，您可以將映射的 retina 版本放在 **Resources** 資料夾中，在副檔名前面加上一個或後置詞，然後 **@2x** **@3x** 在副檔名 (例如。 **myimage@2x.png** ). 不過，Apple 已淘汰此方法來處理 iOS 應用程式中的影像。 如需詳細資訊，請參閱 [影像大小和檔案名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
 Android 替代解析度映射應放置在 Android 專案中的 [特殊命名目錄](https://developer.android.com/guide/practices/screens_support.html) 中，如下列螢幕擷取畫面所示：
 
 [![Android 多重解析度映射位置](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
-UWP 影像檔案名稱 [的尾碼可以是 `.scale-xxx` 副檔名之前](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)，其中 `xxx` 是套用至資產的縮放比例，例如 **myimage.scale-200.png**。 然後，您可以在程式碼或 XAML 中參考影像，而不需要縮放修飾詞，例如只是 **myimage.png**。 平臺會根據顯示器的目前 DPI 來選取最接近的適當資產規模。
+UWP 影像檔案名稱 [的尾碼可以是 `.scale-xxx` 副檔名之前](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)，其中 `xxx` 是套用至資產的縮放比例，例如 **myimage.scale-200.png** 。 然後，您可以在程式碼或 XAML 中參考影像，而不需要縮放修飾詞，例如只是 **myimage.png** 。 平臺會根據顯示器的目前 DPI 來選取最接近的適當資產規模。
 
 ### <a name="additional-controls-that-display-images"></a>顯示影像的其他控制項
 
@@ -120,7 +120,7 @@ UWP 影像檔案名稱 [的尾碼可以是 `.scale-xxx` 副檔名之前](/window
 
 內嵌影像也會隨附于應用程式 (例如本機) 影像），而不是在每個應用程式的檔案結構中都有一份影像複本，而是將影像檔內嵌在元件中做為資源。 當您在每個平臺上使用相同的映射時，建議使用這種方式來發佈影像，而且特別適合用來建立元件，因為映射與程式碼配套。
 
-若要在專案中內嵌映射，請以滑鼠右鍵按一下來加入新專案，然後選取您想要新增的映射。 根據預設，映射會有 **組建動作： None**;這必須設定為 **組建動作： EmbeddedResource**。
+若要在專案中內嵌映射，請以滑鼠右鍵按一下來加入新專案，然後選取您想要新增的映射。 根據預設，映射會有 **組建動作： None** ;這必須設定為 **組建動作： EmbeddedResource** 。
 
 <!-- markdownlint-disable MD001 -->
 
@@ -128,9 +128,9 @@ UWP 影像檔案名稱 [的尾碼可以是 `.scale-xxx` 副檔名之前](/window
 
 [![將組建動作設定為內嵌資源](images-images/vs-buildaction-sml.png)](images-images/vs-buildaction.png#lightbox)
 
-您可以在檔案的 [**屬性**] 視窗中，查看並變更**組建動作**。
+您可以在檔案的 [ **屬性** ] 視窗中，查看並變更 **組建動作** 。
 
-在此範例中，資源識別碼是 **WorkingWithImages.beach.jpg**。
+在此範例中，資源識別碼是 **WorkingWithImages.beach.jpg** 。
 IDE 已產生此預設值，方法是將這個專案的 **預設命名空間** 與檔案名串連在一起，使用句點 (。 ) 每個值之間。
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
@@ -138,8 +138,8 @@ IDE 已產生此預設值，方法是將這個專案的 **預設命名空間** �
 
 ![設定組建動作： EmbeddedResource](images-images/xs-buildaction.png)
 
-您也可以在檔案的**屬性**面板中，查看並變更**組建動作**。
-此 pad 會顯示用來在程式碼中參考資源的 **資源識別碼** 。 在以下螢幕擷取畫面中， **資源識別碼** 是 **WorkingWithImages.beach.jpg**。
+您也可以在檔案的 **屬性** 面板中，查看並變更 **組建動作** 。
+此 pad 會顯示用來在程式碼中參考資源的 **資源識別碼** 。 在以下螢幕擷取畫面中， **資源識別碼** 是 **WorkingWithImages.beach.jpg** 。
 IDE 已產生此預設值，方法是將這個專案的 **預設命名空間** 與檔案名串連在一起，使用句點 (。 ) 每個值之間。
 此識別碼可以在 **Properties** pad 中編輯，但在這些範例中，將會使用 **WorkingWithImages.beach.jpg** 的值。
 

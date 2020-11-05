@@ -10,16 +10,16 @@ ms.date: 02/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 43f2e32a240b74fde50659033096c8a7246ea60c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c6b6a5a538d69d396f8b30381fd1d0b73d3f0e9f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564052"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373818"
 ---
 # <a name="no-locxamarinforms-carouselview-interaction"></a>Xamarin.Forms CarouselView 互動
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 定義控制使用者互動的下列屬性：
 
@@ -85,7 +85,7 @@ void OnCurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
 
 [![螢幕擷取畫面： iOS 和 Android 上的先前和目前專案的 CarouselView](interaction-images/current-item-events.png "具有目前和先前專案的 CarouselView")](interaction-images/current-item-events-large.png#lightbox "具有目前和先前專案的 CarouselView")
 
-### <a name="command"></a>Command
+### <a name="command"></a>命令
 
 下列 XAML 範例顯示 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 使用命令來回應目前專案變更的：
 
@@ -158,7 +158,7 @@ void OnPositionChanged(object sender, PositionChangedEventArgs e)
 
 [![螢幕擷取畫面： iOS 和 Android 上的 CarouselView 與先前和目前的位置](interaction-images/current-position-events.png "具有目前和先前位置的 CarouselView")](interaction-images/current-position-events-large.png#lightbox "具有目前和先前位置的 CarouselView")
 
-### <a name="command"></a>Command
+### <a name="command"></a>命令
 
 下列 XAML 範例顯示 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 使用命令來回應 `Position` 屬性變更的：
 

@@ -10,16 +10,16 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5ea4fa88925925ba7c81f47c30875c3419603ab8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 56254d4a5d255f2db05ff82f224df4ddff04ab1f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555459"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373090"
 ---
 # <a name="the-scale-transform"></a>縮放轉換
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索 SkiaSharp 規模轉換以將物件縮放為各種大小_
 
@@ -124,7 +124,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 public void Scale (Single sx, Single sy, Single px, Single py)
 ```
 
-`px`和 `py` 參數定義了有時稱為*縮放中心*的點，但在 SkiaSharp 檔中稱為「*資料透視點*」。 這是相對於畫布左上角的一點，不受縮放影響。 所有調整都會相對於該中心進行。
+`px`和 `py` 參數定義了有時稱為 *縮放中心* 的點，但在 SkiaSharp 檔中稱為「 *資料透視點* 」。 這是相對於畫布左上角的一點，不受縮放影響。 所有調整都會相對於該中心進行。
 
 [**中央規模**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/CenteredScalePage.xaml.cs)頁面會顯示其運作方式。 此 `PaintSurface` 處理常式類似于 **基本的調整** 程式，不同之處在于 `margin` 會計算值以水準置中文字，這表示程式在直向模式中的效果最佳：
 

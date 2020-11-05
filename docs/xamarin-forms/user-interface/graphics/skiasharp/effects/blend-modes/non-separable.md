@@ -10,16 +10,16 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a77ebb07a09c1bbd2df482c81040f271cdf8f56e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ea590c0390ab045e5cf8b526aee66c2408d1b784
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556343"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374663"
 ---
 # <a name="the-non-separable-blend-modes"></a>不可分離的 blend 模式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 如您在 SkiaSharp 可分隔 [**blend 模式**](separable.md)的文章中所見，可分離的 blend 模式會分別在紅色、綠色和藍色通道上執行作業。 不可分離的 blend 模式則不會。 藉由在色彩的色調、飽和度和亮度層級上操作，不可分離的 blend 模式可以有有趣的方式改變色彩：
 
@@ -29,7 +29,7 @@ ms.locfileid: "91556343"
 
 若要瞭解不可分離的 blend 模式，必須將目的地和來源的圖元視為色相（飽和度）亮度模型中的色彩。  (亮度也稱為亮度。 ) 
 
-HSL 色彩模型已在[**與 Xamarin.Forms **](../../basics/integration.md)該文章中的「整合」和「範例」程式中討論，並可讓您使用 hsl 色彩進行實驗。 您可以 `SKColor` 使用具有靜態方法的色調、飽和度和亮度值來建立值 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl*) 。
+HSL 色彩模型已在 [**與 Xamarin.Forms**](../../basics/integration.md)該文章中的「整合」和「範例」程式中討論，並可讓您使用 hsl 色彩進行實驗。 您可以 `SKColor` 使用具有靜態方法的色調、飽和度和亮度值來建立值 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl*) 。
 
 色調代表色彩的主要波長。 色調值的範圍是從0到360，並迴圈顯示加法和 subtractive 主要複本：紅色的值為0、黃色為60、綠色為120、青色為180、藍色為240、洋紅色為300，且迴圈回到紅色（360）。
 
@@ -205,23 +205,23 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 [![不可分離的 Blend 模式-亮度](non-separable-images/NonSeparableBlendModes-Luminosity.png "不可分離的 Blend 模式-亮度")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 
-理論上，增加或減少影像的亮度應該使其變得更淺或更暗。 有趣的是， [Skia **SkBlendMode 參考**中的亮度範例](https://skia.org/user/api/SkBlendMode_Reference#Luminosity)相當類似。
+理論上，增加或減少影像的亮度應該使其變得更淺或更暗。 有趣的是， [Skia **SkBlendMode 參考** 中的亮度範例](https://skia.org/user/api/SkBlendMode_Reference#Luminosity)相當類似。
 
 一般來說，您不會想要使用其中一個不可分離的 blend 模式，其來源是由套用至整個目的地影像的單一色彩所組成。 效果就太大了。 您會想要將效果限制為影像的一個部分。 在這種情況下，來源可能會併入 transparancy，或許來源會限制為較小的圖形。
 
 ## <a name="a-matte-for-a-separable-mode"></a>可分離模式的遮罩
 
-以下是 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) 範例中包含為資源的其中一個點陣圖。 檔案名為 **Banana.jpg**：
+以下是 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) 範例中包含為資源的其中一個點陣圖。 檔案名為 **Banana.jpg** ：
 
 ![Banana 的猴子](non-separable-images/Banana.jpg "Banana 的猴子")
 
-您可以建立只包含 banana 的遮罩。 這也是 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) 範例中的資源。 檔案名為 **BananaMatte.png**：
+您可以建立只包含 banana 的遮罩。 這也是 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) 範例中的資源。 檔案名為 **BananaMatte.png** ：
 
 ![Banana 亞光](non-separable-images/BananaMatte.png "Banana 亞光")
 
 除了黑色 banana 圖形之外，點陣圖的其餘部分也是透明的。
 
-**藍色 Banana**頁面使用該遮罩來改變猴子所持有之 Banana 的色調和飽和度，但變更影像中的其他內容。 
+**藍色 Banana** 頁面使用該遮罩來改變猴子所持有之 Banana 的色調和飽和度，但變更影像中的其他內容。 
 
 在下列 `BlueBananaPage` 類別中，會將 **Banana.jpg** 點陣圖載入為欄位。 此函式會載入 **BananaMatte.png** 點陣圖作為 `matteBitmap` 物件，但不會將該物件保留在函式之外。 相反地，會建立名為的第三個位圖 `blueBananaBitmap` 。 `matteBitmap`會在之後繪製， `blueBananaBitmap` `SKPaint` `Color` 並將其設為藍色，並 `BlendMode` 將其設定為 `SKBlendMode.SrcIn` 。 的 `blueBananaBitmap` 內容大多保持透明，但具有純純藍色的 banana 影像：
 

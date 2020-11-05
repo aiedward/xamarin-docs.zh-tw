@@ -10,16 +10,16 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6de5e21c509203c5402ed8c7e75908b54808d140
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 16085f8bb3af57fdd0c00c7c111a91df1dd273f7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556889"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374546"
 ---
 # <a name="non-affine-transforms"></a>非仿射轉換
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用轉換矩陣的第三個數據行來建立透視圖和錐度效果_
 
@@ -103,7 +103,7 @@ y ' = y/ (0.01 · x + 1)
 
 `Persp`這些儲存格名稱的一部分是指「透視圖」，因為透視量會建議方塊現在與檢視器的右側傾斜。
 
-[ **測試透視圖** ] 頁面可讓您使用和的值進行實驗， `Persp0` `Pers1` 以瞭解其運作方式。 這些矩陣資料格的合理值很小，因為 `Slider` 通用 Windows 平臺無法正確地處理它們。 為了容納 UWP 問題，TestPerspective 中的兩個 `Slider` 元素[**TestPerspective.xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml)必須初始化為範圍從–1到1：
+[ **測試透視圖** ] 頁面可讓您使用和的值進行實驗， `Persp0` `Pers1` 以瞭解其運作方式。 這些矩陣資料格的合理值很小，因為 `Slider` 通用 Windows 平臺無法正確地處理它們。 為了容納 UWP 問題，TestPerspective 中的兩個 `Slider` 元素 [**TestPerspective.xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml)必須初始化為範圍從–1到1：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -243,7 +243,7 @@ z ' = Persp0 · x + Persp1 · y + 1
 
 一般而言，您不會設定 `Persp0` `Persp1` 隔離。 通常也需要設定矩陣中的其他資料格，以達成某些類型的非仿射轉換。
 
-其中一個這類非仿射轉換是 *錐度轉換*。 這種類型的非仿射轉換會保留矩形的整體維度，但 tapers 一側：
+其中一個這類非仿射轉換是 *錐度轉換* 。 這種類型的非仿射轉換會保留矩形的整體維度，但 tapers 一側：
 
 ![錐度轉換的箱](non-affine-images/tapertransform.png)
 
@@ -401,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 另一種類型的一般化非仿射轉換是3D 旋轉，在下一篇文章（ [**3D 旋轉**](3d-rotation.md)）中示範。
 
-非仿射轉換可以將矩形轉換成任何凸四邊形。 這是由 [ **顯示非仿射矩陣** ] 頁面所示範。 它非常類似[**矩陣轉換**](matrix.md)發行項中的**顯示仿射矩陣**頁面，不同之處在于它有第四個 `TouchPoint` 物件可操作點陣圖的第四個角落：
+非仿射轉換可以將矩形轉換成任何凸四邊形。 這是由 [ **顯示非仿射矩陣** ] 頁面所示範。 它非常類似 [**矩陣轉換**](matrix.md)發行項中的 **顯示仿射矩陣** 頁面，不同之處在于它有第四個 `TouchPoint` 物件可操作點陣圖的第四個角落：
 
 [![顯示非仿射矩陣頁面的三重螢幕擷取畫面](non-affine-images/shownonaffinematrix-small.png)](non-affine-images/shownonaffinematrix-large.png#lightbox "顯示非仿射矩陣頁面的三重螢幕擷取畫面")
 

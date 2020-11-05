@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 308b0aa56afdbdbd0ac1e918eefd72b1edb4f338
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 79ceca6f028ec5d0399251e178d82d1b2fff81ef
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563818"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373337"
 ---
 # <a name="entry-input-method-editor-options-on-android"></a>Android 上的專案輸入方法編輯器選項
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定會將輸入方法編輯器 (IME) 選項提供給的軟鍵盤 [`Entry`](xref:Xamarin.Forms.Entry) 。 這包括設定軟鍵盤右下角的 [使用者動作] 按鈕，以及與的互動 `Entry` 。 它是在 XAML 中使用，方法是將 [`Entry.ImeOptions`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty) 附加屬性設定為 [`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) 列舉值：
 

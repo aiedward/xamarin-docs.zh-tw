@@ -10,16 +10,16 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 59c7435273d7c01f93ef0bbfb0240e3917f8b716
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5df5560966def16741f6eabdacb3312944063a1f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563012"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372609"
 ---
 # <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms Shell 索引標籤
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 當應用程式的導覽模式包含飛出視窗時，應用程式中的下一層導覽是底部索引標籤列。 此外，當飛出視窗關閉時，底部的索引標籤列可視為導覽的最上層。
 

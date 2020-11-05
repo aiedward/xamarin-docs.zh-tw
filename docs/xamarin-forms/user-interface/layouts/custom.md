@@ -10,16 +10,16 @@ ms.date: 03/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 63a939e7093bcbe52f1aed376253c7aa78b078bf
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2a7aa9ec588879eb4f59e42cf9848d6e3c560625
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563844"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373792"
 ---
 # <a name="create-a-custom-layout-in-no-locxamarinforms"></a>在中建立自訂版面配置 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
 _Xamarin.Forms 定義五個配置類別（StackLayout、AbsoluteLayout、RelativeLayout、Grid 和 FlexLayout），並以不同的方式排列其子系。但是，有時候您必須使用不提供的版面配置來組織頁面內容 Xamarin.Forms 。本文說明如何撰寫自訂的版面配置類別，並示範在頁面上水準排列其子系的 WrapLayout 類別，然後將後續子系的顯示換行至其他資料列。_
 
@@ -29,7 +29,7 @@ _Xamarin.Forms 定義五個配置類別（StackLayout、AbsoluteLayout、Relativ
 
 Xamarin.Forms若要建立自訂版面配置，必須徹底瞭解版面配置和失效週期。 現在將會討論這些週期。
 
-## <a name="layout"></a>配置
+## <a name="layout"></a>Layout
 
 版面配置是從具有頁面的視覺化樹狀結構頂端開始，並且會繼續執行視覺化樹狀結構的所有分支，以包含頁面上的每個視覺元素。 其他元素的父系元素會負責調整其子系的大小和位置（相對於本身的位置）。
 
@@ -50,7 +50,7 @@ Xamarin.Forms具有或屬性的每個類別 `Content` `Children` 都有可覆寫
 此外，每個衍生自或的類別都 [`Layout`](xref:Xamarin.Forms.Layout) [`Layout<View>`](xref:Xamarin.Forms.Layout`1) 必須覆寫 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 方法，也就是版面配置類別藉由呼叫 [ `Measure` ] (x：來決定其所需的大小 Xamarin.Forms 。VisualElement Measure (system.string，Double， Xamarin.Forms 。MeasureFlags 其子系的) # A3 方法。
 
 > [!NOTE]
-> 專案會根據 *條件約束*來決定其大小，這表示專案父系內的元素有多少空間可供使用。 傳遞至 [ `Measure` ] (x：的條件約束 Xamarin.Forms 。VisualElement Measure (system.string，Double， Xamarin.Forms 。MeasureFlags) # A3 和 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 方法的範圍可以從0到 `Double.PositiveInfinity` 。 當元素收到對其 [] (x：的呼叫時，會 *受到限制*或 *完全受限* `Measure` 。 Xamarin.FormsVisualElement Measure (system.string，Double， Xamarin.Forms 。MeasureFlags) # A3 方法（具有非無限引數）-元素會限制為特定的大小。 當某個專案接收到其方法的呼叫時，如果專案具有至少一個與等於的引數，則會被視為不受 *限制*或 *部分限制* `Measure` `Double.PositiveInfinity` –可將無限條件約束視為表示自動調整大小。
+> 專案會根據 *條件約束* 來決定其大小，這表示專案父系內的元素有多少空間可供使用。 傳遞至 [ `Measure` ] (x：的條件約束 Xamarin.Forms 。VisualElement Measure (system.string，Double， Xamarin.Forms 。MeasureFlags) # A3 和 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 方法的範圍可以從0到 `Double.PositiveInfinity` 。 當元素收到對其 [] (x：的呼叫時，會 *受到限制* 或 *完全受限* `Measure` 。 Xamarin.FormsVisualElement Measure (system.string，Double， Xamarin.Forms 。MeasureFlags) # A3 方法（具有非無限引數）-元素會限制為特定的大小。 當某個專案接收到其方法的呼叫時，如果專案具有至少一個與等於的引數，則會被視為不受 *限制* 或 *部分限制* `Measure` `Double.PositiveInfinity` –可將無限條件約束視為表示自動調整大小。
 
 ## <a name="invalidation"></a>失效
 
@@ -73,15 +73,15 @@ Xamarin.Forms具有或屬性的每個類別 `Content` `Children` 都有可覆寫
 建立自訂版面配置的程式如下所示：
 
 1. 建立從 `Layout<View>` 類別衍生的類別。 如需詳細資訊，請參閱 [建立 WrapLayout](#create-a-wraplayout)。
-1. [*選用*]針對應該在版面配置類別上設定的任何參數，加入可系結屬性支援的屬性。 如需詳細資訊，請參閱加入可系結 [屬性所支援的屬性](#add-properties-backed-by-bindable-properties)。
+1. [ *選用* ]針對應該在版面配置類別上設定的任何參數，加入可系結屬性支援的屬性。 如需詳細資訊，請參閱加入可系結 [屬性所支援的屬性](#add-properties-backed-by-bindable-properties)。
 1. 覆寫 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 方法以叫用 [ `Measure` ] (x： Xamarin.Forms 。VisualElement Measure (system.string，Double， Xamarin.Forms 。在所有版面配置的子系上 MeasureFlags) # A3 方法，並傳回配置的要求大小。 如需詳細資訊，請參閱覆 [寫 OnMeasure 方法](#override-the-onmeasure-method)。
 1. 覆寫 [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 方法以叫用 [ `Layout` ] (x： Xamarin.Forms 。VisualElement (版面配置 Xamarin.Forms 。矩形) # A3 方法在所有版面配置的子系上。 無法叫用 [ `Layout` ] (x： Xamarin.Forms 。VisualElement (版面配置 Xamarin.Forms 。矩形) # A3 方法在版面配置中的每個子系上，會導致子系永遠不會收到正確的大小或位置，因此子系不會在頁面上顯示。 如需詳細資訊，請參閱覆 [寫 LayoutChildren 方法](#override-the-layoutchildren-method)。
 
     > [!NOTE]
     > 列舉和覆寫中的子系時 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) ，請略過其 [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) 屬性設定為的任何子系 `false` 。 這可確保自訂配置不會留下空間給隱藏的子系。
 
-1. [*選用*]覆寫 [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) 方法，以在配置中加入或移除子系時收到通知。 如需詳細資訊，請參閱覆 [寫 InvalidateLayout 方法](#override-the-invalidatelayout-method)。
-1. [*選用*]覆寫 [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) 方法，以便在其中一個版面配置的子系變更大小時收到通知。 如需詳細資訊，請參閱覆 [寫 OnChildMeasureInvalidated 方法](#override-the-onchildmeasureinvalidated-method)。
+1. [ *選用* ]覆寫 [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) 方法，以在配置中加入或移除子系時收到通知。 如需詳細資訊，請參閱覆 [寫 InvalidateLayout 方法](#override-the-invalidatelayout-method)。
+1. [ *選用* ]覆寫 [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) 方法，以便在其中一個版面配置的子系變更大小時收到通知。 如需詳細資訊，請參閱覆 [寫 OnChildMeasureInvalidated 方法](#override-the-onchildmeasureinvalidated-method)。
 
 > [!NOTE]
 > 請注意， [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 如果配置的大小是由其父系（而非其子系）所控管，則不會叫用覆寫。 但是，如果其中一個或兩個條件約束都是無限的，或版面配置類別具有非預設值 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 或屬性值，就會叫用覆寫 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。 基於這個理由，覆 [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 寫不能依賴在方法呼叫期間取得的子大小 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 。 相反地，必須叫用 `LayoutChildren` [ `Measure` ] (x： Xamarin.Forms 。VisualElement Measure (system.string，Double， Xamarin.Forms 。在叫用 [ `Layout` ] (x：之前，在版面配置的子系上 MeasureFlags) # A3 方法 Xamarin.Forms 。VisualElement (版面配置 Xamarin.Forms 。) # A7 方法的矩形。 或者，您可以快取在覆寫中取得的子系大小 `OnMeasure` ，以避免稍後 `Measure` 在覆寫中叫用 `LayoutChildren` ，但是版面配置類別必須知道何時需要重新取得大小。 如需詳細資訊，請參閱 [計算和](#calculate-and-cache-layout-data)快取版面配置資料。
@@ -92,7 +92,7 @@ Xamarin.Forms具有或屬性的每個類別 `Content` `Children` 都有可覆寫
 
 範例應用程式會示範面向方向的 `WrapLayout` 類別，此類別會在頁面上水準排列其子系，然後將後續子系的顯示換行至其他資料列。
 
-`WrapLayout`類別會根據子系的大小上限，為每個子系配置相同的空間量（稱為資料*格大小*）。 小於資料格大小的子系可以根據其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和屬性值放在資料格中 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。
+`WrapLayout`類別會根據子系的大小上限，為每個子系配置相同的空間量（稱為資料 *格大小* ）。 小於資料格大小的子系可以根據其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和屬性值放在資料格中 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。
 
 `WrapLayout`類別定義如下列程式碼範例所示：
 
@@ -415,6 +415,6 @@ async Task<ImageList> GetImageListAsync()
 - [WrapLayout (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [自訂配置](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [ (影片中建立自訂版面配置 Xamarin.Forms) ](https://www.youtube.com/watch?v=sxjOqNZFhKU)
-- [配置\<T>](xref:Xamarin.Forms.Layout`1)
+- [Layout\<T>](xref:Xamarin.Forms.Layout`1)
 - [版面配置](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

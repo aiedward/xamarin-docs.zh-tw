@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3052220b914b09f18490846bbd2558bbf07e4d3a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 92631f66f729e2d1519bf577accb6f1ce9c1e1b5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562258"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373584"
 ---
 # <a name="basic-animation-in-skiasharp"></a>SkiaSharp 中的基本動畫
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索如何製作 SkiaSharp 圖形的動畫_
 
@@ -27,7 +27,7 @@ _探索如何製作 SkiaSharp 圖形的動畫_
 
 ![許多看似從中央擴充的同心圓圓形](animation-images/animationexample.png)
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式中的 [ **Pulsating 橢圓形**] 頁面會將橢圓形的兩個軸動畫顯示出來，使其看似 Pulsating，而且您甚至可以控制此 pulsation 的速率。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)可具現化和， Xamarin.Forms `Slider` `Label` 以顯示滑杆目前的值。 這是整合 `SKCanvasView` 與其他視圖的常見方式 Xamarin.Forms ：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式中的 [ **Pulsating 橢圓形** ] 頁面會將橢圓形的兩個軸動畫顯示出來，使其看似 Pulsating，而且您甚至可以控制此 pulsation 的速率。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)可具現化和， Xamarin.Forms `Slider` `Label` 以顯示滑杆目前的值。 這是整合 `SKCanvasView` 與其他視圖的常見方式 Xamarin.Forms ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -109,7 +109,7 @@ async Task AnimationLoop()
 
 ```
 
-`while`迴圈一開始會從取得迴圈時間 `Slider` 。 這是以秒為單位的時間，例如，5。 第二個語句會計算 `t` *時間*的值。 若為 `cycleTime` 5， `t` 每隔5秒就會從0增加為1。 第二個語句中的函式引數的 `Math.Sin` 範圍是從0到2π每5秒。 此函式會 `Math.Sin` 傳回值，範圍從0到1，再到 1 &ndash; 和0（每5秒），但值若接近1或-1 則會變得更慢。 系統會加入值1，因此值一律為正數，然後除以2，因此值的範圍從1/2 到1到1/2 到0到1/2，但當值的範圍介於1和0時較慢。 這會儲存在 `scale` 欄位中，而且 `SKCanvasView` 會失效。
+`while`迴圈一開始會從取得迴圈時間 `Slider` 。 這是以秒為單位的時間，例如，5。 第二個語句會計算 `t` *時間* 的值。 若為 `cycleTime` 5， `t` 每隔5秒就會從0增加為1。 第二個語句中的函式引數的 `Math.Sin` 範圍是從0到2π每5秒。 此函式會 `Math.Sin` 傳回值，範圍從0到1，再到 1 &ndash; 和0（每5秒），但值若接近1或-1 則會變得更慢。 系統會加入值1，因此值一律為正數，然後除以2，因此值的範圍從1/2 到1到1/2 到0到1/2，但當值的範圍介於1和0時較慢。 這會儲存在 `scale` 欄位中，而且 `SKCanvasView` 會失效。
 
 `PaintSurface`方法會使用此 `scale` 值來計算橢圓形的兩個軸：
 

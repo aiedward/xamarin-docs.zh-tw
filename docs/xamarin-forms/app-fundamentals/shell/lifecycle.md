@@ -10,16 +10,16 @@ ms.date: 07/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1b2abf7925eabb79b1918a9b9fedb0ba7ecced38
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 830b86c0e8eeeef528c3c1f55a565ef08dad6896
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563155"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373272"
 ---
 # <a name="no-locxamarinforms-shell-lifecycle"></a>Xamarin.Forms Shell 生命週期
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Shell 應用程式 Xamarin.Forms 會遵循生命週期，而 `Appearing` 當頁面即將出現在畫面上時，就會引發事件，而且 `Disappearing` 當頁面即將從畫面上消失時，就會引發事件。 這些事件會傳播到頁面，而且可以藉由覆寫 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 頁面上的或方法來處理 [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) 。
 

@@ -10,16 +10,16 @@ ms.date: 06/02/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 61edbb347b4d3466d1ca756208adb5d173d63b34
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b3db63018bc8d927b9e9041c762b1989cfb17679
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561543"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374091"
 ---
 # <a name="attached-properties"></a>附加屬性
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 
 附加的屬性可讓物件指派本身的類別未定義之屬性的值。 例如，子項目可以使用附加屬性，通知其父元素如何在使用者介面中呈現它們。 控制項可透過 [`Grid`](xref:Xamarin.Forms.Grid) 設定 `Grid.Row` 和附加屬性，來指定子系的資料列和資料行 `Grid.Column` 。 `Grid.Row` 和 `Grid.Column` 都是附加屬性，因為它們是在子系的專案上設定 `Grid` ，而不是在本身的子系上進行設定 `Grid` 。
@@ -36,7 +36,7 @@ ms.locfileid: "91561543"
 建立附加屬性的程式如下所示：
 
 1. [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)使用其中一個方法多載來建立實例 [`CreateAttached`](xref:Xamarin.Forms.BindableProperty.CreateAttached*) 。
-1. 提供 `static` `Get` *propertyname*和 `Set` *propertyname*方法做為附加屬性的存取子。
+1. 提供 `static` `Get` *propertyname* 和 `Set` *propertyname* 方法做為附加屬性的存取子。
 
 ### <a name="create-a-property"></a>建立屬性
 
@@ -60,21 +60,21 @@ public static readonly BindableProperty HasShadowProperty =
 
 ### <a name="create-accessors"></a>建立存取子
 
-需要靜態 `Get` *PropertyName*和 `Set` *PropertyName*方法做為附加屬性的存取子，否則屬性系統將無法使用附加屬性。 `Get` *PropertyName*存取子應符合下列簽章：
+需要靜態 `Get` *PropertyName* 和 `Set` *PropertyName* 方法做為附加屬性的存取子，否則屬性系統將無法使用附加屬性。 `Get` *PropertyName* 存取子應符合下列簽章：
 
 ```csharp
 public static valueType GetPropertyName(BindableObject target)
 ```
 
-`Get` *PropertyName*存取子應傳回附加屬性之對應欄位中包含的值 `BindableProperty` 。 這可以藉由呼叫 [ `GetValue` ] (x：來達成 Xamarin.Forms 。BindableObject (Xamarin.Forms 。BindableProperty) # A3 方法，傳入可在其上取得值的可系結屬性識別碼，然後將產生的值轉換為所需的類型。
+`Get` *PropertyName* 存取子應傳回附加屬性之對應欄位中包含的值 `BindableProperty` 。 這可以藉由呼叫 [ `GetValue` ] (x：來達成 Xamarin.Forms 。BindableObject (Xamarin.Forms 。BindableProperty) # A3 方法，傳入可在其上取得值的可系結屬性識別碼，然後將產生的值轉換為所需的類型。
 
-`Set` *PropertyName*存取子應符合下列簽章：
+`Set` *PropertyName* 存取子應符合下列簽章：
 
 ```csharp
 public static void SetPropertyName(BindableObject target, valueType value)
 ```
 
-`Set` *PropertyName*存取子應 `BindableProperty` 針對附加屬性設定對應欄位的值。 這可以藉由呼叫 [ `SetValue` ] (x：來達成 Xamarin.Forms 。BindableObject (Xamarin.Forms 。BindableProperty，System.object) # A3 方法，傳入要設定值的可系結屬性識別碼，以及要設定的值。
+`Set` *PropertyName* 存取子應 `BindableProperty` 針對附加屬性設定對應欄位的值。 這可以藉由呼叫 [ `SetValue` ] (x：來達成 Xamarin.Forms 。BindableObject (Xamarin.Forms 。BindableProperty，System.object) # A3 方法，傳入要設定值的可系結屬性識別碼，以及要設定的值。
 
 針對這兩個存取子， *目標* 物件必須是或衍生自 [`BindableObject`](xref:Xamarin.Forms.BindableObject) 。
 
@@ -119,7 +119,7 @@ ShadowEffect.SetHasShadow (label, true);
 
 ### <a name="consume-an-attached-property-with-a-style"></a>使用樣式的附加屬性
 
-附加屬性也可以透過樣式加入至控制項。 下列 XAML 程式碼範例顯示使用*explicit* `HasShadow` 附加屬性（可套用至控制項）的明確樣式 [`Label`](xref:Xamarin.Forms.Label) ：
+附加屬性也可以透過樣式加入至控制項。 下列 XAML 程式碼範例顯示使用 *explicit* `HasShadow` 附加屬性（可套用至控制項）的明確樣式 [`Label`](xref:Xamarin.Forms.Label) ：
 
 ```xaml
 <Style x:Key="ShadowEffectStyle" TargetType="Label">
@@ -143,7 +143,7 @@ ShadowEffect.SetHasShadow (label, true);
 
 ## <a name="related-links"></a>相關連結
 
-- [可繫結的屬性](~/xamarin-forms/xaml/bindable-properties.md)
+- [可系結屬性](~/xamarin-forms/xaml/bindable-properties.md)
 - [XAML 命名空間](~/xamarin-forms/xaml/namespaces.md)
 - [Shadow Effect (Samples)](/samples/xamarin/xamarin-forms-samples/effects-shadoweffect) (陰影效果 (範例))
 - [BindableProperty API](xref:Xamarin.Forms.BindableProperty)

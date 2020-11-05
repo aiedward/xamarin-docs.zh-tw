@@ -7,7 +7,7 @@ ms. 生產： xamarin assetid： 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms. 技術
 ---
 # <a name="implementing-a-view"></a>實作檢視
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/customrenderers-view)
 
 _Xamarin.Forms 自訂使用者介面控制項應該衍生自 View 類別，這是用來在螢幕上放置配置和控制項。本文示範如何建立自訂控制項的自訂轉譯器 Xamarin.Forms ，以用來從裝置相機顯示預覽影片串流。_
 
@@ -355,7 +355,7 @@ namespace CustomRenderer.UWP
 > [!NOTE]
 > 請務必停止並處置提供 UWP 應用程式中相機存取權的物件。 若未這樣做，則可能會干擾嘗試存取裝置相機的其他應用程式。 如需詳細資訊，請參閱[顯示相機預覽](/windows/uwp/audio-video-camera/simple-camera-preview-access/)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何建立自訂控制項的自訂轉譯器 Xamarin.Forms ，以用來從裝置相機顯示預覽影片串流。 Xamarin.Forms 自訂使用者介面控制項應該衍生自 [`View`](xref:Xamarin.Forms.View) 類別，這是用來在螢幕上放置配置和控制項。
 

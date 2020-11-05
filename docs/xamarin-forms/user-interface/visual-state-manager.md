@@ -11,24 +11,24 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7e59cddbe9192f29ca1636c567131aad60157066
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f1ceadb6d7985f5d448fe729a42e0cf0a3d5d6f6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556577"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374468"
 ---
 # <a name="no-locxamarinforms-visual-state-manager"></a>Xamarin.Forms 視覺狀態管理員
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
 
 _您可以使用 [視覺狀態管理員]，根據從程式碼設定的視覺狀態來變更 XAML 元素。_
 
 Visual State Manager (VSM) 提供結構化的方式，從程式碼對使用者介面進行視覺變更。 在大部分的情況下，應用程式的使用者介面是以 XAML 定義的，而此 XAML 包含標記，描述視覺狀態管理員如何影響使用者介面的視覺效果。
 
-VSM 引進了 _視覺狀態_的概念。 Xamarin.Forms視其基礎狀態而定，如已 `Button` &mdash; 停用、已按下或有輸入焦點，這類視圖可能會有數個不同的視覺外觀。 這些是按鈕的狀態。
+VSM 引進了 _視覺狀態_ 的概念。 Xamarin.Forms視其基礎狀態而定，如已 `Button` &mdash; 停用、已按下或有輸入焦點，這類視圖可能會有數個不同的視覺外觀。 這些是按鈕的狀態。
 
-視覺狀態會收集在 _視覺狀態群組_中。 視覺狀態群組內的所有視覺狀態都是互斥的。 視覺狀態和視覺狀態群組都是由簡單的文字字串所識別。
+視覺狀態會收集在 _視覺狀態群組_ 中。 視覺狀態群組內的所有視覺狀態都是互斥的。 視覺狀態和視覺狀態群組都是由簡單的文字字串所識別。
 
 Xamarin.Forms視覺狀態管理員會定義一個名為 "CommonStates" 的視覺狀態群組，且具有下列視覺狀態：
 
@@ -46,7 +46,7 @@ Xamarin.Forms視覺狀態管理員會定義一個名為 "CommonStates" 的視覺
 
 ## <a name="common-states"></a>常見狀態
 
-視覺狀態管理員可讓您在 XAML 檔案中包含標記，如果視圖為正常、已停用或具有輸入焦點，則可以變更視圖的視覺外觀。 這些都稱為 _一般狀態_。
+視覺狀態管理員可讓您在 XAML 檔案中包含標記，如果視圖為正常、已停用或具有輸入焦點，則可以變更視圖的視覺外觀。 這些都稱為 _一般狀態_ 。
 
 例如，假設您的 `Entry` 頁面上有一個視圖，而且您想要 `Entry` 以下列方式變更的視覺外觀：
 
@@ -184,7 +184,7 @@ Xamarin.Forms視覺狀態管理員會定義一個名為 "CommonStates" 的視覺
 
 每個 `Setter` 標記都會指出當狀態為最新狀態時，特定屬性的值。 物件所參考的任何屬性都必須受到可系結 `Setter` 屬性的支援。
 
-與此類似的標記是**[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** 範例程式中**VSM**頁面的基礎。 此頁面包含三個 `Entry` 視圖，但只有第二個會附加 VSM 標記：
+與此類似的標記是 **[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** 範例程式中 **VSM** 頁面的基礎。 此頁面包含三個 `Entry` 視圖，但只有第二個會附加 VSM 標記：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -408,7 +408,7 @@ VSM 標記的其餘部分與之前相同。
 
 下表列出中定義的視覺狀態 Xamarin.Forms ：
 
-| 類別 | 狀態 | 相關資訊 |
+| 執行個體 | 狀態 | 相關資訊 |
 | ----- | ------ | ---------------- |
 | `Button` | `Pressed` | [按鈕視覺狀態](~/xamarin-forms/user-interface/button.md#button-visual-states) |
 | `CheckBox` | `IsChecked` | [核取方塊視覺狀態](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) |
@@ -439,7 +439,7 @@ VSM 標記的其餘部分與之前相同。
 > [!NOTE]
 > 物件所參考的任何屬性都必須受到可系結 `Setter` 屬性的支援。
 
-**[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** 範例中的**VSM 與 Setter TargetName**頁面會示範如何從單一視覺狀態群組，設定多個元素的狀態。 XAML 檔案包含 `StackLayout` 包含 `Label` 元素、 `Entry` 和的 `Button` 。
+**[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** 範例中的 **VSM 與 Setter TargetName** 頁面會示範如何從單一視覺狀態群組，設定多個元素的狀態。 XAML 檔案包含 `StackLayout` 包含 `Label` 元素、 `Entry` 和的 `Button` 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -499,7 +499,7 @@ VisualStateManager.GoToState(this, "Focused");
 
 如果您想要執行自己的視覺狀態，則必須 `VisualStateManager.GoToState` 從程式碼呼叫。 您通常會從頁面類別的程式碼後端檔案進行此呼叫。
 
-**[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** 範例中的**VSM 驗證**頁面會示範如何使用視覺狀態管理員連接到輸入驗證。 XAML 檔案包含 `StackLayout` 包含兩個 `Label` 元素、 `Entry` 和的 `Button` 。
+**[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** 範例中的 **VSM 驗證** 頁面會示範如何使用視覺狀態管理員連接到輸入驗證。 XAML 檔案包含 `StackLayout` 包含兩個 `Label` 元素、 `Entry` 和的 `Button` 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -613,7 +613,7 @@ public partial class VsmValidationPage : ContentPage
 
 在 Xamarin.Forms 手機上執行的應用程式通常會以直向或橫向的外觀比例來查看，而 Xamarin.Forms 在桌面上執行的程式可以調整大小以採用許多不同的大小和外觀比例。 設計完善的應用程式可能會以不同的頁面或視窗外型規格來顯示其內容。
 
-這項技術_有時也稱為彈性配置。_ 由於適應性配置只牽涉到程式的視覺效果，因此是 Visual State Manager 的理想應用程式。
+這項技術 _有時也稱為彈性配置。_ 由於適應性配置只牽涉到程式的視覺效果，因此是 Visual State Manager 的理想應用程式。
 
 一個簡單的範例是應用程式，它會顯示影響應用程式內容的小型按鈕集合。 在直向模式中，這些按鈕可能會顯示在頁面頂端的水準列中：
 
@@ -625,7 +625,7 @@ public partial class VsmValidationPage : ContentPage
 
 從上到下，程式正在通用 Windows 平臺、Android 和 iOS 上執行。
 
-[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)範例中的**VSM**調適型配置頁面會定義名為 "OrientationStates" 的群組，其中包含兩個名為 "直向" 和 "橫向" 的視覺狀態。  (更複雜的方法可能會以數種不同的頁面或視窗寬度為基礎。 ) 
+[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)範例中的 **VSM** 調適型配置頁面會定義名為 "OrientationStates" 的群組，其中包含兩個名為 "直向" 和 "橫向" 的視覺狀態。  (更複雜的方法可能會以數種不同的頁面或視窗寬度為基礎。 ) 
 
 VSM 標記會在 XAML 檔案中的四個位置進行。 `StackLayout`指定的 `mainStack` 包含功能表和內容，也就是 `Image` 元素。 這 `StackLayout` 應該會在直向模式中具有垂直方向，並在橫向模式中具有水準方向：
 

@@ -10,18 +10,18 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 154219f58c22005de0a0a2171aeedd04ec9f9ff9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4fd8c91ccf18e72c4e5881261637b7f41b2f3c79
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557955"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373610"
 ---
 # <a name="no-locxamarinforms-binding-path"></a>Xamarin.Forms 系結路徑
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-在所有先前的資料系結範例中， [`Path`](xref:Xamarin.Forms.Binding.Path) 類別的屬性 `Binding` (或 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) `Binding` 標記延伸) 的屬性已設定為單一屬性。 將 `Path` 設成「子屬性」**(屬性的屬性) 或集合成員實際上是可行的。
+在所有先前的資料系結範例中， [`Path`](xref:Xamarin.Forms.Binding.Path) 類別的屬性 `Binding` (或 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) `Binding` 標記延伸) 的屬性已設定為單一屬性。 將 `Path` 設成「子屬性」(屬性的屬性) 或集合成員實際上是可行的。
 
 例如，假設您的頁面包含 `TimePicker`：
 
@@ -38,7 +38,7 @@ ms.locfileid: "91557955"
 
 `Time` 屬性的類型為 `TimeSpan`，其具有 `TotalSeconds` 屬性。 `Time` 和 `TotalSeconds` 屬性只簡單使用句號連接。 `Path` 字串中的項目一律表示屬性，且不是這些屬性的類型。
 
-[Path Variations] \(路徑變化\)**** 頁面會顯示該範例及其他許多範例：
+[Path Variations] \(路徑變化\) 頁面會顯示該範例及其他許多範例：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -98,7 +98,7 @@ ms.locfileid: "91557955"
 
 ## <a name="paths-with-indexers"></a>具有索引子的路徑
 
-[Path Variations] \(路徑變化\)**** 頁面中第三個 `Label` 的繫結會參考 `System.Globalization` 命名空間中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 類別：
+[Path Variations] \(路徑變化\) 頁面中第三個 `Label` 的繫結會參考 `System.Globalization` 命名空間中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 類別：
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},

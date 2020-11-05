@@ -10,16 +10,16 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 71df780c648bcaa5a2ca4db388b52ac77a64d158
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 32997a1453ca52abdfa0cac60e7637ae3367eeb2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560542"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374195"
 ---
 # <a name="native-views-in-c"></a>C 中的原生視圖\#
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 
 _IOS、Android 和 UWP 的原生視圖可以直接從 Xamarin.Forms 使用 c # 建立的頁面參考。本文示範如何將原生視圖新增至 Xamarin.Forms 使用 c # 建立的版面配置，以及如何覆寫自訂視圖的版面配置，以更正其測量 API 的使用方式。_
 
@@ -29,7 +29,7 @@ _IOS、Android 和 UWP 的原生視圖可以直接從 Xamarin.Forms 使用 c # �
 
 下列螢幕擷取畫面示範已新增至的平臺特定視圖 Xamarin.Forms [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
 
-[![包含平臺特定視圖的 StackLayout](code-images/screenshots-sml.png)](code-images/screenshots.png#lightbox "包含平臺特定視圖的 StackLayout")
+[![包含 Platform-Specific 視圖的 StackLayout](code-images/screenshots-sml.png)](code-images/screenshots.png#lightbox "包含 Platform-Specific 視圖的 StackLayout")
 
 將平臺特定的視圖新增至配置的功能 Xamarin.Forms ，會由每個平臺上的兩個擴充方法啟用：
 
@@ -40,9 +40,9 @@ _IOS、Android 和 UWP 的原生視圖可以直接從 Xamarin.Forms 使用 c # �
 
 - **iOS** – Xamarin.Forms 。Platform. iOS
 - **Android** – Xamarin.Forms 。Platform. Android
-- **通用 Windows 平臺 (UWP) ** – Xamarin.Forms 。Platform. UWP
+- **通用 Windows 平臺 (UWP)** – Xamarin.Forms 。Platform. UWP
 
-## <a name="adding-platform-specific-views-on-each-platform"></a>在每個平臺上新增平臺特定的視圖
+## <a name="adding-platform-specific-views-on-each-platform"></a>在每個平臺上新增 Platform-Specific 的視圖
 
 下列各節將示範如何 Xamarin.Forms 在每個平臺上，將平臺特定的視圖新增至版面配置。
 
@@ -319,7 +319,7 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 ![使用 ArrangeOverride 委派的 UWP CustomControl](code-images/winrt-good-measurement.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何將原生視圖新增至 Xamarin.Forms 使用 c # 建立的版面配置，以及如何覆寫自訂視圖的版面配置，以更正其測量 API 的使用方式。
 

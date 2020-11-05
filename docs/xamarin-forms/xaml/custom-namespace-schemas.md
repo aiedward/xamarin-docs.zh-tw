@@ -10,16 +10,16 @@ ms.date: 12/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c7e0d90358ec230436276070ea2792539c446e5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f950db0694b21239b742867d519e893d9a62384c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561478"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374062"
 ---
 # <a name="xaml-custom-namespace-schemas-in-no-locxamarinforms"></a>中的 XAML 自訂命名空間架構 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 
 您可以在 XAML 中參考程式庫中的類型，方法是宣告程式庫的 XAML 命名空間，並以命名空間宣告指定 Common Language Runtime (CLR) 命名空間名稱和元件名稱：
 

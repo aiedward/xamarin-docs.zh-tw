@@ -11,16 +11,16 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 6135d8caec196ded385bc0f962f007c41d20e2cb
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 498e3b0bd2cb88df3e04dc19c66dbe671a8378dd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897490"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374442"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>使用 Azure 通知中樞傳送及接收推播通知 Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
 推播通知會將來自後端系統的資訊傳遞給行動應用程式。 Apple、Google 和其他平臺各自都有自己的推播通知服務 (PNS) 。 Azure 通知中樞可讓您跨平臺集中化通知，讓您的後端應用程式可以與單一中樞進行通訊，這會負責將通知散發至每個平臺特定的 PNS。
 

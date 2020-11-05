@@ -10,16 +10,16 @@ ms.date: 09/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b5c1310e300373fe75cbcd1464220acf989516ba
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2aebd86b4b15dec1a79cb60057e0c04f2e196ac5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555680"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372895"
 ---
 # <a name="refreshview-pull-direction-on-windows"></a>Windows 上的 RefreshView 提取方向
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此通用 Windows 平臺平臺特定可讓的提取方向 `RefreshView` 變更，以符合顯示資料的可滾動控制項方向。 它是在 XAML 中使用，方法是將可系結 `RefreshView.RefreshPullDirection` 屬性設定為 `RefreshPullDirection` 列舉值：
 

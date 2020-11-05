@@ -10,16 +10,16 @@ ms.date: 08/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 827b5618dce019e2dedb773f270fe1090da5d616
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2a9291a56ffa1a05f8e2041033279363f8ec4d34
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562505"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374143"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp mask 篩選
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 遮罩篩選器是操作繪圖物件之幾何和 Alpha 通道的效果。 若要使用遮罩篩選準則，請將的 [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) 屬性設定 `SKPaint` 為您透過 [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) 呼叫其中一個靜態方法所建立之類型的物件 `SKMaskFilter` 。
 
@@ -46,7 +46,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 
 下列範例會顯示這些樣式的效果。 `sigma`參數指定模糊的範圍。 在較舊版本的 Skia 中，模糊的範圍是以半徑值來表示。 如果您的應用程式偏好半徑值，則會有 [`SKMaskFilter.ConvertRadiusToSigma`](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) 可從一個轉換成另一個的靜態方法。 方法會將半徑乘以0.57735，並新增0.5。
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的 [**遮罩模糊實驗**] 頁面可讓您使用模糊樣式和 sigma 值進行實驗。 XAML 檔案具現化 `Picker` 具有四個 `SKBlurStyle` 列舉成員的，以及 `Slider` 用於指定 sigma 值的。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的 [ **遮罩模糊實驗** ] 頁面可讓您使用模糊樣式和 sigma 值進行實驗。 XAML 檔案具現化 `Picker` 具有四個 `SKBlurStyle` 列舉成員的，以及 `Slider` 用於指定 sigma 值的。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -189,11 +189,11 @@ IOS 螢幕擷取畫面顯示 `Solid` 樣式：文字字元仍會顯示為實心�
 
 右側的 UWP 螢幕擷取畫面會顯示 `Inner` 樣式。 模糊僅限於文字字元通常所佔用的區域。
 
-[**SkiaSharp 線性**](shaders/linear-gradient.md#transparency-and-gradients)漸層文章描述了**反映**漸層程式，此程式使用線性漸層和轉換模仿文字字串的反映：
+[**SkiaSharp 線性**](shaders/linear-gradient.md#transparency-and-gradients)漸層文章描述了 **反映** 漸層程式，此程式使用線性漸層和轉換模仿文字字串的反映：
 
 [![反映漸層](shaders/linear-gradient-images/ReflectionGradient.png "反映漸層")](shaders/linear-gradient-images/ReflectionGradient-Large.png#lightbox)
 
-**模糊反映**頁面會將單一語句新增至該程式碼：
+**模糊反映** 頁面會將單一語句新增至該程式碼：
 
 ```csharp
 public class BlurryReflectionPage : ContentPage

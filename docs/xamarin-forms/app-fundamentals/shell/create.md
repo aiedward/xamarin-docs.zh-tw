@@ -10,16 +10,16 @@ ms.date: 05/24/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9ce36af6b8b2a70a7993ff9605c6a7b7735fd974
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f4b15911f48b4260da8839f376800e95c63bf0e4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563272"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373623"
 ---
 # <a name="create-a-no-locxamarinforms-shell-application"></a>建立 Xamarin.Forms Shell 應用程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 建立 Xamarin.Forms Shell 應用程式的程式如下所示：
 
@@ -30,7 +30,7 @@ ms.locfileid: "91563272"
 
 ## <a name="subclass-the-shell-class"></a>將 Shell 類別子類別化
 
-建立 Shell 應用程式的第一個步驟 Xamarin.Forms 是將 XAML 檔案新增至子類別化類別的共用程式碼專案 `Shell` 。 這個檔案可命名為任何名稱，但建議命名為 **AppShell**。 下列程式碼範例顯示新建的 **AppShell.xaml** 檔案：
+建立 Shell 應用程式的第一個步驟 Xamarin.Forms 是將 XAML 檔案新增至子類別化類別的共用程式碼專案 `Shell` 。 這個檔案可命名為任何名稱，但建議命名為 **AppShell** 。 下列程式碼範例顯示新建的 **AppShell.xaml** 檔案：
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -40,7 +40,7 @@ ms.locfileid: "91563272"
 </Shell>
 ```
 
-下列範例顯示程式碼後置檔案 **AppShell.xaml.cs**：
+下列範例顯示程式碼後置檔案 **AppShell.xaml.cs** ：
 
 ```csharp
 using Xamarin.Forms;

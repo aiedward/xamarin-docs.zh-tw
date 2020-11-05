@@ -10,16 +10,16 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3df3a606c54d7367079638d48330dfe1b214043b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5f12dbd4ef0cfea9d276fd8c939afab585541ece
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563181"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373888"
 ---
 # <a name="pixels-and-device-independent-units"></a>像素與裝置獨立單位
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索 SkiaSharp 座標和座標之間的差異 Xamarin.Forms_
 
@@ -29,9 +29,9 @@ _探索 SkiaSharp 座標和座標之間的差異 Xamarin.Forms_
 
 如果您曾經 Xamarin.Forms 進行程式設計，您可能會覺得 Xamarin.Forms 座標和大小。 這兩篇文章中所繪製的圓形可能有點小。
 
-這些圓形與大小的 *比較很小* Xamarin.Forms 。 根據預設，SkiaSharp 會以圖元單位繪製，而 Xamarin.Forms 基底座標和大小會在基礎平臺所建立的裝置獨立單位上。 您 Xamarin.Forms 可以在第5章中找到關於座標系統的 (詳細資訊[。處理使用](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)*建立 Mobile Apps Xamarin.Forms *之書籍的大小。 ) 
+這些圓形與大小的 *比較很小* Xamarin.Forms 。 根據預設，SkiaSharp 會以圖元單位繪製，而 Xamarin.Forms 基底座標和大小會在基礎平臺所建立的裝置獨立單位上。 您 Xamarin.Forms 可以在第5章中找到關於座標系統的 (詳細資訊 [。處理使用](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)*建立 Mobile Apps Xamarin.Forms* 之書籍的大小。 ) 
 
-[**SkewSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式中的頁面，其具有**介面大小**，會使用 SkiaSharp 文字輸出來顯示三個不同來源的顯示介面大小：
+[**SkewSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式中的頁面，其具有 **介面大小** ，會使用 SkiaSharp 文字輸出來顯示三個不同來源的顯示介面大小：
 
 - 物件的一般 Xamarin.Forms [`Width`](xref:Xamarin.Forms.VisualElement.Width) 和 [`Height`](xref:Xamarin.Forms.VisualElement.Height) 屬性 `SKCanvasView` 。
 - [`CanvasSize`](xref:SkiaSharp.Views.Forms.SKCanvasView.CanvasSize)物件的屬性 `SKCanvasView` 。
@@ -114,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 為了維持相同的影像解析度，更好的解決方法是撰寫您自己的簡單函式，以便在兩個座標系統之間進行轉換。
 
-除了 `DrawCircle` 方法之外， `SKCanvas` 也會定義兩個 `DrawOval` 繪製橢圓形的方法。 橢圓形是由兩個半徑所定義，而不是單一半徑。 這些稱為 *主要半徑* 和 *次要半徑*。 `DrawOval`方法會繪製一個橢圓形，其中的兩個半徑平行至 X 和 Y 軸。  (如果您需要繪製的橢圓具有不平行至 X 和 Y 軸的軸，您可以使用旋轉轉換，如文章中所 [**討論的旋轉轉換或圖形**](../transforms/rotate.md) 路徑，如文章中的 [**三種繪製弧線**](../curves/arcs.md)) 的方式所述。 方法的這個多載 [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) 會命名兩個半徑參數 `rx` ，並 `ry` 指出它們平行于 X 和 Y 軸：
+除了 `DrawCircle` 方法之外， `SKCanvas` 也會定義兩個 `DrawOval` 繪製橢圓形的方法。 橢圓形是由兩個半徑所定義，而不是單一半徑。 這些稱為 *主要半徑* 和 *次要半徑* 。 `DrawOval`方法會繪製一個橢圓形，其中的兩個半徑平行至 X 和 Y 軸。  (如果您需要繪製的橢圓具有不平行至 X 和 Y 軸的軸，您可以使用旋轉轉換，如文章中所 [**討論的旋轉轉換或圖形**](../transforms/rotate.md) 路徑，如文章中的 [**三種繪製弧線**](../curves/arcs.md)) 的方式所述。 方法的這個多載 [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) 會命名兩個半徑參數 `rx` ，並 `ry` 指出它們平行于 X 和 Y 軸：
 
 ```csharp
 public void DrawOval (Single cx, Single cy, Single rx, Single ry, SKPaint paint)

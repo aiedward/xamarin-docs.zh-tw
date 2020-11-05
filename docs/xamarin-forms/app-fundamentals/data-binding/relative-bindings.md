@@ -10,16 +10,16 @@ ms.date: 12/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 24fa816519b05b46c38015fa602a4e70fbc07d16
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 859f5d3c196a572aa22a5f5a29801ad4ee44441a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560386"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374585"
 ---
 # <a name="no-locxamarinforms-relative-bindings"></a>Xamarin.Forms 相對系結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 相對系結可讓您設定相對於系結目標位置的系結來源。 它們是使用 `RelativeSource` 標記延伸來建立，並設定為系結 `Source` 運算式的屬性。
 

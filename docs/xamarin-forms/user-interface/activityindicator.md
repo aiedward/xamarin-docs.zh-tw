@@ -10,15 +10,15 @@ ms.date: 07/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 76136067f40d378a6bfa28698f15b6872bb40c93
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 739fc90eda513e4627f5804283bdcab9c0cbacb4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562340"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373116"
 ---
 # <a name="no-locxamarinforms-activityindicator"></a>Xamarin.Forms ActivityIndicator
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 
 Xamarin.Forms [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) 控制項會顯示一個動畫，以顯示應用程式正在參與冗長的活動。 與不同的是 [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) ， `ActivityIndicator` 不會提供進度的指示。 `ActivityIndicator`繼承自 [`View`](xref:Xamarin.Forms.View) 。
 

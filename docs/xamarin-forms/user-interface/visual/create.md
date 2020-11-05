@@ -10,16 +10,16 @@ ms.date: 03/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a8e8388a6a460b3a2958d3ab3b9a4c9c34ea1831
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3cf29c550a6ef3e4f12bdc3a1525d33b53198220
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556460"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374385"
 ---
 # <a name="create-a-no-locxamarinforms-visual-renderer"></a>建立 Xamarin.Forms 視覺效果轉譯器
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
 Xamarin.Forms 視覺效果可讓轉譯器建立並選擇性地套用至 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 物件，而不需要建立子類別 Xamarin.Forms 。 `IVisual`將型別指定為其一部分的轉譯器， `ExportRendererAttribute` 將會用來呈現選擇的視圖，而不是預設轉譯器。 轉譯器選取時， `Visual` 會檢查視圖的屬性，並將其包含在轉譯器選取進程中。
 

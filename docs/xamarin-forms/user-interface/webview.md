@@ -10,22 +10,22 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d535956e03ac02e2cf0c5d7528ee8e363a2a1e55
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9b22b46cb5452e558328c383ed97e66a60cfc166
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561647"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374130"
 ---
 # <a name="no-locxamarinforms-webview"></a>Xamarin.Forms 切換
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
 [`WebView`](xref:Xamarin.Forms.WebView) 是在您的應用程式中顯示 web 和 HTML 內容的視圖：
 
 ![在應用程式瀏覽器中](webview-images/in-app-browser.png)
 
-## <a name="content"></a>內容
+## <a name="content"></a>Content
 
 `WebView` 支援下列類型的內容：
 
@@ -117,7 +117,7 @@ browser.Source = htmlSource;
 
 ### <a name="local-html-content"></a>本機 HTML 內容
 
-Web 程式可顯示應用程式中內嵌的 HTML、CSS 和 JavaScript 內容。 例如：
+Web 程式可顯示應用程式中內嵌的 HTML、CSS 和 JavaScript 內容。 例如︰
 
 ```html
 <html>
@@ -175,7 +175,7 @@ source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 
 #### <a name="ios"></a>iOS
 
-在 iOS 上，web 內容應該位於專案的 [根目錄] 或 [ **資源** ] 目錄中，並具有組建動作 *套件套件*，如下所示：
+在 iOS 上，web 內容應該位於專案的 [根目錄] 或 [ **資源** ] 目錄中，並具有組建動作 *套件套件* ，如下所示：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -245,7 +245,7 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html")))
 
 #### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-在通用 Windows 平臺 (UWP) 專案中，將 HTML、CSS 和影像放在專案根目錄中，並將 [組建] 動作設定為 [ *內容*]。
+在通用 Windows 平臺 (UWP) 專案中，將 HTML、CSS 和影像放在專案根目錄中，並將 [組建] 動作設定為 [ *內容* ]。
 
 `BaseUrl`應設定為 `"ms-appx-web:///"` ：
 
@@ -263,12 +263,12 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>巡覽
+## <a name="navigation"></a>導覽
 
 Web 程式支援透過許多可用的方法和屬性進行流覽：
 
-- **GoForward ( # B1 ** &ndash; 如果 `CanGoForward` 是 true，則呼叫會 `GoForward` 向前流覽至下一個流覽過的頁面。
-- **GoBack ( # B1 ** &ndash; 若 `CanGoBack` 為 true，則呼叫 `GoBack` 將會流覽到最後一個流覽過的頁面。
+- **GoForward ( # B1** &ndash; 如果 `CanGoForward` 是 true，則呼叫會 `GoForward` 向前流覽至下一個流覽過的頁面。
+- **GoBack ( # B1** &ndash; 若 `CanGoBack` 為 true，則呼叫 `GoBack` 將會流覽到最後一個流覽過的頁面。
 - **>cangoback** &ndash;`true`如果有可流覽的頁面，則為， `false` 如果瀏覽器位於起始 URL，則為。
 - **>cangoforward** &ndash;`true`如果使用者已向後導覽，並可移至已造訪的頁面。
 
@@ -329,7 +329,7 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-這樣就完成了！
+就這麼簡單！
 
 ![Web 瀏覽按鈕](webview-images/in-app-browser.png)
 
@@ -355,7 +355,7 @@ Web 工作會引發下列事件，以協助您回應狀態的變更：
 - `Source` –執行導覽的元素。
 - `Url` –導覽目的地。
 
-如果您預期使用的網頁需要很長的時間載入，請考慮使用 [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) 和 [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) 事件來執行狀態指標。 例如：
+如果您預期使用的網頁需要很長的時間載入，請考慮使用 [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) 和 [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) 事件來執行狀態指標。 例如︰
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -430,7 +430,7 @@ webView.Reload();
 - **Android** &ndash;`INTERNET`只有在顯示來自網路的內容時才需要。 本機內容不需要任何特殊許可權。
 - **iOS** &ndash; 不需要任何特殊許可權。
 
-## <a name="layout"></a>配置
+## <a name="layout"></a>Layout
 
 不同于其他大部分 Xamarin.Forms 的視圖，在 `WebView` `HeightRequest` `WidthRequest` StackLayout 或 RelativeLayout 中包含時，會要求和都必須指定。 如果您無法指定這些屬性， `WebView` 將不會呈現。
 
@@ -475,7 +475,7 @@ AbsoluteLayout *但沒有* WidthRequest & HeightRequest：
 </AbsoluteLayout>
 ```
 
-*不含*WidthRequest 的方格 & HeightRequest。 格線是幾個不需要指定所要求高度和寬度的版面配置之一。：
+*不含* WidthRequest 的方格 & HeightRequest。 格線是幾個不需要指定所要求高度和寬度的版面配置之一。：
 
 ```xaml
 <Grid>
@@ -557,9 +557,9 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 這項工作的必要條件如下：
 
-- ** Xamarin.Forms 4.5 或更高版本**。 Xamarin.Forms 如果您的應用程式使用材質視覺效果，則需要4.6 或更高版本。
-- **13.10.0.17 或更高版本**。 檢查 [Visual Studio 中](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)的 Xamarin 版本。 此版本的 Xamarin 隨附于 Visual Studio for Mac dbms-guide-8.4.1 和 Visual Studio 16.4.3 版。
-- **移除的參考 `UIWebView` **。 您的程式碼不應該有任何參考 `UIWebView` 或任何使用的類別 `UIWebView` 。
+- **Xamarin.Forms 4.5 或更高版本** 。 Xamarin.Forms 如果您的應用程式使用材質視覺效果，則需要4.6 或更高版本。
+- **13.10.0.17 或更高版本** 。 檢查 [Visual Studio 中](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)的 Xamarin 版本。 此版本的 Xamarin 隨附于 Visual Studio for Mac dbms-guide-8.4.1 和 Visual Studio 16.4.3 版。
+- **移除的參考 `UIWebView`** 。 您的程式碼不應該有任何參考 `UIWebView` 或任何使用的類別 `UIWebView` 。
 
 如需偵測和移除參考的詳細資訊 `UIWebView` ，請參閱 [UIWebView](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)取代。
 
@@ -569,9 +569,9 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 請遵循下列步驟，讓連結器移除 `UIWebView` 參考：
 
-1. **開啟 iOS 專案屬性** &ndash; 以滑鼠右鍵按一下您的 iOS 專案，然後選擇 [ **屬性**]。
+1. **開啟 iOS 專案屬性** &ndash; 以滑鼠右鍵按一下您的 iOS 專案，然後選擇 [ **屬性** ]。
 1. **流覽至 [IOS 組建] 區段** &ndash; 選取 [ **IOS 組建** ] 區段。
-1. **更新其他 mtouch 引數** &ndash; 在 [ **其他 mtouch 引數** ] 中， `--optimize=experimental-xforms-product-type` 除了任何可能已存在) 中的值之外，還會新增此旗標 (。 注意：此旗標會搭配設定為 [**僅 SDK** ] 或 [**全部連結**] 的**連結器行為**一起運作。 如果基於任何原因，您會在將連結器行為設定為 [全部] 時看到錯誤，這很可能是因為應用程式程式碼或協力廠商程式庫中的問題，而不是連結器安全。 如需連結器的詳細資訊，請參閱 [連結 Xamarin IOS 應用程式](~/ios/deploy-test/linker.md)。
+1. **更新其他 mtouch 引數** &ndash; 在 [ **其他 mtouch 引數** ] 中， `--optimize=experimental-xforms-product-type` 除了任何可能已存在) 中的值之外，還會新增此旗標 (。 注意：此旗標會搭配設定為 [ **僅 SDK** ] 或 [ **全部連結** ] 的 **連結器行為** 一起運作。 如果基於任何原因，您會在將連結器行為設定為 [全部] 時看到錯誤，這很可能是因為應用程式程式碼或協力廠商程式庫中的問題，而不是連結器安全。 如需連結器的詳細資訊，請參閱 [連結 Xamarin IOS 應用程式](~/ios/deploy-test/linker.md)。
 1. **更新所有組建** &ndash; 設定您可以使用視窗頂端 **的 [設定** ] 和 [ **平臺** ] 清單來更新所有組建設定。 要更新的最重要設定是 **Release/iPhone** 設定，因為這通常用來建立 App Store 提交的組建。
 
 您可以在此螢幕擷取畫面中看到具有新旗標的視窗：
@@ -582,9 +582,9 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 請遵循下列步驟，讓連結器移除 `UIWebView` 參考：
 
-1. **開啟 iOS 專案選項** &ndash; 以滑鼠右鍵按一下您的 iOS 專案，然後選擇 [ **選項**]。
+1. **開啟 iOS 專案選項** &ndash; 以滑鼠右鍵按一下您的 iOS 專案，然後選擇 [ **選項** ]。
 1. **流覽至 [IOS 組建] 區段** &ndash; 選取 [ **IOS 組建** ] 區段。
-1. **_mtouch_更新** &ndash; **其他_mtouch_引數**中的其他 mtouch 引數會將此旗標新增 `--optimize=experimental-xforms-product-type` (除了任何可能已存在) 中的值。 注意：此旗標會搭配設定為 [**僅 SDK** ] 或 [**全部連結**] 的**連結器行為**一起運作。 如果基於任何原因，您會在將連結器行為設定為 [全部] 時看到錯誤，這很可能是因為應用程式程式碼或協力廠商程式庫中的問題，而不是連結器安全。 如需連結器的詳細資訊，請參閱 [連結 Xamarin IOS 應用程式](~/ios/deploy-test/linker.md)。
+1. **_mtouch_ 更新** &ndash; **其他 _mtouch_ 引數** 中的其他 mtouch 引數會將此旗標新增 `--optimize=experimental-xforms-product-type` (除了任何可能已存在) 中的值。 注意：此旗標會搭配設定為 [ **僅 SDK** ] 或 [ **全部連結** ] 的 **連結器行為** 一起運作。 如果基於任何原因，您會在將連結器行為設定為 [全部] 時看到錯誤，這很可能是因為應用程式程式碼或協力廠商程式庫中的問題，而不是連結器安全。 如需連結器的詳細資訊，請參閱 [連結 Xamarin IOS 應用程式](~/ios/deploy-test/linker.md)。
 1. **更新所有組建** &ndash; 設定您可以使用視窗頂端 **的 [設定** ] 和 [ **平臺** ] 清單來更新所有組建設定。 要更新的最重要設定是 **Release/iPhone** 設定，因為這通常用來建立 App Store 提交的組建。
 
 您可以在此螢幕擷取畫面中看到具有新旗標的視窗：

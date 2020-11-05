@@ -10,16 +10,16 @@ ms.date: 05/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 32de64c0fa6b0ec0a0b03c8075710e1cbc92dd49
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5f48300b6c974bbbb0106f1afaa6c863f8159c58
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557409"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374634"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解如何使用 SkiaSharp 以三種不同的方式定義弧形_
 
@@ -63,7 +63,7 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 `startAngle`或 `sweepAngle` 引數可以是負數：弧度的正值是順時針的 `sweepAngle` ，而針對負值則是逆時針的。
 
-但是， `AddArc` 不*not*會定義封閉的輪廓。 如果您在 `LineTo` 之後呼叫 `AddArc` ，就會從弧線的結尾處繪製一行到方法中的點 `LineTo` ，而相同的也是 true `ArcTo` 。
+但是， `AddArc` 不 *not* 會定義封閉的輪廓。 如果您在 `LineTo` 之後呼叫 `AddArc` ，就會從弧線的結尾處繪製一行到方法中的點 `LineTo` ，而相同的也是 true `ArcTo` 。
 
 `AddArc` 自動啟動新的輪廓，而且在功能上相當於使用的最後一個引數進行的呼叫 `ArcTo` `true` ：
 
@@ -219,7 +219,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="the-tangent-arc"></a>正切曲線
 
-所支援的第二種弧線類型 `SKPath` 是 *正切*函數，因此會呼叫，因為弧形是與兩個連接線相切的圓形圓周。
+所支援的第二種弧線類型 `SKPath` 是 *正切* 函數，因此會呼叫，因為弧形是與兩個連接線相切的圓形圓周。
 
 您可以使用  [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) 兩個參數來呼叫方法 `SKPoint` ，或使用 [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single)) 不同的 `Single` 點參數多載，將正切函數新增至路徑：
 
@@ -235,7 +235,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 - 如果尚未呼叫，則輪廓的目前點或點 (0，0) `MoveTo`
 - 方法的第一個點引數 `ArcTo` ，稱為 *邊角點*
-- 的第二個點引數 `ArcTo` ，稱為「 *目的地點*」：
+- 的第二個點引數 `ArcTo` ，稱為「 *目的地點* 」：
 
 ![開始反正切弧線的三個點](arcs-images/tangentarcthreepoints.png)
 
@@ -547,7 +547,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 雖然這種定義弧線音效的方法是在第一次遇到複雜的情況，但它是唯一允許以旋轉橢圓形定義弧線的方法，而且當您需要將弧線與等高線的其他部分整合時，這通常是最簡單的方法。
 
-**橢圓形弧線**頁面可讓您以互動方式設定這兩個點，以及橢圓形的大小和旋轉。 `EllipticalArcPage`類別衍生自 `InteractivePage` ，而 `PaintSurface` [**EllipticalArcPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs)程式碼後端檔案中的處理常式會繪製四個弧線：
+**橢圓形弧線** 頁面可讓您以互動方式設定這兩個點，以及橢圓形的大小和旋轉。 `EllipticalArcPage`類別衍生自 `InteractivePage` ，而 `PaintSurface` [**EllipticalArcPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs)程式碼後端檔案中的處理常式會繪製四個弧線：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

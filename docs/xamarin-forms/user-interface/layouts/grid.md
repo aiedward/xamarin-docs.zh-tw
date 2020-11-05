@@ -10,16 +10,16 @@ ms.date: 06/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 59a4d5c0730719d6cc332728c6cab641d02239b4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 226c20acef7fc65cd0a4daf082c86e3c9c17bf54
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563558"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373768"
 ---
 # <a name="no-locxamarinforms-grid"></a>Xamarin.Forms 網 格
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
 [![：：：非 loc (Xamarin. Forms) ：：： Grid](grid-images/layouts.png "：：：非 loc (Xamarin. Forms) ：：： Grid")](grid-images/layouts-large.png#lightbox "：：：非 loc (Xamarin. Forms) ：：： Grid")
 
@@ -270,7 +270,7 @@ public class BasicGridPageCS : ContentPage
 
 在程式碼中，若要指定物件的高度 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) 和物件的寬度， [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) 您可以使用結構的值 [`GridLength`](xref:Xamarin.Forms.GridLength) ，通常會與列舉組合使用 [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) 。
 
-上述範例程式碼也會顯示幾種不同的方法，可將子系加入至 [`Grid`](xref:Xamarin.Forms.Grid) ，並指定其所在的資料格。 使用 `Add` 指定 *left*、 *right*、 *top*和 *底端* 引數的多載時， *左邊* 和 *top* 引數一律會參考中的儲存格，而 `Grid` *右邊* 和 *底部* 引數則會顯示為外部的資料格 `Grid` 。 這是因為 *右邊* 的引數必須一律大於 *左邊* 的引數，而 *底部* 的引數必須一律大於 *top* 引數。 下列範例假設 2x2 `Grid` ，會使用這兩個多載來顯示對等的程式碼 `Add` ：
+上述範例程式碼也會顯示幾種不同的方法，可將子系加入至 [`Grid`](xref:Xamarin.Forms.Grid) ，並指定其所在的資料格。 使用 `Add` 指定 *left* 、 *right* 、 *top* 和 *底端* 引數的多載時， *左邊* 和 *top* 引數一律會參考中的儲存格，而 `Grid` *右邊* 和 *底部* 引數則會顯示為外部的資料格 `Grid` 。 這是因為 *右邊* 的引數必須一律大於 *左邊* 的引數，而 *底部* 的引數必須一律大於 *top* 引數。 下列範例假設 2x2 `Grid` ，會使用這兩個多載來顯示對等的程式碼 `Add` ：
 
 ```csharp
 // left, top
@@ -344,7 +344,7 @@ public GridSpacingPageCS()
 }
 ```
 
-## <a name="alignment"></a>對齊
+## <a name="alignment"></a>對應項目
 
 [`Grid`](xref:Xamarin.Forms.Grid)和屬性可以將中的子視圖置於其資料格 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 內 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。 您可以從結構將這些屬性設定為下欄欄位 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) ：
 

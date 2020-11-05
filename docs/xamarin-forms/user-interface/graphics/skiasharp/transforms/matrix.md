@@ -10,16 +10,16 @@ ms.date: 04/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 911365b6293fecd3bf309f3e61d9b232d90b7a13
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e26e4b66cfc9648eee3c1caab2f8cdc0c02d5c7b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556551"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374559"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩陣轉換
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用多功能轉換矩陣深入探索 SkiaSharp 轉換_
 
@@ -153,7 +153,7 @@ SKMatrix matrix = SKMatrix.MakeIdentity();
 
 ## <a name="matrix-multiplication"></a>矩陣乘法
 
-使用轉換矩陣的優點之一，就是可以透過矩陣乘法取得複合轉換，這在 SkiaSharp 檔中通常稱為「 *串連*」。 中許多轉換相關的方法都是 `SKCanvas` 指「預先串連」或「預先連接」。 這指的是乘法的順序，這一點很重要，因為矩陣乘法不是可交換的。
+使用轉換矩陣的優點之一，就是可以透過矩陣乘法取得複合轉換，這在 SkiaSharp 檔中通常稱為「 *串連* 」。 中許多轉換相關的方法都是 `SKCanvas` 指「預先串連」或「預先連接」。 這指的是乘法的順序，這一點很重要，因為矩陣乘法不是可交換的。
 
 例如，方法的檔顯示「 [`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single)) 使用指定的翻譯預先 concats 目前的矩陣」，而該方法的檔 [`Scale`](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single)) 指出它「預先 concats 目前的矩陣並具有指定的小數位數」。
 
@@ -223,7 +223,7 @@ canvas.Translate(–px, –py);
 
 `SKMatrix` 也會定義名為的屬性，其 [`Values`](xref:SkiaSharp.SKMatrix.Values) 類型為 `float[]` 。 您可以使用這個屬性來設定或取得其中九個值，順序為、、、、、、、 `ScaleX` `SkewX` `TransX` `SkewY` `ScaleY` `TransY` `Persp0` `Persp1` 和 `Persp2` 。
 
-`Persp0`、 `Persp1` 和資料 `Persp2` 格會在[**非仿射轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)文章中討論。 如果這些資料格的預設值為0、0和1，則轉換會乘以如下的座標點：
+`Persp0`、 `Persp1` 和資料 `Persp2` 格會在 [**非仿射轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)文章中討論。 如果這些資料格的預設值為0、0和1，則轉換會乘以如下的座標點：
 
 <pre>
               │ ScaleX  SkewY   0 │
@@ -450,7 +450,7 @@ SKRect transformedRect = matrix.MapRect(rect);
 
 的 `Center` 屬性會 `TouchPoint` 指出物件的位置。 這個屬性可以設定為初始化位置;當使用者在畫布周圍拖曳圓圈時，屬性就會變更。
 
-**顯示仿射矩陣頁面**也需要 [`MatrixDisplay`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) 類別。 這個類別會顯示物件的儲存格 `SKMatrix` 。 它有兩個公用方法： `Measure` 取得轉譯矩陣的維度，以及 `Paint` 顯示它。 類別包含 `MatrixPaint` `SKPaint` 可取代為不同字型大小或色彩的型別屬性（property）。
+**顯示仿射矩陣頁面** 也需要 [`MatrixDisplay`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) 類別。 這個類別會顯示物件的儲存格 `SKMatrix` 。 它有兩個公用方法： `Measure` 取得轉譯矩陣的維度，以及 `Paint` 顯示它。 類別包含 `MatrixPaint` `SKPaint` 可取代為不同字型大小或色彩的型別屬性（property）。
 
 [**ShowAffineMatrixPage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml)檔案具現化， `SKCanvasView` 並附加 `TouchEffect` 。 [**ShowAffineMatrixPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs)程式碼後置檔案會建立三個 `TouchPoint` 物件，然後將它們設定為對應至從內嵌資源載入之點陣圖三個角落的位置：
 

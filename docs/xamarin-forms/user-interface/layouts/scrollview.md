@@ -10,16 +10,16 @@ ms.date: 05/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af8513d86b7cf02ec7adcee75241d8ce99e2dfab
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f59d58ed582b3fd6fd5cc25b08bbf1c262d602b4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556824"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372675"
 ---
 # <a name="no-locxamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
 
 [![：：：非 loc (Xamarin. Forms) ：：： ScrollView](scrollview-images/layouts.png "：：：非 loc (Xamarin. Forms) ：：： ScrollView")](scrollview-images/layouts-large.png#lightbox "：：：非 loc (Xamarin. Forms) ：：： ScrollView")
 
@@ -203,7 +203,7 @@ public class BlackCatPageCS : ContentPage
 }
 ```
 
-## <a name="orientation"></a>方向
+## <a name="orientation"></a>Orientation
 
 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 具有 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 屬性，代表的滾動方向 `ScrollView` 。 這個屬性的類型是 [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) ，它會定義下列成員：
 

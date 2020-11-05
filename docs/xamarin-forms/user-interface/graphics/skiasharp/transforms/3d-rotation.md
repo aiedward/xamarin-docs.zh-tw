@@ -10,16 +10,16 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9bb2720d60f62c0bac6ab30007e226c362d1c5cd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: dfc7ec9b029cedf5584590e17565069bbf83ed2a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563870"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373168"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的3D 旋轉
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用非仿射轉換來旋轉3D 空間中的2D 物件。_
 
@@ -414,7 +414,7 @@ public partial class Rotation3DPage : ContentPage
 
 [![旋轉3D 頁面的三重螢幕擷取畫面](3d-rotation-images/rotation3d-small.png)](3d-rotation-images/rotation3d-large.png#lightbox "旋轉3D 頁面的三重螢幕擷取畫面")
 
-**動畫旋轉 3d**也會 `SKMatrix44` 在3d 空間中用來建立文字字串的動畫。 `textPaint`設定為欄位的物件會在函式中用來判斷文字的界限：
+**動畫旋轉 3d** 也會 `SKMatrix44` 在3d 空間中用來建立文字字串的動畫。 `textPaint`設定為欄位的物件會在函式中用來判斷文字的界限：
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage

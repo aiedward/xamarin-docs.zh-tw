@@ -10,16 +10,16 @@ ms.date: 08/19/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e34144f253b19796ea6ec83cb3873fe373aeb914
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: aec9f0ec0b3092a5f84f183fb90cfc8bc9da7324
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560607"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374221"
 ---
 # <a name="no-locxamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms 在 Xamarin 原生專案中
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/native2forms)
 
 一般而言， Xamarin.Forms 應用程式會包含一或多個衍生自的頁面 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ，而且這些頁面會由 .NET Standard 程式庫專案或共用專案中的所有平臺共用。 不過，原生表單允許 `ContentPage` 將衍生的頁面直接新增至原生 Xamarin. iOS、Xamarin. Android 和 UWP 應用程式。 相較于讓原生專案 `ContentPage` 從 .NET Standard 程式庫專案或共用專案取用衍生的頁面，將頁面直接新增至原生專案的好處是可以使用原生視圖擴充頁面。 然後可以在 XAML 中以 XAML 命名原生視圖 `x:Name` ，並從程式碼後端參考。 如需原生視圖的詳細資訊，請參閱 [原生視圖](~/xamarin-forms/platform/native-views/index.md)。
 
@@ -34,7 +34,7 @@ Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在原生專案中
 Xamarin.Forms 在 `Forms.Init` 原生專案可以建立衍生的頁面之前，必須先呼叫方法來初始化 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。 選擇要執行這項作業的時機，主要取決於應用程式流程中最方便的時間-它可以在應用程式啟動時執行，或是在建立衍生的頁面之前執行 `ContentPage` 。 在本文和隨附的範例應用程式中， `Forms.Init` 會在應用程式啟動時呼叫此方法。
 
 > [!NOTE]
-> **NativeForms**範例應用程式解決方案未包含任何 Xamarin.Forms 專案。 相反地，它是由 Xamarin 專案、Xamarin. Android 專案和 UWP 專案所組成。 每個專案都是使用原生表單來取用衍生頁面的原生專案 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。 不過，原生專案無法 `ContentPage` 從 .NET Standard 程式庫專案或共用專案取用衍生的頁面，因此沒有原因。
+> **NativeForms** 範例應用程式解決方案未包含任何 Xamarin.Forms 專案。 相反地，它是由 Xamarin 專案、Xamarin. Android 專案和 UWP 專案所組成。 每個專案都是使用原生表單來取用衍生頁面的原生專案 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。 不過，原生專案無法 `ContentPage` 從 .NET Standard 程式庫專案或共用專案取用衍生的頁面，因此沒有原因。
 
 使用原生表單時， Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.DependencyService) 、和資料系結引擎等功能仍可 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 正常運作。 不過，您必須使用原生流覽 API 來執行頁面流覽。
 

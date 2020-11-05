@@ -10,16 +10,16 @@ ms.date: 09/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6d568e948f02952fa71ed21af48160a53bfc419
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ee69ca1e95f7dcffa60387579e89c3a2d3e985da
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556538"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374286"
 ---
 # <a name="touch-manipulations"></a>觸控操作
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用矩陣轉換來執行觸控拖曳、捏合和旋轉_
 
@@ -150,7 +150,7 @@ public partial class BitmapDraggingPage : ContentPage
 }
 ```
 
-當手指先觸及畫面時，就會引發型別的事件 `TouchActionType.Pressed` 。 第一個工作是判斷手指是否觸及點陣圖。 這類工作通常稱為 _點擊測試_。 在此情況下，您可以藉由建立 `SKRect` 對應到點陣圖的值、套用矩陣轉換給它，然後 `MapRect` 判斷觸控點是否在轉換的矩形內，來完成點擊測試。
+當手指先觸及畫面時，就會引發型別的事件 `TouchActionType.Pressed` 。 第一個工作是判斷手指是否觸及點陣圖。 這類工作通常稱為 _點擊測試_ 。 在此情況下，您可以藉由建立 `SKRect` 對應到點陣圖的值、套用矩陣轉換給它，然後 `MapRect` 判斷觸控點是否在轉換的矩形內，來完成點擊測試。
 
 如果是這種情況，則會將 `touchId` 欄位設定為觸控識別碼，並儲存手指位置。
 
@@ -268,11 +268,11 @@ public partial class BitmapScalingPage : ContentPage
 
 接下來，程式會計算相對於 pivot 點的新手指位置的兩個向量，以及相對於 pivot 點的舊指標位置。 這些向量的比例是調整因素。 由於零除是有可能的，因此必須檢查這些值是否為無限值或 NaN (不是) 值的數位。 如果一切正常，縮放轉換會與 `SKMatrix` 儲存為欄位的值串連。
 
-當您試驗此頁面時，您會注意到您可以使用一或兩個手指來拖曳點陣圖，或使用兩個手指進行縮放。 調整 _是非_等的，這表示水準和垂直方向的縮放比例可能不同。 這會扭曲外觀比例，但也可讓您翻轉點陣圖以建立鏡像影像。 您也可能會發現，您可以將點陣圖壓縮成零的維度，而它就會消失。 在實際執行的程式碼中，您會想要防範這種情況。
+當您試驗此頁面時，您會注意到您可以使用一或兩個手指來拖曳點陣圖，或使用兩個手指進行縮放。 調整 _是非_ 等的，這表示水準和垂直方向的縮放比例可能不同。 這會扭曲外觀比例，但也可讓您翻轉點陣圖以建立鏡像影像。 您也可能會發現，您可以將點陣圖壓縮成零的維度，而它就會消失。 在實際執行的程式碼中，您會想要防範這種情況。
 
 ## <a name="two-finger-rotation"></a>雙手指旋轉
 
-**點陣圖旋轉**頁面可讓您使用兩個手指來旋轉或 isotropic 縮放。 點陣圖一律會保留其正確的外觀比例。 針對這兩個工作，使用兩個手指來旋轉和非雙向調整的效果並不佳，因為手指的移動非常類似。
+**點陣圖旋轉** 頁面可讓您使用兩個手指來旋轉或 isotropic 縮放。 點陣圖一律會保留其正確的外觀比例。 針對這兩個工作，使用兩個手指來旋轉和非雙向調整的效果並不佳，因為手指的移動非常類似。
 
 此計畫中的第一個重大差異在於點擊測試邏輯。 先前的程式使用的 `Contains` 方法 `SKRect` 來判斷觸控點是否在對應到點陣圖的已轉換矩形內。 但是當使用者操作點陣圖時，點陣圖可能會旋轉，而且 `SKRect` 無法正確地表示旋轉的矩形。 您可能會擔心點擊測試邏輯必須在該情況下實作為複雜的分析幾何。
 
@@ -926,7 +926,7 @@ public partial class TouchManipulationPage : ContentPage
 
 隔離觸控處理常式代碼（例如和）的優點之一， `TouchManipulationBitmap` `TouchManipulationManager` 就是在允許使用者操作多個點陣圖的程式中重複使用這些類別的能力。
 
-**點陣圖散佈圖**頁面會示範如何完成這項操作。 類別不會定義類型的欄位，而是會 `TouchManipulationBitmap` [`BitmapScatterPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BitmapScatterViewPage.xaml.cs) 定義 `List` 點陣圖物件的：
+**點陣圖散佈圖** 頁面會示範如何完成這項操作。 類別不會定義類型的欄位，而是會 `TouchManipulationBitmap` [`BitmapScatterPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BitmapScatterViewPage.xaml.cs) 定義 `List` 點陣圖物件的：
 
 ```csharp
 public partial class BitmapScatterViewPage : ContentPage
@@ -1060,7 +1060,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 [![點陣圖散佈視圖頁面的三重螢幕擷取畫面](touch-images/bitmapscatterview-small.png)](touch-images/bitmapscatterview-large.png#lightbox "點陣圖散佈視圖頁面的三重螢幕擷取畫面")
 
-## <a name="single-finger-scaling"></a>單一手指調整
+## <a name="single-finger-scaling"></a>Single-Finger 調整
 
 調整作業通常需要使用雙手指的縮小手勢。 不過，您可以藉由讓手指移動點陣圖的角落，以單一手指進行調整。
 
@@ -1089,7 +1089,7 @@ public partial class BitmapScatterViewPage : ContentPage
 </ContentPage>
 ```
 
-[**SingleFingerCornerScalePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs)檔案會從**媒體**目錄載入點陣圖資源，並使用 `SKMatrix` 定義為欄位的物件來顯示它：
+[**SingleFingerCornerScalePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs)檔案會從 **媒體** 目錄載入點陣圖資源，並使用 `SKMatrix` 定義為欄位的物件來顯示它：
 
 ```csharp
 public partial class SingleFingerCornerScalePage : ContentPage

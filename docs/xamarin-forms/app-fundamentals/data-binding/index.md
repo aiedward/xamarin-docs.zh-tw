@@ -10,22 +10,22 @@ ms.date: 05/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 88b2bd5a0fe6720a4e14e6327715690bfd74a185
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 819e139c412d08f37aee28251f37a86d341487de
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556798"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374572"
 ---
 # <a name="no-locxamarinforms-data-binding"></a>Xamarin.Forms 資料系結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 _資料系結是連結兩個物件屬性的技術，讓一個屬性中的變更會自動反映在其他屬性中。資料系結是模型視圖 ViewModel (MVVM) 應用程式架構中不可或缺的一部分。_
 
 ## <a name="the-data-linking-problem"></a>資料連結問題
 
-Xamarin.Forms應用程式是由一或多個頁面所組成，其中每個頁面通常會包含多個名為*views*的使用者介面物件。 程式的主要工作之一是讓這些檢視保持同步，並追蹤其所代表的不同值或選取項目。 檢視通常代表來自基礎資料來源的值，而使用者操作這些檢視來變更該資料。 檢視變更時，基礎資料必須反映該變更；同樣地，當基礎資料變更時，該變更必須反映在檢視中。
+Xamarin.Forms應用程式是由一或多個頁面所組成，其中每個頁面通常會包含多個名為 *views* 的使用者介面物件。 程式的主要工作之一是讓這些檢視保持同步，並追蹤其所代表的不同值或選取項目。 檢視通常代表來自基礎資料來源的值，而使用者操作這些檢視來變更該資料。 檢視變更時，基礎資料必須反映該變更；同樣地，當基礎資料變更時，該變更必須反映在檢視中。
 
 若要成功處理這項作業，程式必須收到在這些檢視或基礎資料中進行變更的通知。 定義在變更發生時發出訊號的事件，是常見的解決方案。 因此可安裝會收到這些變更通知的事件處理常式。 事件處理常式藉由將資料從某個物件傳輸到另一個來回應。 不過，當存在許多檢視時，也必須要有許多事件處理常式，會牽涉到大量程式碼。
 

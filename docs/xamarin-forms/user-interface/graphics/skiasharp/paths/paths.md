@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6387da5ffa240c2509a2942a1e721def8f8d39b9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f80660c5875db77c85c39f570e9ae58c6c821eb6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555628"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374624"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp 中的路徑基本概念
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索用來結合連接線和曲線的 SkiaSharp SKPath 物件_
 
@@ -27,13 +27,13 @@ _探索用來結合連接線和曲線的 SkiaSharp SKPath 物件_
 
 ![兩個三角形，顯示已連接和已中斷連線的行之間的差異](paths-images/connectedlinesexample.png)
 
-圖形路徑是由物件所封裝 [`SKPath`](xref:SkiaSharp.SKPath) 。 路徑是一或多個 *輪廓*的集合。 每個輪廓都是 *連接* 直線和曲線的集合。 等高線不會彼此連接，但是它們可能會在視覺上重迭。 有時單一輪廓可能會彼此重迭。
+圖形路徑是由物件所封裝 [`SKPath`](xref:SkiaSharp.SKPath) 。 路徑是一或多個 *輪廓* 的集合。 每個輪廓都是 *連接* 直線和曲線的集合。 等高線不會彼此連接，但是它們可能會在視覺上重迭。 有時單一輪廓可能會彼此重迭。
 
 輪廓通常會從下列方法的呼叫開始 `SKPath` ：
 
 - [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo*) 開始新的輪廓
 
-該方法的引數是單一點，您可以將其作為 `SKPoint` 值或個別的 X 和 Y 座標來表示。 `MoveTo`呼叫會在輪廓的開頭和初始*目前的點*之間建立點。 您可以呼叫下列方法，以使用從目前點到方法中指定之點的線條或曲線來繼續輪廓，如此就會成為新的目前點：
+該方法的引數是單一點，您可以將其作為 `SKPoint` 值或個別的 X 和 Y 座標來表示。 `MoveTo`呼叫會在輪廓的開頭和初始 *目前的點* 之間建立點。 您可以呼叫下列方法，以使用從目前點到方法中指定之點的線條或曲線來繼續輪廓，如此就會成為新的目前點：
 
 - [`LineTo`](xref:SkiaSharp.SKPath.LineTo*) 若要在路徑中加入直線
 - [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) 若要加入弧線，也就是圓形或橢圓形圓周上的線條
@@ -52,7 +52,7 @@ _探索用來結合連接線和曲線的 SkiaSharp SKPath 物件_
 - [`RQuadTo`](xref:SkiaSharp.SKPath.RQuadTo*)
 - [`RConicTo`](xref:SkiaSharp.SKPath.RConicTo*)
 
-`R`代表*相對*的。 這些方法的語法與對應的方法相同，但不含， `R` 但是相對於目前的點。 這些很方便用來在您呼叫的方法中繪製類似的路徑部分。
+`R`代表 *相對* 的。 這些方法的語法與對應的方法相同，但不含， `R` 但是相對於目前的點。 這些很方便用來在您呼叫的方法中繪製類似的路徑部分。
 
 輪廓會以另一個對或的呼叫做為結尾， `MoveTo` `RMoveTo` 也就是開始新的輪廓或呼叫 `Close` ，以關閉輪廓。 `Close`方法會自動從目前的點將直線附加到輪廓的第一個點，並將路徑標示為已關閉，這表示它不會在沒有任何筆觸帽的情況下呈現。
 
@@ -122,7 +122,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 請記住， `SKPath` 物件只會定義一 &mdash; 系列點和連接的幾何。 只有當與 `SKPath` 物件結合時 `SKPaint` ，才會以特定色彩、筆劃寬度等等來呈現路徑。 此外，請記住， `SKPaint` 傳遞給方法的物件會 `DrawPath` 定義整個路徑的特性。 如果您想要繪製需要數個色彩的內容，您必須針對每個色彩使用不同的路徑。
 
-就像線條開始和結束的外觀是由筆劃端點所定義，兩行之間的連接外觀是由 *筆劃聯結*所定義。 您可以藉由將的 [`StrokeJoin`](xref:SkiaSharp.SKPaint.StrokeJoin) 屬性設定 `SKPaint` 為列舉的成員來指定 [`SKStrokeJoin`](xref:SkiaSharp.SKStrokeJoin) ：
+就像線條開始和結束的外觀是由筆劃端點所定義，兩行之間的連接外觀是由 *筆劃聯結* 所定義。 您可以藉由將的 [`StrokeJoin`](xref:SkiaSharp.SKPaint.StrokeJoin) 屬性設定 `SKPaint` 為列舉的成員來指定 [`SKStrokeJoin`](xref:SkiaSharp.SKStrokeJoin) ：
 
 - `Miter` 針對角聯結
 - `Round` 針對舍入聯結

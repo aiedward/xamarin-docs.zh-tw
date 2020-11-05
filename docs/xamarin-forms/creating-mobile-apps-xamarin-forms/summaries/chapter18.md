@@ -10,18 +10,21 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b2309d6ec6712be32f6e972fab130a542fbec857
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 15342144a080f3056c1aaa3441f6d1ec850f4dc2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557422"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374052"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第18章摘要。 MVVM
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
-架構應用程式的其中一個最佳方式，就是將使用者介面與基礎程式碼分開，有時也稱為 *商務邏輯*。 有幾種技術存在，但是針對以 XAML 為基礎的環境量身訂做的技巧，稱為模型 ViewModel 或 MVVM。
+> [!NOTE]
+> 這本書是在2016的春季發行，而且自那時起尚未更新。 本書中有很多工具價值，但部分資料已過期，有些主題則不再是完全正確或完整。
+
+架構應用程式的其中一個最佳方式，就是將使用者介面與基礎程式碼分開，有時也稱為 *商務邏輯* 。 有幾種技術存在，但是針對以 XAML 為基礎的環境量身訂做的技巧，稱為模型 ViewModel 或 MVVM。
 
 ## <a name="mvvm-interrelationships"></a>MVVM 相互關係
 
@@ -45,7 +48,7 @@ MVVM 應用程式有三個層級：
 
 ### <a name="a-viewmodel-clock"></a>ViewModel 時鐘
 
-[`DateTimeViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DateTimeViewModel.cs) [** Xamarin.Forms 書籍**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit)庫中的會定義根據計時器而變更之類型的屬性 `DateTime` 。 此類別會在 `INotifyPropertyChanged` 屬性變更時，執行並引發 `PropertyChanged` 事件 `DateTime` 。
+[`DateTimeViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DateTimeViewModel.cs) [**Xamarin.Forms 書籍**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit)庫中的會定義根據計時器而變更之類型的屬性 `DateTime` 。 此類別會在 `INotifyPropertyChanged` 屬性變更時，執行並引發 `PropertyChanged` 事件 `DateTime` 。
 
 [**MvvmClock**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/MvvmClock)範例會將此 ViewModel 具現化，並使用 ViewModel 的資料系結來顯示更新的日期和時間資訊。
 
@@ -55,17 +58,17 @@ ViewModel 中的屬性可以更具互動方式，如類別所示 [`SimpleMultipl
 
 ### <a name="a-color-viewmodel"></a>色彩 ViewModel
 
-[`ColorViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) [** Xamarin.Forms 書籍**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit)庫中的會整合 RGB 和 HSL 色彩模型。 它會在 [**HslSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders) 範例中示範：
+[`ColorViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) [**Xamarin.Forms 書籍**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit)庫中的會整合 RGB 和 HSL 色彩模型。 它會在 [**HslSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders) 範例中示範：
 
 [![TK 的三重螢幕擷取畫面](images/ch18fg08-small.png "HSL 色彩模型")](images/ch18fg08-large.png#lightbox "HSL 色彩模型")
 
 ### <a name="streamlining-the-viewmodel"></a>簡化 ViewModel
 
-您可以使用屬性定義方法來簡化 Viewmodel 中的程式碼 `OnPropertyChanged` [`CallerMemberName`](xref:System.Runtime.CompilerServices.CallerMemberNameAttribute) ，以自動取得呼叫的屬性名稱。 [`ViewModelBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ViewModelBase.cs) [** Xamarin.Forms 書籍**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit)庫中的類別會執行這個工作，並提供 viewmodel 的基類。
+您可以使用屬性定義方法來簡化 Viewmodel 中的程式碼 `OnPropertyChanged` [`CallerMemberName`](xref:System.Runtime.CompilerServices.CallerMemberNameAttribute) ，以自動取得呼叫的屬性名稱。 [`ViewModelBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ViewModelBase.cs) [**Xamarin.Forms 書籍**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit)庫中的類別會執行這個工作，並提供 viewmodel 的基類。
 
 ## <a name="the-command-interface"></a>命令介面
 
-MVVM 適用于資料系結，而資料系結會使用屬性，因此當您處理或的事件時，MVVM 似乎是或許也裨益的 `Clicked` `Button` `Tapped` `TapGestureRecognizer` 。 為了讓 Viewmodel 能夠處理這類事件， Xamarin.Forms 支援 *命令介面*。
+MVVM 適用于資料系結，而資料系結會使用屬性，因此當您處理或的事件時，MVVM 似乎是或許也裨益的 `Clicked` `Button` `Tapped` `TapGestureRecognizer` 。 為了讓 Viewmodel 能夠處理這類事件， Xamarin.Forms 支援 *命令介面* 。
 
 命令介面會在 `Button` 具有兩個公用屬性的中資訊清單本身：
 
@@ -90,11 +93,11 @@ MVVM 適用于資料系結，而資料系結會使用屬性，因此當您處理
 
 ### <a name="a-calculator-almost"></a>計算機，幾乎
 
-[**AddingMachine**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)範例會使用的 `Execute` 和 `CanExecute` 方法 `ICommand` 。 它會使用 [`AdderViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) [** Xamarin.Forms 書本套件**](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)庫中的類別。 ViewModel 包含六種類型的屬性 `ICommand` 。 這些是從的函[ `Command` 式和的函式，](xref:Xamarin.Forms.Command.%23ctor(System.Action))以及[ `Command` 的](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))的函式初始化 `Command` [ `Command<T>` ](/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__) `Command<T>` 。 新增電腦的數位索引鍵全都系結至以初始化的屬性 `Command<T>` ，以及的 `string` 引數和 `Execute` `CanExecute` 識別特定的索引鍵。
+[**AddingMachine**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)範例會使用的 `Execute` 和 `CanExecute` 方法 `ICommand` 。 它會使用 [`AdderViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) [**Xamarin.Forms 書本套件**](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)庫中的類別。 ViewModel 包含六種類型的屬性 `ICommand` 。 這些是從的函[ `Command` 式和的函式，](xref:Xamarin.Forms.Command.%23ctor(System.Action))以及[ `Command` 的](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))的函式初始化 `Command` [ `Command<T>` ](/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__) `Command<T>` 。 新增電腦的數位索引鍵全都系結至以初始化的屬性 `Command<T>` ，以及的 `string` 引數和 `Execute` `CanExecute` 識別特定的索引鍵。
 
 ## <a name="viewmodels-and-the-application-lifecycle"></a>Viewmodel 和應用程式生命週期
 
-`AdderViewModel` **AddingMachine**範例中使用的也會定義兩個名為和的方法 `SaveState` `RestoreState` 。 當應用程式進入睡眠狀態時，以及重新開機時，會從應用程式呼叫這些方法。
+`AdderViewModel` **AddingMachine** 範例中使用的也會定義兩個名為和的方法 `SaveState` `RestoreState` 。 當應用程式進入睡眠狀態時，以及重新開機時，會從應用程式呼叫這些方法。
 
 ## <a name="related-links"></a>相關連結
 

@@ -10,16 +10,16 @@ ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 575169459433725ae3f3a7db675fc65caef1494e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ad65c46f216af9a24eb02ab55411f0a89ac61100
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563441"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374611"
 ---
 # <a name="no-locxamarinforms-control-templates"></a>Xamarin.Forms 控制項範本
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 
 Xamarin.Forms 控制項範本可讓您定義 [`ContentView`](xref:Xamarin.Forms.ContentView) 衍生自訂控制項的視覺化結構，以及 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 衍生的頁面。 控制項範本會將自訂控制項或頁面的使用者介面 (UI)，從實作控制項或頁面的邏輯分開。 其他內容也可以在預先定義的位置插入樣板化自訂控制項或樣板化頁面。
 
@@ -122,7 +122,7 @@ public class CardView : ContentView
 </ContentPage>
 ```
 
-當宣告 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 為資源時，它必須有以屬性指定的索引鍵， `x:Key` 才能在資源字典中加以識別。 在此範例中，`CardViewControlTemplate` 的根項目是 [`Frame`](xref:Xamarin.Forms.Frame) 物件。 `Frame` 物件使用 `RelativeSource` 標記延伸將其 `BindingContext` 設定為將套用範本的執行階段物件執行個體，稱為「樣板化父系」**。 `Frame`物件會使用 [`Grid`](xref:Xamarin.Forms.Grid) 、 `Frame` 、 [`Image`](xref:Xamarin.Forms.Image) 、和物件的組合 [`Label`](xref:Xamarin.Forms.Label) [`BoxView`](xref:Xamarin.Forms.BoxView) 來定義物件的視覺化結構 `CardView` 。 由於從根 `Frame` 項目繼承 `BindingContext`，這些物件的繫結運算式會對 `CardView` 屬性進行解析。 如需標記延伸的詳細資訊 `RelativeSource` ，請參閱[ Xamarin.Forms 相對](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)系結。
+當宣告 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 為資源時，它必須有以屬性指定的索引鍵， `x:Key` 才能在資源字典中加以識別。 在此範例中，`CardViewControlTemplate` 的根項目是 [`Frame`](xref:Xamarin.Forms.Frame) 物件。 `Frame` 物件使用 `RelativeSource` 標記延伸將其 `BindingContext` 設定為將套用範本的執行階段物件執行個體，稱為「樣板化父系」。 `Frame`物件會使用 [`Grid`](xref:Xamarin.Forms.Grid) 、 `Frame` 、 [`Image`](xref:Xamarin.Forms.Image) 、和物件的組合 [`Label`](xref:Xamarin.Forms.Label) [`BoxView`](xref:Xamarin.Forms.BoxView) 來定義物件的視覺化結構 `CardView` 。 由於從根 `Frame` 項目繼承 `BindingContext`，這些物件的繫結運算式會對 `CardView` 屬性進行解析。 如需標記延伸的詳細資訊 `RelativeSource` ，請參閱[ Xamarin.Forms 相對](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)系結。
 
 ## <a name="consume-a-controltemplate"></a>使用 ControlTemplate
 
@@ -172,12 +172,12 @@ public class CardView : ContentView
 `TemplateBinding`標記延伸會將中專案的屬性系結 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 至樣板化自訂控制項或樣板化頁面所定義的公用屬性。 當您使用 `TemplateBinding` 時，可讓控制項上的屬性能夠作為範本參數。 因此，在設定樣板化自訂控制項或樣板化頁面上的屬性時，該值會傳遞至具有 `TemplateBinding` 的項目。
 
 > [!IMPORTANT]
-> `TemplateBinding`標記延伸是建立的替代方法 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) ，它會使用 `RelativeSource` 標記延伸將 `BindingContext` 範本中根項目的設定為其樣板化父系。 `TemplateBinding` 標記延伸會消除 `RelativeSource` 繫結，並將 `Binding` 運算式取代為 `TemplateBinding` 運算式。
+> `TemplateBinding`標記運算式可 `RelativeSource` 移除先前控制項範本的系結，並取代 `Binding` 運算式。
 
 `TemplateBinding` 標記延伸會定義下列屬性：
 
 - `Path`，屬於 `string` 類型，屬性的路徑。
-- `Mode`，屬於 `BindingMode` 類型，在「來源」** 與「目標」** 之間變更散佈的方向。
+- `Mode`，屬於 `BindingMode` 類型，在「來源」與「目標」之間變更散佈的方向。
 - `Converter`，屬於 `IValueConverter` 類型，繫結值轉換器。
 - `ConverterParameter`，屬於 `object` 類型，繫結值轉換器的參數。
 - `StringFormat`，屬於 `string` 類型，繫結的字串格式。
@@ -253,16 +253,16 @@ public class CardView : ContentView
 
 在此範例中，`TemplateBinding` 標記延伸會對每個 `CardView` 物件的屬性解析繫結運算式。 下列螢幕擷取畫面顯示套用於三個 `CardView` 物件的 `CardViewControlTemplate`：
 
-[![iOS 和 Android 上樣板化 CardView 物件的螢幕擷取畫面](control-template-images/templatebinding-controltemplate.png "樣板化 CardView 物件")](control-template-images/templatebinding-controltemplate-large.png#lightbox "樣板化 CardView 物件")
+[![樣板化 CardView 物件的螢幕擷取畫面](control-template-images/templatebinding-controltemplate.png "樣板化 CardView 物件")](control-template-images/templatebinding-controltemplate-large.png#lightbox "樣板化 CardView 物件")
 
 > [!IMPORTANT]
 > 使用 `TemplateBinding` 標記延伸，這相當於將範本中根項目的 `BindingContext` 設定為其具有 `RelativeSource` 標記延伸的樣板化父系，然後使用 `Binding` 標記延伸模組來解析子物件的繫結。 實際上，`TemplateBinding` 標記延伸會建立其 `Source` 為 `RelativeBindingSource.TemplatedParent` 的 `Binding`。
 
 ## <a name="apply-a-controltemplate-with-a-style"></a>使用樣式來套用 ControlTemplate
 
-控制項範本也可以使用樣式來套用。 您可以建立「隱含」** 或「明確」** 樣式 (此樣式使用 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)) 來完成此操作。
+控制項範本也可以使用樣式來套用。 您可以建立「隱含」或「明確」樣式 (此樣式使用 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)) 來完成此操作。
 
-下列 XAML 範例顯示使用 `CardViewControlTemplate` 的「隱含」** 樣式：
+下列 XAML 範例顯示使用 `CardViewControlTemplate` 的「隱含」樣式：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -497,7 +497,7 @@ public class CardView : ContentView
 
 ## <a name="get-a-named-element-from-a-template"></a>從範本取得具名元素
 
-控制項範本內的具名項目，可以從樣板化自訂控制項或樣板化頁面擷取。 這可以透過方法來達成，這會在具現 `GetTemplateChild` 化的視覺化樹狀結構中傳回指名的元素 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) （如果找到的話）。 否則會傳回 `null`。
+控制項範本內的具名項目，可以從樣板化自訂控制項或樣板化頁面擷取。 這可以透過方法來達成，這會在具現 `GetTemplateChild` 化的視覺化樹狀結構中傳回指名的元素 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) （如果找到的話）。 否則，它會傳回 `null`。
 
 在控制項範本具現化之後，會呼叫範本的 `OnApplyTemplate` 方法。 因此，`GetTemplateChild` 方法應從樣板化控制項或樣板化頁面中的 `OnApplyTemplate` 覆寫呼叫。
 
@@ -549,7 +549,7 @@ public partial class AccessTemplateElementPage : HeaderFooterPage
 
 在此範例中， [`Label`](xref:Xamarin.Forms.Label) 一旦具現 `changeThemeLabel` 化後，就會抓取名為的物件 `ControlTemplate` 。 `changeThemeLabel` 接著可由 `AccessTemplateElementPage` 類別存取並操作。 下列螢幕擷取畫面顯示 `Label` 所顯示的文字已變更：
 
-[![iOS 和 Android 上樣板化頁面物件的螢幕擷取畫面](control-template-images/get-named-element.png "樣板化 ContentPage")](control-template-images/get-named-element-large.png#lightbox "樣板化 ContentPage")
+[![樣板化頁面物件的螢幕擷取畫面](control-template-images/get-named-element.png "樣板化 ContentPage")](control-template-images/get-named-element-large.png#lightbox "樣板化 ContentPage")
 
 ## <a name="bind-to-a-viewmodel"></a>繫結至 viewmodel
 
@@ -625,13 +625,13 @@ public partial class AccessTemplateElementPage : HeaderFooterPage
 
 在此範例中，的根項目 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 是 [`Frame`](xref:Xamarin.Forms.Frame) 物件。 `Frame` 物件使用 `RelativeSource` 標記延伸來將其 `BindingContext` 設定為樣板化父系。 由於從根 `Frame` 項目繼承 `BindingContext`，`Frame` 物件和其子系的繫結運算式會對 `CardView` 屬性進行解析。 下列螢幕擷取畫面顯示會顯示 `People` 集合的頁面，其中包含三個項目：
 
-[![iOS 和 Android 上樣板化 CardView 物件的螢幕擷取畫面](control-template-images/viewmodel-controltemplate.png "樣板化 CardView 物件")](control-template-images/viewmodel-controltemplate-large.png#lightbox "樣板化 CardView 物件")
+[![三個樣板化 CardView 物件的螢幕擷取畫面](control-template-images/viewmodel-controltemplate.png "樣板化 CardView 物件")](control-template-images/viewmodel-controltemplate-large.png#lightbox "樣板化 CardView 物件")
 
 雖然系結 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 至其樣板化父系上的屬性，但控制項範本內的物件會系結 [`Button`](xref:Xamarin.Forms.Button) 至其樣板化父系，以及 `DeletePersonCommand` viewmodel 中的。 這是因為屬性會將 `Button.Command` 其系結來源重新定義為其系結內容型別為之上階的系結內容 `PeopleViewModel` ，也就是 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 接著，繫結運算式的 `Path` 部分即可解析 `DeletePersonCommand` 屬性。 但是， `Button.CommandParameter` 屬性不會改變其系結來源，而是在中從其父系繼承 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 。 因此，`CommandParameter` 屬性會繫結至 `CardView` 的 `CardTitle` 屬性。
 
 系結的整體效果 [`Button`](xref:Xamarin.Forms.Button) 是，當按 `Button` 下時，會 `DeletePersonCommand` 執行類別中的，並將屬性的 `PeopleViewModel` 值 `CardName` 傳遞至 `DeletePersonCommand` 。 這會導致從可繫結配置移除指定的 `CardView`：
 
-[![iOS 和 Android 上樣板化 CardView 物件的螢幕擷取畫面](control-template-images/viewmodel-itemdeleted.png "樣板化 CardView 物件")](control-template-images/viewmodel-itemdeleted-large.png#lightbox "樣板化 CardView 物件")
+[![兩個樣板化 CardView 物件的螢幕擷取畫面](control-template-images/viewmodel-itemdeleted.png "樣板化 CardView 物件")](control-template-images/viewmodel-itemdeleted-large.png#lightbox "樣板化 CardView 物件")
 
 如需相對系結的詳細資訊，請參閱[ Xamarin.Forms 相對](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)系結。
 

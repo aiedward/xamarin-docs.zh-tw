@@ -10,16 +10,16 @@ ms.date: 07/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3fba761d2740f323fb55e80d8cb4e3ba3d8e7cad
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 32571724c945c4bbd845943ac72fc959c42d584a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563597"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374351"
 ---
 # <a name="no-locxamarinforms-boxview"></a>Xamarin.Forms BoxView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
 [`BoxView`](xref:Xamarin.Forms.BoxView) 呈現指定寬度、高度和色彩的簡單矩形。 您可以使用 `BoxView` 以裝飾、基本圖形，以及透過觸控與使用者互動。
 
@@ -40,9 +40,9 @@ ms.locfileid: "91563597"
 
 `CornerRadius`屬性的類型為 [`CornerRadius`](xref:Xamarin.Forms.CornerRadius) ; 屬性可以設定為單一的 `double` 統一角半徑值，或是 `CornerRadius` 由四個值所定義的結構， `double` 這些值會套用至左上方、右上角、左下角和右下角 `BoxView` 。
 
-`WidthRequest`如果在 `HeightRequest` 版面配置 `BoxView` 中未受*限制*，和屬性只會播放角色。 當版面配置容器需要知道子系的大小時，例如，當是配置中自動重設 `BoxView` 大小儲存格的子系時，就會發生這種情況 `Grid` 。 `BoxView`當其 `HorizontalOptions` 和 `VerticalOptions` 屬性設定為以外的值時，也不受限制 `LayoutOptions.Fill` 。 如果 `BoxView` 不受限制，但 `WidthRequest` `HeightRequest` 未設定和屬性，則寬度或高度會設定為40單位的預設值，或行動裝置上的1/4 英寸。
+`WidthRequest`如果在 `HeightRequest` 版面配置 `BoxView` 中未受 *限制* ，和屬性只會播放角色。 當版面配置容器需要知道子系的大小時，例如，當是配置中自動重設 `BoxView` 大小儲存格的子系時，就會發生這種情況 `Grid` 。 `BoxView`當其 `HorizontalOptions` 和 `VerticalOptions` 屬性設定為以外的值時，也不受限制 `LayoutOptions.Fill` 。 如果 `BoxView` 不受限制，但 `WidthRequest` `HeightRequest` 未設定和屬性，則寬度或高度會設定為40單位的預設值，或行動裝置上的1/4 英寸。
 
-`WidthRequest`如果在 `HeightRequest` 版面配置 `BoxView` 中*受到限制*，則會忽略和屬性，在此情況下，版面配置容器會在上強加自己的大小 `BoxView` 。
+`WidthRequest`如果在 `HeightRequest` 版面配置 `BoxView` 中 *受到限制* ，則會忽略和屬性，在此情況下，版面配置容器會在上強加自己的大小 `BoxView` 。
 
 `BoxView`可以在一個維度中受到限制，而另一個維度則不受限制。 例如，如果 `BoxView` 是垂直的子系，則的 `StackLayout` 垂直維度 `BoxView` 會受限制，且其水準維度通常會受到限制。 但是，該水準維度有一些例外狀況：如果將 `BoxView` 其 `HorizontalOptions` 屬性設定為以外的某個部分 `LayoutOptions.Fill` ，則水準維度也不受限制。 本身也可能 `StackLayout` 具有不受限制的水準維度，在這種情況下，也會有不受限制的水準維度 `BoxView` 。
 
@@ -341,7 +341,7 @@ class LifeCell : BoxView
 
 `LifeCell` 也會安裝 `TapGestureRecognizer` ，以允許使用者藉由點擊來切換儲存格的狀態。 類別會將 `Tapped` 事件從手勢辨識器轉譯成它自己的 `Tapped` 事件。
 
-**GameOfLife**程式也包含類別， `LifeGrid` 可封裝遊戲的大部分邏輯，以及 `MainPage` 處理常式視覺效果的類別。 這些包含描述遊戲規則的重迭。 以下是在 `LifeCell` 頁面上顯示數百個物件的程式：
+**GameOfLife** 程式也包含類別， `LifeGrid` 可封裝遊戲的大部分邏輯，以及 `MainPage` 處理常式視覺效果的類別。 這些包含描述遊戲規則的重迭。 以下是在 `LifeCell` 頁面上顯示數百個物件的程式：
 
 [![生命的遊戲](boxview-images/gameoflife-small.png "生命的遊戲")](boxview-images/gameoflife-large.png#lightbox "生命的遊戲")
 
@@ -349,7 +349,7 @@ class LifeCell : BoxView
 
 [**DotMatrixClock**](/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)程式會建立210個 `BoxView` 元素，以模擬舊式的 5 x-7 點矩陣顯示的點。 您可以讀取直向或橫向模式的時間，但它在橫向較大：
 
-[![點-矩陣時鐘](boxview-images/dotmatrixclock-small.png "點-矩陣時鐘")](boxview-images/dotmatrixclock-large.png#lightbox "點-矩陣時鐘")
+[![點-矩陣時鐘](boxview-images/dotmatrixclock-small.png "Dot-Matrix 時鐘")](boxview-images/dotmatrixclock-large.png#lightbox "Dot-Matrix 時鐘")
 
 XAML 檔案除了具現化 `AbsoluteLayout` 用於時鐘的：
 
