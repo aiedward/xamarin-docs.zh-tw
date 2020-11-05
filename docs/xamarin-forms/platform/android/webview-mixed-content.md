@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 27d19773d86c125cd5574f7a281c37c26ef643fd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cfcdd52187fe8e3af258aedb25e8c0df85cbea4e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563194"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375482"
 ---
 # <a name="webview-mixed-content-on-android"></a>在 Android 上將混合內容進行 Web 操作
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定的控制是否 [`WebView`](xref:Xamarin.Forms.WebView) 可以在以 API 21 或更新版本為目標的應用程式中顯示混合內容。 混合內容是一開始透過 HTTPS 連線載入的內容，但是會將資源 (例如影像、音訊、影片、樣式表單、腳本) 透過 HTTP 連接來載入。 它是在 XAML 中使用，方法是將 [`WebView.MixedContentMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty) 附加屬性設定為 [`MixedContentHandling`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) 列舉值：
 

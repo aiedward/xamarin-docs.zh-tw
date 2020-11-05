@@ -10,16 +10,16 @@ ms.date: 12/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c010ac513cec8ac59927325dbe80ad1c8ac556d8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 98f91ec614df08997e7cbf23530086f541500b5d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559996"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375469"
 ---
 # <a name="listview-performance"></a>ListView 效能
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
 
 撰寫行動應用程式時，效能很重要。 使用者預期會有順暢的滾動和快速載入時間。 若無法符合您使用者的期望，將會對應用程式商店中的評等產生費用，或在企業營運應用程式的案例中，成本您的組織時間和金錢。
 

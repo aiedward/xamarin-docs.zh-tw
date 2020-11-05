@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8e8c52c03534ca5d8b653eed4d8fc2c8f39edf61
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9f72541bddcadabe4ce4fa71c2a4dfcae3c3c898
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562635"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374975"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
 
 _NavigationPage 類別提供階層式導覽體驗，讓使用者能夠視需要，向前及向後流覽頁面。類別會以後進先出的方式將導覽實作為頁面物件) 堆疊的後進先出 (。本文示範如何使用 NavigationPage 類別，在一堆頁面中執行導覽。_
 
@@ -41,8 +41,8 @@ _NavigationPage 類別提供階層式導覽體驗，讓使用者能夠視需要�
 
 的版面配置 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 相依于平臺：
 
-- 在 iOS 上，頁面頂端有一個導覽列，其中顯示標題，並具有可返回上一頁的 [上一頁]** 按鈕。
-- 在 Android 上，頁面頂端有一個導覽列，其中顯示標題、圖示，以及可返回上一頁的 [上一頁]** 按鈕。 該圖示是在 `[Activity]` 屬性中定義，以裝飾 Android 平台特定專案中的 `MainActivity` 類別。
+- 在 iOS 上，頁面頂端有一個導覽列，其中顯示標題，並具有可返回上一頁的 [上一頁] 按鈕。
+- 在 Android 上，頁面頂端有一個導覽列，其中顯示標題、圖示，以及可返回上一頁的 [上一頁] 按鈕。 該圖示是在 `[Activity]` 屬性中定義，以裝飾 Android 平台特定專案中的 `MainActivity` 類別。
 - 在通用 Windows 平台上，頁面頂端有一個顯示標題的導覽列。
 
 在所有平臺上，屬性的值 [`Page.Title`](xref:Xamarin.Forms.Page.Title) 會顯示為頁面標題。 此外，您 `IconColor` 也可以將屬性設定為，以套用 [`Color`](xref:Xamarin.Forms.Color) 至巡覽列中的圖示。
@@ -52,7 +52,7 @@ _NavigationPage 類別提供階層式導覽體驗，讓使用者能夠視需要�
 
 ### <a name="creating-the-root-page"></a>建立根頁面
 
-加入至導覽堆疊中的第一頁指的是應用程式的*根*頁面，下列程式碼範例會示範如何完成此作業：
+加入至導覽堆疊中的第一頁指的是應用程式的 *根* 頁面，下列程式碼範例會示範如何完成此作業：
 
 ```csharp
 public App ()
@@ -96,7 +96,7 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 
 ### <a name="popping-pages-from-the-navigation-stack"></a>從導覽堆疊中快顯頁面
 
-無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁]** 按鈕都可以從導覽堆疊快顯使用中的頁面。
+無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁] 按鈕都可以從導覽堆疊快顯使用中的頁面。
 
 若要以程式設計的方式返回原始頁面， `Page2Xaml` 實例必須 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 叫用方法，如下列程式碼範例所示：
 

@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0110fa7c348c4facaf60cd261c8a584904aa0b8e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e8dd18caf7ab6730c8529660d83511cf8c65edcf
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563064"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375157"
 ---
 # <a name="no-locxamarinforms-carousel-page"></a>Xamarin.Forms 浮動切換頁面
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
 _Xamarin.FormsCarouselPage 是使用者可以從側邊滑到一邊以流覽內容頁面的頁面，例如資源庫。本文示範如何使用 CarouselPage 來導覽頁面的集合。_
 

@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c4bdc3a5d952fda525b3e62cfbaabd9b5272bd6a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f5907e5493ff43c6a69dc4a8a8e5d2b4fc78210e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556382"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374871"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>IOS 上的安全區域版面配置指南
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定是用來確保頁面內容位於螢幕上的某個區域，該區域對使用 iOS 11 和更新版本的所有裝置都是安全的。 具體來說，它有助於確保不會將內容由圓角、主指示器或 iPhone X 上的感應器機架裁剪。它是在 XAML 中使用，方法是將 `Page.UseSafeArea` 附加屬性設定為 `boolean` 值：
 

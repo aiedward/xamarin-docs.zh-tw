@@ -10,24 +10,24 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1427b6f8461c74ded933fe562a7d17221790383a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c266cdee5a0949edc6ade7fff81816d0405af27f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562310"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374884"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>顯示 SkiaSharp 點陣圖
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 SkiaSharp 點陣圖的主旨是在 SkiaSharp 的文章 **[點陣圖基本概念中](../basics/bitmaps.md)** 引進。 本文說明載入點陣圖的三種方式，以及用來顯示點陣圖的三種方式。 本文將探討載入點陣圖的技巧，並更深入地使用的 `DrawBitmap` 方法 `SKCanvas` 。
 
 ![顯示範例](displaying-images/DisplayingSample.png "顯示範例")
 
-`DrawBitmapLattice`和 `DrawBitmapNinePatch` 方法會在**[分割顯示 SkiaSharp 點陣圖](segmented.md)** 的文章中討論。
+`DrawBitmapLattice`和 `DrawBitmapNinePatch` 方法會在 **[分割顯示 SkiaSharp 點陣圖](segmented.md)** 的文章中討論。
 
-此頁面上的範例是來自 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式。 從該應用程式的 [首頁] 中，選擇 [ **SkiaSharp 點陣圖**]，然後移至 [ **顯示點陣圖** ] 區段。
+此頁面上的範例是來自 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式。 從該應用程式的 [首頁] 中，選擇 [ **SkiaSharp 點陣圖** ]，然後移至 [ **顯示點陣圖** ] 區段。
 
 ## <a name="loading-a-bitmap"></a>載入點陣圖
 
@@ -131,7 +131,7 @@ DrawBitmap(SKBitmap bitmap, float x, float y, SKPaint paint = null)
 
 這兩種方法的功能完全相同。 指定的點表示相對於畫布之點陣圖左上角的位置。 因為行動裝置的圖元解析度很高，所以較小的點陣圖通常會在這些裝置上顯得相當小。
 
-選擇性的 `SKPaint` 參數可讓您使用透明度來顯示點陣圖。 若要這樣做，請建立 `SKPaint` 物件，並將 `Color` 屬性設定為 `SKColor` Alpha 通道小於1的任何值。 例如：
+選擇性的 `SKPaint` 參數可讓您使用透明度來顯示點陣圖。 若要這樣做，請建立 `SKPaint` 物件，並將 `Color` 屬性設定為 `SKColor` Alpha 通道小於1的任何值。 例如︰
 
 ```csharp
 paint.Color = new SKColor(0, 0, 0, 0x80);
@@ -147,7 +147,7 @@ paint.Color = SKColors.Red.WithAlpha(0x80);
 
 `SKPaint`當使用 blend 模式或篩選效果顯示點陣圖時，物件也會扮演角色。 這些文章會在文章中示範 [SkiaSharp 組合和 blend 模式](../effects/blend-modes/index.md) ，以及 [SkiaSharp 影像篩選](../effects/image-filters.md)。
 
-**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 範例程式中的 [**圖元維度**] 頁面會顯示點陣圖資源，其寬度為320圖元寬、240圖元高：
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 範例程式中的 [ **圖元維度** ] 頁面會顯示點陣圖資源，其寬度為320圖元寬、240圖元高：
 
 ```csharp
 public class PixelDimensionsPage : ContentPage
@@ -231,7 +231,7 @@ DrawBitmap(SKBitmap bitmap, SKRect source, SKRect dest, SKPaint paint = null)
 
 在這兩種情況下，點陣圖都會伸展以填滿名為的矩形 `dest` 。 在第二個方法中， `source` 矩形可讓您選取點陣圖的子集。 `dest`矩形相對於輸出裝置; `source` 矩形相對於點陣圖。
 
-**填滿矩形**頁面會示範這兩個方法中的第一個，方法是在與畫布相同大小的矩形中顯示先前範例中所使用的相同點陣圖： 
+**填滿矩形** 頁面會示範這兩個方法中的第一個，方法是在與畫布相同大小的矩形中顯示先前範例中所使用的相同點陣圖： 
 
 ```csharp
 public class FillRectanglePage : ContentPage
@@ -269,7 +269,7 @@ public class FillRectanglePage : ContentPage
 
 ## <a name="stretching-while-preserving-the-aspect-ratio"></a>在保留外觀比例時延展
 
-延伸點陣圖，同時保留外觀比例是一種進程，也稱為 _一致調整_。 這一期建議演算法方法。 [ **統一調整** ] 頁面中會顯示一個可能的解決方案：
+延伸點陣圖，同時保留外觀比例是一種進程，也稱為 _一致調整_ 。 這一期建議演算法方法。 [ **統一調整** ] 頁面中會顯示一個可能的解決方案：
 
 ```csharp
 public class UniformScalingPage : ContentPage
@@ -622,7 +622,7 @@ public partial class ScalingModesPage : ContentPage
 
 [![調整模式](displaying-images/ScalingModes.png "調整模式")](displaying-images/ScalingModes-Large.png#lightbox)
 
-**矩形子集**頁面的 XAML 檔案幾乎與**縮放模式**相同，但程式碼後端檔案會定義欄位所指定點陣圖的矩形子集 `SOURCE` ： 
+**矩形子集** 頁面的 XAML 檔案幾乎與 **縮放模式** 相同，但程式碼後端檔案會定義欄位所指定點陣圖的矩形子集 `SOURCE` ： 
 
 ```csharp
 public partial class ScalingModesPage : ContentPage

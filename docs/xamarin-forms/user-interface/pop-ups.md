@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 58ab2f785c26019c90b91c928daed864c3c6098b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5f70420690a9d81e5697c2e0bfefdf107aed9c86
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559567"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375417"
 ---
 # <a name="display-pop-ups"></a>顯示快顯視窗
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
 顯示警示、要求使用者進行選擇，或顯示提示是常見的 UI 工作。 Xamarin.Forms 在類別上有三個方法， [`Page`](xref:Xamarin.Forms.Page) 可透過快顯視窗與使用者互動： [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 和 `DisplayPromptAsync` 。 兩者會以適當的原生控制項轉譯在每個平台上。
 

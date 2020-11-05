@@ -10,16 +10,16 @@ ms.date: 03/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3d0cbae406861565d91b0bbc9f39d661c547ca1e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: dcfb713da09a9dab1974110e161d8045132f6b2f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561153"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375014"
 ---
 # <a name="customizing-a-webview"></a>自訂 WebView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
 _Xamarin.Forms `WebView` 是在您的應用程式中顯示 WEB 和 HTML 內容的視圖。本文說明如何建立擴充的自訂轉譯器， `WebView` 以允許從 JavaScript 叫用 c # 程式碼。_
 
@@ -148,7 +148,7 @@ public partial class HybridWebViewPage : ContentPage
 
 1. `WkWebViewRenderer`在 iOS 上建立類別的子類別，並在 `WebViewRenderer` ANDROID 和 UWP 上建立類別的類別，以呈現自訂控制項。
 1. 覆寫 `OnElementChanged` 呈現 [`WebView`](xref:Xamarin.Forms.WebView) 和寫入邏輯以進行自訂的方法。 建立物件時，會呼叫這個方法 `HybridWebView` 。
-1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別或 *AssemblyInfo.cs*，以指定它將用來轉譯 Xamarin.Forms 自訂控制項。 這個屬性是用來向註冊自訂轉譯器 Xamarin.Forms 。
+1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別或 *AssemblyInfo.cs* ，以指定它將用來轉譯 Xamarin.Forms 自訂控制項。 這個屬性是用來向註冊自訂轉譯器 Xamarin.Forms 。
 
 > [!NOTE]
 > 針對大部分的 Xamarin.Forms 專案，您可以選擇性地在每個平臺專案中提供自訂轉譯器。 如果自訂轉譯器尚未註冊，則會使用控制項基底類別的預設轉譯器。 不過，轉譯 [View](xref:Xamarin.Forms.View) 項目時，每個平台專案都必須要有自訂轉譯器。
@@ -161,7 +161,7 @@ public partial class HybridWebViewPage : ContentPage
 
 ![每個平台上的 HybridWebView](hybridwebview-images/screenshots.png)
 
-`WkWebViewRenderer`和 `WebViewRenderer` 類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立自訂控制項以轉譯對應的原生 web 控制項時呼叫。 這個方法會採用 `VisualElementChangedEventArgs` 包含 `OldElement` 和屬性的參數 `NewElement` 。 這些屬性代表轉譯器 Xamarin.Forms 附加到的*was*專案，以及轉譯器 Xamarin.Forms 附加到的元素。 *is* 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `HybridWebView` 執行個體的參考。
+`WkWebViewRenderer`和 `WebViewRenderer` 類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立自訂控制項以轉譯對應的原生 web 控制項時呼叫。 這個方法會採用 `VisualElementChangedEventArgs` 包含 `OldElement` 和屬性的參數 `NewElement` 。 這些屬性代表轉譯器 Xamarin.Forms 附加到的 *was* 專案，以及轉譯器 Xamarin.Forms 附加到的元素。 *is* 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `HybridWebView` 執行個體的參考。
 
 `OnElementChanged`在每個平臺轉譯器類別中，方法的覆寫版本是執行原生 web 控制項自訂的位置。 您 Xamarin.Forms 可以透過屬性取得正在轉譯之控制項的參考 `Element` 。
 

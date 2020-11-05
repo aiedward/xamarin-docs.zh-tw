@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de412e064fa84e516dcb8e9b604068c84a2689e6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9588feeaae1391bcd2ac7fd05e7340a3a40f6236
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563610"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374793"
 ---
 # <a name="listview-selectionmode-on-windows"></a>Windows 上的 ListView SelectionMode
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 在通用 Windows 平臺上，根據預設，會 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 使用原生 `ItemClick` 事件來回應互動，而不是原生 `Tapped` 事件。 這會提供協助工具功能，讓 Windows 朗讀程式和鍵盤可以與進行互動 `ListView` 。 不過，它也會在無法運作的情況下轉譯任何點的手勢 `ListView` 。
 

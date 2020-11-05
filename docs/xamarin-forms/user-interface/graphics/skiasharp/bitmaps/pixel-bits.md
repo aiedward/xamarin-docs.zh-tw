@@ -10,16 +10,16 @@ ms.date: 07/11/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7f0b7c61d44170ab97b060a16693287c28903660
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6e3edf7d0e7630429f8f1c76009987ee8a4b737a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562960"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375326"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>存取 SkiaSharp 點陣圖圖元位
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 如同您在將 [**SkiaSharp 點陣圖儲存至**](saving.md)檔案時所看到的，點陣圖一般會以壓縮格式（例如 JPEG 或 PNG）儲存在檔案中。 在 constrast 中，不會壓縮儲存在記憶體中的 SkiaSharp 點陣圖。 它會儲存為連續的圖元序列。 這種未壓縮的格式有助於將點陣圖傳送至顯示介面。
 
@@ -148,7 +148,7 @@ IntPtr pixelsAddr = bitmap.GetPixels();
 byte* ptr = (byte*)pixelsAddr.ToPointer();
 ```
 
-`ptr`變數的類型為_byte 指標_。 此 `ptr` 變數可讓您存取用來儲存點陣圖圖元的個別記憶體位元組。 您可以使用像這樣的程式碼從這個記憶體讀取位元組，或將位元組寫入記憶體：
+`ptr`變數的類型為 _byte 指標_ 。 此 `ptr` 變數可讓您存取用來儲存點陣圖圖元的個別記憶體位元組。 您可以使用像這樣的程式碼從這個記憶體讀取位元組，或將位元組寫入記憶體：
 
 ```csharp
 byte pixelComponent = *ptr;
@@ -293,7 +293,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 bitmap.SetPixels(intPtr);
 ```
 
-回想一下，會取得 `GetPixels` `IntPtr` 參考點陣圖用來儲存其圖元的記憶體區塊。 `SetPixels`呼叫會_replaces_以 `IntPtr` 指定的做為引數所參考的記憶體區塊來取代該記憶體區塊 `SetPixels` 。 然後點陣圖會釋出先前使用的記憶體區塊。 下一次 `GetPixels` 呼叫時，它會取得使用設定的記憶體區塊 `SetPixels` 。
+回想一下，會取得 `GetPixels` `IntPtr` 參考點陣圖用來儲存其圖元的記憶體區塊。 `SetPixels`呼叫會 _replaces_ 以 `IntPtr` 指定的做為引數所參考的記憶體區塊來取代該記憶體區塊 `SetPixels` 。 然後點陣圖會釋出先前使用的記憶體區塊。 下一次 `GetPixels` 呼叫時，它會取得使用設定的記憶體區塊 `SetPixels` 。
 
 一開始，似乎會 `SetPixels` 讓您沒有比較不方便的電源和效能 `GetPixels` 。 當 `GetPixels` 您取得點陣圖記憶體區塊並加以存取時。 `SetPixels`當您配置和存取某些記憶體時，然後將它設定為點陣圖記憶體區塊。
 
@@ -624,7 +624,7 @@ uint* ptr = basePtr + bitmap.Width * row + col;
 
 程式會維護兩個位圖，也就是名為的原始來源點陣圖 `srcBitmap` 和已調整的目的點陣圖 `dstBitmap` 。 每次 `Slider` 移動時，程式都會在中計算所有新的圖元 `dstBitmap` 。 當然，使用者會藉由 `Slider` 非常快速地移動視圖來進行實驗，因此您想要能管理的最佳效能。 這包括 `GetPixels` 來源和目的地點陣圖的方法。
 
-**色彩調整**頁面不會控制來源和目的點陣圖的色彩格式。 相反地，它包含與格式稍有不同的邏輯 `SKColorType.Rgba8888` `SKColorType.Bgra8888` 。 來源和目的地可以是不同的格式，而且程式仍然可運作。
+**色彩調整** 頁面不會控制來源和目的點陣圖的色彩格式。 相反地，它包含與格式稍有不同的邏輯 `SKColorType.Rgba8888` `SKColorType.Bgra8888` 。 來源和目的地可以是不同的格式，而且程式仍然可運作。
 
 除了將 `TransferPixels` 圖元從來源傳送到目的地的重要方法之外，此程式也是唯一的。 的函式會設定 `dstBitmap` 為等於 `srcBitmap` 。 此 `PaintSurface` 處理常式會顯示 `dstBitmap` ：
 
@@ -748,7 +748,7 @@ public partial class ColorAdjustmentPage : ContentPage
 
 ## <a name="posterization"></a>Posterization
 
-牽涉到存取圖元位的另一個常見工作是 _posterization_。 如果以點陣圖圖元編碼的色彩減少，使結果類似于使用有限色彩調色板的手繪海報，則為數字。
+牽涉到存取圖元位的另一個常見工作是 _posterization_ 。 如果以點陣圖圖元編碼的色彩減少，使結果類似于使用有限色彩調色板的手繪海報，則為數字。
 
 [ **分離** 項] 頁面會在其中一個猴子映射上執行此程式：
 

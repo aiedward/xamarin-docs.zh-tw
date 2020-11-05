@@ -10,16 +10,16 @@ ms.date: 10/22/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d6a63e952d7466dc4b7f2d3e8cfc39d6c63e4daf
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 12ba6e8f9bb1c547ad5a15e2e79f74c29b74ad12
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559970"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375443"
 ---
 # <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Forms 地圖地理編碼
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)命名空間提供的 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) 類別，會在字串位址與儲存在物件中的緯度和經度座標之間進行轉換 [`Position`](xref:Xamarin.Forms.Maps.Position) 。 如需結構的詳細資訊 [`Position`](xref:Xamarin.Forms.Maps.Position) ，請參閱 [地圖位置和距離](position-distance.md)。
 

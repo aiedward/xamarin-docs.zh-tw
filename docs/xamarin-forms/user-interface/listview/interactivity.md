@@ -10,16 +10,16 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d665a80d6f1e0319fc9dc8696db379cf781ee833
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4a922a841452e5e934cc7dcb88a9f84373ae3ded
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560113"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375491"
 ---
 # <a name="listview-interactivity"></a>ListView 互動性
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
 
 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 類別支援使用者與它所呈現的資料互動。
 
@@ -181,7 +181,7 @@ listView.RefreshControlColor = Color.Red;
 
 下列螢幕擷取畫面顯示使用者正在提取時的提取重新整理：
 
-![ListView 提取以進行更新](interactivity-images/refresh-start.png)
+![ListView 提取以重新整理 In-Progress](interactivity-images/refresh-start.png)
 
 下列螢幕擷取畫面顯示在使用者放開提取之後的提取重新整理，並在更新時顯示微調顯示 [`ListView`](xref:Xamarin.Forms.ListView) ：
 

@@ -10,16 +10,16 @@ ms.date: 12/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3b27ef8ecbd5f357eabd728423b5787ea222c593
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e1cefd856cf6cfb5c4a25e6bd26173d527ca7e42
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562297"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375066"
 ---
 # <a name="no-locxamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _ImageButton 會顯示影像，並回應點擊或按一下以引導應用程式執行特定工作。_
 
@@ -213,7 +213,7 @@ public class ImageButtonDemoPage : ContentPage
 
 ## <a name="using-the-command-interface"></a>使用命令介面
 
-應用程式可能會在 `ImageButton` 不處理事件的情況下回應點擊 `Clicked` 。 會 `ImageButton` 執行另一個稱為命令或_命令_介面的_commanding_通知機制。 這包括兩個屬性：
+應用程式可能會在 `ImageButton` 不處理事件的情況下回應點擊 `Clicked` 。 會 `ImageButton` 執行另一個稱為命令或 _命令_ 介面的 _commanding_ 通知機制。 這包括兩個屬性：
 
 - `Command` 型別為的 [`ICommand`](xref:System.Windows.Input.ICommand) 介面，此介面定義于 [`System.Windows.Input`](xref:System.Windows.Input) 命名空間中。
 - `CommandParameter` 型別的屬性 [`Object`](xref:System.Object) 。

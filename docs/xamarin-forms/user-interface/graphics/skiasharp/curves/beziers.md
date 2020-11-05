@@ -10,16 +10,16 @@ ms.date: 05/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9193cef76a5f474f3681b15a1315e5840b41d88a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: aee429b3dcc898ae0663817d52ed5b03d919e239
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562973"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375365"
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索如何使用 SkiaSharp 來呈現三次、二個和圓錐的貝茲曲線_
 
@@ -31,7 +31,7 @@ _探索如何使用 SkiaSharp 來呈現三次、二個和圓錐的貝茲曲線_
 
 電腦字型的字元外框通常是使用貝茲曲線來定義。
 
-有關 [**貝茲曲線**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) 的維琪百科文章包含一些實用的背景資訊。 「 *貝茲曲線* 」實際上是指類似曲線的系列。 SkiaSharp 支援三種類型的貝茲曲線，稱為 *立方*、 *二*和 *圓錐*。 圓錐也稱為 *有理數二*。
+有關 [**貝茲曲線**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) 的維琪百科文章包含一些實用的背景資訊。 「 *貝茲曲線* 」實際上是指類似曲線的系列。 SkiaSharp 支援三種類型的貝茲曲線，稱為 *立方* 、 *二* 和 *圓錐* 。 圓錐也稱為 *有理數二* 。
 
 ## <a name="the-cubic-bzier-curve"></a>三次方貝茲曲線
 
@@ -100,7 +100,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 在數學上，曲線是三個多項式。 曲線最多隻會在三個點相交一條直線。 在起點，曲線一律會與從起點到第一個控制點之間的直線相切，而且會以相同的方向進行。 在結束點，曲線一律會與第二個控制點的直線相切地相切到最後一個點。
 
-立體貝茲曲線一律會由連接四個點的凸四邊形所限制。 這稱為 *凸*殼。 如果控制點位於起點和終點之間的直線，則貝茲曲線會轉譯為直線。 但曲線也可以橫跨本身，如第三個螢幕擷取畫面所示。
+立體貝茲曲線一律會由連接四個點的凸四邊形所限制。 這稱為 *凸* 殼。 如果控制點位於起點和終點之間的直線，則貝茲曲線會轉譯為直線。 但曲線也可以橫跨本身，如第三個螢幕擷取畫面所示。
 
 路徑輪廓可以包含多個連接的三次方貝茲曲線，但只有在下列三個點 colinear (也就是在直線) 上時，兩個三次方貝茲曲線之間的連接才會變得平滑：
 
@@ -122,7 +122,7 @@ y (t) = (1 – t) ³ y ₀ + 3t (1 – t) ² y ₁ + 3t ² (1 – t) y ₂ + t �
 
 有時候，使用貝茲曲線呈現圓弧是很方便的。三次方貝茲曲線可將圓弧的近似程度最高到四分之一圓形，因此四個連接的貝茲曲線可以定義整個圓。 這項近似值將在25年前發行的兩篇文章中討論：
 
-> Tor Dokken，例如，「圓形的良好近似值-連續貝茲曲線」、 *電腦輔助幾何設計 7* (1990) 、33-41。
+> Tor Dokken，例如，「Curvature-Continuous 貝茲曲線的圓形良好近似值」、 *電腦輔助幾何設計 7* (1990) 、33-41。
 
 > Michael Goldapp，「每三立方 Polynomials 的圓形弧形近似值」、 *電腦輔助幾何設計 8* (1991) 、227-238。
 
@@ -130,7 +130,7 @@ y (t) = (1 – t) ³ y ₀ + 3t (1 – t) ² y ₁ + 3t ² (1 – t) y ₂ + t �
 
 ![使用貝茲曲線的圓弧近似值](beziers-images/bezierarc45.png)
 
-從開始和結束點到控制點的線條會與圓形和貝茲曲線相切，且長度為 *L*。上面提及的第一篇文章指出，當該長度 *L* 的計算方式與下列類似時，貝茲曲線最接近圓形弧線：
+從開始和結束點到控制點的線條會與圓形和貝茲曲線相切，且長度為 *L* 。上面提及的第一篇文章指出，當該長度 *L* 的計算方式與下列類似時，貝茲曲線最接近圓形弧線：
 
 L = 4 × tan (α/4) /3
 
@@ -249,7 +249,7 @@ public class SquaringTheCirclePage : ContentPage
 }
 ```
 
-第二個數據行包含四個貝茲曲線的座標，這些曲線定義區域與圓形區域大約相同的正方形。  (將正方形繪製為給定圓形的精確區域，就是將[圓形](https://en.wikipedia.org/wiki/Squaring_the_circle)*精確度*的傳統無法解決幾何問題。 ) 若要呈現具有貝茲曲線的正方形，則每個曲線的兩個控制點都相同，而且會以起點和終點 colinear，因此會以直線線呈現貝茲曲線。
+第二個數據行包含四個貝茲曲線的座標，這些曲線定義區域與圓形區域大約相同的正方形。  (將正方形繪製為給定圓形的精確區域，就是將 [圓形](https://en.wikipedia.org/wiki/Squaring_the_circle)*精確度* 的傳統無法解決幾何問題。 ) 若要呈現具有貝茲曲線的正方形，則每個曲線的兩個控制點都相同，而且會以起點和終點 colinear，因此會以直線線呈現貝茲曲線。
 
 陣列的第三個數據行是用於動畫的插補值。 此頁面會設定16毫秒的計時器，並 `PaintSurface` 以該速率呼叫處理常式：
 
@@ -300,7 +300,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這種動畫不可能有演算法有彈性的曲線，足以轉譯成圓弧和直線。
 
-**貝塞爾**曲線頁面也會利用貝茲曲線的功能來逼近圓弧。以下是 `PaintSurface` 來自類別的處理常式 [`BezierInfinityPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) ：
+**貝塞爾** 曲線頁面也會利用貝茲曲線的功能來逼近圓弧。以下是 `PaintSurface` 來自類別的處理常式 [`BezierInfinityPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) ：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -347,7 +347,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![貝塞爾無限大頁面的三重螢幕擷取畫面](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
 
-從[**三種用來繪製弧形文章的方式來**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)看，中間點會比**弧線無限大**頁面所轉譯的無限大符號稍微平滑。
+從 [**三種用來繪製弧形文章的方式來**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)看，中間點會比 **弧線無限大** 頁面所轉譯的無限大符號稍微平滑。
 
 ## <a name="the-quadratic-bzier-curve"></a>二次方貝茲曲線
 
@@ -420,7 +420,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 圓錐貝茲曲線 &mdash; 也稱為有理二次方貝茲曲線 &mdash; ，這是一系列貝茲曲線的相對最近加法。 如同二次方貝茲曲線，有理數二次方貝茲曲線牽涉到一個起點、一個結束點和一個控制點。 但有理數二次方貝茲曲線也需要 *加權* 值。 因為參數化公式牽涉到比例，所以稱為 *有理數* 二。
 
-X 和 Y 的參數方程式是共用相同分母的比率。 以下是 *t* 的分母方程式範圍，範圍介於0到1，而權數值為 *w*：
+X 和 Y 的參數方程式是共用相同分母的比率。 以下是 *t* 的分母方程式範圍，範圍介於0到1，而權數值為 *w* ：
 
 d (t) = (1 – t) ² + 2wt (1 – t) + t ²
 
@@ -490,7 +490,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 如您所見，當權數較高時，控制點似乎會將曲線拉回更多。 當權數為零時，曲線就會變成從起點到結束點的直線。
 
-理論上，允許負加權，並使曲線 *遠離* 控制點。 不過，[-1] 或 [低於] 的權數會導致參數方程式中的分母針對 *t*的特定值變成負值。 可能基於這個原因，方法中會忽略負加權 `ConicTo` 。 「 **圓錐曲線** 」程式可讓您設定負加權，但您可以藉由實驗來查看，負值加權的效果與零的粗細相同，而且會造成直線的呈現。
+理論上，允許負加權，並使曲線 *遠離* 控制點。 不過，[-1] 或 [低於] 的權數會導致參數方程式中的分母針對 *t* 的特定值變成負值。 可能基於這個原因，方法中會忽略負加權 `ConicTo` 。 「 **圓錐曲線** 」程式可讓您設定負加權，但您可以藉由實驗來查看，負值加權的效果與零的粗細相同，而且會造成直線的呈現。
 
 您很容易就能衍生控制點和權數，以使用 `ConicTo` 方法繪製圓形弧形到 (，但不包括) 的半圓。 在下圖中，起點和終點的正切線條符合控制點。
 

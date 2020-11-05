@@ -10,16 +10,16 @@ ms.date: 10/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c62d03e785e02160d9c0f83c3375383d890d62b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 306dbe15d269f0c8554f73b92623e4f67e06b959
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558267"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375170"
 ---
 # <a name="local-notifications-in-no-locxamarinforms"></a>中的本機通知 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/local-notifications)
 
 本機通知是安裝在行動裝置上的應用程式所傳送的警示。 本機通知通常用於下列功能：
 

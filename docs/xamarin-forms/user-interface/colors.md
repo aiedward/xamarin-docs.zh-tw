@@ -10,16 +10,16 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b4e44cb667335ecca7a0c7e5ec77d6e14ed975c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6018946f280afa3f02d8f81bfc64338e561950fe
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557227"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375287"
 ---
 # <a name="colors-in-no-locxamarinforms"></a>色彩 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithcolors)
 
 _Xamarin.Forms 提供彈性的跨平臺色彩類別。_
 
@@ -34,7 +34,7 @@ _Xamarin.Forms 提供彈性的跨平臺色彩類別。_
 - `FromHsva` -色調、飽和度和值 `int` 或 `double` 值。
 - `FromRgb` -紅色、綠色和藍色的 `int` 值 (0-255) 。
 - `FromRgba` -紅色、綠色、藍色和 Alpha  `int` 值 (0-255) 。
-- `FromUint` -設定 `double` 代表 **argb**的單一值。
+- `FromUint` -設定 `double` 代表 **argb** 的單一值。
 
 以下是一些 `BackgroundColor` 使用不同的允許語法變化，指派給某些標籤之的範例色彩：
 

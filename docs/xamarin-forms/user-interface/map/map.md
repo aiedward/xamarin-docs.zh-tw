@@ -10,16 +10,16 @@ ms.date: 05/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: df3189455102cedab232e0c629e63f65e242c9b5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3029bfeb8179e4bf6a7b9103b22719c19fb38920
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560048"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375456"
 ---
 # <a name="no-locxamarinforms-map-control"></a>Xamarin.Forms 地圖控制項
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 [`Map`](xref:Xamarin.Forms.Maps.Map)控制項是顯示和標注地圖的跨平臺視圖。 它使用每個平臺的原生地圖控制項，為使用者提供快速且熟悉的地圖體驗：
 

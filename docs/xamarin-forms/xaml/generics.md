@@ -10,16 +10,16 @@ ms.date: 04/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e6856e0ef513905a6300dcaf661ea33f4a89852c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 05d0917ac748ca27350f43ae225f1cb1d1aad84f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563909"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375378"
 ---
 # <a name="generics-in-no-locxamarinforms-xaml"></a>XAML 中的泛型 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 
 Xamarin.Forms XAML 藉由指定泛型條件約束做為型別引數，提供使用泛型 CLR 型別的支援。 這項支援是由指示詞提供，此指示詞會將 `x:TypeArguments` 泛型的條件約束類型引數傳遞至泛型型別的函式。
 

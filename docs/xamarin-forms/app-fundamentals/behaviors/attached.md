@@ -10,16 +10,16 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6c8c43a877a102d9e16070da00813b00e7ef1c38
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d6c8154891f6ec295b7082dc6eebe46916d4e4e0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561361"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368054"
 ---
 # <a name="attached-behaviors"></a>附加的行為
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
 _附加的行為是具有一或多個附加屬性的靜態類別。本文示範如何建立和使用附加的行為。_
 
@@ -128,7 +128,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, false);
 
 在執行階段，當 `AttachBehavior` 附加屬性的值設定為 `false` 時，將會執行 `OnAttachBehaviorChanged` 方法。 `OnAttachBehaviorChanged`方法會接著取消註冊事件的事件處理常式，以 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 確保當使用者與控制項互動時，不會執行此行為。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範了如何建立和使用附加的行為。 附加的行為是具有一或多個附加屬性的 `static` 類別。
 

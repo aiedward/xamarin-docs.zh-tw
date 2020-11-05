@@ -10,16 +10,16 @@ ms.date: 08/14/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eb94b2943cfe4659bb77764f810d45dc8b189005
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a11178b9034561e9f1fdf1bbf17cf28cfe9d967b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555368"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375075"
 ---
 # <a name="no-locxamarinforms-contentview"></a>Xamarin.Forms ContentView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
 Xamarin.Forms [`ContentView`](xref:Xamarin.Forms.ContentView) 類別是包含單一子專案的型別， `Layout` 通常用來建立可重複使用的自訂控制項。 `ContentView`類別繼承自 [`TemplatedView`](xref:Xamarin.Forms.TemplatedView) 。 本文和相關的範例說明如何根據類別建立自訂 `CardView` 控制項 `ContentView` 。
 
@@ -119,7 +119,7 @@ public string CardTitle
 </ContentView>
 ```
 
-`ContentView`元素 `x:Name` 會將屬性設定為**此**屬性，可用來存取系結至實例的物件 `CardView` 。 版面配置中的元素會將其屬性的系結設定為系結物件上定義的值。
+`ContentView`元素 `x:Name` 會將屬性設定為 **此** 屬性，可用來存取系結至實例的物件 `CardView` 。 版面配置中的元素會將其屬性的系結設定為系結物件上定義的值。
 
 如需資料系結的詳細資訊，請參閱[ Xamarin.Forms 資料](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結。
 

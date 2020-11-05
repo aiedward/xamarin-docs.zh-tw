@@ -10,16 +10,16 @@ ms.date: 12/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3bbad7f96403cb1f386b80b2923b0cdd222f9596
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d9cece5bc0b9799a4c2ac951cde8196a66465bd4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555875"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375274"
 ---
 # <a name="invoking-events-from-effects"></a>從效果叫用事件
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 
 _效果可以定義並叫用事件，以通知基礎原生視圖中的變更。本文說明如何執行低層級的多點觸控手指追蹤，以及如何產生通知觸控活動的事件。_
 
@@ -31,9 +31,9 @@ _效果可以定義並叫用事件，以通知基礎原生視圖中的變更。�
 
 iOS、Android 和通用 Windows 平台都包含一個低層級的 API，可讓應用程式偵測觸控活動。 這些平台都能區分三種基本類型的觸控事件：
 
-- *按下*，當手指觸控螢幕時
-- *移動*，當觸控螢幕的手指移動時
-- *放開*，當從螢幕放開手指時
+- *按下* ，當手指觸控螢幕時
+- *移動* ，當觸控螢幕的手指移動時
+- *放開* ，當從螢幕放開手指時
 
 在多點觸控的環境中，多個手指可同時觸控螢幕。 各種不同的平台包含應用程式可用來區分多個手指的識別碼 (ID)。
 
@@ -364,7 +364,7 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 
 [**TouchTrackingEffectDemos**](/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) 程式包含五個用來測試一般工作觸控追蹤效果的頁面。
 
-[BoxView 拖曳]**** 頁面可讓您將 `BoxView` 項目新增至 `AbsoluteLayout`，然後將它們拖曳到畫面上。 [XAML 檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BoxViewDraggingPage.xaml)會具現化兩個 `Button` 檢視，用來將 `BoxView` 項目新增至 `AbsoluteLayout`，以及清除 `AbsoluteLayout`。
+[BoxView 拖曳] 頁面可讓您將 `BoxView` 項目新增至 `AbsoluteLayout`，然後將它們拖曳到畫面上。 [XAML 檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BoxViewDraggingPage.xaml)會具現化兩個 `Button` 檢視，用來將 `BoxView` 項目新增至 `AbsoluteLayout`，以及清除 `AbsoluteLayout`。
 
 [程式碼後置檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BoxViewDraggingPage.xaml.cs)中將新 `BoxView` 新增至 `AbsoluteLayout` 的方法，也會將 `TouchEffect` 物件新增至 `BoxView`，並將事件處理常式附加到效果：
 
@@ -460,7 +460,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 ### <a name="subclassing-the-view"></a>子類別化檢視
 
-通常，專案可以更輕鬆地 Xamarin.Forms 處理自己的觸控事件。 [可拖曳的 BoxView 拖曳]**** 頁面的功能與 [BoxView 拖曳]**** 頁面相同，但使用者所拖曳項目是衍生自 `BoxView` 的 [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/DraggableBoxView.cs) 類別執行個體：
+通常，專案可以更輕鬆地 Xamarin.Forms 處理自己的觸控事件。 [可拖曳的 BoxView 拖曳] 頁面的功能與 [BoxView 拖曳] 頁面相同，但使用者所拖曳項目是衍生自 `BoxView` 的 [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/DraggableBoxView.cs) 類別執行個體：
 
 ```csharp
 class DraggableBoxView : BoxView
@@ -517,7 +517,7 @@ class DraggableBoxView : BoxView
 
 以下兩個示範需要圖形，因此它們使用 SkiaSharp 來達到這個目的。 您可能會想要在研究這些範例之前，先瞭解如何[在中 Xamarin.Forms 使用 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) 。 前兩篇文章 (「SkiaSharp 繪圖基本概念」和「SkiaSharp 線條和路徑」) 涵蓋了您在此需要的一切資訊。
 
-[橢圓形繪圖]**** 頁面可讓您在螢幕上撥動手指來繪製橢圓形。 根據您移動手指的方式而定，您可以使用從左上角到右下角，或從任何其他一角到對角的方式繪製橢圓形。 繪製的橢圓形具有隨機色彩且不透明。
+[橢圓形繪圖] 頁面可讓您在螢幕上撥動手指來繪製橢圓形。 根據您移動手指的方式而定，您可以使用從左上角到右下角，或從任何其他一角到對角的方式繪製橢圓形。 繪製的橢圓形具有隨機色彩且不透明。
 
 [![橢圓形繪圖頁面的三張一組螢幕擷取畫面](touch-tracking-images/ellipsedrawing-small.png)](touch-tracking-images/ellipsedrawing-large.png#lightbox "橢圓形繪圖頁面的三張一組螢幕擷取畫面")
 
@@ -689,7 +689,7 @@ case TouchActionType.Pressed:
     break;
 ```
 
-另一個 SkiaSharp 範例是 [手繪]**** 頁面。 您可以從兩個 `Picker` 檢視中選取筆觸色彩和筆觸寬度，然後用一或多個手指進行繪製：
+另一個 SkiaSharp 範例是 [手繪] 頁面。 您可以從兩個 `Picker` 檢視中選取筆觸色彩和筆觸寬度，然後用一或多個手指進行繪製：
 
 [![手指繪圖頁面的三張一組螢幕擷取畫面](touch-tracking-images/fingerpaint-small.png)](touch-tracking-images/fingerpaint-large.png#lightbox "手指繪圖頁面的三張一組螢幕擷取畫面")
 
@@ -751,11 +751,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ### <a name="tracking-view-to-view-touch"></a>追蹤檢視對檢視觸控
 
-不論是建立 `TouchEffect` 或發生 `Pressed` 事件時，所有之前的範例已將 `TouchEffect` 的 `Capture` 屬性設定為 `true`。 這可確保相同的項目會接收與第一個按下檢視的手指建立關聯的所有事件。 最後一個範例「不會」** 將 `Capture` 設定為 `true`。 當接觸螢幕的手指從某個項目移到另一個項目時，這會導致不同的行為。 手指移動的來源項目會接收 `Type` 屬性設定為 `TouchActionType.Exited` 的事件，而第二個項目則接收具有 `Type` 設定 `TouchActionType.Entered` 的事件。
+不論是建立 `TouchEffect` 或發生 `Pressed` 事件時，所有之前的範例已將 `TouchEffect` 的 `Capture` 屬性設定為 `true`。 這可確保相同的項目會接收與第一個按下檢視的手指建立關聯的所有事件。 最後一個範例「不會」將 `Capture` 設定為 `true`。 當接觸螢幕的手指從某個項目移到另一個項目時，這會導致不同的行為。 手指移動的來源項目會接收 `Type` 屬性設定為 `TouchActionType.Exited` 的事件，而第二個項目則接收具有 `Type` 設定 `TouchActionType.Entered` 的事件。
 
 這種類型的觸控處理非常適用於音樂鍵盤。 按鍵應該能夠偵測其按下時間，同時也能偵測手指何時從某個按鍵滑到另一個按鍵。
 
-[靜音鍵盤]**** 頁面可定義衍生自 [`Key`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/Key.cs) (其衍生自 `BoxView`) 的小型 [`WhiteKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/WhiteKey.cs) 和 [`BlackKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BlackKey.cs) 類別。
+[靜音鍵盤] 頁面可定義衍生自 [`Key`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/Key.cs) (其衍生自 `BoxView`) 的小型 [`WhiteKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/WhiteKey.cs) 和 [`BlackKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BlackKey.cs) 類別。
 
 `Key` 類別已準備好在實際的音樂應用程式中使用。 它可定義名為 `IsPressed` 和 `KeyNumber` 的公用屬性，其目的是要設定為依照 MIDI 標準建立的按鍵碼。 `Key` 類別也會定義名為 `StatusChanged` 的事件，當 `IsPressed` 屬性變更時就會叫用該事件。
 
@@ -803,7 +803,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 如果您的手指在按鍵間劃過，您可透過色彩的稍微變化看到觸控事件正在從某個按鍵傳送到另一個按鍵。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已示範如何以效果叫用事件，以及如何撰寫和使用實作低層級多點觸控處理的效果。
 

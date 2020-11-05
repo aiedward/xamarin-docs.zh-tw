@@ -10,18 +10,18 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6c6fb0ea9d3e2b728072fa36c3cdb2a86ade131
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6fe7ce75af14e25fa3dc213f0fb5ed99a2e70a87
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559320"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374819"
 ---
 # <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms 圖形：幾何
 
 ![發行前 API](~/media/shared/preview.png)
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Geometry`類別以及從中衍生的類別，可讓您描述2d 圖形的幾何。 `Geometry` 從兩個或多個幾何物件建立的物件可以很簡單（例如矩形和圓形）或複合。 此外，也可以建立包含弧形和曲線的更複雜幾何。
 

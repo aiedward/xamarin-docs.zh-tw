@@ -10,20 +10,20 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b8665e5489da396cb9f7ef984c97fe79fda17434
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5fdac3524e2213e43e1fad2ed3da9e12d7608b16
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558319"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374923"
 ---
 # <a name="device-styles-in-no-locxamarinforms"></a>中的裝置樣式 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
 _Xamarin.Forms 在 [裝置] 樣式類別中包含六個動態樣式（稱為裝置樣式）。_
 
-*裝置*樣式為：
+*裝置* 樣式為：
 
 - [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)
 - [`CaptionStyle`](xref:Xamarin.Forms.Device.Styles.CaptionStyle)
@@ -72,7 +72,7 @@ _Xamarin.Forms 在 [裝置] 樣式類別中包含六個動態樣式（稱為裝�
 
 ![每個平臺上的裝置樣式](device-images/device-styles.png)
 
-*Device*您也可以將 [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) 屬性設定為裝置樣式的索引鍵名稱，藉以衍生裝置樣式。 在上述程式碼範例中， `myBodyStyle` 繼承自 [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) 並設定強調文字色彩。 如需動態樣式繼承的詳細資訊，請參閱 [動態樣式繼承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)。
+*Device* 您也可以將 [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) 屬性設定為裝置樣式的索引鍵名稱，藉以衍生裝置樣式。 在上述程式碼範例中， `myBodyStyle` 繼承自 [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) 並設定強調文字色彩。 如需動態樣式繼承的詳細資訊，請參閱 [動態樣式繼承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)。
 
 下列程式碼範例示範 c # 中的對等頁面：
 
@@ -116,7 +116,7 @@ public class DeviceStylesPageCS : ContentPage
 
 ## <a name="accessibility"></a>協助工具選項
 
-*裝置*樣式採用協助工具喜好設定，因此字型大小會隨著每個平臺上的協助工具喜好設定改變而變更。 因此，若要支援可存取的文字，請務必將 *裝置* 樣式當做應用程式內任何文字樣式的基礎使用。
+*裝置* 樣式採用協助工具喜好設定，因此字型大小會隨著每個平臺上的協助工具喜好設定改變而變更。 因此，若要支援可存取的文字，請務必將 *裝置* 樣式當做應用程式內任何文字樣式的基礎使用。
 
 下列螢幕擷取畫面會示範每個平臺上的裝置樣式，以及最小的可存取字型大小：
 

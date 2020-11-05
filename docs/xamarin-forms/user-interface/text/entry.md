@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ab2f0880f694bd9e270385dd6e0256374ed76c43
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 625dd57d1f84b95cef1c6513ae832af805bf565a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562219"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375027"
 ---
 # <a name="no-locxamarinforms-entry"></a>Xamarin.Forms 進入
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) 用於單行文字輸入。 `Entry`和 view 一樣，也 [`Editor`](xref:Xamarin.Forms.Editor) 支援多個鍵盤類型。 此外， `Entry` 也可以當做密碼欄位使用。
 

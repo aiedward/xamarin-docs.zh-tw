@@ -10,18 +10,18 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5d48c699ed89e91452efe84749a1dedac18a34f5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 947e630457a652b18abb6979b1f99fa9b1e8c389
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562726"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374988"
 ---
 # <a name="custom-video-transport-controls"></a>自訂影片傳輸控制項
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-影片播放程式的傳輸控制項包括執行 [播放]****、[暫停]**** 和 [停止]**** 功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放]**** 及 [暫停]**** 功能常會合併為一個按鈕。
+影片播放程式的傳輸控制項包括執行 [播放]、[暫停] 和 [停止] 功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放] 及 [暫停] 功能常會合併為一個按鈕。
 
 根據預設，`VideoPlayer` 會顯示由各平台支援的傳輸控制項。 當您將 `AreTransportControlsEnabled` 屬性設定為 `false` 時，就會隱藏這些控制項。 接著可以用程式設計的方式來控制 `VideoPlayer` 或支援您本身的傳輸控制項。
 
@@ -215,7 +215,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="the-video-player-status"></a>影片播放程式狀態
 
-實作**播放**、**暫停**、和**停止**功能並不足以支援傳輸控制項。 **播放**和**暫停**命令通常會以相同的按鈕實作，且該按鈕會指出影片正在播放或暫停。 此外，若影片尚未載入，就不應啟用按鈕。
+實作 **播放** 、 **暫停** 、和 **停止** 功能並不足以支援傳輸控制項。 **播放** 和 **暫停** 命令通常會以相同的按鈕實作，且該按鈕會指出影片正在播放或暫停。 此外，若影片尚未載入，就不應啟用按鈕。
 
 這些需求指出影片播放程式需要提供目前狀態，指出其正在播放、暫停或仍未準備好播放影片。 (各平台也支援指出影片可以暫停或移至新位置的屬性，但這些屬性適用於串流影片而非影片檔案，所以此處描述的 `VideoPlayer` 中不支援這些屬性。)
 
@@ -525,25 +525,25 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>[播放]、[停止] 和 [暫停] 按鈕
 
-使用 Unicode 字元來代表 [播放]****、[暫停]**** 和 [停止]**** 的影像可能會有問題。 但 Unicode 標準的 [Miscellaneous Technical](https://unicode-table.com/en/blocks/miscellaneous-technical/) (其他專門符號) 一節判定這三個符號字元應該適合此用途。 這些警告是：
+使用 Unicode 字元來代表 [播放]、[暫停] 和 [停止] 的影像可能會有問題。 但 Unicode 標準的 [Miscellaneous Technical](https://unicode-table.com/en/blocks/miscellaneous-technical/) (其他專門符號) 一節判定這三個符號字元應該適合此用途。 這些警告是：
 
-- 0x23F5 (指向右方的黑色中型三角形) 或 &#x23F5;，代表 [播放]****
-- 0x23F8 (雙垂直長條) 或 &#x23F8;，代表 [暫停]****
-- 0x23F9 (黑色正方形) 或 &#x23F9;，代表 [停止]****
+- 0x23F5 (指向右方的黑色中型三角形) 或 &#x23F5;，代表 [播放]
+- 0x23F8 (雙垂直長條) 或 &#x23F8;，代表 [暫停]
+- 0x23F9 (黑色正方形) 或 &#x23F9;，代表 [停止]
 
-無論這些符號如何出現在您的瀏覽器中 (，不同的瀏覽器會以不同的方式處理這些符號) ，而不會在支援的平臺上以一致的方式顯示 Xamarin.Forms 。 在 iOS 及 UWP 裝置上，[暫停]**** 及 [停止]**** 字元擁有圖形化的外觀，且帶有藍色 3D 的背景以及白色的前景。 但這在 Android 上就不一樣了，其符號為單純的藍色。 不過，[播放]**** 的 0x23F5 字碼指標在 UWP 上沒有相同的外觀，且甚至在 iOS 和 Android 上都不支援。
+無論這些符號如何出現在您的瀏覽器中 (，不同的瀏覽器會以不同的方式處理這些符號) ，而不會在支援的平臺上以一致的方式顯示 Xamarin.Forms 。 在 iOS 及 UWP 裝置上，[暫停] 及 [停止] 字元擁有圖形化的外觀，且帶有藍色 3D 的背景以及白色的前景。 但這在 Android 上就不一樣了，其符號為單純的藍色。 不過，[播放] 的 0x23F5 字碼指標在 UWP 上沒有相同的外觀，且甚至在 iOS 和 Android 上都不支援。
 
-基於此原因，0x23F5 字碼指標無法作為 [播放]**** 使用。 適合的替代字碼指標為：
+基於此原因，0x23F5 字碼指標無法作為 [播放] 使用。 適合的替代字碼指標為：
 
-- 0x25B6 (指向右方的黑色三角形) 或 &#x25B6;，代表 [播放]****
+- 0x25B6 (指向右方的黑色三角形) 或 &#x25B6;，代表 [播放]
 
-除了其為全黑的三角形，且不像 3D 外觀的 [暫停]**** 及 [停止]**** 之外，各平台皆對其支援。 其中一種可能性為使用變體程式碼來追隨 0x25B6 字碼指標：
+除了其為全黑的三角形，且不像 3D 外觀的 [暫停] 及 [停止] 之外，各平台皆對其支援。 其中一種可能性為使用變體程式碼來追隨 0x25B6 字碼指標：
 
-- 後面接著 0xFE0F (變體 16) 的 0x25B6 或 &#x25B6;&#xFE0F;，代表 [播放]****
+- 後面接著 0xFE0F (變體 16) 的 0x25B6 或 &#x25B6;&#xFE0F;，代表 [播放]
 
-這是下方所示標記使用的項目。 在 iOS 上，它提供 [播放]**** 符號與 [暫停]**** 及 [停止]**** 按鈕相同的 3D 外觀，但變體在 Android 和 UWP 上無效。
+這是下方所示標記使用的項目。 在 iOS 上，它提供 [播放] 符號與 [暫停] 及 [停止] 按鈕相同的 3D 外觀，但變體在 Android 和 UWP 上無效。
 
-**自訂傳輸**頁面會將 **AreTransportControlsEnabled** 屬性設定為 **false**，以及包含載入影片時顯示的 `ActivityIndicator` 和兩個按鈕。 `DataTrigger` 物件可用來啟用和停用 `ActivityIndicator` 和按鈕，以及切換 **播放** 與 **暫停**之間的第一個按鈕：
+**自訂傳輸** 頁面會將 **AreTransportControlsEnabled** 屬性設定為 **false** ，以及包含載入影片時顯示的 `ActivityIndicator` 和兩個按鈕。 `DataTrigger` 物件可用來啟用和停用 `ActivityIndicator` 和按鈕，以及切換 **播放** 與 **暫停** 之間的第一個按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -650,11 +650,11 @@ namespace VideoPlayerDemos
 }
 ```
 
-因為在 **CustomTransport.xaml** 檔案中 `AutoPlay` 設定為 `false`，所以您必須在其啟用時按 [播放]**** 按鈕以開始影片。 因為定義了這些按鈕，所以上面討論的 Unicode 字元都會附有其相對應文字。 當影片播放時，按鈕在各平台上都有一致的外觀：
+因為在 **CustomTransport.xaml** 檔案中 `AutoPlay` 設定為 `false`，所以您必須在其啟用時按 [播放] 按鈕以開始影片。 因為定義了這些按鈕，所以上面討論的 Unicode 字元都會附有其相對應文字。 當影片播放時，按鈕在各平台上都有一致的外觀：
 
 [![自訂傳輸播放](custom-transport-images/customtransportplaying-small.png "自訂傳輸播放")](custom-transport-images/customtransportplaying-large.png#lightbox "自訂傳輸播放")
 
-但在影片暫停時，Android 及 UWP 上的 [播放]**** 看起來大不相同：
+但在影片暫停時，Android 及 UWP 上的 [播放] 看起來大不相同：
 
 [![自訂傳輸已暫停](custom-transport-images/customtransportpaused-small.png "自訂傳輸已暫停")](custom-transport-images/customtransportpaused-large.png#lightbox "自訂傳輸已暫停")
 

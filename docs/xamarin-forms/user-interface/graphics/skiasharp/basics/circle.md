@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 538a3ea3bd5b2293f93047d9796a185abfa5f2b9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 39e9effa1c43a4456a1e75e391e14804e2aa0011
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556590"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375092"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>在 SkiaSharp 中繪製簡單的圓形
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解 SkiaSharp 繪圖的基本概念，包括畫布和油漆物件_
 
@@ -103,13 +103,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-[`Style`](xref:SkiaSharp.SKPaint.Style)屬性工作表示您想要在這種情況下*繪製*線條 (，在此案例中為圓形的外框) ，而不是*填滿*內部。 列舉的三個成員如下所示 [`SKPaintStyle`](xref:SkiaSharp.SKPaintStyle) ：
+[`Style`](xref:SkiaSharp.SKPaint.Style)屬性工作表示您想要在這種情況下 *繪製* 線條 (，在此案例中為圓形的外框) ，而不是 *填滿* 內部。 列舉的三個成員如下所示 [`SKPaintStyle`](xref:SkiaSharp.SKPaintStyle) ：
 
 - [`Fill`](xref:SkiaSharp.SKPaintStyle.Fill)
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-預設值為 `Fill`。 使用第三個選項來繪製線條，並以相同的色彩填滿內部。
+預設為 `Fill`。 使用第三個選項來繪製線條，並以相同的色彩填滿內部。
 
 將 [`Color`](xref:SkiaSharp.SKPaint.Color) 屬性設為類型的值 [`SKColor`](xref:SkiaSharp.SKColor) 。 取得值的方法之一 `SKColor` 是 Xamarin.Forms `Color` 使用擴充方法將值轉換成 `SKColor` 值 [`ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*) 。 [`Extensions`](xref:SkiaSharp.Views.Forms.Extensions)命名空間中的 `SkiaSharp.Views.Forms` 類別包含在 Xamarin.Forms 值與 SkiaSharp 值之間轉換的其他方法。
 
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-座標會指定為相對於顯示介面左上角的位置。 X 座標增加至右側，Y 座標會增加。 在有關圖形的討論中，通常會使用數學標記法 (x，y) 來代表點。 點 (0、0) 是顯示介面的左上角，通常稱為「 *原點*」。
+座標會指定為相對於顯示介面左上角的位置。 X 座標增加至右側，Y 座標會增加。 在有關圖形的討論中，通常會使用數學標記法 (x，y) 來代表點。 點 (0、0) 是顯示介面的左上角，通常稱為「 *原點* 」。
 
 的前兩個引數 `DrawCircle` 表示圓形中心的 X 和 Y 座標。 這些會指派給顯示介面的一半寬度和高度，以將圓形的中心放在顯示介面的中央。 第三個引數會指定圓形的半徑，而最後一個引數則是 `SKPaint` 物件。
 

@@ -7,36 +7,36 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: d8c458ad30d7e281427dad0e29092c55fede7347
-ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
+ms.openlocfilehash: 5cbe3f36d1aeb12be671b14a4f76c79764e814e6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319531"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375001"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>在 Xamarin 中使用 Apple 登入
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios13-addingthesigninwithappleflowtoyourapp/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/ios-samples/ios13-addingthesigninwithappleflowtoyourapp/)
 
-使用 Apple 登入是一項新服務，可為協力廠商驗證服務的使用者提供身分識別保護。 從 iOS 13 開始，Apple 要求使用協力廠商驗證服務的任何新應用程式也應該提供使用 Apple 登入的功能。 目前正在更新的應用程式不需要使用 Apple 新增登入，直到2020年4月為止。
+使用 Apple 登入是一項新的服務，可為協力廠商驗證服務的使用者提供身分識別保護。 從 iOS 13 開始，Apple 要求任何使用協力廠商驗證服務的新應用程式，也應提供使用 Apple 登入。 更新的現有應用程式不需要在2020年4月之前，使用 Apple 新增登入。
 
 本檔介紹如何使用 Apple 將登入新增至 iOS 13 應用程式。
 
 ## <a name="apple-developer-setup"></a>Apple 開發人員設定
 
-使用 [使用 Apple 登入] 建立並執行應用程式之前，您需要完成這些步驟。 在[Apple 開發人員憑證上，識別碼 & 設定檔][5]入口網站：
+使用 [使用 Apple 登入] 建立和執行應用程式之前，您必須完成這些步驟。 在 [Apple Developer 憑證上，識別碼 & 設定檔][5] 入口網站：
 
-1. 建立新的**應用程式 id**識別碼。
-2. 在 [**描述**] 欄位中設定描述。
-3. 選擇**明確**的配套識別碼，並`com.xamarin.AddingTheSignInWithAppleFlowToYourApp`在欄位中設定。
-4. 啟用 [**使用 Apple**功能登入]，並註冊新的身分識別。
+1. 建立新的 **應用程式** 識別碼識別碼。
+2. 在 [ **描述** ] 欄位中設定描述。
+3. 選擇 **明確** 的套件組合識別碼，並 `com.xamarin.AddingTheSignInWithAppleFlowToYourApp` 在欄位中設定。
+4. 啟用 [ **使用 Apple** 功能登入]，並註冊新的身分識別。
 5. 使用新的身分識別建立新的布建設定檔。
-6. 將它下載並安裝在您的裝置上。
-7. 在 Visual Studio 中，啟用 [在**plist**檔案中**使用 Apple**功能登入]。
+6. 下載並安裝在您的裝置上。
+7. 在 Visual Studio 中，啟用 **plist** 檔案中的 [ **使用 Apple 登入** ] 功能。
 
 ## <a name="check-sign-in-status"></a>檢查登入狀態
 
-當您的應用程式開始時，或當您第一次需要檢查使用者的驗證狀態時`ASAuthorizationAppleIdProvider` ，請具現化，並檢查目前的狀態：
+當您的應用程式開始時，或當您第一次需要檢查使用者的驗證狀態時，請具現化 `ASAuthorizationAppleIdProvider` 並檢查目前的狀態：
 
 ```csharp
 var appleIdProvider = new ASAuthorizationAppleIdProvider ();
@@ -65,11 +65,11 @@ appleIdProvider.GetCredentialState (KeychainItem.CurrentUserIdentifier, (credent
 });
 ```
 
-在此程式碼中， `FinishedLaunching`于期間`AppDelegate.cs`呼叫，應用程式會在`LoginViewController`狀態為`NotFound`並向使用者呈現時處理。 如果狀態`Authorized`傳回或`Revoked`，可能會向使用者顯示不同的動作。
+在此程式碼中，于期間呼叫 `FinishedLaunching` `AppDelegate.cs` ，應用程式將會在狀態為 `NotFound` 並向使用者呈現時處理 `LoginViewController` 。 如果狀態傳回 `Authorized` 或 `Revoked` ，則會向使用者顯示不同的動作。
 
 ## <a name="a-loginviewcontroller-for-sign-in-with-apple"></a>使用 Apple 登入的 LoginViewController
 
-使用`UIViewController` Apple 來`IASAuthorizationControllerDelegate` 執行登`LoginViewController`入邏輯和供應專案的會需要實作為，如下列範例所示。`IASAuthorizationControllerPresentationContextProviding`
+在 `UIViewController` Apple 中執行登入邏輯和提供登入的會需要執行， `IASAuthorizationControllerDelegate` `IASAuthorizationControllerPresentationContextProviding` 如 `LoginViewController` 下列範例所示。
 
 ```csharp
 public partial class LoginViewController : UIViewController, IASAuthorizationControllerDelegate, IASAuthorizationControllerPresentationContextProviding {
@@ -129,15 +129,15 @@ public partial class LoginViewController : UIViewController, IASAuthorizationCon
 }
 ```
 
-![使用以 Apple 登入的範例應用程式動畫](sign-in-images/sign-in-flow.png)
+![使用登入 Apple 的範例應用程式動畫](sign-in-images/sign-in-flow.png)
 
-這個範例程式碼會檢查中目前的`PerformExistingAccountSetupFlows`登入狀態，並連接到目前的 view 做為委派。 如果找到現有的 iCloud Keychain 認證或 Apple ID 認證，系統就會提示使用者使用它。
+此範例程式碼會檢查中目前的登入狀態 `PerformExistingAccountSetupFlows` ，並連接到目前的 view 做為委派。 如果找到現有的 iCloud Keychain credential 或 Apple ID 認證，系統會提示使用者使用該認證。
 
-Apple 提供`ASAuthorizationAppleIdButton`，此按鈕特別適用于此用途。 觸及時，按鈕會觸發在方法`HandleAuthorizationAppleIDButtonPress`中處理的工作流程。
+Apple 提供的 `ASAuthorizationAppleIdButton` 按鈕特別適用于此用途。 當您接觸時，按鈕將會觸發方法中處理的工作流程 `HandleAuthorizationAppleIDButtonPress` 。
 
 ## <a name="handling-authorization"></a>處理授權
 
-在中`IASAuthorizationController` ，執行用來儲存使用者帳戶的任何自訂邏輯。 下列範例會將使用者的帳戶儲存在 Keychain 中，也就是 Apple 自己的儲存體服務。
+在中，會 `IASAuthorizationController` 執行任何自訂邏輯來儲存使用者的帳戶。 下列範例會將使用者的帳戶儲存在 Apple 本身的儲存體服務 Keychain 中。
 
 ```csharp
 #region IASAuthorizationController Delegate
@@ -197,7 +197,7 @@ public void DidComplete (ASAuthorizationController controller, NSError error)
 
 ## <a name="authorization-controller"></a>授權控制器
 
-此實作為中的最後一項`ASAuthorizationController`是管理提供者之授權要求的。
+此實作為中的最後一個部分是 `ASAuthorizationController` 管理提供者授權要求的。
 
 ```csharp
 #region IASAuthorizationControllerPresentation Context Providing
@@ -211,8 +211,8 @@ public UIWindow GetPresentationAnchor (ASAuthorizationController controller) => 
 
 * [使用 Apple 指導方針登入](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/)
 * [使用 Apple 權利登入。][2]
-* [WWDC 2019 會話706：簡介使用 Apple 登入。][3]
-* [使用 Apple for Xamarin 的安裝程式登入][4]
+* [WWDC 2019 會話706：使用 Apple 進行登入的簡介。][3]
+* [使用適用于 Xamarin 的 Apple 進行安裝程式登入][4]
 
 [1]: https://developer.apple.com/documentation/authenticationservices/adding_the_sign_in_with_apple_flow_to_your_app
 [2]: https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_applesignin

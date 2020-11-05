@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: jonpryor
 ms.author: jopryo
 ms.date: 09/23/2020
-ms.openlocfilehash: 90efe2533f971180124d044ec39ddcf1591b9d36
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 8a23e973687ac9f775042685122d558788fc7be7
+ms.sourcegitcommit: 145bd7550d19088c84949ecf5b1cc39002183234
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91455036"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "92897438"
 ---
 # <a name="build-items"></a>組建項目
 
@@ -34,7 +34,7 @@ ms.locfileid: "91455036"
 
 ## <a name="androidboundlayout"></a>AndroidBoundLayout
 
-表示在 `AndroidGenerateLayoutBindings` 屬性設定為 `false` 的情況下，配置檔案將為其產生程式碼後置。 在所有其他層面上，它與上述的 `AndroidResource` 相同。 此動作**只**能與配置檔案搭配使用：
+表示在 `AndroidGenerateLayoutBindings` 屬性設定為 `false` 的情況下，配置檔案將為其產生程式碼後置。 在所有其他層面上，它與上述的 `AndroidResource` 相同。 此動作 **只** 能與配置檔案搭配使用：
 
 ```xml
 <AndroidBoundLayout Include="Resources\layout\Main.axml" />
@@ -89,7 +89,7 @@ ms.locfileid: "91455036"
 
 ## <a name="androidresource"></a>AndroidResource
 
-所有具有 AndroidResource** 建置動作的檔案都會在建置程序進行期間編譯成 Android 資源，並可供透過 `$(AndroidResgenFile)` 來存取。
+所有具有 AndroidResource 建置動作的檔案都會在建置程序進行期間編譯成 Android 資源，並可供透過 `$(AndroidResgenFile)` 來存取。
 
 ```xml
 <ItemGroup>
@@ -107,7 +107,7 @@ ms.locfileid: "91455036"
   <AndroidResource Include="Resources-Debug\values\strings.xml"/>
 </ItemGroup>
 <PropertyGroup>
-  <MonoAndroidResourcePrefix>Resources;Resources-Debug<MonoAndroidResourcePrefix>
+  <MonoAndroidResourcePrefix>Resources;Resources-Debug</MonoAndroidResourcePrefix>
 </PropertyGroup>
 ```
 
@@ -132,7 +132,7 @@ ms.locfileid: "91455036"
 
 已在 Xamarin. Android 10.2 中新增。
 
-## <a name="content"></a>內容
+## <a name="content"></a>Content
 
 不支援一般的 `Content` 建置動作 (因為我們還沒想出該如何提供支援，而又不會讓首次執行步驟的成本太高)。
 
@@ -140,11 +140,11 @@ ms.locfileid: "91455036"
 
 ## <a name="linkdescription"></a>LinkDescription
 
-具有 LinkDescription** 建置動作的檔案可用來[控制連結器行為](~/cross-platform/deploy-test/linker.md)。
+具有 LinkDescription 建置動作的檔案可用來[控制連結器行為](~/cross-platform/deploy-test/linker.md)。
 
 ## <a name="proguardconfiguration"></a>ProguardConfiguration
 
-具有 ProguardConfiguration** 建置動作的檔案包含可用來控制 `proguard` 行為的選項。 如需此建置動作的詳細資訊，請參閱 [ProGuard](~/android/deploy-test/release-prep/proguard.md)。
+具有 ProguardConfiguration 建置動作的檔案包含可用來控制 `proguard` 行為的選項。 如需此建置動作的詳細資訊，請參閱 [ProGuard](~/android/deploy-test/release-prep/proguard.md)。
 
 除非有下列情況，否則會忽略這些檔案。 [`$(EnableProguard)`](~/android/deploy-test/building-apps/build-properties.md#enableproguard)
 MSBuild 屬性為 `True` 。

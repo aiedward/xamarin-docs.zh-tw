@@ -10,16 +10,16 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b462535815e1c8ca6262d82d2527d7667b645db8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6f812e252f714539c41b57552038ca74e4d5137c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563922"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374910"
 ---
 # <a name="explicit-styles-in-no-locxamarinforms"></a>中的明確樣式 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _明確的樣式是藉由設定樣式屬性，選擇性地套用至控制項的樣式。_
 
@@ -67,7 +67,7 @@ _明確的樣式是藉由設定樣式屬性，選擇性地套用至控制項的�
 </ContentPage>
 ```
 
-[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)會定義適用于頁面實例的三個*明確*樣式 [`Label`](xref:Xamarin.Forms.Label) 。 每個 `Style` 都用來以不同的色彩顯示文字，同時也會設定字型大小和水準和垂直版面配置選項。 每個 `Style` 都會 `Label` [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 使用標記延伸來設定其屬性，以套用至不同的 `StaticResource` 。 這會導致下列螢幕擷取畫面中顯示的外觀：
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)會定義適用于頁面實例的三個 *明確* 樣式 [`Label`](xref:Xamarin.Forms.Label) 。 每個 `Style` 都用來以不同的色彩顯示文字，同時也會設定字型大小和水準和垂直版面配置選項。 每個 `Style` 都會 `Label` [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 使用標記延伸來設定其屬性，以套用至不同的 `StaticResource` 。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
 [![明確樣式範例](explicit-images/explicit-styles.png)](explicit-images/explicit-styles-large.png#lightbox)
 
@@ -96,7 +96,7 @@ _明確的樣式是藉由設定樣式屬性，選擇性地套用至控制項的�
 </ContentPage>
 ```
 
-在此範例中，會將 *明確*的 [`Style`](xref:Xamarin.Forms.Style) 實例指派給 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 控制項的集合 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 然後，您可以將樣式套用至控制項及其子系。
+在此範例中，會將 *明確* 的 [`Style`](xref:Xamarin.Forms.Style) 實例指派給 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 控制項的集合 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 然後，您可以將樣式套用至控制項及其子系。
 
 如需在應用程式中建立樣式的詳細資訊 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ，請參閱 [全域樣式](~/xamarin-forms/user-interface/styles/application.md)。
 

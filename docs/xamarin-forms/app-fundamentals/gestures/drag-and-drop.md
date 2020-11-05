@@ -10,18 +10,18 @@ ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af56e84598f73693a8cb0e93573b789a716c194a
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 30e77d4978e9a191c1ba19e80109f9854cc46f8f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897464"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375235"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>新增拖放手勢辨識器
 
 ![發行前 API](~/media/shared/preview.png)
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
 
 拖放手勢可讓專案及其相關聯的資料封裝，使用連續手勢從螢幕位置拖曳至另一個位置。 拖放可以在單一應用程式中進行，也可以在一個應用程式中啟動，並在另一個應用程式中結束。
 
@@ -80,7 +80,7 @@ ms.locfileid: "92897464"
 > [!TIP]
 > 在 iOS、Android 及 UWP 上，拖曳手勢會以長按的方式啟動，後面接著拖曳。
 
-如需使用命令的範例 `DragGestureRecognizer` ，請參閱 [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)。
+如需使用命令的範例 `DragGestureRecognizer` ，請參閱 [範例](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)。
 
 ## <a name="build-a-data-package"></a>建立資料封裝
 
@@ -190,7 +190,7 @@ void OnDragStarting(object sender, DragStartingEventArgs e)
 
 `DragEventArgs`事件隨附的類別會 `DragOver` 定義下列屬性：
 
-- `Data`型別為的 `DataPackage` ，其中包含與拖曳來源相關聯的資料。 這個屬性是唯讀的。
+- `Data`型別為的 `DataPackage` ，其中包含與拖曳來源相關聯的資料。 這是唯讀的屬性。
 - `AcceptedOperation`，類型為 `DataPackageOperation` ，指定放置目標所允許的作業。
 
 如需列舉的詳細資訊 `DataPackageOperation` ，請參閱 [處理 system.windows.dragdrop.dragover> 事件](#handle-the-dragover-event)。
@@ -214,7 +214,7 @@ void OnDragStarting(object sender, DragStartingEventArgs e)
 
 在此範例中，當拖曳來源放在放置目標上時，如果 [`Image`](xref:Xamarin.Forms.Image) 拖曳來源為，則會將拖曳來源複製到放置目標 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 。 這是因為 Xamarin.Forms 自動將拖曳的影像和文字複製到相容的放置目標。
 
-如需使用命令的範例 `DropGestureRecognizer` ，請參閱 [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)。
+如需使用命令的範例 `DropGestureRecognizer` ，請參閱 [範例](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)。
 
 ## <a name="handle-the-dragover-event"></a>處理 DragOver 事件
 

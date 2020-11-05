@@ -10,18 +10,18 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3926e063fcabf9c70103e3ee72a4723358f26b2a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2c80a82c50c34d45184e8f6359e8940b697e9823
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558865"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375053"
 ---
 # <a name="no-locxamarinforms-shapes-polyline"></a>Xamarin.Forms 圖形：折線
 
 ![發行前 API](~/media/shared/preview.png)
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Polyline`類別衍生自 `Shape` 類別，而且可以用來繪製一連串的連接直線。 聚合線條類似多邊形，但折線中的最後一個點未連接到第一個點。 如需 `Polyline` 類別繼承自類別之屬性的詳細資訊 `Shape` ，請參閱[ Xamarin.Forms 圖形](index.md)。
 
@@ -53,7 +53,7 @@ ms.locfileid: "91558865"
 
 在此範例中，會繪製紅色的聚合線條：
 
-![聚合線條](polyline-images/stroke.png "聚合線條")
+![折線](polyline-images/stroke.png "聚合線條")
 
 下列 XAML 範例顯示如何繪製虛線的聚合線條：
 

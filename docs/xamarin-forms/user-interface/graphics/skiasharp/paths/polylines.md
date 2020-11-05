@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 75f6f9b3e7a493121b8f4dacb87749d4a9616dee
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2b5fbae64d1cef6fb39fbe505b77fbc931803349
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557097"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375261"
 ---
 # <a name="polylines-and-parametric-equations"></a>聚合線條和參數化的方程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用 SkiaSharp 來呈現您可以使用參數方程式定義的任何線條_
 
@@ -72,7 +72,7 @@ path.Close();
 
 當然，您不需要使用聚合線條建立橢圓形，因為 `SKPath` 包含 `AddOval` 可為您執行此工作的方法。 但是，您可能會想要繪製不是由提供的視覺物件 `SKPath` 。
 
-**Archimedean 螺旋線**頁面的程式碼類似于橢圓形程式碼，但有很重要的差異。 它會圍繞圓形的360度旋轉10次，持續調整半徑：
+**Archimedean 螺旋線** 頁面的程式碼類似于橢圓形程式碼，但有很重要的差異。 它會圍繞圓形的360度旋轉10次，持續調整半徑：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

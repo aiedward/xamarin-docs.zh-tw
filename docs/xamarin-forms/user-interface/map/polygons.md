@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d4b82cc9c04dd711cc99b558475c2e003e557252
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1cb0b229af4ac819b33602e2249f20d308ec111c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559775"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374780"
 ---
 # <a name="no-locxamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms 地圖多邊形和折線
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 `Polygon`、 `Polyline` 和 `Circle` 元素可讓您反白顯示地圖上的特定區域。 `Polygon`是包含筆劃和填滿色彩的完整封閉圖形。 `Polyline`是不會完全括住區域的行。 `Circle`強調地圖的圓形區域：
 

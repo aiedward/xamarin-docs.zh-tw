@@ -10,16 +10,16 @@ ms.date: 08/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cbd1bdd097bc205f82f98574df5c356b03769e29
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 85492866c5d613b9688d215f5979192c32bb7263
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562648"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375196"
 ---
 # <a name="add-a-swipe-gesture-recognizer"></a>新增滑動手勢辨識器
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
 
 _當手指以水準或垂直方向移至螢幕上時，就會發生滑動手勢，通常用來起始內容的導覽。本文中的程式碼範例取自「 [滑動手勢](/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture) 」範例。_
 

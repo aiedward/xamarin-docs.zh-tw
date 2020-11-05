@@ -8,7 +8,7 @@ ms. 生產： xamarin assetid： B8B9268B-BCB8-42B9-B08C-C0F22C137238 ms. 技術
 
 # <a name="no-locxamarinforms-checkbox"></a>Xamarin.Forms 相應
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 
 Xamarin.Forms `CheckBox` 是可以核取或空白的按鈕類型。 核取核取方塊時，會將其視為開啟。 如果核取方塊是空的，則會被視為 off。
 
