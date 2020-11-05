@@ -10,12 +10,12 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 01/24/2020
-  ms.openlocfilehash: c54bbc3d1157ad46abbfe798dbf3227efaed4f78
-  ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+  ms.openlocfilehash: 0e85efff7b1f5af066d21e876de0b31ff7ae5f85
+  ms.sourcegitcommit: d2aa3a8bf9a60b6708db55b10b0c6893c06d3256
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 09/29/2020
-  ms.locfileid: "91432223"
+  ms.lasthandoff: 11/04/2020
+  ms.locfileid: "93331312"
 landingContent:
 - title: 開始使用
   linkLists:
@@ -35,7 +35,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: 協助工具選項
+    - text: 協助工具
       url: ~/ios/app-fundamentals/accessibility.md
     - text: 背景處理
       url: ~/ios/app-fundamentals/backgrounding/index.md
@@ -47,13 +47,13 @@ landingContent:
       url: ~/ios/app-fundamentals/file-system.md
     - text: 影像與圖示
       url: ~/ios/app-fundamentals/images-icons/index.md
-    - text: 當地語系化
+    - text: Localization
       url: ~/ios/app-fundamentals/localization/index.md
     - text: 安全性與隱私權
       url: ~/ios/app-fundamentals/security-privacy.md
     - text: 觸控
       url: ~/ios/app-fundamentals/touch/index.md
-    - text: 查看更多 >
+    - text: 更多資訊 >
       url: ~/ios/app-fundamentals/index.md
 - title: 使用者介面
   linkLists:
@@ -71,6 +71,8 @@ landingContent:
       url: ~/ios/user-interface/programmatic-layout-constraints.md
     - text: MonoTouch.Dialog
       url: ~/ios/user-interface/monotouch.dialog/index.md
+    - text: 使用 Xcode 設計
+      url: ~/ios/user-interface/ios-use-xcode.md
 - title: 平台功能
   linkLists:
   - linkListType: concept
@@ -93,7 +95,7 @@ landingContent:
       url: ~/ios/platform/3d-touch.md
     - text: Touch ID 與 Face ID
       url: ~/ios/platform/touch-id-face-id.md
-    - text: 查看更多 >
+    - text: 更多資訊 >
       url: ~/ios/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
@@ -149,7 +151,7 @@ landingContent:
       url: ~/ios/deploy-test/touch.unit.md
     - text: 無線部署
       url: ~/ios/deploy-test/wireless-deployment.md
-    - text: 查看更多 >
+    - text: 更多資訊 >
       url: ~/ios/deploy-test/index.md
 - title: 進階概念與內部項目
   linkLists:
@@ -161,7 +163,7 @@ landingContent:
       url: ~/ios/internals/api-design/index.md
     - text: 可用的組件
       url: ~/cross-platform/internals/available-assemblies.md?context=xamarin/ios
-    - text: 浮點
+    - text: 浮點數
       url: ~/ios/internals/floating-point.md
     - text: XIB 程式碼產生
       url: ~/ios/internals/xib-code-generation.md

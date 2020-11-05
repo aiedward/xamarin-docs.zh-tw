@@ -10,16 +10,16 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 98eb35697aee9022a837a7b0b531edb0c53b2239
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: da88337778f31378d257894c3428ad89889673d3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562141"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368943"
 ---
 # <a name="xaml-markup-extensions"></a>XAML 標記延伸
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML 標記延伸模組可讓您從常值文字字串以外的來源設定專案屬性，以擴充 XAML 的功能和彈性。
 

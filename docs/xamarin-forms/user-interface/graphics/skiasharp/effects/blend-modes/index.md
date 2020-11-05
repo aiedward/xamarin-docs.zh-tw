@@ -10,20 +10,20 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dd1ef993fc2184561f01dad99aa01858251f8f73
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1c345edf4c9980497d1fcd877a9142819afa9b56
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560672"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368644"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp blend 模式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 這些文章著重于的 [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) 屬性 [`SKPaint`](xref:SkiaSharp.SKPaint) 。 `BlendMode`屬性的類型為 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) ，具有29個成員的列舉。
 
-`BlendMode`屬性（property）會決定當繪圖物件 (通常稱為「_來源_) 在現有繪圖物件上轉譯時所發生的情況， (稱為_目的地_) 。 一般來說，我們預期新的繪圖物件會混淆其下的物件。 但這種情況只是因為預設的 blend 模式為 `SKBlendMode.SrcOver` ，這表示來源是在目的地 _上_ 繪製。 另28個成員 `SKBlendMode` 會造成其他效果。 在圖形程式設計中，以各種方式結合繪圖物件的技巧稱為「 _複合_」（撰寫）。
+`BlendMode`屬性（property）會決定當繪圖物件 (通常稱為「 _來源_ ) 在現有繪圖物件上轉譯時所發生的情況， (稱為 _目的地_ ) 。 一般來說，我們預期新的繪圖物件會混淆其下的物件。 但這種情況只是因為預設的 blend 模式為 `SKBlendMode.SrcOver` ，這表示來源是在目的地 _上_ 繪製。 另28個成員 `SKBlendMode` 會造成其他效果。 在圖形程式設計中，以各種方式結合繪圖物件的技巧稱為「 _複合_ 」（撰寫）。
 
 ## <a name="the-skblendmodes-enumeration"></a>SKBlendModes 列舉
 
@@ -49,13 +49,13 @@ SkiaSharp blend 模式會與 W3C 撰寫 [**和混合層級 1**](https://www.w3.o
 
 這三個類別的名稱在後續討論中將會有更多意義。 成員在此列出的順序與列舉的定義中的順序相同 `SKBlendMode` 。 第一個資料行中的13個列舉成員具有整數值0到12。 第二個數據行是對應至整數13到24的列舉成員，而第三個數據行中的成員具有25到28之間的值。
 
-在 W3C 撰寫**和混合層級 1**檔中，這些 blend 模式的討論順序_大致_相同，但是有一些差異：在 `Src` W3c 檔中稱為「_複製_」模式，且稱為「 `Plus` _較淺_」。 W3C 檔會定義不包含在中的 _一般_ blend 模式， `SKBlendModes` 因為它會與相同 `SrcOver` 。 `Modulate`第一個資料) 行頂端的 blend 模式 (不包含在 W3C 檔中，而模式的討論則在 `Multiply` 前面 `Screen` 。
+在 W3C 撰寫 **和混合層級 1** 檔中，這些 blend 模式的討論順序 _大致_ 相同，但是有一些差異：在 `Src` W3c 檔中稱為「 _複製_ 」模式，且稱為「 `Plus` _較淺_ 」。 W3C 檔會定義不包含在中的 _一般_ blend 模式， `SKBlendModes` 因為它會與相同 `SrcOver` 。 `Modulate`第一個資料) 行頂端的 blend 模式 (不包含在 W3C 檔中，而模式的討論則在 `Multiply` 前面 `Screen` 。
 
-因為 `Modulate` blend 模式對 Skia 而言是唯一的，所以會被視為額外的 Porter Duff 模式，以及可分隔模式。
+因為 `Modulate` blend 模式對 Skia 而言是唯一的，所以會將它做為額外的 Porter-Duff 模式和可分離模式來討論。
 
 ## <a name="the-importance-of-transparency"></a>透明的重要性
 
-在過去，組合是與 _Alpha 通道_的概念一起開發。 在顯示介面（例如 `SKCanvas` 物件和全彩點陣圖）中，每個圖元都是由4個位元組組成：紅色、綠色和藍色元件的1個位元組，以及一個用於透明度的額外位元組。 此 Alpha 元件為0（適用于完整透明度）和0xFF （表示完全不透明度），這些值之間有不同的透明度層級。
+在過去，組合是與 _Alpha 通道_ 的概念一起開發。 在顯示介面（例如 `SKCanvas` 物件和全彩點陣圖）中，每個圖元都是由4個位元組組成：紅色、綠色和藍色元件的1個位元組，以及一個用於透明度的額外位元組。 此 Alpha 元件為0（適用于完整透明度）和0xFF （表示完全不透明度），這些值之間有不同的透明度層級。
 
 許多 blend 模式都依賴透明度。 通常會 `SKCanvas` 在處理常式中第一次取得 `PaintSurface` ，或在 `SKCanvas` 建立以在點陣圖上繪製時，第一個步驟是呼叫：
 
@@ -83,7 +83,7 @@ BackgroundColor = Color.Red;
 
 ## <a name="skiasharp-porter-duff-blend-modes"></a>[SkiaSharp Porter-Duff blend 模式](porter-duff.md)
 
-您可以使用 Porter-Duff blend 模式，根據來源和目的地影像來撰寫場景。
+使用 Porter-Duff blend 模式，根據來源和目的地影像來撰寫場景。
 
 ## <a name="skiasharp-separable-blend-modes"></a>[SkiaSharp 分離的 blend 模式](separable.md)
 

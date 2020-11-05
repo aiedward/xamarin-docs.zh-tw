@@ -10,18 +10,18 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 43c8cd0dd7b50e3a5bfbd15d9858bd4502fedacc
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 87153223c79365053bfc05b2a8a97c9aa1d4c4a4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558774"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369047"
 ---
 # <a name="creating-xaml-markup-extensions"></a>建立 XAML 標記延伸
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
-在程式設計層級上，XAML 標記延伸是實作為 [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension) 或介面的類別 [`IMarkupExtension<T>`](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) 。 您可以在 GitHub 存放庫的[ **MarkupExtensions**目錄](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)中，流覽以下所述標準標記延伸的原始程式碼 Xamarin.Forms 。
+在程式設計層級上，XAML 標記延伸是實作為 [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension) 或介面的類別 [`IMarkupExtension<T>`](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) 。 您可以在 GitHub 存放庫的 [ **MarkupExtensions** 目錄](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)中，流覽以下所述標準標記延伸的原始程式碼 Xamarin.Forms 。
 
 您也可以從或衍生自訂您自己的自訂 XAML 標記 `IMarkupExtension` 延伸 `IMarkupExtension<T>` 。 如果標記延伸取得特定類型的值，請使用一般格式。 這是數個標記延伸的情況 Xamarin.Forms ：
 
@@ -78,7 +78,7 @@ public class HslColorExtension : IMarkupExtension<Color>
 
 因為 `IMarkupExtension<T>` 衍生自 `IMarkupExtension` ，所以類別必須包含兩個 `ProvideValue` 方法，一個會傳回， `Color` 另一個 `object` 則會傳回，但是第二個方法可以直接呼叫第一個方法。
 
-**HSL 色彩示範**頁面會顯示 XAML 檔案中可顯示的各種方式， `HslColorExtension` 以指定的色彩 `BoxView` ：
+**HSL 色彩示範** 頁面會顯示 XAML 檔案中可顯示的各種方式， `HslColorExtension` 以指定的色彩 `BoxView` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -188,7 +188,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 
 ## <a name="service-providers"></a>服務提供者
 
-藉由使用的 `IServiceProvider` 引數 `ProvideValue` ，xaml 標記延伸可以存取其所使用之 xaml 檔案的實用資訊。 但是若要 `IServiceProvider` 成功使用引數，您必須知道特定內容中有何種服務可用。 若要瞭解這項功能，最佳方式是在 GitHub 上的儲存機制的[ **MarkupExtensions**資料夾](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)中，研究現有 XAML 標記延伸的原始程式碼 Xamarin.Forms 。 請注意，有些類型的服務是內部的 Xamarin.Forms 。
+藉由使用的 `IServiceProvider` 引數 `ProvideValue` ，xaml 標記延伸可以存取其所使用之 xaml 檔案的實用資訊。 但是若要 `IServiceProvider` 成功使用引數，您必須知道特定內容中有何種服務可用。 若要瞭解這項功能，最佳方式是在 GitHub 上的儲存機制的 [ **MarkupExtensions** 資料夾](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)中，研究現有 XAML 標記延伸的原始程式碼 Xamarin.Forms 。 請注意，有些類型的服務是內部的 Xamarin.Forms 。
 
 在某些 XAML 標記延伸中，這項服務可能很有用：
 

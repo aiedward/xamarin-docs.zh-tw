@@ -11,16 +11,16 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ef6ccbaac73946ac19f4f5fe194f395234226b5e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3755f85b01821238e790bd2fb09f567c4e98d4d8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562843"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368358"
 ---
 # <a name="consume-an-azure-cosmos-db-document-database-in-no-locxamarinforms"></a>使用中的 Azure Cosmos DB 檔資料庫 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
 
 _Azure Cosmos DB 檔資料庫是一種 NoSQL 資料庫，可對 JSON 檔提供低延遲的存取，為需要無縫調整和全域複寫的應用程式，提供快速、高可用性、可擴充的資料庫服務。本文說明如何使用 Azure Cosmos DB .NET Standard 用戶端程式庫，將 Azure Cosmos DB 檔資料庫整合至 Xamarin.Forms 應用程式。_
 
@@ -43,7 +43,7 @@ Azure Cosmos DB 檔資料庫可能包含零個以上的檔集合。 每個檔集
 > [!NOTE]
 > 如果您沒有 [Azure 訂用帳戶](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，請在開始前建立[免費帳戶](https://aka.ms/azfree-docs-mobileapps)。
 
-## <a name="setup"></a>安裝程式
+## <a name="setup"></a>設定
 
 將 Azure Cosmos DB 檔資料庫整合至應用程式的程式如下所示 Xamarin.Forms ：
 
@@ -223,7 +223,7 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 `DeleteDatabaseAsync`方法會指定一個 `Uri` 引數，表示要刪除的資料庫。 請注意，叫用這個方法也會刪除儲存在資料庫中的檔集合，以及儲存在檔集合中的檔。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何使用 Azure Cosmos DB .NET Standard 用戶端程式庫，將 Azure Cosmos DB 檔資料庫整合至 Xamarin.Forms 應用程式。 Azure Cosmos DB 檔資料庫是一種 NoSQL 資料庫，可對 JSON 檔提供低延遲的存取，為需要無縫調整和全域複寫的應用程式，提供快速、高可用性、可擴充的資料庫服務。
 

@@ -10,22 +10,22 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2dd2abed23704f6a67ac34bc828c48e7200cf99a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 23191be26f8b47393e5cd86f27704fc35c5d5a5c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558713"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368904"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分： 資料繫結的基本概念
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _資料系結允許連結兩個物件的屬性，使其中一個物件的變更會造成另一個物件的變更。這是非常有價值的工具，雖然資料系結可以完全以程式碼定義，但是 XAML 提供快速鍵和便利性。因此，其中一個最重要的標記延伸是系結 Xamarin.Forms 。_
 
 ## <a name="data-bindings"></a>資料系結
 
-資料系結會連接兩個物件的屬性，稱為「 *來源* 」和「 *目標*」。 在程式碼中，需要兩個步驟： `BindingContext` 目標物件的屬性必須設定為來源物件，且 `SetBinding` (通常與類別一起使用的方法 `Binding`) 必須在目標物件上呼叫，才能將該物件的屬性系結至來源物件的屬性。
+資料系結會連接兩個物件的屬性，稱為「 *來源* 」和「 *目標* 」。 在程式碼中，需要兩個步驟： `BindingContext` 目標物件的屬性必須設定為來源物件，且 `SetBinding` (通常與類別一起使用的方法 `Binding`) 必須在目標物件上呼叫，才能將該物件的屬性系結至來源物件的屬性。
 
 目標屬性必須是可系結的屬性，這表示目標物件必須衍生自 `BindableObject` 。 線上 Xamarin.Forms 檔會指出哪些屬性是可系結的屬性。 的屬性（property） `Label` 與可系結屬性（property） `Text` 相關聯 `TextProperty` 。
 
@@ -215,7 +215,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 `ListView` 定義 `ItemsSource` 類型的屬性 `IEnumerable` ，並顯示該集合中的專案。 這些專案可以是任何類型的物件。 依預設， `ListView` 會使用 `ToString` 每個專案的方法來顯示該專案。 有時候這就是您想要的，但在許多情況下，只會傳回 `ToString` 物件的完整類別名稱。
 
-不過，集合中的專案 `ListView` 可以透過使用 *範本*，以任何您想要的方式顯示，其牽涉到衍生自的類別 `Cell` 。 系統會為中的每個專案複製範本 `ListView` ，而且在範本上設定的資料系結會傳輸到個別的複製。
+不過，集合中的專案 `ListView` 可以透過使用 *範本* ，以任何您想要的方式顯示，其牽涉到衍生自的類別 `Cell` 。 系統會為中的每個專案複製範本 `ListView` ，而且在範本上設定的資料系結會傳輸到個別的複製。
 
 通常，您會想要使用類別來建立這些專案的自訂資料格 `ViewCell` 。 在程式碼中，此程式有點複雜，但在 XAML 中，它變得非常簡單。
 
@@ -342,7 +342,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 先前的 **ListView 示範** XAML 檔案會顯示結構的個別 `R` 、 `G` 和 `B` 屬性 Xamarin.Forms `Color` 。 這些屬性的類型為 `double` 0 到1。 如果您想要顯示十六進位值，就不能只使用 `StringFormat` "X2" 格式規格。 這僅適用于整數，而且 `double` 值必須乘以255。
 
-這個小問題是透過 *值轉換器*（也稱為系結 *轉換器*）來解決。 這是實介面的類別 `IValueConverter` ，這表示它有兩個名為和的方法 `Convert` `ConvertBack` 。 `Convert`當值從來源傳送到目標時，會呼叫方法; `ConvertBack` 呼叫方法以從目標到來源或系結的傳輸 `OneWayToSource` `TwoWay` ：
+這個小問題是透過 *值轉換器* （也稱為系結 *轉換器* ）來解決。 這是實介面的類別 `IValueConverter` ，這表示它有兩個名為和的方法 `Convert` `ConvertBack` 。 `Convert`當值從來源傳送到目標時，會呼叫方法; `ConvertBack` 呼叫方法以從目標到來源或系結的傳輸 `OneWayToSource` `TwoWay` ：
 
 ```csharp
 using System;
@@ -405,7 +405,7 @@ namespace XamlSamples
 
 如果專案本身的屬性在執行時間變更，則集合中的專案應該會執行 `INotifyPropertyChanged` 介面，並使用事件對屬性值進行信號變更 `PropertyChanged` 。 這會在本系列的下一個部分中示範， [第5部分。從資料系結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 資料系結提供功能強大的機制，可在頁面內的兩個物件之間，或在視覺物件與基礎資料之間連結屬性。 但是，當應用程式開始使用資料來源時，熱門的應用程式架構模式就會開始成為有用的架構。 [第5部分涵蓋這部分。從資料系結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 

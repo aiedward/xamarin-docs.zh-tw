@@ -12,12 +12,12 @@ ms.date: 05/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e6670faf921248c007c20307fddb6a34057c5202
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: d2bb00eeadb3862d25032da45860f1cc12e3aad2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436667"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369879"
 ---
 # <a name="build-your-first-no-locxamarinforms-app"></a>建立您的第一個 Xamarin.Forms 應用程式
 
@@ -29,15 +29,15 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案] > [新增] > [專案...]**** 或按 [建立新專案...]**** 按鈕：
+1. 選擇 [檔案] > [新增] > [專案...] 或按 [建立新專案...] 按鈕：
 
     [![建立新專案](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
-2. 搜尋 "Xamarin"，或從 [專案類型]**** 功能表中選擇 [行動裝置]****。 選取 [行動 **應用程式] (Xamarin.Forms) ** 專案類型：
+2. 搜尋 "Xamarin"，或從 [專案類型] 功能表中選擇 [行動裝置]。 選取 [行動 **應用程式] (Xamarin.Forms)** 專案類型：
 
     [![Xamarin 專案的篩選](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
@@ -45,29 +45,29 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
     [![選擇專案名稱](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
-4. 按一下 [空白]**** 專案類型，並確定已選取 [**Android**] 及 [**iOS**]：
+4. 按一下 [空白] 專案類型，並確定已選取 [ **Android** ] 及 [ **iOS** ]：
 
     [![具有 .NET Standard 的 Android 和 iOS](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
 5. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
-6. 新 Visual Studio 2019 安裝將不包含已設定的 Android Emulator。 按一下 [偵錯]**** 按鈕上的下拉箭號，然後選擇 [建立 Android Emulator]**** 以啟動模擬器建立畫面：
+6. 新 Visual Studio 2019 安裝將不包含已設定的 Android Emulator。 按一下 [偵錯] 按鈕上的下拉箭號，然後選擇 [建立 Android Emulator] 以啟動模擬器建立畫面：
 
     ![建立 Android Emulator 的下拉式清單](images/win-2019/debug-dropdown.png)
 
-7. 在模擬器建立畫面中，使用預設設定，然後按一下 [建立]**** 按鈕：
+7. 在模擬器建立畫面中，使用預設設定，然後按一下 [建立] 按鈕：
 
     [![Android 模擬器建立畫面](images/win-2019/create-emulator-sml.png)](images/win-2019/create-emulator.png#lightbox)
 
-8. 建立模擬器會讓您回到 [裝置管理員] 視窗。 按一下 [開始]**** 按鈕，以啟動新的模擬器：
+8. 建立模擬器會讓您回到 [裝置管理員] 視窗。 按一下 [開始] 按鈕，以啟動新的模擬器：
 
     ![裝置管理員中的 Android Emulator](images/win-2019/start-emulator.png)
 
-9. Visual Studio 2019 現在應該會在 [偵錯]**** 按鈕上顯示新模擬器的名稱：
+9. Visual Studio 2019 現在應該會在 [偵錯] 按鈕上顯示新模擬器的名稱：
 
     ![[偵錯] 按鈕上的 Android Emulator 名稱](images/win-2019/debug-emulator-name.png)
 
-10. 按一下 [偵錯]**** 按鈕，以建置應用程式並將其部署至 Android Emulator：
+10. 按一下 [偵錯] 按鈕，以建置應用程式並將其部署至 Android Emulator：
 
     ![顯示應用程式的 Android Emulator](images/win-2019/android-emulator.png)
 
@@ -75,13 +75,13 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 您可以自訂應用程式來新增互動式功能。 請執行下列步驟，以將使用者互動新增至應用程式：
 
-1. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
+1. 編輯 **MainPage.xaml** ，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
     ```
 
-2. 編輯 **MainPage.xaml.cs**，並將這段程式碼新增至類別結尾：
+2. 編輯 **MainPage.xaml.cs** ，並將這段程式碼新增至類別結尾：
 
     ```csharp
     int count = 0;
@@ -114,29 +114,29 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案 **> 新的 > 專案** ]，或按 [ **建立新專案 ...** ] 按鈕，然後選取 [ **Visual c # > 跨平臺 > 行動應用程式] (Xamarin.Forms) **：
+1. 選擇 [檔案 **> 新的 > 專案** ]，或按 [ **建立新專案 ...** ] 按鈕，然後選取 [ **Visual c # > 跨平臺 > 行動應用程式] (Xamarin.Forms)** ：
 
     [![行動裝置應用程式 (：：：無 loc (Xamarin) ：：： ) ](images/win/01-sml.png)](images/win/01.png#lightbox)
 
-2. 確定已選取 [Android]**** 和 [iOS]****，並搭配 [.NET Standard]**** 程式碼共用：
+2. 確定已選取 [Android] 和 [iOS]，並搭配 [.NET Standard] 程式碼共用：
 
     [![具有 .NET Standard 的 Android 和 iOS](images/win/02-sml.png)](images/win/02.png#lightbox)
 
 3. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
-4. 按下偵錯按鈕 (或 [偵錯] > [開始偵錯]**** 功能表項目) 來啟動 Android Emulator。
+4. 按下偵錯按鈕 (或 [偵錯] > [開始偵錯] 功能表項目) 來啟動 Android Emulator。
 
-5. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
+5. 編輯 **MainPage.xaml** ，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
     ```
 
-6. 編輯 **MainPage.xaml.cs**，並將這段程式碼新增至類別結尾：
+6. 編輯 **MainPage.xaml.cs** ，並將這段程式碼新增至類別結尾：
 
     ```csharp
     int count = 0;
@@ -161,15 +161,15 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 ## <a name="step-by-step-instructions-for-mac"></a>適用於 Mac 的逐步指示
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案] > [新增方案...]**** 或按下 [新增專案...]**** 按鈕，然後選取 [多平台] > [應用程式] > [空白的 Forms App]****：
+1. 選擇 [檔案] > [新增方案...] 或按下 [新增專案...] 按鈕，然後選取 [多平台] > [應用程式] > [空白的 Forms App]：
 
     [![空白表單應用程式](images/01-sml.png)](images/01.png#lightbox)
 
-2. 確定已選取 [Android]**** 和 [iOS]****，並搭配 [.NET Standard]**** 程式碼共用：
+2. 確定已選取 [Android] 和 [iOS]，並搭配 [.NET Standard] 程式碼共用：
 
     [![具有 .NET Standard 的 Android 和 iOS](images/02-sml.png)](images/02.png#lightbox)
 
@@ -177,15 +177,15 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
     ![Android 應用程式](images/03-sml.png)
 
-4. 按下偵錯按鈕 (或 [執行] > [開始偵錯]****) 來啟動 Android Emulator。
+4. 按下偵錯按鈕 (或 [執行] > [開始偵錯]) 來啟動 Android Emulator。
 
-5. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
+5. 編輯 **MainPage.xaml** ，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Handle_Clicked" />
     ```
 
-6. 編輯 **MainPage.xaml.cs**，並將這段程式碼新增至類別結尾：
+6. 編輯 **MainPage.xaml.cs** ，並將這段程式碼新增至類別結尾：
 
     ```csharp
     int count = 0;
@@ -200,7 +200,7 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
     ![Android 應用程式](images/07-sml.png)
 
-8. 按一下滑鼠右鍵將 iOS 設定為 [啟始專案]****：
+8. 按一下滑鼠右鍵將 iOS 設定為 [啟始專案]：
 
     [![將啟始專案設定為 iOS](images/08-sml.png)](images/08.png#lightbox)
 

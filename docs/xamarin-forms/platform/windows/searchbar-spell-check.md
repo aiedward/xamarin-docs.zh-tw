@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 99a008e1b2a159c26f434644ab829851d76be59b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b97ce2015ba632d100b946a5b287f0eae737123c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563090"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368683"
 ---
 # <a name="searchbar-spell-check-on-windows"></a>SearchBar Windows 上的拼寫檢查
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 這通用 Windows 平臺平臺特定的可讓與 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 拼寫檢查引擎進行互動。 它是在 XAML 中使用，方法是將 [`SearchBar.IsSpellCheckEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.IsSpellCheckEnabledProperty) 附加屬性設定為 `boolean` 值：
 

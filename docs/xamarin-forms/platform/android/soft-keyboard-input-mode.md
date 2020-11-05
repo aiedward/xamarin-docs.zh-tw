@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3baadfcb06a595c5809dbabd484a8f886ab84aec
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e041c766d0a4beefb8b4c74b9024c7554c818511
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562362"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368631"
 ---
 # <a name="soft-keyboard-input-mode-on-android"></a>Android 上的軟鍵盤輸入模式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定用來設定軟鍵盤輸入區域的操作模式，並藉由將 [`Application.WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) 附加屬性設定為列舉的值，在 XAML 中使用它 [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) ：
 
@@ -45,7 +45,7 @@ App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust
 
 結果是，當輸入控制項具有焦點時，可以設定「軟鍵盤輸入區域」作業模式：
 
-[![軟鍵盤操作模式平臺特定](soft-keyboard-input-mode-images/pan-resize.png)](soft-keyboard-input-mode-images/pan-resize-large.png#lightbox "軟鍵盤操作模式平臺特定")
+[![軟鍵盤操作模式平臺特定](soft-keyboard-input-mode-images/pan-resize.png)](soft-keyboard-input-mode-images/pan-resize-large.png#lightbox "軟鍵盤操作模式 Platform-Specific")
 
 ## <a name="related-links"></a>相關連結
 

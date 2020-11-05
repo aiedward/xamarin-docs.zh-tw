@@ -10,16 +10,16 @@ ms.date: 11/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a96e81314ad48ab0618083c215048e0678d09768
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c04626a3139a7fa44b2b13b2c1dd343188322f3c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557370"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368501"
 ---
 # <a name="customizing-an-entry"></a>自訂 Entry
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
 
 _Xamarin.Forms專案控制項允許編輯單一文字行。本文示範如何建立 Entry 控制項的自訂轉譯器，讓開發人員以自己的平臺特定自訂來覆寫預設原生轉譯。_
 
@@ -114,7 +114,7 @@ public class MainPage : ContentPage
 
 ![每個平台上的 MyEntry 控制項](entry-images/screenshots.png)
 
-`EntryRenderer`類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立控制項以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的*was*專案，以及轉譯器 Xamarin.Forms 附加到的元素。 *is* 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `MyEntry` 控制項的參考。
+`EntryRenderer`類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立控制項以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的 *was* 專案，以及轉譯器 Xamarin.Forms 附加到的元素。 *is* 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `MyEntry` 控制項的參考。
 
 在 `MyEntryRenderer` 類別中，`OnElementChanged` 方法的覆寫版本是執行原生控制項自訂的位置。 平台上所使用的原生控制項具型別參考可透過 `Control` 屬性存取。 此外，您 Xamarin.Forms 可以透過屬性取得正在轉譯之控制項的參考 `Element` ，雖然它不會在範例應用程式中使用。
 
@@ -206,7 +206,7 @@ namespace CustomRenderer.UWP
 
 呼叫基底類別的 `OnElementChanged` 方法會具現化 `TextBox` 控制項，且控制項的參考會指派給轉譯器的 `Control` 屬性。 背景色彩則會透過建立 `SolidColorBrush` 執行個體設為青色。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何建立控制項的自訂控制項轉譯器 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) ，讓開發人員以自己的平臺特定轉譯來覆寫預設原生轉譯。 自訂轉譯器提供一個功能強大的方法來自訂控制項的外觀 Xamarin.Forms 。 自訂轉譯器可用於小型樣式變更或複雜的平台特定版面配置，以及行為自訂。
 

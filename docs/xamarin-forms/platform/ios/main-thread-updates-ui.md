@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 844e04b91910152954973f7e6f10c0d56acadf22
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 404e84e9da1df8a44fa176a17f2407e314ae7968
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563678"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368310"
 ---
 # <a name="main-thread-control-updates-on-ios"></a>IOS 上的主要執行緒控制項更新
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定可在主執行緒上執行控制項配置和轉譯更新，而不是在背景執行緒上執行。 這應該很少需要，但在某些情況下可能會導致當機。 它是在 XAML 中使用，方法是將可系結 `Application.HandleControlUpdatesOnMainThread` 屬性設定為 `true` ：
 

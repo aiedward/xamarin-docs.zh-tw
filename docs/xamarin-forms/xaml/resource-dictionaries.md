@@ -11,16 +11,16 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: cdf34d78751345857e89c6bfa6862b58207ad01e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 90068096eced1fd1ddd2eb59b845eb4d5e41286f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562128"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368878"
 ---
 # <a name="no-locxamarinforms-resource-dictionaries"></a>Xamarin.Forms 資源字典
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)是應用程式所使用之資源的儲存機制 Xamarin.Forms 。 儲存在中的一般資源 `ResourceDictionary` 包括 [樣式](~/xamarin-forms/user-interface/styles/index.md)、 [控制項範本](~/xamarin-forms/app-fundamentals/templates/control-template.md)、 [資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)、色彩和轉換器。
 
@@ -39,7 +39,7 @@ Xamarin.Forms應用程式只包含衍生自的類別 [`Application`](xref:Xamari
 
 除了隱含樣式之外，資源字典中的每個資源都必須有以屬性定義的唯一字串索引鍵 `x:Key` 。
 
-下列 XAML 會顯示在應用程式的應用層級 `ResourceDictionary` 中**App.xaml**定義的資源：
+下列 XAML 會顯示在應用程式的應用層級 `ResourceDictionary` 中 **App.xaml** 定義的資源：
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -135,9 +135,9 @@ Xamarin.Forms應用程式只包含衍生自的類別 [`Application`](xref:Xamari
 
 衍生自的類別 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 也可以位於個別的獨立檔案中。 然後，您可以在應用程式之間共用結果檔。
 
-若要建立這類檔案，請將新的**內容視圖**或**內容頁面**專案加入至專案 (但不是只有 c # 檔案) 的**內容****頁面**。 刪除程式碼後端檔案，然後在 XAML 檔案中，將基類的名稱從或變更 [`ContentView`](xref:Xamarin.Forms.ContentView) [`ContentPage`](xref:Xamarin.Forms.ContentPage) 為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 此外，請從檔案 `x:Class` 的根標記中移除該屬性。
+若要建立這類檔案，請將新的 **內容視圖** 或 **內容頁面** 專案加入至專案 (但不是只有 c # 檔案) 的 **內容****頁面** 。 刪除程式碼後端檔案，然後在 XAML 檔案中，將基類的名稱從或變更 [`ContentView`](xref:Xamarin.Forms.ContentView) [`ContentPage`](xref:Xamarin.Forms.ContentPage) 為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 此外，請從檔案 `x:Class` 的根標記中移除該屬性。
 
-下列 XAML 範例顯示 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 名為 **MyResourceDictionary 的 xaml**：
+下列 XAML 範例顯示 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 名為 **MyResourceDictionary 的 xaml** ：
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -194,7 +194,7 @@ Xamarin.Forms應用程式只包含衍生自的類別 [`Application`](xref:Xamari
 
 ### <a name="merge-resource-dictionaries-from-other-assemblies"></a>合併其他元件的資源字典
 
-[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)也可以藉由將加入至的屬性，將它合併至另一個 `ResourceDictionary` [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) `ResourceDictionary` 。 這項技術可讓您合併資源字典，而不論其所在的元件為何。 合併外部元件的資源字典需要將 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 組建動作設為 **EmbeddedResource**、具有程式碼後端檔案，以及在檔案的 `x:Class` 根標記中定義屬性。
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)也可以藉由將加入至的屬性，將它合併至另一個 `ResourceDictionary` [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) `ResourceDictionary` 。 這項技術可讓您合併資源字典，而不論其所在的元件為何。 合併外部元件的資源字典需要將 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 組建動作設為 **EmbeddedResource** 、具有程式碼後端檔案，以及在檔案的 `x:Class` 根標記中定義屬性。
 
 > [!WARNING]
 > [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)類別也會定義 [`MergedWith`](xref:Xamarin.Forms.ResourceDictionary.MergedWith) 屬性。 不過，這個屬性已被取代，不應該再使用。

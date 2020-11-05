@@ -10,16 +10,16 @@ ms.date: 03/06/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 083c8b97d158f817dbe98212bc244e8d1cac845c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2d66464798860848e42e05bb3aaa36fc80e115b1
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556772"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369398"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>從圖片媒體櫃挑選相片
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 本文會逐步說明如何建立可讓使用者從手機圖片媒體櫃挑選相片的應用程式。 由於不 Xamarin.Forms 包含這項功能，因此必須使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 在每個平臺上存取原生 api。
 
@@ -154,7 +154,7 @@ iOS 應用程式需要使用者的權限，以存取手機上的相片媒體櫃�
 
 ## <a name="android-implementation"></a>Android 實作
 
-Android 實作會使用 [**Select an Image**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image) (選取影像) 配方和[程式碼範例](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)中所述的技巧。 不過，當使用者從圖片媒體櫃選取影像時，所呼叫的方法是衍生自 `Activity` 之類別中的 `OnActivityResult` 覆寫。 基於這個理由， [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs) Android 專案中的一般類別已透過欄位、屬性和方法的覆寫進行補充 `OnActivityResult` ：
+Android 實作會使用 [**Select an Image**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image) (選取影像) 配方和 [程式碼範例](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)中所述的技巧。 不過，當使用者從圖片媒體櫃選取影像時，所呼叫的方法是衍生自 `Activity` 之類別中的 `OnActivityResult` 覆寫。 基於這個理由， [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs) Android 專案中的一般類別已透過欄位、屬性和方法的覆寫進行補充 `OnActivityResult` ：
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity

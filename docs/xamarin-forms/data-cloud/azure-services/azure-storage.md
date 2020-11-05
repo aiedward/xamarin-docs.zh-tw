@@ -10,16 +10,16 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cba4c670e9e092eef92f7b37eefc750782c94367
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: bd726a5e5d6064ecb9aa1c862697e08a9c4733f4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563831"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370113"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-no-locxamarinforms"></a>儲存和存取 Azure 儲存體中的資料 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
 _Azure 儲存體是可調整的雲端儲存體解決方案，可用來儲存非結構化和結構化資料。本文示範如何使用 Xamarin.Forms ，在 Azure 儲存體中儲存文字和二進位資料，以及如何存取資料。_
 
@@ -61,11 +61,11 @@ Blob 是任何類型和大小的檔案。 Azure 儲存體支援三種不同的 b
 
 Blob 會上傳至 Azure 儲存體，並從 Azure 儲存體下載為位元組資料流程。 因此，在上傳之前，檔案必須轉換成位元組資料流程，並在下載之後轉換回其原始表示。
 
-儲存在 Azure 儲存體中的每個物件都有唯一的 URL 位址。 儲存體帳戶名稱會形成該位址的子域，而子域和功能變數名稱的組合會形成儲存體帳戶的 *端點* 。 例如，如果您的儲存體帳戶名為 *mystorageaccount*，則儲存體帳戶的預設 blob 端點是 `https://mystorageaccount.blob.core.windows.net` 。
+儲存在 Azure 儲存體中的每個物件都有唯一的 URL 位址。 儲存體帳戶名稱會形成該位址的子域，而子域和功能變數名稱的組合會形成儲存體帳戶的 *端點* 。 例如，如果您的儲存體帳戶名為 *mystorageaccount* ，則儲存體帳戶的預設 blob 端點是 `https://mystorageaccount.blob.core.windows.net` 。
 
 用以存取儲存體帳戶中某物件的 URL，可藉由在端點後附加該物件在儲存體帳戶中的位置來建置。 例如，blob 位址的格式將會是 `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob` 。
 
-## <a name="setup"></a>安裝程式
+## <a name="setup"></a>設定
 
 將 Azure 儲存體帳戶整合至應用程式的程式如下所示 Xamarin.Forms ：
 

@@ -6,16 +6,16 @@ ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: 77df7d986f63861667c67b9c74b88ea6176f42ad
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 96f8a8c2fa49e1ff59621908ef89d08d302aaffa
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91458182"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367968"
 ---
 # <a name="visual-basic-in-xamarin-android-and-ios"></a>Xamarin Android 和 iOS 中的 Visual Basic
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
 
 [TaskyVB](/samples/xamarin/mobile-samples/visualbasic-taskyvb/)範例應用程式會示範如何將編譯成 .NET Standard 程式庫 Visual Basic 程式碼用於 Xamarin。 以下是在 Android 和 iOS 上執行的應用程式的一些螢幕擷取畫面：
 
@@ -188,7 +188,7 @@ Visual Studio 2019 for Mac _可以_ 編譯在 Windows 上建立的 Visual Studio
 
 Visual Studio 2017 完全 _無法_ 建立 Visual Basic 專案。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用 Visual Studio 和 .NET Standard 程式庫，在 Xamarin 應用程式中取用 Visual Basic 程式碼。 雖然 Xamarin 並不支援直接 Visual Basic，但是將 Visual Basic 編譯成 .NET Standard 程式庫，可讓以 Visual Basic 撰寫的程式碼包含在 iOS 和 Android 應用程式中。
 

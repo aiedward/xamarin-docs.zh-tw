@@ -11,16 +11,16 @@ ms.date: 05/07/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fe27c00752723ac34d614c510f1305b197933715
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 05f5e79f9df59859c4514150ec591e0a96912ed5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558163"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368774"
 ---
 # <a name="right-to-left-localization"></a>由右至左當地語系化
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
 
 _從右至左的當地語系化可將由右至左流動方向的支援新增至 Xamarin.Forms 應用程式。_
 
@@ -82,7 +82,7 @@ this.FlowDirection = Device.FlowDirection;
 您可以將 **Info.plist** 中所指定的裝置/模擬器語言和地區變更為由右至左地區設定，以測試由右至左當地語系化。
 
 > [!WARNING]
-> 請注意，當您將語言和區域變更為 iOS 上的由右至左地區設定時， [`DatePicker`](xref:Xamarin.Forms.DatePicker) 如果您未包含地區設定所需的資源，任何視圖都會擲回例外狀況。 例如，當測試具有 `DatePicker` 的阿拉伯文應用程式時，請務必選取 [iOS 組建]**** 窗格 [國際化]**** 區段中的 [中東]****。
+> 請注意，當您將語言和區域變更為 iOS 上的由右至左地區設定時， [`DatePicker`](xref:Xamarin.Forms.DatePicker) 如果您未包含地區設定所需的資源，任何視圖都會擲回例外狀況。 例如，當測試具有 `DatePicker` 的阿拉伯文應用程式時，請務必選取 [iOS 組建] 窗格 [國際化] 區段中的 [中東]。
 
 ### <a name="android"></a>Android
 
@@ -97,7 +97,7 @@ this.FlowDirection = Device.FlowDirection;
 </manifest>
 ```
 
-您可以啟用 [設定] > [開發人員選項]**** 中的 [Force RTL layout direction] \(強制 RTL 配置方向\)****，將裝置/模擬器語言和地區變更為使用由右至左語言，以測試由右至左當地語系化。
+您可以啟用 [設定] > [開發人員選項] 中的 [Force RTL layout direction] \(強制 RTL 配置方向\)，將裝置/模擬器語言和地區變更為使用由右至左語言，以測試由右至左當地語系化。
 
 ### <a name="universal-windows-platform-uwp"></a>通用 Windows 平台 (UWP)
 

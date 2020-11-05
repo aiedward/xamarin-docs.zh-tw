@@ -11,16 +11,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8cb59738519af933e509ebf63a923e573667941e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a62fee4ca3cdb4de7f23856f123389df23692f62
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562908"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368916"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分： 從資料繫結到 MVVM
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _模型視圖 ViewModel (MVVM) 架構模式是以 XAML 的形式來建立。此模式會強制將三個軟體層（稱為 View 的 XAML 使用者介面）分開：基礎資料，稱為模型;以及視圖與模型之間的媒介，稱為 ViewModel。視圖和 ViewModel 通常會透過 XAML 檔案中定義的資料系結進行連接。視圖的 BindingCoNtext 通常是 ViewModel 的實例。_
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 每個的系結 `Label` 都是預設值 `OneWay` 。 它只需要顯示值。 但每一個系結 `Slider` 都是 `TwoWay` 。 這可讓 `Slider` 從 ViewModel 初始化。 請注意， `Color` `Aqua` 當 ViewModel 具現化時，屬性會設定為。 但是，的變更 `Slider` 也需要為 ViewModel 中的屬性設定新的值，然後再計算新的色彩。
 
-[![使用雙向資料系結的 MVVM](data-bindings-to-mvvm-images/hslcolorscroll.png)](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "使用雙向資料系結的 MVVM")
+[![使用 Two-Way 資料系結的 MVVM](data-bindings-to-mvvm-images/hslcolorscroll.png)](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "使用 Two-Way 資料系結的 MVVM")
 
 ## <a name="commanding-with-viewmodels"></a>使用 Viewmodel 命令
 
@@ -566,7 +566,7 @@ namespace XamlSamples
 命令也可以叫用非同步方法。 `async` `await` 在指定方法時使用和關鍵字可達成此目的 `Execute` ：
 
 ```csharp
-DownloadCommand = new Command (async () => await DownloadAsync ());
+DownloadCommand = new Command (async () => await DownloadAsync ());
 ```
 
 這表示該 `DownloadAsync` 方法是 `Task` ，且應該等候：
@@ -708,7 +708,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 **Xamarin 演進2016： MVVM 透過和 Prism 變得簡單 Xamarin.Forms**
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 XAML 是一種功能強大的工具，可用來在應用程式中定義使用者介面 Xamarin.Forms ，尤其是在使用資料系結和 MVVM 時。 結果是使用者介面的清晰、簡潔且可能 toolable 的標記法，並在程式碼中提供所有背景支援。
 

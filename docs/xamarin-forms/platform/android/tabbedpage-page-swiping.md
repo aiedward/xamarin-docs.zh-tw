@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f90fc5bdc29009584536cd6d4321ed8abfc8b878
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 96e05e29c6488113f31c05020870ca9e9a73f3f5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563402"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368618"
 ---
 # <a name="tabbedpage-page-swiping-on-android"></a>Android 上的 TabbedPage Page 輕刷
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 這個 Android 平臺特定的用途是在中的頁面之間，以水準手指手勢來啟用輕量 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 。 它是在 XAML 中使用，方法是將 [`TabbedPage.IsSwipePagingEnabled`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty) 附加屬性設定為 `boolean` 值：
 

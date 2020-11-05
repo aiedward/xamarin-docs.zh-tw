@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms 雙螢幕設計模式
+title: Xamarin.Forms Dual-Screen 設計模式
 description: 本指南說明如何 Xamarin.Forms 支援針對雙螢幕裝置優化的各種不同設計模式。
 ms.prod: xamarin
 ms.assetid: 3176d792-6dba-4e00-b463-497c58678ee9
@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9b553a2fc3dea0d2793cb337142eacf0419ad994
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8cd98f529c324e89a4b935a364a09ff794b6c5be
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556070"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369412"
 ---
 # <a name="no-locxamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms 雙螢幕設計模式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 本指南介紹我們針對雙螢幕裝置所建議的設計模式，其中包含程式碼和範例，可協助您建立介面來提供吸引人且實用的使用者體驗。
 

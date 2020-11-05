@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7ba5224c23eaed6b7c37312f8a765556d0263d9c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 932f6d347afcc4957294036e2c76ef81635d958c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563025"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368696"
 ---
 # <a name="no-locxamarinforms-modal-pages"></a>Xamarin.Forms 強制回應頁面
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
 _Xamarin.Forms 提供模式頁面的支援。強制回應頁面可讓使用者完成無法離開的獨立工作，直到工作完成或取消為止。本文示範如何流覽至強制回應頁面。_
 
@@ -79,7 +79,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 ### <a name="popping-pages-from-the-modal-stack"></a>從強制回應堆疊中快顯頁面
 
-無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁]** 按鈕都可以從強制回應堆疊中快顯使用中頁面。
+無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁] 按鈕都可以從強制回應堆疊中快顯使用中頁面。
 
 若要以程式設計的方式返回原始頁面， `ModalPage` 實例必須 [`PopModalAsync`](xref:Xamarin.Forms.INavigation.PopModalAsync) 叫用方法，如下列程式碼範例所示：
 
@@ -100,7 +100,7 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 
 ### <a name="disabling-the-back-button"></a>停用 [上一頁] 按鈕
 
-在 Android 上，使用者可以隨時在裝置上按下標準 [上一頁]** 按鈕來返回上一頁。 如果強制回應頁面要求使用者完成獨立的工作再離開頁面，則應用程式必須停用 [上一頁]** 按鈕。 這可以藉由覆寫強制回應 [`Page.OnBackButtonPressed`](xref:Xamarin.Forms.Page.OnBackButtonPressed) 頁面上的方法來完成。 如需詳細資訊，請參閱 Charles Petzold 本書的第 [24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Xamarin.Forms 。
+在 Android 上，使用者可以隨時在裝置上按下標準 [上一頁] 按鈕來返回上一頁。 如果強制回應頁面要求使用者完成獨立的工作再離開頁面，則應用程式必須停用 [上一頁] 按鈕。 這可以藉由覆寫強制回應 [`Page.OnBackButtonPressed`](xref:Xamarin.Forms.Page.OnBackButtonPressed) 頁面上的方法來完成。 如需詳細資訊，請參閱 Charles Petzold 本書的第 [24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Xamarin.Forms 。
 
 ### <a name="animating-page-transitions"></a>以動畫顯示頁面轉換
 
@@ -249,7 +249,7 @@ public class DetailPageCS : ContentPage
 
 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/index.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範了如何巡覽至強制回應頁面。 強制回應頁面鼓勵使用者完成各自獨立且無法離開的工作，直到完成或取消工作為止。
 

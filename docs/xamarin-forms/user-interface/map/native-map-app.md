@@ -10,16 +10,16 @@ ms.date: 10/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ede34258650c378a45ee694f90de1e8b249acf71
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cbd61d956b17df556cb4bb452f60b0e41b31b707
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559879"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368241"
 ---
 # <a name="launch-the-native-map-app-from-no-locxamarinforms"></a>啟動原生地圖應用程式 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 每個平臺上的原生地圖應用程式都可以 Xamarin.Forms 由類別從應用程式啟動 Xamarin.Essentials `Launcher` 。 此類別可讓應用程式透過其自訂 URI 配置來開啟另一個應用程式。 您可以使用方法來叫用啟動器功能 `OpenAsync` ，傳遞 `string` `Uri` 代表要開啟之自訂 URL 配置的或引數。 如需的詳細資訊 Xamarin.Essentials ，請參閱 [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms) 。
 

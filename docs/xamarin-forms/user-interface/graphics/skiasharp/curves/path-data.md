@@ -10,16 +10,16 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f2e6735be2593133f755f87b365b8352bf09ebb4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 12af5d9be025fb2113d70a93a364619aff75598d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563077"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370061"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp 中的 SVG 路徑資料
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用可調整向量圖形格式的文字字串來定義路徑_
 
@@ -103,13 +103,13 @@ Z
 A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 ```
 
-*Rx*和*ry*參數是橢圓形的水準和垂直半徑。 *旋轉角度*以度為單位，以度為單位。
+*Rx* 和 *ry* 參數是橢圓形的水準和垂直半徑。 *旋轉角度* 以度為單位，以度為單位。
 
 將大型弧線的 *大弧線旗* 標設為1，或針對小弧線設定為0。
 
 將順時針設定的清除 *旗* 標設為1，並以逆時針的方向設定為0。
 
-弧線會繪製到 (*x*， *y*) 的點，而這會成為新的目前位置。
+弧線會繪製到 ( *x* ， *y* ) 的點，而這會成為新的目前位置。
 
 ## <a name="cubicto"></a>**CubicTo**
 
@@ -117,7 +117,7 @@ A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
-此命令會將目前位置的三次貝茲曲線新增至 (*x3*， *Y3*) ，這會成為新的目前位置。  (*x1*、 *y1*) 和 (*x2*的點， *y2*) 是控制點。
+此命令會將目前位置的三次貝茲曲線新增至 ( *x3* ， *Y3* ) ，這會成為新的目前位置。  ( *x1* 、 *y1* ) 和 ( *x2* 的點， *y2* ) 是控制點。
 
 單一命令可以指定多個貝茲曲線 `C` 。 點數數目必須是3的倍數。
 
@@ -135,7 +135,7 @@ S x2 y2 x3 y3 ...
 Q x1 y1 x2 y2 ...
 ```
 
-針對二次方貝茲曲線，點數目必須是2的倍數。 控制點是 (*x1*、 *y1*) 和結束點 (，而新的目前位置)  (*x2*， *y2*) 
+針對二次方貝茲曲線，點數目必須是2的倍數。 控制點是 ( *x1* 、 *y1* ) 和結束點 (，而新的目前位置)  ( *x2* ， *y2* ) 
 
 另外還有一個流暢的二曲線命令：
 
@@ -153,7 +153,7 @@ T x2 y2 ...
 
 [`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData)方法可讓您從現有的物件取得 SVG 路徑資料 `SKPath` ，以傳送至另一個程式，或儲存為以文字為基礎的檔案格式（例如 XML）。  (`ToSvgPathData` 不會在本文的範例程式碼中示範方法。 ) *不會* 預期傳回與 `ToSvgPathData` 建立路徑之方法呼叫完全對應的字串。 尤其是，您會發現弧線轉換成多個 `QuadTo` 命令，而這就是它們在傳回的路徑資料中出現的方式 `ToSvgPathData` 。
 
-**Path Data Hello**頁面會使用 SVG 路徑資料來將 "Hello" 這個字拼寫出來。 `SKPath`和 `SKPaint` 物件都會定義為類別中的欄位 [`PathDataHelloPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) ：
+**Path Data Hello** 頁面會使用 SVG 路徑資料來將 "Hello" 這個字拼寫出來。 `SKPath`和 `SKPaint` 物件都會定義為類別中的欄位 [`PathDataHelloPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) ：
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -224,7 +224,7 @@ public class PathDataHelloPage : ContentPage
 
 [![Path Data Hello 頁面的三重螢幕擷取畫面](path-data-images/pathdatahello-small.png)](path-data-images/pathdatahello-large.png#lightbox "Path Data Hello 頁面的三重螢幕擷取畫面")
 
-**路徑資料貓**頁面很類似。 路徑和繪圖物件都定義為類別中的欄位 [`PathDataCatPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) ：
+**路徑資料貓** 頁面很類似。 路徑和繪圖物件都定義為類別中的欄位 [`PathDataCatPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) ：
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -297,7 +297,7 @@ public class PathDataCatPage : ContentPage
 
 一般來說，當 `SKPath` 物件定義為欄位時，必須在函式或另一個方法中定義路徑的輪廓。 但是，當您使用 SVG 路徑資料時，您已看到可以完全在欄位定義中指定路徑。
 
-「[**旋轉轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)」一文中較早不美觀的**類比時鐘**範例，會將時鐘的手以簡單的線條顯示。 下列 **相當的類比時鐘** 程式會使用 `SKPath` 定義為類別中欄位的物件和物件來取代這些行 [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ：
+「 [**旋轉轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)」一文中較早不美觀的 **類比時鐘** 範例，會將時鐘的手以簡單的線條顯示。 下列 **相當的類比時鐘** 程式會使用 `SKPath` 定義為類別中欄位的物件和物件來取代這些行 [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ：
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage

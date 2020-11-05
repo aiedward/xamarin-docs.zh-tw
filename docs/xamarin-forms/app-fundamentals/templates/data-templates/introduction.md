@@ -10,16 +10,16 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 28dbbe6411983e1fd7986413ceac69a5543c4bb4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 374444307ef0b6cc6354d2f660834762bb566434
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562570"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367955"
 ---
 # <a name="introduction-to-no-locxamarinforms-data-templates"></a>Xamarin.Forms資料範本簡介
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
 _Xamarin.Forms 資料範本提供在支援的控制項上定義資料呈現方式的能力。本文提供資料範本的簡介，並檢查為何需要這些範本。_
 
@@ -129,7 +129,7 @@ public class Person
 > [!NOTE]
 > 請注意，雖然 [`TableView`](xref:Xamarin.Forms.TableView) 會使用 [`Cell`](xref:Xamarin.Forms.Cell) 物件，但不會使用 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 這是因為資料繫結一律會在 `Cell` 物件上直接設定。
 
-[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)放在上方所列屬性之直接子系的上稱為*內嵌範本*。 或者，您可以將 `DataTemplate` 定義為控制項層級、頁面層級或應用程式層級資源。 選擇要在何處定義 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 可使用的影響：
+[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)放在上方所列屬性之直接子系的上稱為 *內嵌範本* 。 或者，您可以將 `DataTemplate` 定義為控制項層級、頁面層級或應用程式層級資源。 選擇要在何處定義 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 可使用的影響：
 
 - [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)在控制項層級定義的只能套用至控制項。
 - [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)在頁面層級定義的會套用至頁面上的多個有效控制項。

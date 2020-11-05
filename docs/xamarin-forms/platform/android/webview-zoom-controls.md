@@ -10,16 +10,16 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1e41efd4bf100205f20b8f4e02a74fad193134a4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 12c8eafd9768ee0da232ead4aac6cd6bdc3c9a2d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556421"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369606"
 ---
 # <a name="webview-zoom-on-android"></a>Android 上的 Web 功能縮放
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定會啟用的縮小至縮放和縮放控制 [`WebView`](xref:Xamarin.Forms.WebView) 。 它是在 XAML 中使用，方法是將 `WebView.EnableZoomControls` 和可系結 `WebView.DisplayZoomControls` 屬性設定為 `boolean` 值：
 

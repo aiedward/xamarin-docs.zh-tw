@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60b331b01f7ba16bd2ea828d429ee64ae25766ea
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3b63e66018ec96df49dfed2eb0ac6320a9585084
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560269"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368325"
 ---
 # <a name="tabbedpage-icons-on-windows"></a>在 Windows 上 TabbedPage 圖示
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 這通用 Windows 平臺平臺特定的可讓您在工具列上顯示頁面圖示 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ，並提供選擇性地指定圖示大小的功能。 它是在 XAML 中使用，方法是將 [`TabbedPage.HeaderIconsEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) 附加屬性設定為 `true` ，並選擇性地將 [`TabbedPage.HeaderIconsSize`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) 附加屬性設定為 [`Size`](xref:Xamarin.Forms.Size) 值：
 

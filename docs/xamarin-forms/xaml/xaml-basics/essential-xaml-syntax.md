@@ -10,16 +10,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8afb0aa2a36a73af6c63e48a6c1048d8b69cf90
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 23d24ab7477bb7d9e95e4d78f25f334ae13a8ea2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563974"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368514"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分： 基本 XAML 語法
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML 大部分是設計用來具現化和初始化物件。但是，屬性通常必須設定為複雜的物件，而這些物件無法輕鬆地以 XML 字串表示，而且有時候必須在子類別上設定一個類別所定義的屬性。這兩個需求需要屬性元素和附加屬性的基本 XAML 語法功能。_
 
@@ -85,9 +85,9 @@ _XAML 大部分是設計用來具現化和初始化物件。但是，屬性通�
 
 有了這種新語法，可引進一些便利的術語：
 
-- `Label` 是  *物件元素*。 它是以 Xamarin.Forms XML 元素表示的物件。
-- `Text`、  `VerticalOptions` `FontAttributes` 和  `FontSize` 是  *屬性屬性*。 它們是 Xamarin.Forms 以 XML 屬性工作表示的屬性。
-- 在最後一個程式碼片段中， `TextColor` 已成為  *property 元素*。 它是一個 Xamarin.Forms 屬性，但它現在是 XML 元素。
+- `Label` 是  *物件元素* 。 它是以 Xamarin.Forms XML 元素表示的物件。
+- `Text`、  `VerticalOptions` `FontAttributes` 和  `FontSize` 是  *屬性屬性* 。 它們是 Xamarin.Forms 以 XML 屬性工作表示的屬性。
+- 在最後一個程式碼片段中， `TextColor` 已成為  *property 元素* 。 它是一個 Xamarin.Forms 屬性，但它現在是 XML 元素。
 
 屬性專案的定義一開始可能會違反 XML 語法，但卻不是。 在 XML 中，句號沒有特殊意義。 對 XML 解碼器而言， `Label.TextColor` 只是一般的子項目。
 
@@ -261,7 +261,7 @@ _XAML 大部分是設計用來具現化和初始化物件。但是，屬性通�
 
 這些、、和屬性只會在語法中 `Grid.Row` `Grid.Column` `Grid.RowSpan` `Grid.ColumnSpan` 看起來是靜態欄位或屬性，但是有趣的是，不會 `Grid` `Grid` 定義名為 `Row` 、 `Column` 、或的任何內容 `RowSpan` `ColumnSpan` 。
 
-相反地，會 `Grid` 定義四個名為 `RowProperty` 、、 `ColumnProperty` `RowSpanProperty` 和 `ColumnSpanProperty` 的可系結屬性。 這些是可系結屬性的特殊類型，稱為 *附加屬性*。 它們是由類別所定義， `Grid` 但會在的子系上進行設定 `Grid` 。
+相反地，會 `Grid` 定義四個名為 `RowProperty` 、、 `ColumnProperty` `RowSpanProperty` 和 `ColumnSpanProperty` 的可系結屬性。 這些是可系結屬性的特殊類型，稱為 *附加屬性* 。 它們是由類別所定義， `Grid` 但會在的子系上進行設定 `Grid` 。
 
 當您想要在程式碼中使用這些附加屬性時， `Grid` 類別會提供名為、等等的靜態方法 `SetRow` `GetColumn` 。 但是在 XAML 中，這些附加屬性會使用簡單的屬性名稱，設定為的子系中的屬性 `Grid` 。
 
@@ -528,7 +528,7 @@ if (Device.RuntimePlatform == Device.iOS)
 > [!NOTE]
 > `OnPlatform`標記延伸也可以在 XAML 中用來自訂每個平臺的 UI 外觀。 它提供與與類別相同的 `OnPlatform` 功能 `On` ，但有更精確的標記法。 如需詳細資訊，請參閱 [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 使用 property 元素和附加屬性，已建立許多基本 XAML 語法。 不過，有時候您需要以間接方式（例如，從資源字典）將屬性設定為物件。 這種方法涵蓋于下一個部分，第 [3 部分。XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
 

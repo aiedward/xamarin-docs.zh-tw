@@ -10,22 +10,22 @@ ms.date: 01/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ad297b735449796925b92fbc9d1887db9e8a1c99
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d986d66b9b83bb1034c9e635c3a35f2a0ac3dfda
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563324"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369060"
 ---
 # <a name="implicit-styles-in-no-locxamarinforms"></a>中的隱含樣式 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _隱含樣式是相同 TargetType 的所有控制項使用的樣式，不需要每個控制項都參考該樣式。_
 
 ## <a name="create-an-implicit-style-in-xaml"></a>在 XAML 中建立隱含樣式
 
-若要 [`Style`](xref:Xamarin.Forms.Style) 在頁面層級宣告， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 必須將 a 加入至頁面，然後一或多個宣告 `Style` 可以包含在中 `ResourceDictionary` 。 `Style`未指定屬性時，會成為*隱含*的 `x:Key` 。 樣式接著會套用至符合確切的視覺元素 `TargetType` ，但不會套用至衍生自值的元素 `TargetType` 。
+若要 [`Style`](xref:Xamarin.Forms.Style) 在頁面層級宣告， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 必須將 a 加入至頁面，然後一或多個宣告 `Style` 可以包含在中 `ResourceDictionary` 。 `Style`未指定屬性時，會成為 *隱含* 的 `x:Key` 。 樣式接著會套用至符合確切的視覺元素 `TargetType` ，但不會套用至衍生自值的元素 `TargetType` 。
 
 下列程式碼範例顯示在頁面的 XAML 中宣告的 *隱含* 樣式，並將其套用 `ResourceDictionary` 至頁面的 [`Entry`](xref:Xamarin.Forms.Entry) 實例：
 
@@ -54,7 +54,7 @@ _隱含樣式是相同 TargetType 的所有控制項使用的樣式，不需要�
 </ContentPage>
 ```
 
-[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)會定義套用至頁面實例的單一*隱含*樣式 [`Entry`](xref:Xamarin.Forms.Entry) 。 `Style`會用來在黃色背景上顯示藍色文字，同時也會設定其他外觀選項。 `Style`會加入至頁面， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 而不會指定 `x:Key` 屬性。 因此， `Style` 會隱含地套用至所有 `Entry` 實例，因為它們完全符合的 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 屬性 `Style` 。 但是，不會套用 `Style` 至 `CustomEntry` 實例，也就是子類別 `Entry` 。 這會導致下列螢幕擷取畫面中顯示的外觀：
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)會定義套用至頁面實例的單一 *隱含* 樣式 [`Entry`](xref:Xamarin.Forms.Entry) 。 `Style`會用來在黃色背景上顯示藍色文字，同時也會設定其他外觀選項。 `Style`會加入至頁面， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 而不會指定 `x:Key` 屬性。 因此， `Style` 會隱含地套用至所有 `Entry` 實例，因為它們完全符合的 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 屬性 `Style` 。 但是，不會套用 `Style` 至 `CustomEntry` 實例，也就是子類別 `Entry` 。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
 [![隱含樣式範例](implicit-images/implicit-styles.png)](implicit-images/implicit-styles-large.png#lightbox)
 

@@ -10,18 +10,18 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 43702453d1defc3b5a63aba845231f514913d7c5
-ms.sourcegitcommit: 1649554b8c08369b713d20246154455c0ba7d1c0
+ms.openlocfilehash: 0daae3edcfbf95d75c566b3ce10f20c83d099e13
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91712566"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368306"
 ---
 # <a name="no-locxamarinforms-mediaelement"></a>Xamarin.Forms MediaElement
 
 ![發行前 API](~/media/shared/preview.png)
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 
 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 是播放影片和音訊的視圖。 您可以從下列來源播放基礎平臺所支援的媒體：
 
@@ -103,7 +103,7 @@ Media 播放控制項預設為停用，並藉由將屬性設 [`ShowsPlaybackCont
 針對每個平臺，將媒體檔案儲存在平臺專案中是不同的：
 
 - 在 iOS 上，媒體檔案必須儲存在 **resources** 資料夾或 **resources** 資料夾的子資料夾中。 媒體檔案必須具有 `Build Action` 的 `BundleResource` 。
-- 在 Android 上，媒體檔案必須儲存在名為**raw**之**資源**的子資料夾中。 **raw** 資料夾不能包含子資料夾。 媒體檔案必須具有 `Build Action` 的 `AndroidResource` 。
+- 在 Android 上，媒體檔案必須儲存在名為 **raw** 之 **資源** 的子資料夾中。 **raw** 資料夾不能包含子資料夾。 媒體檔案必須具有 `Build Action` 的 `AndroidResource` 。
 - 在 UWP 上，媒體檔案可以儲存在專案中的任何資料夾。 媒體檔案必須具有 `BuildAction` 的 `Content` 。
 
 然後，您可以使用 URI 配置來播放符合這些條件的媒體檔案 `ms-appx:///` ：
@@ -324,7 +324,7 @@ protected override void OnDisappearing()
 
 ## <a name="implement-custom-transport-controls"></a>執行自訂傳輸控制項
 
-媒體播放機的傳輸控制包括執行 **播放**、 **暫停**和 **停止**功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放]**** 及 [暫停]**** 功能常會合併為一個按鈕。
+媒體播放機的傳輸控制包括執行 **播放** 、 **暫停** 和 **停止** 功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放] 及 [暫停] 功能常會合併為一個按鈕。
 
 預設 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 會停用播放控制項。 這可讓您以程式設計 `MediaElement` 方式或提供您自己的傳輸控制項來控制。 為了支援這種情況， `MediaElement` 包含 [`Play`](xref:Xamarin.Forms.MediaElement.Play) 、 [`Pause`](xref:Xamarin.Forms.MediaElement.Pause) 和 [`Stop`](xref:Xamarin.Forms.MediaElement.Stop) 方法。
 
@@ -377,7 +377,7 @@ protected override void OnDisappearing()
 </ContentPage>
 ```
 
-在此範例中，自訂傳輸控制項會定義為 [`Button`](xref:Xamarin.Forms.Button) 物件。 不過，只有兩個 `Button` 物件，第一個代表「 `Button` **播放** 」和「 **暫停**」，而第二個 `Button` 代表「 **停止**」。 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) 物件可用來啟用和停用按鈕，以及切換 **播放** 與 **暫停**之間的第一個按鈕。 如需有關資料觸發程式的詳細資訊，請參閱[ Xamarin.Forms 觸發](~/xamarin-forms/app-fundamentals/triggers.md)程式。
+在此範例中，自訂傳輸控制項會定義為 [`Button`](xref:Xamarin.Forms.Button) 物件。 不過，只有兩個 `Button` 物件，第一個代表「 `Button` **播放** 」和「 **暫停** 」，而第二個 `Button` 代表「 **停止** 」。 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) 物件可用來啟用和停用按鈕，以及切換 **播放** 與 **暫停** 之間的第一個按鈕。 如需有關資料觸發程式的詳細資訊，請參閱[ Xamarin.Forms 觸發](~/xamarin-forms/app-fundamentals/triggers.md)程式。
 
 程式碼後端檔案具有事件的處理常式 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) ：
 

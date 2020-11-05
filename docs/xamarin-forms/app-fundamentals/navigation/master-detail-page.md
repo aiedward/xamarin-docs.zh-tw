@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms 主版詳細資料頁面
+title: Xamarin.Forms Master-Detail 頁面
 description: Xamarin.FormsMasterDetailPage 是管理兩個相關資訊頁面的頁面–顯示專案的主版頁面，以及提供主版頁面上專案相關詳細資料的詳細資料頁面。 本文說明如何使用 MasterDetailPage 及在其資訊頁面之間巡覽。
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d29dafd5bcdf991f275580850d77a4923d37286e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 46f88b1672690645a8e71aba2c0dbe44d7b123cd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563051"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368761"
 ---
-# <a name="no-locxamarinforms-master-detail-page"></a>Xamarin.Forms 主版詳細資料頁面
+# <a name="no-locxamarinforms-master-detail-page"></a>Xamarin.Forms Master-Detail 頁面
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 
 _Xamarin.FormsMasterDetailPage 是管理兩個相關資訊頁面的頁面–顯示專案的主版頁面，以及提供主版頁面上專案相關詳細資料的詳細資料頁面。本文說明如何使用 MasterDetailPage，並在其資訊頁面之間流覽。_
 
@@ -32,7 +32,7 @@ _Xamarin.FormsMasterDetailPage 是管理兩個相關資訊頁面的頁面–顯�
 項目清單的位置在每個平台上都相同，且選取其中一個項目會巡覽至對應的詳細資料頁面。 此外，主版頁面也會提供包含一個按鈕的導覽列，該按鈕可用來巡覽至作用中的詳細資料頁面：
 
 - 在 iOS 上，導覽列會出現在頁面頂端，並有一個按鈕，可巡覽至詳細資料頁面。 此外，可以藉由將主版頁面撥動至左側，巡覽至作用中的詳細資料頁面。
-- 在 Android 上，導覽列會出現在頁面頂端，並顯示一個標題、圖示，以及可巡覽至詳細資料頁面的按鈕。 該圖示是在 `[Activity]` 屬性中定義，以裝飾 Android 平台特定專案中的 `MainActivity` 類別。 此外，可以藉由將主版頁面撥動至左側、點選畫面最右邊的詳細資料頁面，和點選畫面底部的 [上一步]** 按鈕，巡覽至作用中的詳細資料頁面。
+- 在 Android 上，導覽列會出現在頁面頂端，並顯示一個標題、圖示，以及可巡覽至詳細資料頁面的按鈕。 該圖示是在 `[Activity]` 屬性中定義，以裝飾 Android 平台特定專案中的 `MainActivity` 類別。 此外，可以藉由將主版頁面撥動至左側、點選畫面最右邊的詳細資料頁面，和點選畫面底部的 [上一步] 按鈕，巡覽至作用中的詳細資料頁面。
 - 在通用 Windows 平台 (UWP) 上，導覽列出現在頁面頂端，並具有可巡覽至詳細資料頁面的按鈕。
 
 詳細資料頁面會顯示對應至主版頁面上所選取項目的資料，且會顯示詳細資料頁面的主要元件，如下列螢幕擷取畫面所示：
@@ -49,8 +49,8 @@ _Xamarin.FormsMasterDetailPage 是管理兩個相關資訊頁面的頁面–顯�
 
 主版頁面和詳細資料頁面之間的巡覽體驗行為，取決於平台：
 
-- 在 iOS 上，當主版頁面從左邊滑動時，詳細資料頁面會「滑」** 向右邊，詳細資料頁面的左邊部分仍然可見。
-- 在 Android 上，詳細資料頁面和主版頁面會彼此「重疊」**。
+- 在 iOS 上，當主版頁面從左邊滑動時，詳細資料頁面會「滑」向右邊，詳細資料頁面的左邊部分仍然可見。
+- 在 Android 上，詳細資料頁面和主版頁面會彼此「重疊」。
 - 在 UWP 上，主版頁面會在詳細資料頁面的左邊滑出，前提是該 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 屬性設定為 `Popover` 。 如需詳細資訊，請參閱[控制詳細資料頁面顯示行為](#controlling-the-detail-page-display-behavior)。
 
 在橫向模式中會觀察到類似的行為，只除了 iOS 和 Android 上的主版頁面，會具有與直向模式主版頁面類似的寬度，因此會顯示更多詳細資料頁面。
@@ -289,7 +289,7 @@ public class MainPageCS : MasterDetailPage
 
 但是，屬性的值 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 只會影響在平板電腦或桌上型電腦上執行的應用程式。 在手機上執行的應用程式一律為 *Popover* 行為。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ，並在其資訊頁面之間流覽。 Xamarin.Forms `MasterDetailPage` 是管理兩個相關資訊頁面的頁面–顯示專案的主版頁面，以及提供主版頁面上專案相關詳細資料的詳細資料頁面。
 

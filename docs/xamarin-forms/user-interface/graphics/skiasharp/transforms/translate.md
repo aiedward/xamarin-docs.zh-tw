@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 31a76e160186caec74665b7615323eb8e60b698a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fdb59cf8b40c62bc4375a12368ed871898497adf
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562323"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368587"
 ---
 # <a name="the-translate-transform"></a>平移轉換
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解如何使用翻譯轉換來轉換 SkiaSharp 圖形_
 
@@ -41,7 +41,7 @@ public void Translate (Single dx, Single dy)
 public void Translate (SKPoint point)
 ```
 
-[**SkiaSharpForms**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例程式的**累積轉譯**頁面會示範方法的多個呼叫 `Translate` 是累計的。 [`AccumulatedTranslatePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)類別會顯示相同矩形的20個版本，每一個都是從上一個矩形算出的位移，以便沿著對角線伸展。 以下是 `PaintSurface` 事件處理常式：
+[**SkiaSharpForms**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例程式的 **累積轉譯** 頁面會示範方法的多個呼叫 `Translate` 是累計的。 [`AccumulatedTranslatePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)類別會顯示相同矩形的20個版本，每一個都是從上一個矩形算出的位移，以便沿著對角線伸展。 以下是 `PaintSurface` 事件處理常式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -145,7 +145,7 @@ using (SKPaint textPaint = new SKPaint())
 
 不過，您不需要擔心從 `PaintSurface` 處理常式呼叫到下一個處理常式的轉換。 每個新的呼叫都會 `PaintSurface` 傳遞 `SKCanvas` 具有預設轉換的全新物件。
 
-轉換的另一種常見用法 `Translate` ，是為了轉譯最初使用可方便繪圖的座標建立的視覺物件。 例如，您可能想要指定具有中間點的類比時鐘座標， (0，0) 。 然後，您可以使用轉換來顯示您想要的頻率。 這項技術會在 [**Hendecagram 陣列**] 頁面中示範。 [`HendecagramArrayPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs)類別一開始會建立 `SKPath` 11 個指向星形的物件。 `HendecagramPath`物件會定義為公用、靜態和唯讀，以便從其他示範程式進行存取。 它是在靜態的函式中建立的：
+轉換的另一種常見用法 `Translate` ，是為了轉譯最初使用可方便繪圖的座標建立的視覺物件。 例如，您可能想要指定具有中間點的類比時鐘座標， (0，0) 。 然後，您可以使用轉換來顯示您想要的頻率。 這項技術會在 [ **Hendecagram 陣列** ] 頁面中示範。 [`HendecagramArrayPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs)類別一開始會建立 `SKPath` 11 個指向星形的物件。 `HendecagramPath`物件會定義為公用、靜態和唯讀，以便從其他示範程式進行存取。 它是在靜態的函式中建立的：
 
 ```csharp
 public class HendecagramArrayPage : ContentPage

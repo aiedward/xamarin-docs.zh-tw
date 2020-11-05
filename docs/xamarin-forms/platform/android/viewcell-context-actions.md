@@ -10,16 +10,16 @@ ms.date: 09/24/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6cbdea3656daa4df894a79edc70453c78e3844bc
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e829c7f3763d25574b9ca70c1118ee9521633b48
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556746"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368462"
 ---
 # <a name="viewcell-context-actions-on-android"></a>Android 上的 ViewCell 內容動作
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 根據預設 Xamarin.Forms ，在4.3 中，當 [`ViewCell`](xref:Xamarin.Forms.ViewCell) Android 應用程式中的每個專案定義內容動作時 [`ListView`](xref:Xamarin.Forms.ListView) ，會在變更中選取的專案時更新內容動作功能表 `ListView` 。 不過，在舊版的 Xamarin.Forms 內容動作功能表中，並不會更新，而這種行為稱為 `ViewCell` 舊版模式。 如果 `ListView` 使用 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 來 `ItemTemplate` 從 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定義不同內容動作的物件進行設定，則舊版模式可能會導致不正確的行為。
 

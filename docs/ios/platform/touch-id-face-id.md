@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/16/2019
-ms.openlocfilehash: 526de99f32a8682cbe6862e46f90c674cf7d3dc6
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: a092b5f84ebf0481652f5093a4898e44a55e19f8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430369"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369554"
 ---
 # <a name="use-touch-id-and-face-id-with-xamarinios"></a>搭配使用 Touch ID 和臉部識別碼與 Xamarin
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-faceidsample/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/ios-samples/ios11-faceidsample/)
 
 iOS 支援兩種生物特徵辨識驗證系統：
 
@@ -25,7 +25,7 @@ iOS 支援兩種生物特徵辨識驗證系統：
 
 Touch ID 是在 iOS 7 和 iOS 11 中的臉部識別碼引進。
 
-這些驗證系統依賴以硬體為基礎的安全性處理器，稱為「 _安全記憶體保護區_」。 安全記憶體保護區負責加密臉部和指紋資料的數學標記法，並使用這項資訊來驗證使用者。 根據 Apple，臉部和指紋資料不會離開裝置，也不會備份到 iCloud。 應用程式會透過 _本機驗證_ API 與安全記憶體保護區互動，而且無法取出臉部或指紋資料，或直接存取安全的記憶體保護區。
+這些驗證系統依賴以硬體為基礎的安全性處理器，稱為「 _安全記憶體保護區_ 」。 安全記憶體保護區負責加密臉部和指紋資料的數學標記法，並使用這項資訊來驗證使用者。 根據 Apple，臉部和指紋資料不會離開裝置，也不會備份到 iCloud。 應用程式會透過 _本機驗證_ API 與安全記憶體保護區互動，而且無法取出臉部或指紋資料，或直接存取安全的記憶體保護區。
 
 在提供受保護內容的存取權之前，應用程式可以使用 Touch ID 和臉部識別碼來驗證使用者。
 
@@ -186,7 +186,7 @@ partial class AuthenticationViewController: UIViewController
 }
 ```
 
-`AuthenticateMe`呼叫方法是為了回應使用者點擊**登**入按鈕。 會具 `LAContext` 現化新的物件，並檢查裝置版本以判斷要在本機驗證內容上設定的屬性。
+`AuthenticateMe`呼叫方法是為了回應使用者點擊 **登** 入按鈕。 會具 `LAContext` 現化新的物件，並檢查裝置版本以判斷要在本機驗證內容上設定的屬性。
 
 `CanEvaluatePolicy`系統會呼叫此方法以檢查是否已啟用生物識別驗證、切換回 PIN 驗證（如果可能的話），最後提供不安全的模式（如果沒有可用的驗證）。 如果有可用的驗證方法，則 `EvaluatePolicy` 會使用方法來顯示 UI 並完成驗證程式。
 

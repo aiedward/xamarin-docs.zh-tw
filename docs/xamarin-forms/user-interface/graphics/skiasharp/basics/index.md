@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4c205c033f7032eb093b91c10292610bacc12a26
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3ec4a30f077aac53eda0a317bcb5294816e3c51a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556512"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369307"
 ---
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp 繪圖基本概念
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解 SkiaSharp 圖形概念和座標的基本概念_
 
 將 SkiaSharp NuGet 套件新增至您的 Xamarin.Forms 應用程式之後，您就可以開始使用 SkiaSharp 圖形。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)解決方案包含許多頁面，可在漸進式更先進的課程中示範 SkiaSharp 的程式設計技巧。
 
-此區段中的所有範例程式都會出現在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式首頁的 [ **SkiaSharp 繪圖基本概念**] 標題底下，以及方案的 [[**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)] 資料夾中。
+此區段中的所有範例程式都會出現在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式首頁的 [ **SkiaSharp 繪圖基本概念** ] 標題底下，以及方案的 [ [**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)] 資料夾中。
 
 ## <a name="drawing-a-simple-circle"></a>[繪製簡單的圓形](circle.md)
 

@@ -10,16 +10,16 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7edde81a926b142a5e792a203e96ee61b1fdfb7b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cd37166c461abe6b92a280dd52098d85c2393fbd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562700"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369827"
 ---
 # <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.Forms命令介面
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 在 Model-View-ViewModel (MVVM) 架構中，資料繫結是在 ViewModel (這通常是衍生自 `INotifyPropertyChanged` 的類別) 中屬性與檢視 (這通常是 XAML 檔案) 的屬性之間定義。 有時候應用程式需要超越這些屬性繫結，方法是要求使用者起始會影響 ViewModel 某些項目的命令。 這些命令通常是透過按鈕點擊或手指點選發出訊號，傳統上會以 `Button` 的 `Clicked` 事件處理常式或 `TapGestureRecognizer` 的 `Tapped` 事件處理常式在程式碼後置檔案中加以處理。
 
@@ -91,7 +91,7 @@ ViewModel 還必須參考實作 `ICommand` 介面的類別。 稍後即會描述
 
 [**資料繫結示範**](/samples/xamarin/xamarin-forms-samples/databindingdemos)程式中之 **Person Entry** (人員輸入) 頁面會示範 ViewModel 中實作的一些簡單命令。
 
-`PersonViewModel` 會定義三個定義人員的屬性，名稱為 `Name`、`Age` 和 `Skills`。 此類別「不」** 包含任何 `ICommand` 屬性：
+`PersonViewModel` 會定義三個定義人員的屬性，名稱為 `Name`、`Age` 和 `Skills`。 此類別「不」包含任何 `ICommand` 屬性：
 
 ```csharp
 public class PersonViewModel : INotifyPropertyChanged
@@ -288,7 +288,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 此程式沒有任何可編輯現有項目的設備，當您離開該頁面時，也不會儲存項目。
 
-[新增]****、[提交]**** 和 [取消]**** 按鈕的所有邏輯是透過 `NewCommand`、`SubmitCommand` 和 `CancelCommand` 屬性的定義在 `PersonCollectionViewModel` 中加以處理。 `PersonCollectionViewModel` 的建構函式會將這三個屬性設定為 `Command` 類型的物件。  
+[新增]、[提交] 和 [取消] 按鈕的所有邏輯是透過 `NewCommand`、`SubmitCommand` 和 `CancelCommand` 屬性的定義在 `PersonCollectionViewModel` 中加以處理。 `PersonCollectionViewModel` 的建構函式會將這三個屬性設定為 `Command` 類型的物件。  
 
 `Command` 類別的[建構函式](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))可讓您傳遞類型為 `Action` 和 `Func<bool>` (對應於 `Execute` 和 `CanExecute` 方法) 的引數。 最簡單的方式是在直接 `Command` 建構函式中定義這些動作和函式作為 Lambda 函式。 以下是 `NewCommand` 屬性的 `Command` 物件定義：
 
@@ -378,11 +378,11 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-每次所編輯的 `PersonViewModel` 物件有屬性變更時，即會呼叫 `SubmitCommand` 的 `canExecute` 函式。 只有在 `Name` 屬性長度至少是 1 個字元，且 `Age` 大於 0 時，它才會傳回 `true`。 此時，[提交]**** 按鈕會變成啟用狀態。
+每次所編輯的 `PersonViewModel` 物件有屬性變更時，即會呼叫 `SubmitCommand` 的 `canExecute` 函式。 只有在 `Name` 屬性長度至少是 1 個字元，且 `Age` 大於 0 時，它才會傳回 `true`。 此時，[提交] 按鈕會變成啟用狀態。
 
-[提交]**** 的 `execute` 函式會從 `PersonViewModel` 移除屬性變更處理常式，將物件新增至 `Persons` 集合，然後讓所有項目回到初始狀況。
+[提交] 的 `execute` 函式會從 `PersonViewModel` 移除屬性變更處理常式，將物件新增至 `Persons` 集合，然後讓所有項目回到初始狀況。
 
-[取消]**** 按鈕的 `execute` 函式會執行 **Submit** 按鈕執行的所有作業，但將物件新增至集合除外：
+[取消] 按鈕的 `execute` 函式會執行 **Submit** 按鈕執行的所有作業，但將物件新增至集合除外：
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -416,7 +416,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 在編輯 `PersonViewModel` 的任何時候，`canExecute` 方法都會傳回 `true`。
 
-這些技術可調整以符合更複雜的案例：`PersonCollectionViewModel` 中的屬性無法繫結至 `ListView` 的 `SelectedItem` 屬性來編輯現有項目，因此可能會新增 [刪除]**** 按鈕來刪除這些項目。
+這些技術可調整以符合更複雜的案例：`PersonCollectionViewModel` 中的屬性無法繫結至 `ListView` 的 `SelectedItem` 屬性來編輯現有項目，因此可能會新增 [刪除] 按鈕來刪除這些項目。
 
 不需要將 `execute` 和 `canExecute` 方法定義為 Lambda 函式。 您可以在 ViewModel 中將其撰寫為一般的私用方法，並在 `Command` 建構函式中加以參考。 不過，這種方式通常會導致大量的方法只會在 ViewModel 中參考一次。
 
@@ -610,7 +610,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 輸入數字和退格的邏輯有點難以處理，因為如果尚未輸入任何數字，則 `Entry` 屬性是字串 "0"。 如果使用者鍵入多個零，則 `Entry` 仍然只包含一個零。 如果使用者鍵入任何其他數字，該數字就會取代零。 但是，如果使用者在任何其他數字之前鍵入小數點，則 `Entry` 為字串 "0."。
 
-只有在項目的長度大於 1，或 `Entry` 不等於字串 "0" 時，才會啟用 [退格鍵]**Backspace** 按鈕：
+只有在項目的長度大於 1，或 `Entry` 不等於字串 "0" 時，才會啟用 [退格鍵] **Backspace** 按鈕：
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -647,7 +647,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-[退格鍵]**** 按鈕的 `execute` 函式邏輯可確保 `Entry` 至少是一個字串 "0"。
+[退格鍵] 按鈕的 `execute` 函式邏輯可確保 `Entry` 至少是一個字串 "0"。
 
 `DigitCommand` 屬性繫結至 11 個按鈕，其中每個按鈕都會利用 `CommandParameter` 屬性識別其本身。 `DigitCommand` 可以設定為一般 `Command` 類別的執行個體，但使用 `Command<T>` 泛型類別更加容易。 使用命令介面與 XAML 搭配時，`CommandParameter` 屬性通常是字串，而且其為泛型引數的類型。 `execute` 和 `canExecute` 函式則會有類型為 `string` 的引數：
 
@@ -691,7 +691,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>導覽功能表的非同步命令
 
-命令可讓實作導覽功能表更加方便，例如[**資料繫結示範**](/samples/xamarin/xamarin-forms-samples/databindingdemos)程式本身的導覽功能表。 以下是 **MainPage.xaml** 的一部分：
+命令可讓實作導覽功能表更加方便，例如 [**資料繫結示範**](/samples/xamarin/xamarin-forms-samples/databindingdemos)程式本身的導覽功能表。 以下是 **MainPage.xaml** 的一部分：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -757,7 +757,7 @@ public partial class MainPage : ContentPage
 
 建構函式還會將頁面的 `BindingContext` 設定為其本身，以便繫結參考此類別中的 `NavigateCommand`。
 
-此建構函式中的程式碼順序有所不同：`InitializeComponent` 呼叫會導致剖析 XAML，但該時間無法解析名為 `NavigateCommand` 的屬性繫結，因為 `BindingContext` 設定為 `null`。 如果在 `BindingContext` 設定 *之前先*在函式中設定，則在 `NavigateCommand` 設定時可以解析系結 `BindingContext` ，但在該時間， `NavigateCommand` 仍是 `null` 。 在 `BindingContext` 之後設定 `NavigateCommand` 不會影響繫結，因為變更 `NavigateCommand` 並不會引發 `PropertyChanged` 事件，且繫結不知道 `NavigateCommand` 現在是有效的。
+此建構函式中的程式碼順序有所不同：`InitializeComponent` 呼叫會導致剖析 XAML，但該時間無法解析名為 `NavigateCommand` 的屬性繫結，因為 `BindingContext` 設定為 `null`。 如果在 `BindingContext` 設定 *之前先* 在函式中設定，則在 `NavigateCommand` 設定時可以解析系結 `BindingContext` ，但在該時間， `NavigateCommand` 仍是 `null` 。 在 `BindingContext` 之後設定 `NavigateCommand` 不會影響繫結，因為變更 `NavigateCommand` 並不會引發 `PropertyChanged` 事件，且繫結不知道 `NavigateCommand` 現在是有效的。
 
 在呼叫 `InitializeComponent` 之前同時設定 `NavigateCommand` 和 `BindingContext` (依任意順序) 可正常運作，因為 XAML 剖析器遇到繫結定義時，已設定繫結的這兩個元件。
 

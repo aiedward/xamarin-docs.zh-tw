@@ -10,16 +10,16 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2dacbc18fdbc7d9c7bd38d5ddfad2157e3a0a503
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: caa4f78d70f583c22fb4a00fd85b91ec7357013a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563285"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369726"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-no-locxamarinforms"></a>使用 Azure Cosmos DB 檔資料庫和來驗證使用者 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 
 _Azure Cosmos DB 檔資料庫支援分割的集合，可跨越多個伺服器和資料分割，同時支援無限制的儲存體和輸送量。本文說明如何結合存取控制與分割集合，讓使用者只能存取自己在應用程式中的檔 Xamarin.Forms 。_
 
@@ -51,7 +51,7 @@ _Azure Cosmos DB 檔資料庫支援分割的集合，可跨越多個伺服器和
 
 如需 Cosmos DB 資料分割的詳細資訊，請參閱 [如何分割和縮減 Azure Cosmos DB](/azure/cosmos-db/partition-data/)。 如需 Cosmos DB 存取控制的詳細資訊，請參閱[在 SQL API 中](/rest/api/documentdb/access-control-on-documentdb-resources/)[保護對 Cosmos DB 資料](/azure/cosmos-db/secure-access-to-data/)和存取控制的存取。
 
-## <a name="setup"></a>安裝程式
+## <a name="setup"></a>設定
 
 將資源權杖訊息代理程式整合至應用程式的程式如下所示 Xamarin.Forms ：
 
@@ -113,7 +113,7 @@ _Azure Cosmos DB 檔資料庫支援分割的集合，可跨越多個伺服器和
 1. 在 Azure 入口網站中，流覽至 App Service web 應用程式。
 1. 在 Azure 入口網站中，開啟 [驗證/授權] 分頁，然後執行下列設定：
     - 應開啟 App Service 驗證。
-    - 要求未通過驗證時所要採取的動作，應該設定為 **使用 Facebook 登入**。
+    - 要求未通過驗證時所要採取的動作，應該設定為 **使用 Facebook 登入** 。
 
     下列螢幕擷取畫面會示範這項設定：
 
@@ -258,7 +258,7 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 如需有關從檔集合中刪除檔的詳細資訊，請參閱 [從檔集合中刪除](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting-a-document-from-a-document-collection)檔。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何結合存取控制與分割集合，讓使用者只能在應用程式中存取自己的檔資料庫檔案 Xamarin.Forms 。 將使用者的身分識別指定為數據分割索引鍵，可確保資料分割的集合只能儲存該使用者的檔。
 

@@ -10,22 +10,22 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a07931bfa53a5e4d77c2755b08745b8dd962b695
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e874543b356ffe5dd821c6c2f20e487d79919449
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557149"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367916"
 ---
 # <a name="no-locxamarinforms-c-markup"></a>Xamarin.Forms C # 標記
 
 ![發行前 API](~/media/shared/preview.png)
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
 C # 標記是一組可簡化的 helper 方法和類別，可簡化以 c # 建立宣告式 Xamarin.Forms 使用者介面的程式。 C # 標記提供的流暢 API 可在 `Xamarin.Forms.Markup` 命名空間中使用。
 
-和 XAML 一樣，c # 標記也可讓 UI 標記和 UI 邏輯之間有清楚的分隔。 這可以藉由將 UI 標記和 UI 邏輯分隔成不同的部分類別檔案來達成。 例如，針對登入頁面，UI 標記會位於名為 *LoginPage.cs*的檔案中，而 ui 邏輯則會在名為 *LoginPage.logic.cs*的檔案中。
+和 XAML 一樣，c # 標記也可讓 UI 標記和 UI 邏輯之間有清楚的分隔。 這可以藉由將 UI 標記和 UI 邏輯分隔成不同的部分類別檔案來達成。 例如，針對登入頁面，UI 標記會位於名為 *LoginPage.cs* 的檔案中，而 ui 邏輯則會在名為 *LoginPage.logic.cs* 的檔案中。
 
 C # 標記可從 Xamarin.Forms 4.6 取得。 不過，它目前是實驗性，而且只能透過將下列程式碼新增至 *App.cs* 檔案來使用：
 
@@ -231,7 +231,7 @@ new Label { Text = "Tap Me" }
 
 因為手勢辨識器是 `BindableObject` ，所以您可以在 `Bind` 初始化時使用和 `BindCommand` 擴充方法。 您也可以使用擴充方法來初始化自訂手勢辨識器類型 `Gesture<TGestureElement, TGestureRecognizer>` 。
 
-## <a name="layout"></a>配置
+## <a name="layout"></a>Layout
 
 C # 標記包含一系列的版面配置延伸方法，可支援在版面配置中定位視圖，以及在視圖中提供內容：
 
@@ -529,10 +529,10 @@ new ListView { } .iOSGroupHeaderStyle(PciOS.GroupHeaderStyle.Grouped)
 
 建議的屬性和 helper 方法的順序和群組如下：
 
-- **目的**：任何屬性或 helper 方法，其值識別控制項的用途 (例如， `Text` `Placeholder` `Assign`) 。
-- **其他**：在同一行或多行上不是版面配置或系結的所有屬性或 helper 方法。
-- **版面**配置：配置是依序排列：資料列和資料行、配置選項、邊界、大小、填補和內容對齊。
-- 系**結：資料**系結是在方法鏈的結尾執行，每一行有一個系結的屬性。 如果 *預設* 的可系結屬性已系結，它應該位於方法鏈的結尾。
+- **目的** ：任何屬性或 helper 方法，其值識別控制項的用途 (例如， `Text` `Placeholder` `Assign`) 。
+- **其他** ：在同一行或多行上不是版面配置或系結的所有屬性或 helper 方法。
+- **版面** 配置：配置是依序排列：資料列和資料行、配置選項、邊界、大小、填補和內容對齊。
+- 系 **結：資料** 系結是在方法鏈的結尾執行，每一行有一個系結的屬性。 如果 *預設* 的可系結屬性已系結，它應該位於方法鏈的結尾。
 
 下列程式碼顯示下列慣例的範例：
 

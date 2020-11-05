@@ -10,16 +10,16 @@ ms.date: 02/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4d53f999e27aa5aea852f09e8650ea66aac1d9b9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 364cda6372986113e8a782a061783e0ca5455f3b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558826"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368540"
 ---
 # <a name="no-locxamarinforms-slider"></a>Xamarin.Forms 滑 塊
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
 _使用滑杆從連續值的範圍中進行選取。_
 
@@ -63,7 +63,7 @@ Xamarin.Forms [`Slider`](xref:Xamarin.Forms.Slider) 是可由使用者操作以 
 
 ### <a name="creating-a-slider-in-code"></a>在程式碼中建立滑杆
 
-[**SliderDemos**](/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例中的**基本滑杆程式碼**頁面會顯示如何在程式 `Slider` 代碼中建立和兩個 `Label` 物件：
+[**SliderDemos**](/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例中的 **基本滑杆程式碼** 頁面會顯示如何在程式 `Slider` 代碼中建立和兩個 `Label` 物件：
 
 ```csharp
 public class BasicSliderCodePage : ContentPage
@@ -120,7 +120,7 @@ public class BasicSliderCodePage : ContentPage
 
 ### <a name="creating-a-slider-in-xaml"></a>在 XAML 中建立滑杆
 
-**基本滑杆 XAML**頁面的功能與**基本滑杆程式碼**相同，但實際上是在 XAML 中執行：
+**基本滑杆 XAML** 頁面的功能與 **基本滑杆程式碼** 相同，但實際上是在 XAML 中執行：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -179,7 +179,7 @@ double value = slider.Value;
 
 ### <a name="data-binding-the-slider"></a>資料系結滑杆
 
-[**基本滑杆**系結] 頁面會顯示如何使用資料系結來撰寫幾乎相等的程式，以消除 `Value` 事件處理常式： [Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+[ **基本滑杆** 系結] 頁面會顯示如何使用資料系結來撰寫幾乎相等的程式，以消除 `Value` 事件處理常式： [Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -208,7 +208,7 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation`第一個屬性（property `Label` ）系結至的 `Value` 屬性（property），其為 `Slider` `Text` 第二個 `Label` 具有規格的屬性（property） `StringFormat` 。 **基本滑杆**系結頁面的運作方式與前兩個頁面的運作方式稍有不同：當頁面第一次出現時，第二個頁面會 `Label` 顯示具有值的文字字串。 這是使用資料系結的優點。 若要顯示沒有資料系結的文字，您必須明確地初始化的 `Text` 屬性， `Label` 或從類別的函式 `ValueChanged` 呼叫事件處理常式，以模擬事件的引發。
+`Rotation`第一個屬性（property `Label` ）系結至的 `Value` 屬性（property），其為 `Slider` `Text` 第二個 `Label` 具有規格的屬性（property） `StringFormat` 。 **基本滑杆** 系結頁面的運作方式與前兩個頁面的運作方式稍有不同：當頁面第一次出現時，第二個頁面會 `Label` 顯示具有值的文字字串。 這是使用資料系結的優點。 若要顯示沒有資料系結的文字，您必須明確地初始化的 `Text` 屬性， `Label` 或從類別的函式 `ValueChanged` 呼叫事件處理常式，以模擬事件的引發。
 
 ## <a name="precautions"></a>預防 措施
 
@@ -298,7 +298,7 @@ UWP 的執行 `Slider` 是以 uwp 控制項為基礎 [`Slider`](/uwp/api/windows
 
 ### <a name="the-stepslider-solution"></a>StepSlider 解決方案
 
-第 `StepSlider` 27 章會討論更多用途[。](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)*使用 Xamarin.Forms 建立 Mobile Apps*之書籍的自訂轉譯器。 `StepSlider`類似于， `Slider` 但會加入 `Steps` 屬性來指定和之間的值數目 `Minimum` `Maximum` 。
+第 `StepSlider` 27 章會討論更多用途 [。](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)*使用 Xamarin.Forms 建立 Mobile Apps* 之書籍的自訂轉譯器。 `StepSlider`類似于， `Slider` 但會加入 `Steps` 屬性來指定和之間的值數目 `Minimum` `Maximum` 。
 
 ## <a name="sliders-for-color-selection"></a>色彩選取的滑杆
 
@@ -306,7 +306,7 @@ UWP 的執行 `Slider` 是以 uwp 控制項為基礎 [`Slider`](/uwp/api/windows
 
 ### <a name="handling-sliders-in-the-code-behind-file"></a>處理常式代碼後端檔案中的滑杆
 
-**RGB 色彩滑杆**頁面會具現化， `BoxView` 以顯示色彩、三個 `Slider` 實例來選取色彩的紅色、綠色和藍色元件，以及三個可 `Label` 顯示這些色彩值的元素：
+**RGB 色彩滑杆** 頁面會具現化， `BoxView` 以顯示色彩、三個 `Slider` 實例來選取色彩的紅色、綠色和藍色元件，以及三個可 `Label` 顯示這些色彩值的元素：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -463,7 +463,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 Viewmodel 和 `INotifyPropertyChanged` 介面會在「 [資料](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結」一文中討論。
 
-**HslColorSlidersPage**會具現化， `HslColorViewModel` 並將它設定為頁面的 `BindingContext` 屬性。 這可讓 XAML 檔案中的所有元素系結至 ViewModel 中的屬性：
+**HslColorSlidersPage** 會具現化， `HslColorViewModel` 並將它設定為頁面的 `BindingContext` 屬性。 這可讓 XAML 檔案中的所有元素系結至 ViewModel 中的屬性：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

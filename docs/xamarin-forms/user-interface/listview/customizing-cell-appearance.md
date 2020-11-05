@@ -10,16 +10,16 @@ ms.date: 09/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d3deb5631bd37e4081ebaa591a52adb09d9db274
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 18ab6b42753cefbcb8b69deeba9a76c37dc5b9b0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560295"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369229"
 ---
 # <a name="customizing-listview-cell-appearance"></a>自訂 ListView 資料格外觀
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
 
 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 類別是用來呈現可透過使用元素自訂的可滾動清單 `ViewCell` 。 專案 `ViewCell` 可顯示文字和影像、表示 true/false 狀態，以及接收使用者輸入。
 

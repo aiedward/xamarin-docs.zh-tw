@@ -10,18 +10,18 @@ ms.date: 04/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4be3744e0cce465aab8fc4af39495d2f7d8e9004
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 0d6cf880be995949553602f9925535e55a8dbb49
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556603"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369502"
 ---
 # <a name="no-locxamarinforms-expander"></a>Xamarin.Forms 膨脹
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
 
-Xamarin.Forms `Expander` 控制項提供可展開的容器來裝載任何內容。 控制項有標頭和內容，並藉由點擊標頭來顯示或隱藏內容 `Expander` 。 只有在 `Expander` 顯示標頭時， `Expander` 才會*collapsed*折迭。 當 `Expander` 內容顯示時， `Expander` 就會 *展開*。
+Xamarin.Forms `Expander` 控制項提供可展開的容器來裝載任何內容。 控制項有標頭和內容，並藉由點擊標頭來顯示或隱藏內容 `Expander` 。 只有在 `Expander` 顯示標頭時， `Expander` 才會 *collapsed* 折迭。 當 `Expander` 內容顯示時， `Expander` 就會 *展開* 。
 
 下列螢幕擷取畫面顯示 `Expander` 在其折迭和展開的狀態中，並以紅色方塊指出標頭和內容：
 

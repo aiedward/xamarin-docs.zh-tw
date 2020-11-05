@@ -10,16 +10,16 @@ ms.date: 09/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf9ebb819d5b424963170d563575c4900bbed28b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 64a81b04961ebb0d03f661e99839b7ed78d710f2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556356"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368670"
 ---
 # <a name="path-information-and-enumeration"></a>路徑資訊與列舉
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _取得路徑和列舉內容的相關資訊_
 
@@ -139,9 +139,9 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 - `GetTangent`
 - `GetPositionAndTangent`
 
-**Unicycle 的半管道**頁面會在 Unicycle 上建立動畫，該圖似乎會沿著三次貝茲曲線來回傳送：
+**Unicycle 的半管道** 頁面會在 Unicycle 上建立動畫，該圖似乎會沿著三次貝茲曲線來回傳送：
 
-[![Unicycle 半管道頁面的三重螢幕擷取畫面](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Unicycle 半管道頁面的三重螢幕擷取畫面")
+[![Unicycle Half-Pipe 頁面的三重螢幕擷取畫面](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Unicycle Half-Pipe 頁面的三重螢幕擷取畫面")
 
 `SKPaint`用來為半形線和 unicycle 進行筆劃的物件會定義為類別中的欄位 `UnicycleHalfPipePage` 。 此外，也定義了 `SKPath` unicycle 的物件：
 
@@ -439,7 +439,7 @@ static class PathExtensions
 
 請注意，方法會保留變數中每個分佈的第一個點 `firstPoint` ，以及變數中每個繪製命令之後的目前位置 `lastPoint` 。 當遇到動詞時，必須使用這些變數來建立最後的結尾行 `Close` 。
 
-**GlobularText**範例會使用此擴充方法，在3d 效果中以半球環繞文字：
+**GlobularText** 範例會使用此擴充方法，在3d 效果中以半球環繞文字：
 
 [![Globular 文字頁面的三重螢幕擷取畫面](information-images/globulartext-small.png)](information-images/globulartext-large.png#lightbox "Globular 文字頁面的三重螢幕擷取畫面")
 

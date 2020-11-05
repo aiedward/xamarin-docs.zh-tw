@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ca8fdf101d521bf5cc58edecc523a035577be09b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6d4d270b2aeb1bd5e27f8a7a175e4707fd4a9b16
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563363"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368475"
 ---
 # <a name="visualelement-legacy-color-mode-on-android"></a>在 Android 上 VisualElement 舊版色彩模式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 某些 Xamarin.Forms 視圖功能是舊版色彩模式。 在此模式中，當 [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled) 視圖的屬性設定為時， `false` 此視圖會覆寫使用者所設定的色彩，其預設原生色彩為 [已停用] 狀態。 為了回溯相容性，這種舊版色彩模式會維持支援的視圖預設行為。
 

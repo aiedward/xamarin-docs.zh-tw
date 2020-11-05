@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 032a01a1e4e0f2b3e3d394aec6a30bd215fd84f8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fdc529e6b5f1678bd26b40a17b5e0c5257a6dc0e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562414"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368579"
 ---
 # <a name="integrating-text-and-graphics"></a>整合文字與圖形
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解如何判斷呈現的文字字串大小，以將文字與 SkiaSharp 圖形整合_
 
@@ -136,7 +136,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![大綱文字頁面的三重螢幕擷取畫面](text-images/outlinedtext-small.png)](text-images/outlinedtext-large.png#lightbox "大綱文字頁面的三個螢幕擷取畫面")
 
-只要將物件的 [一般] `Style` 屬性 `SKPaint` 從其預設設定變更 `SKPaintStyle.Fill` 為 `SKPaintStyle.Stroke` ，然後指定筆觸寬度，就可以完成此作業。 `PaintSurface`**大綱文字**頁面的處理常式會顯示其完成方式：
+只要將物件的 [一般] `Style` 屬性 `SKPaint` 從其預設設定變更 `SKPaintStyle.Fill` 為 `SKPaintStyle.Stroke` ，然後指定筆觸寬度，就可以完成此作業。 `PaintSurface`**大綱文字** 頁面的處理常式會顯示其完成方式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
