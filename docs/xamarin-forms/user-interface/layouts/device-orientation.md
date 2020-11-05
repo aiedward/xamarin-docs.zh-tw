@@ -10,16 +10,16 @@ ms.date: 04/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 01e439812c3935e890acf0b9b83579b5813d8e21
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5c49ee7022166983f55bca4a39dd726412b070c8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563948"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366200"
 ---
 # <a name="device-orientation"></a>裝置方向
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 
 請務必考慮您的應用程式的使用方式，以及如何合併橫向方向以改善使用者體驗。 可以設計個別的版面配置來容納多個方向，並充分利用可用的空間。 在應用層級，可以停用或啟用旋轉。
 
@@ -33,17 +33,17 @@ ms.locfileid: "91563948"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 中開啟 iOS 專案，並開啟 **plist**。 檔案會開啟至設定面板，從 [iPhone 部署資訊] 索引標籤開始：
+在 Visual Studio 中開啟 iOS 專案，並開啟 **plist** 。 檔案會開啟至設定面板，從 [iPhone 部署資訊] 索引標籤開始：
 
 ![Visual Studio 中的 iPhone 部署資訊](device-orientation-images/orientation-vs.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-在 Visual Studio for Mac 中開啟 iOS 專案，並開啟 **plist**。 在 [ **應用程式** ] 索引標籤底下，區段將可設定為 [方向]：
+在 Visual Studio for Mac 中開啟 iOS 專案，並開啟 **plist** 。 在 [ **應用程式** ] 索引標籤底下，區段將可設定為 [方向]：
 
 ![Visual Studio for Mac 中的 iPhone 部署資訊](device-orientation-images/orientation-vsmac.png)
 
-如果您想要使用索引鍵-值編輯器介面來編輯值，請選取畫面底部的 [ **來源**>] 索引標籤：
+如果您想要使用索引鍵-值編輯器介面來編輯值，請選取畫面底部的 [ **來源** >] 索引標籤：
 
 ![Visual Studio for Mac 中支援的裝置方向](device-orientation-images/orientation-source-vsmac.png)
 
@@ -76,9 +76,9 @@ Xamarin 支援數個指定方向的選項：
 - **ReversePortrait** &ndash; 讓應用程式使用直向方向，並朝平常面對相反的方向，如此就會顯示「倒置」。
 - **FullSensor** &ndash; 使應用程式依賴感應器資料，以從可能的 4) 中選取正確的方向 (。
 - **FullUser** &ndash; 讓應用程式使用使用者的方向喜好設定。 如果啟用自動旋轉，則可以使用全部4個方向。
-- **UserLandscape** &ndash;[ _ \[ 不 \] 支援_] 會導致應用程式使用橫向方向，除非使用者已啟用自動輪替，在這種情況下，它會使用感應器來判斷方向。 此選項會中斷編譯。
-- **UserPortrait** &ndash;[ _ \[ 不 \] 支援_] 會導致應用程式使用直向方向，除非使用者已啟用自動輪替，在此情況下，它會使用感應器來判斷方向。 此選項會中斷編譯。
-- **鎖定** &ndash;_ \[ 不支援 \] _會導致應用程式在啟動時使用螢幕方向，而不會回應裝置實體方向的變更。 此選項會中斷編譯。
+- **UserLandscape** &ndash;[ _\[ 不 \] 支援_ ] 會導致應用程式使用橫向方向，除非使用者已啟用自動輪替，在這種情況下，它會使用感應器來判斷方向。 此選項會中斷編譯。
+- **UserPortrait** &ndash;[ _\[ 不 \] 支援_ ] 會導致應用程式使用直向方向，除非使用者已啟用自動輪替，在此情況下，它會使用感應器來判斷方向。 此選項會中斷編譯。
+- **鎖定** &ndash;_\[ 不支援 \]_ 會導致應用程式在啟動時使用螢幕方向，而不會回應裝置實體方向的變更。 此選項會中斷編譯。
 
 請注意，原生 Android Api 可讓您控制方向的管理方式，包括明確與使用者的表示喜好設定有矛盾的選項。
 
@@ -213,7 +213,7 @@ protected override void OnSizeAllocated (double width, double height){
 }
 ```
 
-請注意：
+注意下列事項：
 
 - `outerStack` 會調整成根據方向將影像和控制項呈現為水準或垂直堆疊，以充分利用可用的空間。
 
@@ -264,7 +264,7 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 </ContentPage>
 ```
 
-請注意：
+注意下列事項：
 
 - 由於頁面的配置方式，不需要程式性程式碼就能引進回應性。
 - `ScrollView`即使螢幕的高度小於按鈕的固定高度和影像的總和，還是會使用來允許顯示標籤。
@@ -355,12 +355,12 @@ BackgroundImageSource="deer.jpg">
 
 ```
 
-請注意：
+注意下列事項：
 
 - 由於頁面的配置方式，不需要程式性程式碼就能引進回應性。
 - `ScrollView`即使螢幕的高度小於按鈕的固定高度和影像的總和，還是會使用來允許顯示標籤。
 
-### <a name="grid"></a>Grid
+### <a name="grid"></a>方格
 
 請考慮下列以直向顯示的應用程式：
 
@@ -458,7 +458,7 @@ protected override void OnSizeAllocated (double width, double height){
 }
 ```
 
-請注意：
+注意下列事項：
 
 - 由於頁面的配置方式，有一種方法可以變更控制項的方格位置。
 

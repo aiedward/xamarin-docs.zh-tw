@@ -10,16 +10,16 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 51bdcc6f9a95911c548269dbf7b3050cc5921183
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8858be2839de58369a6b5f0cb8a6c09c44bb3861
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556616"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366148"
 ---
 # <a name="no-locxamarinforms-collectionview-grouping"></a>Xamarin.Forms CollectionView 群組
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 在持續滾動清單中顯示大型資料集時，經常會變得很困難。 在此案例中，將資料組織成群組可讓您更輕鬆地流覽資料，進而改善使用者體驗。
 

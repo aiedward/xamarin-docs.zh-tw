@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5064a53b140c26acdc5149f5495cc002e657a9b0
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 56a652f6f8ff2c4e9780d72117241d79f71210b5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564000"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367383"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>SkiaSharp 中的點和虛線
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _在 SkiaSharp 中以複雜的方式繪製虛線和虛線_
 
@@ -27,7 +27,7 @@ SkiaSharp 可讓您繪製非實線的線條，而不是由點和虛線組成：
 
 ![虛線](dots-images/dottedlinesample.png)
 
-您可以使用 *路徑效果*來完成這項作業，這是 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 您設定為屬性之類別的實例 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 您可以使用所定義的其中一個靜態建立方法， (或合併路徑效果) 來建立路徑效果 `SKPathEffect` 。  (`SKPathEffect` 是 SkiaSharp 所支援的六個效果之一; 其他則在 [**SkiaSharp 效果**](../effects/index.md)一節中說明。 ) 
+您可以使用 *路徑效果* 來完成這項作業，這是 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 您設定為屬性之類別的實例 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 您可以使用所定義的其中一個靜態建立方法， (或合併路徑效果) 來建立路徑效果 `SKPathEffect` 。  (`SKPathEffect` 是 SkiaSharp 所支援的六個效果之一; 其他則在 [**SkiaSharp 效果**](../effects/index.md)一節中說明。 ) 
 
 若要繪製虛線或虛線，請使用 [`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) 靜態方法。 有兩個引數：第一個是值的陣列 `float` ，表示點和連字號的長度，以及兩者之間的空格長度。 這個陣列必須有偶數的元素，而且至少要有兩個元素。  (陣列中可以有零個元素，但這會產生實線。 ) 如果有兩個元素，則第一個是點或虛線的長度，而第二個是下一個點或虛線之前的間距長度。 如果有兩個以上的元素，則會依下列順序排列：虛線長度、間隙長度、虛線長度、間隙長度等等。
 
@@ -35,7 +35,7 @@ SkiaSharp 可讓您繪製非實線的線條，而不是由點和虛線組成：
 
 但是， `StrokeCap` 物件的設定 `SKPaint` 也會影響這些點和虛線。 您很快就會看到這個陣列的元素有何影響。
 
-**點**和虛線頁面上會示範點線和虛線。 [**DotsAndDashesPage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)檔案會具現化兩個 `Picker` 視圖，一個是讓您選取筆觸帽，而第二個則是選取虛線陣列：
+**點** 和虛線頁面上會示範點線和虛線。 [**DotsAndDashesPage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)檔案會具現化兩個 `Picker` 視圖，一個是讓您選取筆觸帽，而第二個則是選取虛線陣列：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -167,7 +167,7 @@ UWP 畫面會顯示筆劃端點的點線和虛線 `Round` 。 `Round`筆劃端�
 
 到目前為止，方法的第二個參數沒有提及 `SKPathEffect.CreateDash` 。 這個參數的名稱是 `phase` ，它是該行開頭的點和虛線模式內的位移。 例如，如果虛線陣列是 {10，10} 且 `phase` 為10，則該行的開頭會是間距而非點。
 
-其中一個有趣的參數應用程式 `phase` 是在動畫中。 **動畫的螺旋線**頁面類似于**Archimedean 螺旋線**頁面，不同之處在于 [`AnimatedSpiralPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs) 類別會使用方法以動畫顯示 `phase` 參數 Xamarin.Forms `Device.Timer` ：
+其中一個有趣的參數應用程式 `phase` 是在動畫中。 **動畫的螺旋線** 頁面類似于 **Archimedean 螺旋線** 頁面，不同之處在于 [`AnimatedSpiralPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs) 類別會使用方法以動畫顯示 `phase` 參數 Xamarin.Forms `Device.Timer` ：
 
 ```csharp
 public class AnimatedSpiralPage : ContentPage

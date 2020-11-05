@@ -10,16 +10,16 @@ ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 220b8a49f4f261568a653af16e333885edec23f8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5b3a20c621ac76ac3b18ba5c503b8dc2b962ef1b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562869"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366811"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>使用臉部 API 察覺的表情辨識
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 臉部 API 可執行表情偵測，在臉部運算式中偵測生氣、藐視、厭惡、恐懼、快樂、中性、悲傷和驚喜，以人類半截的認知注釋為基礎。 不過請務必注意，臉部運算式本身不一定代表人員的內部狀態。
 

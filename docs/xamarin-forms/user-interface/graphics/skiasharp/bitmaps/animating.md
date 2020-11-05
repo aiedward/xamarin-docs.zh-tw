@@ -10,16 +10,16 @@ ms.date: 07/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d9a96de5520a03b2ef51426be2c589c736ca2396
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: eeaf62c684100ff9fd5bb9ffd15162bdb4c6afd6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562388"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366512"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>製作 SkiaSharp 點陣圖的動畫
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 製作 SkiaSharp 圖形動畫的應用程式通常會 `InvalidateSurface` `SKCanvasView` 以固定的速率呼叫，通常是每16毫秒一次。 使介面失效會觸發對 `PaintSurface` 處理常式的呼叫，以重繪顯示。 當視覺效果每秒重新繪製60次時，它們看起來就像是流暢的動畫。
 
@@ -37,13 +37,13 @@ ms.locfileid: "91562388"
 
 ## <a name="bitmap-animation"></a>點陣圖動畫
 
-Mandelbrot 集以視覺化方式驚人，但 computionally 冗長。  (如需 Mandelbrot 集和此處所用數學的討論，請參閱從666頁面開始[_建立 Mobile Apps Xamarin.Forms _的第20章](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)。 下列描述假設背景知識。 ) 
+Mandelbrot 集以視覺化方式驚人，但 computionally 冗長。  (如需 Mandelbrot 集和此處所用數學的討論，請參閱從666頁面開始 [_建立 Mobile Apps Xamarin.Forms_ 的第20章](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)。 下列描述假設背景知識。 ) 
 
 [**Mandelbrot 動畫**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)範例會使用點陣圖動畫來模擬 Mandelbrot 集中固定點的連續縮放。 放大會接著縮小，然後迴圈會永久重複，或直到您結束程式為止。
 
-程式會藉由建立最多50點陣圖（其儲存在應用程式本機儲存體中）來準備此動畫。 每個點陣圖都會包含複雜平面的一半寬度和高度，作為前一個點陣圖。  (在程式中，這些點陣圖表示為代表整數 _縮放層級_。 ) 接著會依序顯示點陣圖。 調整每個點陣圖的動畫，以提供從某個點陣圖到另一個點陣圖的流暢進展。
+程式會藉由建立最多50點陣圖（其儲存在應用程式本機儲存體中）來準備此動畫。 每個點陣圖都會包含複雜平面的一半寬度和高度，作為前一個點陣圖。  (在程式中，這些點陣圖表示為代表整數 _縮放層級_ 。 ) 接著會依序顯示點陣圖。 調整每個點陣圖的動畫，以提供從某個點陣圖到另一個點陣圖的流暢進展。
 
-就像使用_建立 Mobile Apps Xamarin.Forms _的第20章中所述的最終程式一樣， **Mandelbrot 動畫**中的 Mandelbrot 集計算是具有8個參數的非同步方法。 這些參數包括複雜的中心點，以及圍繞該中心點之複雜平面的寬度和高度。 接下來的三個參數是要建立之點陣圖的圖元寬度和高度，以及遞迴計算的反覆運算次數上限。 `progress`參數是用來顯示此計算的進度。 `cancelToken`此程式未使用此參數：
+就像使用 _建立 Mobile Apps Xamarin.Forms_ 的第20章中所述的最終程式一樣， **Mandelbrot 動畫** 中的 Mandelbrot 集計算是具有8個參數的非同步方法。 這些參數包括複雜的中心點，以及圍繞該中心點之複雜平面的寬度和高度。 接下來的三個參數是要建立之點陣圖的圖元寬度和高度，以及遞迴計算的反覆運算次數上限。 `progress`參數是用來顯示此計算的進度。 `cancelToken`此程式未使用此參數：
 
 ```csharp
 static class Mandelbrot
@@ -130,7 +130,7 @@ class BitmapInfo
 }
 ```
 
-**Mandelbrot 動畫**XAML 檔案包含兩個 `Label` 視圖：、 `ProgressBar` 和，以及 `Button` `SKCanvasView` ：
+**Mandelbrot 動畫** XAML 檔案包含兩個 `Label` 視圖：、 `ProgressBar` 和，以及 `Button` `SKCanvasView` ：
 
 ```csharp
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -182,11 +182,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-在某個時間點，您可能會想要將 `COUNT` 值變更為50，以查看動畫的完整範圍。 50以上的值不實用。 在48或更高的縮放層級周圍，雙精確度浮點數的解析度會變得不足以進行 Mandelbrot 集計算。 此問題會在_建立 Mobile Apps 的 Xamarin.Forms _頁面684中討論。
+在某個時間點，您可能會想要將 `COUNT` 值變更為50，以查看動畫的完整範圍。 50以上的值不實用。 在48或更高的縮放層級周圍，雙精確度浮點數的解析度會變得不足以進行 Mandelbrot 集計算。 此問題會在 _建立 Mobile Apps 的 Xamarin.Forms_ 頁面684中討論。
 
-`center`值相當重要。 這是動畫縮放的焦點。 檔案中的三個值是在第20章的三個最後一個螢幕擷取畫面中所使用的值，在684第20頁的第20章中_建立 Mobile Apps Xamarin.Forms _ ，但您可以在該章節中試驗程式，以使用您自己的其中一個值。
+`center`值相當重要。 這是動畫縮放的焦點。 檔案中的三個值是在第20章的三個最後一個螢幕擷取畫面中所使用的值，在684第20頁的第20章中 _建立 Mobile Apps Xamarin.Forms_ ，但您可以在該章節中試驗程式，以使用您自己的其中一個值。
 
-**Mandelbrot 動畫**範例會將這些 `COUNT` 點陣圖儲存在本機應用程式儲存區中。 50點陣圖在您的裝置上需要超過 20 mb 的儲存空間，因此您可能會想要知道這些點陣圖所佔用的儲存體數量，而且在某個時間點，您可能會想要全部刪除。 這就是類別底部的這兩個方法的用途 `MainPage` ：
+**Mandelbrot 動畫** 範例會將這些 `COUNT` 點陣圖儲存在本機應用程式儲存區中。 50點陣圖在您的裝置上需要超過 20 mb 的儲存空間，因此您可能會想要知道這些點陣圖所佔用的儲存體數量，而且在某個時間點，您可能會想要全部刪除。 這就是類別底部的這兩個方法的用途 `MainPage` ：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -470,9 +470,9 @@ public partial class MainPage : ContentPage
 
 ## <a name="gif-animation"></a>GIF 動畫
 
-圖形交換格式 (GIF) 規格包含的功能，可讓單一 GIF 檔案包含多個可連續顯示的場景（通常在迴圈中）的連續框架。 這些檔案稱為 _動畫 gif_。 Web 瀏覽器可以播放動畫 gif，而 SkiaSharp 可讓應用程式從動畫 GIF 檔案中解壓縮畫面格，並依序顯示它們。
+圖形交換格式 (GIF) 規格包含的功能，可讓單一 GIF 檔案包含多個可連續顯示的場景（通常在迴圈中）的連續框架。 這些檔案稱為 _動畫 gif_ 。 Web 瀏覽器可以播放動畫 gif，而 SkiaSharp 可讓應用程式從動畫 GIF 檔案中解壓縮畫面格，並依序顯示它們。
 
-[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例包含名為**Newtons_cradle_animation_book_2.gif**的動畫 GIF 資源，由 DemonDeLuxe 所建立，並從維琪百科的[牛頓底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)頁面下載。 **動畫 gif**頁面包含提供該資訊的 XAML 檔案，並具現化 `SKCanvasView` ：
+[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例包含名為 **Newtons_cradle_animation_book_2.gif** 的動畫 GIF 資源，由 DemonDeLuxe 所建立，並從維琪百科的 [牛頓底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)頁面下載。 **動畫 gif** 頁面包含提供該資訊的 XAML 檔案，並具現化 `SKCanvasView` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6e25654fb856935c119d731df5db3eaa2d501930
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 7df914ae5b6de38b5179f5b1139b9c41e9559198
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560243"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367448"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>在 Windows 上 VisualElement 存取金鑰
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 存取金鑰是鍵盤快速鍵，可透過鍵盤（而不是透過觸控或滑鼠），提供直覺的方式，讓使用者快速流覽應用程式的可見 UI 並與其互動，藉此改善應用程式在通用 Windows 平臺 (UWP) 的可用性和可存取性。 它們是 ALT 鍵和一或多個英數位元的組合，通常會按順序排列。 使用單一英數位元的存取金鑰會自動支援鍵盤快速鍵。
 

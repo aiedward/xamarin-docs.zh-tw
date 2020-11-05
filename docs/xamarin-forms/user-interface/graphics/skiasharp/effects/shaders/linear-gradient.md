@@ -10,22 +10,22 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2cc0806af28360cf4bf2bb7e382e8d0a423abab9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9d2ac2eec5422068243ac43e78092e25c10652f5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555524"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366772"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 線性漸層
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[`SKPaint`](xref:SkiaSharp.SKPaint)類別 [`Color`](xref:SkiaSharp.SKPaint.Color) 會定義用來筆觸線條或以純色填滿區域的屬性。 您也可以使用漸層來筆觸線或填滿 _區域，這些_漸層會逐漸混合色彩：
+[`SKPaint`](xref:SkiaSharp.SKPaint)類別 [`Color`](xref:SkiaSharp.SKPaint.Color) 會定義用來筆觸線條或以純色填滿區域的屬性。 您也可以使用漸層來筆觸線或填滿 _區域，這些_ 漸層會逐漸混合色彩：
 
 ![線性漸層範例](linear-gradient-images/LinearGradientSample.png "線性漸層範例")
 
-最基本的漸層類型是 _線性_ 漸層。 色彩的 blend 會線上條 (稱為漸層 _線條_) 從某個點到另一個點。 垂直對齊漸層的線條具有相同的色彩。 您可以使用這兩種靜態方法的其中一個來建立線性漸層 [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) 。 這兩個多載之間的差異在於其中一個多載包含矩陣轉換，另一個則沒有。 
+最基本的漸層類型是 _線性_ 漸層。 色彩的 blend 會線上條 (稱為漸層 _線條_ ) 從某個點到另一個點。 垂直對齊漸層的線條具有相同的色彩。 您可以使用這兩種靜態方法的其中一個來建立線性漸層 [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) 。 這兩個多載之間的差異在於其中一個多載包含矩陣轉換，另一個則沒有。 
 
 這些方法會傳回 [`SKShader`](xref:SkiaSharp.SKShader) 您設定為之屬性的型別物件 [`Shader`](xref:SkiaSharp.SKPaint.Shader) `SKPaint` 。 如果 `Shader` 屬性為非 null，則會覆寫 `Color` 屬性。 使用這個物件所填滿的任何線條或任何區域都是以漸層 `SKPaint` 而非純色為基礎。
 
@@ -40,7 +40,7 @@ ms.locfileid: "91555524"
 - 水準對齊右上角
 - 斜向右下角
 
-在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的**SkiaSharp 著色器和其他效果**區段的第一頁中，會示範對角式線性漸層。 **邊角**漸層頁面會在其函式 `SKCanvasView` 中建立。 此 `PaintSurface` 處理常式會 `SKPaint` 在語句中建立物件 `using` ，然後定義位於畫布中央的 300-圖元方形矩形：
+在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的 **SkiaSharp 著色器和其他效果** 區段的第一頁中，會示範對角式線性漸層。 **邊角** 漸層頁面會在其函式 `SKCanvasView` 中建立。 此 `PaintSurface` 處理常式會 `SKPaint` 在語句中建立物件 `using` ，然後定義位於畫布中央的 300-圖元方形矩形：
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -113,7 +113,7 @@ new float[] { 0.25f, 0.75f }
 
 一般來說，您會想要將這些位置值的空間平均從0到1。 如果是這種情況，您可以直接提供 `null` 作為的第四個引數 `CreateLinearGradient` 。
 
-雖然此漸層是在 300-圖元正方形矩形的兩個角落之間定義的，但並不限於填滿該矩形。 **邊角**漸層頁面包含一些額外的程式碼，可回應頁面上的點擊或滑鼠點擊。 此 `drawBackground` 欄位會在每個點間切換 `true` `false` 。 如果值為 `true` ，則 `PaintSurface` 處理常式會使用相同的 `SKPaint` 物件填滿整個畫布，然後繪製表示較小矩形的黑色矩形： 
+雖然此漸層是在 300-圖元正方形矩形的兩個角落之間定義的，但並不限於填滿該矩形。 **邊角** 漸層頁面包含一些額外的程式碼，可回應頁面上的點擊或滑鼠點擊。 此 `drawBackground` 欄位會在每個點間切換 `true` `false` 。 如果值為 `true` ，則 `PaintSurface` 處理常式會使用相同的 `SKPaint` 物件填滿整個畫布，然後繪製表示較小矩形的黑色矩形： 
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -551,7 +551,7 @@ public class GradientAnimationPage : ContentPage
 
 **彩虹漸層**
 
-**彩虹**漸層頁面從畫布左上角到右下角繪製一個彩虹。 但這個彩虹漸層並不像真實的彩虹。 它是直接而非曲線的，但它是以八個 HSL (色相-飽和度-亮度) 色彩，由迴圈從0到360的色調值所決定：
+**彩虹** 漸層頁面從畫布左上角到右下角繪製一個彩虹。 但這個彩虹漸層並不像真實的彩虹。 它是直接而非曲線的，但它是以八個 HSL (色相-飽和度-亮度) 色彩，由迴圈從0到360的色調值所決定：
 
 ```csharp
 SKColor[] colors = new SKColor[8];
@@ -626,7 +626,7 @@ public class RainbowGradientPage : ContentPage
 
 這是個有趣的影像，但不是很重要。 問題在於建立線性漸層時，常數色彩的線條會垂直對齊漸層。 漸層線條是以圖的左上邊和左邊的點為基礎，而該行通常不會與延伸至右下角的圖表邊緣保持垂直。 只有當畫布是正方形時，此方法才會運作。
 
-若要建立適當的彩虹漸層，漸層線條必須垂直于彩虹的邊緣。 這是比較相關的計算。 必須定義平行于圖長邊的向量。 向量會旋轉90度，使其與該邊垂直旋轉。 然後藉由乘以來將其重設為圖形的寬度 `rainbowWidth` 。 這兩個漸層點是根據圖側邊的點來計算，而該點會加上向量。 以下是在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的**彩虹**漸層頁面中顯示的程式碼：
+若要建立適當的彩虹漸層，漸層線條必須垂直于彩虹的邊緣。 這是比較相關的計算。 必須定義平行于圖長邊的向量。 向量會旋轉90度，使其與該邊垂直旋轉。 然後藉由乘以來將其重設為圖形的寬度 `rainbowWidth` 。 這兩個漸層點是根據圖側邊的點來計算，而該點會加上向量。 以下是在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的 **彩虹** 漸層頁面中顯示的程式碼：
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -839,7 +839,7 @@ public class InfinityColorsPage : ContentPage
 
 下拉式清單中的文字會以漸層的漸層呈現，其頂端有50% 的透明效果，底部有完全透明的透明。 這些透明度層級會與0x80 和0的 Alpha 值相關聯。
 
-反映漸層 `PaintSurface` 頁面**Reflection Gradient**中的處理常式會將文字大小調整為畫布寬度的90%。 然後，它會計算 `xText` 和 `yText` 值以將文字置於水準置中，但在相對於頁面垂直中央的基準上：
+反映漸層 `PaintSurface` 頁面 **Reflection Gradient** 中的處理常式會將文字大小調整為畫布寬度的90%。 然後，它會計算 `xText` 和 `yText` 值以將文字置於水準置中，但在相對於頁面垂直中央的基準上：
 
 ```csharp
 public class ReflectionGradientPage : ContentPage

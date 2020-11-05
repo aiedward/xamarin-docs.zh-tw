@@ -10,16 +10,16 @@ ms.date: 08/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 809477fe466ee7a8f0985308896c14341f2dd460
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f7a31f54cb90fa3633217e8eb59d92c1e4d063c7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561933"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365911"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp 色彩篩選
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 色彩篩選器可以轉譯點陣圖 (或其他影像) 的色彩以 posterization 效果的其他色彩：
 
@@ -123,7 +123,7 @@ M44 資料格很重要，因為它會保留不透明度。 一般而言，M41、
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-其中 `matrix` 是20個值的陣列 `float` 。 在 c # 中建立陣列時，很容易就能將數位格式化，使其類似于4×5矩陣。 這會在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的**灰色調整矩陣**頁面中示範：
+其中 `matrix` 是20個值的陣列 `float` 。 在 c # 中建立陣列時，很容易就能將數位格式化，使其類似于4×5矩陣。 這會在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的 **灰色調整矩陣** 頁面中示範：
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -166,11 +166,11 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-`DrawBitmap`此程式碼中使用的方法是來自[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例隨附的**BitmapExtension.cs**檔案。 
+`DrawBitmap`此程式碼中使用的方法是來自 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例隨附的 **BitmapExtension.cs** 檔案。 
 
 以下是在 iOS、Android 和通用 Windows 平臺上執行的結果：
 
-[![灰色縮放矩陣](color-filters-images/GrayScaleMatrix.png "灰色縮放矩陣")](color-filters-images/GrayScaleMatrix-Large.png#lightbox)
+[![灰色縮放矩陣](color-filters-images/GrayScaleMatrix.png "Gray-Scale 矩陣")](color-filters-images/GrayScaleMatrix-Large.png#lightbox)
 
 請留意第四個數據列和第四個數據行中的值。 這是一項重要的因素，會乘以 A ' 轉換色彩值的原始色彩值。 如果該儲存格為零，則不會顯示任何內容，而且可能難以找出問題。
 
@@ -178,7 +178,7 @@ public class GrayScaleMatrixPage : ContentPage
 
 如需有關如何使用色彩轉換的一些概念，請參閱重新 [**著色影像**](/dotnet/framework/winforms/advanced/recoloring-images) 頁面。 討論 Windows Forms 和矩陣是不同的格式，但概念相同。
 
-**蠟筆矩陣**會 attenuating 來源的紅色圖元來計算目的地紅色圖元，並稍微強調紅色和綠色圖元。 此程式會類似于綠色和藍色圖元：
+**蠟筆矩陣** 會 attenuating 來源的紅色圖元來計算目的地紅色圖元，並稍微強調紅色和綠色圖元。 此程式會類似于綠色和藍色圖元：
 
 ```csharp
 public class PastelMatrixPage : ContentPage
@@ -247,7 +247,7 @@ public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] ta
 
 如果您想要將第二個方法的其中一個引數設定 `CreateTable` 為色彩資料表（順序中包含0到255的值），您可以 `null` 改用。 通常， `CreateTable` 呼叫會有 Alpha 色板的 `null` 第一個引數。
 
-在有關[存取 SkiaSharp 點陣圖圖元位](../bitmaps/pixel-bits.md#posterization)的文章中的**Posterization**一節中，您已瞭解如何修改點陣圖的個別圖元位，以降低其色彩解析度。 這是一種稱為 _posterization_的技術。 
+在有關 [存取 SkiaSharp 點陣圖圖元位](../bitmaps/pixel-bits.md#posterization)的文章中的 **Posterization** 一節中，您已瞭解如何修改點陣圖的個別圖元位，以降低其色彩解析度。 這是一種稱為 _posterization_ 的技術。 
 
 您也可以使用色彩表來分離點陣圖。 [重結合 **資料表** ] 頁面的函式會建立色彩表，將其索引對應至底部6位設為零的位元組：
 

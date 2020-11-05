@@ -10,18 +10,18 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a56d2f590b78bef0f47c764862b891c9c0d46129
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 10645e12b81b1ca4ee8e0790ed3a673a23a4ba26
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563571"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366928"
 ---
 # <a name="no-locxamarinforms-brushes-radial-gradients"></a>Xamarin.Forms 筆刷：放射狀漸層
 
 ![預覽 API](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
 
 `RadialGradientBrush`類別衍生自 `GradientBrush` 類別，並繪製具有放射狀漸層的區域，這會將兩個或多個色彩混合在圓形上。 `GradientStop` 物件是用來指定漸層和其位置中的色彩。 如需物件的詳細資訊 `GradientStop` ，請參閱[ Xamarin.Forms 筆刷：](gradient.md)漸層。
 

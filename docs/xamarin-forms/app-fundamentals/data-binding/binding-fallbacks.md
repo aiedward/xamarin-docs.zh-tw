@@ -10,16 +10,16 @@ ms.date: 08/16/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 24a9a351dbe6932b09add2ee7c3111256e013201
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d288d43bcee5719c1ab3667812e5bac4891bb188
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560685"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366304"
 ---
 # <a name="no-locxamarinforms-binding-fallbacks"></a>Xamarin.Forms 系結的回退
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 有時，資料繫結會因為無法解析繫結來源，或繫結成功但卻傳回 `null` 值而失敗。 雖然這些情況都可以透過值轉換器或其他額外程式碼來處理，但您可以藉由定義繫結程序失敗時要使用的後援值，讓資料繫結更穩固。 您可以藉由在系結 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 運算式中定義和屬性來完成這 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 項作業。 因為這些屬性位於類別中 [`BindingBase`](xref:Xamarin.Forms.BindingBase) ，所以它們可以搭配系結、多系結、編譯的系結，以及加上 `Binding` 標記延伸模組使用。
 
@@ -28,7 +28,7 @@ ms.locfileid: "91560685"
 
 ## <a name="defining-a-fallback-value"></a>定義後援值
 
-[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue)屬性可讓您定義要在無法解析系結*來源*時使用的 fallback 值。 設定這個屬性的常見案例是：當您要繫結之來源屬性並未存在於異質類型繫結集合中的所有物件時。
+[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue)屬性可讓您定義要在無法解析系結 *來源* 時使用的 fallback 值。 設定這個屬性的常見案例是：當您要繫結之來源屬性並未存在於異質類型繫結集合中的所有物件時。
 
 **MonkeyDetail** 頁面說明如何設定 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 屬性：
 
@@ -53,14 +53,14 @@ ms.locfileid: "91560685"
 
 ![FallbackValue 系結](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue 系結")
 
-當系結 `FallbackValue` 運算式中未設定屬性，而且未解析系結路徑或部分路徑時， [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) 會在目標上設定。 不過，若已設定 `FallbackValue` 屬性，但未解析繫結路徑或部分路徑時，則會在目標上設定 `FallbackValue` 值屬性的值。 因此，**MonkeyDetail** 頁面中的 [`Label`](xref:Xamarin.Forms.Label) 會顯示 "Population size unknown" (母體大小未知)，因為繫結物件缺少 `Population` 屬性。
+當系結 `FallbackValue` 運算式中未設定屬性，而且未解析系結路徑或部分路徑時， [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) 會在目標上設定。 不過，若已設定 `FallbackValue` 屬性，但未解析繫結路徑或部分路徑時，則會在目標上設定 `FallbackValue` 值屬性的值。 因此， **MonkeyDetail** 頁面中的 [`Label`](xref:Xamarin.Forms.Label) 會顯示 "Population size unknown" (母體大小未知)，因為繫結物件缺少 `Population` 屬性。
 
 > [!IMPORTANT]
 > 當設定屬性時，不會在系結運算式中執行定義的值轉換器 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 。
 
 ## <a name="defining-a-null-replacement-value"></a>定義 Null 取代值
 
-[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue)屬性可讓您定義將在解析系結*來源*時使用的取代值，但值為 `null` 。 設定這個屬性的常見案例是：當您要繫結的來源屬性可能是繫結集合中的 `null` 時。
+[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue)屬性可讓您定義將在解析系結 *來源* 時使用的取代值，但值為 `null` 。 設定這個屬性的常見案例是：當您要繫結的來源屬性可能是繫結集合中的 `null` 時。
 
 **Monkeys** 頁面說明如何設定 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性：
 

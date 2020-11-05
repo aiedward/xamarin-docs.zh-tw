@@ -10,16 +10,16 @@ ms.date: 03/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a5b1e43586810521e87360d8b6537d9bafdabad7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f8bd745f2fee5e2e1b8bb03d474578127a360ac2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555433"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367669"
 ---
 # <a name="bindable-layouts-in-no-locxamarinforms"></a>中的可系結版面配置 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
 可系結配置可讓任何衍生自類別的版面配置類別，藉由系結 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 至專案的集合來產生其內容，並可選擇使用設定每個專案的外觀 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 可系結的版面配置是由 `BindableLayout` 類別提供，其會公開下列附加屬性：
 

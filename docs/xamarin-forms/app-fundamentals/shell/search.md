@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f0d8766420f876898a3f10c2f23a35a0b0afeb43
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: bfac785e6bfa3dce698d5657d0be1079e675ecc6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563467"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366330"
 ---
 # <a name="no-locxamarinforms-shell-search"></a>Xamarin.Forms Shell 搜尋
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.Forms Shell 包含類別所提供的整合式搜尋功能 `SearchHandler` 。 將 `Shell.SearchHandler` 附加屬性設定為子類別化的 `SearchHandler` 物件，就可以將搜尋功能新增至網頁。 這會使搜尋方塊新增至頁面頂端：
 

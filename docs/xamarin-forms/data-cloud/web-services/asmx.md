@@ -10,16 +10,16 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 90f93c2fd17771ccd8bc5dc67404b76cd4ab9c30
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 316f79d72ade21fd068112e2d01660502d0ed0d2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562999"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366759"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服務 (ASMX)
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _.ASMX 提供的功能可讓您建立 web 服務，使用簡單的物件存取通訊協定 (SOAP) 傳送訊息。SOAP 是一種與平臺無關且與語言無關的通訊協定，可用於建立及存取 web 服務。.ASMX 服務的取用者不需要知道用來執行此服務的平臺、物件模型或程式設計語言的任何相關資訊。他們只需要瞭解如何傳送和接收 SOAP 訊息。本文示範如何從應用程式取用 .ASMX SOAP 服務 Xamarin.Forms 。_
 

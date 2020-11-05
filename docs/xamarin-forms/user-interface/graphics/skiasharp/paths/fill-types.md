@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aa427035dc33b617bed14e0c6aa0b0db27efca7f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 63833e80b15bb27ab656825b4b1f6b1e3eb31670
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556564"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367812"
 ---
 # <a name="the-path-fill-types"></a>路徑填滿類型
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索 SkiaSharp 路徑填滿類型可能有的不同效果_
 
@@ -173,7 +173,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 一般情況下，路徑填滿類型應該只影響填滿而非筆劃，但這兩種 `Inverse` 模式會影響填滿和筆劃。 填滿時，這兩個 `Inverse` 類型會填滿區域 oppositely，以填滿星號外的區域。 針對筆觸，這兩種類型會將 `Inverse` 筆劃以外的所有專案全部上色。 使用這些反向填滿類型可能會產生一些奇怪的效果，如 iOS 螢幕擷取畫面所示：
 
-[![五指向的星星頁面的三重螢幕擷取畫面](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "五指向的星星頁面的三重螢幕擷取畫面")
+[![Five-Pointed 星星頁面的三重螢幕擷取畫面](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed 星星頁面的三重螢幕擷取畫面")
 
 Android 螢幕擷取畫面顯示一般的偶奇數和繞組效果，但是筆劃和填滿的順序也會影響結果。
 

@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a4b092d90b3afa2197c1db576545d233eb6e208d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 34c3e2bb09c6e285f38b3c17bab2e10debe1d890
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563506"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367253"
 ---
 # <a name="implementing-a-video-player"></a>實作影片播放程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 有時候，在應用程式中播放影片檔案是很理想的做法 Xamarin.Forms 。 這一系列的文章會討論如何針對名為的類別，撰寫適用于 iOS、Android 和通用 Windows 平臺 (UWP) 的自訂轉譯器 Xamarin.Forms `VideoPlayer` 。
 
@@ -31,7 +31,7 @@ ms.locfileid: "91563506"
 - 平台應用程式中的內嵌資源
 - 裝置的影片庫
 
-影片播放程式需要*傳輸控制項*，即為播放和暫停影片的按鈕，以及可顯示影片進度並讓使用者快速跳至不同位置的定位列。 `VideoPlayer` 可以使用平台提供的傳輸控制項和定位列 (如下所示)，或者您也可以提供自訂傳輸控制項和定位列。 以下是在 iOS、Android 和通用 Windows 平台執行的程式：
+影片播放程式需要 *傳輸控制項* ，即為播放和暫停影片的按鈕，以及可顯示影片進度並讓使用者快速跳至不同位置的定位列。 `VideoPlayer` 可以使用平台提供的傳輸控制項和定位列 (如下所示)，或者您也可以提供自訂傳輸控制項和定位列。 以下是在 iOS、Android 和通用 Windows 平台執行的程式：
 
 [![播放 Web 影片](web-videos-images/playwebvideo-small.png "播放 Web 影片")](web-videos-images/playwebvideo-large.png#lightbox "播放 Web 影片")
 
@@ -63,7 +63,7 @@ ms.locfileid: "91563506"
 
 ## <a name="custom-video-transport-controls"></a>[自訂影片傳輸控制項](custom-transport.md)
 
-雖然每個平台上的影片播放程式會各自提供按鈕形式的 [播放]**** 和 [暫停]**** 傳輸控制項，您也可以隱藏這些按鈕並改用您自己的。 本文將說明如何做到。
+雖然每個平台上的影片播放程式會各自提供按鈕形式的 [播放] 和 [暫停] 傳輸控制項，您也可以隱藏這些按鈕並改用您自己的。 本文將說明如何做到。
 
 ## <a name="custom-video-positioning"></a>[自訂影片定位](custom-positioning.md)
 

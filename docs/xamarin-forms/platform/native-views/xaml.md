@@ -10,16 +10,16 @@ ms.date: 03/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 78bd93e2f6556480ae7d2903771d7d6303dda148
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cd7c29f835b34b4c5ffb9a5af589815a09546a87
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558372"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365901"
 ---
 # <a name="native-views-in-xaml"></a>XAML 中的原生檢視
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _從 iOS、Android 和通用 Windows 平臺的原生視圖可以直接從 XAML 檔案參考 Xamarin.Forms 。屬性和事件處理常式可以在原生視圖上設定，並且可以與 Xamarin.Forms 視圖互動。本文示範如何使用 XAML 檔案中的原生視圖 Xamarin.Forms 。_
 
@@ -109,7 +109,7 @@ Android widget 的函式通常需要 Android `Context` 物件做為引數，而�
 ![原生切換已停用 ](xaml-images/native-switch-disabled.png)
  ![ 原生切換](xaml-images/native-switch-enabled.png)
 
-自動支援雙向系結，前提是原生屬性會在 `INotifyPropertyChanged` iOS 上執行或支援 (KVO) 的索引鍵/值觀察，或是 `DependencyProperty` UWP 上的。 但是，許多原生視圖都不支援屬性變更通知。 針對這些視圖，您可以指定 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) 屬性值做為系結運算式的一部分。 這個屬性應該設為原生視圖中的事件名稱，以在目標屬性變更時發出信號。 然後，當原生參數的值變更時， `Binding` 會通知類別使用者已變更參數值，而且 `NativeSwitchPageViewModel.IsSwitchOn` 屬性值已更新。
+自動支援雙向系結，前提是原生屬性會 `INotifyPropertyChanged` 執行或支援 Key-Value 觀察 iOS 上的 (KVO) 或 `DependencyProperty` UWP 上的。 但是，許多原生視圖都不支援屬性變更通知。 針對這些視圖，您可以指定 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) 屬性值做為系結運算式的一部分。 這個屬性應該設為原生視圖中的事件名稱，以在目標屬性變更時發出信號。 然後，當原生參數的值變更時， `Binding` 會通知類別使用者已變更參數值，而且 `NativeSwitchPageViewModel.IsSwitchOn` 屬性值已更新。
 
 ## <a name="pass-arguments-to-native-views"></a>將引數傳遞至原生視圖
 

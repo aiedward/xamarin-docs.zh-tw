@@ -10,16 +10,16 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0c8e7c0e3edb581e13944ce48e2241f035791574
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fcd5f3deb2c7645988cd70b3556b718151df99fd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556850"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366655"
 ---
 # <a name="no-locxamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
 
 [![：：：非 loc (Xamarin. Forms) ：：： StackLayout](stacklayout-images/layouts.png "：：：非 loc (Xamarin. Forms) ：：： StackLayout")](stacklayout-images/layouts-large.png#lightbox "：：：非 loc (Xamarin. Forms) ：：： StackLayout")
 
@@ -213,7 +213,7 @@ public class StackLayoutSpacingPageCS : ContentPage
 > [!TIP]
 > [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)除非您需要，否則請勿設定的和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 `LayoutOptions.Fill` 和 `LayoutOptions.FillAndExpand` 的預設值可提供最優異的版面配置最佳化。 變更這些屬性會產生成本並耗用記憶體，即使將它們設回預設值也一樣。
 
-### <a name="alignment"></a>對齊
+### <a name="alignment"></a>對應項目
 
 下列 XAML 範例會在中的每個子視圖上設定對齊喜好設定 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
 

@@ -10,16 +10,16 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 13d9ddb5ba13960b4ed5af8f4fdb98b486b7e93e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f4e0387b6b64c5a3bf801a31c6e333b6f514df1d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562271"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367363"
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
 
 _本文示範如何建立 Map 控制項的自訂轉譯器，該控制項會在每個平台上以釘選資料的自訂釘選和自訂檢視來顯示原生地圖。_
 
@@ -141,7 +141,7 @@ public MapPage()
 
 ![每個平台上的 CustomMap](map-pin-images/screenshots.png)
 
-`MapRenderer`類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立自訂地圖以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的*was*專案，以及轉譯器 Xamarin.Forms 附加到的元素。 *is* 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CustomMap` 執行個體的參考。
+`MapRenderer`類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立自訂地圖以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的 *was* 專案，以及轉譯器 Xamarin.Forms 附加到的元素。 *is* 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CustomMap` 執行個體的參考。
 
 在每個平台特定轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生控制項自訂的位置。 平台上所使用的原生控制項具型別參考可透過 `Control` 屬性存取。 此外，您 Xamarin.Forms 可以透過屬性取得正在轉譯之控制項的參考 `Element` 。
 
@@ -176,7 +176,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 ![自訂前和自訂後的 Map 控制項](map-pin-images/map-layout-ios.png)
 
-在 iOS 上，釘選稱為「註釋」**，且可以是自訂影像或系統定義的各種顏色圖釘。 釘選可以選擇性地顯示「圖說文字」**，該文字會在回應選取註釋的使用者時顯示。 圖說文字會顯示 `Pin` 執行個體的 `Label` 和 `Address` 屬性，且可以選擇性的附帶左側或右側裝飾檢視。 在上方的螢幕擷取畫面中，左側裝飾檢視是一隻猴子的影像，右側裝飾檢視則是「資訊」** 按鈕。
+在 iOS 上，釘選稱為「註釋」，且可以是自訂影像或系統定義的各種顏色圖釘。 釘選可以選擇性地顯示「圖說文字」，該文字會在回應選取註釋的使用者時顯示。 圖說文字會顯示 `Pin` 執行個體的 `Label` 和 `Address` 屬性，且可以選擇性的附帶左側或右側裝飾檢視。 在上方的螢幕擷取畫面中，左側裝飾檢視是一隻猴子的影像，右側裝飾檢視則是「資訊」按鈕。
 
 下列程式碼範例示範適用於 iOS 平台的自訂轉譯器：
 
@@ -276,7 +276,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
     - `CustomMKAnnotationView.Image` 屬性會設為表示地圖上註釋的影像。
     - `CustomMKAnnotationView.CalloutOffset` 屬性會設為 `CGPoint`，其指定圖說文字置中並位於註釋上方。
     - `CustomMKAnnotationView.LeftCalloutAccessoryView` 屬性會設為猴子影像，顯示在註釋標題和地址的左側。
-    - `CustomMKAnnotationView.RightCalloutAccessoryView` 屬性會設為「資訊」** 按鈕，顯示在註釋標題和地址的右側。
+    - `CustomMKAnnotationView.RightCalloutAccessoryView` 屬性會設為「資訊」按鈕，顯示在註釋標題和地址的右側。
     - `CustomMKAnnotationView.Name` 屬性會設為 `GetCustomPin` 方法傳回的 `CustomPin.Name` 屬性。 這可以用來識別註釋，使其圖說文字[能供進一步自訂](#selecting-the-annotation) (若需要的話)。
     - `CustomMKAnnotationView.Url` 屬性會設為 `GetCustomPin` 方法傳回的 `CustomPin.Url` 屬性。 當使用者[點選顯示在右側圖說文字裝飾檢視中的按鈕](#tapping-on-the-right-callout-accessory-view)時，便會巡覽至該 URL。
 1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*)屬性設定為， `true` 以便在按了注釋時顯示標注。
@@ -308,7 +308,7 @@ void OnDidSelectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 #### <a name="tapping-on-the-right-callout-accessory-view"></a>點選右側圖說文字裝飾檢視
 
-當使用者點選位於右側圖說文字裝飾檢視中的「資訊」** 按鈕時，便會引發 `CalloutAccessoryControlTapped` 事件，該事件接著便會執行 `OnCalloutAccessoryControlTapped` 方法：
+當使用者點選位於右側圖說文字裝飾檢視中的「資訊」按鈕時，便會引發 `CalloutAccessoryControlTapped` 事件，該事件接著便會執行 `OnCalloutAccessoryControlTapped` 方法：
 
 ```csharp
 void OnCalloutAccessoryControlTapped(object sender, MKMapViewAccessoryTappedEventArgs e)
@@ -349,7 +349,7 @@ void OnDidDeselectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 ![自訂前和自訂後的 Map 控制項](map-pin-images/map-layout-android.png)
 
-在 Android 上，釘選稱為「標記」**，且可以是自訂影像或系統定義的各種顏色圖釘。 標記可以顯示「資訊視窗」**，該視窗會在回應點選標記的使用者時顯示。 資訊視窗會顯示 `Pin` 執行個體的 `Label` 及 `Address` 屬性，且可以進行自訂以包含其它內容。 但是，一次只能顯示一個資訊視窗。
+在 Android 上，釘選稱為「標記」，且可以是自訂影像或系統定義的各種顏色圖釘。 標記可以顯示「資訊視窗」，該視窗會在回應點選標記的使用者時顯示。 資訊視窗會顯示 `Pin` 執行個體的 `Label` 及 `Address` 屬性，且可以進行自訂以包含其它內容。 但是，一次只能顯示一個資訊視窗。
 
 下列程式碼範例示範適用於 Android 平台的自訂轉譯器：
 
@@ -512,7 +512,7 @@ void OnInfoWindowClick(object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 ![自訂前和自訂後的 Map 控制項](map-pin-images/map-layout-uwp.png)
 
-在 UWP 上，釘選稱為「地圖圖示」**，且可以是自訂影像或系統定義的預設影像。 地圖圖示可以顯示 `UserControl`，該控制項會在回應點選地圖圖示的使用者時顯示。 `UserControl` 可以顯示任何內容，包括 `Pin` 執行個體的 `Label` 及 `Address` 屬性。
+在 UWP 上，釘選稱為「地圖圖示」，且可以是自訂影像或系統定義的預設影像。 地圖圖示可以顯示 `UserControl`，該控制項會在回應點選地圖圖示的使用者時顯示。 `UserControl` 可以顯示任何內容，包括 `Pin` 執行個體的 `Label` 及 `Address` 屬性。
 
 下列程式碼範例示範 UWP 自訂轉譯器：
 
@@ -639,7 +639,7 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
 
 #### <a name="tapping-on-the-information-button"></a>點選資訊按鈕
 
-當使用者點選 `XamarinMapOverlay` 使用者控制項中的「資訊」** 按鈕時，便會引發 `Tapped` 事件，該事件接著便會執行 `OnInfoButtonTapped` 方法：
+當使用者點選 `XamarinMapOverlay` 使用者控制項中的「資訊」按鈕時，便會引發 `Tapped` 事件，該事件接著便會執行 `OnInfoButtonTapped` 方法：
 
 ```csharp
 private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)

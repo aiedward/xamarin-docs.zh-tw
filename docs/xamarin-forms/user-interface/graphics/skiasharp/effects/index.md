@@ -10,18 +10,18 @@ ms.date: 08/22/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e63d92cde5925561dae4217c3c46af2c2c59f795
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c6179f94b43f12a7bf4b91a05702c0539f3c8658
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563987"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367786"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp 效果
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp [`SKPaint`](xref:SkiaSharp.SKPaint) 類別會定義可分類為一般 _效果_的六個屬性。 這些屬性會以某種方式改變一般顯示的圖形。 SkiaSharp 效果分成六個類別：
+SkiaSharp [`SKPaint`](xref:SkiaSharp.SKPaint) 類別會定義可分類為一般 _效果_ 的六個屬性。 這些屬性會以某種方式改變一般顯示的圖形。 SkiaSharp 效果分成六個類別：
 
 ## <a name="path-effects"></a>[路徑效果](../curves/effects.md)
 
@@ -33,7 +33,7 @@ SkiaSharp [`SKPaint`](xref:SkiaSharp.SKPaint) 類別會定義可分類為一般 
 
 ## <a name="blend-modes"></a>[混合模式](blend-modes/index.md)
 
-將的 [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) 屬性設定 `SKPaint` 為列舉的成員 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) ，以管理在目的地上顯示來源圖形時所發生的情況。 SkiaSharp 支援所有 CSS 複合和 blend 模式，包括 Porter Duff 模式、可分離的 blend 模式，以及不可分離的 blend 模式。
+將的 [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) 屬性設定 `SKPaint` 為列舉的成員 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) ，以管理在目的地上顯示來源圖形時所發生的情況。 SkiaSharp 支援所有 CSS 複合和 blend 模式，包括 Porter-Duff 模式、可分離的 blend 模式，以及不可分離的 blend 模式。
 
 ## <a name="mask-filters"></a>[遮罩濾鏡](mask-filters.md)
 
@@ -47,7 +47,7 @@ SkiaSharp [`SKPaint`](xref:SkiaSharp.SKPaint) 類別會定義可分類為一般 
 
 將的 [`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter) 屬性設定為 `SKPaint` 類型的物件 [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) ，以使用資料表或矩陣轉換來改變色彩。
 
-這些文章的所有範例程式碼都在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)中。 從首頁選取 [ **SkiaSharp 效果**]。
+這些文章的所有範例程式碼都在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)中。 從首頁選取 [ **SkiaSharp 效果** ]。
 
 ## <a name="related-links"></a>相關連結
 

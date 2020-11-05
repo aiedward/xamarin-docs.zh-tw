@@ -10,16 +10,16 @@ ms.date: 03/23/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c77a219ab1b729aa279708d04610911fbbfe4e81
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e133c684009c116b9cf70a3ccef78484b5515ddb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560126"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365793"
 ---
 # <a name="listview-data-sources"></a>ListView 資料來源
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
 
 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 用於顯示資料的清單。 本文說明如何在中填入 `ListView` 資料，以及如何將資料系結至選取的專案。
 

@@ -10,22 +10,22 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ff9f44ad790f3acda1e855f3308942bb702e66ee
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 595eda84026a9b609f7bd0dadb72fdc9ac762a34
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563896"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367233"
 ---
 # <a name="accessing-the-devices-video-library"></a>存取裝置的影片庫
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 現今多數行動裝置和桌上型電腦都能使用裝置的相機錄影。 然後使用者建立的影片會以檔案的形式儲存在裝置上。 這些檔案可以從影像庫中擷取，並透過 `VideoPlayer` 類別進行播放，與其他影片無異。
 
 ## <a name="the-photo-picker-dependency-service"></a>相片選擇器相依性服務
 
-每個平台都含有讓使用者能從裝置影像庫中選取相片或影片的設備。 要從裝置的影像庫播放影片，首先要建立叫用各個平台上影像選擇器的相依性服務。 下述相依性服務與[**從圖片庫挑選相片**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)一文所定義的相依性服務非常類似，不同之處在於影片選擇器會傳回檔案名稱，而非 `Stream` 物件。
+每個平台都含有讓使用者能從裝置影像庫中選取相片或影片的設備。 要從裝置的影像庫播放影片，首先要建立叫用各個平台上影像選擇器的相依性服務。 下述相依性服務與 [**從圖片庫挑選相片**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)一文所定義的相依性服務非常類似，不同之處在於影片選擇器會傳回檔案名稱，而非 `Stream` 物件。
 
 .NET Standard 程式庫專案會為相依性服務定義 `IVideoPicker` 介面：
 
@@ -191,7 +191,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-對 `MainActivity` 物件新增的項目是 [**VideoPlayerDemos **](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解決方案中，唯一需要改變一般應用程式程式碼才能支援 `FormsVideoLibrary` 類別的程式碼。
+對 `MainActivity` 物件新增的項目是 [**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解決方案中，唯一需要改變一般應用程式程式碼才能支援 `FormsVideoLibrary` 類別的程式碼。
 
 ### <a name="the-uwp-video-picker"></a>UWP 影片選擇器
 

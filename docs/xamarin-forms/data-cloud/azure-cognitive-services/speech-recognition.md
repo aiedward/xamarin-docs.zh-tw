@@ -10,16 +10,16 @@ ms.date: 01/14/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e5888e77948bef0fbb60a4e0068cbedf2d2a50e7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 45cf62354eb54007b9380ee06b1d93ee49000909
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555381"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365849"
 ---
 # <a name="speech-recognition-using-azure-speech-service"></a>使用 Azure 語音服務的語音辨識
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
 
 Azure 語音服務是雲端式 API，提供下列功能：
 
@@ -102,7 +102,7 @@ public interface IMicrophoneService
 
 ## <a name="implement-the-speech-service"></a>執行語音服務
 
-**MainPage.xaml.cs**程式碼後端檔案包含從 Azure 語音服務傳送音訊和接收轉譯文字的所有邏輯。
+**MainPage.xaml.cs** 程式碼後端檔案包含從 Azure 語音服務傳送音訊和接收轉譯文字的所有邏輯。
 
 此函 `MainPage` 式會從取得介面的實例 `IMicrophoneService` `DependencyService` ：
 
@@ -458,7 +458,7 @@ namespace CognitiveSpeechService.UWP.Services
 1. `GetPermissionAsync`方法會嘗試初始化 `MediaCapture` 實例。 如果失敗，則會啟動使用者要求以啟用麥克風。
 1. `OnRequestPermissionResult`有方法可滿足介面，但 UWP 執行不需要這個方法。
 
-最後，UWP **Package. package.appxmanifest** 必須指定應用程式使用麥克風。 按兩下 package.appxmanifest 檔案，然後在 Visual Studio 2019 的 [**功能**] 索引標籤上選取 [**麥克風**] 選項：
+最後，UWP **Package. package.appxmanifest** 必須指定應用程式使用麥克風。 按兩下 package.appxmanifest 檔案，然後在 Visual Studio 2019 的 [ **功能** ] 索引標籤上選取 [ **麥克風** ] 選項：
 
 [![Visual Studio 2019 中資訊清單的螢幕擷取畫面](speech-recognition-images/package-manifest-cropped.png)](speech-recognition-images/package-manifest.png#lightbox "Visual Studio 2019 中資訊清單的螢幕擷取畫面")
 

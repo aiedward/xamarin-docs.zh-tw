@@ -10,16 +10,16 @@ ms.date: 10/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b029ffdb0a16d9f54951ae3754ca0f1eb7f69aaa
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ca78ee1c31e4f6e2089d5860543aabafe1a80c3a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556876"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366902"
 ---
 # <a name="platform-specifics"></a>平台專用
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 _平臺專屬特性可讓您使用僅適用于特定平臺的功能，而不需要執行自訂轉譯器或效果。_
 
@@ -46,7 +46,7 @@ _平臺專屬特性可讓您使用僅適用于特定平臺的功能，而不需�
 建立平臺特定的程式如下所示：
 
 1. 將特定功能實作為效果。 如需詳細資訊，請參閱 [建立效果](~/xamarin-forms/app-fundamentals/effects/creating.md)。
-1. 建立會公開效果的平臺特定類別。 如需詳細資訊，請參閱 [建立平臺特定類別](#creating-a-platform-specific-class)。
+1. 建立會公開效果的平臺特定類別。 如需詳細資訊，請參閱 [建立 Platform-Specific 類別](#creating-a-platform-specific-class)。
 1. 在平臺專屬類別中，執行附加屬性，以允許透過 XAML 取用特定平臺。 如需詳細資訊，請參閱 [加入附加屬性](#adding-an-attached-property)。
 1. 在平臺專屬類別中，執行擴充方法，以允許透過流暢的程式碼 API 取用特定平臺。 如需詳細資訊，請參閱 [新增擴充方法](#adding-extension-methods)。
 1. 修改效果的執行，如此一來，只有在與效果相同的平臺上叫用平臺特定時，才會套用效果。 如需詳細資訊，請參閱 [建立效果](#creating-the-effect)。
@@ -58,7 +58,7 @@ _平臺專屬特性可讓您使用僅適用于特定平臺的功能，而不需�
 
 [範例應用程式](/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)會示範 `Shadow` 平臺特定的，將陰影新增至控制項所顯示的文字 [`Label`](xref:Xamarin.Forms.Label) ：
 
-![影子平臺特定](images/screenshots.png)
+![陰影 Platform-Specific](images/screenshots.png)
 
 [範例應用程式](/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)會 `Shadow` 在每個平臺上執行平臺特定，以方便您瞭解。 不過，除了每個平臺特定的效果執行之外，每個平臺的影子類別的執行大致相同。 因此，本指南著重了影子類別的執行，以及在單一平臺上相關聯的效果。
 

@@ -10,16 +10,16 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ebff259519776718f41ab0fcc0a7abb0c692dac6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 7d1cb1d9fa418cd16cb25519680e526864c9917c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563415"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367721"
 ---
 # <a name="no-locxamarinforms-web-services-introduction"></a>Xamarin.Forms Web 服務簡介
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _本主題提供 Xamarin.Forms 範例應用程式的逐步解說，示範如何與不同的 web 服務進行通訊。雖然每個 web 服務都使用不同的範例應用程式，但它們的功能類似，而且共用一般類別。_
 

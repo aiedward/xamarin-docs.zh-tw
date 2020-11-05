@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45634695050dc6f74a9b1617a2180481e3788d11
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 639b9db51d4a9f0bb0ddd55a3d35bcbda7e31962
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557318"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366460"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>裁剪 SkiaSharp 點陣圖
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 [**建立和繪製 SkiaSharp 點陣圖**](drawing.md)文章會說明如何 `SKBitmap` 將物件傳遞至函式 `SKCanvas` 。 在該畫布上呼叫的任何繪圖方法都會使圖形呈現在點陣圖上。 這些繪圖方法包括 `DrawBitmap` ，這表示這項技術允許將部分或全部點陣圖傳送到另一個點陣圖，也許是套用了轉換。
 
@@ -319,7 +319,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 覆寫的最後一行 `OnPaintSurface` 會採用的反向， `bitmapScaleMatrix` 並將其儲存為 `inverseBitmapMatrix` 欄位。 這可用於觸控處理。
 
-`TouchEffect`物件會具現化為欄位，而且此函式會將處理常式附加至 `TouchAction` 事件，但是必須將處理常式加入至衍生的 `TouchEffect` `Effects` _父系_集合 `SKCanvasView` ，以便在覆寫中完成 `OnParentSet` ：
+`TouchEffect`物件會具現化為欄位，而且此函式會將處理常式附加至 `TouchAction` 事件，但是必須將處理常式加入至衍生的 `TouchEffect` `Effects` _父系_ 集合 `SKCanvasView` ，以便在覆寫中完成 `OnParentSet` ：
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -448,7 +448,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>裝載相片 cropper 畫布視圖
 
-由於這兩個類別會處理裁剪邏輯，因此**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中的 [**相片裁剪**] 頁面會有很多工作。 XAML 檔案會具現化， `Grid` 以裝載 `PhotoCropperCanvasView` 和 [ **完成** ] 按鈕：
+由於這兩個類別會處理裁剪邏輯，因此 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中的 [ **相片裁剪** ] 頁面會有很多工作。 XAML 檔案會具現化， `Grid` 以裝載 `PhotoCropperCanvasView` 和 [ **完成** ] 按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -535,11 +535,11 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 
 ## <a name="dividing-a-bitmap-into-tiles"></a>將點陣圖分割為磚
 
-Xamarin.Forms[_建立 Mobile Apps Xamarin.Forms _](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)的書籍第22章會出現一版著名的14-15 謎題，可下載為[**>xamagonxuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 不過，謎題變得更有趣 (而且當它是以您自己的相片媒體櫃中的影像為基礎時，通常更具挑戰性的) 。
+Xamarin.Forms[_建立 Mobile Apps Xamarin.Forms_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)的書籍第22章會出現一版著名的14-15 謎題，可下載為 [**>xamagonxuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 不過，謎題變得更有趣 (而且當它是以您自己的相片媒體櫃中的影像為基礎時，通常更具挑戰性的) 。
 
-這一版的14-15 謎題是 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式的一部分，並且是由一系列標題為 **相片謎題**的頁面所組成。
+這一版的14-15 謎題是 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式的一部分，並且是由一系列標題為 **相片謎題** 的頁面所組成。
 
-**PhotoPuzzlePage1 .xaml**檔案包含 `Button` ：
+**PhotoPuzzlePage1 .xaml** 檔案包含 `Button` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -583,7 +583,7 @@ public partial class PhotoPuzzlePage1 : ContentPage
 
 然後，方法會導覽至 `PhotoPuzzlePage2` ，並將選取的點陣圖傳遞至建構。
 
-從文件庫中選取的相片可能不會在相片圖庫中顯示，而是會旋轉或倒置。  (這是 iOS 裝置的問題。基於這個原因，) 可 `PhotoPuzzlePage2` 讓您將影像旋轉至所需的方向。 XAML 檔案包含三個標示為 **90 的按鈕&#x00B0; 右** (表示順時針) 、 **90&#x00B0; 左方** (逆時針) 和 **完成**。
+從文件庫中選取的相片可能不會在相片圖庫中顯示，而是會旋轉或倒置。  (這是 iOS 裝置的問題。基於這個原因，) 可 `PhotoPuzzlePage2` 讓您將影像旋轉至所需的方向。 XAML 檔案包含三個標示為 **90 的按鈕&#x00B0; 右** (表示順時針) 、 **90&#x00B0; 左方** (逆時針) 和 **完成** 。
 
 程式碼後端檔案會執行在 **[SkiaSharp 點陣圖上建立和繪製](drawing.md#rotating-bitmaps)** 文章中所顯示的點陣圖旋轉邏輯。 使用者可以順時針或逆時針旋轉90影像的次數：
 
@@ -652,7 +652,7 @@ public partial class PhotoPuzzlePage2 : ContentPage
 
 `PhotoPuzzlePage3` 允許裁剪相片。 程式需要正方形點陣圖，以分割成四個磚的四個方格。
 
-**PhotoPuzzlePage3 .xaml**檔案包含 `Label` 、 `Grid` 可裝載的、 `PhotoCropperCanvasView` 以及另一個**完成**的按鈕：
+**PhotoPuzzlePage3 .xaml** 檔案包含 `Label` 、 `Grid` 可裝載的、 `PhotoCropperCanvasView` 以及另一個 **完成** 的按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -737,7 +737,7 @@ public partial class PhotoPuzzlePage3 : ContentPage
 }
 ```
 
-**完成**按鈕處理常式會取得裁剪點陣圖的寬度和高度 (這兩個值應該是相同的) 然後將它分割成15個不同的點陣圖，每個都是1/4 的原始寬度和高度。  (不會建立最後一個可能的16個位圖。 ) `DrawBitmap` 具有來源和目的地矩形的方法，可讓您根據較大點陣圖的子集來建立點陣圖。
+**完成** 按鈕處理常式會取得裁剪點陣圖的寬度和高度 (這兩個值應該是相同的) 然後將它分割成15個不同的點陣圖，每個都是1/4 的原始寬度和高度。  (不會建立最後一個可能的16個位圖。 ) `DrawBitmap` 具有來源和目的地矩形的方法，可讓您根據較大點陣圖的子集來建立點陣圖。
 
 ## <a name="converting-to-no-locxamarinforms-bitmaps"></a>轉換成 Xamarin.Forms 點陣圖
 
@@ -747,7 +747,7 @@ public partial class PhotoPuzzlePage3 : ContentPage
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource` 是 Xamarin.Forms 封裝點陣圖的基底類型。 幸運的是，SkiaSharp 允許從 SkiaSharp 點陣圖轉換成 Xamarin.Forms 點陣圖。 **SkiaSharp**元件 [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) 會定義衍生自的類別， `ImageSource` 但可以根據 SkiaSharp 物件來建立 `SKBitmap` 。 `SKBitmapImageSource` 甚至定義和之間的轉換 `SKBitmapImageSource` `SKBitmap` ，這就是 `SKBitmap` 物件以點陣圖形式儲存在陣列中的方式 Xamarin.Forms ：
+`ImageSource` 是 Xamarin.Forms 封裝點陣圖的基底類型。 幸運的是，SkiaSharp 允許從 SkiaSharp 點陣圖轉換成 Xamarin.Forms 點陣圖。 **SkiaSharp** 元件 [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) 會定義衍生自的類別， `ImageSource` 但可以根據 SkiaSharp 物件來建立 `SKBitmap` 。 `SKBitmapImageSource` 甚至定義和之間的轉換 `SKBitmapImageSource` `SKBitmap` ，這就是 `SKBitmap` 物件以點陣圖形式儲存在陣列中的方式 Xamarin.Forms ：
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;

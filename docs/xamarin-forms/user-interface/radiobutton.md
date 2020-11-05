@@ -10,16 +10,16 @@ ms.date: 03/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 964bac947f46e5279cbdcc6bdb61d74deba7f622
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 20ccf71771493afe56d4d899186c7e6330ee96dd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559385"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366577"
 ---
 # <a name="no-locxamarinforms-radiobutton"></a>Xamarin.Forms RadioButton
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
 
 Xamarin.Forms `RadioButton` 是一種按鈕，可讓使用者從集合中選取一個選項。 每個選項都會以一個選項按鈕表示，而且您只能在群組中選取一個選項按鈕。 `RadioButton`類別繼承自 [`Button`](xref:Xamarin.Forms.Button) 類別。
 

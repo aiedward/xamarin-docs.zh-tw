@@ -10,16 +10,16 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7fec48c86e68d2115a919e620e8b0f4e46740a03
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c2ae9d7bd2195e48fede30082b70f8a1a6d49ac3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562492"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367357"
 ---
 # <a name="customizing-a-listview"></a>自訂 ListView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
 
 _Xamarin.FormsListView 是將資料集合顯示為垂直清單的視圖。本文示範如何建立自訂轉譯器，以封裝平臺特定清單控制項和原生資料格配置，讓您能夠更充分掌控原生清單控制效能。_
 
@@ -158,7 +158,7 @@ public class MainPageCS : ContentPage
 
 ![每個平台上的 NativeListView](listview-images/screenshots.png)
 
-`ListViewRenderer`類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立自訂控制項以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的*was*專案，以及轉譯器 Xamarin.Forms 附加到的元素。 *is* 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `NativeListView` 執行個體的參考。
+`ListViewRenderer`類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立自訂控制項以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的 *was* 專案，以及轉譯器 Xamarin.Forms 附加到的元素。 *is* 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `NativeListView` 執行個體的參考。
 
 在每個平台特定轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生控制項自訂的位置。 平台上所使用的原生控制項具型別參考可透過 `Control` 屬性存取。 此外，您 Xamarin.Forms 可以透過屬性取得正在轉譯之控制項的參考 `Element` 。
 
@@ -557,7 +557,7 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 
 方法會使用變更的資料重新填入原生 `ListView` 控制項，前提是可繫結的 `NativeListView.Items` 屬性已變更。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範了如何建立自訂轉譯器，其會封裝平台特定清單控制項和原生資料格配置，讓您對原生清單控制效能擁有更多掌控權。
 

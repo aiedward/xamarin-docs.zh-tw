@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6a81e5a589e99a62aeaea58707228afd03016a8c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f02de8bc2bf0ed1091c73c3a91f748400f8615b7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563935"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367578"
 ---
 # <a name="visualelement-blur-on-ios"></a>在 iOS 上 VisualElement 模糊
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定用來模糊其下階層式內容，並可套用至任何內容 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。 它是在 XAML 中使用，方法是將 [`VisualElement.BlurEffect`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty) 附加屬性設定為 [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) 列舉值：
 
@@ -49,7 +49,7 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 
 結果是將指定的套用 [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) 至 [`BoxView`](xref:Xamarin.Forms.BoxView) 實例，這會模糊 [`Image`](xref:Xamarin.Forms.Image) 其下的分層：
 
-![模糊效果平臺特定](applying-blur-images/blur-effect.png)
+![模糊效果 Platform-Specific](applying-blur-images/blur-effect.png)
 
 > [!NOTE]
 > 當將模糊效果加入至時 [`VisualElement`](xref:Xamarin.Forms.VisualElement) ，仍會收到觸控事件 `VisualElement` 。

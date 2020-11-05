@@ -10,18 +10,18 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e48b962130acf98aa99c83773318d077dde2666
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 945b6656895b4c148ac4b138af0c4922f9e3bc8f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556642"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365681"
 ---
 # <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.Forms CarouselView 滾動
 
 ![發行前 API](~/media/shared/preview.png)
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 定義下列捲軸相關屬性：
 
@@ -135,7 +135,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)如果 `position` 呼叫方法時未指定引數，預設會使用成員 `ScrollTo` 。
 
-### <a name="start"></a>開始
+### <a name="start"></a>Start
 
 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應滾動至視圖的開頭：
 
@@ -231,7 +231,7 @@ CarouselView carouselView = new CarouselView
 > [!IMPORTANT]
 > [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)只有當 [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) 屬性設定為或時，才會遵守屬性的值 `Mandatory` `MandatorySingle` 。
 
-#### <a name="start"></a>開始
+#### <a name="start"></a>Start
 
 `SnapPointsAlignment.Start`成員表示對齊點與專案的開頭邊緣對齊。 下列 XAML 範例顯示如何設定此列舉成員：
 

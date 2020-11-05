@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 65bdeef161ce4bfed18ca07966a0ab3189c65ba2
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f653f2a617022ddd80e910fcea7c43450cb911d0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556707"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366720"
 ---
 # <a name="page-status-bar-visibility-on-ios"></a>IOS 上的頁面狀態列可見度
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定是用來設定狀態列上的可見度 [`Page`](xref:Xamarin.Forms.Page) ，而且它包含控制狀態列進入或離開的能力 `Page` 。 它是在 XAML 中使用，方法是將 `Page.PrefersStatusBarHidden` 附加屬性設定為列舉的值 `StatusBarHiddenMode` ，並選擇性地將 `Page.PreferredStatusBarUpdateAnimation` 附加屬性設定為 `UIStatusBarAnimation` 列舉值：
 
@@ -47,7 +47,7 @@ On<iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True)
 
 結果是可以設定上狀態列的可見度 [`Page`](xref:Xamarin.Forms.Page) ：
 
-![狀態列可見度平臺特定](page-status-bar-visibility-images/hide-status-bar.png)
+![狀態列可見度 Platform-Specific](page-status-bar-visibility-images/hide-status-bar.png)
 
 > [!NOTE]
 > 在上 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ，指定的 `StatusBarHiddenMode` 列舉值也會更新所有子頁面上的狀態列。 在所有其他 [`Page`](xref:Xamarin.Forms.Page) 衍生的類型上，指定的 `StatusBarHiddenMode` 列舉值只會更新目前頁面上的狀態列。

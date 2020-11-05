@@ -10,16 +10,16 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d24ff6831bb8b52d840ff2db7c13c3eb674b7bd8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5ccff2fd24537be0bbf2d809b20a00bc35667c95
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555784"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366851"
 ---
 # <a name="no-locxamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 發行-訂閱模式是一種訊息模式，發行者可以在不知道任何接收者 (稱為訂閱者) 的情況下傳送訊息。 同樣地，訂閱者可以在不知道任何發行者的情況下接聽特定訊息。
 
@@ -94,7 +94,7 @@ MessagingCenter.Subscribe<MainPage, string>(this, "Hi", async (sender, arg) =>
 若訂閱者不想再接收訊息，則應從訊息中取消訂閱。 使用其中一個多載可達成此目的 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) ：
 
 ```csharp
-MessagingCenter.Unsubscribe<MainPage>(this, "Hi");
+MessagingCenter.Unsubscribe<MainPage>(this, "Hi");
 ```
 
 在此範例中， [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法會 `this` 從型別所傳送的訊息取消訂閱物件 `Hi` `MainPage` 。
@@ -102,7 +102,7 @@ MessagingCenter.Unsubscribe<MainPage>(this, "Hi");
 包含承載資料的訊息應使用 [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 指定兩個泛型引數的多載來取消訂閱：
 
 ```csharp
-MessagingCenter.Unsubscribe<MainPage, string>(this, "Hi");
+MessagingCenter.Unsubscribe<MainPage, string>(this, "Hi");
 ```
 
 在此範例中， [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法會從型別所傳送的訊息中取消訂閱 `this` 物件 `Hi` `MainPage` ，其承載資料為 `string` 。

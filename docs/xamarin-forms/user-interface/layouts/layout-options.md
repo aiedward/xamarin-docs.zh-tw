@@ -10,16 +10,16 @@ ms.date: 02/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bf85bb3bf6f694aa5eefa8512b8391084228598e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: dc85f93110d2faec69ae42823a121b6d16fdfe7f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563519"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367773"
 ---
 # <a name="layout-options-in-no-locxamarinforms"></a>中的版面配置選項 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 
 _每個 Xamarin.Forms 視圖都有 HorizontalOptions 和 VerticalOptions 屬性，類型為 LayoutOptions。本文說明每個 LayoutOptions 值對視圖的對齊和展開有何影響。_
 
@@ -53,7 +53,7 @@ _每個 Xamarin.Forms 視圖都有 HorizontalOptions 和 VerticalOptions 屬性�
 > [!NOTE]
 > 檢視的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性預設值為 [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。
 
-## <a name="alignment"></a>對齊
+## <a name="alignment"></a>對應項目
 
 當父配置包含未使用的空間時，對齊方式會控制視圖在其父配置內的位置 (也就是說，父配置大於其所有子系) 的合併大小。
 
@@ -151,7 +151,7 @@ Content = new StackLayout
 
 每個都 [`Label`](xref:Xamarin.Forms.Label) 佔用中的相同空間量 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 不過，最後的 `Label` 會將其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設為 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)，因此只有其大小不同。 此外，每個 `Label` 都是以小紅色分隔 [`BoxView`](xref:Xamarin.Forms.BoxView) ，讓您能夠 `Label` 輕鬆地查看佔用的空間。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明每個 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 結構值對視圖的對齊和展開（相對於其父系）有何影響。 `Start`、、 `Center` `End` 和 `Fill` 欄位是用來定義父配置內的視圖對齊，而 `StartAndExpand` 、 `CenterAndExpand` 、 `EndAndExpand` 和 `FillAndExpand` 欄位則用來定義對齊喜好設定，以及判斷視圖是否會在中佔用更多的空間（如果有的話） [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
 

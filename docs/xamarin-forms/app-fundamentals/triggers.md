@@ -10,16 +10,16 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 29fb1300e62d15130e999f6816e2afefcd3fba3b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1f2484fe7c6dee1f1b4df1318263624f3f50f604
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562596"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367175"
 ---
 # <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 觸發程序可讓您用 XAML 以宣告方式表達動作，根據事件或屬性變更改變控制項的外觀。 此外，狀態觸發程式是一組特殊的觸發程式，可定義何時 [`VisualState`](xref:Xamarin.Forms.VisualState) 應該套用。
 
@@ -254,8 +254,8 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 </Button>
 ```
 
-這些螢幕擷取畫面顯示上述兩個多重觸發程序範例之間的差異。 在畫面頂端的文字輸入，只需要有一個 `Entry` 即可啟用 [儲存]**** 按鈕。
-在畫面底部，[登入]**** 按鈕保持非使用中，直到兩個欄位都包含資料為止。
+這些螢幕擷取畫面顯示上述兩個多重觸發程序範例之間的差異。 在畫面頂端的文字輸入，只需要有一個 `Entry` 即可啟用 [儲存] 按鈕。
+在畫面底部，[登入] 按鈕保持非使用中，直到兩個欄位都包含資料為止。
 
 ![MultiTrigger 範例](triggers-images/multi-requireall.png)
 
@@ -268,7 +268,7 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 > [!NOTE]
 > [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) `EnterActions` `ExitActions` 類別會忽略和集合中定義的物件 [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) 。    
 
-您可以「同時」*在觸發程序中提供 * `EnterActions` 和 `ExitActions`，以及 `Setter`；但請注意，會立即呼叫 `Setter` (其不會等待 `EnterAction` 或 `ExitAction` 完成)。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
+您可以「同時」 *在觸發程序中提供* `EnterActions` 和 `ExitActions`，以及 `Setter`；但請注意，會立即呼叫 `Setter` (其不會等待 `EnterAction` 或 `ExitAction` 完成)。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
 
 ```xaml
 <Entry Placeholder="enter job title">

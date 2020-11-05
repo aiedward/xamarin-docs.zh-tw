@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7eb21f9a6a679c294a848d7fa79721c6db03bb0d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 19f09025e44bb7deddbb8a9e6ae326d2137a5ce0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563220"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367526"
 ---
 # <a name="visualelement-elevation-on-android"></a>Android 上的 VisualElement 提升許可權
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平臺特定用來控制以 API 21 或更高版本為目標之應用程式上的視覺元素提高許可權或迭置順序。 視覺專案的提高許可權會決定其繪製順序，而具有較高 Z 值的視覺元素則會遮蔽較低 Z 值的視覺元素。 它是在 XAML 中使用，方法是將 `VisualElement.Elevation` 附加屬性設定為 `boolean` 值：
 
