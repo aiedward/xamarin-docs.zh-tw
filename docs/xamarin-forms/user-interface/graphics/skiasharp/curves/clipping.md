@@ -10,24 +10,24 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 604d2aa8368c85b852530f999601fffca8e104e6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 79c32595053cc80ffae91b5434e18690ca2dce4a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562921"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370711"
 ---
 # <a name="clipping-with-paths-and-regions"></a>使用路徑和區域裁剪
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用路徑將圖形裁剪至特定區域，以及建立區域_
 
-有時必須將圖形轉譯限制為特定區域。 這稱為「 *裁剪*」。 您可以使用裁剪來取得特殊效果，例如透過鑰匙孔看到的猴子影像：
+有時必須將圖形轉譯限制為特定區域。 這稱為「 *裁剪* 」。 您可以使用裁剪來取得特殊效果，例如透過鑰匙孔看到的猴子影像：
 
 ![鑰匙孔的猴子](clipping-images/clippingsample.png)
 
-*裁剪區域*是呈現圖形的螢幕區域。 在裁剪區域以外顯示的任何部分都不會呈現。 裁剪區域通常是由矩形或物件所定義 [`SKPath`](xref:SkiaSharp.SKPath) ，但您也可以使用物件來定義裁剪區域 [`SKRegion`](xref:SkiaSharp.SKRegion) 。 這兩種類型的物件一開始似乎是相關的，因為您可以從路徑建立區域。 不過，您無法從區域建立路徑，而且它們會在內部非常不同：路徑包含一連串的線條和曲線，而區域是由一系列的水準掃描線條所定義。
+*裁剪區域* 是呈現圖形的螢幕區域。 在裁剪區域以外顯示的任何部分都不會呈現。 裁剪區域通常是由矩形或物件所定義 [`SKPath`](xref:SkiaSharp.SKPath) ，但您也可以使用物件來定義裁剪區域 [`SKRegion`](xref:SkiaSharp.SKRegion) 。 這兩種類型的物件一開始似乎是相關的，因為您可以從路徑建立區域。 不過，您無法從區域建立路徑，而且它們會在內部非常不同：路徑包含一連串的線條和曲線，而區域是由一系列的水準掃描線條所定義。
 
 上圖是 **透過鑰匙孔** 頁面建立的猴子。 [`MonkeyThroughKeyholePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)類別會使用 SVG 資料定義路徑，並使用此函式從程式資源載入點陣圖：
 
@@ -372,7 +372,7 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 
 但是，當區域縮減為一系列的掃描線時，這些掃描行會以特定的圖元維度為基礎。 嚴格來說，區域不是向量繪圖物件。 它的本質與壓縮的單色點陣圖更接近路徑。 因此，區域無法調整或旋轉，而不會遺失精確度，因此在用於裁剪區域時不會轉換它們。
 
-不過，您可以將轉換套用至區域以供繪製之用。 **區域繪圖**程式生動示範區域的內部本質。 [`RegionPaintPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs)類別會 `SKRegion` 根據10個 `SKPath` 單位半徑圓形的來建立物件。 接著，轉換會展開該圓形以填滿頁面：
+不過，您可以將轉換套用至區域以供繪製之用。 **區域繪圖** 程式生動示範區域的內部本質。 [`RegionPaintPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs)類別會 `SKRegion` 根據10個 `SKPath` 單位半徑圓形的來建立物件。 接著，轉換會展開該圓形以填滿頁面：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -511,7 +511,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 它其實看起來不像四分葉四葉草，但是它是一個可能難以轉譯而不需要裁剪的影像：
 
-[![四分葉四葉草頁面的三個螢幕擷取畫面](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
+[![Four-Leaf 四葉草頁面的三重螢幕擷取畫面](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 

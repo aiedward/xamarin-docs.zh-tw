@@ -10,16 +10,16 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 13527bd8da1322df15bde45bcc8162f62a1f556a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 81e72d060e9852b5825e1ba5547bb4d39c32f38c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555914"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371634"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>將效果參數當作 Common Language Runtime 屬性傳遞
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _Common Language Runtime (CLR) 屬性可以用來定義不會回應執行時間屬性變更的效果參數。本文將示範如何使用 CLR 屬性將參數傳遞至效果。_
 
@@ -237,7 +237,7 @@ namespace EffectsDemo.UWP
 
 通用 Windows 平臺不會提供陰影效果，因此 `LabelShadowEffect` 在這兩個平臺上的執行方式都會在主要複本後面加上第二個位移來模擬一個 [`Label`](xref:Xamarin.Forms.Label) `Label` 。 `OnAttached` 方法會擷取 `ShadowEffect` 執行個體、建立新的 `Label`，並在 `Label` 上設定一些配置屬性。 然後藉由設定 [`TextColor`](xref:Xamarin.Forms.Label.TextColor) 、 [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) 和屬性來建立陰影， [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) 以控制的色彩和位置 `Label` 。 `shadowLabel` 會接著偏移插入在主要 `Label` 的後方。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `Control.Layer` 屬性。 因為沒有必要的清除，所以 `OnDetached` 方法不提供實作。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範了如何使用 CLR 屬性將參數傳遞至效果。 CLR 屬性可用來定義不會回應執行階段屬性變更的效果參數。
 

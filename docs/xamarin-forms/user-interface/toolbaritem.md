@@ -10,16 +10,16 @@ ms.date: 07/29/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6aabe5931dce51889432e7d5dce2be40631ffe2
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 59954a16cbf1fb01c974968848596138469ab9b2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556499"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371205"
 ---
 # <a name="no-locxamarinforms-toolbaritem"></a>Xamarin.Forms ToolbarItem
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
 Xamarin.Forms [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 類別是一種特殊類型的按鈕，可新增至 `Page` 物件的 `ToolbarItems` 集合。 每個 `ToolbarItem` 物件會顯示為應用程式巡覽列中的按鈕。 `ToolbarItem`實例可以有圖示，並顯示為主要或次要功能表項目。 `ToolbarItem`類別繼承自 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 。
 

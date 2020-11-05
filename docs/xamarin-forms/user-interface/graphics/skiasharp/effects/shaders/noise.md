@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 00b6251f530a4927d069ae92ec919645a06baf15
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1a9a8b8dc31369b5774935a2e8fca5cf17faa24b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555394"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371244"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp 雜訊和撰寫
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-簡單向量圖形通常會看起來非自然。 直線、平滑曲線和純色不像真實世界物件的缺陷。 在針對 1982 movie _Tron_的電腦產生的圖形上工作時，電腦科學家 Ken Perlin 開始開發使用隨機進程的演算法，以提供這些影像更逼真的材質。 在1997中，Ken Perlin 贏得了技術成就的學術獎項。 他的工作就是所謂的 Perlin 雜訊，而 SkiaSharp 也有支援。 以下是範例：
+簡單向量圖形通常會看起來非自然。 直線、平滑曲線和純色不像真實世界物件的缺陷。 在針對 1982 movie _Tron_ 的電腦產生的圖形上工作時，電腦科學家 Ken Perlin 開始開發使用隨機進程的演算法，以提供這些影像更逼真的材質。 在1997中，Ken Perlin 贏得了技術成就的學術獎項。 他的工作就是所謂的 Perlin 雜訊，而 SkiaSharp 也有支援。 以下是範例：
 
 ![Perlin 雜訊範例](noise-images/NoiseSample.png "Perlin 雜訊範例")
 
@@ -47,7 +47,7 @@ public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequenc
 
 `seed`參數是亂數產生器的起點。 雖然指定為浮點值，但在使用之前會截斷分數，0與1相同。
 
-[ **SkiaSharpFormsDemos**) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的 [ **Perlin 雜訊**] 頁面，可讓您使用 `baseFrequency` 和引數的各種值進行實驗 `numOctaves` 。 以下是 XAML 檔案：
+[ **SkiaSharpFormsDemos** )](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的 [ **Perlin 雜訊** ] 頁面，可讓您使用 `baseFrequency` 和引數的各種值進行實驗 `numOctaves` 。 以下是 XAML 檔案：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -322,7 +322,7 @@ public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader);
 
 Perlin 雜訊著色器包含透明度。 如果該著色器是來源，則目的地著色器會透過透明區域顯示。
 
-**組成的 Perlin 雜訊**頁面具有與第一個**Perlin 雜訊**頁面幾乎相同的 XAML 檔案。 程式碼後端檔案也很類似。 但是，原始的 **Perlin 雜訊** 頁面會將的 `Shader` 屬性設定 `SKPaint` 為從靜態和方法傳回的著色器 `CreatePerlinNoiseFractalNoise` `CreatePerlinNoiseTurbulence` 。 這會為組合著色器 **撰寫 Perlin 雜訊** 頁呼叫 `CreateCompose` 。 目的地是使用所建立的立體藍色著色器 `CreateColor` 。 來源是 Perlin 雜訊著色器：
+**組成的 Perlin 雜訊** 頁面具有與第一個 **Perlin 雜訊** 頁面幾乎相同的 XAML 檔案。 程式碼後端檔案也很類似。 但是，原始的 **Perlin 雜訊** 頁面會將的 `Shader` 屬性設定 `SKPaint` 為從靜態和方法傳回的著色器 `CreatePerlinNoiseFractalNoise` `CreatePerlinNoiseTurbulence` 。 這會為組合著色器 **撰寫 Perlin 雜訊** 頁呼叫 `CreateCompose` 。 目的地是使用所建立的立體藍色著色器 `CreateColor` 。 來源是 Perlin 雜訊著色器：
 
 ```csharp
 public partial class ComposedPerlinNoisePage : ContentPage

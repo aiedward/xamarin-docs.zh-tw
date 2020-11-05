@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0fd934a305e34bb7406a0379a0882873e3400fe8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3480c2fe2ef94a2a1beee9a924a59cd90d3a42b3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558358"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370802"
 ---
 # <a name="the-separable-blend-modes"></a>分離的 blend 模式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-如您在 [**SkiaSharp Porter-Duff blend 模式一**](porter-duff.md)文所見，Porter-Duff blend 模式通常會執行裁剪作業。 可分離的 blend 模式不同。 可分離模式會改變影像的個別紅色、綠色和藍色色彩元件。 可分離的 blend 模式可以混合色彩，以示範紅色、綠色和藍色的組合的確是白色：
+如您在 [**SkiaSharp Porter-Duff blend 模式**](porter-duff.md)的文章中所見，Porter-Duff blend 模式通常會執行裁剪作業。 可分離的 blend 模式不同。 可分離模式會改變影像的個別紅色、綠色和藍色色彩元件。 可分離的 blend 模式可以混合色彩，以示範紅色、綠色和藍色的組合的確是白色：
 
 ![原色](separable-images/SeparableSample.png "原色")
 
@@ -166,13 +166,13 @@ public partial class LightenAndDarkenPage : ContentPage
 | `Exclusion`  | 黑色     | 類似于 `Difference` 但較低對比度 |
 | `Multiply`   | 白色     | 使用乘法色來變暗： Sc ·直流 |
 
-您可以在 W3C [**複合和混合層級 1**](https://www.w3.org/TR/compositing-1/) 規格和 Skia [**SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference)中找到更詳細的演算法，雖然這兩個來源中的標記法不同。 請記住， `Plus` 通常視為 Porter Duff blend 模式， `Modulate` 不是 W3C 規格的一部分。
+您可以在 W3C [**複合和混合層級 1**](https://www.w3.org/TR/compositing-1/) 規格和 Skia [**SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference)中找到更詳細的演算法，雖然這兩個來源中的標記法不同。 請記住， `Plus` 通常會被視為 Porter-Duff blend 模式，而 `Modulate` 不是 W3C 規格的一部分。
 
 如果來源是透明的，則除了以外的所有可分隔 blend 模式之外， `Modulate` blend 模式沒有任何作用。 如您先前所見， `Modulate` blend 模式會將 Alpha 色板併入乘法中。 否則，會 `Modulate` 有相同的效果 `Multiply` 。 
 
-請注意兩個名為和的模式 `ColorDodge` `ColorBurn` 。 在攝影暗房實務中，字組會 _減_ 到和 _燒錄_ 。 放大鏡會透過以光燈的方式來進行攝影列印。 如果沒有輕量，列印就是白色。 列印較長一段時間時，列印會變暗。 列印製作者通常會使用手或小型物件來封鎖某些光線落在列印的特定部分，使該區域變得更淺。 這就是所謂的 _躲過_。 相反地，在其中具有洞的不透明材質 (或手上封鎖大部分的燈光) 可用來將更多光線導向特定的位置，以使其變得更暗，稱為「 _燒錄_」。
+請注意兩個名為和的模式 `ColorDodge` `ColorBurn` 。 在攝影暗房實務中，字組會 _減_ 到和 _燒錄_ 。 放大鏡會透過以光燈的方式來進行攝影列印。 如果沒有輕量，列印就是白色。 列印較長一段時間時，列印會變暗。 列印製作者通常會使用手或小型物件來封鎖某些光線落在列印的特定部分，使該區域變得更淺。 這就是所謂的 _躲過_ 。 相反地，在其中具有洞的不透明材質 (或手上封鎖大部分的燈光) 可用來將更多光線導向特定的位置，以使其變得更暗，稱為「 _燒錄_ 」。
 
-**減減和燒錄**程式非常類似于**淡化和變暗**。 XAML 檔案的結構相同，但具有不同的元素名稱，而程式碼後端檔案也相當類似，但是這兩種混合模式的效果相當不同：
+**減減和燒錄** 程式非常類似于 **淡化和變暗** 。 XAML 檔案的結構相同，但具有不同的元素名稱，而程式碼後端檔案也相當類似，但是這兩種混合模式的效果相當不同：
 
 [![減減和燒錄](separable-images/DodgeAndBurn.png "減減和燒錄")](separable-images/DodgeAndBurn-Large.png#lightbox)
 

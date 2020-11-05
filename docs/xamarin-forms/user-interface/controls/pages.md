@@ -10,28 +10,28 @@ ms.date: 01/12/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9164275b75c021a79b6ea5ea64194997ad804ece
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2a3540773aec977c6d17592ff6a0ea1e16acc2b9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563207"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372167"
 ---
 # <a name="no-locxamarinforms-pages"></a>Xamarin.Forms 頁面
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 _Xamarin.Forms 頁面代表跨平臺行動應用程式畫面。_
 
-以下所述的所有頁面類型都是衍生自 Xamarin.Forms [`Page`](xref:Xamarin.Forms.Page) 類別。 這些視覺元素會佔據全部或大部分的畫面。 `Page`物件表示 `ViewController` iOS 中的，而 `Page` 通用 Windows 平臺中的。 在 Android 上，每個頁面都會佔用像這樣的畫面 `Activity` ，但 Xamarin.Forms 頁面並 *不*是 `Activity` 物件。
+以下所述的所有頁面類型都是衍生自 Xamarin.Forms [`Page`](xref:Xamarin.Forms.Page) 類別。 這些視覺元素會佔據全部或大部分的畫面。 `Page`物件表示 `ViewController` iOS 中的，而 `Page` 通用 Windows 平臺中的。 在 Android 上，每個頁面都會佔用像這樣的畫面 `Activity` ，但 Xamarin.Forms 頁面並 *不* 是 `Activity` 物件。
 
 [![：：：非 loc (Xamarin. Forms) ：：：頁面類型](pages-images/pages-sml.png)](pages-images/pages.png#lightbox "：：：非 loc (Xamarin. Forms) ：：：頁面類型")
 
-## <a name="pages"></a>頁面
+## <a name="pages"></a>Pages
 
 Xamarin.Forms 支援下列頁面類型：
 
-| 類型 | 描述 | 外觀 |
+| 類型 | 說明 | 外觀 |
 | --- | --- | --- |
 | `ContentPage` | [`ContentPage`](xref:Xamarin.Forms.ContentPage) 是最簡單且最常見的頁面類型。 將 [`Content`](xref:Xamarin.Forms.ContentPage.Content) 屬性設定為單一 [`View`](views.md) 物件，最常為 [`Layout`](layouts.md) [`StackLayout`](xref:Xamarin.Forms.StackLayout) 、 [`Grid`](xref:Xamarin.Forms.Grid) 或 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 。<br /><br />[API 檔](xref:Xamarin.Forms.ContentPage) | [![ContentPage 範例](pages-images/ContentPage.png "ContentPage 範例")](pages-images/ContentPage-Large.png#lightbox "ContentPage 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentPageDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentPageDemoPage.xaml) |
 | `MasterDetailPage` | 會 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 管理兩個資訊窗格。 將 [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) 屬性設定為通常會顯示清單或功能表的頁面。 將 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 屬性設定為顯示主版頁面所選取專案的頁面。 [`IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented)屬性會控制主要或詳細資料頁面是否可見。<br /><br />[API 檔](xref:Xamarin.Forms.MasterDetailPage)  / [指南](~/xamarin-forms/app-fundamentals/navigation/master-detail-page.md)  / [範例](/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage) | [![MasterDetailPage 範例](pages-images/MasterDetailPage.png "MasterDetailPage 範例")](pages-images/MasterDetailPage-Large.png#lightbox "MasterDetailPage 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MasterDetailPageDemoPage.cs)  /  的 c # 程式碼具有[程式碼後端](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MasterDetailPageDemoPage.xaml.cs)的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MasterDetailPageDemoPage.xaml) |

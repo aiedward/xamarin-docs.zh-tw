@@ -10,16 +10,16 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fbaa5779787efe2b7c62368080789fe767ca8021
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a46214af677cd164a4e55b06cf386533d3130ccb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560334"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370568"
 ---
 # <a name="no-locxamarinforms-collectionview-introduction"></a>Xamarin.Forms CollectionView 簡介
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 是使用不同的版面配置規格來呈現資料清單的觀點。 它的目標是要提供更具彈性且更具效能的替代方案 [`ListView`](xref:Xamarin.Forms.ListView) 。 例如，下列螢幕擷取畫面顯示 `CollectionView` 使用兩個數據行垂直格線，並允許多重選取的：
 
@@ -52,7 +52,7 @@ ms.locfileid: "91560334"
 | 專案外觀 | `ItemTemplate` | 您 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以藉由將屬性設定為，來定義中每個專案的外觀 `ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 如需詳細資訊，請參閱 [定義專案外觀](populate-data.md#define-item-appearance)。 |
 | 資料格 | `TextCell`, `ImageCell`, `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 沒有資料格的概念，因此沒有洩漏指標的概念。 相反地，資料範本是用來定義清單中每個資料項目目的外觀。 |
 | 資料列分隔符號 | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 不包含內建分隔符號。 您可以視需要在專案範本中提供這些專案。 |
-| 選取 | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 支援單一和多重選取。 如需詳細資訊，請參閱[ Xamarin.Forms CollectionView 選取專案](selection.md)。 |
+| 選取項目 | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 支援單一和多重選取。 如需詳細資訊，請參閱[ Xamarin.Forms CollectionView 選取專案](selection.md)。 |
 | 資料列高度 | `HasUnevenRows`, `RowHeight` | 在中 `CollectionView` ，每個專案的資料列高度是由屬性所決定 `ItemSizingStrategy` 。 如需詳細資訊，請參閱專案重設 [大小](layout.md#item-sizing)。|
 | Caching | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 會自動使用基礎原生控制項所提供的虛擬化。 |
 | 頁首和頁尾 | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以透過 `Header` 、 `Footer` 、 `HeaderTemplate` 和屬性，呈現以清單中的專案來滾動的頁首和頁尾 `FooterTemplate` 。 如需詳細資訊，請參閱頁首 [和](layout.md#headers-and-footers)頁尾。 |

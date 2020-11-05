@@ -10,16 +10,16 @@ ms.date: 06/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e693565bf34b2ab17992aed72d022315a33b87e3
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: bdf910443295a4a54ea76aa39ee67f1c3aeb10d4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563662"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372336"
 ---
 # <a name="accessibility-scaling-for-named-font-sizes-on-ios"></a>IOS 上命名字型大小的協助工具調整
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定會停用命名字型大小的協助工具調整。 它是在 XAML 中使用，方法是將可系結 `Application.EnableAccessibilityScalingForNamedFontSizes` 屬性設定為 `false` ：
 

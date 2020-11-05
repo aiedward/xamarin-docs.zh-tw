@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c3e74d52eee5da11dffc3c8a778fa2f691f1ca02
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 66fd7fcd5accbc1b6b1595fcb8ee7b1f8eb8d6d4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560932"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370737"
 ---
 # <a name="slider-thumb-tap-on-ios"></a>在 iOS 上點按滑動軸
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定可讓您透過在 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 橫條上的位置來設定屬性 [`Slider`](xref:Xamarin.Forms.Slider) ，而不需要拖曳 `Slider` thumb。 它是在 XAML 中使用，方法是將可系結 [`Slider.UpdateOnTap`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty) 屬性設定為 `true` ：
 

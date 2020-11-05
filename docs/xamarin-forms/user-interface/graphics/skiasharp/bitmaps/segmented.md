@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a39433a0bad518055542adb190f4f441675ddfb
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fe63f3fdab5d508ab0202fbfe93bdc223f97d28a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556369"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370165"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>分割的 SkiaSharp 點陣圖顯示
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 SkiaSharp `SKCanvas` 物件會定義名為 `DrawBitmapNinePatch` 的方法，以及兩個名稱 `DrawBitmapLattice` 相同的方法。 這兩種方法都會將點陣圖轉譯為目的地矩形的大小，但不是一致地縮放點陣圖，而是在其圖元維度中顯示點陣圖的部分，並延展點陣圖的其他部分，使其符合矩形：
 
@@ -47,7 +47,7 @@ canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 
 中心矩形相對於點陣圖。 它是 `SKRectI` () 整數版本的值 `SKRect` ，而且所有座標和大小都是以圖元為單位。 目的地矩形相對於顯示介面。 `paint` 引數是選擇性的。
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的**九個 Patch 顯示**頁面會先使用靜態的函式來建立類型的公用靜態屬性 `SKBitmap` ：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的 **九個 Patch 顯示** 頁面會先使用靜態的函式來建立類型的公用靜態屬性 `SKBitmap` ：
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -110,7 +110,7 @@ public class NinePatchDisplayPage : ContentPage
 
 `centerRect`矩形包含16個圓形的中央陣列。 角落中的圓形會以圖元尺寸顯示，其他所有專案則會據以伸展：
 
-[![九-修補程式顯示](segmented-images/NinePatchDisplay.png "九-修補程式顯示")](segmented-images/NinePatchDisplay-Large.png#lightbox)
+[![九-修補程式顯示](segmented-images/NinePatchDisplay.png "Nine-Patch 顯示")](segmented-images/NinePatchDisplay-Large.png#lightbox)
 
 UWP 頁面的寬度會是500圖元，因此會以相同大小的一連串圓形來顯示頂端和底部資料列。 否則，所有不在角落的圓形都會延伸成形成省略號。
 
@@ -182,9 +182,9 @@ public class LatticeNinePatchPage : ContentPage
 
 顯示與上一個程式相同：
 
-[![>lattice 9-修補程式](segmented-images/LatticeNinePatch.png ">lattice 9-修補程式")](segmented-images/LatticeNinePatch-Large.png#lightbox)
+[![>lattice 9-修補程式](segmented-images/LatticeNinePatch.png ">lattice Nine-Patch")](segmented-images/LatticeNinePatch-Large.png#lightbox)
 
-**>lattice 顯示**頁面會將點陣圖分成16個矩形：
+**>lattice 顯示** 頁面會將點陣圖分成16個矩形：
 
 ```csharp
 public class LatticeDisplayPage : ContentPage
@@ -226,7 +226,7 @@ public class LatticeDisplayPage : ContentPage
 
 在左側的 iOS 和 Android 影像中，只會以圖元大小轉譯較小的圓形。 所有其他專案都已伸展。
 
-**>lattice 顯示**頁面一般化了陣列的建立 `Flags` ，可讓您 `XDivs` `YDivs` 更輕鬆地進行實驗。 尤其是，您會想要查看當您將或陣列的第一個元素設定為0時，會發生什麼事 `XDivs` `YDivs` 。 
+**>lattice 顯示** 頁面一般化了陣列的建立 `Flags` ，可讓您 `XDivs` `YDivs` 更輕鬆地進行實驗。 尤其是，您會想要查看當您將或陣列的第一個元素設定為0時，會發生什麼事 `XDivs` `YDivs` 。 
 
 ## <a name="related-links"></a>相關連結
 

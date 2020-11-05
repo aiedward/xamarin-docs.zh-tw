@@ -7,22 +7,22 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: 2b0b68be5cd36d908c7e152137b14b41a7a0b947
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: bd24fbf6ce99e87c6a7f4ccd8cceef6cbe826f0f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91458169"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370529"
 ---
 # <a name="splash-screen"></a>啟動顯示畫面
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/monodroid-samples/splashscreen)
 
 _Android 應用程式需要一些時間才能啟動，尤其是當應用程式第一次在裝置上啟動時。啟動顯示畫面可能會向使用者顯示開始進度，或指出商標。_
 
 ## <a name="overview"></a>概觀
 
-Android 應用程式需要一些時間才能啟動，尤其是在第一次在裝置上執行應用程式時 (有時這稱為 _冷啟動_) 。 啟動顯示畫面可能會向使用者顯示開始進度，也可能會顯示商標資訊來識別及升級應用程式。
+Android 應用程式需要一些時間才能啟動，尤其是在第一次在裝置上執行應用程式時 (有時這稱為 _冷啟動_ ) 。 啟動顯示畫面可能會向使用者顯示開始進度，也可能會顯示商標資訊來識別及升級應用程式。
 
 本指南將討論在 Android 應用程式中實施啟動顯示畫面的一種技術。 其中涵蓋下列步驟：
 
@@ -50,7 +50,7 @@ Android 應用程式需要一些時間才能啟動，尤其是在第一次在裝
 
 啟動顯示畫面會在啟動顯示畫面活動的背景中顯示 XML 可繪製。 您必須使用點陣圖影像 (例如 PNG 或 JPG) ，才能顯示影像。
 
-範例應用程式會定義一個稱為 **splash_screen.xml**的繪製。 這個可繪製的會使用 [圖層清單](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) 來置入應用程式中的啟動顯示畫面影像，如下列 xml 所示：
+範例應用程式會定義一個稱為 **splash_screen.xml** 的繪製。 這個可繪製的會使用 [圖層清單](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) 來置入應用程式中的啟動顯示畫面影像，如下列 xml 所示：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -81,7 +81,7 @@ Android 應用程式需要一些時間才能啟動，尤其是在第一次在裝
 
 ### <a name="implementing-a-theme"></a>執行主題
 
-若要建立啟動顯示畫面活動的自訂主題，請編輯 (或新增) 檔案 **值/styles.xml** ，並 `style` 為啟動顯示畫面建立新的元素。 範例 **值/style.xml** 檔案如下所示，其 `style` 名為 **MyTheme**：
+若要建立啟動顯示畫面活動的自訂主題，請編輯 (或新增) 檔案 **值/styles.xml** ，並 `style` 為啟動顯示畫面建立新的元素。 範例 **值/style.xml** 檔案如下所示，其 `style` 名為 **MyTheme** ：
 
 ```xml
 <resources>
@@ -167,7 +167,7 @@ public class MainActivity : AppCompatActivity
 
 1. 在 [ **資源/可繪製** ] 資料夾中，新增您想要使用之啟動顯示畫面影像的橫向版本。 在此範例中， **splash_logo_land.png** 是上述範例中所使用之標誌的橫向版本 (它使用的是白色字母，而非藍色的) 。
 
-2. 在 [ **資源/可繪製** ] 資料夾中，建立稍 `layer-list` 早定義之可繪製的橫向版本 (例如 **splash_screen_land.xml**) 。 在此檔案中，將點陣圖路徑設定為啟動顯示畫面影像的橫向版本。 在下列範例中， **splash_screen_land.xml** 使用 **splash_logo_land.png**：
+2. 在 [ **資源/可繪製** ] 資料夾中，建立稍 `layer-list` 早定義之可繪製的橫向版本 (例如 **splash_screen_land.xml** ) 。 在此檔案中，將點陣圖路徑設定為啟動顯示畫面影像的橫向版本。 在下列範例中， **splash_screen_land.xml** 使用 **splash_logo_land.png** ：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -225,7 +225,7 @@ public class MainActivity : AppCompatActivity
 
 請注意，使用橫向模式的啟動顯示畫面不一定會提供順暢的體驗。 根據預設，Android 會在直向模式中啟動應用程式，並將其轉換為橫向模式，即使裝置已處於橫向模式也一樣。 如此一來，如果在裝置處於橫向模式時啟動應用程式，則裝置會短暫顯示直向啟動顯示畫面，然後以動畫顯示方式從縱向旋轉到橫向啟動顯示畫面。 可惜的是，即使 `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` 是在啟動顯示活動的旗標中指定，也會發生這種初始的直向橫向轉換。 解決這項限制的最佳方式是建立單一啟動顯示畫面影像，以在直向和橫向模式中正確呈現。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本指南討論了在 Xamarin Android 應用程式中實施啟動顯示畫面的一種方法;亦即，將自訂主題套用至啟動活動。
 

@@ -10,16 +10,16 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4b32c4b3ac4dea9dcdf52e3b9316f5f82aaad6ef
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8d24300dcee76511466ec97f4944fe0be1278354
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558332"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371582"
 ---
 # <a name="global-styles-in-no-locxamarinforms"></a>中的全域樣式 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _您可以藉由將樣式加入至應用程式的資源字典，使其成為全域可用。這有助於避免跨頁面或控制項重複樣式。_
 
@@ -47,7 +47,7 @@ _您可以藉由將樣式加入至應用程式的資源字典，使其成為全�
 </Application>
 ```
 
-這 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 定義了單一的 *明確* 樣式， `buttonStyle` 將用來設定實例的外觀 [`Button`](xref:Xamarin.Forms.Button) 。 不過，全域樣式可以是 *明確* 或 *隱含*的。
+這 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 定義了單一的 *明確* 樣式， `buttonStyle` 將用來設定實例的外觀 [`Button`](xref:Xamarin.Forms.Button) 。 不過，全域樣式可以是 *明確* 或 *隱含* 的。
 
 下列程式碼範例顯示將套用 `buttonStyle` 至頁面實例的 XAML 頁面 [`Button`](xref:Xamarin.Forms.Button) ：
 
@@ -129,7 +129,7 @@ public class App : Application
 }
 ```
 
-此 *函* 式會定義套用至 [`Button`](xref:Xamarin.Forms.Button) 整個應用程式實例的單一明確樣式。 *明確* [`Style`](xref:Xamarin.Forms.Style) 使用方法將實例新增至 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) ，並指定 `key` 要參考該實例的字串 `Style` 。 `Style`然後，可以將實例套用至應用程式中正確型別的任何控制項。 不過，全域樣式可以是 *明確* 或 *隱含*的。
+此 *函* 式會定義套用至 [`Button`](xref:Xamarin.Forms.Button) 整個應用程式實例的單一明確樣式。 *明確* [`Style`](xref:Xamarin.Forms.Style) 使用方法將實例新增至 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) ，並指定 `key` 要參考該實例的字串 `Style` 。 `Style`然後，可以將實例套用至應用程式中正確型別的任何控制項。 不過，全域樣式可以是 *明確* 或 *隱含* 的。
 
 下列程式碼範例顯示將套用 `buttonStyle` 至頁面實例的 c # 頁面 [`Button`](xref:Xamarin.Forms.Button) ：
 

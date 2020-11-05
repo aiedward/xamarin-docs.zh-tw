@@ -10,16 +10,16 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6a5249b6929b283cbbcb5ea4a4bc1f136003ea43
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 49fd8c563509d88b80fcb91b5e6298b8a5bb3363
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563649"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372297"
 ---
 # <a name="home-indicator-visibility-on-ios"></a>IOS 上的主指示器可見度
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定會設定上主指示器的可見度 [`Page`](xref:Xamarin.Forms.Page) 。 它是在 XAML 中使用，方法是將可系結 [`Page.PrefersHomeIndicatorAutoHidden`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.PrefersHomeIndicatorAutoHiddenProperty) 屬性設定為 `boolean` ：
 

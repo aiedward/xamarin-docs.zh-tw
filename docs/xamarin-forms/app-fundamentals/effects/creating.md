@@ -10,16 +10,16 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b109459f583afd491b613b4e32e4e4530eeb5ca4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cb1aa068e702b4d12bf112486e77a1c893b68956
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562687"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370854"
 ---
 # <a name="creating-an-effect"></a>建立效果
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
 
 _效果簡化了控制項的自訂。本文示範如何建立效果，以在控制項取得焦點時，變更專案控制項的背景色彩。_
 
@@ -265,7 +265,7 @@ public HomePageCS ()
 
 [`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String)) [`Effect`](xref:Xamarin.Forms.Effect) 會傳回指定之名稱的，這是使用效果類別上的屬性 (指定的解析組名串連 [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute)) ，以及在 [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 效果類別上使用屬性指定的唯一識別碼。 如果某個平台不提供效果，則 `Effect.Resolve` 方法會傳回非 `null` 值。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何建立效果，以在 [`Entry`](xref:Xamarin.Forms.Entry) 控制項取得焦點時變更控制項的背景色彩。
 

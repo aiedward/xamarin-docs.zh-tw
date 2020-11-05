@@ -10,23 +10,23 @@ ms.date: 05/22/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2c6898439da5869d79bc500643ca3cfc52c2e3f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: db32d4250bf5ba63761c59f67b64b59fa565e651
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557552"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371010"
 ---
 # <a name="no-locxamarinforms-text-styles"></a>Xamarin.Forms 文字樣式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _設定文字的樣式 Xamarin.Forms_
 
 樣式可以用來調整標籤、專案和編輯器的外觀。 樣式可以定義為一次，並由許多視圖使用，但是樣式只能與一種類型的視圖一起使用。
 您可以指定樣式 `Key` ，並選擇性地使用特定控制項的屬性來套用樣式 `Style` 。
 
-## <a name="built-in-styles"></a>內建樣式
+## <a name="built-in-styles"></a>Built-In 樣式
 
 Xamarin.Forms 針對常見案例包含數個 [內建](xref:Xamarin.Forms.Device.Styles) 的樣式：
 

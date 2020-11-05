@@ -10,16 +10,16 @@ ms.date: 11/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2336a4fbd92a7e9158d332de1ea2e2b018d144ce
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: db7101d5e50dc6ee7840023f6ec4efeb2c52150b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556655"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370191"
 ---
 # <a name="simple-animations-in-no-locxamarinforms"></a>中的簡單動畫 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 
 _ViewExtensions 類別提供可用於建立簡單動畫的擴充方法。本文將示範如何使用 ViewExtensions 類別來建立和取消動畫。_
 
@@ -85,7 +85,7 @@ await image.RelRotateTo (360, 2000);
 
 ![相對旋轉動畫](simple-images/relrotateto.png)
 
-### <a name="scaling"></a>擴縮
+### <a name="scaling"></a>調整大小
 
 下列程式碼範例將示範 [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) 如何使用方法，以動畫顯示的 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) 屬性 [`Image`](xref:Xamarin.Forms.Image) ：
 
@@ -230,7 +230,7 @@ ViewExtensions.CancelAnimations (image);
 
 這會立即取消目前實例上正在執行的所有動畫 [`Image`](xref:Xamarin.Forms.Image) 。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用類別來建立和取消動畫 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 。 這個類別提供的擴充方法可用來建立可旋轉、縮放、轉譯和淡化實例的簡單動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 

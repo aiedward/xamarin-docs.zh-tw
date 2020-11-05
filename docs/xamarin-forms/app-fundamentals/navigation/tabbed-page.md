@@ -10,22 +10,22 @@ ms.date: 11/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: afcf182fe093a9bb02ea23f53d0f568fd83c862c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d5c380a5ce6e76b0f9275b09d2943be479ef09e4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563311"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370893"
 ---
 # <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.Forms TabbedPage
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
 是由索引標籤 Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 清單和較大的詳細資料區域所組成，每個索引標籤會將內容載入至詳細資料區域。 下列螢幕擷取畫面顯示 `TabbedPage` 在 iOS 和 Android 上的：
 
 [![螢幕擷取畫面：在 iOS 和 Android 上包含三個索引標籤的 TabbedPage](tabbed-page-images/tabbedpage-today.png "包含三個索引標籤的 TabbedPage")](tabbed-page-images/tabbedpage-today-large.png#lightbox "包含三個索引標籤的 TabbedPage")
 
-在 iOS 上，索引標籤清單會出現在畫面的底部，詳細資料區域則出現在上方。 每個索引標籤都是由標題和圖示組成，其應為具有 Alpha 色板的 PNG 檔案。 在直向中，索引標籤列圖示會顯示在索引標籤標題上方。 在橫向，圖示和標題會並排顯示。 此外，您也可以根據裝置和方向顯示一般或精簡索引標籤列。 若有超過五個索引標籤，則會出現 [更多]**** 索引標籤，可用於存取其他索引標籤。 如需圖示需求的詳細資訊，請參閱 developer.apple.com 上的 [Tab 列圖示大小](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size) 。
+在 iOS 上，索引標籤清單會出現在畫面的底部，詳細資料區域則出現在上方。 每個索引標籤都是由標題和圖示組成，其應為具有 Alpha 色板的 PNG 檔案。 在直向中，索引標籤列圖示會顯示在索引標籤標題上方。 在橫向，圖示和標題會並排顯示。 此外，您也可以根據裝置和方向顯示一般或精簡索引標籤列。 若有超過五個索引標籤，則會出現 [更多] 索引標籤，可用於存取其他索引標籤。 如需圖示需求的詳細資訊，請參閱 developer.apple.com 上的 [Tab 列圖示大小](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size) 。
 
 > [!TIP]
 > `TabbedRenderer`IOS 的可覆寫 `GetIcon` 方法可以用來從指定的來源載入索引標籤圖示。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示。 此外，也可以提供圖示的選取及未選取版本。

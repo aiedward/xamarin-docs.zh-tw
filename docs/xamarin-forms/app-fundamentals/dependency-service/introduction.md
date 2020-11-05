@@ -10,16 +10,16 @@ ms.date: 06/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2d63ac91031fc4a2cc127272a075f15a8ea81f4e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1234584dda50746e45d121eb03a3c6abafd8473a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555278"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371504"
 ---
 # <a name="no-locxamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 簡介
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService)類別是服務定位器，可讓 Xamarin.Forms 應用程式從共用程式碼叫用原生平臺功能。
 

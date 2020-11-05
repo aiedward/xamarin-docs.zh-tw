@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/12/2018
-ms.openlocfilehash: ef632b4bff3313de82c71cb5839ecdc24c9242ad
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: ffb49329b38705d097520b24d53285d5dbf15167
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91431488"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371803"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Xamarin 中的檔案系統存取
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/ios-samples/filesystemsamplecode)
 
-您可以使用 Xamarin 和 `System.IO` .Net 基類庫中的類別 * (BCL) * 來存取 iOS 檔案系統。 `File` 類別可讓您建立、刪除和讀取檔案，而 `Directory` 類別可讓您建立、刪除或列舉目錄內容。 您也可以使用 `Stream` 子類別，這可以提供更高程度的檔案作業控制 (例如，壓縮或在檔案) 內搜尋位置。
+您可以使用 Xamarin 和 `System.IO` .Net 基類庫中的類別 *(BCL)* 來存取 iOS 檔案系統。 `File` 類別可讓您建立、刪除和讀取檔案，而 `Directory` 類別可讓您建立、刪除或列舉目錄內容。 您也可以使用 `Stream` 子類別，這可以提供更高程度的檔案作業控制 (例如，壓縮或在檔案) 內搜尋位置。
 
 iOS 強加一些限制，可讓應用程式在檔案系統上做什麼，以保存應用程式資料的安全性，並保護使用者免于惡性的應用程式。 這些限制是 *Application Sandbox* 的一部分，這是一組規則，可限制應用程式對檔案、喜好設定、網路資源、硬體等的存取。應用程式只能在其主目錄中讀取和寫入檔案， (安裝的位置) ;它無法存取另一個應用程式的檔案。
 
-iOS 也有一些檔案系統特有的功能：某些目錄需要特別處理備份和升級，而應用程式也可以與彼此共用檔案，以及從 iOS 11) 和 iTunes (**檔案應用程式** 。
+iOS 也有一些檔案系統特有的功能：某些目錄需要特別處理備份和升級，而應用程式也可以與彼此共用檔案，以及從 iOS 11) 和 iTunes ( **檔案應用程式** 。
 
 本文討論 iOS 檔案系統的功能和限制，並包含範例應用程式，示範如何使用 Xamarin 執行一些簡單的檔案系統作業：
 
@@ -149,13 +149,13 @@ File.WriteAllText(filename, json);
 
 根據預設，如果您將檔案新增至專案，它將不會包含在最終的元件中，因此您的應用程式將無法使用它。 若要將檔案包含在元件中，您必須使用特殊的組建動作（稱為內容）來標示它。
 
-若要標示要包含的檔案，請以滑鼠右鍵按一下檔案 (s) ，然後在 Visual Studio for Mac 中選擇 [ **建立動作 &gt; 內容** ]。 您也可以在檔案的**屬性**表中變更**組建動作**。
+若要標示要包含的檔案，請以滑鼠右鍵按一下檔案 (s) ，然後在 Visual Studio for Mac 中選擇 [ **建立動作 &gt; 內容** ]。 您也可以在檔案的 **屬性** 表中變更 **組建動作** 。
 
 ### <a name="case-sensitivity"></a>區分大小寫
 
-請務必瞭解 iOS 檔案系統 *區分大小寫*。 區分大小寫表示您的檔案和目錄名稱必須完全相符– **README.txt** 且 **readme.txt** 會被視為不同的檔案名。
+請務必瞭解 iOS 檔案系統 *區分大小寫* 。 區分大小寫表示您的檔案和目錄名稱必須完全相符– **README.txt** 且 **readme.txt** 會被視為不同的檔案名。
 
-如果 .NET 開發人員比較熟悉 Windows 檔案系統（不區分*大小寫* **），則檔案、檔案****和檔案**都會參考相同的**目錄，這**可能會令人困惑。
+如果 .NET 開發人員比較熟悉 Windows 檔案系統（不區分 *大小寫* **），則檔案、檔案****和檔案** 都會參考相同的 **目錄，這** 可能會令人困惑。
 
 > [!WARNING]
 > IOS 模擬器不區分大小寫。
@@ -169,18 +169,18 @@ iOS 使用正斜線 '/' 做為路徑分隔符號 (這與 Windows 不同，後者
 
 ## <a name="application-sandbox"></a>應用程式沙箱
 
-基於安全性考慮，您的應用程式對檔案系統 (和其他資源（例如網路和硬體功能) ）的存取權會受到限制。 這項限制稱為「 *應用程式沙箱*」。 就檔案系統而言，您的應用程式只能在其主目錄中建立和刪除檔案和目錄。
+基於安全性考慮，您的應用程式對檔案系統 (和其他資源（例如網路和硬體功能) ）的存取權會受到限制。 這項限制稱為「 *應用程式沙箱* 」。 就檔案系統而言，您的應用程式只能在其主目錄中建立和刪除檔案和目錄。
 
 主目錄是檔案系統中儲存應用程式及其所有資料的唯一位置。 您無法選擇 (或變更) 應用程式主目錄的位置;不過，iOS 和 Xamarin 會提供屬性和方法來管理內的檔案和目錄。
 
 ## <a name="the-application-bundle"></a>應用程式套件組合
 
-*應用程式*套件組合是包含應用程式的資料夾。
+*應用程式* 套件組合是包含應用程式的資料夾。
 它可與其他資料夾區別，方法是將. 應用程式尾碼新增至目錄名稱。 您的應用程式套件組合包含您的可執行檔和您的專案所需的所有內容 (檔案、映射等 ) 。
 
 當您流覽至 Mac OS 中的應用程式套件組合時，它會與您在其他目錄中看到的圖示不同（ (的圖示），而 **應用程式** 尾碼會隱藏) ;但是，這只是作業系統以不同方式顯示的一般目錄。
 
-若要查看範例程式碼的應用程式套件組合，請在 **Visual Studio for Mac** 中的專案上按一下滑鼠右鍵，然後選取 [ **在搜尋工具中顯示**]。 然後，流覽至您應該會在其中找到應用程式圖示的 **bin/** 目錄， (類似) 的螢幕擷取畫面。
+若要查看範例程式碼的應用程式套件組合，請在 **Visual Studio for Mac** 中的專案上按一下滑鼠右鍵，然後選取 [ **在搜尋工具中顯示** ]。 然後，流覽至您應該會在其中找到應用程式圖示的 **bin/** 目錄， (類似) 的螢幕擷取畫面。
 
 ![流覽 bin 目錄以尋找類似此螢幕擷取畫面的應用程式圖示](file-system-images/40-bundle.png)
 
@@ -200,7 +200,7 @@ iOS 使用正斜線 '/' 做為路徑分隔符號 (這與 Windows 不同，後者
 
 |目錄|描述|
 |---|---|
-|[ApplicationName]. app/|**在 iOS 7 及更早版本中**，這是 `ApplicationBundle` 儲存應用程式可執行檔的目錄。 您在應用程式中建立的目錄結構存在於此目錄中 (例如，您在 Visual Studio for Mac 專案中標示為資源的影像和其他檔案類型) 。<br /><br />如果您需要存取應用程式配套中的內容檔案，可透過屬性取得此目錄的路徑 `NSBundle.MainBundle.BundlePath` 。|
+|[ApplicationName]. app/|**在 iOS 7 及更早版本中** ，這是 `ApplicationBundle` 儲存應用程式可執行檔的目錄。 您在應用程式中建立的目錄結構存在於此目錄中 (例如，您在 Visual Studio for Mac 專案中標示為資源的影像和其他檔案類型) 。<br /><br />如果您需要存取應用程式配套中的內容檔案，可透過屬性取得此目錄的路徑 `NSBundle.MainBundle.BundlePath` 。|
 |說明|使用這個目錄來儲存使用者檔和應用程式資料檔案。<br /><br />此目錄的內容可透過 iTunes 檔案共用 (提供給使用者，但預設為停用) 。 將 `UIFileSharingEnabled` 布林值索引鍵新增至 plist 檔案，以允許使用者存取這些檔案。<br /><br />即使應用程式不會立即啟用檔案共用，您仍應避免將應該隱藏在此目錄中的使用者隱藏的檔案 (例如資料庫檔案，除非您想要) 共用它們。 只要機密檔案保持隱藏，如果未來的版本已啟用檔案共用，這些檔案就不會公開 (，且可能會被 iTunes 的移動、修改或刪除) 。<br /><br /> 您可以使用 `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` 方法來取得應用程式之 [檔] 目錄的路徑。<br /><br />此目錄的內容是由 iTunes 所備份。|
 |函數|程式庫目錄是儲存不直接由使用者建立之檔案的理想位置，例如資料庫或其他應用程式產生的檔案。 此目錄的內容絕不會透過 iTunes 向使用者公開。<br /><br />您可以在程式庫中建立自己的子目錄;不過，這裡已經有一些系統建立的目錄，您應該注意，包括喜好設定和快取。<br /><br />此目錄的內容 (除了由 iTunes 備份的 [快取] 子目錄) 。 您在程式庫中建立的自訂目錄將會進行備份。|
 |程式庫/喜好設定/|應用程式特定的喜好設定檔案會儲存在此目錄中。 請勿直接建立這些檔案。 請改用 `NSUserDefaults` 類別。<br /><br />此目錄的內容是由 iTunes 所備份。|
@@ -245,7 +245,7 @@ iOS 11 引進了 **檔案應用程式，這** 是適用于 iOS 的檔案瀏覽�
 
 ![在 Info. plist 中設定 LSSupportsOpeningDocumentsInPlace](file-system-images/51-supports-opening.png)
 
-應用程式的 [**檔** **] 目錄現在**將可在 [檔案] 應用程式中流覽。 **在 [檔案**] 應用程式中，流覽至**我的 iPhone** ，每個具有共用檔案的應用程式都可以看見。 下列螢幕擷取畫面顯示 [檔案系統範例應用程式](/samples/xamarin/ios-samples/filesystemsamplecode) 看起來的樣子：
+應用程式的 [ **檔** **] 目錄現在** 將可在 [檔案] 應用程式中流覽。 **在 [檔案** ] 應用程式中，流覽至 **我的 iPhone** ，每個具有共用檔案的應用程式都可以看見。 下列螢幕擷取畫面顯示 [檔案系統範例應用程式](/samples/xamarin/ios-samples/filesystemsamplecode) 看起來的樣子：
 
 ![iOS 11 檔案應用程式](file-system-images/50-files-app-1-sml.png) ![流覽我的 iPhone 檔案](file-system-images/50-files-app-2-sml.png) ![範例應用程式檔](file-system-images/50-files-app-3-sml.png)
 
@@ -263,7 +263,7 @@ iOS 11 引進了 **檔案應用程式，這** 是適用于 iOS 的檔案瀏覽�
 
 如果使用者不小心，修改檔資料夾內容的使用者可能會造成問題。 您的應用程式應該將此納入考慮，並可在 [檔] 資料夾的破壞性更新中復原。
 
-本文的範例程式碼會在 **SampleCode.cs**) 的 [檔] 資料夾中建立檔案和資料夾 (，並在 **plist** 檔案中啟用檔案共用。 此螢幕擷取畫面顯示這些顯示在 iTunes 中的方式：
+本文的範例程式碼會在 **SampleCode.cs** ) 的 [檔] 資料夾中建立檔案和資料夾 (，並在 **plist** 檔案中啟用檔案共用。 此螢幕擷取畫面顯示這些顯示在 iTunes 中的方式：
 
 [![此螢幕擷取畫面顯示檔案如何顯示在 iTunes 中](file-system-images/15-itunes-file-sharing-example-sml.png)](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
@@ -276,7 +276,7 @@ iOS 11 引進了 **檔案應用程式，這** 是適用于 iOS 的檔案瀏覽�
 當 iTunes 備份裝置時，會儲存在應用程式主目錄中建立的所有目錄，但下列目錄除外：
 
 - **[ApplicationName]. app** –不寫入此目錄，因為它已簽署，因此在安裝之後必須保持不變。 它可能包含您從程式碼存取的資源，但不需要備份，因為它們會藉由重新下載應用程式來還原。
-- 連結**庫/** 快取-快取目錄適用于不需要備份的工作檔案。
+- 連結 **庫/** 快取-快取目錄適用于不需要備份的工作檔案。
 - **tmp** –此目錄用於在不再需要時所建立和刪除的暫存檔案，或 iOS 在需要空間時所刪除的檔案。
 
 備份大量資料可能需要很長的時間。 如果您決定需要備份任何特定的檔或資料，您的應用程式應該使用檔和文件庫資料夾。 針對可從網路輕鬆取出的暫時性資料或檔案，請使用快取或 tmp 目錄。
@@ -319,11 +319,11 @@ NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-u
 
 ### <a name="configure-an-app-group"></a>設定應用程式群組
 
-共用位置是使用 [ [IOS 開發人員中心](https://developer.apple.com/devcenter/ios/)] 的 [**憑證、識別碼 & 設定檔**] 區段中設定的[應用程式群組](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)進行設定。 您也必須在每個專案的 **plist**中參考此值。
+共用位置是使用 [ [IOS 開發人員中心](https://developer.apple.com/devcenter/ios/)] 的 [ **憑證、識別碼 & 設定檔** ] 區段中設定的 [應用程式群組](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)進行設定。 您也必須在每個專案的 **plist** 中參考此值。
 
 如需建立和設定應用程式群組的相關資訊，請參閱 [應用程式群組功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) 指南。
 
-### <a name="files"></a>檔案儲存體
+### <a name="files"></a>檔案
 
 IOS 應用程式和擴充功能也可以使用常見的檔案路徑共用檔案 (假設它們已正確設定正確的權利和布建) ：
 
@@ -350,7 +350,7 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 
 您也可以在新的主目錄下複製其他目錄，但不保證會將它們複製，因此您的應用程式不應該依賴此系統行為。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明與 Xamarin 的檔案系統作業類似于任何其他 .NET 應用程式。 它也引進了應用程式沙箱，並檢查它所造成的安全性含意。 接下來，它會探討應用程式套件組合的概念。 最後，它會列舉應用程式可用的特製化目錄，並在應用程式升級與備份期間說明其角色。
 

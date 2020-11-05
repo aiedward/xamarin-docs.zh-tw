@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 68cff80395f4bccf6acd718e044f708108ce4d18
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6c59a2c669a6a60049b6bb6383faea35a7de3631
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563857"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371189"
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp 轉換
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _深入瞭解顯示 SkiaSharp 圖形的轉換_
 
@@ -52,9 +52,9 @@ SkiaSharp 轉換和轉換之間有幾個重要的差異 Xamarin.Forms ：
 
 SkiaSharp 轉換是相對於的左上角， `SKCanvas` 而 Xamarin.Forms 轉換則是相對於套用這些轉換之的左上角 `VisualElement` 。 這項差異在套用縮放和旋轉轉換時很重要，因為這些轉換一律相對於特定點。
 
-真正的差別在於 SKiaSharp 轉換是 *方法* ，而 Xamarin.Forms 轉換是 *屬性*。 這是語法差異以外的語義差異： SkiaSharp 轉換會在 Xamarin.Forms 轉換設定狀態時執行作業。 SkiaSharp 轉換會套用至後續繪製的繪圖物件，但不適用於套用轉換之前繪製的繪圖物件。 相反地， Xamarin.Forms 轉換會在屬性設定後立即套用至先前轉譯的元素。 SkiaSharp 轉換會在呼叫方法時累計， Xamarin.Forms 當屬性設定為另一個值時，就會取代轉換。
+真正的差別在於 SKiaSharp 轉換是 *方法* ，而 Xamarin.Forms 轉換是 *屬性* 。 這是語法差異以外的語義差異： SkiaSharp 轉換會在 Xamarin.Forms 轉換設定狀態時執行作業。 SkiaSharp 轉換會套用至後續繪製的繪圖物件，但不適用於套用轉換之前繪製的繪圖物件。 相反地， Xamarin.Forms 轉換會在屬性設定後立即套用至先前轉譯的元素。 SkiaSharp 轉換會在呼叫方法時累計， Xamarin.Forms 當屬性設定為另一個值時，就會取代轉換。
 
-此區段中的所有範例程式都會出現在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式的 [ **SkiaSharp 轉換**] 區段中。 原始程式碼可在解決方案的 [ [**轉換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms) ] 資料夾中找到。
+此區段中的所有範例程式都會出現在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式的 [ **SkiaSharp 轉換** ] 區段中。 原始程式碼可在解決方案的 [ [**轉換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms) ] 資料夾中找到。
 
 ## <a name="the-translate-transform"></a>[平移轉換](translate.md)
 

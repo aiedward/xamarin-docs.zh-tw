@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 99e163364161287a8506bfc741d737edfaf88e4c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c565467d3c42dbaa9f9d9fc40352efbc964503a9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556759"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372310"
 ---
 # <a name="navigationpage-bar-translucency-on-ios"></a>IOS 上的 NavigationPage Bar 半透明度
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平臺特定用來變更上導覽列的透明度 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，並且會透過將 [`NavigationPage.IsNavigationBarTranslucent`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty) 附加屬性設定為值，在 XAML 中使用 `boolean` ：
 
@@ -53,7 +53,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 結果是可以變更導覽列的透明度：
 
-![半透明導覽列平臺特定](navigation-bar-translucent-images/translucent-navigation-bar.png)
+![半透明巡覽列 Platform-Specific](navigation-bar-translucent-images/translucent-navigation-bar.png)
 
 ## <a name="related-links"></a>相關連結
 

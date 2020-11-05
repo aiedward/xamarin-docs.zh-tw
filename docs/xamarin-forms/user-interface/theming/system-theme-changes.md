@@ -10,16 +10,16 @@ ms.date: 08/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 258061042fc8ab80b8bbdd9a0a9a965d87a1e064
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 0275e3d26b86807b113ed78a00c0654809f10990
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557565"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370945"
 ---
 # <a name="respond-to-system-theme-changes-in-no-locxamarinforms-applications"></a>回應應用程式中的系統主題變更 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
 裝置通常包含淺色和深色的主題，每個都參考一組可以在作業系統層級設定的廣泛外觀喜好設定。 應用程式應該遵守這些系統主題，並在系統主題變更時立即回應。
 

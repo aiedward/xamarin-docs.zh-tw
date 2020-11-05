@@ -10,16 +10,16 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a54b5e2523f4d1993cf0c86ba141135b1e9d74c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: afb2c7c5c82a7ce530846c266d231b893bbbf39d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561740"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371219"
 ---
 # <a name="no-locxamarinforms-tableview"></a>Xamarin.Forms TableView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
 
 [`TableView`](xref:Xamarin.Forms.TableView) 是一種視圖，可顯示資料列的可滾動清單，或有不共用相同範本的選項。 與 [ListView](~/xamarin-forms/user-interface/listview/index.md)不同的是，沒有的 `TableView` 概念 `ItemsSource` ，因此必須以手動方式將專案新增為子系。
 

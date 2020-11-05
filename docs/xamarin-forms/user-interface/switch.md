@@ -10,16 +10,16 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 94f77fd70fee595efd341ff7372828b12661442d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b44a3fa34044327be6a928588397c3371f196336
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561725"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371127"
 ---
 # <a name="no-locxamarinforms-switch"></a>Xamarin.Forms 開關
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
 Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) 控制項是水準切換按鈕，可由使用者操作，以便在開啟和關閉狀態（以值表示）之間切換 `boolean` 。 `Switch`類別繼承自 [`View`](xref:Xamarin.Forms.View) 。
 
@@ -30,7 +30,7 @@ Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) 控制項是水準切換按�
 `Switch`控制項會定義下列屬性：
 
 - [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)這是 `boolean` 指出是否開啟的值 `Switch` 。 **on**
-- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是 `Color` ，它會影響在 `Switch` 切換或狀態下呈現的方式**on**。
+- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是 `Color` ，它會影響在 `Switch` 切換或狀態下呈現的方式 **on** 。
 - `ThumbColor` 是 `Color` 切換捲動方塊的。
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示 `Switch` 可以設定樣式，也可以是資料系結的目標。

@@ -10,15 +10,15 @@ ms.date: 07/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 111b3ad13902b272256464f6f70f0db3dfd015b6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 824851c1406dfefb5f276be069f92040d03a5c98
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559450"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370516"
 ---
 # <a name="no-locxamarinforms-progressbar"></a>Xamarin.Forms ProgressBar
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 
 Xamarin.Forms [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) 控制項以視覺化方式將進度表示為水準橫條，填滿至以值表示的百分比 `float` 。 `ProgressBar`類別繼承自 [`View`](xref:Xamarin.Forms.View) 。
 

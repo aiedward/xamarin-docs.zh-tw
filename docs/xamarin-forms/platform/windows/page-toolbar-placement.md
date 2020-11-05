@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f0d552db24e89c3bc10ca6f38f9e8f936bd4290d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4caf352024d7ae2a89d49ff021f0f90f35fdd8eb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555758"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372206"
 ---
 # <a name="page-toolbar-placement-on-windows"></a>Windows 上的頁面工具列放置
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 這個通用 Windows 平臺平臺特定用來變更工具列在上的位置 [`Page`](xref:Xamarin.Forms.Page) ，並且會透過將 [`Page.ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) 附加屬性設定為列舉的值，在 XAML 中使用 [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) ：
 
@@ -45,7 +45,7 @@ page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
 結果是將指定的工具列位置套用至 [`Page`](xref:Xamarin.Forms.Page) 實例：
 
-[![工具列放置平臺特定](page-toolbar-placement-images/toolbar-placement.png)](page-toolbar-placement-images/toolbar-placement-large.png#lightbox "工具列放置平臺特定")
+[![工具列放置平臺特定](page-toolbar-placement-images/toolbar-placement.png)](page-toolbar-placement-images/toolbar-placement-large.png#lightbox "工具列放置 Platform-Specific")
 
 ## <a name="related-links"></a>相關連結
 

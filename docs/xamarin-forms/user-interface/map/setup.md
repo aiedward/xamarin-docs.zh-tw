@@ -10,16 +10,16 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3da0223bf72e4de60cc50be2562a0fdbd279f52e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b84336f836c3fa421537daf7e43de01e7be20b01
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559736"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371283"
 ---
 # <a name="no-locxamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms 對應初始化和設定
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 [`Map`](xref:Xamarin.Forms.Maps.Map)控制項會在每個平臺上使用原生地圖控制項。 這可為使用者提供快速且熟悉的地圖體驗，但表示需要一些設定步驟才能遵守每個平臺的 API 需求。
 
@@ -35,7 +35,7 @@ ms.locfileid: "91559736"
 Xamarin.FormsMaps.Init();
 ```
 
-在 Android 上，在方法之後叫用方法，就會在**MainActivity.cs**中進行這項 `Xamarin.FormsMaps.Init` *after* `Xamarin.Forms.Forms.Init` 操作：
+在 Android 上，在方法之後叫用方法，就會在 **MainActivity.cs** 中進行這項 `Xamarin.FormsMaps.Init` *after* `Xamarin.Forms.Forms.Init` 操作：
 
 ```csharp
 Xamarin.FormsMaps.Init(this, savedInstanceState);
@@ -57,7 +57,7 @@ Android 上需要進行其他設定，而在地圖將會顯示通用 Windows 平
 
 ### <a name="ios"></a>iOS
 
-在 iOS 上顯示地圖並與其互動，不需要任何額外的設定。 不過，若要存取位置服務，您必須在 **Info. plist**中設定下列索引鍵：
+在 iOS 上顯示地圖並與其互動，不需要任何額外的設定。 不過，若要存取位置服務，您必須在 **Info. plist** 中設定下列索引鍵：
 
 - iOS 11 和更新版本
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –用於在應用程式使用中時使用位置服務
@@ -79,7 +79,7 @@ Android 上需要進行其他設定，而在地圖將會顯示通用 Windows 平
 <string>Can we use your location at all times?</string>
 ```
 
-編輯**info. plist**檔案時，也可以在**來源**視圖中加入**plist**專案：
+編輯 **info. plist** 檔案時，也可以在 **來源** 視圖中加入 **plist** 專案：
 
 ![適用于 iOS 8 的 plist](setup-images/ios8-map-permissions.png "iOS 8 必要資訊。 plist 專案")
 
@@ -245,7 +245,7 @@ Android 上需要進行其他設定，而在地圖將會顯示通用 Windows 平
 
 此外，如果您的應用程式需要存取使用者的位置，您必須啟用套件資訊清單中的位置功能。 執行下列工作即可達成這點：
 
-1. 在 \[**方案總管**\] 中按兩下 **package.appxmanifest**，然後選取 \[**功能**\] 索引標籤。
+1. 在 \[ **方案總管** \] 中按兩下 **package.appxmanifest** ，然後選取 \[ **功能** \] 索引標籤。
 1. 在 **\[功能\]** 清單中，選取 **\[位置\]** 的方塊。 這會將 `location` 裝置功能新增至套件資訊清單檔案。
 
     ```xml
@@ -257,7 +257,7 @@ Android 上需要進行其他設定，而在地圖將會顯示通用 Windows 平
 
 #### <a name="release-builds"></a>發行組建
 
-UWP 版本組建使用 .NET 原生編譯，將應用程式直接編譯成機器碼。 不過，這是 [`Map`](xref:Xamarin.Forms.Maps.Map) 因為 UWP 上的控制項轉譯器可能會從可執行檔連結。 您可以使用 App.xaml.cs 中方法的 UWP 特定多載來修正此 `Forms.Init` 問題**App.xaml.cs**：
+UWP 版本組建使用 .NET 原生編譯，將應用程式直接編譯成機器碼。 不過，這是 [`Map`](xref:Xamarin.Forms.Maps.Map) 因為 UWP 上的控制項轉譯器可能會從可執行檔連結。 您可以使用 App.xaml.cs 中方法的 UWP 特定多載來修正此 `Forms.Init` 問題 **App.xaml.cs** ：
 
 ```csharp
 var assembliesToInclude = new [] { typeof(Xamarin.Forms.Maps.UWP.MapRenderer).GetTypeInfo().Assembly };

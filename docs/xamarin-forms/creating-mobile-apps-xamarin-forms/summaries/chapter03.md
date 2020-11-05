@@ -10,16 +10,19 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5423a9f716f384eca107003bdeca69615f8b459f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: abe8161ea8536f5fb8b13c71fe49ebad57460ca1
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136899"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370412"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第3章的摘要。 Deeper into text
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
+
+> [!NOTE]
+> 這本書是在2016的春季發行，而且自那時起尚未更新。 本書中有很多工具價值，但部分資料已過期，有些主題則不再是完全正確或完整。
 
 這一章會 [`Label`](xref:Xamarin.Forms.Label) 深入探索視野，包括色彩、字型和格式。
 
@@ -27,11 +30,11 @@ ms.locfileid: "84136899"
 
 當的 [`Text`](xref:Xamarin.Forms.Label.Text) 屬性 `Label` 包含長文字時， `Label` 會自動將其包裝成多行，如 [**Baskervilles**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles) 範例所示。 您可以將 Unicode 代碼（例如 ' \u2014 '）內嵌為 em 虛線，或是將 c # 字元（例如 ' \r '）換成新行。
 
-當的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性 `Label` 設定為時，的 `LayoutOptions.Fill` 整體大小 `Label` 會受到其容器可供使用的空間所控管。 `Label`被視為*受限制*。 的大小 `Label` 是其容器的大小。
+當的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性 `Label` 設定為時，的 `LayoutOptions.Fill` 整體大小 `Label` 會受到其容器可供使用的空間所控管。 `Label`被視為 *受限制* 。 的大小 `Label` 是其容器的大小。
 
-當 `HorizontalOptions` 和 `VerticalOptions` 屬性設定為以外的值時 `LayoutOptions.Fill` ，的大小 `Label` 會受到轉譯文字所需的空間所控管，最大到其容器可供使用的大小 `Label` 。 `Label`說是不受*限制*的，它會決定自己的大小。
+當 `HorizontalOptions` 和 `VerticalOptions` 屬性設定為以外的值時 `LayoutOptions.Fill` ，的大小 `Label` 會受到轉譯文字所需的空間所控管，最大到其容器可供使用的大小 `Label` 。 `Label`說是不受 *限制* 的，它會決定自己的大小。
 
- (附注：*受限制**和不受限制的*詞彙可能會以直覺方式顯示，因為未受限制的視圖通常比受限的視圖小。 此外，本書籍的早期章節不會一致地使用這些詞彙。 ) 
+ (附注： *受限制**和不受限制的* 詞彙可能會以直覺方式顯示，因為未受限制的視圖通常比受限的視圖小。 此外，本書籍的早期章節不會一致地使用這些詞彙。 ) 
 
 例如的視圖 `Label` 可以在一個維度中受到限制，而另一個維度則不受限制。 `Label`只有在水準限制時，才會將文字包裝在多行上。
 
@@ -132,7 +135,7 @@ ms.locfileid: "84136899"
 
 `FormattedString` 具有 [`Spans`](xref:Xamarin.Forms.FormattedString.Spans) 是物件集合的屬性 [`Span`](xref:Xamarin.Forms.Span) 。 每個 `Span` 物件都有它自己的、、、、 [`Text`](xref:Xamarin.Forms.Span.Text) [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily) [`FontSize`](xref:Xamarin.Forms.Span.FontSize) [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes) [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) 和 [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) 屬性。
 
-[**VariableFormattedText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormText)範例會示範如何使用 `FormattedText` 單一文字行的屬性，而[**VariableFormattedParagraph**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormPara)會示範整個段落的技巧，如下所示：
+[**VariableFormattedText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormText)範例會示範如何使用 `FormattedText` 單一文字行的屬性，而 [**VariableFormattedParagraph**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormPara)會示範整個段落的技巧，如下所示：
 
 [![可變格式化段落的三個螢幕擷取畫面](images/ch03fg06-small.png "可變格式的標籤文字")](images/ch03fg06-large.png#lightbox "可變格式的標籤文字")
 

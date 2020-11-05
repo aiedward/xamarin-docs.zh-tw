@@ -10,16 +10,16 @@ ms.date: 09/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 319afff4572c02e363fef6296aca06ba290923c2
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8992f2a649b1d3998a24a11cdf7e51d768a3cd09
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562830"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371335"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部份： 開始使用 XAML
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _在 Xamarin.Forms 應用程式中，XAML 大部分用來定義頁面的視覺內容，並與 c # 程式碼後端檔案搭配運作。_
 
@@ -37,39 +37,39 @@ _在 Xamarin.Forms 應用程式中，XAML 大部分用來定義頁面的視覺�
 
 ![新增解決方案視窗](get-started-with-xaml-images/win/new-solution-2019.png)
 
-在 [ **建立新專案** ] **視窗中，選取 [** **專案類型** ] 下拉式清單中的 [行動裝置]，選取 [行動 **應用程式 (Xamarin.Forms) ** ] 範本，然後按 [ **下一步]** 按鈕：
+在 [ **建立新專案** ] **視窗中，選取 [** **專案類型** ] 下拉式清單中的 [行動裝置]，選取 [行動 **應用程式 (Xamarin.Forms)** ] 範本，然後按 [ **下一步]** 按鈕：
 
 ![[新增專案] 視窗](get-started-with-xaml-images/win/new-project-2019.png)
 
 在 [設定 **您的新專案** ] 視窗中，將 **專案名稱** 設定為 **XamlSamples** (或您偏好) 的任何專案，然後按一下 [ **建立** ] 按鈕。
 
-在 [ **新的跨平臺應用程式** ] 對話方塊中，按一下 [ **空白**]，然後按一下 [ **確定]** 按鈕：
+在 [ **新的跨平臺應用程式** ] 對話方塊中，按一下 [ **空白** ]，然後按一下 [ **確定]** 按鈕：
 
 ![新增應用程式對話方塊](get-started-with-xaml-images/win/new-cross-platform-app.png)
 
-方案中會建立四個專案： **XamlSamples** .NET Standard 程式庫、 **XamlSamples**、 **XamlSamples**和通用 Windows 平臺方案**XamlSamples。**
+方案中會建立四個專案： **XamlSamples** .NET Standard 程式庫、 **XamlSamples** 、 **XamlSamples** 和通用 Windows 平臺方案 **XamlSamples。**
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-在 Visual Studio for Mac 中，從功能表中選取 [檔案] **> [新方案** ]。 在 [ **新增專案** ] 對話方塊中，選取左側的多 **平臺 > 應用程式** ，而 **空白的表單應用程式** (*不會*從範本清單中 **形成應用程式**) ：
+在 Visual Studio for Mac 中，從功能表中選取 [檔案] **> [新方案** ]。 在 [ **新增專案** ] 對話方塊中，選取左側的多 **平臺 > 應用程式** ，而 **空白的表單應用程式** ( *不會* 從範本清單中 **形成應用程式** ) ：
 
 ![新增專案對話方塊1](get-started-with-xaml-images/mac/newprojectdialog1.png)
 
-按 **[下一步]**。
+按 **[下一步]** 。
 
 在下一個對話方塊中，將專案命名為 **XamlSamples** (或您偏好) 的任何名稱。 確認已選取 [ **使用 .NET Standard** ] 選項按鈕：
 
 ![新增專案對話方塊2](get-started-with-xaml-images/mac/newprojectdialog2.png)
 
-按 **[下一步]**。
+按 **[下一步]** 。
 
 在下列對話方塊中，您可以選取專案的位置：
 
 ![新增專案對話方塊3](get-started-with-xaml-images/mac/newprojectdialog3.png)
 
-按下 [**建立**]
+按下 [ **建立** ]
 
-方案中會建立三個專案： **XamlSamples** .NET Standard 程式庫、 **XamlSamples、Android**和**XamlSamples。**
+方案中會建立三個專案： **XamlSamples** .NET Standard 程式庫、 **XamlSamples、Android** 和 **XamlSamples。**
 
 -----
 
@@ -81,17 +81,17 @@ _在 Xamarin.Forms 應用程式中，XAML 大部分用來定義頁面的視覺�
 
 **XamlSamples** .NET Standard 程式庫中有一組具有下列名稱的檔案：
 
-- **App.xaml，xaml**檔案;和
-- **App.xaml.cs**，這是與 xaml 檔案相關聯的 c # *程式碼後端* 檔案。
+- **App.xaml，xaml** 檔案;和
+- **App.xaml.cs** ，這是與 xaml 檔案相關聯的 c # *程式碼後端* 檔案。
 
 您必須按一下 [app.xaml] 旁邊的箭號，以查看 **程式** 代碼後端檔案。
 
-**App.xaml**和**App.xaml.cs**都參與名為 `App` 的類別，該類別衍生自 `Application` 。 大部分其他具有 XAML 檔案的類別都有提供衍生自的類別，而這些檔案會 `ContentPage` 使用 XAML 來定義整個頁面的視覺內容。 這適用于 **XamlSamples** 專案中的其他兩個檔案：
+**App.xaml** 和 **App.xaml.cs** 都參與名為 `App` 的類別，該類別衍生自 `Application` 。 大部分其他具有 XAML 檔案的類別都有提供衍生自的類別，而這些檔案會 `ContentPage` 使用 XAML 來定義整個頁面的視覺內容。 這適用于 **XamlSamples** 專案中的其他兩個檔案：
 
-- **MainPage**，xaml 檔案;和
-- **MainPage.xaml.cs**，c # 程式碼後端檔案。
+- **MainPage** ，xaml 檔案;和
+- **MainPage.xaml.cs** ，c # 程式碼後端檔案。
 
-**MainPage .xaml**檔案看起來像這樣 (雖然格式可能有點不同) ：
+**MainPage .xaml** 檔案看起來像這樣 (雖然格式可能有點不同) ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,7 +140,7 @@ namespace XamlSamples
 
 `MainPage`類別衍生自 `ContentPage` ，但請注意 `partial` 類別定義。 這表示應該有另一個部分類別定義 `MainPage` ，但在哪裡？ 那麼該方法是什麼 `InitializeComponent` ？
 
-當 Visual Studio 建立專案時，它會剖析 XAML 檔案以產生 c # 程式碼檔案。 如果您查看 **XamlSamples\XamlSamples\obj\Debug** 目錄，就會找到名為 **XamlSamples.MainPage.xaml.g.cs**的檔案。 ' G ' 代表已產生。 這是的其他部分類別定義 `MainPage` ，其中包含從函式 `InitializeComponent` 呼叫之方法的定義 `MainPage` 。 然後，您可以將這兩個部分 `MainPage` 類別定義一起編譯。 根據是否編譯 XAML 而定，xaml 檔案或 XAML 檔案的二進位格式會內嵌在可執行檔中。
+當 Visual Studio 建立專案時，它會剖析 XAML 檔案以產生 c # 程式碼檔案。 如果您查看 **XamlSamples\XamlSamples\obj\Debug** 目錄，就會找到名為 **XamlSamples.MainPage.xaml.g.cs** 的檔案。 ' G ' 代表已產生。 這是的其他部分類別定義 `MainPage` ，其中包含從函式 `InitializeComponent` 呼叫之方法的定義 `MainPage` 。 然後，您可以將這兩個部分 `MainPage` 類別定義一起編譯。 根據是否編譯 XAML 而定，xaml 檔案或 XAML 檔案的二進位格式會內嵌在可執行檔中。
 
 在執行時間，特定平臺專案中的程式碼 `LoadApplication` 會呼叫方法，並將 `App` .NET Standard 程式庫中類別的新實例傳遞給它。 類別的函式具現 `App` 化 `MainPage` 。 該類別的函式會呼叫 `InitializeComponent` ，然後呼叫 `LoadFromXaml` 從 .NET Standard 程式庫中解壓縮 XAML 檔案 (或其已編譯二進位) 的方法。 `LoadFromXaml` 初始化 XAML 檔案中定義的所有物件、將它們全部連接在父子式關聯性中、將程式碼中定義的事件處理常式附加至 XAML 檔案中設定的事件，並將物件的結果樹狀結構設定為頁面的內容。
 
@@ -156,19 +156,19 @@ namespace XamlSamples
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-若要將其他以 XAML 為基礎的 `ContentPage` 類別加入至您的專案，請選取 [ **XamlSamples** .NET Standard 程式庫] 專案，按一下滑鼠右鍵，然後選取 [ **加入 > 新專案**...]。在 [ **加入新專案** ] 對話方塊中，選取 [ **Visual c # 專案] > Xamarin.Forms > 內容頁面** ([ **內容] 頁面 (c # ) **，這會建立僅限程式碼的頁面或 **內容視圖**，這不是頁面) 。 提供頁面名稱，例如， **HelloXamlPage**：
+若要將其他以 XAML 為基礎的 `ContentPage` 類別加入至您的專案，請選取 [ **XamlSamples** .NET Standard 程式庫] 專案，按一下滑鼠右鍵，然後選取 [ **加入 > 新專案**...]。在 [ **加入新專案** ] 對話方塊中，選取 [ **Visual c # 專案] > Xamarin.Forms > 內容頁面** ([ **內容] 頁面 (c # )** ，這會建立僅限程式碼的頁面或 **內容視圖** ，這不是頁面) 。 提供頁面名稱，例如， **HelloXamlPage** ：
 
 ![[加入新專案] 對話方塊](get-started-with-xaml-images/win/add-new-item-dialog-2019.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-若要將其他以 XAML 為基礎的 `ContentPage` 類別加入至您的專案，請選取 [ **XamlSamples** .NET Standard 程式庫] 專案，並叫用檔案 **> [新增** 檔案] 功能表項目。 在 [ **新增** 檔案] 對話方塊的左側，選取左邊的 **表單** ， **表單 ContentPage Xaml** (不是 **表單 ContentPage**，它會建立僅限程式碼的頁面或 **內容視圖**，這不是頁面) 。 提供頁面名稱，例如， **HelloXamlPage**：
+若要將其他以 XAML 為基礎的 `ContentPage` 類別加入至您的專案，請選取 [ **XamlSamples** .NET Standard 程式庫] 專案，並叫用檔案 **> [新增** 檔案] 功能表項目。 在 [ **新增** 檔案] 對話方塊的左側，選取左邊的 **表單** ， **表單 ContentPage Xaml** (不是 **表單 ContentPage** ，它會建立僅限程式碼的頁面或 **內容視圖** ，這不是頁面) 。 提供頁面名稱，例如， **HelloXamlPage** ：
 
 ![[新增檔案] 對話方塊](get-started-with-xaml-images/mac/newfiledialog.png)
 
 -----
 
-系統會將兩個檔案新增至專案、 **HelloXamlPage** 和程式碼後端檔案 **HelloXamlPage.xaml.cs**。
+系統會將兩個檔案新增至專案、 **HelloXamlPage** 和程式碼後端檔案 **HelloXamlPage.xaml.cs** 。
 
 ## <a name="setting-page-content"></a>設定頁面內容
 
@@ -186,7 +186,7 @@ namespace XamlSamples
 
 `ContentPage.Content`標記是 XAML 的唯一語法的一部分。 一開始，它們可能會是不正確 XML，但卻是合法的。 句點不是 XML 中的特殊字元。
 
-`ContentPage.Content`標記稱為*屬性元素*標記。 `Content` 是的屬性 `ContentPage` ，而且通常會設定為單一視圖或具有子視圖的版面配置。 一般來說，屬性會變成 XAML 中的屬性，但很難將 `Content` 屬性設為複雜的物件。 基於這個理由，屬性會以 XML 專案表示，此專案是由類別名稱和以句號分隔的屬性名稱所組成。 現在 `Content` 可在標記之間設定屬性 `ContentPage.Content` ，如下所示：
+`ContentPage.Content`標記稱為 *屬性元素* 標記。 `Content` 是的屬性 `ContentPage` ，而且通常會設定為單一視圖或具有子視圖的版面配置。 一般來說，屬性會變成 XAML 中的屬性，但很難將 `Content` 屬性設為複雜的物件。 基於這個理由，屬性會以 XML 專案表示，此專案是由類別名稱和以句號分隔的屬性名稱所組成。 現在 `Content` 可在標記之間設定屬性 `ContentPage.Content` ，如下所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -299,7 +299,7 @@ public MainPage()
 
 ## <a name="xaml-and-code-interactions"></a>XAML 和程式碼互動
 
-**HelloXamlPage**範例只 `Label` 會在頁面上包含單一頁面，但這非常不尋常。 大部分 `ContentPage` 的衍生會將 `Content` 屬性設定為某些排序的版面配置，例如 `StackLayout` 。 的 `Children` 屬性 `StackLayout` 定義為類型 `IList<View>` ，但實際上是類型的物件 `ElementCollection<View>` ，而且可以使用多個視圖或其他配置來填入集合。 在 XAML 中，這些父子式關聯性會與一般 XML 階層建立。 以下是新頁面的 XAML 檔案，名為 **XamlPlusCodePage**：
+**HelloXamlPage** 範例只 `Label` 會在頁面上包含單一頁面，但這非常不尋常。 大部分 `ContentPage` 的衍生會將 `Content` 屬性設定為某些排序的版面配置，例如 `StackLayout` 。 的 `Children` 屬性 `StackLayout` 定義為類型 `IList<View>` ，但實際上是類型的物件 `ElementCollection<View>` ，而且可以使用多個視圖或其他配置來填入集合。 在 XAML 中，這些父子式關聯性會與一般 XML 階層建立。 以下是新頁面的 XAML 檔案，名為 **XamlPlusCodePage** ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -432,7 +432,7 @@ async void OnButtonClicked(object sender, EventArgs args)
 
 您已瞭解在 XAML 中定義的物件可能引發在程式碼後端檔案中處理的事件，而且程式碼後端檔案可以使用以屬性指派給它的名稱，存取在 XAML 中定義的物件 `x:Name` 。 這兩種程式碼和 XAML 互動的基本方式。
 
-您可以藉由檢查新產生的 **XamlPlusCode.xaml.g.cs**檔案，來以往累積 XAML 運作方式的一些詳細資訊，現在會包含指派給任何 `x:Name` 屬性作為私用欄位的任何名稱。 以下是該檔案的簡化版本：
+您可以藉由檢查新產生的 **XamlPlusCode.xaml.g.cs** 檔案，來以往累積 XAML 運作方式的一些詳細資訊，現在會包含指派給任何 `x:Name` 屬性作為私用欄位的任何名稱。 以下是該檔案的簡化版本：
 
 ```csharp
 public partial class XamlPlusCodePage : ContentPage {
@@ -452,7 +452,7 @@ public partial class XamlPlusCodePage : ContentPage {
 
 請放心。 這是您的頁面，而 XAML 則是建立其內容的工具。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 在此簡介中，您已瞭解 XAML 檔案和程式碼檔如何構成類別定義，以及 XAML 和程式碼檔案如何互動。 但是 XAML 也有自己獨特的語法功能，可讓您以極具彈性的方式使用。 您可以在 [第2部分開始探索。基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
 

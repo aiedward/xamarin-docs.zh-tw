@@ -10,16 +10,16 @@ ms.date: 01/12/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: be5b2854c2f546e2194bd4dc95db77c9dcaf0760
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 01f625d9ecfb91bc36013b7f6d45fb3d275e8bee
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562804"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370828"
 ---
 # <a name="no-locxamarinforms-cells"></a>Xamarin.Forms 細胞
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin.Forms 您可以將資料格加入至 Listview 和 TableViews。_
 
@@ -31,7 +31,7 @@ _Xamarin.Forms 您可以將資料格加入至 Listview 和 TableViews。_
 
 Xamarin.Forms 支援下列資料格類型：
 
-| 類型 | 描述 | 外觀 |
+| 類型 | 說明 | 外觀 |
 | --- | --- | --- |
 | `TextCell` | 會 [`TextCell`](xref:Xamarin.Forms.TextCell) 顯示一或兩個文字字串。 將屬性（property） [`Text`](xref:Xamarin.Forms.TextCell.Text) 和屬性（property）（選擇性）設定 [`Detail`](xref:Xamarin.Forms.TextCell.Detail) 為這些文字字串。<br /><br />[API 檔](xref:Xamarin.Forms.TextCell)  / [指南](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#textcell) | [![TextCell 範例](cells-images/TextCell.png "TextCell 範例")](cells-images/TextCell-Large.png#lightbox "TextCell 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TextCellDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TextCellDemoPage.xaml) |
 | `ImageCell` | [`ImageCell`](xref:Xamarin.Forms.ImageCell)會顯示相同的資訊， [`TextCell`](xref:Xamarin.Forms.TextCell) 但會包含您使用屬性設定的點陣圖 [`Source`](xref:Xamarin.Forms.Image.Source) 。<br /><br />[API 檔](xref:Xamarin.Forms.ImageCell)  / [指南](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell) | [![ImageCell 範例](cells-images/ImageCell.png "ImageCell 範例")](cells-images/ImageCell-Large.png#lightbox "ImageCell 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |

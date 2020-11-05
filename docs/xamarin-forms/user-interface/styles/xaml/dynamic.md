@@ -11,16 +11,16 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: d6944da583679d58885c20d327b3e43e176eb6fa
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 520af44a307c8d493f550bbaeaa009bcdc94d8e0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563350"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371608"
 ---
 # <a name="dynamic-styles-in-no-locxamarinforms"></a>中的動態樣式 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
 _樣式不會回應屬性變更，而且會在應用程式的持續時間內保持不變。例如，在將樣式指派給視覺專案之後，如果其中一個 Setter 實例已修改、移除或加入新的 Setter 實例，變更將不會套用至視覺元素。不過，應用程式可以在執行時間使用動態資源動態地回應樣式變更。_
 

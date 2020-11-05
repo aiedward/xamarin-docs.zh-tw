@@ -10,16 +10,16 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c014396f9670ece93295c2c8da1738f9dc7dae9e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 103839c7016b7e9776e80f3f3459f8dc92b3bcbb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555979"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371647"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>將效果參數傳遞為附加屬性
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
 _附加屬性可用來定義會回應執行時間屬性變更的效果參數。本文示範如何使用附加屬性將參數傳遞至效果，並在執行時間變更參數。_
 
@@ -164,7 +164,7 @@ ShadowEffect.SetColor (label, Color.Teal);
 
 ### <a name="consuming-the-effect-with-a-style"></a>透過樣式使用效果
 
-效果可以透過將附加屬性新增至控制項來使用，也可以由樣式使用。 下列 XAML 程式碼範例顯示陰影效果的「明確」** 樣式，該陰影效果可以套用至 [`Label`](xref:Xamarin.Forms.Label) 控制項：
+效果可以透過將附加屬性新增至控制項來使用，也可以由樣式使用。 下列 XAML 程式碼範例顯示陰影效果的「明確」樣式，該陰影效果可以套用至 [`Label`](xref:Xamarin.Forms.Label) 控制項：
 
 ```xaml
 <Style x:Key="ShadowEffectStyle" TargetType="Label">
@@ -432,7 +432,7 @@ public class LabelShadowEffect : PlatformEffect
 
 `OnElementPropertyChanged` 方法會更新陰影的色彩或位移，前提是已變更適當的 `ShadowEffect` 附加屬性值。 因為此覆寫會呼叫多次，所以請一律檢查變更的屬性。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用附加屬性將參數傳遞給效果，並在執行階段變更參數。 附加屬性可用來定義會回應執行階段屬性變更的效果參數。
 
