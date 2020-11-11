@@ -9,12 +9,12 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6c6092a73d2a32999423d0fceef5757a1a5bdd6e
-ms.sourcegitcommit: 7a7ab7e0cd7c29c7198ec4c8c70bae76a4e52127
+ms.openlocfilehash: 0870dd94c15f1bd94d5c6864b3d4caeb96349f32
+ms.sourcegitcommit: 83793378b28e8ef8624406309b4ecd41aa1a3a14
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94374843"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94503263"
 ---
 # <a name="no-locxamarinessentials-share"></a>Xamarin.Essentials：共用
 
@@ -84,7 +84,7 @@ await Share.RequestAsync(new ShareFileRequest
 
 ![發行前 API](~/media/shared/preview.png)
 
-共用多個檔案的使用方式與單一檔案不同，只在於一次傳送數個檔案的能力。
+共用多個檔案的使用方式與單一檔案不同，只是一次傳送數個檔案的能力：
 
 ```csharp
 var file1 = Path.Combine(FileSystem.CacheDirectory, "Attachment1.txt");
@@ -95,7 +95,7 @@ File.WriteAllText(file, "Content 2");
 await Share.RequestAsync(new ShareMultipleFilesRequest
 {
     Title = ShareFilesTitle,
-    Files = new ShareFile[] { new ShareFile(file1), new ShareFile(file2) },
+    Files = new ShareFile[] { new ShareFile(file1), new ShareFile(file2) }
 });
 ```
 
