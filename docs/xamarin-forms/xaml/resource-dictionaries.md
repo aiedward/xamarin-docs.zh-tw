@@ -6,17 +6,17 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/01/2020
+ms.date: 11/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: 90068096eced1fd1ddd2eb59b845eb4d5e41286f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 60d16183e1a2ea162c97bbf8b30636a5a9999204
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93368878"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590251"
 ---
 # <a name="no-locxamarinforms-resource-dictionaries"></a>Xamarin.Forms 資源字典
 
@@ -133,7 +133,7 @@ Xamarin.Forms應用程式只包含衍生自的類別 [`Application`](xref:Xamari
 
 ## <a name="stand-alone-resource-dictionaries"></a>獨立資源字典
 
-衍生自的類別 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 也可以位於個別的獨立檔案中。 然後，您可以在應用程式之間共用結果檔。
+衍生自的類別 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 也可以在獨立的 XAML 檔案中。 然後可以在應用程式之間共用 XAML 檔案。
 
 若要建立這類檔案，請將新的 **內容視圖** 或 **內容頁面** 專案加入至專案 (但不是只有 c # 檔案) 的 **內容****頁面** 。 刪除程式碼後端檔案，然後在 XAML 檔案中，將基類的名稱從或變更 [`ContentView`](xref:Xamarin.Forms.ContentView) [`ContentPage`](xref:Xamarin.Forms.ContentPage) 為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 此外，請從檔案 `x:Class` 的根標記中移除該屬性。
 
@@ -167,6 +167,17 @@ Xamarin.Forms應用程式只包含衍生自的類別 [`Application`](xref:Xamari
 ```
 
 在此範例中， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 包含單一資源，也就是類型的物件 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 **MyResourceDictionary** 可以藉由將其合併至另一個資源字典來取用。
+
+根據預設，連結器行為設定為 [連結所有元件] 時，連結器會從發行組建中移除獨立的 XAML 檔案。 若要確保獨立的 XAML 檔案保留在發行組建中：
+
+1. 將自訂 `Preserve` 屬性新增至包含獨立 XAML 檔案的元件。 如需詳細資訊，請參閱 [保留程式碼](~/ios/deploy-test/linker.md)。
+1. `Preserve`在元件層級設定屬性：
+
+    ```csharp
+    [assembly:Preserve(AllMembers = true)]
+    ```
+
+如需連結的詳細資訊，請參閱 [連結 Xamarin iOS 應用程式](~/ios/deploy-test/linker.md) 和 [Android 上的連結](~/android/deploy-test/linker.md)。
 
 ## <a name="merged-resource-dictionaries"></a>合併的資源字典
 
@@ -239,7 +250,9 @@ Xamarin.Forms應用程式只包含衍生自的類別 [`Application`](xref:Xamari
 - [資源字典 (範例) ](/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 - [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Xamarin.Forms 風格](~/xamarin-forms/user-interface/styles/index.md)
-- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary) \(英文\)
+- [連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)
+- [在 Android 上連結](~/android/deploy-test/linker.md)
+- [ResourceDictionary API](xref:Xamarin.Forms.ResourceDictionary)
 
 ## <a name="related-video"></a>相關影片
 

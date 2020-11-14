@@ -10,12 +10,12 @@ ms.date: 10/03/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 948a0194ef6b6d672f04737698991c835f1181fc
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 5aa20e29e22df9de1d6cdd6208e56fa2e0fe0325
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374117"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590346"
 ---
 # <a name="no-locxamarinforms-carouselview-emptyview"></a>Xamarin.Forms CarouselView EmptyView
 
@@ -69,19 +69,22 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
                Placeholder="Filter" />
     <CarouselView ItemsSource="{Binding Monkeys}">
         <CarouselView.EmptyView>
-            <StackLayout>
-                <Label Text="No results matched your filter."
-                       Margin="10,25,10,10"
-                       FontAttributes="Bold"
-                       FontSize="18"
-                       HorizontalOptions="Fill"
-                       HorizontalTextAlignment="Center" />
-                <Label Text="Try a broader filter?"
-                       FontAttributes="Italic"
-                       FontSize="12"
-                       HorizontalOptions="Fill"
-                       HorizontalTextAlignment="Center" />
-            </StackLayout>
+            <ContentView>
+                <StackLayout HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="CenterAndExpand">
+                    <Label Text="No results matched your filter."
+                           Margin="10,25,10,10"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           HorizontalOptions="Fill"
+                           HorizontalTextAlignment="Center" />
+                    <Label Text="Try a broader filter?"
+                           FontAttributes="Italic"
+                           FontSize="12"
+                           HorizontalOptions="Fill"
+                           HorizontalTextAlignment="Center" />
+                </StackLayout>
+            </ContentView>
         </CarouselView.EmptyView>
         <CarouselView.ItemTemplate>
             ...
@@ -90,18 +93,23 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 </StackLayout>
 ```
 
+在此範例中，已將多餘的 [`ContentView`](xref:Xamarin.Forms) 視為的根項目加入 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) 。 這是因為在內部， `EmptyView` 會新增至未提供版面配置任何內容的原生容器 Xamarin.Forms 。 因此，若要放置組成的視圖， `EmptyView` 您必須加入根配置，其子系是可在根配置內放置本身的版面配置。
+
 對等的 C# 程式碼為：
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
 CarouselView carouselView = new CarouselView
 {
-    EmptyView = new StackLayout
+    EmptyView = new ContentView
     {
-        Children =
+        Content = new StackLayout
         {
-            new Label { Text = "No results matched your filter.", ... },
-            new Label { Text = "Try a broader filter?", ... }
+            Children =
+            {
+                new Label { Text = "No results matched your filter.", ... },
+                new Label { Text = "Try a broader filter?", ... }
+            }
         }
     }
 };

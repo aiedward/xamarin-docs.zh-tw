@@ -11,12 +11,12 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 498e3b0bd2cb88df3e04dc19c66dbe671a8378dd
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: b560eedb1968db791c57620686c4ddb854153b1c
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374442"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590398"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>使用 Azure 通知中樞傳送及接收推播通知 Xamarin.Forms
 
@@ -142,8 +142,10 @@ public static class AppConstants
 1. 覆[寫](#override-firebasemessagingservice-to-handle-messages) `FirebaseMessagingService`處理訊息。
 1. [將](#add-incoming-notifications-to-the-xamarinforms-ui) 傳入通知新增至 Xamarin.Forms UI。
 
-> [!NOTE]
-> `GoogleServicesJson`組建動作是 NuGet 套件的一部分 `Xamarin.GooglePlayServices.Base` 。 Visual Studio 2019 會在啟動期間設定可用的組建動作。 如果您看不 `GoogleServicesJson` 到組建動作，請在安裝 NuGet 套件之後重新開機 Visual Studio 2019。
+`GoogleServicesJson`組建動作是 NuGet 套件的一部分 `Xamarin.GooglePlayServices.Base` 。 Visual Studio 2019 會在啟動期間設定可用的組建動作。 如果您看不 `GoogleServicesJson` 到組建動作，請在安裝 NuGet 套件之後重新開機 Visual Studio 2019。
+
+> [!IMPORTANT]
+> 在應用程式睡眠時傳遞推播通知，現在需要使用 AndroidX。 如需有關遷移至 AndroidX 的詳細資訊，請參閱[ Xamarin.Forms 中的 AndroidX 遷移](~/xamarin-forms/platform/android/androidx-migration.md)。
 
 ### <a name="configure-android-manifest"></a>設定 Android 資訊清單
 

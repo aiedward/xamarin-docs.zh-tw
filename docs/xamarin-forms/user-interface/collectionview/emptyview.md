@@ -6,16 +6,16 @@ ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
+ms.date: 11/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 831bef32a5f10a1383dc9e9c2e57f2f0e705b196
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: e689620a943719f769e897676dbd2628e5f1558c
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93366174"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590428"
 ---
 # <a name="no-locxamarinforms-collectionview-emptyview"></a>Xamarin.Forms CollectionView EmptyView
 
@@ -75,23 +75,28 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
             </DataTemplate>
         </CollectionView.ItemTemplate>
         <CollectionView.EmptyView>
-            <StackLayout>
-                <Label Text="No results matched your filter."
-                       Margin="10,25,10,10"
-                       FontAttributes="Bold"
-                       FontSize="18"
-                       HorizontalOptions="Fill"
-                       HorizontalTextAlignment="Center" />
-                <Label Text="Try a broader filter?"
-                       FontAttributes="Italic"
-                       FontSize="12"
-                       HorizontalOptions="Fill"
-                       HorizontalTextAlignment="Center" />
-            </StackLayout>
+            <ContentView>
+                <StackLayout HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="CenterAndExpand">
+                    <Label Text="No results matched your filter."
+                           Margin="10,25,10,10"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           HorizontalOptions="Fill"
+                           HorizontalTextAlignment="Center" />
+                    <Label Text="Try a broader filter?"
+                           FontAttributes="Italic"
+                           FontSize="12"
+                           HorizontalOptions="Fill"
+                           HorizontalTextAlignment="Center" />
+                </StackLayout>
+            </ContentView>
         </CollectionView.EmptyView>
     </CollectionView>
 </StackLayout>
 ```
+
+在此範例中，已將多餘的 [`ContentView`](xref:Xamarin.Forms) 視為的根項目加入 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) 。 這是因為在內部， `EmptyView` 會新增至未提供版面配置任何內容的原生容器 Xamarin.Forms 。 因此，若要放置組成的視圖， `EmptyView` 您必須加入根配置，其子系是可在根配置內放置本身的版面配置。
 
 對等的 C# 程式碼為：
 
@@ -99,12 +104,15 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 SearchBar searchBar = new SearchBar { ... };
 CollectionView collectionView = new CollectionView
 {
-    EmptyView = new StackLayout
+    EmptyView = new ContentView
     {
-        Children =
+        Content = new StackLayout
         {
-            new Label { Text = "No results matched your filter.", ... },
-            new Label { Text = "Try a broader filter?", ... }
+            Children =
+            {
+                new Label { Text = "No results matched your filter.", ... },
+                new Label { Text = "Try a broader filter?", ... }
+            }
         }
     }
 };

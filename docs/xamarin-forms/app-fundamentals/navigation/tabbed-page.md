@@ -6,16 +6,16 @@ ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/07/2019
+ms.date: 11/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d5c380a5ce6e76b0f9275b09d2943be479ef09e4
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: ef4c8717b419d1be4c4050f86b183385d6c10072
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370893"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590333"
 ---
 # <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.Forms TabbedPage
 
@@ -27,15 +27,17 @@ ms.locfileid: "93370893"
 
 在 iOS 上，索引標籤清單會出現在畫面的底部，詳細資料區域則出現在上方。 每個索引標籤都是由標題和圖示組成，其應為具有 Alpha 色板的 PNG 檔案。 在直向中，索引標籤列圖示會顯示在索引標籤標題上方。 在橫向，圖示和標題會並排顯示。 此外，您也可以根據裝置和方向顯示一般或精簡索引標籤列。 若有超過五個索引標籤，則會出現 [更多] 索引標籤，可用於存取其他索引標籤。 如需圖示需求的詳細資訊，請參閱 developer.apple.com 上的 [Tab 列圖示大小](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size) 。
 
-> [!TIP]
-> `TabbedRenderer`IOS 的可覆寫 `GetIcon` 方法可以用來從指定的來源載入索引標籤圖示。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示。 此外，也可以提供圖示的選取及未選取版本。
-
 在 Android 上，索引標籤清單會出現在畫面的頂端，而詳細資料區域則如下。 每個索引標籤都是由標題和圖示組成，其應為具有 Alpha 色板的 PNG 檔案。 不過，您可以使用平臺特定，將索引標籤移至畫面底部。 如果有五個以上的索引標籤，且索引標籤清單位於畫面底部，則會出現 *更多* 索引標籤，可用來存取其他索引標籤。 如需圖示需求的詳細資訊， [請參閱 material.io 上的索引](https://material.io/components/tabs/#) 標籤，並在 Developer.android.com 上 [支援不同的圖元密度](https://developer.android.com/training/multiscreen/screendensities) 。 如需將索引標籤移至畫面底部的詳細資訊，請參閱 [設定 TabbedPage 工具列位置和色彩](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)。
 
-> [!TIP]
-> `TabbedPageRenderer`For Android AppCompat 具有可覆寫 `SetTabIconImageSource` 的方法，可用來從自訂載入索引標籤圖示 `Drawable` 。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示，且可使用頂端與底部索引標籤列。
-
 在 [通用 Windows 平臺 (UWP) 上，索引標籤清單會出現在畫面的頂端，而詳細資料區域如下所示。 每個索引標籤都包含一個標題。 不過，您可以將圖示新增至具有平臺特定的每個索引標籤。 如需詳細資訊，請參閱 [Windows 上的 TabbedPage 圖示](~/xamarin-forms/platform/windows/tabbedpage-icons.md)。
+
+> [!TIP]
+> 可調整的向量圖形 (SVG) 檔案可以在上顯示為索引標籤圖示 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ：
+>
+> - IOS `TabbedRenderer` 類別具有可覆寫 `GetIcon` 的方法，可用來從指定的來源載入索引標籤圖示。 此外，您可以視需要提供已選取和未選取的圖示版本。
+> - Android AppCompat `TabbedPageRenderer` 類別具有可覆寫 `SetTabIconImageSource` 的方法，可用來從自訂載入索引標籤圖示 `Drawable` 。 或者，SVG 檔案可以轉換成可自動顯示的向量可繪製資源 Xamarin.Forms 。 如需將 SVG 檔案轉換成向量可繪製資源的詳細資訊，請參閱在 developer.android.com 上 [新增多密度向量圖形](https://developer.android.com/studio/write/vector-asset-studio) 。
+>
+> 如需詳細資訊，請參閱[ Xamarin.Forms TABBEDPAGE with SVG tab 圖示](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithsvgtabicons)。
 
 ## <a name="create-a-tabbedpage"></a>建立 TabbedPage
 
@@ -240,6 +242,7 @@ public class TabbedPageDemoPageCS : TabbedPage
 
 - [TabbedPageWithNavigationPage (Sampls)](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 - [TabbedPage (Sampls)](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
+- [具有 SVG 索引標籤圖示的 TabbedPage](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithsvgtabicons)
 - [階層式導覽](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
 - [頁面種類](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [TabbedPage API](xref:Xamarin.Forms.TabbedPage)

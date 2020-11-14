@@ -10,12 +10,12 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 945b6656895b4c148ac4b138af0c4922f9e3bc8f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 58d0da21c81586a2cee2268c5d2df668eab0515a
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93365681"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590294"
 ---
 # <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.Forms CarouselView 滾動
 
@@ -169,11 +169,11 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 定義 `ItemsUpdatingScrollMode` 由可系結屬性所支援的屬性。 這個屬性會取得或設定 `ItemsUpdatingScrollMode` 列舉值，這個值表示 `CarouselView` 新增專案時的滾動行為。 `ItemsUpdatingScrollMode` 列舉會定義下列成員：
 
-- `KeepItemsInView` 調整滾動位移，以在新增專案時保持顯示第一個可見的專案。
-- `KeepScrollOffset` 當新增專案時，會維護相對於清單開頭的捲軸位移。
-- `KeepLastItemInView` 調整滾動位移，以在新增專案時保持最後一個專案可見。
+- `KeepItemsInView` 在新增專案時，將清單中的第一個專案保留在顯示清單中。
+- `KeepScrollOffset` 確保新增專案時，會保留目前的滾動位置。
+- `KeepLastItemInView` 調整滾動位移，以在新增專案時，將清單中的最後一個專案保留在顯示清單中。
 
-屬性的預設值 `ItemsUpdatingScrollMode` 為 `KeepItemsInView` 。 因此，當新專案新增至 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 清單中的第一個可見專案時，仍會顯示。 為了確保新加入的專案一律會顯示在清單底部， `ItemsUpdatingScrollMode` 屬性應設定為 `KeepLastItemInView` ：
+屬性的預設值 `ItemsUpdatingScrollMode` 為 `KeepItemsInView` 。 因此，當新專案新增至 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 清單中的第一個專案時，仍會顯示。 若要確保在新增專案時顯示清單中的最後一個專案，請將屬性設定 `ItemsUpdatingScrollMode` 為 `KeepLastItemInView` ：
 
 ```xaml
 <CarouselView ItemsUpdatingScrollMode="KeepLastItemInView">

@@ -6,16 +6,16 @@ ms.assetid: A2C1BD59-1A16-4E26-A825-0338E2AF9E65
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/19/2020
+ms.date: 11/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c774b795fce50b32f01b50c29cb71dd5fd02585c
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4f60a48d2d8b43ea08ccc36401103d8987e48b1c
+ms.sourcegitcommit: f920ac0724f09e5c9b4f36be1995a5a17a6d9f95
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373519"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591043"
 ---
 # <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms 圖形：路徑標記語法
 
@@ -43,7 +43,13 @@ Xamarin.Forms 路徑標記語法可讓您在 XAML 中簡潔地指定路徑幾何
 在路徑標記語法中，命令之前或之後都不需要空格。 此外，兩個數字不需要以逗點或空白字元分隔，但只能在字串明確時才能達成。
 
 > [!TIP]
-> 路徑標記語言使用的語法與可擴充的向量圖形 (SVG) 映射路徑定義相同，因此可用於移植來自 SVG 格式的圖形。
+> 路徑標記語法與可擴充的向量圖形相容 (SVG) 映射路徑定義，因此可用於移植來自 SVG 格式的圖形。
+
+雖然路徑標記語法適用于 XAML 中的耗用量，但是可以透過叫用 `Geometry` 類別中的方法，將它轉換成程式碼中的物件 `ConvertFromInvariantString` `PathGeometryConverter` ：
+
+```csharp
+Geometry pathData = (Geometry)new PathGeometryConverter().ConvertFromInvariantString("M13.908992,16.207977 L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983Z");
+```
 
 ## <a name="move-command"></a>移動命令
 

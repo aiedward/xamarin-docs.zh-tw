@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/07/2018
+ms.date: 11/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05f5e79f9df59859c4514150ec591e0a96912ed5
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 676e0f062d3ed83cf433188e646f1e96f84a77cc
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93368774"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590252"
 ---
 # <a name="right-to-left-localization"></a>由右至左當地語系化
 
@@ -187,7 +187,10 @@ Xamarin. Android 應用程式可以透過修改 **>mainactivity** 類別以包�
 Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
 ```
 
-這種方法適用于一律需要由右至左配置的應用程式，而且會移除設定屬性的需求 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
+> [!NOTE]
+> 這種方法需要將應用程式設定為支援由右至左的版面配置。 如需詳細資訊，請參閱 [Android platform 安裝程式](#android)。
+
+這種方法適用于一律需要由右至左配置的應用程式，而且不需要設定 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 大部分控制項的屬性。 不過，某些控制項（例如 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ）不 `LayoutDirection` 會遵守屬性，而且仍然需要 `FlowDirection` 設定屬性。
 
 ## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Xamarin.University 的由右至左語言支援
 

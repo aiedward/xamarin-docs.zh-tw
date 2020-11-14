@@ -948,8 +948,6 @@ items:
             href: data-cloud/azure-services/azure-search.md
           - name: Azure Functions
             href: data-cloud/azure-services/azure-functions.md
-          - name: Azure SignalR Service
-            href: data-cloud/azure-services/azure-signalr.md
       - name: Azure 認知服務
         items:
           - name: 認知服務概觀

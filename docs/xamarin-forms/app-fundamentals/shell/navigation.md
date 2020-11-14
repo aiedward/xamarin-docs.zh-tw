@@ -10,12 +10,12 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb9d5243e5be4d99d741349564854c9c54e7a1bb
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f29bacf3546b2148a3d97c3c1ccaa44e02872be8
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373285"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590307"
 ---
 # <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
 
@@ -149,20 +149,24 @@ await Shell.Current.GoToAsync("//animals/monkeys");
 
 ### <a name="relative-routes"></a>相對路由
 
-將有效的相對 URI 指定為 `GoToAsync` 方法的引數也可以執行導覽。 路由系統將會嘗試比對 `ShellContent` 物件的 URI。 因此，如果應用程式中的所有路由都是唯一的，則僅能透過將唯一的路由名稱指定為相對 URI 來執行導覽：
+將有效的相對 URI 指定為 `GoToAsync` 方法的引數也可以執行導覽。 路由系統將會嘗試比對 `ShellContent` 物件的 URI。 因此，如果應用程式中的所有路由都是唯一的，則只能將唯一的路由名稱指定為相對 URI，藉以執行導覽。
+
+以下是支援的相對路由格式：
+
+| 格式 | 描述 |
+| --- | --- |
+| *route* | 系統會從目前的位置向上搜尋路由階層中指定的路由。 相符的頁面將會推送至導覽堆疊。 |
+| /*路線* | 路由階層將從指定的路由搜尋，從目前的位置往下搜尋。 相符的頁面將會推送至導覽堆疊。 |
+| //*路線* | 系統會從目前的位置向上搜尋路由階層中指定的路由。 相符的頁面將會取代流覽堆疊。 |
+| ///*路線* | 路由階層將會從目前的位置向下搜尋指定的路由。 相符的頁面將會取代流覽堆疊。 |
+
+下列範例會流覽至路由的頁面 `monkeydetails` ：
 
 ```csharp
 await Shell.Current.GoToAsync("monkeydetails");
 ```
 
-此範例會導覽至 `monkeydetails` 路由的頁面。
-
-此外，支援下列相對路徑格式：
-
-| 格式 | 描述 |
-| --- | --- |
-| //*路線* | 將會從目前顯示的路由向上搜尋路由階層中指定的路由。 |
-| ///*路線* | 將會從目前顯示的路由向下搜尋路由階層中指定的路由。 |
+在此範例中， `monkeyDetails` 會搜尋階層中的路由，直到找到相符的頁面為止。 找到頁面時，會將其推送至導覽堆疊。
 
 #### <a name="contextual-navigation"></a>關聯式導覽
 
@@ -185,13 +189,13 @@ bears
 await Shell.Current.GoToAsync("..");
 ```
 
-具有 ".." 的回溯導覽也可以與路由結合，如下所示：
+具有 ".." 的回溯導覽也可以與路由結合：
 
 ```csharp
 await Shell.Current.GoToAsync("../route");
 ```
 
-在此範例中，整體效果是向後導覽，然後流覽至指定的路由。
+在此範例中，會執行向後導覽，然後流覽至指定的路由。
 
 > [!IMPORTANT]
 > 只有在向後導覽會將您放在路由階層中的目前位置，以流覽至指定的路由時，才可以向後導覽至指定的路由。
@@ -202,10 +206,20 @@ await Shell.Current.GoToAsync("../route");
 await Shell.Current.GoToAsync("../../route");
 ```
 
-在此範例中，整體效果是向後導覽兩次，然後流覽至指定的路由。
+在此範例中，向後流覽會執行兩次，然後流覽至指定的路由。
+
+此外，您可以在向後導覽時，透過查詢屬性傳遞資料：
+
+```csharp
+await Shell.Current.GoToAsync($"..?parameterToPassBack={parameterValueToPassBack}");
+```
+
+在此範例中，會執行向後導覽，並將查詢參數值傳遞至上一頁的查詢參數。
 
 > [!NOTE]
-> 使用 "..." 流覽時，也可以傳遞資料。 如需詳細資訊，請參閱 [傳遞資料](#pass-data)。
+> 查詢參數可以附加至任何回溯導覽要求。
+
+如需在流覽時傳遞資料的詳細資訊，請參閱 [傳遞資料](#pass-data)。
 
 ### <a name="invalid-routes"></a>無效的路由
 
@@ -240,11 +254,27 @@ await Shell.Current.GoToAsync("../../route");
 - `OnPushAsync`，傳回 `Task`，會在呼叫 `INavigation.PushAsync` 時呼叫。
 - `OnRemovePage`，會在呼叫 `INavigation.RemovePage` 時呼叫。
 
+例如，下列程式碼範例顯示如何覆寫 `OnRemovePage` 方法：
+
+```csharp
+public class MyTab : Tab
+{
+    protected override void OnRemovePage(Page page)
+    {
+        base.OnRemovePage(page);
+
+        // Custom logic
+    }
+}
+```
+
+`MyTab` 然後，您可以在 Shell 視覺階層中使用物件，而不是 `Tab` 物件。
+
 ## <a name="navigation-events"></a>導覽事件
 
 `Shell` 類別會定義 `Navigating` 事件，當導覽即將執行時，可能會因為程式設計導覽或使用者互動而引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatingEventArgs` 物件會提供下列屬性：
 
-| 屬性 | 類型 | 說明 |
+| 屬性 | 類型 | 描述 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
 | `Source` | `ShellNavigationSource` | 發生導覽的類型。 |
@@ -256,7 +286,7 @@ await Shell.Current.GoToAsync("../../route");
 
 `Shell` 類別也會定義 `Navigated` 事件，導覽完成時會引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatedEventArgs` 物件會提供下列屬性：
 
-| 屬性 | 類型 | 說明 |
+| 屬性 | 類型 | 描述 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
 | `Previous`| `ShellNavigationState` | 上一頁的 URI。 |

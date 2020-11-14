@@ -10,12 +10,12 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 62bfb13f3aa4c09da76eca6723a34e6e8a72853d
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 1ba44903f20d0431c27f2d49429b2feb9c9a51e0
+ms.sourcegitcommit: f920ac0724f09e5c9b4f36be1995a5a17a6d9f95
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373727"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591056"
 ---
 # <a name="no-locxamarinforms-shapes-path"></a>Xamarin.Forms 圖形：路徑
 
@@ -56,9 +56,6 @@ ms.locfileid: "93373727"
 `Data`字串的開頭是 move 命令，它是由所表示 `M` ，它會建立路徑的絕對起始點。 `L` 這是 line 命令，它會從起點到指定的結束點建立直線。 `Z` 是 close 命令，它會建立將目前點連接到起點的線。 結果為三角形：
 
 ![路徑三角形](path-images/triangle.png "路徑三角形")
-
-> [!NOTE]
-> 路徑標記語法只適用于 XAML。
 
 如需路徑標記語法的詳細資訊，請參閱[ Xamarin.Forms 路徑標記語法](path-markup-syntax.md)。
 

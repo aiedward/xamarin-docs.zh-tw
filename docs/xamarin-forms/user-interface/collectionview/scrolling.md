@@ -10,12 +10,12 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1872f86c0e7be6ab07b4e962d17be7d8030c1d96
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 557c82ac9318faaef5628a15989af2982a7f5ba4
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373155"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590411"
 ---
 # <a name="no-locxamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView 滾動
 
@@ -132,7 +132,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 
 此範例程式碼會產生將專案滾動至視野所需的最小滾動：
 
-[![螢幕擷取畫面：在 iOS 和 Android 上，具有捲軸專案的 CollectionView 垂直清單](scrolling-images/scrolltoposition-makevisible.png "具有滾動專案的 CollectionView 垂直清單")](scrolling-images/scrolltoposition-makevisible-large.png#lightbox "具有滾動專案的 CollectionView 垂直清單")
+[![螢幕擷取畫面：在 iOS 和 Android 上，ScrollToPosition MakeVisible 的 CollectionView 垂直清單](scrolling-images/scrolltoposition-makevisible.png "具有滾動專案的 CollectionView 垂直清單")](scrolling-images/scrolltoposition-makevisible-large.png#lightbox "具有滾動專案的 CollectionView 垂直清單")
 
 > [!NOTE]
 > [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)如果 `position` 呼叫方法時未指定引數，預設會使用成員 `ScrollTo` 。
@@ -147,7 +147,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 此範例程式碼會導致專案被滾動到視圖的開頭：
 
-[![螢幕擷取畫面：在 iOS 和 Android 上，具有捲軸專案的 CollectionView 垂直清單](scrolling-images/scrolltoposition-start.png "具有滾動專案的 CollectionView 垂直清單")](scrolling-images/scrolltoposition-start-large.png#lightbox "具有滾動專案的 CollectionView 垂直清單")
+[![螢幕擷取畫面：在 iOS 和 Android 上，使用 ScrollToPosition 的 CollectionView 垂直清單](scrolling-images/scrolltoposition-start.png "具有滾動專案的 CollectionView 垂直清單")](scrolling-images/scrolltoposition-start-large.png#lightbox "具有滾動專案的 CollectionView 垂直清單")
 
 ### <a name="center"></a>Center
 
@@ -159,7 +159,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Center);
 
 此範例程式碼會導致專案被滾動到視圖的中心：
 
-[![螢幕擷取畫面：在 iOS 和 Android 上，具有捲軸專案的 CollectionView 垂直清單](scrolling-images/scrolltoposition-center.png "具有滾動專案的 CollectionView 垂直清單")](scrolling-images/scrolltoposition-center-large.png#lightbox "具有滾動專案的 CollectionView 垂直清單")
+[![螢幕擷取畫面：在 iOS 和 Android 上，使用 ScrollToPosition 的 CollectionView 垂直清單](scrolling-images/scrolltoposition-center.png "具有滾動專案的 CollectionView 垂直清單")](scrolling-images/scrolltoposition-center-large.png#lightbox "具有滾動專案的 CollectionView 垂直清單")
 
 ### <a name="end"></a>結束
 
@@ -171,17 +171,17 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 此範例程式碼會導致專案被滾動到視圖結尾：
 
-[![螢幕擷取畫面：在 iOS 和 Android 上，具有捲軸專案的 CollectionView 垂直清單](scrolling-images/scrolltoposition-end.png "具有滾動專案的 CollectionView 垂直清單")](scrolling-images/scrolltoposition-end-large.png#lightbox "具有滾動專案的 CollectionView 垂直清單")
+[![螢幕擷取畫面： iOS 和 Android 上有 ScrollToPosition 的 CollectionView 垂直清單](scrolling-images/scrolltoposition-end.png "具有滾動專案的 CollectionView 垂直清單")](scrolling-images/scrolltoposition-end-large.png#lightbox "具有滾動專案的 CollectionView 垂直清單")
 
 ## <a name="control-scroll-position-when-new-items-are-added"></a>在新增專案時控制捲軸位置
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 定義 `ItemsUpdatingScrollMode` 由可系結屬性所支援的屬性。 這個屬性會取得或設定 `ItemsUpdatingScrollMode` 列舉值，這個值表示 `CollectionView` 新增專案時的滾動行為。 `ItemsUpdatingScrollMode` 列舉會定義下列成員：
 
-- `KeepItemsInView` 調整滾動位移，以在新增專案時保持顯示第一個可見的專案。
-- `KeepScrollOffset` 當新增專案時，會維護相對於清單開頭的捲軸位移。
-- `KeepLastItemInView` 調整滾動位移，以在新增專案時保持最後一個專案可見。
+- `KeepItemsInView` 在新增專案時，將清單中的第一個專案保留在顯示清單中。
+- `KeepScrollOffset` 確保新增專案時，會保留目前的滾動位置。
+- `KeepLastItemInView` 調整滾動位移，以在新增專案時，將清單中的最後一個專案保留在顯示清單中。
 
-屬性的預設值 `ItemsUpdatingScrollMode` 為 `KeepItemsInView` 。 因此，當新專案新增至 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 清單中的第一個可見專案時，仍會顯示。 為了確保新加入的專案一律會顯示在清單底部， `ItemsUpdatingScrollMode` 屬性應設定為 `KeepLastItemInView` ：
+屬性的預設值 `ItemsUpdatingScrollMode` 為 `KeepItemsInView` 。 因此，當新專案新增至 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 清單中的第一個專案時，仍會顯示。 若要確保在新增專案時顯示清單中的最後一個專案，請將屬性設定 `ItemsUpdatingScrollMode` 為 `KeepLastItemInView` ：
 
 ```xaml
 <CollectionView ItemsUpdatingScrollMode="KeepLastItemInView">
