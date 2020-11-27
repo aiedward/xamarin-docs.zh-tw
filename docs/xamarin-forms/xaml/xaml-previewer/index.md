@@ -11,19 +11,20 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dff01728c986b23e59af702edb3bfd8c74ad744a
-ms.sourcegitcommit: d2aa3a8bf9a60b6708db55b10b0c6893c06d3256
+ms.openlocfilehash: 5af5846c77c5cd63e14494c25e5dc04ebcea4b7d
+ms.sourcegitcommit: f90e908a72cf616ee303c2751729b62f11654379
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93331444"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96299955"
 ---
 # <a name="xaml-previewer-for-no-locxamarinforms"></a>的 XAML 預覽程式 Xamarin.Forms
 
 _查看您 Xamarin.Forms 鍵入時所呈現的版面配置_
 
 > [!WARNING]
-> 預覽 XAML 的建議方式是現在有 **[XAML 熱重新載入](~/xamarin-forms/xaml/hot-reload.md)** 。
+> XAML 預覽器將開始在 Visual Studio 2019 16.8 版和 Visual Studio for Mac 8.8 版中推出。
+> 預覽 XAML 的建議方式是現在有 **[XAML 熱重新載入](~/xamarin-forms/xaml/hot-reload.md)**。
 
 ## <a name="overview"></a>概觀
 
@@ -53,7 +54,7 @@ XAML 預覽程式會顯示您的 Xamarin.Forms xaml 頁面在 iOS 和 Android �
 
 #### <a name="enable-or-disable-the-xaml-previewer"></a>啟用或停用 XAML 預覽器
 
-您可以選取 [ **預設 XML 編輯器** ] 作為 **預設的 XAML 編輯器** ，以在 [ **工具] > 選項 > Xamarin > Xamarin.Forms xaml 預覽** 程式] 對話方塊中關閉 xaml 預覽程式。 這也會關閉 [檔大綱]、[屬性面板] 和 [XAML 工具箱]。 若要將 XAML 預覽程式和這些工具重新開啟，請將您的 **預設 XAML 編輯器** 變更為 **Xamarin.Forms 預覽** 程式。
+您可以選取 [**預設 XML 編輯器**] 作為 **預設的 XAML 編輯器**，以在 [**工具] > 選項 > Xamarin > Xamarin.Forms xaml 預覽** 程式] 對話方塊中關閉 xaml 預覽程式。 這也會關閉 [檔大綱]、[屬性面板] 和 [XAML 工具箱]。 若要將 XAML 預覽程式和這些工具重新開啟，請將您的 **預設 XAML 編輯器** 變更為 **Xamarin.Forms 預覽** 程式。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -69,7 +70,7 @@ XAML 預覽程式會顯示您的 Xamarin.Forms xaml 頁面在 iOS 和 Android �
 
 #### <a name="enable-or-disable-the-xaml-previewer"></a>啟用或停用 XAML 預覽器
 
-您可以選取 [ **預設 XML 編輯器** ] 做為 **預設的 xaml 編輯器** ，在 **Visual Studio > 喜好設定 > 文字編輯器 > XAML** ] 對話方塊中關閉 xaml 預覽程式。 這也會關閉 [檔大綱]、[屬性面板] 和 [XAML 工具箱]。 若要將 XAML 預覽程式和這些工具重新開啟，請將您的 **預設 XAML 編輯器** 變更為 **Xamarin.Forms 預覽** 程式。
+您可以選取 [**預設 XML 編輯器**] 做為 **預設的 xaml 編輯器**，在 **Visual Studio > 喜好設定 > 文字編輯器 > XAML** ] 對話方塊中關閉 xaml 預覽程式。 這也會關閉 [檔大綱]、[屬性面板] 和 [XAML 工具箱]。 若要將 XAML 預覽程式和這些工具重新開啟，請將您的 **預設 XAML 編輯器** 變更為 **Xamarin.Forms 預覽** 程式。
 
 ::: zone-end
 
@@ -78,7 +79,7 @@ XAML 預覽程式會顯示您的 Xamarin.Forms xaml 頁面在 iOS 和 Android �
 [預覽] 窗格頂端的選項如下：
 
 * **Android** –顯示 android 版本的畫面
-* **ios** –顯示 ios 版的螢幕 ( *注意：如果您在 Windows 上使用 Visual Studio，則必須將 [與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md) ，才能使用此模式* ) 
+* **ios** –顯示 ios 版的螢幕 (*注意：如果您在 Windows 上使用 Visual Studio，則必須將 [與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md) ，才能使用此模式*) 
 * Android 或 iOS 裝置的 **裝置** 下拉式清單，包括解析度和螢幕大小
 * 直向 **(圖示)** –使用預覽的直向方向
 * **橫向 (圖示)** –使用預覽的橫向方向

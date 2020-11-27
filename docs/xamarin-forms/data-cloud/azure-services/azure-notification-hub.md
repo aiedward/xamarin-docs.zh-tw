@@ -12,11 +12,11 @@ no-loc:
 - Xamarin.Essentials
 - Firebase
 ms.openlocfilehash: b560eedb1968db791c57620686c4ddb854153b1c
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.sourcegitcommit: f90e908a72cf616ee303c2751729b62f11654379
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590398"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96299968"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>使用 Azure 通知中樞傳送及接收推播通知 Xamarin.Forms
 
@@ -44,7 +44,7 @@ ms.locfileid: "94590398"
 1. 定義範例中使用的 Android 套件名稱 `com.xamarin.notifysample` ，例如。
 1. `google-services.json`從主控台下載 Firebase 。 您將在未來的步驟中，將此檔案新增至 Android 應用程式。
 1. 建立 Azure 通知中樞實例，並為其命名。 此文章和範例會用 `xdocsnotificationhub` 來作為中樞名稱。
-1. 複製 FCM **伺服器金鑰** ，並將它儲存為 **Google (GCM/FCM)** 在 Azure 通知中樞內的 **API 金鑰** 。
+1. 複製 FCM **伺服器金鑰**，並將它儲存為 **Google (GCM/FCM)** 在 Azure 通知中樞內的 **API 金鑰**。
 
 下列螢幕擷取畫面顯示 Azure 通知中樞中的 Google platform 設定：
 
@@ -122,7 +122,7 @@ public static class AppConstants
 自訂中的下列值 `AppConstants` ，以將範例應用程式連接到您的 Azure 通知中樞：
 
 * `NotificationHubName`：使用您在 Azure 入口網站中建立的 Azure 通知中樞名稱。
-* `ListenConnectionString`：在 Azure 通知中樞的 [ **存取原則** ] 下找到此值。
+* `ListenConnectionString`：在 Azure 通知中樞的 [ **存取原則**] 下找到此值。
 
 下列螢幕擷取畫面顯示這些值位於 Azure 入口網站中的位置：
 
