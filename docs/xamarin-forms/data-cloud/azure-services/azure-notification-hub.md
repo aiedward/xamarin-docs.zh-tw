@@ -11,12 +11,12 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: b560eedb1968db791c57620686c4ddb854153b1c
-ms.sourcegitcommit: f90e908a72cf616ee303c2751729b62f11654379
+ms.openlocfilehash: 2d32d6bab2bf514894689c3e67f8b49c882ece6d
+ms.sourcegitcommit: 8fa0cb9ccbc107d697aa5b9113a4e5d1e75d6eb9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2020
-ms.locfileid: "96299968"
+ms.locfileid: "96303070"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>使用 Azure 通知中樞傳送及接收推播通知 Xamarin.Forms
 
@@ -459,10 +459,7 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
         {
             if (errorCallback != null)
             {
-                if (errorCallback != null)
-                {
-                    Debug.WriteLine($"RegisterTemplateAsync error: {errorCallback}");
-                }
+                Debug.WriteLine($"RegisterTemplateAsync error: {errorCallback}");
             }
         });
     });

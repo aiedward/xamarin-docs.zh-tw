@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e997ae3137110e18df9eed90ef07bfa2703e8088
-ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
+ms.openlocfilehash: f98f0cdea812a91bbe6caf1e248e468d9a960ac6
+ms.sourcegitcommit: 8fa0cb9ccbc107d697aa5b9113a4e5d1e75d6eb9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629596"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96303041"
 ---
 # <a name="no-locxamarinessentials-file-picker"></a>Xamarin.Essentials：檔案選擇器
 
@@ -110,6 +110,21 @@ var options = new PickOptions
 ## <a name="pick-multiple-files"></a>挑選多個檔案
 
 如果您希望使用者挑選多個檔案，您可以呼叫 `FilePicker.PickMultipleAsync()` 方法。 它也會將 `PickOptions` 作為參數來指定其他資訊。 結果與相同 `PickAsync` ，但不會 `FileResult` `IEnumerable<FileResult>` 傳回可反復查看的單一。
+
+
+## <a name="platform-differences"></a>平台差異
+
+# <a name="android"></a>[Android](#tab/android)
+
+- 所產生檔案的 URI 可能不會在重新開機之間保存。
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+無平台差異。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+無平台差異。
 
 ## <a name="api"></a>API
 
