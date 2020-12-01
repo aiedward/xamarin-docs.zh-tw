@@ -7,19 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/31/2018
-ms.openlocfilehash: 3a58fc58b429a8a16437773289cd4d7286bbff81
-ms.sourcegitcommit: d2aa3a8bf9a60b6708db55b10b0c6893c06d3256
+ms.openlocfilehash: 07226b22243f3d463ce2630e1f12a94f83ddd64a
+ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93331477"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96439442"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>使用 iOS 設計工具建立使用者介面
 
 _Xamarin Designer for iOS 是適用于 iOS 分鏡腳本的視覺化設計工具，以及與 Visual Studio for Mac 和 Visual Studio 完全整合的 Interface Builder 格式。IOS 設計工具會維持與分鏡腳本和 xib 格式的完整相容性，如此一來，除了 Xcode 的 Interface Builder 之外，還可以在 Visual Studio for Mac 或 Visual Studio 中編輯檔案。此外，Xamarin Designer for iOS 也支援像是在設計階段于編輯器中轉譯的自訂控制項等 advanced 功能。_
 
 > [!WARNING]
-> 現在，建立 iOS 使用者介面的建議方式是直接在執行 Xcode 的 Mac 上執行。 您可以在 [這裡找到](~/ios/user-interface/ios-use-xcode.md)詳細資訊。
+> IOS 設計工具將開始在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 8.8 版中推出。
+> 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 的 Mac 上執行。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](../storyboards/index.md)。 
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 

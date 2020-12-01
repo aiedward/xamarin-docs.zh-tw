@@ -1,53 +1,57 @@
 ---
 title: Xamarin Designer for iOS 中的自訂控制項
-description: Xamarin Designer for iOS 支援轉譯您的專案中建立的自訂控制項，或從「Xamarin 元件存放區」之類的外部來源參考。
+description: Xamarin Designer for iOS 支援轉譯在您的專案中建立的自訂控制項，或從像是 Xamarin 元件存放區的外部來源參考。
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 5c8a852a37e2cd5c679283bc4d078f19e6e5d241
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 593f03588d691071d4a231d9ed788391530d5608
+ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939681"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96439419"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 中的自訂控制項
 
-_Xamarin Designer for iOS 支援轉譯您的專案中建立的自訂控制項，或從「Xamarin 元件存放區」之類的外部來源參考。_
+_Xamarin Designer for iOS 支援轉譯在您的專案中建立的自訂控制項，或從像是 Xamarin 元件存放區的外部來源參考。_
 
-Xamarin Designer for iOS 是一種功能強大的工具，可讓您視覺化應用程式的使用者介面，並為大部分的 iOS 視圖和視圖控制器提供 WYSIWYG 編輯支援。 您的應用程式可能也會包含自訂控制項，以擴充內建于 iOS 中的控制項。 如果這些自訂控制項是以幾個指導方針寫成，則 iOS 設計工具也可以轉譯它們，以提供更豐富的編輯體驗。 本檔將探討這些指導方針。
+> [!WARNING]
+> IOS 設計工具將開始在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 8.8 版中推出。
+> 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 的 Mac 上執行。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](../storyboards/index.md)。 
 
-## <a name="requirements"></a>需求
+Xamarin Designer for iOS 是一種功能強大的工具，可將應用程式的使用者介面視覺化，並針對大部分的 iOS 視圖和視圖控制器提供 WYSIWYG 編輯支援。 您的應用程式也可能包含可延伸內建至 iOS 的自訂控制項。 如果在撰寫這些自訂控制項時，有一些指導方針，也可以由 iOS 設計工具來呈現，以提供更豐富的編輯體驗。 本檔將探討這些指導方針。
+
+## <a name="requirements"></a>規格需求
 
 符合下列所有需求的控制項將會在設計介面上呈現：
 
-1. 它是[UIView](xref:UIKit.UIView)或[UIViewController](xref:UIKit.UIViewController)的直接或間接子類別。 其他[NSObject](xref:Foundation.NSObject)子類別會顯示為設計介面上的圖示。
-2. 它有[RegisterAttribute](xref:Foundation.RegisterAttribute)可將它公開給目標-C。
-3. 它具有[必要的 IntPtr 函數](~/ios/internals/api-design/index.md)。
-4. 它會執行[IComponent](xref:System.ComponentModel.IComponent)介面，或將[DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute)設定為 True。
+1. 它是  [UIView](xref:UIKit.UIView) 或  [UIViewController](xref:UIKit.UIViewController)的直接或間接子類別。 其他 [NSObject](xref:Foundation.NSObject) 子類別會顯示為設計介面上的圖示。
+2. 它有  [RegisterAttribute](xref:Foundation.RegisterAttribute) 可將它公開至目標 C。
+3. 它有  [必要的 IntPtr 函數](~/ios/internals/api-design/index.md)。
+4. 它會實 [IComponent](xref:System.ComponentModel.IComponent) 介面，或將 [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute) 設定為 True。
 
-當程式碼中定義的控制項符合上述需求時，就會出現在設計工具中，當其包含的專案是針對模擬器進行編譯時。 根據預設，所有自訂控制項都會出現在 [**工具箱**] 的 [**自訂群組件**] 區段中。 不過， [CategoryAttribute](xref:System.ComponentModel.CategoryAttribute)可以套用至自訂控制項的類別，以指定不同的區段。
+在程式碼中所定義符合上述需求的控制項，會在其包含的專案為模擬器進行編譯時出現在設計工具中。 根據預設，所有自訂控制項都會出現在 [**工具箱**] 的 [**自訂群組件**] 區段中。 不過， [CategoryAttribute](xref:System.ComponentModel.CategoryAttribute) 可以套用至自訂控制項的類別，以指定不同的區段。
 
 設計工具不支援載入協力廠商的目標 C 程式庫。
 
 ## <a name="custom-properties"></a>自訂屬性
 
-如果符合下列條件，自訂控制項所宣告的屬性就會出現在 [屬性] 面板中：
+如果符合下列條件，自訂控制項所宣告的屬性將會出現在 [屬性] 面板中：
 
 1. 屬性具有公用 getter 和 setter。
-1. 屬性的[ExportAttribute](xref:Foundation.ExportAttribute)和[BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)設定為 True。
-1. 屬性類型為數數值型別、列舉類型、字串、bool、 [SizeF](xref:System.Drawing.SizeF)、 [UIColor](xref:UIKit.UIColor)或[UIImage](xref:UIKit.UIImage)。 這份支援的類型清單可能會在未來擴充。
+1. 屬性的  [ExportAttribute](xref:Foundation.ExportAttribute) 和  [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) 設定為 True。
+1. 屬性類型為數數值型別、列舉類型、字串、bool、 [SizeF](xref:System.Drawing.SizeF)、 [UIColor](xref:UIKit.UIColor)或 [UIImage](xref:UIKit.UIImage)。 未來可能會擴充此支援類型清單。
 
-屬性也可以使用[DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute)裝飾，以指定在 [屬性] 面板中顯示的標籤。
+屬性也可以使用 [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute) 裝飾，以指定顯示在屬性面板中的標籤。
 
 ## <a name="initialization"></a>初始化
 
-針對子 `UIViewController` 類別，您應該使用[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)方法來執行與您在設計工具中建立之瀏覽器相依的程式碼。
+針對子 `UIViewController` 類別，您應該針對相依于您在設計工具中建立之視圖的程式碼使用 [ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) 方法。
 
-對於 `UIView` 和其他子 `NSObject` 類別， [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)方法是在從配置檔案載入自訂控制項之後，為其執行初始化的建議位置。 這是因為在執行控制項的函式時，將不會設定在屬性面板中設定的任何自訂屬性，但會在呼叫之前設定它們 `AwakeFromNib` ：
+針對 `UIView` 和其他子 `NSObject` 類別， [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib) 方法是在從配置檔案載入自訂控制項之後，執行自訂控制項初始化的建議位置。 這是因為在執行控制項的函式時，將不會設定屬性面板中設定的任何自訂屬性，但是在呼叫之前會先設定它們 `AwakeFromNib` ：
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -62,7 +66,7 @@ public class CustomView : UIView {
 }
 ```
 
-如果控制項也是設計為直接從程式碼建立，您可能會想要建立具有一般初始化程式碼的方法，如下所示：
+如果控制項也設計為直接從程式碼建立，您可能會想要建立具有一般初始化程式碼的方法，如下所示：
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -91,7 +95,7 @@ public class CustomView : UIView {
 
 ## <a name="property-initialization-and-awakefromnib"></a>屬性初始化和 AwakeFromNib
 
-請注意，在自訂群組件中初始化可設計屬性的時機和位置，以確保不會覆寫 iOS 設計工具內已設定的值。 例如，請採用下列程式碼：
+請小心在自訂群組件中將可設計的屬性初始化的時機和位置，不要覆寫在 iOS 設計工具內設定的值。 例如，請採用下列程式碼：
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -122,23 +126,23 @@ public class CustomView : UIView {
 }
 ```
 
-`CustomView`元件 `Counter` 會公開可由開發人員在 iOS 設計工具中設定的屬性。 不過，不論在設計工具內設定的值為何，屬性的值 `Counter` 一律會是零（0）。 原因如下：
+`CustomView`元件 `Counter` 會公開可由開發人員在 iOS 設計工具內設定的屬性。 不過，無論在設計工具內設定的值為何，屬性的值 `Counter` 一律會是零 (0) 。 原因如下：
 
-- 的實例會從分鏡腳本檔案 `CustomControl` 中放大。
-- 在 iOS 設計工具中修改的任何屬性（例如，將的值設定 `Counter` 為二（2））都是如此。
-- `AwakeFromNib`會執行方法，並對元件的方法進行呼叫 `Initialize` 。
-- 在 `Initialize` 屬性值中，將 `Counter` 會重設為零（0）。
+- 的實例是從分鏡腳本檔案  `CustomControl` 放大的。
+- 在 iOS 設計工具中修改的任何屬性都會設定 (例如，將的值設定  `Counter` 為兩個 (2) ，例如) 。
+- `AwakeFromNib`方法會執行，並對元件的方法進行呼叫 `Initialize` 。
+- 在  `Initialize` 屬性值內，  `Counter` 會將屬性的值重設為零 (0) 。
 
-若要修正上述情況，請在 `Counter` 其他地方初始化屬性（例如在元件的函式中），或不要覆寫 `AwakeFromNib` 方法，並 `Initialize` 在元件不需要在其其程式的目前正在處理的範圍以外進行進一步初始化時呼叫。
+若要修正上述狀況，請 `Counter` 在其他地方初始化屬性 (例如在元件的函式中) 或不覆寫 `AwakeFromNib` 方法，並呼叫 `Initialize` 元件是否不需要在目前由其函式處理的範圍之外進行任何初始化。
 
 ## <a name="design-mode"></a>設計模式
 
-在設計介面上，自訂控制項必須遵守幾個限制：
+在設計介面上，自訂控制項必須遵守一些限制：
 
-- 應用程式套件組合資源無法在設計模式中使用。 透過[UIImage 方法](xref:UIKit.UIImage)載入時，可以使用影像。
+- 應用程式套件組合資源無法在設計模式中使用。 透過  [UIImage 方法](xref:UIKit.UIImage) 載入時，可以使用映射。
 - 非同步作業（例如 web 要求）不應該在設計模式中執行。 設計介面不支援動畫或任何其他非同步更新至控制項的 UI。
 
-自訂控制項可以執行[IComponent](xref:System.ComponentModel.IComponent) ，並使用[DesignMode](xref:System.ComponentModel.ISite.DesignMode)屬性來檢查它是否位於設計介面上。 在此範例中，標籤會在設計介面上顯示「設計模式」，並在執行時間顯示「執行時間」：
+自訂控制項可以執行 [IComponent](xref:System.ComponentModel.IComponent) ，並使用 [DesignMode](xref:System.ComponentModel.ISite.DesignMode) 屬性來檢查它是否在設計介面上。 在此範例中，標籤會在設計介面上顯示「設計模式」，並在執行時間顯示「執行時間」：
 
 ```csharp
 [Register ("DesignerAwareLabel")]
@@ -163,27 +167,27 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-在 `Site` `null` 嘗試存取其任何成員之前，您應該一律檢查的屬性。 如果 `Site` 為 `null` ，則可以放心假設控制項不是在設計工具中執行。
-在設計模式中，會在控制項的「函式」 `Site` 執行之後和 `AwakeFromNib` 呼叫之前設定。
+在 `Site` `null` 嘗試存取其任何成員之前，您應該一律先檢查屬性是否存在。 如果 `Site` 為 `null` ，則假設控制項不是在設計工具中執行，就是安全的。
+在設計模式中，將會在 `Site` 控制項的函式已執行，而且在呼叫之前設定 `AwakeFromNib` 。
 
 ## <a name="debugging"></a>偵錯
 
-符合上述需求的控制項將會顯示在 [工具箱] 中，並在介面上呈現。
-如果未轉譯控制項，請檢查控制項中的 bug 或其相依性的其中之一。
+符合上述需求的控制項將會顯示在 [工具箱] 中，並呈現在介面上。
+如果未轉譯控制項，請檢查控制項或其中一個相依性的 bug。
 
-設計介面通常可以攔截個別控制項所擲回的例外狀況，同時繼續呈現其他控制項。 錯誤的控制項會取代成紅色的預留位置，而您可以按一下驚嘆號圖示來查看例外狀況追蹤：
+設計介面通常可以捕捉個別控制項擲回的例外狀況，同時繼續呈現其他控制項。 錯誤的控制項會以紅色預留位置取代，而且您可以按一下驚嘆號圖示來查看例外狀況追蹤：
 
  ![做為紅色預留位置和例外狀況詳細資料的錯誤控制項](ios-designable-controls-overview-images/exception-box.png)
 
-如果控制項有可用的偵錯工具符號，追蹤就會有檔案名和行號。
-按兩下堆疊追蹤中的一行，會跳至原始程式碼中的那一行。
+如果控制項可使用 debug 符號，追蹤將會有檔案名和行號。
+按兩下堆疊追蹤中的行，將會跳到原始程式碼中的那一行。
 
-如果設計工具無法隔離錯誤的控制項，則會在設計介面的頂端顯示警告訊息：
+如果設計工具無法隔離錯誤的控制項，設計介面頂端會出現一則警告訊息：
 
  ![設計介面頂端的警告訊息](ios-designable-controls-overview-images/info-bar.png)
 
-從設計介面修正或移除錯誤的控制項時，將會繼續完整轉譯。
+當修正錯誤的控制項或從設計介面中移除時，就會繼續進行完整轉譯。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文介紹在 iOS 設計工具中建立和應用自訂控制項的方式。 首先，它會說明控制項必須符合才能在設計介面上轉譯，並在屬性面板中公開自訂屬性的需求。 然後，它會查看控制項的程式碼後置初始化和 DesignMode 屬性。 最後，它會說明當擲回例外狀況時所發生的情況，以及如何解決此問題。
+本文介紹如何在 iOS 設計工具中建立和應用自訂控制項。 首先，它會說明控制項必須符合才能在設計介面上呈現的需求，並在屬性面板中公開自訂屬性。 接著，它會查看控制項和 DesignMode 屬性的程式碼後端初始化。 最後，它會描述擲回例外狀況時所發生的狀況，以及如何解決此問題。

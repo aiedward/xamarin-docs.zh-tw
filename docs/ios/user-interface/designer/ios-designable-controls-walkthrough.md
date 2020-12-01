@@ -7,22 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: ad07d6e7381c646273eae8fe6aaecb2d487027f7
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: f4b161159423bc7e5d6d99e9dfd4407532106979
+ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436809"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96439452"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>搭配 iOS 設計工具使用自訂控制項
 
-## <a name="requirements"></a>需求
+> [!WARNING]
+> IOS 設計工具將開始在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 8.8 版中推出。
+> 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 的 Mac 上執行。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](../storyboards/index.md)。 
+
+## <a name="requirements"></a>規格需求
 
 Xamarin Designer for iOS 可在 Windows 上的 Visual Studio for Mac 和 Visual Studio 2017 和更新版本中使用。
 
 本指南假設您已經熟悉 [消費者入門指南](~/ios/get-started/index.md)中涵蓋的內容。
 
-## <a name="walkthrough"></a>逐步解說
+## <a name="walkthrough"></a>逐步介紹
 
 > [!IMPORTANT]
 > 自 Xamarin. Studio 5.5 開始，自訂控制項的建立方式與舊版稍有不同。 若要建立自訂控制項，必須 `IComponent` 有介面 (與相關聯的實方法) 或可以使用標注類別 `[DesignTimeVisible(true)]` 。 第二個方法是在下列逐步解說範例中使用。
@@ -156,7 +160,7 @@ Xamarin Designer for iOS 可在 Windows 上的 Visual Studio for Mac 和 Visual 
     }
     ```
 
-1. 在 `FillTexture.png` `FillTexture2.png` [資源] 資料夾中新增 `Monkey.png` (可[從 GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) **Resources**取得的和檔案。
+1. 在 `FillTexture.png` `FillTexture2.png` [資源] 資料夾中新增 `Monkey.png` (可 [從 GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) **Resources** 取得的和檔案。
 
 1. 按兩下該檔案， `Main.storyboard` 以在設計工具中開啟它：
 
@@ -198,7 +202,7 @@ Xamarin Designer for iOS 可在 Windows 上的 Visual Studio for Mac 和 Visual 
 
     [![執行範例應用程式](ios-designable-controls-walkthrough-images/10-app.png)](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
-## <a name="adding-design-time-properties"></a>加入設計階段屬性
+## <a name="adding-design-time-properties"></a>新增 Design-Time 屬性
 
 設計工具也包含屬性類型 numeric、enumeration、string、bool、CGSize、UIColor 和 UIImage 的自訂控制項設計階段支援。 為了示範，讓我們將屬性新增至， `ScratchTicketView` 以設定「有劃痕」的影像。
 
