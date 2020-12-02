@@ -9,16 +9,16 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 01902942c750a3cd278d648fa82499af4c5d3ab6
-ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
+ms.openlocfilehash: 25677d79b29902ed0cdd0b2ed08da021d7ef9e6f
+ms.sourcegitcommit: d2daaa6ca5fe630f80d5a8151985d9f96a2fc93b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92169965"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96513014"
 ---
 # <a name="no-locxamarinessentials-permissions"></a>Xamarin.Essentials：許可權
 
-**許可權**類別提供檢查及要求執行時間許可權的能力。
+**許可權** 類別提供檢查及要求執行時間許可權的能力。
 
 ## <a name="get-started"></a>開始使用
 
@@ -97,7 +97,7 @@ Xamarin.Essentials 嘗試盡可能抽象化最多許可權。 不過，每個作
 | 媒體 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | 麥克風 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
 | 電話 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| 相片 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![支援 tvOS](~/media/shared/yes.png "支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| 照片 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![支援 tvOS](~/media/shared/yes.png "支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | 提醒事項 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | 感應器 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | 短信 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
@@ -108,7 +108,8 @@ Xamarin.Essentials 嘗試盡可能抽象化最多許可權。 不過，每個作
 如果許可權被標示為 ![不受支援](~/media/shared/no.png "不支援") ，則會 `Granted` 在選取或要求時一律傳回。
 
 ## <a name="general-usage"></a>一般使用方式
-以下是處理許可權的一般使用模式。
+
+下列程式碼會提供一般使用模式，以判斷是否已授與許可權，並要求它（如果沒有的話）。 此程式碼會使用 Xamarin.Essentials 版本1.6.0 或更新版本所提供的功能。
 
 ```csharp
 public async Task<PermissionStatus> CheckAndRequestLocationPermission()
@@ -116,8 +117,7 @@ public async Task<PermissionStatus> CheckAndRequestLocationPermission()
     var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
     
     if (status == PermissionStatus.Granted)
-        return status;
-        
+        return status;        
     
     if (status == PermissionStatus.Denied && DeviceInfo.Platform == DevicePlatform.iOS)
     {
