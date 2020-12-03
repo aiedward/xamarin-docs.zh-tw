@@ -8,16 +8,16 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3df31f500290189bb9ce36148729a7b1d22df3ae
-ms.sourcegitcommit: 9bf375b43907384551188ec6f0ebd3290b3e9295
+ms.openlocfilehash: 04090a2e9d97f1a5f4dae8fa850a39c3465ba05b
+ms.sourcegitcommit: 0c31f1398ec1de1a2b18ec7f25f30630df968db1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92436956"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96544665"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
-**WebAuthenticator**類別可讓您起始以瀏覽器為基礎的流程，此流程會接聽對應用程式註冊之特定 URL 的回呼。
+**WebAuthenticator** 類別可讓您起始以瀏覽器為基礎的流程，此流程會接聽對應用程式註冊之特定 URL 的回呼。
 
 ## <a name="overview"></a>概觀
 
@@ -200,7 +200,14 @@ else
     r = await WebAuthenticator.AuthenticateAsync(authUrl, callbackUrl);
 }
 
-var accessToken = r?.AccessToken;
+var authToken = string.Empty;
+if (r.Properties.TryGetValue("name", out var name) && !string.IsNullOrEmpty(name))
+    authToken += $"Name: {name}{Environment.NewLine}";
+if (r.Properties.TryGetValue("email", out var email) && !string.IsNullOrEmpty(email))
+    authToken += $"Email: {email}{Environment.NewLine}";
+
+// Note that Apple Sign In has an IdToken and not an AccessToken
+authToken += r?.AccessToken ?? r?.IdToken;
 ```
 
 > [!TIP]
