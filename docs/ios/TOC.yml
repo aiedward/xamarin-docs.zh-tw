@@ -140,9 +140,11 @@
       items:
         - name: 總覽
           href: user-interface/index.md
-        - name: Storyboard
+        - name: 使用 Xcode 進行設計
           href: user-interface/storyboards/index.md
           items:
+            - name: Storyboard
+              href: user-interface/storyboards/indepth-storyboard.md
             - name: 整合的 Storyboard
               href: user-interface/storyboards/unified-storyboards.md
         - name: iOS 設計工具
