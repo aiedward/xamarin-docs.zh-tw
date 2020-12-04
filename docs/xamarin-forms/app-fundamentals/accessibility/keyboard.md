@@ -10,12 +10,12 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 011ef1fcb2de53cb1f1aa6f0b2c3953e9240d132
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: bdc26b0745e48295c2040440d5eab90b7850b145
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374494"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604465"
 ---
 # <a name="keyboard-accessibility-in-no-locxamarinforms"></a>鍵盤協助工具 Xamarin.Forms
 
@@ -75,6 +75,9 @@ ms.locfileid: "93374494"
 - `TabIndex` 的衝突由宣告順序來解決。
 
 在您定義定位順序之後，按下 Tab 鍵時即會以遞增 `TabIndex` 順序循環控制項的焦點，從開頭一直循環到最後一個控制項。
+
+> [!WARNING]
+> 在通用 Windows 平臺上， `TabIndex` 每個控制項的屬性都必須設定為，才能 `int.MaxValue` 讓定位順序與控制項宣告順序相同。
 
 下列 XAML 範例顯示輸入控制項上設定的 `TabIndex` 屬性，其可啟用資料行優先的定位導覽：
 

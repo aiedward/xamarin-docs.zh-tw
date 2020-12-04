@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: a001cabae5e137cda4b31e15d3e75401575b96a7
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 2fc6c7fcd1c255e1cfd87e2e7cf91c92f17d8465
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91435035"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604439"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>Xamarin 中的 tvOS 簡介
 
@@ -35,7 +35,7 @@ Apple TV 平臺開放給開發人員使用，讓他們可以建立豐富、沉�
 
 - [TvOS 11 簡介](~/ios/tvos/platform/introduction-to-tvos11.md) -本文說明 tvOS 11 中適用于 Xamarin tvOS 開發人員的新功能。
 - [TvOS 10 簡介](~/ios/tvos/platform/introduction-to-tvos10/index.md) -本文將介紹適用于 Xamarin tvOS 開發人員的 tvOS 10 中所有新的和修改過的 api 和功能。
-- [TvOS 9 簡介](~/ios/tvos/platform/tvos9.md) -本文將介紹適用于 Xamarin tvOS 開發人員的 tvOS 9 中所有新的和修改過的 api 和功能。 
+- [TvOS 9 簡介](~/ios/tvos/platform/tvos9.md) -本文將介紹適用于 Xamarin tvOS 開發人員的 tvOS 9 中所有新的和修改過的 api 和功能。
 - [TvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md) –本指南將逐步解說如何建立您的第一個 tvOS 應用程式，並在此程式仲介紹開發工具鏈，包括 Visual Studio for Mac、Xcode 和 Interface Builder。 它也引進了可將 UI 控制項公開到程式碼的輸出和動作，最後還說明如何建立、執行及測試 tvOS 應用程式。
 - 使用[圖示和影像](~/ios/tvos/app-fundamentals/icons-images.md)-本文涵蓋在 tvOS 應用程式內設計和使用圖示和影像。
 - 使用[導覽和焦點](~/ios/tvos/app-fundamentals/navigation-focus.md)：本文涵蓋焦點的概念，以及如何在 tvOS 應用程式內呈現和處理導覽。
@@ -71,6 +71,10 @@ Apple TV 平臺開放給開發人員使用，讓他們可以建立豐富、沉�
 如果您在使用 Xamarin 建立 tvOS 時遇到任何問題，請查看 [版本](/xamarin/ios/release-notes/)資訊、 [Xamarin、iOS 論壇](https://forums.xamarin.com/categories/ios)、 [Xamarin Bugzilla 追蹤](https://bugzilla.xamarin.com/query.cgi?product=iOS)程式和 [GitHub](https://github.com/xamarin/xamarin-macios/issues) 是否有任何問題。
 
 [在 GitHub 上](https://github.com/xamarin/xamarin-macios/issues)報告新問題和建議。
+
+## <a name="xamarintvos-on-qa"></a>TvOS on Q&A 
+
+詢問有關使用 Xamarin 在 [Q&A](/answers/topics/dotnet-tvos.html)中建立和部署 tvOS 應用程式的問題。
 
 ## <a name="related-links"></a>相關連結
 

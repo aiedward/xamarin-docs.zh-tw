@@ -11,12 +11,12 @@ ms.custom: contperfq2
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6fdbaf8d218044de9a4fe30ffe7e3df05619bdb
-ms.sourcegitcommit: f920ac0724f09e5c9b4f36be1995a5a17a6d9f95
+ms.openlocfilehash: 271c6c5e510a892919b5d87c4dbc38ad8e9d657d
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94591069"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604569"
 ---
 # <a name="fonts-in-no-locxamarinforms"></a>中的字型 Xamarin.Forms
 
@@ -24,7 +24,7 @@ ms.locfileid: "94591069"
 
 依預設，會 Xamarin.Forms 使用每個平臺所定義的系統字型。 但是，顯示文字的控制項會定義您可以用來變更這個字型的屬性：
 
-- `FontAttributes`，類型 `FontAttributes` 為，其為具有三個成員的列舉： `None` 、 `Build` 和 `Italic` 。 此屬性的預設值為 `None`。
+- `FontAttributes`，類型 `FontAttributes` 為，其為具有三個成員的列舉： `None` 、 `Bold` 和 `Italic` 。 此屬性的預設值為 `None`。
 - 類型為 `double` 的 `FontSize`。
 - 類型為 `string` 的 `FontFamily`。
 
@@ -107,8 +107,8 @@ myLabel.FontSize = Device.GetNamedSize(NamedSize.Large, myLabel);
 
 您可以將自訂字型加入至您 Xamarin.Forms 的共用專案，並由平臺專案取用，而不需要任何額外的工作。 完成此動作的程序如下所示：
 
-1. 將字型新增到您 Xamarin.Forms 的共用專案，做為內嵌資源 ( **組建動作： EmbeddedResource** ) 。
-1. 使用屬性，在檔案（例如 **AssemblyInfo.cs** ）中向元件註冊字型檔案 `ExportFont` 。 也可以指定選擇性的別名。
+1. 將字型新增到您 Xamarin.Forms 的共用專案，做為內嵌資源 (**組建動作： EmbeddedResource**) 。
+1. 使用屬性，在檔案（例如 **AssemblyInfo.cs**）中向元件註冊字型檔案 `ExportFont` 。 也可以指定選擇性的別名。
 
 下列範例顯示在元件中註冊的 Lobster-Regular 字型，以及別名：
 
@@ -121,7 +121,7 @@ using Xamarin.Forms;
 > [!NOTE]
 > 字型可以位於共用專案的任何資料夾中，而不需要在向元件註冊字型時指定資料夾名稱。
 >
-> 在 Windows 上，字型檔案名和字型名稱可能會不同。 若要在 Windows 上探索字型名稱，請在 ttf 檔案上按一下滑鼠右鍵，然後選取 [ **預覽** ]。 然後您可以從 [預覽] 視窗判斷字型名稱。
+> 在 Windows 上，字型檔案名和字型名稱可能會不同。 若要在 Windows 上探索字型名稱，請在 ttf 檔案上按一下滑鼠右鍵，然後選取 [ **預覽**]。 然後您可以從 [預覽] 視窗判斷字型名稱。
 
 然後您可以在每個平臺上使用該字型，方法是參考其名稱，而不需要副檔名：
 

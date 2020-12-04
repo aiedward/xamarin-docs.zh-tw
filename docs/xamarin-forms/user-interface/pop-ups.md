@@ -10,12 +10,12 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5f70420690a9d81e5697c2e0bfefdf107aed9c86
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f1caf08cf0fc2fdba6c9a9156280f9d3dafe0322
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93375417"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604556"
 ---
 # <a name="display-pop-ups"></a>顯示快顯視窗
 
@@ -46,6 +46,9 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 ```
 
 [![DisplayAlert](pop-ups-images/alert2-sml.png "有兩個按鈕的警示對話方塊")](pop-ups-images/alert2.png#lightbox "有兩個按鈕的警示對話方塊")
+
+> [!WARNING]
+> 根據預設，您可以在顯示警示時啟用 UWP 存取金鑰。 如需詳細資訊，請參閱 [Windows 上的 VisualElement 存取金鑰](~/xamarin-forms/platform/windows/visualelement-access-keys.md)。
 
 ## <a name="guide-users-through-tasks"></a>引導使用者完成工作
 
@@ -109,6 +112,9 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialV
 此程式碼會顯示預先定義的回應10、將可輸入的字元數限制為2，並顯示使用者輸入的數字鍵台：
 
 [![螢幕擷取畫面： iOS 和 Android 上的強制回應提示](pop-ups-images/keyboard-prompt.png "強制回應提示")](pop-ups-images/keyboard-prompt-large.png#lightbox "強制回應提示")
+
+> [!WARNING]
+> 根據預設，您可以在出現提示時啟用 UWP 存取金鑰。 如需詳細資訊，請參閱 [Windows 上的 VisualElement 存取金鑰](~/xamarin-forms/platform/windows/visualelement-access-keys.md)。
 
 ## <a name="related-links"></a>相關連結
 
