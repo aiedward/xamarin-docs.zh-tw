@@ -28,7 +28,7 @@
           href: live-player/player.md
         - name: 疑難排解
           href: live-player/troubleshooting.md
-    - name: 分析工具
+    - name: 程式碼剖析工具
       href: profiler/index.md
       items:
         - name: 疑難排解
@@ -69,7 +69,7 @@
     - name: .NET 內嵌
       href: dotnet-embedding/index.md
       items:
-        - name: 開始使用
+        - name: 快速入門
           href: dotnet-embedding/get-started/index.md
           items:
             - name: 安裝
