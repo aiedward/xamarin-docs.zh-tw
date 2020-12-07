@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bd239a8dcf192c0bdbc6265769208f4fc989bbbe
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 19c9929706b7cf285b22562b094d2de2a25ff77d
+ms.sourcegitcommit: 0a41c4aa6db72cd2d0cecbe0dc893024cecac71d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434492"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96749887"
 ---
 # <a name="no-locxamarinessentials-contacts"></a>Xamarin.Essentials：連絡人
 
@@ -31,7 +31,7 @@ Contact **類別可** 讓使用者挑選連絡人並取得其相關資訊。
 
 需要 `ReadContacts` 權限，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟 [Properties]**** 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
+開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.ReadContacts)]
@@ -39,7 +39,7 @@ Contact **類別可** 讓使用者挑選連絡人並取得其相關資訊。
 
 或更新 Android 資訊清單：
 
-開啟 [ **Properties** ] 資料夾底下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
+開啟 [ **Properties** ] 資料夾底下的 **AndroidManifest.xml** 檔案，並在 **資訊清單** 節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.READ_CONTACTS" /> />
@@ -64,7 +64,7 @@ Contact **類別可** 讓使用者挑選連絡人並取得其相關資訊。
 
 -----
 
-## <a name="picking-a-contact"></a>挑選連絡人
+## <a name="pick-a-contact"></a>挑選連絡人
 
 藉由呼叫 `Contacts.PickContactAsync()` contact 對話方塊將會出現，並允許使用者接收使用者的相關資訊。
 
@@ -77,17 +77,61 @@ try
     if(contact == null)
         return;
 
-    var name = contact.Name;
-    var contactType = contact.ContactType; // Unknown, Personal, Work
-    var numbers = contact.Numbers; // List of phone numbers
-    var emails = contact.Emails; // List of email addresses 
-    
+    var id = contact.Id;
+    var namePrefix = contact.NamePrefix;
+    var givenName = contact.GivenName;
+    var middleName = contact.MiddleName;
+    var familyName = contact.FamilyName;
+    var nameSuffix = contact.NameSuffix;
+    var displayName = contact.DisplayName;
+    var phones = contact.Phones; // List of phone numbers
+    var emails = contact.Emails; // List of email addresses
 }
 catch (Exception ex)
 {
     // Handle exception here.
 }
 ```
+
+## <a name="get-all-contacts"></a>取得所有連絡人
+
+```csharp
+ObservableCollection<Contact> contactsCollect = new ObservableCollection<Contact>();
+
+try
+{
+    // cancellationToken parameter is optional
+    var cancellationToken = default(CancellationToken);
+    var contacts = await Contacts.GetAllAsync(cancellationToken);
+
+    if (contacts == null)
+        return;
+
+    foreach (var contact in contacts)
+        contactsCollect.Add(contact);
+}
+catch (Exception ex)
+{
+    // Handle exception here.
+}
+```
+
+## <a name="platform-differences"></a>平臺差異
+
+# <a name="android"></a>[Android](#tab/android)
+
+- `cancellationToken`方法中的參數 `GetAllAsync` 只在 UWP 上使用。
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+- `cancellationToken`方法中的參數 `GetAllAsync` 只在 UWP 上使用。
+- IOS 平臺不會 `DisplayName` 以原生方式支援屬性，因此 `DisplayName` 值會被視為「GivenName FamilyName」。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+無平台差異。
+
+-----
 
 
 ## <a name="api"></a>API
