@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3cd4a9078a22c1f002cbc414490455c716ba884a
-ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
+ms.openlocfilehash: 8b7cdc43570958918020f5a219392434a7ed85fb
+ms.sourcegitcommit: 1d19ee87e317a72de05f3f0fa73dfcaeb767cbd1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604582"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755002"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>在 Windows 上 VisualElement 存取金鑰
 
@@ -104,7 +104,7 @@ button4.On<Windows>()
 當使用者啟動存取金鑰時，按下 ALT 鍵後面接著存取金鑰， `VisualElement` 將會執行的預設動作。 例如，當使用者啟動上的存取金鑰時 [`Switch`](xref:Xamarin.Forms.Switch) ， `Switch` 就會切換。 當使用者啟動上的存取金鑰時 [`Entry`](xref:Xamarin.Forms.Entry) ，會 `Entry` 取得焦點。 當使用者啟動上的存取金鑰時 [`Button`](xref:Xamarin.Forms.Button) ， [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 就會執行事件的事件處理常式。
 
 > [!WARNING]
-> 依預設，當顯示模式對話方塊時（例如，透過和方法），就會啟用存取金鑰 `DisplayAlert` `DisplayPromptAsync` 。 不過，您可以撰寫自訂邏輯，在此案例中停用存取金鑰。 這可以藉由在 `Dispatcher.AcceleratorKeyActivated` UWP 專案的類別中處理事件 `MainPage` ，以及在事件處理常式中，將 `Handled` 事件引數的屬性設定為 `true` 顯示模式對話方塊時，來達成這個目的。
+> 依預設，當強制回應對話方塊顯示時，在對話方塊後方的頁面上定義的任何存取金鑰仍可啟用。 不過，您可以撰寫自訂邏輯，在此案例中停用存取金鑰。 這可以藉由在 `Dispatcher.AcceleratorKeyActivated` UWP 專案的類別中處理事件 `MainPage` ，以及在事件處理常式中，將 `Handled` 事件引數的屬性設定為 `true` 顯示模式對話方塊時，來達成這個目的。
 
 如需存取金鑰的詳細資訊，請參閱 [存取金鑰](/windows/uwp/design/input/access-keys)。
 
