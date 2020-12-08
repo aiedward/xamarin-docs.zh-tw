@@ -602,6 +602,8 @@
           href: /xamarin/essentials/release-notes/
         - name: 疑難排解
           href: ~/essentials/troubleshooting.md?context=xamarin/ios
+        - name: Q&A 上的 Xamarin.Essentials
+          href: /answers/topics/dotnet-xamarinessentials.html
     - name: 資料和雲端服務
       items:
         - name: 總覽
@@ -1005,6 +1007,8 @@
               href: ~/essentials/version-tracking.md?context=xamarin/watchos
             - name: 疑難排解
               href: ~/essentials/troubleshooting.md?context=xamarin/watchos
+            - name: Q&A 上的 Xamarin.Essentials
+              href: /answers/topics/dotnet-xamarinessentials.html
         - name: 部署與測試
           href: watchos/deploy-test/index.md
           items:
@@ -1014,6 +1018,8 @@
               href: watchos/deploy-test/appstore.md
         - name: 疑難排解
           href: watchos/troubleshooting.md
+        - name: Q&A 上的 Xamarin watchOS
+          href: /answers/topics/dotnet-watchos.html
     - name: tvOS
       items:
         - name: 總覽
@@ -1096,6 +1102,8 @@
               href: ~/essentials/version-tracking.md?context=xamarin/tvos
             - name: 疑難排解
               href: ~/essentials/troubleshooting.md?context=xamarin/tvos
+            - name: Q&A 上的 Xamarin.Essentials
+              href: /answers/topics/dotnet-xamarinessentials.html
         - name: 使用者介面
           href: tvos/user-interface/index.md
           items:
@@ -1142,6 +1150,10 @@
               href: tvos/internals/assemblies.md
             - name: 架構
               href: tvos/internals/frameworks.md
+        - name: Q&A 上的 Xamarin.tvOS
+          href: /answers/topics/dotnet-tvos.html
+    - name: Q&A 上的 Xamarin.iOS
+      href: /answers/topics/dotnet-ios.html
     - name: 版本資訊
       href: /xamarin/ios/release-notes/
     - name: 範例

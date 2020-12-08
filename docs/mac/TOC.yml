@@ -221,6 +221,8 @@
           href: troubleshooting/troubleshooting.md
         - name: 錯誤訊息 (mmp)
           href: troubleshooting/mmp-errors.md
+    - name: Q&A 上的 Xamarin.Mac
+      href: /answers/topics/dotnet-macos.html
     - name: 版本資訊
       href: /xamarin/mac/release-notes/
     - name: 範例

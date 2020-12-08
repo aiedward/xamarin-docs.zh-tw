@@ -6,7 +6,7 @@
       href: get-started/index.md
       expanded: true
       items:
-        - name: 需求
+        - name: 規格需求
           displayName: System requirements
           href: get-started/requirements.md
         - name: 行動裝置軟體開發生命週期
@@ -14,7 +14,7 @@
         - name: 建置跨平台應用程式的逐步解說
           href: app-fundamentals/building-cross-platform-applications/index.md
           items:
-            - name: 總覽
+            - name: 概觀
               href: app-fundamentals/building-cross-platform-applications/overview.md
             - name: 第 1 部分 - 了解 Xamarin 行動裝置平台
               href: app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md
@@ -33,7 +33,7 @@
     - name: 共用程式碼
       href: app-fundamentals/index.md
       items:
-        - name: 總覽
+        - name: 概觀
           href: app-fundamentals/code-sharing.md
         - name: .NET Standard
           href: app-fundamentals/net-standard.md
@@ -60,18 +60,18 @@
     - name: 語言支援
       href: platform/index.md
       items:
-        - name: 'C#'
+        - name: C#
           items:
             - name: 非同步支援概觀
               href: platform/async.md
-            - name: 'C# 6 語言功能'
+            - name: C# 6 語言功能
               href: platform/csharp-six.md
-        - name: 'F#'
+        - name: F#
           href: platform/fsharp/index.md
           items:
             - name: 開始使用
               href: platform/fsharp/overview.md
-            - name: 'F# 範例'
+            - name: F# 範例
               href: platform/fsharp/samples.md
         - name: Visual Basic
           href: platform/visual-basic/index.md
@@ -138,7 +138,7 @@
               href: troubleshooting/questions/pcl-support-libraries.md
             - name: PCL 反映 API
               href: troubleshooting/questions/pcl-reflection.md
-            - name: PCL 案例研究：如何解決 Microsoft TPL Dataflow NuGet 套件之 System.Diagnostics.Tracing 的有關問題？
+            - name: PCL 案例研究：如何解決 Microsoft TPL Dataflow NuGet 套件有關 System.Diagnostics.Tracing 的問題？
               href: troubleshooting/questions/pcl-case-study.md
             - name: 如何更新 NuGet？
               href: troubleshooting/questions/nuget-update.md
@@ -172,5 +172,7 @@
               href: troubleshooting/questions/vs-config-manager.md
         - name: 將元件參考更新為 NuGet
           href: troubleshooting/component-nuget.md
+    - name: Q&A 上的跨平台開發
+      href: /answers/topics/dotnet-crossplatform-general.html
     - name: 範例
       href: samples/index.md

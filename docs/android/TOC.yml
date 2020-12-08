@@ -483,6 +483,8 @@
           href: /xamarin/essentials/release-notes/
         - name: 疑難排解
           href: ~/essentials/troubleshooting.md?context=xamarin/android
+        - name: Q&A 上的 Xamarin.Essentials
+          href: /answers/topics/dotnet-xamarinessentials.html
     - name: 資料和雲端服務
       href: data-cloud/index.md
       items:
@@ -694,6 +696,8 @@
               href: wear/deploy-test/debug-on-device.md
             - name: 包裝
               href: wear/deploy-test/packaging.md
+    - name: Q&A 上的 Xamarin.Android
+      href: /answers/topics/dotnet-android.html
     - name: 版本資訊
       href: /xamarin/android/release-notes/
     - name: 範例
