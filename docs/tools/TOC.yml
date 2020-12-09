@@ -28,82 +28,13 @@
           href: live-player/player.md
         - name: 疑難排解
           href: live-player/troubleshooting.md
-    - name: 程式碼剖析工具
+    - name: 分析工具
       href: profiler/index.md
       items:
         - name: 疑難排解
           href: profiler/troubleshooting.md
         - name: 版本資訊
           href: /xamarin/tools/profiler/release-notes/
-    - name: 活頁簿
-      href: workbooks/index.md
-      items:
-        - name: 安裝與需求
-          href: workbooks/install.md
-        - name: 互動式活頁簿
-          href: workbooks/workbook.md
-        - name: 編輯器鍵盤快速鍵
-          href: workbooks/keybindings.md
-        - name: 疑難排解
-          href: workbooks/troubleshooting/index.md
-          items:
-            - name: 一般的已知問題和解決辦法
-              href: workbooks/troubleshooting/general.md
-            - name: Android 活頁簿的問題
-              href: workbooks/troubleshooting/android.md
-        - name: 整合 SDK
-          href: workbooks/sdk/index.md
-          items:
-            - name: 架構概觀
-              href: workbooks/sdk/architecture.md
-            - name: 進階的整合主題
-              href: workbooks/sdk/integrations.md
-            - name: Xamarin 活頁簿中的表示法
-              href: workbooks/sdk/representations.md
-            - name: 偵錯整合
-              href: workbooks/sdk/debugging.md
-            - name: 範例整合
-              href: workbooks/sdk/samples.md
-        - name: 版本資訊
-          href: /xamarin/tools/inspector/release-notes/
-    - name: .NET 內嵌
-      href: dotnet-embedding/index.md
-      items:
-        - name: 快速入門
-          href: dotnet-embedding/get-started/index.md
-          items:
-            - name: 安裝
-              href: dotnet-embedding/get-started/install/install.md
-            - name: C
-              href: dotnet-embedding/get-started/c.md
-            - name: Java
-              href: dotnet-embedding/get-started/java/index.md
-              items:
-                - name: Android
-                  href: dotnet-embedding/get-started/java/android.md
-            - name: Objective-C
-              href: dotnet-embedding/get-started/objective-c/index.md
-              items:
-                - name: iOS
-                  href: dotnet-embedding/get-started/objective-c/ios.md
-                - name: macOS
-                  href: dotnet-embedding/get-started/objective-c/macos.md
-        - name: Android
-          href: dotnet-embedding/android/index.md
-          items:
-            - name: Android 回呼
-              href: dotnet-embedding/android/callbacks.md
-        - name: Objective-C
-          href: dotnet-embedding/objective-c/index.md
-          items:
-            - name: 最佳做法
-              href: dotnet-embedding/objective-c/best-practices.md
-            - name: 平台
-              href: dotnet-embedding/objective-c/platforms.md
-        - name: 限制
-          href: dotnet-embedding/limitations.md
-        - name: 版本資訊
-          href: /xamarin/tools/dotnet-embedding/release-notes/
     - name: 持續整合
       href: ci/index.md
       items:
