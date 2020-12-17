@@ -8,16 +8,16 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: add9143ff1a9546d3d2c8cfb851f621083bf356d
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: e85206d8e48db1a6f168c6f89ca494519a0fe95c
+ms.sourcegitcommit: 4bb12419da2547c0afc17903ae46052b29cd0dc4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414748"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97628179"
 ---
 # <a name="no-locxamarinessentials-app-actions"></a>Xamarin.Essentials：應用程式動作
 
-**AppActions**類別可讓您建立並回應應用程式圖示的應用程式快捷方式。
+**AppActions** 類別可讓您建立並回應應用程式圖示的應用程式快捷方式。
 
 ![發行前 API](~/media/shared/preview.png)
 
@@ -29,7 +29,18 @@ ms.locfileid: "91414748"
 
 # <a name="android"></a>[Android](#tab/android)
 
-在中， `MainActivity` 新增下列邏輯以處理動作：
+將意圖篩選新增至您的 `MainActivity` 類別：
+
+```csharp
+[IntentFilter(
+        new[] { Xamarin.Essentials.Platform.Intent.ActionAppAction },
+        Categories = new[] { Intent.CategoryDefault })]
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+    ...
+```
+
+然後，新增下列邏輯以處理動作：
 
 ```csharp
 protected override void OnResume()
