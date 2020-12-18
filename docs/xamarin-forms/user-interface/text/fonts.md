@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2020
-ms.custom: contperfq2
+ms.custom: contperf-fy21q2
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 271c6c5e510a892919b5d87c4dbc38ad8e9d657d
-ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
+ms.openlocfilehash: 146c67655c420611b2a0901efa6cc22ef780713e
+ms.sourcegitcommit: c5e72d2ca4152b62ab6583f0dbe84b3ba29d8283
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604569"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97677522"
 ---
 # <a name="fonts-in-no-locxamarinforms"></a>中的字型 Xamarin.Forms
 
@@ -201,7 +201,7 @@ label.FontFamily = Device.RuntimePlatform == Device.iOS ? "MarkerFelt-Thin" :
 
 Xamarin.Forms 定義 [`NamedSize`](xref:Xamarin.Forms.NamedSize) 列舉中表示特定字型大小的欄位。 下表顯示成員及其 `NamedSize` 在 iOS、Android 和通用 Windows 平臺 (UWP) 的預設大小：
 
-| 成員 | iOS | Android | UWP |
+| member | iOS | Android | UWP |
 | --- | --- | --- | --- |
 | `Default` | 16 | 14 | 14 |
 | `Micro` | 11 | 10 | 15.667 |
