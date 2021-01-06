@@ -10,12 +10,12 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 374444307ef0b6cc6354d2f660834762bb566434
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4df1afb80cc8b261d9bc6d022fe814fd411c0c3c
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93367955"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940079"
 ---
 # <a name="introduction-to-no-locxamarinforms-data-templates"></a>Xamarin.Forms資料範本簡介
 
@@ -118,18 +118,7 @@ public class Person
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)用來指定資料的外觀，而且通常會使用資料系結來顯示資料。 它的常見使用案例是在中顯示物件集合的資料時 [`ListView`](xref:Xamarin.Forms.ListView) 。 例如，當 `ListView` 繫結至 `Person` 物件集合時，會將 `ListView.ItemTemplate` 屬性設定為 `DataTemplate`，來定義 `ListView` 中每個 `Person` 物件的外觀。 `DataTemplate` 會包含繫結至每個 `Person` 物件屬性值的項目。 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
-[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)可以用來做為下列屬性的值：
-
-- [`ListView.HeaderTemplate`](xref:Xamarin.Forms.ListView.HeaderTemplate)
-- [`ListView.FooterTemplate`](xref:Xamarin.Forms.ListView.FooterTemplate)
-- [`ListView.GroupHeaderTemplate`](xref:Xamarin.Forms.ListView.GroupHeaderTemplate)
-- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)，由繼承 [`ListView`](xref:Xamarin.Forms.ListView) 。
-- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1)，由 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 、 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 和繼承 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 。
-
-> [!NOTE]
-> 請注意，雖然 [`TableView`](xref:Xamarin.Forms.TableView) 會使用 [`Cell`](xref:Xamarin.Forms.Cell) 物件，但不會使用 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 這是因為資料繫結一律會在 `Cell` 物件上直接設定。
-
-[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)放在上方所列屬性之直接子系的上稱為 *內嵌範本* 。 或者，您可以將 `DataTemplate` 定義為控制項層級、頁面層級或應用程式層級資源。 選擇要在何處定義 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 可使用的影響：
+[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)放在上方所列屬性之直接子系的上稱為 *內嵌範本*。 或者，您可以將 `DataTemplate` 定義為控制項層級、頁面層級或應用程式層級資源。 選擇要在何處定義 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 可使用的影響：
 
 - [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)在控制項層級定義的只能套用至控制項。
 - [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)在頁面層級定義的會套用至頁面上的多個有效控制項。

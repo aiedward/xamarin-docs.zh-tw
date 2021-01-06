@@ -6,16 +6,16 @@ ms.assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/11/2020
+ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6b6a5a538d69d396f8b30381fd1d0b73d3f0e9f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: d8187c82033a872752a314b03950793cad4ac0d1
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373818"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939156"
 ---
 # <a name="no-locxamarinforms-carouselview-interaction"></a>Xamarin.Forms CarouselView 互動
 
@@ -28,6 +28,7 @@ ms.locfileid: "93373818"
 - `CurrentItemChangedCommandParameter`，屬於 `object` 類型，這是傳遞至 `CurrentItemChangedCommand` 的參數。
 - `IsBounceEnabled`，類型為 `bool` ，指定是否 `CarouselView` 會在內容界限上彈跳。 預設值是 `true`。
 - `IsSwipeEnabled`，類型為 `bool` ，決定滑動手勢是否會變更顯示的專案。 預設值是 `true`。
+- `Loop`，類型為 `bool` ，可判斷是否 `CarouselView` 提供對其專案集合的迴圈存取。 預設值是 `true`。
 - `Position`，型別為 `int` 基礎集合中目前專案的索引。 這個屬性的預設系結模式為 `TwoWay` ，如果沒有任何要顯示的資料，則具有0值。
 - `PositionChangedCommand`，類型 `ICommand` 為，其會在位置變更時執行。
 - `PositionChangedCommandParameter`，屬於 `object` 類型，這是傳遞至 `PositionChangedCommand` 的參數。
@@ -355,6 +356,10 @@ public class MonkeysViewModel : INotifyPropertyChanged
 ## <a name="disable-bounce"></a>停用彈跳
 
 依預設，會 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 在內容界限上彈跳專案。 您可以藉由將屬性設定為來停用此功能 `IsBounceEnabled` `false` 。
+
+## <a name="disable-loop"></a>停用迴圈
+
+依預設，會 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 提供對其專案集合的迴圈存取。 因此，從集合中的第一個專案向前輕輕的方式將會顯示集合中的最後一個專案。 同樣地，從集合中的最後一個專案開始，將會回到集合中的第一個專案。 您可以藉由將屬性設定為，來停用此行為 `Loop` `false` 。
 
 ## <a name="disable-swipe-interaction"></a>停用滑動互動
 

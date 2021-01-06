@@ -10,12 +10,12 @@ ms.date: 12/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 98cf9f67188f67c4575823024106e100f6f22608
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 53f6a44ef28e00613ed0ee4e05a4e86a26bc7a6a
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374507"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940573"
 ---
 # <a name="automation-properties-in-no-locxamarinforms"></a>中的 Automation 屬性 Xamarin.Forms
 
@@ -145,11 +145,11 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 在 Android 上，若要設定螢幕讀取器將在中動作列的上一頁箭號讀取的文字 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，請 `AutomationProperties.Name` `AutomationProperties.HelpText` 在上設定和屬性 [`Page`](xref:Xamarin.Forms.Page) 。 但請注意，這對 OS [上一步] 按鈕沒有任何效果。
 
-### <a name="masterdetailpage"></a>MasterDetailPage
+### <a name="flyoutpage"></a>FlyoutPage
 
-在 iOS 和通用 Windows 平臺 (UWP) 上，若要設定螢幕讀取器將在上的切換按鈕中讀取的文字，請在上 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 設定的 `AutomationProperties.Name` 、和 `AutomationProperties.HelpText` 屬性 `MasterDetailPage` ，或在 `IconImageSource` 頁面的屬性上設定 `Master` 。
+在 iOS 和通用 Windows 平臺 (UWP) 上，若要設定螢幕讀取器將在上的切換按鈕中讀取的文字，請在上 [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) 設定的 `AutomationProperties.Name` 、和 `AutomationProperties.HelpText` 屬性 `FlyoutPage` ，或在 `IconImageSource` 頁面的屬性上設定 `Flyout` 。
 
-在 Android 上，若要設定螢幕讀取器將針對上的切換按鈕讀取的文字 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ，請將字串資源新增至 Android 專案：
+在 Android 上，若要設定螢幕讀取器將針對上的切換按鈕讀取的文字 [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) ，請將字串資源新增至 Android 專案：
 
 ```xml
 <resources>
@@ -159,11 +159,11 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 </resources>
 ```
 
-然後將 `Master` 頁面 `IconImageSource` 屬性的 `AutomationId` 屬性，設為適當的字串：
+然後將 `Flyout` 頁面 `IconImageSource` 屬性的 `AutomationId` 屬性，設為適當的字串：
 
 ```csharp
-var master = new ContentPage { ... };
-master.IconImageSource.AutomationId = "btnMDPAutomationID";
+var flyout = new ContentPage { ... };
+flyout.IconImageSource.AutomationId = "btnMDPAutomationID";
 ```
 
 ### <a name="toolbaritem"></a>ToolbarItem

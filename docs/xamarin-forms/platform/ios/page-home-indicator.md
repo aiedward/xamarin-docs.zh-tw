@@ -10,12 +10,12 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 49fd8c563509d88b80fcb91b5e6298b8a5bb3363
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 20d8bb1140599b5b858c52fde1e54393e66d7bd1
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372297"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940547"
 ---
 # <a name="home-indicator-visibility-on-ios"></a>IOS 上的主指示器可見度
 
@@ -48,7 +48,7 @@ On<iOS>().SetPrefersHomeIndicatorAutoHidden(true);
 ![IOS 頁面上家庭指標可見度的螢幕擷取畫面](page-home-indicator-images/home-indicator-visibility.png "Page 首頁指標可見度")
 
 > [!NOTE]
-> 這個平臺特定的可套用至 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 、 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 和 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 物件。
+> 這個平臺特定的可套用至 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 、 [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) 、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 和 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 物件。
 
 ## <a name="related-links"></a>相關連結
 

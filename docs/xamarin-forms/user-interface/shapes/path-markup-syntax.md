@@ -10,16 +10,14 @@ ms.date: 11/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4f60a48d2d8b43ea08ccc36401103d8987e48b1c
-ms.sourcegitcommit: f920ac0724f09e5c9b4f36be1995a5a17a6d9f95
+ms.openlocfilehash: 542d06970cb414b7590cd13757b4e4902af3dd7f
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94591043"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939078"
 ---
 # <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms 圖形：路徑標記語法
-
-![發行前 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -27,7 +25,6 @@ Xamarin.Forms 路徑標記語法可讓您在 XAML 中簡潔地指定路徑幾何
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Data="M13.908992,16.207977 L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983Z" />
 ```
 
@@ -53,7 +50,7 @@ Geometry pathData = (Geometry)new PathGeometryConverter().ConvertFromInvariantSt
 
 ## <a name="move-command"></a>移動命令
 
-Move 命令會指定新圖表的起點。 此命令的語法為： `M` *startPoint* 或 `m` *startPoint* 。
+Move 命令會指定新圖表的起點。 此命令的語法為： `M` *startPoint* 或 `m` *startPoint*。
 
 在這個語法中， *startPoint* 是 [`Point`](xref:Xamarin.Forms.Point) 指定新圖形起點的結構。 如果您在移動命令之後列出多個點，則會對這些點繪製線條。
 
@@ -76,7 +73,7 @@ Move 命令會指定新圖表的起點。 此命令的語法為： `M` *startPoi
 
 ### <a name="line-command"></a>線條命令
 
-Line 命令會在目前的點和指定的結束點之間建立直線。 此命令的語法為： `L` *端點* 或 `l` *端點* 。
+Line 命令會在目前的點和指定的結束點之間建立直線。 此命令的語法為： `L` *端點* 或 `l` *端點*。
 
 在此語法中， *端點* 是 [`Point`](xref:Xamarin.Forms.Point) 代表該行結束點的。
 
@@ -86,7 +83,7 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 
 ### <a name="horizontal-line-command"></a>水平線命令
 
-水平線命令會在目前的點和指定的 x 座標之間建立水平線。 此命令的語法為： `H` *x* 或 `h` *x* 。
+水平線命令會在目前的點和指定的 x 座標之間建立水平線。 此命令的語法為： `H` *x* 或 `h` *x*。
 
 在這個語法中， *x* 是 `double` ，表示線條之結束點的 x 座標。
 
@@ -94,7 +91,7 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 
 ### <a name="vertical-line-command"></a>垂直線命令
 
-垂直線命令會在目前的點和指定的 y 座標之間建立垂直直線。 此命令的語法為： `V` *y* 或 `v` *y* 。
+垂直線命令會在目前的點和指定的 y 座標之間建立垂直直線。 此命令的語法為： `V` *y* 或 `v` *y*。
 
 在這個語法中， *y* 是， `double` 代表線條之結束點的 y 座標。
 
@@ -102,7 +99,7 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 
 ### <a name="elliptical-arc-command"></a>橢圓形弧線命令
 
-橢圓形弧線命令會在目前的點和指定的結束點之間建立橢圓形弧線。 此命令的語法為： `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint* 或 `a` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint* 。
+橢圓形弧線命令會在目前的點和指定的結束點之間建立橢圓形弧線。 此命令的語法為： `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint* 或 `a` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*。
 
 在此語法中：
 
@@ -118,7 +115,7 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 
 ### <a name="cubic-bezier-curve-command"></a>三次方貝茲曲線命令
 
-三次方貝茲曲線命令會使用兩個指定的控制點，在目前的點和指定的結束點之間建立三次方貝茲曲線。 此命令的語法為： `C` *controlPoint1* *controlPoint2* *endpoint* 或 `c` *controlPoint1* *controlPoint2* *endpoint* 。
+三次方貝茲曲線命令會使用兩個指定的控制點，在目前的點和指定的結束點之間建立三次方貝茲曲線。 此命令的語法為： `C` *controlPoint1* *controlPoint2* *endpoint* 或 `c` *controlPoint1* *controlPoint2* *endpoint*。
 
 在此語法中：
 
@@ -132,7 +129,7 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 
 ### <a name="quadratic-bezier-curve-command"></a>二次方貝茲曲線命令
 
-二次方貝茲曲線命令會使用指定的控制點，在目前的點和指定的結束點之間建立二次方貝茲曲線。 此命令的語法為： `Q` *controlPoint* *端點* 或 `q` *controlPoint* *端點* 。
+二次方貝茲曲線命令會使用指定的控制點，在目前的點和指定的結束點之間建立二次方貝茲曲線。 此命令的語法為： `Q` *controlPoint* *端點* 或 `q` *controlPoint* *端點*。
 
 在此語法中：
 
@@ -145,7 +142,7 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 
 ### <a name="smooth-cubic-bezier-curve-command"></a>平滑三次方貝茲曲線命令
 
-平滑三次方貝茲曲線命令會使用指定的控制點，在目前的點和指定的結束點之間建立三次方貝茲曲線。 此命令的語法為： `S` *controlPoint2* *端點* 或 `s` *controlPoint2* *端點* 。  
+平滑三次方貝茲曲線命令會使用指定的控制點，在目前的點和指定的結束點之間建立三次方貝茲曲線。 此命令的語法為： `S` *controlPoint2* *端點* 或 `s` *controlPoint2* *端點*。  
 
 在此語法中：
 
@@ -158,7 +155,7 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 
 ### <a name="smooth-quadratic-bezier-curve-command"></a>平滑二次方貝茲曲線命令
 
-平滑二次方貝茲曲線命令會使用控制點，在目前的點和指定的結束點之間建立二次方貝茲曲線。 此命令的語法為： `T` *端點* 或 `t` *端點* 。
+平滑二次方貝茲曲線命令會使用控制點，在目前的點和指定的結束點之間建立二次方貝茲曲線。 此命令的語法為： `T` *端點* 或 `t` *端點*。
 
 在這個語法中， *端點* 是 [`Point`](xref:Xamarin.Forms.Point) ，代表繪製曲線的點。
 

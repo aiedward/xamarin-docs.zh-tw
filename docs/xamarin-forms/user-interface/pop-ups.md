@@ -6,16 +6,16 @@ ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/10/2020
+ms.date: 12/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4af29f2df797aea4bbd0655fc0564e289f2c2a3b
-ms.sourcegitcommit: 1d19ee87e317a72de05f3f0fa73dfcaeb767cbd1
+ms.openlocfilehash: 09cffb4e5c7d8f6b78d5ab1de6ec9839c3969e87
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96755015"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940105"
 ---
 # <a name="display-pop-ups"></a>顯示快顯視窗
 
@@ -47,6 +47,8 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 [![有兩個按鈕的警示對話方塊](pop-ups-images/alert2-sml.png)](pop-ups-images/alert2.png#lightbox)
 
+[`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)方法也具有可接受引數的多載，此 [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) 引數會指定 UI 元素在警示內的流動方向。 如需流程方向的詳細資訊，請參閱由 [右至左的當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
+
 > [!WARNING]
 > 根據預設，在 UWP 上，警示會顯示在警示後方的頁面上定義的任何存取金鑰，仍然可以啟用。 如需詳細資訊，請參閱 [Windows 上的 VisualElement 存取金鑰](~/xamarin-forms/platform/windows/visualelement-access-keys.md)。
 
@@ -77,6 +79,8 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 ```
 
 [![DisplayActionSheet](pop-ups-images/action2-sml.png "具有終結按鈕的動作表對話方塊")](pop-ups-images/action2.png#lightbox "具有終結按鈕的動作表對話方塊")
+
+[`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)方法也具有可接受引數的多載，這個 [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) 引數會指定 UI 元素在動作表中的流動方向。 如需流程方向的詳細資訊，請參閱由 [右至左的當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 
 ## <a name="display-a-prompt"></a>顯示提示
 
@@ -119,3 +123,4 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialV
 ## <a name="related-links"></a>相關連結
 
 - [PopupsSample](/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+- [從右至左的當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)

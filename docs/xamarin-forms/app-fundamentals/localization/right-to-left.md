@@ -11,12 +11,12 @@ ms.date: 11/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 676e0f062d3ed83cf433188e646f1e96f84a77cc
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.openlocfilehash: 5d06b0467a5029fec6d0c92a683114b9e0d04685
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590252"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940183"
 ---
 # <a name="right-to-left-localization"></a>由右至左當地語系化
 
@@ -128,7 +128,6 @@ Xamarin.Forms 由右至左當地語系化目前有一些限制：
 - [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 按鈕位置、工具列專案位置和轉換動畫是由裝置地區設定控制，而不是由 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性所控制。
 - [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 滑動方向不會翻轉。
 - [`Image`](xref:Xamarin.Forms.Image) 視覺內容不會翻轉。
-- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) 和 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) 方向是由裝置的地區設定控制，而不是由屬性所控制 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
 - [`WebView`](xref:Xamarin.Forms.WebView) 內容不遵守 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
 - 必須新增 `TextDirection` 屬性，以控制文字的對齊方式。
 
@@ -146,7 +145,7 @@ Xamarin.Forms 由右至左當地語系化目前有一些限制：
 ### <a name="uwp"></a>UWP
 
 - [`Editor`](xref:Xamarin.Forms.Editor) 文字對齊由裝置的地區設定控制，而不是由屬性所控制 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
-- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 子系不會繼承屬性 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 。
+- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 子系不會繼承屬性 [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) 。
 - [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) 文字對齊由裝置的地區設定控制，而不是由屬性所控制 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 。
 
 ## <a name="force-right-to-left-layout"></a>強制由右至左的版面配置

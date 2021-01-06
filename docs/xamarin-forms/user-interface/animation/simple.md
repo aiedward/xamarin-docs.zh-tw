@@ -6,16 +6,16 @@ ms.assetid: 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/05/2019
+ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: db7101d5e50dc6ee7840023f6ec4efeb2c52150b
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: ce3dd92c09fb40ea1b864e0c613223ce8bf99e36
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370191"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940365"
 ---
 # <a name="simple-animations-in-no-locxamarinforms"></a>中的簡單動畫 Xamarin.Forms
 
@@ -25,20 +25,19 @@ _ViewExtensions 類別提供可用於建立簡單動畫的擴充方法。本文�
 
 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)類別提供下列擴充方法，可用於建立簡單的動畫：
 
-- [ `TranslateTo` ] (x： Xamarin.Forms 。ViewExtensions. TranslateTo (Xamarin.Forms 。VisualElement、system.string、system.object、system.string、 Xamarin.Forms 。簡化) # A3 繪製的 [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) 和 [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
-- [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) 以動畫呈現的 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) 屬性 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
-- `ScaleXTo` 以動畫呈現的 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) 屬性 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
-- `ScaleYTo` 以動畫呈現的 [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 屬性 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
+- [ `CancelAnimations` ] (x： Xamarin.Forms 。ViewExtensions. CancelAnimations (Xamarin.Forms 。VisualElement) # A3 會取消任何動畫。
+- [ `FadeTo` ] (x： Xamarin.Forms 。ViewExtensions. FadeTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 繪製的 [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 - [ `RelScaleTo` ] (x： Xamarin.Forms 。ViewExtensions. RelScaleTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 會將動畫增量增加或減少套用至的 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) 屬性 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 - [ `RotateTo` ] (x： Xamarin.Forms 。ViewExtensions. RotateTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 繪製的 [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 - [ `RelRotateTo` ] (x： Xamarin.Forms 。ViewExtensions. RelRotateTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 會將動畫增量增加或減少套用至的 [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) 屬性 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 - [ `RotateXTo` ] (x： Xamarin.Forms 。ViewExtensions. RotateXTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 繪製的 [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 - [ `RotateYTo` ] (x： Xamarin.Forms 。ViewExtensions. RotateYTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 繪製的 [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
-- [ `FadeTo` ] (x： Xamarin.Forms 。ViewExtensions. FadeTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 繪製的 [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
+- [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) 以動畫呈現的 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) 屬性 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
+- `ScaleXTo` 以動畫呈現的 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) 屬性 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
+- `ScaleYTo` 以動畫呈現的 [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 屬性 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
+- [ `TranslateTo` ] (x： Xamarin.Forms 。ViewExtensions. TranslateTo (Xamarin.Forms 。VisualElement、system.string、system.object、system.string、 Xamarin.Forms 。簡化) # A3 繪製的 [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) 和 [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 
 根據預設，每個動畫都會花費250毫秒。 不過，在建立動畫時，可以指定每個動畫的持續時間。
-
-此 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 類別也包含 [ `CancelAnimations` ] (x： Xamarin.Forms 。ViewExtensions. CancelAnimations (Xamarin.Forms 。VisualElement) # A3 方法，可用來取消任何動畫。
 
 > [!NOTE]
 > [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)類別提供 [ `LayoutTo` ] (x： Xamarin.Forms 。ViewExtensions. LayoutTo (Xamarin.Forms 。VisualElement， Xamarin.Forms 。矩形， Xamarin.Forms system.object。簡化) # A3 擴充方法。 不過，此方法的目的是要讓版面配置用來在包含大小和位置變更的版面配置狀態之間建立動畫轉換的動畫。 因此，它只能由子類別使用 [`Layout`](xref:Xamarin.Forms.Layout) 。
@@ -85,7 +84,7 @@ await image.RelRotateTo (360, 2000);
 
 ![相對旋轉動畫](simple-images/relrotateto.png)
 
-### <a name="scaling"></a>調整大小
+### <a name="scaling"></a>擴縮
 
 下列程式碼範例將示範 [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) 如何使用方法，以動畫顯示的 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) 屬性 [`Image`](xref:Xamarin.Forms.Image) ：
 
@@ -222,15 +221,15 @@ await Task.WhenAll (
 
 ## <a name="canceling-animations"></a>取消動畫
 
-應用程式可以呼叫 `static` [ `ViewExtensions.CancelAnimations` ] (x：來取消一個或多個動畫 Xamarin.Forms 。ViewExtensions. CancelAnimations (Xamarin.Forms 。VisualElement) # A3 方法，如下列程式碼範例所示：
+應用程式可以使用 [CancelAnimations] 的呼叫來取消一個或多個動畫 (x： Xamarin.Forms 。ViewExtensions. CancelAnimations (Xamarin.Forms 。VisualElement) # A3 擴充方法，如下列程式碼範例所示：
 
 ```csharp
-ViewExtensions.CancelAnimations (image);
+image.CancelAnimations();
 ```
 
 這會立即取消目前實例上正在執行的所有動畫 [`Image`](xref:Xamarin.Forms.Image) 。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範如何使用類別來建立和取消動畫 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 。 這個類別提供的擴充方法可用來建立可旋轉、縮放、轉譯和淡化實例的簡單動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 

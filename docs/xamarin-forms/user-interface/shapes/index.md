@@ -6,27 +6,22 @@ ms.assetid: 4E749FE8-852C-46DA-BB1E-652936106357
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2020
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 07765fdb9f67f21415db495da1b635b0507b7ed1
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6db938f01e4ac1f886149145046668202b119431
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559203"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939754"
 ---
 # <a name="no-locxamarinforms-shapes"></a>Xamarin.Forms 形狀
-
-![發行前 API](~/media/shared/preview.png)
 
 `Shape`是的類型，可 [`View`](xref:Xamarin.Forms.View) 讓您在螢幕上繪製圖形。 `Shape` 物件可用於版面配置類別和大部分的控制項中，因為該 `Shape` 類別衍生自 `View` 類別。
 
 Xamarin.Forms 圖形可在 `Xamarin.Forms.Shapes` iOS、Android、macOS、通用 Windows 平臺 (UWP) 和 Windows Presentation Foundation (WPF) 上的命名空間中使用。
-
-> [!IMPORTANT]
-> Xamarin.Forms 圖形目前為實驗性，而且只能透過設定旗標來使用 `Shapes_Experimental` 。 如需詳細資訊，請參閱 [實驗旗標](~/xamarin-forms/internals/experimental-flags.md)。
 
 `Shape` 會定義下列屬性：
 
@@ -38,7 +33,7 @@ Xamarin.Forms 圖形可在 `Xamarin.Forms.Shapes` iOS、Android、macOS、通用
 - `StrokeLineCap`型別為的， `PenLineCap` 描述線條或線段開頭和結尾的圖形。 此屬性的預設值為 `PenLineCap.Flat`。
 - `StrokeLineJoin`，類型為 `PenLineJoin` ，指定在圖形頂點上使用的聯結類型。 此屬性的預設值為 `PenLineJoin.Miter`。
 - `StrokeMiterLimit`型別為的，會將 `double` 斜接長度的比例指定為形狀的一半 `StrokeThickness` 。 這個屬性的預設值是10.0。
-- `StrokeThickness`型別為的 `double` ，表示圖形大綱的寬度。 這個屬性的預設值是0.0。
+- `StrokeThickness`型別為的 `double` ，表示圖形大綱的寬度。 這個屬性的預設值是1.0。
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標和樣式。
 
@@ -84,7 +79,6 @@ Xamarin.Forms 定義衍生自類別的許多物件 `Shape` 。 這些是 `Ellips
 ```xaml
 <Path Aspect="Uniform"
       Stroke="Yellow"
-      StrokeThickness="1"
       Fill="Red"
       BackgroundColor="LightGray"
       HorizontalOptions="Start"

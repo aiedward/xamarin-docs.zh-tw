@@ -6,16 +6,16 @@ ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/14/2016
+ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 50b64b394314ae2f63ab1f756f1cc73ba29e59e7
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6ec4c16249aadce668b9fe33dad661e1f7e7ee9e
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372843"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939013"
 ---
 # <a name="easing-functions-in-no-locxamarinforms"></a>簡化函式 Xamarin.Forms
 
@@ -54,6 +54,9 @@ await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 ```
 
 藉由指定動畫的簡化函式，動畫速度會變成非線性，並產生簡化函式所提供的效果。 在建立動畫時省略緩動函式會導致動畫使用預設的 [`Linear`](xref:Xamarin.Forms.Easing.Linear) 緩時函數，這會產生線性速度。
+
+> [!NOTE]
+> Xamarin.Forms 5.0 包含型別轉換子，可將簡化函式的字串表示轉換為適當的 [`Easing`](xref:Xamarin.Forms.Easing) 列舉成員。 這個類型轉換器會在 XAML 中設定之任何類型的屬性上自動叫 `Easing` 用。
 
 如需在類別中使用動畫擴充方法的詳細資訊 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) ，請參閱 [簡單的動畫](~/xamarin-forms/user-interface/animation/simple.md)。 此類別也可以取用簡化功能 [`Animation`](xref:Xamarin.Forms.Animation) 。 如需詳細資訊，請參閱 [自訂動畫](~/xamarin-forms/user-interface/animation/custom.md)。
 
@@ -103,7 +106,7 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 
 自訂簡化函式指定為函式的 lambda 函式引數 [`Easing`](xref:Xamarin.Forms.Easing) ，並使用 `Math.Cos` 方法來建立方法所抑制的緩慢卸載效果 `Math.Exp` 。 因此，會將 [`Image`](xref:Xamarin.Forms.Image) 實例轉譯，使其看似放置於最後的放置位置。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範如何使用預先定義的簡化函式，以及如何建立自訂的簡化功能。 Xamarin.Forms 包含 [`Easing`](xref:Xamarin.Forms.Easing) 類別，可讓您指定傳送函式，以控制動畫執行時的速度或速度變慢。
 

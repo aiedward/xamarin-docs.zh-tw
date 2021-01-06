@@ -6,20 +6,18 @@ ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/24/2020
+ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6fe7ce75af14e25fa3dc213f0fb5ed99a2e70a87
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f3a89e0c5c49ec790cf35443030d50d3ddef9ed4
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374819"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939806"
 ---
 # <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms 圖形：幾何
-
-![發行前 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -32,6 +30,9 @@ ms.locfileid: "93374819"
 - `LineGeometry`，代表線條的幾何。
 - `PathGeometry`，代表可以由弧形、曲線、橢圓形、線條和矩形組成的複雜圖形幾何。
 - `RectangleGeometry`，代表矩形或方形的幾何。
+
+> [!NOTE]
+> 另外還有一個 `RoundedRectangleGeometry` 衍生自類別的類別 `GeometryGroup` 。 如需詳細資訊，請參閱 [RoundRectangleGeometry](#roundrectanglegeometry)。
 
 `Geometry`和 `Shape` 類別看起來很類似，因為它們會描述2d 圖形，但有一個重要的差異。 類別 `Geometry` 衍生自 [`BindableObject`](xref:Xamarin.Forms.BindableObject) 類別，而 `Shape` 類別衍生自 [`View`](xref:Xamarin.Forms.View) 類別。 因此， `Shape` 物件可以自行轉譯和參與配置系統，而物件則 `Geometry` 不能。 雖然物件 `Shape` 比物件更容易使用 `Geometry` ， `Geometry` 物件更具用途。 當 `Shape` 物件用來轉譯2d 圖形時， `Geometry` 物件可以用來定義2d 圖形的幾何區域，以及定義用於裁剪的區域。
 
@@ -62,8 +63,7 @@ ms.locfileid: "93374819"
 
 ```xaml
 <Path Fill="Blue"
-      Stroke="Red"
-      StrokeThickness="1">
+      Stroke="Red">
   <Path.Data>
     <EllipseGeometry Center="50,50"
                      RadiusX="50"
@@ -90,8 +90,7 @@ ms.locfileid: "93374819"
 下列範例顯示如何在物件中建立和轉譯 `LineGeometry` `Path` ：
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
   <Path.Data>
     <LineGeometry StartPoint="10,20"
                   EndPoint="100,130" />
@@ -116,8 +115,7 @@ ms.locfileid: "93374819"
 
 ```xaml
 <Path Fill="Blue"
-      Stroke="Red"
-      StrokeThickness="1">
+      Stroke="Red">
   <Path.Data>
     <RectangleGeometry Rect="10,10,150,100" />
   </Path.Data>
@@ -159,8 +157,7 @@ ms.locfileid: "93374819"
 內的區段 `PathFigure` 會合並成單一幾何圖形，其中每個區段的結束點都是下一個區段的起點。 的 `StartPoint` 屬性 `PathFigure` 會指定繪製第一個區段的起點。 每個後續區段都會從前一個區段的結束點開始。 例如，您 `10,50` `10,150` 可以將 `StartPoint` 屬性設定為 `10,50` ，並 `LineSegment` 使用的屬性設定來建立的 `Point` `10,150` 垂直線，以定義的垂直線。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -206,13 +203,12 @@ ms.locfileid: "93374819"
 下列範例顯示如何在物件中建立和轉譯 `ArcSegment` `Path` ：
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
                 <PathFigureCollection>
-                    <PathFigure StartPoint="10,100">
+                    <PathFigure StartPoint="10,10">
                         <PathFigure.Segments>
                             <PathSegmentCollection>
                                 <ArcSegment Size="100,50"
@@ -230,7 +226,7 @@ ms.locfileid: "93374819"
 </Path>
 ```
 
-在此範例中，會從 (10100) 繪製橢圓弧線至 (200100) 。
+在此範例中，從 (10，10) 到 (200100) 繪製橢圓弧線。
 
 ### <a name="create-a-beziersegment"></a>建立 System.windows.media.beziersegment>
 
@@ -252,8 +248,7 @@ ms.locfileid: "93374819"
 下列範例顯示如何在物件中建立和轉譯 `BezierSegment` `Path` ：
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -290,8 +285,7 @@ ms.locfileid: "93374819"
 下列範例顯示如何 `LineSegment` 在物件中建立和轉譯物件 `Path` ：
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1"
+<Path Stroke="Black"      
       Aspect="Uniform"
       HorizontalOptions="Start">
     <Path.Data>
@@ -330,8 +324,7 @@ ms.locfileid: "93374819"
 下列範例顯示如何在物件中建立和轉譯 `PolyBezierSegment` `Path` ：
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -366,8 +359,7 @@ ms.locfileid: "93374819"
 下列範例顯示如何在物件中建立和轉譯 `PolyLineSegment` `Path` ：
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -398,8 +390,7 @@ ms.locfileid: "93374819"
 下列範例顯示如何 `PolyQuadraticBezierSegment` 在物件中建立和轉譯 `Path` ：
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -439,8 +430,7 @@ ms.locfileid: "93374819"
 下列範例顯示如何在物件中建立和轉譯 `QuadraticBezierSegment` `Path` ：
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -469,8 +459,7 @@ ms.locfileid: "93374819"
 您可以使用物件的組合來建立更複雜的幾何 `PathSegment` 。 下列範例會使用、和來建立圖形 `BezierSegment` `LineSegment` `ArcSegment` ：
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -595,6 +584,34 @@ ms.locfileid: "93374819"
 在此範例中， `EllipseGeometry` 會合並四個具有相同 x 半徑和 y 半徑座標但具有不同中心座標的物件。 這會建立四個重迭的圓形，其內部會因為預設 `EvenOdd` 填滿規則而填滿橙色：
 
 ![GeometryGroup](geometry-images/geometrygroup.png "GeometryGroup")
+
+### <a name="roundrectanglegeometry"></a>RoundRectangleGeometry
+
+圓角矩形幾何代表矩形的幾何（或正方形）（圓角），並以圓角半徑和 [`Rect`](xref:Xamarin.Forms.Rect) 指定其相對位置及其高度和寬度的結構來定義。
+
+`RoundRectangleGeometry`衍生自類別的類別會 `GeometryGroup` 定義下列屬性：
+
+- `CornerRadius`，屬於類型的 [`CornerRadius`](xref:Xamarin.Forms.CornerRadius) ，也就是幾何的圓角半徑。
+- `Rect`， [`Rect`](xref:Xamarin.Forms.Rect) 代表矩形維度的型別。
+
+這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標和樣式。
+
+> [!NOTE]
+> 使用的填滿規則 `RoundRectangleGeometry` 為 `FillRule.Nonzero` 。 如需填滿規則的詳細資訊，請參閱[ Xamarin.Forms 圖形：填滿規則](fillrules.md)。
+
+下列範例顯示如何在物件中建立和轉譯 `RoundRectangleGeometry` `Path` ：
+
+```xaml
+<Path Fill="Blue"
+      Stroke="Red">
+    <Path.Data>
+        <RoundRectangleGeometry CornerRadius="5"
+                                Rect="10,10,150,100" />
+    </Path.Data>
+</Path>
+```
+
+矩形的位置和維度是由 [`Rect`](xref:Xamarin.Forms.Rect) 結構定義。 在此範例中，位置是 (10，10) ，寬度是150，而高度是100裝置獨立單位。 此外，矩形邊角會以5個裝置獨立單位的半徑四捨五入。
 
 ## <a name="clip-with-a-geometry"></a>具有幾何的剪輯
 

@@ -10,12 +10,12 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: abe8161ea8536f5fb8b13c71fe49ebad57460ca1
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6e53fdc689c15b3495af838f4788c1a50ad7a989
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370412"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940339"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第3章的摘要。 Deeper into text
 
@@ -30,11 +30,11 @@ ms.locfileid: "93370412"
 
 當的 [`Text`](xref:Xamarin.Forms.Label.Text) 屬性 `Label` 包含長文字時， `Label` 會自動將其包裝成多行，如 [**Baskervilles**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles) 範例所示。 您可以將 Unicode 代碼（例如 ' \u2014 '）內嵌為 em 虛線，或是將 c # 字元（例如 ' \r '）換成新行。
 
-當的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性 `Label` 設定為時，的 `LayoutOptions.Fill` 整體大小 `Label` 會受到其容器可供使用的空間所控管。 `Label`被視為 *受限制* 。 的大小 `Label` 是其容器的大小。
+當的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性 `Label` 設定為時，的 `LayoutOptions.Fill` 整體大小 `Label` 會受到其容器可供使用的空間所控管。 `Label`被視為 *受限制*。 的大小 `Label` 是其容器的大小。
 
 當 `HorizontalOptions` 和 `VerticalOptions` 屬性設定為以外的值時 `LayoutOptions.Fill` ，的大小 `Label` 會受到轉譯文字所需的空間所控管，最大到其容器可供使用的大小 `Label` 。 `Label`說是不受 *限制* 的，它會決定自己的大小。
 
- (附注： *受限制**和不受限制的* 詞彙可能會以直覺方式顯示，因為未受限制的視圖通常比受限的視圖小。 此外，本書籍的早期章節不會一致地使用這些詞彙。 ) 
+ (附注：*受限制**和不受限制的* 詞彙可能會以直覺方式顯示，因為未受限制的視圖通常比受限的視圖小。 此外，本書籍的早期章節不會一致地使用這些詞彙。 ) 
 
 例如的視圖 `Label` 可以在一個維度中受到限制，而另一個維度則不受限制。 `Label`只有在水準限制時，才會將文字包裝在多行上。
 
@@ -115,7 +115,7 @@ ms.locfileid: "93370412"
 
 各種平臺都有預設的色彩配置，如上表所示。
 
-以 Android 為目標時，您可以藉由在 Android.Manifest.xml 檔案中指定淺色主題，或 [加入 AppCompat 和材質設計](~/xamarin-forms/platform/android/appcompat-material-design.md)，切換至輕量配置。
+以 Android 為目標時，您可以藉由在 Android.Manifest.xml 檔案中指定淺色主題，切換至輕量配置。
 
 針對 Windows 平臺，色彩主題通常會由使用者選取，但您可以將 `RequestedTheme` 屬性集新增至 `Light` `Dark` 平臺的 app.config 檔案中的或。 根據預設，UWP 專案中的 app.xaml 檔案包含 `RequestedTheme` 設定為的屬性 `Light` 。
 

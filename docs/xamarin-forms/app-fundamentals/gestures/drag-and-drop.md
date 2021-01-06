@@ -10,27 +10,23 @@ ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 30e77d4978e9a191c1ba19e80109f9854cc46f8f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4bd8715d7eb4fa593d62021721f9403672652754
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93375235"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940456"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>新增拖放手勢辨識器
-
-![發行前 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
 
 拖放手勢可讓專案及其相關聯的資料封裝，使用連續手勢從螢幕位置拖曳至另一個位置。 拖放可以在單一應用程式中進行，也可以在一個應用程式中啟動，並在另一個應用程式中結束。
 
 > [!IMPORTANT]
-> Xamarin.Forms拖放手勢辨識器目前為實驗性，而且只能透過設定旗標來使用 `DragAndDrop_Experimental` 。 如需詳細資訊，請參閱 [實驗旗標](~/xamarin-forms/internals/experimental-flags.md)。
->
 > IOS、Android 和通用 Windows 平臺 (UWP) 支援拖放手勢的識別。 不過，在 iOS 上，需要最基本的 iOS 11 平臺。
 
-*拖曳來源* （即起始拖曳手勢的元素）可以藉由填入資料封裝物件來提供要傳送的資料。 當拖曳來源釋出時，就會發生 drop。 *放置目標* ，也就是拖曳來源下的元素，然後處理資料套件。
+*拖曳來源*（即起始拖曳手勢的元素）可以藉由填入資料封裝物件來提供要傳送的資料。 當拖曳來源釋出時，就會發生 drop。 *放置目標*，也就是拖曳來源下的元素，然後處理資料套件。
 
 在應用程式中啟用拖放的程式如下所示：
 

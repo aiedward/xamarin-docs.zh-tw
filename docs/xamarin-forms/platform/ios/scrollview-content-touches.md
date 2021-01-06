@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e028c506745bfd61aaff8e530a4f13d2429864ff
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 072f5db9115069fad547bb363865a609e5167ce8
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373909"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939936"
 ---
 # <a name="scrollview-content-touches-on-ios"></a>IOS 上的 ScrollView 內容觸控
 
@@ -24,12 +24,12 @@ ms.locfileid: "93373909"
 當觸控手勢于 iOS 上開始時，會觸發隱含計時器， [`ScrollView`](xref:Xamarin.Forms.ScrollView) 並 `ScrollView` 根據計時器範圍內的使用者動作，決定是否應該處理手勢或將其傳遞至其內容。 根據預設，iOS 會 `ScrollView` 延遲內容的內容，但在某些情況下可能會造成問題，但在某些情況下，內容不會在應該的情況下 `ScrollView` 贏得手勢。 因此，此平臺特定會控制是否 `ScrollView` 處理觸控手勢，或將其傳遞至其內容。 它是在 XAML 中使用，方法是將 `ScrollView.ShouldDelayContentTouches` 附加屬性設定為 `boolean` 值：
 
 ```xaml
-<MasterDetailPage ...
+<FlyoutPage ...
                   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
-    <MasterDetailPage.Master>
+    <FlyoutPage.Flyout>
         <ContentPage Title="Menu" BackgroundColor="Blue" />
-    </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
         <ContentPage>
             <ScrollView x:Name="scrollView" ios:ScrollView.ShouldDelayContentTouches="false">
                 <StackLayout Margin="0,20">
@@ -38,8 +38,8 @@ ms.locfileid: "93373909"
                 </StackLayout>
             </ScrollView>
         </ContentPage>
-    </MasterDetailPage.Detail>
-</MasterDetailPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
 ```
 
 或者，您也可以使用流暢的 API，從 c # 中使用它：
@@ -58,7 +58,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(false);
 scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDelayContentTouches());
 ```
 
-結果是， [`ScrollView`](xref:Xamarin.Forms.ScrollView) 可以停用延遲接收內容的觸控，因此在此案例中，會 [`Slider`](xref:Xamarin.Forms.Slider) 接收手勢，而不是的 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 頁面 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ：
+結果是， [`ScrollView`](xref:Xamarin.Forms.ScrollView) 可以停用延遲接收內容的觸控，因此在此案例中，會 [`Slider`](xref:Xamarin.Forms.Slider) 接收手勢，而不是的 [`Detail`](xref:Xamarin.Forms.FlyoutPage.Detail) 頁面 [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) ：
 
 [![ScrollView 延遲內容觸及平臺特定](scrollview-content-touches-images/scrollview-delay-content-touches.png)](scrollview-content-touches-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView 延遲內容觸控 Platform-Specific")
 

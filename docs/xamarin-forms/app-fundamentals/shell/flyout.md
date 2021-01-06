@@ -10,18 +10,18 @@ ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 90f06c0379cc40a946970ad4248dc8527ee34f3a
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4faa0923e074460ef254db319dfcfd01cc832dce
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372778"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940116"
 ---
 # <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms Shell 飛出視窗
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-飛出視窗為 Shell 應用程式的根功能表，且可透過圖示或從螢幕側邊撥動來存取。 飛出視窗會由選用標頭、飛出視窗項目及選用功能表項目所組成：
+飛出視窗為 Shell 應用程式的根功能表，且可透過圖示或從螢幕側邊撥動來存取。 飛出視窗是由選擇性的標頭、飛出視窗專案、選擇性功能表項目和選擇性頁尾所組成：
 
 ![Shell 批註飛出視窗的螢幕擷取畫面](flyout-images/flyout-annotated.png "批註式飛出視窗")
 
@@ -133,6 +133,59 @@ Shell.Current.FlyoutIsPresented = false;
     ...
 </Shell>
 ```
+
+## <a name="flyout-footer"></a>飛出視窗頁尾
+
+飛出視窗頁尾是選擇性顯示在飛出視窗底部的內容，其外觀是由 `object` 可透過屬性值設定的所定義 `Shell.FlyoutFooter` ：
+
+```xaml
+<Shell.FlyoutFooter>
+    <controls:FlyoutFooter />
+</Shell.FlyoutFooter>
+```
+
+下列範例中會顯示 `FlyoutFooter` 型別：
+
+```xaml
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="Xaminals.Controls.FlyoutFooter">
+    <StackLayout>
+        <Label Text="Xaminals"
+               TextColor="GhostWhite"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+        <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+               TextColor="GhostWhite"
+               HorizontalOptions="Center" />
+    </StackLayout>
+</ContentView>
+```
+
+這會產生下列飛出視窗頁尾：
+
+![飛出視窗頁尾的螢幕擷取畫面](flyout-images/flyout-footer.png "飛出視窗頁尾")
+
+或者，您可以藉由將屬性設定為，來定義飛出視窗頁尾的外觀 `Shell.FlyoutFooterTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
+
+```xaml
+<Shell.FlyoutFooterTemplate>
+    <DataTemplate>
+        <StackLayout>
+            <Label Text="Xaminals"
+                   TextColor="GhostWhite"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+                   TextColor="GhostWhite"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </DataTemplate>
+</Shell.FlyoutFooterTemplate>
+```
+
+飛出視窗頁尾會固定到飛出視窗的底部，而且可以是任何高度。 此外，頁尾也永遠不會遮住任何功能表項目。
 
 ## <a name="flyout-background-image"></a>飛出視窗背景影像
 

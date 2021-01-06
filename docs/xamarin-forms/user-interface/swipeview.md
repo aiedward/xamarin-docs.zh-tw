@@ -6,20 +6,18 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/26/2020
+ms.date: 10/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c9ebee7914d8d2ccfb284910f31d87999b22701f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: de3d7df922a0b6bdc6644e2684c6f01176abbe42
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93369645"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940495"
 ---
 # <a name="no-locxamarinforms-swipeview"></a>Xamarin.Forms SwipeView
-
-![發行前 API](~/media/shared/preview.png)
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
 
@@ -27,18 +25,13 @@ ms.locfileid: "93369645"
 
 [![螢幕擷取畫面：在 iOS 和 Android 上，SwipeView 滑動 CollectionView 中的專案](swipeview-images/swipeview-collectionview.png "SwipeView 滑動專案")](swipeview-images/swipeview-collectionview-large.png#lightbox "SwipeView 滑動專案")
 
-`SwipeView` 可在4.4 中取得 Xamarin.Forms 。 不過，它目前是實驗性，而且只能透過將下列程式程式碼新增至您在 `AppDelegate` iOS 上的類別、Android 上的類別， `MainActivity` 或在 `App` UWP 上的類別，然後再呼叫 `Forms.Init` ：
-
-```csharp
-Forms.SetFlags("SwipeView_Experimental");
-```
-
 `SwipeView` 會定義下列屬性：
 
 - `LeftItems`，代表在 `SwipeItems` 從左側撥動控制項時可叫用的滑動專案。
 - `RightItems`， `SwipeItems` 代表可在從右邊撥動控制項時叫用的滑動專案。
 - `TopItems`，代表在 `SwipeItems` 從上撥動控制項時可叫用的滑動專案。
 - `BottomItems`， `SwipeItems` 代表可在從下撥動控制項時叫用的滑動專案。
+- `Threshold`，代表與 `double` 裝置無關的單位數目，這些單位會觸發滑動手勢以完全顯示滑動專案。
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標和樣式。
 
@@ -186,7 +179,7 @@ SwipeView swipeView = new SwipeView
 
 [![螢幕擷取畫面： iOS 和 Android 上的 SwipeView 滑動專案](swipeview-images/swipeview-swipeitems.png "SwipeView 滑動專案")](swipeview-images/swipeview-swipeitems-large.png#lightbox "SwipeView 滑動專案")
 
-當 `SwipeItem` 按下時，它的 `Invoked` 事件就會引發，並由其註冊的事件處理常式處理。 或者，您也 `Command` 可以將屬性設定為叫 `ICommand` 用時將執行的實作為 `SwipeItem` 。
+當 `SwipeItem` 按下時，它的 `Invoked` 事件就會引發，並由其註冊的事件處理常式處理。 此外，也會 `MenuItem.Clicked` 引發事件。 或者，您也 `Command` 可以將屬性設定為叫 `ICommand` 用時將執行的實作為 `SwipeItem` 。
 
 > [!NOTE]
 > `SwipeItem`使用或屬性定義的外觀時 `Text` `IconImageSource` ，內容一律會置中。
@@ -234,6 +227,30 @@ SwipeView swipeView = new SwipeView
 - `Left` 指出發生左方刷。
 - `Up` 指出已發生向上滑動。
 - `Down` 表示已發生向下滑動。
+
+## <a name="swipe-threshold"></a>滑動閾值
+
+`SwipeView` 包含 `Threshold` 類型的屬性 `double` ，此屬性工作表示觸發滑動手勢以完全顯示滑動專案的裝置獨立單位數目。
+
+下列範例顯示的 `SwipeView` 會設定 `Threshold` 屬性：
+
+```xaml
+<SwipeView Threshold="200">
+    <SwipeView.LeftItems>
+        <SwipeItems>
+            <SwipeItem Text="Favorite"
+                       IconImageSource="favorite.png"
+                       BackgroundColor="LightGreen" />
+        </SwipeItems>
+    </SwipeView.LeftItems>
+    <!-- Content -->
+</SwipeView>
+```
+
+在此範例中， `SwipeView` 必須針對200裝置獨立單位撥動，才能完全顯示 `SwipeItem` 。
+
+> [!NOTE]
+> 目前， `Threshold` 屬性只會在 iOS 和 Android 上執行。
 
 ## <a name="swipe-mode"></a>滑動模式
 

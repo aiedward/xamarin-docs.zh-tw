@@ -10,12 +10,12 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8dd18caf7ab6730c8529660d83511cf8c65edcf
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 289f2637b10e1ad163b0c3693176625f3bd82e6f
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93375157"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940092"
 ---
 # <a name="no-locxamarinforms-carousel-page"></a>Xamarin.Forms 浮動切換頁面
 
@@ -43,7 +43,7 @@ _Xamarin.FormsCarouselPage 是使用者可以從側邊滑到一邊以流覽內�
 > [!NOTE]
 > 不 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 支援 UI 虛擬化。 因此，如果 `CarouselPage` 包含太多子項目，效能可能會受影響。
 
-如果內嵌在的 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 頁面 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 中，則 [`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) 應該將屬性設定為， `false` 以防止和之間的手勢衝突 `CarouselPage` `MasterDetailPage` 。
+如果內嵌在的 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) [`Detail`](xref:Xamarin.Forms.FlyoutPage.Detail) 頁面 [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) 中，則 [`FlyoutPage.IsGestureEnabled`](xref:Xamarin.Forms.FlyoutPage.IsGestureEnabledProperty) 應該將屬性設定為， `false` 以防止和之間的手勢衝突 `CarouselPage` `FlyoutPage` 。
 
 如需的詳細資訊 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) ，請參閱 Charles Petzold 本書的第 [25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) Xamarin.Forms 。
 

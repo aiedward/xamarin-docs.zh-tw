@@ -10,12 +10,12 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05b7821a08140dda411842c5f978be2027fcc033
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f37006e15ad4cc2c6c8d03f3c88c1c8f57fe4fd5
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373966"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940066"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第25章的摘要。 頁面變化
 
@@ -40,7 +40,7 @@ ms.locfileid: "93373966"
 - *分割* 主要和詳細資料並存的位置
 - 詳細資料頁面涵蓋或部分涵蓋主版頁面的 *popover*
 
-*Popover* 方法有幾種變化 (投影 *片* 、重 *迭* 和 *交換* ) ，但是這些通常是平臺相依的。 您可以將的 [`MasterDetailBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 屬性設定 `MasterDetailPage` 為列舉的成員 [`MasterBehavior`](xref:Xamarin.Forms.MasterBehavior) ：
+*Popover* 方法有幾種變化 (投影 *片*、重 *迭* 和 *交換*) ，但是這些通常是平臺相依的。 您可以將的 [`MasterDetailBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 屬性設定 `MasterDetailPage` 為列舉的成員 [`MasterBehavior`](xref:Xamarin.Forms.MasterBehavior) ：
 
 - [`Default`](xref:Xamarin.Forms.MasterBehavior.Default)
 - [`Split`](xref:Xamarin.Forms.MasterBehavior.Split)
@@ -62,13 +62,13 @@ Windows 8.1 和 Windows Phone 8.1 平臺需要將點陣圖設定為 `Icon` 主�
 
 `Master`和 `Detail` 屬性會以[SchoolAndDetailPage](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml)中的視覺化樹狀結構定義，其衍生自 `MasterDetailPage` 。 這種相片順序可讓您在主版和詳細資料頁面之間設定資料系結。
 
-該 XAML 檔案也會將的 [`IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) 屬性設定 `MasterDetailPage` 為 `True` 。 這會導致主版頁面在啟動時顯示;依預設會顯示詳細資料頁面。 當[SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs)您 `IsPresented` `false` `ListView` 在主版頁面中選取專案時，SchoolAndDetailPage.xaml.cs 檔會將設定為。 接著會顯示詳細資料頁面：
+該 XAML 檔案也會將的 [`IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) 屬性設定 `MasterDetailPage` 為 `True` 。 這會導致主版頁面在啟動時顯示;依預設會顯示詳細資料頁面。 當[](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs)您 `IsPresented` `false` `ListView` 在主版頁面中選取專案時，SchoolAndDetailPage.xaml.cs 檔會將設定為。 接著會顯示詳細資料頁面：
 
 [![學校和詳細資料的三重螢幕擷取畫面](images/ch25fg09-small.png "來自 MasterDetailPage 的詳細資料頁面")](images/ch25fg09-large.png#lightbox "來自 MasterDetailPage 的詳細資料頁面")
 
 ### <a name="your-own-user-interface"></a>您自己的使用者介面
 
-雖然 Xamarin.Forms 提供使用者介面，以便在主要和詳細資料檢視之間切換，但您可以提供自己的介面。 若要這樣做：
+雖然 Xamarin.Forms 提供使用者介面，以便在主要和詳細資料檢視之間切換，但您可以提供自己的介面。 操作方法：
 
 - 將 [`IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled) 屬性設定為 `false` 以停用輕刷
 - 覆寫 [`ShouldShowToolbarButton`](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton) 方法並返回， `false` 以隱藏 Windows 8.1 和 Windows Phone 8.1 上的工具列按鈕。
@@ -122,5 +122,5 @@ Windows 8.1 和 Windows Phone 8.1 平臺需要將點陣圖設定為 `Icon` 主�
 
 - [第25章完整文字 (PDF) ](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf)
 - [第25章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
-- [主版詳細資料頁面](~/xamarin-forms/app-fundamentals/navigation/master-detail-page.md)
+- [主版詳細資料頁面](~/xamarin-forms/app-fundamentals/navigation/flyoutpage.md)
 - [索引標籤式頁面](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)

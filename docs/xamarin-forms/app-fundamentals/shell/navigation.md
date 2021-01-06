@@ -6,16 +6,16 @@ ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/02/2020
+ms.date: 10/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f29bacf3546b2148a3d97c3c1ccaa44e02872be8
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.openlocfilehash: 5fb215ea92035965b48fff85ef4ccc70edc65fdf
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590307"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939169"
 ---
 # <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
 
@@ -27,6 +27,7 @@ Xamarin.Forms Shell 包含以 URI 為基礎的流覽體驗，可使用路由導�
 
 - `BackButtonBehavior`，屬於 `BackButtonBehavior` 類型，可定義上一頁按鈕行為的一種附加屬性。
 - `CurrentItem`，屬於 `FlyoutItem` 類型，是目前選取的 `FlyoutItem`。
+- `CurrentPage`，類型為 `Page` 目前顯示的頁面。
 - `CurrentState`，屬於 `ShellNavigationState` 類型，是 `Shell` 的目前導覽狀態。
 - `Current`，屬於 `Shell` 類型，是 `Application.Current.MainPage` 類型轉換的別名。
 
@@ -41,9 +42,9 @@ Xamarin.Forms Shell 包含以 URI 為基礎的流覽體驗，可使用路由導�
 
 導覽是在 Shell 應用程式中，透過指定要導覽的 URI 執行的。 導覽 URI 可以有三個元件：
 
-- *路由* ：定義當作 Shell 視覺階層一部分存在之內容的路徑。
-- *頁面* 。 Shell 視覺階層中不存在的頁面可以從 Shell 應用程式中的任何位置推送到導覽堆疊上。 例如，在 Shell 視覺階層中不會定義項目詳細資料頁面，但是如有需要，可以推送到導覽堆疊上。
-- 一或多個 *查詢參數* 。 查詢參數是導覽時可以傳遞至目的地頁面的參數。
+- *路由*：定義當作 Shell 視覺階層一部分存在之內容的路徑。
+- *頁面*。 Shell 視覺階層中不存在的頁面可以從 Shell 應用程式中的任何位置推送到導覽堆疊上。 例如，在 Shell 視覺階層中不會定義項目詳細資料頁面，但是如有需要，可以推送到導覽堆疊上。
+- 一或多個 *查詢參數*。 查詢參數是導覽時可以傳遞至目的地頁面的參數。
 
 當導覽 URI 包含全部三個元件時，結構是：//route/page?queryParameters
 
@@ -108,7 +109,7 @@ Routing.RegisterRoute("dogdetails", typeof(DogDetailPage));
 Routing.RegisterRoute("elephantdetails", typeof(ElephantDetailPage));
 ```
 
-此範例會註冊項目詳細資料頁面，Shell 子類別中未將此頁面定義為路由。 接著，可以使用 URI 式導覽，從應用程式中的任何位置導覽這些頁面。 這類頁面的路由稱為 *全域路由* 。
+此範例會註冊項目詳細資料頁面，Shell 子類別中未將此頁面定義為路由。 接著，可以使用 URI 式導覽，從應用程式中的任何位置導覽這些頁面。 這類頁面的路由稱為 *全域路由*。
 
 > [!NOTE]
 > 如果需要，已使用 `Routing.RegisterRoute` 方法註冊其路由的頁面可使用 `Routing.UnRegisterRoute` 方法取消註冊。
@@ -227,8 +228,8 @@ await Shell.Current.GoToAsync($"..?parameterToPassBack={parameterValueToPassBack
 
 | 格式 | 說明 |
 | --- | --- |
-| *route* 或 / *route* | 視覺階層中的路由無法推送到導覽堆疊上。 |
-| //*page* 或 /// *page* | 全域路由目前不得為導覽堆疊上的唯一頁面。 因此，不支援以絕對路由傳送至全域路由。 |
+| *route* 或 /*route* | 視覺階層中的路由無法推送到導覽堆疊上。 |
+| //*page* 或 ///*page* | 全域路由目前不得為導覽堆疊上的唯一頁面。 因此，不支援以絕對路由傳送至全域路由。 |
 
 使用下列任何一種路由格式都會導致擲回 `Exception`。
 
@@ -282,7 +283,7 @@ public class MyTab : Tab
 | `CanCancel`  | `bool` | 指出它是否可以取消導覽的值。 |
 | `Cancelled`  | `bool` | 指出是否已取消導覽的值。 |
 
-此外，`ShellNavigatingEventArgs` 類別會提供可用來取消導覽的 `Cancel` 方法。
+此外， `ShellNavigatingEventArgs` 類別還提供 `Cancel` 可用來取消導覽的方法，以及傳回 `GetDeferral` `ShellNavigatingDeferral` 可用來完成導覽之權杖的方法。 如需流覽延遲的詳細資訊，請參閱 [流覽延遲](#navigation-deferral)。
 
 `Shell` 類別也會定義 `Navigated` 事件，導覽完成時會引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatedEventArgs` 物件會提供下列屬性：
 
@@ -316,6 +317,35 @@ void OnNavigating(object sender, ShellNavigatingEventArgs e)
     }
 }
 ```
+
+## <a name="navigation-deferral"></a>流覽延遲
+
+您可以根據使用者的選擇來攔截、完成或取消 Shell 導覽。 這可以藉由覆寫子 `OnNavigating` 類別中的方法 `Shell` ，以及在 `GetDeferral` 物件上呼叫方法來達成 `ShellNavigatingEventArgs` 。 這個方法會傳回 `ShellNavigatingDeferral` 具有方法的權杖 `Complete` ，可用來完成導覽要求：
+
+```csharp
+public MyShell : Shell
+{
+    // ...
+    protected override async void OnNavigating(ShellNavigatingEventArgs args)
+    {
+        base.OnNavigating(args);
+
+        ShellNavigatingDeferral token = args.GetDeferral();
+        var result = await DisplayActionSheet("Navigate?", "Cancel", "Yes", "No");
+
+        if (result != "Yes")
+        {
+            args.Cancel();
+        }
+        token.Complete();
+    }    
+}
+```
+
+在此範例中，會顯示會邀請使用者完成導覽要求或將其取消的動作表。 藉由叫用物件上的方法來取消導覽 `Cancel` `ShellNavigatingEventArgs` 。 透過在 `Complete` `ShellNavigatingDeferral` `GetDeferral` 物件上方法所抓取的 token 上叫用方法，即可完成導覽 `ShellNavigatingEventArgs` 。
+
+> [!IMPORTANT]
+> `GoToAsync` `InvalidOperationException` 如果使用者嘗試在有暫止的流覽延遲的情況下流覽時，方法會擲回。
 
 ## <a name="pass-data"></a>傳遞資料
 

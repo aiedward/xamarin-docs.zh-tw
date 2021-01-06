@@ -8,18 +8,18 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 04090a2e9d97f1a5f4dae8fa850a39c3465ba05b
-ms.sourcegitcommit: 0c31f1398ec1de1a2b18ec7f25f30630df968db1
+ms.openlocfilehash: f05868bbf8da9597c4290ba687f767f3995ba437
+ms.sourcegitcommit: 07ee6a95f77f9a12fadb857e549cdcdb1928c7d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96544665"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904980"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
 **WebAuthenticator** 類別可讓您起始以瀏覽器為基礎的流程，此流程會接聽對應用程式註冊之特定 URL 的回呼。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 許多應用程式都需要新增使用者驗證，這通常表示讓您的使用者能夠登入其現有的 Microsoft、Facebook、Google 和現在的 Apple 登入帳戶。
 
@@ -46,9 +46,6 @@ ms.locfileid: "96544665"
 
 Android 需要意圖篩選器設定來處理您的回呼 URI。 將類別子類別化可輕鬆完成此作業 `WebAuthenticatorCallbackActivity` ：
 
-> [!NOTE]
-> 您應該考慮執行 [Android 應用程式連結](https://developer.android.com/training/app-links/) 來處理回呼 uri，並確保您的應用程式是唯一可註冊以處理回呼 uri 的應用程式。
-
 ```csharp
 const string CALLBACK_SCHEME = "myapp";
 
@@ -58,17 +55,6 @@ const string CALLBACK_SCHEME = "myapp";
     DataScheme = CALLBACK_SCHEME)]
 public class WebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthenticatorCallbackActivity
 {
-}
-```
-
-您也必須從中的覆寫回呼至 Essentials `OnResume` `MainActivity` ：
-
-```csharp
-protected override void OnResume()
-{
-    base.OnResume();
-
-    Xamarin.Essentials.Platform.OnResume();
 }
 ```
 
@@ -91,9 +77,6 @@ protected override void OnResume()
     </dict>
 </array>
 ```
-
-> [!NOTE]
-> 您應該考慮使用 [通用應用程式連結](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content) ，來註冊應用程式的回呼 URI 作為最佳作法。
 
 您也需要覆寫您 `AppDelegate` 的 `OpenUrl` 和方法， `ContinueUserActivity` 以呼叫 Essentials：
 

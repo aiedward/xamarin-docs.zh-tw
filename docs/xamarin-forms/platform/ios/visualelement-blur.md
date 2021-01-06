@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f02de8bc2bf0ed1091c73c3a91f748400f8615b7
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4c688e6f2e4ac29eea9298f5e0f3c58403cd2ec1
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93367578"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940300"
 ---
 # <a name="visualelement-blur-on-ios"></a>在 iOS 上 VisualElement 模糊
 
@@ -27,10 +27,8 @@ ms.locfileid: "93367578"
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
   ...
-  <AbsoluteLayout HorizontalOptions="Center">
-      <Image Source="monkeyface.png" />
-      <BoxView x:Name="boxView" ios:VisualElement.BlurEffect="ExtraLight" HeightRequest="300" WidthRequest="300" />
-  </AbsoluteLayout>
+  <Image Source="monkeyface.png"
+         ios:VisualElement.BlurEffect="ExtraLight" />
   ...
 </ContentPage>
 ```
@@ -42,12 +40,17 @@ using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 ...
 
-boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
+image.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 ```
 
-`BoxView.On<iOS>`方法指定此平臺特定的只會在 iOS 上執行。 [ `VisualElement.UseBlurEffect` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. UseBlurEffect (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。VisualElement}， Xamarin.Forms 。命名空間中的 PlatformConfiguration. iOSSpecific. BlurEffectStyle) # A3 方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 可用來套用模糊效果，並 [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) 提供四個值的列舉： [`None`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None) 、 [`ExtraLight`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight) 、 [`Light`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light) 和 [`Dark`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark) 。
+`Image.On<iOS>`方法指定此平臺特定的只會在 iOS 上執行。 [ `VisualElement.UseBlurEffect` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. UseBlurEffect (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。VisualElement}， Xamarin.Forms 。命名空間中的 PlatformConfiguration. iOSSpecific. BlurEffectStyle) # A3 方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 可用來套用模糊效果，並 [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) 提供四個值的列舉：
 
-結果是將指定的套用 [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) 至 [`BoxView`](xref:Xamarin.Forms.BoxView) 實例，這會模糊 [`Image`](xref:Xamarin.Forms.Image) 其下的分層：
+- [`None`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None)
+- [`ExtraLight`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight)
+- [`Light`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light)
+- [`Dark`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark)
+
+結果是將指定的套用 [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) 至 [`Image`](xref:Xamarin.Forms.Image) ：
 
 ![模糊效果 Platform-Specific](applying-blur-images/blur-effect.png)
 

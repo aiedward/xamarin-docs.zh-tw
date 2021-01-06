@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9459ce5e8b8f167f94d1f88e79d9acb32e4788bf
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6aa435cebe1976897f8165d1e645179b1ca4aa9f
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370607"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940313"
 ---
 # <a name="navigationpage-bar-text-color-mode-on-ios"></a>IOS 上的 NavigationPage Bar 文字色彩模式
 
@@ -24,14 +24,14 @@ ms.locfileid: "93370607"
 這個平臺特定的控制項，是否調整上的狀態列文字色彩， [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 以符合導覽列的亮度。 它是在 XAML 中使用，方法是將 [`NavigationPage.StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty) 附加屬性設定為 [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) 列舉值：
 
 ```xaml
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     x:Class="PlatformSpecifics.iOSStatusBarTextColorModePage">
-    <MasterDetailPage.Master>
-        <ContentPage Title="Master Page Title" />
-    </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Flyout Page Title" />
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
         <NavigationPage BarBackgroundColor="Blue" BarTextColor="White"
                         ios:NavigationPage.StatusBarTextColorMode="MatchNavigationBarTextLuminosity">
             <x:Arguments>
@@ -40,8 +40,8 @@ ms.locfileid: "93370607"
                 </ContentPage>
             </x:Arguments>
         </NavigationPage>
-    </MasterDetailPage.Detail>
-</MasterDetailPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
 
 ```
 
@@ -54,13 +54,13 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 IsPresentedChanged += (sender, e) =>
 {
-    var mdp = sender as MasterDetailPage;
-    if (mdp.IsPresented)
-        ((Xamarin.Forms.NavigationPage)mdp.Detail)
+    var flyoutPage = sender as FlyoutPage;
+    if (flyoutPage.IsPresented)
+        ((Xamarin.Forms.NavigationPage)flyoutPage.Detail)
           .On<iOS>()
           .SetStatusBarTextColorMode(StatusBarTextColorMode.DoNotAdjust);
     else
-        ((Xamarin.Forms.NavigationPage)mdp.Detail)
+        ((Xamarin.Forms.NavigationPage)flyoutPage.Detail)
           .On<iOS>()
           .SetStatusBarTextColorMode(StatusBarTextColorMode.MatchNavigationBarTextLuminosity);
 };
@@ -73,7 +73,7 @@ IsPresentedChanged += (sender, e) =>
 
 此外，[ `GetStatusBarTextColorMode` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. NavigationPage. GetStatusBarTextColorMode (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。NavigationPage} ) # A3 方法可以用來取得套用至之列舉的目前值 [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 。
 
-結果是可以調整上的狀態列文字色彩 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，以符合巡覽列的亮度。 在此範例中，當使用者在的和頁面之間切換時，狀態列文字色彩會變更 [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ：
+結果是可以調整上的狀態列文字色彩 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，以符合巡覽列的亮度。 在此範例中，當使用者在的和頁面之間切換時，狀態列文字色彩會變更 [`Flyout`](xref:Xamarin.Forms.FlyoutPage.Flyout) [`Detail`](xref:Xamarin.Forms.FlyoutPage.Detail) [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) ：
 
 ![狀態列文字色彩模式 Platform-Specific](status-bar-text-color-images/status-bar-text-color-mode.png)
 
