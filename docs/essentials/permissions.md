@@ -5,16 +5,16 @@ ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
-ms.date: 09/22/2020
+ms.date: 01/04/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 25677d79b29902ed0cdd0b2ed08da021d7ef9e6f
-ms.sourcegitcommit: d2daaa6ca5fe630f80d5a8151985d9f96a2fc93b
+ms.openlocfilehash: 3d0ec65b363f727834b12e6a12e832fbcf446ea9
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96513014"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972353"
 ---
 # <a name="no-locxamarinessentials-permissions"></a>Xamarin.Essentials：許可權
 
@@ -71,8 +71,6 @@ var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 
 ## <a name="explain-why-permission-is-needed"></a>說明為何需要許可權
 
-![發行前 API](~/media/shared/preview.png)
-
 最好的作法是解釋您的應用程式需要特定許可權的原因。 在 iOS 上，您必須指定向使用者顯示的字串。 Android 沒有這個功能，而且也預設的許可權狀態為停用。 這會限制知道使用者是否已拒絕許可權或第一次提示使用者的能力。 `ShouldShowRationale`方法可以用來判斷是否應該顯示教育使用者介面。 如果方法傳回， `true` 則是因為使用者已拒絕或停用過去的許可權。 `false`當呼叫這個方法時，其他平臺一律會傳回。
 
 ## <a name="available-permissions"></a>可用的許可權
@@ -91,7 +89,7 @@ Xamarin.Essentials 嘗試盡可能抽象化最多許可權。 不過，每個作
 | 相機 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
 | ContactsRead | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | ContactsWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| Flashlight | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
+| 手電筒 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
 | LocationWhenInUse | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![支援 tvOS](~/media/shared/yes.png "支援 tvOS")  | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
 | LocationAlways | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") |
 | 媒體 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |

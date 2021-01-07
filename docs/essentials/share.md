@@ -4,17 +4,17 @@ description: 中的共用類別可 Xamarin.Essentials 讓應用程式將資料�
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 01/06/2020
+ms.date: 01/04/2021
 ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0870dd94c15f1bd94d5c6864b3d4caeb96349f32
-ms.sourcegitcommit: 83793378b28e8ef8624406309b4ecd41aa1a3a14
+ms.openlocfilehash: 67c3aad219cdc71fd9d88783ca42803dfd1fe4f4
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94503263"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972275"
 ---
 # <a name="no-locxamarinessentials-share"></a>Xamarin.Essentials：共用
 
@@ -60,7 +60,7 @@ public class ShareTest
 
 提出要求時，會顯示要與外部應用程式共用的使用者介面：
 
-![共用](images/share.png)
+![與外部應用程式 UI 共用](images/share.png)
 
 ## <a name="file"></a>檔案
 
@@ -81,8 +81,6 @@ await Share.RequestAsync(new ShareFileRequest
 ```
 
 ## <a name="multiple-files"></a>多個檔案
-
-![發行前 API](~/media/shared/preview.png)
 
 共用多個檔案的使用方式與單一檔案不同，只是一次傳送數個檔案的能力：
 

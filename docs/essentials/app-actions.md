@@ -4,22 +4,20 @@ description: 中的加速計類別 Xamarin.Essentials 可讓您建立並回應�
 ms.assetid: 5edf9bc5-b721-448c-a8a2-0a9d4d0c792c
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 09/22/2020
+ms.date: 01/04/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e85206d8e48db1a6f168c6f89ca494519a0fe95c
-ms.sourcegitcommit: 4bb12419da2547c0afc17903ae46052b29cd0dc4
+ms.openlocfilehash: 0ebbc1630a6ccb294bb5fe8d3342ca13e997dee0
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97628179"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972340"
 ---
 # <a name="no-locxamarinessentials-app-actions"></a>Xamarin.Essentials：應用程式動作
 
 **AppActions** 類別可讓您建立並回應應用程式圖示的應用程式快捷方式。
-
-![發行前 API](~/media/shared/preview.png)
 
 ## <a name="get-started"></a>開始使用
 

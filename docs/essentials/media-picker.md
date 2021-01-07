@@ -4,22 +4,20 @@ description: 中的 MediaPicker 類別 Xamarin.Essentials 可讓使用者在裝�
 ms.assetid: 23460875-6cf9-4440-a97b-46c55b0bca69
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 09/22/2020
+ms.date: 01/04/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 32d05208250a4e9927aac50caa5a42c1c6c59bcb
-ms.sourcegitcommit: 4f0223cf13e14d35c52fa72a026b1c7696bf8929
+ms.openlocfilehash: 4d080ab13bb04b8502ad547234d5b9592af406e1
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93278360"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972249"
 ---
 # <a name="no-locxamarinessentials-media-picker"></a>Xamarin.Essentials：媒體選擇器
 
 **MediaPicker** 類別可讓使用者在裝置上挑選或拍攝相片或影片。
-
-![發行前 API](~/media/shared/preview.png)
 
 ## <a name="get-started"></a>開始使用
 

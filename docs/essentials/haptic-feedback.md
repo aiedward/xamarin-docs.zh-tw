@@ -4,22 +4,20 @@ description: 本檔說明中的 HapticFeedback 類別 Xamarin.Essentials ，可�
 ms.assetid: 4462936c-4018-443b-906d-d63da6d0ed7d
 author: dimonovdd
 ms.author: jamont
-ms.date: 09/22/2020
+ms.date: 01/04/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b1bf597874dc22a95ca9a3db239d9c7d2dd5658a
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 0b039a8ba7db7b98d30a49b74454b8c0c101f040
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436727"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972301"
 ---
 # <a name="no-locxamarinessentials-haptic-feedback"></a>Xamarin.Essentials： Haptic 意見反應
 
-**HapticFeedback**類別可讓您控制裝置上的 haptic 意見反應。
-
-![發行前 API](~/media/shared/preview.png)
+**HapticFeedback** 類別可讓您控制裝置上的 haptic 意見反應。
 
 ## <a name="get-started"></a>開始使用
 
@@ -31,7 +29,7 @@ ms.locfileid: "91436727"
 
 需要震動權限，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟 [Properties]**** 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
+開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
@@ -39,13 +37,13 @@ ms.locfileid: "91436727"
 
 或更新 Android 資訊清單：
 
-開啟 [ **Properties** ] 資料夾底下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
+開啟 [ **Properties** ] 資料夾底下的 **AndroidManifest.xml** 檔案，並在 **資訊清單** 節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單]**** 下，尋找 [必要權限]**** 區域並選取 [震動]**** 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
+禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單] 下，尋找 [必要權限] 區域並選取 [震動] 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 

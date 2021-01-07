@@ -4,23 +4,20 @@ description: 本檔說明中的螢幕擷取畫面類別 Xamarin.Essentials ，�
 ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 09/22/2020
+ms.date: 01/04/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 085da722aa2e893f97efb1c89f20b03da330ac3e
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: e907cf06814a5b14678e4584f9aabc56f39bb164
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414759"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972262"
 ---
 # <a name="no-locxamarinessentials-screenshot"></a>Xamarin.Essentials：螢幕擷取畫面
 
-**螢幕擷取畫面**類別可讓您捕捉應用程式目前顯示的畫面。
-
-![發行前 API](~/media/shared/preview.png)
-
+**螢幕擷取畫面** 類別可讓您捕捉應用程式目前顯示的畫面。
 
 ## <a name="get-started"></a>開始使用
 
