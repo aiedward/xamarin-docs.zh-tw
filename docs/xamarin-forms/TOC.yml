@@ -308,8 +308,8 @@ items:
             href: app-fundamentals/navigation/tabbed-page.md
           - name: CarouselPage
             href: app-fundamentals/navigation/carousel-page.md
-          - name: MasterDetailPage
-            href: app-fundamentals/navigation/master-detail-page.md
+          - name: FlyoutPage
+            href: app-fundamentals/navigation/flyoutpage.md
           - name: 強制回應頁面
             href: app-fundamentals/navigation/modal.md
       - name: Shell
@@ -354,8 +354,6 @@ items:
     items:
       - name: 總覽
         href: user-interface/index.yml
-      - name: C# 標記
-        href: user-interface/csharp-markup.md
       - name: 控制項參考
         items:
           - name: 總覽
@@ -376,8 +374,6 @@ items:
         items:
           - name: BoxView
             href: user-interface/boxview.md
-          - name: 展開工具
-            href: user-interface/expander.md
           - name: Image
             href: user-interface/images.md
           - name: 標籤
@@ -400,8 +396,6 @@ items:
                 href: user-interface/map/geocoder.md
               - name: 啟動原生地圖應用程式
                 href: user-interface/map/native-map-app.md
-          - name: MediaElement
-            href: user-interface/mediaelement.md
           - name: 圖形
             items:
               - name: 總覽
@@ -561,13 +555,6 @@ items:
                     href: user-interface/brushes/radialgradient.md
           - name: 色彩
             href: user-interface/colors.md
-          - name: DataPages
-            href: user-interface/datapages/index.md
-            items:
-              - name: 開始使用
-                href: user-interface/datapages/get-started.md
-              - name: 控制項參考
-                href: user-interface/datapages/controls.md
           - name: 顯示快顯
             href: user-interface/pop-ups.md
           - name: 字型
@@ -668,8 +655,6 @@ items:
             href: platform/android/index.md
           - name: AndroidX 移轉
             href: platform/android/androidx-migration.md
-          - name: AppCompat 與質感設計
-            href: platform/android/appcompat-material-design.md
           - name: 按鈕邊框間距與陰影
             href: platform/android/button-padding-shadow.md
           - name: Entry 輸入法選項
@@ -716,6 +701,8 @@ items:
             href: platform/ios/entry-cursor-color.md
           - name: Entry 字型大小
             href: platform/ios/entry-font-size.md
+          - name: FlyoutPage 陰影
+            href: platform/ios/flyoutpage-shadow.md
           - name: 格式化
             href: platform/ios/formatting.md
           - name: 強制回應頁面呈現樣式
@@ -730,8 +717,6 @@ items:
             href: platform/ios/listview-separator-style.md
           - name: 主要執行緒控制項更新
             href: platform/ios/main-thread-updates-ui.md
-          - name: MasterDetailPage 陰影
-            href: platform/ios/masterdetailpage-shadow.md
           - name: NavigationPage 列分隔符號
             href: platform/ios/navigation-bar-separator.md
           - name: NavigationPage 列文字色彩模式
@@ -774,12 +759,12 @@ items:
             href: platform/windows/index.md
           - name: 預設影像目錄
             href: platform/windows/default-image-directory.md
+          - name: FlyoutPage 瀏覽列
+            href: platform/windows/flyoutpage-navigation-bar.md
           - name: InputView 閱讀順序
             href: platform/windows/inputview-reading-order.md
           - name: ListView SelectionMode
             href: platform/windows/listview-selectionmode.md
-          - name: MasterDetailPage 瀏覽列
-            href: platform/windows/masterdetailpage-navigation-bar.md
           - name: Page 工具列放置
             href: platform/windows/page-toolbar-placement.md
           - name: 平台設定
@@ -794,6 +779,8 @@ items:
             href: platform/windows/visualelement-access-keys.md
           - name: VisualElement 舊版色彩模式
             href: platform/windows/legacy-color-mode.md
+          - name: Web 檢視執行模式
+            href: platform/windows/webview-executionmode.md
           - name: WebView JavaScript 警示
             href: platform/windows/webview-javascript-alert.md
       - name: 建立平台專用
@@ -1026,6 +1013,8 @@ items:
       - name: 常見問題集
         href: troubleshooting/questions/index.md
         items:
+          - name: 如何將我的應用程式移轉到 Xamarin.Forms 5.0？
+            href: troubleshooting/questions/forms5-migration.md
           - name: 我可以將 Xamarin.Forms 預設範本更新為較新的 NuGet 套件嗎？
             href: troubleshooting/questions/update-forms-template.md
           - name: 為什麼 Visual Studio XAML 設計工具不適用於 Xamarin.Forms XAML 檔案？
