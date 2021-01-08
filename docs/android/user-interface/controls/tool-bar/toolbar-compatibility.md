@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 8d5f5ff1cfe7876862371a9732f0ab8186bbeeba
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 8d5f0b06a804e9b9af7bb15111c70e4505c79fd0
+ms.sourcegitcommit: 40a56bbc1e038a9181101580ad18a4584edb5ab0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457616"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025509"
 ---
 # <a name="toolbar-compatibility"></a>工具列相容性
 
@@ -35,7 +35,7 @@ ms.locfileid: "91457616"
 
 ## <a name="set-the-minimum-and-target-android-version"></a>設定 Android 版本的最小值和目標
 
-應用程式的目標架構必須設定為 API 層級21或更新版本，否則應用程式將無法正確部署。 部署應用程式時，如果在 **套件 ' android ' 中找不到屬性 ' tileModeX ' 的資源識別碼** ，就會發生這種錯誤，這是因為目標 Framework 未設定為 **ANDROID 5.0 (API 層級 21-棒) ** 或更高。 
+應用程式的目標架構必須設定為 API 層級21或更新版本，否則應用程式將無法正確部署。 部署應用程式時，如果在 **套件 ' android ' 中找不到屬性 ' tileModeX ' 的資源識別碼** ，就會發生這種錯誤，這是因為目標 Framework 未設定為 **ANDROID 5.0 (API 層級 21-棒)** 或更高。 
 
 將目標 Framework 層級設定為 API 層級21或更高，並將 Android API 層級專案設定設為應用程式支援的最低 Android 版本。 如需設定 Android API 層級的詳細資訊，請參閱 [瞭解 ANDROID Api 層級](~/android/app-fundamentals/android-api-levels.md)。 在此 `ToolbarFun` 範例中，最低 Android 版本會設定為 KitKat (API 層級 4.4) 。 
 
@@ -45,7 +45,7 @@ ms.locfileid: "91457616"
 
 [![在 [管理 NuGet 套件] 中選取 V7 Appcompat 套件的螢幕擷取畫面](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
-安裝此 NuGet 時，也會一併安裝數個其他 NuGet 套件（如果尚未提供 (例如，例如，如 **支援**），則會安裝這些 nuget 套件。可繪製、支援 **v4**和 **xamarin**) 。 如需安裝 NuGet 套件的詳細資訊，請參閱 [逐步解說：在您的專案中包含 NuGet](/visualstudio/mac/nuget-walkthrough)。 
+安裝此 NuGet 時，也會一併安裝數個其他 NuGet 套件（如果尚未提供 (例如，例如，如 **支援**），則會安裝這些 nuget 套件。可繪製、支援 **v4** 和 **xamarin**) 。 如需安裝 NuGet 套件的詳細資訊，請參閱 [逐步解說：在您的專案中包含 NuGet](/visualstudio/mac/nuget-walkthrough)。 
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>使用 AppCompat 主題和工具列
 
@@ -166,7 +166,7 @@ local:showAsAction="ifRoom"
 
 ## <a name="subclass-appcompatactivity"></a>子類別 AppCompatActivity
 
-轉換中的最後一個步驟是修改， `MainActivity` 使其成為的子類別 `AppCompactActivity` 。 編輯 **MainActivity.cs** 並加入下列 `using` 語句： 
+轉換中的最後一個步驟是修改， `MainActivity` 使其成為的子類別 `AppCompatActivity` 。 編輯 **MainActivity.cs** 並加入下列 `using` 語句： 
 
 ```csharp
 using Android.Support.V7.App;
