@@ -43,31 +43,31 @@ _在 Xamarin.Forms 應用程式中，XAML 大部分用來定義頁面的視覺�
 
 在 [設定 **您的新專案** ] 視窗中，將 **專案名稱** 設定為 **XamlSamples** (或您偏好) 的任何專案，然後按一下 [ **建立** ] 按鈕。
 
-在 [ **新的跨平臺應用程式** ] 對話方塊中，按一下 [ **空白** ]，然後按一下 [ **確定]** 按鈕：
+在 [ **新的跨平臺應用程式** ] 對話方塊中，按一下 [ **空白**]，然後按一下 [ **確定]** 按鈕：
 
 ![新增應用程式對話方塊](get-started-with-xaml-images/win/new-cross-platform-app.png)
 
-方案中會建立四個專案： **XamlSamples** .NET Standard 程式庫、 **XamlSamples** 、 **XamlSamples** 和通用 Windows 平臺方案 **XamlSamples。**
+方案中會建立四個專案： **XamlSamples** .NET Standard 程式庫、 **XamlSamples**、 **XamlSamples** 和通用 Windows 平臺方案 **XamlSamples。**
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-在 Visual Studio for Mac 中，從功能表中選取 [檔案] **> [新方案** ]。 在 [ **新增專案** ] 對話方塊中，選取左側的多 **平臺 > 應用程式** ，而 **空白的表單應用程式** ( *不會* 從範本清單中 **形成應用程式** ) ：
+在 Visual Studio for Mac 中，從功能表中選取 [檔案] **> [新方案** ]。 在 [ **新增專案** ] 對話方塊中，選取左側的多 **平臺 > 應用程式** ，而 **空白的表單應用程式** (*不會* 從範本清單中 **形成應用程式**) ：
 
 ![新增專案對話方塊1](get-started-with-xaml-images/mac/newprojectdialog1.png)
 
-按 **[下一步]** 。
+按 **[下一步]**。
 
 在下一個對話方塊中，將專案命名為 **XamlSamples** (或您偏好) 的任何名稱。 確認已選取 [ **使用 .NET Standard** ] 選項按鈕：
 
 ![新增專案對話方塊2](get-started-with-xaml-images/mac/newprojectdialog2.png)
 
-按 **[下一步]** 。
+按 **[下一步]**。
 
 在下列對話方塊中，您可以選取專案的位置：
 
 ![新增專案對話方塊3](get-started-with-xaml-images/mac/newprojectdialog3.png)
 
-按下 [ **建立** ]
+按下 [**建立**]
 
 方案中會建立三個專案： **XamlSamples** .NET Standard 程式庫、 **XamlSamples、Android** 和 **XamlSamples。**
 
@@ -82,14 +82,14 @@ _在 Xamarin.Forms 應用程式中，XAML 大部分用來定義頁面的視覺�
 **XamlSamples** .NET Standard 程式庫中有一組具有下列名稱的檔案：
 
 - **App.xaml，xaml** 檔案;和
-- **App.xaml.cs** ，這是與 xaml 檔案相關聯的 c # *程式碼後端* 檔案。
+- **App.xaml.cs**，這是與 xaml 檔案相關聯的 c # *程式碼後端* 檔案。
 
 您必須按一下 [app.xaml] 旁邊的箭號，以查看 **程式** 代碼後端檔案。
 
 **App.xaml** 和 **App.xaml.cs** 都參與名為 `App` 的類別，該類別衍生自 `Application` 。 大部分其他具有 XAML 檔案的類別都有提供衍生自的類別，而這些檔案會 `ContentPage` 使用 XAML 來定義整個頁面的視覺內容。 這適用于 **XamlSamples** 專案中的其他兩個檔案：
 
-- **MainPage** ，xaml 檔案;和
-- **MainPage.xaml.cs** ，c # 程式碼後端檔案。
+- **MainPage**，xaml 檔案;和
+- **MainPage.xaml.cs**，c # 程式碼後端檔案。
 
 **MainPage .xaml** 檔案看起來像這樣 (雖然格式可能有點不同) ：
 
@@ -156,19 +156,19 @@ namespace XamlSamples
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-若要將其他以 XAML 為基礎的 `ContentPage` 類別加入至您的專案，請選取 [ **XamlSamples** .NET Standard 程式庫] 專案，按一下滑鼠右鍵，然後選取 [ **加入 > 新專案**...]。在 [ **加入新專案** ] 對話方塊中，選取 [ **Visual c # 專案] > Xamarin.Forms > 內容頁面** ([ **內容] 頁面 (c # )** ，這會建立僅限程式碼的頁面或 **內容視圖** ，這不是頁面) 。 提供頁面名稱，例如， **HelloXamlPage** ：
+若要將其他以 XAML 為基礎的 `ContentPage` 類別加入至您的專案，請選取 [ **XamlSamples** .NET Standard 程式庫] 專案，按一下滑鼠右鍵，然後選取 [ **加入 > 新專案**...]。在 [ **加入新專案** ] 對話方塊中，選取 [ **Visual c # 專案] > Xamarin.Forms > 內容頁面** ([ **內容] 頁面 (c # )**，這會建立僅限程式碼的頁面或 **內容視圖**，這不是頁面) 。 提供頁面名稱，例如， **HelloXamlPage**：
 
 ![[加入新專案] 對話方塊](get-started-with-xaml-images/win/add-new-item-dialog-2019.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-若要將其他以 XAML 為基礎的 `ContentPage` 類別加入至您的專案，請選取 [ **XamlSamples** .NET Standard 程式庫] 專案，並叫用檔案 **> [新增** 檔案] 功能表項目。 在 [ **新增** 檔案] 對話方塊的左側，選取左邊的 **表單** ， **表單 ContentPage Xaml** (不是 **表單 ContentPage** ，它會建立僅限程式碼的頁面或 **內容視圖** ，這不是頁面) 。 提供頁面名稱，例如， **HelloXamlPage** ：
+若要將其他以 XAML 為基礎的 `ContentPage` 類別加入至您的專案，請選取 [ **XamlSamples** .NET Standard 程式庫] 專案，並叫用檔案 **> [新增** 檔案] 功能表項目。 在 [ **新增** 檔案] 對話方塊的左側，選取左邊的 **表單** ， **表單 ContentPage Xaml** (不是 **表單 ContentPage**，它會建立僅限程式碼的頁面或 **內容視圖**，這不是頁面) 。 提供頁面名稱，例如， **HelloXamlPage**：
 
 ![[新增檔案] 對話方塊](get-started-with-xaml-images/mac/newfiledialog.png)
 
 -----
 
-系統會將兩個檔案新增至專案、 **HelloXamlPage** 和程式碼後端檔案 **HelloXamlPage.xaml.cs** 。
+系統會將兩個檔案新增至專案、 **HelloXamlPage** 和程式碼後端檔案 **HelloXamlPage.xaml.cs**。
 
 ## <a name="setting-page-content"></a>設定頁面內容
 
@@ -299,7 +299,7 @@ public MainPage()
 
 ## <a name="xaml-and-code-interactions"></a>XAML 和程式碼互動
 
-**HelloXamlPage** 範例只 `Label` 會在頁面上包含單一頁面，但這非常不尋常。 大部分 `ContentPage` 的衍生會將 `Content` 屬性設定為某些排序的版面配置，例如 `StackLayout` 。 的 `Children` 屬性 `StackLayout` 定義為類型 `IList<View>` ，但實際上是類型的物件 `ElementCollection<View>` ，而且可以使用多個視圖或其他配置來填入集合。 在 XAML 中，這些父子式關聯性會與一般 XML 階層建立。 以下是新頁面的 XAML 檔案，名為 **XamlPlusCodePage** ：
+**HelloXamlPage** 範例只 `Label` 會在頁面上包含單一頁面，但這非常不尋常。 大部分 `ContentPage` 的衍生會將 `Content` 屬性設定為某些排序的版面配置，例如 `StackLayout` 。 的 `Children` 屬性 `StackLayout` 定義為類型 `IList<View>` ，但實際上是類型的物件 `ElementCollection<View>` ，而且可以使用多個視圖或其他配置來填入集合。 在 XAML 中，這些父子式關聯性會與一般 XML 階層建立。 以下是新頁面的 XAML 檔案，名為 **XamlPlusCodePage**：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
