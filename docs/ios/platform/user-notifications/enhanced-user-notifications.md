@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 207aac33101615a0a103176cd2bf5dd061e0d264
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 8a18bfe3a72334eab3304492da63e6ce8f889a72
+ms.sourcegitcommit: 3edcc63fcf86409b73cd6e5dc77f0093a99b3f87
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430415"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98062611"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin 中增強的使用者通知
 
@@ -112,6 +112,7 @@ IOS 應用程式可使用兩種類型的遠端通知：
 - **iOS** -管理和排程通知的完整支援。
 - **tvOS** -新增徽章應用程式圖示的功能，供本機和遠端通知之用。
 - **watchOS** -新增將通知從使用者的已配對 iOS 裝置轉寄至其 Apple Watch 的功能，並讓 watch 應用程式能夠直接在監看式上進行本機通知。
+- **macOS** -管理和排程通知的完整支援。
 
 如需詳細資訊，請參閱 Apple 的 [UserNotifications 架構參考](https://developer.apple.com/reference/usernotifications) 和 [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui) 檔。
 
@@ -129,22 +130,48 @@ IOS 應用程式可使用兩種類型的遠端通知：
 
 當應用程式啟動時，應立即要求通知許可權，方法是將下列程式碼新增至的 `FinishedLaunching` 方法 `AppDelegate` ，並將所需的通知類型 (`UNAuthorizationOptions`) ：
 
+> [!NOTE]
+> `UNUserNotificationCenter` 僅適用于 iOS 10 +。 因此，最佳作法是在傳送要求之前檢查 macOS 版本。 
+
 ```csharp
 using UserNotifications;
 ...
 
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 {
-    // Request notification permissions from the user
-    UNUserNotificationCenter.Current.RequestAuthorization (UNAuthorizationOptions.Alert, (approved, err) => {
-        // Handle approval
-    });
+    // Version check
+    if (UIDevice.CurrentDevice.CheckSystemVersion (10, 0)) {
+        // Request notification permissions from the user
+        UNUserNotificationCenter.Current.RequestAuthorization (UNAuthorizationOptions.Alert, (approved, err) => {
+            // Handle approval
+        });
+    }
 
     return true;
 }
 ```
 
-此外，使用者隨時都可以使用裝置上的 [ **設定** ] 應用程式來變更應用程式的通知許可權。 應用程式應該先檢查使用者所要求的通知許可權，然後再使用下列程式碼來呈現通知：
+由於此 API 是統一的，而且也適用于 Mac 10.14 +，如果您是瞄準 macOS，您也必須儘快檢查通知許可權：
+
+```csharp
+using UserNotifications;
+...
+
+public override void DidFinishLaunching (NSNotification notification)
+{
+    // Check we're at least v10.14
+    if (NSProcessInfo.ProcessInfo.IsOperatingSystemAtLeastVersion (new NSOperatingSystemVersion (10, 14, 0))) {
+        // Request notification permissions from the user
+        UNUserNotificationCenter.Current.RequestAuthorization (UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound, (approved, err) => {
+            // Handle approval
+        });
+    }
+}
+
+> [!NOTE]
+> With MacOS apps, for the permission dialog to appear, you must sign your macOS app, even if building locally in DEBUG mode. Therefore, **Project->Options->Mac Signing->Sign the application bundle** must be checked.
+
+Additionally, a user can always change the notification privileges for an app at any time using the **Settings** app on the device. The app should check for the user's requested notification privileges before presenting a notification using the following code:
 
 ```csharp
 // Get current notification settings
@@ -239,12 +266,12 @@ content.Badge = 1;
 
 ### <a name="scheduling-when-a-notification-is-sent"></a>排程傳送通知的時間
 
-當建立通知的內容時，應用程式必須透過設定 *觸發*程式來排程通知將會向使用者顯示。 iOS 10 提供四種不同的觸發程式類型：
+當建立通知的內容時，應用程式必須透過設定 *觸發* 程式來排程通知將會向使用者顯示。 iOS 10 提供四種不同的觸發程式類型：
 
 - **推播通知** -專門用於遠端通知，當 APNs 傳送通知套件至裝置上執行的應用程式時，就會觸發推播通知。
 - **時間間隔** -允許從時間間隔開始排程本機通知，從現在開始，並結束未來的某個時間點。 例如， `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
-- 行事**曆日期**-允許在特定日期和時間排程本機通知。
-- 以**位置為基礎**-可在 iOS 裝置進入或離開特定地理位置，或在指定接近任何藍牙指標的時候排程本機通知。
+- 行事 **曆日期**-允許在特定日期和時間排程本機通知。
+- 以 **位置為基礎**-可在 iOS 裝置進入或離開特定地理位置，或在指定接近任何藍牙指標的時候排程本機通知。
 
 當本機通知就緒時，應用程式必須呼叫 `Add` 物件的方法，以將 `UNUserNotificationCenter` 其顯示排程給使用者。 針對遠端通知，伺服器端應用程式會將通知承載傳送給 APNs，然後將封包傳送至使用者的裝置。
 
@@ -535,8 +562,8 @@ namespace MonkeyNotification
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中開啟應用程式的解決方案。
-2. 以滑鼠右鍵按一下**Solution Pad**中的方案名稱，然後選取 [**加入**  >  **新專案**]。
-3. 選取 [ **iOS**  >  **延伸**模組  >  **通知服務擴充**功能]，然後按 [**下一步]** 按鈕： 
+2. 以滑鼠右鍵按一下 **Solution Pad** 中的方案名稱，然後選取 [**加入**  >  **新專案**]。
+3. 選取 [ **iOS**  >  **延伸** 模組  >  **通知服務擴充** 功能]，然後按 [**下一步]** 按鈕： 
 
     [![選取通知服務延伸模組](enhanced-user-notifications-images/extension02.png)](enhanced-user-notifications-images/extension02.png#lightbox)
 4. 輸入擴充功能的 **名稱** ，然後按 [ **下一步]** 按鈕： 
@@ -550,7 +577,7 @@ namespace MonkeyNotification
 
 1. 在 Visual Studio 中開啟應用程式的解決方案。
 2. 在 **方案總管** 中，以滑鼠右鍵按一下方案名稱，然後選取 [ **加入 > 新增專案**]。
-3. 選取 **Visual c # > IOS 延伸模組 > Notification Service 延伸**模組：
+3. 選取 **Visual c # > IOS 延伸模組 > Notification Service 延伸** 模組：
 
     [![選取通知服務延伸模組](enhanced-user-notifications-images/extension01.w157-sml.png)](enhanced-user-notifications-images/extension01.w157.png#lightbox)
 4. 輸入擴充功能的 **名稱** ，然後按一下 [ **確定]** 按鈕。

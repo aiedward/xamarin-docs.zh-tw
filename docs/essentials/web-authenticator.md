@@ -8,18 +8,18 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f05868bbf8da9597c4290ba687f767f3995ba437
-ms.sourcegitcommit: 07ee6a95f77f9a12fadb857e549cdcdb1928c7d3
+ms.openlocfilehash: 4ab7c5dab6a414e15531e0e0e812d604e05ab1cc
+ms.sourcegitcommit: 3edcc63fcf86409b73cd6e5dc77f0093a99b3f87
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904980"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98062598"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
 **WebAuthenticator** 類別可讓您起始以瀏覽器為基礎的流程，此流程會接聽對應用程式註冊之特定 URL 的回呼。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 許多應用程式都需要新增使用者驗證，這通常表示讓您的使用者能夠登入其現有的 Microsoft、Facebook、Google 和現在的 Apple 登入帳戶。
 
@@ -56,6 +56,16 @@ const string CALLBACK_SCHEME = "myapp";
 public class WebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthenticatorCallbackActivity
 {
 }
+```
+如果您專案的目標 Android 版本設為 **android 11 (R API 30)** 您必須使用與新的 [封裝可見度需求](https://developer.android.com/preview/privacy/package-visibility)搭配使用的查詢來更新 android 資訊清單。
+
+開啟 [Properties] 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest] 節點內新增下列內容：
+```XML
+<queries>
+    <intent>
+        <action android:name="android.support.customtabs.action.CustomTabsService" />
+    </intent>
+</queries>
 ```
 
 # <a name="ios"></a>[iOS](#tab/ios)
