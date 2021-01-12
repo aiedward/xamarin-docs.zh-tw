@@ -6,16 +6,16 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/05/2020
+ms.date: 01/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de3d7df922a0b6bdc6644e2684c6f01176abbe42
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: d0ebae93405cb115a0f1e87453ab9b438202ef30
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940495"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115245"
 ---
 # <a name="no-locxamarinforms-swipeview"></a>Xamarin.Forms SwipeView
 
@@ -37,12 +37,11 @@ ms.locfileid: "97940495"
 
 此外，會 `SwipeView` 繼承 [`Content`](xref:Xamarin.Forms.ContentView.Content) 類別中的屬性 [`ContentView`](xref:Xamarin.Forms.ContentView) 。 `Content`屬性是類別的 content 屬性 `SwipeView` ，因此不需要明確設定。
 
-`SwipeView`類別也會定義四個事件：
+`SwipeView`類別也會定義三個事件：
 
 - `SwipeStarted` 當滑動開始時引發。 `SwipeStartedEventArgs`伴隨這個事件的物件具有 `SwipeDirection` 類型的屬性 `SwipeDirection` 。
 - `SwipeChanging` 會在滑動移動時引發。 `SwipeChangingEventArgs`伴隨這個事件的物件具有 `SwipeDirection` 屬性、類型為 `SwipeDirection` ，以及 `Offset` 類型的屬性 `double` 。
-- `SwipeEnded` 當滑動結束時就會引發。 `SwipeEndedEventArgs`伴隨這個事件的物件具有 `SwipeDirection` 類型的屬性 `SwipeDirection` 。
-- `CloseRequested` 當滑動專案關閉時，就會引發。
+- `SwipeEnded` 當滑動結束時就會引發。 `SwipeEndedEventArgs`伴隨這個事件的物件具有 `SwipeDirection` 屬性、類型為 `SwipeDirection` ，以及 `IsOpen` 類型的屬性 `bool` 。
 
 此外， `SwipeView` 包含 `Open` 和 `Close` 方法，分別以程式設計方式開啟和關閉滑動專案。
 
@@ -346,7 +345,7 @@ SwipeView swipeView = new SwipeView
 
 ## <a name="open-and-close-a-swipeview-programmatically"></a>以程式設計方式開啟和關閉 SwipeView
 
-`SwipeView` 包含 `Open` 和 `Close` 方法，分別以程式設計方式開啟和關閉滑動專案。
+`SwipeView` 包含 `Open` 和 `Close` 方法，分別以程式設計方式開啟和關閉滑動專案。 根據預設，這些方法會在 `SwipeView` 其開啟或關閉時建立動畫。
 
 `Open`方法需要 `OpenSwipeItem` 引數，以指定將開啟的方向 `SwipeView` 。 `OpenSwipeItem`列舉包含四個成員：
 
@@ -354,6 +353,8 @@ SwipeView swipeView = new SwipeView
 - `TopItems`，表示 `SwipeView` 將從頂端開啟，以顯示集合中的滑動專案 `TopItems` 。
 - `RightItems`，表示 `SwipeView` 將從右邊開啟，以顯示集合中的滑動專案 `RightItems` 。
 - `BottomItems`，表示 `SwipeView` 將從底部開啟，以顯示集合中的滑動專案 `BottomItems` 。
+
+此外，此 `Open` 方法也會接受選擇性 `bool` 引數，以定義是否 `SwipeView` 會在開啟時繪製動畫。
 
 如果指定 `SwipeView` 了 `swipeView` ，則下列範例會示範如何開啟 `SwipeView` 來顯示集合中的滑動專案 `LeftItems` ：
 
@@ -368,7 +369,7 @@ swipeView.Close();
 ```
 
 > [!NOTE]
-> 當叫用 `Close` 方法時， `CloseRequested` 就會引發事件。
+> `Close`方法也會接受選擇性 `bool` 引數，以定義是否 `SwipeView` 會在關閉時進行動畫。
 
 ## <a name="disable-a-swipeview"></a>停用 SwipeView
 

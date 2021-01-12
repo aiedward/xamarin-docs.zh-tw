@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ad3b5d76816710d45cd1d8e738771e39555401fa
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: ea0be2136b354ef7a613904799481079bcae52ad
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940670"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115232"
 ---
 # <a name="no-locxamarinforms-flyoutpage"></a>Xamarin.Forms FlyoutPage
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-flyoutpage)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/navigation-flyoutpage)
 
 飛出視窗頁面通常會顯示專案清單，如下列螢幕擷取畫面所示：
 
@@ -294,5 +294,5 @@ public class MainPageCS : FlyoutPage
 ## <a name="related-links"></a>相關連結
 
 - [頁面種類](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
-- [FlyoutPage (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-flyoutpage)
+- [FlyoutPage (範例) ](/samples/xamarin/xamarin-forms-samples/navigation-flyoutpage)
 - [FlyoutPage API](xref:Xamarin.Forms.FlyoutPage)

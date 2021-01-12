@@ -10,12 +10,12 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f37006e15ad4cc2c6c8d03f3c88c1c8f57fe4fd5
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: d9d0d75a393cc30ffaf698625cd49cf0ce5b5741
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940066"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115258"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第25章的摘要。 頁面變化
 
@@ -33,7 +33,7 @@ ms.locfileid: "97940066"
 
 ## <a name="master-and-detail"></a>主要和詳細資料
 
-會 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 定義類型為的兩個屬性 `Page` ： [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) 和 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 。 一般來說，您會將每個屬性都設定為 `ContentPage` 。 會 `MasterDetailPage` 顯示並切換這兩個頁面。
+會 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 定義類型為的兩個屬性 `Page` ： [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) 和 `Detail` 。 一般來說，您會將每個屬性都設定為 `ContentPage` 。 會 `MasterDetailPage` 顯示並切換這兩個頁面。
 
 有兩個基本的方法可以在這兩個頁面之間切換：
 
@@ -62,7 +62,7 @@ Windows 8.1 和 Windows Phone 8.1 平臺需要將點陣圖設定為 `Icon` 主�
 
 `Master`和 `Detail` 屬性會以[SchoolAndDetailPage](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml)中的視覺化樹狀結構定義，其衍生自 `MasterDetailPage` 。 這種相片順序可讓您在主版和詳細資料頁面之間設定資料系結。
 
-該 XAML 檔案也會將的 [`IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) 屬性設定 `MasterDetailPage` 為 `True` 。 這會導致主版頁面在啟動時顯示;依預設會顯示詳細資料頁面。 當[](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs)您 `IsPresented` `false` `ListView` 在主版頁面中選取專案時，SchoolAndDetailPage.xaml.cs 檔會將設定為。 接著會顯示詳細資料頁面：
+該 XAML 檔案也會將的 `IsPresented` 屬性設定 `MasterDetailPage` 為 `True` 。 這會導致主版頁面在啟動時顯示;依預設會顯示詳細資料頁面。 當[](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs)您 `IsPresented` `false` `ListView` 在主版頁面中選取專案時，SchoolAndDetailPage.xaml.cs 檔會將設定為。 接著會顯示詳細資料頁面：
 
 [![學校和詳細資料的三重螢幕擷取畫面](images/ch25fg09-small.png "來自 MasterDetailPage 的詳細資料頁面")](images/ch25fg09-large.png#lightbox "來自 MasterDetailPage 的詳細資料頁面")
 
@@ -70,8 +70,8 @@ Windows 8.1 和 Windows Phone 8.1 平臺需要將點陣圖設定為 `Icon` 主�
 
 雖然 Xamarin.Forms 提供使用者介面，以便在主要和詳細資料檢視之間切換，但您可以提供自己的介面。 操作方法：
 
-- 將 [`IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled) 屬性設定為 `false` 以停用輕刷
-- 覆寫 [`ShouldShowToolbarButton`](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton) 方法並返回， `false` 以隱藏 Windows 8.1 和 Windows Phone 8.1 上的工具列按鈕。
+- 將 `IsGestureEnabled` 屬性設定為 `false` 以停用輕刷
+- 覆寫 `ShouldShowToolbarButton` 方法並返回， `false` 以隱藏 Windows 8.1 和 Windows Phone 8.1 上的工具列按鈕。
 
 接著，您必須提供在主版和詳細資料頁面之間切換的方法，如 [**ColorsDetail**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/ColorsDetails) 範例所示範。
 

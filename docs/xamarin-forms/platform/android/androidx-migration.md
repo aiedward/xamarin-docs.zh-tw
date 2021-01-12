@@ -1,5 +1,5 @@
 ---
-title: 中的 AndroidX 遷移Xamarin.Forms
+title: AndroidX 遷移 Xamarin.Forms
 description: 本文說明 AndroidX 存在的原因，以及如何在您的應用程式中遷移至 AndroidX Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: 98884003-E65A-4EB4-842D-66CFE27344A4
@@ -10,49 +10,52 @@ ms.date: 01/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c2df309a8a12a05a4b492bb66977aa2411142850
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3ef1d0322018e5c404204fdaf9f4816891cc39f3
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138264"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115128"
 ---
-# <a name="androidx-migration-in-xamarinforms"></a>中的 AndroidX 遷移Xamarin.Forms
+# <a name="androidx-migration-in-no-locxamarinforms"></a>AndroidX 遷移 Xamarin.Forms
 
-AndroidX 取代了 Android 支援程式庫。 本文說明為什麼 AndroidX 存在、它會如何影響 Xamarin.Forms ，以及如何將應用程式遷移以使用 AndroidX 程式庫。
+AndroidX 取代 Android 支援程式庫。 本文說明 AndroidX 的存在、其影響的方式 Xamarin.Forms ，以及如何遷移您的應用程式以使用 AndroidX 程式庫。
+
+> [!IMPORTANT]
+> 如果您要將應用程式遷移至 Xamarin.Forms 5.0，請參閱 [如何? 將我的應用程式遷移至 Xamarin.Forms 5.0？](~/xamarin-forms/troubleshooting/questions/forms5-migration.md)。
 
 ## <a name="history-of-androidx"></a>AndroidX 的歷程記錄
 
-Android 支援程式庫是為了在較舊版本的 Android 上提供較新的功能而建立的。 它是一種相容性層，可讓開發人員使用可能不存在於所有 Android 作業系統版本上的功能，並針對較舊的版本進行正常的回退。 支援程式庫也包括便利性和 helper 類別、偵錯工具和公用程式工具，以及相依于其他支援程式庫類別以運作的複雜類別。
+Android 支援程式庫的建立是為了提供較舊版本 Android 的較新功能。 它是一種相容性層級，可讓開發人員使用在所有 Android 作業系統版本上可能不存在的功能，並針對較舊的版本進行正常的回退。 支援程式庫也包括便利性和 helper 類別、偵錯工具和公用程式工具，以及相依于其他支援程式庫類別的複雜類別。
 
-雖然支援程式庫原本是一個二進位檔，但它已成長並進化成一套程式庫，這對現代化應用程式開發而言幾乎是必要的。 以下是支援程式庫中一些常用的功能：
+雖然支援程式庫最初是單一的二進位檔，但它已成長並演進成一套程式庫，這對新式應用程式開發而言幾乎是不可或缺的。 以下是支援程式庫常用的一些功能：
 
 - `Fragment`支援類別。
-- `RecyclerView`，用於管理長清單。
-- 使用超過65536個方法 Multidex 應用程式的支援。
+- `RecyclerView`用來管理長清單的。
+- 使用超過65536方法的應用程式 Multidex 支援。
 - `ActivityCompat` 類別。
 
-AndroidX 是取代支援程式庫的功能，不再維護此功能-所有新的程式庫開發都會在 AndroidX 程式庫中進行。 AndroidX 是重新設計的程式庫，它會使用語義版本設定、更清楚的封裝名稱，以及對常見應用程式架構模式的更佳支援。 AndroidX 1.0.0 版是二進位檔，等同于支援程式庫版本28.0.0。 如需從支援程式庫至 AndroidX 之類別對應的完整清單，請參閱 developer.android.com 上的[支援程式庫類別](https://developer.android.com/jetpack/androidx/migrate/class-mappings)對應。
+AndroidX 取代了不再維護的支援程式庫-所有新的程式庫開發都會出現在 AndroidX 程式庫中。 AndroidX 是經過重新設計的程式庫，它會使用語義版本控制、更清楚的封裝名稱，以及更好的一般應用程式架構模式支援。 AndroidX 1.0.0 版是相當於支援程式庫版本28.0.0 的二進位檔。 如需從支援程式庫到 AndroidX 的類別對應完整清單，請參閱 developer.android.com 上的 [支援程式庫類別](https://developer.android.com/jetpack/androidx/migrate/class-mappings) 對應。
 
-Google 已使用 AndroidX 建立名為 Jetifier 的遷移程式。 此 Jetifier 會在建立程式期間檢查 jar 位元組程式碼，並在應用程式程式碼和相依性中，將支援程式庫參考重新對應到其對等的 AndroidX。
+Google 建立了一個名為 Jetifier with AndroidX 的遷移程式。 Jetifier 會在組建程式期間檢查 jar 位元組程式碼，並在應用程式程式碼和相依性中，重新對應支援程式庫參考至其 AndroidX 對等專案。
 
-在 Xamarin.Forms 應用程式中，就像在 Android JAVA 應用程式中一樣，jar 相依性必須遷移至 AndroidX。 不過，您也必須遷移 Xamarin 系結，以指向正確的基礎 jar 檔案。 Xamarin.Forms已新增在4.5 版中自動 AndroidX 遷移的支援。
+在 Xamarin.Forms 應用程式中（如同在 Android JAVA 應用程式中），jar 相依性必須遷移至 AndroidX。 不過，您也必須遷移 Xamarin 系結，以指向正確的基礎 jar 檔案。 Xamarin.Forms 已新增4.5 版中自動 AndroidX 遷移的支援。
 
-如需 AndroidX 的詳細資訊，請參閱 developer.android.com 上的[AndroidX 總覽](https://developer.android.com/jetpack/androidx)。
+如需 AndroidX 的詳細資訊，請參閱 developer.android.com 上的 [AndroidX 總覽](https://developer.android.com/jetpack/androidx) 。
 
-## <a name="automatic-migration-in-xamarinforms"></a>中的自動遷移Xamarin.Forms
+## <a name="automatic-migration-in-no-locxamarinforms"></a>中的自動遷移 Xamarin.Forms
 
 若要自動遷移至 AndroidX， Xamarin.Forms 專案必須：
 
-- 以 Android API 版本29或更高的目標。
-- 使用 Xamarin.Forms 4.5 或更高版本。
+- 將 Android API 的目標設為29或更高版本。
+- 使用 Xamarin.Forms 4.5 版或更高版本。
 
-在您的專案中確認這些設定之後，請在 Visual Studio 2019 中建立 Android 應用程式。 在建立過程中，會檢查中繼語言（IL），並支援程式庫相依性和系結與 AndroidX 相依性交換。 如果您的應用程式具有組建所需的所有 AndroidX 相依性，您將會注意到組建程式中沒有任何差異。
+當您在專案中確認這些設定之後，請在 Visual Studio 2019 中建立 Android 應用程式。 在建立程式期間，會檢查中繼語言 (IL) ，而且支援程式庫相依性和系結會以 AndroidX 相依性交換。 如果您的應用程式具有組建所需的所有 AndroidX 相依性，您將會注意到組建程式沒有任何差異。
 
 > [!NOTE]
-> 您必須在專案中保留支援程式庫的參考。 這些是用來在遷移程式檢查產生的 IL 並轉換相依性之前，用來編譯應用程式。
+> 您必須在專案中保留支援程式庫的參考。 這些是用來在遷移程式檢查產生的 IL 並轉換相依性之前，先編譯應用程式。
 
-如果偵測到的 AndroidX 相依性不是專案的一部分，則會報告組建錯誤，指出遺失哪些 AndroidX 套件。 範例組建錯誤如下所示：
+如果偵測到不是專案一部分的 AndroidX 相依性，則會報告組建錯誤，指出哪些 AndroidX 封裝遺失。 範例組建錯誤如下所示：
 
 ```
 Could not find 37 AndroidX assemblies, make sure to install the following NuGet packages:
@@ -67,14 +70,15 @@ You can also copy and paste the following snippit into your .csproj file:
  <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0-rc1" />
 ```
 
-您可以透過 Visual Studio 中的 NuGet 套件管理員安裝遺失的 NuGet 套件，或編輯您的 Android .csproj 檔案來安裝，以包含 `PackageReference` 錯誤中列出的 XML 專案。
+遺漏的 NuGet 套件可以透過 Visual Studio 中的 NuGet 封裝管理員安裝，或藉由編輯您的 Android .csproj 檔案來安裝，以包含 `PackageReference` 錯誤中所列的 XML 專案。
 
-解決遺漏的套件之後，重建專案會載入遺失的封裝，而您的專案會使用 AndroidX 相依性來編譯，而不是支援程式庫相依性。
+解析遺漏的封裝之後，重建專案會載入缺少的封裝，而您的專案會使用 AndroidX 相依性進行編譯，而不是支援程式庫相依性。
 
 > [!NOTE]
 > 如果您的專案和專案相依性不參考 Android 支援程式庫，則遷移程式不會執行任何動作，也不會執行。
 
 ## <a name="related-links"></a>相關連結
 
+- [如何? 將我的應用程式遷移至 Xamarin.Forms 5.0？](~/xamarin-forms/troubleshooting/questions/forms5-migration.md)
 - Developer.android.com 上的[Android 支援程式庫總覽](https://developer.android.com/topic/libraries/support-library/index)
-- Developer.android.com 上的[AndroidX 總覽](https://developer.android.com/jetpack/androidx)
+- Developer.android.com 的[AndroidX 總覽](https://developer.android.com/jetpack/androidx)

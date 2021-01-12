@@ -10,16 +10,16 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0b05cb37a2399f438b9003e39341feb138bce490
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 9f601ed1cfd7938a2340650604b925339328f29d
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940677"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115219"
 ---
 # <a name="flyoutpage-shadow-on-ios"></a>在 iOS 上 FlyoutPage 陰影
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 這個平臺特定的控制項，是在顯示 [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) 飛出視窗頁面時，是否已套用陰影的詳細資料頁面。 它是在 XAML 中使用，方法是將可系結 `FlyoutPage.ApplyShadow` 屬性設定為 `true` ：
 
@@ -56,6 +56,6 @@ public class iOSFlyoutPageCS : FlyoutPage
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

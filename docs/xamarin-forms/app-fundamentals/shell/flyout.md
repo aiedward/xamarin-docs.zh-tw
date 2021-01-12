@@ -6,16 +6,16 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2020
+ms.date: 01/12/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4faa0923e074460ef254db319dfcfd01cc832dce
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: bad3a19de5a8feae2ca2fd02c1a454ac379e9f42
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940116"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115154"
 ---
 # <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms Shell 飛出視窗
 
@@ -63,6 +63,20 @@ ms.locfileid: "97940116"
 ```csharp
 Shell.Current.FlyoutIsPresented = false;
 ```
+
+## <a name="flyout-width-and-height"></a>飛出視窗寬度和高度
+
+藉由將 `Shell.FlyoutWidth` 和 `Shell.FlyoutHeight` 附加屬性設定為值，即可自訂飛出視窗的寬度和高度 `double` ：
+
+```xaml
+<Shell ...
+       FlyoutWidth="400"
+       FlyoutHeight="200">
+    ...
+</Shell>
+```
+
+這可讓您在整個畫面上展開飛出視窗，或減少飛出視窗的高度，使其不會遮蔽索引標籤列。
 
 ## <a name="flyout-header"></a>飛出視窗標題
 
@@ -279,7 +293,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 `FlyoutItem` 類別包含下列屬性來控制飛出視窗項目的外觀和行為：
 
-- `FlyoutDisplayOptions`，屬於 `FlyoutDisplayOptions` 類型，可定義項目及其子項目如何顯示在飛出視窗中。 預設值是 `AsSingleItem`。
+- `FlyoutDisplayOptions`，屬於 `FlyoutDisplayOptions` 類型，可定義項目及其子項目如何顯示在飛出視窗中。 預設值為 `AsSingleItem`。
 - `CurrentItem`，屬於 `Tab` 類型，這是選取的項目。
 - 型別為 `IList<Tab>` 的 `Items` 會在 `FlyoutItem` 內定義所有索引標籤。
 - 型別為 `ImageSource` 的 `FlyoutIcon`，這是要針對項目使用的圖示。 如果未設定這個屬性，它將轉而使用 `Icon` 屬性值。
@@ -540,7 +554,23 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 > [!NOTE]
 > 相同的範本也可用於 `MenuItem` 物件。
 
-## <a name="flyoutitem-tab-order"></a>FlyoutItem 定位順序
+## <a name="set-flyoutitem-visibility"></a>設定 FlyoutItem 可見度
+
+飛出視窗專案預設會顯示在飛出視窗中。 不過，您可以藉由將 `Shell.FlyoutItemIsVisible` 附加屬性（預設為）設定為，在飛出視窗中隱藏飛出視窗專案 `true` `false` ：
+
+```xaml
+<Shell ...>
+    <FlyoutItem ...
+                Shell.FlyoutItemIsVisible="False">
+        ...
+    </FlyoutItem>
+</Shell>
+```
+
+> [!NOTE]
+> `Shell.FlyoutItemIsVisible`可以在 `FlyoutItem` 、 `MenuItem` 、 `Tab` 和物件上設定附加屬性 `ShellContent` 。
+
+## <a name="set-flyoutitem-tab-order"></a>設定 FlyoutItem 定位順序
 
 根據預設，`FlyoutItem` 物件的定位順序會與其列在 XAML 中的順序或以程式設計方式新增至子集合的順序相同。 此順序為透過鍵盤巡覽 `FlyoutItem` 物件的順序，而這個預設順序通常也是最佳順序。
 
@@ -588,6 +618,54 @@ CurrentItem = aboutItem;
 ```csharp
 Shell.Current.CurrentItem = aboutItem;
 ```
+
+## <a name="replace-flyout-content"></a>取代飛出視窗內容
+
+您可以將可系結屬性設定為，以選擇性地將可系結屬性取代為您自己的內容，以將飛出視窗內容取代為 `Shell.FlyoutContent` `object` ：
+
+```xaml
+<Shell.FlyoutContent>
+    <CollectionView BindingContext="{x:Reference shell}"
+                    IsGrouped="True"
+                    ItemsSource="{Binding FlyoutItems}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Label Text="{Binding Title}"
+                       TextColor="White"
+                       FontSize="Large" />
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</Shell.FlyoutContent>
+```
+
+在此範例中，會將飛出視窗內容取代為 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，以顯示集合中每個專案的標題 `FlyoutItems` 。
+
+> [!NOTE]
+> `FlyoutItems`類別中的屬性 `Shell` 是飛出視窗專案的唯讀集合。
+
+或者，您可以藉由將屬性設定為，來定義飛出視窗內容 `Shell.FlyoutContentTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
+
+```xaml
+<Shell.FlyoutContentTemplate>
+    <DataTemplate>
+        <CollectionView BindingContext="{x:Reference shell}"
+                        IsGrouped="True"
+                        ItemsSource="{Binding FlyoutItems}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Title}"
+                           TextColor="White"
+                           FontSize="Large" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </DataTemplate>
+</Shell.FlyoutContentTemplate>
+```
+
+> [!IMPORTANT]
+> 飛出視窗標題可以選擇性地顯示在您的飛出視窗內容上方，而飛出視窗頁尾可以選擇性地顯示在您的飛出視窗內容下方。 如果您的飛出視窗內容是可滾動的，Shell 將會嘗試接受您的飛出視窗標題的滾動行為。
 
 ## <a name="menu-items"></a>功能表項目
 
