@@ -6,16 +6,16 @@ ms.assetid: 98884003-E65A-4EB4-842D-66CFE27344A4
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 01/22/2020
+ms.date: 01/13/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3ef1d0322018e5c404204fdaf9f4816891cc39f3
-ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
+ms.openlocfilehash: b24ab21bf7ae5812916a968da3a59169b975e33a
+ms.sourcegitcommit: 86663f94f8eddb808eb4504cd32ddaf217b6406c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98115128"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98166624"
 ---
 # <a name="androidx-migration-in-no-locxamarinforms"></a>AndroidX 遷移 Xamarin.Forms
 
@@ -45,15 +45,16 @@ Google 建立了一個名為 Jetifier with AndroidX 的遷移程式。 Jetifier 
 
 ## <a name="automatic-migration-in-no-locxamarinforms"></a>中的自動遷移 Xamarin.Forms
 
-若要自動遷移至 AndroidX， Xamarin.Forms 專案必須：
+若要自動遷移至 AndroidX， Xamarin.Forms Android 平臺專案必須：
 
 - 將 Android API 的目標設為29或更高版本。
 - 使用 Xamarin.Forms 4.5 版或更高版本。
+- 對 Android 支援程式庫具有直接或可轉移的相依性。
 
 當您在專案中確認這些設定之後，請在 Visual Studio 2019 中建立 Android 應用程式。 在建立程式期間，會檢查中繼語言 (IL) ，而且支援程式庫相依性和系結會以 AndroidX 相依性交換。 如果您的應用程式具有組建所需的所有 AndroidX 相依性，您將會注意到組建程式沒有任何差異。
 
-> [!NOTE]
-> 您必須在專案中保留支援程式庫的參考。 這些是用來在遷移程式檢查產生的 IL 並轉換相依性之前，先編譯應用程式。
+> [!IMPORTANT]
+> 手動遷移至 AndroidX 將會為您的應用程式產生最快的組建流程，而且是 AndroidX 遷移的建議方法。 這包括以 AndroidX 相依性取代支援程式庫相依性，以及更新您的程式碼以取用 AndroidX 類型。 如需詳細資訊，請參閱 [使用 AndroidX 類型](~/xamarin-forms/troubleshooting/questions/forms5-migration.md#use-androidx-types)。
 
 如果偵測到不是專案一部分的 AndroidX 相依性，則會報告組建錯誤，指出哪些 AndroidX 封裝遺失。 範例組建錯誤如下所示：
 
@@ -82,3 +83,5 @@ You can also copy and paste the following snippit into your .csproj file:
 - [如何? 將我的應用程式遷移至 Xamarin.Forms 5.0？](~/xamarin-forms/troubleshooting/questions/forms5-migration.md)
 - Developer.android.com 上的[Android 支援程式庫總覽](https://developer.android.com/topic/libraries/support-library/index)
 - Developer.android.com 的[AndroidX 總覽](https://developer.android.com/jetpack/androidx)
+- [AndroidX 類別對應](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-class-mapping.csv)
+- [AndroidX 元件](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-assemblies.csv)

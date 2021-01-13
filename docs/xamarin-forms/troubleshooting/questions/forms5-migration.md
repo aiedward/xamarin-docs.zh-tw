@@ -11,12 +11,12 @@ ms.date: 10/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8f93d20dac789abed57f8f41bf41778ad50a5fb5
-ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
+ms.openlocfilehash: 2a8aa964dd2f18998e15d68df72f3cee1bd0ac5a
+ms.sourcegitcommit: 86663f94f8eddb808eb4504cd32ddaf217b6406c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97972314"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98166637"
 ---
 # <a name="how-do-i-migrate-my-app-to-no-locxamarinforms-50"></a>如何? 將我的應用程式遷移至 Xamarin.Forms 5.0？
 
@@ -96,7 +96,7 @@ AndroidX 取代 Android 支援程式庫，因此 Android 支援程式庫類型�
 | `Android.Support.V7.App` | `AndroidX.AppCompat.App` |
 | `Android.Support.V7.Widget` | `AndroidX.AppCompat.Widget` |
 
-如需從支援程式庫到 AndroidX 之類別對應的完整清單，請參閱 developer.android.com 上的 [支援程式庫類別](https://developer.android.com/jetpack/androidx/migrate/class-mappings) 對應。
+如需從支援程式庫到 AndroidX 之類別對應的完整清單，請參閱 github.com 上的 [AndroidX 類別](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-class-mapping.csv) 對應。 如需從支援程式庫到 AndroidX 的元件對應完整清單，請參閱 github.com 上的 [AndroidX 元件](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-assemblies.csv) 。
 
 #### <a name="remove-axml-files"></a>移除 .AXML 檔案
 
@@ -124,3 +124,5 @@ Xamarin.Forms 5.0 建議 UWP 專案的目標平臺版本為 >= 10.0.18362.0。 �
 
 - [功能移動來源 Xamarin.Forms](https://github.com/xamarin/XamarinCommunityToolkit/wiki/Features-moved-from-Xamarin.Forms)
 - [AndroidX 遷移 Xamarin.Forms](~/xamarin-forms/platform/android/androidx-migration.md)
+- [AndroidX 類別對應](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-class-mapping.csv)
+- [AndroidX 元件](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-assemblies.csv)
