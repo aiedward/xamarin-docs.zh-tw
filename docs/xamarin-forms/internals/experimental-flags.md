@@ -10,12 +10,12 @@ ms.date: 12/01/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 55a710ace10834cffdecb5247c2df410e8e1396e
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: d9f6f5e2d27f04dadfa2b830703bb36355072c44
+ms.sourcegitcommit: c9f62ed4bab516be18606e87e89e01f57b4ad17e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939819"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98163487"
 ---
 # <a name="no-locxamarinforms-experimental-flags"></a>Xamarin.Forms 實驗性旗標
 
@@ -85,7 +85,8 @@ Device.SetFlags(new string[]{ "Shell_UWP_Experimental", "AnotherFeature_Experime
 | `DragAndDrop_Experimental` | 5.0 |
 | `FastRenderers_Experimental` | 4.0 |
 | `IndicatorView_Experimental` | 4.7 |
-| `Markup_Experimental` | 5.0 |
+| `Markup_Experimental` | 5.0 (移至 Xamarin 社區工具組)  |
+| `MediaElement_Experimental` | 5.0 (移至 Xamarin 社區工具組)  |
 | `RadioButton_Experimental` | 5.0 |
 | `Shapes_Experimental` | 5.0 |
 | `Shell_Experimental` | 4.0  |

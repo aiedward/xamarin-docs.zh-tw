@@ -10,12 +10,12 @@ ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ce3dd92c09fb40ea1b864e0c613223ce8bf99e36
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: a2259d9784d9b55be636e92452562a13f0750b14
+ms.sourcegitcommit: c9f62ed4bab516be18606e87e89e01f57b4ad17e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940365"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98163500"
 ---
 # <a name="simple-animations-in-no-locxamarinforms"></a>中的簡單動畫 Xamarin.Forms
 
@@ -25,7 +25,7 @@ _ViewExtensions 類別提供可用於建立簡單動畫的擴充方法。本文�
 
 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)類別提供下列擴充方法，可用於建立簡單的動畫：
 
-- [ `CancelAnimations` ] (x： Xamarin.Forms 。ViewExtensions. CancelAnimations (Xamarin.Forms 。VisualElement) # A3 會取消任何動畫。
+- [ `CancelAnimations` ] (x： Xamarin.Forms 。ViewExtensions. CancelAnimations (Xamarin.Forms 。VisualElement) 會取消任何動畫。
 - [ `FadeTo` ] (x： Xamarin.Forms 。ViewExtensions. FadeTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 繪製的 [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 - [ `RelScaleTo` ] (x： Xamarin.Forms 。ViewExtensions. RelScaleTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 會將動畫增量增加或減少套用至的 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) 屬性 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 - [ `RotateTo` ] (x： Xamarin.Forms 。ViewExtensions. RotateTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 繪製的 [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
