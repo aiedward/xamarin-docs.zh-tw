@@ -1,19 +1,19 @@
 ---
-title: 使用小組城市與 Xamarin
+title: 搭配 Xamarin 使用 TeamCity
 description: 本指南將討論使用 TeamCity 來編譯行動應用程式，然後將其提交至 App Center 測試所需的步驟。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: davidortinau
 ms.author: daortin
 ms.date: 04/01/2020
-ms.openlocfilehash: a7118cc3ce9c0a5c4254bb5921800fe38acd85a0
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 553f40a407fa8003a6545214a545f00b01fb0ed6
+ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91458221"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555031"
 ---
-# <a name="using-team-city-with-xamarin"></a>使用小組城市與 Xamarin
+# <a name="using-teamcity-with-xamarin"></a>搭配 Xamarin 使用 TeamCity
 
 _本指南將討論使用 TeamCity 來編譯行動應用程式，然後將其提交至 App Center 測試所需的步驟。_
 
@@ -35,7 +35,7 @@ TeamCity 安裝有數種不同的排列。 下列清單說明其中一些排列�
 
 - **準備組建伺服器** –這個步驟牽涉到安裝建立行動應用程式所需的必要軟體、工具和憑證，並準備發佈。
 
-- 建立**組建腳本**–此步驟並非絕對必要，但組建腳本是可自動建立應用程式的實用輔助工具。 使用組建腳本有助於針對可能發生的組建問題進行疑難排解，並提供一致且可重複的方式來建立要散發的二進位檔，即使未練習持續整合也是一樣。
+- 建立 **組建腳本**–此步驟並非絕對必要，但組建腳本是可自動建立應用程式的實用輔助工具。 使用組建腳本有助於針對可能發生的組建問題進行疑難排解，並提供一致且可重複的方式來建立要散發的二進位檔，即使未練習持續整合也是一樣。
 
 - **建立 TeamCity 專案** –完成前三個步驟之後，我們必須建立 TeamCity 專案，以包含取出原始程式碼、編譯專案，並將測試提交至 App Center 測試所需的所有中繼資料。
 
@@ -59,7 +59,7 @@ TeamCity 安裝有數種不同的排列。 下列清單說明其中一些排列�
 1. **Visual Studio for Mac** –這包含了 Xamarin 和 Xamarin. Android。
 2. **登入 Xamarin 元件存放區** -此步驟是選擇性的，且只有在您的應用程式使用 Xamarin 元件存放區中的元件時才需要。 此時主動登入元件存放區，會在 TeamCity 組建嘗試編譯應用程式時避免任何問題。
 3. **Xcode** –編譯和簽署 iOS 應用程式需要 Xcode。
-4. **Xcode 命令列工具** -這會在「 [更新 Ruby with rbenv ruby-build](https://github.com/calabash/calabash-ios/wiki) 指南」的「安裝」一節的步驟1中加以說明。
+4. **Xcode Command-Line 工具** -這會在「 [更新 Ruby with rbenv ruby-build](https://github.com/calabash/calabash-ios/wiki) 指南」的「安裝」一節的步驟1中加以說明。
 5. **簽署身分識別 & 布建設定檔** –透過 XCode 匯入憑證和布建設定檔。 如需詳細資訊，請參閱匯出簽署身分識別和布建 [設定檔](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html) 的 Apple 指南。
 6. **Android 金鑰庫** –將必要的 Android 金鑰庫複製到 TeamCity 使用者可存取的目錄，例如 `~/Documents/keystores/MyAndroidApp1` 。
 7. **Calabash** –如果您的應用程式具有使用 Calabash 撰寫的測試，這是選擇性步驟。 如需詳細資訊，請參閱《 [在 OS X 上安裝 Calabash X Mavericks](https://github.com/calabash/calabash-ios/wiki) 指南》和 [更新 Ruby with rbenv ruby-build](https://github.com/calabash/calabash-ios/wiki) 指南。
@@ -81,7 +81,7 @@ TeamCity 安裝有數種不同的排列。 下列清單說明其中一些排列�
 
 組建腳本可以像 Windows) 上的 PowerShell 檔案 (一樣簡單，或是在 OS X) 上 (bash 腳本。 建立組建腳本時，有數種指令碼語言選擇：
 
-- [**Rake**](https://github.com/jimweirich/rake) –這是特定領域的語言 (DSL) ，可用於建立以 Ruby 為基礎的專案。 Rake 具有熱門的優點，以及更豐富的程式庫生態系統。
+- [**Rake**](https://github.com/jimweirich/rake) –這是以 Ruby 為基礎的 Domain-Specific 語言 (DSL) 以建立專案。 Rake 具有熱門的優點，以及更豐富的程式庫生態系統。
 
 - [**psake**](https://github.com/psake/psake) –這是建立軟體的 Windows PowerShell 程式庫
 
@@ -114,7 +114,7 @@ TeamCity 安裝有數種不同的排列。 下列清單說明其中一些排列�
 
 - **編譯應用程式** –這包括使用正確的布建設定檔簽署應用程式。
 
-- 將**應用程式提交給 Xamarin Test Cloud** –這包括將 APK 與適當金鑰儲存區對齊的簽章和 zip。
+- 將 **應用程式提交給 Xamarin Test Cloud** –這包括將 APK 與適當金鑰儲存區對齊的簽章和 zip。
 
 以下將詳細說明這兩個步驟。
 
@@ -139,7 +139,7 @@ TeamCity 安裝有數種不同的排列。 下列清單說明其中一些排列�
 appcenter test run uitest --app <TEAM-NAME/APP-NAME> --devices <DEVICE_SET> --token <API_KEY> --app-path <appname.APK-or-appname.IPA> --merge-nunit-xml report.xml --build-dir pathToUITestBuildDir
 ```
 
-當測試執行時，將會以稱為 **report.xml**的 NUNIT 樣式 XML 檔案格式傳回測試結果。 TeamCity 會在組建記錄檔中顯示資訊。
+當測試執行時，將會以稱為 **report.xml** 的 NUNIT 樣式 XML 檔案格式傳回測試結果。 TeamCity 會在組建記錄檔中顯示資訊。
 
 如需如何將 Uitest 提交至 App Center 的詳細資訊，請參閱 [準備 xamarin. Android 應用程式](/appcenter/test-cloud/uitest/preparing-for-upload-android) 或 [準備 Xamarin iOS 應用程式](/appcenter/test-cloud/uitest/preparing-for-upload-ios)。
 
@@ -200,7 +200,7 @@ $ appcenter test run calabash --app <TEAM-NAME/APP-NAME> --devices <DEVICE_SET> 
 
 8. 組建完成後，請檢查組建記錄檔，並查看是否有任何需要注意的組建發生問題或警告。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本指南涵蓋了如何使用 TeamCity 來建立 Xamarin 行動應用程式，然後將其提交至 App Center 測試。 我們討論了如何建立組建腳本，以將組建程式自動化。 組建腳本會負責編譯應用程式、提交至 App Center 測試，以及等待結果。
 
