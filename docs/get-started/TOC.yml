@@ -60,7 +60,7 @@
         - name: 方格版面配置
           href: tutorials/grid/index.yml
         - name: 清單
-          href: tutorials/listview/index.yml
+          href: tutorials/collectionview/index.yml
         - name: 快顯視窗
           href: tutorials/pop-ups/index.yml
         - name: 應用程式生命週期

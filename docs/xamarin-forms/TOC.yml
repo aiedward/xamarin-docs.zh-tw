@@ -59,7 +59,7 @@ items:
           - name: 方格版面配置
             href: ~/get-started/tutorials/grid/index.yml
           - name: 清單
-            href: ~/get-started/tutorials/listview/index.yml
+            href: ~/get-started/tutorials/collectionview/index.yml
           - name: 快顯視窗
             href: ~/get-started/tutorials/pop-ups/index.yml
           - name: 應用程式生命週期
@@ -352,7 +352,7 @@ items:
         href: app-fundamentals/triggers.md
   - name: 使用者介面
     items:
-      - name: 總覽
+      - name: 概觀
         href: user-interface/index.yml
       - name: 控制項參考
         items:
@@ -547,7 +547,7 @@ items:
                 href: user-interface/brushes/solidcolor.md
               - name: 漸層
                 items:
-                  - name: 概觀
+                  - name: 總覽
                     href: user-interface/brushes/gradient.md
                   - name: 線形漸層
                     href: user-interface/brushes/lineargradient.md
@@ -755,7 +755,7 @@ items:
             href: platform/ios/visualelement-first-responder.md
       - name: Windows
         items:
-          - name: 總覽
+          - name: 概觀
             href: platform/windows/index.md
           - name: 預設影像目錄
             href: platform/windows/default-image-directory.md
