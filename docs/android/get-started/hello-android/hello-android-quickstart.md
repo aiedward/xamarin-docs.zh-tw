@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: f8824f8dac7edee1c91772231e5c58735b9ece26
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: e12020f2a73ebb454a32342b7b0ea745f441804c
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93368787"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609101"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入門
 
@@ -24,7 +24,7 @@ _在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置�
 
 您會建立一個應用程式，將使用者輸入的英數字元電話號碼轉譯成數字電話號碼，然後將該數字電話號碼顯示給使用者。 最終的應用程式看起來如下：
 
-[![應用程式完成時的螢幕擷取畫面](hello-android-quickstart-images/vs/15-running-app-sml.png)](hello-android-quickstart-images/vs/15-running-app.png#lightbox)
+[![電話號碼轉譯應用程式完成時的螢幕擷取畫面。](hello-android-quickstart-images/vs/15-running-app-sml.png)](hello-android-quickstart-images/vs/15-running-app.png#lightbox)
 
 ::: zone pivot="windows"
 
@@ -85,7 +85,7 @@ _在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置�
 > [!TIP]
 > 較新版的 Visual Studio 包含稍微不同的應用程式範本。
 >
-> 1. 版面配置位於 **content_main.axml** ，而非 **activity_main.axml** 中。
+> 1. 版面配置位於 **content_main.axml**，而非 **activity_main.axml** 中。
 > 2. 預設版面配置會是 `RelativeLayout`。 對於此頁面上要進行的其餘步驟，您應將 `<RelativeLayout>` 標籤變更為 `<LinearLayout>`，然後將另一個屬性 `android:orientation="vertical"` 新增至 `LinearLayout` 起始標籤。
 
 從 [工具箱] (左側區域)，在搜尋欄位中輸入 `text`，然後將 [Text (Large)] (文字 (大型)) 小工具拖曳至設計介面 (中央區域)：
@@ -128,7 +128,7 @@ _在這份含有兩部分的指南中，您將會使用 Visual Studio 來建置�
 
 [![新增項目](hello-android-quickstart-images/vs/12-add-new-item-w158-sml.png)](hello-android-quickstart-images/vs/12-add-new-item-w158.png#lightbox)
 
-在 [新增項目] 對話方塊中選取 [Visual C#] > [程式碼] > [程式碼檔案] 並將新的程式碼檔案命名為 **PhoneTranslator.cs** ：
+在 [新增項目] 對話方塊中選取 [Visual C#] > [程式碼] > [程式碼檔案] 並將新的程式碼檔案命名為 **PhoneTranslator.cs**：
 
 [![新增 PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-w158-sml.png)](hello-android-quickstart-images/vs/14-add-class-w158.png#lightbox)
 
@@ -193,7 +193,7 @@ namespace Core
 }
 ```
 
-儲存對 **PhoneTranslator.cs** 檔案的變更，方法是按一下 [檔案] > [儲存] (或按 **CTRL + S** )，然後關閉檔案。
+儲存對 **PhoneTranslator.cs** 檔案的變更，方法是按一下 [檔案] > [儲存] (或按 **CTRL + S**)，然後關閉檔案。
 
 ## <a name="wire-up-the-user-interface"></a>連接使用者介面
 
@@ -253,7 +253,7 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-選取 [檔案] > [全部儲存] (或按 **CTRL-SHIFT-S** ) 來儲存您的工作，然後選取 [建置] > [重建方案] (或按 **CTRL-SHIFT-B** ) 來建置應用程式。 
+選取 [檔案] > [全部儲存] (或按 **CTRL-SHIFT-S**) 來儲存您的工作，然後選取 [建置] > [重建方案] (或按 **CTRL-SHIFT-B**) 來建置應用程式。 
 
 如果發生錯誤，請完成上述步驟，並更正任何錯誤，直到應用程式建置成功為止。 如果您收到建置錯誤，例如「資源不存在於目前的內容」，請確認 **MainActivity.cs** 中的命名空間名稱符合專案名稱 (`Phoneword`)，然後完全重建解決方案。 如果您仍然得到建置錯誤，請確認您已安裝最新的 Visual Studio 更新。
 
@@ -284,7 +284,7 @@ translateButton.Click += (sender, e) =>
 
 按一下 [ **新增專案** ] 以建立新專案。
 
-在 [Choose a template for your new project] (選擇新專案的範本) 對話方塊中，按一下 [Android] > [應用程式]，然後選取 [Android 應用程式] 範本。 按 [下一步]  。
+在 [Choose a template for your new project] (選擇新專案的範本) 對話方塊中，按一下 [Android] > [應用程式]，然後選取 [Android 應用程式] 範本。 按一下 [下一步] 。
 
 [![選擇 Android 應用程式範本](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png#lightbox)
 
@@ -344,7 +344,7 @@ translateButton.Click += (sender, e) =>
 
 [![將新檔案新增至專案](hello-android-quickstart-images/xs/14-add-new-file-sml.png)](hello-android-quickstart-images/xs/14-add-new-file.png#lightbox)
 
-在 [新增檔案] 對話方塊中，選取 [一般] > [空的類別]、將新檔案命名為 **PhoneTranslator** ，然後按一下 [新增]。 這會建立新的空白 C# 類別。
+在 [新增檔案] 對話方塊中，選取 [一般] > [空的類別]、將新檔案命名為 **PhoneTranslator**，然後按一下 [新增]。 這會建立新的空白 C# 類別。
 
 在新類別中移除所有範本程式碼，並取代為下列程式碼：
 
@@ -407,12 +407,12 @@ namespace Core
 }
 ```
 
-儲存對 **PhoneTranslator.cs** 檔案的變更，方法是選擇 [檔案] > [儲存] (或按 **&#8984; + S** )，然後關閉檔案。 重建解決方案以確定沒有任何編譯時間錯誤。
+儲存對 **PhoneTranslator.cs** 檔案的變更，方法是選擇 [檔案] > [儲存] (或按 **&#8984; + S**)，然後關閉檔案。 重建解決方案以確定沒有任何編譯時間錯誤。
 
 ## <a name="wire-up-the-user-interface"></a>連接使用者介面
 
 下一個步驟是將支援程式碼新增到 `MainActivity` 類別，以便新增程式碼來連接使用者介面。
-在 **Solution Pad** 中，按兩下 **MainActivity.cs** ，將其開啟。
+在 **Solution Pad** 中，按兩下 **MainActivity.cs**，將其開啟。
 
 開始新增事件處理常式至 [翻譯] 按鈕。 在 `MainActivity` 類別中找到 `OnCreate` 方法。 將按鈕程式碼新增在 `OnCreate` 內，`base.OnCreate(bundle)` 和 `SetContentView (Resource.Layout.Main)` 呼叫底下。 移除任何現有的按鈕處理程式碼 (亦即參考 `Resource.Id.myButton` 並為它建立點擊處理常式的程式碼) 以便 `OnCreate` 方法看起來像下面這樣：
 
@@ -473,7 +473,7 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-選取 [建置] > [Build All] (全部建置) (或按 **&#8984; + B** ) 儲存工作並建置應用程式。 如果應用程式會編譯，您會在 Visual Studio for Mac 的頂端看到成功訊息：
+選取 [建置] > [Build All] (全部建置) (或按 **&#8984; + B**) 儲存工作並建置應用程式。 如果應用程式會編譯，您會在 Visual Studio for Mac 的頂端看到成功訊息：
 
 如果發生錯誤，請完成上述步驟，並更正任何錯誤，直到應用程式建置成功為止。 如果您收到建置錯誤，例如「資源不存在於目前的內容」，請確認 **MainActivity.cs** 中的命名空間名稱符合專案名稱 (`Phoneword`)，然後完全重建解決方案。 如果您仍然得到建置錯誤，請確認您已安裝最新的 Xamarin.Android 和 Visual Studio for Mac 更新。
 
@@ -493,7 +493,7 @@ namespace Phoneword
 }
 ```
 
-現在是時候來設定應用程式圖示了。 根據預設，Visual Studio for Mac 會為專案提供預設圖示。 從方案刪除這些檔案，並將它們取代成不同的圖示。 在 **Solution Pad** 中展開 [Resources] 資料夾。 請注意，有五個資料夾前面會加上 **mipmap-** ，且這些每個資料夾都包含一個 **Icon.png** 檔案：
+現在是時候來設定應用程式圖示了。 根據預設，Visual Studio for Mac 會為專案提供預設圖示。 從方案刪除這些檔案，並將它們取代成不同的圖示。 在 **Solution Pad** 中展開 [Resources] 資料夾。 請注意，有五個資料夾前面會加上 **mipmap-**，且這些每個資料夾都包含一個 **Icon.png** 檔案：
 
 [![mipmap-資料夾和 Icon.png 檔案](hello-android-quickstart-images/xs/23-mipmap-folders-sml.png)](hello-android-quickstart-images/xs/23-mipmap-folders.png#lightbox)
 

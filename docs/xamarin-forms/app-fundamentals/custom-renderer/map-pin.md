@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4e0387b6b64c5a3bf801a31c6e333b6f514df1d
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 81a273091d14f8da908d1d52751f262b3a00027c
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93367363"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609062"
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
@@ -141,7 +141,7 @@ public MapPage()
 
 ![每個平台上的 CustomMap](map-pin-images/screenshots.png)
 
-`MapRenderer`類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立自訂地圖以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的 *was* 專案，以及轉譯器 Xamarin.Forms 附加到的元素。 *is* 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CustomMap` 執行個體的參考。
+`MapRenderer`類別 `OnElementChanged` 會公開方法，這個方法會在 Xamarin.Forms 建立自訂地圖以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的專案，以及轉譯器 Xamarin.Forms 附加到的元素。  在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CustomMap` 執行個體的參考。
 
 在每個平台特定轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生控制項自訂的位置。 平台上所使用的原生控制項具型別參考可透過 `Control` 屬性存取。 此外，您 Xamarin.Forms 可以透過屬性取得正在轉譯之控制項的參考 `Element` 。
 
@@ -174,7 +174,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 下列螢幕擷取畫面會顯示自訂前和自訂後的地圖：
 
-![自訂前和自訂後的 Map 控制項](map-pin-images/map-layout-ios.png)
+![螢幕擷取畫面顯示具有一般 pin 和批註式 pin 的行動裝置。](map-pin-images/map-layout-ios.png)
 
 在 iOS 上，釘選稱為「註釋」，且可以是自訂影像或系統定義的各種顏色圖釘。 釘選可以選擇性地顯示「圖說文字」，該文字會在回應選取註釋的使用者時顯示。 圖說文字會顯示 `Pin` 執行個體的 `Label` 和 `Address` 屬性，且可以選擇性的附帶左側或右側裝飾檢視。 在上方的螢幕擷取畫面中，左側裝飾檢視是一隻猴子的影像，右側裝飾檢視則是「資訊」按鈕。
 
@@ -347,7 +347,7 @@ void OnDidDeselectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 下列螢幕擷取畫面會顯示自訂前和自訂後的地圖：
 
-![自訂前和自訂後的 Map 控制項](map-pin-images/map-layout-android.png)
+![螢幕擷取畫面：顯示具有一般標記和自訂標記的行動裝置。](map-pin-images/map-layout-android.png)
 
 在 Android 上，釘選稱為「標記」，且可以是自訂影像或系統定義的各種顏色圖釘。 標記可以顯示「資訊視窗」，該視窗會在回應點選標記的使用者時顯示。 資訊視窗會顯示 `Pin` 執行個體的 `Label` 及 `Address` 屬性，且可以進行自訂以包含其它內容。 但是，一次只能顯示一個資訊視窗。
 
@@ -510,7 +510,7 @@ void OnInfoWindowClick(object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 下列螢幕擷取畫面會顯示自訂前和自訂後的地圖：
 
-![自訂前和自訂後的 Map 控制項](map-pin-images/map-layout-uwp.png)
+![螢幕擷取畫面：顯示具有一般地圖圖示和自訂地圖圖示的行動裝置。](map-pin-images/map-layout-uwp.png)
 
 在 UWP 上，釘選稱為「地圖圖示」，且可以是自訂影像或系統定義的預設影像。 地圖圖示可以顯示 `UserControl`，該控制項會在回應點選地圖圖示的使用者時顯示。 `UserControl` 可以顯示任何內容，包括 `Pin` 執行個體的 `Label` 及 `Address` 屬性。
 

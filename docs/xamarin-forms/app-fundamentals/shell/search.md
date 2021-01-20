@@ -10,12 +10,12 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bfac785e6bfa3dce698d5657d0be1079e675ecc6
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 7420c5883856379db98001fce2fd36bf576cc2fb
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93366330"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609075"
 ---
 # <a name="no-locxamarinforms-shell-search"></a>Xamarin.Forms Shell 搜尋
 
@@ -102,11 +102,11 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 `ShowsResults` 屬性會設定為 `true`，因此在使用者輸入搜尋查詢時，便會顯示搜尋建議：
 
-[![螢幕擷取畫面：在 iOS 和 Android 上的 Shell SearchHandler 中搜尋結果](search-images/search-results.png "Shell SearchHandler 搜尋結果")](search-images/search-results-large.png#lightbox "Shell SearchHandler 搜尋結果")
+[![在 iOS 和 Android 上 Shell SearchHandler 中搜尋結果的螢幕擷取畫面，其中包含部分字串 M 的結果。](search-images/search-results.png "Shell SearchHandler 搜尋結果")](search-images/search-results-large.png#lightbox "Shell SearchHandler 搜尋結果")
 
 當搜尋查詢變更時，就會更新搜尋建議區域：
 
-[![螢幕擷取畫面：在 iOS 和 Android 上的 Shell SearchHandler 中搜尋結果](search-images/search-results-change.png "Shell SearchHandler 搜尋結果")](search-images/search-results-change-large.png#lightbox "Shell SearchHandler 搜尋結果")
+[![在 iOS 和 Android 上 Shell SearchHandler 中搜尋結果的螢幕擷取畫面，其中包含部分字串 M o n 的結果。](search-images/search-results-change.png "Shell SearchHandler 搜尋結果")](search-images/search-results-change-large.png#lightbox "Shell SearchHandler 搜尋結果")
 
 選取搜尋結果時，便會導覽至 `MonkeyDetailPage`，並顯示所選猴子的相關資料：
 

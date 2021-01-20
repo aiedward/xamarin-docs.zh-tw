@@ -10,12 +10,12 @@ ms.date: 08/19/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d998ec31c6e10366409a89fa554a2d00ad2cb3e2
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 241aa896cb66c4ff594c786ad484781adcddffa1
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940287"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609127"
 ---
 # <a name="no-locxamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms 在 Xamarin 原生專案中
 
@@ -91,7 +91,7 @@ public class AppDelegate : UIApplicationDelegate
 
 一旦 `FinishedLaunching` 執行方法之後，就會顯示類別中定義的 UI Xamarin.Forms `NotesPage` ，如下列螢幕擷取畫面所示：
 
-[![使用 XAML 中定義之 UI 的 Xamarin iOS 應用程式螢幕擷取畫面](native-forms-images/ios-notespage.png "使用 XAML UI 的 Xamarin iOS 應用程式")](native-forms-images/ios-notespage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 應用程式")
+[![螢幕擷取畫面：顯示行動裝置上的附注畫面。](native-forms-images/ios-notespage.png "使用 XAML UI 的 Xamarin iOS 應用程式")](native-forms-images/ios-notespage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 應用程式")
 
 與 UI 互動（例如藉由點擊 **+** [`Button`](xref:Xamarin.Forms.Button) ），會導致程式碼後端中的下列事件處理常式 `NotesPage` 執行：
 
@@ -118,7 +118,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 `NavigateToNoteEntryPage`方法會 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 使用擴充方法將衍生的頁面轉換成 `UIViewController` `CreateViewController` ，並設定的 `Title` 屬性 `UIViewController` 。 `UIViewController`然後，方法會推送至 `AppNavigationController` `PushViewController` 。 因此，會顯示類別中定義的 UI Xamarin.Forms `NoteEntryPage` ，如下列螢幕擷取畫面所示：
 
-[![使用 XAML 中定義之 UI 的 Xamarin iOS 應用程式螢幕擷取畫面](native-forms-images/ios-noteentrypage.png "使用 XAML UI 的 Xamarin iOS 應用程式")](native-forms-images/ios-noteentrypage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 應用程式")
+[![螢幕擷取畫面：顯示行動裝置上的附注專案。](native-forms-images/ios-noteentrypage.png "使用 XAML UI 的 Xamarin iOS 應用程式")](native-forms-images/ios-noteentrypage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 應用程式")
 
 當 `NoteEntryPage` 顯示時，後端流覽將會 `UIViewController` 從取出類別的，將使用者傳 `NoteEntryPage` `AppNavigationController` 回到類別的 `UIViewController` `NotesPage` 。 不過， `UIViewController` 從 iOS 原生導覽堆疊中取出，並不會自動處置 `UIViewController` 和附加的 `Page` 物件。 因此， `AppNavigationController` 類別會覆寫 `PopViewController` 方法，以處置回溯導覽上的 view 控制器：
 
@@ -193,7 +193,7 @@ public class MainActivity : AppCompatActivity
 
 一旦 `OnCreate` 執行方法之後，就會顯示類別中定義的 UI Xamarin.Forms `NotesPage` ，如下列螢幕擷取畫面所示：
 
-[![使用 XAML 中定義之 UI 的 Xamarin Android 應用程式螢幕擷取畫面](native-forms-images/android-notespage.png "具有 XAML UI 的 Xamarin Android 應用程式")](native-forms-images/android-notespage-large.png#lightbox "具有 XAML UI 的 Xamarin Android 應用程式")
+[![螢幕擷取畫面：在行動裝置上顯示具有藍色橫幅和彩色備註文字的附注畫面。](native-forms-images/android-notespage.png "具有 XAML UI 的 Xamarin Android 應用程式")](native-forms-images/android-notespage-large.png#lightbox "具有 XAML UI 的 Xamarin Android 應用程式")
 
 與 UI 互動（例如藉由點擊 **+** [`Button`](xref:Xamarin.Forms.Button) ），會導致程式碼後端中的下列事件處理常式 `NotesPage` 執行：
 
@@ -223,7 +223,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 `NavigateToNoteEntryPage`方法會 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 使用擴充方法將衍生的頁面轉換成 `Fragment` `CreateSupportFragment` ，並將加入 `Fragment` 至片段的堆疊。 因此，將會顯示中定義的 UI Xamarin.Forms `NoteEntryPage` ，如下列螢幕擷取畫面所示：
 
-[![使用 XAML 中定義之 UI 的 Xamarin Android 應用程式螢幕擷取畫面](native-forms-images/android-noteentrypage.png "具有 XAML UI 的 Xamarin Android 應用程式")](native-forms-images/android-noteentrypage-large.png#lightbox "具有 XAML UI 的 Xamarin Android 應用程式")
+[![螢幕擷取畫面顯示行動裝置上具有藍色橫幅的附注專案。](native-forms-images/android-noteentrypage.png "具有 XAML UI 的 Xamarin Android 應用程式")](native-forms-images/android-noteentrypage-large.png#lightbox "具有 XAML UI 的 Xamarin Android 應用程式")
 
 當 `NoteEntryPage` 顯示時，按 [上一步] 箭號將會 `Fragment` 從片段的堆疊中取出，並將使用者傳回到 `NoteEntryPage` `Fragment` 類別的 `NotesPage` 。
 
@@ -314,7 +314,7 @@ public sealed partial class MainPage : Page
 
 一旦執行了函式 `MainPage` ，就會顯示類別中定義的 UI Xamarin.Forms `NotesPage` ，如下列螢幕擷取畫面所示：
 
-[![UWP 應用程式的螢幕擷取畫面，其中使用定義了：：： no loc (Xamarin) ：：： XAML 的 UI](native-forms-images/uwp-notespage.png "具有：：： no loc (Xamarin 的 UWP 應用程式) ：：： XAML UI")](native-forms-images/uwp-notespage-large.png#lightbox "具有：：： no loc (Xamarin 的 UWP 應用程式) ：：： XAML UI")
+[![螢幕擷取畫面顯示包含附注和日期/時間的附注頁面。](native-forms-images/uwp-notespage.png "具有：：： no loc (Xamarin 的 UWP 應用程式) ：：： XAML UI")](native-forms-images/uwp-notespage-large.png#lightbox "具有：：： no loc (Xamarin 的 UWP 應用程式) ：：： XAML UI")
 
 與 UI 互動（例如藉由點擊 **+** [`Button`](xref:Xamarin.Forms.Button) ），會導致程式碼後端中的下列事件處理常式 `NotesPage` 執行：
 
@@ -340,7 +340,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 UWP 中的導覽通常是使用 `Frame.Navigate` 方法（採用引數）來執行 `Page` 。 Xamarin.Forms 定義 `Frame.Navigate` 採用 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 衍生頁面實例的擴充方法。 因此，當 `NavigateToNoteEntryPage` 方法執行時，中所定義的 UI Xamarin.Forms `NoteEntryPage` 將會顯示，如下列螢幕擷取畫面所示：
 
-[![UWP 應用程式的螢幕擷取畫面，其中使用定義了：：： no loc (Xamarin) ：：： XAML 的 UI](native-forms-images/uwp-noteentrypage.png "具有：：： no loc (Xamarin 的 UWP 應用程式) ：：： XAML UI")](native-forms-images/uwp-noteentrypage-large.png#lightbox "具有：：： no loc (Xamarin 的 UWP 應用程式) ：：： XAML UI")
+[![螢幕擷取畫面顯示附注頁面，其中包含已輸入附注的文字方塊。](native-forms-images/uwp-noteentrypage.png "具有：：： no loc (Xamarin 的 UWP 應用程式) ：：： XAML UI")](native-forms-images/uwp-noteentrypage-large.png#lightbox "具有：：： no loc (Xamarin 的 UWP 應用程式) ：：： XAML UI")
 
 當 `NoteEntryPage` 顯示時，按 [上一步] 箭號將會 `FrameworkElement` `NoteEntryPage` 從應用程式後端堆疊中取出，並將使用者傳回到 `FrameworkElement` 類別的 `NotesPage` 。
 

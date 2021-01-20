@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 05/13/2020
-ms.openlocfilehash: b9bbbc784fa9932d087e1f1c2a575eb7848d5a80
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: ed7b7bae452db0067b330126315d5b029a08ccab
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437113"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98608932"
 ---
 # <a name="reuse-xamarinforms-pages-in-an-ios-extension"></a>在 iOS 延伸模組中重複使用 Xamarin. Forms 頁面
 
@@ -39,7 +39,7 @@ iOS 延伸模組可讓您自訂現有的系統行為，方法是將額外的功�
 > [!IMPORTANT]
 > IOS 延伸模組有許多 [已知的限制](./extensions.md#limitations) 。 雖然您可以在 iOS 延伸模組中使用 Xamarin，但您應該非常小心地監視記憶體使用量和啟動時間。 否則，iOS 將無法正常處理此延伸模組。
 
-## <a name="walkthrough"></a>逐步解說
+## <a name="walkthrough"></a>逐步介紹
 
 在本逐步解說中，您將建立 Xamarin. Forms 應用程式、一個 Xamarin 副檔名，並在擴充功能專案中重複使用共用程式碼：
 
@@ -47,7 +47,7 @@ iOS 延伸模組可讓您自訂現有的系統行為，方法是將額外的功�
 
     ![建立專案](extensions-xf-images/1.walkthrough-createproject.png)
 
-1. 在 **FormsShareExtension/MainPage**中，將內容取代為下列配置：
+1. 在 **FormsShareExtension/MainPage** 中，將內容取代為下列配置：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -131,9 +131,9 @@ iOS 延伸模組可讓您自訂現有的系統行為，方法是將額外的功�
 
     程式碼會在所有平臺上共用，而且也會由 iOS 延伸模組使用。
 
-1. 在 solution pad 中，以滑鼠右鍵按一下方案，選取 [ **新增 > 新專案] > iOS > 延伸模組 > 動作延伸**模組，將它命名為 **MyAction** ，然後按 [ **建立**]：
+1. 在 solution pad 中，以滑鼠右鍵按一下方案，選取 [ **新增 > 新專案] > iOS > 延伸模組 > 動作延伸** 模組，將它命名為 **MyAction** ，然後按 [ **建立**]：
 
-    ![建立延伸模組](extensions-xf-images/2.walkthrough-createextension.png)
+    ![螢幕擷取畫面顯示 [選擇已選取動作延伸模組的範本]。](extensions-xf-images/2.walkthrough-createextension.png)
 
 1. 若要在 iOS 擴充功能和共用程式碼中使用 Xamarin，您需要新增必要的參考：
 
@@ -167,11 +167,11 @@ iOS 延伸模組可讓您自訂現有的系統行為，方法是將額外的功�
     
     建立並執行應用程式：
 
-    ![建立延伸模組](extensions-xf-images/3.walkthrough-runapp.png)
+    ![螢幕擷取畫面顯示行動裝置上的 Xamarin dot 表單訊息的 Hello。](extensions-xf-images/3.walkthrough-runapp.png)
 
     若要啟用擴充功能，請流覽至 Safari 瀏覽器，輸入任何網址（例如 [microsoft.com](https://microsoft.com)），按下 [流覽]，然後按頁面底部的 [ **共用** ] 圖示，以查看可用的動作延伸模組。 從可用的擴充功能清單中，透過下列方式來選取 **MyAction** 延伸模組：
 
-    ![建立延伸模組](extensions-xf-images/4.walkthrough-run1.png) ![建立延伸模組](extensions-xf-images/5.walkthrough-run2.png) ![建立延伸模組](extensions-xf-images/6.walkthrough-run3.png)
+    ![螢幕擷取畫面顯示 Microsoft 小組 [深入瞭解] 頁面，其中顯示在行動裝置上醒目提示的共用圖示。](extensions-xf-images/4.walkthrough-run1.png) ![螢幕擷取畫面顯示已在行動裝置上反白顯示 MyAction 的官方首頁。](extensions-xf-images/5.walkthrough-run2.png) ![螢幕擷取畫面顯示從行動裝置上的 i O S 延伸模組訊息建立的歡迎使用 X F 頁面。](extensions-xf-images/6.walkthrough-run3.png)
 
     擴充功能隨即啟用，並向使用者顯示 [Xamarin] 頁面。 所有的系結和命令都如同在容器應用程式中運作。
 

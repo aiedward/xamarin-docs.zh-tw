@@ -10,12 +10,12 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f2484fe7c6dee1f1b4df1318263624f3f50f604
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6f54ec3afd3d53d4a7bee40159bccff2d23f44f6
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93367175"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609039"
 ---
 # <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
@@ -52,7 +52,7 @@ ms.locfileid: "93367175"
 
 - **Setter** - 符合觸發程序條件時可以新增 `Setter` 項目的集合。 您必須指定要設定的 `Property` 和 `Value`。
 
-- **EnterActions 和 ExitActions** (未顯示) - 以程式碼撰寫，且可以和 `Setter` 項目一起使用，或是用來代替它。 其[描述如下](#enteractions-and-exitactions)。
+- **EnterActions 和 ExitActions** (未顯示) - 以程式碼撰寫，且可以和 `Setter` 項目一起使用，或是用來代替它。 如下 [所述](#enteractions-and-exitactions)。
 
 ### <a name="applying-a-trigger-using-a-style"></a>使用樣式套用觸發程式
 
@@ -268,7 +268,7 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 > [!NOTE]
 > [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) `EnterActions` `ExitActions` 類別會忽略和集合中定義的物件 [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) 。    
 
-您可以「同時」 *在觸發程序中提供* `EnterActions` 和 `ExitActions`，以及 `Setter`；但請注意，會立即呼叫 `Setter` (其不會等待 `EnterAction` 或 `ExitAction` 完成)。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
+您可以「同時」*在觸發程序中提供* `EnterActions` 和 `ExitActions`，以及 `Setter`；但請注意，會立即呼叫 `Setter` (其不會等待 `EnterAction` 或 `ExitAction` 完成)。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -521,8 +521,8 @@ Unchecked state active: True
 
 在此範例中，隱含的 [`Style`](xref:Xamarin.Forms.Style) 目標 [`Grid`](xref:Xamarin.Forms.Grid) 物件。 當的 [`IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) 屬性為時 [`CheckBox`](xref:Xamarin.Forms.CheckBox) `false` ，的背景色彩 `Grid` 會設定為白色。 當 `CheckBox.IsChecked` 屬性變成時 `true` ， [`VisualState`](xref:Xamarin.Forms.VisualState) 會觸發變更，而的背景色彩 `Grid` 會變成黑色：
 
-[![螢幕擷取畫面：在 iOS 和 Android 上，觸發的視覺狀態變更](triggers-images/comparestatetrigger-unchecked.png "CompareStateTrigger 範例")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "CompareStateTrigger 範例") 
-[![螢幕擷取畫面：在 IOS 和 Android 上，觸發的視覺狀態變更](triggers-images/comparestatetrigger-checked.png "CompareStateTrigger 範例")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "CompareStateTrigger 範例")
+[![螢幕擷取畫面： iOS 和 Android 上已觸發的視覺狀態變更，並取消選取觸發程式。](triggers-images/comparestatetrigger-unchecked.png "CompareStateTrigger 範例")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "CompareStateTrigger 範例") 
+[![螢幕擷取畫面： IOS 和 Android 上已觸發的視覺狀態變更，並已核](triggers-images/comparestatetrigger-checked.png "CompareStateTrigger 範例")取 [觸發程式]。](triggers-images/comparestatetrigger-checked-large.png#lightbox "CompareStateTrigger 範例")
 
 ### <a name="device-state-trigger"></a>裝置狀態觸發程式
 

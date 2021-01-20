@@ -10,12 +10,12 @@ ms.date: 01/29/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f447a89ca4b4f21554a75ec52c5771ee9f9d35fd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6bb9156c3f097b517474b70cdacc683d96423417
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562986"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609114"
 ---
 # <a name="adding-ios-specific-formatting"></a>新增 iOS 特定格式
 
@@ -23,14 +23,14 @@ ms.locfileid: "91562986"
 
 控制 Xamarin.Forms iOS 應用程式外觀的其他選項包括：
 
-- 在[ **Info. plist**中設定顯示選項](#customizing-infoplist)
+- 在 [ **Info. plist** 中設定顯示選項](#customizing-infoplist)
 - 透過[ `UIAppearance` API](#uiappearance-api)設定控制項樣式
 
 以下將討論這些替代方案。
 
 ## <a name="customizing-infoplist"></a>自訂資訊. plist
 
-**Plist**檔案可讓您設定 iOS 應用程式轉譯的某些層面，例如 (以及是否顯示) 狀態列。
+**Plist** 檔案可讓您設定 iOS 應用程式轉譯的某些層面，例如 (以及是否顯示) 狀態列。
 
 例如， [Todo 範例](/samples/xamarin/xamarin-forms-samples/todo) 會使用下列程式碼，在所有平臺上設定導覽列的色彩和文字色彩：
 
@@ -42,7 +42,7 @@ nav.BarTextColor = Color.White;
 
 結果會顯示在下方的畫面程式碼片段中。 請注意，狀態列專案是黑色 (這無法在中設定 Xamarin.Forms ，因為它是) 的平臺特定功能。
 
-![iOS 主題](theme-images/status-default-sml.png)
+![螢幕擷取畫面顯示 iOS 主題，並以黑色文字顯示狀態列專案。](theme-images/status-default-sml.png)
 
 在理想的情況下，狀態列也是可以直接在 iOS 專案中完成的專案。 將下列專案新增至 **plist** ，以強制狀態列成為白色：
 
@@ -59,15 +59,15 @@ nav.BarTextColor = Color.White;
 
 現在，當應用程式執行時，流覽列為綠色，而其文字為白色 (因為 Xamarin.Forms 格式化) *，而* 狀態列文字也是白色，因為這是 iOS 特定的設定：
 
-![iOS 主題](theme-images/status-white-sml.png)
+![螢幕擷取畫面顯示 iOS 主題，並以白色文字顯示狀態列專案。](theme-images/status-white-sml.png)
 
 ## <a name="uiappearance-api"></a>UIAppearance API
 
-[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)可以用來設定許多 iOS 控制項的視覺屬性，*而不*需要建立[自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器。
+[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)可以用來設定許多 iOS 控制項的視覺屬性，*而不* 需要建立 [自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器。
 
-在 **AppDelegate.cs**方法中加入一行程式碼， `FinishedLaunching` 可以使用其屬性來建立指定型別之所有控制項的樣式 `Appearance` 。 下列程式碼包含兩個範例-全域設定索引標籤列和切換控制項的樣式：
+在 **AppDelegate.cs** 方法中加入一行程式碼， `FinishedLaunching` 可以使用其屬性來建立指定型別之所有控制項的樣式 `Appearance` 。 下列程式碼包含兩個範例-全域設定索引標籤列和切換控制項的樣式：
 
-IOS 專案中的**AppDelegate.cs**
+IOS 專案中的 **AppDelegate.cs**
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)

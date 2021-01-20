@@ -10,12 +10,12 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05de8c554864108b90433c335074c61fc3def8cf
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 3fe1b7d56e71cac0b7a5a7b4e2bc68710241f13f
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939949"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609153"
 ---
 # <a name="no-locxamarinforms-webview"></a>Xamarin.Forms 切換
 
@@ -25,7 +25,7 @@ ms.locfileid: "97939949"
 
 ![在應用程式瀏覽器中](webview-images/in-app-browser.png)
 
-## <a name="content"></a>內容
+## <a name="content"></a>Content
 
 `WebView` 支援下列類型的內容：
 
@@ -263,7 +263,7 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>瀏覽
+## <a name="navigation"></a>導覽
 
 Web 程式支援透過許多可用的方法和屬性進行流覽：
 
@@ -386,11 +386,11 @@ void webviewNavigated(object sender, WebNavigatedEventArgs e)
 
 這會導致下列輸出 (載入) ：
 
-![Web 流覽事件範例](webview-images/loading-start.png)
+![螢幕擷取畫面顯示在載入時流覽的流覽事件。](webview-images/loading-start.png)
 
 已完成載入：
 
-![Web 流覽事件範例](webview-images/loading-end.png)
+![螢幕擷取畫面顯示在載入後流覽事件的 Web 流覽。](webview-images/loading-end.png)
 
 ## <a name="reloading-content"></a>正在重載內容
 

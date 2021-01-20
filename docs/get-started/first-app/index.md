@@ -12,12 +12,12 @@ ms.date: 05/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d2bb00eeadb3862d25032da45860f1cc12e3aad2
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: beb3800b2b91c6c393b597ddb05042ea8cf92361
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93369879"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609010"
 ---
 # <a name="build-your-first-no-locxamarinforms-app"></a>建立您的第一個 Xamarin.Forms 應用程式
 
@@ -45,7 +45,7 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
     [![選擇專案名稱](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
-4. 按一下 [空白] 專案類型，並確定已選取 [ **Android** ] 及 [ **iOS** ]：
+4. 按一下 [空白] 專案類型，並確定已選取 [**Android**] 及 [**iOS**]：
 
     [![具有 .NET Standard 的 Android 和 iOS](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
@@ -75,13 +75,13 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 您可以自訂應用程式來新增互動式功能。 請執行下列步驟，以將使用者互動新增至應用程式：
 
-1. 編輯 **MainPage.xaml** ，並在 `</StackLayout>` 結尾前面新增此 XAML：
+1. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
     ```
 
-2. 編輯 **MainPage.xaml.cs** ，並將這段程式碼新增至類別結尾：
+2. 編輯 **MainPage.xaml.cs**，並將這段程式碼新增至類別結尾：
 
     ```csharp
     int count = 0;
@@ -118,7 +118,7 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案 **> 新的 > 專案** ]，或按 [ **建立新專案 ...** ] 按鈕，然後選取 [ **Visual c # > 跨平臺 > 行動應用程式] (Xamarin.Forms)** ：
+1. 選擇 [檔案 **> 新的 > 專案** ]，或按 [ **建立新專案 ...** ] 按鈕，然後選取 [ **Visual c # > 跨平臺 > 行動應用程式] (Xamarin.Forms)**：
 
     [![行動裝置應用程式 (：：：無 loc (Xamarin) ：：： ) ](images/win/01-sml.png)](images/win/01.png#lightbox)
 
@@ -130,13 +130,13 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 4. 按下偵錯按鈕 (或 [偵錯] > [開始偵錯] 功能表項目) 來啟動 Android Emulator。
 
-5. 編輯 **MainPage.xaml** ，並在 `</StackLayout>` 結尾前面新增此 XAML：
+5. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
     ```
 
-6. 編輯 **MainPage.xaml.cs** ，並將這段程式碼新增至類別結尾：
+6. 編輯 **MainPage.xaml.cs**，並將這段程式碼新增至類別結尾：
 
     ```csharp
     int count = 0;
@@ -149,7 +149,7 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 7. 偵錯 Android 上的應用程式：
 
-    ![Android 應用程式](images/win/07-sml.png)
+    ![螢幕擷取畫面顯示 Android Emulator。](images/win/07-sml.png)
 
     > [!TIP]
     > 您可以使用網路相連的 Mac 電腦，從 Visual Studio 建置及偵錯 iOS 應用程式。 如需詳細資訊，請參閱[安裝指示](~/ios/get-started/installation/windows/index.md)。
@@ -175,17 +175,17 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 3. 以滑鼠右鍵按一下方案來還原 NuGet 套件：
 
-    ![Android 應用程式](images/03-sml.png)
+    ![螢幕擷取畫面：顯示從方案的內容功能表中選取的還原 NuGet 套件。](images/03-sml.png)
 
 4. 按下偵錯按鈕 (或 [執行] > [開始偵錯]) 來啟動 Android Emulator。
 
-5. 編輯 **MainPage.xaml** ，並在 `</StackLayout>` 結尾前面新增此 XAML：
+5. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Handle_Clicked" />
     ```
 
-6. 編輯 **MainPage.xaml.cs** ，並將這段程式碼新增至類別結尾：
+6. 編輯 **MainPage.xaml.cs**，並將這段程式碼新增至類別結尾：
 
     ```csharp
     int count = 0;
@@ -198,7 +198,7 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 7. 偵錯 Android 上的應用程式：
 
-    ![Android 應用程式](images/07-sml.png)
+    ![螢幕擷取畫面顯示 Android Emulator。](images/07-sml.png)
 
 8. 按一下滑鼠右鍵將 iOS 設定為 [啟始專案]：
 

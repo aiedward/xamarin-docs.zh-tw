@@ -11,16 +11,16 @@ ms.date: 05/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 17db86eb6e6c767498f1d8b550b923377b905364
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 948dd586a3b60897531cc96187f288687668f60b
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557435"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609088"
 ---
 # <a name="wpf-platform-setup"></a>WPF 平臺設定
 
-![預覽](~/media/shared/preview.png)
+![預覽標籤](~/media/shared/preview.png)
 
 Xamarin.Forms 在 .NET Framework 和 .NET Core 3 上具有 Windows Presentation Foundation (WPF) 的預覽支援。 本文示範如何將以 .NET Framework 為目標的 WPF 專案加入至 Xamarin.Forms 方案。
 
@@ -35,22 +35,22 @@ Xamarin.Forms 在 .NET Framework 和 .NET Core 3 上具有 Windows Presentation 
 
 1. 在 Visual Studio 2019 中，以滑鼠右鍵按一下 **方案總管** 中的方案名稱，然後選擇 [ **加入 > 新專案 ...**]。
 
-2. 在 [**加入新專案**] 視窗中，選取 [**語言**] 下拉式清單中的 [ **c #** ]，在 [**平臺**] 下拉式清單中選取 [ **Windows** ]，然後選取 [**專案類型**] 下拉式清單中的 [**桌面** 在專案類型清單中，選擇 [ **WPF 應用程式 ( .NET Framework) **：
+2. 在 [**加入新專案**] 視窗中，選取 [**語言**] 下拉式清單中的 [ **c #** ]，在 [**平臺**] 下拉式清單中選取 [ **Windows** ]，然後選取 [**專案類型**] 下拉式清單中的 [**桌面** 在專案類型清單中，選擇 [ **WPF 應用程式 ( .NET Framework)**：
 
-    ![加入新的 WPF 專案](wpf-images/add-project.png "加入新的 WPF 專案")
+    ![螢幕擷取畫面顯示 [加入新的專案] 對話方塊，其中已選取 W P F 應用程式。](wpf-images/add-project.png "加入新的 WPF 專案")
 
     按 **下 [下一步]** 按鈕。
 
     > [!NOTE]
     > Xamarin.Forms 4.7 包含對 .NET Core 3 執行的 WPF 應用程式的支援。
 
-3. 在 [**設定您的新專案**] 視窗中，輸入具有**wpf**副檔名之專案的名稱，例如， **BoxViewClock。** 按一下 [ **流覽]** 按鈕，選取 [ **BoxViewClock** ] 資料夾，然後按 [ **選取資料夾** ]，將 WPF 專案放置於方案中的其他專案所在的相同目錄中：
+3. 在 [**設定您的新專案**] 視窗中，輸入具有 **wpf** 副檔名之專案的名稱，例如， **BoxViewClock。** 按一下 [ **流覽]** 按鈕，選取 [ **BoxViewClock** ] 資料夾，然後按 [ **選取資料夾** ]，將 WPF 專案放置於方案中的其他專案所在的相同目錄中：
 
-    ![加入新的 WPF 專案](wpf-images/configure-project.png "加入新的 WPF 專案")
+    ![螢幕擷取畫面顯示 [設定您的新專案] 對話方塊，其中包含 [專案名稱]、[位置] 和 [架構] 的值。](wpf-images/configure-project.png "加入新的 WPF 專案")
 
     按下 [ **建立** ] 按鈕以建立專案。
 
-4. 在 [**方案總管**中，以滑鼠右鍵按一下新的 [ **BoxViewClock** ] 專案，然後選取 [**管理 NuGet 套件**...]。選取 [**流覽**] 索引標籤，然後搜尋** Xamarin.Forms 。Platform. WPF**：
+4. 在 [**方案總管** 中，以滑鼠右鍵按一下新的 [ **BoxViewClock** ] 專案，然後選取 [**管理 NuGet 套件**...]。選取 [**流覽**] 索引標籤，然後搜尋 **Xamarin.Forms 。Platform. WPF**：
 
     ![選取 NuGet 套件](wpf-images/select-nuget-package.png "選取 NuGet 套件")
 
@@ -66,7 +66,7 @@ Xamarin.Forms 在 .NET Framework 和 .NET Core 3 上具有 Windows Presentation 
 
     按下 [ **確定]** 按鈕。
 
-7. 編輯 WPF 專案的 **MainWindow .xaml** 檔案。 在 `Window` 標記中，加入的 XML 命名空間宣告** Xamarin.Forms 。Platform. WPF**元件和命名空間：
+7. 編輯 WPF 專案的 **MainWindow .xaml** 檔案。 在 `Window` 標記中，加入的 XML 命名空間宣告 **Xamarin.Forms 。Platform. WPF** 元件和命名空間：
 
     ```xaml
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
