@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8f379e8639846d9a6424c4aaadf83ff89d7a8684
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 62706082496732f60136e4283d5ff7a087488dd3
+ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107195"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98557148"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
 
@@ -12,7 +12,7 @@ ms.locfileid: "71107195"
 - [StackLayout](~/get-started/tutorials/stacklayout/index.yml) 教學課程。
 - [按鈕](~/get-started/tutorials/button/index.yml)教學課程。
 - [項目](~/get-started/tutorials/entry/index.yml)教學課程。
-- [ListView](~/get-started/tutorials/listview/index.yml) 教學課程。
+- [CollectionView](~/get-started/tutorials/collectionview/index.yml) 教學課程。
 
 在本教學課程中，您會了解如何：
 

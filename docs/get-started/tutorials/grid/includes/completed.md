@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4ee2326079ba9ddea6b0f4c5c4356412a3d5b492
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 7c0896c3674304275b284a482335cb397379a2a9
+ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91451572"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98557150"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
@@ -16,10 +16,10 @@ ms.locfileid: "91451572"
 
 ## <a name="next-steps"></a>後續步驟
 
-若要深入了解使用 Xamarin.Forms 建立行動應用程式的基本概念，請繼續進行 ListView 教學課程。
+若要深入了解使用 Xamarin.Forms 建立行動應用程式的基本概念，請繼續進行 CollectionView 教學課程。
 
 > [!div class="nextstepaction"]
-> [ListView 教學課程](~/get-started/tutorials/listview/index.yml)
+> [ListView 教學課程](~/get-started/tutorials/collectionview/index.yml)
 
 ## <a name="related-links"></a>相關連結
 
