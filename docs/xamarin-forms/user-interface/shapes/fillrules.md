@@ -10,12 +10,12 @@ ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e78acc88c9f159fdeb797663f1c90283ed0d803b
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 3daf08c688be41652ae2573b0bf58e2ace2072c6
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939780"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609140"
 ---
 # <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.Forms 圖形：填滿規則
 
@@ -101,11 +101,11 @@ ms.locfileid: "97939780"
 
 在此範例中，會顯示一系列同心圓所組成的複合圖形：
 
-![具有非零填滿規則的複合圖形](fillrule-images/nonzero.png "具有非零填滿規則的複合圖形")
+![圖顯示四個同心圓，全部都已填滿。](fillrule-images/nonzero.png "具有非零填滿規則的複合圖形")
 
 在複合圖形中，請注意所有環形都會填滿。 這是因為所有區段都是以相同的方向執行，因此從任何點繪製的光線會跨越一或多個區段，而交點的總和不等於零：
 
-![具有非零填滿規則的標注複合圖形](fillrule-images/nonzero-annotated.png "具有非零填滿規則的標注複合圖形")
+![圖表顯示上圖中的圓形和方向箭號，以及針對每個相交的圓形以 + 1 標注的光線。](fillrule-images/nonzero-annotated.png "具有非零填滿規則的標注複合圖形")
 
 在上方的影像中，紅色箭號代表繪製線段的方向，而黑色箭號代表從最內層環形的某個點執行的任意光線。 起始值為零，針對光線交會的每個線段，值會增加 1，因為線段由左至右與光線交會。
 
@@ -172,11 +172,11 @@ ms.locfileid: "97939780"
 
 在此範例中，會繪製一連串的弧形區段，而不會關閉：
 
-![具有非零填滿規則的複合圖形](fillrule-images/nonzero-gaps.png "具有非零填滿規則的複合圖形")
+![圖顯示四個同心圓，其中的最外層和第三個都已填入。](fillrule-images/nonzero-gaps.png "具有非零填滿規則的複合圖形")
 
 在上圖中，不會填滿中間的第三個弧形。 這是因為指定光線與其路徑中的區段之間的值總和為零：
 
-![具有非零填滿規則的標注複合圖形](fillrule-images/nonzero-gaps-annotated.png "具有非零填滿規則的標注複合圖形")
+![圖表顯示上圖中的圓形與方向箭號，以及兩個以 + 1 標注的光線，或針對每個相交的圓形為-1。](fillrule-images/nonzero-gaps-annotated.png "具有非零填滿規則的標注複合圖形")
 
 在上圖中，紅色圓圈表示點，黑色線條代表從未填滿區域中的點往外移動的任意光線，紅色箭號表示段落繪製的方向。 如您所見，與區段之間的光線之間的值總和為零：
 

@@ -10,12 +10,12 @@ ms.date: 05/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5f48300b6c974bbbb0106f1afaa6c863f8159c58
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6aa52ff13dccbf6c7b65f7006195997971a7cac2
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374634"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609777"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
 
@@ -63,7 +63,7 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 `startAngle`或 `sweepAngle` 引數可以是負數：弧度的正值是順時針的 `sweepAngle` ，而針對負值則是逆時針的。
 
-但是， `AddArc` 不 *not* 會定義封閉的輪廓。 如果您在 `LineTo` 之後呼叫 `AddArc` ，就會從弧線的結尾處繪製一行到方法中的點 `LineTo` ，而相同的也是 true `ArcTo` 。
+但是， `AddArc` 不會定義封閉的輪廓。 如果您在 `LineTo` 之後呼叫 `AddArc` ，就會從弧線的結尾處繪製一行到方法中的點 `LineTo` ，而相同的也是 true `ArcTo` 。
 
 `AddArc` 自動啟動新的輪廓，而且在功能上相當於使用的最後一個引數進行的呼叫 `ArcTo` `true` ：
 
@@ -235,7 +235,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 - 如果尚未呼叫，則輪廓的目前點或點 (0，0) `MoveTo`
 - 方法的第一個點引數 `ArcTo` ，稱為 *邊角點*
-- 的第二個點引數 `ArcTo` ，稱為「 *目的地點* 」：
+- 的第二個點引數 `ArcTo` ，稱為「 *目的地點*」：
 
 ![開始反正切弧線的三個點](arcs-images/tangentarcthreepoints.png)
 
@@ -257,7 +257,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 新增到輪廓的曲線不會觸及方法中指定的任何點 `ArcTo` 。 它包含從目前點到第一個正切函數的直線，以及結束于第二個正切點（以紅色顯示）的弧線：
 
-![兩行之間反白顯示的正切曲線](arcs-images/tangentarchighlight.png)
+![圖所示的上圖示注了紅線，可顯示兩行之間反白顯示的正切函數。](arcs-images/tangentarchighlight.png)
 
 以下是新增到輪廓的最後直線和弧線：
 

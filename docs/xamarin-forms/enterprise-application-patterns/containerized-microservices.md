@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 310a4e94a91eeb0d8d1c1f6ccb6fa30f0ff1f563
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 30c2f39a299b59022df8d651762df0dd7023e264
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93366564"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98608958"
 ---
 # <a name="containerized-microservices"></a>容器化的微服務
 
@@ -28,7 +28,7 @@ ms.locfileid: "93366564"
 
 ![整合型應用程式調整方法](containerized-microservices-images/monolithicapp.png)
 
-**圖 8-1** ：整合型應用程式調整方法
+**圖 8-1**：整合型應用程式調整方法
 
 ## <a name="microservices"></a>微服務
 
@@ -36,9 +36,9 @@ ms.locfileid: "93366564"
 
 相較于一起調整的大型整合型應用程式，微服務可以獨立相應放大。 這表示，需要更多處理能力或網路頻寬才能支援需求的特定功能區域可以調整，而不需要向外擴充應用程式的其他區域。 圖8-2 說明這種方法，在此方法中，微服務會獨立部署並調整規模，以跨電腦建立服務的實例。
 
-![微服務應用程式調整方法](containerized-microservices-images/microservicesapp.png)
+![圖顯示兩個應用程式，其圖格代表不同的功能區域，以及六個從兩個應用程式裝載各種功能區域的矩形。](containerized-microservices-images/microservicesapp.png)
 
-**圖 8-2** ：微服務應用程式調整方法
+**圖 8-2**：微服務應用程式調整方法
 
 微服務向外延展可能幾乎是瞬間的，可讓應用程式適應變更的負載。 例如，應用程式 web 對向功能中的單一微服務，可能是應用程式中需要向外延展以處理額外連入流量的唯一微服務。
 
@@ -70,9 +70,9 @@ ms.locfileid: "93366564"
 
 容器與虛擬機器之間有許多相似之處，如圖8-3 所示。
 
-![微服務應用程式調整方法](containerized-microservices-images/containersvsvirtualmachines.png)
+![下圖顯示虛擬機器和容器之間的比較，其中的虛擬機器有三個應用程式，分別在虛擬機器上以虛擬機器和主機 O 為單位，且容器在單一作業系統上有三個裝載于容器引擎的應用程式。](containerized-microservices-images/containersvsvirtualmachines.png)
 
-**圖 8-3** ：虛擬機器和容器的比較
+**圖 8-3**：虛擬機器和容器的比較
 
 容器會執行作業系統、具有檔案系統，並且可透過網路來存取，就像是實體或虛擬機器一樣。 不過，容器所使用的技術和概念與虛擬機器非常不同。 虛擬機器包含應用程式、必要的相依性，以及完整的客體作業系統。 容器包含應用程式及其相依性，但與其他容器共用作業系統，在主機作業系統上以獨立程式的形式執行， (除了在每個容器) 的特殊虛擬機器中執行的 Hyper-v 容器之外。 因此，容器會共用資源，而且通常需要比虛擬機器少的資源。
 
@@ -92,7 +92,7 @@ EShopOnContainers 參考應用程式會使用 Docker 來裝載四個容器化後
 
 ![eShopOnContainers 參考應用程式後端微服務](containerized-microservices-images/microservicesarchitecture.png)
 
-**圖 8-4** ： eShopOnContainers 參考應用程式後端微服務
+**圖 8-4**： eShopOnContainers 參考應用程式後端微服務
 
 參考應用程式中後端服務的架構，會以共同作業微服務和容器的形式分解成多個自主子系統。 每個微服務都提供單一功能區域：身分識別服務、目錄服務、訂購服務和購物籃服務。
 
@@ -104,9 +104,9 @@ EShopOnContainers 參考應用程式會使用 Docker 來裝載四個容器化後
 
 EShopOnContainers 行動裝置應用程式會使用 *直接用戶端對微服務* 通訊，與容器化後端微服務通訊，如圖8-5 所示。
 
-![微服務應用程式調整方法](containerized-microservices-images/directclienttomicroservicecommunication.png)
+![圖表顯示連接至三個後端微服務的行動裝置上裝載的應用程式，每個都有自己的 Web A P I 容器。](containerized-microservices-images/directclienttomicroservicecommunication.png)
 
-**圖 8-5** ：直接用戶端對微服務通訊
+**圖 8-5**：直接用戶端對微服務通訊
 
 透過直接用戶端對微服務通訊，行動應用程式會透過其公用端點直接對每個微服務提出要求，每個微服務都有不同的 TCP 埠。 在生產環境中，端點通常會對應至微服務的負載平衡器，其會將要求分散到可用的實例之間。
 
@@ -137,7 +137,7 @@ EShopOnContainers 行動裝置應用程式會使用 *直接用戶端對微服務
 
 ![一對多通訊](containerized-microservices-images/eventdrivencommunication.png)
 
-**圖 8-9** ：一對多通訊
+**圖 8-9**：一對多通訊
 
 這種一對多的通訊方法會使用事件來執行跨越多個服務的商務交易，以確保服務之間的最終一致性。 最終一致的交易是由一系列的分散式步驟所組成。 因此，當使用者設定檔微服務收到 UpdateUser 命令時，它會更新使用者在其資料庫中的詳細資料，並將 UserUpdated 事件發佈至事件匯流排。 購物籃微服務和訂購微服務都已訂閱接收此事件，並在回應中更新其各自資料庫中的購買者資訊。
 
@@ -146,7 +146,7 @@ EShopOnContainers 行動裝置應用程式會使用 *直接用戶端對微服務
 
 如需事件匯流排執行的相關資訊，請參閱 [.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 微服務提供一種應用程式開發和部署的方法，適用于新式雲端應用程式的靈活性、規模和可靠性需求。 微服務的主要優點之一，就是可以獨立相應放大，這表示特定功能區域可進行調整，需要更多處理能力或網路頻寬來支援需求，而不會有不必要地調整應用程式的區域，而不會增加需求。
 
