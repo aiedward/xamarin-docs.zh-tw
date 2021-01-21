@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: bff3b2a7c1e273c7a03ae341dd663ebc722791eb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 79e700f17f365895cd2cdaa015f4a8fe9e95bb79
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571736"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628848"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
 
 _將功能新增至應用程式通常需要額外的布建設定。本指南說明所有功能所需的設定。_
 
-Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)__ 來延伸 iOS 應用程式的功能及擴大其用途範圍。 這些功能可讓開發人員在其應用程式中加入更深的平台功能整合，例如：能夠從應用程式、額外的裝置服務 (例如 Siri) 等起始金錢交易。
+Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) 來延伸 iOS 應用程式的功能及擴大其用途範圍。 這些功能可讓開發人員在其應用程式中加入更深的平台功能整合，例如：能夠從應用程式、額外的裝置服務 (例如 Siri) 等起始金錢交易。
 這些功能可以與 Xamarin.iOS 專案搭配使用。 以下提供完整的服務清單說明：
 
 - 應用程式群組
@@ -76,13 +76,13 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 
 在 Visual Studio for Mac 中，功能會新增至 **Entitlements.plist**。 若要新增功能，請使用下列步驟：
 
-1. 開啟您 iOS 應用程式的 **Info.plist** 檔案，並從下拉式方塊選取 [自動化佈建]**** 配置和您的**小組**。 如果需要協助，請依照[自動佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)指南中的步驟進行操作：
+1. 開啟您 iOS 應用程式的 **Info.plist** 檔案，並從下拉式方塊選取 [自動化佈建] 配置和您的 **小組**。 如果需要協助，請依照[自動佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)指南中的步驟進行操作：
 
     ![[自動管理簽署] 選項](images/manage-signing.png)
 
-2. 開啟**plist**檔案，然後選取您想要新增的功能：
+2. 開啟 **plist** 檔案，並選取您想要新增的功能：
 
-    ![將功能新增至 entitlements.plist 檔案](images/image17.png)
+    ![螢幕擷取畫面：顯示 plist 檔案的內容。](images/image17.png)
 
     選取功能會執行兩項工作：
     - 將該功能新增至您的「應用程式識別碼」
@@ -90,7 +90,7 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 
     當執行完這些工作時，Visual Studio for Mac 會藉由顯示下列成功訊息來告知您：
 
-    ![將功能新增至 entitlements.plist 檔案](images/image18.png)
+    ![螢幕擷取畫面顯示自動布建完成時的通知。](images/image18.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -98,9 +98,9 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 
 1. 依照[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述來配對 Visual Studio 2019 和 Mac。
 
-2. 選取 [專案] > [佈建內容]**** 開啟 [佈建] 選項
+2. 選取 [專案] > [佈建內容] 開啟 [佈建] 選項
 
-3. 從下拉式方塊選取 [自動化佈建]**** 配置和您的**小組**。 如果需要協助，請依照[自動佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)指南中的步驟進行操作：
+3. 從下拉式方塊選取 [自動化佈建] 配置和您的 **小組**。 如果需要協助，請依照[自動佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)指南中的步驟進行操作：
 
     ![[自動管理簽署] 選項](images/manage-signing-vs.png)
 
@@ -122,11 +122,11 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 ### <a name="creating-an-app-id-with-an-app-service"></a>建立具有應用程式服務的應用程式識別碼
 
 1. 在 Mac (如果使用 Windows 電腦，則為組建主機 Mac) 上瀏覽至 [Apple Developer Center](https://developer.apple.com/account) \(Apple 開發人員中心\) 並登入。
-2. 選取 [Certificates, Identifiers, and Profiles] \(憑證、識別碼及設定檔\)： ****
+2. 選取 [Certificates, Identifiers, and Profiles] \(憑證、識別碼及設定檔\)： 
 
     ![Apple Developer Center (Apple 開發人員中心)](images/image5.png)
 
-3. 在 [Identifiers] \(識別碼\)**** 底下，選取 [App IDs] \(應用程式識別碼\)****：
+3. 在 [Identifiers] \(識別碼\) 底下，選取 [App IDs] \(應用程式識別碼\)：
 
     ![在 Developer Center (開發人員中心) 中選取 [App ID] \(應用程式識別碼\)](images/image6.png)
 
@@ -135,16 +135,16 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 
     ![新增 App ID (應用程式識別碼) 詳細資料](images/image7.png)
 
-6. 在 [App Services] \(應用程式服務\)**** 底下，選取您應用程式中所需的服務：
+6. 在 [App Services] \(應用程式服務\) 底下，選取您應用程式中所需的服務：
 
     ![App Services (應用程式服務) 選取頁面](images/image8.png)
 
-7. 按 [Continue] \(繼續\)****。
-8. 確認您的 App ID (應用程式識別碼)。 每個服務將會處於下列其中一種狀態：[Enabled] \(已啟用\)****、[Disabled] \(已停用\)**** 或 [Configurable] \(可設定\)****，如下所示。 如果是 [Enabled] \(已啟用\)****，表示已可在佈建設定檔中使用該服務。 如果是 [Configurable] \(可設定\)****，表示此功能需要進行額外的設定。 稍後的小節中將會提供這些額外步驟的更詳細說明。
+7. 按 [Continue] \(繼續\)。
+8. 確認您的 App ID (應用程式識別碼)。 每個服務將會處於下列其中一種狀態：[Enabled] \(已啟用\)、[Disabled] \(已停用\) 或 [Configurable] \(可設定\)，如下所示。 如果是 [Enabled] \(已啟用\)，表示已可在佈建設定檔中使用該服務。 如果是 [Configurable] \(可設定\)，表示此功能需要進行額外的設定。 稍後的小節中將會提供這些額外步驟的更詳細說明。
 
     ![App ID (應用程式識別碼) 確認](images/image9.png)
 
-9. 按一下 [Register] \(註冊\)****，然後按一下 [Done] \(完成\)****。 新建立的 App ID (應用程式識別碼) 應該會顯示在 [iOS App IDs] \(iOS 應用程式識別碼\) 清單中。
+9. 按一下 [Register] \(註冊\)，然後按一下 [Done] \(完成\)。 新建立的 App ID (應用程式識別碼) 應該會顯示在 [iOS App IDs] \(iOS 應用程式識別碼\) 清單中。
 
 <a name="provisioningprofile"></a>
 
@@ -152,36 +152,36 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 
 現在，請建立包含此 App ID (應用程式識別碼) 的佈建設定檔。 遵循下列步驟：
 
-1. 在 Apple Developer Center (Apple 開發人員中心) 中，瀏覽至 [Provisioning Profiles] \(佈建設定檔\) > [All] \(全部\)****：
+1. 在 Apple Developer Center (Apple 開發人員中心) 中，瀏覽至 [Provisioning Profiles] \(佈建設定檔\) > [All] \(全部\)：
 
     ![[Provisioning Profile] \(佈建設定檔\) 區段](images/image10.png)
 
 2. 按 **+** 右上角的按鈕，以建立新的布建設定檔。
-3. 選取所需的佈建設定檔類型，然後按一下 [Continue] \(繼續\)****：
+3. 選取所需的佈建設定檔類型，然後按一下 [Continue] \(繼續\)：
 
     ![選取 Provisioning Profile (佈建設定檔)](images/image11.png)
 
-4. 從下拉式清單中，選取在上述步驟中建立的 App ID (應用程式識別碼)，然後按 [Continue] \(繼續\)****：
+4. 從下拉式清單中，選取在上述步驟中建立的 App ID (應用程式識別碼)，然後按 [Continue] \(繼續\)：
 
     ![選取 App ID (應用程式識別碼)](images/image12.png)
 
-5. 選取用來簽署應用程式的憑證，然後按 [Continue] \(繼續\)****：
+5. 選取用來簽署應用程式的憑證，然後按 [Continue] \(繼續\)：
 
     ![選取 Certificate (憑證)](images/image13.png)
 
-6. 選取要包含在此設定檔中的裝置，然後按 [Continue] \(繼續\)****：
+6. 選取要包含在此設定檔中的裝置，然後按 [Continue] \(繼續\)：
 
     ![為 Provisioning Profile (佈建設定檔) 選取裝置](images/image14.png)
 
-7. 為設定檔命名以便識別設定檔，然後按 [Continue] \(繼續\)**** 來產生設定檔：
+7. 為設定檔命名以便識別設定檔，然後按 [Continue] \(繼續\) 來產生設定檔：
 
     ![為 Provisioning Profile (佈建設定檔) 命名](images/image15.png)
 
-8. 按 [Download] \(下載\)**** 按鈕來下載它，然後在 Finder 中按兩下該檔案來安裝佈建設定檔。
+8. 按 [Download] \(下載\) 按鈕來下載它，然後在 Finder 中按兩下該檔案來安裝佈建設定檔。
 
-9. 如果您要使用 Visual Studio，請確認選取 [手動佈建]**** 選項。
+9. 如果您要使用 Visual Studio，請確認選取 [手動佈建] 選項。
 
-10. 在 Visual Studio for Mac / Visual Studio 中，瀏覽至 [專案選項] > [套件組合簽署]****，然後將佈建設定檔設定為剛才建立的佈建設定檔：
+10. 在 Visual Studio for Mac / Visual Studio 中，瀏覽至 [專案選項] > [套件組合簽署]，然後將佈建設定檔設定為剛才建立的佈建設定檔：
 
     ![Visual Studio for Mac 專案選項](images/image16.png)
 
@@ -203,15 +203,15 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 
 以下清單詳細說明在開發已啟用某項應用程式服務的應用程式時，會造成障礙的最常見問題。
 
-- 確定已在 Apple Developer Portal (Apple 開發人員入口網站) 的 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\) 區段中，適當建立並註冊正確的識別碼。 ****
-- 確定已將服務新增至應用程式 (或擴充功能) 的識別碼，並且已將服務設定為使用上述在 Apple Developer Portal (Apple 開發人員入口網站) 的 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\) 中建立的 App Group (應用程式群組)/Merchant ID (商家識別碼)/Container (容器)。 ****
+- 確定已在 Apple Developer Portal (Apple 開發人員入口網站) 的 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\) 區段中，適當建立並註冊正確的識別碼。 
+- 確定已將服務新增至應用程式 (或擴充功能) 的識別碼，並且已將服務設定為使用上述在 Apple Developer Portal (Apple 開發人員入口網站) 的 [Certificates, IDs & Profiles] \(憑證、識別碼及設定檔\) 中建立的 App Group (應用程式群組)/Merchant ID (商家識別碼)/Container (容器)。 
 - 確定已安裝「佈建設定檔」和「應用程式識別碼」，並且應用程式的 **Info.plist** (位於「Xamarin 專案」中) 使用上述設定的其中一個「應用程式識別碼」。
 - 確定應用程式的 **Entitlements.plist** 檔案 (位於「Xamarin 專案」中) 已啟用正確的服務。
 - 確定 info.plist 中已設定正確的隱私機碼
-- 在應用程式的 [iOS 套件組合簽署]**** 中，確定 [自訂權利]**** 已設定為 **Entitlements.plist**。 這「不是」__「偵錯」和「iOS 模擬器」組建的預設設定。
+- 在應用程式的 [iOS 套件組合簽署] 中，確定 [自訂權利] 已設定為 **Entitlements.plist**。 這「不是」「偵錯」和「iOS 模擬器」組建的預設設定。
 
 <a name="summary"></a>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>[摘要]
 
-本指南說明了「功能」(或稱「應用程式服務」)__，也描述了如何在 Visual Studio 和 Apple Developer Center (Apple 開發人員中心) 中啟用這些功能。 此外，也詳細說明了如何設定更複雜的服務，例如「電子錢包」、iCloud、Apple Pay 及「應用程式群組」。 最後，還涵蓋了取得設定和簡單疑難排解選項的後續步驟。
+本指南說明了「功能」(或稱「應用程式服務」)，也描述了如何在 Visual Studio 和 Apple Developer Center (Apple 開發人員中心) 中啟用這些功能。 此外，也詳細說明了如何設定更複雜的服務，例如「電子錢包」、iCloud、Apple Pay 及「應用程式群組」。 最後，還涵蓋了取得設定和簡單疑難排解選項的後續步驟。

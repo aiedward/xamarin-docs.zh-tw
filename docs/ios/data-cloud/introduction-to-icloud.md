@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/09/2016
-ms.openlocfilehash: cace68a1b85a4404774ca88ec697d419920d05cb
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: cf10633d06c338f5067f768b9097c9b1836d6f59
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432904"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628822"
 ---
 # <a name="using-icloud-with-xamarinios"></a>搭配使用 iCloud 與 Xamarin
 
@@ -20,7 +20,7 @@ IOS 5 中的 iCloud 儲存 API 可讓應用程式將使用者檔和應用程式�
 
 有四種可用的儲存體類型：
 
-- 索引**鍵-值儲存體**-在使用者的其他裝置上與您的應用程式共用少量的資料。
+- 索引 **鍵-值儲存體**-在使用者的其他裝置上與您的應用程式共用少量的資料。
 
 - **UIDocument 儲存體** -使用 UIDocument 的子類別，在使用者的 iCloud 帳戶中儲存檔和其他資料。
 
@@ -28,12 +28,12 @@ IOS 5 中的 iCloud 儲存 API 可讓應用程式將使用者檔和應用程式�
 
 - **個別的檔案和目錄** -可直接在檔案系統中管理許多不同的檔案。
 
-本檔討論前兩種類型-索引鍵/值組和 UIDocument 子類別，以及如何在 Xamarin 中使用這些功能。
+本檔討論前兩種類型-Key-Value 組和 UIDocument 子類別，以及如何在 Xamarin 中使用這些功能。
 
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 - 最新穩定版本的 Xamarin. iOS
 - Xcode 10
@@ -55,15 +55,15 @@ IOS 5 中的 iCloud 儲存 API 可讓應用程式將使用者檔和應用程式�
 
 - **將容器識別碼新增至 plist** -容器識別碼格式為 `TeamID.BundleID` 。 如需詳細資訊，請參閱使用 [權利](~/ios/deploy-test/provisioning/entitlements.md) 指南。
 
-- **設定專案屬性**-在 Info. plist 檔案中，確定**套件組合識別碼符合建立**[應用程式識別碼](~/ios/deploy-test/provisioning/capabilities/index.md)時所設定的套件組合**識別碼**;IOS 套件組合簽署使用的布建**設定檔**包含具有 iCloud App Service 的應用程式識別碼，以及選取的**自訂權利**檔案。 您可以在 [專案屬性] 窗格底下的 Visual Studio 完成這項操作。
+- **設定專案屬性**-在 Info. plist 檔案中，確定 **套件組合識別碼符合建立**[應用程式識別碼](~/ios/deploy-test/provisioning/capabilities/index.md)時所設定的套件組合 **識別碼**;IOS 套件組合簽署使用的布建 **設定檔** 包含具有 iCloud App Service 的應用程式識別碼，以及選取的 **自訂權利** 檔案。 您可以在 [專案屬性] 窗格底下的 Visual Studio 完成這項操作。
 
-- 在**您的裝置上啟用 iCloud** -移至 [**設定] > iCloud** ，並確定裝置已登入。
+- 在 **您的裝置上啟用 iCloud** -移至 [**設定] > iCloud** ，並確定裝置已登入。
 選取並開啟 [ **檔] & 資料** ] 選項。
 
 - **您必須使用裝置來測試 iCloud** -它將無法在模擬器上運作。
 事實上，您真的需要使用相同的 Apple ID 登入兩個以上的裝置，才能看到 iCloud 的作用。
 
-## <a name="key-value-storage"></a>機碼值儲存體
+## <a name="key-value-storage"></a>Key-Value 儲存體
 
 索引鍵-值儲存體適用于少量的資料，使用者可能會喜歡將這些資料保存在不同的裝置上，例如他們在書籍或雜誌中看到的最後一頁。 索引鍵/值儲存體不應用於備份資料。
 
@@ -73,11 +73,11 @@ IOS 5 中的 iCloud 儲存 API 可讓應用程式將使用者檔和應用程式�
 
 - **最大值大小** -您無法在單一值中儲存超過 64 kb。
 
-- 應用程式的索引**鍵/值存放區大小上限**-應用程式最多隻能儲存 64 kb 的索引鍵/值資料。 嘗試設定超過該限制的索引鍵將會失敗，且先前的值會保存。
+- 應用程式的索引 **鍵/值存放區大小上限**-應用程式最多隻能儲存 64 kb 的索引鍵/值資料。 嘗試設定超過該限制的索引鍵將會失敗，且先前的值會保存。
 
 - **資料類型** -只可以儲存字串、數位和布林值等基本類型。
 
-**ICloudKeyValue**範例會示範其運作方式。 此範例程式碼會為每個裝置建立名為的金鑰：您可以在一部裝置上設定此金鑰，並監看此值是否會傳播給其他人。 它也會建立名為「共用」的金鑰，可在任何裝置上進行編輯-如果您一次在許多裝置上編輯，iCloud 將會決定哪個值「獲勝」 (使用變更) 上的時間戳記，並傳播。
+**ICloudKeyValue** 範例會示範其運作方式。 此範例程式碼會為每個裝置建立名為的金鑰：您可以在一部裝置上設定此金鑰，並監看此值是否會傳播給其他人。 它也會建立名為「共用」的金鑰，可在任何裝置上進行編輯-如果您一次在許多裝置上編輯，iCloud 將會決定哪個值「獲勝」 (使用變更) 上的時間戳記，並傳播。
 
 此螢幕擷取畫面顯示使用中的範例。 從 iCloud 收到變更通知時，會在畫面底部的滾動文字視圖中列印，並在輸入欄位中更新。
 
@@ -117,7 +117,7 @@ store.Synchronize();
 ### <a name="observing-changes"></a>觀察變更
 
 當 iCloud 變更值時，應用程式也可以藉由將觀察者新增至來接收通知 `NSNotificationCenter.DefaultCenter` 。
-**KeyValueViewController.cs**方法中的下列程式碼示範 `ViewWillAppear` 如何接聽這些通知，以及如何建立已變更金鑰的清單：
+**KeyValueViewController.cs** 方法中的下列程式碼示範 `ViewWillAppear` 如何接聽這些通知，以及如何建立已變更金鑰的清單：
 
 ```csharp
 keyValueNotification =
@@ -223,7 +223,7 @@ ThreadPool.QueueUserWorkItem (_ => {
 
 - **ContentsForType** -要求您提供模型類別/Es 的以外 nsdata 標記法，以儲存至磁片 (和雲端) 。
 
-**ICloudUIDoc\MonkeyDocument.cs**中的這個範例程式碼會示範如何執行 UIDocument。
+**ICloudUIDoc\MonkeyDocument.cs** 中的這個範例程式碼會示範如何執行 UIDocument。
 
 ```csharp
 public class MonkeyDocument : UIDocument
@@ -404,9 +404,9 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
 當使用者嘗試從其裝置移除啟用 iCloud 的應用程式時，也會收到不同的警告，以通知他們與該應用程式相關的 iCloud 檔狀態。
 
- [![當使用者嘗試從其裝置移除啟用 iCloud 的應用程式時的範例對話方塊](introduction-to-icloud-images/icloud-delete1.png)](introduction-to-icloud-images/icloud-delete1.png#lightbox)
+ [![螢幕擷取畫面顯示檔更新暫止的警告。](introduction-to-icloud-images/icloud-delete1.png)](introduction-to-icloud-images/icloud-delete1.png#lightbox)
 
- [![當使用者嘗試從其裝置移除啟用 iCloud 的應用程式時的範例對話方塊](introduction-to-icloud-images/icloud-delete2.png)](introduction-to-icloud-images/icloud-delete2.png#lightbox)
+ [![螢幕擷取畫面顯示「刪除我的雲端」的警告。](introduction-to-icloud-images/icloud-delete2.png)](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
 ## <a name="icloud-backup"></a>iCloud 備份
 
@@ -417,7 +417,7 @@ Apple 提供 [Ios 資料儲存指導方針](https://developer.apple.com/icloud/d
 
 儲存大量資料的應用程式（例如這類）應該將它儲存在其中一個未備份的使用者目錄中 (例如， 快取或 tmp) 或用 `NSFileManager.SetSkipBackupAttribute` 來將旗標套用至這些檔案，讓 iCloud 在備份作業期間忽略這些檔案。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 本文引進了 iOS 5 隨附的新 iCloud 功能。 它會檢查將您的專案設定為使用 iCloud 所需的步驟，然後提供如何執行 iCloud 功能的範例。
 

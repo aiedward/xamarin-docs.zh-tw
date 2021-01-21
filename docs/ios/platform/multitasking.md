@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: e32042c4b7e7d67e219611014d3a06ad9ed17b9d
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 76ce375e611ddc8ee21d76e7947601319bf9dba8
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432457"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628939"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin 中 iPad 的多工
 
@@ -56,7 +56,7 @@ iOS 9 針對在特定 iPad 硬體上同時執行兩個應用程式，增加多�
 
 ## <a name="about-multitasking-for-ipad"></a>關於 iPad 的多工
 
-iOS 9 在 iPad 上提供新的多工功能 _，並引進_了_投影片_、_分割視圖_ (iPad Air 2、iPad 迷你4和 iPad Pro，只) 和圖片。 我們將在下列各節中進一步瞭解這些功能。
+iOS 9 在 iPad 上提供新的多工功能 _，並引進_ 了 _投影片_、_分割視圖_ (iPad Air 2、iPad 迷你4和 iPad Pro，只) 和圖片。 我們將在下列各節中進一步瞭解這些功能。
 
 <a name="Slide-Over"></a>
 
@@ -124,7 +124,7 @@ iOS 9 在 iPad 上提供新的多工功能 _，並引進_了_投影片_、_分�
 
 在支援滑過和分割視圖的 Ipad 上，您最後可以使用下列組合：
 
-| **方向** | **主要應用程式** | **次要應用程式** |
+| **Orientation** | **主要應用程式** | **次要應用程式** |
 |--- |--- |--- |
 | **直向** |75% 的螢幕<br />水準壓縮<br />一般垂直|25% 的螢幕<br />水準壓縮<br />一般垂直|
 | **橫向** |75% 的螢幕<br />一般水準<br />一般垂直|25% 的螢幕<br />水準壓縮<br />一般垂直|
@@ -158,7 +158,7 @@ iOS 9 在 iPad 上提供新的多工功能 _，並引進_了_投影片_、_分�
 
 如果 iOS 9 應用程式包含鍵盤快速鍵，則使用者可以按住 **命令**、 **Option** 或 **Control** 鍵，以在快顯視窗中顯示它們：
 
-[![鍵盤快速鍵快顯視窗](multitasking-images/keyboard02.png)](multitasking-images/keyboard02.png#lightbox)
+[![螢幕擷取畫面：顯示應用程式的鍵盤快速鍵。](multitasking-images/keyboard02.png)](multitasking-images/keyboard02.png#lightbox)
 
 #### <a name="defining-custom-keyboard-shortcuts"></a>定義自訂鍵盤快速鍵
 
@@ -194,7 +194,7 @@ public void NewEntry() {
 
 如果我們在附加硬體鍵盤的 iPad 上執行此應用程式，且使用者輸入 **命令-N**，則會將新專案新增至清單。 如果使用者按住 **命令** 鍵，則會顯示快捷方式清單：
 
-[![鍵盤快速鍵快顯視窗](multitasking-images/keyboard03.png)](multitasking-images/keyboard03.png#lightbox)
+[![螢幕擷取畫面：顯示應用程式的新專案快捷方式。](multitasking-images/keyboard03.png)](multitasking-images/keyboard03.png#lightbox)
 
 請參閱範例執行 [程式](/samples/xamarin/ios-samples/ios9-multitask) 範例，以取得範例執行。
 
@@ -208,13 +208,13 @@ public void NewEntry() {
 
 請考慮下列使用者動作及其含意：
 
-- 透過**面板在投影片中輸入文字**-即使您的應用程式沒有文字輸入，系統鍵盤現在也可以透過其 UI 來顯示。 因此，應用程式可能需要回應鍵盤顯示通知 (例如顯示和隱藏鍵盤) 。
+- 透過 **面板在投影片中輸入文字**-即使您的應用程式沒有文字輸入，系統鍵盤現在也可以透過其 UI 來顯示。 因此，應用程式可能需要回應鍵盤顯示通知 (例如顯示和隱藏鍵盤) 。
 - **在 [滑過] 面板中執行第二個應用程式** -新的應用程式現在會在前景中執行，並與現有的應用程式競爭系統資源（例如記憶體和 CPU 週期）。
 - **在 PIP 視窗中播放影片** -不只可以涵蓋應用程式介面的一部分，但是啟動影片的應用程式仍在背景執行，並耗用 CPU 和記憶體資源。
 
 為了確保您的應用程式有效率地使用資源，您應該執行下列作業：
 
-- 使用檢測功能來**分析應用程式**，以檢查記憶體流失、明確 CPU 使用量，以及應用程式可能封鎖主執行緒的區域。
+- 使用檢測功能來 **分析應用程式**，以檢查記憶體流失、明確 CPU 使用量，以及應用程式可能封鎖主執行緒的區域。
 - **回應狀態轉換方法** -在您的 **AppDelegate.cs** 檔覆寫中，以及回應狀態變更方法（例如應用程式在背景中輸入或返回）。 釋放任何下一頁資產，例如影像、資料或視圖，以及 view controller。
 - **並行測試與記憶體密集型應用程式** -使用隨需記憶體的應用程式，在實體 iOS 硬體上使用滑出和分割（例如在衛星視圖) 模式中 (的地圖），並測試這兩個應用程式保持回應且未損毀。
 
@@ -247,7 +247,7 @@ public void NewEntry() {
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 本文涵蓋了確保 Xamarin iOS 應用程式能在 iOS 9 的新多工 Ipad 功能中執行並正確運作所需的步驟。 此外，它涵蓋了針對不適合的應用程式退出宣告多工處理。
 

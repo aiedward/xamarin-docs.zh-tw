@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: f5796ee17e947494d1e22f750bc43ff823d56d55
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 98855bb51552edcd567e3b99740f0be04034e388
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937276"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628965"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>單元測試 Xamarin.iOS 應用程式
 
@@ -21,7 +21,7 @@ ms.locfileid: "86937276"
 
 ## <a name="setting-up-a-test-project-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中設定測試專案
 
-若要為您的專案設定單元測試架構，只需要將 [iOS 單元測試專案]**** 類型的專案新增至您的方案即可。 在您的方案上按一下滑鼠右鍵，然後選取 [新增] > [新增專案]**** 即可完成此動作。 從清單中選取 [iOS] > [測試] > [Unified API] > [iOS 單元測試專案]**** (您可以選擇 C# 或 F#)。
+若要為您的專案設定單元測試架構，只需要將 [iOS 單元測試專案] 類型的專案新增至您的方案即可。 在您的方案上按一下滑鼠右鍵，然後選取 [新增] > [新增專案] 即可完成此動作。 從清單中選取 [iOS] > [測試] > [Unified API] > [iOS 單元測試專案] (您可以選擇 C# 或 F#)。
 
 ![選擇 C# 或 F#](touch.unit-images/00.png)
 
@@ -66,7 +66,7 @@ public partial class AppDelegate : UIApplicationDelegate
 
 若要編寫測試，請建立已套用 `[TestFixture]` 屬性的類別。 您應該在每個 TestFixture 類別內，將 `[Test]` 屬性套用至您希望測試執行器叫用的每個方法。 實際的測試固件可以存在於測試專案中的任何檔案。
 
-若要快速開始，請選取 [加入]/[加入新檔案]****，然後在 Xamarin.iOS 群組中選取 [UnitTests]****。 這將會新增包含一個通過測試、一個失敗測試，以及一個忽略測試的基本架構檔案，它看起來像這樣：
+若要快速開始，請選取 [加入]/[加入新檔案]，然後在 Xamarin.iOS 群組中選取 [UnitTests]。 這將會新增包含一個通過測試、一個失敗測試，以及一個忽略測試的基本架構檔案，它看起來像這樣：
 
 ```csharp
 using System;
@@ -101,7 +101,7 @@ namespace Fixtures {
 
 ## <a name="running-your-tests"></a>執行您的測試
 
-若要執行此專案，請在方案內以滑鼠右鍵按一下該專案，然後選取 [Debug Item]**** \(針對項目進行偵錯\)或 [Run Item]**** \(執行項目\)。
+若要執行此專案，請在方案內以滑鼠右鍵按一下該專案，然後選取 [Debug Item] \(針對項目進行偵錯\)或 [Run Item] \(執行項目\)。
 
 測試執行器可讓您查看已登錄的測試，並個別選取可以執行的測試。
 
@@ -112,7 +112,7 @@ namespace Fixtures {
 
 您可以透過從巢狀檢視中選取測試固件來執行個別的測試固件，或者您可以使用 [Run Everything] \(全部執行\) 來執行所有測試。 如果您執行預設測試，應該包括一個通過測試、一個失敗測試以及一個忽略測試。 這是報表的外觀，而且您可以直接向下切入失敗測試，並找出有關失敗的詳細資訊：
 
-[ ![ 範例報表](touch.unit-images/05-sml.png)](touch.unit-images/05.png#lightbox)範例報表[ ![ 範例報表](touch.unit-images/06-sml.png)](touch.unit-images/06.png#lightbox) [ ![ ](touch.unit-images/07-sml.png)](touch.unit-images/07.png#lightbox)
+[![螢幕擷取畫面顯示範例報表 Test Runner 畫面。](touch.unit-images/05-sml.png)](touch.unit-images/05.png#lightbox) [![螢幕擷取畫面顯示範例報表 [測試] 畫面。](touch.unit-images/06-sml.png)](touch.unit-images/06.png#lightbox) [![螢幕擷取畫面顯示範例報表、測試畫面和測試狀態。](touch.unit-images/07-sml.png)](touch.unit-images/07.png#lightbox)
 
 您也可以查看 IDE 中的 [應用程式輸出] 視窗，以了解正在執行哪些測試及其目前狀態。
 

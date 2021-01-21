@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/31/2017
-ms.openlocfilehash: 9a31cd31f7cbfb4748991d45204ca867b5d62c8c
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: c33317835ff07826e8b9276c4f5cdc13c04c2680
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436618"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628809"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Xamarin 中的視覺架構
 
@@ -27,7 +27,7 @@ ms.locfileid: "91436618"
 - 範圍偵測
 - 物件偵測 & 追蹤
 
-![偵測到包含三個矩形的相片](vision-images/found-rectangles-tiny.png) ![偵測到有兩個臉部的相片](vision-images/xamarin-home-faces-tiny.png)
+![偵測到包含三個矩形的相片。](vision-images/found-rectangles-tiny.png) ![偵測到有兩個臉部的相片。](vision-images/xamarin-home-faces-tiny.png)
 
 以下將更詳細討論矩形偵測和臉部偵測。
 
@@ -88,7 +88,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. 顯示結果
 
-`OverlayRectangles` **VisionRectangles**範例中的方法有三個函數：
+`OverlayRectangles` **VisionRectangles** 範例中的方法有三個函數：
 
 - 轉譯來源影像
 - 繪製矩形以指出偵測到每個位置的位置，以及
@@ -96,7 +96,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 針對確切的 CoreGraphics 方法，查看 [範例的來源](/samples/xamarin/ios-samples/ios11-visionrectangles) 。
 
-![偵測到包含三個矩形的相片](vision-images/found-rectangles-phone-sml.png)
+![在行動裝置上偵測到三個矩形的相片。](vision-images/found-rectangles-phone-sml.png)
 
 ### <a name="5-further-processing"></a>5. 進一步處理
 
@@ -106,7 +106,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ## <a name="face-detection"></a>臉部偵測
 
-[VisionFaces 範例](/samples/xamarin/ios-samples/ios11-visionfaces)的運作方式類似于使用不同的視覺要求類別的**VisionRectangles**範例。
+[VisionFaces 範例](/samples/xamarin/ios-samples/ios11-visionfaces)的運作方式類似于使用不同的視覺要求類別的 **VisionRectangles** 範例。
 
 ### <a name="1-initialize-the-vision-request"></a>1. 初始化視覺要求
 
@@ -161,7 +161,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. 顯示結果
 
-`OverlayRectangles` **VisionFaces**範例中的方法有三個函數：
+`OverlayRectangles` **VisionFaces** 範例中的方法有三個函數：
 
 - 轉譯來源影像
 - 針對每個偵測到的臉部繪製一個矩形，並
@@ -169,7 +169,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 針對確切的 CoreGraphics 方法，查看 [範例的來源](/samples/xamarin/ios-samples/ios11-visionfaces) 。
 
-![偵測到有兩個臉部的相片](vision-images/found-faces-phone-sml.png)
+![在行動裝置上偵測到兩張臉部的相片。](vision-images/found-faces-phone-sml.png)
 
 ### <a name="5-further-processing"></a>5. 進一步處理
 

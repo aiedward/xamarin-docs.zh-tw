@@ -1,38 +1,38 @@
 ---
 title: Xamarin 中的國際化編碼
-description: 本檔說明在 Xamarin 中的國際化編碼，討論可用的編碼方式，以及如何將它們新增至應用程式。
+description: 本檔說明 Xamarin 中的國際化編碼方式，討論可用的編碼方式，以及如何將它們新增至應用程式。
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: 88f95f797d1230c818a635376f7b17a2264afadf
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b832bdd25b8449ce365f87e145812ec3db27f393
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930334"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628744"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin 中的國際化編碼
 
-根據預設，所有編碼都不會包含在 Xamarin. iOS 類別庫中。
+依預設，並非所有編碼都包含在 Xamarin 類別庫中。
 
-為了減少應用程式的大小，Xamarin 不會包含任何特定的編碼，而且您必須指示 mtouch 包含包含所需編碼支援的元件。
+為了減少應用程式的大小，Xamarin 不包含任何特定的編碼方式，而且您必須指示 mtouch 包含包含所需編碼支援的元件。
 
-做法是在 Visual Studio for Mac 或 Visual Studio 的 [iOS 組建]/[高級] 窗格中選取額外的編碼方式：
+若要完成此動作，請在 Visual Studio for Mac 或 Visual Studio 的 [iOS 組建/Advanced] 窗格中選取額外的編碼：
 
- [![選取額外的編碼方式](encodings-images/00.png)](encodings-images/00.png#lightbox)
+ [![螢幕擷取畫面顯示在 Visual Studio for Mac 中選取額外的編碼方式。](encodings-images/00.png)](encodings-images/00.png#lightbox)
 
- [![選取額外的編碼方式](encodings-images/00a.png)](encodings-images/00a.png#lightbox)
+ [![螢幕擷取畫面顯示在 Visual Studio 中選取額外的編碼方式。](encodings-images/00a.png)](encodings-images/00a.png#lightbox)
 
 您可以選取下列其中一項：
 
 - cjk：適用于 Chineese、日文和韓文
-- 務必：阿拉伯文、希伯來文、土耳其文和 Latin5。
-- 其他：斯拉夫文，波羅語，越南文，烏克蘭和泰文
-- 罕見： EBCDIC 編碼和其他罕見字碼頁
-- 西部：拉丁語言、復活節和西歐
+- mideast：阿拉伯文、希伯來文、土耳其文和 Latin5。
+- 其他：斯拉夫文、波羅的海文、越南文、烏克蘭文和泰文
+- 罕見： EBCDIC 編碼和其他罕見的字碼頁
+- 西歐：拉丁語言、復活節和西歐
 - all
 
  <a name="cjk"></a>
@@ -48,7 +48,7 @@ ms.locfileid: "86930334"
 
  <a name="mideast"></a>
 
-## <a name="mideast"></a>務必
+## <a name="mideast"></a>中東
 
 - CP1254
 - CP1255
@@ -74,7 +74,7 @@ ms.locfileid: "86930334"
 
  <a name="rare"></a>
 
-## <a name="rare"></a>比較
+## <a name="rare"></a>罕見
 
 - CP1026
 - CP1047

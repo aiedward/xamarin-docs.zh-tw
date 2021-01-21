@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2018
-ms.openlocfilehash: 67698ae7fe3ef9a7586d83e26ed276ba473396e5
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 9f9e886d6e72faee6ba579fc4c9ab92dfbfb0cf4
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457506"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628926"
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -22,7 +22,7 @@ Android 磨損是針對穿戴式裝置（例如智慧型監看）所設計的 An
 
 介紹 Android 磨損、說明如何安裝及設定您的電腦以進行磨損開發，並提供步驟來協助您在模擬器或磨損裝置上建立並執行第一個 Android 磨損應用程式。
 
-## <a name="user-interface"></a>[使用者介面](~/android/wear/user-interface/index.md)
+## <a name="user-interface"></a>[消費者介面](~/android/wear/user-interface/index.md)
 
 說明 Android 磨損特定控制項，並提供示範如何使用這些控制項之範例的連結。
 
@@ -59,11 +59,11 @@ Android 開發人員網站提供有關主要磨損 Api 的詳細資訊，例如 
 
 查看這些與支援磨損的 Xamarin 相關的影片連結：
 
-|描述|螢幕擷取畫面|
+|Description|螢幕擷取畫面|
 |--- |--- |
-|[Android L 和其他更多](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; Android L 開發人員預覽引進了新 Api 的眾多，讓開發人員可以利用，包括材質設計、通知和新的動畫等等。|![簡報的影片螢幕擷取畫面](images/video-android-l.png)|
-|[C # 位於我的耳中，並在我的眼睛中： Google 玻璃和 Android 磨損](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash; 穿戴式運算看起來可能像未來的 (或偵測工具小工具集) ，但許多人現在都已在使用未來了！ C # 開發人員知道這一點，而且已經有工具和技能可充分利用穿戴式裝置的強大功能， (從 2014) 演進。|![簡報的影片螢幕擷取畫面](images/video-eyes-ears.png)|
-|Xamarin 的新[功能](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash;Android L、Android 磨損、Android 電視、Android 自動、材質設計和藝術;這對您是 Xamarin 開發人員來說是什麼意思？從演進2014。|![簡報的影片螢幕擷取畫面](Images/video-whats-new.png)|
+|[Android L 和其他更多](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; Android L 開發人員預覽引進了新 Api 的眾多，讓開發人員可以利用，包括材質設計、通知和新的動畫等等。|![Android L 和更多簡報的影片螢幕擷取畫面。](images/video-android-l.png)|
+|[C # 位於我的耳中，並在我的眼睛中： Google 玻璃和 Android 磨損](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash; 穿戴式運算看起來可能像未來的 (或偵測工具小工具集) ，但許多人現在都已在使用未來了！ C # 開發人員知道這一點，而且已經有工具和技能可充分利用穿戴式裝置的強大功能， (從 2014) 演進。|![C # 的影片螢幕擷取畫面位於我的耳和我的眼睛簡報中。](images/video-eyes-ears.png)|
+|Xamarin 的新[功能](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash;Android L、Android 磨損、Android 電視、Android 自動、材質設計和藝術;這對您是 Xamarin 開發人員來說是什麼意思？從演進2014。|![Xamarin. Android 簡報的新功能影片螢幕擷取畫面。](Images/video-whats-new.png)|
 
 <!--
 

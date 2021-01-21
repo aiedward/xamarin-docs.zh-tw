@@ -7,24 +7,24 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 2f70dd3b18c36d478548672bb78d329cb2a4c9ab
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: cac0d9bc6d4ac2c07bcfd09275ff3f78e0e18b91
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938771"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628835"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>針對 Xamarin 中的不同裝置進行編譯
 
-可執行檔的組建屬性可從專案的 [iOS 組建]**** 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建]**** (在 Visual Studio for Mac 中) 和 [屬性]**** \(在 Visual Studio 中)：
+可執行檔的組建屬性可從專案的 [iOS 組建] 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建] (在 Visual Studio for Mac 中) 和 [屬性]\(在 Visual Studio 中)：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![[專案] [iOS 組建] 屬性頁面](compiling-for-different-devices-images/image1.png)](compiling-for-different-devices-images/image1.png#lightbox) 
+[![Visual Studio for Mac 的 [專案 iOS 組建屬性] 頁面。](compiling-for-different-devices-images/image1.png)](compiling-for-different-devices-images/image1.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![[專案] [iOS 組建] 屬性頁面](compiling-for-different-devices-images/image1a.png)](compiling-for-different-devices-images/image1a.png#lightbox)
+[![Visual Studio 的 [專案 iOS 組建屬性] 頁面。](compiling-for-different-devices-images/image1a.png)](compiling-for-different-devices-images/image1a.png#lightbox)
 
 -----
 
@@ -34,11 +34,11 @@ ms.locfileid: "86938771"
 
 Visual Studio for Mac 可讓您設定兩個與 SDK 相關的重要屬性：iOS SDK 版本 (用來建置軟體) 和部署目標 (或最小的必要 iOS 版本)。
 
-iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會將 Xamarin.iOS 導向至其應該在建置期間參考的編譯器、連結器和程式庫。 以滑鼠右鍵按一下專案，然後在 [選項] 視窗中依序選擇 [**選項**] 和 [ **iOS 組建**]：
+iOS **SDK 版本** 選項可讓您使用不同版本的 Apple 發佈 SDK，這會將 Xamarin.iOS 導向至其應該在建置期間參考的編譯器、連結器和程式庫。 以滑鼠右鍵按一下專案，然後依 **序選擇 [選項]** 和 [ **iOS 組建** ] 中的 [選項] 視窗：
 
-[![選擇 [選項] 視窗上的 [SDK 版本]](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
+[![選擇 [選項] 視窗上的 SDK 版本](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
 
-**部署目標**設定可用來選取應用程式執行所在之作業系統的最小必要版本。 這會在您專案的**plist**檔案中設定。 請挑選擁有您執行應用程式所需之所有 API 的最小版本。
+**部署目標** 設定可用來選取應用程式執行所在之作業系統的最小必要版本。 這是在您專案的 **plist** 檔案中設定。 請挑選擁有您執行應用程式所需之所有 API 的最小版本。
 
 [![在 plist 檔案中設定部署目標](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
 
@@ -58,9 +58,9 @@ iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會
 
 您可以從 Visual Studio for Mac 或 Visual Studio 的 [iOS 組建] 選項啟用這兩個引擎。
 
-[![啟用 LLVM](compiling-for-different-devices-images/image2.png)](compiling-for-different-devices-images/image2.png#lightbox)
+[![在 Visual Studio for Mac 中啟用 L L V M。](compiling-for-different-devices-images/image2.png)](compiling-for-different-devices-images/image2.png#lightbox)
 
-[![啟用 LLVM](compiling-for-different-devices-images/image2a.png)](compiling-for-different-devices-images/image2a.png#lightbox)
+[![在 Visual Studio 中啟用 L L V M。](compiling-for-different-devices-images/image2a.png)](compiling-for-different-devices-images/image2a.png#lightbox)
 
 ## <a name="architecture-support"></a>架構支援
 
@@ -99,7 +99,7 @@ iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會
 
 請注意，提交至 App Store 的任何組建都必須包含 64 位元的支援，這是 [Apple](https://developer.apple.com/news/?id=12172014b) 所設下的需求。 此外，iOS 11 僅支援 64 位元應用程式。
 
-### <a name="arm-thumb-2-support"></a>ARM 拇指2支援
+### <a name="arm-thumb-2-support"></a>ARM Thumb-2 支援
 
 Thumb 是 ARM 處理器所使用、更為精簡的指令集。 藉由啟用 Thumb 支援，您可以減少可執行檔的大小，但代價是執行時間較久。 ARMv7 和 ARMv7s 可支援 Thumb。
 
@@ -109,8 +109,8 @@ Thumb 是 ARM 處理器所使用、更為精簡的指令集。 藉由啟用 Thum
 
 如果要這麼做，請執行下列步驟：
 
-- 開啟 [專案選項]****，然後瀏覽至 [iOS 組建]**** 窗格。
-- 針對您想要進行弱式連結的每個組態，在 [其他選項]**** 中新增 `'-gcc_flags "-weak_framework iAd"'`：
+- 開啟 [專案選項]，然後瀏覽至 [iOS 組建] 窗格。
+- 針對您想要進行弱式連結的每個組態，在 [其他選項] 中新增 `'-gcc_flags "-weak_framework iAd"'`：
 
 [![其他選項](compiling-for-different-devices-images/image3.png)](compiling-for-different-devices-images/image3.png#lightbox)
 

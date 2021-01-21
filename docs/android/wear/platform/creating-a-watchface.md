@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2018
-ms.openlocfilehash: 79dcab73c379cecb5108a88cc8bbb2eab33af05c
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 81dc3d23ea606a525fcc1bbffafa7d3bfdf6b332
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457103"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628861"
 ---
 # <a name="creating-a-watch-face"></a>建立錶面
 
@@ -23,15 +23,15 @@ _本指南說明如何為 Android 磨損1.0 執行自訂監看式臉部服務。
 本逐步解說會建立基本的 watch 臉部服務，以說明建立自訂 Android 磨損1.0 監看臉部的基本概念。
 初始 watch 臉部服務會顯示簡單的數位監看式，以小時和分鐘顯示目前時間：
 
-[![數位觀賞臉部](creating-a-watchface-images/01-initial-face.png "初始數位監看臉部的範例螢幕擷取畫面")](creating-a-watchface-images/01-initial-face.png#lightbox)
+[![螢幕擷取畫面顯示初始的數位監看臉部。](creating-a-watchface-images/01-initial-face.png "初始數位監看臉部的範例螢幕擷取畫面")](creating-a-watchface-images/01-initial-face.png#lightbox)
 
 在開發和測試此數位監看面之後，會新增更多程式碼，以將其升級至更精密的類比監看表面：
 
-[![類比監看臉部](creating-a-watchface-images/02-example-watchface.png "最終類比監看臉部的範例螢幕擷取畫面")](creating-a-watchface-images/02-example-watchface.png#lightbox)
+[![螢幕擷取畫面顯示最終的類比監看臉部。](creating-a-watchface-images/02-example-watchface.png "最終類比監看臉部的範例螢幕擷取畫面")](creating-a-watchface-images/02-example-watchface.png#lightbox)
 
 監看臉部服務已配套並安裝為磨損1.0 應用程式的一部分。 在下列範例中， `MainActivity` 只會包含來自磨損1.0 應用程式範本的程式碼，以便將 watch 臉部服務封裝並部署至智慧型監看式，作為應用程式的一部分。 實際上，此應用程式會單純作為車輛，讓 watch 臉部服務載入至磨損1.0 裝置 (或模擬器) 以進行偵測和測試。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 若要執行 watch 臉部服務，需要下列專案：
 
@@ -71,14 +71,14 @@ _本指南說明如何為 Android 磨損1.0 執行自訂監看式臉部服務。
 
 此外，請向下滾動並啟用 **網際網路** 並 **WAKE_LOCK** 許可權：
 
-[![所需的權限](creating-a-watchface-images/05-required-permissions-vs.png "啟用網際網路和 WAKE_LOCK 許可權")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
+[![必要許可權](creating-a-watchface-images/05-required-permissions-vs.png "啟用網際網路和 WAKE_LOCK 許可權")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-將最低 Android 版本設定為 **android 5.1 (API 層級 22) **。
+將最低 Android 版本設定為 **android 5.1 (API 層級 22)**。
 此外，啟用 **網際網路** 和 **WakeLock** 許可權：
 
-[![所需的權限](creating-a-watchface-images/05-required-permissions-xs.png "啟用網際網路和 WakeLock 許可權")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
+[![必要許可權](creating-a-watchface-images/05-required-permissions-xs.png "啟用網際網路和 WakeLock 許可權")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
 
 -----
 
@@ -88,7 +88,7 @@ _本指南說明如何為 Android 磨損1.0 執行自訂監看式臉部服務。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-啟動 NuGet 封裝管理員 (Visual Studio 中，以滑鼠右鍵按一下**方案總管**中的 [**參考**]，然後選取 [**管理 NuGet 套件 ...** ]) 。將專案更新為最新穩定版本的**Xamarin**：
+啟動 NuGet 封裝管理員 (Visual Studio 中，以滑鼠右鍵按一下 **方案總管** 中的 [**參考**]，然後選取 [**管理 NuGet 套件 ...** ]) 。將專案更新為最新穩定版本的 **Xamarin**：
 
 [![NuGet 封裝管理員新增](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "新增 Xamarin。")](creating-a-watchface-images/06-add-wear-pkg-vs.png#lightbox)
 
@@ -98,13 +98,13 @@ _本指南說明如何為 Android 磨損1.0 執行自訂監看式臉部服務。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-啟動 [NuGet 封裝管理員 (] Visual Studio for Mac 中，以滑鼠右鍵按一下 [**解決方案] 窗格**中的 [**封裝**]，然後選取 [**新增套件 ...** ]) 。將專案更新為最新穩定版本的**Xamarin**：
+啟動 [NuGet 封裝管理員 (] Visual Studio for Mac 中，以滑鼠右鍵按一下 [**解決方案] 窗格** 中的 [**封裝**]，然後選取 [**新增套件 ...** ]) 。將專案更新為最新穩定版本的 **Xamarin**：
 
 [![NuGet 封裝管理員新增](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "新增 Xamarin。")](creating-a-watchface-images/06-add-wear-pkg-xs.png#lightbox)
 
 -----
 
-在磨損裝置或模擬器上建立並執行應用程式 (如需如何執行此作業的詳細資訊，請參閱 [消費者入門](~/android/wear/get-started/index.md) 指南) 。 您應該會在磨損裝置上看到下列應用程式畫面：
+在磨損裝置或模擬器上建立並執行應用程式 (如需如何執行此作業的詳細資訊，請參閱 [開始使用](~/android/wear/get-started/index.md) 指南) 。 您應該會在磨損裝置上看到下列應用程式畫面：
 
 [![應用程式螢幕擷取畫面](creating-a-watchface-images/08-app-screen.png "在磨損裝置上的應用程式畫面")](creating-a-watchface-images/08-app-screen.png#lightbox)
 
@@ -142,11 +142,11 @@ Android 磨損會透過類別實行監看臉部 `CanvasWatchFaceService` 。 `Ca
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 中加入名為**MyWatchFaceService.cs** (的新檔案，以滑鼠右鍵按一下**方案總管**中的 [ **WatchFace** ]，按一下 [新增] **> [新專案**]，然後選取 [**類別**) ]。
+在 Visual Studio 中加入名為 **MyWatchFaceService.cs** (的新檔案，以滑鼠右鍵按一下 **方案總管** 中的 [ **WatchFace** ]，按一下 [新增] **> [新專案**]，然後選取 [**類別**) ]。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-在 Visual Studio for Mac 中加入名為 **MyWatchFaceService.cs** (的新檔案，以滑鼠右鍵按一下 [ **WatchFace** ] 專案，按一下 [ **新增 > 新**檔案 ...]，然後選取 [ **空白類別**) ]。
+在 Visual Studio for Mac 中加入名為 **MyWatchFaceService.cs** (的新檔案，以滑鼠右鍵按一下 [ **WatchFace** ] 專案，按一下 [ **新增 > 新** 檔案 ...]，然後選取 [ **空白類別**) ]。
 
 -----
 
@@ -340,7 +340,7 @@ public override void OnTimeTick()
 
 這會變更磨損裝置的監看面，以使用到目前為止所實行的自訂監看臉部服務：
 
-[![數位觀賞臉部](creating-a-watchface-images/12-digital-watchface.png "在磨損裝置上執行的自訂數位監看式")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
+[![螢幕擷取畫面顯示在磨損裝置上執行的自訂數位監看式。](creating-a-watchface-images/12-digital-watchface.png "在磨損裝置上執行的自訂數位監看式")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
 
 這是相當粗糙的監看式臉部，因為應用程式的執行最小 (例如，它不包含 watch 臉部背景，也不會呼叫 `Paint` 反別名方法來改善外觀) 。
 但是，它會執行建立自訂監看臉部所需的基本功能。
@@ -373,7 +373,7 @@ public override void OnTimeTick()
 
 更新後的 **>oncreate** 方法會將 watch 臉部樣式設定為先前，但還包含一些額外的步驟：
 
-1. 將背景影像設定為位於**資源/可繪製-hDPI/xamarin_background.png**中的**xamarin_background**資源。
+1. 將背景影像設定為位於 **資源/可繪製-hDPI/xamarin_background.png** 中的 **xamarin_background** 資源。
 
 2. 初始化用 `Paint` 來繪製時數、每分鐘手和第二次的物件。
 
@@ -419,7 +419,7 @@ public override void OnTimeTick()
 
 ### <a name="time-zone-feature"></a>時區功能
 
-新的 **MyWatchFaceService.cs** 也包含功能，可在時區 (變更時（例如跨時區) 移動時）更新目前時間。 在 **MyWatchFaceService.cs**結束時，定義了時區變更 `BroadcastReceiver` 來處理時區變更的意圖物件：
+新的 **MyWatchFaceService.cs** 也包含功能，可在時區 (變更時（例如跨時區) 移動時）更新目前時間。 在 **MyWatchFaceService.cs** 結束時，定義了時區變更 `BroadcastReceiver` 來處理時區變更的意圖物件：
 
 ```csharp
 public class TimeZoneReceiver: BroadcastReceiver
@@ -463,11 +463,11 @@ Application.Context.UnregisterReceiver (timeZoneReceiver);
 
 再次建立應用程式，並將其部署至磨損裝置。 如同之前一樣，選取 watch 臉部選擇器的監看式臉部。 [監看式] 選擇器中的預覽會顯示在左側，而新的 watch 臉部會顯示在右邊：
 
-[![類比監看臉部](creating-a-watchface-images/13-analog-watchface.png "改善選擇器和裝置上的類比臉部")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
+[![螢幕擷取畫面顯示選擇器和裝置上改良的類比臉部。](creating-a-watchface-images/13-analog-watchface.png "改善選擇器和裝置上的類比臉部")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
 
 在此螢幕擷取畫面中，第二個手會每秒移動一次。 當您在磨損裝置上執行此程式碼時，當 watch 進入環境模式時，第二個手會消失。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 在本逐步解說中，已執行並測試自訂的 Android 磨損 1.0 watchface。 `CanvasWatchFaceService`引進了和 `CanvasWatchFaceService.Engine` 類別，並已實行引擎類別的基本方法來建立簡單的數位監看臉部。 這項處理已使用更多的功能來進行更新，以建立類比監看式臉部，並已實行其他方法來處理可見度、環境模式和裝置屬性的差異。 最後，已實行時區廣播接收器，讓監看式自動更新超過某個時區的時間。
 

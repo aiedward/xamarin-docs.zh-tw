@@ -6,16 +6,16 @@ ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: davidortinau
 ms.author: daortin
 ms.date: 04/20/2018
-ms.openlocfilehash: fda004fe32b8f7d047298608a500cf72c4e9f06c
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 2beb33915d1dd03184d784ea998f91fcb64f423f
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91453322"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628900"
 ---
 # <a name="transport-layer-security-tls-12"></a>傳輸層安全性 (TLS) 1.2
 
-使用最新版本的 [_傳輸層安全性_ (TLS) ](https://en.wikipedia.org/wiki/Transport_Layer_Security) 很重要，可確保應用程式網路的通訊安全。
+使用最新版本的 [_傳輸層安全性_ (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) 很重要，可確保應用程式網路的通訊安全。
 
 > [!WARNING]
 > **2018 年4月** –由於安全性需求增加（包括 PCI 合規性），主要雲端提供者和 web 伺服器預期會停止支援早于1.2 的 TLS 版本。 在舊版 Visual Studio 中建立的 Xamarin 專案預設為使用舊版 TLS。
@@ -35,7 +35,7 @@ ms.locfileid: "91453322"
 
 您可以在 [ **專案屬性 > Android 選項** ] 中找到這些設定，然後按一下 [ **Advanced** ] 按鈕：
 
-[![在 Visual Studio 中設定 HttpClient 和 TLS](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
+[![在適用于 Android 裝置的 Visual Studio 中設定 HttpClient 和 TLS。](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -53,13 +53,13 @@ ms.locfileid: "91453322"
 
 您可以在 [ **IOS 組建] > 的 [專案屬性**] 中找到這項設定：
 
-[![在 Visual Studio 中設定 HttpClient 和 TLS](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
+[![在 Visual Studio 中設定適用于 i O S 裝置的 HttpClient 和 TLS。](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 您可以在 [ **組建 > IOS 組建** ] 索引標籤的 [專案 > 選項] 中找到這項設定：
 
-[![在 Visual Studio for Mac 中設定 HttpClient](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
+[![在 Visual Studio for Mac 中設定適用于 i O S 裝置的 HttpClient。](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
 
 -----
 
@@ -82,7 +82,7 @@ ms.locfileid: "91453322"
 
 Xamarin 開發人員一直都可以在程式碼中使用原生網路功能類別，不過還有一個可決定類別所使用之網路堆疊的選項 `HttpClient` 。 這提供了熟悉的 .NET API，其具有原生平臺的速度和安全性優勢。
 
-可用選項包括：
+選項包括：
 
 - **受控堆疊** – Mono 提供的網路功能，或
 - **原生堆疊** –基礎平臺所提供的各種網路 Api (Android、IOS 或 macOS) 。
@@ -101,7 +101,7 @@ Android 專案選項也可讓您選擇要支援的 SSL/TLS 執行：
 新的 Xamarin 專案預設為支援 TLS 1.2 (的原生實作為) 的所有專案建議使用，不過您可以視需要切換回 managed 程式碼，以取得相容性的原因。
 
 > [!IMPORTANT]
-> 已[從 iOS 和 Mac 專案選項中移除](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_10/xamarin.ios_10.8.md) **Mono/Managed**選項。
+> 已 [從 iOS 和 Mac 專案選項中移除](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_10/xamarin.ios_10.8.md) **Mono/Managed** 選項。
 >
 > 原生選項一律會在 iOS 和 Mac 平臺上使用。
 
@@ -112,7 +112,7 @@ Android 專案選項也可讓您選擇要支援的 SSL/TLS 執行：
 - [**Android**](~/android/app-fundamentals/http-stack.md)
 - [**iOS 和 Mac**](~/cross-platform/macios/http-stack.md)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 應用程式應該盡可能使用傳輸層安全性 (TLS) 1.2。
 您應該根據本文中的指示來更新現有應用程式中的設定，然後重新建立並重新部署至您的客戶。

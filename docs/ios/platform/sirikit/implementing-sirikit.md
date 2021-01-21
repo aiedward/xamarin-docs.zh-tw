@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: ed31e0262fecccf8974961d45d02388aeb8e85ea
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 273badf0e2ee609b72d433771ef967e1257ec83a
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434423"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629004"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin 中執行 SiriKit
 
@@ -20,7 +20,7 @@ _本文涵蓋在 Xamarin iOS 應用程式中執行 SiriKit 支援所需的步驟
 
 SiriKit 是 iOS 10 的新功能，可讓 Xamarin iOS 應用程式提供可讓使用者使用 Siri 和 iOS 裝置上的 Maps 應用程式存取的服務。 本文說明如何藉由新增必要的意圖延伸模組、意圖 UI 延伸模組和詞彙，在 Xamarin 應用程式中執行 SiriKit 支援所需的步驟。
 
-Siri 適用于 **領域**的概念、相關工作的已知動作群組。 應用程式與 Siri 之間的每個互動都必須屬於其中一個已知的服務網域，如下所示：
+Siri 適用于 **領域** 的概念、相關工作的已知動作群組。 應用程式與 Siri 之間的每個互動都必須屬於其中一個已知的服務網域，如下所示：
 
 - 正在呼叫音訊或影片。
 - 預約。
@@ -29,7 +29,7 @@ Siri 適用于 **領域**的概念、相關工作的已知動作群組。 應用
 - 正在搜尋相片。
 - 傳送或接收款項。
 
-當使用者要求包含其中一個應用程式延伸模組服務的 Siri 時，SiriKit 會傳送一個 **意圖** 物件給延伸模組，該物件會描述使用者的要求以及任何支援的資料。 然後，應用程式延伸模組會為指定的**意圖**產生適當的**回應**物件，詳述延伸模組如何處理要求。
+當使用者要求包含其中一個應用程式延伸模組服務的 Siri 時，SiriKit 會傳送一個 **意圖** 物件給延伸模組，該物件會描述使用者的要求以及任何支援的資料。 然後，應用程式延伸模組會為指定的 **意圖** 產生適當的 **回應** 物件，詳述延伸模組如何處理要求。
 
 本指南將提供將 SiriKit 支援加入現有應用程式的快速範例。 基於此範例，我們將使用假的 MonkeyChat 應用程式：
 
@@ -43,10 +43,10 @@ MonkeyChat 會保留自己的使用者朋友的連絡人，每個都與螢幕名
 
 [![使用 SiriKit 圖表擴充應用程式](implementing-sirikit-images/elements01.png)](implementing-sirikit-images/elements01.png#lightbox)
 
-這些包括：
+其中包含：
 
 1. **意圖擴充** 功能-驗證使用者的回應、確認應用程式可以處理要求，並實際執行工作來完成使用者的要求。
-2. **意圖 UI 延伸**  -  模組*選擇性*，提供自訂 Ui 給 Siri 環境中的回應，並可將應用程式 ui 和商標帶到 Siri 中，以豐富使用者的體驗。
+2. **意圖 UI 延伸**  -  模組 *選擇性*，提供自訂 Ui 給 Siri 環境中的回應，並可將應用程式 ui 和商標帶到 Siri 中，以豐富使用者的體驗。
 3. **應用** 程式-為應用程式提供使用者專屬的詞彙，以協助 Siri 使用它。 
 
 下列各節將詳細說明這些元素以及將它們包含在應用程式中的步驟。
@@ -57,7 +57,7 @@ SiriKit 是以延伸模組為基礎，不過在將任何延伸模組新增至應
 
 ### <a name="moving-common-shared-code"></a>移動一般共用程式碼 
 
-首先，開發人員可以將應用程式與延伸模組之間共用的一些通用程式碼移至 _共用專案_、 _可移植類別庫 (Pcl) _ 或 _原生程式庫_。
+首先，開發人員可以將應用程式與延伸模組之間共用的一些通用程式碼移至 _共用專案_、 _可移植類別庫 (Pcl)_ 或 _原生程式庫_。
 
 擴充功能必須能夠執行應用程式所執行的所有作業。 以範例 MonkeyChat 應用程式的條款而言，像是尋找連絡人、加入新的連絡人、傳送訊息，以及取得訊息歷程記錄等專案。
 
@@ -72,19 +72,19 @@ SiriKit 是以延伸模組為基礎，不過在將任何延伸模組新增至應
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 啟動 Visual Studio for Mac，然後開啟 MonkeyChat 應用程式。
-2. 在**Solution Pad**中，以滑鼠右鍵按一下方案名稱，然後選取 [**加入**  >  **新專案 ...**： 
+2. 在 **Solution Pad** 中，以滑鼠右鍵按一下方案名稱，然後選取 [**加入**  >  **新專案 ...**： 
 
     [![新增專案](implementing-sirikit-images/prep01.png)](implementing-sirikit-images/prep01.png#lightbox)
-3. 選取 [ **iOS**連結  >  **庫**  >  **類別庫**]，然後按 [**下一步]** 按鈕： 
+3. 選取 [ **iOS** 連結  >  **庫**  >  **類別庫**]，然後按 [**下一步]** 按鈕： 
 
     [![選取類別庫](implementing-sirikit-images/prep02.png)](implementing-sirikit-images/prep02.png#lightbox)
 4. 輸入 `MonkeyChatCommon` **名稱** ，然後按一下 [ **建立** ] 按鈕： 
 
     [![輸入 MonkeyChatCommon 作為名稱](implementing-sirikit-images/prep03.png)](implementing-sirikit-images/prep03.png#lightbox)
-5. 在**方案總管**中，以滑鼠右鍵按一下主應用程式的 [**參考**] 資料夾，然後選取 [**編輯參考 ...**]。檢查**MonkeyChatCommon**專案，然後按一下 [**確定]** 按鈕： 
+5. 在 **方案總管** 中，以滑鼠右鍵按一下主應用程式的 [**參考**] 資料夾，然後選取 [**編輯參考 ...**]。檢查 **MonkeyChatCommon** 專案，然後按一下 [**確定]** 按鈕： 
 
     [![檢查 MonkeyChatCommon 專案](implementing-sirikit-images/prep05.png)](implementing-sirikit-images/prep05.png#lightbox)
-6. 在 **方案總管**中，將一般的共用程式碼從主應用程式拖曳到原生程式庫。
+6. 在 **方案總管** 中，將一般的共用程式碼從主應用程式拖曳到原生程式庫。
 7. 在 MonkeyChat 的案例中，將 **DataModels** 和 **處理器** 資料夾從主要應用程式拖曳到原生程式庫： 
 
     [![方案總管中的 [DataModels] 和 [處理器] 資料夾](implementing-sirikit-images/prep06.png)](implementing-sirikit-images/prep06.png#lightbox)
@@ -92,15 +92,15 @@ SiriKit 是以延伸模組為基礎，不過在將任何延伸模組新增至應
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 啟動 Visual Studio，然後開啟 MonkeyChat 應用程式。
-2. 以滑鼠右鍵按一下**方案總管**中的方案名稱，然後選取 [**加入**  >  **新專案**]。
+2. 以滑鼠右鍵按一下 **方案總管** 中的方案名稱，然後選取 [**加入**  >  **新專案**]。
 3. 選取 [ **Visual c #**  >  **共用專案**]，然後按 [**下一步]** 按鈕： 
 
     [![選取類別庫](implementing-sirikit-images/prep02.w157-sml.png)](implementing-sirikit-images/prep02.w157.png#lightbox)
 4. 輸入 `MonkeyChatCommon` **名稱** ，然後按一下 [ **建立** ] 按鈕。
-5. 在**方案總管**中，以滑鼠右鍵按一下主應用程式的 [**參考**] 資料夾，然後選取 [**編輯參考 ...**]。檢查**MonkeyChatCommon**專案，然後按一下 [**確定]** 按鈕： 
+5. 在 **方案總管** 中，以滑鼠右鍵按一下主應用程式的 [**參考**] 資料夾，然後選取 [**編輯參考 ...**]。檢查 **MonkeyChatCommon** 專案，然後按一下 [**確定]** 按鈕： 
 
     [![檢查 MonkeyChatCommon 專案](implementing-sirikit-images/prep05w.png)](implementing-sirikit-images/prep05w.png#lightbox)
-6. 在 **方案總管**中，將一般的共用程式碼從主應用程式拖曳到共用的專案。
+6. 在 **方案總管** 中，將一般的共用程式碼從主應用程式拖曳到共用的專案。
 7. 在 MonkeyChat 的案例中，將 **DataModels** 和 **處理器** 資料夾從主要應用程式拖曳到原生程式庫。
 
 -----
@@ -167,16 +167,16 @@ namespace MonkeyChat
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下 `Entitlements.plist` **方案總管** 中的檔案，將它開啟以供編輯。
-2. 切換至 [來源]**** 索引標籤。
+2. 切換至 [來源] 索引標籤。
 3. 加入 `com.apple.developer.siri` **屬性**，將 **類型** 設定為， `Boolean` 並將 **值** 設定為 `Yes` ： 
 
     [![加入 siri 屬性。](implementing-sirikit-images/setup01.png)](implementing-sirikit-images/setup01.png#lightbox)
 4. 將變更儲存至檔案。
-5. 按兩下**方案總管**中的**專案**檔，以開啟它進行編輯。
+5. 按兩下 **方案總管** 中的 **專案** 檔，以開啟它進行編輯。
 6. 選取 [IOS 套件組合 **簽署** ]，並確定 `Entitlements.plist` 已在 [ **自訂權利** ] 欄位中選取檔案： 
 
     [![在 [自訂權利] 欄位中選取 plist 檔案](implementing-sirikit-images/setup02.png)](implementing-sirikit-images/setup02.png#lightbox)
-7. 按一下 [確定]**** 按鈕以儲存所做的變更。
+7. 按一下 [確定] 按鈕以儲存所做的變更。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -185,7 +185,7 @@ namespace MonkeyChat
 
     [![加入 siri 屬性。](implementing-sirikit-images/setup01w.png)](implementing-sirikit-images/setup01w.png#lightbox)
 3. 將變更儲存至檔案。
-4. 按兩下**方案總管**中的**專案**檔，以開啟它進行編輯。
+4. 按兩下 **方案總管** 中的 **專案** 檔，以開啟它進行編輯。
 5. 選取 [IOS 套件組合 **簽署** ]，並確定 `Entitlements.plist` 已在 [ **自訂權利** ] 欄位中選取該檔案。
 
 -----
@@ -218,8 +218,8 @@ namespace MonkeyChat
 
     [![選取 SiriKit](implementing-sirikit-images/setup03.png)](implementing-sirikit-images/setup03.png#lightbox)
 7. 確認所有設定，然後 **提交** 應用程式識別碼。
-8. 選取 [布建**設定檔**  >  **開發**]，按一下 **+** 按鈕，選取**Apple ID**，然後按一下 [**繼續**]。
-9. 按一下 [ **全選]，然後**按一下 [ **繼續**]。
+8. 選取 [布建 **設定檔**  >  **開發**]，按一下 **+** 按鈕，選取 **Apple ID**，然後按一下 [**繼續**]。
+9. 按一下 [ **全選]，然後** 按一下 [ **繼續**]。
 10. 按一下 [ **全部選取** ]，然後按一下 [ **繼續**]。
 11. 使用 Apple 的命名建議輸入 **設定檔名稱** ，然後按一下 [ **繼續**]。
 12. 啟動 Xcode。
@@ -232,16 +232,16 @@ namespace MonkeyChat
     [![下載所有設定檔](implementing-sirikit-images/setup05.png)](implementing-sirikit-images/setup05.png#lightbox)
 16. 確定已在 Xcode 中安裝上述建立的布建 **設定檔** 。
 17. 開啟專案，在 Visual Studio for Mac 中新增 SiriKit 支援。
-18. 按兩下 `Info.plist` **方案總管**中的檔案。
+18. 按兩下 `Info.plist` **方案總管** 中的檔案。
 19. 請確定套件組合識別碼符合在 Apple 開發人員入口網站中建立的套件組合 **識別碼** ： 
 
     [![套件組合識別碼](implementing-sirikit-images/setup06.png)](implementing-sirikit-images/setup06.png#lightbox)
-20. 在 [ **方案總管**中，選取 **專案**。
+20. 在 [ **方案總管** 中，選取 **專案**。
 21. 以滑鼠右鍵按一下專案，然後選取 [ **選項**]。
 22. 選取 [IOS 套件組合 **簽署**]，選取先前建立的 **簽署身分識別** 和布建 **設定檔** ： 
 
     [![選取簽署身分識別和布建設定檔](implementing-sirikit-images/setup07.png)](implementing-sirikit-images/setup07.png#lightbox)
-23. 按一下 [確定]**** 按鈕以儲存所做的變更。
+23. 按一下 [確定] 按鈕以儲存所做的變更。
 
 > [!IMPORTANT]
 > 測試 SiriKit 僅適用于實際的 iOS 10 硬體裝置，而不是在 iOS 10 模擬器中。 如果在實際的硬體上安裝 SiriKit 的 Xamarin iOS 應用程式發生問題，請確定已在 Apple 開發人員入口網站和 Visual Studio for Mac 中正確設定必要權利、應用程式識別碼、簽署識別碼和布建設定檔。
@@ -454,7 +454,7 @@ namespace MonkeyChat
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**方案總管**中的專案名稱上按一下滑鼠右鍵，然後選取 [**加入**  >  **新**  >  檔案]。**iOS**：
+1. 在 **方案總管** 中的專案名稱上按一下滑鼠右鍵，然後選取 [**加入**  >  **新**  >  檔案]。**iOS**：
 
     [![加入屬性清單](implementing-sirikit-images/plist01.png)](implementing-sirikit-images/plist01.png#lightbox)
 2. 按兩下 `AppIntentVocabulary.plist` **方案總管** 中的檔案，將它開啟以供編輯。
@@ -475,7 +475,7 @@ namespace MonkeyChat
     [![將 ParameterVocabulary 索引鍵新增至具有陣列類型的 ParameterVocabularies 索引鍵](implementing-sirikit-images/plist06.png)](implementing-sirikit-images/plist06.png#lightbox)
 8. 新增具有下列 **類型** 的新機碼 `Dictionary` ：
 
-    [![新增具有字典類型的新機碼](implementing-sirikit-images/plist07.png)](implementing-sirikit-images/plist07.png#lightbox)
+    [![在 Visual Studio for Mac 中加入具有字典類型的新索引鍵。](implementing-sirikit-images/plist07.png)](implementing-sirikit-images/plist07.png#lightbox)
 9. 加入 `VocabularyItemIdentifier` 具有 **類型** 的索引鍵 `String` ，並指定該詞彙的唯一識別碼：
 
     [![新增具有字串類型的 VocabularyItemIdentifier 索引鍵，並指定唯一的識別碼](implementing-sirikit-images/plist08.png)](implementing-sirikit-images/plist08.png#lightbox)
@@ -484,7 +484,7 @@ namespace MonkeyChat
     [![新增具有陣列類型的 VocabularyItemSynonyms 索引鍵](implementing-sirikit-images/plist09.png)](implementing-sirikit-images/plist09.png#lightbox)
 11. 新增具有下列 **類型** 的新機碼 `Dictionary` ：
 
-    [![新增具有字典類型的新機碼](implementing-sirikit-images/plist10.png)](implementing-sirikit-images/plist10.png#lightbox)
+    [![在 Visual Studio for Mac 中新增具有字典類型的另一個新索引鍵。](implementing-sirikit-images/plist10.png)](implementing-sirikit-images/plist10.png#lightbox)
 12. 使用的 `VocabularyItemPhrase` **類型** `String` 和應用程式所定義的詞彙來新增金鑰：
 
     [![新增具有字串類型和應用程式所定義詞彙的 VocabularyItemPhrase 索引鍵](implementing-sirikit-images/plist11.png)](implementing-sirikit-images/plist11.png#lightbox)
@@ -496,7 +496,7 @@ namespace MonkeyChat
     [![新增具有陣列類型的 VocabularyItemExamples 索引鍵](implementing-sirikit-images/plist13.png)](implementing-sirikit-images/plist13.png#lightbox)
 15. `String`使用「詞彙」的範例用法來新增一些金鑰：
 
-    [![使用詞彙的範例用法來新增一些字串索引鍵](implementing-sirikit-images/plist14.png)](implementing-sirikit-images/plist14.png#lightbox)
+    [![使用 Visual Studio for Mac 中的詞彙範例來新增一些字串索引鍵。](implementing-sirikit-images/plist14.png)](implementing-sirikit-images/plist14.png#lightbox)
 16. 針對應用程式需要定義的任何其他自訂字詞，重複上述步驟。
 17. 折迭索引 `ParameterVocabularies` 鍵。
 18. 新增 `IntentPhrases` 具有下列 **類型** 的金鑰 `Array` ：
@@ -504,7 +504,7 @@ namespace MonkeyChat
     [![新增具有陣列類型的 IntentPhrases 索引鍵](implementing-sirikit-images/plist15.png)](implementing-sirikit-images/plist15.png#lightbox)
 19. 新增具有下列 **類型** 的新機碼 `Dictionary` ：
 
-    [![新增具有字典類型的新機碼](implementing-sirikit-images/plist16.png)](implementing-sirikit-images/plist16.png#lightbox)
+    [![在 Visual Studio for Mac 中，以字典的類型加入額外的新索引鍵。](implementing-sirikit-images/plist16.png)](implementing-sirikit-images/plist16.png#lightbox)
 20. 在範例中新增 `IntentName` 具有和意圖 **類型** 的索引鍵 `String` ：
 
     [![使用範例的字串和意圖類型來新增 IntentName 索引鍵](implementing-sirikit-images/plist17.png)](implementing-sirikit-images/plist17.png#lightbox)
@@ -513,7 +513,7 @@ namespace MonkeyChat
     [![新增具有陣列類型的 IntentExamples 索引鍵](implementing-sirikit-images/plist18.png)](implementing-sirikit-images/plist18.png#lightbox)
 22. `String`使用「詞彙」的範例用法來新增一些金鑰：
 
-    [![使用詞彙的範例用法來新增一些字串索引鍵](implementing-sirikit-images/plist19.png)](implementing-sirikit-images/plist19.png#lightbox)
+    [![使用 Visual Studio for Mac 中的詞彙範例來新增一些額外的字串索引鍵。](implementing-sirikit-images/plist19.png)](implementing-sirikit-images/plist19.png#lightbox)
 23. 針對應用程式為了提供範例使用方式所需的任何意圖重複上述步驟。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -540,7 +540,7 @@ namespace MonkeyChat
     [![將 ParameterVocabulary 索引鍵新增至具有陣列類型的 ParameterVocabularies 索引鍵](implementing-sirikit-images/plist06w.png)](implementing-sirikit-images/plist06w.png#lightbox)
 8. 新增具有下列 **類型** 的新機碼 `Dictionary` ：
 
-    [![新增具有字典類型的新機碼](implementing-sirikit-images/plist07w.png)](implementing-sirikit-images/plist07w.png#lightbox)
+    [![加入具有字典類型的新索引鍵。](implementing-sirikit-images/plist07w.png)](implementing-sirikit-images/plist07w.png#lightbox)
 9. 加入 `VocabularyItemIdentifier` 具有 **類型** 的索引鍵 `String` ，並指定該詞彙的唯一識別碼：
 
     [![新增具有字串類型的 VocabularyItemIdentifier 索引鍵，並指定該詞彙的唯一識別碼](implementing-sirikit-images/plist08w.png)](implementing-sirikit-images/plist08w.png#lightbox)
@@ -549,7 +549,7 @@ namespace MonkeyChat
     [![新增具有陣列類型的 VocabularyItemSynonyms 索引鍵](implementing-sirikit-images/plist09w.png)](implementing-sirikit-images/plist09w.png#lightbox)
 11. 新增具有下列 **類型** 的新機碼 `Dictionary` ：
 
-    [![新增具有字典類型的新機碼](implementing-sirikit-images/plist10w.png)](implementing-sirikit-images/plist10w.png#lightbox)
+    [![新增具有字典類型的另一個新索引鍵。](implementing-sirikit-images/plist10w.png)](implementing-sirikit-images/plist10w.png#lightbox)
 12. 使用的 `VocabularyItemPhrase` **類型** `String` 和應用程式所定義的詞彙來新增金鑰：
 
     [![新增具有字串類型和應用程式所定義詞彙的 VocabularyItemPhrase 索引鍵](implementing-sirikit-images/plist11w.png)](implementing-sirikit-images/plist11w.png#lightbox)
@@ -561,7 +561,7 @@ namespace MonkeyChat
     [![新增具有陣列類型的 VocabularyItemExamples 索引鍵](implementing-sirikit-images/plist13w.png)](implementing-sirikit-images/plist13w.png#lightbox)
 15. `String`使用「詞彙」的範例用法來新增一些金鑰：
 
-    [![使用詞彙的範例用法來新增一些字串索引鍵](implementing-sirikit-images/plist14w.png)](implementing-sirikit-images/plist14w.png#lightbox)
+    [![使用詞彙的範例用法來新增一些字串索引鍵。](implementing-sirikit-images/plist14w.png)](implementing-sirikit-images/plist14w.png#lightbox)
 16. 針對應用程式需要定義的任何其他自訂字詞，重複上述步驟。
 17. 折迭索引 `ParameterVocabularies` 鍵。
 18. 新增 `IntentPhrases` 具有下列 **類型** 的金鑰 `Array` ：
@@ -569,7 +569,7 @@ namespace MonkeyChat
     [![新增具有陣列類型的 IntentPhrases 索引鍵](implementing-sirikit-images/plist15w.png)](implementing-sirikit-images/plist15w.png#lightbox)
 19. 新增具有下列 **類型** 的新機碼 `Dictionary` ：
 
-    [![新增具有字典類型的新機碼](implementing-sirikit-images/plist16w.png)](implementing-sirikit-images/plist16w.png#lightbox)
+    [![新增具有字典類型的額外新索引鍵。](implementing-sirikit-images/plist16w.png)](implementing-sirikit-images/plist16w.png#lightbox)
 20. 在範例中新增 `IntentName` 具有和意圖 **類型** 的索引鍵 `String` ：
 
     [![使用範例的字串和意圖類型來新增 IntentName 索引鍵](implementing-sirikit-images/plist17w.png)](implementing-sirikit-images/plist17w.png#lightbox)
@@ -578,7 +578,7 @@ namespace MonkeyChat
     [![新增具有陣列類型的 IntentExamples 索引鍵](implementing-sirikit-images/plist18w.png)](implementing-sirikit-images/plist18w.png#lightbox)
 22. `String`使用「詞彙」的範例用法來新增一些金鑰：
 
-    [![使用詞彙的範例用法來新增一些字串索引鍵](implementing-sirikit-images/plist19w.png)](implementing-sirikit-images/plist19w.png#lightbox)
+    [![使用詞彙的範例用法來新增一些額外的字串索引鍵。](implementing-sirikit-images/plist19w.png)](implementing-sirikit-images/plist19w.png#lightbox)
 23. 針對應用程式為了提供範例使用方式所需的任何意圖重複上述步驟。
 
 -----
@@ -606,28 +606,28 @@ namespace MonkeyChat
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 以滑鼠右鍵按一下**Solution Pad**中的**方案名稱**，然後選取 [**加入**  >  **新專案**]。
-2. 從對話方塊中選取 [ **iOS**  >  **延伸**模組  >  **意圖擴充**功能]，然後按 [**下一步]** 按鈕： 
+1. 以滑鼠右鍵按一下 **Solution Pad** 中的 **方案名稱**，然後選取 [**加入**  >  **新專案**]。
+2. 從對話方塊中選取 [ **iOS**  >  **延伸** 模組  >  **意圖擴充** 功能]，然後按 [**下一步]** 按鈕： 
 
     [![選取意圖延伸模組](implementing-sirikit-images/intents05.png)](implementing-sirikit-images/intents05.png#lightbox)
 3. 接下來輸入意圖延伸的 **名稱** ，然後按 [ **下一步]** 按鈕： 
 
-    [![輸入意圖延伸模組的名稱](implementing-sirikit-images/intents06.png)](implementing-sirikit-images/intents06.png#lightbox)
+    [![輸入意圖延伸的名稱。](implementing-sirikit-images/intents06.png)](implementing-sirikit-images/intents06.png#lightbox)
 4. 最後，按一下 [ **建立** ] 按鈕，將意圖延伸新增至應用程式解決方案： 
 
-    [![將意圖擴充功能新增至應用程式解決方案](implementing-sirikit-images/intents07.png)](implementing-sirikit-images/intents07.png#lightbox)
-5. 在 **方案總管**中，以滑鼠右鍵按一下新建立之意圖延伸模組的 [ **參考** ] 資料夾。 檢查上面建立的應用程式 (常見的共用程式碼程式庫專案的名稱) 然後按一下 [ **確定]** 按鈕： 
+    [![將意圖擴充功能新增至應用程式解決方案。](implementing-sirikit-images/intents07.png)](implementing-sirikit-images/intents07.png#lightbox)
+5. 在 **方案總管** 中，以滑鼠右鍵按一下新建立之意圖延伸模組的 [ **參考** ] 資料夾。 檢查上面建立的應用程式 (常見的共用程式碼程式庫專案的名稱) 然後按一下 [ **確定]** 按鈕： 
 
-    [![選取通用共用程式碼程式庫專案的名稱](implementing-sirikit-images/intents08.png)](implementing-sirikit-images/intents08.png#lightbox)
+    [![選取通用共用程式碼程式庫專案的名稱。](implementing-sirikit-images/intents08.png)](implementing-sirikit-images/intents08.png#lightbox)
     
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 以滑鼠右鍵按一下**方案總管**中的**方案名稱**，然後選取 [**加入**  >  **新專案**]。
+1. 以滑鼠右鍵按一下 **方案總管** 中的 **方案名稱**，然後選取 [**加入**  >  **新專案**]。
 2. 從對話方塊中，選取 [ **Visual c # > IOS 延伸模組] > 意圖擴充** 功能，然後按 [ **下一步]** 按鈕：
 
     [![選取意圖延伸模組](implementing-sirikit-images/intents05.w157-sml.png)](implementing-sirikit-images/intents05.w157.png#lightbox)
 3. 接下來輸入意圖延伸模組的 **名稱** ，然後按一下 [ **確定]** 按鈕。
-4. 在 [ **方案總管**中，以滑鼠右鍵按一下新建立之意圖延伸模組的 [ **參考** ] 資料夾，然後選擇 [ **加入 > 參考**]。 檢查上面建立的應用程式 (常見的共用程式碼程式庫專案的名稱) 然後按一下 [ **確定]** 按鈕：
+4. 在 [ **方案總管** 中，以滑鼠右鍵按一下新建立之意圖延伸模組的 [ **參考** ] 資料夾，然後選擇 [ **加入 > 參考**]。 檢查上面建立的應用程式 (常見的共用程式碼程式庫專案的名稱) 然後按一下 [ **確定]** 按鈕：
 
     [![選取通用共用程式碼程式庫專案的名稱](implementing-sirikit-images/intents08w.png)](implementing-sirikit-images/intents08w.png#lightbox)
     
@@ -650,7 +650,7 @@ namespace MonkeyChat
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![編輯器中的 NSExtension 和 NSExtensionAttributes 索引鍵](implementing-sirikit-images/intents02.png)](implementing-sirikit-images/intents02.png#lightbox)
+[![Visual Studio for Mac 中編輯器中的 NSExtension 和 NSExtensionAttributes 索引鍵。](implementing-sirikit-images/intents02.png)](implementing-sirikit-images/intents02.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -662,11 +662,11 @@ namespace MonkeyChat
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![INSendMessageIntent 鍵](implementing-sirikit-images/intents09.png)](implementing-sirikit-images/intents09.png#lightbox)
+[![Visual Studio for Mac 編輯器中的 INSendMessageIntent 索引鍵。](implementing-sirikit-images/intents09.png)](implementing-sirikit-images/intents09.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![INSendMessageIntent 鍵](implementing-sirikit-images/intents09w.png)](implementing-sirikit-images/intents09w.png#lightbox)
+[![INSendMessageIntent 鍵。](implementing-sirikit-images/intents09w.png)](implementing-sirikit-images/intents09w.png#lightbox)
 
 -----
 
@@ -867,26 +867,26 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 以滑鼠右鍵按一下**Solution Pad**中的**方案名稱**，然後選取 [**加入**  >  **新專案**]。
-2. 從對話方塊中選取 [ **iOS**  >  **擴充**功能  >  **意圖 UI 延伸**模組]，然後按一下 [**下一步]** 按鈕： 
+1. 以滑鼠右鍵按一下 **Solution Pad** 中的 **方案名稱**，然後選取 [**加入**  >  **新專案**]。
+2. 從對話方塊中選取 [ **iOS**  >  **擴充** 功能  >  **意圖 UI 延伸** 模組]，然後按一下 [**下一步]** 按鈕： 
 
     [![選取意圖 UI 延伸模組](implementing-sirikit-images/intents11.png)](implementing-sirikit-images/intents11.png#lightbox)
 3. 接下來輸入意圖延伸的 **名稱** ，然後按 [ **下一步]** 按鈕： 
 
-    [![輸入意圖延伸模組的名稱](implementing-sirikit-images/intents12.png)](implementing-sirikit-images/intents12.png#lightbox)
+    [![在 Visual Studio for Mac 中輸入意圖延伸的名稱。](implementing-sirikit-images/intents12.png)](implementing-sirikit-images/intents12.png#lightbox)
 4. 最後，按一下 [ **建立** ] 按鈕，將意圖延伸新增至應用程式解決方案： 
 
-    [![將意圖擴充功能新增至應用程式解決方案](implementing-sirikit-images/intents13.png)](implementing-sirikit-images/intents13.png#lightbox)
-5. 在 **方案總管**中，以滑鼠右鍵按一下新建立之意圖延伸模組的 [ **參考** ] 資料夾。 檢查上面建立的應用程式 (常見的共用程式碼程式庫專案的名稱) 然後按一下 [ **確定]** 按鈕： 
+    [![將意圖延伸新增至 Visual Studio for Mac 中的應用程式解決方案。](implementing-sirikit-images/intents13.png)](implementing-sirikit-images/intents13.png#lightbox)
+5. 在 **方案總管** 中，以滑鼠右鍵按一下新建立之意圖延伸模組的 [ **參考** ] 資料夾。 檢查上面建立的應用程式 (常見的共用程式碼程式庫專案的名稱) 然後按一下 [ **確定]** 按鈕： 
 
-    [![選取通用共用程式碼程式庫專案的名稱](implementing-sirikit-images/intents14.png)](implementing-sirikit-images/intents14.png#lightbox)
+    [![在 Visual Studio for Mac 中，選取通用共用程式碼程式庫專案的名稱。](implementing-sirikit-images/intents14.png)](implementing-sirikit-images/intents14.png#lightbox)
     
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 以滑鼠右鍵按一下**方案總管**中的**方案名稱**，然後選取 [**加入**  >  **新專案**]。
-2. 從對話方塊中選取 [ **iOS**  >  **延伸**模組  >  **意圖 UI 延伸**模組]，然後按一下 [**下一步]** 按鈕。
+1. 以滑鼠右鍵按一下 **方案總管** 中的 **方案名稱**，然後選取 [**加入**  >  **新專案**]。
+2. 從對話方塊中選取 [ **iOS**  >  **延伸** 模組  >  **意圖 UI 延伸** 模組]，然後按一下 [**下一步]** 按鈕。
 3. 接下來輸入意圖延伸模組的 **名稱** ，然後按一下 [ **確定]** 按鈕。
-4. 在 **方案總管**中，以滑鼠右鍵按一下新建立之意圖延伸模組的 [ **參考** ] 資料夾。 檢查上面建立的應用程式 (常見的共用程式碼程式庫專案的名稱) 然後按一下 [ **確定]** 按鈕。
+4. 在 **方案總管** 中，以滑鼠右鍵按一下新建立之意圖延伸模組的 [ **參考** ] 資料夾。 檢查上面建立的應用程式 (常見的共用程式碼程式庫專案的名稱) 然後按一下 [ **確定]** 按鈕。
     
 -----
 
@@ -904,7 +904,7 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 若要設定意圖 UI 延伸模組的檔案 `Info.plist` ，請在 **方案總管** 中按兩下該檔案以開啟它進行編輯。 接下來，切換至 **來源** 視圖，然後 `NSExtension` `NSExtensionAttributes` 在編輯器中展開和索引鍵：
 
-[![編輯器中的 NSExtension 和 NSExtensionAttributes 索引鍵](implementing-sirikit-images/intents04.png)](implementing-sirikit-images/intents04.png#lightbox)
+[![編輯器中的 NSExtension 和 NSExtensionAttributes 索引鍵。](implementing-sirikit-images/intents04.png)](implementing-sirikit-images/intents04.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -918,11 +918,11 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![INSendMessageIntent 鍵](implementing-sirikit-images/intents15.png)](implementing-sirikit-images/intents15.png#lightbox)
+[![Visual Studio for Mac 中意圖 U I 擴充功能的 INSendMessageIntent 鍵。](implementing-sirikit-images/intents15.png)](implementing-sirikit-images/intents15.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![INSendMessageIntent 鍵](implementing-sirikit-images/intents15w.png)](implementing-sirikit-images/intents15w.png#lightbox)
+[![Visual Studio 中意圖 U I 擴充功能的 INSendMessageIntent 鍵。](implementing-sirikit-images/intents15w.png)](implementing-sirikit-images/intents15w.png#lightbox)
 
 -----
 
@@ -1004,12 +1004,12 @@ Siri 也會傳入完成處理常式，讓應用程式在應用程式完成設定
 
 ### <a name="design-the-ui-in-ios-designer"></a>在 iOS 設計工具中設計 UI
 
-在 iOS 設計工具中配置意圖 UI 延伸的使用者介面。 按兩下方案總管中的延伸模組檔案 `MainInterface.storyboard` ，將**Solution Explorer**它開啟以供編輯。 拖曳所有必要的 UI 元素，以建立消費者介面並儲存變更。
+在 iOS 設計工具中配置意圖 UI 延伸的使用者介面。 按兩下方案總管中的延伸模組檔案 `MainInterface.storyboard` ，將它開啟以供編輯。 拖曳所有必要的 UI 元素，以建立消費者介面並儲存變更。
 
 > [!IMPORTANT]
 > 雖然可以將互動式專案（例如或）新增 `UIButtons` `UITextFields` 至意圖 ui 延伸模組，但 `UIViewController` 這些專案在非互動式的意圖 ui 中是完全禁止的，使用者將無法與其互動。
 
-### <a name="wire-up-the-user-interface"></a>連接消費者介面
+### <a name="wire-up-the-user-interface"></a>Wire-Up 消費者介面
 
 在 iOS 設計工具中建立意圖 UI 延伸模組的消費者介面，請編輯子 `UIViewController` 類別並覆寫方法，如下所示 `Configure` ：
 
@@ -1052,11 +1052,11 @@ public bool DisplaysMessage {
 
 Apple 建議開發人員在設計和實行意圖 UI 延伸時，考慮下列事項：
 
-- 請**關注記憶體使用量**-因為意圖 UI 延伸模組是暫時性的，而且只會在短時間內顯示，因此系統會強加比使用完整應用程式更緊密的記憶體限制。
+- 請 **關注記憶體使用量**-因為意圖 UI 延伸模組是暫時性的，而且只會在短時間內顯示，因此系統會強加比使用完整應用程式更緊密的記憶體限制。
 - **考慮最小和最大的視圖大小** -確定意圖 UI 延伸模組在每個 iOS 裝置類型、大小和方向上都能美觀。 此外，應用程式傳回給 Siri 的所需大小可能無法被授與。
-- 請再次**使用彈性和**自動調整的版面配置模式，以確保 UI 在每個裝置上都能美觀。
+- 請再次 **使用彈性和** 自動調整的版面配置模式，以確保 UI 在每個裝置上都能美觀。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 本文涵蓋了 SiriKit，並示範如何將它新增至 Xamarin 應用程式，以提供可供使用者使用 Siri 和 iOS 裝置上的 Maps 應用程式存取的服務。
 
