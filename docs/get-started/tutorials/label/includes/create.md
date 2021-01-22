@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 1bcd808221ee319fa2818563418d2362b146e354
-ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
+ms.openlocfilehash: 2446b4410b7ded6aa070a19ae0ac742bb519b331
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389915"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689820"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 若要完成此教學課程，您應該有 Visual Studio 2019 (最新版本)，並已安裝 [使用 .NET 進行行動開發] 工作負載。 此外，您還需要配對的 Mac 才能在 iOS 上建置教學課程應用程式。 如需安裝 Xamarin 平台的相關資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。 如需有關將 Visual Studio 2019 連線至 Mac 建置主機的相關資訊，請參閱[為 Xamarin.iOS 開發與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
-1. 啟動 Visual Studio，然後建立名為 **LabelTutorial** 的新空白 Xamarin.Forms 應用程式。 確定該應用程式使用 .NET Standard 作為共用程式碼機制。
+1. 啟動 Visual Studio，然後建立名為 **LabelTutorial** 的新空白 Xamarin.Forms 應用程式。
 
     > [!IMPORTANT]
     > 本教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **LabelTutorial**。 當您從本教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
@@ -41,7 +41,7 @@ ms.locfileid: "81389915"
 
 若要完成本教學課程，您應該具備 Visual Studio for Mac (最新版本)，並已安裝 iOS 和 Android 平台支援。 此外，您還需要 Xcode (最新版本)。 如需安裝 Xamarin 平台的詳細資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。
 
-1. 啟動 Visual Studio for Mac，然後建立名為 **LabelTutorial** 的新空白 Xamarin.Forms 應用程式。 確定該應用程式使用 .NET Standard 作為共用程式碼機制。
+1. 啟動 Visual Studio for Mac，然後建立名為 **LabelTutorial** 的新空白 Xamarin.Forms 應用程式。
 
     > [!IMPORTANT]
     > 本教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **LabelTutorial**。 當您從本教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
