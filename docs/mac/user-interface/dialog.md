@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: f4d90960547fb43d6681667daadde1ce71fc105a
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 484a40aa744cae382fccca3698df0cb9344863fa
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91431764"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697549"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin 中的對話方塊
 
@@ -38,7 +38,7 @@ Windows 可以在非模式狀態中使用 (例如可以開啟多個檔的文字�
 
 - **檔** 強制回應-檔案模式對話方塊可防止使用者在指定檔中執行其他動作，直到它關閉為止。
 - **應用** 程式強制回應-應用程式強制回應對話方塊可防止使用者與應用程式互動，直到它關閉為止。
-- 非**模式**非強制回應對話方塊可讓使用者變更對話方塊中的設定，同時與文件視窗保持互動。
+- 非 **模式** 非強制回應對話方塊可讓使用者變更對話方塊中的設定，同時與文件視窗保持互動。
 
 ### <a name="modal-window"></a>強制回應視窗
 
@@ -48,7 +48,7 @@ Windows 可以在非模式狀態中使用 (例如可以開啟多個檔的文字�
 
 ### <a name="document-modal-dialog-sheets"></a>檔案模式對話方塊表
 
-_工作表_是附加至指定文件視窗的強制回應對話方塊，可防止使用者在關閉對話方塊之前與視窗互動。 工作表會附加至從中出現的視窗，而且每次只能為視窗開啟一個工作表。
+_工作表_ 是附加至指定文件視窗的強制回應對話方塊，可防止使用者在關閉對話方塊之前與視窗互動。 工作表會附加至從中出現的視窗，而且每次只能為視窗開啟一個工作表。
 
 [![範例模式工作表](dialog-images/sheet08.png)](dialog-images/sheet08.png#lightbox)
 
@@ -94,7 +94,7 @@ macOS 提供標準的 [列印] 和 [版面設定] 對話方塊，可讓您的應
 
 [![展開的儲存對話方塊](dialog-images/save02.png)](dialog-images/save02.png#lightbox)
 
-**最基本**的儲存對話方塊也可以顯示為工作表：
+**最基本** 的儲存對話方塊也可以顯示為工作表：
 
 [![儲存工作表的基本工作](dialog-images/save03.png)](dialog-images/save03.png#lightbox)
 
@@ -112,13 +112,13 @@ macOS 提供標準的 [列印] 和 [版面設定] 對話方塊，可讓您的應
 
 若要加入新的視窗，請執行下列動作：
 
-1. 在 **方案總管**中，以 `Main.storyboard` Xcode 的 Interface Builder 開啟檔案進行編輯。
+1. 在 **方案總管** 中，以 `Main.storyboard` Xcode 的 Interface Builder 開啟檔案進行編輯。
 2. 將新的 **視圖控制器** 拖曳至 Design Surface：
 
     [![從程式庫選取視圖控制器](dialog-images/new01.png)](dialog-images/new01.png#lightbox)
 3. 在 [身分 **識別偵測器**] 中，輸入 `CustomDialogController` **類別名稱**： 
 
-    [![設定類別名稱](dialog-images/new02.png)](dialog-images/new02.png#lightbox)
+    [![將類別名稱設定為 CustomDialogController。](dialog-images/new02.png)](dialog-images/new02.png#lightbox)
 4. 切換回 Visual Studio for Mac，讓它與 Xcode 同步並建立檔案 `CustomDialogController.h` 。
 5. 返回 Xcode 並設計您的介面： 
 
@@ -256,11 +256,11 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 ## <a name="creating-a-custom-sheet"></a>建立自訂工作表
 
-_工作表_是附加至指定文件視窗的強制回應對話方塊，可防止使用者在關閉對話方塊之前與視窗互動。 工作表會附加至從中出現的視窗，而且每次只能為視窗開啟一個工作表。 
+_工作表_ 是附加至指定文件視窗的強制回應對話方塊，可防止使用者在關閉對話方塊之前與視窗互動。 工作表會附加至從中出現的視窗，而且每次只能為視窗開啟一個工作表。 
 
 若要在 Xamarin 中建立自訂工作表，讓我們執行下列動作：
 
-1. 在 **方案總管**中，以 `Main.storyboard` Xcode 的 Interface Builder 開啟檔案進行編輯。
+1. 在 **方案總管** 中，以 `Main.storyboard` Xcode 的 Interface Builder 開啟檔案進行編輯。
 2. 將新的 **視圖控制器** 拖曳至 Design Surface：
 
     [![從程式庫選取視圖控制器](dialog-images/new01.png)](dialog-images/new01.png#lightbox)
@@ -270,9 +270,9 @@ _工作表_是附加至指定文件視窗的強制回應對話方塊，可防止
 4. 建立從主視窗 Segue 至新 View 控制器的 **工作表** ： 
 
     [![選取工作表 segue 類型](dialog-images/sheet02.png)](dialog-images/sheet02.png#lightbox)
-5. 在 [身分 **識別偵測器**] 中，將視圖控制器的 **類別**命名為 `SheetViewController` ： 
+5. 在 [身分 **識別偵測器**] 中，將視圖控制器的 **類別** 命名為 `SheetViewController` ： 
 
-    [![設定類別名稱](dialog-images/sheet03.png)](dialog-images/sheet03.png#lightbox)
+    [![將類別名稱設定為 SheetViewController。](dialog-images/sheet03.png)](dialog-images/sheet03.png#lightbox)
 6. 定義任何所需的 **輸出** 和 **動作**： 
 
     [![定義必要的輸出和動作](dialog-images/sheet04.png)](dialog-images/sheet04.png#lightbox)
@@ -477,7 +477,7 @@ namespace MacWindows
 
 若要加入新的視窗，請執行下列動作：
 
-1. 在 **方案總管**中，以 `Main.storyboard` Xcode 的 Interface Builder 開啟檔案進行編輯。
+1. 在 **方案總管** 中，以 `Main.storyboard` Xcode 的 Interface Builder 開啟檔案進行編輯。
 2. 將新的 **視窗控制器** 拖曳至 Design Surface：
 
     [![從程式庫選取視窗控制器](dialog-images/pref01.png)](dialog-images/pref01.png#lightbox)
@@ -487,7 +487,7 @@ namespace MacWindows
 4. 建立附加視圖控制器的複本，因為您的喜好設定視圖中會有索引標籤：
 
     [![新增必要的視圖控制器](dialog-images/pref03.png)](dialog-images/pref03.png#lightbox)
-5. 從連結**庫**拖曳新的**工具列控制器**：
+5. 從連結 **庫** 拖曳新的 **工具列控制器**：
 
     [![從程式庫中選取工具列控制器](dialog-images/pref04.png)](dialog-images/pref04.png#lightbox)
 6. 然後將它放在 Design Surface 中的視窗上：
@@ -496,20 +496,20 @@ namespace MacWindows
 7. 版面配置您的工具列設計：
 
     [![版面組態工具欄](dialog-images/pref06.png)](dialog-images/pref06.png#lightbox)
-8. 按住 ctrl 鍵，並從每個 **工具列按鈕** 拖曳至您先前建立的視圖。 選取 **自訂** segue 類型：
+8. Control-Click，並從每個 **工具列按鈕** 拖曳至您先前建立的視圖。 選取 **自訂** segue 類型：
 
-    [![設定 segue 類型](dialog-images/pref07.png)](dialog-images/pref07.png#lightbox)
+    [![設定自訂 segue 類型。](dialog-images/pref07.png)](dialog-images/pref07.png#lightbox)
 9. 選取新的 Segue，並將 **類別** 設定為 `ReplaceViewSegue` ：
 
     [![設定 segue 類別](dialog-images/pref08.png)](dialog-images/pref08.png#lightbox)
 10. 在 Design Surface 的 **功能表列設計** 工具中，從 [應用程式] 功能表選取 [ **喜好設定 ...**]，然後按一下 [喜好設定] 視窗並拖曳至 [喜好設定] 視窗，以建立 **顯示** segue：
 
-    [![設定 segue 類型](dialog-images/pref09.png)](dialog-images/pref09.png#lightbox)
+    [![藉由將喜好設定拖曳至 [喜好設定] 視窗來設定 segue 類型。](dialog-images/pref09.png)](dialog-images/pref09.png#lightbox)
 11. 儲存您的變更，並返回 Visual Studio for Mac 進行同步處理。
 
-如果我們執行程式碼，並從 [**應用程式] 功能表**中選取 [**喜好設定 ...** ]，將會顯示視窗：
+如果我們執行程式碼，並從 [**應用程式] 功能表** 中選取 [**喜好設定 ...** ]，將會顯示視窗：
 
-[![範例喜好設定視窗](dialog-images/pref10.png)](dialog-images/pref10.png#lightbox)
+[![顯示 word 設定檔的 [喜好設定] 視窗範例。](dialog-images/pref10.png)](dialog-images/pref10.png#lightbox)
 
 如需有關使用 Windows 和工具列的詳細資訊，請參閱 [windows](~/mac/user-interface/window.md) 和 [工具列](~/mac/user-interface/toolbar.md) 檔。
 
@@ -519,7 +519,7 @@ namespace MacWindows
 
 在一般的 macOS 應用程式中，當使用者對應用程式的任何使用者喜好設定進行變更時，系統會自動儲存這些變更。 在 Xamarin 應用程式中處理這項工作的最簡單方式，就是建立單一類別來管理所有使用者的喜好設定，並共用整個系統。
 
-首先，將新 `AppPreferences` 類別加入至專案，並繼承自 `NSObject` 。 這些喜好設定將設計成使用 [資料系結和索引鍵/值編碼](~/mac/app-fundamentals/databinding.md) ，讓建立和維護喜好設定表單的程式更簡單。 因為喜好設定將由少量的單一資料型別所組成，所以請使用內建的 `NSUserDefaults` 來儲存和取出值。
+首先，將新 `AppPreferences` 類別加入至專案，並繼承自 `NSObject` 。 這些喜好設定將設計成使用 [資料系結和 Key-Value 編碼](~/mac/app-fundamentals/databinding.md) ，這會讓建立和維護喜好設定表單的程式更簡單。 因為喜好設定將由少量的單一資料型別所組成，所以請使用內建的 `NSUserDefaults` 來儲存和取出值。
 
 編輯檔案 `AppPreferences.cs` ，使其看起來如下所示：
 
@@ -902,7 +902,7 @@ namespace SourceWriter
 
 所有這些變更都已備妥之後，如果使用者編輯應用程式的喜好設定並關閉喜好設定視窗，變更就會套用至所有開啟的視窗：
 
-[![範例喜好設定視窗](dialog-images/prefs14.png)](dialog-images/prefs14.png#lightbox)
+[![範例喜好設定視窗，與數個其他開啟的視窗一起顯示。](dialog-images/prefs14.png)](dialog-images/prefs14.png#lightbox)
 
 <a name="The_Open_Dialog"></a>
 
@@ -951,7 +951,7 @@ if (dlg.RunModal () == 1) {
 
 [開啟] 對話方塊會傳回使用者所選取的檔案或目錄，做為屬性中 Url 的陣列 `URL` 。
 
-如果我們執行程式，然後**從 [檔案**] 功能表中選取 [**開啟 ...** ] 專案，就會顯示下列內容： 
+如果我們執行程式，然後 **從 [檔案**] 功能表中選取 [**開啟 ...** ] 專案，就會顯示下列內容： 
 
 [![開啟的對話方塊](dialog-images/dialog03.png)](dialog-images/dialog03.png#lightbox)
 
@@ -1073,7 +1073,7 @@ void ShowSaveAs (NSObject sender)
 
 `AllowedFileTypes`屬性是一種檔案類型的字串陣列，使用者可以選取此陣列來儲存檔案。 檔案類型可以指定為副檔名或 _UTI_。 預設值為 `null` ，允許使用任何檔案類型。
 
-如果將屬性設定 `ShowSaveAsSheet` 為 `false` ，請執行應用程式，然後從 [檔案] 功能表中選取**File** [**另存**新檔]，將會顯示下列內容：
+如果將屬性設定 `ShowSaveAsSheet` 為 `false` ，請執行應用程式，然後從 [檔案] 功能表中選取 [**另存** 新檔]，將會顯示下列內容：
 
 [![儲存對話方塊](dialog-images/save01.png)](dialog-images/save01.png#lightbox)
 
@@ -1081,7 +1081,7 @@ void ShowSaveAs (NSObject sender)
 
 [![展開的儲存對話方塊](dialog-images/save02.png)](dialog-images/save02.png#lightbox)
 
-如果將屬性設定 `ShowSaveAsSheet` 為 `true` ，請執行應用程式，然後從 [檔案] 功能表中選取**File** [**另存**新檔]，將會顯示下列內容：
+如果將屬性設定 `ShowSaveAsSheet` 為 `true` ，請執行應用程式，然後從 [檔案] 功能表中選取 [**另存** 新檔]，將會顯示下列內容：
 
 [![儲存工作表](dialog-images/save03.png)](dialog-images/save03.png#lightbox)
 
@@ -1093,7 +1093,7 @@ void ShowSaveAs (NSObject sender)
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 本文將詳細說明如何使用 Xamarin 應用程式中的強制回應視窗、工作表和標準系統對話方塊。 我們看到強制回應視窗、工作表和對話方塊的不同類型和使用方式、如何建立和維護 Xcode Interface Builder 中的強制回應視窗和工作表，以及如何在 c # 程式碼中使用強制回應視窗、工作表和對話方塊。
 

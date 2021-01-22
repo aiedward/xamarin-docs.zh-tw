@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 01a09294d55490a723eb59b0365ac2dc516110c9
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 65fd825b6858efa02fcada196b4229cc69313b3e
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434674"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697484"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Xamarin 中的滑杆、交換器和分段的控制項
 
@@ -60,9 +60,9 @@ slider1.MaximumTrackTintColor = UIColor.Green;
 
 ## <a name="switch"></a>參數
 
-iOS 會使用 `UISwitch` 做為布林輸入，可在其他平臺上以選項按鈕表示。 使用者可以藉由**在開啟/關閉**位置之間移動*滾動*盒來操作控制項。
+iOS 會使用 `UISwitch` 做為布林輸入，可在其他平臺上以選項按鈕表示。 使用者可以藉由 **在開啟/關閉** 位置之間移動 *滾動* 盒來操作控制項。
 
- [![參數](slider-switch-segmented-controls-images/image28a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![開關](slider-switch-segmented-controls-images/image28a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 您可以在設計工具的 **Properties Pad** 中自訂切換的外觀，讓您控制預設狀態、 **開啟/關閉色調** 色彩以及 **開啟/關閉影像**。 如下圖所示：
 
@@ -78,17 +78,17 @@ switch1.On = true;
 
 ## <a name="segmented-controls"></a>區段控制項
 
-分割的控制項是一種有條理的方式，可讓使用者與少量的選項互動。 它會水準配置，且每個區段都會作為個別按鈕。 使用設計工具時，可以在 [ **工具箱] > 控制項**下找到分割的控制項，看起來應該如下圖所示：
+分割的控制項是一種有條理的方式，可讓使用者與少量的選項互動。 它會水準配置，且每個區段都會作為個別按鈕。 使用設計工具時，可以在 [ **工具箱] > 控制項** 下找到分割的控制項，看起來應該如下圖所示：
 
- [![分割的控制項](slider-switch-segmented-controls-images/segmentedcontrol.png)](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
+ [![分割的控制項圖示。](slider-switch-segmented-controls-images/segmentedcontrol.png)](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
 
 設計工具的一項獨特功能，可讓您在設計介面上個別選取每個區段，如下所示：
 
- [![分割的控制項](slider-switch-segmented-controls-images/segmentedcontrolselection.png)](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
+ [![個別選取分割的控制項區段。](slider-switch-segmented-controls-images/segmentedcontrolselection.png)](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
 
 這可讓 Properties Pad 用來更精確地控制每個區段的屬性。 您可以在下列螢幕擷取畫面中看到可編輯的屬性：
 
- [![分割的控制項](slider-switch-segmented-controls-images/segmentedcontrolproperties.png)](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
+ [![分割的控制項屬性。](slider-switch-segmented-controls-images/segmentedcontrolproperties.png)](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
 
 請注意，分割的控制項樣式在 iOS7 中已被取代，因此在 iOS7 應用程式中調整這項功能的選項將不會有任何作用。
 

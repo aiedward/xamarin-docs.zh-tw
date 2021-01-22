@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: d70d794ea95c628a2f2f59e94c3c4fe2f458f718
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: ec1005f3956498f1525c65b5d505f2f899aee2e2
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436107"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697666"
 ---
 # <a name="xib-files-in-xamarinmac"></a>在 Xamarin 中 xib 檔案
 
@@ -57,7 +57,7 @@ MacOS 會使用 xib 檔案來定義應用程式使用者介面的元素 (例如�
 
 #### <a name="interface-editor"></a>介面編輯器
 
-[ **介面編輯器** ] 區段提供您以圖形方式將消費者介面進行版面配置的表面。 您將從 [**屬性 & 公用程式**] 區段的 [連結**庫**] 區段中拖曳元素，以建立您的設計。 當您在設計介面中加入使用者介面專案 (views) 時，它們就會依照出現在**介面編輯器**中的順序加入至 [**介面**階層] 區段。
+[ **介面編輯器** ] 區段提供您以圖形方式將消費者介面進行版面配置的表面。 您將從 [**屬性 & 公用程式**] 區段的 [連結 **庫**] 區段中拖曳元素，以建立您的設計。 當您在設計介面中加入使用者介面專案 (views) 時，它們就會依照出現在 **介面編輯器** 中的順序加入至 [**介面** 階層] 區段。
 
 #### <a name="properties--utilities"></a>屬性 & 公用程式
 
@@ -67,7 +67,7 @@ MacOS 會使用 xib 檔案來定義應用程式使用者介面的元素 (例如�
 
 此區段一開始幾乎是空的，不過，如果您在 [ **介面編輯器** ] 或 [ **介面**] 階層中選取專案，[ **屬性** ] 區段將會填入可供您調整之指定專案和屬性的相關資訊。
 
-在 [屬性]**** 區段內，共有 8 個不同的「偵測器索引標籤」**，如下圖所示：
+在 [屬性] 區段內，共有 8 個不同的「偵測器索引標籤」，如下圖所示：
 
 [![所有偵測器的總覽](xib-images/xcode05.png "所有偵測器的概觀")](xib-images/xcode05-large.png#lightbox)
 
@@ -79,7 +79,7 @@ MacOS 會使用 xib 檔案來定義應用程式使用者介面的元素 (例如�
 - **屬性偵測器** –屬性偵測器可讓您自訂所選控制項/視圖的各種屬性。
 - **大小偵測器** –大小偵測器可讓您控制所選控制項/視圖的大小和調整大小行為。
 - **連接偵測器** –連接偵測器會顯示所選控制項的輸出和動作連接。 我們只會在稍後檢查輸出和動作。
-- 系結偵測**器-系結偵測器可**讓您設定控制項，使其值自動系結至資料模型。
+- 系結偵測 **器-系結偵測器可** 讓您設定控制項，使其值自動系結至資料模型。
 - **視圖效果偵測器** ：視圖效果偵測器可讓您指定控制項的效果，例如動畫。
 
 在 [連結 **庫** ] 區段中，您可以找到要放入設計工具中的控制項和物件，以圖形方式建立使用者介面：
@@ -95,15 +95,15 @@ MacOS 會使用 xib 檔案來定義應用程式使用者介面的元素 (例如�
 若要切換到使用以 xib 為基礎的 UI，請執行下列動作：
 
 1. 開啟 Visual Studio for Mac 並啟動新的 Xamarin 專案。
-2. 在 [ **Solution Pad**中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新**檔案]。
-3. 選取**Mac**  >  **Windows 控制器**：
+2. 在 [ **Solution Pad** 中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新** 檔案]。
+3. 選取 **Mac**  >  **Windows 控制器**：
 
     ![新增視窗控制器](xib-images/setup00.png "新增視窗控制器")
 4. 輸入 `MainWindow` 名稱，然後按一下 [ **新增** ] 按鈕：
 
     ![加入新的主視窗](xib-images/setup01.png "加入新的主視窗")
-5. 再以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新**檔案]。
-6. 選取**Mac**  >  **主功能表**：
+5. 再以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新** 檔案]。
+6. 選取 **Mac**  >  **主功能表**：
 
     ![加入新的主功能表](xib-images/setup02.png "加入新的主功能表")
 7. 將名稱保留為 `MainMenu` ，然後按一下 [ **新增** ] 按鈕。
@@ -113,18 +113,18 @@ MacOS 會使用 xib 檔案來定義應用程式使用者介面的元素 (例如�
 9. 在 [移除] 對話方塊中，按一下 [ **刪除** ] 按鈕：
 
     ![確認刪除](xib-images/setup04.png "確認刪除")
-10. 在 [ **Solution Pad**中，按兩下 **plist** 檔案以開啟它進行編輯。
-11. `MainMenu`從**主要介面**下拉式清單中選取：
+10. 在 [ **Solution Pad** 中，按兩下 **plist** 檔案以開啟它進行編輯。
+11. `MainMenu`從 **主要介面** 下拉式清單中選取：
 
     [![設定主功能表](xib-images/setup05.png "設定主功能表")](xib-images/setup05-large.png#lightbox)
-12. 在 [ **Solution Pad**中，按兩下 **MainMenu xib** 檔案，以開啟該檔案以在 Xcode 的 Interface Builder 中進行編輯。
+12. 在 [ **Solution Pad** 中，按兩下 **MainMenu xib** 檔案，以開啟該檔案以在 Xcode 的 Interface Builder 中進行編輯。
 13. 在 [連結 **庫偵測器**] 中，于 `object` [搜尋] 欄位中輸入，然後將新的 **物件** 拖曳至設計介面：
 
     [![編輯主功能表](xib-images/setup06.png "編輯主功能表")](xib-images/setup06-large.png#lightbox)
-14. 在 [身分 **識別偵測器**] 中，輸入 `AppDelegate` **類別**的：
+14. 在 [身分 **識別偵測器**] 中，輸入 `AppDelegate` **類別** 的：
 
     [![選取應用程式委派](xib-images/setup07.png "選取應用程式委派")](xib-images/setup07-large.png#lightbox)
-15. 從**介面**階層選取檔案**的擁有**者，切換至 [**連接偵測器**]，然後從委派將一行拖曳至 `AppDelegate` 剛剛新增至專案的**物件**：
+15. 從 **介面** 階層選取檔案 **的擁有** 者，切換至 [**連接偵測器**]，然後從委派將一行拖曳至 `AppDelegate` 剛剛新增至專案的 **物件**：
 
     [![連接應用程式委派](xib-images/setup08.png "連接應用程式委派")](xib-images/setup08-large.png#lightbox)
 16. 儲存變更並返回 Visual Studio for Mac。
@@ -161,7 +161,7 @@ namespace MacXib
 }
 ```
 
-現在應用程式的主視窗會在新增視窗控制器時，自動包含在專案中的 **xib** 檔案中定義。 若要編輯您的 windows 設計，請在 [ **Solution Pad**中，按兩下 **MainWindow xib** 檔案：
+現在應用程式的主視窗會在新增視窗控制器時，自動包含在專案中的 **xib** 檔案中定義。 若要編輯您的 windows 設計，請在 [ **Solution Pad** 中，按兩下 **MainWindow xib** 檔案：
 
 ![選取 MainWindow xib 檔案](xib-images/edit01.png "選取 MainWindow xib 檔案")
 
@@ -175,8 +175,8 @@ namespace MacXib
 
 1. 針對不是自動新增至專案的新視窗，請在專案中加入新的視窗定義。
 2. 按兩下 xib 檔案以開啟在 Xcode 的 Interface Builder 中編輯的視窗設計。
-3. 在 **屬性偵測器** 和 **大小偵測器**中設定任何必要的視窗屬性。
-4. 拖曳建立您的介面所需的控制項，並在屬性偵測 **器**中進行設定。
+3. 在 **屬性偵測器** 和 **大小偵測器** 中設定任何必要的視窗屬性。
+4. 拖曳建立您的介面所需的控制項，並在屬性偵測 **器** 中進行設定。
 5. 使用 **大小偵測器** 來處理 UI 元素的調整大小。
 6. 透過輸出和動作，將視窗的 UI 元素公開到 c # 程式碼。
 7. 儲存您的變更並切換回 Visual Studio for Mac，以與 Xcode 同步。
@@ -186,39 +186,39 @@ namespace MacXib
 在 Interface builder 中配置消費者介面的程式基本上是針對您新增的每個元素都相同：
 
 1. 在 [連結 **庫偵測器** ] 中尋找所需的控制項，並將它拖曳至 **介面編輯器** 並放置。
-2. 在 **屬性偵測器**中設定任何必要的視窗屬性。
+2. 在 **屬性偵測器** 中設定任何必要的視窗屬性。
 3. 使用 **大小偵測器** 來處理 UI 元素的調整大小。
-4. 如果您使用自訂類別，請在身分識別偵測 **器**中進行設定。
+4. 如果您使用自訂類別，請在身分識別偵測 **器** 中進行設定。
 5. 透過輸出和動作，將 UI 元素公開至 c # 程式碼。
 6. 儲存您的變更並切換回 Visual Studio for Mac，以與 Xcode 同步。
 
 例如：
 
-1. 在 Xcode 中，從 [程式庫] 區段拖曳 [按鈕]********：
+1. 在 Xcode 中，從 [程式庫] 區段拖曳 [按鈕]：
 
     [![從程式庫選取按鈕](xib-images/xcode07.png "從程式庫選取按鈕")](xib-images/xcode07-large.png#lightbox)
-2. 將按鈕放在**介面編輯器**中的**視窗**上：
+2. 將按鈕放在 **介面編輯器** 中的 **視窗** 上：
 
     [![將按鈕加入至視窗](xib-images/xcode08.png "將按鈕加入至視窗")](xib-images/xcode08-large.png#lightbox)
-3. 按一下 [屬性偵測器]**** 中的 [標題]**** 屬性，將按鈕的標題變更為 `Click Me`：
+3. 按一下 [屬性偵測器] 中的 [標題] 屬性，將按鈕的標題變更為 `Click Me`：
 
     ![設定按鈕屬性](xib-images/xcode09.png "設定按鈕屬性")
-4. 從 [程式庫]**** 區段拖曳 [標籤]****：
+4. 從 [程式庫] 區段拖曳 [標籤]：
 
     [![選取文件庫中的標籤](xib-images/xcode10.png "選取文件庫中的標籤")](xib-images/xcode10-large.png#lightbox)
-5. 將標籤拖曳到 [介面編輯器]**** 中 [視窗]**** 上的按鈕旁：
+5. 將標籤拖曳到 [介面編輯器] 中 [視窗] 上的按鈕旁：
 
     [![將標籤加入至視窗](xib-images/xcode11.png "將標籤加入至視窗")](xib-images/xcode11-large.png#lightbox)
 6. 抓住標籤上的右側控點，將它拖曳到視窗邊緣附近為止：
 
     [![調整標籤大小](xib-images/xcode12.png "調整標籤大小")](xib-images/xcode12-large.png#lightbox)
-7. 在 **介面編輯器**中仍選取標籤的情況下，切換至 **大小偵測器**：
+7. 在 **介面編輯器** 中仍選取標籤的情況下，切換至 **大小偵測器**：
 
     ![選取大小檢查](xib-images/xcode13.png "選取大小檢查")
 8. 在 [ **自動調整大小** ] 方塊中，按一下右邊的 **暗紅色括弧** 和中央的 **暗紅色水準箭** 號：
 
     ![編輯自動調整大小屬性](xib-images/xcode14.png "編輯自動調整大小屬性")
-9. 這可確保在執行中的應用程式中調整視窗大小時，標籤會延展以放大和縮小。 **自動調整大小 box**方塊的**紅色括弧**和左上角，可讓標籤卡在指定的 X 和 Y 位置。
+9. 這可確保在執行中的應用程式中調整視窗大小時，標籤會延展以放大和縮小。 **自動調整大小 box** 方塊的 **紅色括弧** 和左上角，可讓標籤卡在指定的 X 和 Y 位置。
 10. 將您的變更儲存至消費者介面
 
 當您調整控制項的大小和移動時，您應該注意到 Interface Builder 會提供以 [OS X 人類介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)為基礎的實用嵌入式管理提示。 這些指導方針可協助您建立高品質的應用程式，以熟悉 Mac 使用者的外觀和風格。
@@ -247,11 +247,11 @@ namespace MacXib
 
     [![編輯類別名稱](xib-images/windowcontroller01.png "編輯類別名稱")](xib-images/windowcontroller01-large.png#lightbox)
 4. 儲存您的變更，並返回 Visual Studio for Mac 進行同步處理。
-5. **WindowController.cs**檔案將會新增至您在 Visual Studio for Mac 中**Solution Pad**的專案中：
+5. **WindowController.cs** 檔案將會新增至您在 Visual Studio for Mac 中 **Solution Pad** 的專案中：
 
     ![Visual Studio for Mac 中的新類別名稱](xib-images/windowcontroller02.png "Visual Studio for Mac 中的新類別名稱")
 6. 在 Xcode 的 Interface Builder 中重新開啟分鏡腳本。
-7. **WindowController .h**檔案將可供使用：
+7. **WindowController .h** 檔案將可供使用：
 
     [![Xcode 中的相符 .h 檔案](xib-images/windowcontroller03.png "Xcode 中的相符 .h 檔案")](xib-images/windowcontroller03-large.png#lightbox)
 
@@ -276,11 +276,11 @@ namespace MacXib
 
 執行下列動作：
 
-1. 在 Xcode 中，於畫面較靠近右上角按一下 [雙圓形]**** 按鈕以開啟 [助理編輯器]****：
+1. 在 Xcode 中，於畫面較靠近右上角按一下 [雙圓形] 按鈕以開啟 [助理編輯器]：
 
     [![選取 [助理編輯器]](xib-images/outlet01.png "選取 [助理編輯器]")](xib-images/outlet01-large.png#lightbox)
-2. Xcode 會切換成分割檢視模式，一邊是 [介面編輯器]****，另一邊則是 [程式碼編輯器]****。
-3. 請注意，Xcode 已在程式**代碼編輯器**中自動挑選**MainWindowController**檔，這是不正確的。 如果您記得討論上述的輸出和動作，我們必須選取 **MainWindow** 。
+2. Xcode 會切換成分割檢視模式，一邊是 [介面編輯器]，另一邊則是 [程式碼編輯器]。
+3. 請注意，Xcode 已在程式 **代碼編輯器** 中自動挑選 **MainWindowController** 檔，這是不正確的。 如果您記得討論上述的輸出和動作，我們必須選取 **MainWindow** 。
 4. 在程式 **代碼編輯器** 的頂端，按一下 [ **自動] 連結** ，然後選取 **MainWindow .h** 檔案：
 
     [![選取正確的 .h 檔案](xib-images/outlet02.png "選取正確的 .h 檔案")](xib-images/outlet02-large.png#lightbox)
@@ -312,7 +312,7 @@ namespace MacXib
 3. 將 **連接** 類型變更為 [動作]：
 
     [![選取動作類型](xib-images/action02.png "選取動作類型")](xib-images/action02-large.png#lightbox)
-4. 輸入 `ClickedButton` 作為**名稱**：
+4. 輸入 `ClickedButton` 作為 **名稱**：
 
     [![設定動作](xib-images/action03.png "設定動作")](xib-images/action03-large.png#lightbox)
 5. 按一下 [連線 **]** 按鈕以建立動作：
@@ -324,7 +324,7 @@ namespace MacXib
 
 ### <a name="writing-the-code"></a>撰寫程式碼
 
-隨著您的消費者介面建立，並透過輸出和動作將其 UI 元素公開到程式碼，您就可以開始撰寫程式碼，將您的程式帶入生活。 例如，在**Solution Pad**中按兩下以開啟**MainWindow.cs**檔案進行編輯：
+隨著您的消費者介面建立，並透過輸出和動作將其 UI 元素公開到程式碼，您就可以開始撰寫程式碼，將您的程式帶入生活。 例如，在 **Solution Pad** 中按兩下以開啟 **MainWindow.cs** 檔案進行編輯：
 
 [![MainWindow.cs 檔案](xib-images/code01.png "MainWindow.cs 檔案")](xib-images/code01-large.png#lightbox)
 
@@ -360,7 +360,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 此程式碼會附加至您在 Xcode 和 Interface Builder 中建立的動作，並在使用者按一下按鈕時呼叫。
 
-某些 UI 元素會自動有內建的動作，例如，預設功能表列中的專案，例如 [ **開啟 ...** ] 功能表項目 (`openDocument:`) 。 在 [ **Solution Pad**中，按兩下 **AppDelegate.cs** 檔案以開啟它進行編輯，並將下列程式碼新增至 `DidFinishLaunching` 方法下方：
+某些 UI 元素會自動有內建的動作，例如，預設功能表列中的專案，例如 [ **開啟 ...** ] 功能表項目 (`openDocument:`) 。 在 [ **Solution Pad** 中，按兩下 **AppDelegate.cs** 檔案以開啟它進行編輯，並將下列程式碼新增至 `DidFinishLaunching` 方法下方：
 
 ```csharp
 [Export ("openDocument:")]
@@ -389,7 +389,7 @@ void OpenDialog (NSObject sender)
 
 當您從 Xcode 切換回 Visual Studio for Mac 時，您在 Xcode 中所做的任何變更都會自動與您的 Xamarin. Mac 專案同步處理。
 
-如果您在**Solution Pad**中選取 [ **MainWindow.designer.cs** ]，您將能夠看到我們的 c # 程式碼中的輸出口和動作如何連接：
+如果您在 **Solution Pad** 中選取 [ **MainWindow.designer.cs** ]，您將能夠看到我們的 c # 程式碼中的輸出口和動作如何連接：
 
 [![使用 Xcode 同步處理變更](xib-images/sync01.png "與 Xcode 同步處理變更")](xib-images/sync01-large.png#lightbox)
 
@@ -423,11 +423,11 @@ partial void ClickedButton (Foundation.NSObject sender);
 
 若要加入新的視窗，請執行下列動作：
 
-1. 在 [ **Solution Pad**中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新**檔案]。
+1. 在 [ **Solution Pad** 中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新** 檔案]。
 2. 在 [新增檔案] 對話方塊中，選取 [ **Xamarin**  >  **] Cocoa 視窗與控制器**：
 
     ![新增視窗控制器](xib-images/new01.png "新增視窗控制器")
-3. 輸入 `PreferencesWindow` 作為 [名稱]****，然後按一下 [新增]**** 按鈕。
+3. 輸入 `PreferencesWindow` 作為 [名稱]，然後按一下 [新增] 按鈕。
 4. 按兩下 **PreferencesWindow xib** 檔案以開啟它，以在 Interface Builder 中編輯：
 
     [![在 Xcode 中編輯視窗](xib-images/new02.png "在 Xcode 中編輯視窗")](xib-images/new02-large.png#lightbox)
@@ -449,9 +449,9 @@ void ShowPreferences (NSObject sender)
 
 這 `var preferences = new PreferencesWindowController ();` 一行會建立視窗控制器的新實例，此實例會從 xib 檔案載入視窗並擴大它。 這 `preferences.Window.MakeKeyAndOrderFront (this);` 一行會向使用者顯示新的視窗。
 
-如果您執行程式碼，並從 [**應用程式] 功能表**中選取 [**喜好設定 ...** ]，將會顯示視窗：
+如果您執行程式碼，並從 [**應用程式] 功能表** 中選取 [**喜好設定 ...** ]，將會顯示視窗：
 
-![執行範例應用程式](xib-images/new04.png "執行範例應用程式")
+![螢幕擷取畫面顯示 [應用程式] 功能表中顯示的 [喜好設定] 視窗。](xib-images/new04.png "執行範例應用程式")
 
 如需在 Xamarin 應用程式中使用 Windows 的詳細資訊，請參閱我們的 [windows](~/mac/user-interface/window.md) 檔。
 
@@ -463,11 +463,11 @@ void ShowPreferences (NSObject sender)
 
 若要加入新的視圖，請執行下列動作：
 
-1. 在 [ **Solution Pad**中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新**檔案]。
+1. 在 [ **Solution Pad** 中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新** 檔案]。
 2. 在 [新增檔案] 對話方塊中，選取 [ **Xamarin. Mac**  >  **Cocoa View with Controller**：
 
     ![加入新的視圖](xib-images/view01.png "加入新的視圖")
-3. 輸入 `SubviewTable` 作為 [名稱]****，然後按一下 [新增]**** 按鈕。
+3. 輸入 `SubviewTable` 作為 [名稱]，然後按一下 [新增] 按鈕。
 4. 按兩下 **SubviewTable** 檔案以開啟它，以在 Interface Builder 中編輯並設計消費者介面：
 
     [![在 Xcode 中設計新的視圖](xib-images/view02.png "在 Xcode 中設計新的視圖")](xib-images/view02-large.png#lightbox)
@@ -559,11 +559,11 @@ DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 
 這會為要顯示的新視圖建立視圖控制器的新實例，並將其類型 (設定為加入至專案的列舉所指定) ，並使用 `DisplaySubview` 加入至視窗類別的方法來實際顯示視圖。 例如：
 
-[![執行範例應用程式](xib-images/view04.png "執行範例應用程式")](xib-images/view04-large.png#lightbox)
+[![螢幕擷取畫面顯示 [使用影像] 視窗中選取的資料表視圖。](xib-images/view04.png "執行範例應用程式")](xib-images/view04-large.png#lightbox)
 
 如需在 Xamarin 應用程式中使用 Windows 的詳細資訊，請參閱我們的 [windows](~/mac/user-interface/window.md) 和 [對話](~/mac/user-interface/dialog.md) 檔。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 本文詳細說明如何在 Xamarin 應用程式中使用 xib 檔案。 我們看到 xib 檔案的不同類型和用途，可建立您應用程式的消費者介面、如何建立和維護 Xcode 的 Interface Builder 中的 xib 檔案，以及如何使用 c # 程式碼中的 xib 檔案。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: 900a4bf3407b4a3d37f6102ff4b10292edf4bd25
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 2350c068b0a719e8d633c0f96712aec40e7865aa
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434046"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697471"
 ---
 # <a name="displaying-images-with-xamarinios"></a>使用 Xamarin 顯示影像
 
@@ -32,7 +32,7 @@ Visual Studio for Mac 通常會自動選擇正確的 **組建動作** ，但您�
 
 ### <a name="adding-an-image-file"></a>新增影像檔案
 
-若要將影像檔加入至專案，請先以滑鼠右鍵按一下專案，然後選擇 [**加入**檔案]。
+若要將影像檔加入至專案，請先以滑鼠右鍵按一下專案，然後選擇 [**加入** 檔案]。
 
  [![新增檔案 .。。功能表](image-images/image31a.png)](image-images/image31a.png#lightbox)
 
@@ -51,15 +51,15 @@ Visual Studio for Mac 通常會自動選擇正確的 **組建動作** ，但您�
 - 儲存在應用程式屬性中設定的影像，例如預設的啟動映射和應用程式圖示。
 - 將其他映射和檔案與程式碼分開儲存，讓您更容易管理 (子目錄會在資原始目錄內容複寫) 時保留。
 
-**Resources**目錄在程式庫專案中特別有用，因為程式碼可以假設這些映射將複製到取用應用程式的根目錄中，讓您更輕鬆地撰寫需要影像、音效、影片、XML 或其他檔案的共用程式碼程式庫。
+**Resources** 目錄在程式庫專案中特別有用，因為程式碼可以假設這些映射將複製到取用應用程式的根目錄中，讓您更輕鬆地撰寫需要影像、音效、影片、XML 或其他檔案的共用程式碼程式庫。
 
-**Resources**目錄必須命名為，而且所有檔案的組建動作都必須設為**套件套件**。
+**Resources** 目錄必須命名為，而且所有檔案的組建動作都必須設為 **套件套件**。
 
 ## <a name="displaying-the-image"></a>顯示影像
 
 在 iOS 設計工具中，使用 **影像視圖** 來顯示影像或動畫系列的影像。 [工具箱] 中的 **影像視圖** 圖示如下所示：
 
- [![工具箱中的 >imageview](image-images/image35a.png)](image-images/image35.png#lightbox)
+ [![工具箱中的 >imageview 圖示。](image-images/image35a.png)](image-images/image35.png#lightbox)
 
 將 [ **影像視圖** ] 從 [ **工具箱** ] 拖曳到視圖控制器上。 然後，在 [ **影像視圖] > 影像** 下，下拉式清單將提供您專案中所有可用影像檔案的清單。 選取其中任何一項，將它新增至您的影像視圖。
 
@@ -73,7 +73,7 @@ Visual Studio for Mac 通常會自動選擇正確的 **組建動作** ，但您�
 imageview1.Image = UIImage.FromBundle("SF Monkey.png");
 ```
 
-如果我們已將影像放在 **/Resources/Pics/SF Monkey.jpg**中，則程式碼會在路徑中包含 [ **圖片** ] 資料夾：
+如果我們已將影像放在 **/Resources/Pics/SF Monkey.jpg** 中，則程式碼會在路徑中包含 [ **圖片** ] 資料夾：
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");

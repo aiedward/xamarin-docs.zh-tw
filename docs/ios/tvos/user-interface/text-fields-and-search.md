@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: ae54f4f4cfb9b2c604be9c55d2a47303fb22485e
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: e5a872fc18ca918b45181646ff4b279e1441f39b
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91435570"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697536"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>在 Xamarin 中使用 tvOS 文字和搜尋欄位
 
@@ -66,7 +66,7 @@ Apple 針對使用文字欄位有下列建議：
 Apple 針對使用螢幕鍵盤有下列建議：
 
 - **選取適當的預設鍵盤類型** -tvOS 提供數種不同的特殊用途鍵盤類型，可供您針對文字欄位指定。 例如，電子郵件地址鍵盤可以讓使用者從最近輸入的地址清單中選取，以簡化輸入。
-- 若有**需要，請使用鍵盤配件視圖**-除了永遠顯示的標準資訊之外，您還可以在螢幕小鍵盤中新增選擇性的配件視圖 (例如影像或標籤) 可以新增至螢幕小鍵盤，以明確解說文字輸入的用途，或協助使用者輸入必要的資訊。
+- 若有 **需要，請使用鍵盤配件視圖**-除了永遠顯示的標準資訊之外，您還可以在螢幕小鍵盤中新增選擇性的配件視圖 (例如影像或標籤) 可以新增至螢幕小鍵盤，以明確解說文字輸入的用途，或協助使用者輸入必要的資訊。
 
 如需使用螢幕小鍵盤的詳細資訊，請參閱 Apple 的 [UIKeyboardType](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/c/tdef/UIKeyboardType)、 [管理鍵盤](https://developer.apple.com/library/tvos/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html#//apple_ref/doc/uid/TP40009542-CH5-SW1)、 [資料輸入的自訂視圖](https://developer.apple.com/library/tvos/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/InputViews/InputViews.html#//apple_ref/doc/uid/TP40009542-CH12-SW1) ，以及 IOS 檔的 [文字程式設計指南](https://developer.apple.com/library/tvos/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/Introduction/Introduction.html) 。
 
@@ -100,11 +100,11 @@ Apple 針對使用搜尋欄位有下列建議：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` 以開啟它進行編輯。
+1. 在 [ **Solution Pad** 中，按兩下檔案 `Main.storyboard` 以開啟它進行編輯。
 1. 將一個或多個 **文字欄位** （設計介面）拖曳到視圖上：
 
     [![文字欄位](text-fields-and-search-images/text02.png)](text-fields-and-search-images/text02.png#lightbox)
-1. 選取**文字欄位**，然後在**Properties Pad**的 [ **Widget** ] 索引標籤中提供每個唯一的**名稱**：
+1. 選取 **文字欄位**，然後在 **Properties Pad** 的 [ **Widget** ] 索引標籤中提供每個唯一的 **名稱**：
 
     [![Properties Pad 的 [Widget] 索引標籤](text-fields-and-search-images/text03.png)](text-fields-and-search-images/text03.png#lightbox)
 1. 在 [ **文字欄位** ] 區段中，您可以定義元素，例如 **預留位置** 提示和預設 **值**：
@@ -117,13 +117,13 @@ Apple 針對使用搜尋欄位有下列建議：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在方案總管**** 中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
+1. 在方案總管中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
 1. 將一個或多個 **文字欄位** （設計介面）拖曳到視圖上：
 
     [![文字欄位](text-fields-and-search-images/text02-vs.png)](text-fields-and-search-images/text02-vs.png#lightbox)
-1. 選取**文字欄位**，並在**屬性瀏覽器**的 [ **Widget** ] 索引標籤中提供每個唯一的**名稱**：
+1. 選取 **文字欄位**，並在 **屬性瀏覽器** 的 [ **Widget** ] 索引標籤中提供每個唯一的 **名稱**：
 
-    [![[Widget] 索引標籤](text-fields-and-search-images/text03-vs.png)](text-fields-and-search-images/text03-vs.png#lightbox)
+    [![[Widget] 索引標籤，您可以在其中輸入每個文字欄位的名稱。](text-fields-and-search-images/text03-vs.png)](text-fields-and-search-images/text03-vs.png#lightbox)
 1. 在 [ **文字欄位** ] 區段中，您可以定義元素，例如 **預留位置** 提示和預設 **值**：
 
     [![文字欄位區段](text-fields-and-search-images/text04-vs.png)](text-fields-and-search-images/text04-vs.png#lightbox)
@@ -152,36 +152,36 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` 以開啟它進行編輯。
+1. 在 [ **Solution Pad** 中，按兩下檔案 `Main.storyboard` 以開啟它進行編輯。
 1. 將新的 [集合視圖控制器] 拖曳至腳本，以顯示使用者搜尋的結果：
 
     [![集合視圖控制器](text-fields-and-search-images/search02.png)](text-fields-and-search-images/search02.png#lightbox)
-1. 在**Properties Pad**的 [ **Widget** ] 索引標籤中， `SearchResultsViewController` 針對**類別**和分鏡腳本 `SearchResults` **識別碼**使用：
+1. 在 **Properties Pad** 的 [ **Widget** ] 索引標籤中， `SearchResultsViewController` 針對 **類別** 和分鏡腳本 `SearchResults` **識別碼** 使用：
 
-    [![[Widget] 索引標籤](text-fields-and-search-images/search03.png)](text-fields-and-search-images/search03.png#lightbox)
+    [![Visual Studio for Mac 中的 [Widget] 索引標籤，您可以在其中指定類別和分鏡腳本 I D。](text-fields-and-search-images/search03.png)](text-fields-and-search-images/search03.png#lightbox)
 1. 選取設計介面上的資料 **格原型** 。
-1. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 索引標籤中， `SearchResultCell` 針對**類別**和 `ImageCell` **識別碼**使用：
+1. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 索引標籤中， `SearchResultCell` 針對 **類別** 和 `ImageCell` **識別碼** 使用：
 
-    [![[Widget] 索引標籤](text-fields-and-search-images/search04.png)](text-fields-and-search-images/search04.png#lightbox)
-1. 配置資料**格原型**的設計，並在**屬性瀏覽器**的 [ **Widget** ] 索引標籤中，使用唯一的**名稱**來公開每個元素：
+    [![Visual Studio for Mac 中的 [Widget] 索引標籤，您可以在其中指定類別和識別碼。](text-fields-and-search-images/search04.png)](text-fields-and-search-images/search04.png#lightbox)
+1. 配置資料 **格原型** 的設計，並在 **屬性瀏覽器** 的 [ **Widget** ] 索引標籤中，使用唯一的 **名稱** 來公開每個元素：
 
     [![版面配置資料格原型的設計](text-fields-and-search-images/search05.png)](text-fields-and-search-images/search05.png#lightbox)
 1. 將變更儲存到您的腳本。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在方案總管**** 中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
+1. 在方案總管中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
 1. 將新的 [集合視圖控制器] 拖曳至腳本，以顯示使用者搜尋的結果：
 
     [![集合視圖控制器](text-fields-and-search-images/seach02-vs.png)](text-fields-and-search-images/seach02-vs.png#lightbox)
-1. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 索引標籤中，使用類別和的分鏡腳本 `SearchResultsViewController` **Class** `SearchResults` **識別碼**：
+1. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 索引標籤中，使用類別和的分鏡腳本 `SearchResultsViewController`  `SearchResults` **識別碼**：
 
-    [![[Widget] 索引標籤](text-fields-and-search-images/search03-vs.png)](text-fields-and-search-images/search03-vs.png#lightbox)
+    [![[Widget] 索引標籤，您可以在其中指定類別和分鏡腳本 I D。](text-fields-and-search-images/search03-vs.png)](text-fields-and-search-images/search03-vs.png#lightbox)
 1. 選取設計介面上的資料 **格原型** 。
-1. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 索引標籤中， `SearchResultCell` 針對**類別**和 `ImageCell` **識別碼**使用：
+1. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 索引標籤中， `SearchResultCell` 針對 **類別** 和 `ImageCell` **識別碼** 使用：
 
-    [![[Widget] 索引標籤](text-fields-and-search-images/search04-vs.png)](text-fields-and-search-images/search04-vs.png#lightbox)
-1. 配置資料**格原型**的設計，並在**屬性瀏覽器**的 [ **Widget** ] 索引標籤中，使用唯一的**名稱**來公開每個元素：
+    [![[Widget] 索引標籤，您可以在其中指定類別和識別碼。](text-fields-and-search-images/search04-vs.png)](text-fields-and-search-images/search04-vs.png#lightbox)
+1. 配置資料 **格原型** 的設計，並在 **屬性瀏覽器** 的 [ **Widget** ] 索引標籤中，使用唯一的 **名稱** 來公開每個元素：
 
     [![版面配置資料格原型的設計](text-fields-and-search-images/search05-vs.png)](text-fields-and-search-images/search05-vs.png#lightbox)
 1. 將變更儲存到您的腳本。
@@ -194,13 +194,13 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-接下來，您必須提供一個類別，作為使用者將搜尋之結果的資料模型。 在 [**方案總管**中，以滑鼠右鍵按一下專案名稱，然後選取 [**加入**  >  **新**  >  檔案]。**一般**  > **空白類別**並提供**名稱**：
+接下來，您必須提供一個類別，作為使用者將搜尋之結果的資料模型。 在 [**方案總管** 中，以滑鼠右鍵按一下專案名稱，然後選取 [**加入**  >  **新**  >  檔案]。**一般**  > **空白類別** 並提供 **名稱**：
 
 [![選取空白類別並提供名稱](text-fields-and-search-images/search06.png)](text-fields-and-search-images/search06.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-接下來，您必須提供一個類別，作為使用者將搜尋之結果的資料模型。 在 [**方案總管**中，以滑鼠右鍵按一下專案名稱，然後選取 [**加入**  >  **新專案**  >  ]。**Apple**  > **其他**  > **類別**並提供**名稱**：
+接下來，您必須提供一個類別，作為使用者將搜尋之結果的資料模型。 在 [**方案總管** 中，以滑鼠右鍵按一下專案名稱，然後選取 [**加入**  >  **新專案**  >  ]。**Apple**  > **其他**  > **類別** 並提供 **名稱**：
 
 [![選取類別並提供名稱](text-fields-and-search-images/search06-vs.png)](text-fields-and-search-images/search06-vs.png#lightbox)
 
@@ -293,7 +293,7 @@ namespace tvText
 }
 ```
 
-`UpdateUI`方法會在每次更新屬性時，用來顯示**PictureInformation**專案的個別欄位， (`PictureInfo` 命名 UI 元素中的屬性) 。 例如，與圖片相關聯的影像和標題。
+`UpdateUI`方法會在每次更新屬性時，用來顯示 **PictureInformation** 專案的個別欄位， (`PictureInfo` 命名 UI 元素中的屬性) 。 例如，與圖片相關聯的影像和標題。
 
 <a name="The-Collection-View-Controller"></a>
 
@@ -780,7 +780,7 @@ public override void ViewDidAppear (bool animated)
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 本文涵蓋了如何設計和使用 tvOS 應用程式內的文字和搜尋欄位。 它會示範如何在介面設計工具中建立文字和搜尋集合內容，並以兩種不同的方式呈現搜尋欄位，以供 tvOS 中的使用者使用。
 

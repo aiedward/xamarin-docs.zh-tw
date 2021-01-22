@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 04c33b59e2a1bab7fb401ffdc49d120bcfd679d0
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 53ffd71704201c87d5e30dea0f8da46189d6e75b
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436831"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697523"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>在 Xamarin 中手動相機控制項
 
@@ -332,7 +332,7 @@ iOS 7 及更早版本，透過屬性提供現有的焦點控制項， `FocusMode
 
 若要手動控制鏡頭位置，Capture 裝置必須處於鎖定焦點模式。 範例：
 
- `CaptureDevice.FocusMode = AVCaptureFocusMode.Locked;`
+ `CaptureDevice.FocusMode = AVCaptureFocusMode.Locked;`
 
 `SetFocusModeLocked`擷取裝置的方法是用來調整相機鏡頭的位置。 您可以提供選擇性的回呼常式，在變更生效時取得通知。 範例：
 
@@ -348,7 +348,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 設定好一般 AV Capture 安裝程式程式碼之後， `UIViewController` 就可以新增到應用程式的腳本，並設定如下：
 
-[![UIViewController 可以加入至應用程式分鏡腳本，並設定如下所示](intro-to-manual-camera-controls-images/image5.png)](intro-to-manual-camera-controls-images/image5.png#lightbox)
+[![您可以將 UIViewController 新增至應用程式分鏡腳本，並設定為手動焦點範例，如下所示。](intro-to-manual-camera-controls-images/image5.png)](intro-to-manual-camera-controls-images/image5.png#lightbox)
 
 此視圖包含下列主要元素：
 
@@ -539,7 +539,7 @@ iOS 7 及更新版本，透過屬性提供下列現有的公開控制項 `Exposu
 除了 iOS 7 和更新版本所提供的功能之外，下列功能現在也可在 iOS 8 中控制曝光：
 
 - 完全手動自訂公開。
-- 取得、設定和索引鍵-值會觀察 IOS 和快門速度 (持續時間) 。
+- 取得、設定和 Key-Value 觀察 IOS 和快門速度 (持續時間) 。
 
 為了執行上述功能，已新增新的 `AVCaptureExposureModeCustom` 模式。 當中的攝影機是自訂模式時，可以使用下列程式碼來調整曝光持續時間和 ISO：
 
@@ -572,7 +572,7 @@ CaptureDevice.UnlockForConfiguration();
 
 設定好一般 AV Capture 安裝程式程式碼之後， `UIViewController` 就可以新增到應用程式的腳本，並設定如下：
 
-[![UIViewController 可以加入至應用程式分鏡腳本，並設定如下所示](intro-to-manual-camera-controls-images/image12.png)](intro-to-manual-camera-controls-images/image12.png#lightbox)
+[![您可以將 UIViewController 新增至應用程式分鏡腳本，並設定為手動公開範例。](intro-to-manual-camera-controls-images/image12.png)](intro-to-manual-camera-controls-images/image12.png#lightbox)
 
 此視圖包含下列主要元素：
 
@@ -827,7 +827,7 @@ iOS 7 和更新版本透過屬性提供下列現有的白色餘額控制 `WhiteB
 除了 iOS 7 和更新版本所提供的功能之外，現在還提供下列功能來控制 iOS 8 中的白平衡：
 
 - 完全手動控制裝置 RGB 增益。
-- Get、Set 和索引鍵-值會觀察裝置 RGB 增益。
+- 取得、設定和 Key-Value 觀察裝置 RGB 增益。
 - 支援使用灰色卡片的白色平衡。
 - 與裝置無關的色彩空間之間的轉換常式。
 
@@ -872,7 +872,7 @@ Apple 使用灰色的世界來表示 iOS 8 內建的灰色卡支援。 它可讓
 
 設定好一般 AV Capture 安裝程式程式碼之後， `UIViewController` 就可以新增到應用程式的腳本，並設定如下：
 
-[![UIViewController 可以加入至應用程式分鏡腳本，並設定如下所示](intro-to-manual-camera-controls-images/image18.png)](intro-to-manual-camera-controls-images/image18.png#lightbox)
+[![您可以將 UIViewController 新增至應用程式分鏡腳本，並將其設定為以手動的白色餘額範例顯示。](intro-to-manual-camera-controls-images/image18.png)](intro-to-manual-camera-controls-images/image18.png#lightbox)
 
 此視圖包含下列主要元素：
 
@@ -1152,7 +1152,7 @@ Apple 使用灰色的世界來表示 iOS 8 內建的灰色卡支援。 它可讓
 
 設定好一般 AV Capture 安裝程式程式碼之後， `UIViewController` 就可以新增到應用程式的腳本，並設定如下：
 
-[![UIViewController 可以加入至應用程式分鏡腳本，並設定如下所示](intro-to-manual-camera-controls-images/image23.png)](intro-to-manual-camera-controls-images/image23.png#lightbox)
+[![您可以將 UIViewController 新增至應用程式分鏡腳本，並設定為如以下的括弧捕獲範例所示。](intro-to-manual-camera-controls-images/image23.png)](intro-to-manual-camera-controls-images/image23.png#lightbox)
 
 此視圖包含下列主要元素：
 
@@ -1315,7 +1315,7 @@ Apple 使用灰色的世界來表示 iOS 8 內建的灰色卡支援。 它可讓
 
 上述程式碼示範了如何在 iOS 8 中設定和採用自動曝光的已括住捕捉。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 在本文中，我們已介紹過 iOS 8 所提供的新手動攝影機控制項，並涵蓋其功能及其運作方式的基本概念。 我們已提供手動焦點、手動曝光和手動白色平衡的範例。 最後，我們提供了一個範例，讓我們使用先前討論的手動攝影機控制項來進行有括弧的捕獲
 
