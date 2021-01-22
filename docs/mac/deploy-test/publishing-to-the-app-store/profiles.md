@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 0bde2ee6451b7160ac7c1655e705984e53c82ff4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: de87e650f68e5a327564c0a4216bee2b3e04fe2f
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939005"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697601"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的佈建設定檔
 
@@ -25,35 +25,35 @@ ms.locfileid: "86939005"
 開發佈建設定檔可讓以 Mac App Store 為目標的應用程式在設定檔中設定的特定電腦上進行測試。 這與使用像是 iCloud 與推播通知等 macOS 功能時特別相關。
 
 > [!NOTE]
-> 開發人員必須已經建立「Mac 開發憑證」，才能建立「開發佈建設定檔」。 完成此螢幕擷取畫面所示的詳細資料，以產生可用於建立組建的**開發佈建設定檔**。 [Certificate (憑證)]**** 方塊中的選取項目必須是可用的有效 Mac 開發憑證，且至少註冊一個系統以供進行測試。
+> 開發人員必須已經建立「Mac 開發憑證」，才能建立「開發佈建設定檔」。 完成此螢幕擷取畫面所示的詳細資料，以產生可用於建立組建的 **開發佈建設定檔**。 [Certificate (憑證)] 方塊中的選取項目必須是可用的有效 Mac 開發憑證，且至少註冊一個系統以供進行測試。
 
 執行下列動作：
 
-1. 選取要建立的佈建設定檔類型，然後按一下 [Continue (繼續)]**** 按鈕：
+1. 選取要建立的佈建設定檔類型，然後按一下 [Continue (繼續)] 按鈕：
 
     [![選取設定檔類型](profiles-images/certif14.png)](profiles-images/certif14.png#lightbox)
-2. 選取要用於建立設定檔的應用程式識別碼，然後按一下 [Continue (繼續)]**** 按鈕：
+2. 選取要用於建立設定檔的應用程式識別碼，然後按一下 [Continue (繼續)] 按鈕：
 
     [![選取應用程式識別碼](profiles-images/certif15.png)](profiles-images/certif15.png#lightbox)
-3. 選取用於簽署設定檔的開發人員識別碼，然後按一下 [Continue (繼續)]****：
+3. 選取用於簽署設定檔的開發人員識別碼，然後按一下 [Continue (繼續)]：
 
     [![選取開發人員識別碼](profiles-images/certif16.png)](profiles-images/certif16.png#lightbox)
-4. 選取可使用此設定檔的電腦，然後按一下 [Continue (繼續)]****：
+4. 選取可使用此設定檔的電腦，然後按一下 [Continue (繼續)]：
 
     [![選取允許的電腦](profiles-images/certif17.png)](profiles-images/certif17.png#lightbox)
-5. 現在，輸入**設定檔名稱**，然後按一下 [Generate(產生)]**** 按鈕：
+5. 現在，輸入 **設定檔名稱**，然後按一下 [Generate(產生)] 按鈕：
 
-    [![產生設定檔](profiles-images/certif18.png)](profiles-images/certif18.png#lightbox)
-6. 按一下 [Download (下載)]**** 按鈕以下載新的設定檔：
+    [![螢幕擷取畫面顯示在布建視窗中輸入設定檔名稱。](profiles-images/certif18.png)](profiles-images/certif18.png#lightbox)
+6. 按一下 [Download (下載)] 按鈕以下載新的設定檔：
 
-    [![下載設定檔](profiles-images/certif19.png)](profiles-images/certif19.png#lightbox)
-7. 開發佈建設定檔會安裝至 Mac [系統偏好設定]**** 應用程式的設定檔偏好設定窗格：
+    [![螢幕擷取畫面：顯示設定檔的 [下載] 按鈕。](profiles-images/certif19.png)](profiles-images/certif19.png#lightbox)
+7. 開發佈建設定檔會安裝至 Mac [系統偏好設定] 應用程式的設定檔偏好設定窗格：
 
-    [![安裝設定檔](profiles-images/certif20.png)](profiles-images/certif20.png#lightbox)
+    [![螢幕擷取畫面，顯示 [安裝驗證] 對話方塊。](profiles-images/certif20.png)](profiles-images/certif20.png#lightbox)
 8. 設定檔偏好設定窗格會顯示所有安裝的設定檔：
 
     [![顯示所有安裝的設定檔](profiles-images/image47.png)](profiles-images/image47.png#lightbox)
-9. 該設定檔也會顯示在[Developer Certificate Utility (開發人員憑證公用程式)]**** 中，以防萬一您需要再次下載：
+9. 該設定檔也會顯示在[Developer Certificate Utility (開發人員憑證公用程式)] 中，以防萬一您需要再次下載：
 
     [![開發人員憑證公用程式](profiles-images/image48.png)](profiles-images/image48.png#lightbox)
 
@@ -65,19 +65,19 @@ ms.locfileid: "86939005"
 
 執行下列動作：
 
-1. 選取要建立的設定檔類型，然後按一下 [Continue (繼續)]**** 按鈕：
+1. 選取要建立的設定檔類型，然後按一下 [Continue (繼續)] 按鈕：
 
     [![選取設定檔類型](profiles-images/certif21.png)](profiles-images/certif21.png#lightbox)
-2. 選取要用於建立設定檔的應用程式識別碼，然後按一下 [Continue (繼續)]**** 按鈕：
+2. 選取要用於建立設定檔的應用程式識別碼，然後按一下 [Continue (繼續)] 按鈕：
 
     [![選取應用程式識別碼](profiles-images/certif15.png)](profiles-images/certif15.png#lightbox)
-3. 選取要簽署設定檔的公司識別碼，然後按一下 [Continue (繼續)]**** 按鈕：
+3. 選取要簽署設定檔的公司識別碼，然後按一下 [Continue (繼續)] 按鈕：
 
     [![選取公司識別碼](profiles-images/certif23.png)](profiles-images/certif23.png#lightbox)
-4. 輸入**設定檔名稱**，然後按一下 [Generate(產生)]**** 按鈕：
+4. 輸入 **設定檔名稱**，然後按一下 [Generate(產生)] 按鈕：
 
     [![產生設定檔](profiles-images/certif24.png)](profiles-images/certif24.png#lightbox)
-5. 按一下 [Download (下載)]****，以取得佈建設定檔檔案 (副檔名為 `.provisionprofile`)：
+5. 按一下 [Download (下載)]，以取得佈建設定檔檔案 (副檔名為 `.provisionprofile`)：
 
     [![下載設定檔](profiles-images/certif25.png)](profiles-images/certif25.png#lightbox)
 6. 將檔案拖放到 **Xcode Organizer** 或按兩下以安裝。 接著，設定檔會顯示在 Xcode Organizer 中：

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: a2e8e6d1fdf3f51f015dccf12a6a3b455ceff741
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 0bfb4168e3d990ae1afb3ee2022553053c383083
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432748"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697588"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Xamarin 中的進度和活動指示器
 
@@ -38,7 +38,7 @@ Apple 針對使用活動指標有下列建議：
 
 如果您使用 iOS 設計工具建立 UI，則可以從 [工具箱] 將活動指標加入至您的版面配置。 您可以從 Properties Pad 調整下列屬性：
 
-![Properties Pad](progress-activity-indicator-images/progress-indicator1.png)
+![螢幕擷取畫面：顯示您可以在其中修改樣式、色彩和行為屬性的 Properties Pad。](progress-activity-indicator-images/progress-indicator1.png)
 
 ### <a name="managing-activity-indicator-behavior"></a>管理活動指標行為
 
@@ -63,7 +63,7 @@ activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.White
 Apple 針對使用進度列有下列建議：
 
 - **正確地報告進度** ：進度列應一律精確表示完成工作所需的時間。 絕對不要讓應用程式看似忙碌的時間。
-- **使用於定義完善的持續** 時間（進度列）不只會顯示漫長的工作正在進行中，還可讓使用者和指出工作的完成程度，以及剩餘時間的估計。
+- **使用於 Well-Defined 持續** 時間-進度列應該不只會顯示漫長的工作正在進行中，而是讓使用者和指出工作的完成程度，以及估計剩餘的時間。
 
 ### <a name="implementing-an-progress-bar"></a>執行進度列
 
@@ -71,11 +71,11 @@ Apple 針對使用進度列有下列建議：
 
 ### <a name="progress-bars-and-storyboards"></a>進度列和分鏡腳本
 
-使用 iOS 設計工具時，您也可以將進度列新增至 UI。 在 [**工具箱**] 中搜尋**進度視圖**，然後將它拖曳至您的視圖。
+使用 iOS 設計工具時，您也可以將進度列新增至 UI。 在 [**工具箱**] 中搜尋 **進度視圖**，然後將它拖曳至您的視圖。
 
 下列屬性可以在 properties pad 上調整：
 
-![Properties Pad](progress-activity-indicator-images/progress-indicator3.png)
+![螢幕擷取畫面顯示 Properties Pad，您可以在其中修改樣式、進度、進度色調、追蹤色調、進度影像，以及追蹤影像屬性。](progress-activity-indicator-images/progress-indicator3.png)
 
 ### <a name="managing-progress-bar-behavior"></a>管理進度列行為
 

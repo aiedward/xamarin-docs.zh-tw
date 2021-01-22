@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 719436835f5d104930adfe8cd7aa95de326784e9
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: e320e5e3ad7942f371e01baaade753a2bb35f76e
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432088"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697653"
 ---
 # <a name="layout-options-in-xamarinios"></a>Xamarin 中的版面配置選項
 
@@ -25,11 +25,11 @@ ms.locfileid: "91432088"
 
 當使用者調整視窗大小時，例如當裝置旋轉且方向變更時，系統會根據其自動調整大小規則，自動調整該視窗內的視圖大小。 您可以使用中的 `AutoresizingMask` 屬性 `UIView` 或在 iOS 設計工具的 **Properties Pad** 中，以 c # 設定這些規則，如下所示：
 
- [![Visual Studio for Mac 設計工具](layout-options-images/image41.png)](layout-options-images/image41.png#lightbox)
+ [![螢幕擷取畫面顯示 I O S 設計工具的 Properties Pad。](layout-options-images/image41.png)](layout-options-images/image41.png#lightbox)
 
 選取控制項時，這可讓您手動指定控制項的位置和維度，以及選擇 **自動調整大小** 行為。 如下列螢幕擷取畫面所示，我們可以使用自動調整大小控制項中的彈簧和 struts，來定義所選取的視圖與父系的關聯性：
 
- [![Visual Studio for Mac 設計工具](layout-options-images/image42.png)](layout-options-images/image42.png#lightbox)
+ [![螢幕擷取畫面顯示 I O S 設計工具 Properties Pad 中的自動調整大小控制項。](layout-options-images/image42.png)](layout-options-images/image42.png#lightbox)
 
 調整 *彈簧* 會使視圖根據其父視圖的寬度或高度調整大小。 調整 *strut* 會讓視圖在該特定邊緣上維持與其父視圖之間的固定距離。
 
@@ -54,11 +54,11 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 
 我們也可以使用設計工具來調整控制項。 選取下方的 struts 會導致影像保持靠右對齊，而不會被剪下視圖的底部：
 
- [![Autorotation](layout-options-images/autoresize.png)](layout-options-images/autoresize.png#lightbox)
+ [![螢幕擷取畫面顯示已選取左側和底部的自動調整大小控制項。 ](layout-options-images/autoresize.png)](layout-options-images/autoresize.png#lightbox)
 
 這些螢幕擷取畫面顯示當旋轉螢幕時，控制項如何自行調整大小或重新置放：
 
- [![Autorotation](layout-options-images/image44a.png)](layout-options-images/image44a.png#lightbox)
+ [![螢幕擷取畫面顯示行動裝置顯示在直向和橫向，並已調整文字和圖形。](layout-options-images/image44a.png)](layout-options-images/image44a.png#lightbox)
 
 請注意，文字視圖和文字欄位都因為設定，而調整為保持相同的左邊和右邊界 `FlexibleWidth` 。 影像的上邊界和左邊界有彈性，這表示它會保留底部和右邊的邊界，而在旋轉螢幕時，讓影像保持在視野中。 複雜的配置通常需要在每個可見控制項上組合這些設定，讓使用者介面保持一致，並防止控制項在視圖的界限變更 (由於旋轉或其他調整大小事件) 。
 
