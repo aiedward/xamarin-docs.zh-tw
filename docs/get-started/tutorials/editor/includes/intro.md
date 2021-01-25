@@ -1,17 +1,17 @@
 ---
-ms.openlocfilehash: 4416eddfab4bfcf2b3274054db9bcfc60ed8fdec
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: d00ddd66c6b609131c363d8c13c0490b08eff8f0
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059603"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689928"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
 
 - [建置您的第一個 Xamarin.Forms 應用程式](~/get-started/first-app/index.md)快速入門。
 - [StackLayout](~/get-started/tutorials/stacklayout/index.yml) 教學課程。
 
-在本教學課程中，您會了解如何：
+在本教學課程中，您將了解如何：
 
 > [!div class="checklist"]
 >
@@ -22,3 +22,5 @@ ms.locfileid: "71059603"
 您將會使用 Visual Studio 2019 或 Visual Studio for Mac 來建立能示範如何自訂 [`Editor`](xref:Xamarin.Forms.Editor) 之行為的簡單應用程式。 下列螢幕擷取畫面顯示的是最終的應用程式：
 
 [![螢幕擷取畫面：iOS 和 Android 上的自動調整大小 Editor](../images/customize-behavior.png "自動調整大小 Editor")](../images/customize-behavior-large.png#lightbox "自動調整大小 Editor")
+
+您也會使用[適用於 Xamarin.Forms 的 XAML 熱重新載入](~/xamarin-forms/xaml/hot-reload.md)查看 UI 變更，而不需要重建您的應用程式。

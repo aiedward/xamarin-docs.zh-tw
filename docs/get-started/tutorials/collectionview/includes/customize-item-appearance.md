@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4464b5cc4220072de3d55d76f568dab938d3d805
-ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+ms.openlocfilehash: 6118d4ee8d2fa56a3b14d3d280db4991a36874fc
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98559008"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98690027"
 ---
 先前，已使用資料繫結在 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 中填入資料。 不過，儘管將資料繫結至集合，而集合中的每個物件已定義多個資料項目，但每個物件只會顯示單一資料項目 (`Monkey` 物件的 `Name` 屬性)。
 
@@ -49,6 +49,8 @@ ms.locfileid: "98559008"
 
     [![以資料範本將其項目樣板化的 CollectionView 螢幕擷取畫面](../images/customize-item-appearance.png "顯示樣板化資料的 CollectionView")](../images/customize-item-appearance-large.png#lightbox "顯示樣板化資料的 CollectionView")
 
+    在 Visual Studio 中，停止應用程式。
+
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 **MainPage.xaml** 中修改 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 宣告，以自訂每個資料項目的外觀：
@@ -87,3 +89,5 @@ ms.locfileid: "98559008"
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![以資料範本將其項目樣板化的 CollectionView 螢幕擷取畫面](../images/customize-item-appearance.png "顯示樣板化資料的 CollectionView")](../images/customize-item-appearance-large.png#lightbox "顯示樣板化資料的 CollectionView")
+
+    在 Visual Studio for Mac 中，停止應用程式。

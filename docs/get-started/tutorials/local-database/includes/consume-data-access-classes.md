@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9e78d92bdd2d6b0b398ef30ba5f30f71ef64cfd3
-ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+ms.openlocfilehash: 6e546d85c87962b022f72c8c16cb0ece14e9bde6
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98557117"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689808"
 ---
 在此練習中，您將建立使用者介面來使用先前建立的資料存取類別。
 
@@ -81,6 +81,8 @@ ms.locfileid: "98557117"
 
     [![螢幕擷取畫面：iOS 和 Android 上的本機 SQLite.NET 資料庫資料保留](../images/consume-data-access-classes.png "本機資料庫資料保留")](../images/consume-data-access-classes-large.png#lightbox "本機資料庫資料保留")
 
+    在 Visual Studio 中，停止應用程式。
+
     如需 Xamarin.Forms 中有關本機資料庫的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫 (指南)](~/xamarin-forms/data-cloud/data/databases.md)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
@@ -155,5 +157,7 @@ ms.locfileid: "98557117"
     輸入數個資料項目，點選每個資料項目的 [`Button`](xref:Xamarin.Forms.Button)。 這會將資料儲存至資料庫，並以所有資料庫資料重新填入 [`CollectionView`](xref:Xamarin.Forms.CollectionView)：
 
     [![螢幕擷取畫面：iOS 和 Android 上的本機 SQLite.NET 資料庫資料保留](../images/consume-data-access-classes.png "本機資料庫資料保留")](../images/consume-data-access-classes-large.png#lightbox "本機資料庫資料保留")
+
+    在 Visual Studio for Mac 中，停止應用程式。
 
     如需 Xamarin.Forms 中有關本機資料庫的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫 (指南)](~/xamarin-forms/data-cloud/data/databases.md)

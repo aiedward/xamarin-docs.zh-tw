@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 58ed33adbc25e026431609370075c24c3b6ba690
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 42d1f79b22e25e46f81f7c5a77389fd578a4d894
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574657"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689871"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -24,9 +24,11 @@ ms.locfileid: "84574657"
 
     此外，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性可指定將影像水平置中。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 如果應用程式仍在執行，請將變更儲存至檔案，應用程式使用者介面將會在您的模擬器中自動更新。 否則，請在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![iOS 和 Android 以不同方式調整影像大小的螢幕擷取畫面](../images/customize-appearance.png "依平台調整影像的大小")](../images/customize-appearance-large.png#lightbox "依平台調整影像的大小")
+
+    在 Visual Studio 中，停止應用程式。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -46,6 +48,8 @@ ms.locfileid: "84574657"
 
     此外，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性可指定將影像水平置中。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 如果應用程式仍在執行，請將變更儲存至檔案，應用程式使用者介面將會在您的模擬器中自動更新。 否則，請在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![iOS 和 Android 以不同方式調整影像大小的螢幕擷取畫面](../images/customize-appearance.png "依平台調整影像的大小")](../images/customize-appearance-large.png#lightbox "依平台調整影像的大小")
+
+    在 Visual Studio for Mac 中，停止應用程式。

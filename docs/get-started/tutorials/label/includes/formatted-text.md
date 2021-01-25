@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 841dac9486097e27923ccfe582803b4ec50371cf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 4352ff38e785a0a222cf8d2d64511ed14b3ae192
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "60896650"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689644"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -30,9 +30,11 @@ ms.locfileid: "60896650"
     > [!NOTE]
     > [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) 屬性的類型是 [`FormattedString`](xref:Xamarin.Forms.FormattedString)，其包含一或多個 [`Span`](xref:Xamarin.Forms.Span) 執行個體。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 請觀察一下，[`Label`](xref:Xamarin.Forms.Label) 外觀已變更：
+1. 如果應用程式仍在執行，請將變更儲存至檔案，應用程式使用者介面將會在您的模擬器中自動更新。 否則，請在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 請觀察一下，[`Label`](xref:Xamarin.Forms.Label) 外觀已變更：
 
     [![螢幕擷取畫面：iOS 和 Android 上顯示格式化文字的 Label](../images/label-formatted-text.png "具有格式化文字的 Label")](../images/label-formatted-text-large.png#lightbox "具有格式化文字的 Label")
+
+    在 Visual Studio 中，停止應用程式。
 
     如需如何設定 [`Span`](xref:Xamarin.Forms.Span) 外觀的詳細資訊，請參閱 [Xamarin.Forms 標籤](~/xamarin-forms/user-interface/text/label.md)指南中的[格式化文字](~/xamarin-forms/user-interface/text/label.md#formatted-text)。
 
@@ -60,8 +62,10 @@ ms.locfileid: "60896650"
     > [!NOTE]
     > [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) 屬性的類型是 [`FormattedString`](xref:Xamarin.Forms.FormattedString)，其包含一或多個 [`Span`](xref:Xamarin.Forms.Span) 執行個體。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 請觀察一下，[`Label`](xref:Xamarin.Forms.Label) 外觀已變更：
+1. 如果應用程式仍在執行，請將變更儲存至檔案，應用程式使用者介面將會在您的模擬器中自動更新。 否則，請在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 請觀察一下，[`Label`](xref:Xamarin.Forms.Label) 外觀已變更：
 
     [![螢幕擷取畫面：iOS 和 Android 上顯示格式化文字的 Label](../images/label-formatted-text.png "具有格式化文字的 Label")](../images/label-formatted-text-large.png#lightbox "具有格式化文字的 Label")
+
+    在 Visual Studio for Mac 中，停止應用程式。
 
     如需如何設定 [`Span`](xref:Xamarin.Forms.Span) 外觀的詳細資訊，請參閱 [Xamarin.Forms 標籤](~/xamarin-forms/user-interface/text/label.md)指南中的[格式化文字](~/xamarin-forms/user-interface/text/label.md#formatted-text)。

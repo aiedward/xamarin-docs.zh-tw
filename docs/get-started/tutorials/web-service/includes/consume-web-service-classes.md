@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: bf46d8ab4ca124bc36dd971513a78147e71a0039
-ms.sourcegitcommit: 4d260b655cb52b990dda79c239a9721f2e964625
+ms.openlocfilehash: a642e34c5f49e63503b34c44f536f0428993335b
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570872"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634926"
 ---
 在此練習中，您會建立使用者介面來取用 `RestService` 類別，其會從 GitHub Web API 擷取 .NET 存放庫資料。 擷取的資料會由 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 顯示。
 
@@ -80,6 +80,8 @@ ms.locfileid: "98570872"
 
     [![iOS 和 Android 上 GitHub .NET 存放庫的螢幕擷取畫面](../images/consume-web-service.png)](../images/consume-web-service-large.png#lightbox)
 
+    在 Visual Studio 中，停止應用程式。
+
     如需有關如何取用 Xamarin.Forms 中 REST 架構 Web 服務的詳細資訊，請參閱[取用 RESTful Web 服務 (指南)](~/xamarin-forms/data-cloud/web-services/rest.md)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
@@ -153,5 +155,7 @@ ms.locfileid: "98570872"
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 點選 [`Button`](xref:Xamarin.Forms.Button)，以從 GitHub 擷取 .NET 存放庫資料：
 
     [![iOS 和 Android 上 GitHub .NET 存放庫的螢幕擷取畫面](../images/consume-web-service.png)](../images/consume-web-service-large.png#lightbox)
+
+    在 Visual Studio for Mac 中，停止應用程式。
 
     如需有關如何取用 Xamarin.Forms 中 REST 架構 Web 服務的詳細資訊，請參閱[取用 RESTful Web 服務 (指南)](~/xamarin-forms/data-cloud/web-services/rest.md)。

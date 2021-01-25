@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 93ee0681adcc63fe05b4be88ff67f0aeee3e03ca
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c2d340f10a6fb71d3ea1e6ed7fd5bfd3d2862729
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61384409"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689770"
 ---
 影像檔案可以新增至平台專案，也可以從 Xamarin.Forms 的共用程式碼來參考。 當影像是平台專用的 (例如，在不同平台上使用不同的解析度) 或屬於略微不同的設計時，就需要這種影像散發方法。
 
@@ -56,9 +56,11 @@ ms.locfileid: "61384409"
     > [!NOTE]
     > 對於 iOS 上的 PNG 影像，在 [`Source`](xref:Xamarin.Forms.Image.Source) 屬性中指定的檔案名稱內可省略 **.png** 副檔名。 若為其他影像格式，則必須有副檔名。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，顯示本機影像的 Image 檢視](../images/local-file.png "顯示本機影像的 Image 檢視")](../images/local-file-large.png#lightbox "顯示本機影像的 Image 檢視")
+
+    在 Visual Studio 中，停止應用程式。
 
     如需本機影像的詳細資訊，請參閱 [Xamarin.Forms 中的影像](~/xamarin-forms/user-interface/images.md)指南中的[本機影像](~/xamarin-forms/user-interface/images.md#local-images)。
 
@@ -105,5 +107,7 @@ ms.locfileid: "61384409"
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，顯示本機影像的 Image 檢視](../images/local-file.png "顯示本機影像的 Image 檢視")](../images/local-file-large.png#lightbox "顯示本機影像的 Image 檢視")
+
+    在 Visual Studio for Mac 中，停止應用程式。
 
     如需本機影像的詳細資訊，請參閱 [Xamarin.Forms 中的影像](~/xamarin-forms/user-interface/images.md)指南中的[本機影像](~/xamarin-forms/user-interface/images.md#local-images)。

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 97e52d593e2b59d127da324d8ad74ad7b2096cdd
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.openlocfilehash: f9bacad9732a47a143aadb3efa9096b51a22f97a
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83343415"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634749"
 ---
 子檢視在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的大小和位置取決於子檢視的 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 和 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 屬性值，以及 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性的值。
 
@@ -51,7 +51,7 @@ ms.locfileid: "83343415"
     > [!NOTE]
     > 檢視的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性預設值為 [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。
 
-1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 如果應用程式仍在執行，請將變更儲存至檔案，應用程式使用者介面將會在您的模擬器中自動更新。 否則，請在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：iOS 和 Android 上已設定對齊和延展選項的 StackLayout 子檢視](../images/alignment-expansion.png "包含 Label 執行個體並已設定對齊和延展的 StackLayout")](../images/alignment-expansion-large.png#lightbox "包含 Label 執行個體並已設定對齊和延展的 StackLayout")
 
@@ -66,6 +66,8 @@ ms.locfileid: "83343415"
 
     > [!IMPORTANT]
     > 如果 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的所有空間都已使用，則延展喜好設定不會有作用。
+
+    在 Visual Studio 中，停止應用程式。
 
     如需對齊和延展的詳細資訊，請參閱 [Xamarin.Forms 中的版面配置選項](~/xamarin-forms/user-interface/layouts/layout-options.md)。
 
@@ -107,7 +109,7 @@ ms.locfileid: "83343415"
     > [!NOTE]
     > 檢視的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性預設值為 [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 如果應用程式仍在執行，請將變更儲存至檔案，應用程式使用者介面將會在您的模擬器中自動更新。 否則，請在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：iOS 和 Android 上已設定對齊和延展選項的 StackLayout 子檢視](../images/alignment-expansion.png "包含 Label 執行個體並已設定對齊和延展的 StackLayout")](../images/alignment-expansion-large.png#lightbox "包含 Label 執行個體並已設定對齊和延展的 StackLayout")
 
@@ -122,5 +124,7 @@ ms.locfileid: "83343415"
 
     > [!IMPORTANT]
     > 如果 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的所有空間都已使用，則延展喜好設定不會有作用。
+
+    在 Visual Studio for Mac 中，停止應用程式。
 
     如需對齊和延展的詳細資訊，請參閱 [Xamarin.Forms 中的版面配置選項](~/xamarin-forms/user-interface/layouts/layout-options.md)。

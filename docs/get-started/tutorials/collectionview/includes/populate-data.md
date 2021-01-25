@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 590acbe98b2d67a10bed0fc66de0350da888d319
-ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+ms.openlocfilehash: ff37327e1fd942382c3eb81b8c6bcc0041347b0e
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98559013"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689798"
 ---
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 會使用類型為 `IEnumerable` 的 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性來填入資料。 上一個步驟已使用字串陣列填入 XAML 中的 `CollectionView`。 不過，一般而言，`CollectionView` 會從程式碼中所定義且實作 `IEnumerable` 的集合填入資料。
 
@@ -191,6 +191,8 @@ ms.locfileid: "98559013"
 
     [`CollectionView`](xref:Xamarin.Forms.CollectionView) 會顯示 `Monkeys` 集合中每個 `Monkey` 的 `Name` 屬性。 這是因為從集合顯示物件時，`CollectionView` 預設會呼叫 `ToString` 方法 (已在 `Monkey` 類別中進行覆寫，進而傳回 `Name` 屬性值)。
 
+    在 Visual Studio 中，停止應用程式。
+
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 [Solution Pad] 的 **CollectionViewTutorial** 專案中，新增包含下列程式碼且名為 `Monkey` 的類別：
@@ -371,3 +373,5 @@ ms.locfileid: "98559013"
     [![iOS 和 Android 上從集合填入資料的 CollectionView 螢幕擷取畫面](../images/populate-data.png "顯示集合中資料的 CollectionView")](../images/populate-data-large.png#lightbox "顯示集合中資料的 CollectionView")
 
     [`CollectionView`](xref:Xamarin.Forms.CollectionView) 會顯示 `Monkeys` 集合中每個 `Monkey` 的 `Name` 屬性。 這是因為從集合顯示物件時，`CollectionView` 預設會呼叫 `ToString` 方法 (已在 `Monkey` 類別中進行覆寫，進而傳回 `Name` 屬性值)。
+
+    在 Visual Studio for Mac 中，停止應用程式。

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e1705e9311d4875a5b866ac5acb7d20aa107a2bb
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+ms.openlocfilehash: 624d7f2866767bbb748988a3c486718d7691faf6
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83435413"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634863"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -44,7 +44,7 @@ ms.locfileid: "83435413"
     > [!NOTE]
     > 您可使用 [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 和 [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 屬性設定 [`Grid`](xref:Xamarin.Forms.Grid) 中資料行與資料列之間的間距。 如需詳細資訊，請參閱 [Xamarin.Forms 方格](~/xamarin-forms/user-interface/layouts/grid.md)指南中的[間距](~/xamarin-forms/user-interface/layouts/grid.md#space-between-rows-and-columns)。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 如果應用程式仍在執行，請將變更儲存至檔案，應用程式使用者介面將會在您的模擬器中自動更新。 否則，請在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，以欄和列顯示內容的 Grid](../images/columns-rows.png "以欄和列顯示內容的 Grid")](../images/columns-rows-large.png#lightbox "以欄和列顯示內容的 Grid")
 
@@ -86,6 +86,6 @@ ms.locfileid: "83435413"
     > [!NOTE]
     > 您可使用 [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 和 [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 屬性設定 [`Grid`](xref:Xamarin.Forms.Grid) 中資料行與資料列之間的間距。 如需詳細資訊，請參閱 [Xamarin.Forms 方格](~/xamarin-forms/user-interface/layouts/grid.md)指南中的[間距](~/xamarin-forms/user-interface/layouts/grid.md#space-between-rows-and-columns)。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 如果應用程式仍在執行，請將變更儲存至檔案，應用程式使用者介面將會在您的模擬器中自動更新。 否則，請在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，以欄和列顯示內容的 Grid](../images/columns-rows.png "以欄和列顯示內容的 Grid")](../images/columns-rows-large.png#lightbox "以欄和列顯示內容的 Grid")

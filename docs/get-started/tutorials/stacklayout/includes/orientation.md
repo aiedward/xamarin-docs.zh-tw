@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a7c2aa15521b89e4930746dc5421ce67fa26b2b9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f205e97c11c6ae1c75b101ada57c10ef49a9c146
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "67559984"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634745"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -21,7 +21,7 @@ ms.locfileid: "67559984"
 
     此程式碼會將 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) 屬性設定為 [`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal)。
 
-1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 如果應用程式仍在執行，請將變更儲存至檔案，應用程式使用者介面將會在您的模擬器中自動更新。 否則，請在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，StackLayout 中的水平方向子檢視](../images/orientation.png "包含水平方向 Label 執行個體的 StackLayout")](../images/orientation-large.png#lightbox "包含水平方向 Label 執行個體的 StackLayout")
 
@@ -42,7 +42,7 @@ ms.locfileid: "67559984"
 
     此程式碼會將 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) 屬性設定為 [`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal)。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 如果應用程式仍在執行，請將變更儲存至檔案，應用程式使用者介面將會在您的模擬器中自動更新。 否則，請在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，StackLayout 中的水平方向子檢視](../images/orientation.png "包含水平方向 Label 執行個體的 StackLayout")](../images/orientation-large.png#lightbox "包含水平方向 Label 執行個體的 StackLayout")
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: bd9d4bbd04f504400bd14bb3a18bf4c2b16a5849
-ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+ms.openlocfilehash: e2b6e6a6902fcf67e92f58da15771ce0ed8a6075
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98558979"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98690147"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -48,6 +48,8 @@ ms.locfileid: "98558979"
 
     [![iOS 和 Android 上的 CollectionView 螢幕擷取畫面](../images/create-collectionview.png "顯示資料的 CollectionView")](../images/create-collectionview-large.png#lightbox "顯示資料的 CollectionView")
 
+    在 Visual Studio 中，停止應用程式。
+
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 若要完成本教學課程，您應該具備 Visual Studio for Mac (最新版本)，並已安裝 iOS 和 Android 平台支援。 此外，您還需要 Xcode (最新版本)。 如需安裝 Xamarin 平台的詳細資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。
@@ -89,3 +91,5 @@ ms.locfileid: "98558979"
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![iOS 和 Android 上的 CollectionView 螢幕擷取畫面](../images/create-collectionview.png "顯示資料的 CollectionView")](../images/create-collectionview-large.png#lightbox "顯示資料的 CollectionView")
+
+    在 Visual Studio for Mac 中，停止應用程式。

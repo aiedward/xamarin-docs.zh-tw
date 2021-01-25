@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3d20c4f0149c632863eace633abb759eca49a786
-ms.sourcegitcommit: 4d260b655cb52b990dda79c239a9721f2e964625
+ms.openlocfilehash: 4517415e2431193e56728e3bb1a24e3c7d119ca4
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570773"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634927"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -40,11 +40,11 @@ ms.locfileid: "98570773"
 
     如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱 [Xamarin.Forms 快速入門深度剖析](~/get-started/first-app/index.md)中的 [Xamarin.Forms 應用程式的結構](~/get-started/first-app/index.md)。
 
-1. 在 [Solution Pad] 中選取 **WebServiceTutorial** 專案，並以滑鼠右鍵按一下 [新增] > [新增 NuGet 套件...] 來將其選取：
+1. 在 [Solution Pad] 中選取 **WebServiceTutorial** 專案，按一下滑鼠右鍵，然後選取 [管理 NuGet 套件...]：
 
     ![螢幕擷取畫面：已選取 [新增 NuGet 套件] 功能表項目](../images/vsmac/add-nuget-packages.png "[新增 NuGet 套件] 功能表項目")
 
-1. 在 [新增套件] 視窗中，搜尋 **Newtonsoft.Json** NuGet 套件並加以選取，然後按一下 [新增套件] 按鈕，將其新增至專案：
+1. 在 [管理 NuGet 套件] 視窗中，搜尋 **Newtonsoft.Json** NuGet 套件並加以選取，然後按一下 [新增套件] 按鈕，將其新增至專案：
 
     ![螢幕擷取畫面：NuGet 套件管理員中的 Newtonsoft.Json NuGet 套件](../images/vsmac/add-package.png "Newtonsoft.Json NuGet 套件")
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cbf301b341f78ae8d8826580d30a13393716f56c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 24fdf5849e94fb80cad40635a44cc8da434d83cc
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059597"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634861"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
 
@@ -21,3 +21,5 @@ ms.locfileid: "71059597"
 您將會使用 Visual Studio 2019 或 Visual Studio for Mac 來建立能示範如何在 [`Grid`](xref:Xamarin.Forms.Grid) 內配置控制項的簡單應用程式。 下列螢幕擷取畫面顯示的是最終的應用程式：
 
 [![螢幕擷取畫面：在 iOS 和 Android 上，內容跨越多個欄和列的 Grid](../images/span-columns-rows.png "內容跨越欄和列的 Grid")](../images/span-columns-rows-large.png#lightbox "內容跨越欄和列的 Grid")
+
+您也會使用[適用於 Xamarin.Forms 的 XAML 熱重新載入](~/xamarin-forms/xaml/hot-reload.md)查看 UI 變更，而不需要重建您的應用程式。
