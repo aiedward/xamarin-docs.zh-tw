@@ -8,12 +8,12 @@ ms.date: 08/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9c21e4c746224902b4dcc317b53d751d33c45df1
-ms.sourcegitcommit: 86663f94f8eddb808eb4504cd32ddaf217b6406c
+ms.openlocfilehash: cb172ff7d86229d4ee0cebc2e3ea6bc326e7fa29
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98166663"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758028"
 ---
 # <a name="platform-support"></a>平台支援
 
@@ -49,7 +49,7 @@ Xamarin.Essentials 一律會嘗試將功能帶入每個平臺，但有時根據�
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [加速計](accelerometer.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") | ![不支援 macOS](~/media/shared/no.png "不支援 macOS") |
 | [應用程式動作](app-actions.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") | ![不支援 macOS](~/media/shared/no.png "不支援 macOS") |
-| [應用程式資訊](app-information.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![支援 tvOS](~/media/shared/yes.png "支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") | ![支援 macOS](~/media/shared/yes.png "支援 macOS") |
+| [應用程式資訊](app-information.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![支援 tvOS](~/media/shared/yes.png "支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") | ![支援 macOS](~/media/shared/yes.png "支援 macOS") |
 | [應用程式主題](app-theme.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") | ![支援 macOS](~/media/shared/yes.png "支援 macOS") |
 | [Barometer](barometer.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援 watchOS](~/media/shared/yes.png "支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援 Tizen](~/media/shared/yes.png "支援 Tizen") | ![不支援 macOS](~/media/shared/no.png "不支援 macOS") |
 | [電池](battery.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援 iOS](~/media/shared/yes.png "支援 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![watchOS 有限支援](~/media/shared/warn.png "watchOS 有限支援") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![Tizen 有限支援](~/media/shared/warn.png "Tizen 有限支援") | ![支援 macOS](~/media/shared/yes.png "支援 macOS") |

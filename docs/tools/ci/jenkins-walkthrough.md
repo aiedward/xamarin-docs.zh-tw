@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 0ce1d4d0b74330b623b6d933e385222a71a38ec4
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: eb792f7b2e24e5a3a25fd48ed0ec60cbaceea107
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91458156"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758119"
 ---
 # <a name="using-jenkins-with-xamarin"></a>搭配 Xamarin 使用 Jenkins
 
@@ -23,7 +23,7 @@ _本指南說明如何將 Jenkins 設定為連續整合伺服器，並自動編�
 
 設定 Jenkins 並安裝任何必要的外掛程式之後，我們會建立一或多個作業來編譯 Xamarin. Android 和 Xamarin. iOS 專案。 作業是執行一些工作所需的步驟和元資料集合。 作業通常包含下列各項：
 
-- **原始程式碼管理 (SCM) ** –這是 Jenkins 設定檔中的中繼資料專案，其中包含如何連線至原始程式碼控制和要取出哪些檔案的資訊。
+- **原始程式碼管理 (SCM)** –這是 Jenkins 設定檔中的中繼資料專案，其中包含如何連線至原始程式碼控制和要取出哪些檔案的資訊。
 - **觸發** 程式–觸發程式可用來根據特定動作啟動作業，例如當開發人員認可原始程式碼存放庫的變更時。
 - **組建指示** –這是外掛程式或腳本，會編譯原始程式碼並產生可安裝在行動裝置上的二進位檔。
 - **選擇性的組建動作** –這可能包括執行單元測試、在程式碼上執行靜態分析、簽署程式碼，或啟動另一個工作來執行其他組建相關工作。
@@ -81,15 +81,15 @@ Jenkins 完成後，應用程式會顯示另一個對話方塊，詢問您是否
 
 如果需要自訂 Jenkins，請按一下 [ **變更預設值** ] 按鈕。 這會顯示兩個連續的對話：一個要求 JAVA 命令列參數，另一個則要求 Jenkins 命令列參數。 以下兩個螢幕擷取畫面顯示這兩個對話方塊：
 
-[![此螢幕擷取畫面顯示對話方塊](jenkins-walkthrough-images/image6.png)](jenkins-walkthrough-images/image6.png#lightbox)
+[![此螢幕擷取畫面顯示要求 JAVA 命令列參數的對話方塊。](jenkins-walkthrough-images/image6.png)](jenkins-walkthrough-images/image6.png#lightbox)
 
-[![此螢幕擷取畫面顯示對話方塊](jenkins-walkthrough-images/image7.png)](jenkins-walkthrough-images/image7.png#lightbox)
+[![此螢幕擷取畫面顯示要求 Jenkins 命令列參數的對話方塊。](jenkins-walkthrough-images/image7.png)](jenkins-walkthrough-images/image7.png#lightbox)
 
 Jenkins 執行之後，您可能會想要將它設定為登入專案，以便每次使用者登入電腦時都會啟動。 若要這樣做，您可以用滑鼠右鍵按一下 Dock 中的 Jenkins 圖示，然後選擇 [選項]， **> 在登入時開啟**]，如下列螢幕擷取畫面所示：
 
 [![若要這樣做，您可以用滑鼠右鍵按一下 Dock 中的 Jenkins 圖示，然後選擇 [登入時 OptionsOpen]，如下列螢幕擷取畫面所示](jenkins-walkthrough-images/image8.png)](jenkins-walkthrough-images/image8.png#lightbox)
 
-這會導致 Jenkins 在使用者每次登入時自動啟動，而不是在電腦啟動時自動啟動。 您可以指定 OS X 將用來在開機時自動登入的使用者帳戶。 開啟 [ **系統偏好**設定]，然後選取 [ **使用者 & 群組** ] 圖示，如下列螢幕擷取畫面所示：
+這會導致 Jenkins 在使用者每次登入時自動啟動，而不是在電腦啟動時自動啟動。 您可以指定 OS X 將用來在開機時自動登入的使用者帳戶。 開啟 [ **系統偏好** 設定]，然後選取 [ **使用者 & 群組** ] 圖示，如下列螢幕擷取畫面所示：
 
 [![開啟 [系統偏好設定]，然後選取 [使用者群組] 圖示，如下列螢幕擷取畫面所示](jenkins-walkthrough-images/image9.png)](jenkins-walkthrough-images/image9.png#lightbox)
 
@@ -133,7 +133,7 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
 
  [![在 [設定系統 Jenkins] 頁面上向下移動，直到出現 [加入 MSBuild] 按鈕為止](jenkins-walkthrough-images/image15.png)](jenkins-walkthrough-images/image15.png#lightbox)
 
-按一下這個按鈕，然後在出現的表單上填入**MSBuild**欄位的**名稱**和**路徑**。 **Msbuild**安裝的名稱應該有意義，而**msbuild 的路徑**應該是的路徑 `xbuild` ，通常是 **/Library/Frameworks/Mono.framework/Commands/xbuild**。 在儲存變更之後，按一下頁面底部的 [儲存] 或 [套用] 按鈕，Jenkins 就能用 `xbuild` 來編譯您的解決方案。
+按一下這個按鈕，然後在出現的表單上填入 **MSBuild** 欄位的 **名稱** 和 **路徑**。 **Msbuild** 安裝的名稱應該有意義，而 **msbuild 的路徑** 應該是的路徑 `xbuild` ，通常是 **/Library/Frameworks/Mono.framework/Commands/xbuild**。 在儲存變更之後，按一下頁面底部的 [儲存] 或 [套用] 按鈕，Jenkins 就能用 `xbuild` 來編譯您的解決方案。
 
 #### <a name="configuring-the-tfs-plugin"></a>設定 TFS 外掛程式
 
@@ -167,7 +167,7 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
 
 第一次安裝時，Jenkins 會停用安全性，讓任何使用者都能以匿名方式設定和執行任何種類的工作。 本節說明如何使用 Jenkins 使用者資料庫來設定驗證和授權，以設定安全性。
 
-您可以藉由選取 **Jenkins > 管理 Jenkins > 設定全域安全性**來找到安全性設定，如下列螢幕擷取畫面所示：
+您可以藉由選取 **Jenkins > 管理 Jenkins > 設定全域安全性** 來找到安全性設定，如下列螢幕擷取畫面所示：
 
 [![您可以藉由選取 [Jenkins]/[管理 Jenkins/設定全域安全性] 來找到安全性設定](jenkins-walkthrough-images/image18.png)](jenkins-walkthrough-images/image18.png#lightbox)
 
@@ -175,7 +175,7 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
 
 [![在 [設定全域安全性] 頁面上，核取 [啟用安全性] 核取方塊和 [存取控制] 表單應該會出現，類似于下列螢幕擷取畫面](jenkins-walkthrough-images/image19.png)](jenkins-walkthrough-images/image19.png#lightbox)
 
-在 [**安全性領域] 區段**中，切換**Jenkins [自己的使用者資料庫**] 的選項按鈕，並確定也已核取 [**允許使用者註冊**]，如下列螢幕擷取畫面所示：
+在 [**安全性領域] 區段** 中，切換 **Jenkins [自己的使用者資料庫**] 的選項按鈕，並確定也已核取 [**允許使用者註冊**]，如下列螢幕擷取畫面所示：
 
 [![在 [安全性領域] 區段中，切換 Jenkins 專屬使用者資料庫的選項按鈕，並確定也已核取 [允許使用者註冊]。](jenkins-walkthrough-images/image20.png)](jenkins-walkthrough-images/image20.png#lightbox)
 
@@ -272,7 +272,7 @@ Jenkins 支援現成的 Git –不需要額外的外掛程式。 若要使用 Gi
 
 #### <a name="location-of-build-artifacts"></a>組建成品的位置
 
-Jenkins 會將整個原始程式碼捕獲到稱為 *工作區*的特殊資料夾中。 您可以在下列位置的資料夾中找到這個目錄：
+Jenkins 會將整個原始程式碼捕獲到稱為 *工作區* 的特殊資料夾中。 您可以在下列位置的資料夾中找到這個目錄：
 
 ```
 ~/.jenkins/jobs/[JOB NAME]/workspace
@@ -280,13 +280,13 @@ Jenkins 會將整個原始程式碼捕獲到稱為 *工作區*的特殊資料夾
 
 工作區的路徑將會儲存在名為的環境變數中 `$WORKSPACE` 。
 
-您可以流覽至作業的登陸頁面，然後按一下左側功能表中的 [ **工作區** ] 連結，以流覽 Jenkins 中的工作區資料夾。 下列螢幕擷取畫面顯示名為 **HelloWorld**之作業的工作區範例：
+您可以流覽至作業的登陸頁面，然後按一下左側功能表中的 [ **工作區** ] 連結，以流覽 Jenkins 中的工作區資料夾。 下列螢幕擷取畫面顯示名為 **HelloWorld** 之作業的工作區範例：
 
 ![此螢幕擷取畫面顯示名為 HelloWorld 之工作的工作區範例](jenkins-walkthrough-images/image32.png)
 
 ### <a name="build-triggers"></a>組建觸發程式
 
-有幾個不同的策略可在 Jenkins 中起始組建，這些都稱為「 *建立觸發*程式」。 組建觸發程式可協助 Jenkins 決定何時啟動作業並建立專案。 有兩個常見的組建觸發程式：
+有幾個不同的策略可在 Jenkins 中起始組建，這些都稱為「 *建立觸發* 程式」。 組建觸發程式可協助 Jenkins 決定何時啟動作業並建立專案。 有兩個常見的組建觸發程式：
 
 - **定期建立** ：此觸發程式會導致 Jenkins 依指定的間隔啟動作業，例如每隔兩個小時，或在工作日午夜。 無論原始程式碼存放庫中是否有任何變更，組建都會啟動。
 - **輪詢 SCM** –此觸發程式會定期輪詢原始程式碼控制。 如果任何變更已認可至原始程式碼存放庫，Jenkins 將會啟動新的組建。
@@ -323,7 +323,7 @@ Jenkins 會將整個原始程式碼捕獲到稱為 *工作區*的特殊資料夾
 
 ![將組建步驟新增至專案之後，請填入顯示的表單欄位](jenkins-walkthrough-images/image37.png)
 
-此組建步驟將會 `xbuild` 在 **$WORKSPACE** 資料夾中執行。 MSBuild 組建檔案會設定為 **Xamarin** 檔案。 **命令列引數**會指定目標**PackageForAndroid**的發行組建。 此步驟的產品將會是下列位置的 APK：
+此組建步驟將會 `xbuild` 在 **$WORKSPACE** 資料夾中執行。 MSBuild 組建檔案會設定為 **Xamarin** 檔案。 **命令列引數** 會指定目標 **PackageForAndroid** 的發行組建。 此步驟的產品將會是下列位置的 APK：
 
 ```
 $WORKSPACE/[PROJECT NAME]/bin/Release
@@ -389,7 +389,7 @@ zipalign -f -v 4 $SIGNED_APK $FINAL_APK
 
 您可以使用 shell 命令將自動化測試提交到測試雲端。 如需在 Xamarin Test Cloud 中設定測試回合的詳細資訊，請參閱 [準備 xamarin. Android 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest) 和 [準備 Xamarin iOS 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 在本指南中，我們引進了 Jenkins 做為 macOS 上的組建伺服器，並將其設定為可編譯和準備 Xamarin 行動應用程式以供發行。 我們已在 macOS 電腦上安裝 Jenkins，以及數個外掛程式來支援組建程式。 我們已建立並設定將從 TFS 或 Git 提取程式碼的作業，然後將該程式碼編譯成發行就緒的應用程式。 我們也探討了兩種不同的方式來排程應執行工作的時間。
 

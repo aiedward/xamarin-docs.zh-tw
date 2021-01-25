@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: c607e4668e4754edaec50a4c8b24776c7bb5844e
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 884b14cdb268fe417388a9007bc1c8990114f7e7
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430780"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758132"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin 中的功能表
 
@@ -23,10 +23,10 @@ _本文說明如何在 Xamarin 應用程式中使用功能表。它描述如何�
 功能表是 Mac 應用程式使用者體驗不可或缺的一部分，而且通常會出現在使用者介面的各個部分：
 
 - **應用程式的功能表列** -這是在每個 Mac 應用程式的畫面頂端顯示的主功能表。
-- 內容功能表-當使用者以滑鼠右鍵按一下或按一下視窗中的專案時，就會出現這些**功能表**。
+- 內容功能表-當使用者以滑鼠右鍵按一下或按一下視窗中的專案時，就會出現這些 **功能表**。
 - **狀態列** -這是顯示在畫面頂端之 [應用程式] 功能表列最右邊的區域 (在功能表列時鐘的左邊) ，而將專案新增至左方則擴大至左方。
-- 停**駐功能表**-dock 中的每個應用程式的功能表，當使用者以滑鼠右鍵按一下或控制應用程式的圖示，或當使用者按下滑鼠按鍵時，或當使用者按下滑鼠按鍵時，就會顯示該應用程式。
-- 快顯**按鈕和下拉式清單**-彈出按鈕會顯示選取的專案，並顯示使用者按下時要選取的選項清單。 下拉式清單是一種彈出按鈕，通常用來選取目前工作內容特有的命令。 兩者都可以出現在視窗中的任何位置。
+- 停 **駐功能表**-dock 中的每個應用程式的功能表，當使用者以滑鼠右鍵按一下或控制應用程式的圖示，或當使用者按下滑鼠按鍵時，或當使用者按下滑鼠按鍵時，就會顯示該應用程式。
+- 快顯 **按鈕和下拉式清單**-彈出按鈕會顯示選取的專案，並顯示使用者按下時要選取的選項清單。 下拉式清單是一種彈出按鈕，通常用來選取目前工作內容特有的命令。 兩者都可以出現在視窗中的任何位置。
 
 [![範例功能表](menu-images/intro01.png "範例功能表")](menu-images/intro01-large.png#lightbox)
 
@@ -40,47 +40,47 @@ _本文說明如何在 Xamarin 應用程式中使用功能表。它描述如何�
 
 [![功能表列](menu-images/appmenu01.png "功能表列")](menu-images/appmenu01-large.png#lightbox)
 
-此功能表列上的專案會根據目前的內容或應用程式的狀態及其使用者介面，在任何指定的時間啟用或停用。 例如：如果使用者選取文字欄位，則會啟用 [ **編輯** ] 功能表上的專案，例如 **複製** 和 **剪**下。
+此功能表列上的專案會根據目前的內容或應用程式的狀態及其使用者介面，在任何指定的時間啟用或停用。 例如：如果使用者選取文字欄位，則會啟用 [ **編輯** ] 功能表上的專案，例如 **複製** 和 **剪** 下。
 
 根據 Apple 和預設，所有 macOS 應用程式都有一組標準的功能表和功能表項目，會出現在應用程式的功能表列中：
 
 - **Apple 功能表** -此功能表可讓您存取使用者隨時可用的整個系統，無論應用程式是在哪一個應用程式上執行。 這些專案無法由開發人員修改。
 - **應用程式功能表** -此功能表以粗體顯示應用程式的名稱，並可協助使用者識別目前正在執行的應用程式。 它包含適用于整個應用程式的專案，而不是指定的檔或進程，例如結束應用程式。
-- [檔案] 功能表-用來建立、開啟或儲存應用程式所使用**檔**的專案。 如果您的應用程式不是以檔為基礎，則可以重新命名或移除此功能表。
-- [**編輯] 功能表**-保留**剪**下、**複製**和**貼**上等命令，用來編輯或修改應用程式使用者介面中的元素。
+- [檔案] 功能表-用來建立、開啟或儲存應用程式所使用 **檔** 的專案。 如果您的應用程式不是以檔為基礎，則可以重新命名或移除此功能表。
+- [**編輯] 功能表**-保留 **剪** 下、**複製** 和 **貼** 上等命令，用來編輯或修改應用程式使用者介面中的元素。
 - **格式功能表** -如果應用程式使用文字，此功能表會保存命令以調整該文字的格式。
 - [ **View] 功能表**-保存會影響內容顯示方式的命令 (在應用程式的使用者介面中看到) 。
 - **應用程式特定功能表** -這些是您的應用程式特定的功能表 (例如網頁瀏覽器) 的書簽功能表。 它們應該會出現在橫條的 [ **View** ] 和 [ **Window]** 功能表之間。
 - **視窗功能表** -包含在應用程式中使用 windows 的命令，以及目前開啟視窗的清單。
-- 說明**功能表**-如果您的應用程式提供螢幕上的 [說明]，[說明] 功能表應該是列上最右邊的功能表。 
+- 說明 **功能表**-如果您的應用程式提供螢幕上的 [說明]，[說明] 功能表應該是列上最右邊的功能表。 
 
 如需應用程式功能表列和標準功能表和功能表項目的詳細資訊，請參閱 Apple 的 [人類介面指導方針](https://developer.apple.com/macos/human-interface-guidelines/menus/menu-anatomy/)。
 
 ### <a name="the-default-application-menu-bar"></a>預設應用程式功能表列
 
-每當您建立新的 Xamarin. Mac 專案時，您會自動取得標準的預設應用程式功能表列，其中具有 macOS 應用程式通常會 (，如) 上一節所討論的一般專案。 您應用程式的預設功能表列是在 **主要** 的分鏡腳本檔案中定義 (以及 **Solution Pad**中專案下的其餘應用程式 UI) ：  
+每當您建立新的 Xamarin. Mac 專案時，您會自動取得標準的預設應用程式功能表列，其中具有 macOS 應用程式通常會 (，如) 上一節所討論的一般專案。 您應用程式的預設功能表列是在 **主要** 的分鏡腳本檔案中定義 (以及 **Solution Pad** 中專案下的其餘應用程式 UI) ：  
 
 ![選取主要分鏡腳本](menu-images/appmenu02.png "選取主要分鏡腳本")
 
 按兩下 **主要** 的分鏡腳本檔案，在 Xcode 的 Interface Builder 中開啟以進行編輯，您將會看到功能表編輯器介面：
 
-[![在 Xcode 中編輯 UI](menu-images/defaultbar01.png "在 Xcode 中編輯 UI")](menu-images/defaultbar01-large.png#lightbox)
+[![編輯 Xcode 中的 UI，並顯示主要的點分鏡腳本。](menu-images/defaultbar01.png "在 Xcode 中編輯 UI")](menu-images/defaultbar01-large.png#lightbox)
 
-在這裡，我們可以**按一下 [檔案] 功能表中**的 [**開啟**] 功能表項目等專案，然後在 [屬性] 偵測**器**中編輯或調整其屬性：
+在這裡，我們可以 **按一下 [檔案] 功能表中** 的 [**開啟**] 功能表項目等專案，然後在 [屬性] 偵測 **器** 中編輯或調整其屬性：
 
 [![編輯功能表的屬性](menu-images/defaultbar02.png "編輯功能表的屬性")](menu-images/defaultbar02-large.png#lightbox)
 
 我們將在本文稍後加入、編輯和刪除功能表和專案。 現在我們只想要查看預設可用的功能表和功能表項目，以及它們如何透過一組預先定義的輸出和動作自動公開給程式碼 (如需詳細資訊，請參閱我們的「 [輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions) 」檔) 。
 
-例如，如果我們按一下 [**開啟**] 功能表項目的**連接偵測器**，我們可以看到它會自動連接到 `openDocument:` 動作： 
+例如，如果我們按一下 [**開啟**] 功能表項目的 **連接偵測器**，我們可以看到它會自動連接到 `openDocument:` 動作： 
 
 [![查看附加的動作](menu-images/defaultbar03.png "查看附加的動作")](menu-images/defaultbar03-large.png#lightbox)
 
-如果您選取**介面**階層中的**第一個回應**程式，並在**連接偵測器**中向下移動，您將會看到 [ `openDocument:` **開啟**] 功能表項目附加的動作定義 (以及應用程式的數個其他預設動作，而不會自動連接到控制項) ：
+如果您選取 **介面** 階層中的 **第一個回應** 程式，並在 **連接偵測器** 中向下移動，您將會看到 [ `openDocument:` **開啟**] 功能表項目附加的動作定義 (以及應用程式的數個其他預設動作，而不會自動連接到控制項) ：
 
 [![查看所有附加的動作](menu-images/defaultbar04.png "查看所有附加的動作")](menu-images/defaultbar04-large.png#lightbox) 
 
-這為什麼很重要？ 在下一節中，會看到這些自動定義的動作如何與其他 Cocoa 使用者介面專案搭配使用，以自動啟用和停用功能表項目，以及提供專案的內建功能。
+為什麼這很重要？ 在下一節中，會看到這些自動定義的動作如何與其他 Cocoa 使用者介面專案搭配使用，以自動啟用和停用功能表項目，以及提供專案的內建功能。
 
 稍後我們將使用這些內建動作來啟用和停用程式碼中的專案，並在選取時提供自己的功能。
 
@@ -88,15 +88,15 @@ _本文說明如何在 Xamarin 應用程式中使用功能表。它描述如何�
 
 ### <a name="built-in-menu-functionality"></a>內建功能表功能
 
-如果您是在新增任何 UI 專案或程式碼之前，先執行新建立的 Xamarin 應用程式，您會發現某些專案會自動為您進行連接並啟用， (具有自動內建) 的完整功能，例如**應用程式**功能表中的**Quit**專案：
+如果您是在新增任何 UI 專案或程式碼之前，先執行新建立的 Xamarin 應用程式，您會發現某些專案會自動為您進行連接並啟用， (具有自動內建) 的完整功能，例如 **應用程式** 功能表中的 **Quit** 專案：
 
 ![啟用的功能表項目](menu-images/appmenu03.png "啟用的功能表項目")
 
-其他功能表項目（例如 **剪**下、 **複製**和 **貼** 上）則不會：
+其他功能表項目（例如 **剪** 下、 **複製** 和 **貼** 上）則不會：
 
 ![停用的功能表項目](menu-images/appmenu04.png "停用的功能表項目")
 
-讓我們停止應用程式，然後按兩下**Solution Pad**中的**主要**分鏡腳本檔案，在 Xcode 的 Interface Builder 中開啟它以進行編輯。 接下來，將連結**庫**中的**文字視圖**拖曳至**介面編輯器**中視窗的視圖控制器：
+讓我們停止應用程式，然後按兩下 **Solution Pad** 中的 **主要** 分鏡腳本檔案，在 Xcode 的 Interface Builder 中開啟它以進行編輯。 接下來，將連結 **庫** 中的 **文字視圖** 拖曳至 **介面編輯器** 中視窗的視圖控制器：
 
 [![從文件庫中選取文字視圖](menu-images/appmenu05.png "從文件庫中選取文字視圖")](menu-images/appmenu05-large.png#lightbox)
 
@@ -108,7 +108,7 @@ _本文說明如何在 Xamarin 應用程式中使用功能表。它描述如何�
 
 ![功能表項目會自動啟用/停用](menu-images/appmenu07.png "功能表項目會自動啟用/停用")
 
-請注意 **剪**下、 **複製**和 **貼** 上專案如何自動啟用並完全正常運作，而不需要撰寫任何一行程式碼。 
+請注意 **剪** 下、 **複製** 和 **貼** 上專案如何自動啟用並完全正常運作，而不需要撰寫任何一行程式碼。 
 
 這其中發生了什麼狀況？ 請記住，內建的預先定義動作會連結至預設功能表項目 (如上所示) ，大部分屬於 macOS 一部分的 Cocoa 使用者介面元素，都有內建的特定動作 (，例如 `copy:`) 。 因此，當它們新增至視窗、使用中和選取時，會自動啟用對應的功能表項目或附加至該動作的專案。 如果使用者選取該功能表項目，就會呼叫並執行內建在 UI 元素中的功能，而不需要開發人員介入。
 
@@ -170,7 +170,7 @@ public bool ValidateMenuItem (NSMenuItem item) {
 
 例如，假設我們希望使用者能夠使用 [檔案 **] 功能表中的**[**開啟**] 專案來選取資料夾。 由於我們想要這是應用程式範圍的函式，而不限於提供的視窗或 UI 元素，因此我們將新增程式碼來處理應用程式委派。
 
-在 [ **Solution Pad**中，按兩下檔案 `AppDelegate.CS` 以開啟它進行編輯：
+在 [ **Solution Pad** 中，按兩下檔案 `AppDelegate.CS` 以開啟它進行編輯：
 
 ![選取應用程式委派](menu-images/appmenu08.png "選取應用程式委派")
 
@@ -435,7 +435,7 @@ public void defineKeyword (NSObject sender) {
 }
 ```
 
-接下來，按兩下 **Solution Pad** 中的應用程式分鏡腳本檔案，在 Xcode 的 Interface Builder 中開啟它以進行編輯。 選取**應用程式場景**底下的**第一個回應**程式，然後切換至 [屬性] 偵測**器**：
+接下來，按兩下 **Solution Pad** 中的應用程式分鏡腳本檔案，在 Xcode 的 Interface Builder 中開啟它以進行編輯。 選取 **應用程式場景** 底下的 **第一個回應** 程式，然後切換至 [屬性] 偵測 **器**：
 
 ![屬性偵測器](menu-images/action01.png "屬性偵測器")
 
@@ -447,7 +447,7 @@ public void defineKeyword (NSObject sender) {
 
 ![編輯動作名稱](menu-images/action03.png "編輯動作名稱")
 
-從功能表項目中，按一下並拖曳至**應用程式場景**底下的**第一個回應**程式。 從彈出列表中，選取您剛才建立的新動作 (`defineKeyword:` 在此範例中) ：
+從功能表項目中，按一下並拖曳至 **應用程式場景** 底下的 **第一個回應** 程式。 從彈出列表中，選取您剛才建立的新動作 (`defineKeyword:` 在此範例中) ：
 
 ![附加動作](menu-images/action04.png "附加動作")
 
@@ -463,9 +463,9 @@ public void defineKeyword (NSObject sender) {
 
 在本節中，我們將探討如何移除不需要的功能表項目、重新組織功能表，以及加入新的功能表、功能表項目和動作。
 
-按兩下**Solution Pad**中的**主要**分鏡腳本檔案，開啟它進行編輯：
+按兩下 **Solution Pad** 中的 **主要** 分鏡腳本檔案，開啟它進行編輯：
 
-[![在 Xcode 中編輯 UI](menu-images/maint01.png "在 Xcode 中編輯 UI")](menu-images/maint01-large.png#lightbox)
+[![按兩下分鏡腳本檔案以編輯 Xcode 中的 UI。](menu-images/maint01.png "在 Xcode 中編輯 UI")](menu-images/maint01-large.png#lightbox)
 
 針對我們的特定 Xamarin For Mac 應用程式，我們不會使用預設的 [ **View** ] 功能表，因此我們將會移除它。 在 [ **介面** 階層] 中，選取主功能表列中的 [ **View** ] 功能表項目：
 
@@ -483,7 +483,7 @@ public void defineKeyword (NSObject sender) {
 
 [![新位置中的專案](menu-images/maint05.png "新位置中的專案")](menu-images/maint05-large.png#lightbox)
 
-接下來，讓我們從 [**格式**] 功能表下拖曳**文字**子功能表，然後將它放在 [**格式**] 和 [**視窗]** 功能表之間的主功能表列上：
+接下來，讓我們從 [**格式**] 功能表下拖曳 **文字** 子功能表，然後將它放在 [**格式**] 和 [**視窗]** 功能表之間的主功能表列上：
 
 [![文字功能表](menu-images/maint06.png "文字功能表")](menu-images/maint06-large.png#lightbox)
 
@@ -503,16 +503,16 @@ public void defineKeyword (NSObject sender) {
 2. 將專案重新命名為 "片語"： 
 
     [![設定功能表名稱](menu-images/maint09.png "設定功能表名稱")](menu-images/maint09-large.png#lightbox)
-3. 接著，從程式庫偵測**器**拖曳**功能表**： 
+3. 接著，從程式庫偵測 **器** 拖曳 **功能表**： 
 
     ![從文件庫選取功能表](menu-images/maint11.png "從文件庫選取功能表")
-4. 在剛才建立的新**功能表項目****上的**下拉式功能表中，將其名稱變更為「片語」： 
+4. 在剛才建立的新 **功能表項目****上的** 下拉式功能表中，將其名稱變更為「片語」： 
 
     [![編輯功能表名稱](menu-images/maint12.png "編輯功能表名稱")](menu-images/maint12-large.png#lightbox)
 5. 現在讓我們將三個預設 **功能表項目** 重新命名為「位址」、「日期」和「問候語」： 
 
     [![片語功能表](menu-images/maint13.png "片語功能表")](menu-images/maint13-large.png#lightbox)
-6. 讓我們加入第四個**功能表項目**，方法是從連結**庫偵測器**拖曳**功能表項目**，然後呼叫它「簽章」： 
+6. 讓我們加入第四個 **功能表項目**，方法是從連結 **庫偵測器** 拖曳 **功能表項目**，然後呼叫它「簽章」： 
 
     [![編輯功能表項目名稱](menu-images/maint14.png "編輯功能表項目名稱")](menu-images/maint14-large.png#lightbox)
 7. 將變更儲存至功能表列。
@@ -529,13 +529,13 @@ public void defineKeyword (NSObject sender) {
     [![選取動作類型](menu-images/maint17.png "選取動作類型")](menu-images/maint17-large.png#lightbox)
 3. 輸入 "phraseAddress" 的 **名稱** ，然後按 [連線 **]** 按鈕以建立新的動作： 
 
-    [![設定動作](menu-images/maint18.png "設定動作")](menu-images/maint18-large.png#lightbox)
+    [![輸入名稱來設定動作。](menu-images/maint18.png "設定動作")](menu-images/maint18-large.png#lightbox)
 4. 針對 [ **日期**]、[ **問候語** **] 和 [** 簽章] 功能表項目重複上述步驟： 
 
     [![完成的動作](menu-images/maint19.png "完成的動作")](menu-images/maint19-large.png#lightbox)
 5. 將變更儲存至功能表列。
 
-接下來，我們需要建立文字視圖的輸出，讓我們可以從程式碼調整其內容。 在 [**助理編輯器**] 中選取**ViewController** ，然後建立名為的新輸出 `documentText` ：
+接下來，我們需要建立文字視圖的輸出，讓我們可以從程式碼調整其內容。 在 [**助理編輯器**] 中選取 **ViewController** ，然後建立名為的新輸出 `documentText` ：
 
 [![建立輸出](menu-images/maint20.png "建立輸出")](menu-images/maint20-large.png#lightbox)
 
@@ -893,24 +893,24 @@ public void UnpopulateFormattingMenu(NSMenu menu) {
 
 當使用者在視窗中以滑鼠右鍵按一下或控制專案時，就會顯示內容功能表。 根據預設，內建在 macOS 中的幾個 UI 元素已經有附加的內容功能表 (例如文字視圖) 。 不過，有時候我們會想要為已新增至視窗的 UI 元素，建立自己的自訂內容功能表。
 
-讓我們在 Xcode 中編輯我們的**主要**分鏡腳本檔案，並將**視窗**視窗新增至我們的設計，在身分識別偵測**器**中將其**類別**設定為 "NSPanel"，並將新的**助理**專案加入至**視窗**功能表，並使用**顯示 Segue**將它附加至新視窗：
+讓我們在 Xcode 中編輯我們的 **主要** 分鏡腳本檔案，並將 **視窗** 視窗新增至我們的設計，在身分識別偵測 **器** 中將其 **類別** 設定為 "NSPanel"，並將新的 **助理** 專案加入至 **視窗** 功能表，並使用 **顯示 Segue** 將它附加至新視窗：
 
-[![設定 segue 類型](menu-images/context01.png "設定 segue 類型")](menu-images/context01-large.png#lightbox)
+[![在主要點分鏡腳本檔案中設定 segue 類型。](menu-images/context01.png "設定 segue 類型")](menu-images/context01-large.png#lightbox)
 
 讓我們執行下列作業：
 
 1. 將 **標籤** 從連結 **庫偵測器** 拖曳至 **面板** 視窗，並將其文字設定為 "Property"： 
 
     [![編輯標籤的值](menu-images/context03.png "編輯標籤的值")](menu-images/context03-large.png#lightbox)
-2. 接下來，從 [連結**庫偵測器**] 將**功能表**拖曳至 [view] 階層中的 view Controller，並重新命名三個預設功能表項目**檔**、**文字**和**字型**：
+2. 接下來，從 [連結 **庫偵測器**] 將 **功能表** 拖曳至 [view] 階層中的 view Controller，並重新命名三個預設功能表項目 **檔**、**文字** 和 **字型**：
 
     [![必要的功能表項目](menu-images/context02.png "必要的功能表項目")](menu-images/context02-large.png#lightbox)
-3. 現在將控制項從 **屬性標籤** 拖曳到 **功能表**上：
+3. 現在將控制項從 **屬性標籤** 拖曳到 **功能表** 上：
 
     [![拖曳以建立 segue](menu-images/context04.png "拖曳以建立 segue")](menu-images/context04-large.png#lightbox)
 4. 從快顯視窗中選取 [ **功能表**]： 
 
-    ![設定 segue 類型](menu-images/context05.png "設定 segue 類型")
+    ![從標籤內容功能表中的 [輸出] 功能表中選取功能表，以設定 segue 類型。](menu-images/context05.png "設定 segue 類型")
 5. 從身分 **識別偵測器**，將 View Controller 的類別設定為 "PanelViewController"： 
 
     [![設定 segue 類別](menu-images/context10.png "設定 segue 類別")](menu-images/context10-large.png#lightbox)
@@ -918,10 +918,10 @@ public void UnpopulateFormattingMenu(NSMenu menu) {
 7. 切換至 [ **助理編輯器** ]，然後選取 **PanelViewController .h** 檔案。
 8. 建立 [ **檔** ] 功能表項目的動作，稱為 `propertyDocument` ： 
 
-    [![設定動作](menu-images/context06.png "設定動作")](menu-images/context06-large.png#lightbox)
+    [![設定名為 propertyDocument 的動作。](menu-images/context06.png "設定動作")](menu-images/context06-large.png#lightbox)
 9. 針對其餘的功能表項目重複建立動作： 
 
-    [![必要的動作](menu-images/context07.png "必要的動作")](menu-images/context07-large.png#lightbox)
+    [![其餘功能表項目的重複動作。](menu-images/context07.png "必要的動作")](menu-images/context07-large.png#lightbox)
 10. 最後，針對名為的 **屬性標籤** 建立輸出 `propertyLabel` ： 
 
     [![設定輸出](menu-images/context08.png "設定輸出")](menu-images/context08-large.png#lightbox)
@@ -1008,19 +1008,19 @@ public override void DidFinishLaunching (NSNotification notification)
 
 藉由執行下列動作，讓我們為應用程式建立自訂 dock 功能表：
 
-1. 在 Visual Studio for Mac 中，以滑鼠右鍵按一下應用程式的專案，然後選取 [**加入**  >  **新**檔案]。從 [新增檔案] 對話方塊中，選取 [ **Xamarin**  >  **空白介面定義**]、使用 "DockMenu" 作為**名稱**，然後按一下 [**新增**] 按鈕以建立新的**DockMenu xib**檔案：
+1. 在 Visual Studio for Mac 中，以滑鼠右鍵按一下應用程式的專案，然後選取 [**加入**  >  **新** 檔案]。從 [新增檔案] 對話方塊中，選取 [ **Xamarin**  >  **空白介面定義**]、使用 "DockMenu" 作為 **名稱**，然後按一下 [**新增**] 按鈕以建立新的 **DockMenu xib** 檔案：
 
     ![加入空的介面定義](menu-images/dock02.png "加入空的介面定義")
-2. 在 [ **Solution Pad**中，按兩下 **DockMenu xib** 檔案，將它開啟以在 Xcode 中編輯。 使用下列專案建立新的 **功能表** ： **Address**、 **Date**、 **問候語**和 **Signature** 
+2. 在 [ **Solution Pad** 中，按兩下 **DockMenu xib** 檔案，將它開啟以在 Xcode 中編輯。 使用下列專案建立新的 **功能表** ： **Address**、 **Date**、 **問候語** 和 **Signature** 
 
     [![配置 UI](menu-images/dock03.png "配置 UI")](menu-images/dock03-large.png#lightbox)
-3. 接下來，讓我們將新的功能表項目連接至先前在 [ [新增]、[編輯] 和 [刪除] 功能表](#Adding,_Editing_and_Deleting_Menus) 一節中為自訂功能表所建立的現有動作。 切換至 [**連接偵測器**]，然後選取**介面**階層中的**第一個回應**程式。 向下滾動並尋找 `phraseAddress:` 動作。 從該動作的圓形將線條拖曳至 [ **位址** ] 功能表項目：
+3. 接下來，讓我們將新的功能表項目連接至先前在 [ [新增]、[編輯] 和 [刪除] 功能表](#Adding,_Editing_and_Deleting_Menus) 一節中為自訂功能表所建立的現有動作。 切換至 [**連接偵測器**]，然後選取 **介面** 階層中的 **第一個回應** 程式。 向下滾動並尋找 `phraseAddress:` 動作。 從該動作的圓形將線條拖曳至 [ **位址** ] 功能表項目：
 
-    [![拖曳以連接動作](menu-images/dock04.png "拖曳以連接動作")](menu-images/dock04-large.png#lightbox)
+    [![將線條拖曳至 [位址] 功能表項目。](menu-images/dock04.png "拖曳以連接動作")](menu-images/dock04-large.png#lightbox)
 4. 針對附加至其對應動作的其他所有功能表項目重複執行： 
 
-    [![必要的動作](menu-images/dock05.png "必要的動作")](menu-images/dock05-large.png#lightbox)
-5. 接下來，在**介面**階層中選取**應用程式**。 在 [ **連接偵測器**] 中，從輸出中的圓形將線條拖曳 `dockMenu` 至剛才建立的功能表：
+    [![針對附加至其對應動作的其他功能表項目重複執行。](menu-images/dock05.png "必要的動作")](menu-images/dock05-large.png#lightbox)
+5. 接下來，在 **介面** 階層中選取 **應用程式**。 在 [ **連接偵測器**] 中，從輸出中的圓形將線條拖曳 `dockMenu` 至剛才建立的功能表：
 
     [![將連接上的線向上拖曳](menu-images/dock06.png "將連接上的線向上拖曳")](menu-images/dock06-large.png#lightbox)
 6. 儲存您的變更並切換回 Visual Studio for Mac，以與 Xcode 同步。
@@ -1048,13 +1048,13 @@ public override void DidFinishLaunching (NSNotification notification)
 
 藉由執行下列動作，讓我們為應用程式建立自訂彈出按鈕：
 
-1. 在 Xcode 中編輯**主要的**分鏡腳本檔案，然後從 [連結**庫偵測器**] 將**彈出按鈕**拖曳至我們在 [內容[功能表](#Contextual_Menus)] 區段中建立的**面板**視窗： 
+1. 在 Xcode 中編輯 **主要的** 分鏡腳本檔案，然後從 [連結 **庫偵測器**] 將 **彈出按鈕** 拖曳至我們在 [內容 [功能表](#Contextual_Menus)] 區段中建立的 **面板** 視窗： 
 
     [![加入快捷方式按鈕](menu-images/popup01.png "加入快捷方式按鈕")](menu-images/popup01-large.png#lightbox)
-2. 新增功能表項目，並將快顯視窗中專案的標題設定為： **Address**、 **Date**、 **問候語**和 **Signature** 
+2. 新增功能表項目，並將快顯視窗中專案的標題設定為： **Address**、 **Date**、 **問候語** 和 **Signature** 
 
     [![設定功能表項目](menu-images/popup02.png "設定功能表項目")](menu-images/popup02-large.png#lightbox)
-3. 接下來，讓我們將新的功能表項目連接到先前在 [ [新增]、[編輯] 和 [刪除] 功能表](#Adding,_Editing_and_Deleting_Menus) 一節中為自訂功能表所建立的現有動作。 切換至 [**連接偵測器**]，然後選取**介面**階層中的**第一個回應**程式。 向下滾動並尋找 `phraseAddress:` 動作。 從該動作的圓形將線條拖曳至 [ **位址** ] 功能表項目： 
+3. 接下來，讓我們將新的功能表項目連接到先前在 [ [新增]、[編輯] 和 [刪除] 功能表](#Adding,_Editing_and_Deleting_Menus) 一節中為自訂功能表所建立的現有動作。 切換至 [**連接偵測器**]，然後選取 **介面** 階層中的 **第一個回應** 程式。 向下滾動並尋找 `phraseAddress:` 動作。 從該動作的圓形將線條拖曳至 [ **位址** ] 功能表項目： 
 
     [![拖曳以連接動作](menu-images/popup03.png "拖曳以連接動作")](menu-images/popup03-large.png#lightbox)
 4. 針對附加至其對應動作的其他所有功能表項目重複執行： 
@@ -1068,7 +1068,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 您可以用與快顯按鈕完全相同的方式來建立和使用下拉式清單。 除了附加至現有的動作之外，您還可以建立自己的自訂動作，就像我們 [在內容功能表](#Contextual_Menus) 區段中的內容功能表一樣。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 本文詳細說明如何在 Xamarin 應用程式中使用功能表和功能表項目。 首先我們會檢查應用程式的功能表列，然後我們探討了如何建立內容功能表，接下來我們檢查了狀態列功能表和自訂 dock 功能表。 最後，我們討論了快顯功能表和下拉式清單。
 

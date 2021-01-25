@@ -10,12 +10,12 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b44a3fa34044327be6a928588397c3371f196336
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 760d6f6e6d57a1ab9a6537e8974e85e26195d8cb
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93371127"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758015"
 ---
 # <a name="no-locxamarinforms-switch"></a>Xamarin.Forms 開關
 
@@ -29,8 +29,8 @@ Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) 控制項是水準切換按�
 
 `Switch`控制項會定義下列屬性：
 
-- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)這是 `boolean` 指出是否開啟的值 `Switch` 。 **on**
-- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是 `Color` ，它會影響在 `Switch` 切換或狀態下呈現的方式 **on** 。
+- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)這是 `boolean` 指出是否開啟的值 `Switch` 。 
+- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是 `Color` ，它會影響在 `Switch` 切換或狀態下呈現的方式。
 - `ThumbColor` 是 `Color` 切換捲動方塊的。
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示 `Switch` 可以設定樣式，也可以是資料系結的目標。
@@ -68,7 +68,7 @@ Switch switch = new Switch { OnColor = Color.Orange, ThumbColor = Color.Green };
 
 下列螢幕擷取畫面顯示在 `Switch` 其 **開啟** 和 **關閉** 切換狀態中的， `OnColor` 並設定和 `ThumbColor` 屬性：
 
-![螢幕擷取畫面： iOS 和 Android 上的開啟和關閉狀態開關](switch-images/switch-states-colors.png "IOS 和 Android 上的交換器")
+![螢幕擷取畫面： iOS 和 Android 上的開啟和關閉狀態切換，色彩已變更。](switch-images/switch-states-colors.png "IOS 和 Android 上的交換器")
 
 ## <a name="respond-to-a-switch-state-change"></a>回應切換狀態變更
 

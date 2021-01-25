@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 35adaf4a5cf9ce103cb36320692ad8307b9d1354
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f2aa56982df0a2ec27b677dbe7d12ec9c3289041
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564117"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758080"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 散發 Xamarin.iOS 應用程式
 
@@ -37,9 +37,14 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 ## <a name="provisioning"></a>佈建
 
-若要使用 TestFlight 測試您的組建，必須利用新的 Beta 權利建立 *App Store 散發設定檔*。 此權利允許透過 TestFlight 進行 Beta 測試，而且任何**新的** App Store 散發設定檔都會自動包含此權利。 您可以依照[建立散發設定檔](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile)指南中的逐步指示，產生新的設定檔。
+若要使用 TestFlight 測試您的組建，必須利用新的 Beta 權利建立 **App Store 散發設定檔**。 此權利允許透過 TestFlight 進行 Beta 測試，而且任何 **新的** App Store 散發設定檔都會自動包含此權利。 您可以依照[建立散發設定檔](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile)指南中的逐步指示，產生新的設定檔。
 
 您可以[在 Xcode 中驗證您的組建](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)時，確認發佈設定檔是否已包含 Beta 權利，如下所示：
+
+1. 封存應用程式之後，在 Mac 組建主機上開啟 XCode
+2. 選取 **視窗 > 召集人** 功能表
+3. 選取 **左側的封存**
+4. 選取您要驗證的封存，然後按一下 [ **驗證** ] 按鈕。
 
 [![將應用程式提交給 Apple](testflight-images/validate-build.png)](testflight-images/validate-build.png#lightbox)
 
@@ -65,9 +70,9 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
     [![選取我的應用程式](testflight-images/my-apps.png)](testflight-images/my-apps.png#lightbox)
 
-3. 在 [我的應用程式]**** 畫面上，按一下畫面左上角的 **+** 按鈕以加入新的應用程式。 如果您有 Mac 和 iOS 開發人員帳戶，系統會提示您在此處選擇新的應用程式類型。
+3. 在 [我的應用程式] 畫面上，按一下畫面左上角的 **+** 按鈕以加入新的應用程式。 如果您有 Mac 和 iOS 開發人員帳戶，系統會提示您在此處選擇新的應用程式類型。
 
-您將會看到 [新 iOS 應用程式]**** 提交視窗，其中必須包含與您應用程式的 Info.plist 完全相同的資訊
+您將會看到 [新 iOS 應用程式] 提交視窗，其中必須包含與您應用程式的 Info.plist 完全相同的資訊
 
 如需有關建立新 iTunes Connect 記錄的詳細資訊，請參閱[建立 iTunes Connect 記錄](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)指南。
 
@@ -78,10 +83,10 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 [ ![ 應用程式的資訊。 plist](testflight-images/infoplist.png)](testflight-images/infoplist.png#lightbox) 
  [ ![ iTunes Connect 上的表單](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
 
-- **名稱**：設定應用程式套件組合時所使用的描述性名稱。 這必須完全符合您 `Info.plist` 中的**應用程式名稱**項目。
+- **名稱**：設定應用程式套件組合時所使用的描述性名稱。 這必須完全符合您 `Info.plist` 中的 **應用程式名稱** 項目。
 - **主要語言**：應用程式內使用的基礎語言。 這通常是您本身所使用的語言。
 - **套件組合識別碼**：列出您開發人員帳戶上建立之所有應用程式識別碼的下拉式功能表。
-  - **套件組合識別碼尾碼**：如果您已選取萬用字元套件組合識別碼 (亦即結尾為 * 的識別碼，如以上範例所示)，螢幕將會出現額外的方塊，提示您輸入套件組合識別碼尾碼。 在該範例中，[套件組合識別碼]**** 為 `mobi.chkn.*`，[尾碼] 則為 **PageView**。 這些在 `Info.plist` 中，就會組成 [套件組合識別碼]****。
+  - **套件組合識別碼尾碼**：如果您已選取萬用字元套件組合識別碼 (亦即結尾為 * 的識別碼，如以上範例所示)，螢幕將會出現額外的方塊，提示您輸入套件組合識別碼尾碼。 在該範例中，[套件組合識別碼] 為 `mobi.chkn.*`，[尾碼] 則為 **PageView**。 這些在 `Info.plist` 中，就會組成 [套件組合識別碼]。
 - **版本**：所上傳之應用程式的版本號碼。 這是由開發人員所選擇。
 - **SKU**：SKU 是應用程式的唯一識別碼，使用者將看不到這個識別碼。 它與產品識別碼類似。 在上述範例中，我已經選擇日期，以及該日期的版本號碼。
 
@@ -97,7 +102,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 ### <a name="create-an-archive"></a>建立封存
 
- 若要在 Visual Studio for Mac 中建置二進位檔，您必須使用 [封存]__ 功能。 以滑鼠右鍵按一下專案，然後選取 [封存以供發行]****，如下所示：
+ 若要在 Visual Studio for Mac 中建置二進位檔，您必須使用 [封存] 功能。 以滑鼠右鍵按一下專案，然後選取 [封存以供發行]，如下所示：
 
  [![選取封存以供發行](testflight-images/new-archive.png)](testflight-images/new-archive.png#lightbox)
 
@@ -105,18 +110,18 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 ### <a name="sign-and-distribute-your-app"></a>簽署並散發應用程式
 
- 建立封存將會自動開啟 [封存檢視]****，顯示依方案分組的所有已封存專案。 若要簽署應用程式並準備散發，請選取 [簽署並散發]****，如下所示：
+ 建立封存將會自動開啟 [封存檢視]，顯示依方案分組的所有已封存專案。 若要簽署應用程式並準備散發，請選取 [簽署並散發]，如下所示：
 
 [![建立封存將會自動開啟封存視圖](testflight-images/archive-view.png)](testflight-images/archive-view.png#lightbox)
 
- 如此將開啟發行精靈。 選取 [App Store]**** 散發通道以建立套件，然後開啟應用程式載入器。 在 [佈建設定檔] 畫面上，選取您的簽署身分識別與佈建設定檔，或以另一個身分識別重新簽署。 確認套件的詳細資料，然後按一下 [發佈]**** 以儲存您的 `.ipa`
+ 如此將開啟發行精靈。 選取 [App Store] 散發通道以建立套件，然後開啟應用程式載入器。 在 [佈建設定檔] 畫面上，選取您的簽署身分識別與佈建設定檔，或以另一個身分識別重新簽署。 確認套件的詳細資料，然後按一下 [發佈] 以儲存您的 `.ipa`
 
 [![選取您的簽署身分識別和布建設定檔，或以另一個身分識別重新簽署](testflight-images/group.png)](testflight-images/group.png#lightbox)
 
  如需有關這些步驟的詳細資訊，請參閱[向 Apple 提交應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)一節。
 
 ### <a name="submitting-your-build"></a>提交您的組建
- 發佈精靈將會開啟應用程式載入器程式，以允許您將組建上傳至 iTunes Connect。 選取 [提交您的應用程式]**** 選項，然後上傳於上方所建立的 `.ipa` 檔案。 應用程式載入器將會驗證您的組建，並將其上傳至 iTunes Connect。
+ 發佈精靈將會開啟應用程式載入器程式，以允許您將組建上傳至 iTunes Connect。 選取 [提交您的應用程式] 選項，然後上傳於上方所建立的 `.ipa` 檔案。 應用程式載入器將會驗證您的組建，並將其上傳至 iTunes Connect。
 
  如需有關這些步驟的詳細資訊，請參閱[向 Apple 提交應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)一節。
 
@@ -133,7 +138,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 ### <a name="submitting-your-build"></a>提交您的組建
  若要將您的應用程式提交到 Apple，您必須移至組建主機，並使用隨 Xcode 安裝的應用程式載入器程式。 如需有關存取應用程式載入器的詳細資訊，請參閱 Apple 的[存取應用程式載入器](https://help.apple.com/itc/apploader/#/apdATD1E927-D1E1A1303-D1E927A1126)指南。
 
-開啟之後，選取 [提交您的應用程式]**** 選項，然後上傳於上方所建立的壓縮檔或 `.ipa` 檔案。 應用程式載入器將會驗證您的組建，並將其上傳至 iTunes Connect。
+開啟之後，選取 [提交您的應用程式] 選項，然後上傳於上方所建立的壓縮檔或 `.ipa` 檔案。 應用程式載入器將會驗證您的組建，並將其上傳至 iTunes Connect。
 
  如需有關這些步驟的詳細資訊，請參閱[向 Apple 提交應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)一節。
 
@@ -141,13 +146,13 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 [發佈到 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) 指南會更詳細地說明所有上述步驟，如需更深入了解 App Store 的提交程序，請參閱此指南。
 
-回到 iTunes Connect 的 [我的應用程式]**** 區段之後，您應該會發現您的應用程式已經成功上傳。 現在您已經準備就緒，可以執行 Beta 測試了！
+回到 iTunes Connect 的 [我的應用程式] 區段之後，您應該會發現您的應用程式已經成功上傳。 現在您已經準備就緒，可以執行 Beta 測試了！
 
 ## <a name="manage-beta-testing"></a>管理 Beta 測試
 
 ### <a name="add-metadata"></a>新增中繼資料
 
-若要開始使用 TestFlight，請瀏覽至應用程式的 [發行前版本]**** 索引標籤。 您應該會看到三個索引標籤，顯示 [組建]、[內部測試人員] 和 [外部測試人員] 的清單，如下所示：
+若要開始使用 TestFlight，請瀏覽至應用程式的 [發行前版本] 索引標籤。 您應該會看到三個索引標籤，顯示 [組建]、[內部測試人員] 和 [外部測試人員] 的清單，如下所示：
 
 [![組建、內部測試人員和外部測試人員索引標籤](testflight-images/app-uploaded.png)](testflight-images/app-uploaded.png#lightbox)
 
@@ -155,7 +160,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 [![新增中繼資料](testflight-images/metadata.png)](testflight-images/metadata.png#lightbox)
 
-在 [測試資訊]**** 底下，您可以為測試人員提供關於您應用程式的重要資訊，例如：
+在 [測試資訊] 底下，您可以為測試人員提供關於您應用程式的重要資訊，例如：
 
 - 測試的內容
 - 應用程式的描述。
@@ -163,17 +168,17 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 - 隱私權原則 URL：提供貴公司隱私權原則相關資訊的 URL。
 - 意見反應電子郵件。
 
-請注意，內部測試人員並**不**需要此中繼資料，但您**必須**將它提供給外部測試人員。
+請注意，內部測試人員並 **不** 需要此中繼資料，但您 **必須** 將它提供給外部測試人員。
 
 <a name="beta-testing"></a>
 
 ### <a name="enable-beta-testing"></a>啟用 Beta 測試
 
-當您準備好開始測試應用程式時，請開啟您版本的 [TestFlight Beta 測試]**** 開關：
+當您準備好開始測試應用程式時，請開啟您版本的 [TestFlight Beta 測試] 開關：
 
 [![開啟 TestFlight Beta 測試切換](testflight-images/turn-on-testing.png)](testflight-images/turn-on-testing.png#lightbox)
 
-每個組建的有效期都是從您開啟 TestFlight Beta 開關之日起的 **60 天**。 您可以在 [測試資訊]**** 頁面上看到每個組建剩餘的天數：
+每個組建的有效期都是從您開啟 TestFlight Beta 開關之日起的 **60 天**。 您可以在 [測試資訊] 頁面上看到每個組建剩餘的天數：
 
 [![[測試資訊] 頁面](testflight-images/daysleft.png)](testflight-images/daysleft.png#lightbox)
 
@@ -189,11 +194,11 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 每個組建最多可以共用100個成員，每個成員最多可以在30部裝置上進行測試。
 
-若要新增測試人員，請瀏覽至 iTunes Connect 主畫面上的 [使用者及角色]****：
+若要新增測試人員，請瀏覽至 iTunes Connect 主畫面上的 [使用者及角色]：
 
 [![主要 iTunes Connect 畫面上的使用者和角色](testflight-images/users-and-roles.png)](testflight-images/users-and-roles.png#lightbox)
 
-現有的 iTunes Connect 使用者將會出現在清單中。 若要選取這些使用者，請按一下其名稱，開啟 [內部測試人員]**** 開關，然後按一下 [儲存]****：
+現有的 iTunes Connect 使用者將會出現在清單中。 若要選取這些使用者，請按一下其名稱，開啟 [內部測試人員] 開關，然後按一下 [儲存]：
 
 [![開啟內部測試人員參數](testflight-images/internal-tester.png)](testflight-images/internal-tester.png#lightbox)
 
@@ -201,11 +206,11 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 [![新增使用者](testflight-images/add-new-user.png)](testflight-images/add-new-user.png#lightbox)
 
-如果您返回 [我的應用程式] > [發行前版本] > [內部測試人員]****，現在將會看到已針對 TestFlight 內部 Beta 測試新增的使用者：
+如果您返回 [我的應用程式] > [發行前版本] > [內部測試人員]，現在將會看到已針對 TestFlight 內部 Beta 測試新增的使用者：
 
 [![已針對 TestFlight 內部 Beta 測試新增的使用者清單](testflight-images/select-users.png)](testflight-images/select-users.png#lightbox)
 
-您可以選取這些測試人員的名稱，然後按一下 [邀請]**** 按鈕來邀請他們。 他們將會收到一封電子郵件，其中包含測試應用程式的邀請。
+您可以選取這些測試人員的名稱，然後按一下 [邀請] 按鈕來邀請他們。 他們將會收到一封電子郵件，其中包含測試應用程式的邀請。
 
 您可以在 [內部測試人員] 頁面的 [狀態] 欄中查看其邀請的狀態：
 
@@ -215,7 +220,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 邀請外部測試人員進行應用程式 Beta 測試之前，必須先通過 Beta 應用程式審查，因此必須符合 [App Store 審查方針](https://developer.apple.com/app-store/review/guidelines/) \(英文\)。
 
-若要提交應用程式以供審查，按一下您組建旁邊的 [提交以供 Beta 應用程式審查]**** 文字，如下圖所示：
+若要提交應用程式以供審查，按一下您組建旁邊的 [提交以供 Beta 應用程式審查] 文字，如下圖所示：
 
 [![提交 Beta 版應用程式評論](testflight-images/beta-app-review.png)](testflight-images/beta-app-review.png#lightbox)
 
@@ -225,7 +230,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 [![邀請測試人員](testflight-images/add-external.png)](testflight-images/add-external.png#lightbox)
 
-如果您有大量的外部測試人員，則可以使用 [匯入檔案]**** 連結來匯入每行皆包含下列格式的 `CSV` 檔案：
+如果您有大量的外部測試人員，則可以使用 [匯入檔案] 連結來匯入每行皆包含下列格式的 `CSV` 檔案：
 
 ```
 first name, last name, email address
@@ -233,13 +238,13 @@ first name, last name, email address
 
 您也可以將外部測試人員新增到不同的群組，以協助使您的測試人員保持井然有序。
 
-一旦您輸入外部測試人員的詳細資料之後，請按一下 [新增]****，並確認使用者已同意您邀請他們：
+一旦您輸入外部測試人員的詳細資料之後，請按一下 [新增]，並確認使用者已同意您邀請他們：
 
 [![確認您的使用者同意邀請](testflight-images/confirm-consent.png)](testflight-images/confirm-consent.png#lightbox)
 
-只有在 Beta 應用程式審查成功之後，您才能夠將邀請傳送給外部測試人員。 此時，組建頁面上 [外部]**** 底下的文字會變更為 [傳送邀請]****。 按一下這個文字以將邀請傳送給您已經新增的所有測試人員。
+只有在 Beta 應用程式審查成功之後，您才能夠將邀請傳送給外部測試人員。 此時，組建頁面上 [外部] 底下的文字會變更為 [傳送邀請]。 按一下這個文字以將邀請傳送給您已經新增的所有測試人員。
 
-如果您的應用程式被拒絕，您必須修正顯示在 [解決中心]**** 中的問題，然後重新提交整個已更新的二進位檔以供審查。
+如果您的應用程式被拒絕，您必須修正顯示在 [解決中心] 中的問題，然後重新提交整個已更新的二進位檔以供審查。
 
 ## <a name="as-a-beta-tester"></a>身為 Beta 測試人員
 
@@ -247,7 +252,7 @@ first name, last name, email address
 
 [![範例邀請電子郵件](testflight-images/tester-email.png)](testflight-images/tester-email.png#lightbox)
 
-當他們按一下 [在 TestFlight 中開啟]**** 按鈕之後，您的應用程式將會在 TestFlight 應用程式中開啟；如果尚未下載該應用程式，系統會將他們導向至 App Store，並允許他們下載該應用程式。
+當他們按一下 [在 TestFlight 中開啟] 按鈕之後，您的應用程式將會在 TestFlight 應用程式中開啟；如果尚未下載該應用程式，系統會將他們導向至 App Store，並允許他們下載該應用程式。
 
 一旦您的應用程式在 TestFlight 中開啟之後，它將會顯示測試內容的詳細資料，並提示測試人員將您的應用程式安裝至其 iOS 8.0 (或更新版本) 的裝置上：
 
@@ -259,11 +264,11 @@ first name, last name, email address
 
 ### <a name="beta-testing-complete"></a>Beta 測試完成
 
-一旦完成 Beta 測試之後，您將可以提交您的應用程式，以供 Apple 進行 App Store 審查。 此程序可在 iTunes Connect 中以非常簡單的方式完成，只要按一下 [提交以供審查]**** 按鈕即可，如下所示：
+一旦完成 Beta 測試之後，您將可以提交您的應用程式，以供 Apple 進行 App Store 審查。 此程序可在 iTunes Connect 中以非常簡單的方式完成，只要按一下 [提交以供審查] 按鈕即可，如下所示：
 
 [![按一下 [提交評論] 按鈕](testflight-images/submit-for-review.png)](testflight-images/submit-for-review.png#lightbox)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 本文已探討如何透過 iTunes Connect 使用 Apple 的 TestFlight Beta 測試。 其中已涵蓋如何將新組建上傳至 iTunes Connect，以及如何邀請內部和外部 Beta 測試人員使用該應用程式。
 

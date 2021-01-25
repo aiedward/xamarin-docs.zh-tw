@@ -10,12 +10,12 @@ ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a2259d9784d9b55be636e92452562a13f0750b14
-ms.sourcegitcommit: c9f62ed4bab516be18606e87e89e01f57b4ad17e
+ms.openlocfilehash: 4078fa50e2e86d80e1e5b35321223deea5adeab7
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98163500"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758054"
 ---
 # <a name="simple-animations-in-no-locxamarinforms"></a>中的簡單動畫 Xamarin.Forms
 
@@ -25,7 +25,7 @@ _ViewExtensions 類別提供可用於建立簡單動畫的擴充方法。本文�
 
 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)類別提供下列擴充方法，可用於建立簡單的動畫：
 
-- [ `CancelAnimations` ] (x： Xamarin.Forms 。ViewExtensions. CancelAnimations (Xamarin.Forms 。VisualElement) 會取消任何動畫。
+- [ `CancelAnimations` ] (x： Xamarin.Forms 。ViewExtensions. CancelAnimations (Xamarin.Forms 。VisualElement) # A3 會取消任何動畫。
 - [ `FadeTo` ] (x： Xamarin.Forms 。ViewExtensions. FadeTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 繪製的 [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 - [ `RelScaleTo` ] (x： Xamarin.Forms 。ViewExtensions. RelScaleTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 會將動畫增量增加或減少套用至的 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) 屬性 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 - [ `RotateTo` ] (x： Xamarin.Forms 。ViewExtensions. RotateTo (Xamarin.Forms 。VisualElement，system.string， Xamarin.Forms system.object。簡化) # A3 繪製的 [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) 屬性動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
@@ -221,7 +221,7 @@ await Task.WhenAll (
 
 ## <a name="canceling-animations"></a>取消動畫
 
-應用程式可以使用 [CancelAnimations] 的呼叫來取消一個或多個動畫 (x： Xamarin.Forms 。ViewExtensions. CancelAnimations (Xamarin.Forms 。VisualElement) # A3 擴充方法，如下列程式碼範例所示：
+應用程式可以呼叫 [ `CancelAnimations` ] (x：來取消一個或多個動畫 Xamarin.Forms 。ViewExtensions. CancelAnimations (Xamarin.Forms 。VisualElement) # A3 擴充方法，如下列程式碼範例所示：
 
 ```csharp
 image.CancelAnimations();
@@ -229,7 +229,7 @@ image.CancelAnimations();
 
 這會立即取消目前實例上正在執行的所有動畫 [`Image`](xref:Xamarin.Forms.Image) 。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 本文示範如何使用類別來建立和取消動畫 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 。 這個類別提供的擴充方法可用來建立可旋轉、縮放、轉譯和淡化實例的簡單動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 

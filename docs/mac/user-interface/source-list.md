@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: ae82918c1f87e47be9446e80f99ebc4dc967c078
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: fb9764acb23c40815ed4a95580e80a4ac63970df
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91431942"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758041"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin 中的來源清單
 
@@ -48,7 +48,7 @@ _本文說明如何使用 Xamarin 應用程式中的來源清單。它描述如�
 
 來源清單是一種特殊的大綱視圖，用來顯示動作的來源，例如 Finder 或 iTunes 中的側邊列。 不同于大綱視圖，在我們于 Interface Builder 中定義來源清單之前，讓我們先在 Xamarin 中建立支援類別。
 
-首先，讓我們建立新的 `SourceListItem` 類別來保存來源清單的資料。 在 [**方案總管**中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新**檔案]。選取 **[一般**  >  **空白類別**]，輸入 `SourceListItem` **名稱**，然後按一下 [**新增**] 按鈕：
+首先，讓我們建立新的 `SourceListItem` 類別來保存來源清單的資料。 在 [**方案總管** 中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新** 檔案]。選取 **[一般**  >  **空白類別**]，輸入 `SourceListItem` **名稱**，然後按一下 [**新增**] 按鈕：
 
 [![新增空白類別](source-list-images/source01.png)](source-list-images/source01.png#lightbox)
 
@@ -270,7 +270,7 @@ namespace MacOutlines
 }
 ```
 
-在 [**方案總管**中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新**檔案]。選取 **[一般**  >  **空白類別**]，輸入 `SourceListDataSource` **名稱**，然後按一下 [**新增**] 按鈕。 使檔案 `SourceListDataSource.cs` 看起來如下所示：
+在 [**方案總管** 中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新** 檔案]。選取 **[一般**  >  **空白類別**]，輸入 `SourceListDataSource` **名稱**，然後按一下 [**新增**] 按鈕。 使檔案 `SourceListDataSource.cs` 看起來如下所示：
 
 ```csharp
 using System;
@@ -354,7 +354,7 @@ namespace MacOutlines
 
 這會提供來源清單的資料。
 
-在 [**方案總管**中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新**檔案]。選取 **[一般**  >  **空白類別**]，輸入 `SourceListDelegate` **名稱**，然後按一下 [**新增**] 按鈕。 使檔案 `SourceListDelegate.cs` 看起來如下所示：
+在 [**方案總管** 中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新** 檔案]。選取 **[一般**  >  **空白類別**]，輸入 `SourceListDelegate` **名稱**，然後按一下 [**新增**] 按鈕。 使檔案 `SourceListDelegate.cs` 看起來如下所示：
 
 ```csharp
 using System;
@@ -446,7 +446,7 @@ namespace MacOutlines
 
 這會提供來源清單的行為。
 
-最後，在**方案總管**中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新**檔案]。選取 **[一般**  >  **空白類別**]，輸入 `SourceListView` **名稱**，然後按一下 [**新增**] 按鈕。 使檔案 `SourceListView.cs` 看起來如下所示：
+最後，在 **方案總管** 中，以滑鼠右鍵按一下專案，然後選取 [**加入**  >  **新** 檔案]。選取 **[一般**  >  **空白類別**]，輸入 `SourceListView` **名稱**，然後按一下 [**新增**] 按鈕。 使檔案 `SourceListView.cs` 看起來如下所示：
 
 ```csharp
 using System;
@@ -530,13 +530,13 @@ namespace MacOutlines
 
 ## <a name="creating-and-maintaining-source-lists-in-xcode"></a>在 Xcode 中建立和維護來源清單
 
-現在，讓我們在 Interface Builder 中設計我們的來源清單。 按兩下檔案 `Main.storyboard` 將它開啟，以在 Interface Builder 中進行編輯，並從連結 **庫偵測器**拖曳分割視圖，將它加入至 view 控制器，並將其設定為在 **條件約束編輯器**中以視圖調整大小：
+現在，讓我們在 Interface Builder 中設計我們的來源清單。 按兩下檔案 `Main.storyboard` 將它開啟，以在 Interface Builder 中進行編輯，並從連結 **庫偵測器** 拖曳分割視圖，將它加入至 view 控制器，並將其設定為在 **條件約束編輯器** 中以視圖調整大小：
 
-[![編輯條件約束](source-list-images/source00.png)](source-list-images/source00.png#lightbox)
+[![Interface Builder 中的編輯條件約束。](source-list-images/source00.png)](source-list-images/source00.png#lightbox)
 
-接下來，從連結 **庫偵測器**拖曳來源清單，將它加入至分割視圖的左側，然後將它設定為在 **條件約束編輯器**中以視圖調整大小：
+接下來，從連結 **庫偵測器** 拖曳來源清單，將它加入至分割視圖的左側，然後將它設定為在 **條件約束編輯器** 中以視圖調整大小：
 
-[![編輯條件約束](source-list-images/source02.png)](source-list-images/source02.png#lightbox)
+[![藉由將來源清單拖曳至分割視圖來編輯條件約束。](source-list-images/source02.png)](source-list-images/source02.png#lightbox)
 
 接下來，切換至 [身分 **識別] 視圖**，選取來源清單，然後將其 **類別** 變更為 `SourceListView` ：
 
@@ -591,7 +591,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-在 `Initialize ()` 新增任何專案_之前_，必須先對來源清單的**輸出**呼叫此方法。 針對每個專案群組，我們會建立一個父代專案，然後將子專案加入至該群組專案。 接著，每個群組都會加入至來源清單的集合 `SourceList.AddItem (...)` 。 最後兩行會載入來源清單的資料，並展開所有群組：
+在 `Initialize ()` 新增任何專案 _之前_，必須先對來源清單的 **輸出** 呼叫此方法。 針對每個專案群組，我們會建立一個父代專案，然後將子專案加入至該群組專案。 接著，每個群組都會加入至來源清單的集合 `SourceList.AddItem (...)` 。 最後兩行會載入來源清單的資料，並展開所有群組：
 
 ```csharp
 // Display side list
@@ -618,7 +618,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 
 本文將詳細說明如何使用 Xamarin 應用程式中的來源清單。 我們已瞭解如何在 Xcode 的 Interface Builder 中建立和維護來源清單，以及如何使用 c # 程式碼中的來源清單。
 
