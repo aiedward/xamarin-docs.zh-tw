@@ -8,12 +8,12 @@ ms.date: 01/04/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 797f7e80ac389776f921021ef3b1a9ab16b3f53b
-ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
+ms.openlocfilehash: 7a9701a1607333022b7356f4485f041d66b410c6
+ms.sourcegitcommit: 3a68a8a48eb5a0ea7d6e0f861e2f7ecefcc49715
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97972327"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98810729"
 ---
 # <a name="no-locxamarinessentials-file-picker"></a>Xamarin.Essentials：檔案選擇器
 
@@ -60,7 +60,7 @@ ms.locfileid: "97972327"
 
 ## <a name="pick-file"></a>挑選檔案
 
-`FilePicker.PickAsync()` 方法可讓您的使用者從裝置挑選檔案。 `PickOptions`當您呼叫方法時，您可以指定要顯示的標題，以及允許使用者挑選的檔案類型，以提供特定的不同。 依照預設 
+`FilePicker.PickAsync()` 方法可讓您的使用者從裝置挑選檔案。 `PickOptions`當您呼叫方法時，您可以指定要顯示的標題，以及允許使用者挑選的檔案類型，以提供特定的不同。 依照預設
 
 ```csharp
 async Task<FileResult> PickAndShow(PickOptions options)
@@ -123,6 +123,8 @@ var options = new PickOptions
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
 無平台差異。
+
+-----
 
 ## <a name="api"></a>API
 
