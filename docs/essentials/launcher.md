@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Essentials啟動
+title: Xamarin.Essentials 發射
 description: 中的啟動器類別 Xamarin.Essentials 可讓應用程式依系統開啟 URI。
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
@@ -9,14 +9,14 @@ ms.date: 08/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dcb236c47cf2eec77b3b90da798b0cf0d58f3c1d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1e68755778522fa61d593d25e763fae1569724cf
+ms.sourcegitcommit: 2a7bbe9cbee3727ba20ee755c1713bcfdb4d8ecb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802307"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98950972"
 ---
-# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials：啟動器
+# <a name="no-locxamarinessentials-launcher"></a>Xamarin.Essentials：啟動器
 
 **Launcher** 類別可讓應用程式依系統開啟 URI。 當深層連結到其他應用程式的自訂 URI 配置時，通常會使用它。 若您要開啟瀏覽器並瀏覽網站，您應該參考 **[瀏覽器](open-browser.md)** API。
 
@@ -62,11 +62,11 @@ public class LauncherTest
 
 # <a name="android"></a>[Android](#tab/android)
 
-不需額外的設定。
+無額外設定。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-在 iOS 9 和更新版本中，Apple 會強制執行應用程式可以查詢的配置。 若要指定您想要使用的配置，您必須 `LSApplicationQueriesSchemes` 在檔案中指定 `Info.plist` 。
+在 iOS 9 及更新版本中，Apple 會強制執行應用程式可查詢的配置。 若要指定您要使用的配置，您必須在檔案 `LSApplicationQueriesSchemes` 中指定 `Info.plist` 。
 
 ```
 <key>LSApplicationQueriesSchemes</key>
@@ -78,15 +78,15 @@ public class LauncherTest
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-不需額外的設定。
+無額外設定。
 
 -----
 
 ## <a name="files"></a>檔案
 
-此功能可讓應用程式要求其他應用程式開啟及檢視檔案。 Xamarin.Essentials會自動偵測檔案類型（MIME），並要求要開啟的檔案。
+此功能可讓應用程式要求其他應用程式開啟及檢視檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME) 並要求開啟檔案。
 
-以下範例說明如何將文字寫入磁片，並要求將它開啟：
+以下是將文字寫入磁片並要求開啟的範例：
 
 ```csharp
 var fn = "File.txt";
@@ -98,6 +98,10 @@ await Launcher.OpenAsync(new OpenFileRequest
     File = new ReadOnlyFile(file)
 });
 ```
+
+## <a name="presentation-location-when-opening-files"></a>開啟檔案時的展示位置
+
+[!include[](~/essentials/includes/ios-PresentationSourceBounds.md)]
 
 ## <a name="platform-differences"></a>平台差異
 
