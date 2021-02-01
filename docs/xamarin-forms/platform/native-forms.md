@@ -6,22 +6,22 @@ ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/19/2019
+ms.date: 02/01/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 241aa896cb66c4ff594c786ad484781adcddffa1
-ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
+ms.openlocfilehash: 6d17f20babd11a58540306f146ee9dc2bf1a5da4
+ms.sourcegitcommit: 9ab5a1e346e20f54e8b7aa655fd3d117b43978cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98609127"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223551"
 ---
 # <a name="no-locxamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms 在 Xamarin 原生專案中
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/native2forms)
 
-一般而言， Xamarin.Forms 應用程式會包含一或多個衍生自的頁面 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ，而且這些頁面會由 .NET Standard 程式庫專案或共用專案中的所有平臺共用。 不過，原生表單允許 `ContentPage` 將衍生的頁面直接新增至原生 Xamarin. iOS、Xamarin. Android 和 UWP 應用程式。 相較于讓原生專案 `ContentPage` 從 .NET Standard 程式庫專案或共用專案取用衍生的頁面，將頁面直接新增至原生專案的好處是可以使用原生視圖擴充頁面。 然後可以在 XAML 中以 XAML 命名原生視圖 `x:Name` ，並從程式碼後端參考。 如需原生視圖的詳細資訊，請參閱 [原生視圖](~/xamarin-forms/platform/native-views/index.md)。
+一般而言， Xamarin.Forms 應用程式會包含一或多個衍生自的頁面 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ，而且這些頁面會由 .NET Standard 程式庫專案或共用專案中的所有平臺共用。 不過，原生表單可讓 `ContentPage` 衍生的頁面直接新增至原生 Xamarin. iOS、Xamarin 和 UWP 應用程式。 相較于讓原生專案 `ContentPage` 從 .NET Standard 程式庫專案或共用專案取用衍生的頁面，將頁面直接新增至原生專案的好處是可以使用原生視圖擴充頁面。 然後可以在 XAML 中以 XAML 命名原生視圖 `x:Name` ，並從程式碼後端參考。 如需原生視圖的詳細資訊，請參閱 [原生視圖](~/xamarin-forms/platform/native-views/index.md)。
 
 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在原生專案中使用衍生頁面的程式如下所示：
 
@@ -56,6 +56,10 @@ public class AppDelegate : UIApplicationDelegate
     {
         Forms.Init();
 
+        // Create app-level resource dictionary.
+        Xamarin.Forms.Application.Current = new Xamarin.Forms.Application();
+        Xamarin.Forms.Application.Current.Resources = new MyDictionary();
+
         Instance = this;
         _window = new UIWindow(UIScreen.MainScreen.Bounds);
 
@@ -65,13 +69,22 @@ public class AppDelegate : UIApplicationDelegate
         });
 
         FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
-        UIViewController mainPage = new NotesPage().CreateViewController();
-        mainPage.Title = "Notes";
 
-        _navigation = new AppNavigationController(mainPage);
+        NotesPage notesPage = new NotesPage()
+        {
+            // Set the parent so that the app-level resource dictionary can be located.
+            Parent = Xamarin.Forms.Application.Current
+        };
+
+        UIViewController notesPageController = notesPage.CreateViewController();
+        notesPageController.Title = "Notes";
+
+        _navigation = new AppNavigationController(notesPageController);
+
         _window.RootViewController = _navigation;
         _window.MakeKeyAndVisible();
 
+        notesPage.Parent = null;
         return true;
     }
     // ...
@@ -81,17 +94,23 @@ public class AppDelegate : UIApplicationDelegate
 `FinishedLaunching` 方法會執行下列工作：
 
 - Xamarin.Forms 藉由呼叫方法來初始化 `Forms.Init` 。
+- 建立新的 `Xamarin.Forms.Application` 物件，並將其應用層級資源字典設定為 `ResourceDictionary` XAML 中定義的。
 - 類別的參考 `AppDelegate` 會儲存在 `static` `Instance` 欄位中。 這是為了提供一個機制，讓其他類別呼叫類別中定義的方法 `AppDelegate` 。
 - `UIWindow`會建立，這是原生 iOS 應用程式中 views 的主要容器。
 - `FolderPath`屬性會初始化為裝置上儲存附注資料的路徑。
-- `NotesPage`類別是 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 以 XAML 定義的衍生頁面，會 `UIViewController` 使用擴充方法來建立和轉換成 `CreateViewController` 。
+- 建立 `NotesPage` 物件，這是 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在 XAML 中定義的衍生頁面，而且其父系設定為先前建立的 `Xamarin.Forms.Application` 物件。
+- `NotesPage` `UIViewController` 使用擴充方法，將物件轉換為 `CreateViewController` 。
 - `Title`已設定的屬性 `UIViewController` ，將顯示在上 `UINavigationBar` 。
 - `AppNavigationController`建立以管理階層式流覽。 這是自訂的流覽控制器類別，其衍生自 `UINavigationController` 。 `AppNavigationController`物件會管理檢視控制器的堆疊，而 `UIViewController` 傳入的函式會在載入時，一開始就顯示 `AppNavigationController` 。
 - `AppNavigationController`物件會設定為的最上層 `UIViewController` `UIWindow` ，而且 `UIWindow` 會設定為應用程式的索引鍵視窗，而且會成為可見的。
+- `Parent`物件的屬性 `NotesPage` 設定為 `null` ，以避免記憶體流失。
 
 一旦 `FinishedLaunching` 執行方法之後，就會顯示類別中定義的 UI Xamarin.Forms `NotesPage` ，如下列螢幕擷取畫面所示：
 
 [![螢幕擷取畫面：顯示行動裝置上的附注畫面。](native-forms-images/ios-notespage.png "使用 XAML UI 的 Xamarin iOS 應用程式")](native-forms-images/ios-notespage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 應用程式")
+
+> [!IMPORTANT]
+> 所有 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 衍生的頁面都可以使用應用層級中定義的資源 `ResourceDictionary` ，但前提 `Parent` 是該頁面的屬性已設定為 `Application` 物件。
 
 與 UI 互動（例如藉由點擊 **+** [`Button`](xref:Xamarin.Forms.Button) ），會導致程式碼後端中的下列事件處理常式 `NotesPage` 執行：
 
@@ -102,17 +121,23 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 }
 ```
 
-`static` `AppDelegate.Instance` 欄位允許叫用 `AppDelegate.NavigateToNoteEntryPage` 方法，如下列程式碼範例所示：
+欄位可讓您叫用 `static` `AppDelegate.Instance` `AppDelegate.NavigateToNoteEntryPage` 方法，如下列程式碼範例所示：
 
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
 {
-    var noteEntryPage = new NoteEntryPage
+    NoteEntryPage noteEntryPage = new NoteEntryPage
     {
-        BindingContext = note
-    }.CreateViewController();
-    noteEntryPage.Title = "Note Entry";
-    _navigation.PushViewController(noteEntryPage, true);
+        BindingContext = note,
+        // Set the parent so that the app-level resource dictionary can be located.
+        Parent = Xamarin.Forms.Application.Current
+    };
+
+    var noteEntryViewController = noteEntryPage.CreateViewController();
+    noteEntryViewController.Title = "Note Entry";
+
+    _navigation.PushViewController(noteEntryViewController, true);
+    noteEntryPage.Parent = null;
 }
 ```
 
@@ -160,6 +185,11 @@ public class MainActivity : AppCompatActivity
         base.OnCreate(bundle);
 
         Forms.Init(this, bundle);
+
+        // Create app-level resource dictionary.
+        Xamarin.Forms.Application.Current = new Xamarin.Forms.Application();
+        Xamarin.Forms.Application.Current.Resources = new MyDictionary();
+
         Instance = this;
 
         SetContentView(Resource.Layout.Main);
@@ -168,12 +198,21 @@ public class MainActivity : AppCompatActivity
         SupportActionBar.Title = "Notes";
 
         FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
-        AndroidX.Fragment.App.Fragment mainPage = new NotesPage().CreateSupportFragment(this);
+
+        NotesPage notesPage = new NotesPage()
+        {
+            // Set the parent so that the app-level resource dictionary can be located.
+            Parent = Xamarin.Forms.Application.Current
+        };
+        AndroidX.Fragment.App.Fragment notesPageFragment = notesPage.CreateSupportFragment(this);
+
         SupportFragmentManager
             .BeginTransaction()
             .Replace(Resource.Id.fragment_frame_layout, mainPage)
             .Commit();
-        ...
+        //...
+
+        notesPage.Parent = null;
     }
     ...
 }
@@ -182,18 +221,24 @@ public class MainActivity : AppCompatActivity
 `OnCreate` 方法會執行下列工作：
 
 - Xamarin.Forms 藉由呼叫方法來初始化 `Forms.Init` 。
+- 建立新的 `Xamarin.Forms.Application` 物件，並將其應用層級資源字典設定為 `ResourceDictionary` XAML 中定義的。
 - 類別的參考 `MainActivity` 會儲存在 `static` `Instance` 欄位中。 這是為了提供一個機制，讓其他類別呼叫類別中定義的方法 `MainActivity` 。
 - `Activity`內容是從版面配置資源設定。 在範例應用程式中，版面配置是由 `LinearLayout` 包含的 `Toolbar` ，以及 `FrameLayout` 做為片段容器的。
 - `Toolbar`會取出並設定為的動作列 `Activity` ，並設定動作列標題。
 - `FolderPath`屬性會初始化為裝置上儲存附注資料的路徑。
-- `NotesPage`類別是 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 以 XAML 定義的衍生頁面，會 `Fragment` 使用擴充方法來建立和轉換成 `CreateSupportFragment` 。
+- 建立 `NotesPage` 物件，這是 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在 XAML 中定義的衍生頁面，而且其父系設定為先前建立的 `Xamarin.Forms.Application` 物件。
+- `NotesPage` `Fragment` 使用擴充方法，將物件轉換為 `CreateSupportFragment` 。
 - `SupportFragmentManager`類別會建立並認可將 `FrameLayout` 實例取代為類別之的交易 `Fragment` `NotesPage` 。
+- `Parent`物件的屬性 `NotesPage` 設定為 `null` ，以避免記憶體流失。
 
 如需片段的詳細資訊，請參閱 [片段](~/android/platform/fragments/index.md)。
 
 一旦 `OnCreate` 執行方法之後，就會顯示類別中定義的 UI Xamarin.Forms `NotesPage` ，如下列螢幕擷取畫面所示：
 
 [![螢幕擷取畫面：在行動裝置上顯示具有藍色橫幅和彩色備註文字的附注畫面。](native-forms-images/android-notespage.png "具有 XAML UI 的 Xamarin Android 應用程式")](native-forms-images/android-notespage-large.png#lightbox "具有 XAML UI 的 Xamarin Android 應用程式")
+
+> [!IMPORTANT]
+> 所有 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 衍生的頁面都可以使用應用層級中定義的資源 `ResourceDictionary` ，但前提 `Parent` 是該頁面的屬性已設定為 `Application` 物件。
 
 與 UI 互動（例如藉由點擊 **+** [`Button`](xref:Xamarin.Forms.Button) ），會導致程式碼後端中的下列事件處理常式 `NotesPage` 執行：
 
@@ -204,20 +249,26 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 }
 ```
 
-`static` `MainActivity.Instance` 欄位允許叫用 `MainActivity.NavigateToNoteEntryPage` 方法，如下列程式碼範例所示：
+欄位可讓您叫用 `static` `MainActivity.Instance` `MainActivity.NavigateToNoteEntryPage` 方法，如下列程式碼範例所示：
 
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
 {
-    AndroidX.Fragment.App.Fragment noteEntryPage = new NoteEntryPage
+    NoteEntryPage noteEntryPage = new NoteEntryPage
     {
-        BindingContext = note
-    }.CreateSupportFragment(this);
+        BindingContext = note,
+        // Set the parent so that the app-level resource dictionary can be located.
+        Parent = Xamarin.Forms.Application.Current
+    };
+
+    AndroidX.Fragment.App.Fragment noteEntryFragment = noteEntryPage.CreateSupportFragment(this);
     SupportFragmentManager
         .BeginTransaction()
         .AddToBackStack(null)
-        .Replace(Resource.Id.fragment_frame_layout, noteEntryPage)
+        .Replace(Resource.Id.fragment_frame_layout, noteEntryFragment)
         .Commit();
+
+    noteEntryPage.Parent = null;
 }
 ```
 
@@ -278,7 +329,23 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ## <a name="uwp"></a>UWP
 
-在 UWP 上，原生 `App` 類別通常是執行應用程式啟動相關工作的地方。 Xamarin.Forms 在 UWP 應用程式中，通常會在 Xamarin.Forms 原生類別的覆寫中初始化， `OnLaunched` 以將 `App` `LaunchActivatedEventArgs` 引數傳遞給 `Forms.Init` 方法。 基於這個理由，使用衍生頁面的原生 UWP 應用程式很 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 容易就能 `Forms.Init` 從方法呼叫方法 `App.OnLaunched` 。
+在 UWP 上，原生 `App` 類別通常是執行應用程式啟動相關工作的地方。 Xamarin.Forms 在 UWP 應用程式中，通常會在 Xamarin.Forms 原生類別的覆寫中初始化， `OnLaunched` 以將 `App` `LaunchActivatedEventArgs` 引數傳遞給 `Forms.Init` 方法。 基於這個理由，使用衍生頁面的原生 UWP 應用程式很 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 容易就能 `Forms.Init` 從方法呼叫方法 `App.OnLaunched` ：
+
+```csharp
+protected override void OnLaunched(LaunchActivatedEventArgs e)
+{
+    // ...
+    Xamarin.Forms.Forms.Init(e);
+
+    // Create app-level resource dictionary.
+    Xamarin.Forms.Application.Current = new Xamarin.Forms.Application();
+    Xamarin.Forms.Application.Current.Resources = new MyDictionary();
+
+    // ...
+}
+```
+
+此外，此 `OnLaunched` 方法也可以建立應用程式所需的任何應用層級資源字典。
 
 根據預設，原生 `App` 類別會啟動 `MainPage` 類別做為應用程式的第一頁。 下列程式碼範例顯示 `MainPage` 範例應用程式中的類別：
 
@@ -293,13 +360,18 @@ public sealed partial class MainPage : Page
 
     public MainPage()
     {
-        this.InitializeComponent();
         this.NavigationCacheMode = NavigationCacheMode.Enabled;
         Instance = this;
         FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
-        notesPage = new Notes.UWP.Views.NotesPage();
+
+        notesPage = new Notes.UWP.Views.NotesPage
+        {
+            // Set the parent so that the app-level resource dictionary can be located.
+            Parent = Xamarin.Forms.Application.Current
+        };
         this.Content = notesPage.CreateFrameworkElement();
-        // ...        
+        // ...
+        notesPage.Parent = null;    
     }
     // ...
 }
@@ -310,11 +382,16 @@ public sealed partial class MainPage : Page
 - 頁面會啟用快取，因此 `MainPage` 當使用者流覽回頁面時，不會建立新的。
 - 類別的參考 `MainPage` 會儲存在 `static` `Instance` 欄位中。 這是為了提供一個機制，讓其他類別呼叫類別中定義的方法 `MainPage` 。
 - `FolderPath`屬性會初始化為裝置上儲存附注資料的路徑。
-- `NotesPage`類別是 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 以 XAML 定義的衍生頁面，會 `FrameworkElement` 使用擴充方法來建立和轉換成，然後 `CreateFrameworkElement` 設定為類別的內容 `MainPage` 。
+- 建立 `NotesPage` 物件，這是 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在 XAML 中定義的衍生頁面，而且其父系設定為先前建立的 `Xamarin.Forms.Application` 物件。
+- `NotesPage` `FrameworkElement` 使用擴充方法，將物件轉換成 `CreateFrameworkElement` ，然後將它設定為類別的內容 `MainPage` 。
+- `Parent`物件的屬性 `NotesPage` 設定為 `null` ，以避免記憶體流失。
 
 一旦執行了函式 `MainPage` ，就會顯示類別中定義的 UI Xamarin.Forms `NotesPage` ，如下列螢幕擷取畫面所示：
 
 [![螢幕擷取畫面顯示包含附注和日期/時間的附注頁面。](native-forms-images/uwp-notespage.png "具有：：： no loc (Xamarin 的 UWP 應用程式) ：：： XAML UI")](native-forms-images/uwp-notespage-large.png#lightbox "具有：：： no loc (Xamarin 的 UWP 應用程式) ：：： XAML UI")
+
+> [!IMPORTANT]
+> 所有 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 衍生的頁面都可以使用應用層級中定義的資源 `ResourceDictionary` ，但前提 `Parent` 是該頁面的屬性已設定為 `Application` 物件。
 
 與 UI 互動（例如藉由點擊 **+** [`Button`](xref:Xamarin.Forms.Button) ），會導致程式碼後端中的下列事件處理常式 `NotesPage` 執行：
 
@@ -325,16 +402,19 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 }
 ```
 
-`static` `MainPage.Instance` 欄位允許叫用 `MainPage.NavigateToNoteEntryPage` 方法，如下列程式碼範例所示：
+欄位可讓您叫用 `static` `MainPage.Instance` `MainPage.NavigateToNoteEntryPage` 方法，如下列程式碼範例所示：
 
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
 {
     noteEntryPage = new Notes.UWP.Views.NoteEntryPage
     {
-        BindingContext = note
+        BindingContext = note,
+        // Set the parent so that the app-level resource dictionary can be located.
+        Parent = Xamarin.Forms.Application.Current
     };
     this.Frame.Navigate(noteEntryPage);
+    noteEntryPage.Parent = null;
 }
 ```
 

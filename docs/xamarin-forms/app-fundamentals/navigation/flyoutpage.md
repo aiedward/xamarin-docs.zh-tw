@@ -10,12 +10,12 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ea0be2136b354ef7a613904799481079bcae52ad
-ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
+ms.openlocfilehash: 8a2947ef2c326c57bc646cd980109ed9a1b97347
+ms.sourcegitcommit: 9ab5a1e346e20f54e8b7aa655fd3d117b43978cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98115232"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223707"
 ---
 # <a name="no-locxamarinforms-flyoutpage"></a>Xamarin.Forms FlyoutPage
 
@@ -27,7 +27,7 @@ ms.locfileid: "98115232"
 
 項目清單的位置在每個平台上都相同，且選取其中一個項目會巡覽至對應的詳細資料頁面。 此外，[飛出視窗] 頁面也有一個導覽列，其中包含可用來流覽至 [作用中詳細資料] 頁面的按鈕：
 
-- 在 iOS 上，導覽列會出現在頁面頂端，並有一個按鈕，可巡覽至詳細資料頁面。 此外，可以藉由將主版頁面撥動至左側，巡覽至作用中的詳細資料頁面。
+- 在 iOS 上，導覽列會出現在頁面頂端，並有一個按鈕，可巡覽至詳細資料頁面。 此外，您可以透過將飛出視窗向左輕刷，來流覽至 [作用中詳細資料] 頁面。
 - 在 Android 上，導覽列會出現在頁面頂端，並顯示一個標題、圖示，以及可巡覽至詳細資料頁面的按鈕。 該圖示是在 `[Activity]` 屬性中定義，以裝飾 Android 平台特定專案中的 `MainActivity` 類別。 此外，您可以藉由在畫面最右邊的 [詳細資料] 頁面，然後按一下畫面底部的 [ *上一頁* ] 按鈕，將 [現用詳細資料] 頁面移至左邊，藉以將飛出視窗頁面移至左側。
 - 在通用 Windows 平台 (UWP) 上，導覽列出現在頁面頂端，並具有可巡覽至詳細資料頁面的按鈕。
 
@@ -214,7 +214,7 @@ public class FlyoutMenuPageCS : ContentPage
 
 下列螢幕擷取畫面顯示每個平臺上的飛出視窗頁面：
 
-![主版頁面範例](flyoutpage-images/flyoutpage.png)
+![飛出視窗頁面範例](flyoutpage-images/flyoutpage.png)
 
 ### <a name="create-and-display-the-detail-page"></a>建立並顯示詳細資料頁面
 

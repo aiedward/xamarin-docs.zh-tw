@@ -10,12 +10,12 @@ ms.date: 06/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3c75fc9add49e3754241c129a8243d33095c3abf
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.openlocfilehash: cc080b9c69614b2e743e32139622502250de3684
+ms.sourcegitcommit: 9ab5a1e346e20f54e8b7aa655fd3d117b43978cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590372"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223694"
 ---
 # <a name="no-locxamarinforms-and-azure-services"></a>Xamarin.Forms 和 Azure 服務
 
@@ -23,7 +23,7 @@ ms.locfileid: "94590372"
 
 Azure Cosmos DB 檔資料庫是一種 NoSQL 資料庫，可對 JSON 檔提供低延遲的存取，為需要無縫調整和全域複寫的應用程式，提供快速、高可用性、可擴充的資料庫服務。 本文說明如何使用 Azure Cosmos DB .NET Standard 用戶端程式庫，將 Azure Cosmos DB 檔資料庫整合至 Xamarin.Forms 應用程式。
 
-## <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>[使用 Azure 通知中樞傳送及接收推播通知 Xamarin.Forms](azure-notification-hub.md)
+## <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>[使用 Azure 通知中樞傳送及接收推播通知 Xamarin.Forms](/azure/developer/mobile-apps/notification-hubs-backend-service-xamarin-forms)
 
 Azure 通知中樞可讓您跨平臺集中化通知，讓您的後端應用程式可以與單一中樞進行通訊。 Azure 通知中樞會負責將推播通知散發給多個平臺提供者。 本文說明如何將 Azure 通知中樞整合至 Xamarin.Forms 應用程式。
 
