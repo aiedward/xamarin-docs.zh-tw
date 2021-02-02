@@ -196,23 +196,6 @@ items:
             href: app-fundamentals/custom-renderer/hybridwebview.md
           - name: 實作檢視
             href: app-fundamentals/custom-renderer/view.md
-          - name: 實作影片播放程式
-            href: app-fundamentals/custom-renderer/video-player/index.md
-            items:
-              - name: 建立平台影片播放程式
-                href: app-fundamentals/custom-renderer/video-player/player-creation.md
-              - name: 播放網路影片
-                href: app-fundamentals/custom-renderer/video-player/web-videos.md
-              - name: 將影片來源繫結至播放程式
-                href: app-fundamentals/custom-renderer/video-player/source-bindings.md
-              - name: 載入應用程式資源影片
-                href: app-fundamentals/custom-renderer/video-player/loading-resources.md
-              - name: 存取裝置的影片庫
-                href: app-fundamentals/custom-renderer/video-player/accessing-library.md
-              - name: 自訂影片傳輸控制項
-                href: app-fundamentals/custom-renderer/video-player/custom-transport.md
-              - name: 自訂影片位置
-                href: app-fundamentals/custom-renderer/video-player/custom-positioning.md
       - name: 資料繫結
         href: app-fundamentals/data-binding/index.md
         items:
@@ -352,7 +335,7 @@ items:
         href: app-fundamentals/triggers.md
   - name: 使用者介面
     items:
-      - name: 概觀
+      - name: 總覽
         href: user-interface/index.yml
       - name: 控制項參考
         items:
@@ -547,7 +530,7 @@ items:
                 href: user-interface/brushes/solidcolor.md
               - name: 漸層
                 items:
-                  - name: 總覽
+                  - name: 概觀
                     href: user-interface/brushes/gradient.md
                   - name: 線形漸層
                     href: user-interface/brushes/lineargradient.md
@@ -755,7 +738,7 @@ items:
             href: platform/ios/visualelement-first-responder.md
       - name: Windows
         items:
-          - name: 概觀
+          - name: 總覽
             href: platform/windows/index.md
           - name: 預設影像目錄
             href: platform/windows/default-image-directory.md
@@ -932,7 +915,7 @@ items:
           - name: Azure Cosmos DB 文件資料庫
             href: data-cloud/azure-services/azure-cosmosdb.md
           - name: Azure 通知中樞
-            href: data-cloud/azure-services/azure-notification-hub.md
+            href: /azure/developer/mobile-apps/notification-hubs-backend-service-xamarin-forms
           - name: Azure 儲存體
             href: data-cloud/azure-services/azure-storage.md
           - name: Azure 搜尋服務
