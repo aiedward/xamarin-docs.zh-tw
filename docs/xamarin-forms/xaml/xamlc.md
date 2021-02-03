@@ -1,33 +1,33 @@
 ---
-title: 中的 XAML 編譯Xamarin.Forms
-description: 本文說明如何使用 Xamarin.Forms xaml 編譯器（XAMLC），選擇性地將 XAML 直接編譯成中繼語言（IL）。
+title: 中的 XAML 編譯 Xamarin.Forms
+description: 本文說明如何選擇性地將 XAML 直接編譯成中繼語言 (IL) 與 Xamarin.Forms xaml 編譯器 (XAMLC) 。
 ms.prod: xamarin
 ms.assetid: 9A2D10A6-5DFC-485F-A75A-2F7B98314025
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/22/2018
+ms.date: 02/03/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eebbb3040175118320639bcb4482ec77b5c16ac7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8d53f80372062f4830d92213110f01d005f92018
+ms.sourcegitcommit: 4f274920d1fe906cda0bf83b8e928b3b50147d40
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137289"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509880"
 ---
-# <a name="xaml-compilation-in-xamarinforms"></a>中的 XAML 編譯Xamarin.Forms
+# <a name="xaml-compilation-in-xamarinforms"></a>中的 XAML 編譯 Xamarin.Forms
 
 _XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (IL)。_
 
-XAML 編譯提供一些優點：
+XAML 編譯提供許多優點：
 
 - 它會執行 XAML 的編譯時間檢查，以通知使用者是否有任何錯誤。
 - 它能免去 XAML 元素一部分的載入和具現化時間。
 - 它能透過不再包含 .xaml 檔案來協助減少最終組件的檔案大小。
 
-XAML 編譯預設為停用，以確保回溯相容性。 您可以藉由加入屬性，在元件和類別層級上啟用此功能 [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 。
+架構中的 XAML 編譯預設為停用。 不過，它會在新專案的範本中啟用。 您可以藉 `XamlCompilationOptions.Skip` 由新增屬性，在元件和類別層級上明確地啟用或停用 () [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 。
 
 下列程式碼範例將示範如何在元件層級啟用 XAML 編譯：
 
@@ -41,12 +41,14 @@ namespace PhotoApp
 }
 ```
 
-在此範例中，將會執行包含在元件內之所有 XAML 的編譯階段檢查，並在編譯時期（而非執行時間）報告 XAML 錯誤。 因此， `assembly` 屬性的前置詞 [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 會指定將屬性套用至整個元件。
+雖然可以將屬性放在任何地方，但最好的地方是將它放在 **AssemblyInfo.cs** 中。
+
+在此範例中，將會執行包含在元件中的所有 XAML 的編譯時間檢查，而且在編譯時期（而非執行時間）回報 XAML 錯誤。 因此，屬性（attribute）的前置詞（attribute） `assembly` [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 會指定套用至整個元件的屬性（attribute）。
 
 > [!NOTE]
-> [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)屬性和 [`XamlCompilationOptions`](xref:Xamarin.Forms.Xaml.XamlCompilationOptions) 列舉位於 `Xamarin.Forms.Xaml` 命名空間中，必須匯入才能使用它們。
+> [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)屬性和 [`XamlCompilationOptions`](xref:Xamarin.Forms.Xaml.XamlCompilationOptions) 列舉位於 `Xamarin.Forms.Xaml` 命名空間中，必須匯入才能使用。
 
-下列程式碼範例示範如何在類別層級啟用 XAML 編譯：
+下列程式碼範例將示範如何在類別層級啟用 XAML 編譯：
 
 ```csharp
 using Xamarin.Forms.Xaml;
@@ -58,10 +60,10 @@ public class HomePage : ContentPage
 }
 ```
 
-在此範例中，將會執行類別之 XAML 的編譯階段檢查， `HomePage` 以及在編譯過程中報告的錯誤。
+在此範例中，將會執行類別的 XAML 的編譯時間檢查 `HomePage` ，並在編譯過程中回報錯誤。
 
 > [!NOTE]
-> 可以啟用編譯的系結，以改善應用程式中的資料系結效能 Xamarin.Forms 。 如需詳細資訊，請參閱[編譯繫結](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。
+> 您可以啟用編譯的系結，以改善應用程式中的資料系結效能 Xamarin.Forms 。 如需詳細資訊，請參閱[編譯繫結](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。
 
 ## <a name="related-links"></a>相關連結
 
