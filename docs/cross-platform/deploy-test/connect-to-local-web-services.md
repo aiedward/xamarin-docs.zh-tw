@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/29/2020
-ms.openlocfilehash: 2b289e5ffe4fba5c2f20caf0cf1d59cd277767f9
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.date: 02/04/2021
+ms.openlocfilehash: a4bf7beb23b1ae875f0d267ee16554e7a054252b
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373415"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99540944"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>從 iOS 模擬器和 Android 模擬器連線到本機 web 服務
 
@@ -83,15 +83,17 @@ Android 模擬器的每個執行個體都會與您的開發電腦網路介面隔
 
 但是，每個模擬器的虛擬路由器都會管理一個特殊的網路空間，其中包括預先配置的位址，而 `10.0.2.2` 位址為您主機回送介面的別名 (在您的開發電腦上為 127.0.0.1)。 因此，提供一個透過 `/api/todoitems/` 相對 URI 公開 GET 作業的本機安全 Web 服務，在 Android 模擬器中執行的應用程式就可以透過傳送 GET 要求至 `https://10.0.2.2:<port>/api/todoitems/` 來取用作業。
 
-### <a name="xamarinforms-example"></a>Xamarin.Forms 範例
+### <a name="detect-the-operating-system"></a>偵測作業系統
 
-在 Xamarin 應用程式中， [`Device`](xref:Xamarin.Forms.Device) 類別可以用來偵測應用程式執行所在的平臺。 然後可以如下所示，設定適當的主機名稱 (讓您能夠存取本機安全 Web 服務)：
+[`DeviceInfo`](xref:Xamarin.Essentials.DeviceInfo)類別可以用來偵測應用程式執行所在的平臺。 然後可以如下所示，設定適當的主機名稱 (讓您能夠存取本機安全 Web 服務)：
 
 ```csharp
 public static string BaseAddress =
-    Device.RuntimePlatform == Device.Android ? "https://10.0.2.2:5001" : "https://localhost:5001";
+    DeviceInfo.Platform == DevicePlatform.Android ? "https://10.0.2.2:5001" : "https://localhost:5001";
 public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 ```
+
+如需類別的詳細資訊 `DeviceInfo` ，請參閱 [Xamarin：裝置資訊](~/essentials/device-information.md)。
 
 ## <a name="bypass-the-certificate-security-check"></a>繞過憑證安全性檢查
 
@@ -124,9 +126,58 @@ public HttpClientHandler GetInsecureHandler()
 #endif
 ```
 
+## <a name="enable-http-clear-text-traffic"></a>啟用 HTTP 純文字流量
+
+（選擇性）您可以將 iOS 和 Android 專案設定為允許純文字 HTTP 流量。 如果後端服務設定為允許 HTTP 流量，您可以在基底 Url 中指定 HTTP，然後設定您的專案以允許純文字流量：
+
+```csharp
+public static string BaseAddress =
+    DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5001" : "http://localhost:5001";
+public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
+```
+
+### <a name="ios-ats-opt-out"></a>iOS ATS 退出
+
+若要在 iOS 上啟用純文字本機流量，您應該將下列內容新增至您的 **plist** 檔案，以 [退出宣告 ATS](~/ios/app-fundamentals/ats.md#optout) ：
+
+```xml
+<key>NSAppTransportSecurity</key>    
+<dict>
+    <key>NSAllowsLocalNetworking</key>
+    <true/>
+</dict>
+```
+
+### <a name="android-network-security-configuration"></a>Android 網路安全性設定
+
+若要在 Android 上啟用純文字本機流量，您應該在 **Resources/XML** 資料夾中加入名為 **network_security_config.xml** 的新 XML 檔案，以建立網路安全性設定。 XML 檔案應指定下列設定：
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+  <domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">10.0.2.2</domain>
+  </domain-config>
+</network-security-config>
+```
+
+然後，在 Android 資訊清單中的 **應用程式** 節點上設定 **networkSecurityConfig** 屬性：
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+    <application android:networkSecurityConfig="@xml/network_security_config">
+        ...
+    </application>
+</manifest>
+```
+
 ## <a name="related-links"></a>相關連結
 
 - [TodoREST (範例)](/samples/xamarin/xamarin-forms-samples/webservices-todorest/) \(英文\)
 - [啟用本機 HTTPS](/aspnet/core/getting-started#enable-local-https)
 - [適用於 iOS/macOS 的 HttpClient 和 SSL/TLS 實作選取器](~/cross-platform/macios/http-stack.md)
 - [適用於 Android 的 HttpClient 堆疊和 SSL/TLS 實作選擇器](~/android/app-fundamentals/http-stack.md)
+- [Android 網路安全性設定](https://devblogs.microsoft.com/xamarin/cleartext-http-android-network-security/)
+- [iOS 應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)
+- [Xamarin.Essentials：裝置資訊](~/essentials/device-information.md)

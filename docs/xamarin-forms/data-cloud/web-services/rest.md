@@ -6,16 +6,16 @@ ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/28/2020
+ms.date: 02/03/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3146d1c1de66c0b2bc2e9c2d86a7a50d406ecd7e
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: a3fd59ecbaf85f24515deba8562060aadc6d2165
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373363"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99540957"
 ---
 # <a name="consume-a-restful-web-service"></a>使用 RESTful Web 服務
 
@@ -211,8 +211,17 @@ REST 服務會在屬性中傳送 HTTP 狀態碼 `HttpResponseMessage.IsSuccessSt
 - **400 (錯誤的要求)** –伺服器無法理解要求。
 - **404 (找不到)** –要求的資源不存在於伺服器上。
 
+### <a name="local-development"></a>本機開發
+
+如果您要在本機使用架構（例如 ASP.NET Core Web API）來開發 REST web 服務，您可以同時進行 web 服務和行動應用程式的偵錯工具。 在此案例中，您必須啟用 iOS simualtor 和 Android 模擬器的純文字 HTTP 流量。 如需設定專案以允許通訊的相關資訊，請參閱 [連接到本機 web 服務](~/cross-platform/deploy-test/connect-to-local-web-services.md)。
+
 ## <a name="related-links"></a>相關連結
 
+- [Microsoft Learn：在 Xamarin 應用程式中取用 REST web 服務](/learn/modules/consume-rest-services/)
+- [Microsoft Learn：使用 ASP.NET Core 建立 web API](/learn/modules/build-web-api-aspnet-core/)
 - [建立原生行動應用程式的後端服務](/aspnet/core/mobile/native-mobile-backend/)
 - [TodoREST (範例)](/samples/xamarin/xamarin-forms-samples/webservices-todorest) \(英文\)
-- [HttpClient](/dotnet/api/system.net.http.httpclient)
+- [HttpClient API](xref:System.Net.Http.HttpClient)
+- [Android 網路安全性設定](https://devblogs.microsoft.com/xamarin/cleartext-http-android-network-security/)
+- [iOS 應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)
+- [連線到本機 Web 服務](~/cross-platform/deploy-test/connect-to-local-web-services.md)
