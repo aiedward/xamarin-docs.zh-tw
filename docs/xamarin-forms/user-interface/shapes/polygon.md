@@ -6,18 +6,18 @@ ms.assetid: D6539F60-A5AC-46EF-86EB-E9F508EB1FA8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/24/2020
+ms.date: 02/05/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dda3c0ded11af919dd80b2f0e00c50d8d6b77389
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 2928e3bd32d7dd2722f01ad5a51dbaab127afd77
+ms.sourcegitcommit: 06701714021545eb5e932847829b876082194ffc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939975"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585880"
 ---
-# <a name="no-locxamarinforms-shapes-polygon"></a>Xamarin.Forms 圖形：多邊形
+# <a name="xamarinforms-shapes-polygon"></a>Xamarin.Forms 圖形：多邊形
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -36,7 +36,7 @@ ms.locfileid: "97939975"
 
 ## <a name="create-a-polygon"></a>建立多邊形
 
-若要繪製多邊形，請建立 `Polygon` 物件，並將其 `Points` 屬性設定為圖形的頂點。 會自動繪製線，以連接第一個和最後一個點。 若要繪製多邊形內的，請將其 `Fill` 屬性設定為 [`Color`](xref:Xamarin.Forms.Color) 。 若要為多邊形提供外框，請將其 `Stroke` 屬性設定為 [`Color`](xref:Xamarin.Forms.Color) 。 `StrokeThickness`屬性會指定多邊形外框的粗細。
+若要繪製多邊形，請建立 `Polygon` 物件，並將其 `Points` 屬性設定為圖形的頂點。 會自動繪製線，以連接第一個和最後一個點。 若要繪製多邊形內的，請將其 `Fill` 屬性設定為 [`Brush`](xref:Xamarin.Forms.Brush) 衍生的物件。 若要為多邊形提供外框，請將其 `Stroke` 屬性設定為 [`Brush`](xref:Xamarin.Forms.Brush) 衍生的物件。 `StrokeThickness`屬性會指定多邊形外框的粗細。 如需物件的詳細資訊 `Brush` ，請參閱[ Xamarin.Forms 筆刷](~/xamarin-forms/user-interface/brushes/index.md)。
 
 下列 XAML 範例顯示如何繪製填滿的多邊形：
 
@@ -100,3 +100,4 @@ ms.locfileid: "97939975"
 - [ShapeDemos (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 形狀](index.md)
 - [Xamarin.Forms 圖形：填滿規則](fillrules.md)
+- [Xamarin.Forms 刷](~/xamarin-forms/user-interface/brushes/index.md)

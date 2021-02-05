@@ -6,18 +6,18 @@ ms.assetid: 2DD663D3-DAEC-495C-AB6D-8A143FC97637
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/24/2020
+ms.date: 02/05/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6d70d850f0c51abfc75d15d6cefd6dc429de8c8a
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 9080f509f9327f18f0cd66b0a497bdf03ac4975a
+ms.sourcegitcommit: 06701714021545eb5e932847829b876082194ffc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939962"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585854"
 ---
-# <a name="no-locxamarinforms-shapes-rectangle"></a>Xamarin.Forms 圖形：矩形
+# <a name="xamarinforms-shapes-rectangle"></a>Xamarin.Forms 圖形：矩形
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -34,7 +34,7 @@ ms.locfileid: "97939962"
 
 ## <a name="create-a-rectangle"></a>建立矩形
 
-若要繪製矩形，請建立 `Rectangle` 物件並設定其 `WidthRequest` 和 `HeightRequest` 屬性。 若要繪製矩形內的，請將其 `Fill` 屬性設定為 [`Color`](xref:Xamarin.Forms.Color) 。 若要為矩形提供外框，請將其 `Stroke` 屬性設定為 [`Color`](xref:Xamarin.Forms.Color) 。 `StrokeThickness`屬性指定矩形大綱的粗細。
+若要繪製矩形，請建立 `Rectangle` 物件並設定其 `WidthRequest` 和 `HeightRequest` 屬性。 若要繪製矩形內的，請將其 `Fill` 屬性設定為 [`Brush`](xref:Xamarin.Forms.Brush) 衍生的物件。 若要為矩形提供外框，請將其 `Stroke` 屬性設定為 [`Brush`](xref:Xamarin.Forms.Brush) 衍生的物件。 `StrokeThickness`屬性指定矩形大綱的粗細。 如需物件的詳細資訊 `Brush` ，請參閱[ Xamarin.Forms 筆刷](~/xamarin-forms/user-interface/brushes/index.md)。
 
 若要為矩形圓角，請設定其 `RadiusX` 和 `RadiusY` 屬性。 這些屬性會設定用來將矩形圓角四捨五入的 X 軸和 y 軸半徑。
 
@@ -76,3 +76,4 @@ ms.locfileid: "97939962"
 
 - [ShapeDemos (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 形狀](index.md)
+- [Xamarin.Forms 刷](~/xamarin-forms/user-interface/brushes/index.md)

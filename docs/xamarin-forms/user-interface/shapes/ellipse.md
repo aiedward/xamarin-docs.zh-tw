@@ -6,18 +6,18 @@ ms.assetid: 5BF81E25-12E5-49F0-A40C-0CF4C5D63B9B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/24/2020
+ms.date: 02/05/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4a905371b8bda93616fee0677cbd0932d8699e5
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: b3130fd4cb054799ca9e0a61d13cacb2629320b7
+ms.sourcegitcommit: 06701714021545eb5e932847829b876082194ffc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939767"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585828"
 ---
-# <a name="no-locxamarinforms-shapes-ellipse"></a>Xamarin.Forms 圖形：橢圓形
+# <a name="xamarinforms-shapes-ellipse"></a>Xamarin.Forms 圖形：橢圓形
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -27,7 +27,7 @@ ms.locfileid: "97939767"
 
 ## <a name="create-an-ellipse"></a>建立橢圓形
 
-若要繪製橢圓形，請建立 `Ellipse` 物件並設定其 `WidthRequest` 和 `HeightRequest` 屬性。 若要繪製橢圓形內的，請將其 `Fill` 屬性設定為 [`Color`](xref:Xamarin.Forms.Color) 。 若要為橢圓形提供外框，請將其 `Stroke` 屬性設定為 [`Color`](xref:Xamarin.Forms.Color) 。 `StrokeThickness`屬性會指定橢圓形大綱的粗細。
+若要繪製橢圓形，請建立 `Ellipse` 物件並設定其 `WidthRequest` 和 `HeightRequest` 屬性。 若要繪製橢圓形內的，請將其 `Fill` 屬性設定為 [`Brush`](xref:Xamarin.Forms.Brush) 衍生的物件。 若要為橢圓形提供外框，請將其 `Stroke` 屬性設定為 [`Brush`](xref:Xamarin.Forms.Brush) 衍生的物件。 `StrokeThickness`屬性會指定橢圓形大綱的粗細。 如需物件的詳細資訊 `Brush` ，請參閱[ Xamarin.Forms 筆刷](~/xamarin-forms/user-interface/brushes/index.md)。
 
 若要繪製圓形，請讓 `WidthRequest` 物件的和 `HeightRequest` 屬性 `Ellipse` 相等。
 
@@ -56,7 +56,7 @@ ms.locfileid: "97939767"
 
 在此範例中，會繪製維度 150x150 (裝置獨立單位) 的紅色圓圈：
 
-![Circle](ellipse-images/circle.png "Circle")
+![未空心圓形](ellipse-images/circle.png "Circle")
 
 如需繪製虛線橢圓形的詳細資訊，請參閱 [繪製虛線圖形](index.md#draw-dashed-shapes)。
 
@@ -64,3 +64,4 @@ ms.locfileid: "97939767"
 
 - [ShapeDemos (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 形狀](index.md)
+- [Xamarin.Forms 刷](~/xamarin-forms/user-interface/brushes/index.md)

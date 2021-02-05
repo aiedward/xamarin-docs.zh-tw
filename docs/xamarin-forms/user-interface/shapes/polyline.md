@@ -6,18 +6,18 @@ ms.assetid: 15D02690-AC03-457E-8815-8E4C17E4D642
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/24/2020
+ms.date: 02/05/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b331ea54e1ae0d5746090d155cb14465bcec0307
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 95b60c4ab28200dd2bc2434396df0832532bdd7a
+ms.sourcegitcommit: 06701714021545eb5e932847829b876082194ffc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97938988"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585867"
 ---
-# <a name="no-locxamarinforms-shapes-polyline"></a>Xamarin.Forms 圖形：折線
+# <a name="xamarinforms-shapes-polyline"></a>Xamarin.Forms 圖形：折線
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -36,10 +36,10 @@ ms.locfileid: "97938988"
 
 ## <a name="create-a-polyline"></a>建立折線
 
-若要繪製折線，請建立 `Polyline` 物件，並將其 `Points` 屬性設定為圖形的頂點。 若要為聚合線條提供外框，請將其 `Stroke` 屬性設定為 [`Color`](xref:Xamarin.Forms.Color) 。 `StrokeThickness`屬性會指定折線大綱的粗細。
+若要繪製折線，請建立 `Polyline` 物件，並將其 `Points` 屬性設定為圖形的頂點。 若要為聚合線條提供外框，請將其 `Stroke` 屬性設定為 [`Brush`](xref:Xamarin.Forms.Brush) 衍生的物件。 `StrokeThickness`屬性會指定折線大綱的粗細。 如需物件的詳細資訊 `Brush` ，請參閱[ Xamarin.Forms 筆刷](~/xamarin-forms/user-interface/brushes/index.md)。
 
 > [!IMPORTANT]
-> 如果您將的 `Fill` 屬性設定 `Polyline` 為 [`Color`](xref:Xamarin.Forms.Color) ，即使起點和終點不相交，也會繪製聚合線條的內部空間。
+> 如果您將的 `Fill` 屬性設定 `Polyline` 為衍生的 [`Brush`](xref:Xamarin.Forms.Brush) 物件，則會繪製聚合線條的內部空間，即使起點和終點沒有交集。
 
 下列 XAML 範例顯示如何繪製聚合線條：
 
@@ -100,3 +100,4 @@ ms.locfileid: "97938988"
 - [ShapeDemos (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 形狀](index.md)
 - [Xamarin.Forms 圖形：填滿規則](fillrules.md)
+- [Xamarin.Forms 刷](~/xamarin-forms/user-interface/brushes/index.md)
