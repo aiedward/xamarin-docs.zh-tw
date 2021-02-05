@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: d5b0cc2bb4617a0f093971dfca69e8352779c088
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93373649"
 ---
-# <a name="create-no-locxamarinforms-behaviors"></a>建立 Xamarin.Forms 行為
+# <a name="create-xamarinforms-behaviors"></a>建立 Xamarin.Forms 行為
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
@@ -59,7 +59,7 @@ public class CustomBehavior : Behavior<View>
 
 然後，您可以將行為附加至適當控制項的集合，藉以取用該行為 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 。
 
-## <a name="creating-a-no-locxamarinforms-behavior"></a>建立 Xamarin.Forms 行為
+## <a name="creating-a-xamarinforms-behavior"></a>建立 Xamarin.Forms 行為
 
 範例應用程式會示範 `NumericValidationBehavior` ，它會將使用者輸入的值反白顯示為 [`Entry`](xref:Xamarin.Forms.Entry) 紅色的控制項（如果不是的話） `double` 。 此行為會顯示在下列程式碼範例中：
 
@@ -92,7 +92,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 > [!NOTE]
 > Xamarin.Forms 不會設定 `BindingContext` 行為的，因為可以透過樣式來共用行為，並將其套用至多個控制項。
 
-## <a name="consuming-a-no-locxamarinforms-behavior"></a>使用 Xamarin.Forms 行為
+## <a name="consuming-a-xamarinforms-behavior"></a>使用 Xamarin.Forms 行為
 
 每個 Xamarin.Forms 控制項都有一個 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 集合，可新增一或多個行為，如下列 XAML 程式碼範例所示：
 
@@ -118,7 +118,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 > [!NOTE]
 > 行為是針對特定的控制項類型 (或可套用至許多控制項的 Superclass) 所撰寫，且應該只新增至相容的控制項。 嘗試將行為附加至不相容的控制項會導致擲回例外狀況。
 
-### <a name="consuming-a-no-locxamarinforms-behavior-with-a-style"></a>Xamarin.Forms使用樣式的行為
+### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Xamarin.Forms使用樣式的行為
 
 行為也可以明確或隱含樣式來使用。 但是，無法建立設定控制項屬性的樣式， [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 因為屬性是唯讀的。 解決方案是將附加屬性新增至會控制新增和移除行為的行為類別。 此程序如下：
 
@@ -207,7 +207,7 @@ entry.Behaviors.Clear();
 
 另請注意，當頁面從導覽堆疊快顯時，控制項的行為不會以隱含方式移除。 而是必須在頁面超出範圍之前先明確移除它們。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範如何建立和使用 Xamarin.Forms 行為。 Xamarin.Forms 行為是藉由衍生自 [`Behavior`](xref:Xamarin.Forms.Behavior) 或類別來建立 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 。
 

@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 6cc6b1a33f2334239d2135d6ffe72c24d2243335
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93374741"
 ---
 # <a name="reusable-effectbehavior"></a>可重複使用的 EffectBehavior
@@ -164,7 +164,7 @@ label.Behaviors.Add (new EffectBehavior {
 
 使用此行為在控制項中新增和移除效果的優點是：可以從程式碼後置檔案中移除以定案效果方式處理的程式碼。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範如何使用行將效果新增至控制項。 `EffectBehavior`類別是可重複使用的 Xamarin.Forms 自訂行為，可在 [`Effect`](xref:Xamarin.Forms.Effect) 行為附加至控制項時，將實例新增至控制項，並在 `Effect` 行為與控制項中斷連結時移除實例。
 

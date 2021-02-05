@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 37973db6288f092d756a29de61731a296eac3924
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93375404"
 ---
-# <a name="text-in-no-locxamarinforms"></a>中的文字 Xamarin.Forms
+# <a name="text-in-xamarinforms"></a>中的文字 Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
@@ -59,7 +59,7 @@ Xamarin.Forms 有三個主要的視圖可使用文字：
 
 如需詳細資訊，請參閱 [編輯器](editor.md) 文章。
 
-## <a name="fonts"></a>[字體](fonts.md)
+## <a name="fonts"></a>[字型](fonts.md)
 
 許多控制項都支援使用每個平臺上內建字型的不同字型設定，或應用程式隨附的自訂字型。 如需詳細資訊，請參閱「字型 [」](fonts.md) 一文。
 

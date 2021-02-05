@@ -12,13 +12,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: cb811972d622ffdcf6042e030528a88fb18abaf7
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93369801"
 ---
-# <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms 字串和影像當地語系化
+# <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms 字串和影像當地語系化
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
@@ -39,7 +39,7 @@ ms.locfileid: "93369801"
 
 ## <a name="create-resx-files"></a>建立 Resx 檔案
 
-資源檔是副檔名為 **.resx** 的 XML 檔案，會在建立程式期間) 檔案編譯成二進位資源 (。 Visual Studio 2019 產生的類別會提供用來取出資源的 API。 當地語系化的應用程式通常會包含預設資源檔，其中包含應用程式中使用的所有字串，以及每種支援語言的資源檔。 範例應用程式在共用專案中有一個 **Resx** 資料夾，其中包含資源檔，以及其預設資源檔，稱為 **>appresources.resx .resx** 。
+資源檔是副檔名為 **.resx** 的 XML 檔案，會在建立程式期間) 檔案編譯成二進位資源 (。 Visual Studio 2019 產生的類別會提供用來取出資源的 API。 當地語系化的應用程式通常會包含預設資源檔，其中包含應用程式中使用的所有字串，以及每種支援語言的資源檔。 範例應用程式在共用專案中有一個 **Resx** 資料夾，其中包含資源檔，以及其預設資源檔，稱為 **>appresources.resx .resx**。
 
 資源檔包含每個專案的下列資訊：
 
@@ -59,7 +59,7 @@ ms.locfileid: "93369801"
 
 [ **存取修飾** 詞] 下拉式設定會決定 Visual Studio 如何產生用來存取資源的類別。 使用指定的存取範圍層級，將存取修飾詞設定為 **公用** 或 **內部** 結果產生的類別。 將存取修飾詞設定為不產生程式 **代碼** 不會產生類別檔案。 預設資源檔應設定為產生類別檔案，以將副檔名為 **designer.cs** 的檔案新增至專案。
 
-一旦建立預設資源檔，就可以為應用程式支援的每個文化特性建立額外的檔案。 每個額外的資源檔都應該在檔案名中包含翻譯文化特性，且 **存取修飾** 詞必須設定為 **不產生程式碼** 。
+一旦建立預設資源檔，就可以為應用程式支援的每個文化特性建立額外的檔案。 每個額外的資源檔都應該在檔案名中包含翻譯文化特性，且 **存取修飾** 詞必須設定為 **不產生程式碼**。
 
 在執行時間，應用程式會嘗試以明確的順序來解析資源要求。 例如，如果裝置文化特性是 **en-us** ，則應用程式會依下列順序尋找資源檔：
 
@@ -71,7 +71,7 @@ ms.locfileid: "93369801"
 
 ![指定 .resx 檔中的預設西班牙文文字資源](text-images/pc-spanish-strings.png)
 
-轉譯檔案使用預設檔案中指定的相同 **名稱** 值，但在 [ **值** ] 資料行中包含西班牙文語言字串。 此外， **存取修飾** 詞設定為 **不產生程式碼** 。
+轉譯檔案使用預設檔案中指定的相同 **名稱** 值，但在 [ **值** ] 資料行中包含西班牙文語言字串。 此外， **存取修飾** 詞設定為 **不產生程式碼**。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -102,9 +102,9 @@ ms.locfileid: "93369801"
 
 ![資源檔案屬性中指定的自訂工具](text-images/mac-resx-properties.png)
 
-將 **自訂工具** 設定為 **PublicResXFileCodeGenerator** 會導致產生的類別具有 `public` 存取權。 將 **自訂工具** 設定為 **InternalResXFileCodeGenerator** 會導致產生的類別具有 `internal` 存取權。 空白的 **自訂工具** 值將不會產生類別。 產生的類別名稱會與資源檔名稱相符。 例如， **>appresources.resx .resx** 檔案將導致在名為 AppResources.designer.cs 的檔案中建立 `AppResources` 類別。 **AppResources.designer.cs**
+將 **自訂工具** 設定為 **PublicResXFileCodeGenerator** 會導致產生的類別具有 `public` 存取權。 將 **自訂工具** 設定為 **InternalResXFileCodeGenerator** 會導致產生的類別具有 `internal` 存取權。 空白的 **自訂工具** 值將不會產生類別。 產生的類別名稱會與資源檔名稱相符。 例如， **>appresources.resx .resx** 檔案將導致在名為 AppResources.designer.cs 的檔案中建立 `AppResources` 類別。 
 
-您可以為每個支援的文化特性建立額外的資源檔。 每個語言檔案都應該在檔案名中包含翻譯文化特性，以便將目標為 **es-mx** 的檔案命名為 **AppResources.es-mx .resx** 。
+您可以為每個支援的文化特性建立額外的資源檔。 每個語言檔案都應該在檔案名中包含翻譯文化特性，以便將目標為 **es-mx** 的檔案命名為 **AppResources.es-mx .resx**。
 
 在執行時間，應用程式會嘗試以明確的順序來解析資源要求。 例如，如果裝置文化特性是 **en-us** ，則應用程式會依下列順序尋找資源檔：
 
@@ -185,9 +185,9 @@ using System.Resources;
 
 如需詳細資訊，請參閱 [在 Info. plist 中指定預設和支援的語言](~/ios/app-fundamentals/localization/index.md#specifying-default-and-supported-languages-in-infoplist)。
 
-## <a name="localize-text-in-no-locxamarinforms"></a>當地語系化中的文字 Xamarin.Forms
+## <a name="localize-text-in-xamarinforms"></a>當地語系化中的文字 Xamarin.Forms
 
-Xamarin.Forms使用產生的類別來當地語系化文字 `AppResources` 。 這個類別是根據預設的資源檔名稱來命名。 由於範例專案資源檔的名稱為 **AppResources.cs** ，Visual Studio 會產生一個名為的對應類別 `AppResources` 。 資源檔中的每個資料列都會在類別中產生靜態屬性 `AppResources` 。 下列靜態屬性會在範例應用程式的類別中產生 `AppResources` ：
+Xamarin.Forms使用產生的類別來當地語系化文字 `AppResources` 。 這個類別是根據預設的資源檔名稱來命名。 由於範例專案資源檔的名稱為 **AppResources.cs**，Visual Studio 會產生一個名為的對應類別 `AppResources` 。 資源檔中的每個資料列都會在類別中產生靜態屬性 `AppResources` 。 下列靜態屬性會在範例應用程式的類別中產生 `AppResources` ：
 
 - AddButton
 - NotesLabel
@@ -246,9 +246,9 @@ public LocalizedCodePage()
 
 ### <a name="localize-images-on-android"></a>將 Android 上的影像當地語系化
 
-在 Android 上，會使用 **Resources** 目錄中的資料夾命名慣例儲存) 的當地語系化可繪製資源 (映射。 資料夾會以目的語言的尾碼命名為可 **繪製** 。 例如，西班牙文語言資料夾的名稱為「可 **繪製的-es** 」。
+在 Android 上，會使用 **Resources** 目錄中的資料夾命名慣例儲存) 的當地語系化可繪製資源 (映射。 資料夾會以目的語言的尾碼命名為可 **繪製** 。 例如，西班牙文語言資料夾的名稱為「可 **繪製的-es**」。
 
-當需要四個字母的地區設定程式碼時，Android 會在虛線之後需要額外的 **r** 。 例如，墨西哥地區設定 (es-MX) 資料夾應命名為 **rMX** 。 每個地區設定資料夾中的影像檔案名稱應該相同：
+當需要四個字母的地區設定程式碼時，Android 會在虛線之後需要額外的 **r** 。 例如，墨西哥地區設定 (es-MX) 資料夾應命名為 **rMX**。 每個地區設定資料夾中的影像檔案名稱應該相同：
 
 ![Android 專案中的當地語系化影像](text-images/pc-android-images.png)
 
@@ -256,9 +256,9 @@ public LocalizedCodePage()
 
 ### <a name="localize-images-on-ios"></a>在 iOS 上將影像當地語系化
 
-在 iOS 上，會使用 **Resources** 目錄中的資料夾命名慣例來儲存當地語系化的影像。 預設資料夾的名稱是 **>.lproj** 。 特定語言的資料夾會使用語言或地區設定名稱來命名，後面接著 **. >.lproj** 。 例如，西班牙文語言資料夾的名稱是 **es. >.lproj** 。
+在 iOS 上，會使用 **Resources** 目錄中的資料夾命名慣例來儲存當地語系化的影像。 預設資料夾的名稱是 **>.lproj**。 特定語言的資料夾會使用語言或地區設定名稱來命名，後面接著 **. >.lproj**。 例如，西班牙文語言資料夾的名稱是 **es. >.lproj**。
 
-四個字母的本機代碼的運作方式就像兩個字母的語言代碼。 例如，墨西哥地區設定 (es-MX) 資料夾應命名為 **es-mx. >.lproj** 。 每個地區設定資料夾中的影像檔案名稱應該相同：
+四個字母的本機代碼的運作方式就像兩個字母的語言代碼。 例如，墨西哥地區設定 (es-MX) 資料夾應命名為 **es-mx. >.lproj**。 每個地區設定資料夾中的影像檔案名稱應該相同：
 
 ![IOS 專案中的當地語系化影像](text-images/pc-ios-images.png)
 
@@ -269,7 +269,7 @@ public LocalizedCodePage()
 
 ### <a name="localize-images-on-uwp"></a>在 UWP 上當地語系化影像
 
-在 UWP 上，會使用 **資產/影像** 目錄中的資料夾命名慣例來儲存當地語系化的影像。 資料夾的命名方式為語言或地區設定。 例如，西班牙文語言資料夾的名稱是 **es** ，且墨西哥 locale 資料夾應命名為 **es-MX** 。 每個地區設定資料夾中的影像檔案名稱應該相同：
+在 UWP 上，會使用 **資產/影像** 目錄中的資料夾命名慣例來儲存當地語系化的影像。 資料夾的命名方式為語言或地區設定。 例如，西班牙文語言資料夾的名稱是 **es** ，且墨西哥 locale 資料夾應命名為 **es-MX**。 每個地區設定資料夾中的影像檔案名稱應該相同：
 
 ![UWP 專案中的當地語系化影像](text-images/pc-uwp-images.png)
 

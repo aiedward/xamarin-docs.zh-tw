@@ -13,13 +13,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: b550aed2dd2038a48fa4eafcf1ed1d874a08eb03
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93375521"
 ---
-# <a name="create-a-single-page-no-locxamarinforms-application"></a>建立單一頁面 Xamarin.Forms 應用程式
+# <a name="create-a-single-page-xamarinforms-application"></a>建立單一頁面 Xamarin.Forms 應用程式
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
@@ -53,12 +53,12 @@ ms.locfileid: "93375521"
 
     ![跨平台專案範本](single-page-images/vs/new-project-2019.png)
 
-3. 在 [設定新專案] 視窗中，將 [方案名稱] 設定為 **Notes** ，然後為專案選擇合適的位置，並按一下 [建立] 按鈕：
+3. 在 [設定新專案] 視窗中，將 [方案名稱] 設定為 **Notes**，然後為專案選擇合適的位置，並按一下 [建立] 按鈕：
 
     ![設定專案](single-page-images/vs/configure-project.png)
 
     > [!IMPORTANT]
-    > 本快速入門中的 C# 和 XAML 程式碼片段，要求將解決方案命名為 **Notes** 。 當您從本快速入門將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
+    > 本快速入門中的 C# 和 XAML 程式碼片段，要求將解決方案命名為 **Notes**。 當您從本快速入門將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
 
 4. 在 [New Cross Platform App] \(新增跨平台應用程式\) 對話方塊中，按一下 [空白應用程式]，然後按一下 [確定] 按鈕：
 
@@ -101,9 +101,9 @@ ms.locfileid: "93375521"
 
     這段程式碼會以宣告方式定義頁面的使用者介面，其中包含 [`Label`](xref:Xamarin.Forms.Label) 要顯示文字的、 [`Editor`](xref:Xamarin.Forms.Editor) 用於文字輸入的，以及指示 [`Button`](xref:Xamarin.Forms.Button) 應用程式儲存或刪除檔案的兩個實例。 這兩個 `Button` 實例會以水準方式配置在中 [`Grid`](xref:Xamarin.Forms.Grid) ，並在中垂直配置 `Label` 、 `Editor` 和 `Grid` [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 如需建立使用者介面的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)的[使用者介面](deepdive.md#user-interface)。
 
-    按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml** ，然後關閉檔案。
+    按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml**，然後關閉檔案。
 
-7. 在 [方案總管] 的 **Notes** 專案中展開 **MainPage.xaml** ，然後按兩下 **MainPage.xaml.cs** 將其開啟：
+7. 在 [方案總管] 的 **Notes** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟：
 
     ![開啟 MainPage.xaml.cs](single-page-images/vs/open-mainpage-codebehind-2019.png)
 
@@ -147,9 +147,9 @@ ms.locfileid: "93375521"
     }
     ```
 
-    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面的函式時，會讀取檔案（如果存在的話），並顯示在中 [`Editor`](xref:Xamarin.Forms.Editor) 。 當按下 [ **儲存** ] 時 [`Button`](xref:Xamarin.Forms.Button) `OnSaveButtonClicked` ，就會執行事件處理常式，這會將的內容儲存 `Editor` 至檔案。 按下 [刪除] `Button` 即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (若檔案存在)，並移除 `Editor` 中的所有文字。 如需使用者互動的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)中的[回應使用者互動](deepdive.md#responding-to-user-interaction)。
+    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面的函式時，會讀取檔案（如果存在的話），並顯示在中 [`Editor`](xref:Xamarin.Forms.Editor) 。 當按下 [ **儲存**] 時 [`Button`](xref:Xamarin.Forms.Button) `OnSaveButtonClicked` ，就會執行事件處理常式，這會將的內容儲存 `Editor` 至檔案。 按下 [刪除] `Button` 即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (若檔案存在)，並移除 `Editor` 中的所有文字。 如需使用者互動的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)中的[回應使用者互動](deepdive.md#responding-to-user-interaction)。
 
-    按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml.cs** ，然後關閉檔案。
+    按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml.cs**，然後關閉檔案。
 
 ### <a name="building-the-quickstart"></a>建置快速入門
 
@@ -203,12 +203,12 @@ ms.locfileid: "93375521"
 
     ![新增專案](single-page-images/vs/new-solution.png)
 
-2. 在 [ **新增專案** ] 對話方塊中，按一下 [ **跨平臺** ]，選取 [行動 **應用程式] (Xamarin.Forms)** 範本，將 [名稱] 設定為 [ **附注** ]，為專案選擇適當的位置，然後按一下 [ **確定]** 按鈕：
+2. 在 [ **新增專案** ] 對話方塊中，按一下 [ **跨平臺**]，選取 [行動 **應用程式] (Xamarin.Forms)** 範本，將 [名稱] 設定為 [ **附注**]，為專案選擇適當的位置，然後按一下 [ **確定]** 按鈕：
 
     ![跨平台專案範本](single-page-images/vs/new-project.png)
 
     > [!IMPORTANT]
-    > 本快速入門中的 C# 和 XAML 程式碼片段，要求將解決方案命名為 **Notes** 。 當您從本快速入門將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
+    > 本快速入門中的 C# 和 XAML 程式碼片段，要求將解決方案命名為 **Notes**。 當您從本快速入門將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
 
 3. 在 [新增跨平台應用程式] 對話方塊中，按一下 [空白應用程式]，並選取 [.NET Standard] 作為 [程式碼共用策略]，然後按一下 [確定] 按鈕：
 
@@ -251,9 +251,9 @@ ms.locfileid: "93375521"
 
     這段程式碼會以宣告方式定義頁面的使用者介面，其中包含 [`Label`](xref:Xamarin.Forms.Label) 要顯示文字的、 [`Editor`](xref:Xamarin.Forms.Editor) 用於文字輸入的，以及指示 [`Button`](xref:Xamarin.Forms.Button) 應用程式儲存或刪除檔案的兩個實例。 這兩個 `Button` 實例會以水準方式配置在中 [`Grid`](xref:Xamarin.Forms.Grid) ，並在中垂直配置 `Label` 、 `Editor` 和 `Grid` [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 如需建立使用者介面的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)的[使用者介面](deepdive.md#user-interface)。
 
-    按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml** ，然後關閉檔案。
+    按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml**，然後關閉檔案。
 
-6. 在 [方案總管] 的 **Notes** 專案中展開 **MainPage.xaml** ，然後按兩下 **MainPage.xaml.cs** 將其開啟：
+6. 在 [方案總管] 的 **Notes** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟：
 
     ![開啟 MainPage.xaml.cs](single-page-images/vs/open-mainpage-codebehind.png)
 
@@ -297,9 +297,9 @@ ms.locfileid: "93375521"
     }
     ```
 
-    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面的函式時，會讀取檔案（如果存在的話），並顯示在中 [`Editor`](xref:Xamarin.Forms.Editor) 。 當按下 [ **儲存** ] 時 [`Button`](xref:Xamarin.Forms.Button) `OnSaveButtonClicked` ，就會執行事件處理常式，這會將的內容儲存 `Editor` 至檔案。 按下 [刪除] `Button` 即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (若檔案存在)，並移除 `Editor` 中的所有文字。 如需使用者互動的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)中的[回應使用者互動](deepdive.md#responding-to-user-interaction)。
+    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面的函式時，會讀取檔案（如果存在的話），並顯示在中 [`Editor`](xref:Xamarin.Forms.Editor) 。 當按下 [ **儲存**] 時 [`Button`](xref:Xamarin.Forms.Button) `OnSaveButtonClicked` ，就會執行事件處理常式，這會將的內容儲存 `Editor` 至檔案。 按下 [刪除] `Button` 即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (若檔案存在)，並移除 `Editor` 中的所有文字。 如需使用者互動的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)中的[回應使用者互動](deepdive.md#responding-to-user-interaction)。
 
-    按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml.cs** ，然後關閉檔案。
+    按下 **CTRL+S** 以將變更儲存到 **MainPage.xaml.cs**，然後關閉檔案。
 
 ### <a name="building-the-quickstart"></a>建置快速入門
 
@@ -357,16 +357,16 @@ ms.locfileid: "93375521"
 
     ![選擇範本](single-page-images/vsmac/choose-template.png)
 
-3. 在 [設定空白的表單應用程式] 對話方塊中，將新的應用程式命名為 **Notes** 、確保已選取 [使用 .NET Standard] 選項按鈕，然後按一下 [下一步] 按鈕：    
+3. 在 [設定空白的表單應用程式] 對話方塊中，將新的應用程式命名為 **Notes**、確保已選取 [使用 .NET Standard] 選項按鈕，然後按一下 [下一步] 按鈕：    
 
     ![設定 Forms 應用程式](single-page-images/vsmac/configure-app.png)
 
-4. 在 [設定新的空白表單應用程式] 對話方塊中，將 [方案名稱] 和 [專案名稱] 設定為 **Notes** 、選擇專案的合適位置，然後按一下 [建立] 按鈕以建立專案：
+4. 在 [設定新的空白表單應用程式] 對話方塊中，將 [方案名稱] 和 [專案名稱] 設定為 **Notes**、選擇專案的合適位置，然後按一下 [建立] 按鈕以建立專案：
 
     ![設定 Forms 專案](single-page-images/vsmac/configure-project.png)
 
     > [!IMPORTANT]
-    > 本快速入門中的 C# 和 XAML 程式碼片段要求將解決方案和專案全都命名為 **Notes** 。 當您從本快速入門將程式碼複製到專案時，使用不同的名稱會導致建置錯誤。
+    > 本快速入門中的 C# 和 XAML 程式碼片段要求將解決方案和專案全都命名為 **Notes**。 當您從本快速入門將程式碼複製到專案時，使用不同的名稱會導致建置錯誤。
 
     如需有關所建立之 .NET Standard 程式庫的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)中的[ Xamarin.Forms 應用程式剖析](deepdive.md#anatomy-of-a-xamarinforms-application)。
 
@@ -405,9 +405,9 @@ ms.locfileid: "93375521"
 
     這段程式碼會以宣告方式定義頁面的使用者介面，其中包含 [`Label`](xref:Xamarin.Forms.Label) 要顯示文字的、 [`Editor`](xref:Xamarin.Forms.Editor) 用於文字輸入的，以及指示 [`Button`](xref:Xamarin.Forms.Button) 應用程式儲存或刪除檔案的兩個實例。 這兩個 `Button` 實例會以水準方式配置在中 [`Grid`](xref:Xamarin.Forms.Grid) ，並在中垂直配置 `Label` 、 `Editor` 和 `Grid` [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 如需建立使用者介面的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)的[使用者介面](deepdive.md#user-interface)。
 
-    選擇 [檔案] > [儲存] (或按下 **&#8984; + S** ) 以將變更儲存到 **MainPage.xaml** ，然後關閉檔案。
+    選擇 [檔案] > [儲存] (或按下 **&#8984; + S**) 以將變更儲存到 **MainPage.xaml**，然後關閉檔案。
 
-7. 在 [Solution Pad] 的 **Notes** 專案中展開 **MainPage.xaml** ，然後按兩下 **MainPage.xaml.cs** 將其開啟：
+7. 在 [Solution Pad] 的 **Notes** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟：
 
     ![MainPage.xaml.cs](single-page-images/vsmac/mainpage-xaml-cs.png)
 
@@ -451,13 +451,13 @@ ms.locfileid: "93375521"
     }
     ```
 
-    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面的函式時，會讀取檔案（如果存在的話），並顯示在中 [`Editor`](xref:Xamarin.Forms.Editor) 。 當按下 [ **儲存** ] 時 [`Button`](xref:Xamarin.Forms.Button) `OnSaveButtonClicked` ，就會執行事件處理常式，這會將的內容儲存 `Editor` 至檔案。 按下 [刪除] `Button` 即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (若檔案存在)，並移除 `Editor` 中的所有文字。 如需使用者互動的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)中的[回應使用者互動](deepdive.md#responding-to-user-interaction)。
+    此程式碼定義了 `_fileName` 欄位，這個欄位會參考名為 `notes.txt` 的檔案，以將附註資料儲存在應用程式的本機應用程式資料夾中。 執行頁面的函式時，會讀取檔案（如果存在的話），並顯示在中 [`Editor`](xref:Xamarin.Forms.Editor) 。 當按下 [ **儲存**] 時 [`Button`](xref:Xamarin.Forms.Button) `OnSaveButtonClicked` ，就會執行事件處理常式，這會將的內容儲存 `Editor` 至檔案。 按下 [刪除] `Button` 即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (若檔案存在)，並移除 `Editor` 中的所有文字。 如需使用者互動的詳細資訊，請參閱[ Xamarin.Forms 快速入門深入探討](deepdive.md)中的[回應使用者互動](deepdive.md#responding-to-user-interaction)。
 
-    選擇 [檔案] > [儲存] (或按下 **&#8984; + S** ) 以將變更儲存到 **MainPage.xaml.cs** ，然後關閉檔案。
+    選擇 [檔案] > [儲存] (或按下 **&#8984; + S**) 以將變更儲存到 **MainPage.xaml.cs**，然後關閉檔案。
 
 ### <a name="building-the-quickstart"></a>建置快速入門
 
-1. 在 Visual Studio for Mac 中，選取 [建置] > [全部建置] 功能表項目 (或按下 **&#8984; + B** )。 系統將建置專案，且 Visual Studio for Mac 工具列中將會出現成功訊息。
+1. 在 Visual Studio for Mac 中，選取 [建置] > [全部建置] 功能表項目 (或按下 **&#8984; + B**)。 系統將建置專案，且 Visual Studio for Mac 工具列中將會出現成功訊息。
 
       ![建置成功](single-page-images/vsmac/build-successful.png)
 
