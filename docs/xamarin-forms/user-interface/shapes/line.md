@@ -6,18 +6,18 @@ ms.assetid: 384F1A72-6D3B-4FD3-BC40-E00A73A463EC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/24/2020
+ms.date: 02/05/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5d5ecd7804c6cd8321827cd8aef98245124beca0
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 962800c5deb546ddf6a74d1f52ffaf60734ae463
+ms.sourcegitcommit: 06701714021545eb5e932847829b876082194ffc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939106"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585841"
 ---
-# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.Forms 圖形：線條
+# <a name="xamarinforms-shapes-line"></a>Xamarin.Forms 圖形：線條
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -36,7 +36,7 @@ ms.locfileid: "97939106"
 
 ## <a name="create-a-line"></a>建立線條
 
-若要繪製線條，請建立 `Line` 物件，並將其 `X1` 和 `Y1` 屬性設定為其起點，並將其和屬性設定為 `X2` 它的 `Y` 結束點。 此外，將其 `Stroke` 屬性設定為， [`Color`](xref:Xamarin.Forms.Color) 因為沒有筆劃的線條會隱藏。
+若要繪製線條，請建立 `Line` 物件，並將其 `X1` 和 `Y1` 屬性設定為其起點，並將其和屬性設定為 `X2` 它的 `Y` 結束點。 此外，將其 `Stroke` 屬性設定為 [`Brush`](xref:Xamarin.Forms.Brush) 衍生的物件，因為不會隱藏沒有筆劃的行。 如需物件的詳細資訊 `Brush` ，請參閱[ Xamarin.Forms 筆刷](~/xamarin-forms/user-interface/brushes/index.md)。
 
 > [!NOTE]
 > 設定的 `Fill` 屬性 `Line` 沒有任何作用，因為一行沒有內部。
@@ -53,7 +53,7 @@ ms.locfileid: "97939106"
 
 在此範例中，會將紅色對角線從 (40，0) 繪製至 (0120) ：
 
-![線條](line-images/line.png "線")
+![對角線](line-images/line.png "線條")
 
 由於 `X1` 、、 `Y1` `X2` 和屬性的 `Y2` 預設值為0，因此可以使用最基本的語法來繪製一些行：
 
@@ -86,3 +86,4 @@ ms.locfileid: "97939106"
 
 - [ShapeDemos (範例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 形狀](index.md)
+- [Xamarin.Forms 刷](~/xamarin-forms/user-interface/brushes/index.md)

@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/04/2021
-ms.openlocfilehash: a4bf7beb23b1ae875f0d267ee16554e7a054252b
-ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
+ms.openlocfilehash: 6c9e91d8c434a0deea8c419def7dc3f1800b1d06
+ms.sourcegitcommit: 3b6eec7841868f50827271105577ecdc6766c162
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99540944"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99606572"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>從 iOS 模擬器和 Android 模擬器連線到本機 web 服務
 
@@ -132,7 +132,7 @@ public HttpClientHandler GetInsecureHandler()
 
 ```csharp
 public static string BaseAddress =
-    DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5001" : "http://localhost:5001";
+    DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
 public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 ```
 
