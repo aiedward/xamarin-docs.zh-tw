@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 04/10/2017
-ms.openlocfilehash: da3148022f1280a18fd398e7c960c1a8440c0200
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: eb59d86582b50b5b0c166f2b5672422b481db048
+ms.sourcegitcommit: 1f391667869a4541dd9b42d78862dc01d69ed160
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91456804"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99818029"
 ---
 # <a name="building-mobile-apps"></a>建置行動應用程式
 
@@ -21,7 +21,7 @@ ms.locfileid: "91456804"
 ## <a name="build-your-first-app"></a>建置您的第一個應用程式
 
 > [!div class="nextstepaction"]
-> [Xamarin.Forms 快速入門](~/get-started/quickstarts/single-page.md)
+> [Xamarin.Forms 快速入門](~/get-started/quickstarts/app.md)
 
 若您想使用原生 UI 技術 (例如 Android XML 或 Xcode 腳本) 建置應用程式，請嘗試以下專為平台提供的指南：
 
@@ -34,7 +34,7 @@ ms.locfileid: "91456804"
 
 ### <a name="what-is-xamarin"></a>[什麼是 Xamarin？](~/cross-platform/get-started/introduction-to-mobile-development.md)
 
-此文件概略說明 *Xamarin 運作方式*及連結到 Xamarin.Forms、Android 與 iOS 快速入門指南的方式。
+此文件概略說明 *Xamarin 運作方式* 及連結到 Xamarin.Forms、Android 與 iOS 快速入門指南的方式。
 
 ### <a name="mobile-software-development-lifecycle"></a>[行動裝置軟體開發生命週期](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
 

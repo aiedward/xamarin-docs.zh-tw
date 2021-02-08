@@ -12,14 +12,14 @@ ms.date: 05/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: beb3800b2b91c6c393b597ddb05042ea8cf92361
-ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
+ms.openlocfilehash: 75c260f0d362e598ffa378942a5de46d103ad844
+ms.sourcegitcommit: 1f391667869a4541dd9b42d78862dc01d69ed160
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98609010"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99818159"
 ---
-# <a name="build-your-first-no-locxamarinforms-app"></a>建立您的第一個 Xamarin.Forms 應用程式
+# <a name="build-your-first-xamarinforms-app"></a>建立您的第一個 Xamarin.Forms 應用程式
 
 _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 Xamarin.Forms 。_
 
@@ -214,6 +214,6 @@ _觀看這段影片，並遵循以使用建立您的第一個行動應用程式 
 
 ## <a name="next-steps"></a>後續步驟
 
-- [單一頁面快速入門](~/get-started/quickstarts/single-page.md) &ndash; 建置功能更強大的應用程式。
+- [單一頁面快速入門](~/get-started/quickstarts/app.md) &ndash; 建置功能更強大的應用程式。
 - [ Xamarin.Forms 範例](~/xamarin-forms/samples/index.md) &ndash;下載並執行程式碼範例和範例應用程式。
 - [建立 Mobile Apps 電子書](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash; 教授開發的深度章節 Xamarin.Forms ，以 PDF 形式提供，並包含數百個額外的範例。
