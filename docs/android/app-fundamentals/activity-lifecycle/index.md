@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/28/2018
-ms.openlocfilehash: 2472086c700a6b2a93a4a1a834d7a7d3e6e635ce
-ms.sourcegitcommit: 8fa0cb9ccbc107d697aa5b9113a4e5d1e75d6eb9
+ms.openlocfilehash: d01e32fcd710174aa458a749a9ede67e00301087
+ms.sourcegitcommit: 877965466ae58a6821d9d16871de1013895fd083
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96303054"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987527"
 ---
 # <a name="activity-lifecycle"></a>活動開發週期
 
@@ -210,7 +210,7 @@ public void OnPause()
 當活動停止或損毀時，系統會提供機會來儲存活動的狀態，以供稍後解除凍結。
 這個儲存的狀態稱為實例狀態。 Android 提供三個選項，可讓您在活動生命週期期間儲存實例狀態：
 
-1. 將基本值儲存在稱為「套件組合」中 `Dictionary` ，以供 Android 用來儲存狀態。 [Bundle](xref:Android.OS.Bundle)
+1. 將基本值儲存在稱為「套件組合」中 `Dictionary` ，以供 Android 用來儲存狀態。 [](xref:Android.OS.Bundle)
 
 1. 建立會保存點陣圖等複雜值的自訂類別。 Android 會使用這個自訂類別來儲存狀態。
 
@@ -303,14 +303,14 @@ c = bundle.GetInt ("counter", -1);
 
 #### <a name="onrestoreinstancestate"></a>OnRestoreInstanceState
 
-[OnRestoreInstanceState](xref:Android.App.Activity.OnRestoreInstanceState*)將在之後呼叫 OnRestoreInstanceState `OnStart` 。 它讓活動有機會還原先前儲存到套件組合的任何狀態 `OnSaveInstanceState` 。 不過，這是提供給的相同組合 `OnCreate` 。
+[](xref:Android.App.Activity.OnRestoreInstanceState*)將在之後呼叫 OnRestoreInstanceState `OnStart` 。 它讓活動有機會還原先前儲存到套件組合的任何狀態 `OnSaveInstanceState` 。 不過，這是提供給的相同組合 `OnCreate` 。
 
 下列程式碼會示範如何在中還原狀態 `OnRestoreInstanceState` ：
 
 ```csharp
 protected override void OnRestoreInstanceState(Bundle savedState)
 {
-    base.OnRestoreSaveInstanceState(savedState);
+    base.OnRestoreInstanceState(savedState);
     var myString = savedState.GetString("myString");
     var myBool = savedState.GetBoolean("myBool");
 }
