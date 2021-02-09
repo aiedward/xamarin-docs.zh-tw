@@ -32,9 +32,9 @@ items:
         href: ~/get-started/quickstarts/index.md
         items:
           - name: '[檔案] > [新增]'
-            href: ~/get-started/quickstarts/single-page.md
+            href: ~/get-started/quickstarts/app.md
           - name: 多頁
-            href: ~/get-started/quickstarts/multi-page.md
+            href: ~/get-started/quickstarts/navigation.md
           - name: 資料庫
             href: ~/get-started/quickstarts/database.md
           - name: 樣式

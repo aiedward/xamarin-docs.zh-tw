@@ -32,9 +32,9 @@
       expanded: true
       items:
         - name: '[檔案] > [新增]'
-          href: quickstarts/single-page.md
-        - name: 多頁
-          href: quickstarts/multi-page.md
+          href: quickstarts/app.md
+        - name: 導覽
+          href: quickstarts/navigation.md
         - name: 資料庫
           href: quickstarts/database.md
         - name: 樣式
