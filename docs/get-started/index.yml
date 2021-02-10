@@ -13,12 +13,12 @@ metadata:
   no-loc:
   - Xamarin.Forms
   - Xamarin.Essentials
-  ms.openlocfilehash: fdc3e6ec64cfda10151f5baabab47569b2df8635
-  ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
-  ms.translationtype: HT
+  ms.openlocfilehash: 6dfc1ba43e85ca8f4c5ad7ba2cd9eed78c9b9973
+  ms.sourcegitcommit: e122a06da4304c2477c934a357b236e0366a2b03
+  ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 01/18/2021
-  ms.locfileid: "98554940"
+  ms.lasthandoff: 02/08/2021
+  ms.locfileid: "99821188"
 landingContent:
 - title: 開始使用
   linkLists:
@@ -42,10 +42,10 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: 建立單頁 Xamarin.Forms 應用程式
-      url: quickstarts/single-page.md
-    - text: 在多頁 Xamarin.Forms 應用程式中執行巡覽
-      url: quickstarts/multi-page.md
+    - text: 建立 Xamarin Forms 應用程式
+      url: quickstarts/app.md
+    - text: 在 Xamarin. Forms 應用程式中執行導覽
+      url: quickstarts/navigation.md
     - text: 將資料儲存在本機 SQLite.NET 資料庫中
       url: quickstarts/database.md
     - text: 設計跨平台 Xamarin.Forms 應用程式

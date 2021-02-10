@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e4c0e1500e6e445580a971c6af0af0fd267ee0f7
-ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
-ms.translationtype: HT
+ms.openlocfilehash: a204177ccd5319d0b2564c00ad0408f89bceb668
+ms.sourcegitcommit: 1f391667869a4541dd9b42d78862dc01d69ed160
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98689587"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99974444"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -26,7 +26,7 @@ ms.locfileid: "98689587"
     ![螢幕擷取畫面：NuGet 套件管理員中的 SQLite.NET NuGet 套件](../images/vs/add-package.png "SQLite.NET NuGet 套件")
 
     > [!NOTE]
-    > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
+    > 有許多 NuGet 套件具有類似的名稱。 正確的套件有下列屬性：
     > - **作者：** SQLite-net
     > - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
@@ -56,7 +56,7 @@ ms.locfileid: "98689587"
     ![螢幕擷取畫面：NuGet 套件管理員中的 SQLite.NET NuGet 套件](../images/vsmac/add-package.png "SQLite.NET NuGet 套件")
 
     > [!NOTE]
-    > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
+    > 有許多 NuGet 套件具有類似的名稱。 正確的套件有下列屬性：
     > - **識別碼：** sqlite-net-pcl
     > - **作者：** SQLite-net
     > - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
