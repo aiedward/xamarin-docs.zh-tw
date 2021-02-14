@@ -10,12 +10,12 @@ ms.date: 12/13/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c710328426590322f60f482708931c160b2100ca
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 9b22297fe06211b550ac2fdd62ee934b4ba849ee
+ms.sourcegitcommit: 0a6b19004932c1ac82e16c95d5d3d5eb35a5b17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372648"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100255332"
 ---
 # <a name="layout-compression"></a>版面配置壓縮
 
@@ -58,7 +58,7 @@ Xamarin.Forms 使用兩系列的遞迴方法呼叫來執行配置：
 </ContentView>
 ```
 
-您可以使用 [Xamarin Inspector](~/tools/inspector/index.md)來檢查產生的嵌套視圖階層。 在 Android 上，嵌套視圖階層包含17個視圖：
+您可以使用即時視覺化樹狀結構來檢查產生的嵌套視圖階層。 在 Android 上，嵌套視圖階層包含17個視圖：
 
 ![查看 Facebook 按鈕的階層](layout-compression-images/no-compression.png)
 
@@ -117,7 +117,7 @@ CompressedLayout.SetIsHeadless(stackLayout, true);
 
 範例應用程式包含從實際應用程式解壓縮的頁面。 如果沒有版面配置壓縮和快速轉譯器，頁面會在 Android 上產生130個視圖的嵌套視圖階層。 在適當的版面配置類別上啟用快速轉譯器和版面配置壓縮可將嵌套視圖階層縮減為70個視圖，減少46%。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 版面配置壓縮會從視覺化樹狀結構中移除指定的版面配置，以嘗試改善頁面轉譯效能。 這所提供的效能優勢，會根據頁面的複雜性、所使用的作業系統版本，以及執行應用程式的裝置而有所不同。 然而，較舊裝置將能獲得較大的效能提升。
 

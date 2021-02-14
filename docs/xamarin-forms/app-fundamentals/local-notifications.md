@@ -6,18 +6,18 @@ ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 12/03/2020
+ms.date: 02/12/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1dad280ee8253d4ef627c5ab7ec9c8dcfa0408a2
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 2ebc226e865bbf3e482857b9c99fdda5d4922a44
+ms.sourcegitcommit: 0a6b19004932c1ac82e16c95d5d3d5eb35a5b17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940443"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100255376"
 ---
-# <a name="local-notifications-in-no-locxamarinforms"></a>中的本機通知 Xamarin.Forms
+# <a name="local-notifications-in-xamarinforms"></a>中的本機通知 Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/local-notifications)
 
@@ -47,7 +47,7 @@ public interface INotificationManager
 
 此介面會在每個平臺專案中執行。 此 `NotificationReceived` 事件可讓應用程式處理傳入的通知。 `Initialize`方法應該執行準備通知系統所需的任何原生平臺邏輯。 `SendNotification`方法應該以選擇性的方式傳送通知 `DateTime` 。 `ReceiveNotification`收到訊息時，基礎平臺應呼叫方法。
 
-## <a name="consume-the-interface-in-no-locxamarinforms"></a>使用中的介面 Xamarin.Forms
+## <a name="consume-the-interface-in-xamarinforms"></a>使用中的介面 Xamarin.Forms
 
 一旦建立介面之後，即使尚未建立平臺，也可以在共用的專案中使用 Xamarin.Forms 。 範例應用程式包含 `ContentPage` 呼叫的 **MainPage** ，其中包含下列內容：
 
@@ -179,10 +179,15 @@ namespace LocalNotifications.Droid
 
         public static AndroidNotificationManager Instance { get; private set; }
 
+        public AndroidNotificationManager() => Initialize();
+
         public void Initialize()
         {
-            CreateNotificationChannel();
-            Instance = this;
+            if (Instance == null)
+            {
+                CreateNotificationChannel();
+                Instance = this;
+            }
         }
 
         public void SendNotification(string title, string message, DateTime? notifyTime = null)
@@ -284,14 +289,15 @@ public class AlarmHandler : BroadcastReceiver
             string title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
             string message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
 
-            AndroidNotificationManager.Instance.Show(title, message);
+            AndroidNotificationManager manager = AndroidNotificationManager.Instance ?? new AndroidNotificationManager();
+            manager.Show(title, message);
         }
     }
 }
 ```
 
 > [!IMPORTANT]
-> 根據預設，使用類別排程的通知 `AlarmManager` 不會在裝置重新開機後存活。 不過，您可以設計應用程式，以便在裝置重新開機時自動重新排程通知。 如需詳細資訊，請參閱在 [裝置重新開機時啟動](https://developer.android.com/training/scheduling/alarms#boot) 警示 developer.android.com 中的 [重複](https://developer.android.com/training/scheduling/alarms) 警示。 如需有關 Android 背景處理的詳細資訊，請參閱 developer.android.com 上的 [背景處理指南](https://developer.android.com/guide/background) 。
+> 根據預設，使用類別排程的通知 `AlarmManager` 不會在裝置重新開機後存活。 不過，您可以設計應用程式，以便在裝置重新開機時自動重新排程通知。 如需詳細資訊，請在 [裝置重新開機時重新](https://developer.android.com/training/scheduling/alarms#boot) 啟動警示，並在 Developer.android.com 上 [排程重複](https://developer.android.com/training/scheduling/alarms) 的警示和 [範例](/samples/xamarin/xamarin-forms-samples/local-notifications)。 如需有關 Android 背景處理的詳細資訊，請參閱 developer.android.com 上的 [背景處理指南](https://developer.android.com/guide/background) 。
 
 如需廣播接收器的詳細資訊，請參閱 [Xamarin 中的廣播接收者](~/android/app-fundamentals/broadcast-receivers.md)。
 
@@ -460,18 +466,23 @@ public class iOSNotificationReceiver : UNUserNotificationCenterDelegate
 {
     public override void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)
     {
-        DependencyService.Get<INotificationManager>().ReceiveNotification(notification.Request.Content.Title, notification.Request.Content.Body);
-
-        // alerts are always shown for demonstration but this can be set to "None"
-        // to avoid showing alerts if the app is in the foreground
+        ProcessNotification(notification);
         completionHandler(UNNotificationPresentationOptions.Alert);
     }
+
+    void ProcessNotification(UNNotification notification)
+    {
+        string title = notification.Request.Content.Title;
+        string message = notification.Request.Content.Body;
+
+        DependencyService.Get<INotificationManager>().ReceiveNotification(title, message);
+    }    
 }
 ```
 
 這個類別會使用 `DependencyService` 來取得類別的實例 `iOSNotificationManager` ，並提供傳入的通知資料給 `ReceiveNotification` 方法。
 
-`AppDelegate`類別必須在應用程式啟動期間指定自訂委派。 `AppDelegate`類別必須在 `iOSNotificationReceiver` `UNUserNotificationCenter` 應用程式啟動期間將物件指定為委派。 這會發生在 `FinishedLaunching` 方法中：
+`AppDelegate`類別必須在 `iOSNotificationReceiver` `UNUserNotificationCenter` 應用程式啟動期間將物件指定為委派。 這會發生在 `FinishedLaunching` 方法中：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)

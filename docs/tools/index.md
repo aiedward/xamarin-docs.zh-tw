@@ -4,12 +4,12 @@ description: 讓r Xamarin 開發體驗更棒的工具。
 author: davidortinau
 ms.author: daortin
 ms.date: 12/27/2019
-ms.openlocfilehash: b90b7c83d7182866afb1e976cfb065f711a3a1fd
-ms.sourcegitcommit: bc2850d6f55f2e68c6ffeb9d562b21c1a242bab9
+ms.openlocfilehash: 4d39d8390aabbe868e14ef90e0720c880b435dc8
+ms.sourcegitcommit: 0a6b19004932c1ac82e16c95d5d3d5eb35a5b17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96850955"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100255307"
 ---
 # <a name="xamarin-tools"></a>Xamarin 工具
 
@@ -22,13 +22,6 @@ ms.locfileid: "96850955"
 ### <a name="ios-simulator-for-windows"></a>[適用於 Windows 的 iOS 模擬器](~/tools/ios-simulator/index.md)
 
 在 Windows 上使用 Visual Studio 與 iOS 模擬器互動。
-    :::column-end:::
-    :::column:::
-[![Xamarin Inspector](~/media/index/xamarin-tools-inspector.svg?branch=master)](~/tools/inspector/index.md)
-
-### <a name="xamarin-inspector"></a>[Xamarin Inspector](~/tools/inspector/index.md)
-
-了解及針對您的使用者介面進行偵錯。
     :::column-end:::
     :::column:::
 [![Xamarin Profiler](~/media/index/xamarin-tools-profiler.svg?branch=master)](~/tools/profiler/index.md)

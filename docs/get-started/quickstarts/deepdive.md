@@ -13,12 +13,12 @@ ms.date: 01/25/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c110093d0fea6e5d97d8e58474d84edb008b1ee
-ms.sourcegitcommit: 1f391667869a4541dd9b42d78862dc01d69ed160
+ms.openlocfilehash: 723ea0f3c6703824bfbfca51f4ecfc8c5ab0b83a
+ms.sourcegitcommit: 0a6b19004932c1ac82e16c95d5d3d5eb35a5b17f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99818247"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100255303"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入門深入探討
 
@@ -405,9 +405,6 @@ async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 
 這個範例會抓取中目前選取的專案 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，並流覽至 `NoteEntryPage` ，並將物件的 `ID` 屬性值做為 `Note` 查詢參數傳遞至 `NoteEntryPage.ItemId` 屬性。
 
-> [!NOTE]
-> 查詢參數在導覽之前會先進行 URL 編碼。
-
 若要接收傳遞的資料， `NoteEntryPage` 類別會以 `QueryPropertyAttribute`
 
 ```csharp
@@ -432,6 +429,8 @@ public partial class NoteEntryPage : ContentPage
 ```csharp
 await Shell.Current.GoToAsync("..");
 ```
+
+如需回溯導覽的詳細資訊，請參閱回溯 [導覽](~/xamarin-forms/app-fundamentals/shell/navigation.md#backwards-navigation)。
 
 ## <a name="data-binding"></a>資料繫結
 

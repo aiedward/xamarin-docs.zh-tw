@@ -9,15 +9,6 @@
           href: ios-simulator/deploy.md
         - name: 版本資訊
           href: /xamarin/tools/ios-simulator/release-notes/?context=xamarin/tools
-    - name: Inspector
-      href: inspector/index.md
-      items:
-        - name: 安裝與需求
-          href: inspector/install.md
-        - name: 檢查即時應用程式
-          href: inspector/inspect.md
-        - name: 版本資訊
-          href: /xamarin/tools/inspector/release-notes/
     - name: Live Player
       items:
         - name: 關於 Xamarin Live Player 預覽
