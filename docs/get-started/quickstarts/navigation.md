@@ -13,12 +13,12 @@ ms.date: 01/28/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b6158df758a5c9563d8d8d0aa0b51e9dccff6a31
-ms.sourcegitcommit: 1f391667869a4541dd9b42d78862dc01d69ed160
+ms.openlocfilehash: c218c7108ec70ab1ccd1b048e1655dba02c48660
+ms.sourcegitcommit: 66ca2680c8fde18a55ce5daa3818edeeb9ba219b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99818864"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100569705"
 ---
 # <a name="perform-navigation-in-a-xamarinforms-application"></a>在應用程式中執行導覽 Xamarin.Forms
 
@@ -89,7 +89,7 @@ ms.locfileid: "99818864"
 
     ![Add：：：非 loc (Xamarin. Forms) ：：： ContentPage](navigation-images/vs/add-note-entry-page.png)
 
-    這會將名為 **NoteEntryPage** 的新頁面新增至專案根資料夾。 此頁面將用於附注專案。
+    這會將名為 **>noteentrypage.xaml.cs** 的新頁面新增至專案的 **Views** 資料夾中。 此頁面將用於附注專案。
 
 8. 在 **NoteEntryPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -268,7 +268,6 @@ ms.locfileid: "99818864"
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using Newtonsoft.Json;
     using Notes.Models;
     using Xamarin.Forms;
 
@@ -452,7 +451,7 @@ ms.locfileid: "99818864"
 
     ![Add：：：非 loc (Xamarin. Forms) ：：： ContentPage](navigation-images/vsmac/add-note-entry-page.png)
 
-    這會將名為 **NoteEntryPage** 的新頁面新增至專案根資料夾。 此頁面將用於附注專案。
+    這會將名為 **>noteentrypage.xaml.cs** 的新頁面新增至專案的 **Views** 資料夾中。 此頁面將用於附注專案。
 
 8. 在 **NoteEntryPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -631,7 +630,6 @@ ms.locfileid: "99818864"
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using Newtonsoft.Json;
     using Notes.Models;
     using Xamarin.Forms;
 
