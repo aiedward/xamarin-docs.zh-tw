@@ -10,12 +10,12 @@ ms.date: 07/11/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6e3edf7d0e7630429f8f1c76009987ee8a4b737a
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 0797829a566ddd71311cb701dbc4d6b1f7bb1c2e
+ms.sourcegitcommit: a0de974875f8fa1a29f7abc990137246789ad85a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93375326"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630237"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>存取 SkiaSharp 點陣圖圖元位
 
@@ -148,7 +148,7 @@ IntPtr pixelsAddr = bitmap.GetPixels();
 byte* ptr = (byte*)pixelsAddr.ToPointer();
 ```
 
-`ptr`變數的類型為 _byte 指標_ 。 此 `ptr` 變數可讓您存取用來儲存點陣圖圖元的個別記憶體位元組。 您可以使用像這樣的程式碼從這個記憶體讀取位元組，或將位元組寫入記憶體：
+`ptr`變數的類型為 _byte 指標_。 此 `ptr` 變數可讓您存取用來儲存點陣圖圖元的個別記憶體位元組。 您可以使用像這樣的程式碼從這個記憶體讀取位元組，或將位元組寫入記憶體：
 
 ```csharp
 byte pixelComponent = *ptr;
@@ -293,7 +293,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 bitmap.SetPixels(intPtr);
 ```
 
-回想一下，會取得 `GetPixels` `IntPtr` 參考點陣圖用來儲存其圖元的記憶體區塊。 `SetPixels`呼叫會 _replaces_ 以 `IntPtr` 指定的做為引數所參考的記憶體區塊來取代該記憶體區塊 `SetPixels` 。 然後點陣圖會釋出先前使用的記憶體區塊。 下一次 `GetPixels` 呼叫時，它會取得使用設定的記憶體區塊 `SetPixels` 。
+回想一下，會取得 `GetPixels` `IntPtr` 參考點陣圖用來儲存其圖元的記憶體區塊。 `SetPixels`呼叫會以 `IntPtr` 指定的做為引數所參考的記憶體區塊來取代該記憶體區塊 `SetPixels` 。 然後點陣圖會釋出先前使用的記憶體區塊。 下一次 `GetPixels` 呼叫時，它會取得使用設定的記憶體區塊 `SetPixels` 。
 
 一開始，似乎會 `SetPixels` 讓您沒有比較不方便的電源和效能 `GetPixels` 。 當 `GetPixels` 您取得點陣圖記憶體區塊並加以存取時。 `SetPixels`當您配置和存取某些記憶體時，然後將它設定為點陣圖記憶體區塊。
 
@@ -748,7 +748,7 @@ public partial class ColorAdjustmentPage : ContentPage
 
 ## <a name="posterization"></a>Posterization
 
-牽涉到存取圖元位的另一個常見工作是 _posterization_ 。 如果以點陣圖圖元編碼的色彩減少，使結果類似于使用有限色彩調色板的手繪海報，則為數字。
+牽涉到存取圖元位的另一個常見工作是 _posterization_。 如果以點陣圖圖元編碼的色彩減少，使結果類似于使用有限色彩調色板的手繪海報，則為數字。
 
 [ **分離** 項] 頁面會在其中一個猴子映射上執行此程式：
 
@@ -792,7 +792,7 @@ public class PosterizePage : ContentPage
 
 函式中的程式碼會存取每個圖元、使用0xE0E0E0F光圈值執行位 AND 運算，然後將結果儲存回點陣圖。 值0xE0E0E0FF 會保留每個色彩元件的高3位，並將較低的5位設定為0。 點陣圖會縮減為 2<sup>9</sup>或512色彩，而不是 2<sup>24</sup>或16777216色彩：
 
-[![分離](pixel-bits-images/Posterize.png "分離")](pixel-bits-images/Posterize-Large.png#lightbox)
+[![螢幕擷取畫面顯示兩個行動裝置上的玩具猴子和桌面視窗的色調影像。](pixel-bits-images/Posterize.png "分離")](pixel-bits-images/Posterize-Large.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 

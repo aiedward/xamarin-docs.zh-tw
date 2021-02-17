@@ -10,14 +10,14 @@ ms.date: 12/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 846cfed068cb03af9ade7af4258021abc7a0c59e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3e49b472427ee51674c4dfbfd67fd4e7769fde43
+ms.sourcegitcommit: a0de974875f8fa1a29f7abc990137246789ad85a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562531"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630159"
 ---
-# <a name="no-locxamarinforms-samples"></a>Xamarin.Forms 樣品
+# <a name="xamarinforms-samples"></a>Xamarin.Forms 樣品
 
 Xamarin.Forms 範例應用程式和程式碼示範，可協助您開始使用並瞭解中的概念 Xamarin.Forms 。
 
@@ -25,14 +25,14 @@ Xamarin.Forms 範例應用程式和程式碼示範，可協助您開始使用並
 
 :::row:::
     :::column:::
-[![Todo](images/todo.png)](/samples/xamarin/xamarin-forms-samples/todo/)
+[![Todo 清單應用程式](images/todo.png)](/samples/xamarin/xamarin-forms-samples/todo/)
 
 ### <a name="todo"></a>[Todo](/samples/xamarin/xamarin-forms-samples/todo/)
 
 此範例示範待辦事項清單應用程式，資料將儲存在本機 SQLite 資料庫並從其中存取。
     :::column-end:::
     :::column:::
-[![BugSweeper](images/bugsweeper.png)](/samples/xamarin/xamarin-forms-samples/bugsweeper/)
+[![BugSweeper 遊戲](images/bugsweeper.png)](/samples/xamarin/xamarin-forms-samples/bugsweeper/)
 
 ### <a name="bugsweeper"></a>[BugSweeper](/samples/xamarin/xamarin-forms-samples/bugsweeper/)
 
@@ -49,7 +49,7 @@ RPN (反波蘭記法) 計算機允許輸入數字和運算而不包含括號或�
 
 :::row:::
     :::column:::
-[![SpinPaint](images/spinpaint.png)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint/)
+[![SpinPaint 應用程式](images/spinpaint.png)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint/)
 
 ### <a name="spinpaint"></a>[SpinPaint](/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint/)
 
@@ -63,7 +63,7 @@ RPN (反波蘭記法) 計算機允許輸入數字和運算而不包含括號或�
 XAML-可延伸應用程式標記語言，可讓開發人員 Xamarin.Forms 使用標記而非程式碼，在應用程式中定義使用者介面。
     :::column-end:::
         :::column:::
-[![Xuzzle](images/xuzzle.png)](/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/)
+[![Xuzzle 遊戲](images/xuzzle.png)](/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/)
 
 ### <a name="xuzzle"></a>[Xuzzle](/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/26/2019
-ms.openlocfilehash: 0bca8208e1c9a0e78e3f17192002fd7e9dcd6ef6
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 918f149c549a19f3e1488235571bdfb19411c711
+ms.sourcegitcommit: a0de974875f8fa1a29f7abc990137246789ad85a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457402"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630185"
 ---
 # <a name="cross-platform-samples"></a>跨平臺範例
 
@@ -50,21 +50,21 @@ Xamarin 跨平台範例應用程式和程式碼示範，可協助您使用 C# �
 
 :::row:::
     :::column:::
-[![介紹](images/acquaint.jpg)](https://github.com/xamarinhq/app-acquaint/)
+[![熟悉畫面](images/acquaint.jpg)](https://github.com/xamarinhq/app-acquaint/)
 
 ### <a name="acquaint"></a>[介紹](https://github.com/xamarinhq/app-acquaint/)
 
 具有詳細資料與編輯畫面的連絡人清單應用程式。 Xamarin.Forms 與 Xamarin 原生實作皆可使用原始程式碼。
     :::column-end:::
     :::column:::
-[![SmartHotel360](images/smarthotel360.png)](https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps)
+[![SmartHotel360 示範](images/smarthotel360.png)](https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps)
 
 ### <a name="smarthotel360"></a>[SmartHotel360](https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps)
 
 Connect 2017 示範建置包含 Xamarin 與 Azure 的應用程式套件。
     :::column-end:::
     :::column:::
-[![BikeSharing360](images/bikesharing360.png)](https://github.com/Microsoft/BikeSharing360_MobileApps)
+[![BikeSharing360 示範](images/bikesharing360.png)](https://github.com/Microsoft/BikeSharing360_MobileApps)
 
 ### <a name="bikesharing360"></a>[BikeSharing360](https://github.com/Microsoft/BikeSharing360_MobileApps)
 
@@ -73,7 +73,7 @@ Connect 2016 示範建置包含 Xamarin 與 Azure 的應用程式套件。
 :::row-end:::
 :::row:::
     :::column:::
-[![eShop](images/eshop.png)](https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile)
+[![eShop 示範](images/eshop.png)](https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile)
 
 ### <a name="eshop"></a>[eShop](https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile)
 

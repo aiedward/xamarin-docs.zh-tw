@@ -10,14 +10,14 @@ ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f3a89e0c5c49ec790cf35443030d50d3ddef9ed4
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 2798ee872e9db86a31beb6021f6bf4c3d82caaa2
+ms.sourcegitcommit: a0de974875f8fa1a29f7abc990137246789ad85a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939806"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630250"
 ---
-# <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms 圖形：幾何
+# <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms 圖形：幾何
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -271,7 +271,7 @@ ms.locfileid: "97939806"
 
 在此範例中，會將三次方貝茲曲線繪製自 (10，10) 到 (300，10) 。 曲線有兩個指向 (100、0) 和 (200200) 的控制點：
 
-![System.windows.media.beziersegment>](geometry-images/beziersegment.png "System.windows.media.beziersegment>")
+![折線圖：顯示貝茲曲線。](geometry-images/beziersegment.png "System.windows.media.beziersegment>")
 
 ### <a name="create-a-linesegment"></a>建立 LineSegment
 
@@ -310,7 +310,7 @@ ms.locfileid: "97939806"
 
 在此範例中，從 (10100) 到 (100100) ，以及從 (100100) 到 (100，50) 繪製線段。 此外， `PathFigure` 也會關閉，因為它的 `IsClosed` 屬性設定為 `true` 。 這會導致繪製三角形：
 
-![LineSegments](geometry-images/linesegments.png "LineSegments")
+![折線圖：顯示三角形。](geometry-images/linesegments.png "LineSegments")
 
 ### <a name="create-a-polybeziersegment"></a>建立 PolyBezierSegment
 
@@ -345,7 +345,7 @@ ms.locfileid: "97939806"
 
 在此範例中，會 `PolyBezierSegment` 指定兩個三次方貝茲曲線。 第一個曲線是從 (10、10) 到 (150100) ，且控制項點為 (0、0) ，另一個控制點為 (100，0) 。 第二個曲線是從 (150100) 到 (300，10) ，且控制點為 (150，0) ，另一個控制點為 (200，0) ：
 
-![PolyBezierSegment](geometry-images/polybeziersegment.png "PolyBezierSegment")
+![折線圖會顯示兩個連接的貝茲曲線。](geometry-images/polybeziersegment.png "PolyBezierSegment")
 
 ### <a name="create-a-polylinesegment"></a>建立 PolyLineSegment
 
@@ -376,7 +376,7 @@ ms.locfileid: "97939806"
 
 在此範例中，會 `PolyLineSegment` 指定兩行。 第一行是從 (10、10) 到 (50、10) ，而第二行是從 (50，10) 到 (50，50) ：
 
-![PolyLineSegment](geometry-images/polylinesegment.png "PolyLineSegment")
+![折線圖：以右角顯示兩行。](geometry-images/polylinesegment.png "PolyLineSegment")
 
 ### <a name="create-a-polyquadraticbeziersegment"></a>建立 PolyQuadraticBezierSegment
 
@@ -411,7 +411,7 @@ ms.locfileid: "97939806"
 
 在此範例中，會 `PolyQuadraticBezierSegment` 指定兩個貝茲曲線。 第一個曲線是從 (10，10) 到 (150，50) ，且 (100100) 有一個控制點。 第二個曲線是從 (100100) 到 (15200) 和 (0100) 上的控制點：
 
-![PolyQuadraticBezierSegment](geometry-images/polyquadraticbeziersegment.png "PolyQuadraticBezierSegment")
+![折線圖會顯示兩個連接的重迭貝茲曲線。](geometry-images/polyquadraticbeziersegment.png "PolyQuadraticBezierSegment")
 
 ### <a name="create-a-quadraticbeziersegment"></a>建立 System.windows.media.quadraticbeziersegment>
 
@@ -452,7 +452,7 @@ ms.locfileid: "97939806"
 
 在此範例中，會將二次方貝茲曲線從 (10，10) 繪製至 (300，10) 。 曲線的控制點位於 (200200) ：
 
-![System.windows.media.quadraticbeziersegment>](geometry-images/quadraticbeziersegment.png "System.windows.media.quadraticbeziersegment>")
+![折線圖：顯示二次方貝茲曲線。](geometry-images/quadraticbeziersegment.png "System.windows.media.quadraticbeziersegment>")
 
 ### <a name="create-complex-geometries"></a>建立複雜的幾何
 
@@ -583,7 +583,7 @@ ms.locfileid: "97939806"
 
 在此範例中， `EllipseGeometry` 會合並四個具有相同 x 半徑和 y 半徑座標但具有不同中心座標的物件。 這會建立四個重迭的圓形，其內部會因為預設 `EvenOdd` 填滿規則而填滿橙色：
 
-![GeometryGroup](geometry-images/geometrygroup.png "GeometryGroup")
+![折線圖會顯示四個已填滿區域的重迭圓形。](geometry-images/geometrygroup.png "GeometryGroup")
 
 ### <a name="roundrectanglegeometry"></a>RoundRectangleGeometry
 
