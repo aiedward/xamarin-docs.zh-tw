@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 53ffd71704201c87d5e30dea0f8da46189d6e75b
-ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
+ms.openlocfilehash: 9162754dd41190a14ce1b385d63e94f7c8c1ced7
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98697523"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087500"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>在 Xamarin 中手動相機控制項
 
@@ -38,13 +38,7 @@ IOS 8 提供的手動攝影機控制項， `AVFoundation Framework` 可讓行動
 
 iOS 8 提供現有 iOS Api 的擴充功能和增強功能，可讓您更精細地控制映射捕獲進程。
 
-## <a name="bracketed-capture"></a>有括弧的捕獲
-
-括弧內的捕獲是以上述手動相機控制項的設定為基礎，可讓應用程式以各種不同的方式來捕捉時間點。
-
-單純地說，有括弧的捕捉是一種高載，也就是以圖片和圖片的各種設定拍攝的影像。
-
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 若要完成本文中所述的步驟，必須具備下列專案：
 
@@ -1315,7 +1309,7 @@ Apple 使用灰色的世界來表示 iOS 8 內建的灰色卡支援。 它可讓
 
 上述程式碼示範了如何在 iOS 8 中設定和採用自動曝光的已括住捕捉。
 
-## <a name="summary"></a>[摘要]
+## <a name="summary"></a>摘要
 
 在本文中，我們已介紹過 iOS 8 所提供的新手動攝影機控制項，並涵蓋其功能及其運作方式的基本概念。 我們已提供手動焦點、手動曝光和手動白色平衡的範例。 最後，我們提供了一個範例，讓我們使用先前討論的手動攝影機控制項來進行有括弧的捕獲
 

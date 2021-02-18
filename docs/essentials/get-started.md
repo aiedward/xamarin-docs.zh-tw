@@ -1,6 +1,6 @@
 ---
 title: 開始 Xamarin.Essentials
-description: Xamarin.Essentials 提供單一跨平臺 API，適用于任何可從共用程式碼存取的 iOS、Android 或 UWP 應用程式，無論使用者介面的建立方式為何。
+description: 開始使用 Xamarin.Essentials ，其提供可搭配任何 iOS、Android 或 UWP 應用程式使用的單一跨平臺 API。
 ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
@@ -9,14 +9,14 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f8a65c7bd3476114b849bb0e9383227e2ec78c7c
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 8bf7b03cb7bb211d0e25e0f75e527ad4c5c1dbd2
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432611"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087306"
 ---
-# <a name="get-started-with-no-locxamarinessentials"></a>開始 Xamarin.Essentials
+# <a name="get-started-with-xamarinessentials"></a>開始 Xamarin.Essentials
 
 Xamarin.Essentials 提供單一跨平臺 API，適用于任何可從共用程式碼存取的 iOS、Android 或 UWP 應用程式，無論使用者介面的建立方式為何。 如需有關支援之作業系統的詳細資訊，請參閱[平台與功能支援指南](platform-feature-support.md)。
 
@@ -26,7 +26,7 @@ Xamarin.Essentials 會以 NuGet 套件的形式提供，並包含在 Visual Stud
 
 1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](~/get-started/installation/index.md)的 [Visual Studio](https://visualstudio.microsoft.com/)。
 
-2. 開啟現有專案，或建立使用 [Visual Studio C#]**** (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。
+2. 開啟現有專案，或建立使用 [Visual Studio C#] (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。
 
     > [!IMPORTANT]
     > 若新增到 UWP 專案，請確保在專案屬性中設定組建 16299 或更高版本。
@@ -36,7 +36,7 @@ Xamarin.Essentials 會以 NuGet 套件的形式提供，並包含在 Visual Stud
     <!--markdownlint-disable MD023 -->
     # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]****。 搜尋 **Xamarin.Essentials** 套件，並將其安裝到 **所有** 專案中，包括 Android、iOS、UWP 和 .NET Standard 程式庫。
+    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]。 搜尋 **Xamarin.Essentials** 套件，並將其安裝到 **所有** 專案中，包括 Android、iOS、UWP 和 .NET Standard 程式庫。
 
     # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -93,7 +93,7 @@ Xamarin.Essentials 會以 NuGet 套件的形式提供，並包含在 Visual Stud
 
 6. 遵循可讓您針對每項功能複製並貼上程式碼片段的[ Xamarin.Essentials 指南](index.md)。
 
-## <a name="no-locxamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials -適用于 Mobile Apps (影片的跨平臺 Api) 
+## <a name="xamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials -適用于 Mobile Apps (影片的跨平臺 Api) 
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-XamarinEssentials-Cross-Platform-APIs-for-Mobile-Apps/player]
 

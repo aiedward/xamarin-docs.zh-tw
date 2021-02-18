@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: chamons
 ms.author: chhamo
 ms.date: 04/16/2019
-ms.openlocfilehash: 6c6a0491f7989f2f76afabc3412e38be74a06da4
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 509f50d26818af09c4d664f27f2ae17a73430991
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91431582"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087427"
 ---
 # <a name="can-i-use-an-older-version-of-xcode-or-xamarinios"></a>我可以使用較舊版本的 Xcode 或 Xamarin 嗎？
 
@@ -34,7 +34,7 @@ Microsoft 強烈建議您在開發和提交應用程式時，使用最新的 Xco
 
 請注意，使用最新的 Xcode 並不會防止您的應用程式以較舊的 iOS 版本為目標。 您支援的 iOS 版本是以您的 **plist** 專案和應用程式所使用的 api 為基礎。
 
-您可以並存安裝多個版本的 Xcode，並使用不同的名稱，例如**Xcode101. app**和**Xcode102。** 如果您使用多個版本，請務必使用 [Visual Studio for Mac](~/ios/troubleshooting/questions/ios-sdk.md) 設定和 [`xcode-select`](https://developer.apple.com/library/archive/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-HOW_DO_I_SELECT_THE_DEFAULT_VERSION_OF_XCODE_TO_USE_FOR_MY_COMMAND_LINE_TOOLS_) [命令列工具](https://developer.apple.com/library/archive/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-HOW_DO_I_SELECT_THE_DEFAULT_VERSION_OF_XCODE_TO_USE_FOR_MY_COMMAND_LINE_TOOLS_)來設定使用中的 Xcode。
+您可以並存安裝多個版本的 Xcode，並使用不同的名稱，例如 **Xcode101. app** 和 **Xcode102。** 如果您使用多個版本，請務必使用 [Visual Studio for Mac](~/ios/troubleshooting/questions/ios-sdk.md) 設定和 [`xcode-select`](https://developer.apple.com/library/archive/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-HOW_DO_I_SELECT_THE_DEFAULT_VERSION_OF_XCODE_TO_USE_FOR_MY_COMMAND_LINE_TOOLS_) [命令列工具](https://developer.apple.com/library/archive/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-HOW_DO_I_SELECT_THE_DEFAULT_VERSION_OF_XCODE_TO_USE_FOR_MY_COMMAND_LINE_TOOLS_)來設定使用中的 Xcode。
 
 不過，罕見的情況可能需要使用較舊的元件。 本檔將說明您使用的版本早于最新版本時可能面臨的一般挑戰。
 
@@ -53,7 +53,7 @@ Microsoft 強烈建議您在開發和提交應用程式時，使用最新的 Xco
 Xamarin 一般可盡可能地支援較舊的 Xcode 版本。 一些潛在的挑戰包括：
 
 - 較新的 Xamarin 可能會支援所選 Xcode 中不存在的某些功能和 Api。 
-- **靜態註冊機構**需要 Xcode 標頭檔來建立應用程式，並 [`MT0091`](~/ios/troubleshooting/mtouch-errors.md#MT0091) [`MT4109`](~/ios/troubleshooting/mtouch-errors.md#MT4109) 在遺漏 api 時導致或錯誤。
+- **靜態註冊機構** 需要 Xcode 標頭檔來建立應用程式，並 [`MT0091`](~/ios/troubleshooting/mtouch-errors.md#MT0091) [`MT4109`](~/ios/troubleshooting/mtouch-errors.md#MT4109) 在遺漏 api 時導致或錯誤。
   - 在大多數情況下，如果未使用新的 API) 的受控系結，則啟用 managed 連結器將有助於 (。
 - 除非使用 Xcode 9.0 + 工具鏈，否則 tvOS 和 watchOS) 的 Bitcode 組建 (可能會無法提交至 App Store。
 
@@ -76,7 +76,7 @@ Xamarin 一般可盡可能地支援較舊的 Xcode 版本。 一些潛在的挑�
 
 Apple 隨時都有權更新 AppStore 提交規則。 這些規則變更通常會事先宣佈。 其中一些變更需要工具變更才能支援，這需要更新的 Xamarin. iOS 元件。
 
-除了規則變更之外，Apple 通常會將額外的驗證新增至已提交的應用程式，或可強化現有的應用程式。 其中有些需要在我們的工具中進行變更 (例如) 的新黑名單符號。 其中有許多是客戶提交的第一次發生，因為沒有任何公告 (或列出規則) 。
+除了規則變更之外，Apple 通常會將額外的驗證新增至已提交的應用程式，或可強化現有的應用程式。 其中有些需要在我們的工具中進行變更 (例如) 新的封鎖符號。 其中有許多是客戶提交的第一次發生，因為沒有任何公告 (或列出規則) 。
 
 ## <a name="summary"></a>摘要
 

@@ -10,18 +10,18 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af6da36e242ae2d967d795b61d65a38e5e43e22b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 0f04037941cb73af2f6cb9987c7cd4525477720b
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557279"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087478"
 ---
-# <a name="creating-mobile-apps-with-no-locxamarinforms-book"></a>使用書籍建立 Mobile Apps Xamarin.Forms
+# <a name="creating-mobile-apps-with-xamarinforms-book"></a>使用書籍建立 Mobile Apps Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples)
 
-<img src="images/cover-sml.png" title="使用書籍建立 Mobile Apps Xamarin.Forms" alt="Creating Mobile Apps with Xamarin.Forms Book" align="left" />使用 Charles Petzold * Xamarin.Forms 建立 Mobile Apps*的書籍是學習如何撰寫 Xamarin.Forms 應用程式的指南。 唯一的先決條件是 c # 程式設計語言的知識。 本書提供使用者介面的廣泛探索， Xamarin.Forms 也涵蓋動畫、MVVM、觸發程式、行為、自訂版面配置、自訂轉譯器，以及其他更多。
+<img src="images/cover-sml.png" title="使用書籍建立 Mobile Apps Xamarin.Forms" alt="Creating Mobile Apps with Xamarin.Forms Book" align="left" />使用 Charles Petzold *Xamarin.Forms 建立 Mobile Apps* 的書籍是學習如何撰寫 Xamarin.Forms 應用程式的指南。 唯一的先決條件是 c # 程式設計語言的知識。 本書提供使用者介面的廣泛探索， Xamarin.Forms 也涵蓋動畫、MVVM、觸發程式、行為、自訂版面配置、自訂轉譯器，以及其他更多。
 
 這本書是在2016的春季發行，而且自那時起尚未更新。 本書中有很多工具價值，但部分資料 [已過期](#ways-in-which-the-book-is-outdated)，有些主題則不再是完全正確或完整。
 
@@ -29,11 +29,11 @@ ms.locfileid: "91557279"
 
 從 Microsoft Virtual 學院下載您偏好的電子書格式：
 
-- [**PDF (56Mb) **](https://aka.ms/xamformsebook)
+- [**PDF (56Mb)**](https://aka.ms/xamformsebook)
 
-- [**ePub (151Mb) **](https://aka.ms/xamebook/epub)
+- [**ePub (151Mb)**](https://aka.ms/xamebook/epub)
 
-- [**Kindle edition (325Mb) **](https://aka.ms/xamebook/mobi)
+- [**Kindle edition (325Mb)**](https://aka.ms/xamebook/mobi)
 
 您也可以將 [個別章節下載](#download-chapters-and-summaries) 為 PDF 檔案。
 
@@ -65,7 +65,7 @@ ms.locfileid: "91557279"
 | 第6章。 按一下按鈕 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf) | [總結](summaries/chapter06.md) |
 | 第7章。 XAML 與程式碼的比較 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf) | [總結](summaries/chapter07.md) |
 | 第8章。 程式碼和 XAML 的協調 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf) | [總結](summaries/chapter08.md) |
-| 第9章。 平臺特定 API 呼叫 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch09-Apr2016.pdf) | [總結](summaries/chapter09.md) |
+| 第9章。 Platform-Specific API 呼叫 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch09-Apr2016.pdf) | [總結](summaries/chapter09.md) |
 | 第10章。 XAML 標記延伸 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf) | [總結](summaries/chapter10.md) |
 | 第11章。 可系結基礎結構 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch11-Apr2016.pdf) | [總結](summaries/chapter11.md) |
 | 第12章。 樣式 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch12-Apr2016.pdf) | [總結](summaries/chapter12.md) |
@@ -88,7 +88,7 @@ ms.locfileid: "91557279"
 
 ## <a name="ways-in-which-the-book-is-outdated"></a>書籍過期的方式
 
-自從*建立 Mobile Apps Xamarin.Forms *的發行集之後，已將數個新功能新增至 Xamarin.Forms 。 這些新功能會在檔的個別文章中說明 [Xamarin.Forms](../../index.yml) 。
+自從 *建立 Mobile Apps Xamarin.Forms* 的發行集之後，已將數個新功能新增至 Xamarin.Forms 。 這些新功能會在檔的個別文章中說明 [Xamarin.Forms](../../index.yml) 。
 
 其他變更導致書籍的部分內容過期：
 
@@ -104,7 +104,7 @@ Xamarin.Forms應用程式通常會使用程式庫，在不同的平臺之間共�
 
 ### <a name="the-role-of-xaml-has-been-elevated"></a>XAML 的角色已提高許可權
 
-*使用 Xamarin.Forms 建立 Mobile Apps*首先說明如何 Xamarin.Forms 使用 c # 撰寫應用程式。 第7章之前未引進 Extensible Application Markup Language (XAML) [。XAML 和程式碼](summaries/chapter07.md)。
+*使用 Xamarin.Forms 建立 Mobile Apps* 首先說明如何 Xamarin.Forms 使用 c # 撰寫應用程式。 第7章之前未引進 Extensible Application Markup Language (XAML) [。XAML 和程式碼](summaries/chapter07.md)。
 
 XAML 現在在中有更大的角色 Xamarin.Forms 。 Xamarin.Forms隨 Visual Studio 所散發的解決方案範本會建立以 XAML 為基礎的分頁檔。 使用的開發人員 Xamarin.Forms 應該會儘早熟悉 XAML。 檔中的可延伸 [應用程式標記語言 (xaml) ](~/xamarin-forms/xaml/index.yml) 一節 Xamarin.Forms 包含一些 xaml 的相關文章，可協助您開始著手。
 
@@ -127,7 +127,7 @@ Xamarin.Forms 具有 [Mac](~/xamarin-forms/platform/other/mac.md)、 [WPF](~/xam
 
 ### <a name="samples"></a>範例
 
-在 [**xamarin-書籍範例**](https://github.com/xamarin/xamarin-forms-book-samples) GitHub 存放庫中， **原始程式碼中的原始程式碼** 分支包含與書籍一致的程式範例。 **Master**分支包含已升級的專案，以移除已淘汰的 api 並反映增強的 api。 此外， **主要** 分支中的 android 專案已透過 AppCompat 升級 Android [材質設計](~/xamarin-forms/platform/android/index.md) ，而且通常會在白色背景上顯示黑色文字。
+在 [**xamarin-書籍範例**](https://github.com/xamarin/xamarin-forms-book-samples) GitHub 存放庫中， **原始程式碼中的原始程式碼** 分支包含與書籍一致的程式範例。 主要分支包含已升級的專案，以移除已淘汰的 Api 並反映增強的 Api。 此外，主要分支中的 Android 專案已透過 AppCompat 升級 Android [材質設計](~/xamarin-forms/platform/android/index.md) ，而且通常會在白色背景上顯示黑色文字。
 
 ## <a name="related-links"></a>相關連結
 

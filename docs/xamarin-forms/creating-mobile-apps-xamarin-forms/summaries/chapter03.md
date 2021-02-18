@@ -10,12 +10,12 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6e53fdc689c15b3495af838f4788c1a50ad7a989
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 7eb555530f96a56b78087b64393e2c57efdb6d95
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940339"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087485"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第3章的摘要。 Deeper into text
 
@@ -69,7 +69,7 @@ ms.locfileid: "97940339"
 - [`Color.FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Double,System.Double,System.Double,System.Double)) 適用于 `double` 具有透明度的 RGB 值
 - [`Color.FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32)) 具有透明度的整數 RGB 值
 - [`Color.FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double))`double`具有透明度的 HSL 值
-- [`Color.FromUint`](xref:Xamarin.Forms.Color.FromUint(System.UInt32)) 針對 `uint` 計算為 (B + 256 \* (G + 256 \* (R + 256 \* a) # A4 # A5 的值
+- [`Color.FromUint`](xref:Xamarin.Forms.Color.FromUint(System.UInt32)) 針對 `uint` 計算為 (B + 256 \* (G + 256 \* (R + 256 \* a) ) ) 的值
 - [`Color.FromHex`](xref:Xamarin.Forms.Color.FromHex(System.String)) 針對 `string` 格式為 "#AARRGGBB" 或 "#RRGGBB" 或 "#ARGB" 或 "#RGB" 的十六進位數位，其中每個字母都對應至 Alpha、紅色、綠色和藍色通道的十六進位數位。 這個方法是 XAML 色彩轉換的主要用途，如 XAML 和程式 [代碼第7章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md)所述。
 
 一旦建立之後， `Color` 值就是不可變的。 您可以從下列屬性取得色彩的特性：
@@ -106,7 +106,7 @@ ms.locfileid: "97940339"
 `Color.Default` 的目的是要強制執行平臺的色彩配置，因此在不同平臺上的不同內容中會有不同的意義。 平臺色彩配置預設為：
 
 - iOS：淺色背景的深色文字
-- Android：深色背景上的淺文字 (于書籍) 或淺色背景中的深色文字，以透過範例程式碼存放庫的 **主要** 分支中的 AppCompat 來設計的材質 () 
+- Android：深色背景上的淺文字 (于書籍) 或淺色 (背景中的深色文字，以透過範例程式碼存放庫主要分支中的 AppCompat 進行材質設計) 
 - UWP：淺色背景的深色文字
 
 此 `Color.Accent` 值會產生平臺特定的 (，有時也會顯示在深色或淺色背景上可見的使用者可選取) 色彩。
@@ -125,7 +125,7 @@ ms.locfileid: "97940339"
 
 將的屬性設定為，以 [`FontSize`](xref:Xamarin.Forms.Label.FontSize) `Label` `double` 指定字型的近似高度。 如需智慧選擇字型大小的詳細資訊，請參閱 [第5章，處理大小](chapter05.md)。
 
-您也可以取得數個預設的平臺相依字型大小的其中一種。 靜態 [ `Device.GetNamedSize` ] (x： Xamarin.Forms 。GetNamedSize (Xamarin.Forms 。NamedSize，System.object) # A3 方法和 [多載] (x： Xamarin.Forms 。GetNamedSize (Xamarin.Forms 。NamedSize， Xamarin.Forms 。元素) # A7 都會 `double` 根據列舉的成員，傳回適合平臺的字型大小 (、、、 [`NamedSize`](xref:Xamarin.Forms.NamedSize) [`Default`](xref:Xamarin.Forms.NamedSize.Default) [`Micro`](xref:Xamarin.Forms.NamedSize.Micro) [`Small`](xref:Xamarin.Forms.NamedSize.Small) [`Medium`](xref:Xamarin.Forms.NamedSize.Medium) 和 [`Large`](xref:Xamarin.Forms.NamedSize.Large)) 。 從成員傳回的值 `Medium` 不一定與相同 `Default` 。 [**NamedFontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)範例會顯示具有這些命名大小的文字。
+您也可以取得數個預設的平臺相依字型大小的其中一種。 靜態 [ `Device.GetNamedSize` ] (x： Xamarin.Forms 。GetNamedSize (Xamarin.Forms 。NamedSize、System.object) ) 方法和 [多載] (x： Xamarin.Forms 。GetNamedSize (Xamarin.Forms 。NamedSize， Xamarin.Forms 。元素) ) 都會 `double` 根據列舉的成員傳回符合平臺的字型大小 [`NamedSize`](xref:Xamarin.Forms.NamedSize)  (、、、 [`Default`](xref:Xamarin.Forms.NamedSize.Default) [`Micro`](xref:Xamarin.Forms.NamedSize.Micro) [`Small`](xref:Xamarin.Forms.NamedSize.Small) [`Medium`](xref:Xamarin.Forms.NamedSize.Medium) 和 [`Large`](xref:Xamarin.Forms.NamedSize.Large)) 。 從成員傳回的值 `Medium` 不一定與相同 `Default` 。 [**NamedFontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)範例會顯示具有這些命名大小的文字。
 
 將的 [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes) 屬性設定 `Label` 為這些 [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) 列舉、、或的 [`Bold`](xref:Xamarin.Forms.FontAttributes.Bold) 成員  [`Italic`](xref:Xamarin.Forms.FontAttributes.Italic) [`None`](xref:Xamarin.Forms.FontAttributes.None) 。 您可以結合 `Bold` 和 `Italic` 成員與 c # 位 or 運算子。
 
