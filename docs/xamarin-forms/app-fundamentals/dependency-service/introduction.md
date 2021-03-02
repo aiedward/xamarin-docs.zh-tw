@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93371504"
 ---
-# <a name="no-locxamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 簡介
+# <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 簡介
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
