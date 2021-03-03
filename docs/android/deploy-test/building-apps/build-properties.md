@@ -6,18 +6,18 @@ ms.assetid: FC0DBC08-EBCB-4D2D-AB3F-76B54E635C22
 ms.technology: xamarin-android
 author: jonpryor
 ms.author: jopryo
-ms.date: 09/21/2020
-ms.openlocfilehash: aeb0cca9ead1a0f0a3f5b1dec88b2470289cd589
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.date: 03/01/2021
+ms.openlocfilehash: 5c26c171c198698580e2b2170a6692d8fb80a171
+ms.sourcegitcommit: 3aa9bdcaaedca74ab5175cb2338a1df122300243
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91454932"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101749313"
 ---
 # <a name="build-properties"></a>組建屬性
 
 MSBuild 屬性會控制 [目標](~/android/deploy-test/building-apps/build-targets.md)的行為。
-這些專案是在[MSBuild PropertyGroup](/visualstudio/msbuild/propertygroup-element-msbuild)中的專案檔（例如**MyApp. .csproj**）內指定。
+這些專案是在 [MSBuild PropertyGroup](/visualstudio/msbuild/propertygroup-element-msbuild)中的專案檔（例如 **MyApp. .csproj**）內指定。
 
 ## <a name="adbtarget"></a>AdbTarget
 
@@ -41,6 +41,14 @@ Xamarin.Android 9.4 已新增此支援。
 指定在處理 Android 資產和資源時，要傳遞至 **aapt2 link** 命令的其他命令列選項。
 
 已在 Xamarin.Android 9.1 中新增。
+
+## <a name="androidaddkeepalives"></a>AndroidAddKeepAlives
+
+此為布林值屬性，可控制連結器是否會在系結 `GC.KeepAlive()` 專案內插入調用，以防止物件收集過早。
+
+發行設定 `True` 組建的預設值為。
+
+這個屬性是在 Xamarin. Android 11.2 中新增的。
 
 ## <a name="androidaotcustomprofilepath"></a>AndroidAotCustomProfilePath
 
@@ -154,7 +162,7 @@ Android 套件內只能有一個具有 `<AndroidApplication>True</AndroidApplica
 
 - `class-parse` 不會「略過」繼承自或包含無法解析類型成員的類別。
 
-**實驗**性。 已在 Xamarin.Android 6.0 中新增。
+**實驗** 性。 已在 Xamarin.Android 6.0 中新增。
 
 預設值是 `jar2xml`。
 
@@ -165,7 +173,7 @@ Android 套件內只能有一個具有 `<AndroidApplication>True</AndroidApplica
 控制程式代碼產生目標 ABI 的字串屬性。
 可能的值包括：
 
-- **XamarinAndroid**：使用自 Mono for Android 1.0 之後存在的 JNI 系結 API。 使用 Xamarin.Android 5.0 或更新版本所建置的繫結組件只可在 Xamarin.Android 5.0 或更新版本 (API/ABI 新增項目) 上執行，但「來源」** 與舊版產品相容。
+- **XamarinAndroid**：使用自 Mono for Android 1.0 之後存在的 JNI 系結 API。 使用 Xamarin.Android 5.0 或更新版本所建置的繫結組件只可在 Xamarin.Android 5.0 或更新版本 (API/ABI 新增項目) 上執行，但「來源」與舊版產品相容。
 
 - **XAJavaInterop1**：在 JNI 引動過程使用 Java.Interop。 使用 `XAJavaInterop1` 的繫結組件只可使用 Xamarin.Android 6.1 或更新版本來建置及執行。 Xamarin.Android 6.1 及更新版本使用此值繫結 `Mono.Android.dll`。
 
@@ -183,7 +191,7 @@ Android 套件內只能有一個具有 `<AndroidApplication>True</AndroidApplica
 
 此為布林值屬性，可決定是否要建立每個在中指定的一 *組* 檔案， [`$(AndroidSupportedAbis)`](#androidsupportedabis) 而不是支援單一中的所有 abi `.apk` 。
 
-另請參閱 [建立 ABI](~/android/deploy-test/building-apps/abi-specific-apks.md) 專屬的 apk 指南。
+另請參閱 [大樓 ABI-Specific apk](~/android/deploy-test/building-apps/abi-specific-apks.md) 指南。
 
 ## <a name="androiddebugkeyalgorithm"></a>AndroidDebugKeyAlgorithm
 
@@ -199,6 +207,27 @@ Android 套件內只能有一個具有 `<AndroidApplication>True</AndroidApplica
 
 已在 Xamarin. Android 10.2 中新增。
 
+
+## <a name="androiddeviceuserid"></a>AndroidDeviceUserId
+
+允許在來賓或公司帳戶下部署和偵測應用程式。 值是 `uid` 您從下列 adb 命令取得的值：
+
+```
+adb shell pm list users
+```
+
+這會傳回下列資料：
+
+```
+Users:
+    UserInfo{0:Owner:c13} running
+    UserInfo{10:Guest:404}
+```
+
+`uid`是第一個整數值。 在範例中，它們是 `0` 和 `10` 。
+
+這個屬性是在 Xamarin. Android 11.2 中新增的。
+
 ## <a name="androiddextool"></a>AndroidDexTool
 
 具有或值之有效值的列舉樣式屬性 `dx` `d8` 。 指出在 Xamarin.Android 建置流程期間使用哪一個 Android [dex][dex] 編譯器。
@@ -213,7 +242,7 @@ Android 套件內只能有一個具有 `<AndroidApplication>True</AndroidApplica
 
 ## <a name="androidenablegoogleplaystorechecks"></a>AndroidEnableGooglePlayStoreChecks
 
-Bool 屬性，可讓開發人員停用下列 Google Play 商店檢查： XA1004、XA1005 和 XA1006。 這適用於不是以 Google Play 商店為目標，所以不想要執行這些檢查的開發人員。
+此為布林值屬性，可讓開發人員停用下列 Google Play 商店檢查： XA1004、XA1005 和 XA1006。 這適用於不是以 Google Play 商店為目標，所以不想要執行這些檢查的開發人員。
 
 Xamarin.Android 9.4 已新增此支援。
 
@@ -235,7 +264,7 @@ Xamarin.Android 9.4 已新增此支援。
 設定為 `False` 時，組件將只會在需要時載入。
 這可加快應用程式啟動速度，同時也能夠與傳統型 .NET 語意更加一致。  若要查看省下的時間，請設定 `debug.mono.log` 系統屬性以包括 `timing`，並在 `adb logcat` 內尋找 `Finished loading assemblies: preloaded` 訊息。
 
-如果使用相依性插入的應用程式或程式庫要求 `AppDomain.CurrentDomain.GetAssemblies()` 傳回應用程式組合內的所有組件 (即使還不需要那些組件)，它們可能就會*要求*此屬性為 `True`。
+如果使用相依性插入的應用程式或程式庫要求 `AppDomain.CurrentDomain.GetAssemblies()` 傳回應用程式組合內的所有組件 (即使還不需要那些組件)，它們可能就會 *要求* 此屬性為 `True`。
 
 此值預設為 `True`。
 
@@ -263,7 +292,7 @@ Xamarin.Android 9.4 已新增此屬性支援。
 ## <a name="androiderroroncustomjavaobject"></a>AndroidErrorOnCustomJAVAObject
 
 此為布林值屬性，可判斷型別是否可以 `Android.Runtime.IJavaObject` 
- 在不同時繼承自或的*情況下*執行 `Java.Lang.Object` `Java.Lang.Throwable` ：
+ 在不同時繼承自或的 *情況下* 執行 `Java.Lang.Object` `Java.Lang.Throwable` ：
 
 ```csharp
 class BadType : IJavaObject {
@@ -298,17 +327,21 @@ class BadType : IJavaObject {
 
 已在 Xamarin. Android 10.2 中新增。
 
+<a name="AndroidFastDeploymentType"></a>
+
 ## <a name="androidfastdeploymenttype"></a>AndroidFastDeploymentType
 
-`:`值的 (冒號) 分隔的值清單，可在 MSBuild 屬性為時，控制可部署至目標裝置上[快速部署目錄](~/android/deploy-test/building-apps/build-process.md#Fast_Deployment)的類型 [`$(EmbedAssembliesIntoApk)`](#embedassembliesintoapk) `False` 。 資源如果使用快速部署，則不會** 內嵌到所產生的 `.apk`，從而可加快部署時間   (快速部署的更多，則需要重建的頻率較低， `.apk` 而且安裝程式可能會更快。 ) 有效的值包括：
+`:`值的 (冒號) 分隔的值清單，可在 MSBuild 屬性為時，控制可部署至目標裝置上[快速部署目錄](~/android/deploy-test/building-apps/build-process.md#Fast_Deployment)的類型 [`$(EmbedAssembliesIntoApk)`](#embedassembliesintoapk) `False` 。 資源如果使用快速部署，則不會內嵌到所產生的 `.apk`，從而可加快部署時間   (快速部署的更多，則需要重建的頻率較低， `.apk` 而且安裝程式可能會更快。 ) 有效的值包括：
 
 - `Assemblies`：部署應用程式組件。
-
-- `Dexes`：部署 `.dex` 檔案、Android 資源和 Android 資產。 **執行 Android 4.4 或更新版本 (API-19) 的裝置上才** 能使用這個值。**
+- `Dexes`：部署檔案 `.dex` 、原生程式庫和 typemaps。
+  **執行 Android 4.4 或更新版本 (API-19) 的裝置上才能使用這個值。**
 
 預設值是 `Assemblies`。
 
-**實驗**性。 已在 Xamarin.Android 6.1 中新增。
+認可 [f0d565fe](https://github.com/xamarin/xamarin-android/commit/f0d565fe4833f16df31378c77bbb492ffd2904b9)中已移除透過該系統快速部署資源和資產的支援。 這是因為它需要使用已淘汰的 API 才能運作。
+
+**實驗** 性。 這個屬性是在 Xamarin. Android 6.1 中新增的。
 
 ## <a name="androidgeneratejnimarshalmethods"></a>AndroidGenerateJniMarshalMethods
 
@@ -326,7 +359,7 @@ Bool 屬性，可讓您產生 JNI 封送處理方法做為組建程式的一部�
 /p:AndroidGenerateJniMarshalMethods=True
 ```
 
-**實驗**性。 已在 Xamarin.Android 9.2 中新增。
+**實驗** 性。 已在 Xamarin.Android 9.2 中新增。
 預設值是 False。
 
 ## <a name="androidgeneratejnimarshalmethodsadditionalarguments"></a>AndroidGenerateJniMarshalMethodsAdditionalArguments
@@ -358,19 +391,19 @@ Bool 屬性，可讓您產生 JNI 封送處理方法做為組建程式的一部�
 
 - `Xamarin.Android.Net.AndroidClientHandler`：使用 Android JAVA Api 來執行網路要求。 這允許在基礎 Android 版本支援 TLS 1.2 時存取 TLS 1.2 URL。 只有 Android 5.0 及更新版本能夠可靠地透過 Java 提供 TLS 1.2 支援。
 
-  這對應到 Visual Studio 屬性頁中的 [Android]**** 選項及 Visual Studio for Mac 屬性頁中的 [AndroidClientHandler]**** 選項。
+  這對應到 Visual Studio 屬性頁中的 [Android] 選項及 Visual Studio for Mac 屬性頁中的 [AndroidClientHandler] 選項。
 
-  當 [Android 最低版本]**** 的設定為 [Android 5.0 (Lollipop)]****，或當 Visual Studio for Mac 中之 [目標平台]**** 的設定為 [最新及最高]**** 時，[新增專案] 精靈會為新專案選取此選項。
+  當 [Android 最低版本] 的設定為 [Android 5.0 (Lollipop)]，或當 Visual Studio for Mac 中之 [目標平台] 的設定為 [最新及最高] 時，[新增專案] 精靈會為新專案選取此選項。
 
 - 取消設定/空字串：這相當於 `System.Net.Http.HttpClientHandler, System.Net.Http`
 
-  這對應到 Visual Studio屬性頁中的 [預設]**** 選項。
+  這對應到 Visual Studio屬性頁中的 [預設] 選項。
 
-  當 Visual Studio 中之 [Android 最低版本]**** 的設定為 [Android 4.4.87]**** 或更低，或當 Visual Studio for Mac 中之 [目標平台]**** 的設定為[新式開發]**** 或 [相容性上限]**** 時，[新增專案] 精靈會為新專案選取此選項。
+  當 Visual Studio 中之 [Android 最低版本] 的設定為 [Android 4.4.87] 或更低，或當 Visual Studio for Mac 中之 [目標平台] 的設定為[新式開發] 或 [相容性上限] 時，[新增專案] 精靈會為新專案選取此選項。
 
 - `System.Net.Http.HttpClientHandler, System.Net.Http`：使用 managed `HttpMessageHandler` 。
 
-  這對應到 Visual Studio屬性頁中的 [受控]**** 選項。
+  這對應到 Visual Studio屬性頁中的 [受控] 選項。
 
 > [!NOTE]
 > 如果在5.0 之前的 Android 版本上需要 TLS 1.2 支援， *或是* 和相關的 API 需要 tls 1.2 支援 `System.Net.WebClient` ，則 [`$(AndroidTlsProvider)`](#androidtlsprovider) 應該使用。
@@ -382,6 +415,36 @@ Bool 屬性，可讓您產生 JNI 封送處理方法做為組建程式的一部�
 
 已在 Xamarin.Android 6.1 中新增。
 
+## <a name="androidincludewrapsh"></a>AndroidIncludeWrapSh
+
+布林值，指出是否應該將 Android 包裝函式腳本 ([`wrap.sh`](https://developer.android.com/ndk/guides/wrap-script)) 封裝到 APK 中。 屬性預設為， `false` 因為包裝函式腳本可能會大幅影響應用程式啟動和運作的方式，而且應該只在必要時才包含腳本，例如用於偵錯工具或變更應用程式啟動/執行時間行為。
+
+腳本會使用來新增至專案 [`@(AndroidNativeLibrary)`](~/android/deploy-test/building-apps/build-items.md#androidnativelibrary)
+組建動作，因為它會放在與架構特定原生程式庫相同的目錄中，而且必須命名為 `wrap.sh` 。
+
+指定腳本路徑最簡單的方式， `wrap.sh` 就是將它放在以目標架構命名的目錄中。 如果您的每個架構只有一個，這個方法會運作 `wrap.sh` ：
+
+```xml
+<AndroidNativeLibrary Include="path/to/arm64-v8a/wrap.sh" />
+```
+
+但是，如果您的專案在每個架構中都需要一個以上的專案， `wrap.sh` 基於不同用途，此方法將無法運作。
+相反地，在這種情況下，可以使用的 `Link` 中繼資料來指定名稱 `AndroidNativeLibrary` ：
+
+```xml
+<AndroidNativeLibrary Include="/path/to/my/arm64-wrap.sh">
+  <Link>lib\arm64-v8a\wrap.sh</Link>
+</AndroidNativeLibrary>
+```
+
+如果 `Link` 使用中繼資料，其值中所指定的路徑必須是有效的原生架構特定程式庫路徑（相對於 APK 根目錄）。 路徑的格式為 `lib\ARCH\wrap.sh` ，其中 `ARCH` 可以是下列其中一個：
+
++ `arm64-v8a`
++ `armeabi-v7a`
++ `x86_64`
++ `x86`
+
+
 ## <a name="androidkeystore"></a>AndroidKeyStore
 
 布林值，指出是否應該使用自訂簽署資訊。 預設值是 `False`，也就是會使用預設的偵錯簽署金鑰來簽署套件。
@@ -392,7 +455,7 @@ Bool 屬性，可讓您產生 JNI 封送處理方法做為組建程式的一部�
 
 ## <a name="androidlinkmode"></a>AndroidLinkMode
 
-指定應在包含于 Android 套件內的元件上執行的 [連結](~/android/deploy-test/linker.md) 類型。 僅限用於 Android 應用程式專案內。 預設值是 SdkOnly**。 有效值為：
+指定應在包含于 Android 套件內的元件上執行的 [連結](~/android/deploy-test/linker.md) 類型。 僅限用於 Android 應用程式專案內。 預設值是 SdkOnly。 有效值為：
 
 - **無**：不會嘗試任何連結。
 
@@ -401,7 +464,7 @@ Bool 屬性，可讓您產生 JNI 封送處理方法做為組建程式的一部�
 - **完整**：會對基底類別庫和使用者組件執行連結。
 
   > [!NOTE]
-  > 若使用的 `AndroidLinkMode` 值為 *Full*，通常會導致應用程式損壞，特別是在使用了「反映」時。 除非您確實** 了解您正在執行的動作，否則請避免使用此值。
+  > 若使用的 `AndroidLinkMode` 值為 *Full*，通常會導致應用程式損壞，特別是在使用了「反映」時。 除非您確實了解您正在執行的動作，否則請避免使用此值。
 
 ```xml
 <AndroidLinkMode>SdkOnly</AndroidLinkMode>
@@ -483,9 +546,9 @@ Google 的合併可啟用的支援， `xmlns:tools="http://schemas.android.com/t
 
 ## <a name="androidmanifestplaceholders"></a>AndroidManifestPlaceholders
 
-*AndroidManifest.xml*的索引鍵/值取代組分號分隔清單，其中每個配對都具有格式 `key=value` 。
+*AndroidManifest.xml* 的索引鍵/值取代組分號分隔清單，其中每個配對都具有格式 `key=value` 。
 
-例如，的屬性值 `assemblyName=$(AssemblyName)` `${assemblyName}` 會定義可以出現在 *AndroidManifest.xml*中的預留位置：
+例如，的屬性值 `assemblyName=$(AssemblyName)` `${assemblyName}` 會定義可以出現在 *AndroidManifest.xml* 中的預留位置：
 
 ```xml
 <application android:label="${assemblyName}"
@@ -537,6 +600,14 @@ com.android.dex.DexException: Too many classes in --main-dex-list, main dex capa
 
 已在 Xamarin. Android 10.1 中新增。
 
+## <a name="androidproguardmappingfile"></a>AndroidProguardMappingFile
+
+指定的 `-printmapping` proguard 規則 `r8` 。 這表示檔案 `mapping.txt` 將會在資料夾中產生 `$(OutputPath)` 。 然後，將套件上傳至 Google Play 商店時，即可使用此檔案。
+
+預設值是 `$(OutputPath)mapping.txt`。
+
+這個屬性是在 Xamarin. Android 11.2 中新增的。
+
 ## <a name="androidr8ignorewarnings"></a>AndroidR8IgnoreWarnings
 
 指定的 `-ignorewarnings` proguard 規則 `r8` 。 這可讓您 `r8` 繼續進行 dex 編譯，即使遇到特定警告也是如此。 預設為 `True` ，但可以設定為， `False` 以強制執行更嚴格的行為。 如需詳細資訊，請參閱 [ProGuard 手冊](https://www.guardsquare.com/products/proguard/manual/usage) 。
@@ -557,7 +628,7 @@ com.android.dex.DexException: Too many classes in --main-dex-list, main dex capa
 
 ## <a name="androidsdkbuildtoolsversion"></a>AndroidSdkBuildToolsVersion
 
-Android SDK build tools 套件提供 **aapt** 和 **zipalign** 工具，還有其他工具。 您可以同時安裝建置工具套件的多個不同版本。 如果「慣用的」建置工具版本存在，可藉由檢查及使用該版本來完成選擇要封裝的建置工具套件，如果「慣用的」版本不** 存在，則會使用已安裝的建置工具套件中版本最高者。
+Android SDK build tools 套件提供 **aapt** 和 **zipalign** 工具，還有其他工具。 您可以同時安裝建置工具套件的多個不同版本。 如果「慣用的」建置工具版本存在，可藉由檢查及使用該版本來完成選擇要封裝的建置工具套件，如果「慣用的」版本不存在，則會使用已安裝的建置工具套件中版本最高者。
 
 `$(AndroidSdkBuildToolsVersion)` MSBuild 屬性包含慣用的建置工具版本。 Xamarin.Android 建置系統會在 `Xamarin.Android.Common.targets` 中提供預設值，而如果 (舉例來說) 最新的 aapt 損毀但您知道有舊版 aapt 能夠正常運作，則可以在專案檔內複寫此預設值，以選擇其他建置工具版本。
 
@@ -567,13 +638,13 @@ Android SDK build tools 套件提供 **aapt** 和 **zipalign** 工具，還有�
 
 ## <a name="androidsigningkeypass"></a>AndroidSigningKeyPass
 
-在金鑰儲存區檔案中指定金鑰的密碼。 這是在 `keytool` 要求**輸入 $(AndroidSigningKeyAlias) 的金鑰密碼**時所輸入的值。
+在金鑰儲存區檔案中指定金鑰的密碼。 這是在 `keytool` 要求 **輸入 $(AndroidSigningKeyAlias) 的金鑰密碼** 時所輸入的值。
 
 在 Xamarin. Android 10.0 及更早版本中，此屬性只支援純文字密碼。
 
 在 Xamarin. Android 10.1 和更新版本中，此屬性也支援和前置詞， `env:` `file:` 可用來指定包含密碼的環境變數或檔案。 這些選項提供防止密碼出現在組建記錄檔中的方法。
 
-例如，若要使用名為 *AndroidSigningPassword*的環境變數：
+例如，若要使用名為 *AndroidSigningPassword* 的環境變數：
 
 ```xml
 <PropertyGroup>
@@ -599,13 +670,13 @@ Android SDK build tools 套件提供 **aapt** 和 **zipalign** 工具，還有�
 ## <a name="androidsigningstorepass"></a>AndroidSigningStorePass
 
 指定的密碼 [`$(AndroidSigningKeyStore)`](#androidsigningkeystore) 。
-這是在建立金鑰儲存區檔案時提供給 `keytool`，並且會要求**輸入金鑰儲存區密碼: **的值。
+這是在建立金鑰儲存區檔案時提供給 `keytool`，並且會要求 **輸入金鑰儲存區密碼:** 的值。
 
 在 Xamarin. Android 10.0 及更早版本中，此屬性只支援純文字密碼。
 
 在 Xamarin. Android 10.1 和更新版本中，此屬性也支援和前置詞， `env:` `file:` 可用來指定包含密碼的環境變數或檔案。 這些選項提供防止密碼出現在組建記錄檔中的方法。
 
-例如，若要使用名為 *AndroidSigningPassword*的環境變數：
+例如，若要使用名為 *AndroidSigningPassword* 的環境變數：
 
 ```xml
 <PropertyGroup>
@@ -643,21 +714,21 @@ Android SDK build tools 套件提供 **aapt** 和 **zipalign** 工具，還有�
 
   在 Xamarin.Android 7.1 中，這相當於 `legacy`。
 
-  這對應到 Visual Studio屬性頁中的 [預設]**** 設定。
+  這對應到 Visual Studio屬性頁中的 [預設] 設定。
 
 - `btls`：使用 [Boring SSL](https://boringssl.googlesource.com/boringssl) 以利用 [HttpWebRequest](xref:System.Net.HttpWebRequest) 進行 TLS 通訊。
 
   這允許在所有的 Android 版本上使用 TLS 1.2。
 
-  這對應到 Visual Studio 屬性頁中的 [原生 TLS 1.2+]**** 設定。
+  這對應到 Visual Studio 屬性頁中的 [原生 TLS 1.2+] 設定。
 
-- `legacy`：在 Xamarin. Android 10.1 及更早版本中，請使用歷程記錄管理的 SSL 實行進行網路互動。 這不** 支援 TLS 1.2。
+- `legacy`：在 Xamarin. Android 10.1 及更早版本中，請使用歷程記錄管理的 SSL 實行進行網路互動。 這不支援 TLS 1.2。
 
-  這對應到 Visual Studio 屬性頁中的 [原生 TLS 1.0]**** 設定。
+  這對應到 Visual Studio 屬性頁中的 [原生 TLS 1.0] 設定。
 
   在 Xamarin. Android 10.2 和更新版本中，會忽略此值，並 `btls` 使用此設定。
 
-- `default`：此值不太可能用於 Xamarin. Android 專案。 建議改用對應到 Visual Studio 屬性頁中之 [預設]**** 設定的空字串值。
+- `default`：此值不太可能用於 Xamarin. Android 專案。 建議改用對應到 Visual Studio 屬性頁中之 [預設] 設定的空字串值。
 
   Visual Studio 屬性頁不提供 `default` 值。
 
@@ -681,7 +752,7 @@ Android SDK build tools 套件提供 **aapt** 和 **zipalign** 工具，還有�
 /p:AndroidUseAapt2=True
 ```
 
-已在 Xamarin.Android 8.3 中新增。
+這個屬性是在 Xamarin. Android 8.3 中新增的。 將設定 `AndroidUseAapt2` 為 `false` 已在 Xamarin. Android 11.2 中淘汰。
 
 ## <a name="androiduseapksigner"></a>AndroidUseApkSigner
 
@@ -713,7 +784,9 @@ Bool 屬性，可讓開發人員隱藏預設 AOT 設定檔的使用方式。
 
 此為布林值屬性，可決定是否需要 *共用執行時間封裝* ，才能在目標裝置上執行應用程式。 依賴共用執行階段套件可讓應用程式套件小一些、加快套件的建立和部署程序速度，進而提升建置/部署/偵錯往返循環速度。
 
-如果是偵錯組建，這個屬性應該是 `True`，如果是發行專案，則應該是 `False`。
+在 11.2 Xamarin 之前的版本中，這個屬性應該是 `True` 用於 Debug 組建和 `False` 發行專案。
+
+此屬性已在 Xamarin. Android 11.2 中 *移除* 。
 
 ## <a name="androidversioncodepattern"></a>AndroidVersionCodePattern
 
@@ -749,7 +822,7 @@ f `abi` 是 `x86_64` 和 `versionCode` 在資訊清單中 `44` 。 若 `544` `$(
 ## <a name="androidversioncodeproperties"></a>AndroidVersionCodeProperties
 
 字串屬性，可讓開發人員定義要與搭配使用的自訂專案 [`$(AndroidVersionCodePattern)`](#androidversioncodepattern) 。
-其格式為 `key=value` 組。 `value` 中的所有項目都應該是整數值。 例如： `screen=23;target=$(_AndroidApiLevel)` 。 如您所見，您可以在字串中利用現有或自訂的 MSBuild 屬性。
+其格式為 `key=value` 組。 `value` 中的所有項目都應該是整數值。 例如：`screen=23;target=$(_AndroidApiLevel)`。 如您所見，您可以在字串中利用現有或自訂的 MSBuild 屬性。
 
 已在 Xamarin.Android 7.2 中新增。
 
@@ -771,7 +844,7 @@ f `abi` 是 `x86_64` 和 `versionCode` 在資訊清單中 `44` 。 若 `544` `$(
 
 Xamarin.Android 9.4 已新增此支援。
 
-## <a name="configuration"></a>設定
+## <a name="configuration"></a>組態
 
 指定要使用的組建設定，例如 "Debug" 或 "Release"。 組態屬性可用來決定其他會決定目標行為之屬性的預設值。 您可以在 IDE 內建立其他組態。
 
@@ -781,13 +854,13 @@ Xamarin.Android 9.4 已新增此支援。
 
 預設設定 `Release` 會導致 [`Install`](~/android/deploy-test/building-apps/build-targets.md#install)
 和 [`SignAndroidPackage`](~/android/deploy-test/building-apps/build-targets.md#signandroidpackage)
-目標是建立 *獨立*的 Android 套件，而且可以在不安裝任何其他套件或檔案的情況下使用。
+目標是建立 *獨立* 的 Android 套件，而且可以在不安裝任何其他套件或檔案的情況下使用。
 
 ## <a name="debugsymbols"></a>DebugSymbols
 
-布林 *值，判斷 Android 封裝是否與*屬性搭配使用 [`$(DebugType)`](#debugtype) 。
+布林 *值，判斷 Android 封裝是否與* 屬性搭配使用 [`$(DebugType)`](#debugtype) 。
 可調試封裝包含 debug 符號、將[ `//application/@android:debuggable` 屬性](https://developer.android.com/guide/topics/manifest/application-element#debug)設為 `true` ，以及自動將[`INTERNET`](https://developer.android.com/reference/android/Manifest.permission#INTERNET)
-許可權，讓偵錯工具可以附加至進程。 如果 `DebugSymbols` 是  且 `True` ** `DebugType` 為空字串或 `Full`，則應用程式是可偵錯的。
+許可權，讓偵錯工具可以附加至進程。 如果 `DebugSymbols` 是  且 `True`  `DebugType` 為空字串或 `Full`，則應用程式是可偵錯的。
 
 ## <a name="debugtype"></a>DebugType
 
@@ -804,7 +877,7 @@ Xamarin.Android 9.4 已新增此支援。
 
 此為布林值屬性，可決定應用程式的元件是否應內嵌到應用程式封裝中。
 
-如果是發行組建，這個屬性應該是 `True`，如果是偵錯組建，則應該是 `False`。 如果快速部署不支援目標裝置，則在偵錯組建中，這個屬性可能** 需為 `True`。
+如果是發行組建，這個屬性應該是 `True`，如果是偵錯組建，則應該是 `False`。 如果快速部署不支援目標裝置，則在偵錯組建中，這個屬性可能需為 `True`。
 
 當這個屬性為時 `False` ， [`$(AndroidFastDeploymentType)`](#androidfastdeploymenttype)
 MSBuild 屬性也會控制要內嵌至的內容 `.apk` ，這可能會影響部署和重建時間。
@@ -833,7 +906,7 @@ MSBuild 屬性也會控制要內嵌至的內容 `.apk` ，這可能會影響部�
 
 ## <a name="javamaximumheapsize"></a>JAVAMaximumHeapSize
 
-指定在**java** 
+指定在 
  `-Xmx` `.dex` 封裝進程中建立檔案時，要使用的 java 參數值值。 如果未指定，則 `-Xmx` 選項會為 **java** 提供值 `1G`。 相較於其他平台，這在 Windows 上通常是必要項目。
 
 如果[ `_CompileDex` 目標 `java.lang.OutOfMemoryError` ](https://bugzilla.xamarin.com/show_bug.cgi?id=18327)擲回，則必須指定這個屬性。
@@ -874,6 +947,8 @@ MSBuild 屬性也會控制要內嵌至的內容 `.apk` ，這可能會影響部�
 
 布林值屬性，可產生連結器相依性檔案。 此檔案可作為 [illinkanalyzer](https://github.com/mono/linker/blob/master/src/analyzer/README.md) 工具的輸入使用。
 
+名為的相依性檔案 `linker-dependencies.xml.gz` 會寫入至專案目錄。 個.NET5/6 會在目錄中的連結元件旁邊寫入 `obj/<Configuration>/android<ABI>/linked` 。
+
 預設值是 False。
 
 ## <a name="mandroidi18n"></a>MandroidI18n
@@ -884,15 +959,15 @@ MSBuild 屬性也會控制要內嵌至的內容 `.apk` ，這可能會影響部�
 
 - **全部**：包含所有可用的編碼。
 
-- **CJK**：包含中文、日文和韓文編碼，例如日文 (EUC)** \[enc-jp, CP51932\]、日文 (Shift-JIS)** \[iso-2022-jp, shift\_jis, CP932\]、日文 (JIS)** \[CP50220\]、簡體中文 (GB2312)** \[gb2312, CP936\]、韓文 (UHC)** \[ks\_c\_5601-1987, CP949\]、韓文 (EUC)** \[euc-kr, CP51949\]、繁體中文(Big5)** \[big5, CP950\] 和簡體中文 (GB18030)** \[GB18030, CP54936\]。
+- **CJK**：包含中文、日文和韓文編碼，例如日文 (EUC) \[enc-jp, CP51932\]、日文 (Shift-JIS) \[iso-2022-jp, shift\_jis, CP932\]、日文 (JIS) \[CP50220\]、簡體中文 (GB2312) \[gb2312, CP936\]、韓文 (UHC) \[ks\_c\_5601-1987, CP949\]、韓文 (EUC) \[euc-kr, CP51949\]、繁體中文(Big5) \[big5, CP950\] 和簡體中文 (GB18030) \[GB18030, CP54936\]。
 
-- **中東**：包含中東編碼，例如土耳其文 (Windows)** \[iso-8859-9, CP1254\]、希伯來文 (Windows)** \[windows-1255, CP1255\]、阿拉伯文 (Windows)** \[windows-1256, CP1256\]、阿拉伯文 (ISO)** \[iso-8859-6, CP28596\]、希伯來文 (ISO)** \[iso-8859-8, CP28598\]、拉丁文 5 (ISO)** \[iso-8859-9, CP28599\] 和希伯來文 (Iso Alternative)** \[iso-8859-8, CP38598\]。
+- **中東**：包含中東編碼，例如土耳其文 (Windows) \[iso-8859-9, CP1254\]、希伯來文 (Windows) \[windows-1255, CP1255\]、阿拉伯文 (Windows) \[windows-1256, CP1256\]、阿拉伯文 (ISO) \[iso-8859-6, CP28596\]、希伯來文 (ISO) \[iso-8859-8, CP28598\]、拉丁文 5 (ISO) \[iso-8859-9, CP28599\] 和希伯來文 (Iso Alternative) \[iso-8859-8, CP38598\]。
 
-- **其他**：包含其他編碼，例如斯拉夫文 (Windows)** \[CP1251\]、波羅的海文 (Windows)** \[iso-8859-4, CP1257\]、越南文 (Windows)** \[CP1258\]、斯拉夫文 (KOI8-R)** \[koi8-r, CP1251\]、烏克蘭文 (KOI8-U)** \[koi8-u, CP1251\]、波羅的海文 (ISO)** \[iso-8859-4, CP1257\]、斯拉夫文 (ISO)** \[iso-8859-5, CP1251\]、ISCII 梵文** \[x-iscii-de, CP57002\]、ISCII 孟加拉文** \[x-iscii-be, CP57003\]、ISCII 坦米爾文** \[x-iscii-ta, CP57004\]、ISCII 特拉古文** \[x-iscii-te, CP57005\]、ISCII 阿薩姆文** \[x-iscii-as, CP57006\]、ISCII 歐利亞文** \[x-iscii-or, CP57007\]、ISCII 坎那達文** \[x-iscii-ka, CP57008\]、ISCII 馬來亞拉姆文** \[x-iscii-ma, CP57009\]、ISCII 古吉拉特文** \[x-iscii-gu, CP57010\]、ISCII 旁遮普文** \[x-iscii-pa, CP57011\] 和泰文 (Windows)** \[CP874\]。
+- **其他**：包含其他編碼，例如斯拉夫文 (Windows) \[CP1251\]、波羅的海文 (Windows) \[iso-8859-4, CP1257\]、越南文 (Windows) \[CP1258\]、斯拉夫文 (KOI8-R) \[koi8-r, CP1251\]、烏克蘭文 (KOI8-U) \[koi8-u, CP1251\]、波羅的海文 (ISO) \[iso-8859-4, CP1257\]、斯拉夫文 (ISO) \[iso-8859-5, CP1251\]、ISCII 梵文 \[x-iscii-de, CP57002\]、ISCII 孟加拉文 \[x-iscii-be, CP57003\]、ISCII 坦米爾文 \[x-iscii-ta, CP57004\]、ISCII 特拉古文 \[x-iscii-te, CP57005\]、ISCII 阿薩姆文 \[x-iscii-as, CP57006\]、ISCII 歐利亞文 \[x-iscii-or, CP57007\]、ISCII 坎那達文 \[x-iscii-ka, CP57008\]、ISCII 馬來亞拉姆文 \[x-iscii-ma, CP57009\]、ISCII 古吉拉特文 \[x-iscii-gu, CP57010\]、ISCII 旁遮普文 \[x-iscii-pa, CP57011\] 和泰文 (Windows) \[CP874\]。
 
-- **罕見**：包含罕見的編碼，例如 IBM EBCDIC (土耳其文)** \[CP1026\]、IBM EBCDIC (開啟系統拉丁文 1)** \[CP1047\]、IBM EBCDIC (美國-加拿大與歐元區)** \[CP1140\]、IBM EBCDIC (德國與歐元區)** \[CP1141\]、IBM EBCDIC (丹麥/挪威與歐元區)** \[CP1142\]、IBM EBCDIC (芬蘭/瑞典與歐元區)** \[CP1143\]、IBM EBCDIC (義大利與歐元區)** \[CP1144\]、IBM EBCDIC (拉丁美洲/西班牙與歐元區)** \[CP1145\]、IBM EBCDIC (英國與歐元區)** \[CP1146\]、IBM EBCDIC (法國與歐元區)** \[CP1147\]、IBM EBCDIC (國際與歐元區)** \[CP1148\]、IBM EBCDIC (冰島與歐元區)** \[CP1149\]、IBM EBCDIC (德國)** \[CP20273\]、IBM EBCDIC (丹麥/挪威)** \[CP20277\]、IBM EBCDIC (芬蘭/瑞典)** \[CP20278\]、IBM EBCDIC (義大利)** \[CP20280\]、IBM EBCDIC (拉丁美洲/西班牙)** \[CP20284\]、IBM EBCDIC (英國)** \[CP20285\]、IBM EBCDIC (日文片假名延伸)** \[CP20290\]、IBM EBCDIC (法國)** \[CP20297\]、IBM EBCDIC (阿拉伯文)** \[CP20420\]、IBM EBCDIC (希伯來文)** \[CP20424\]、IBM EBCDIC (冰島文)** \[CP20871\]、IBM EBCDIC (斯拉夫文-塞爾維亞文、保加利亞文)** \[CP21025\]、IBM EBCDIC (美國-加拿大)** \[CP37\]、IBM EBCDIC (國際)** \[CP500\]、阿拉伯文 (ASMO 708)** \[CP708\]、中歐語系 (DOS)** \[CP852\]、斯拉夫文 (DOS)** \[CP855\]、土耳其文 (DOS)** \[CP857\]、西歐語系 (DOS 與歐元區)** \[CP858\]、希伯來文 (DOS)** \[CP862\]、阿拉伯文 (DOS)** \[CP864\]、俄文 (DOS)** \[CP866\]、Greek (DOS)** \[CP869\]、IBM EBCDIC (拉丁文 2)** \[CP870\] 和 IBM EBCDIC (希臘文)** \[CP875\]。
+- **罕見**：包含罕見的編碼，例如 IBM EBCDIC (土耳其文) \[CP1026\]、IBM EBCDIC (開啟系統拉丁文 1) \[CP1047\]、IBM EBCDIC (美國-加拿大與歐元區) \[CP1140\]、IBM EBCDIC (德國與歐元區) \[CP1141\]、IBM EBCDIC (丹麥/挪威與歐元區) \[CP1142\]、IBM EBCDIC (芬蘭/瑞典與歐元區) \[CP1143\]、IBM EBCDIC (義大利與歐元區) \[CP1144\]、IBM EBCDIC (拉丁美洲/西班牙與歐元區) \[CP1145\]、IBM EBCDIC (英國與歐元區) \[CP1146\]、IBM EBCDIC (法國與歐元區) \[CP1147\]、IBM EBCDIC (國際與歐元區) \[CP1148\]、IBM EBCDIC (冰島與歐元區) \[CP1149\]、IBM EBCDIC (德國) \[CP20273\]、IBM EBCDIC (丹麥/挪威) \[CP20277\]、IBM EBCDIC (芬蘭/瑞典) \[CP20278\]、IBM EBCDIC (義大利) \[CP20280\]、IBM EBCDIC (拉丁美洲/西班牙) \[CP20284\]、IBM EBCDIC (英國) \[CP20285\]、IBM EBCDIC (日文片假名延伸) \[CP20290\]、IBM EBCDIC (法國) \[CP20297\]、IBM EBCDIC (阿拉伯文) \[CP20420\]、IBM EBCDIC (希伯來文) \[CP20424\]、IBM EBCDIC (冰島文) \[CP20871\]、IBM EBCDIC (斯拉夫文-塞爾維亞文、保加利亞文) \[CP21025\]、IBM EBCDIC (美國-加拿大) \[CP37\]、IBM EBCDIC (國際) \[CP500\]、阿拉伯文 (ASMO 708) \[CP708\]、中歐語系 (DOS) \[CP852\]、斯拉夫文 (DOS) \[CP855\]、土耳其文 (DOS) \[CP857\]、西歐語系 (DOS 與歐元區) \[CP858\]、希伯來文 (DOS) \[CP862\]、阿拉伯文 (DOS) \[CP864\]、俄文 (DOS) \[CP866\]、Greek (DOS) \[CP869\]、IBM EBCDIC (拉丁文 2) \[CP870\] 和 IBM EBCDIC (希臘文) \[CP875\]。
 
-- **西方**：包含西方編碼，例如西歐語系 (Mac)** \[macintosh, CP10000\]、冰島文 (Mac)** \[x-mac-icelandic, CP10079\]、中歐語系 (Windows)** \[iso-8859-2, CP1250\]、西歐語系 (Windows)** \[iso-8859-1, CP1252\]、希臘文 (Windows)** \[iso-8859-7, CP1253\]、中歐語系 (ISO)** \[iso-8859-2, CP28592\]、拉丁文 3 (ISO)** \[iso-8859-3, CP28593\]、希臘文 (ISO)** \[iso-8859-7, CP28597\]、拉丁文 9 (ISO)** \[iso-8859-15, CP28605\]、OEM 美國** \[CP437\]、西歐語系 (DOS)** \[CP850\]、葡萄牙文 (DOS)** \[CP860\]、冰島文 (DOS)** \[CP861\]、加拿大法文 (DOS)** \[CP863\] 和北歐語言 (DOS)** \[CP865\]。
+- **西方**：包含西方編碼，例如西歐語系 (Mac) \[macintosh, CP10000\]、冰島文 (Mac) \[x-mac-icelandic, CP10079\]、中歐語系 (Windows) \[iso-8859-2, CP1250\]、西歐語系 (Windows) \[iso-8859-1, CP1252\]、希臘文 (Windows) \[iso-8859-7, CP1253\]、中歐語系 (ISO) \[iso-8859-2, CP28592\]、拉丁文 3 (ISO) \[iso-8859-3, CP28593\]、希臘文 (ISO) \[iso-8859-7, CP28597\]、拉丁文 9 (ISO) \[iso-8859-15, CP28605\]、OEM 美國 \[CP437\]、西歐語系 (DOS) \[CP850\]、葡萄牙文 (DOS) \[CP860\]、冰島文 (DOS) \[CP861\]、加拿大法文 (DOS) \[CP863\] 和北歐語言 (DOS) \[CP865\]。
 
 ```xml
 <MandroidI18n>West</MandroidI18n>

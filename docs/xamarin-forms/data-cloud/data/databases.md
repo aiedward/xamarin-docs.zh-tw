@@ -6,18 +6,18 @@ ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 12/05/2019
+ms.date: 03/01/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4331b29c54b5f7c59daf0a9e04cd398693e79201
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: a7dd5ea8963fed079c82ac6944d571176002486e
+ms.sourcegitcommit: 322e7bcf9fb8c1ad52ab8e929bea95d45e280834
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374702"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751440"
 ---
-# <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms 本機資料庫
+# <a name="xamarinforms-local-databases"></a>Xamarin.Forms 本機資料庫
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/todo)
 
@@ -96,93 +96,70 @@ public static class Constants
 
 ### <a name="lazy-initialization"></a>延遲初始設定
 
-在 `TodoItemDatabase` `Lazy` 第一次存取資料庫之前，會使用 .net 類別來延遲資料庫的初始化。 使用延遲初始化可防止資料庫載入進程延遲應用程式啟動。 如需詳細資訊，請參閱 [Lazy &lt; T &gt; 類別](xref:System.Lazy`1)。
+`TodoItemDatabase`使用由自訂類別表示的非同步延遲初始化 `AsyncLazy<T>` ，來延遲資料庫的初始存取，直到第一次被存取為止：
 
 ```csharp
 public class TodoItemDatabase
 {
-    static readonly Lazy<SQLiteAsyncConnection> lazyInitializer = new Lazy<SQLiteAsyncConnection>(() =>
-    {
-        return new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
-    });
+    static SQLiteAsyncConnection Database;
 
-    static SQLiteAsyncConnection Database => lazyInitializer.Value;
-    static bool initialized = false;
+    public static readonly AsyncLazy<TodoItemDatabase> Instance = new AsyncLazy<TodoItemDatabase>(async () =>
+    {
+        var instance = new TodoItemDatabase();
+        CreateTableResult result = await Database.CreateTableAsync<TodoItem>();
+        return instance;
+    });
 
     public TodoItemDatabase()
     {
-        InitializeAsync().SafeFireAndForget(false);
-    }
-
-    async Task InitializeAsync()
-    {
-        if (!initialized)
-        {
-            if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(TodoItem).Name))
-            {
-                await Database.CreateTablesAsync(CreateFlags.None, typeof(TodoItem)).ConfigureAwait(false);
-            }
-            initialized = true;
-        }
+        Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
     }
 
     //...
 }
 ```
 
-資料庫連接是靜態欄位，可確保在應用程式存留期內使用單一資料庫連接。 在單一應用程式會話期間，使用持續性靜態連接可提供比開啟和關閉連接更佳的效能。
+此 `Instance` 欄位是用來建立物件的資料庫資料表 `TodoItem` （如果尚未存在），並傳回 `TodoItemDatabase` 做為 singleton。 `Instance`型別的欄位 `AsyncLazy<TodoItemDatabase>` 是在第一次等候時所構成。 如果有多個執行緒同時嘗試存取欄位，它們都會使用單一結構。 然後，當結構完成時，所有 `await` 作業都會完成。 此外， `await` 結構之後的任何作業都會立即繼續，因為值可以使用。
 
-`InitializeAsync`方法負責檢查資料表是否已存在，以儲存 `TodoItem` 物件。 如果資料表不存在，這個方法會自動建立資料表。
+> [!NOTE]
+> 資料庫連接是靜態欄位，可確保在應用程式存留期內使用單一資料庫連接。 在單一應用程式會話期間，使用持續性靜態連接可提供比開啟和關閉連接更佳的效能。
 
-### <a name="the-safefireandforget-extension-method"></a>SafeFireAndForget 擴充方法
+### <a name="asynchronous-lazy-initialization"></a>非同步延遲初始化
 
-當 `TodoItemDatabase` 類別具現化時，它必須初始化資料庫連接，這是非同步處理常式。 但是：
-
-- 類別的函式不可以是非同步。
-- 未等候的非同步方法不會擲回例外狀況。
-- 使用 `Wait` 方法會封鎖執行緒 _並_ 抑制例外狀況。
-
-為了開始非同步初始化，請避免封鎖執行，並有機會攔截例外狀況，範例應用程式會使用稱為的擴充方法 `SafeFireAndForget` 。 `SafeFireAndForget`擴充方法會提供類別的其他功能 `Task` ：
+若要啟動資料庫初始化，請避免封鎖執行，並有機會攔截例外狀況，範例應用程式會使用以類別表示的非同步延遲初始化 `AsyncLazy<T>` ：
 
 ```csharp
-public static class TaskExtensions
+public class AsyncLazy<T> : Lazy<Task<T>>
 {
-    // NOTE: Async void is intentional here. This provides a way
-    // to call an async method from the constructor while
-    // communicating intent to fire and forget, and allow
-    // handling of exceptions
-    public static async void SafeFireAndForget(this Task task,
-        bool returnToCallingContext,
-        Action<Exception> onException = null)
-    {
-        try
-        {
-            await task.ConfigureAwait(returnToCallingContext);
-        }
+    readonly Lazy<Task<T>> instance;
 
-        // if the provided action is not null, catch and
-        // pass the thrown exception
-        catch (Exception ex) when (onException != null)
-        {
-            onException(ex);
-        }
+    public AsyncLazy(Func<T> factory)
+    {
+        instance = new Lazy<Task<T>>(() => Task.Run(factory));
+    }
+
+    public AsyncLazy(Func<Task<T>> factory)
+    {
+        instance = new Lazy<Task<T>>(() => Task.Run(factory));
+    }
+
+    public TaskAwaiter<T> GetAwaiter()
+    {
+        return instance.Value.GetAwaiter();
     }
 }
 ```
 
-`SafeFireAndForget`方法會等候所提供物件的非同步執行 `Task` ，並可讓您附加在擲 `Action` 回例外狀況時呼叫的。
-
-如需詳細資訊，請參閱以工作為 [基礎的非同步模式 (點擊) ](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)。
+`AsyncLazy`類別會合並 `Lazy<T>` 和類型， `Task<T>` 以建立延遲初始化的工作，以表示資源的初始化。 傳遞給函式的 factory 委派可以是同步或非同步。 Factory 委派將會線上程集區執行緒上執行，且不會執行一次以上 (即使多個執行緒嘗試同時啟動它們) 。 當 factory 委派完成時，會提供延遲初始化的值，而且任何等候該實例的方法 `AsyncLazy<T>` 都會收到值。 如需詳細資訊，請參閱 [改用 asynclazy<t>](https://devblogs.microsoft.com/pfxteam/asynclazyt/)。
 
 ### <a name="data-manipulation-methods"></a>資料操作方法
 
 `TodoItemDatabase`類別包含四種資料操作類型的方法：建立、讀取、編輯和刪除。 SQLite.NET 程式庫提供簡單的物件關聯式對應 (ORM) ，可讓您在不需要撰寫 SQL 語句的情況下儲存和取出物件。
 
 ```csharp
-public class TodoItemDatabase {
-
+public class TodoItemDatabase
+{
     // ...
-
     public Task<List<TodoItem>> GetItemsAsync()
     {
         return Database.Table<TodoItem>().ToListAsync();
@@ -218,35 +195,20 @@ public class TodoItemDatabase {
 }
 ```
 
-## <a name="access-data-in-no-locxamarinforms"></a>存取中的資料 Xamarin.Forms
+## <a name="access-data-in-xamarinforms"></a>存取中的資料 Xamarin.Forms
 
-Xamarin.Forms `App` 類別會公開類別的實例 `TodoItemDatabase` ：
-
-```csharp
-static TodoItemDatabase database;
-public static TodoItemDatabase Database
-{
-    get
-    {
-        if (database == null)
-        {
-            database = new TodoItemDatabase();
-        }
-        return database;
-    }
-}
-```
-
-這個屬性可讓 Xamarin.Forms 元件呼叫實例上的資料抓取和操作方法， `Database` 以回應使用者互動。 例如︰
+`TodoItemDatabase`類別 `Instance` 會公開欄位，可透過此欄位叫用類別中的資料存取作業 `TodoItemDatabase` ：
 
 ```csharp
-var saveButton = new Button { Text = "Save" };
-saveButton.Clicked += async (sender, e) =>
+async void OnSaveClicked(object sender, EventArgs e)
 {
     var todoItem = (TodoItem)BindingContext;
-    await App.Database.SaveItemAsync(todoItem);
+    TodoItemDatabase database = await TodoItemDatabase.Instance;
+    await database.SaveItemAsync(todoItem);
+
+    // Navigate backwards
     await Navigation.PopAsync();
-};
+}
 ```
 
 ## <a name="advanced-configuration"></a>進階組態
@@ -255,13 +217,13 @@ SQLite 提供的強大 API 具有比本文和範例應用程式中涵蓋的功�
 
 如需詳細資訊，請參閱 sqlite.org 上的 [SQLite 檔](https://www.sqlite.org/docs.html) 。
 
-### <a name="write-ahead-logging"></a>Write-Ahead 記錄
+### <a name="write-ahead-logging"></a>預先寫入記錄
 
 根據預設，SQLite 會使用傳統的復原日誌。 未變更資料庫內容的複本會寫入個別的復原檔案，然後這些變更會直接寫入資料庫檔案中。 刪除復原日誌時，就會發生認可。
 
 Write-Ahead 記錄 (WAL) 會先將變更寫入個別的 WAL 檔。 在 WAL 模式中，認可是一種特殊記錄，會附加至 WAL 檔案，以允許在單一 WAL 檔中發生多筆交易。 WAL 檔案會在稱為 _檢查點_ 的特殊作業中，合併回資料庫檔案中。
 
-本機資料庫的 WAL 可能會更快，因為讀取器和寫入器不會彼此封鎖，允許並行讀取和寫入作業。 但是，WAL 模式不允許變更 _頁面大小_ 、將其他檔案關聯加入至資料庫，以及加入額外的 _檢查點_ 作業。
+本機資料庫的 WAL 可能會更快，因為讀取器和寫入器不會彼此封鎖，允許並行讀取和寫入作業。 但是，WAL 模式不允許變更 _頁面大小_、將其他檔案關聯加入至資料庫，以及加入額外的 _檢查點_ 作業。
 
 若要在 SQLite.NET 中啟用 WAL，請 `EnableWriteAheadLoggingAsync` 在實例上呼叫方法 `SQLiteAsyncConnection` ：
 
@@ -271,7 +233,7 @@ await Database.EnableWriteAheadLoggingAsync();
 
 如需詳細資訊，請參閱 sqlite.org 上的 [SQLite Write-Ahead 記錄](https://www.sqlite.org/wal.html) 。
 
-### <a name="copying-a-database"></a>複製資料庫
+### <a name="copy-a-database"></a>複製資料庫
 
 有幾種情況可能需要複製 SQLite 資料庫：
 
@@ -293,5 +255,4 @@ await Database.EnableWriteAheadLoggingAsync();
 - [SQLite 檔](https://www.sqlite.org/docs.html)
 - [搭配使用 SQLite 與 Android](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [搭配使用 SQLite 與 iOS](~/ios/data-cloud/data/using-sqlite-orm.md)
-- [以工作為基礎的非同步模式 (點擊) ](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
-- [Lazy &lt; T &gt; 類別](xref:System.Lazy`1)
+- [改用 asynclazy<t>](https://devblogs.microsoft.com/pfxteam/asynclazyt/)

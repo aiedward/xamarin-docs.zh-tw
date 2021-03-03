@@ -11,14 +11,14 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f1ceadb6d7985f5d448fe729a42e0cf0a3d5d6f6
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 2c69dc4373a2fe98d61b123daf63d54e129e8426
+ms.sourcegitcommit: 322e7bcf9fb8c1ad52ab8e929bea95d45e280834
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374468"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751427"
 ---
-# <a name="no-locxamarinforms-visual-state-manager"></a>Xamarin.Forms 視覺狀態管理員
+# <a name="xamarinforms-visual-state-manager"></a>Xamarin.Forms 視覺狀態管理員
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
 
@@ -46,7 +46,7 @@ Xamarin.Forms視覺狀態管理員會定義一個名為 "CommonStates" 的視覺
 
 ## <a name="common-states"></a>常見狀態
 
-視覺狀態管理員可讓您在 XAML 檔案中包含標記，如果視圖為正常、已停用或具有輸入焦點，則可以變更視圖的視覺外觀。 這些都稱為 _一般狀態_ 。
+視覺狀態管理員可讓您在 XAML 檔案中包含標記，如果視圖為正常、已停用或具有輸入焦點，則可以變更視圖的視覺外觀。 這些都稱為 _一般狀態_。
 
 例如，假設您的 `Entry` 頁面上有一個視圖，而且您想要 `Entry` 以下列方式變更的視覺外觀：
 
@@ -247,7 +247,7 @@ Xamarin.Forms視覺狀態管理員會定義一個名為 "CommonStates" 的視覺
 </ContentPage>
 ```
 
-請注意，第二個也會在 `Entry` `DataTrigger` 其集合中包含 `Trigger` 。 這會導致 `Entry` 停用，直到將某個內容輸入至第三個為止 `Entry` 。 以下是在 iOS、Android 和通用 Windows 平臺 (UWP) 上執行的啟動頁面：
+請注意，第二個也會在 `Entry` `DataTrigger` 其集合中包含 `Trigger` 。 這會導致 `Entry` 停用，直到將某個內容輸入至第三個為止 `Entry` 。 以下是在 iOS、Android 和通用 Windows 平臺上執行的啟動頁面 (UWP) ：
 
 [![VSM on View： Disabled](vsm-images/VsmOnViewDisabled.png "已停用 VSM-已停用")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
@@ -404,17 +404,17 @@ VSM 標記的其餘部分與之前相同。
 
 [![VSM 的樣式](vsm-images/VsmInStyle.png "VSM 的樣式")](vsm-images/VsmInStyle-Large.png#lightbox)
 
-## <a name="visual-states-in-no-locxamarinforms"></a>中的視覺狀態 Xamarin.Forms
+## <a name="visual-states-in-xamarinforms"></a>中的視覺狀態 Xamarin.Forms
 
 下表列出中定義的視覺狀態 Xamarin.Forms ：
 
-| 執行個體 | 狀態 | 相關資訊 |
+| 類別 | 狀態 | 相關資訊 |
 | ----- | ------ | ---------------- |
 | `Button` | `Pressed` | [按鈕視覺狀態](~/xamarin-forms/user-interface/button.md#button-visual-states) |
 | `CheckBox` | `IsChecked` | [核取方塊視覺狀態](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) |
 | `CarouselView` | `DefaultItem`, `CurrentItem`, `PreviousItem`, `NextItem` | [CarouselView 視覺狀態](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
 | `ImageButton` | `Pressed` | [ImageButton 視覺狀態](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
-| `RadioButton` | `IsChecked` | [選項按鈕視覺狀態](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) |
+| `RadioButton` | `Checked`, `Unchecked` | [選項按鈕視覺狀態](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) |
 | `Switch` | `On`, `Off` | [切換視覺狀態](~/xamarin-forms/user-interface/switch.md#switch-visual-states) |
 | `VisualElement` | `Normal`, `Disabled`, `Focused`, `Selected` | [常見狀態](#common-states) |
 
@@ -487,7 +487,7 @@ VSM 標記會附加至 `StackLayout` 。 有兩個互斥狀態，名為「一般
 
 ## <a name="define-your-own-visual-states"></a>定義您自己的視覺狀態
 
-每個衍生自的類別都 `VisualElement` 支援常見的狀態「標準」、「焦點」和「已停用」。 此外，此類別也支援「已 `CollectionView` 選取」狀態。 就內部而言， [`VisualElement`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) 類別會在它變成啟用或停用、或焦點或未取得焦點時偵測，並呼叫靜態 [ `VisualStateManager.GoToState` ] (x： Xamarin.Forms 。VisualStateManager. GoToState (Xamarin.Forms 。VisualElement，System.string) # A3 方法：
+每個衍生自的類別都 `VisualElement` 支援常見的狀態「標準」、「焦點」和「已停用」。 此外，此類別也支援「已 `CollectionView` 選取」狀態。 就內部而言， [`VisualElement`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) 類別會在它變成啟用或停用、或焦點或未取得焦點時偵測，並呼叫靜態 [ `VisualStateManager.GoToState` ] (x： Xamarin.Forms 。VisualStateManager. GoToState (Xamarin.Forms 。VisualElement，System.string) ) 方法：
 
 ```csharp
 VisualStateManager.GoToState(this, "Focused");

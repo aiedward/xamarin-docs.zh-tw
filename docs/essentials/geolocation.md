@@ -9,28 +9,28 @@ ms.date: 03/13/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 09e39f5cc99e5556274fb8d55db7f8b81970f8e1
-ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
+ms.openlocfilehash: 0d1f953537b0963c3d25fbfe486a1e7ae97ce716
+ms.sourcegitcommit: 3aa9bdcaaedca74ab5175cb2338a1df122300243
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92169926"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101749339"
 ---
-# <a name="no-locxamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
+# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
 
-**地理位置**類別會提供 API 來擷取裝置的目前地理位置座標。
+**地理位置** 類別會提供 API 來擷取裝置的目前地理位置座標。
 
 ## <a name="get-started"></a>開始使用
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要存取**地理位置**功能，需要下列平台特定設定：
+若要存取 **地理位置** 功能，需要下列平台特定設定：
 
 # <a name="android"></a>[Android](#tab/android)
 
 需要粗略和精確位置的權限，並且必須在 Android 專案中設定。 此外，如果您的應用程式針對 Android 5.0 (API 層級 21) 或更新版，則必須宣告您應用程式使用資訊清單	檔案中的硬體功能。 能以下列方式新增：
 
-開啟 [Properties]**** 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
+開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
@@ -42,7 +42,7 @@ ms.locfileid: "92169926"
 
 或更新 Android 資訊清單：
 
-開啟 [Properties]**** 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest]**** 節點內新增下列內容：
+開啟 [Properties] 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest] 節點內新增下列內容：
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -52,7 +52,21 @@ ms.locfileid: "92169926"
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-或以滑鼠右鍵按一下 Android 專案並開啟專案的屬性。 在 [Android 資訊清單]**** 下，尋找 [必要權限]**** 區域並選取 **ACCESS_COARSE_LOCATION** 和 **ACCESS_FINE_LOCATION** 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
+或以滑鼠右鍵按一下 Android 專案並開啟專案的屬性。 在 [Android 資訊清單] 下，尋找 [必要權限] 區域並選取 **ACCESS_COARSE_LOCATION** 和 **ACCESS_FINE_LOCATION** 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
+
+如果您的應用程式將目標設為 Android 10-Q (API 層級29或更高) 並且正在要求 **LocationAlways**，您也必須將下列許可權新增至 **AssemblyInfo.cs**：
+
+```csharp
+[assembly: UsesPermission(Manifest.Permission.AccessBackgroundLocation)]
+```
+
+或直接進入您的 **AndroidManifest.xml**：
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+```
+
+如果建議您閱讀 [背景位置更新的 Android 檔](https://developer.android.com/training/location/permissions) ，因為有許多限制需要考慮。
 
 [!include[](~/essentials/includes/android-permissions.md)]
 
@@ -71,7 +85,7 @@ ms.locfileid: "92169926"
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-您必須為應用程式設定 `Location` 權限。 可以透過開啟 **Package.appxmanifest**、選取 [功能]**** 索引標籤，並選取 [位置]**** 來完成。
+您必須為應用程式設定 `Location` 權限。 可以透過開啟 **Package.appxmanifest**、選取 [功能] 索引標籤，並選取 [位置] 來完成。
 
 -----
 
@@ -225,9 +239,9 @@ if (location != null)
 
 ## <a name="distance-between-two-locations"></a>兩個位置之間的距離
 
-[`Location`](xref:Xamarin.Essentials.Location)和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 類別會定義 `CalculateDistance` 方法，讓您計算兩個地理位置之間的距離。 此計算出的距離不會考慮道路或其他路徑，而僅僅是沿著地球表面兩個點之間的最短距離，也稱為「大圓距離」__；或口語化說法：「直線」的距離。
+[`Location`](xref:Xamarin.Essentials.Location)和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 類別會定義 `CalculateDistance` 方法，讓您計算兩個地理位置之間的距離。 此計算出的距離不會考慮道路或其他路徑，而僅僅是沿著地球表面兩個點之間的最短距離，也稱為「大圓距離」；或口語化說法：「直線」的距離。
 
-以下是範例：
+以下為範例：
 
 ```csharp
 Location boston = new Location(42.358056, -71.063611);

@@ -10,12 +10,12 @@ ms.date: 12/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 09cffb4e5c7d8f6b78d5ab1de6ec9839c3969e87
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 05ad6af1b094a980f5e226bcde22b43764576652
+ms.sourcegitcommit: 322e7bcf9fb8c1ad52ab8e929bea95d45e280834
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940105"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751473"
 ---
 # <a name="display-pop-ups"></a>顯示快顯視窗
 
@@ -31,7 +31,7 @@ ms.locfileid: "97940105"
 await DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![具有一個按鈕的警示對話方塊](pop-ups-images/alert.png)
+[![IOS 和 Android 上有一個按鈕的警示對話方塊](pop-ups-images/simple-alert.png)](pop-ups-images/simple-alert-large.png#lightbox)
 
 此範例不會向使用者收集資訊。 警示會以強制回應的方式顯示，關閉後，使用者就可繼續與應用程式互動。
 
@@ -45,7 +45,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 }
 ```
 
-[![有兩個按鈕的警示對話方塊](pop-ups-images/alert2-sml.png)](pop-ups-images/alert2.png#lightbox)
+[![有兩個按鈕的警示對話方塊](pop-ups-images/two-button-alert.png)](pop-ups-images/two-button-alert.png#lightbox)
 
 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)方法也具有可接受引數的多載，此 [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) 引數會指定 UI 元素在警示內的流動方向。 如需流程方向的詳細資訊，請參閱由 [右至左的當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 
@@ -66,9 +66,9 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 }
 ```
 
-![ActionSheet 對話方塊](pop-ups-images/action.png)
+[![IOS 和 Android 上的 [引導] 對話方塊](pop-ups-images/simple-actionsheet.png)](pop-ups-images/simple-actionsheet-large.png#lightbox)
 
-`destroy` 按鈕的轉譯方式不同於其他按鈕，可以保留 `null`，也可以指定為第三個字串參數。 下列範例使用 `destroy` 按鈕︰
+按鈕的轉譯 `destroy` 方式不同于 iOS 上的其他按鈕，而且可以保留 `null` 或指定為第三個字串參數。 下列範例使用 `destroy` 按鈕︰
 
 ```csharp
 async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
@@ -78,7 +78,7 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "具有終結按鈕的動作表對話方塊")](pop-ups-images/action2.png#lightbox "具有終結按鈕的動作表對話方塊")
+[![IOS 和 Android 上具有終結按鈕的引導對話方塊](pop-ups-images/actionsheet-destroy-button.png)](pop-ups-images/actionsheet-destroy-button-large.png#lightbox)
 
 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)方法也具有可接受引數的多載，這個 [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) 引數會指定 UI 元素在動作表中的流動方向。 如需流程方向的詳細資訊，請參閱由 [右至左的當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 

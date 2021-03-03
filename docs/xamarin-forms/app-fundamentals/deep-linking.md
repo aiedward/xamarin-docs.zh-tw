@@ -4,29 +4,22 @@ description: 本文說明如何使用應用程式索引和深層連結，讓 Xam
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
-ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 99da232d13202aadc338ff419042998f646b7c28
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 1eb2bd3f6b996ece3388c3ce8ad8fceca4c31957
+ms.sourcegitcommit: 322e7bcf9fb8c1ad52ab8e929bea95d45e280834
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373064"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751349"
 ---
 # <a name="application-indexing-and-deep-linking"></a>應用程式索引和深層連結
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/deeplinking)
-
-_應用程式編制索引可讓應用程式在幾個用途之後忘記，以在搜尋結果中出現時保持相關。深層連結可讓應用程式回應包含應用程式資料的搜尋結果，通常是藉由流覽至深層連結所參考的頁面。本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。_
-
-> [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
-
-**與 Azure 影片的深層連結 Xamarin.Forms**
 
 Xamarin.Forms 應用程式索引和深層連結提供 API，可在使用者流覽應用程式時，發行應用程式編制索引的中繼資料。 編製了索引的內容，即可在 Spotlight 搜尋、Google 搜尋或 Web 搜尋中搜尋。 點選包含深層連結的搜尋結果，會引發應用程式能夠處理的事件，而通常會用來瀏覽到參考自深層連結的頁面。
 
@@ -41,7 +34,7 @@ Xamarin.Forms 應用程式索引和深層連結提供 API，可在使用者流�
 > [!NOTE]
 > Xamarin.Forms 應用程式索引和深層連結功能僅適用于 iOS 和 Android 平臺，而且至少需要 iOS 9 和 API 23。
 
-## <a name="setup"></a>設定
+## <a name="setup"></a>安裝程式
 
 以下章節提供在 iOS 和 Android 平台使用此功能的任何額外設定指示。
 
@@ -128,7 +121,7 @@ http://deeplinking/DeepLinking.TodoItemPage?id=2
 
 ## <a name="registering-content-for-indexing"></a>註冊內容以編製索引
 
-一旦 [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry) 建立實例之後，就必須註冊，才能在搜尋結果中顯示其索引。 這可透過 [ `RegisterLink` ] (x：來完成 Xamarin.Forms 。IAppLinks. RegisterLink (Xamarin.Forms 。IAppLinkEntry) # A3 方法，如下列程式碼範例所示：
+一旦 [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry) 建立實例之後，就必須註冊，才能在搜尋結果中顯示其索引。 這可透過 [ `RegisterLink` ] (x：來完成 Xamarin.Forms 。IAppLinks. RegisterLink (Xamarin.Forms 。IAppLinkEntry) ) 方法，如下列程式碼範例所示：
 
 ```csharp
 Application.Current.AppLinks.RegisterLink (appLink);
@@ -145,7 +138,7 @@ Application.Current.AppLinks.RegisterLink (appLink);
 
 ## <a name="de-registering-indexed-content"></a>取消註冊已編製索引的內容
 
-[ `DeregisterLink` ] (x： Xamarin.Forms 。IAppLinks. DeregisterLink (Xamarin.Forms 。IAppLinkEntry) # A3 方法可用來移除搜尋結果中已編制索引的內容，如下列程式碼範例所示：
+[ `DeregisterLink` ] (x： Xamarin.Forms 。IAppLinks. DeregisterLink (Xamarin.Forms 。IAppLinkEntry) ) 方法是用來從搜尋結果移除已編制索引的內容，如下列程式碼範例所示：
 
 ```csharp
 Application.Current.AppLinks.DeregisterLink (appLink);
@@ -188,7 +181,7 @@ public class App : Application
 }
 ```
 
-[`OnAppLinkRequestReceived`](xref:Xamarin.Forms.Application.OnAppLinkRequestReceived(System.Uri))方法會先檢查所收到的 `Uri` 是否適用于應用程式，然後再將剖析 `Uri` 成要導覽的頁面，以及要傳遞至頁面的參數。 系統會建立瀏覽目標頁面的執行個體，以及擷取頁面參數所代表的 `TodoItem`。 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)接著，會將要流覽之頁面的設定為 `TodoItem` 。 這可確保 `TodoItemPage` [ `PushAsync` ] (x：顯示時 Xamarin.Forms 。INavigation. PushAsync (Xamarin.Forms 。頁面) # A3 方法，它會顯示 `TodoItem` `ID` 包含在深層連結中的。
+[`OnAppLinkRequestReceived`](xref:Xamarin.Forms.Application.OnAppLinkRequestReceived(System.Uri))方法會先檢查所收到的 `Uri` 是否適用于應用程式，然後再將剖析 `Uri` 成要導覽的頁面，以及要傳遞至頁面的參數。 系統會建立瀏覽目標頁面的執行個體，以及擷取頁面參數所代表的 `TodoItem`。 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)接著，會將要流覽之頁面的設定為 `TodoItem` 。 這可確保 `TodoItemPage` [ `PushAsync` ] (x：顯示時 Xamarin.Forms 。INavigation. PushAsync (Xamarin.Forms 。頁面) ) 方法，它會顯示 `TodoItem` `ID` 包含在深層連結中的。
 
 ## <a name="making-content-available-for-search-indexing"></a>讓內容可用於搜尋索引
 
@@ -244,10 +237,6 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 > Android 平台未使用 `KeyValues` 集合。
 
 如需遞交的詳細資訊，請參閱 [Handoff 簡介](~/ios/platform/handoff.md)。
-
-## <a name="summary"></a>總結
-
-本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。 應用程式索引讓經過少數幾次使用就遺忘的應用程式能出現在搜尋結果中，藉此保有關聯性。
 
 ## <a name="related-links"></a>相關連結
 

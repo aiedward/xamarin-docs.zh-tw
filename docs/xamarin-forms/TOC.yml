@@ -112,6 +112,8 @@ items:
         items:
           - name: XAML 熱重新載入
             href: xaml/hot-reload.md
+          - name: 即時視覺化樹狀結構
+            href: xaml/live-visual-tree.md
           - name: XAML 工具箱
             href: xaml/toolbox.md
           - name: XAML 預覽程式
