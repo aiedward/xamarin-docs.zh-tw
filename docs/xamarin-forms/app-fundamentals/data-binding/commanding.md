@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93369827"
 ---
-# <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.Forms命令介面
+# <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms命令介面
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -610,7 +610,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 輸入數字和退格的邏輯有點難以處理，因為如果尚未輸入任何數字，則 `Entry` 屬性是字串 "0"。 如果使用者鍵入多個零，則 `Entry` 仍然只包含一個零。 如果使用者鍵入任何其他數字，該數字就會取代零。 但是，如果使用者在任何其他數字之前鍵入小數點，則 `Entry` 為字串 "0."。
 
-只有在項目的長度大於 1，或 `Entry` 不等於字串 "0" 時，才會啟用 [退格鍵] **Backspace** 按鈕：
+只有在項目的長度大於 1，或 `Entry` 不等於字串 "0" 時，才會啟用 [退格鍵]**Backspace** 按鈕：
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged

@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93366304"
 ---
-# <a name="no-locxamarinforms-binding-fallbacks"></a>Xamarin.Forms 系結的回退
+# <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms 系結的回退
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -53,7 +53,7 @@ ms.locfileid: "93366304"
 
 ![FallbackValue 系結](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue 系結")
 
-當系結 `FallbackValue` 運算式中未設定屬性，而且未解析系結路徑或部分路徑時， [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) 會在目標上設定。 不過，若已設定 `FallbackValue` 屬性，但未解析繫結路徑或部分路徑時，則會在目標上設定 `FallbackValue` 值屬性的值。 因此， **MonkeyDetail** 頁面中的 [`Label`](xref:Xamarin.Forms.Label) 會顯示 "Population size unknown" (母體大小未知)，因為繫結物件缺少 `Population` 屬性。
+當系結 `FallbackValue` 運算式中未設定屬性，而且未解析系結路徑或部分路徑時， [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) 會在目標上設定。 不過，若已設定 `FallbackValue` 屬性，但未解析繫結路徑或部分路徑時，則會在目標上設定 `FallbackValue` 值屬性的值。 因此，**MonkeyDetail** 頁面中的 [`Label`](xref:Xamarin.Forms.Label) 會顯示 "Population size unknown" (母體大小未知)，因為繫結物件缺少 `Population` 屬性。
 
 > [!IMPORTANT]
 > 當設定屬性時，不會在系結運算式中執行定義的值轉換器 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 。

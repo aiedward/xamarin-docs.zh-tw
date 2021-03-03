@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373805"
 ---
-# <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.Forms TwoPaneView 版面配置
+# <a name="xamarinforms-twopaneview-layout"></a>Xamarin.Forms TwoPaneView 版面配置
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 

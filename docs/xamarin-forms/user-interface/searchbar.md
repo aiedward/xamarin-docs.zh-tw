@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93369125"
 ---
-# <a name="no-locxamarinforms-searchbar"></a>Xamarin.Forms SearchBar
+# <a name="xamarinforms-searchbar"></a>Xamarin.Forms SearchBar
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 

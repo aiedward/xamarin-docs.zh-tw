@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374351"
 ---
-# <a name="no-locxamarinforms-boxview"></a>Xamarin.Forms BoxView
+# <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
@@ -40,9 +40,9 @@ ms.locfileid: "93374351"
 
 `CornerRadius`屬性的類型為 [`CornerRadius`](xref:Xamarin.Forms.CornerRadius) ; 屬性可以設定為單一的 `double` 統一角半徑值，或是 `CornerRadius` 由四個值所定義的結構， `double` 這些值會套用至左上方、右上角、左下角和右下角 `BoxView` 。
 
-`WidthRequest`如果在 `HeightRequest` 版面配置 `BoxView` 中未受 *限制* ，和屬性只會播放角色。 當版面配置容器需要知道子系的大小時，例如，當是配置中自動重設 `BoxView` 大小儲存格的子系時，就會發生這種情況 `Grid` 。 `BoxView`當其 `HorizontalOptions` 和 `VerticalOptions` 屬性設定為以外的值時，也不受限制 `LayoutOptions.Fill` 。 如果 `BoxView` 不受限制，但 `WidthRequest` `HeightRequest` 未設定和屬性，則寬度或高度會設定為40單位的預設值，或行動裝置上的1/4 英寸。
+`WidthRequest`如果在 `HeightRequest` 版面配置 `BoxView` 中未受 *限制*，和屬性只會播放角色。 當版面配置容器需要知道子系的大小時，例如，當是配置中自動重設 `BoxView` 大小儲存格的子系時，就會發生這種情況 `Grid` 。 `BoxView`當其 `HorizontalOptions` 和 `VerticalOptions` 屬性設定為以外的值時，也不受限制 `LayoutOptions.Fill` 。 如果 `BoxView` 不受限制，但 `WidthRequest` `HeightRequest` 未設定和屬性，則寬度或高度會設定為40單位的預設值，或行動裝置上的1/4 英寸。
 
-`WidthRequest`如果在 `HeightRequest` 版面配置 `BoxView` 中 *受到限制* ，則會忽略和屬性，在此情況下，版面配置容器會在上強加自己的大小 `BoxView` 。
+`WidthRequest`如果在 `HeightRequest` 版面配置 `BoxView` 中 *受到限制*，則會忽略和屬性，在此情況下，版面配置容器會在上強加自己的大小 `BoxView` 。
 
 `BoxView`可以在一個維度中受到限制，而另一個維度則不受限制。 例如，如果 `BoxView` 是垂直的子系，則的 `StackLayout` 垂直維度 `BoxView` 會受限制，且其水準維度通常會受到限制。 但是，該水準維度有一些例外狀況：如果將 `BoxView` 其 `HorizontalOptions` 屬性設定為以外的某個部分 `LayoutOptions.Fill` ，則水準維度也不受限制。 本身也可能 `StackLayout` 具有不受限制的水準維度，在這種情況下，也會有不受限制的水準維度 `BoxView` 。
 

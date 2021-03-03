@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/04/2020
 ms.locfileid: "93330958"
 ---
-# <a name="no-locxamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms 通用控制項屬性、方法和事件
+# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms 通用控制項屬性、方法和事件
 
 Xamarin.Forms `VisualElement` 類別是應用程式中大部分使用的控制項的基類（base class） Xamarin.Forms 。 `VisualElement`類別會定義用於衍生類別的許多[屬性](#properties)、[方法](#methods)和[事件](#events)。
 

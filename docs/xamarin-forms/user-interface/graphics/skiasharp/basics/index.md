@@ -25,13 +25,13 @@ _瞭解 SkiaSharp 圖形概念和座標的基本概念_
 
 將 SkiaSharp NuGet 套件新增至您的 Xamarin.Forms 應用程式之後，您就可以開始使用 SkiaSharp 圖形。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)解決方案包含許多頁面，可在漸進式更先進的課程中示範 SkiaSharp 的程式設計技巧。
 
-此區段中的所有範例程式都會出現在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式首頁的 [ **SkiaSharp 繪圖基本概念** ] 標題底下，以及方案的 [ [**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)] 資料夾中。
+此區段中的所有範例程式都會出現在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式首頁的 [ **SkiaSharp 繪圖基本概念**] 標題底下，以及方案的 [[**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)] 資料夾中。
 
 ## <a name="drawing-a-simple-circle"></a>[繪製簡單的圓形](circle.md)
 
 瞭解 SkiaSharp 繪圖的基本概念，包括畫布和繪製物件。
 
-## <a name="integrating-with-no-locxamarinforms"></a>[整合 Xamarin.Forms](integration.md)
+## <a name="integrating-with-xamarinforms"></a>[整合 Xamarin.Forms](integration.md)
 
 藉由回應觸控輸入並與元素整合，建立互動式 SkiaSharp 圖形 Xamarin.Forms 。
 

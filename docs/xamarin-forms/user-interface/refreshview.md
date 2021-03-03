@@ -19,7 +19,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93372869"
 ---
-# <a name="no-locxamarinforms-no-locrefreshview"></a>Xamarin.Forms RefreshView
+# <a name="xamarinforms-refreshview"></a>Xamarin.Forms RefreshView
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
@@ -37,7 +37,7 @@ ms.locfileid: "93372869"
 > [!NOTE]
 > 在上 Universal Windows Platform ，的提取方向 `RefreshView` 可以使用平臺特定來設定。 如需詳細資訊，請參閱[ RefreshView 提取方向](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)。
 
-## <a name="create-a-no-locrefreshview"></a>建立 RefreshView
+## <a name="create-a-refreshview"></a>建立 RefreshView
 
 下列範例顯示如何 `RefreshView` 在 XAML 中具現化：
 
@@ -84,7 +84,7 @@ refreshView.Content = scrollView;
 > [!NOTE]
 > 將屬性手動設定 `IsRefreshing` 為 `true` 將會觸發重新整理視覺效果，並且會執行 `ICommand` 由屬性定義的 `Command` 。
 
-## <a name="no-locrefreshview-appearance"></a>RefreshView 外觀
+## <a name="refreshview-appearance"></a>RefreshView 外觀
 
 除了 `RefreshView` 繼承自類別的屬性之外 [`VisualElement`](xref:Xamarin.Forms.VisualElement) ，也會 `RefreshView` 定義 `RefreshColor` 屬性。 您可以設定這個屬性來定義在重新整理期間出現的進度圓圈色彩：
 
@@ -102,7 +102,7 @@ refreshView.Content = scrollView;
 > [!NOTE]
 > 在 iOS 上， `BackgroundColor` 屬性 `UIView` 會設定包含進度圓形之的背景色彩。
 
-## <a name="disable-a-no-locrefreshview"></a>停用 RefreshView
+## <a name="disable-a-refreshview"></a>停用 RefreshView
 
 應用程式可能會進入狀態，其中的提取重新整理不是有效的作業。 在這種情況下，您 `RefreshView` 可以藉由將其 `IsEnabled` 屬性設定為來停用 `false` 。 這會讓使用者無法觸發提取以重新整理。
 

@@ -18,7 +18,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2020
 ms.locfileid: "94590251"
 ---
-# <a name="no-locxamarinforms-resource-dictionaries"></a>Xamarin.Forms 資源字典
+# <a name="xamarinforms-resource-dictionaries"></a>Xamarin.Forms 資源字典
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
@@ -135,9 +135,9 @@ Xamarin.Forms應用程式只包含衍生自的類別 [`Application`](xref:Xamari
 
 衍生自的類別 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 也可以在獨立的 XAML 檔案中。 然後可以在應用程式之間共用 XAML 檔案。
 
-若要建立這類檔案，請將新的 **內容視圖** 或 **內容頁面** 專案加入至專案 (但不是只有 c # 檔案) 的 **內容****頁面** 。 刪除程式碼後端檔案，然後在 XAML 檔案中，將基類的名稱從或變更 [`ContentView`](xref:Xamarin.Forms.ContentView) [`ContentPage`](xref:Xamarin.Forms.ContentPage) 為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 此外，請從檔案 `x:Class` 的根標記中移除該屬性。
+若要建立這類檔案，請將新的 **內容視圖** 或 **內容頁面** 專案加入至專案 (但不是只有 c # 檔案) 的 **內容****頁面**。 刪除程式碼後端檔案，然後在 XAML 檔案中，將基類的名稱從或變更 [`ContentView`](xref:Xamarin.Forms.ContentView) [`ContentPage`](xref:Xamarin.Forms.ContentPage) 為 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 此外，請從檔案 `x:Class` 的根標記中移除該屬性。
 
-下列 XAML 範例顯示 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 名為 **MyResourceDictionary 的 xaml** ：
+下列 XAML 範例顯示 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 名為 **MyResourceDictionary 的 xaml**：
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -205,7 +205,7 @@ Xamarin.Forms應用程式只包含衍生自的類別 [`Application`](xref:Xamari
 
 ### <a name="merge-resource-dictionaries-from-other-assemblies"></a>合併其他元件的資源字典
 
-[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)也可以藉由將加入至的屬性，將它合併至另一個 `ResourceDictionary` [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) `ResourceDictionary` 。 這項技術可讓您合併資源字典，而不論其所在的元件為何。 合併外部元件的資源字典需要將 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 組建動作設為 **EmbeddedResource** 、具有程式碼後端檔案，以及在檔案的 `x:Class` 根標記中定義屬性。
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)也可以藉由將加入至的屬性，將它合併至另一個 `ResourceDictionary` [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) `ResourceDictionary` 。 這項技術可讓您合併資源字典，而不論其所在的元件為何。 合併外部元件的資源字典需要將 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 組建動作設為 **EmbeddedResource**、具有程式碼後端檔案，以及在檔案的 `x:Class` 根標記中定義屬性。
 
 > [!WARNING]
 > [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)類別也會定義 [`MergedWith`](xref:Xamarin.Forms.ResourceDictionary.MergedWith) 屬性。 不過，這個屬性已被取代，不應該再使用。

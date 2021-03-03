@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374728"
 ---
-# <a name="no-locxamarinforms-dualscreeninfo-helper-class"></a>Xamarin.Forms DualScreenInfo helper 類別
+# <a name="xamarinforms-dualscreeninfo-helper-class"></a>Xamarin.Forms DualScreenInfo helper 類別
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 

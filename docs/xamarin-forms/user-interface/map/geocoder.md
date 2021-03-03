@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93375443"
 ---
-# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Forms 地圖地理編碼
+# <a name="xamarinforms-map-geocoding"></a>Xamarin.Forms 地圖地理編碼
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 

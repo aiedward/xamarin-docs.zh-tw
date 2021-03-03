@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93371283"
 ---
-# <a name="no-locxamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms 對應初始化和設定
+# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms 對應初始化和設定
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -245,7 +245,7 @@ Android 上需要進行其他設定，而在地圖將會顯示通用 Windows 平
 
 此外，如果您的應用程式需要存取使用者的位置，您必須啟用套件資訊清單中的位置功能。 執行下列工作即可達成這點：
 
-1. 在 \[ **方案總管** \] 中按兩下 **package.appxmanifest** ，然後選取 \[ **功能** \] 索引標籤。
+1. 在 \[**方案總管**\] 中按兩下 **package.appxmanifest**，然後選取 \[**功能**\] 索引標籤。
 1. 在 **\[功能\]** 清單中，選取 **\[位置\]** 的方塊。 這會將 `location` 裝置功能新增至套件資訊清單檔案。
 
     ```xml
@@ -257,7 +257,7 @@ Android 上需要進行其他設定，而在地圖將會顯示通用 Windows 平
 
 #### <a name="release-builds"></a>發行組建
 
-UWP 版本組建使用 .NET 原生編譯，將應用程式直接編譯成機器碼。 不過，這是 [`Map`](xref:Xamarin.Forms.Maps.Map) 因為 UWP 上的控制項轉譯器可能會從可執行檔連結。 您可以使用 App.xaml.cs 中方法的 UWP 特定多載來修正此 `Forms.Init` 問題 **App.xaml.cs** ：
+UWP 版本組建使用 .NET 原生編譯，將應用程式直接編譯成機器碼。 不過，這是 [`Map`](xref:Xamarin.Forms.Maps.Map) 因為 UWP 上的控制項轉譯器可能會從可執行檔連結。 您可以使用 App.xaml.cs 中方法的 UWP 特定多載來修正此 `Forms.Init` 問題 **App.xaml.cs**：
 
 ```csharp
 var assembliesToInclude = new [] { typeof(Xamarin.Forms.Maps.UWP.MapRenderer).GetTypeInfo().Assembly };

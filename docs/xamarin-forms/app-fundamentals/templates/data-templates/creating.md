@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373025"
 ---
-# <a name="creating-a-no-locxamarinforms-datatemplate"></a>建立 Xamarin.Forms DataTemplate
+# <a name="creating-a-xamarinforms-datatemplate"></a>建立 Xamarin.Forms DataTemplate
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 

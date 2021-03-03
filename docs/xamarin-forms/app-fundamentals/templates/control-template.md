@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374611"
 ---
-# <a name="no-locxamarinforms-control-templates"></a>Xamarin.Forms 控制項範本
+# <a name="xamarinforms-control-templates"></a>Xamarin.Forms 控制項範本
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 

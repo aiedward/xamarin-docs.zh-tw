@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93375456"
 ---
-# <a name="no-locxamarinforms-map-control"></a>Xamarin.Forms 地圖控制項
+# <a name="xamarinforms-map-control"></a>Xamarin.Forms 地圖控制項
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 

@@ -25,7 +25,7 @@ _資料系結允許連結兩個物件的屬性，使其中一個物件的變更�
 
 ## <a name="data-bindings"></a>資料系結
 
-資料系結會連接兩個物件的屬性，稱為「 *來源* 」和「 *目標* 」。 在程式碼中，需要兩個步驟： `BindingContext` 目標物件的屬性必須設定為來源物件，且 `SetBinding` (通常與類別一起使用的方法 `Binding`) 必須在目標物件上呼叫，才能將該物件的屬性系結至來源物件的屬性。
+資料系結會連接兩個物件的屬性，稱為「 *來源* 」和「 *目標*」。 在程式碼中，需要兩個步驟： `BindingContext` 目標物件的屬性必須設定為來源物件，且 `SetBinding` (通常與類別一起使用的方法 `Binding`) 必須在目標物件上呼叫，才能將該物件的屬性系結至來源物件的屬性。
 
 目標屬性必須是可系結的屬性，這表示目標物件必須衍生自 `BindableObject` 。 線上 Xamarin.Forms 檔會指出哪些屬性是可系結的屬性。 的屬性（property） `Label` 與可系結屬性（property） `Text` 相關聯 `TextProperty` 。
 
@@ -215,7 +215,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 `ListView` 定義 `ItemsSource` 類型的屬性 `IEnumerable` ，並顯示該集合中的專案。 這些專案可以是任何類型的物件。 依預設， `ListView` 會使用 `ToString` 每個專案的方法來顯示該專案。 有時候這就是您想要的，但在許多情況下，只會傳回 `ToString` 物件的完整類別名稱。
 
-不過，集合中的專案 `ListView` 可以透過使用 *範本* ，以任何您想要的方式顯示，其牽涉到衍生自的類別 `Cell` 。 系統會為中的每個專案複製範本 `ListView` ，而且在範本上設定的資料系結會傳輸到個別的複製。
+不過，集合中的專案 `ListView` 可以透過使用 *範本*，以任何您想要的方式顯示，其牽涉到衍生自的類別 `Cell` 。 系統會為中的每個專案複製範本 `ListView` ，而且在範本上設定的資料系結會傳輸到個別的複製。
 
 通常，您會想要使用類別來建立這些專案的自訂資料格 `ViewCell` 。 在程式碼中，此程式有點複雜，但在 XAML 中，它變得非常簡單。
 
@@ -342,7 +342,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 先前的 **ListView 示範** XAML 檔案會顯示結構的個別 `R` 、 `G` 和 `B` 屬性 Xamarin.Forms `Color` 。 這些屬性的類型為 `double` 0 到1。 如果您想要顯示十六進位值，就不能只使用 `StringFormat` "X2" 格式規格。 這僅適用于整數，而且 `double` 值必須乘以255。
 
-這個小問題是透過 *值轉換器* （也稱為系結 *轉換器* ）來解決。 這是實介面的類別 `IValueConverter` ，這表示它有兩個名為和的方法 `Convert` `ConvertBack` 。 `Convert`當值從來源傳送到目標時，會呼叫方法; `ConvertBack` 呼叫方法以從目標到來源或系結的傳輸 `OneWayToSource` `TwoWay` ：
+這個小問題是透過 *值轉換器*（也稱為系結 *轉換器*）來解決。 這是實介面的類別 `IValueConverter` ，這表示它有兩個名為和的方法 `Convert` `ConvertBack` 。 `Convert`當值從來源傳送到目標時，會呼叫方法; `ConvertBack` 呼叫方法以從目標到來源或系結的傳輸 `OneWayToSource` `TwoWay` ：
 
 ```csharp
 using System;

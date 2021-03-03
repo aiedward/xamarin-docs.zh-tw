@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373636"
 ---
-# <a name="no-locxamarinforms-binding-mode"></a>Xamarin.Forms 系結模式
+# <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 系結模式
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 

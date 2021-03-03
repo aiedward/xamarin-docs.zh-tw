@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93372011"
 ---
-# <a name="no-locxamarinforms-listview"></a>Xamarin.Forms Listview
+# <a name="xamarinforms-listview"></a>Xamarin.Forms Listview
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 

@@ -109,7 +109,7 @@ A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 
 將順時針設定的清除 *旗* 標設為1，並以逆時針的方向設定為0。
 
-弧線會繪製到 ( *x* ， *y* ) 的點，而這會成為新的目前位置。
+弧線會繪製到 (*x*， *y*) 的點，而這會成為新的目前位置。
 
 ## <a name="cubicto"></a>**CubicTo**
 
@@ -117,7 +117,7 @@ A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
-此命令會將目前位置的三次貝茲曲線新增至 ( *x3* ， *Y3* ) ，這會成為新的目前位置。  ( *x1* 、 *y1* ) 和 ( *x2* 的點， *y2* ) 是控制點。
+此命令會將目前位置的三次貝茲曲線新增至 (*x3*， *Y3*) ，這會成為新的目前位置。  (*x1*、 *y1*) 和 (*x2* 的點， *y2*) 是控制點。
 
 單一命令可以指定多個貝茲曲線 `C` 。 點數數目必須是3的倍數。
 
@@ -135,7 +135,7 @@ S x2 y2 x3 y3 ...
 Q x1 y1 x2 y2 ...
 ```
 
-針對二次方貝茲曲線，點數目必須是2的倍數。 控制點是 ( *x1* 、 *y1* ) 和結束點 (，而新的目前位置)  ( *x2* ， *y2* ) 
+針對二次方貝茲曲線，點數目必須是2的倍數。 控制點是 (*x1*、 *y1*) 和結束點 (，而新的目前位置)  (*x2*， *y2*) 
 
 另外還有一個流暢的二曲線命令：
 
@@ -297,7 +297,7 @@ public class PathDataCatPage : ContentPage
 
 一般來說，當 `SKPath` 物件定義為欄位時，必須在函式或另一個方法中定義路徑的輪廓。 但是，當您使用 SVG 路徑資料時，您已看到可以完全在欄位定義中指定路徑。
 
-「 [**旋轉轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)」一文中較早不美觀的 **類比時鐘** 範例，會將時鐘的手以簡單的線條顯示。 下列 **相當的類比時鐘** 程式會使用 `SKPath` 定義為類別中欄位的物件和物件來取代這些行 [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ：
+「[**旋轉轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)」一文中較早不美觀的 **類比時鐘** 範例，會將時鐘的手以簡單的線條顯示。 下列 **相當的類比時鐘** 程式會使用 `SKPath` 定義為類別中欄位的物件和物件來取代這些行 [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ：
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage

@@ -17,13 +17,13 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93370919"
 ---
-# <a name="no-locxamarinforms-binding-value-converters"></a>Xamarin.Forms 系結值轉換器
+# <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms 系結值轉換器
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 資料繫結通常會將資料從來源屬性傳輸至目標屬性，並在某些情況下從目標屬性傳輸至來源屬性。 當來源和目標屬性都屬於相同類型，或其中一種類型可以透過隱含轉換來轉換成其他類型時，傳輸即會簡單明瞭。 若非此情況，則必須採取類型轉換。
 
-在 [**字串格式化**](string-formatting.md)一文中，您已看到可如何使用資料繫結的 `StringFormat` 屬性，將任何類型轉換為字串。 針對其他類型的轉換，您需要在實介面的類別中撰寫一些特製化程式碼 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 。  (通用 Windows 平臺包含命名空間中名為的類似類別 [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) `Windows.UI.Xaml.Data` ，但這 `IValueConverter` 是在 `Xamarin.Forms` 命名空間中。實作為實 `IValueConverter` 作為 *值轉換器* 的 ) 類別，但它們通常也稱為系結 *轉換器* 或系結 *值轉換器* 。
+在 [**字串格式化**](string-formatting.md)一文中，您已看到可如何使用資料繫結的 `StringFormat` 屬性，將任何類型轉換為字串。 針對其他類型的轉換，您需要在實介面的類別中撰寫一些特製化程式碼 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 。  (通用 Windows 平臺包含命名空間中名為的類似類別 [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) `Windows.UI.Xaml.Data` ，但這 `IValueConverter` 是在 `Xamarin.Forms` 命名空間中。實作為實 `IValueConverter` 作為 *值轉換器* 的 ) 類別，但它們通常也稱為系結 *轉換器* 或系結 *值轉換器*。
 
 ## <a name="the-ivalueconverter-interface"></a>IValueConverter 介面
 

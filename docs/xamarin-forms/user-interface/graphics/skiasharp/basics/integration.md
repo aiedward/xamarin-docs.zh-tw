@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93366603"
 ---
-# <a name="integrating-with-no-locxamarinforms"></a>整合 Xamarin.Forms
+# <a name="integrating-with-xamarinforms"></a>整合 Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
@@ -28,7 +28,7 @@ SkiaSharp 圖形可以透過數種方式與其余的圖形整合 Xamarin.Forms �
 ![使用滑杆選取色彩](integration-images/integrationexample.png)
 
 建立互動式 SkiaSharp 圖形的另一種方法 Xamarin.Forms 是透過觸控。
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式中的第二個頁面有權按下 [ **切換填滿** ]。 它會以兩種方式繪製簡單圓圈 &mdash; ，而不填滿，並以點一下切換填滿 &mdash; 。 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)類別會顯示如何改變 SkiaSharp 圖形以回應使用者輸入。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式中的第二個頁面有權按下 [**切換填滿**]。 它會以兩種方式繪製簡單圓圈 &mdash; ，而不填滿，並以點一下切換填滿 &mdash; 。 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)類別會顯示如何改變 SkiaSharp 圖形以回應使用者輸入。
 
 在這個頁面中， `SKCanvasView` 類別會在 [TapToggleFill](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) 中具現化，也就是 Xamarin.Forms [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 在視圖上設定：
 

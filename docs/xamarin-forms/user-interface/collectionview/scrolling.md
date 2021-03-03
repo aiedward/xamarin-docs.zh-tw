@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2020
 ms.locfileid: "94590411"
 ---
-# <a name="no-locxamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView 滾動
+# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView 滾動
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 

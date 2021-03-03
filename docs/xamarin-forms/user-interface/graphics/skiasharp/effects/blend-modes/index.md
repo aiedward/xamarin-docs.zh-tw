@@ -23,7 +23,7 @@ ms.locfileid: "93368644"
 
 這些文章著重于的 [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) 屬性 [`SKPaint`](xref:SkiaSharp.SKPaint) 。 `BlendMode`屬性的類型為 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) ，具有29個成員的列舉。
 
-`BlendMode`屬性（property）會決定當繪圖物件 (通常稱為「 _來源_ ) 在現有繪圖物件上轉譯時所發生的情況， (稱為 _目的地_ ) 。 一般來說，我們預期新的繪圖物件會混淆其下的物件。 但這種情況只是因為預設的 blend 模式為 `SKBlendMode.SrcOver` ，這表示來源是在目的地 _上_ 繪製。 另28個成員 `SKBlendMode` 會造成其他效果。 在圖形程式設計中，以各種方式結合繪圖物件的技巧稱為「 _複合_ 」（撰寫）。
+`BlendMode`屬性（property）會決定當繪圖物件 (通常稱為「_來源_) 在現有繪圖物件上轉譯時所發生的情況， (稱為 _目的地_) 。 一般來說，我們預期新的繪圖物件會混淆其下的物件。 但這種情況只是因為預設的 blend 模式為 `SKBlendMode.SrcOver` ，這表示來源是在目的地 _上_ 繪製。 另28個成員 `SKBlendMode` 會造成其他效果。 在圖形程式設計中，以各種方式結合繪圖物件的技巧稱為「 _複合_」（撰寫）。
 
 ## <a name="the-skblendmodes-enumeration"></a>SKBlendModes 列舉
 
@@ -49,7 +49,7 @@ SkiaSharp blend 模式會與 W3C 撰寫 [**和混合層級 1**](https://www.w3.o
 
 這三個類別的名稱在後續討論中將會有更多意義。 成員在此列出的順序與列舉的定義中的順序相同 `SKBlendMode` 。 第一個資料行中的13個列舉成員具有整數值0到12。 第二個數據行是對應至整數13到24的列舉成員，而第三個數據行中的成員具有25到28之間的值。
 
-在 W3C 撰寫 **和混合層級 1** 檔中，這些 blend 模式的討論順序 _大致_ 相同，但是有一些差異：在 `Src` W3c 檔中稱為「 _複製_ 」模式，且稱為「 `Plus` _較淺_ 」。 W3C 檔會定義不包含在中的 _一般_ blend 模式， `SKBlendModes` 因為它會與相同 `SrcOver` 。 `Modulate`第一個資料) 行頂端的 blend 模式 (不包含在 W3C 檔中，而模式的討論則在 `Multiply` 前面 `Screen` 。
+在 W3C 撰寫 **和混合層級 1** 檔中，這些 blend 模式的討論順序 _大致_ 相同，但是有一些差異：在 `Src` W3c 檔中稱為「_複製_」模式，且稱為「 `Plus` _較淺_」。 W3C 檔會定義不包含在中的 _一般_ blend 模式， `SKBlendModes` 因為它會與相同 `SrcOver` 。 `Modulate`第一個資料) 行頂端的 blend 模式 (不包含在 W3C 檔中，而模式的討論則在 `Multiply` 前面 `Screen` 。
 
 因為 `Modulate` blend 模式對 Skia 而言是唯一的，所以會將它做為額外的 Porter-Duff 模式和可分離模式來討論。
 

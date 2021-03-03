@@ -36,7 +36,7 @@ SkiaSharp 轉換支援下列作業：
 
 SkiaSharp 也支援非仿射轉換 (也稱為 *projective* ，或根據標準的 3 x 3 轉換矩陣) 的 *觀點* 轉換。 非仿射轉換可讓正方形轉換成任何凸四邊形，也就是所有內部角度都小於180度的四邊圖。 非仿射轉換可能會使座標或大小變成無限，但對3D 效果而言很重要。
 
-## <a name="differences-between-skiasharp-and-no-locxamarinforms-transforms"></a>SkiaSharp 和轉換之間的差異 Xamarin.Forms
+## <a name="differences-between-skiasharp-and-xamarinforms-transforms"></a>SkiaSharp 和轉換之間的差異 Xamarin.Forms
 
 Xamarin.Forms 也支援與 SkiaSharp 中類似的轉換。 Xamarin.Forms [`VisualElement`](xref:Xamarin.Forms.VisualElement) 類別會定義下列轉換屬性：
 
@@ -52,9 +52,9 @@ SkiaSharp 轉換和轉換之間有幾個重要的差異 Xamarin.Forms ：
 
 SkiaSharp 轉換是相對於的左上角， `SKCanvas` 而 Xamarin.Forms 轉換則是相對於套用這些轉換之的左上角 `VisualElement` 。 這項差異在套用縮放和旋轉轉換時很重要，因為這些轉換一律相對於特定點。
 
-真正的差別在於 SKiaSharp 轉換是 *方法* ，而 Xamarin.Forms 轉換是 *屬性* 。 這是語法差異以外的語義差異： SkiaSharp 轉換會在 Xamarin.Forms 轉換設定狀態時執行作業。 SkiaSharp 轉換會套用至後續繪製的繪圖物件，但不適用於套用轉換之前繪製的繪圖物件。 相反地， Xamarin.Forms 轉換會在屬性設定後立即套用至先前轉譯的元素。 SkiaSharp 轉換會在呼叫方法時累計， Xamarin.Forms 當屬性設定為另一個值時，就會取代轉換。
+真正的差別在於 SKiaSharp 轉換是 *方法* ，而 Xamarin.Forms 轉換是 *屬性*。 這是語法差異以外的語義差異： SkiaSharp 轉換會在 Xamarin.Forms 轉換設定狀態時執行作業。 SkiaSharp 轉換會套用至後續繪製的繪圖物件，但不適用於套用轉換之前繪製的繪圖物件。 相反地， Xamarin.Forms 轉換會在屬性設定後立即套用至先前轉譯的元素。 SkiaSharp 轉換會在呼叫方法時累計， Xamarin.Forms 當屬性設定為另一個值時，就會取代轉換。
 
-此區段中的所有範例程式都會出現在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式的 [ **SkiaSharp 轉換** ] 區段中。 原始程式碼可在解決方案的 [ [**轉換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms) ] 資料夾中找到。
+此區段中的所有範例程式都會出現在 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式的 [ **SkiaSharp 轉換**] 區段中。 原始程式碼可在解決方案的 [ [**轉換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms) ] 資料夾中找到。
 
 ## <a name="the-translate-transform"></a>[平移轉換](translate.md)
 

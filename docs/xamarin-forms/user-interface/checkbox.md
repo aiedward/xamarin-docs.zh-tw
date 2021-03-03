@@ -6,7 +6,7 @@ ms. 生產： xamarin assetid： B8B9268B-BCB8-42B9-B08C-C0F22C137238 ms. 技術
 
 ---
 
-# <a name="no-locxamarinforms-checkbox"></a>Xamarin.Forms 相應
+# <a name="xamarinforms-checkbox"></a>Xamarin.Forms 相應
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 

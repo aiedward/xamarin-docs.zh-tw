@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93375378"
 ---
-# <a name="generics-in-no-locxamarinforms-xaml"></a>XAML 中的泛型 Xamarin.Forms
+# <a name="generics-in-xamarinforms-xaml"></a>XAML 中的泛型 Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 

@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93368696"
 ---
-# <a name="no-locxamarinforms-modal-pages"></a>Xamarin.Forms 強制回應頁面
+# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 強制回應頁面
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/navigation-modal)
 

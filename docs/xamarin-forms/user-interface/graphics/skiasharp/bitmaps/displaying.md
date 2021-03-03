@@ -27,7 +27,7 @@ SkiaSharp 點陣圖的主旨是在 SkiaSharp 的文章 **[點陣圖基本概念�
 
 `DrawBitmapLattice`和 `DrawBitmapNinePatch` 方法會在 **[分割顯示 SkiaSharp 點陣圖](segmented.md)** 的文章中討論。
 
-此頁面上的範例是來自 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式。 從該應用程式的 [首頁] 中，選擇 [ **SkiaSharp 點陣圖** ]，然後移至 [ **顯示點陣圖** ] 區段。
+此頁面上的範例是來自 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式。 從該應用程式的 [首頁] 中，選擇 [ **SkiaSharp 點陣圖**]，然後移至 [ **顯示點陣圖** ] 區段。
 
 ## <a name="loading-a-bitmap"></a>載入點陣圖
 
@@ -147,7 +147,7 @@ paint.Color = SKColors.Red.WithAlpha(0x80);
 
 `SKPaint`當使用 blend 模式或篩選效果顯示點陣圖時，物件也會扮演角色。 這些文章會在文章中示範 [SkiaSharp 組合和 blend 模式](../effects/blend-modes/index.md) ，以及 [SkiaSharp 影像篩選](../effects/image-filters.md)。
 
-**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 範例程式中的 [ **圖元維度** ] 頁面會顯示點陣圖資源，其寬度為320圖元寬、240圖元高：
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 範例程式中的 [**圖元維度**] 頁面會顯示點陣圖資源，其寬度為320圖元寬、240圖元高：
 
 ```csharp
 public class PixelDimensionsPage : ContentPage
@@ -269,7 +269,7 @@ public class FillRectanglePage : ContentPage
 
 ## <a name="stretching-while-preserving-the-aspect-ratio"></a>在保留外觀比例時延展
 
-延伸點陣圖，同時保留外觀比例是一種進程，也稱為 _一致調整_ 。 這一期建議演算法方法。 [ **統一調整** ] 頁面中會顯示一個可能的解決方案：
+延伸點陣圖，同時保留外觀比例是一種進程，也稱為 _一致調整_。 這一期建議演算法方法。 [ **統一調整** ] 頁面中會顯示一個可能的解決方案：
 
 ```csharp
 public class UniformScalingPage : ContentPage

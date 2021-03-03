@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374780"
 ---
-# <a name="no-locxamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms 地圖多邊形和折線
+# <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms 地圖多邊形和折線
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 

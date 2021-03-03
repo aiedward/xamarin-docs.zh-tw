@@ -104,9 +104,9 @@ protected override async void OnAppearing()
 
 ## <a name="loading-a-bitmap-resource"></a>載入點陣圖資源
 
-就程式碼而言，載入點陣圖最簡單的方法就是直接在您的應用程式中包含點陣圖資源。 **SkiaSharpFormsDemos** 套裝程式含名為 **Media** 的資料夾，其中包含數個位圖檔案，包括一個名為 **monkey.png** 的點陣圖檔案。 針對儲存為程式資源的點陣圖，您必須使用 [ **屬性** ] 對話方塊為檔案提供 **Embedded 資源** 的 **組建動作** ！
+就程式碼而言，載入點陣圖最簡單的方法就是直接在您的應用程式中包含點陣圖資源。 **SkiaSharpFormsDemos** 套裝程式含名為 **Media** 的資料夾，其中包含數個位圖檔案，包括一個名為 **monkey.png** 的點陣圖檔案。 針對儲存為程式資源的點陣圖，您必須使用 [**屬性**] 對話方塊為檔案提供 **Embedded 資源** 的 **組建動作**！
 
-每個內嵌資源都有一個 *資源識別碼* ，其中包含專案名稱、資料夾和檔案名，並以句點連接： **SkiaSharpFormsDemos.Media.monkey.png** 。 您可以藉由指定該資源識別碼作為 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) 類別之方法的引數，來取得此資源的存取權 [`Assembly`](xref:System.Reflection.Assembly) ：
+每個內嵌資源都有一個 *資源識別碼* ，其中包含專案名稱、資料夾和檔案名，並以句點連接： **SkiaSharpFormsDemos.Media.monkey.png**。 您可以藉由指定該資源識別碼作為 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) 類別之方法的引數，來取得此資源的存取權 [`Assembly`](xref:System.Reflection.Assembly) ：
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";

@@ -238,7 +238,7 @@ public class PhotoLibrary : IPhotoLibrary
 }
 ```
 
-**Package.appxmanifest** 檔案的 [ **功能** ] 區段需要 **圖片媒體** 櫃。
+**Package.appxmanifest** 檔案的 [**功能**] 區段需要 **圖片媒體** 櫃。
 
 ## <a name="exploring-the-image-formats"></a>探索映射格式
 
@@ -283,7 +283,7 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 
 `SKManagedWStream`類別衍生自 `SKWStream` (，其代表「可寫入的資料流程」 ) 。 `Encode`方法會將編碼的點陣圖檔案寫入該資料流程。 該程式碼中的批註是指您可能需要執行的一些錯誤檢查。
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)應用程式中的 [儲存檔案 **格式** ] 頁面使用類似的程式碼，可讓您試驗如何以各種格式儲存點陣圖。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)應用程式中的 [儲存檔案 **格式**] 頁面使用類似的程式碼，可讓您試驗如何以各種格式儲存點陣圖。
 
 XAML 檔案包含 `SKCanvasView` 會顯示點陣圖的，而其餘的頁面則包含應用程式呼叫方法所需的所有專案 `Encode` `SKBitmap` 。 它擁有列舉的成員、適用于失真 `Picker` `SKEncodedImageFormat` `Slider` 點陣圖格式的 quality 引數、兩個 `Entry` 檔案名和資料夾名稱的視圖，以及用 `Button` 來儲存檔案的。
 
@@ -470,7 +470,7 @@ public partial class SaveFileFormatsPage : ContentPage
 
 ## <a name="saving-finger-paint-art"></a>正在儲存手指油漆藝術
 
-點陣圖的其中一種常見用法是在繪圖程式中，它會作為所謂的 _陰影點陣圖_ 。 所有繪圖都會保留在點陣圖上，然後由程式顯示。 點陣圖也方便儲存繪圖。
+點陣圖的其中一種常見用法是在繪圖程式中，它會作為所謂的 _陰影點陣圖_。 所有繪圖都會保留在點陣圖上，然後由程式顯示。 點陣圖也方便儲存繪圖。
 
 [**SkiaSharp 文章中的手指繪製**](../paths/finger-paint.md)示範如何使用觸控追蹤來執行基本的手指繪製程式。 此程式只支援一個色彩，而只有一個筆觸寬度，但它會將整個繪圖保留在物件的集合中 `SKPath` 。
 
@@ -705,7 +705,7 @@ public partial class FingerPaintSavePage : ContentPage
 
 [![微調繪圖](saving-images/SpinPaint.png "微調繪圖")](saving-images/SpinPaint-Large.png#lightbox)
 
-類別的 [ **儲存** ] 按鈕類似于 [ `SpinPaint` **手指繪製** ]，其會將影像儲存至固定的資料夾名稱 ( **SpainPaint** ) 以及從日期和時間所建立的檔案名。
+類別的 [ **儲存** ] 按鈕類似于 [ `SpinPaint` **手指繪製** ]，其會將影像儲存至固定的資料夾名稱 (**SpainPaint**) 以及從日期和時間所建立的檔案名。
 
 ## <a name="related-links"></a>相關連結
 

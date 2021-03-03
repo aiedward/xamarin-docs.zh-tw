@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374585"
 ---
-# <a name="no-locxamarinforms-relative-bindings"></a>Xamarin.Forms 相對系結
+# <a name="xamarinforms-relative-bindings"></a>Xamarin.Forms 相對系結
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 

@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93366148"
 ---
-# <a name="no-locxamarinforms-collectionview-grouping"></a>Xamarin.Forms CollectionView 群組
+# <a name="xamarinforms-collectionview-grouping"></a>Xamarin.Forms CollectionView 群組
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 

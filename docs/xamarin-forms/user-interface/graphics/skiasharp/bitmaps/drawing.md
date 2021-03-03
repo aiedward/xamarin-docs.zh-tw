@@ -495,7 +495,7 @@ public partial class BitmapRotatorPage : ContentPage
 
 ## <a name="flipping-bitmaps"></a>翻轉點陣圖
 
-通常在點陣圖上執行的另一項作業稱為「 _翻轉_ 」。 就概念而言，點陣圖是沿著垂直軸或水準軸的三個維度旋轉到點陣圖的中心。 垂直翻轉會建立鏡像影像。
+通常在點陣圖上執行的另一項作業稱為「 _翻轉_」。 就概念而言，點陣圖是沿著垂直軸或水準軸的三個維度旋轉到點陣圖的中心。 垂直翻轉會建立鏡像影像。
 
 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中的 **點陣圖擋板** 頁面會示範這些處理常式。 XAML 檔案包含 `SKCanvasView` 和兩個按鈕，可垂直和水準翻轉：
 

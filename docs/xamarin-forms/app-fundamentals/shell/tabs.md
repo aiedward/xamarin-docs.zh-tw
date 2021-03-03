@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93372609"
 ---
-# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms Shell 索引標籤
+# <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms Shell 索引標籤
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 

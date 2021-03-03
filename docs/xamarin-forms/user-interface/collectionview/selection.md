@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93375339"
 ---
-# <a name="no-locxamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView 選取專案
+# <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView 選取專案
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 

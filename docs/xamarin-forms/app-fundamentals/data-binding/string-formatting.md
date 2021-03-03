@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93369762"
 ---
-# <a name="no-locxamarinforms-string-formatting"></a>Xamarin.Forms 字串格式化
+# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字串格式化
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 

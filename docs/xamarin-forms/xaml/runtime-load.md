@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374273"
 ---
-# <a name="loading-xaml-at-runtime-in-no-locxamarinforms"></a>在執行時間載入 XAML Xamarin.Forms
+# <a name="loading-xaml-at-runtime-in-xamarinforms"></a>在執行時間載入 XAML Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
 
@@ -37,7 +37,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-當 Visual Studio 建立包含 XAML 檔案的專案時，它會剖析 XAML 檔案以產生 c # 程式碼檔案 (例如，包含方法定義的 **MainPage.xaml.g.cs** ) `InitializeComponent` ：
+當 Visual Studio 建立包含 XAML 檔案的專案時，它會剖析 XAML 檔案以產生 c # 程式碼檔案 (例如，包含方法定義的 **MainPage.xaml.g.cs**) `InitializeComponent` ：
 
 ```csharp
 private void InitializeComponent()

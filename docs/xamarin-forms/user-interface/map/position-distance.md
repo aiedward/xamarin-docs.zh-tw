@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93367708"
 ---
-# <a name="no-locxamarinforms-map-position-and-distance"></a>Xamarin.Forms 地圖位置和距離
+# <a name="xamarinforms-map-position-and-distance"></a>Xamarin.Forms 地圖位置和距離
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 

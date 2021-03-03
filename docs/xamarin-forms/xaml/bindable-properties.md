@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374078"
 ---
-# <a name="no-locxamarinforms-bindable-properties"></a>Xamarin.Forms 可系結屬性
+# <a name="xamarinforms-bindable-properties"></a>Xamarin.Forms 可系結屬性
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
@@ -69,7 +69,7 @@ public static readonly BindableProperty EventNameProperty =
 
 （選擇性）建立 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 實例時，可以指定下列參數：
 
-- 繫結模式。 這是用來指定屬性值變更將傳播的方向。 在預設系結模式中，變更將會從 *來源* 傳播至 *目標* 。
+- 繫結模式。 這是用來指定屬性值變更將傳播的方向。 在預設系結模式中，變更將會從 *來源* 傳播至 *目標*。
 - 設定屬性值時，將叫用的驗證委派。 如需詳細資訊，請參閱 [驗證回呼](#validation-callbacks)。
 - 屬性值變更時，將會叫用的屬性已變更委派。 如需詳細資訊，請參閱偵測 [屬性變更](#detect-property-changes)。
 - 屬性值將會變更時，將會叫用的屬性變更委派。 這個委派與屬性變更的委派具有相同的簽章。

@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374062"
 ---
-# <a name="xaml-custom-namespace-schemas-in-no-locxamarinforms"></a>中的 XAML 自訂命名空間架構 Xamarin.Forms
+# <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>中的 XAML 自訂命名空間架構 Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 

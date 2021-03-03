@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373272"
 ---
-# <a name="no-locxamarinforms-shell-lifecycle"></a>Xamarin.Forms Shell 生命週期
+# <a name="xamarinforms-shell-lifecycle"></a>Xamarin.Forms Shell 生命週期
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 

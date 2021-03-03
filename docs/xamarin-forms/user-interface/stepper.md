@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93369788"
 ---
-# <a name="no-locxamarinforms-stepper"></a>Xamarin.Forms 步 進
+# <a name="xamarinforms-stepper"></a>Xamarin.Forms 步 進
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 
@@ -49,7 +49,7 @@ Xamarin.Forms [`Stepper`](xref:Xamarin.Forms.Stepper) 包含兩個標示為減�
 
 ### <a name="creating-a-stepper-in-code"></a>在程式碼中建立分檔器
 
-[**StepperDemos**](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)範例中的 **基本 [分檔器代碼** ] 頁面會顯示如何 [`Stepper`](xref:Xamarin.Forms.Stepper) 在程式碼中建立和兩個 [`Label`](xref:Xamarin.Forms.Label) 物件：
+[**StepperDemos**](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)範例中的 **基本 [分檔器代碼**] 頁面會顯示如何 [`Stepper`](xref:Xamarin.Forms.Stepper) 在程式碼中建立和兩個 [`Label`](xref:Xamarin.Forms.Label) 物件：
 
 ```csharp
 public class BasicStepperCodePage : ContentPage
@@ -161,7 +161,7 @@ double value = stepper.Value;
 
 ### <a name="data-binding-the-stepper"></a>資料系結至分檔器
 
-[ **基本的分檔** 器系結] 頁面會顯示如何使用資料系結來撰寫幾乎相等的應用程式，以消除 [`Value`](xref:Xamarin.Forms.Stepper.Value) 事件處理常式： [Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+[**基本的分檔** 器系結] 頁面會顯示如何使用資料系結來撰寫幾乎相等的應用程式，以消除 [`Value`](xref:Xamarin.Forms.Stepper.Value) 事件處理常式： [Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

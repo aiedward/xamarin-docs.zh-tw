@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93366851"
 ---
-# <a name="no-locxamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
+# <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 

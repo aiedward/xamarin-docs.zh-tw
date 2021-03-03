@@ -398,7 +398,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-您也可以在 .NET Standard 程式庫所參考的任何元件中，為 .NET 命名空間定義 XML 命名空間宣告。 例如，以下是 `sys` 標準 .net 命名空間的前置詞 `System` ，它位於 **netstandard** 元件中。 因為這是另一個元件，所以您也必須指定元件名稱，在此案例中為 **netstandard** ：
+您也可以在 .NET Standard 程式庫所參考的任何元件中，為 .NET 命名空間定義 XML 命名空間宣告。 例如，以下是 `sys` 標準 .net 命名空間的前置詞 `System` ，它位於 **netstandard** 元件中。 因為這是另一個元件，所以您也必須指定元件名稱，在此案例中為 **netstandard**：
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=netstandard"

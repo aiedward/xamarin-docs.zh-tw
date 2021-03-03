@@ -153,7 +153,7 @@ SKMatrix matrix = SKMatrix.MakeIdentity();
 
 ## <a name="matrix-multiplication"></a>矩陣乘法
 
-使用轉換矩陣的優點之一，就是可以透過矩陣乘法取得複合轉換，這在 SkiaSharp 檔中通常稱為「 *串連* 」。 中許多轉換相關的方法都是 `SKCanvas` 指「預先串連」或「預先連接」。 這指的是乘法的順序，這一點很重要，因為矩陣乘法不是可交換的。
+使用轉換矩陣的優點之一，就是可以透過矩陣乘法取得複合轉換，這在 SkiaSharp 檔中通常稱為「 *串連*」。 中許多轉換相關的方法都是 `SKCanvas` 指「預先串連」或「預先連接」。 這指的是乘法的順序，這一點很重要，因為矩陣乘法不是可交換的。
 
 例如，方法的檔顯示「 [`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single)) 使用指定的翻譯預先 concats 目前的矩陣」，而該方法的檔 [`Scale`](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single)) 指出它「預先 concats 目前的矩陣並具有指定的小數位數」。
 

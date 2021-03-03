@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374260"
 ---
-# <a name="no-locxamarinforms-reusable-roundeffect"></a>Xamarin.Forms 可重複使用的的 roundeffect
+# <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.Forms 可重複使用的的 roundeffect
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 

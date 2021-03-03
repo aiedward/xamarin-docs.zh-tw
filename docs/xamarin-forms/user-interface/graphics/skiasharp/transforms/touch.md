@@ -150,7 +150,7 @@ public partial class BitmapDraggingPage : ContentPage
 }
 ```
 
-當手指先觸及畫面時，就會引發型別的事件 `TouchActionType.Pressed` 。 第一個工作是判斷手指是否觸及點陣圖。 這類工作通常稱為 _點擊測試_ 。 在此情況下，您可以藉由建立 `SKRect` 對應到點陣圖的值、套用矩陣轉換給它，然後 `MapRect` 判斷觸控點是否在轉換的矩形內，來完成點擊測試。
+當手指先觸及畫面時，就會引發型別的事件 `TouchActionType.Pressed` 。 第一個工作是判斷手指是否觸及點陣圖。 這類工作通常稱為 _點擊測試_。 在此情況下，您可以藉由建立 `SKRect` 對應到點陣圖的值、套用矩陣轉換給它，然後 `MapRect` 判斷觸控點是否在轉換的矩形內，來完成點擊測試。
 
 如果是這種情況，則會將 `touchId` 欄位設定為觸控識別碼，並儲存手指位置。
 

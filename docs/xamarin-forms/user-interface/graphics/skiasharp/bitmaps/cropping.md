@@ -448,7 +448,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>裝載相片 cropper 畫布視圖
 
-由於這兩個類別會處理裁剪邏輯，因此 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中的 [ **相片裁剪** ] 頁面會有很多工作。 XAML 檔案會具現化， `Grid` 以裝載 `PhotoCropperCanvasView` 和 [ **完成** ] 按鈕：
+由於這兩個類別會處理裁剪邏輯，因此 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中的 [**相片裁剪**] 頁面會有很多工作。 XAML 檔案會具現化， `Grid` 以裝載 `PhotoCropperCanvasView` 和 [ **完成** ] 按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -583,7 +583,7 @@ public partial class PhotoPuzzlePage1 : ContentPage
 
 然後，方法會導覽至 `PhotoPuzzlePage2` ，並將選取的點陣圖傳遞至建構。
 
-從文件庫中選取的相片可能不會在相片圖庫中顯示，而是會旋轉或倒置。  (這是 iOS 裝置的問題。基於這個原因，) 可 `PhotoPuzzlePage2` 讓您將影像旋轉至所需的方向。 XAML 檔案包含三個標示為 **90 的按鈕&#x00B0; 右** (表示順時針) 、 **90&#x00B0; 左方** (逆時針) 和 **完成** 。
+從文件庫中選取的相片可能不會在相片圖庫中顯示，而是會旋轉或倒置。  (這是 iOS 裝置的問題。基於這個原因，) 可 `PhotoPuzzlePage2` 讓您將影像旋轉至所需的方向。 XAML 檔案包含三個標示為 **90 的按鈕&#x00B0; 右** (表示順時針) 、 **90&#x00B0; 左方** (逆時針) 和 **完成**。
 
 程式碼後端檔案會執行在 **[SkiaSharp 點陣圖上建立和繪製](drawing.md#rotating-bitmaps)** 文章中所顯示的點陣圖旋轉邏輯。 使用者可以順時針或逆時針旋轉90影像的次數：
 
@@ -739,7 +739,7 @@ public partial class PhotoPuzzlePage3 : ContentPage
 
 **完成** 按鈕處理常式會取得裁剪點陣圖的寬度和高度 (這兩個值應該是相同的) 然後將它分割成15個不同的點陣圖，每個都是1/4 的原始寬度和高度。  (不會建立最後一個可能的16個位圖。 ) `DrawBitmap` 具有來源和目的地矩形的方法，可讓您根據較大點陣圖的子集來建立點陣圖。
 
-## <a name="converting-to-no-locxamarinforms-bitmaps"></a>轉換成 Xamarin.Forms 點陣圖
+## <a name="converting-to-xamarinforms-bitmaps"></a>轉換成 Xamarin.Forms 點陣圖
 
 在 `OnDoneButtonClicked` 方法中，為15個位圖建立的陣列類型為 [`ImageSource`](xref:Xamarin.Forms.ImageSource) ：
 

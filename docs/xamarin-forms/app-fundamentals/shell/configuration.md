@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374375"
 ---
-# <a name="no-locxamarinforms-shell-page-configuration"></a>Xamarin.Forms Shell 頁面設定
+# <a name="xamarinforms-shell-page-configuration"></a>Xamarin.Forms Shell 頁面設定
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 

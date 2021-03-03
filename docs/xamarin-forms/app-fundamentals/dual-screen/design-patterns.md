@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93369412"
 ---
-# <a name="no-locxamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms 雙螢幕設計模式
+# <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms 雙螢幕設計模式
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 

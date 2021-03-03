@@ -18,7 +18,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93365862"
 ---
-# <a name="no-locxamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基本概念
+# <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基本概念
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
@@ -54,7 +54,7 @@ XAML 基本上是 XML，但 XAML 有一些獨特的語法功能。 最重要的�
 
 ## <a name="requirements"></a>需求
 
-本文假設您已熟悉使用 Xamarin.Forms 。 本文也假設您已熟悉 XML，包括瞭解 XML 命名空間宣告的使用方式，以及詞彙 *元素* 、 *標記* 和 *屬性* 。
+本文假設您已熟悉使用 Xamarin.Forms 。 本文也假設您已熟悉 XML，包括瞭解 XML 命名空間宣告的使用方式，以及詞彙 *元素*、 *標記* 和 *屬性*。
 
 當您熟悉 Xamarin.Forms 和 XML 時，請先閱讀 [第1部分。使用 XAML 消費者入門](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)。
 

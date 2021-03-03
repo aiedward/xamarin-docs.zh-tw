@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93371205"
 ---
-# <a name="no-locxamarinforms-toolbaritem"></a>Xamarin.Forms ToolbarItem
+# <a name="xamarinforms-toolbaritem"></a>Xamarin.Forms ToolbarItem
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 

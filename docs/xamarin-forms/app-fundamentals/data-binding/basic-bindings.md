@@ -18,7 +18,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93366421"
 ---
-# <a name="no-locxamarinforms-basic-bindings"></a>Xamarin.Forms 基本系結
+# <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本系結
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 

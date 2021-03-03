@@ -148,7 +148,7 @@ public partial class HybridWebViewPage : ContentPage
 
 1. `WkWebViewRenderer`在 iOS 上建立類別的子類別，並在 `WebViewRenderer` ANDROID 和 UWP 上建立類別的類別，以呈現自訂控制項。
 1. 覆寫 `OnElementChanged` 呈現 [`WebView`](xref:Xamarin.Forms.WebView) 和寫入邏輯以進行自訂的方法。 建立物件時，會呼叫這個方法 `HybridWebView` 。
-1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別或 *AssemblyInfo.cs* ，以指定它將用來轉譯 Xamarin.Forms 自訂控制項。 這個屬性是用來向註冊自訂轉譯器 Xamarin.Forms 。
+1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別或 *AssemblyInfo.cs*，以指定它將用來轉譯 Xamarin.Forms 自訂控制項。 這個屬性是用來向註冊自訂轉譯器 Xamarin.Forms 。
 
 > [!NOTE]
 > 針對大部分的 Xamarin.Forms 專案，您可以選擇性地在每個平臺專案中提供自訂轉譯器。 如果自訂轉譯器尚未註冊，則會使用控制項基底類別的預設轉譯器。 不過，轉譯 [View](xref:Xamarin.Forms.View) 項目時，每個平台專案都必須要有自訂轉譯器。

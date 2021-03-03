@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93368137"
 ---
-# <a name="no-locxamarinforms-menuitem"></a>Xamarin.Forms MenuItem
+# <a name="xamarinforms-menuitem"></a>Xamarin.Forms MenuItem
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-menuitemdemos/)
 

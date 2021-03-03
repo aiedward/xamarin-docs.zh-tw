@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373103"
 ---
-# <a name="no-locxamarinforms-data-templates"></a>Xamarin.Forms 資料範本
+# <a name="xamarinforms-data-templates"></a>Xamarin.Forms 資料範本
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 

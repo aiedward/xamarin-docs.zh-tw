@@ -145,7 +145,7 @@ using (SKPaint textPaint = new SKPaint())
 
 不過，您不需要擔心從 `PaintSurface` 處理常式呼叫到下一個處理常式的轉換。 每個新的呼叫都會 `PaintSurface` 傳遞 `SKCanvas` 具有預設轉換的全新物件。
 
-轉換的另一種常見用法 `Translate` ，是為了轉譯最初使用可方便繪圖的座標建立的視覺物件。 例如，您可能想要指定具有中間點的類比時鐘座標， (0，0) 。 然後，您可以使用轉換來顯示您想要的頻率。 這項技術會在 [ **Hendecagram 陣列** ] 頁面中示範。 [`HendecagramArrayPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs)類別一開始會建立 `SKPath` 11 個指向星形的物件。 `HendecagramPath`物件會定義為公用、靜態和唯讀，以便從其他示範程式進行存取。 它是在靜態的函式中建立的：
+轉換的另一種常見用法 `Translate` ，是為了轉譯最初使用可方便繪圖的座標建立的視覺物件。 例如，您可能想要指定具有中間點的類比時鐘座標， (0，0) 。 然後，您可以使用轉換來顯示您想要的頻率。 這項技術會在 [**Hendecagram 陣列**] 頁面中示範。 [`HendecagramArrayPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs)類別一開始會建立 `SKPath` 11 個指向星形的物件。 `HendecagramPath`物件會定義為公用、靜態和唯讀，以便從其他示範程式進行存取。 它是在靜態的函式中建立的：
 
 ```csharp
 public class HendecagramArrayPage : ContentPage

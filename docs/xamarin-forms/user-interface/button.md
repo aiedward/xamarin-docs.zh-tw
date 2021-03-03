@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374208"
 ---
-# <a name="no-locxamarinforms-button"></a>Xamarin.Forms 按鈕
+# <a name="xamarinforms-button"></a>Xamarin.Forms 按鈕
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
@@ -59,7 +59,7 @@ _按鈕會回應點按或按一下，以指示應用程式執行特定工作。_
 
 依預設， `Button` 是矩形，但您可以使用屬性為其圓角 [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) ，如下面的區段 [**按鈕外觀**](#button-appearance)所述。
 
-[`Text`](xref:Xamarin.Forms.Button.Text)屬性會指定出現在中的文字 `Button` 。 [`Clicked`](xref:Xamarin.Forms.Button.Clicked)事件會設定為名為的事件處理常式 `OnButtonClicked` 。 此處理程式位於程式碼後置檔案 **BasicButtonClickPage.xaml.cs** ：
+[`Text`](xref:Xamarin.Forms.Button.Text)屬性會指定出現在中的文字 `Button` 。 [`Clicked`](xref:Xamarin.Forms.Button.Clicked)事件會設定為名為的事件處理常式 `OnButtonClicked` 。 此處理程式位於程式碼後置檔案 **BasicButtonClickPage.xaml.cs**：
 
 ```csharp
 public partial class BasicButtonClickPage : ContentPage
@@ -155,7 +155,7 @@ button.Clicked += OnButtonClicked;
 
 在 MVVM 應用程式中，viewmodel 會定義類型 `ICommand` 的屬性，這些屬性接著會連接到具有資料系結的 XAML `Button` 元素。 Xamarin.Forms 也 [`Command`](xref:Xamarin.Forms.Command) 會定義和 [`Command<T>`](xref:Xamarin.Forms.Command`1) 類別，以執行 `ICommand` 介面並協助 viewmodel 定義類型的屬性 `ICommand` 。
 
-[**命令介面**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)中會更詳細地說明命令，但 [**system.windows.forms.datagridview.buttondemos**](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例中的 [ **基本] 按鈕命令** 頁面會顯示基本的方法。
+[**命令介面**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)中會更詳細地說明命令，但 [**system.windows.forms.datagridview.buttondemos**](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例中的 [**基本] 按鈕命令** 頁面會顯示基本的方法。
 
 `CommandDemoViewModel`類別是非常簡單的 viewmodel，它會定義名為之型別的屬性 `double` `Number` ，以及 `ICommand` 名為和的兩個型別屬性 `MultiplyBy2Command` `DivideBy2Command` ：
 
@@ -349,7 +349,7 @@ public partial class MainPage : ContentPage
 
 除了 `Clicked` 事件之外， `Button` 也會定義 [`Pressed`](xref:Xamarin.Forms.Button.Pressed) 和 [`Released`](xref:Xamarin.Forms.Button.Released) 事件。 `Pressed`當手指按下 `Button` ，或按下滑鼠按鍵時，就會發生此事件 `Button` 。 `Released`釋放手指或滑鼠按鍵時，就會發生此事件。 一般而言，事件 `Clicked` 也會同時引發 `Released` ，但如果手指或滑鼠指標從的表面滑離 `Button` ，則 `Clicked` 可能不會發生此事件。
 
-`Pressed`和 `Released` 事件不常使用，但可用於特殊用途，如 [ **按下和放開] 按鈕** 頁面所示。 XAML 檔案包含和，並 `Label` `Button` 附加給和事件的處理 `Pressed` 程式 `Released` ：
+`Pressed`和 `Released` 事件不常使用，但可用於特殊用途，如 [**按下和放開] 按鈕** 頁面所示。 XAML 檔案包含和，並 `Label` `Button` 附加給和事件的處理 `Pressed` 程式 `Released` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -766,7 +766,7 @@ public partial class ToggleButtonDemoPage : ContentPage
 - 96-圖元的正方形點陣圖，儲存為 **/Resource/MonkeyFace@2x.png**
 - 144-圖元的正方形點陣圖，儲存為 **/Resource/MonkeyFace@3x.png**
 
-這三個位圖都會獲得 **套件套件** 的 **組建動作** 。
+這三個位圖都會獲得 **套件套件** 的 **組建動作**。
 
 針對 Android 專案，所有點陣圖都有相同的名稱，但會儲存在 **Resources** 資料夾的不同子資料夾中：
 
@@ -775,7 +775,7 @@ public partial class ToggleButtonDemoPage : ContentPage
 - 儲存為/Resources/drawable-xxhDPI/的 144-圖元正方形點陣圖 **MonkeyFace.png**
 - 儲存為/Resources/drawable-xxxhDPI/的 192-圖元正方形點陣圖 **MonkeyFace.png**
 
-這些會獲得 **AndroidResource** 的 **組建動作** 。
+這些會獲得 **AndroidResource** 的 **組建動作**。
 
 在 UWP 專案中，點陣圖可以儲存在專案中的任何位置，但通常儲存在自訂資料夾或 **資產** 現有的資料夾中。 UWP 專案包含這些點陣圖：
 
@@ -783,7 +783,7 @@ public partial class ToggleButtonDemoPage : ContentPage
 - 儲存為/Assets/的 96-圖元正方形點陣圖 **MonkeyFace.scale-200.png**
 - 儲存為/Assets/的 192-圖元正方形點陣圖 **MonkeyFace.scale-400.png**
 
-它們都有提供 **內容** 的 **組建動作** 。
+它們都有提供 **內容** 的 **組建動作**。
 
 您可以使用的屬性，指定如何 `Text` `ImageSource` 排列和屬性的相片順序 `Button` [`ContentLayout`](xref:Xamarin.Forms.Button.ContentLayout) `Button` 。 這個屬性的類型是 [`ButtonContentLayout`](xref:Xamarin.Forms.Button.ButtonContentLayout) ，它是中的內嵌類別 `Button` 。 [函式] (x： Xamarin.Forms 。ButtonContentLayout .% 23ctor (Xamarin.Forms 。ButtonContentLayout. ImagePosition，System.object) # A3 有兩個引數：
 

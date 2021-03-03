@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93368540"
 ---
-# <a name="no-locxamarinforms-slider"></a>Xamarin.Forms 滑 塊
+# <a name="xamarinforms-slider"></a>Xamarin.Forms 滑 塊
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
@@ -179,7 +179,7 @@ double value = slider.Value;
 
 ### <a name="data-binding-the-slider"></a>資料系結滑杆
 
-[ **基本滑杆** 系結] 頁面會顯示如何使用資料系結來撰寫幾乎相等的程式，以消除 `Value` 事件處理常式： [Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+[**基本滑杆** 系結] 頁面會顯示如何使用資料系結來撰寫幾乎相等的程式，以消除 `Value` 事件處理常式： [Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

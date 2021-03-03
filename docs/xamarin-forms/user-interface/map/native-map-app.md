@@ -17,7 +17,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93368241"
 ---
-# <a name="launch-the-native-map-app-from-no-locxamarinforms"></a>啟動原生地圖應用程式 Xamarin.Forms
+# <a name="launch-the-native-map-app-from-xamarinforms"></a>啟動原生地圖應用程式 Xamarin.Forms
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 

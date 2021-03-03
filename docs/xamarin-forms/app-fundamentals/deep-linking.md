@@ -73,7 +73,7 @@ Xamarin.Forms 應用程式索引和深層連結提供 API，可在使用者流�
 1. 在網頁瀏覽器中，透過 [Firebase 控制台](https://console.firebase.google.com/)建立新專案。
 1. 在 Firebase 控制台中，將 Firebase 新增到您的 Android 應用程式，然後輸入必填資料。
 1. 下載產生的 **google-services.json** 檔案。
-1. 將 **google-services.json** 檔案新增到 Android 專案的根目錄，並將其 [建置動作] 設為 **GoogleServicesJson** 。
+1. 將 **google-services.json** 檔案新增到 Android 專案的根目錄，並將其 [建置動作] 設為 **GoogleServicesJson**。
 1. 在 `MainActivity.OnCreate` 覆寫中，在 `Forms.Init(this, bundle)` 下方新增下列程式碼：
 
 ```csharp
@@ -81,7 +81,7 @@ FirebaseApp.InitializeApp(this);
 AndroidAppLinks.Init(this);
 ```
 
-當 **google-services.json** 新增到專案 (並已設定 *GoogleServicesJson* * 建置動作) 時，建置流程會擷取用戶端識別碼和 API 金鑰，然後將這些認證新增到所產生的資訊清單檔。
+當 **google-services.json** 新增到專案 (並已設定 *GoogleServicesJson** 建置動作) 時，建置流程會擷取用戶端識別碼和 API 金鑰，然後將這些認證新增到所產生的資訊清單檔。
 
 > [!NOTE]
 > 在此文章中，「應用程式連結」與「深層連結」這兩個詞彙通常會交替使用。 不過，在 Android 上，這些詞彙有不同的意義。 在 Android 上，「深層連結」是意圖篩選條件，可讓使用者直接進入應用程式中的特定活動。 按一下深層連結可能會開啟去除混淆對話方塊，讓使用者選取可處理 URL 的多個應用程式之一。 Android 應用程式連結是以您的網站 URL 為基礎的深層連結，其已驗證為屬於您的網站。 按一下應用程式連結會開啟您的應用程式 (如果已安裝)，而不會開啟去除混淆對話方塊。

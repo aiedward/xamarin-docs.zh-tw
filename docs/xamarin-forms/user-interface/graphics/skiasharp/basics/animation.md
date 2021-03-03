@@ -27,7 +27,7 @@ _探索如何製作 SkiaSharp 圖形的動畫_
 
 ![許多看似從中央擴充的同心圓圓形](animation-images/animationexample.png)
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式中的 [ **Pulsating 橢圓形** ] 頁面會將橢圓形的兩個軸動畫顯示出來，使其看似 Pulsating，而且您甚至可以控制此 pulsation 的速率。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)可具現化和， Xamarin.Forms `Slider` `Label` 以顯示滑杆目前的值。 這是整合 `SKCanvasView` 與其他視圖的常見方式 Xamarin.Forms ：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式中的 [ **Pulsating 橢圓形**] 頁面會將橢圓形的兩個軸動畫顯示出來，使其看似 Pulsating，而且您甚至可以控制此 pulsation 的速率。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)可具現化和， Xamarin.Forms `Slider` `Label` 以顯示滑杆目前的值。 這是整合 `SKCanvasView` 與其他視圖的常見方式 Xamarin.Forms ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
