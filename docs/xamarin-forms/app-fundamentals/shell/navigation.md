@@ -6,51 +6,51 @@ ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/06/2020
+ms.date: 02/23/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5fb215ea92035965b48fff85ef4ccc70edc65fdf
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 7d714b38dd838ef0779802dc7ca8c050dbd4464b
+ms.sourcegitcommit: 1b542afc0f6f2f6adbced527ae47b9ac90eaa1de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939169"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101757531"
 ---
-# <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
+# <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.Forms Shell 包含以 URI 為基礎的流覽體驗，可使用路由導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。 此外，它還提供向後巡覽的能力，而不需瀏覽導覽堆疊上的所有頁面。
 
-`Shell` 會定義下列導覽相關的屬性：
+[`Shell`](xref:Xamarin.Forms.Shell)類別會定義下列導覽相關的屬性：
 
-- `BackButtonBehavior`，屬於 `BackButtonBehavior` 類型，可定義上一頁按鈕行為的一種附加屬性。
-- `CurrentItem`，屬於 `FlyoutItem` 類型，是目前選取的 `FlyoutItem`。
-- `CurrentPage`，類型為 `Page` 目前顯示的頁面。
-- `CurrentState`，屬於 `ShellNavigationState` 類型，是 `Shell` 的目前導覽狀態。
-- `Current`，屬於 `Shell` 類型，是 `Application.Current.MainPage` 類型轉換的別名。
+- [`BackButtonBehavior`](xref:Xamarin.Forms.Shell.BackButtonBehaviorProperty)型別為的 [`BackButtonBehavior`](xref:Xamarin.Forms.BackButtonBehavior) 附加屬性，定義 [上一頁] 按鈕的行為。
+- [`CurrentItem`](xref:Xamarin.Forms.Shell.CurrentItem)，類型為 [`ShellItem`](xref:Xamarin.Forms.ShellItem) 目前選取的專案。
+- [`CurrentPage`](xref:Xamarin.Forms.Shell.CurrentPage)，類型為 [`Page`](xref:Xamarin.Forms.Page) 目前顯示的頁面。
+- [`CurrentState`](xref:Xamarin.Forms.Shell.CurrentState)的型別 [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) ，這是目前的流覽狀態 [`Shell`](xref:Xamarin.Forms.Shell) 。
+- [`Current`](xref:Xamarin.Forms.Shell.Current)型別為的型別為 [`Shell`](xref:Xamarin.Forms.Shell) 轉換的別名 `Application.Current.MainPage` 。
 
-`BackButtonBehavior`、 `CurrentItem` 和 `CurrentState` 屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示這些屬性可以是資料系結的目標。
+[`BackButtonBehavior`](xref:Xamarin.Forms.Shell.BackButtonBehaviorProperty)、 [`CurrentItem`](xref:Xamarin.Forms.Shell.CurrentItem) 和 [`CurrentState`](xref:Xamarin.Forms.Shell.CurrentState) 屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示這些屬性可以是資料系結的目標。
 
-導覽是透過從 `Shell` 類別叫用 `GoToAsync` 方法執行的。 導覽即將執行時，會引發 `Navigating` 事件，而導覽完成時，則會引發 `Navigated` 事件。
+從類別叫用方法來執行導覽 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) [`Shell`](xref:Xamarin.Forms.Shell) 。 當導覽即將執行時， [`Navigating`](xref:Xamarin.Forms.Shell.Navigating) 就會引發事件，並在 [`Navigated`](xref:Xamarin.Forms.Shell.Navigated) 流覽完成時引發事件。
 
 > [!NOTE]
-> 在 Shell 應用程式中，仍然可以 Xamarin.Forms 使用 [導覽](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性來執行導覽。 如需詳細資訊，請參閱[階層式導覽](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)。
+> 您仍然可以使用 [導覽](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性，在 Shell 應用程式的頁面之間進行導覽。 如需詳細資訊，請參閱[階層式導覽](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)。
 
 ## <a name="routes"></a>路由
 
 導覽是在 Shell 應用程式中，透過指定要導覽的 URI 執行的。 導覽 URI 可以有三個元件：
 
 - *路由*：定義當作 Shell 視覺階層一部分存在之內容的路徑。
-- *頁面*。 Shell 視覺階層中不存在的頁面可以從 Shell 應用程式中的任何位置推送到導覽堆疊上。 例如，在 Shell 視覺階層中不會定義項目詳細資料頁面，但是如有需要，可以推送到導覽堆疊上。
+- *頁面*。 Shell 視覺階層中不存在的頁面可以從 Shell 應用程式中的任何位置推送到導覽堆疊上。 例如，不會在 Shell 視覺階層中定義詳細資料頁面，但可以視需要將其推送至導覽堆疊上。
 - 一或多個 *查詢參數*。 查詢參數是導覽時可以傳遞至目的地頁面的參數。
 
 當導覽 URI 包含全部三個元件時，結構是：//route/page?queryParameters
 
 ### <a name="register-routes"></a>註冊路由
 
-路由可以在 `FlyoutItem`、`Tab` 和 `ShellContent` 物件上，透過其 `Route` 屬性定義：
+您可以 [`FlyoutItem`](xref:Xamarin.Forms.FlyoutItem) 透過屬性，在、 [`TabBar`](xref:Xamarin.Forms.TabBar) 、 [`Tab`](xref:Xamarin.Forms.Tab) 和 [`ShellContent`](xref:Xamarin.Forms.ShellContent) 物件上定義路由 `Route` 。
 
 ```xaml
 <Shell ...>
@@ -77,9 +77,9 @@ Xamarin.Forms Shell 包含以 URI 為基礎的流覽體驗，可使用路由導�
 ```
 
 > [!NOTE]
-> Shell 階層中的所有項目有與其相關聯的路由。 如果開發人員未設定路由，則會執行階段產生路由。 但是，不保證產生的路由在不同的應用程式工作階段之間都一致。
+> Shell 階層中的所有項目有與其相關聯的路由。 如果您未設定路由，則會在執行時間產生一個路由。 但是，不保證產生的路由在不同的應用程式工作階段之間都一致。
 
-此範例會從範例應用程式中建立下列路由階層，以用於程式設計的導覽：
+上述範例會建立下列路由階層，可用於以程式設計方式流覽：
 
 ```
 animals
@@ -92,14 +92,14 @@ animals
 about
 ```
 
-若要導覽至 `dogs` 路由的 `ShellContent` 物件，絕對路由 URI 為 `//animals/domestic/dogs`。 同樣地，若要導覽至 `about` 路由的 `ShellContent` 物件，絕對路由 URI 為 `//about`。
+若要流覽至 [`ShellContent`](xref:Xamarin.Forms.ShellContent) 路由的物件 `dogs` ，絕對路由 URI 為 `//animals/domestic/dogs` 。 同樣地，若要導覽至 `about` 路由的 `ShellContent` 物件，絕對路由 URI 為 `//about`。
 
-> [!IMPORTANT]
+> [!WARNING]
 > 如果偵測到重複的路由，將會在應用程式啟動時擲回 `ArgumentException`。 如果階層中有兩個以上的同層級路由共用一個路由名稱，也會擲回此例外狀況。
 
-#### <a name="register-page-routes"></a>註冊頁面路由
+### <a name="register-detail-page-routes"></a>註冊詳細資料頁面路由
 
-在 Shell 子類別建構函式或在叫用路由之前執行的其他任何位置中，可以針對 Shell 視覺階層中未表示的任何頁面，明確地註冊其他路由：
+在子類別的函式中 [`Shell`](xref:Xamarin.Forms.Shell) ，或在叫用路由之前執行的任何其他位置中，可以針對 Shell 視覺階層中未表示的任何詳細資料頁面，明確註冊其他路由。 這可透過方法來完成 [`Routing.RegisterRoute`](xref:Xamarin.Forms.Routing.RegisterRoute*) ：
 
 ```csharp
 Routing.RegisterRoute("monkeydetails", typeof(MonkeyDetailPage));
@@ -109,10 +109,10 @@ Routing.RegisterRoute("dogdetails", typeof(DogDetailPage));
 Routing.RegisterRoute("elephantdetails", typeof(ElephantDetailPage));
 ```
 
-此範例會註冊項目詳細資料頁面，Shell 子類別中未將此頁面定義為路由。 接著，可以使用 URI 式導覽，從應用程式中的任何位置導覽這些頁面。 這類頁面的路由稱為 *全域路由*。
+此範例會將子類別中未定義的詳細資料頁面註冊 [`Shell`](xref:Xamarin.Forms.Shell) 為路由。 然後，您可以從應用程式內的任何位置，使用以 URI 為基礎的導覽來流覽這些詳細資料頁面。 這類頁面的路由稱為 *全域路由*。
 
-> [!NOTE]
-> 如果需要，已使用 `Routing.RegisterRoute` 方法註冊其路由的頁面可使用 `Routing.UnRegisterRoute` 方法取消註冊。
+> [!WARNING]
+> `ArgumentException`如果 [`Routing.RegisterRoute`](xref:Xamarin.Forms.Routing.RegisterRoute*) 方法嘗試註冊相同的路由至兩個或多個不同的類型，將會擲回。
 
 或者，如果需要，可以在不同的路由階層註冊頁面：
 
@@ -124,33 +124,33 @@ Routing.RegisterRoute("dogs/details", typeof(DogDetailPage));
 Routing.RegisterRoute("elephants/details", typeof(ElephantDetailPage));
 ```
 
-此範例會啟用內容相關式頁面導覽，其中，從 `monkeys` 路由的頁面導覽至 `details` 路由會顯示 `MonkeyDetailPage`。 同樣地，從 `elephants` 路由的頁面導覽至 `details` 路由會顯示 `ElephantDetailPage`。
+此範例會啟用內容相關式頁面導覽，其中，從 `monkeys` 路由的頁面導覽至 `details` 路由會顯示 `MonkeyDetailPage`。 同樣地，從 `elephants` 路由的頁面導覽至 `details` 路由會顯示 `ElephantDetailPage`。 如需詳細資訊，請參閱關聯式 [導覽](#contextual-navigation)。
 
-> [!IMPORTANT]
-> 如果 `Routing.RegisterRoute` 方法嘗試向兩個以上的不同類型註冊相同的路由，則會擲回 `ArgumentException`。
+> [!NOTE]
+> [`Routing.RegisterRoute`](xref:Xamarin.Forms.Routing.RegisterRoute*)如果有需要，可以使用方法來取消註冊其路由已向方法註冊的頁面 [`Routing.UnRegisterRoute`](xref:Xamarin.Forms.Routing.UnRegisterRoute*) 。
 
 ## <a name="perform-navigation"></a>執行導覽
 
-若要執行導覽，必須先取得 `Shell` 子類別的參考。 將 `App.Current.MainPage` 屬性轉換為 `Shell` 物件，或透 過`Shell.Current` 屬性可以取得這個參考。 接著，可以對 `Shell` 物件呼叫 `GoToAsync` 方法來執行導覽。 此方法會導覽至 `ShellNavigationState`，並在導覽動畫完成後傳回將會完成的 `Task`。 `ShellNavigationState` 物件是由 `GoToAsync` 方法，從 `string` 或 `Uri` 所建構，且其 `Location` 屬性設為 `string` 或 `Uri` 引數。
+若要執行導覽， [`Shell`](xref:Xamarin.Forms.Shell) 必須先取得子類別的參考。 您可以藉由將 `App.Current.MainPage` 屬性轉換為 `Shell` 物件，或透過屬性來取得此參考 [`Shell.Current`](xref:Xamarin.Forms.Shell.Current) 。 然後，您可以 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) 在物件上呼叫方法來執行導覽 `Shell` 。 這個方法會導覽至 [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) ，並傳回完成 `Task` 導覽動畫之後將完成的。 `ShellNavigationState` 物件是由 `GoToAsync` 方法，從 `string` 或 `Uri` 所建構，且其 `Location` 屬性設為 `string` 或 `Uri` 引數。
 
-從 Shell 視覺階層導覽至路由時，不會建立導覽堆疊。 但是，導覽至不在 Shell 視覺階層中的頁面時，則會建立導覽堆疊。
+> [!IMPORTANT]
+> 從 Shell 視覺階層導覽至路由時，不會建立導覽堆疊。 但是，導覽至不在 Shell 視覺階層中的頁面時，則會建立導覽堆疊。
 
-> [!NOTE]
-> `Shell` 目前的導覽狀態可以透過 `Shell.Current.CurrentState` 屬性擷取，其中包含 `Location` 屬性中所顯示路由的 URI。
+您可以透過屬性來抓取物件的目前導覽狀態 [`Shell`](xref:Xamarin.Forms.Shell) [`Shell.Current.CurrentState`](xref:Xamarin.Forms.Shell.CurrentState) ，其中包含屬性中顯示之路徑的 URI `Location` 。
 
 ### <a name="absolute-routes"></a>絕對路由
 
-將有效的絕對 URI 指定為 `GoToAsync` 方法的引數可執行導覽：
+您可以藉由指定有效的絕對 URI 做為方法的引數來執行導覽 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) ：
 
 ```csharp
 await Shell.Current.GoToAsync("//animals/monkeys");
 ```
 
-此範例會導覽至 `monkeys` 路由的頁面，並在 `ShellContent` 物件上定義路由。 表示 `monkeys` 路由的 `ShellContent` 物件為 `FlyoutItem` 物件子系，其路由是 `animals`。
+此範例會導覽至路由的頁面 `monkeys` ，並在物件上定義路由 [`ShellContent`](xref:Xamarin.Forms.ShellContent) 。 `ShellContent`表示路由的物件 `monkeys` 是物件的子系 [`FlyoutItem`](xref:Xamarin.Forms.FlyoutItem) ，其路由為 `animals` 。
 
 ### <a name="relative-routes"></a>相對路由
 
-將有效的相對 URI 指定為 `GoToAsync` 方法的引數也可以執行導覽。 路由系統將會嘗試比對 `ShellContent` 物件的 URI。 因此，如果應用程式中的所有路由都是唯一的，則只能將唯一的路由名稱指定為相對 URI，藉以執行導覽。
+您也可以藉由指定有效的相對 URI 做為方法的引數來執行導覽 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) 。 路由系統會嘗試比對 URI 與 [`ShellContent`](xref:Xamarin.Forms.ShellContent) 物件。 因此，如果應用程式中的所有路由都是唯一的，則只能將唯一的路由名稱指定為相對 URI，藉以執行導覽。
 
 以下是支援的相對路由格式：
 
@@ -180,11 +180,11 @@ bears
   details
 ```
 
-顯示 `monkeys` 路由已註冊的頁面時，導覽至 `details` 路由將會顯示 `monkeys/details` 路由已註冊的頁面。 同樣地，顯示 `bears` 路由已註冊的頁面時，導覽至 `details` 路由將會顯示 `bears/details` 路由已註冊的頁面。 如需如何在此範例中註冊路由的相關資訊，請參閱[註冊頁面路由](#register-page-routes)。
+顯示 `monkeys` 路由已註冊的頁面時，導覽至 `details` 路由將會顯示 `monkeys/details` 路由已註冊的頁面。 同樣地，顯示 `bears` 路由已註冊的頁面時，導覽至 `details` 路由將會顯示 `bears/details` 路由已註冊的頁面。 如需如何在此範例中註冊路由的相關資訊，請參閱[註冊頁面路由](#register-detail-page-routes)。
 
 ### <a name="backwards-navigation"></a>向後瀏覽
 
-您可以指定 "..." 做為方法的引數來執行回溯導覽 `GotoAsync` ：
+您可以指定 "..." 做為方法的引數來執行回溯導覽 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) ：
 
 ```csharp
 await Shell.Current.GoToAsync("..");
@@ -228,34 +228,33 @@ await Shell.Current.GoToAsync($"..?parameterToPassBack={parameterValueToPassBack
 
 | 格式 | 說明 |
 | --- | --- |
-| *route* 或 /*route* | 視覺階層中的路由無法推送到導覽堆疊上。 |
 | //*page* 或 ///*page* | 全域路由目前不得為導覽堆疊上的唯一頁面。 因此，不支援以絕對路由傳送至全域路由。 |
 
-使用下列任何一種路由格式都會導致擲回 `Exception`。
+使用這些路由格式會導致擲回 `Exception` 。
 
-> [!IMPORTANT]
+> [!WARNING]
 > 嘗試導覽至不存在的路由會導致擲回 `ArgumentException` 例外狀況。
 
 ### <a name="debugging-navigation"></a>為導覽偵錯
 
-部分 Shell 類別是以 `DebuggerDisplayAttribute` 裝飾，以指定偵錯工具如何顯示類別或欄位。 顯示與導覽要求相關的資料有助於為導覽要求偵錯。 例如，下列螢幕擷取畫面顯示 `Shell.Current` 物件的 `CurrentItem` 和 `CurrentState` 屬性：
+部分 Shell 類別是以 `DebuggerDisplayAttribute` 裝飾，以指定偵錯工具如何顯示類別或欄位。 顯示與導覽要求相關的資料有助於為導覽要求偵錯。 例如，下列螢幕擷取畫面顯示物件的 [`CurrentItem`](xref:Xamarin.Forms.Shell.CurrentItem) 和 [`CurrentState`](xref:Xamarin.Forms.Shell.CurrentState) 屬性 [`Shell.Current`](xref:Xamarin.Forms.Shell.Current) ：
 
 ![偵錯工具的螢幕擷取畫面](navigation-images/debugger.png "偵錯工具")
 
-在此範例中，`CurrentItem` 屬性屬於 `FlyoutItem` 類型，可顯示 `FlyoutItem` 物件的標題和路由。 同樣地，`CurrentState` 屬性屬於 `ShellNavigationState` 類型，可顯示 Shell 應用程式內顯示之路由的 URI。
+在此範例中，的 [`CurrentItem`](xref:Xamarin.Forms.Shell.CurrentItem) 屬性（類型為 [`FlyoutItem`](xref:Xamarin.Forms.FlyoutItem) ）會顯示物件的標題和路徑 `FlyoutItem` 。 同樣地， [`CurrentState`](xref:Xamarin.Forms.Shell.CurrentState) 型別的屬性（property）會 [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) 顯示在 Shell 應用程式內顯示之路由的 URI。
 
-### <a name="tab-class"></a>Tab 類別
+### <a name="navigation-stack"></a>導覽堆疊
 
-`Tab` 類別會定義 `IReadOnlyList<Page>` 類型的 `Stack` 屬性，這表示 `Tab` 中目前已推送的導覽堆疊。 此類別也會提供下列可覆寫的導覽方法：
+[`Tab`](xref:Xamarin.Forms.Tab)類別會定義型別為 [`Stack`](xref:Xamarin.Forms.ShellSection.Stack) 的屬性 `IReadOnlyList<Page>` ，代表中目前的導覽堆疊 `Tab` 。 此類別也會提供下列可覆寫的導覽方法：
 
-- `GetNavigationStack`，傳回 `IReadOnlyList<Page`>，也就是目前的導覽堆疊。
-- `OnInsertPageBefore`，會在呼叫 `INavigation.InsertPageBefore` 時呼叫。
-- `OnPopAsync`，傳回 `Task<Page>`，會在呼叫 `INavigation.PopAsync` 時呼叫。
-- `OnPopToRootAsync`，傳回 `Task`，會在呼叫 `INavigation.OnPopToRootAsync` 時呼叫。
-- `OnPushAsync`，傳回 `Task`，會在呼叫 `INavigation.PushAsync` 時呼叫。
-- `OnRemovePage`，會在呼叫 `INavigation.RemovePage` 時呼叫。
+- [`GetNavigationStack`](xref:Xamarin.Forms.ShellSection.GetNavigationStack*)，傳回 `IReadOnlyList<Page` 目前的導覽堆疊>。
+- [`OnInsertPageBefore`](xref:Xamarin.Forms.ShellSection.OnInsertPageBefore*)，呼叫時呼叫 `INavigation.InsertPageBefore` 。
+- [`OnPopAsync`](xref:Xamarin.Forms.ShellSection.OnPopAsync*)、會傳回 `Task<Page>` ，而且會在 `INavigation.PopAsync` 呼叫時呼叫。
+- [`OnPopToRootAsync`](xref:Xamarin.Forms.ShellSection.OnPopToRootAsync*)、會傳回 `Task` ，而且會在 `INavigation.OnPopToRootAsync` 呼叫時呼叫。
+- [`OnPushAsync`](xref:Xamarin.Forms.ShellSection.OnPushAsync*)、會傳回 `Task` ，而且會在 `INavigation.PushAsync` 呼叫時呼叫。
+- [`OnRemovePage`](xref:Xamarin.Forms.ShellSection.OnRemovePage*)，呼叫時呼叫 `INavigation.RemovePage` 。
 
-例如，下列程式碼範例顯示如何覆寫 `OnRemovePage` 方法：
+下列範例顯示如何覆寫 [`OnRemovePage`](xref:Xamarin.Forms.ShellSection.OnRemovePage*) 方法：
 
 ```csharp
 public class MyTab : Tab
@@ -269,31 +268,34 @@ public class MyTab : Tab
 }
 ```
 
-`MyTab` 然後，您可以在 Shell 視覺階層中使用物件，而不是 `Tab` 物件。
+在此範例中， `MyTab` 物件應該在 Shell 視覺階層中使用，而不是 [`Tab`](xref:Xamarin.Forms.Tab) 物件。
 
 ## <a name="navigation-events"></a>導覽事件
 
-`Shell` 類別會定義 `Navigating` 事件，當導覽即將執行時，可能會因為程式設計導覽或使用者互動而引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatingEventArgs` 物件會提供下列屬性：
+[`Shell`](xref:Xamarin.Forms.Shell)類別 [`Navigating`](xref:Xamarin.Forms.Shell.Navigating) 會定義事件，此事件會在導覽即將執行時引發，這可能是因為程式設計流覽或使用者互動所造成。 [`ShellNavigatingEventArgs`](xref:Xamarin.Forms.ShellNavigatingEventArgs)事件隨附的物件 `Navigating` 提供下列屬性：
 
 | 屬性 | 類型 | 描述 |
 |---|---|---|
-| `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
-| `Source` | `ShellNavigationSource` | 發生導覽的類型。 |
-| `Target` | `ShellNavigationState`  | 代表導覽目的地的 URI。 |
-| `CanCancel`  | `bool` | 指出它是否可以取消導覽的值。 |
-| `Cancelled`  | `bool` | 指出是否已取消導覽的值。 |
+| [`Current`](xref:Xamarin.Forms.ShellNavigatingEventArgs.Current) | [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) | 目前頁面的 URI。 |
+| [`Source`](xref:Xamarin.Forms.ShellNavigatingEventArgs.Source) | [`ShellNavigationSource`](xref:Xamarin.Forms.ShellNavigationSource) | 發生導覽的類型。 |
+| [`Target`](xref:Xamarin.Forms.ShellNavigatingEventArgs.Target) | [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) | 代表導覽目的地的 URI。 |
+| [`CanCancel`](xref:Xamarin.Forms.ShellNavigatingEventArgs.CanCancel)  | `bool` | 指出它是否可以取消導覽的值。 |
+| [`Cancelled`](xref:Xamarin.Forms.ShellNavigatingEventArgs.Cancelled)  | `bool` | 指出是否已取消導覽的值。 |
 
-此外， `ShellNavigatingEventArgs` 類別還提供 `Cancel` 可用來取消導覽的方法，以及傳回 `GetDeferral` `ShellNavigatingDeferral` 可用來完成導覽之權杖的方法。 如需流覽延遲的詳細資訊，請參閱 [流覽延遲](#navigation-deferral)。
+此外， [`ShellNavigatingEventArgs`](xref:Xamarin.Forms.ShellNavigatingEventArgs) 類別還提供 [`Cancel`](xref:Xamarin.Forms.ShellNavigatingEventArgs.Cancel*) 可用來取消導覽的方法，以及傳回 [`GetDeferral`](xref:Xamarin.Forms.ShellNavigatingEventArgs.GetDeferral*) [`ShellNavigatingDeferral`](xref:Xamarin.Forms.ShellNavigatingDeferral) 可用來完成導覽之權杖的方法。 如需流覽延遲的詳細資訊，請參閱 [流覽延遲](#navigation-deferral)。
 
-`Shell` 類別也會定義 `Navigated` 事件，導覽完成時會引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatedEventArgs` 物件會提供下列屬性：
+[`Shell`](xref:Xamarin.Forms.Shell)類別也會定義在 [`Navigated`](xref:Xamarin.Forms.Shell.Navigated) 導覽完成時引發的事件。 [`ShellNavigatedEventArgs`](xref:Xamarin.Forms.ShellNavigatedEventArgs)事件隨附的物件 `Navigated` 提供下列屬性：
 
 | 屬性 | 類型 | 描述 |
 |---|---|---|
-| `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
-| `Previous`| `ShellNavigationState` | 上一頁的 URI。 |
-| `Source`  | `ShellNavigationSource` | 發生導覽的類型。 |
+| [`Current`](xref:Xamarin.Forms.ShellNavigatedEventArgs.Current)  | [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) | 目前頁面的 URI。 |
+| [`Previous`](xref:Xamarin.Forms.ShellNavigatedEventArgs.Previous) | [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) | 上一頁的 URI。 |
+| [`Source`](xref:Xamarin.Forms.ShellNavigatedEventArgs.Source) | [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) | 發生導覽的類型。 |
 
-例如，`ShellNavigatedEventArgs` 及 `ShellNavigatingEventArgs` 類別都擁有 `ShellNavigationSource` 類型的 `Source` 屬性。 此列舉提供下列值：
+> [!IMPORTANT]
+> `OnNavigating`當事件引發時，會呼叫方法 [`Navigating`](xref:Xamarin.Forms.Shell.Navigating) 。 同樣地， `OnNavigated` 當引發事件時，會呼叫方法 [`Navigated`](xref:Xamarin.Forms.Shell.Navigated) 。 這兩種方法都可以在您的子類別中覆寫 [`Shell`](xref:Xamarin.Forms.Shell) 來攔截導覽要求。
+
+[`ShellNavigatedEventArgs`](xref:Xamarin.Forms.ShellNavigatedEventArgs)和 [`ShellNavigatingEventArgs`](xref:Xamarin.Forms.ShellNavigatingEventArgs) 類別都具有 `Source` 類型的屬性 [`ShellNavigationSource`](xref:Xamarin.Forms.ShellNavigationSource) 。 此列舉提供下列值：
 
 - `Unknown`
 - `Push`
@@ -305,22 +307,24 @@ public class MyTab : Tab
 - `ShellSectionChanged`
 - `ShellContentChanged`
 
-因此，在 `Navigating` 事件的處理常式中，可以攔截導覽，並根據導覽來源執行動作。 例如，下列的程式碼會示範如何在未儲存頁面上的資料時，取消向後導覽：
+因此，可以在覆寫中攔截導覽， `OnNavigating` 並根據導覽來源執行動作。 例如，下列的程式碼會示範如何在未儲存頁面上的資料時，取消向後導覽：
 
 ```csharp
-void OnNavigating(object sender, ShellNavigatingEventArgs e)
+protected override void OnNavigating(ShellNavigatingEventArgs args)
 {
-    // Cancel back navigation if data is unsaved
-    if (e.Source == ShellNavigationSource.Pop && !dataSaved)
+    base.OnNavigating(args);
+
+    // Cancel any back navigation.
+    if (args.Source == ShellNavigationSource.Pop)
     {
-        e.Cancel();
+        args.Cancel();
     }
-}
+// }
 ```
 
 ## <a name="navigation-deferral"></a>流覽延遲
 
-您可以根據使用者的選擇來攔截、完成或取消 Shell 導覽。 這可以藉由覆寫子 `OnNavigating` 類別中的方法 `Shell` ，以及在 `GetDeferral` 物件上呼叫方法來達成 `ShellNavigatingEventArgs` 。 這個方法會傳回 `ShellNavigatingDeferral` 具有方法的權杖 `Complete` ，可用來完成導覽要求：
+您可以根據使用者的選擇來攔截、完成或取消 Shell 導覽。 這可以藉由覆寫子 `OnNavigating` 類別中的方法 [`Shell`](xref:Xamarin.Forms.Shell) ，以及在 [`GetDeferral`](xref:Xamarin.Forms.ShellNavigatingEventArgs.GetDeferral*) 物件上呼叫方法來達成 [`ShellNavigatingEventArgs`](xref:Xamarin.Forms.ShellNavigatingEventArgs) 。 這個方法會傳回 [`ShellNavigatingDeferral`](xref:Xamarin.Forms.ShellNavigatingDeferral) 具有方法的權杖 [`Complete`](xref:Xamarin.Forms.ShellNavigatingDeferral.Complete*) ，可用來完成導覽要求：
 
 ```csharp
 public MyShell : Shell
@@ -331,8 +335,8 @@ public MyShell : Shell
         base.OnNavigating(args);
 
         ShellNavigatingDeferral token = args.GetDeferral();
-        var result = await DisplayActionSheet("Navigate?", "Cancel", "Yes", "No");
 
+        var result = await DisplayActionSheet("Navigate?", "Cancel", "Yes", "No");
         if (result != "Yes")
         {
             args.Cancel();
@@ -342,60 +346,116 @@ public MyShell : Shell
 }
 ```
 
-在此範例中，會顯示會邀請使用者完成導覽要求或將其取消的動作表。 藉由叫用物件上的方法來取消導覽 `Cancel` `ShellNavigatingEventArgs` 。 透過在 `Complete` `ShellNavigatingDeferral` `GetDeferral` 物件上方法所抓取的 token 上叫用方法，即可完成導覽 `ShellNavigatingEventArgs` 。
+在此範例中，會顯示會邀請使用者完成導覽要求或將其取消的動作表。 藉由叫用物件上的方法來取消導覽 [`Cancel`](xref:Xamarin.Forms.ShellNavigatingEventArgs.Cancel*) [`ShellNavigatingEventArgs`](xref:Xamarin.Forms.ShellNavigatingEventArgs) 。 透過在 [`Complete`](xref:Xamarin.Forms.ShellNavigatingDeferral.Complete*) [`ShellNavigatingDeferral`](xref:Xamarin.Forms.ShellNavigatingDeferral) `GetDeferral` 物件上方法所抓取的 token 上叫用方法，即可完成導覽 `ShellNavigatingEventArgs` 。
 
-> [!IMPORTANT]
-> `GoToAsync` `InvalidOperationException` 如果使用者嘗試在有暫止的流覽延遲的情況下流覽時，方法會擲回。
+> [!WARNING]
+> [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) `InvalidOperationException` 如果使用者嘗試在有暫止的流覽延遲的情況下流覽時，方法會擲回。
 
 ## <a name="pass-data"></a>傳遞資料
 
-執行程式設計導覽時，可以將資料當作查詢參數傳遞。 例如，當使用者在 `ElephantsPage` 上選取大象時，範例應用程式中會執行下列程式碼：
+執行以 URI 為基礎的程式設計導覽時，可以將資料當作查詢參數傳遞。 這是藉由在 `?` 路由之後附加，後面接著查詢參數識別碼、 `=` 和值來達成。 例如，當使用者在 `ElephantsPage` 上選取大象時，範例應用程式中會執行下列程式碼：
 
 ```csharp
 async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
 {
     string elephantName = (e.CurrentSelection.FirstOrDefault() as Animal).Name;
-    await Shell.Current.GoToAsync($"//animals/elephants/elephantdetails?name={elephantName}");
+    await Shell.Current.GoToAsync($"elephantdetails?name={elephantName}");
 }
 ```
 
-這個程式碼範例會在中取出目前選取的大象 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，並流覽至 `elephantdetails` 路由，並以 `elephantName` 查詢參數的形式傳遞。 請注意，查詢參數將會是針對導覽編碼的 URL，因此 "Indian Elephant" 將會變成 "Indian%20Elephant"。
+這個程式碼範例會在中取出目前選取的大象 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，並流覽至 `elephantdetails` 路由，並以 `elephantName` 查詢參數的形式傳遞。
 
-若要接收資料，表示要導覽的頁面或頁面的類別 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ，必須使用 `QueryPropertyAttribute` for each query 參數裝飾：
+若要接收資料，表示要導覽的頁面或頁面的類別 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ，必須使用 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) for each query 參數裝飾：
 
 ```csharp
-[QueryProperty("Name", "name")]
+[QueryProperty(nameof(Name), "name")]
 public partial class ElephantDetailPage : ContentPage
 {
     public string Name
     {
         set
         {
-            BindingContext = ElephantData.Elephants.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
+            LoadAnimal(value);
         }
     }
     ...
+
+    void LoadAnimal(string name)
+    {
+        try
+        {
+            Animal animal = ElephantData.Elephants.FirstOrDefault(a => a.Name == name);
+            BindingContext = animal;
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("Failed to load animal.");
+        }
+    }    
 }
 ```
 
-的第一個引數 `QueryPropertyAttribute` 會指定將接收資料之屬性的名稱，而第二個引數則指定查詢參數識別碼。因此， `QueryPropertyAttribute` 上述範例中的 `Name` 會指定屬性將 `name` 從方法呼叫中的 URI 接收查詢參數中傳遞的資料 `GoToAsync` 。 `Name`然後，屬性 URL 會將查詢參數值解碼，並使用它將頁面的設定為 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 將顯示的物件。
+的第一個引數 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) 會指定將接收資料之屬性的名稱，而第二個引數則指定查詢參數識別碼。因此， `QueryPropertyAttribute` 上述範例中的 `Name` 會指定屬性將 `name` 從方法呼叫中的 URI 接收查詢參數中傳遞的資料 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) 。 `Name`屬性 setter `LoadAnimal` 會呼叫方法來取出 `Animal` 的物件 `name` ，並將它設定為 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 頁面的。
 
-> [!NOTE]
-> 類別可以使用多個 `QueryPropertyAttribute` 物件裝飾。
+> [!IMPORTANT]
+> 查詢參數值會自動進行 URL 解碼。
+
+### <a name="pass-multiple-query-parameters"></a>傳遞多個查詢參數
+
+您可以透過連接多個查詢參數來傳遞這些參數 `&` 。 例如，下列程式碼會傳遞兩個數據項：
+
+```csharp
+async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    string elephantName = (e.CurrentSelection.FirstOrDefault() as Animal).Name;
+    string elephantLocation = (e.CurrentSelection.FirstOrDefault() as Animal).Location;
+    await Shell.Current.GoToAsync($"elephantdetails?name={elephantName}&location={elephantLocation}");
+}
+```
+
+這個程式碼範例會取出中目前選取的大象 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，並流覽至 `elephantdetails` 路由， `elephantName` 並傳遞和 `elephantLocation` 作為查詢參數。
+
+若要接收資料，表示要導覽的頁面或頁面的類別 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ，必須使用 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) for each query 參數裝飾：
+
+```csharp
+[QueryProperty(nameof(Name), "name")]
+[QueryProperty(nameof(Location), "location")]
+public partial class ElephantDetailPage : ContentPage
+{
+    public string Name
+    {
+        set
+        {
+            // Custom logic
+        }
+    }
+
+    public string Location
+    {
+        set
+        {
+            // Custom logic
+        }
+    }
+    ...    
+}
+```
+
+在此範例中，類別是以 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) for each query 參數的來裝飾。 第一個 `QueryPropertyAttribute` `Name` 會指定屬性將接收查詢參數中所傳遞的資料 `name` ，而第二個指定屬性 `QueryPropertyAttribute` `Location` 將接收 `location` 查詢參數中傳遞的資料。 在這兩種情況下，查詢參數值都是在方法呼叫的 URI 中指定 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) 。
 
 ## <a name="back-button-behavior"></a>上一頁按鈕行為
 
-`BackButtonBehavior` 類別會定義可控制上一頁按鈕外觀和行為的下列屬性：
+您可以藉由將 [`BackButtonBehavior`](xref:Xamarin.Forms.Shell.BackButtonBehaviorProperty) 附加屬性設定為物件，來重新定義 [上一頁] 按鈕外觀和行為 [`BackButtonBehavior`](xref:Xamarin.Forms.BackButtonBehavior) 。 [`BackButtonBehavior`](xref:Xamarin.Forms.BackButtonBehavior)類別會定義下列屬性：
 
-- `Command`，屬於 `ICommand` 類型，會在按 [上一頁] 按鈕時執行。
-- `CommandParameter`，屬於 `object` 類型，這是傳遞至 `Command` 的參數。
-- `IconOverride`，類型為 [`ImageSource`](xref:Xamarin.Forms.ImageSource) ，用於 [上一頁] 按鈕的圖示。
-- `IsEnabled`，屬於 `boolean` 類型，可指出是否啟用上一頁按鈕。 預設值是 `true`。
-- `TextOverride`，屬於 `string` 類型，這是用於上一頁按鈕的文字。
+- [`Command`](xref:Xamarin.Forms.BackButtonBehavior.Command)，類型為 `ICommand` ，在按下 [上一頁] 按鈕時執行。
+- [`CommandParameter`](xref:Xamarin.Forms.BackButtonBehavior.CommandParameter)，屬於類型 `object` ，也就是傳遞給的參數 `Command` 。
+- [`IconOverride`](xref:Xamarin.Forms.BackButtonBehavior.IconOverride)，類型為 [`ImageSource`](xref:Xamarin.Forms.ImageSource) ，用於 [上一頁] 按鈕的圖示。
+- [`IsEnabled`](xref:Xamarin.Forms.BackButtonBehavior.IsEnabled)型別為的 `boolean` ，指出是否已啟用 [上一頁] 按鈕。 預設值是 `true`。
+- [`TextOverride`](xref:Xamarin.Forms.BackButtonBehavior.TextOverride)，類型為 `string` ，用於 [上一頁] 按鈕的文字。
 
 所有這些屬性都是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示屬性可以是資料系結的目標。
 
-將 `Shell.BackButtonBehavior` 附加屬性設為 `BackButtonBehavior` 物件可以取用 `BackButtonBehavior` 類別：
+下列程式碼顯示重新定義按鈕外觀和行為的範例：
 
 ```xaml
 <ContentPage ...>    
@@ -420,9 +480,9 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 });
 ```
 
-`Command` 屬性會設定要按 [上一頁] 按鈕時執行的 `ICommand`，而 `IconOverride` 屬性則會設定為用於 [上一頁] 按鈕的圖示：
+[`Command`](xref:Xamarin.Forms.BackButtonBehavior.Command) `ICommand` 當按下 [上一頁] 按鈕時，屬性會設定為，並將 `IconOverride` 屬性設定為 [上一頁] 按鈕所用的圖示：
 
-[![螢幕擷取畫面： iOS 和 Android 上的 Shell 上一頁按鈕圖示覆寫](navigation-images/back-button.png "Shell 上一頁按鈕圖示覆寫")](navigation-images/back-button-large.png#lightbox "Shell 上一頁按鈕圖示覆寫")
+[![螢幕擷取畫面： iOS 和 Android 上的 Shell 上一頁按鈕圖示覆寫](navigation-images/back-button.png)](navigation-images/back-button-large.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 

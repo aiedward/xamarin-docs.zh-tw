@@ -6,27 +6,27 @@ ms.assetid: 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/29/2020
+ms.date: 02/15/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a35966bfdf203a77fc3943e224d77fb087dcc45
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: cd70e7d50990cfc5c7668f4b7a51e889f14a9fb3
+ms.sourcegitcommit: 1b542afc0f6f2f6adbced527ae47b9ac90eaa1de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940482"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101757564"
 ---
-# <a name="no-locxamarinforms-shell-custom-renderers"></a>Xamarin.Forms Shell 自訂轉譯器
+# <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.Forms Shell 自訂轉譯器
 
-Shell 應用程式的優點之一， Xamarin.Forms 就是其外觀和行為可透過各種 Shell 類別所公開的屬性和方法，高度自訂。 不過，它也能夠在需要更複雜的平台專用自訂時，建立 Shell 自訂轉譯器。 如同其他自訂轉譯器，可以將 Shell 自訂轉譯器只加入至一個平台專案來自訂外觀和行為，同時在另一個平台上允許預設行為；或者，可將不同的 Shell 自訂轉譯器加入至每個平台專案，以自訂 iOS 和 Android 上的外觀與行為。
+Shell 應用程式的優點之一， Xamarin.Forms 就是其外觀和行為可透過各種 Shell 類別所公開的屬性和方法，高度自訂。 但是，如果需要更廣泛的平臺特定自訂，也可以建立 Shell 自訂轉譯器。 如同其他自訂轉譯器，可以將 Shell 自訂轉譯器只加入至一個平台專案來自訂外觀和行為，同時在另一個平台上允許預設行為；或者，可將不同的 Shell 自訂轉譯器加入至每個平台專案，以自訂 iOS 和 Android 上的外觀與行為。
 
 Shell 應用程式會在 iOS 和 Android 上使用 `ShellRenderer` 類別來轉譯。 在 iOS 上，`ShellRenderer` 類別可在下列 `Xamarin.Forms.Platform.iOS` 命名空間中找到。 在 Android 上，`ShellRenderer` 類別可在下列 `Xamarin.Forms.Platform.Android` 命名空間中找到。
 
 建立 Shell 自訂轉譯器的流程如下：
 
-1. 將 `Shell` 類別子類別化。 此動作已經在您的 Shell 應用程式中完成。
-1. 取用子類別化的 `Shell` 類別。 此動作已經在您的 Shell 應用程式中完成。
+1. 子 [`Shell`](xref:Xamarin.Forms.Shell) 類別化類別。 此動作已經在您的 Shell 應用程式中完成。
+1. 使用子 [`Shell`](xref:Xamarin.Forms.Shell) 類別化類別。 此動作已經在您的 Shell 應用程式中完成。
 1. 在所需的平台上，建立衍生自 `ShellRenderer` 類別的自訂轉譯器類別。
 
 ## <a name="create-a-custom-renderer-class"></a>建立自訂轉譯器類別
@@ -46,7 +46,7 @@ Shell 應用程式會在 iOS 和 Android 上使用 `ShellRenderer` 類別來轉�
 | --- | --- | --- |
 | `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` | `CreateShellFlyoutTemplateSelector`<br />`CreateShellHeaderRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateFlyoutBackdropColor`<br />`UpdateFlyoutBackgroundColor` |
 
-`FlyoutItem` 和 `TabBar` 類別為 `ShellItem` 類別的別名，而 `Tab` 類別則為 `ShellSection` 類別的別名。 因此，在為 `FlyoutItem` 物件建立自訂轉譯器時，應該覆寫 `CreateShellItemRenderer` 方法，而在為 `Tab` 物件建立自訂轉譯器時應該覆寫 `CreateShellSectionRenderer` 方法。
+[`FlyoutItem`](xref:Xamarin.Forms.FlyoutItem)和 [`TabBar`](xref:Xamarin.Forms.TabBar) 類別是類別的別名 [`ShellItem`](xref:Xamarin.Forms.ShellItem) ，而 [`Tab`](xref:Xamarin.Forms.Tab) 類別是類別的別名 [`ShellSection`](xref:Xamarin.Forms.ShellSection) 。 因此，在為 `FlyoutItem` 物件建立自訂轉譯器時，應該覆寫 `CreateShellItemRenderer` 方法，而在為 `Tab` 物件建立自訂轉譯器時應該覆寫 `CreateShellSectionRenderer` 方法。
 
 > [!IMPORTANT]
 > `ShellSectionRenderer` `ShellItemRenderer` IOS、ANDROID 和 UWP 上有其他的 Shell 轉譯器類別，例如和。 不過，這些其他轉譯器類別都會透過在 `ShellRenderer` 類別中覆寫來建立。 因此，自訂這些其他轉譯器類別的行為可藉由將它們子類別化，並在子類別化之 `ShellRenderer` 類別的適當覆寫中建立該子類別的執行個體來實現。

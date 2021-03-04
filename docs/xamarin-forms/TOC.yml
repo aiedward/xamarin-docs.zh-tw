@@ -308,8 +308,8 @@ items:
             href: app-fundamentals/shell/flyout.md
           - name: 定位點
             href: app-fundamentals/shell/tabs.md
-          - name: 頁面設定
-            href: app-fundamentals/shell/configuration.md
+          - name: 頁面
+            href: app-fundamentals/shell/pages.md
           - name: 巡覽
             href: app-fundamentals/shell/navigation.md
           - name: 搜尋

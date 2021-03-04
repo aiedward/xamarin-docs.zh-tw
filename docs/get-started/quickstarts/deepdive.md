@@ -13,12 +13,12 @@ ms.date: 01/25/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 723ea0f3c6703824bfbfca51f4ecfc8c5ab0b83a
-ms.sourcegitcommit: 0a6b19004932c1ac82e16c95d5d3d5eb35a5b17f
+ms.openlocfilehash: 8e7a5a196dbbd55f8d10d1e1960f6b4c989021dc
+ms.sourcegitcommit: 1b542afc0f6f2f6adbced527ae47b9ac90eaa1de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100255303"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101757652"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入門深入探討
 
@@ -54,7 +54,7 @@ Visual Studio 會將程式碼組織成 *方案* 和 *專案*。 方案是可以�
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac 簡介
 
-[Visual Studio for Mac](/visualstudio/mac/) 遵循將程式碼組織成 *方案* 和 *專案* 的 Visual Studio 做法。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含三項專案的方案所組成，如下列螢幕擷取畫面所示：
+[Visual studio For Mac](/visualstudio/mac/) 遵循 visual studio 的做法，將程式碼組織成 *方案* 和 *專案*。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含三項專案的方案所組成，如下列螢幕擷取畫面所示：
 
 ![Visual Studio for Mac 方案窗格](deepdive-images/vsmac/solution.png)
 
@@ -212,7 +212,7 @@ Xamarin.Forms Shell 應用程式會在子類別化類別的類別中，定義應
 - `TabBar`. 代表底部索引標籤列 `TabBar` ，當應用程式的導覽模式使用底部索引標籤時，則應使用此選項。 `TabBar` 物件是 `Shell` 物件的子系。
 - `ShellContent`，代表中每個索引標籤的 `ContentPage` 物件 `TabBar` 。 每個 `ShellContent` 物件都是物件的子系 `TabBar` 。
 
-這些物件不代表任何使用者介面，而是應用程式視覺階層的組織。 Shell 將會採用這些物件，並產生用於內容的導覽使用者介面。 因此， `AppShell` 類別定義會定義可從底部索引標籤導覽的兩個頁面。 頁面會視需要建立，以回應使用者導覽。
+這些物件不代表任何使用者介面，而是應用程式視覺階層的組織。 Shell 將會採用這些物件，並產生用於內容的導覽使用者介面。 因此， `AppShell` 類別定義會定義可從底部索引標籤導覽的兩個頁面。 頁面會視需要建立，以回應導覽。
 
 如需 Shell 應用程式的詳細資訊，請參閱[ Xamarin.Forms shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
 
@@ -544,7 +544,7 @@ Xamarin.Forms 應用程式通常會包含多個具有相同外觀的視覺元素
 建立時 [`Style`](xref:Xamarin.Forms.Style) ， [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 一律需要屬性。
 
 > [!NOTE]
-> Xamarin.Forms傳統上使用 XAML 樣式來設定應用程式的樣式。 不過， Xamarin.Forms 也支援使用階層式樣式表 (CSS) 來設定視覺元素樣式。 如需詳細資訊，請參閱 [ Xamarin.Forms 使用階層式樣式表 (CSS) 設定應用程式的樣式 ](~/xamarin-forms/user-interface/styles/css/index.md)。
+> Xamarin.Forms傳統上使用 XAML 樣式來設定應用程式的樣式。 不過， Xamarin.Forms 也支援使用級聯樣式表 (CSS) 來設定視覺元素樣式。 如需詳細資訊，請參閱 [ Xamarin.Forms 使用級聯樣式表 (CSS) 來設定應用程式的樣式 ](~/xamarin-forms/user-interface/styles/css/index.md)。
 
 如需 XAML 樣式的詳細資訊，請參閱 [ Xamarin.Forms 使用 xaml 樣式設定應用程式](~/xamarin-forms/user-interface/styles/xaml/index.md)的樣式。
 
@@ -574,7 +574,7 @@ Visual Studio for Mac 和 Visual Studio 都會提供許多選項來測試和部�
 - [eXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.yml)
 - [資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [控制項參考](~/xamarin-forms/user-interface/controls/index.md)
-- [開始範例](/samples/browse/?products=xamarin&term=Xamarin.Forms%2bget%2bstarted)
+- [開始使用範例](/samples/browse/?products=xamarin&term=Xamarin.Forms%2bget%2bstarted)
 - [Xamarin.Forms 樣品](/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.Forms API 參考](xref:Xamarin.Forms)
 
