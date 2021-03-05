@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2021
-ms.openlocfilehash: bc47c9a939188a8bf4d70e11e81e9c43c948f8f4
-ms.sourcegitcommit: 3aa9bdcaaedca74ab5175cb2338a1df122300243
+ms.openlocfilehash: d5222e347967c8ad26e562ce5fba250d19fe4bcc
+ms.sourcegitcommit: 854efa710e5906fdd35cdddb2e8155ffe66b410d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101749300"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102197064"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -46,7 +46,8 @@ Xamarin. Android build process 負責將所有專案互相對應： [ `Resource.
 此程式會加快組建/部署/偵錯工具的速度，因為 *只有* 在變更元件時，不會重新安裝套件。
 只有更新的元件才會重新同步處理至目標裝置。
 
-> [!警告> 快速部署在封鎖的裝置上已知會失敗 `run-as` ，這通常會包含早于 Android 5.0 的裝置。
+> [!WARNING]
+> 快速部署在封鎖的裝置上已知會失敗 `run-as` ，這通常會包含早于 Android 5.0 的裝置。
 
 快速部署預設為啟用狀態，藉由將 `$(EmbedAssembliesIntoApk)` 屬性設定為 `True` 即可在偵錯組建中加以停用。
 
