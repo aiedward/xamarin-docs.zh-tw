@@ -10,17 +10,19 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 02/28/2020
-  ms.openlocfilehash: 247d5b193f075f02837bba4855e69e31171a4d2e
-  ms.sourcegitcommit: c9f62ed4bab516be18606e87e89e01f57b4ad17e
-  ms.translationtype: HT
+  ms.openlocfilehash: f46c5cf6205096b1aa6fea8fe4213b3315161574
+  ms.sourcegitcommit: 5bebaa95da243cc6fa6fbb593a702de69d02e809
+  ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 01/13/2021
-  ms.locfileid: "98163409"
+  ms.lasthandoff: 03/04/2021
+  ms.locfileid: "102110270"
 landingContent:
 - title: 新功能
   linkLists:
   - linkListType: whats-new
     links:
+    - text: 2021年2月
+      url: 2021-02.md
     - text: 2021 年 1 月
       url: 2021-01.md
     - text: 2020 年 8 月
