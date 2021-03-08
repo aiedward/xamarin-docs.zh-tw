@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: 89c6125b4afacd23ddf2c2877c97dff34b5692e3
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 04f1fe980dd9f4bc8c3ee57144fab6f34fdb90cd
+ms.sourcegitcommit: 2d52346fa1407358e57c339a130a2330bad8e5b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436632"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102446446"
 ---
 # <a name="installing-xamarinios-on-windows"></a>在 Windows 上安裝 Xamarin.iOS
 
@@ -50,7 +50,7 @@ _本文說明如何設定 Windows 電腦和 Mac 組建主機來進行 Xamarin.iO
 
 2. 設定 Mac (安裝 Xcode 和 Visual Studio for Mac)
 
-    若要建置、偵錯和簽署 iOS 應用程式進行散發，Visual Studio 2017 必須透過網路存取已設定 Apple 開發人員工具 (Xcode) 和 Xamarin.iOS 的 Mac 組建主機。
+    若要建立、偵測和簽署 iOS 應用程式以進行發佈，Visual Studio 2019 必須能夠存取以 Apple 開發人員工具（ (Xcode) 和 Xamarin）設定的 Mac 組建主機的網路存取權。
 
     - [從 Mac App Store 下載和安裝 Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
     - [安裝 Visual Studio for Mac](/visualstudio/mac/installation)，這也會安裝 Xamarin.iOS。
@@ -110,7 +110,7 @@ _本文說明如何設定 Windows 電腦和 Mac 組建主機來進行 Xamarin.iO
 
 本文說明如何設定 Windows 電腦和其相關聯 Mac 組建主機來進行 Xamarin.iOS 開發。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 - [Xamarin.iOS for Visual Studio 簡介](introduction-to-xamarin-ios-for-visual-studio.md)
 - [設定 Visual Studio 以進行 iOS 開發](config-options.md)

@@ -7,51 +7,51 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 56c9fc307166ec9c72ab6cb1f7a726c4cd12cb3e
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: e7aa47b0d5602d9cdc0eb6e026333cfe85ade933
+ms.sourcegitcommit: 2d52346fa1407358e57c339a130a2330bad8e5b3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997029"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102446472"
 ---
 # <a name="fragments-walkthrough-ndash-phone"></a>片段逐步解說 &ndash; 電話
 
-這是逐步解說的第一個部分，將會建立以直向的 Android 裝置為目標的 Xamarin Android 應用程式。 本逐步解說將討論如何在 Xamarin 中建立片段，以及如何將它們新增至範例。
+這是逐步解說的第一個部分，將建立以直向的 Android 裝置為目標的 Xamarin Android 應用程式。 本逐步解說會討論如何在 Xamarin 中建立片段，以及如何將它們新增至範例。
 
 [![逐步解說應用程式螢幕擷取畫面](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
-將會為此應用程式建立下列類別：
+系統會為此應用程式建立下列類別：
 
-1. `PlayQuoteFragment`&nbsp;此片段會顯示由 William Shakespeare 播放的報價。 它將由主控 `PlayQuoteActivity` 。
-1. `Shakespeare`&nbsp;這個類別會將兩個硬式編碼的陣列保存為屬性。
-1. `TitlesFragment`&nbsp;此片段會顯示 William Shakespeare 所撰寫的播放標題清單。 它將由主控 `MainActivity` 。
-1. `PlayQuoteActivity`&nbsp; `TitlesFragment` 會啟動， `PlayQuoteActivity` 以回應選取 [播放] 的使用者 `TitlesFragment` 。
+1. `PlayQuoteFragment`&nbsp;此片段會顯示 William Shakespeare play 的報價。 它將由裝載 `PlayQuoteActivity` 。
+1. `Shakespeare`&nbsp;此類別會將兩個硬式編碼的陣列保存為屬性。
+1. `TitlesFragment`&nbsp;此片段會顯示 William Shakespeare 所撰寫的播放標題清單。 它將由裝載 `MainActivity` 。
+1. `PlayQuoteActivity`&nbsp; `TitlesFragment` 將會啟動， `PlayQuoteActivity` 以回應選取播放的使用者 `TitlesFragment` 。
 
 ## <a name="1-create-the-android-project"></a>1. 建立 Android 專案
 
-建立名為**FragmentSample**的新 Xamarin. Android 專案。
+建立名為 **FragmentSample** 的新 Xamarin. Android 專案。
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![建立新的 Xamarin.Android 專案](./walkthrough-images/01-newproject.w157-sml.png)](./walkthrough-images/01-newproject.w157.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![建立新的 Xamarin Android 專案](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
+[![建立新的 Xamarin. Android 專案](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
 
-建議您在此逐步解說中選取 [**現代化開發**]。
+建議您在此逐步解說中選取 **新式開發** 。
 
-建立專案之後，將檔案**layout/axml**重新命名為**layout/activity_main. axml**。
+建立專案之後，將檔案配置 **/.axml** 重新命名為 **layout/activity_main. .axml**。
 
 -----
 
 ## <a name="2-add-the-data"></a>2. 新增資料
 
-此應用程式的資料會儲存在兩個已編碼的字串陣列中，其為類別名稱的屬性 `Shakespeare` ：
+此應用程式的資料會儲存在兩個屬於類別名稱屬性的硬式編碼字串陣列中 `Shakespeare` ：
 
-* `Shakespeare.Titles`&nbsp;此陣列會保留 William Shakespeare 的播放清單。 這是的資料來源 `TitlesFragment` 。
-* `Shakespeare.Dialogue`&nbsp;此陣列會保存包含在中的其中一個播放的引號清單 `Shakespeare.Titles` 。 這是的資料來源 `PlayQuoteFragment` 。
+* `Shakespeare.Titles`&nbsp;此陣列將保留 William Shakespeare 的播放清單。 這是的資料來源 `TitlesFragment` 。
+* `Shakespeare.Dialogue`&nbsp;此陣列將會保留其中一個播放的引號清單 `Shakespeare.Titles` 。 這是的資料來源 `PlayQuoteFragment` 。
 
-將新的 c # 類別新增至**FragmentSample**專案，並將其命名為**Shakespeare.cs**。 在此檔案中， `Shakespeare` 使用下列內容建立名為的新 c # 類別
+將新的 c # 類別加入至 **FragmentSample** 專案，並將其命名為 **Shakespeare.cs**。 在此檔案中， `Shakespeare` 使用下列內容建立名為的新 c # 類別
 
 ```csharp
 class Shakespeare
@@ -82,7 +82,7 @@ class Shakespeare
 
 ## <a name="3-create-the-playquotefragment"></a>3. 建立 PlayQuoteFragment
 
-`PlayQuoteFragment`是 Android 片段，會顯示使用者稍早在應用程式中所選取之 Shakespeare 播放的報價，此片段不會使用 Android 配置檔案，而是會以動態方式建立其使用者介面。 將名為 `Fragment` 的新類別新增 `PlayQuoteFragment` 至專案：
+`PlayQuoteFragment`是 Android 片段，它會顯示使用者先前在應用程式中選取的 Shakespeare 播放報價，此片段不會使用 Android 版面配置檔案，而是會動態建立其使用者介面。 將名為 `Fragment` 的新類別新增 `PlayQuoteFragment` 至專案：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -94,7 +94,7 @@ class Shakespeare
 
 -----
 
-然後，將片段的程式碼變更為類似此程式碼片段：
+然後，將片段的程式碼變更為類似下列程式碼片段：
 
 ```csharp
 public class PlayQuoteFragment : Fragment
@@ -129,16 +129,16 @@ public class PlayQuoteFragment : Fragment
 }
 ```
 
-這是 Android 應用程式中常見的模式，可提供將具現化片段的 factory 方法。 這可確保會使用必要的參數來建立片段，以便正常運作。 在此逐步解說中，應用程式預期會在 `PlayQuoteFragment.NewInstance` 每次選取報價時，使用方法來建立新的片段。 此 `NewInstance` 方法會採用單一參數 &ndash; 來顯示報價的索引。
+這是 Android 應用程式中的常見模式，可提供將會具現化片段的 factory 方法。 這可確保會使用必要的參數來建立片段，以便正常運作。 在此逐步解說中，應用程式預期會在 `PlayQuoteFragment.NewInstance` 每次選取報價時使用方法來建立新的片段。 `NewInstance`方法會採用單一參數 &ndash; 來顯示要顯示的報價索引。
 
-`OnCreateView`當您要在螢幕上呈現片段時，Android 會叫用方法。 它會傳回 `View` 屬於片段的 Android 物件。 此片段不會使用版面配置檔案來建立視圖。 相反地，它會以程式設計方式建立**TextView**以保存引號，並將該 widget 顯示在**ScrollView**中。
+`OnCreateView`當您要在螢幕上呈現片段時，Android 會叫用方法。 它會傳回 `View` 屬於片段的 Android 物件。 此片段不會使用版面配置檔案來建立視圖。 相反地，它會藉由具現化 **TextView** 來保存報價，以程式設計方式建立視圖，並將該 widget 顯示在 **ScrollView** 中。
 
 > [!NOTE]
-> 片段子類別必須具有沒有參數的公用預設函式。
+> 片段子類別必須有不具參數的公用預設的函式。
 
 ## <a name="4-create-the-playquoteactivity"></a>4. 建立 PlayQuoteActivity
 
-片段必須裝載于活動內部，因此此應用程式需要將主控的活動 `PlayQuoteFragment` 。 活動會在執行時間以動態方式將片段加入其版面配置中。 將新活動新增至應用程式，並將它命名為 `PlayQuoteActivity` ：
+片段必須裝載于活動內，因此此應用程式需要將裝載的活動 `PlayQuoteFragment` 。 活動會在執行時間以動態方式將片段新增至其版面配置。 將新的活動加入至應用程式，並將其命名為 `PlayQuoteActivity` ：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -153,8 +153,10 @@ public class PlayQuoteFragment : Fragment
 編輯中的程式碼 `PlayQuoteActivity` ：
 
 ```csharp
+using AndroidX.Fragment.App;
+
 [Activity(Label = "PlayQuoteActivity")]
-public class PlayQuoteActivity : Activity
+public class PlayQuoteActivity : FragmentActivity
 {
     protected override void OnCreate(Bundle savedInstanceState)
     {
@@ -163,20 +165,20 @@ public class PlayQuoteActivity : Activity
         var playId = Intent.Extras.GetInt("current_play_id", 0);
 
         var detailsFrag = PlayQuoteFragment.NewInstance(playId);
-        FragmentManager.BeginTransaction()
+        SupportFragmentManager.BeginTransaction()
                         .Add(Android.Resource.Id.Content, detailsFrag)
                         .Commit();
     }
 }
 ```
 
-當 `PlayQuoteActivity` 建立時，它會具現化新的， `PlayQuoteFragment` 並在內容的根視圖中載入該片段 `FragmentTransaction` 。 請注意，此活動不會載入其使用者介面的 Android 配置檔案。 相反地，新的 `PlayQuoteFragment` 會加入至應用程式的根視圖。 資源識別碼 `Android.Resource.Id.Content` 是用來參考活動的根視圖，而不知道它的特定識別碼。
+當 `PlayQuoteActivity` 建立時，它會在的內容中，將新 `PlayQuoteFragment` 的和載入該片段的根視圖中 `FragmentTransaction` 。 請注意，此活動不會為其使用者介面載入 Android 版面配置檔案。 相反 `PlayQuoteFragment` 地，會在應用程式的根視圖中加入新的。 資源識別碼 `Android.Resource.Id.Content` 是用來參考活動的根視圖，而不知道它的特定識別碼。
 
 ## <a name="5-create-titlesfragment"></a>5. 建立 TitlesFragment
 
-`TitlesFragment`會將特定的片段（稱為）子類別化 `ListFragment` ，以封裝在片段中顯示的邏輯 `ListView` 。 會 `ListFragment` 公開 `ListAdapter` 屬性（用 `ListView` 來顯示其內容），以及名為的事件處理常式，可 `OnListItemClick` 讓片段回應所顯示之資料列的按下動作 `ListView` 。
+`TitlesFragment`會將稱為的特製化片段子類別化 `ListFragment` ，以封裝 `ListView` 在片段中顯示的邏輯。 會 `ListFragment` 公開 `ListAdapter` 屬性 (用 `ListView` 來顯示其內容) 以及名為的事件處理常式，可 `OnListItemClick` 讓片段回應所顯示之資料列上的按一下動作 `ListView` 。
 
-若要開始使用，請將新的片段新增至專案，並將其命名為**TitlesFragment**：
+若要開始使用，請在專案中加入新的片段，並將其命名為 **TitlesFragment**：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -191,6 +193,8 @@ public class PlayQuoteActivity : Activity
 編輯片段內的程式碼：
 
 ```csharp
+using AndroidX.Fragment.App;
+
 public class TitlesFragment : ListFragment
 {
     int selectedPlayId;
@@ -200,9 +204,9 @@ public class TitlesFragment : ListFragment
         // Being explicit about the requirement for a default constructor.
     }
 
-    public override void OnActivityCreated(Bundle savedInstanceState)
+    public override void OnCreate(Bundle savedInstanceState)
     {
-        base.OnActivityCreated(savedInstanceState);
+        base.OnCreate(savedInstanceState);
         ListAdapter = new ArrayAdapter<String>(Activity, Android.Resource.Layout.SimpleListItemActivated1, Shakespeare.Titles);
 
         if (savedInstanceState != null)
@@ -231,13 +235,13 @@ public class TitlesFragment : ListFragment
 }
 ```
 
-建立活動時，Android 會叫用 `OnActivityCreated` 片段的方法，這是建立清單介面卡的位置 `ListView` 。  `ShowQuoteFromPlay`方法會啟動的實例， `PlayQuoteActivity` 以顯示所選播放的報價。
+建立活動時，Android 會叫用 `OnCreate` 片段的方法，這是建立清單介面卡的位置 `ListView` 。  `ShowQuoteFromPlay`方法會啟動的實例 `PlayQuoteActivity` ，以顯示所選播放的報價。
 
-## <a name="display-titlesfragment-in-mainactivity"></a>在 MainActivity 中顯示 TitlesFragment
+## <a name="display-titlesfragment-in-mainactivity"></a>在 >mainactivity 中顯示 TitlesFragment
 
-最後一個步驟是 `TitlesFragment` 在中顯示 `MainActivity` 。 活動不會動態載入片段。 而是以靜態方式載入片段，方法是使用元素在活動的配置檔案中宣告 `fragment` 。 將 `android:name` 屬性設定為片段類別（包括類型的命名空間），即可識別要載入的片段。 例如，若要使用 `TitlesFragment` ，則會 `android:name` 設定為 `FragmentSample.TitlesFragment` 。
+最後一個步驟是 `TitlesFragment` 在中顯示 `MainActivity` 。 活動不會動態載入片段。 相反地，會使用專案在活動的版面配置檔案中宣告片段，以靜態方式載入片段 `fragment` 。 要載入的片段是藉由將 `android:name` 屬性設定為片段類別 (，包括) 類型的命名空間來識別。 例如，若要使用 `TitlesFragment` ，則會將 `android:name` 設定為 `FragmentSample.TitlesFragment` 。
 
-編輯設定檔案**activity_main axml**，以下列內容取代現有的 XML：
+編輯版面配置檔案 **activity_main .axml**，並以下列內容取代現有的 XML：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -256,13 +260,15 @@ public class TitlesFragment : ListFragment
 ```
 
 > [!NOTE]
-> `class`屬性是的有效替代 `android:name` 。 沒有慣用的表單指引，有許多程式碼基底範例可 `class` 與互換使用 `android:name` 。
+> `class`屬性是的有效替代 `android:name` 。 慣用的表單沒有正式的指導方針，有許多程式碼基底的範例會 `class` 與一起使用 `android:name` 。
 
-MainActivity 不需要變更程式碼。 該類別中的程式碼應該與此程式碼片段非常類似：
+>mainactivity 不需要變更程式碼。 該類別中的程式碼應該與此程式碼片段非常類似：
 
 ```csharp
+using AndroidX.Fragment.App;
+
 [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-public class MainActivity : Activity
+public class MainActivity : FragmentActivity
 {
     protected override void OnCreate(Bundle savedInstanceState)
     {
@@ -274,8 +280,8 @@ public class MainActivity : Activity
 
 ## <a name="run-the-app"></a>執行應用程式
 
-現在程式碼已完成，請在裝置上執行應用程式，以查看其運作方式。
+現在程式碼已完成，請在裝置上執行應用程式，以查看其實際運作情況。
 
 [![在手機上執行之應用程式的螢幕擷取畫面。](./walkthrough-images/05-app-screenshots-sml.png)](./walkthrough-images/05-app-screenshots.png#lightbox)
 
-[本逐步解說的第2部分](./walkthrough-landscape.md)將針對以橫向模式執行的裝置 optimtize 此應用程式。
+[本逐步解說的第2部分](./walkthrough-landscape.md) 會 optimtize 此應用程式，以供在橫向模式中執行的裝置。
