@@ -8,14 +8,14 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4ab7c5dab6a414e15531e0e0e812d604e05ab1cc
-ms.sourcegitcommit: 3edcc63fcf86409b73cd6e5dc77f0093a99b3f87
+ms.openlocfilehash: 1dba93f5f6f0f81477824d22c616cd4a4c2d0b41
+ms.sourcegitcommit: b6f6dd231b6bef2df8b7f8e4c530c9aead70809a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98062598"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102498385"
 ---
-# <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
+# <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
 **WebAuthenticator** 類別可讓您起始以瀏覽器為基礎的流程，此流程會接聽對應用程式註冊之特定 URL 的回呼。
 
@@ -112,13 +112,17 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 針對 UWP，您必須在檔案中宣告您的回呼 URI `Package.appxmanifest` ：
 
 ```xml
-    <Extensions>
-        <uap:Extension Category="windows.protocol">
+<Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MyApp.App">
+        <Extensions>
+            <uap:Extension Category="windows.protocol">
             <uap:Protocol Name="myapp">
                 <uap:DisplayName>My App</uap:DisplayName>
             </uap:Protocol>
-        </uap:Extension>
-    </Extensions>
+            </uap:Extension>
+        </Extensions>
+    </Application>
+</Applications>
 ```
 
 -----
@@ -268,11 +272,11 @@ public class AuthController : ControllerBase
 查看 Essentials 存放庫中的 [完整控制器範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Controllers/MobileAuthController.cs) 。
 
 > [!NOTE]
-> 上述範例示範如何從協力廠商驗證 (ie： OAuth) 提供者傳回存取權杖。 若要取得權杖，讓您可以用來授權 web 後端本身的 web 要求，您應該在 web 應用程式中建立自己的權杖，並改為傳回該權杖。  [ASP.NET Core authentication 的總覽](/aspnet/core/security/authentication)有 ASP.NET Core 中 advanced authentication 案例的詳細資訊。
+> 上述範例示範如何從協力廠商驗證 (ie： OAuth) 提供者傳回存取權杖。 若要取得權杖，讓您可以用來授權 web 後端本身的 web 要求，您應該在 web 應用程式中建立自己的權杖，並改為傳回該權杖。  [ASP.NET core authentication 的總覽](/aspnet/core/security/authentication)具有有關 ASP.NET Core 中 advanced authentication 案例的詳細資訊。
 
 -----
 ## <a name="api"></a>API
 
 - [WebAuthenticator 來源程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/WebAuthenticator)
 - [WebAuthenticator API 檔](xref:Xamarin.Essentials.WebAuthenticator)
-- [ASP.NET Core 伺服器範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/)
+- [ASP.NET 核心伺服器範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/)
