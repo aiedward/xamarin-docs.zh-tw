@@ -6,16 +6,16 @@ ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/23/2021
+ms.date: 03/09/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d714b38dd838ef0779802dc7ca8c050dbd4464b
-ms.sourcegitcommit: 1b542afc0f6f2f6adbced527ae47b9ac90eaa1de
+ms.openlocfilehash: d8c4337a09044756a1ea453cbf67afb50f13bb08
+ms.sourcegitcommit: c153247dc069e5393e5bf492465cdb08530c8d7b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101757531"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102511536"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
 
@@ -274,7 +274,7 @@ public class MyTab : Tab
 
 [`Shell`](xref:Xamarin.Forms.Shell)類別 [`Navigating`](xref:Xamarin.Forms.Shell.Navigating) 會定義事件，此事件會在導覽即將執行時引發，這可能是因為程式設計流覽或使用者互動所造成。 [`ShellNavigatingEventArgs`](xref:Xamarin.Forms.ShellNavigatingEventArgs)事件隨附的物件 `Navigating` 提供下列屬性：
 
-| 屬性 | 類型 | 描述 |
+| 屬性 | 類型 | Description |
 |---|---|---|
 | [`Current`](xref:Xamarin.Forms.ShellNavigatingEventArgs.Current) | [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) | 目前頁面的 URI。 |
 | [`Source`](xref:Xamarin.Forms.ShellNavigatingEventArgs.Source) | [`ShellNavigationSource`](xref:Xamarin.Forms.ShellNavigationSource) | 發生導覽的類型。 |
@@ -286,7 +286,7 @@ public class MyTab : Tab
 
 [`Shell`](xref:Xamarin.Forms.Shell)類別也會定義在 [`Navigated`](xref:Xamarin.Forms.Shell.Navigated) 導覽完成時引發的事件。 [`ShellNavigatedEventArgs`](xref:Xamarin.Forms.ShellNavigatedEventArgs)事件隨附的物件 `Navigated` 提供下列屬性：
 
-| 屬性 | 類型 | 描述 |
+| 屬性 | 類型 | Description |
 |---|---|---|
 | [`Current`](xref:Xamarin.Forms.ShellNavigatedEventArgs.Current)  | [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) | 目前頁面的 URI。 |
 | [`Previous`](xref:Xamarin.Forms.ShellNavigatedEventArgs.Previous) | [`ShellNavigationState`](xref:Xamarin.Forms.ShellNavigationState) | 上一頁的 URI。 |
@@ -365,7 +365,14 @@ async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEvent
 
 這個程式碼範例會在中取出目前選取的大象 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，並流覽至 `elephantdetails` 路由，並以 `elephantName` 查詢參數的形式傳遞。
 
-若要接收資料，表示要導覽的頁面或頁面的類別 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ，必須使用 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) for each query 參數裝飾：
+有兩種方式可以接收導覽資料：
+
+1. 代表要流覽之頁面的類別，或頁面的類別 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ，可以使用 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) for each query 參數裝飾。 如需詳細資訊，請參閱 [使用查詢屬性屬性處理導覽資料](#process-navigation-data-using-query-property-attributes)。
+1. 代表正在流覽之頁面的類別，或頁面的類別 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 可以實作為 [`IQueryAttributable`](xref:Xamarin.Forms.IQueryAttributable) 介面。 如需詳細資訊，請參閱 [使用單一方法處理流覽資料](#process-navigation-data-using-a-single-method)。
+
+### <a name="process-navigation-data-using-query-property-attributes"></a>使用查詢屬性屬性處理導覽資料
+
+您可以使用 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) for each query 參數裝飾接收類別，來接收導覽資料：
 
 ```csharp
 [QueryProperty(nameof(Name), "name")]
@@ -397,10 +404,49 @@ public partial class ElephantDetailPage : ContentPage
 
 的第一個引數 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) 會指定將接收資料之屬性的名稱，而第二個引數則指定查詢參數識別碼。因此， `QueryPropertyAttribute` 上述範例中的 `Name` 會指定屬性將 `name` 從方法呼叫中的 URI 接收查詢參數中傳遞的資料 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) 。 `Name`屬性 setter `LoadAnimal` 會呼叫方法來取出 `Animal` 的物件 `name` ，並將它設定為 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 頁面的。
 
-> [!IMPORTANT]
-> 查詢參數值會自動進行 URL 解碼。
+> [!NOTE]
+> 透過接收的查詢參數值會 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) 自動進行 URL 解碼。
 
-### <a name="pass-multiple-query-parameters"></a>傳遞多個查詢參數
+### <a name="process-navigation-data-using-a-single-method"></a>使用單一方法處理導覽資料
+
+您可以藉由在接收類別上執行介面來接收導覽資料 [`IQueryAttributable`](xref:Xamarin.Forms.IQueryAttributable) 。 [`IQueryAttributable`](xref:Xamarin.Forms.IQueryAttributable)介面會指定實類別必須執行 [`ApplyQueryAttributes`](xref:Xamarin.Forms.IQueryAttributable.ApplyQueryAttributes*) 方法。 這個方法具有 `query` 類型的引數， `IDictionary<string, string>` 其中包含導覽期間傳遞的任何資料。 字典中的每個索引鍵都是查詢參數識別碼，其值為查詢參數值。 使用這種方法的優點是可以使用單一方法來處理導覽資料，當您有多個需要整個處理的導覽資料項目目時，這會很有用。
+
+下列範例顯示的視圖模型類別會實 [`IQueryAttributable`](xref:Xamarin.Forms.IQueryAttributable) 介面：
+
+```csharp
+public class MonkeyDetailViewModel : IQueryAttributable, INotifyPropertyChanged
+{
+    public Animal Monkey { get; private set; }
+
+    public void ApplyQueryAttributes(IDictionary<string, string> query)
+    {
+        // The query parameter requires URL decoding.
+        string name = HttpUtility.UrlDecode(query["name"]);
+        LoadAnimal(name);
+    }
+
+    void LoadAnimal(string name)
+    {
+        try
+        {
+            Monkey = MonkeyData.Monkeys.FirstOrDefault(a => a.Name == name);
+            OnPropertyChanged("Monkey");
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("Failed to load animal.");
+        }
+    }
+    ...
+}
+```
+
+在此範例中， [`ApplyQueryAttributes`](xref:Xamarin.Forms.IQueryAttributable.ApplyQueryAttributes*) 方法會 `name` 從方法呼叫中的 URI 抓取查詢參數的值 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) 。 然後， `LoadAnimal` 呼叫方法以抓取 `Animal` 物件，其設定為數據所系結之屬性的值 `Monkey` 。
+
+> [!IMPORTANT]
+> 透過介面接收的查詢參數值 [`IQueryAttributable`](xref:Xamarin.Forms.IQueryAttributable) 不會自動進行 URL 解碼。
+
+#### <a name="pass-and-process-multiple-query-parameters"></a>傳遞和處理多個查詢參數
 
 您可以透過連接多個查詢參數來傳遞這些參數 `&` 。 例如，下列程式碼會傳遞兩個數據項：
 
@@ -415,7 +461,7 @@ async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEvent
 
 這個程式碼範例會取出中目前選取的大象 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ，並流覽至 `elephantdetails` 路由， `elephantName` 並傳遞和 `elephantLocation` 作為查詢參數。
 
-若要接收資料，表示要導覽的頁面或頁面的類別 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ，必須使用 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) for each query 參數裝飾：
+若要接收多個資料項目目，代表要導覽之頁面的類別，或頁面的類別 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ，可以使用 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) for each 查詢參數裝飾：
 
 ```csharp
 [QueryProperty(nameof(Name), "name")]
@@ -442,6 +488,25 @@ public partial class ElephantDetailPage : ContentPage
 ```
 
 在此範例中，類別是以 [`QueryPropertyAttribute`](xref:Xamarin.Forms.QueryPropertyAttribute) for each query 參數的來裝飾。 第一個 `QueryPropertyAttribute` `Name` 會指定屬性將接收查詢參數中所傳遞的資料 `name` ，而第二個指定屬性 `QueryPropertyAttribute` `Location` 將接收 `location` 查詢參數中傳遞的資料。 在這兩種情況下，查詢參數值都是在方法呼叫的 URI 中指定 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) 。
+
+或者，您可以藉由在 [`IQueryAttributable`](xref:Xamarin.Forms.IQueryAttributable) 代表所要流覽之頁面的類別上執行介面，或在頁面的類別中，藉由單一方法來處理導覽資料 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ：
+
+```csharp
+public class ElephantDetailViewModel : IQueryAttributable, INotifyPropertyChanged
+{
+    public Animal Elephant { get; private set; }
+
+    public void ApplyQueryAttributes(IDictionary<string, string> query)
+    {
+        string name = HttpUtility.UrlDecode(query["name"]);
+        string location = HttpUtility.UrlDecode(query["location"]);
+        ...        
+    }
+    ...
+}
+```
+
+在此範例中， [`ApplyQueryAttributes`](xref:Xamarin.Forms.IQueryAttributable.ApplyQueryAttributes*) 方法會 `name` `location` 從方法呼叫中的 URI 抓取和查詢參數的值 [`GoToAsync`](xref:Xamarin.Forms.Shell.GoToAsync*) 。
 
 ## <a name="back-button-behavior"></a>上一頁按鈕行為
 
