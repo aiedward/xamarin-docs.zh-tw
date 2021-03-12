@@ -1,28 +1,28 @@
 ---
-title: Xamarin Designer for iOS 中的自訂控制項
-description: Xamarin Designer for iOS 支援轉譯在您的專案中建立的自訂控制項，或從像是 Xamarin 元件存放區的外部來源參考。
+title: 適用于 iOS 的 Xamarin 設計工具中的自訂控制項
+description: 適用于 iOS 的 Xamarin Designer 支援轉譯在您的專案中建立的自訂控制項，或從像是 Xamarin 元件存放區的外部來源參考。
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 593f03588d691071d4a231d9ed788391530d5608
-ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
+ms.openlocfilehash: 85a1c66f7cc72cc66069c86282821050ad4eb683
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96439419"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602732"
 ---
-# <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 中的自訂控制項
+# <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>適用于 iOS 的 Xamarin 設計工具中的自訂控制項
 
-_Xamarin Designer for iOS 支援轉譯在您的專案中建立的自訂控制項，或從像是 Xamarin 元件存放區的外部來源參考。_
+_適用于 iOS 的 Xamarin Designer 支援轉譯在您的專案中建立的自訂控制項，或從像是 Xamarin 元件存放區的外部來源參考。_
 
 > [!WARNING]
-> IOS 設計工具將開始在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 8.8 版中推出。
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
 > 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 的 Mac 上執行。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](../storyboards/index.md)。 
 
-Xamarin Designer for iOS 是一種功能強大的工具，可將應用程式的使用者介面視覺化，並針對大部分的 iOS 視圖和視圖控制器提供 WYSIWYG 編輯支援。 您的應用程式也可能包含可延伸內建至 iOS 的自訂控制項。 如果在撰寫這些自訂控制項時，有一些指導方針，也可以由 iOS 設計工具來呈現，以提供更豐富的編輯體驗。 本檔將探討這些指導方針。
+適用于 iOS 的 Xamarin 設計工具是一種功能強大的工具，可將應用程式的使用者介面視覺化，並針對大部分的 iOS 視圖和視圖控制器提供 WYSIWYG 編輯支援。 您的應用程式也可能包含可延伸內建至 iOS 的自訂控制項。 如果在撰寫這些自訂控制項時，有一些指導方針，也可以由 iOS 設計工具來呈現，以提供更豐富的編輯體驗。 本檔將探討這些指導方針。
 
 ## <a name="requirements"></a>規格需求
 

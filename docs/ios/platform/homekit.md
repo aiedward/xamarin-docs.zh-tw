@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 7d5c5a6543da701b70532134d8ae901564e5c0b8
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 54b3b361110d3ad63effe0c2afc77a6398ab8034
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430167"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602992"
 ---
 # <a name="homekit-in-xamarinios"></a>在 Xamarin 中 HomeKit
 
@@ -25,7 +25,7 @@ Apple 在 iOS 8 中引進了 HomeKit，可將多個家庭自動化裝置從不�
 透過 HomeKit，您可以建立可控制任何已啟用 HomeKit 之裝置的 Xamarin iOS 應用程式，而不需使用廠商提供的 Api 或應用程式。 使用 HomeKit，您可以執行下列動作：
 
 - 探索已啟用新 HomeKit 的家用自動化裝置，並將其新增至將在所有使用者的 iOS 裝置上保存的資料庫。
-- 設定、設定、顯示及控制 HomeKit _Home Configuration 資料庫_中的任何裝置。
+- 設定、設定、顯示及控制 HomeKit _Home Configuration 資料庫_ 中的任何裝置。
 - 與任何預先設定的 HomeKit 裝置通訊，然後命令以執行個別動作或工作，例如開啟廚房中的所有燈光。
 
 除了將 Home 設定資料庫中的裝置提供給 HomeKit 啟用的應用程式之外，HomeKit 還提供 Siri voice 命令的存取權。 有了適當設定的 HomeKit 設定，使用者就可以發出語音命令，例如「Siri，開啟客廳中的燈光」。
@@ -58,8 +58,8 @@ HomeKit 會將指定位置中的所有自動化裝置組織成一個首頁集合
 4. 確定已檢查 **HomeKit** 服務是否有指定的識別碼： 
 
     [![為指定的識別碼啟用 HomeKit 服務](homekit-images/provision01.png)](homekit-images/provision01.png#lightbox)
-5. 儲存變更。
-6. 按一下 [布建**設定檔**  >  **開發**]，並為您的應用程式建立新的開發布建設定檔： 
+5. 儲存您的變更。
+6. 按一下 [布建 **設定檔**  >  **開發**]，並為您的應用程式建立新的開發布建設定檔： 
 
     [![為應用程式建立新的開發提供設定檔](homekit-images/provision02.png)](homekit-images/provision02.png#lightbox)
 7. 請下載並安裝新的布建設定檔，或使用 Xcode 下載並安裝設定檔。
@@ -81,7 +81,7 @@ HomeKit 會將指定位置中的所有自動化裝置組織成一個首頁集合
 
 ## <a name="the-homekit-accessory-simulator"></a>HomeKit 配件模擬器
 
-為了提供測試所有可能家用自動化裝置和服務的方法，而不需要有實體裝置，Apple 建立了 _HomeKit 的配件_模擬器。 您可以使用此模擬器來設定和設定虛擬 HomeKit 裝置。
+為了提供測試所有可能家用自動化裝置和服務的方法，而不需要有實體裝置，Apple 建立了 _HomeKit 的配件_ 模擬器。 您可以使用此模擬器來設定和設定虛擬 HomeKit 裝置。
 
 ### <a name="installing-the-simulator"></a>安裝模擬器
 
@@ -131,7 +131,7 @@ Apple 提供 HomeKit 配件模擬器作為 Xcode 的個別下載，因此您必�
 
 若要設定此機碼，請執行下列動作：
 
-1. 按兩下 `Info.plist` **方案總管** 中的檔案，將它開啟以供編輯。
+1. `Info.plist`在 [**方案瀏覽器**] 中按兩下該檔案以開啟它進行編輯。
 2. 在畫面底部，切換至 [ **來源** ] view。
 3. 將新 **專案** 新增至清單。
 4. 從下拉式清單中，選取 [ **隱私權-HomeKit 使用方式描述**： 
@@ -229,7 +229,7 @@ ThisApp.HomeManager.DidUpdateHomes += (sender, e) => {
 
 如果的 `PrimaryHome` 屬性是在 `HMHomeManager` `null` `DidUpdateHomes` 事件之後，您必須提供方法讓使用者在繼續之前，先建立並指派主要首頁。
 
-應用程式通常會顯示一個表單，讓使用者命名新的首頁，然後將其傳遞給 Home Manager，以設定為主要首頁。 針對 **HomeKitIntro** 範例應用程式，會在 IOS 設計工具中建立模式視圖，並由 `AddHomeSegue` segue 從應用程式的主要介面呼叫。
+應用程式通常會顯示一個表單，讓使用者命名新的首頁，然後將其傳遞給 Home Manager，以設定為主要首頁。 針對 **HomeKitIntro** 範例應用程式，會在 Xcode Interface Builder 中建立模式視圖，並由 `AddHomeSegue` segue 從應用程式的主要介面呼叫。
 
 它會提供文字欄位，讓使用者輸入新首頁的名稱，以及用來新增首頁的按鈕。 當使用者按下 [ **新增首頁** ] 按鈕時，下列程式碼會呼叫「首頁管理員」來新增首頁：
 
@@ -425,7 +425,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 - 製造商
 - 模型
 - MotionDetected
-- 名稱
+- Name
 - ObstructionDetected
 - OccupancyDetected
 - OutletInUse
@@ -665,22 +665,22 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 
 本文涵蓋了在 Xamarin iOS 應用程式中使用 HomeKit 附屬應用程式所需的基本功能。 不過，本簡介中未涵蓋 HomeKit 的數個先進功能：
 
-- HomeKit**啟用的配件**可以選擇性地組織到使用者的房間。 如此一來，HomeKit 就能以方便使用者瞭解和使用的方式呈現配件。 如需有關建立和維護房間的詳細資訊，請參閱 Apple 的 [HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom) 檔。
+- HomeKit **啟用的配件** 可以選擇性地組織到使用者的房間。 如此一來，HomeKit 就能以方便使用者瞭解和使用的方式呈現配件。 如需有關建立和維護房間的詳細資訊，請參閱 Apple 的 [HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom) 檔。
 - **區域** -房間可以選擇性地依使用者組織至區域。 區域指的是使用者可能視為單一單位的房間集合。 例如：樓上、樓下或下出。 同樣地，這讓 HomeKit 能以對終端使用者有意義的方式來呈現和使用配件。 如需有關建立和維護區域的詳細資訊，請參閱 Apple 的 [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone) 檔。
 - **動作和動作集** -動作會修改配件服務特性，並且可以分組到集合中。 動作集的作用如同腳本，可控制一組附屬應用程式並協調其動作。 例如，「觀賞電視」腳本可能會關閉遮蔽、使燈光變暗，以及開啟電視及其音效系統。 如需建立和維護動作和動作集的詳細資訊，請參閱 Apple 的 [HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction) 和 [HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet) 檔。
 - **觸發** 程式-觸發程式可以在符合一組特定條件時啟用一或多個動作集。 例如，開啟 portch 燈光，並在外部的外部大門變暗時，鎖定所有外部門。 如需有關建立和維護觸發程式的詳細資訊，請參閱 Apple 的 [HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger) 檔。
 
-由於這些功能使用上述相同的技術，因此您應該遵循 Apple 的 [HomeKitDeveloper 指南](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)、 [HomeKit 消費者介面指導方針](https://developer.apple.com/homekit/ui-guidelines/) 和 [HomeKit 架構參考](https://developer.apple.com/library/ios/home_kit_framework_ref)，輕鬆地執行這些功能。
+由於這些功能使用上述相同的技術，因此您應該遵循 Apple 的 [HomeKitDeveloper 指南](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)、 [HomeKit 使用者介面指導方針](https://developer.apple.com/homekit/ui-guidelines/) 和 [HomeKit 架構參考](https://developer.apple.com/library/ios/home_kit_framework_ref)，輕鬆地執行這些功能。
 
 ## <a name="homekit-app-review-guidelines"></a>HomeKit 應用程式審查指導方針
 
-將已啟用 HomeKit 的 Xamarin iOS 應用程式提交至 itunes App Store 中的 release Connect 之前，請確定您遵循 Apple 的 HomeKit 啟用應用程式指導方針：
+在 iTunes App Store 中將已啟用 HomeKit 的 Xamarin iOS 應用程式提交至 iTunes Connect 以進行發行之前，請確定您遵循 Apple 的 HomeKit 啟用應用程式指導方針：
 
 - 如果使用 HomeKit 架構，則應用程式的主要用途 _必須_ 是 home automation。
 - 應用程式的行銷文字必須通知使用者正在使用 HomeKit，而且必須提供隱私權原則。
 - 嚴格禁止收集使用者資訊或使用 HomeKit 進行廣告。
 
-如需完整的審查指導方針，請參閱 Apple 的 [App Store 審核指導方針](https://developer.apple.com/app-store/review/guidelines/)。
+如需完整的審查指導方針，請參閱 Apple 的 [App Store 審核指南](https://developer.apple.com/app-store/review/guidelines/)。
 
 ## <a name="whats-new-in-ios-9"></a>IOS 9 的新功能
 
@@ -693,10 +693,10 @@ Apple 已針對 iOS 9 的 HomeKit 進行下列變更和新增：
 - **預先** 定義的場景預先定義的場景，已針對平均 HomeKit 使用者所發生的四個常見事件建立：開始使用、離開、返回、前往床。 這些預先定義的場景無法從家裡刪除。
 - **場景和 Siri** -Siri 在 iOS 9 中有更深入的場景支援，而且可以辨識 HomeKit 中定義之任何場景的名稱。 使用者只要說出其名稱就可以執行場景 Siri。
 - **配件分類** -一組預先定義的類別已新增至所有配件，有助於識別要新增至家裡或從您的應用程式中處理的配件類型。 這些新類別可在配件設定期間使用。
-- **Apple Watch 支援** -HomeKit 現在可供 watchOS 使用，且 Apple Watch 將可在監看不到 iPhone 的情況下，控制已啟用 HomeKit 的裝置。 HomeKit for watchOS 支援下列功能：觀賞房屋、控制附屬應用程式，以及執行場景。
+- **Apple Watch 支援** -HomeKit 現在可供 watchOS 使用，且 Apple watch 將能夠控制 HomeKit 啟用的裝置，而不需要 iPhone 的監看式。 HomeKit for watchOS 支援下列功能：觀賞房屋、控制附屬應用程式，以及執行場景。
 - **新的事件觸發程式類型** -除了 ios 8 中支援的計時器類型觸發程式之外，ios 9 現在也支援以配件狀態 (（例如感應器資料) 或地理位置）為基礎的事件觸發程式。 事件觸發 `NSPredicates` 程式用來設定其執行的條件。
 - **遠端存取** -透過「遠端存取」，使用者現在可以在遠端位置離開辦公室時，控制其已啟用 HomeKit 的家用自動化配件。 在 iOS 8 中，只有在使用者在家中有第三代 Apple 電視時，才支援此功能。 在 iOS 9 中，會提高這項限制，並透過 iCloud 和 HomeKit 附屬通訊協定 (HAP) 支援遠端存取。
-- **新的藍牙低能量 (BLE) 能力** -HomeKit 現在支援更多可透過藍牙低能源 (BLE) 通訊協定進行通訊的配件類型。 使用 HAP 安全通道時，HomeKit 配件可能會透過 Wi-fi (公開另一個藍牙配件（如果它超出藍牙範圍) ）。 在 iOS 9 中，BLE 配件具有通知和中繼資料的完整支援。
+- **新的藍牙低能量 (BLE) 能力** -HomeKit 現在支援更多可透過藍牙低能源 (BLE) 通訊協定進行通訊的配件類型。 使用 HAP 安全通道時，HomeKit 配件可以公開另一個 Bluetooth 配件，Wi-Fi (如果它不在藍牙範圍) 。 在 iOS 9 中，BLE 配件具有通知和中繼資料的完整支援。
 - **新的配件類別** -Apple 在 iOS 9 中新增了下列新的配件類別： Window Coverings、電動大門和 Windows、鬧鐘系統、感應器和可程式化參數。
 
 如需 iOS 9 中 HomeKit 新功能的詳細資訊，請參閱 Apple 的 [HomeKit 索引](https://developer.apple.com/homekit/) 和 [HomeKit 影片中的新](https://developer.apple.com/videos/wwdc/2015/?id=210) 功能。
@@ -711,5 +711,5 @@ Apple 已針對 iOS 9 的 HomeKit 進行下列變更和新增：
 - [適用于開發人員的 iOS 9](https://developer.apple.com/ios/pre-release/)
 - [IOS 9.0 的新功能](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [HomeKitDeveloper 指南](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)
-- [HomeKit 消費者介面指導方針](https://developer.apple.com/homekit/ui-guidelines/)
+- [HomeKit 使用者介面指導方針](https://developer.apple.com/homekit/ui-guidelines/)
 - [HomeKit 架構參考](https://developer.apple.com/library/ios/home_kit_framework_ref)

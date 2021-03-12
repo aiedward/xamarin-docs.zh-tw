@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 0bfb4168e3d990ae1afb3ee2022553053c383083
-ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
+ms.openlocfilehash: 00945fa528fb0221080d2b2546fd56a07cb481d9
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98697588"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102603070"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Xamarin 中的進度和活動指示器
 
@@ -33,12 +33,6 @@ Apple 針對使用活動指標有下列建議：
 ### <a name="implementing-an-activity-indicator"></a>執行活動指標
 
 活動指標是透過 [`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView) 類別來執行，以表示正在進行 `UIActivity` 。
-
-### <a name="activity-indicators-and-storyboards"></a>活動指標和分鏡腳本
-
-如果您使用 iOS 設計工具建立 UI，則可以從 [工具箱] 將活動指標加入至您的版面配置。 您可以從 Properties Pad 調整下列屬性：
-
-![螢幕擷取畫面：顯示您可以在其中修改樣式、色彩和行為屬性的 Properties Pad。](progress-activity-indicator-images/progress-indicator1.png)
 
 ### <a name="managing-activity-indicator-behavior"></a>管理活動指標行為
 
@@ -75,7 +69,7 @@ Apple 針對使用進度列有下列建議：
 
 下列屬性可以在 properties pad 上調整：
 
-![螢幕擷取畫面顯示 Properties Pad，您可以在其中修改樣式、進度、進度色調、追蹤色調、進度影像，以及追蹤影像屬性。](progress-activity-indicator-images/progress-indicator3.png)
+![螢幕擷取畫面顯示 [屬性] 面板，您可以在其中修改樣式、進度、進度色調、追蹤色調、進度影像，以及追蹤影像屬性。](progress-activity-indicator-images/progress-indicator3.png)
 
 ### <a name="managing-progress-bar-behavior"></a>管理進度列行為
 

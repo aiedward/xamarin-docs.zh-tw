@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 7e56eed866cb647bd654370d587b02bcaba04d4e
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 5bea776f1f2046a6cad3651456a179d7efb59ebe
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432810"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602784"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 疑難排解
 
@@ -23,7 +23,7 @@ ms.locfileid: "91432810"
 
 - [從圖示影像中移除 Alpha 通道](#noalpha)
 
-- [手動新增](#add) Xcode Interface Builder 的介面控制器檔案。
+- [手動新增](#add) Xcode interface Builder 的介面控制器檔案。
 
 - [從命令列啟動 WatchApp](#command_line)。
 
@@ -35,12 +35,12 @@ ms.locfileid: "91432810"
 
 <a name="deploy"></a>
 
-- 較早版本的 Visual Studio for Mac 不正確地將其中一個 **AppleCompanionSettings** 圖示顯示為88x88 圖元;如果您嘗試提交給 App Store，這會導致 **遺失圖示錯誤** 。
-    此圖示應為 Retina 畫面)  (29 個單位的87x87 圖元 **@3x** 。 您無法在 Visual Studio for Mac 中修正此問題-請在 Xcode 中編輯影像資產，或手動編輯檔案的 **Contents.js** 。
+- 舊版 Visual Studio for Mac 會錯誤地將其中一個 **AppleCompanionSettings** 圖示顯示為88x88 圖元;如果您嘗試提交至 App Store，這會導致 **遺失圖示錯誤** 。
+    此圖示應為 Retina 畫面)  (29 個單位的87x87 圖元 **@3x** 。 您無法在 Visual Studio for Mac 中修正此問題-請編輯 Xcode 中的影像資產，或手動編輯檔案 **上的Contents.js** 。
 
-- 如果 Watch 延伸模組專案的 **Info. plist > WKApp** 套件組合識別碼未 [正確設定](~/ios/watchos/get-started/project-references.md) 為符合 Watch 應用程式套件組合 **識別碼**，則偵錯工具將無法連線，而且 Visual Studio for Mac 將會等候訊息「 *正在等候偵錯工具連接*」。
+- 如果 Watch 延伸模組專案的 **資訊. plist > WKApp** 套件組合識別碼未 [正確設定](~/ios/watchos/get-started/project-references.md) 為符合 Watch 應用程式套件組合 **識別碼**，則偵錯工具將無法連線，且 Visual Studio for Mac 將會等候訊息「 *正在等候偵錯工具連接*」。
 
-- **通知**模式支援偵錯工具，但可能不可靠。 重試有時會正常運作。 確認 Watch 應用程式的 **資訊 plist** `WKCompanionAppBundleIdentifier` 已設定為符合 iOS 父/容器應用程式的套件組合識別碼， (Ie. 在 iPhone) 上執行的應用程式。
+- **通知** 模式支援偵錯工具，但可能不可靠。 重試有時會正常運作。 確認 Watch 應用程式的 **資訊 plist** `WKCompanionAppBundleIdentifier` 已設定為符合 iOS 父/容器應用程式的套件組合識別碼， (Ie. 在 iPhone) 上執行的應用程式。
 
 - iOS 設計工具不會顯示快速概覽或通知介面控制器的進入點箭號。
 
@@ -52,15 +52,11 @@ ms.locfileid: "91432810"
 - 當您嘗試啟動應用程式時，可能會看到錯誤「尚未建立應用程式」。 當啟始專案設定為 watch 延伸模組專案時，就會發生 **這種情況** 。
     修正方法是選取 **組建 > 全部重建** ，然後重新開機應用程式。
 
-### <a name="visual-studio"></a>Visual Studio
-
-Watch 套件的 iOS 設計工具支援 *需要* 正確設定解決方案。 如果未設定專案參考 (請參閱 [如何設定參考](~/ios/watchos/get-started/project-references.md)) 然後設計介面將無法正常運作。
-
 <a name="noalpha"></a>
 
 ## <a name="removing-the-alpha-channel-from-icon-images"></a>從圖示影像中移除 Alpha 通道
 
-圖示不應包含 Alpha 色板 (Alpha 通道會定義影像) 的透明區域，否則應用程式將會在 App Store 提交期間遭到拒絕，並出現類似下面的錯誤：
+圖示不應包含 Alpha 色板 (Alpha 通道會定義影像) 的透明區域，否則應用程式會在應用程式商店提交期間遭到拒絕，並出現類似下面的錯誤：
 
 ```csharp
 Invalid Icon - The watch application '...watchkitextension.appex/WatchApp.app'
@@ -85,13 +81,13 @@ with an alpha channel. Icons should not have an alpha channel.
 ## <a name="manually-adding-interface-controller-files"></a>手動新增介面控制器檔案
 
 > [!IMPORTANT]
-> Xamarin 的 WatchKit 支援包括在 iOS 設計工具中設計監看式分鏡腳本 (在 Visual Studio for Mac 和 Visual Studio) ，不需要執行下列步驟。 只要在 Visual Studio for Mac Properties pad 中提供介面控制器的類別名稱，系統就會自動建立 c # 程式碼檔案。
+> Xamarin 的 WatchKit 支援包括在 iOS 設計工具中設計 watch 腳本 (在 Visual Studio for Mac 和 Visual Studio) 中，這不需要下列步驟。 只要將 Visual Studio for Mac Properties pad 中的類別名稱提供給介面控制器，就會自動建立 c # 程式碼檔案。
 
-*如果* 您使用 Xcode Interface Builder，請遵循下列步驟來為您的 watch 應用程式建立新的介面控制器，並啟用與 Xcode 的同步處理，以便在 c # 中使用輸出和動作：
+*如果* 您使用 Xcode 介面產生器，請遵循下列步驟來為您的 watch 應用程式建立新的介面控制器，並啟用與 Xcode 的同步處理，以便在 c # 中使用輸出和動作：
 
-1. 開啟 watch 應用程式的 **介面。** **Xcode Interface Builder**中的分鏡腳本。
+1. 開啟 watch 應用程式的 **介面。** **Xcode interface Builder** 中的分鏡腳本。
 
-    ![在 Xcode 中開啟分鏡腳本 Interface Builder](troubleshooting-images/add-6.png)
+    ![在 Xcode Interface Builder 中開啟分鏡腳本](troubleshooting-images/add-6.png)
 
 2. 將新的拖曳 `InterfaceController` 至腳本：
 
@@ -101,7 +97,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
     ![版面配置中的按鈕](troubleshooting-images/add-2.png)
 
-4. 關閉腳本並返回 Visual Studio for Mac。 建立新的 c # 檔案 **MyInterfaceController.cs** (或您喜歡的任何名稱) 在 **watch 應用程式擴充** 功能專案中 (不是) 腳本的監看式應用程式本身。 加入下列程式碼， (更新命名空間、classname 和) 的函式名稱：
+4. 關閉腳本，並返回 Visual Studio for Mac。 建立新的 c # 檔案 **MyInterfaceController.cs** (或您喜歡的任何名稱) 在 **watch 應用程式擴充** 功能專案中 (不是) 腳本的監看式應用程式本身。 加入下列程式碼， (更新命名空間、classname 和) 的函式名稱：
 
     ```csharp
     using System;
@@ -137,7 +133,7 @@ with an alpha channel. Icons should not have an alpha channel.
     }
     ```
 
-5. 在**watch 應用程式擴充**功能專案中，建立另一個新的 c # 檔案**MyInterfaceController.designer.cs** ，並新增下列程式碼。 請務必更新命名空間、classname 和 `Register` 屬性：
+5. 在 **watch 應用程式擴充** 功能專案中，建立另一個新的 c # 檔案 **MyInterfaceController.designer.cs** ，並新增下列程式碼。 請務必更新命名空間、classname 和 `Register` 屬性：
 
     ```csharp
     using Foundation;
@@ -156,13 +152,13 @@ with an alpha channel. Icons should not have an alpha channel.
     ```
 
     > [!TIP]
-    > 您可以 (選擇性地) 將此檔案拖曳至 Visual Studio for Mac Solution Pad 中的其他 c # 檔案，使其成為第一個檔案的子節點。 它會顯示如下：
+    > 您可以 (選擇性地) 將此檔案設為第一個檔案的子節點，方法是將它拖曳到 Visual Studio for Mac Solution Pad 中的其他 c # 檔案。 它會顯示如下：
 
     ![Solution pad](troubleshooting-images/add-5.png)
 
 6. 選取 [ **組建 > 組建** ]，讓 Xcode 同步處理可透過我們所用的 `Register` 屬性) 來辨識新類別 (。
 
-7. 以滑鼠右鍵按一下 watch 應用程式分鏡腳本檔案，然後選取 [開啟檔案]  **> Xcode Interface Builder，以**重新開啟分鏡腳本：
+7. 以滑鼠右鍵按一下 watch 應用程式分鏡腳本檔案，然後選取 [  **開啟方式 > Xcode 介面** 產生器]，以重新開啟分鏡腳本：
 
     ![在 Interface Builder 中開啟分鏡腳本](troubleshooting-images/add-6.png)
 
@@ -213,7 +209,7 @@ with an alpha channel. Icons should not have an alpha channel.
 ## <a name="launching-the-watch-app-from-the-command-line"></a>從命令列啟動 Watch 應用程式
 
 > [!IMPORTANT]
-> 您可以根據預設，以一般應用程式模式啟動 Watch 應用程式，也可以使用 Visual Studio for Mac 和 Visual Studio 中的[自訂執行參數](~/ios/watchos/get-started/installation.md#custommodes)，**快速概覽**或**通知**模式。
+> 您可以使用 Visual Studio for Mac 和 Visual Studio 中的 [自訂執行參數](~/ios/watchos/get-started/installation.md#custommodes)，以一般的應用程式模式啟動 Watch 應用程式，也可以 **一目了然** 或 **通知** 模式。
 
 您也可以使用命令列來控制 iOS 模擬器。 用來啟動 watch 應用程式的命令列工具是 **mtouch**。
 
@@ -228,10 +224,10 @@ with an alpha channel. Icons should not have an alpha channel.
 
 ### <a name="--launchsimwatch"></a>--launchsimwatch
 
-IOS 應用程式主要應用程式套件組合的完整路徑 *，其中包含 watch 應用程式和延伸*模組。
+IOS 應用程式主要應用程式套件組合的完整路徑 *，其中包含 watch 應用程式和延伸* 模組。
 
 > [!NOTE]
-> 您需要提供的路徑是適用于 *iPhone 應用程式*檔案，也就是將部署至 iOS 模擬器，並同時包含 watch 延伸模組和 watch 應用程式的應用程式檔。
+> 您需要提供的路徑是適用于 *iPhone 應用程式* 檔案，也就是將部署至 iOS 模擬器，並同時包含 watch 延伸模組和 watch 應用程式的應用程式檔。
 
 範例：
 

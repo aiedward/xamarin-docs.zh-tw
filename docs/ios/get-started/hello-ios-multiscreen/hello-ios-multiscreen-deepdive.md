@@ -8,18 +8,21 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 3020bb588f79ce4faf471488c116516402642b73
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 8e7035d586871f8faf9a49823cdc7030dd144fc0
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437281"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602758"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS 多重畫面 – 深度剖析
+> [!WARNING]
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
+> 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 介面產生器的 Mac 上。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](~/ios/user-interface/storyboards/index.md)。 
 
 在＜快速入門＞逐步解說中，我們已建置並執行第一個多重畫面的 Xamarin.iOS 應用程式。 現在是時候更深入了解 iOS 瀏覽和架構。
 
-在本指南中，我們將介紹「模型、檢視、控制器 (MVC)」** 模式及其在 iOS 架構與瀏覽中所扮演的角色。
+在本指南中，我們將介紹「模型、檢視、控制器 (MVC)」模式及其在 iOS 架構與瀏覽中所扮演的角色。
 接著會深入剖析瀏覽控制器，並了解如何使用它，在 iOS 中提供熟悉的瀏覽體驗。
 
 ## <a name="model-view-controller-mvc"></a>模型檢視控制器 (MVC)
@@ -28,11 +31,11 @@ ms.locfileid: "91437281"
 
  [![此圖說明如何在兩個畫面之間傳遞資料](hello-ios-multiscreen-deepdive-images/08.png)](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
-在我們的範例中，資料是在第一個畫面中收集、從第一個檢視控制器傳遞到第二個，並由第二個畫面顯示。 這種畫面、視圖控制器和資料的分隔會遵循 *Model、view、Controller (MVC) * 模式。 在後續幾節中，我們將討論此模式的優點、它的元件，以及如何在 Phoneword 應用程式中使用它。
+在我們的範例中，資料是在第一個畫面中收集、從第一個檢視控制器傳遞到第二個，並由第二個畫面顯示。 這種畫面、視圖控制器和資料的分隔會遵循 *Model、view、Controller (MVC)* 模式。 在後續幾節中，我們將討論此模式的優點、它的元件，以及如何在 Phoneword 應用程式中使用它。
 
 ### <a name="benefits-of-the-mvc-pattern"></a>MVC 模式的優點
 
-「模型-檢視-控制器」是一個「設計模式」**，一種可在程式碼中針對常見問題或使用案例重複使用的架構方案。 MVC 是適用於含「圖形化使用者介面 (GUI)」** 之應用程式的架構。 它會為應用程式中的物件指派下列三個角色之一：「模型」**(資料或應用程式邏輯)、「檢視」**(使用者介面)，以及「控制器」**(程式碼後置)。 下圖說明 MVC 模式的三個部分與使用者之間的關聯性：
+「模型-檢視-控制器」是一個「設計模式」，一種可在程式碼中針對常見問題或使用案例重複使用的架構方案。 MVC 是適用於含「圖形化使用者介面 (GUI)」之應用程式的架構。 它會為應用程式中的物件指派下列三個角色之一：「模型」(資料或應用程式邏輯)、「檢視」(使用者介面)，以及「控制器」(程式碼後置)。 下圖說明 MVC 模式的三個部分與使用者之間的關聯性：
 
  [![下圖說明 MVC 模式的三個部分與使用者之間的關聯性](hello-ios-multiscreen-deepdive-images/00.png)](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
@@ -41,11 +44,11 @@ MVC 模式很實用，因為它提供 GUI 應用程式之不同組件間的邏�
 > [!NOTE]
 > MVC 模式大致上類似於 ASP.NET 網頁或 WPF 應用程式的結構。 在這些範例中，檢視是實際上負責描述 UI 的元件，而且對應至 ASP.NET 中的 ASPX (HTML) 網頁，或對應至 WPF 應用程式中的 XAML。 控制器是負責管理檢視的元件，對應至 ASP.NET 或 WPF 中的程式碼後置。
 
-### <a name="model"></a>模型
+### <a name="model"></a>型號
 
 模型物件通常是要顯示於檢視或輸入到檢視之資料的應用程式專用表示法。 模型通常是鬆散定義的，例如，在 **Phoneword_iOS** 應用程式中，電話號碼的清單 (顯示為字串清單) 即為模型。 如果我們正在建置跨平台應用程式，則可選擇在 iOS 和 Android 應用程式之間共用 **PhonewordTranslator** 程式碼。 我們也可以將該共用程式碼視為模型。
 
-MVC 完全不知道模型的「資料持續性」** 和「存取」**。 換句話說，MVC 不在意資料看起來像什麼或它的儲存方式，只關心資料的「呈現」** 方式。 例如，我們可以選擇將資料儲存於 SQL 資料庫，或將它保存於某些雲端儲存機制中，或者只使用 `List<string>`。 基於 MVC 用途，模式中只會包含資料表示法本身。
+MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說，MVC 不在意資料看起來像什麼或它的儲存方式，只關心資料的「呈現」方式。 例如，我們可以選擇將資料儲存於 SQL 資料庫，或將它保存於某些雲端儲存機制中，或者只使用 `List<string>`。 基於 MVC 用途，模式中只會包含資料表示法本身。
 
 在某些情況下，MVC 的模型部分可能是空的。 例如，我們可能選擇將一些靜態網頁新增至應用程式，以說明電話翻譯工具的運作方式、如何建置它，以及如何與我們聯繫來回報錯誤。 這些應用程式畫面仍會使用檢視和控制器來建立，但它們不會有任何實際的模型資料。
 
@@ -76,7 +79,7 @@ MVC 完全不知道模型的「資料持續性」** 和「存取」**。 換句�
 
     [![此圖表說明如何以一堆牌的形式導覽](hello-ios-multiscreen-deepdive-images/02.png)](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
-- **選擇性地提供 [上一頁] 按鈕**：當我們將新的項目推送至瀏覽堆疊時，標題列可以自動顯示「[上一頁] 按鈕」**，讓使用者能夠向後瀏覽。 按 [上一步  *] 按鈕會將目前的 view* 控制器從流覽堆疊中取出，並將先前的內容視圖階層載入至視窗：  
+- **選擇性地提供 [上一頁] 按鈕**：當我們將新的項目推送至瀏覽堆疊時，標題列可以自動顯示「[上一頁] 按鈕」，讓使用者能夠向後瀏覽。 按 [上一步  *] 按鈕會將目前的 view* 控制器從流覽堆疊中取出，並將先前的內容視圖階層載入至視窗：  
 
     [![此圖說明如何從堆疊中取出卡片](hello-ios-multiscreen-deepdive-images/03.png)](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
@@ -87,7 +90,7 @@ MVC 完全不知道模型的「資料持續性」** 和「存取」**。 換句�
 ### <a name="root-view-controller"></a>根檢視控制器
 
 瀏覽控制器不會管理內容檢視階層；因此，其本身沒有什麼可以顯示。
-相反地，流覽控制器會與 *根視圖控制器*配對：
+相反地，流覽控制器會與 *根視圖控制器* 配對：
 
  [![流覽控制器會與根視圖控制器配對](hello-ios-multiscreen-deepdive-images/05.png)](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
@@ -189,9 +192,9 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 
 Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包括：
 
-- **自動建立視圖控制器** -當我們在  **Properties Pad** 中輸入視圖控制器的類別名稱時，iOS 設計工具會檢查該類別是否存在，然後為我們產生 view controller 支援類別。 如需此功能與其他 iOS 設計工具功能的詳細資訊，請參閱 [iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
+- **自動建立視圖控制器** ：當我們在  **Properties Pad** 中輸入視圖控制器的類別名稱時，iOS 設計工具會檢查該類別是否存在，然後為我們產生 view controller 支援類別。 如需此功能與其他 iOS 設計工具功能的詳細資訊，請參閱 [iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
 - **資料表視圖控制器** –  `CallHistoryController` 是資料表視圖控制器。 資料表檢視控制器包含資料表檢視，這是 iOS 中最常見的版面配置與資料顯示工具。 資料表已超出本指南的範圍。 如需資料表視圖控制器的詳細資訊，請參閱使用  [資料表和資料格](~/ios/user-interface/controls/tables/index.md) 指南。
-- 分鏡腳本**識別碼**：設定分鏡腳本識別碼會在目標 C 中建立視圖控制器類別，其中包含分鏡腳本中視圖控制器的程式碼後端。 我們使用分鏡腳本識別碼來尋找 Objective-C 類別，並將分鏡腳本中的檢視控制器具現化。 如需有關分鏡腳本識別碼的詳細資訊，請參閱[分鏡腳本簡介](~/ios/user-interface/storyboards/index.md)指南。
+- 分鏡腳本 **識別碼**：設定分鏡腳本識別碼會在目標 C 中建立視圖控制器類別，其中包含分鏡腳本中視圖控制器的程式碼後端。 我們使用分鏡腳本識別碼來尋找 Objective-C 類別，並將分鏡腳本中的檢視控制器具現化。 如需有關分鏡腳本識別碼的詳細資訊，請參閱[分鏡腳本簡介](~/ios/user-interface/storyboards/index.md)指南。
 
 ## <a name="summary"></a>摘要
 

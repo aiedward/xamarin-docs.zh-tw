@@ -7,14 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/07/2017
-ms.openlocfilehash: 07d48a38751680f5e7227682d0639b77b3a3627b
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 68a8c7499148da2b3712ce9b7a485c7e975dcd3c
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436155"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602771"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>在 Xamarin 中使用 tvOS 按鈕
+
+> [!WARNING]
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
+> 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 介面產生器的 Mac 上。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](~/ios/user-interface/storyboards/index.md)。 
 
 您可以使用類別的實例 `UIButton` ，在 tvOS 視窗中建立可設定焦點、可選取的按鈕。 當使用者選取按鈕時，它會將動作訊息傳送至目標物件，讓您的 tvOS 應用程式回應使用者的輸入。
 
@@ -26,7 +30,7 @@ ms.locfileid: "91436155"
 
 ## <a name="about-buttons"></a>關於按鈕
 
-在 tvOS 中，按鈕可用於應用程式特定的動作，而且可能包含標題、圖示或兩者。 當使用者使用 [Siri 遠端](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)流覽應用程式消費者介面時，焦點會移至指定的按鈕，使其變更文字和背景色彩。 陰影也會套用至按鈕，以新增3D 效果，使其出現在消費者介面其餘部分的上方。
+在 tvOS 中，按鈕可用於應用程式特定的動作，而且可能包含標題、圖示或兩者。 當使用者使用 [Siri 遠端](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)流覽應用程式的使用者介面時，焦點會移至指定的按鈕，使其變更文字和背景色彩。 陰影也會套用至按鈕，以新增3D 效果，使其出現在使用者介面的其餘部分之上。
 
 [![範例按鈕](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
@@ -34,7 +38,7 @@ Apple 針對使用按鈕有下列建議：
 
 - **使用標題或圖示** -雖然圖示和標題都可包含在按鈕中，但空間有限，因此請不要將兩者合併。
 - **清楚標示破壞性按鈕** -如果按鈕執行破壞性動作 (例如) 刪除檔案，請使用文字及/或圖示清楚地標示。 破壞性動作應該一律提出 [警示](~/ios/tvos/user-interface/alerts.md) ，要求使用者限制該動作。
-- **不要使用 [上一頁] 按鈕** -Siri 遠端上的功能表按鈕會用來回到上一個畫面。 這項規則的唯一例外狀況是針對應用程式內購買或破壞性動作，其中應該會顯示 [ **取消** ] 按鈕。
+- **不要使用 [上一頁] 按鈕** -Siri 遠端上的功能表按鈕會用來回到上一個畫面。 這項規則的唯一例外是 In-App 購買或破壞性動作，其中應該會顯示 [ **取消** ] 按鈕。
 
 如需使用焦點和導覽的詳細資訊，請參閱我們使用 [導覽和焦點](~/ios/tvos/app-fundamentals/navigation-focus.md) 檔。
 
@@ -52,25 +56,25 @@ Apple 建議您針對按鈕圖示使用簡單、可高度辨識的影像。 過�
 
 - **顯示下列圖示按鈕的描述性文字** -可能的話，請將清楚的描述性文字放在下方圖示，以進一步取得按鈕的用途。
 - **針對標題使用動詞或動詞片語** -清楚陳述當使用者按一下按鈕時將會發生的動作。
-- **使用標題樣式的大小寫** -除了文章、結合或介係詞 (四個字母或較少的) 之外，按鈕標題的每個字都應為大寫。
+- **使用 Title-Style 大小寫** -除了發行項、結合或介係詞 (四個字母或較少) 時，按鈕標題的每個字都應為大寫。
 - **使用簡短** 的點對點標題-使用最短的措辭來描述按鈕的動作。
 
 <a name="Buttons-and-Storyboards"></a>
 
 ## <a name="buttons-and-storyboards"></a>按鈕和分鏡腳本
 
-在 tvOS 應用程式中使用按鈕最簡單的方式，就是使用 Xamarin Designer for iOS 將它們新增至應用程式的 UI。
+在 tvOS 應用程式中使用按鈕最簡單的方式，就是使用適用于 iOS 的 Xamarin 設計工具將它們新增至應用程式的 UI。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在 [ **方案總管**中，按兩下該檔案 `Main.storyboard` ，然後開啟它進行編輯。
-1. 從連結**庫**拖曳**按鈕**，並將它放在視圖上： 
+1. 在 [ **方案瀏覽器**] 中，按兩下該檔案 `Main.storyboard` ，然後開啟它進行編輯。
+1. 從連結 **庫** 拖曳 **按鈕**，並將它放在視圖上： 
 
     [![A 按鍵](buttons-images/storyboard01.png)](buttons-images/storyboard01.png#lightbox)
-1. 在 **屬性瀏覽器**中，您可以調整按鈕的數個屬性，例如其 **標題** 和 **文字色彩**： 
+1. 在 **屬性瀏覽器** 中，您可以調整按鈕的數個屬性，例如其 **標題** 和 **文字色彩**： 
 
     [![按鈕屬性](buttons-images/storyboard02.png)](buttons-images/storyboard02.png#lightbox)
-1. 接下來，切換至 [**事件]** 索引標籤，然後從**按鈕**連接**事件**並加以呼叫 `ButtonPressed` ： 
+1. 接下來，切換至 [**事件]** 索引標籤，然後從 **按鈕** 連接 **事件** 並加以呼叫 `ButtonPressed` ： 
 
     [![[事件] 索引標籤](buttons-images/storyboard03.png)](buttons-images/storyboard03.png#lightbox)
 1. 您將會自動切換到您 `ViewController.cs` 可以使用 **向上** 鍵和 **向下** 鍵在程式碼中放置新動作的視圖： 
@@ -83,14 +87,14 @@ Apple 建議您針對按鈕圖示使用簡單、可高度辨識的影像。 過�
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在 [ **方案總管**中，按兩下該檔案 `Main.storyboard` ，然後開啟它進行編輯。
-1. 從連結**庫**拖曳**按鈕**，並將它放在視圖上： 
+1. 在 [ **方案瀏覽器**] 中，按兩下該檔案 `Main.storyboard` ，然後開啟它進行編輯。
+1. 從連結 **庫** 拖曳 **按鈕**，並將它放在視圖上： 
 
     [![A 按鍵](buttons-images/storyboard01vs.png)](buttons-images/storyboard01vs.png#lightbox)
-1. 在 **屬性瀏覽器**中，您可以調整按鈕的數個屬性，例如其 **標題** 和 **文字色彩**： 
+1. 在 **屬性瀏覽器** 中，您可以調整按鈕的數個屬性，例如其 **標題** 和 **文字色彩**： 
 
     [![屬性瀏覽器](buttons-images/storyboard02vs.png)](buttons-images/storyboard02vs.png#lightbox)
-1. 接下來，切換至 [**事件]** 索引標籤，然後從**按鈕**連接**事件**並加以呼叫 `ButtonPressed` ： 
+1. 接下來，切換至 [**事件]** 索引標籤，然後從 **按鈕** 連接 **事件** 並加以呼叫 `ButtonPressed` ： 
 
     [![[事件] 索引標籤](buttons-images/storyboard03vs.png)](buttons-images/storyboard03vs.png#lightbox)
 1. 將變更儲存至所有檔案。
@@ -122,9 +126,9 @@ namespace tvRemote
 只要按鈕的 `Enabled` 屬性為 `true` ，而且不是由另一個控制項或視圖所涵蓋，則可以使用 Siri 遠端來使其成為焦點專案。 如果使用者選取按鈕並按一下觸控介面，則會 `ButtonPressed` 執行上面所定義的動作。
 
 > [!IMPORTANT]
-> 雖然 `TouchUpInside` `UIButton` 您可以在建立 **事件處理常式**時，將動作指派給 iOS 設計工具中的，但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 建立 tvOS 使用者介面元素的**動作**時，您應該一律使用預設**動作類型**。
+> 雖然 `TouchUpInside` `UIButton` 您可以在建立 **事件處理常式** 時指派動作（例如），但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 建立 tvOS 使用者介面元素的 **動作** 時，您應該一律使用預設 **動作類型**。
 
-如需使用分鏡腳本的詳細資訊，請參閱我們的 [Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
+如需使用分鏡腳本的詳細資訊，請參閱我們的 [Hello，TvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
 
 <a name="Buttons-and-Code"></a>
 
@@ -180,7 +184,7 @@ View.AddSubview (button);
 ```
 
 > [!IMPORTANT]
-> 雖然可以將動作（例如）指派給 `TouchUpInside` `UIButton` ，但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 您應該一律使用 **AllEvents** 或 **PrimaryActionTriggered**之類的事件。
+> 雖然可以將動作（例如）指派給 `TouchUpInside` `UIButton` ，但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 您應該一律使用 **AllEvents** 或 **PrimaryActionTriggered** 之類的事件。
 
 <a name="Styling-a-Button"></a>
 

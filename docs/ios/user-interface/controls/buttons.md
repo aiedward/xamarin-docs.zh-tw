@@ -7,20 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/11/2018
-ms.openlocfilehash: d763d4433ef0979343de059c5113314f553142fa
-ms.sourcegitcommit: 01ccefd54c0ced724784dbe1aec9ecfc9b00e633
+ms.openlocfilehash: 2de52400241d45046f58222231b8d865ecf6666d
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92630214"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602797"
 ---
 # <a name="buttons-in-xamarinios"></a>Xamarin 中的按鈕
 
 在 iOS 中， `UIButton` 類別代表按鈕控制項。
 
-您可以透過程式設計方式或使用 iOS 設計工具的 [ **屬性] 視窗或面板** 來修改按鈕的屬性：
-
-![IOS 設計工具的 Properties Pad](buttons-images/properties.png "IOS 設計工具的 Properties Pad")
+您可以透過程式設計方式或使用 Xcode 的 Interface Builder 來修改按鈕的屬性。
 
 ## <a name="creating-a-button-programmatically"></a>以程式設計方式建立按鈕
 
@@ -86,14 +84,6 @@ myButton.TouchUpInside += (sender, e) => {
 
 > [!NOTE]
 > `TouchUpInside` 不是唯一可用的按鈕事件。 `UIButton` 是的子類別 `UIControl` ，它會定義 [許多不同的事件](xref:UIKit.UIControlEvent)。
-
-### <a name="using-the-ios-designer-to-specify-button-event-handlers"></a>使用 iOS 設計工具指定按鈕事件處理常式
-
-使用 **Properties Pad** 的 [ **事件** ] 索引標籤，即可指定按鈕各種事件的事件處理常式。
-
-針對適當的事件，請輸入新事件處理常式的名稱，或從清單中選取一個。 這樣做會在程式碼中為按鈕的 view controller 建立事件處理常式。
-
-![Properties Pad 的 [事件] 索引標籤](buttons-images/image1.png "Properties Pad 的 [事件] 索引標籤")
 
 ## <a name="styling-a-button"></a>設定按鈕樣式
 

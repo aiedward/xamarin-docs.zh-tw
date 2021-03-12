@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: b318f11e866c94ab1f5aa8f6b4f351ac88475ac3
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 1d6f2b6cbc18317562396308bf353c83a8471c2c
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437048"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602888"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆疊視圖
+> [!WARNING]
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
+> 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 介面產生器的 Mac 上。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](~/ios/user-interface/storyboards/index.md)。 
 
 Stack View 控制項 (`UIStackView`) 利用自動設定和大小類別的功能，以水準或垂直方式管理子檢視堆疊，其動態地回應內容變更和 APPLE TV 裝置的螢幕大小。
 
@@ -30,7 +33,7 @@ Stack View 控制項 (`UIStackView`) 利用自動設定和大小類別的功能�
 
 有幾個屬性會控制堆疊視圖如何排列其子檢視的集合：
 
-- **軸** –決定堆疊視圖是以 **水準** 或 **垂直**方式排列子檢視。
+- **軸** –決定堆疊視圖是以 **水準** 或 **垂直** 方式排列子檢視。
 - **對齊** –控制子檢視在堆疊視圖內的對齊方式。
 - **分佈** –控制子檢視在堆疊視圖內的大小。
 - **間距** -控制堆疊視圖中每個子視圖之間的最短空間。
@@ -65,9 +68,9 @@ Stack View 控制項 (`UIStackView`) 利用自動設定和大小類別的功能�
 - 如果 `LayoutMarginsRelativeArrangement` 屬性為 `true` ，堆疊視圖大小也會包含邊界的空間。
 - 垂直的大小 `Axis` 會設定為集合中最大的子視圖。
 
-此外，您可以指定堆疊視圖的 **高度** 和 **寬度**條件約束。 在此情況下，子檢視會配置 (大小) 以填滿由和屬性決定的堆疊視圖所指定的空間 `Distribution` `Alignment` 。
+此外，您可以指定堆疊視圖的 **高度** 和 **寬度** 條件約束。 在此情況下，子檢視會配置 (大小) 以填滿由和屬性決定的堆疊視圖所指定的空間 `Distribution` `Alignment` 。
 
-如果 `BaselineRelativeArrangement` 屬性為 `true` ，則會根據第一個或最後一個子視圖的基準配置子檢視，而不是使用**頂端**、**下**或 * 中間的*Center* -  **Y**位置。 這些會在堆疊視圖的內容上計算，如下所示：
+如果 `BaselineRelativeArrangement` 屬性為 `true` ，則會根據第一個或最後一個子視圖的基準配置子檢視，而不是使用 **頂端**、**下** 或 * 中間的 -  **Y** 位置。 這些會在堆疊視圖的內容上計算，如下所示：
 
 - 垂直堆疊視圖會傳回第一個基準的第一個子視圖，最後一個是最後一個。 如果其中一個子檢視本身是堆疊視圖，則會使用其第一個或最後一個基準。
 - 水準堆疊視圖會針對第一個和最後一個基準使用其最高的子視圖。 如果最高的視圖也是堆疊視圖，它會使用最高的子視圖作為基準。
@@ -94,7 +97,7 @@ Stack View 控制項 (`UIStackView`) 利用自動設定和大小類別的功能�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在 [ **Solution Pad**中，按兩下該檔案 `Main.storyboard` ，然後開啟它進行編輯。
+1. 在 **Solution Pad** 中，按兩下該檔案， `Main.storyboard` 然後開啟它進行編輯。
 1. 設計您要加入至堆疊視圖之個別元素的版面配置：
 
     [![元素版面配置範例](stacked-views-images/layout01.png)](stacked-views-images/layout01.png#lightbox)
@@ -102,10 +105,10 @@ Stack View 控制項 (`UIStackView`) 利用自動設定和大小類別的功能�
 1. 在此案例中，請將所需的複本數目 (四) ：
 
     [![所需的複本數目](stacked-views-images/layout02.png)](stacked-views-images/layout02.png#lightbox)
-1. 從 [**工具箱**] 拖曳**堆疊視圖**，然後將它放在視圖上：
+1. 從 [**工具箱**] 拖曳 **堆疊視圖**，然後將它放在視圖上：
 
     [![堆疊視圖](stacked-views-images/layout03.png)](stacked-views-images/layout03.png#lightbox)
-1. 選取堆疊視圖，在**Properties Pad** **選取 [** **對齊**] 的 [ **Widget]** 索引標籤中，針對**分佈****平均填滿**，然後輸入 `25` **間距**：
+1. 選取 [堆疊] 視圖，在 [**屬性] 面板** 的 [ **Widget]** 索引標籤中，選取 [**填滿****對齊**]，針對 **分佈****平均填滿**，然後輸入 `25` **間距**：
 
     [![[Widget] 索引標籤](stacked-views-images/layout04.png)](stacked-views-images/layout04.png#lightbox)
 1. 將堆疊視圖放在您想要的畫面上，並加入條件約束以將它保留在所需的位置。
@@ -113,12 +116,12 @@ Stack View 控制項 (`UIStackView`) 利用自動設定和大小類別的功能�
 
     [![堆疊視圖中的個別元素](stacked-views-images/layout05.png)](stacked-views-images/layout05.png#lightbox)
 1. 系統會調整配置，並根據您在上面設定的屬性，在堆疊視圖中排列元素。
-1. 在 [**屬性瀏覽器**] 的 [ **Widget]** 索引標籤中指派**名稱**，以使用 c # 程式碼中的 UI 控制項。
-1. 儲存變更。
+1. 在 [**屬性瀏覽器**] 的 [ **Widget]** 索引標籤中指派 **名稱**，以使用 c # 程式碼中的 UI 控制項。
+1. 儲存您的變更。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在 [ **方案總管**中，按兩下該檔案 `Main.storyboard` ，然後開啟它進行編輯。
+1. 在 [ **方案瀏覽器**] 中，按兩下該檔案 `Main.storyboard` ，然後開啟它進行編輯。
 1. 設計您要加入至堆疊視圖之個別元素的版面配置：
 
     [![範例元素版面配置](stacked-views-images/layout01.png)](stacked-views-images/layout01.png#lightbox)
@@ -126,10 +129,10 @@ Stack View 控制項 (`UIStackView`) 利用自動設定和大小類別的功能�
 1. 在此案例中，請將所需的複本數目 (四) ：
 
     [![所需的複本數目](stacked-views-images/layout02.png)](stacked-views-images/layout02.png#lightbox)
-1. 從 [**工具箱**] 拖曳**堆疊視圖**，然後將它放在視圖上：
+1. 從 [**工具箱**] 拖曳 **堆疊視圖**，然後將它放在視圖上：
 
     [![堆疊視圖](stacked-views-images/layout03-vs.png)](stacked-views-images/layout03-vs.png#lightbox)
-1. 選取堆疊視圖，並在**屬性瀏覽器**的 [ **Widget]** 索引標籤中，選取 [**對齊**] 的 [**填滿**]，針對**分佈****平均填滿**，然後輸入 `25` **間距**：
+1. 選取堆疊視圖，並在 **屬性瀏覽器** 的 [ **Widget]** 索引標籤中，選取 [**對齊**] 的 [**填滿**]，針對 **分佈****平均填滿**，然後輸入 `25` **間距**：
 
     [![[Widget] 索引標籤](stacked-views-images/layout04-vs.png)](stacked-views-images/layout04-vs.png#lightbox)
 1. 將堆疊視圖放在您想要的畫面上，並加入條件約束以將它保留在所需的位置。
@@ -137,15 +140,15 @@ Stack View 控制項 (`UIStackView`) 利用自動設定和大小類別的功能�
 
     [![堆疊視圖中的個別元素](stacked-views-images/layout05-vs.png)](stacked-views-images/layout05-vs.png#lightbox)
 1. 系統會調整配置，並根據您在上面設定的屬性，在堆疊視圖中排列元素。
-1. 在 [**屬性瀏覽器**] 的 [ **Widget]** 索引標籤中指派**名稱**，以使用 c # 程式碼中的 UI 控制項。
-1. 儲存變更。
+1. 在 [**屬性瀏覽器**] 的 [ **Widget]** 索引標籤中指派 **名稱**，以使用 c # 程式碼中的 UI 控制項。
+1. 儲存您的變更。
 
 -----
 
 > [!IMPORTANT]
 > 雖然您可以在 `TouchUpInside` `UIButton` 建立事件處理常式時，將動作指派給 UI 元素，例如 iOS 設計工具中的)  (例如，但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 `Action Type`建立 tvOS 使用者介面元素的動作時，您應該一律使用預設值。
 
-如需使用分鏡腳本的詳細資訊，請參閱我們的 [Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
+如需使用分鏡腳本的詳細資訊，請參閱我們的 [Hello，TvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
 
 在我們的範例中，我們已針對每個「玩家卡片」公開區段控制項和輸出的輸出口和動作。 在程式碼中，我們會根據目前的區段隱藏和顯示播放機。 例如：
 
@@ -250,7 +253,7 @@ partial void DecreaseRating (Foundation.NSObject sender) {
 
 讓我們詳細看看這段程式碼的幾個部分。 首先，我們會使用 `if` 語句來檢查不超過五個 "星星" 或小於零。
 
-若要加入新的「星星」，我們會載入其影像，並將其 **內容模式** 設定為 **適當**調整：
+若要加入新的「星星」，我們會載入其影像，並將其 **內容模式** 設定為 **適當** 調整：
 
 ```csharp
 var icon = new UIImageView (new UIImage("icon.png"));

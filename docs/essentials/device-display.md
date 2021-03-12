@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Essentials：裝置顯示資訊
-description: 本檔描述中的 DeviceDisplay 類別 Xamarin.Essentials ，它會針對執行應用程式的裝置提供螢幕計量。
+description: 本檔說明中的 DeviceDisplay 類別 Xamarin.Essentials ，此類別提供應用程式執行所在裝置的畫面計量。
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.custom: video
@@ -9,12 +9,12 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 867e6bd1828d4158f70226dbaad678f9d6037bb0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: afb39563a0da85e73e7c7c8d774647066019efe0
+ms.sourcegitcommit: 28ba903991a3c90a9420bda85e3abc16453314df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802402"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102996537"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials：裝置顯示資訊
 
@@ -74,6 +74,8 @@ public class DisplayInfoTest
     }
 }
 ```
+
+## <a name="keep-screen-on"></a>保持螢幕開啟
 
 **DeviceDisplay** 類別公開稱為 `KeepScreenOn` 的 `bool` 屬性，其可設定為嘗試防止裝置顯示關閉或鎖定。
 

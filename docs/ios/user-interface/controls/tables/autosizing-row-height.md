@@ -7,18 +7,21 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: eedf76a4ecc566a18f4d4b7d5c4f1b63642b8e25
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: b612800656a7073d0442e450f52c8aacdd12f8cd
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437193"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602966"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>在 Xamarin 中自動調整大小的資料列高度
+> [!WARNING]
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
+> 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 介面產生器的 Mac 上。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](~/ios/user-interface/storyboards/index.md)。 
 
 從 iOS 8 開始，Apple 新增了建立資料表視圖的功能 (`UITableView`) ，根據使用自動設定、大小類別和條件約束，根據其內容的大小來自動成長和縮減指定資料列的高度。
 
-iOS 11 已新增資料列自動擴充的功能。 標題、頁尾和資料格現在可以根據其內容自動調整大小。 但是，如果您的資料表是在 iOS 設計工具中建立、Interface Builder，或者如果它有固定的資料列高度，您必須手動啟用自行調整大小的儲存格，如本指南所述。
+iOS 11 已新增資料列自動擴充的功能。 標題、頁尾和資料格現在可以根據其內容自動調整大小。 但是，如果您的資料表是在 iOS 設計工具、介面產生器中建立，或者如果它有固定的資料列高度，您必須手動啟用自行調整資料格，如本指南所述。
 
 ## <a name="cell-layout-in-the-ios-designer"></a>IOS 設計工具中的儲存格版面配置
 
@@ -26,7 +29,7 @@ iOS 11 已新增資料列自動擴充的功能。 標題、頁尾和資料格現
 
 [![儲存格的原型設計](autosizing-row-height-images/table01.png)](autosizing-row-height-images/table01.png#lightbox)
 
-針對原型中的每個專案，加入條件約束以將專案保留在正確的位置，因為資料表視圖會針對旋轉或不同的 iOS 裝置螢幕大小調整大小。 例如，將釘選 `Title` 到儲存格 *內容視圖*的左上角和右邊：
+針對原型中的每個專案，加入條件約束以將專案保留在正確的位置，因為資料表視圖會針對旋轉或不同的 iOS 裝置螢幕大小調整大小。 例如，將釘選 `Title` 到儲存格 *內容視圖* 的左上角和右邊：
 
 [![將標題釘選在資料格內容視圖的上方、左方和右邊](autosizing-row-height-images/table02.png)](autosizing-row-height-images/table02.png#lightbox)
 
@@ -34,9 +37,9 @@ iOS 11 已新增資料列自動擴充的功能。 標題、頁尾和資料格現
 
 [![這些條件約束可釘選標籤的左邊、右邊、頂端和底部](autosizing-row-height-images/table03.png)](autosizing-row-height-images/table03.png#lightbox)
 
-既然我們已完全限制儲存格中的元素，就必須明確地說明應該延展的元素。 若要這樣做，請在 Properties Pad 的**版面**配置區段中，視需要設定**content Hugging Priority**和**content 壓縮阻力優先順序**：
+既然我們已完全限制儲存格中的元素，就必須明確地說明應該延展的元素。 若要這樣做，請 **在 [屬性**] 面板的 [配置] 區段中，視需要設定 **內容 Hugging 優先順序** 和 **內容壓縮阻力**：
 
-[![Properties Pad 的版面配置區段](autosizing-row-height-images/table03a.png)](autosizing-row-height-images/table03a.png#lightbox)
+[![屬性面板的版面配置區段](autosizing-row-height-images/table03a.png)](autosizing-row-height-images/table03a.png#lightbox)
 
 設定您想要擴充的元素，使其具有 **較低** 的 Hugging 優先權值和 **較低** 的壓縮阻力優先權值。
 

@@ -10,19 +10,23 @@ ms.date: 03/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4221cd313ca8fbc3f3f9f886e3bd3f774c7472f7
-ms.sourcegitcommit: 27f33b0a83b9dc871ad9fb207a1c9960ef197d9e
+ms.openlocfilehash: b4d6eb3c1c983cb1add671d03d71cbb0499f1d89
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91897943"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602043"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>搭配使用設計階段資料與 XAML 預覽
 
 _某些版面配置很難在沒有資料的情況下視覺化。您可以使用這些秘訣，充分利用 XAML 預覽程式中的大量資料頁面預覽。_
 
+> [!WARNING]
+> XAML 預覽程式在 Visual Studio 2019 16.8 版和 Visual Studio for Mac 8.8 版中已淘汰，並由 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中的 XAML 熱重載功能所取代。
+> 深入瞭解 [檔中的](~/xamarin-forms/xaml/hot-reload.md)XAML 熱重載。
+
 > [!NOTE]
-> 如果您使用 Windows Presentation Foundation (WPF) 或 UWP，請參閱 [使用設計階段資料搭配桌面應用程式的 XAML 設計工具](/visualstudio/xaml-tools/xaml-designtime-data)
+> 如果您使用 Windows Presentation Foundation (WPF) 或 UWP，請參閱將[設計階段資料與適用于桌面應用程式的 XAML 設計](/visualstudio/xaml-tools/xaml-designtime-data)工具搭配使用
 
 ## <a name="design-time-data-basics"></a>設計階段資料基本概念
 
@@ -141,7 +145,7 @@ xmlns:models="clr-namespace:Monkeys.Models"
 
 ## <a name="troubleshooting"></a>疑難排解
 
-### <a name="requirements"></a>需求
+### <a name="requirements"></a>規格需求
 
 設計階段資料需要的最低版本為 Xamarin.Forms 3.6。
 

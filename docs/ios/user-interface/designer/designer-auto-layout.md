@@ -1,23 +1,23 @@
 ---
-title: 使用 Xamarin Designer for iOS 的自動版面配置
-description: 本指南介紹 iOS Auto 版面配置，並說明如何使用 Xamarin Designer for iOS 來建立和編輯使用條件約束的版面配置。 它也會討論如何修改程式碼中的條件約束、將條件約束變更動畫，以及其他更多
+title: 使用適用于 iOS 的 Xamarin 設計工具進行自動版面配置
+description: 本指南介紹 iOS Auto 版面配置，並說明如何使用適用于 iOS 的 Xamarin 設計工具來建立和編輯使用條件約束的版面配置。 它也會討論如何修改程式碼中的條件約束、將條件約束變更動畫，以及其他更多
 ms.prod: xamarin
 ms.assetid: CAC7A715-55BB-45E2-BB6D-2168D36D428F
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 37d90bc42e843dd3b3c8f07689e0e229225ff57d
-ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
+ms.openlocfilehash: a350e5cbea616c57d529ca5e05f531c58e8b141a
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96439466"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602914"
 ---
-# <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用 Xamarin Designer for iOS 的自動版面配置
+# <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用適用于 iOS 的 Xamarin 設計工具進行自動版面配置
 
 > [!WARNING]
-> IOS 設計工具將開始在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 8.8 版中推出。
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
 > 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 的 Mac 上執行。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](../storyboards/index.md)。 
 
 自動版面配置 (也稱為「彈性配置」 ) 是回應式設計方法。 不同于轉換版面配置系統，其中每個專案的位置都已硬式編碼為螢幕上的某個點，而 [自動設定] 則是 *關聯* 性，也就是專案相對於設計介面上其他元素的位置。 「自動設定」的核心是一種條件約束或規則的概念，這些條件約束或規則會在螢幕上的其他元素內容中定義專案或專案集的位置。 因為元素未系結至畫面上的特定位置，條件約束有助於建立可在不同螢幕大小和裝置方向上美觀的彈性版面配置。
@@ -26,7 +26,7 @@ ms.locfileid: "96439466"
 
 ## <a name="requirements"></a>規格需求
 
-Xamarin Designer for iOS 可在 Windows 上 Visual Studio 2017 和更新版本的 Visual Studio for Mac 中取得。
+適用于 iOS 的 Xamarin 設計工具可在 visual studio 2017 和更新版本的 Windows 中，于 Visual Studio for Mac 中使用。
 
 本指南假設您已瞭解 [IOS 設計](~/ios/user-interface/designer/introduction.md) 工具指南簡介中的設計工具元件。
 
@@ -236,5 +236,5 @@ UIView.CommitAnimations();
 
 - [Storyboard 簡介](~/ios/user-interface/storyboards/index.md)
 - [iOS 設計的控制項逐步解說](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
-- [Android Designer 總覽](~/android/user-interface/android-designer/index.md)
+- [Android 設計工具總覽](~/android/user-interface/android-designer/index.md)
 - [程式設計條件約束](~/ios/user-interface/programmatic-layout-constraints.md)

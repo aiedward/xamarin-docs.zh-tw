@@ -1,6 +1,6 @@
 ---
 title: 的 XAML 預覽程式 Xamarin.Forms
-description: 本文說明如何使用 XAML 預覽程式來查看您 Xamarin.Forms 輸入時所呈現的版面配置。 XAML 預覽程式可在 Visual Studio 2019 和適用于 Mac 的 Visual Studio 2019 中取得。
+description: 本文說明如何使用 XAML 預覽程式來查看您 Xamarin.Forms 輸入時所呈現的版面配置。 XAML 預覽程式可在 Visual Studio 2019 和 Visual Studio 2019 for Mac 中使用。
 zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
@@ -11,24 +11,24 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5af5846c77c5cd63e14494c25e5dc04ebcea4b7d
-ms.sourcegitcommit: f90e908a72cf616ee303c2751729b62f11654379
+ms.openlocfilehash: 94c09aa870052108261caf0107463b6beb88bb45
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96299955"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102603005"
 ---
-# <a name="xaml-previewer-for-no-locxamarinforms"></a>的 XAML 預覽程式 Xamarin.Forms
+# <a name="xaml-previewer-for-xamarinforms"></a>的 XAML 預覽程式 Xamarin.Forms
 
 _查看您 Xamarin.Forms 鍵入時所呈現的版面配置_
 
 > [!WARNING]
-> XAML 預覽器將開始在 Visual Studio 2019 16.8 版和 Visual Studio for Mac 8.8 版中推出。
-> 預覽 XAML 的建議方式是現在有 **[XAML 熱重新載入](~/xamarin-forms/xaml/hot-reload.md)**。
+> XAML 預覽程式在 Visual Studio 2019 16.8 版和 Visual Studio for Mac 8.8 版中已淘汰，並由 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中的 XAML 熱重載功能所取代。
+> 深入瞭解 [檔中的](~/xamarin-forms/xaml/hot-reload.md)XAML 熱重載。
 
 ## <a name="overview"></a>概觀
 
-XAML 預覽程式會顯示您的 Xamarin.Forms xaml 頁面在 iOS 和 Android 上的外觀。 當您對 XAML 進行變更時，您會看到它們立即與您的程式碼一起預覽。 XAML 預覽程式可在 Visual Studio 和 Visual Studio for Mac 中取得。
+XAML 預覽程式會顯示您的 Xamarin.Forms xaml 頁面在 iOS 和 Android 上的外觀。 當您對 XAML 進行變更時，您會看到它們立即與您的程式碼一起預覽。 XAML 預覽程式可在 Visual Studio 和 Visual Studio for Mac 中使用。
 
 ## <a name="getting-started"></a>開始使用
 
@@ -38,7 +38,7 @@ XAML 預覽程式會顯示您的 Xamarin.Forms xaml 頁面在 iOS 和 Android �
 
 您可以按一下 [分割視圖] 窗格上的箭號來開啟 XAML 預覽程式。 如果您想要變更預設的分割視圖行為，請使用 [ **Xamarin > Xamarin.Forms XAML 預覽** 器] 對話方塊中的 [工具] > 選項 >。 在這個對話方塊中，您可以選取預設的檔視圖和分割方向。
 
-[![：：：非 loc (Xamarin. Forms) ：：：預覽器選項 Visual Studio](xaml-previewer-images/xamlp-options-vs-sm.png "：：：非 loc (Xamarin. Forms) ：：：預覽器選項 Visual Studio")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
+[![：：：在 Visual Studio 中不含 loc (Xamarin) ：：：預覽器選項](xaml-previewer-images/xamlp-options-vs-sm.png "：：：在 Visual Studio 中不含 loc (Xamarin) ：：：預覽器選項")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
 當您開啟 XAML 檔案時，編輯器會根據 [ **工具] > 選項 > Xamarin > Xamarin.Forms XAML 預覽** 器] 對話方塊中選取的設定，開啟預覽工具的完整大小或旁邊。 不過，您可以在編輯器視窗中變更每個檔案的分割。
 
@@ -46,11 +46,11 @@ XAML 預覽程式會顯示您的 Xamarin.Forms xaml 頁面在 iOS 和 Android �
 
 在 [分割視圖] 窗格上選取這些按鈕，選擇您想要查看程式碼、XAML 預覽程式或兩者。 中間按鈕會交換預覽程式和您的程式碼所在的位置：
 
-[![：：：非 loc (Xamarin. Forms) ：：：預覽器控制項，以便在 Visual Studio 的設計、來源和分割視圖之間切換](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "：：：非 loc (Xamarin. Forms) ：：：預覽器控制項，以便在 Visual Studio 的設計、來源和分割視圖之間切換")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
+[![：：：非 loc (Xamarin. Forms) ：：：預覽器控制項，可在 Visual Studio 中的設計、來源和分割視圖之間切換](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "：：：非 loc (Xamarin. Forms) ：：：預覽器控制項，可在 Visual Studio 中的設計、來源和分割視圖之間切換")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
 
 您可以變更是否以垂直或水準方式分割螢幕，或全部折迭一個窗格：
 
-[![：：：非 loc (Xamarin. Forms) ：：：預覽窗格的方向控制項 Visual Studio](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "：：：非 loc (Xamarin. Forms) ：：：預覽窗格的方向控制項 Visual Studio")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+[![：：：非 loc (Xamarin. Forms) ：：：預覽器窗格在 Visual Studio 中的方向控制項](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "：：：非 loc (Xamarin. Forms) ：：：預覽器窗格在 Visual Studio 中的方向控制項")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
 
 #### <a name="enable-or-disable-the-xaml-previewer"></a>啟用或停用 XAML 預覽器
 
@@ -70,7 +70,7 @@ XAML 預覽程式會顯示您的 Xamarin.Forms xaml 頁面在 iOS 和 Android �
 
 #### <a name="enable-or-disable-the-xaml-previewer"></a>啟用或停用 XAML 預覽器
 
-您可以選取 [**預設 XML 編輯器**] 做為 **預設的 xaml 編輯器**，在 **Visual Studio > 喜好設定 > 文字編輯器 > XAML** ] 對話方塊中關閉 xaml 預覽程式。 這也會關閉 [檔大綱]、[屬性面板] 和 [XAML 工具箱]。 若要將 XAML 預覽程式和這些工具重新開啟，請將您的 **預設 XAML 編輯器** 變更為 **Xamarin.Forms 預覽** 程式。
+您可以選取 [**預設 XML 編輯器**] 做為 **預設的 XAML 編輯器**，在 **Visual Studio > 喜好設定 > 文字編輯器 > XAML** ] 對話方塊中關閉 xaml 預覽程式。 這也會關閉 [檔大綱]、[屬性面板] 和 [XAML 工具箱]。 若要將 XAML 預覽程式和這些工具重新開啟，請將您的 **預設 XAML 編輯器** 變更為 **Xamarin.Forms 預覽** 程式。
 
 ::: zone-end
 

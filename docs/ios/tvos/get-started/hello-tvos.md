@@ -7,20 +7,24 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: beaa26e0d028fb614baf76ff52d05b80584f14d4
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 2fcc08680185eed3a77f89ba4822172fcaf4b88e
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91435256"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102603044"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS 快速入門指南
 
 _本指南將逐步解說如何建立您的第一個 tvOS 應用程式及其開發工具鏈。它也引進了 Xamarin 設計工具，此設計工具會將 UI 控制項公開給程式碼，並說明如何建立、執行及測試 tvOS 應用程式。_
 
+> [!WARNING]
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
+> 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 介面產生器的 Mac 上。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](~/ios/user-interface/storyboards/index.md)。 
+
 Apple 已發行第5代的 Apple TV，也就是執行 tvOS 11 的 apple tv 4K。
 
-Apple TV 平臺開放給開發人員使用，讓他們可以建立豐富、沉浸式的應用程式，並透過 Apple TV 的內建 App Store 來發行這些應用程式。
+Apple TV 平臺開放給開發人員使用，讓他們可以建立豐富、沉浸式的應用程式，並透過 Apple TV 的內建 App Store 發行。
 
 如果您熟悉 Xamarin 的開發，您應該會發現轉換成 tvOS 相當簡單。 大部分的 Api 和功能都是相同的，但許多常見的 Api 都無法使用 (例如 WebKit) 。 此外，使用 Siri 遠端時，會帶來一些在以觸控式螢幕為基礎的 iOS 裝置上不存在的設計挑戰。
 
@@ -28,22 +32,22 @@ Apple TV 平臺開放給開發人員使用，讓他們可以建立豐富、沉�
 
 ## <a name="overview"></a>概觀
 
-TvOS 可讓您使用 c # 和 .NET 開發完全原生的 Apple TV 應用程式，其方式是使用在 *Swift* (或 *目標-C*) 和 *Xcode*中進行開發時使用的相同 OS X 程式庫和介面控制項。
+TvOS 可讓您使用 c # 和 .NET 開發完全原生的 Apple TV 應用程式，其方式是使用在 *Swift* (或 *目標-C*) 和 *Xcode* 中進行開發時使用的相同 OS X 程式庫和介面控制項。
 
 此外，由於 tvOS 應用程式是以 c # 和 .NET 撰寫的，因此通用的後端程式碼可以與 Xamarin、Xamarin 和 Xamarin 應用程式共用;在每個平臺上提供原生體驗。
 
-本文將為您介紹使用 tvOS 和 Visual Studio 建立 Apple TV 應用程式所需的重要概念，方法是逐步解說建立基本的 **Hello tvOS** 應用程式，以計算按鈕的點擊次數：
+本文將為您介紹使用 Xamarin. tvOS 和 Visual Studio 建立 Apple TV 應用程式所需的重要概念。您可以逐步完成建立基本的 **Hello tvOS** 應用程式，計算按鈕的點擊次數：
 
 [![範例應用程式執行](hello-tvos-images/run05.png)](hello-tvos-images/run05.png#lightbox)
 
 我們將涵蓋下列概念：
 
-- **Visual Studio for Mac**  – Visual Studio for Mac 的簡介，以及如何使用它建立 Xamarin. tvOS 應用程式。
+- **Visual studio For mac**  -visual Studio for mac 的簡介，以及如何使用它建立 Xamarin. tvOS 應用程式。
 - **Xamarin. TvOS 應用程式** 的結構– tvOS 應用程式所組成的。
-- **建立消費者介面** –如何使用 Xamarin Designer for iOS 來建立使用者介面。
+- **建立使用者介面** –如何使用適用于 IOS 的 Xamarin 設計工具建立使用者介面。
 - **部署和測試** –如何在 tvOS 模擬器和實際 tvOS 硬體上執行和測試您的應用程式。
 
-## <a name="starting-a-new-xamarintvos-app-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中啟動新的 Xamarin. tvOS 應用程式
+## <a name="starting-a-new-xamarintvos-app-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中啟動新的 tvOS 應用程式
 
 如上所述，我們將建立名為的 Apple TV 應用程式 `Hello-tvOS` ，將單一按鈕和標籤新增至主畫面。 按一下按鈕時，標籤將會顯示已按下的次數。
 
@@ -53,7 +57,7 @@ TvOS 可讓您使用 c # 和 .NET 開發完全原生的 Apple TV 應用程式，
 
     [![Visual Studio for Mac](hello-tvos-images/setup01.png)](hello-tvos-images/setup01.png#lightbox)
 2. 按一下畫面左上角的 [ **新增方案 ...** ] 連結，以開啟 [ **新增專案** ] 對話方塊。
-3. 選取**tvOS**  >  **應用程式**  >  **單一視圖應用程式**，然後按 [**下一步]** 按鈕：
+3. 選取 **tvOS**  >  **應用程式**  >  **單一視圖應用程式**，然後按 [**下一步]** 按鈕：
 
     [![選取單一視圖應用程式](hello-tvos-images/setup02.png)](hello-tvos-images/setup02.png#lightbox)
 4. 輸入 `Hello, tvOS` **應用程式名稱**、輸入您的 **組織識別碼** ，然後按 [ **下一步]** 按鈕：
@@ -67,7 +71,7 @@ Visual Studio for Mac 將會建立新的 tvOS 應用程式，並顯示新增至�
 
  [![預設檔案視圖](hello-tvos-images/project01.png)](hello-tvos-images/project01.png#lightbox)
 
-Visual Studio for Mac 使用 **方案** 和 **專案**的方式，與 Visual Studio 的方式完全相同。 解決方案是可保存一或多個專案的容器;專案可以包含應用程式、支援程式庫、測試應用程式等。在此情況下，Visual Studio for Mac 已為您建立方案和應用程式專案。
+Visual Studio for Mac 使用 **方案** 和 **專案** 的方式與 visual studio 的功能完全相同。 解決方案是可保存一或多個專案的容器;專案可以包含應用程式、支援程式庫、測試應用程式等。在此情況下，Visual Studio for Mac 已為您建立方案和應用程式專案。
 
 如果您想要的話，您可以建立一個或多個包含通用共用程式碼的程式碼程式庫專案。 應用程式專案可以使用這些程式庫專案，或與其他 tvOS 應用程式專案共用 (或 Xamarin、Xamarin 和 Xamarin （根據程式碼) 的類型），就像您建立標準 .NET 應用程式一樣。
 
@@ -82,7 +86,7 @@ Visual Studio for Mac 使用 **方案** 和 **專案**的方式，與 Visual Stu
 - `Info.plist` –這個檔案包含應用程式屬性，例如應用程式名稱、圖示等。
 - `ViewController.cs` –這是代表主視窗並控制其生命週期的類別。
 - `ViewController.designer.cs` –這個檔案包含的程式碼可協助您整合主畫面的使用者介面。
-- `Main.storyboard` –主視窗的 UI。 此檔案可由 Xamarin Designer for iOS 建立和維護。
+- `Main.storyboard` –主視窗的 UI。 此檔案可由適用于 iOS 的 Xamarin 設計工具建立和維護。
 
 在下列各節中，我們將快速查看其中一些檔案。 稍後我們將更詳細地探索它們，但現在瞭解其基本概念是不錯的主意。
 
@@ -224,7 +228,7 @@ namespace Hello_tvOS
 
 #### <a name="viewcontrollerdesignercs"></a>ViewController.Designer.cs
 
-主視窗類別的設計工具檔案目前是空的，但在使用 iOS 設計工具建立消費者介面時，Visual Studio for Mac 會自動將它填入：
+主視窗類別的設計工具檔案目前是空的，但在使用 iOS 設計工具建立使用者介面時，Visual Studio for Mac 會自動將它填入：
 
 ```csharp
 using Foundation;
@@ -249,9 +253,9 @@ namespace HellotvOS
 
 ## <a name="creating-the-user-interface"></a>建立使用者介面
 
-您不需要使用 Xamarin Designer for iOS 來建立 tvOS 應用程式的消費者介面，您可以直接從 c # 程式碼建立 UI，但這已超出本文的範圍。 為了簡單起見，我們將使用 iOS 設計工具，在本教學課程的其餘部分建立 UI。
+您不需要使用適用于 iOS 的 Xamarin 設計工具來建立 tvOS 應用程式的使用者介面，您可以直接從 c # 程式碼建立 UI，但這不在本文的討論範圍內。 為了簡單起見，我們將使用 iOS 設計工具，在本教學課程的其餘部分建立 UI。
 
-若要開始建立您的 UI，讓我們按兩下 `Main.storyboard` **方案總管** 中的檔案，將它開啟，以在 iOS 設計工具中進行編輯：
+若要開始建立您的 UI，讓我們在 [ `Main.storyboard` **方案瀏覽器** ] 中按兩下該檔案，以在 iOS 設計工具中開啟以進行編輯：
 
 [![[方案總管] 中的 Main.storyboard 檔案](hello-tvos-images/designer01.png)](hello-tvos-images/designer01.png#lightbox)
 
@@ -259,7 +263,7 @@ namespace HellotvOS
 
 [![設計工具](hello-tvos-images/designer02.png)](hello-tvos-images/designer02.png#lightbox)
 
-如需 iOS 設計工具和其運作方式的詳細資訊，請參閱 [Xamarin Designer for iOS 指南簡介](~/ios/user-interface/designer/introduction.md) 。
+如需 iOS 設計工具和其運作方式的詳細資訊，請參閱《 [Xamarin Designer For IOS 簡介](~/ios/user-interface/designer/introduction.md) 》指南。
 
 我們現在可以開始將控制項新增至 tvOS 應用程式的設計介面。
 
@@ -273,7 +277,7 @@ namespace HellotvOS
 2. 將 **標籤** 從 [ **工具箱** ] 拖曳至設計介面：
 
     [![從 [工具箱] 拖曳標籤](hello-tvos-images/designer04.png)](hello-tvos-images/designer04.png#lightbox)
-3. 按一下**屬性板**中的 [**標題**] 屬性，然後將按鈕的標題變更為 `Hello, tvOS` ，並將**字型大小**設為128：
+3. 按一下 **屬性板** 中的 [**標題**] 屬性，然後將按鈕的標題變更為 `Hello, tvOS` ，並將 **字型大小** 設為128：
 
     [![將標題設定為 Hello、tvOS，並將字型大小設為128](hello-tvos-images/designer05.png)](hello-tvos-images/designer05.png#lightbox)
 4. 調整標籤的大小，以便顯示所有文字，並將它放在靠近視窗頂端的中央：
@@ -298,20 +302,20 @@ namespace HellotvOS
 9. 完成時，您的條件約束看起來應該會類似 [屬性] 面板的 [配置] 索引標籤中：
 
     [![範例條件約束](hello-tvos-images/designer11.png)](hello-tvos-images/designer11.png#lightbox)
-10. 從 [**工具箱**] 拖曳**按鈕**，並將它放在標籤底下。
-11. 按一下**屬性板**中的 [**標題**] 屬性，然後將按鈕的標題變更為 `Click Me` ：
+10. 從 [**工具箱**] 拖曳 **按鈕**，並將它放在標籤底下。
+11. 按一下 **屬性板** 中的 [**標題**] 屬性，然後將按鈕的標題變更為 `Click Me` ：
 
     [![將按鈕標題變更為 Click Me](hello-tvos-images/designer12.png)](hello-tvos-images/designer12.png#lightbox)
 12. 重複上述步驟5到8，以限制 tvOS 視窗中的按鈕。 不過，您不需要將 T 控制碼拖曳至視窗的頂端 (如同在步驟 #7) 中，將它拖曳到標籤底部：
 
     [![限制按鈕](hello-tvos-images/designer14.png)](hello-tvos-images/designer14.png#lightbox)
-13. 拖曳按鈕下的另一個標籤，將其大小調整為與第一個標籤相同的寬度，並將其 **對齊方式** 設定為 [ **置**中]：
+13. 拖曳按鈕下的另一個標籤，將其大小調整為與第一個標籤相同的寬度，並將其 **對齊方式** 設定為 [ **置** 中]：
 
     [![拖曳按鈕下的另一個標籤，將其大小調整為與第一個標籤相同的寬度，並將其對齊方式設定為 [置中]](hello-tvos-images/designer15.png)](hello-tvos-images/designer15.png#lightbox)
 14. 如同第一個標籤和按鈕，將此標籤設定為置中，並將其釘選到位置和大小：
 
     [![將標籤釘選到位置和大小](hello-tvos-images/designer16.png)](hello-tvos-images/designer16.png#lightbox)
-15. 將您的變更儲存至消費者介面。
+15. 將您的變更儲存至使用者介面。
 
 當您調整控制項的大小時，您應該注意到設計工具會為您提供以 [APPLE TV 人體介面指導方針](https://developer.apple.com/tvos/human-interface-guidelines/)為基礎的輔助貼齊提示。 這些指導方針可協助您建立高品質的應用程式，以熟悉 Apple TV 使用者的外觀和風格。
 
@@ -321,7 +325,7 @@ namespace HellotvOS
 
 您可以從這裡選取要編輯的專案，或視需要拖曳以重新排列 UI 元素。 例如，如果 UI 元素是由另一個專案所涵蓋，您可以將它拖曳到清單底部，使其成為視窗中最上層的專案。
 
-既然我們已建立消費者介面，我們必須公開 UI 專案，tvOS 才能在 c # 程式碼中存取這些專案並與其互動。
+既然我們已建立使用者介面，我們必須公開 UI 專案，tvOS 才能在 c # 程式碼中存取這些專案並與其互動。
 
 ### <a name="accessing-the-controls-in-the-code-behind"></a>存取程式碼後置於中的控制項
 
@@ -343,7 +347,7 @@ namespace HellotvOS
 3. 找出 TouchUpInside 事件，並為它指定一個名為的事件處理常式 `Clicked` ：
 
     [![TouchUpInside 事件](hello-tvos-images/event2.png)](hello-tvos-images/event2.png#lightbox)
-4. 當您按 **enter**鍵時， **ViewController**會開啟，建議您在程式碼中的事件處理常式位置。 使用鍵盤上的方向鍵來設定位置：
+4. 當您按 **enter** 鍵時， **ViewController** 會開啟，建議您在程式碼中的事件處理常式位置。 使用鍵盤上的方向鍵來設定位置：
 
     [![設定位置](hello-tvos-images/event3.png)](hello-tvos-images/event3.png#lightbox)
 5. 這會建立部分方法，如下所示：
@@ -368,11 +372,11 @@ namespace HellotvOS
 
 ### <a name="how-controls-are-accessed"></a>如何存取控制項
 
-如果您 `ViewController.designer.cs` 在 **方案總管** 中選取，您將能夠看到 `ClickedLabel` 標籤和 `Clicked` 事件處理常式如何對應到 c # 中的 **輸出** 和 **動作** ：
+如果您 `ViewController.designer.cs` 在 [ **方案瀏覽器** ] 中選取，您將能夠看到 `ClickedLabel` 標籤和 `Clicked` 事件處理常式如何對應到 c # 中的 **輸出** 和 **動作** ：
 
 [![輸出和動作](hello-tvos-images/accesscontrol.png)](hello-tvos-images/accesscontrol.png#lightbox)
 
-您也可能會注意到這 `ViewController.designer.cs` 是部分類別，因此 Visual Studio for Mac 不需要修改 `ViewController.cs` 會覆寫對類別所做的任何變更。
+您也可能會注意到，這 `ViewController.designer.cs` 是部分類別，因此 Visual Studio For Mac 不需要修改以 `ViewController.cs` 覆寫對類別所做的任何變更。
 
 以這種方式公開 UI 專案，可讓您在「View 控制器」中存取這些元素。
 
@@ -382,9 +386,9 @@ namespace HellotvOS
 
 ## <a name="writing-the-code"></a>撰寫程式碼
 
-藉由我們的消費者介面建立，並透過 **輸出** 和 **動作**將其 UI 元素公開到程式碼，我們終於可以撰寫程式碼來提供程式功能。
+藉由建立使用者介面，並透過 **輸出** 和 **動作** 將其 UI 元素公開到程式碼，我們終於可以撰寫程式碼來提供程式功能。
 
-在我們的應用程式中，每次按一下第一個按鈕時，就會更新標籤，以顯示按鈕的點擊次數。 若要完成這項工作，我們必須 `ViewController.cs` 在 **Solution Pad**中按兩下檔案，以開啟檔案進行編輯：
+在我們的應用程式中，每次按一下第一個按鈕時，就會更新標籤，以顯示按鈕的點擊次數。 若要達成此目的，我們必須 `ViewController.cs` 在 **Solution Pad** 中按兩下以開啟檔案進行編輯：
 
 [![Solution Pad](hello-tvos-images/code01.png)](hello-tvos-images/code01.png#lightbox)
 
@@ -415,7 +419,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-我們需要使用 `ViewDidLoad` ，而不是另一個方法（例如 `Initialize` ），因為 `ViewDidLoad` 會在作業系統載入並具現化來自檔案的消費者介面 *之後* 呼叫 `.storyboard` 。 如果我們嘗試在檔案完全載入並具現化之前存取標籤控制項 `.storyboard` ，我們會收到錯誤， `NullReferenceException` 因為尚未建立標籤控制項。
+我們需要使用 `ViewDidLoad` ，而不是另一種方法（例如 `Initialize` ），因為在 `ViewDidLoad` OS 載入並具現化使用者介面 *之後* ，會呼叫 `.storyboard` 。 如果我們嘗試在檔案完全載入並具現化之前存取標籤控制項 `.storyboard` ，我們會收到錯誤， `NullReferenceException` 因為尚未建立標籤控制項。
 
 接下來，我們需要新增程式碼來回應使用者按一下按鈕。 將下列內容新增至我們所建立的部分類別：
 
@@ -438,23 +442,23 @@ partial void Clicked (UIButton sender)
 - **Debug** – debug 組建會編譯成「 (應用程式) 檔案，其中包含額外的中繼資料，可讓我們在應用程式執行時，對發生的情況進行偵錯工具。
 - **發行** -發行組建也會建立 ' ' 檔案，但不包含 debug 資訊，因此它較小，執行速度更快。  
 
-您可以從 Visual Studio for Mac 畫面左上角的設定選取 **器** ，選取組建的類型：
+您可以從 Visual Studio for Mac 畫面左上角的設定 **選取器** ，選取組建的類型：
 
 [![選取組建的類型](hello-tvos-images/run01.png)](hello-tvos-images/run01.png#lightbox)
 
 ### <a name="building-the-application"></a>建置應用程式
 
-在我們的案例中，我們只想要有一個 debug 組建，因此請確定已選取 [ **debug** ]。 讓我們先藉由按 **⌘ B**來建立應用程式，或從 [ **組建** ] 功能表選擇 [ **全部組建**]。
+在我們的案例中，我們只想要有一個 debug 組建，因此請確定已選取 [ **debug** ]。 讓我們先藉由按 **⌘ B** 來建立應用程式，或從 [ **組建** ] 功能表選擇 [ **全部組建**]。
 
-如果沒有任何錯誤，您將會在 Visual Studio for Mac 的狀態列中看到 **組建成功** 訊息。 如果發生錯誤，請檢查您的專案，並確定您已正確遵循這些步驟。 先確認您的程式碼 (在 Xcode 和 Visual Studio for Mac) 符合教學課程中的程式碼。
+如果沒有任何錯誤，您將會在 Visual Studio for Mac 的狀態列中看到 **組建成功** 訊息。 如果發生錯誤，請檢查您的專案，並確定您已正確遵循這些步驟。 先確認您在 Xcode 和 Visual Studio for Mac 中的程式碼 (，) 符合教學課程中的程式碼。
 
 ### <a name="running-the-application"></a>執行應用程式
 
 若要執行應用程式，我們有三個選項：
 
 - 按 **⌘ + enter**。
-- 從 [執行]**** 功能表中選擇 [偵錯]****。
-- 按一下 Visual Studio for Mac 工具列中的 [播放]**** 按鈕 (在 [方案總管]**** 上方)。
+- 從 [執行] 功能表中選擇 [偵錯]。
+- 按一下 Visual Studio for Mac 工具列中的 [播放] 按鈕 (在 [方案總管] 上方)。
 
 應用程式將會建立 (（如果尚未建立）) ，在「偵測模式」中啟動，tvOS 模擬器將會啟動，而應用程式會啟動並顯示其主要介面視窗：
 
@@ -477,18 +481,18 @@ partial void Clicked (UIButton sender)
 因此，我們強烈建議您先閱讀下列檔，然後再進入 Xamarin. tvOS 應用程式的設計：
 
 - [TvOS 9 簡介](~/ios/tvos/platform/tvos9.md) -本文將介紹適用于 Xamarin tvOS 開發人員的 tvOS 9 中所有新的和修改過的 api 和功能。
-- 使用[導覽和焦點](~/ios/tvos/app-fundamentals/navigation-focus.md)：您的 tvOS 應用程式的使用者將不會像 iOS 一樣直接與其介面互動，因為它們會在裝置的螢幕上點出影像，但會使用 Siri 遠端在房間間間接地進行。 本文涵蓋焦點的概念，以及如何用它來處理 Xamarin. tvOS 應用程式消費者介面中的導覽。
+- 使用[導覽和焦點](~/ios/tvos/app-fundamentals/navigation-focus.md)：您的 tvOS 應用程式的使用者將不會像 iOS 一樣直接與其介面互動，因為它們會在裝置的螢幕上點出影像，但會使用 Siri 遠端在房間間間接地進行。 本文涵蓋焦點的概念，以及如何用它來處理 tvOS 應用程式使用者介面中的導覽。
 - [Siri 遠端和藍牙控制器](~/ios/tvos/platform/remote-bluetooth.md) -使用者將與 Apple TV 和您的 tvOS 應用程式互動的主要方式是透過包含的 Siri 遠端。 如果您的應用程式是一項遊戲，您可以選擇性地為您的應用程式中的 iOS (MFI) 藍牙遊戲控制器建立協力廠商支援。 本文說明如何在您的 tvOS 應用程式中支援新的 Siri 遠端和藍牙遊戲控制器。
 - [資源和資料存放區](~/ios/tvos/app-fundamentals/resources-data-storage.md) （不同于 iOS 裝置）新的 Apple TV 不會為 tvOS apps 提供持續的本機儲存體。 如此一來，如果您的 tvOS 應用程式需要保存 (的資訊，例如使用者喜好設定) 它必須儲存並從 iCloud 取得該資料。 本文涵蓋在 tvOS 應用程式中使用資源和持續性資料存放區。
 - 使用[圖示和](~/ios/tvos/app-fundamentals/icons-images.md)影像–建立迷人圖示和影像是為 Apple TV 應用程式開發沉浸式使用者體驗的重要部分。 本指南將涵蓋為您的 tvOS 應用程式建立和包含必要圖形資產所需的步驟。
-- [消費者介面](~/ios/tvos/user-interface/index.md) –一般使用者體驗 (UX) 涵蓋範圍（包括消費者介面 (UI) 控制項）在使用 tvOS 時，請使用 Xcode 的 INTERFACE BUILDER 和 UX 設計原則。
-- [部署和測試](~/ios/tvos/deploy-test/index.md) -本節涵蓋用來測試應用程式的主題，以及散發該應用程式的方式。 這裡的主題包括用於偵錯工具的工具、部署至測試人員，以及如何將應用程式發佈至 Apple TV App Store。
+- [使用者介面](~/ios/tvos/user-interface/index.md) -一般使用者體驗 (UX) 涵蓋範圍（包括使用者介面 (UI) 控制項）使用 Xcode 的介面產生器和 UX 設計原則（使用 Xamarin. tvOS 時）。
+- [部署和測試](~/ios/tvos/deploy-test/index.md) -本節涵蓋用來測試應用程式的主題，以及散發該應用程式的方式。 這裡的主題包括用於偵錯工具的工具、部署至測試人員，以及如何將應用程式發行至 Apple TV App Store。
 
 如果您在使用 tvOS 時遇到任何問題，請參閱我們的 [疑難排解](~/ios/tvos/troubleshooting.md) 檔，以取得已知問題和解決方案的清單。
 
 ## <a name="summary"></a>摘要
 
-本文提供快速入門，以透過建立簡單的 Hello tvOS 應用程式，使用 Visual Studio for Mac 開發 tvOS 應用程式。 其中涵蓋了 tvOS 裝置布建、建立介面、在 tvOS 模擬器上 tvOS 和測試程式碼的基本概念。
+本文提供快速入門，以使用 Visual Studio for Mac 開發 tvOS 的應用程式，方法是建立簡單的 Hello，tvOS 應用程式。 其中涵蓋了 tvOS 裝置布建、建立介面、在 tvOS 模擬器上 tvOS 和測試程式碼的基本概念。
 
 ## <a name="related-links"></a>相關連結
 

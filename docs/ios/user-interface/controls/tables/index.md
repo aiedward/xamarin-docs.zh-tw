@@ -7,14 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/06/2016
-ms.openlocfilehash: fc2a76d97fe6c3bb52877bd58707872068f25968
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 4974992890348541538ea54823f8f0ea1f22b24e
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430806"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602693"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>在 Xamarin 中使用資料表和資料格
+
+> [!WARNING]
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
+> 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 介面產生器的 Mac 上。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](~/ios/user-interface/storyboards/index.md)。 
 
 本節介紹用來建立和顯示資料表的類別，然後提供如何在 Xamarin 中使用這些類別的範例。 它將涵蓋如何使用資料表的預設面板、自訂配置、執行編輯，以及使用 Xamarin iOS 設計工具以視覺化方式設計資料表。 有時顯示是資料列的清單， (例如「音樂」應用程式) 和其他時候很難辨識表格控制項 (例如在「連絡人」應用程式中編輯，或是在「訊息」應用程式) 中的對話。
 
@@ -25,7 +29,7 @@ ms.locfileid: "91430806"
 - **資料表元件** -介紹和說明控制項的視覺元素  `UITableView` 。 
 - **在資料表中顯示資料** -示範如何建立和擴展資料表、使用不同的資料表和資料格樣式，以及藉由回收資料格物件來避免記憶體問題。 
 - **Advanced usage** –建立自訂資料格，以及使用 ios uitableview 範例類別的編輯功能。 
-- 以**視覺化方式建立資料表**–使用 Xamarin Designer for iOS 建立具有分鏡腳本的表格驅動介面。 
+- 以 **視覺化方式建立資料表**–使用適用于 IOS 的 Xamarin 設計工具來建立具有分鏡腳本的表格驅動介面。 
 
 ## <a name="contents"></a>目錄
 
@@ -35,7 +39,7 @@ ms.locfileid: "91430806"
 
  [自訂表格外觀](~/ios/user-interface/controls/tables/customizing-table-appearance.md)
 
- [編輯](~/ios/user-interface/controls/tables/editing.md)
+ [編輯中](~/ios/user-interface/controls/tables/editing.md)
 
  [資料列動作](~/ios/user-interface/controls/tables/row-action.md)
 

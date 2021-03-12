@@ -1,30 +1,30 @@
 ---
 title: 搭配 iOS 設計工具使用自訂控制項
-description: 本檔說明如何建立自訂控制項，並搭配 Xamarin Designer for iOS 使用。 它會示範如何在 iOS 設計工具的 [工具箱] 中，將控制項設為可供使用，並執行控制項以正確轉譯和設計階段等等。
+description: 本檔說明如何建立自訂控制項，並將它與適用于 iOS 的 Xamarin 設計工具搭配使用。 它會示範如何在 iOS 設計工具的 [工具箱] 中，將控制項設為可供使用，並執行控制項以正確轉譯和設計階段等等。
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: f4b161159423bc7e5d6d99e9dfd4407532106979
-ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
+ms.openlocfilehash: ddde6736014f959c0f2906e716a681dc3db0e73a
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96439452"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602368"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>搭配 iOS 設計工具使用自訂控制項
 
 > [!WARNING]
-> IOS 設計工具將開始在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 8.8 版中推出。
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
 > 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 的 Mac 上執行。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](../storyboards/index.md)。 
 
 ## <a name="requirements"></a>規格需求
 
-Xamarin Designer for iOS 可在 Windows 上的 Visual Studio for Mac 和 Visual Studio 2017 和更新版本中使用。
+適用于 iOS 的 Xamarin Designer 可在 Visual Studio for Mac 和 Visual Studio 2017 和更新版本的 Windows 中使用。
 
-本指南假設您已經熟悉 [消費者入門指南](~/ios/get-started/index.md)中涵蓋的內容。
+本指南假設您已經熟悉《 [快速入門手冊》](~/ios/get-started/index.md)中所涵蓋的內容。
 
 ## <a name="walkthrough"></a>逐步介紹
 
@@ -160,7 +160,7 @@ Xamarin Designer for iOS 可在 Windows 上的 Visual Studio for Mac 和 Visual 
     }
     ```
 
-1. 在 `FillTexture.png` `FillTexture2.png` [資源] 資料夾中新增 `Monkey.png` (可 [從 GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) **Resources** 取得的和檔案。
+1. 在 `FillTexture.png` `FillTexture2.png` [資源] 資料夾中新增 `Monkey.png` (可[從 GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) 取得的和檔案。
 
 1. 按兩下該檔案， `Main.storyboard` 以在設計工具中開啟它：
 

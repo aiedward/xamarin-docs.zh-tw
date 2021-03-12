@@ -1,33 +1,33 @@
 ---
 title: Xamarin Live Player 應用程式
-description: 本檔說明 Xamarin Live Player 的應用程式，可用來在裝置上即時預覽程式碼變更。 其中討論設定、範例、記錄、設定、管理裝置等等。
+description: 本檔說明 Xamarin Live Player 應用程式，可用來在裝置上即時預覽程式碼變更。 其中討論設定、範例、記錄、設定、管理裝置等等。
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: d79eb9ad1ca57361e063f6ce73910d6bb149cf72
-ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
+ms.openlocfilehash: 7c99fb593f0515dc45b64c01621cb453340f7bc1
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98758067"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602862"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 應用程式
 
 ![預覽功能](~/media/shared/preview.png)
 
 > [!WARNING]
-> Xamarin Live Player 預覽版已結束。 應用程式已無法再使用。 下列指示可供客戶繼續使用預覽版搭配 Visual Studio 2017。
+> Xamarin Live Player Preview 已結束。 應用程式已無法再使用。 下列指示適用于繼續在 Visual Studio 2017 中使用預覽版的客戶。
 
 > [!TIP]
-> 您可以使用 Visual Studio 2019 或 Visual Studio for Mac 中的 [XAML 預覽](~/xamarin-forms/xaml/xaml-previewer/index.md) 程式來查看您在編輯時的畫面設計。
+> 您可以使用 Visual Studio 2019 或 Visual Studio for Mac 中的 [XAML 熱重載 (~/xamarin-forms/xaml/hot-reload/index.md) ，以在編輯時查看畫面設計。
 
-啟動時，Xamarin Live Player 應用程式看起來像這樣：
+在啟動時，Xamarin Live Player 應用程式看起來像這樣：
 
 ![Live Player Android 應用程式螢幕擷取畫面](player-images/app-android-sml.png)
 
-當您按下 [ **配對] Visual Studio** 時，請使用相機掃描電腦上顯示的條碼：
+當您按下 [ **配對至 Visual Studio**] 時，請使用相機掃描電腦上顯示的條碼：
 
 ![Android 條碼掃描器的螢幕擷取畫面](player-images/scan-android-sml.png)
 
@@ -35,7 +35,7 @@ ms.locfileid: "98758067"
 
 ![在裝置上執行的範例計算機應用程式](player-images/basic-calculator-sml.png)
 
-## <a name="options"></a>選項。
+## <a name="options"></a>選項
 
 按下 [資訊] 按鈕 **(我)** 在應用程式底部，以顯示 [ **選項** ] 功能表：
 
@@ -83,7 +83,7 @@ ms.locfileid: "98758067"
 - 或者輸入在螢幕上顯示的程式碼來配對裝置
 - 從清單中移除現有的裝置
 
-![螢幕擷取畫面顯示 Xamarin Live Player 的視窗，以及可供預覽您應用程式的選項。](player-images/manage.png)
+![螢幕擷取畫面顯示 Xamarin Live Player 視窗，以及可供預覽您應用程式的選項。](player-images/manage.png)
 
 您也可以從裝置清單存取此視窗：
 

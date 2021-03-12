@@ -11,18 +11,18 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1c660c04e89c56f10435964425b2b20dbf5c8eb3
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: e269a56daa7517b2b3deb3808d7eb73da825ffac
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93365862"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102603057"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基本概念
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
- (XAML) 的可延伸應用程式標記語言，是 Microsoft 所建立的 XML 架構語言，可用於將物件具現化和初始化，以及在父子式階層中組織這些物件。 XAML 已經調整為 .NET framework 中的數種技術，但它已找到其最大的公用程式，可在 Windows Presentation Foundation (WPF) 、Silverlight、Windows 執行階段和通用 Windows 平臺 (UWP) 中定義使用者介面的版面配置。
+ (XAML) 的可延伸應用程式標記語言，是 Microsoft 所建立的 XML 架構語言，可用於將物件具現化和初始化，以及在父子式階層中組織這些物件。 XAML 已經調整成 .NET framework 中的數種技術，但在 Windows Presentation Foundation (WPF) 、Silverlight、Windows 執行時間和通用 Windows 平臺 (UWP) 中，已找到其最大的公用程式。
 
 XAML 可讓開發人員 Xamarin.Forms 使用標記而非程式碼，在應用程式中定義使用者介面。 程式中永遠不需要 XAML Xamarin.Forms ，但通常會比對等程式碼更簡潔且更具視覺效果，而且可能會 toolable。 XAML 非常適合搭配熱門 MVVM (模型 ViewModel) 應用程式架構使用： XAML 定義了透過以 XAML 為基礎的資料系結連結至 ViewModel 程式碼的視圖。
 
@@ -42,7 +42,7 @@ XAML 具有比對等程式碼更多的優點：
 - XAML 通常無法具現化未定義無參數函式的類別。  (不過，有時候這項限制會有一種方法。 ) 
 - XAML 通常無法呼叫方法。  (，有時可能會克服此限制。 ) 
 
-尚未有可在應用程式中產生 XAML 的視覺化設計工具 Xamarin.Forms 。 所有 XAML 都必須手動寫入，但是有一個 [Xaml 預覽](~/xamarin-forms/xaml/xaml-previewer/index.md)程式。 XAML 的新程式設計人員可能會想要經常建立和執行其應用程式，特別是在可能不正確的任何情況下。 即使是在 XAML 中有很多經驗的開發人員都知道，測試也會獲得獎勵。
+尚未有可在應用程式中產生 XAML 的視覺化設計工具 Xamarin.Forms 。 所有的 XAML 都必須手動撰寫，但您可以使用 Visual Studio 2019 或 Visual Studio for Mac 中的 [XAML 熱重載 (~/xamarin-forms/xaml/hot-reload/index.md) ，以在編輯時查看您的畫面設計。 即使是在 XAML 中有很多經驗的開發人員都知道，測試也會獲得獎勵。
 
 XAML 基本上是 XML，但 XAML 有一些獨特的語法功能。 最重要的是：
 
@@ -52,11 +52,11 @@ XAML 基本上是 XML，但 XAML 有一些獨特的語法功能。 最重要的�
 
 這些功能 *不* 是 XML 延伸模組。 XAML 是完全合法的 XML。 但是這些 XAML 語法功能以獨特的方式使用 XML。 下列文章將詳細討論這些詳細資料，其中最後有使用 XAML 來實現 MVVM 的簡介。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 本文假設您已熟悉使用 Xamarin.Forms 。 本文也假設您已熟悉 XML，包括瞭解 XML 命名空間宣告的使用方式，以及詞彙 *元素*、 *標記* 和 *屬性*。
 
-當您熟悉 Xamarin.Forms 和 XML 時，請先閱讀 [第1部分。使用 XAML 消費者入門](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)。
+當您熟悉 Xamarin.Forms 和 XML 時，請先閱讀 [第1部分。開始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)。
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 7b6852485fed6cc14c9f9b2e1a303b7c2e576da9
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 0d5bdde37bef6247d2b78a84dbe217d6ab7796d4
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433584"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102603148"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin 的程式碼中建立 iOS 使用者介面
 
@@ -24,7 +24,7 @@ IOS 應用程式的使用者介面就像店面–應用程式通常會取得一�
 
 [![下圖說明視窗、Views、子檢視和 View Controller 之間的關聯性](ios-code-only-images/image9.png)](ios-code-only-images/image9.png#lightbox)
 
-您可以使用 Visual Studio 中的 [Xamarin Designer for iOS](~/ios/user-interface/designer/index.md) 來建立這些視圖階層，不過最好先瞭解如何在程式碼中工作。 本文將逐步解說一些基本要點，以啟動並執行僅限程式碼的使用者介面開發。
+您可以使用 Xcode 的介面產生器來建立這些視圖階層，不過最好先瞭解如何徹底地在程式碼中工作。 本文將逐步解說一些基本要點，以啟動並執行僅限程式碼的使用者介面開發。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -32,7 +32,7 @@ IOS 應用程式的使用者介面就像店面–應用程式通常會取得一�
 
 [![下圖說明視窗、Views、子檢視和 View Controller 之間的關聯性](ios-code-only-images/image9.png)](ios-code-only-images/image9.png#lightbox)
 
-您可以使用 Visual Studio for Mac 中的 [Xamarin Designer for iOS](~/ios/user-interface/designer/index.md) 來建立這些視圖階層，不過最好先瞭解如何在程式碼中工作。 本文將逐步解說一些基本要點，以啟動並執行僅限程式碼的使用者介面開發。
+您可以使用 Xcode 的介面產生器來建立這些視圖階層，不過最好先瞭解如何徹底地在程式碼中工作。 本文將逐步解說一些基本要點，以啟動並執行僅限程式碼的使用者介面開發。
 
 -----
 
@@ -42,7 +42,7 @@ IOS 應用程式的使用者介面就像店面–應用程式通常會取得一�
 
 ## <a name="ios-blank-project-template"></a>iOS 空白專案範本
 
-首先，使用檔案 > 新專案，在 Visual Studio 中建立 iOS 專案 **> Visual c # > iPhone & iPad > IOS 應用程式 (Xamarin) ** 專案，如下所示：
+首先，在 Visual Studio 中使用檔案 **> 新專案 > Visual c # > iPhone & iPad > Ios 應用程式 (Xamarin)** 專案中建立 iOS 專案，如下所示：
 
 [![[新增專案] 對話方塊](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
@@ -63,7 +63,7 @@ IOS 應用程式的使用者介面就像店面–應用程式通常會取得一�
 
 ## <a name="ios-templates"></a>iOS 範本
 
-Visual Studio for Mac 不提供空白的範本。 所有範本都隨附分鏡腳本支援，Apple 建議您以這種方式建立 UI。 不過，您可以完全以程式碼建立您的 UI。
+Visual Studio for Mac 不提供空白範本。 所有範本都隨附分鏡腳本支援，Apple 建議您以這種方式建立 UI。 不過，您可以完全以程式碼建立您的 UI。
 
 下列步驟將引導您從應用程式移除分鏡腳本：
 
@@ -481,7 +481,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 ### <a name="inheriting-from-uiview"></a>從 UIView 繼承
 
-我們需要做的第一件事，就是建立自訂視圖的類別。 我們會使用 Visual Studio 中的 **類別** 樣板來新增名為的空白類別，以進行這項作業 `CircleView` 。 基類應設定為 `UIView` ，我們回想在 `UIKit` 命名空間中。 我們也需要 `System.Drawing` 命名空間。 在 `System.*` 此範例中，不會使用其他的不同命名空間，因此您可以隨意移除它們。
+我們需要做的第一件事，就是建立自訂視圖的類別。 我們會使用 Visual Studio 中的 **類別** 範本來新增名為的空白類別，以進行這項作業 `CircleView` 。 基類應設定為 `UIView` ，我們回想在 `UIKit` 命名空間中。 我們也需要 `System.Drawing` 命名空間。 在 `System.*` 此範例中，不會使用其他的不同命名空間，因此您可以隨意移除它們。
 
 該類別看起來應該如下所示：
 
@@ -594,9 +594,9 @@ submitButton.TouchUpInside += delegate
 
 -----
 
-您可以按兩下，然後在 iOS 設計工具中開啟它來編輯。
+您可以按兩下它，然後在 Xcode 介面產生器中開啟它，藉以進行編輯。
 
-Apple 建議將 xib 或分鏡腳本檔案用於以 iOS 8 或更新版本為目標的應用程式，當您在 iOS 設計工具中啟動任一檔案時，您將會使用大小類別和自動設定來調整版面配置，使其看起來正確，並針對所有裝置大小正確地顯示。 除了 xib 或分鏡腳本之外，還可以使用靜態啟動映射來允許以較早版本為目標的應用程式支援。
+Apple 建議將 xib 或分鏡腳本檔案用於以 iOS 8 或更新版本為目標的應用程式，當您在 Xcode 介面產生器中啟動任一檔案時，您可以使用大小類別和自動設定來調整版面配置，使其看起來正確，並正確地顯示所有裝置的大小。 除了 xib 或分鏡腳本之外，還可以使用靜態啟動映射來允許以較早版本為目標的應用程式支援。
 
 如需有關建立啟動畫面的詳細資訊，請參閱下列檔：
 

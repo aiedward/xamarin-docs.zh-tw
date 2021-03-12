@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 6048690bc68c3998b67dc89fdc191ea9158ae952
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 5ef7d08242702143de667803b76de7325fca1b82
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437277"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602329"
 ---
 # <a name="images-and-icons-in-xamarinios"></a>Xamarin 中的影像和圖示
 
@@ -22,9 +22,8 @@ _本節包含各種文章，涵蓋如何在 Xamarin iOS 應用程式中使用影
 
 - **解決方案獨立映射** -使用 iOS 的內建支援，可在不同裝置解析度和類型 (IPhone、iPad 等 ) 使用影像。
 - **資產目錄映射集** -使用 **資產目錄映射集** 來管理和分組應用程式所需之特定影像資產的所有版本。
-- **Ios 設計工具中的影像** -使用 ios 設計工具來設定控制項的影像。
-- 程式**代碼中的影像**–使用 `UIImage` 類別的方法來載入和使用影像資產，並將它們指派給 c # 程式碼中的 UI 控制項。
-- **應用程式圖示** -定義每個 iOS 應用程式所需的應用程式圖示。 這是使用者將從 iOS 主畫面上點擊以啟動應用程式的圖示。 此外，Game Center 也會使用此圖示（如果適用）。
+- 程式 **代碼中的影像**–使用 `UIImage` 類別的方法來載入和使用影像資產，並將它們指派給 c # 程式碼中的 UI 控制項。
+- **應用程式圖示** -定義每個 iOS 應用程式所需的應用程式圖示。 這是使用者將從 iOS 主畫面上點擊以啟動應用程式的圖示。 此外，遊戲中心會使用此圖示（如果適用）。
 - **焦點圖示** -定義應用程式的焦點圖示。 每當使用者在焦點搜尋中輸入應用程式的名稱時，就會顯示此圖示。
 - **設定圖示** -定義應用程式的 **設定** 圖示。 如果使用者在其 iOS 裝置上輸入「 **設定** 」應用程式，則會在應用程式的 [設定] 清單結尾顯示此圖示。 
 - **啟動畫面** -定義應用程式的啟動畫面。 當使用者按下應用程式圖示，並在第一個視圖出現之前，會顯示空白畫面。 幸運的是，iOS 支援使用分鏡腳本來顯示影像，以取代空白畫面。 

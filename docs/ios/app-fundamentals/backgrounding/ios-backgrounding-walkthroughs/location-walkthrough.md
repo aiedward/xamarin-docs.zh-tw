@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 2350db2e8d4f43a33b0ce394e06ffd2c16b6b7ad
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 6bd93fe50dc97c2349486513079768c473355e76
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436556"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602979"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>逐步解說-Xamarin 中的背景位置
 
@@ -22,17 +22,17 @@ ms.locfileid: "91436556"
 
 ## <a name="application-set-up"></a>應用程式設定
 
-1. 首先，建立新的 **iOS > 應用程式 > 單一視圖應用程式 (c # ) **。 呼叫它的 _位置_ ，並確保已選取 IPad 和 iPhone。
+1. 首先，建立新的 **iOS > 應用程式 > 單一視圖應用程式 (c # )**。 呼叫它的 _位置_ ，並確保已選取 IPad 和 iPhone。
 
 1. 位置應用程式在 iOS 中符合背景必要的應用程式。 藉由編輯專案的 **plist** 檔案，將應用程式註冊為位置應用程式。
 
-    在 [方案總管] 下，按兩下 **plist** 檔案以開啟它，並將其滾動至清單底部。 勾選 [ **啟用背景模式** ] 和 [ **位置更新** ] 核取方塊。
+    在 [方案 Explorer] 下，按兩下 **plist** 檔案將它開啟，並將其向下移動至清單底部。 勾選 [ **啟用背景模式** ] 和 [ **位置更新** ] 核取方塊。
 
     在 Visual Studio for Mac 中，它看起來會像這樣：
 
     [![勾選 [啟用背景模式] 和 [位置更新] 核取方塊](location-walkthrough-images/image7.png)](location-walkthrough-images/image7.png#lightbox)
 
-    在 Visual Studio 中， **plist** 必須藉由新增下列索引鍵/值組來手動更新：
+    在 Visual Studio 中， **plist** 必須藉由新增下列索引鍵/值組，以手動方式更新：
 
     ```xml
     <key>UIBackgroundModes</key>
@@ -133,15 +133,13 @@ public class LocationUpdatedEventArgs : EventArgs
 
 ## <a name="user-interface"></a>使用者介面
 
-1. 使用 iOS 設計工具來建立將顯示位置資訊的畫面。 按兩下 **主要** 的分鏡腳本檔案以開始。
+1. 使用 Xcode 介面產生器來建立將顯示位置資訊的畫面。 按兩下 **主要** 的分鏡腳本檔案以開始。
 
     在腳本中，將數個標籤拖曳到螢幕上，作為位置資訊的預留位置。 在此範例中，緯度、經度、海拔高度、課程和速度都有標籤。
 
-    配置應如下所示：
+    如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](~/ios/user-interface/storyboards/index.md)。
 
-    ![IOS 設計工具中的範例 UI 版面配置](location-walkthrough-images/image8.png)
-
-1. 在 [Solution Pad 中，按兩下該檔案 `ViewController.cs` 並加以編輯，以建立 LocationManager 的新實例，並 `StartLocationUpdates` 對其進行呼叫。
+1. 在 Solution Pad 中，按兩下該檔案 `ViewController.cs` 並加以編輯，以建立 LocationManager 的新實例，並 `StartLocationUpdates` 對其進行呼叫。
   變更程式碼，如下所示：
 
     ```csharp

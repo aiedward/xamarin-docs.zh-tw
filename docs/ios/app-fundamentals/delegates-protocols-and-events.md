@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/17/2017
-ms.openlocfilehash: ce436f907c70657ff6d08f39bdec9e7d796d519c
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: b4c23792cca0bbaabeeaac38b2756490f1485605
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91431031"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102602927"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>Xamarin 中的事件、通訊協定和委派
 
@@ -52,21 +52,13 @@ aButton.TouchUpInside += delegate {
 };
 ```
 
-上述程式碼會在 UIViewController 的方法中連接 `ViewDidLoad` 。 `aButton`變數參考的是按鈕，您可以在 IOS 設計工具或程式碼中加入該按鈕。 下圖顯示已在 iOS 設計工具中新增的按鈕：
+上述程式碼會在 UIViewController 的方法中連接 `ViewDidLoad` 。 `aButton`變數會參考按鈕，您可以在 Xcode 介面產生器或程式碼中加入該按鈕。 
 
-[![在 iOS 設計工具中新增的按鈕](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png)](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
+Xamarin 也支援將您的程式碼連接到與控制項發生互動的目標動作樣式。 
 
-Xamarin 也支援將您的程式碼連接到與控制項發生互動的目標動作樣式。 若要建立 **Hello** 按鈕的目標動作，請在 iOS 設計工具中按兩下該動作。 將會顯示 UIViewController 的程式碼後置檔案，並要求開發人員選取要插入連接方法的位置：
+如需有關 iOS 目標動作模式的詳細資訊，請參閱 Apple iOS Developer Library 中 [適用于 ios 的核心應用程式](https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html#//apple_ref/doc/uid/TP40010810-CH12) 專長認證的 Target-Action 一節。
 
-[![UIViewControllers 程式碼後端檔案](delegates-protocols-and-events-images/03-interface-builder-action-sml.png)](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
-
-選取位置之後，就會建立新的方法，並將其連接到控制項。 在下列範例中，當您按一下按鈕時，會將訊息寫入主控台：
-
-[![按一下按鈕時，會將訊息寫入主控台](delegates-protocols-and-events-images/05-interface-builder-action-sml.png)](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
-
-如需有關 iOS 目標動作模式的詳細資訊，請參閱 Apple iOS Developer Library 中 [適用于 ios 的核心應用程式](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html) 專長認證的目標動作一節。
-
-如需有關如何搭配使用 iOS 設計工具與 Xamarin 的詳細資訊，請參閱 [Ios 設計工具總覽](~/ios/user-interface/designer/index.md) 檔。
+如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](~/ios/user-interface/storyboards/index.md)。
 
 ## <a name="events"></a>事件
 
@@ -152,7 +144,7 @@ Apple 會使用整個 iOS 的通訊協定來定義要採用之類別的合約，
 
  [![當使用者按注釋時，標注的範例文字](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png)](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
-如同下一節中的 [通訊協定深入探討](#protocols-deep-dive)，Xamarin 會將通訊協定系結至抽象類別。 針對 `MKAnnotation` 通訊協定，系結的 c # 類別會命名 `MKAnnotation` 為模仿通訊協定的名稱，而這是 `NSObject` CocoaTouch 的根基類的子類別。 通訊協定需要針對座標實作為 getter 和 setter;不過，標題和子標題是選擇性的。 因此，在類別中， `MKAnnotation` `Coordinate` 屬性是 *抽象*的，需要實作為，而且 `Title` 和 `Subtitle` 屬性標示為 *虛擬*，使其成為選擇性，如下所示：
+如同下一節中的 [通訊協定深入探討](#protocols-deep-dive)，Xamarin 會將通訊協定系結至抽象類別。 針對 `MKAnnotation` 通訊協定，系結的 c # 類別會命名 `MKAnnotation` 為模仿通訊協定的名稱，而這是 `NSObject` CocoaTouch 的根基類的子類別。 通訊協定需要針對座標實作為 getter 和 setter;不過，標題和子標題是選擇性的。 因此，在類別中， `MKAnnotation` `Coordinate` 屬性是 *抽象* 的，需要實作為，而且 `Title` 和 `Subtitle` 屬性標示為 *虛擬*，使其成為選擇性，如下所示：
 
 ```csharp
 [Register ("MKAnnotation"), Model ]

@@ -1,34 +1,34 @@
 ---
 title: iOS 設計工具基本概念
-description: 本指南介紹 Xamarin Designer for iOS。 它會示範如何使用 iOS 設計工具，以視覺化方式配置控制項、如何在程式碼中存取這些控制項，以及如何編輯屬性。
+description: 本指南介紹適用于 iOS 的 Xamarin Designer。 它會示範如何使用 iOS 設計工具，以視覺化方式配置控制項、如何在程式碼中存取這些控制項，以及如何編輯屬性。
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: 07f3e313a743c9d95f8baf2be7a31f16c6ca4f7e
-ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
+ms.openlocfilehash: 422b84c456e6fd9e1efb798bbf53959bd8423d07
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96439478"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102603135"
 ---
 # <a name="ios-designer-basics"></a>iOS 設計工具基本概念
 
-_本指南介紹 Xamarin Designer for iOS。它會示範如何使用 iOS 設計工具，以視覺化方式配置控制項、如何在程式碼中存取這些控制項，以及如何編輯屬性。_
+_本指南介紹適用于 iOS 的 Xamarin Designer。它會示範如何使用 iOS 設計工具，以視覺化方式配置控制項、如何在程式碼中存取這些控制項，以及如何編輯屬性。_
 
 > [!WARNING]
-> IOS 設計工具將開始在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 8.8 版中推出。
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
 > 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 的 Mac 上執行。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](../storyboards/index.md)。 
 
-Xamarin Designer for iOS 是類似 Xcode 的 Interface Builder 和 Android Designer 的視覺化介面設計工具。 其中一些功能包括與適用于 Windows 和 Mac 的 Visual Studio 的緊密整合、拖放編輯、設定事件處理常式的介面，以及轉譯自訂控制項的能力。
+適用于 iOS 的 Xamarin 設計工具是視覺化介面設計工具，類似于 Xcode 的 Interface Builder 和 Android Designer。 其中一些功能包括與適用于 Windows 和 Mac 的 Visual Studio 緊密整合、拖放編輯、設定事件處理常式的介面，以及轉譯自訂控制項的能力。
 
 ## <a name="requirements"></a>規格需求
 
-IOS 設計工具可在 Windows 上的 Visual Studio for Mac 和 Visual Studio 2017 和更新版本中使用。 在適用于 Windows 的 Visual Studio 中，iOS 設計工具需要連接到已正確設定的 Mac 組建主機，但 Xcode 不需要執行。
+IOS 設計工具可在 Visual Studio for Mac 和 Visual Studio 2017 和更新版本的 Windows 中使用。 在 Visual Studio for Windows 中，iOS 設計工具需要連接到已正確設定的 Mac 組建主機，但 Xcode 不需要執行。
 
-本指南假設您已經熟悉 [消費者入門指南](~/ios/get-started/index.md)中涵蓋的內容。
+本指南假設您已經熟悉《 [快速入門手冊》](~/ios/get-started/index.md)中所涵蓋的內容。
 
 <a name="how-it-works"></a>
 
@@ -72,7 +72,7 @@ IOS 設計工具可讓開發人員以視覺化方式設計應用程式的使用�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-為了在程式碼中存取和操作按鈕，它必須有唯一的識別碼。 選取按鈕、開啟 **Properties Pad**，並將其 [ **名稱** ] 欄位設定為值（例如 "SubmitButton"），以提供唯一識別碼：
+為了在程式碼中存取和操作按鈕，它必須有唯一的識別碼。 選取按鈕、開啟 [ **屬性] 面板**，然後將其 [ **名稱** ] 欄位設定為值（例如 "SubmitButton"），以提供唯一識別碼：
 
 [![在 Properties Pad 中設定按鈕的名稱](introduction-images/4-settingbuttonname-vsmac.png "在 Properties Pad 中設定按鈕的名稱")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
@@ -88,13 +88,13 @@ IOS 設計工具可讓開發人員以視覺化方式設計應用程式的使用�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-在 **Solution Pad** 中，流覽至 **ViewController.cs** ，然後按一下洩漏指標，顯示 view 控制器的 `ViewController` 類別定義橫跨兩個檔案，其中每個檔案都包含 [部分類別](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) 定義：
+在 **Solution Pad** 中，流覽至 **ViewController.cs** ，然後按一下洩漏指標，顯示 view 控制器的 `ViewController` 類別定義橫跨兩個檔案，每個檔案都包含 [部分類別](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) 定義：
 
 [![組成 ViewController 類別的兩個檔案： ViewController.cs 和 ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "組成 ViewController 類別的兩個檔案： ViewController.cs 和 ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在 **方案總管** 中，流覽至 **ViewController.cs** ，然後按一下洩漏指標，顯示 view 控制器的 `ViewController` 類別定義橫跨兩個檔案，其中每個檔案都包含 [部分類別](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) 定義：
+在 [ **方案瀏覽器**] 中，流覽至 **ViewController.cs** ，然後按一下洩漏指標，顯示 view 控制器的 `ViewController` 類別定義橫跨兩個檔案，其中每個檔案都包含 [部分類別](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) 定義：
 
 [![組成 ViewController 類別的兩個檔案： ViewController.cs 和 ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "組成 ViewController 類別的兩個檔案： ViewController.cs 和 ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
@@ -157,7 +157,7 @@ namespace Designer
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-大部分使用 Visual Studio 建立的 Xamarin. iOS 專案都包含分鏡腳本。 若要查看分鏡腳本的內容，請按兩下 **方案總管** 中的分鏡腳本檔案：
+大部分使用 Visual Studio 建立的 Xamarin. iOS 專案都包含分鏡腳本。 若要查看分鏡腳本的內容，請按兩下 [ **方案瀏覽器**] 中的分鏡腳本檔案：
 
 [![在 iOS 設計工具中開啟的分鏡腳本](introduction-images/7-storyboardopen-vs.png "在 iOS 設計工具中開啟的分鏡腳本")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
@@ -173,18 +173,18 @@ IOS 設計工具有六個主要區段：
 
 [![IOS 設計工具的區段](introduction-images/8-sixpartsofiosdesigner-vsmac.png "IOS 設計工具的區段")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
 
-1. **Design Surface** – iOS 設計工具的主要工作區。 顯示在檔區域中，可讓使用者介面的視覺化結構。
+1. **設計介面** – iOS 設計工具的主要工作區。 顯示在檔區域中，可讓使用者介面的視覺化結構。
 2. **條件約束工具列** –可讓您在畫面格編輯模式和條件約束編輯模式之間切換，這兩種不同的方式可在使用者介面中定位元素。
 3. **工具箱** –列出可拖曳至設計介面並新增至使用者介面的控制器、物件、控制項、資料檢視、手勢辨識器、視窗和橫條。
-4. **Properties Pad** –顯示所選控制項的屬性，包括身分識別、視覺樣式、協助工具、配置和行為。
-5. [**檔大綱**]-顯示為編輯的介面撰寫版面配置的控制項樹狀結構。 按一下樹狀結構中的專案，會在 iOS 設計工具中選取專案，並在  **Properties Pad** 中顯示其屬性。 這對於在深度嵌套的使用者介面中選取特定的控制項很方便。
+4. **Properties Pad** -顯示所選控制項的屬性，包括身分識別、視覺樣式、協助工具、配置和行為。
+5. [**檔大綱**]-顯示為編輯的介面撰寫版面配置的控制項樹狀結構。 按一下樹狀結構中的專案，會在 iOS 設計工具中選取專案，並在 [  **屬性] 面板** 中顯示其屬性。 這對於在深度嵌套的使用者介面中選取特定的控制項很方便。
 6. **底部工具列** ：包含變更 IOS 設計工具如何顯示腳本或 xib 檔案的選項，包括裝置、方向和縮放。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![IOS 設計工具的區段](introduction-images/8-sixpartsofiosdesigner-vs.png "IOS 設計工具的區段")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
 
-1. **Design Surface** – iOS 設計工具的主要工作區。 顯示在檔區域中，可讓使用者介面的視覺化結構。
+1. **設計介面** – iOS 設計工具的主要工作區。 顯示在檔區域中，可讓使用者介面的視覺化結構。
 2. **條件約束工具列** –可讓您在畫面格編輯模式和條件約束編輯模式之間切換，這兩種不同的方式可在使用者介面中定位元素。
 3. **工具箱** –列出可拖曳至設計介面並新增至使用者介面的控制器、物件、控制項、資料檢視、手勢辨識器、視窗和橫條。
 4. [**屬性] 視窗**-顯示所選控制項的屬性，包括身分識別、視覺樣式、協助工具、配置和行為。
@@ -305,7 +305,7 @@ IOS 設計工具有六個主要區段：
 當 [大小類別](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)[啟用](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)時，[**編輯特性**] 按鈕會出現在展開的底部工具列中。  按一下 [ **編輯特性** ] 按鈕會顯示根據所選裝置和方向所代表的大小類別來建立介面變化的選項。 請考慮以下範例：
 
 - 如果選取 **iPhone SE** 直向  /  ****，popover 會提供選項來建立 compact width、regular height 大小類別的介面變化。 
-- 如果已選取 **iPad Pro 9.7** 的  /  **Landscape**  /  **全螢幕畫面**，popover 會提供選項來建立一般寬度、一般高度大小類別的介面變化。
+- 如果已選取 **iPad Pro 9.7** 的  /    /  **全螢幕畫面**，popover 會提供選項來建立一般寬度、一般高度大小類別的介面變化。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -342,14 +342,14 @@ IOS 設計工具有六個主要區段：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-### <a name="properties-pad"></a>Properties Pad
+### <a name="properties-pad"></a>屬性面板
 
-使用 **Properties Pad** 來編輯控制項的身分識別、視覺樣式、協助工具和行為。 下列螢幕擷取畫面說明按鈕的 **Properties Pad** 選項：
+您可以使用 [ **屬性] 面板** 來編輯控制項的身分識別、視覺樣式、協助工具和行為。 下列螢幕擷取畫面說明按鈕的 **Properties Pad** 選項：
 
-[![按鈕的 Properties Pad](introduction-images/17-buttonpropertiespad-vsmac.png "按鈕的 Properties Pad")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
-#### <a name="properties-pad-sections"></a>Properties Pad 區段
+[![按鈕的屬性面板](introduction-images/17-buttonpropertiespad-vsmac.png "按鈕的屬性面板")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
+#### <a name="properties-pad-sections"></a>屬性面板區段
 
-**Properties Pad** 包含三個區段：
+[ **屬性] 面板** 包含三個區段：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -371,9 +371,9 @@ IOS 設計工具有六個主要區段：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-#### <a name="editing-properties-in-the-properties-pad"></a>編輯 Properties Pad 中的屬性
+#### <a name="editing-properties-in-the-properties-pad"></a>編輯屬性面板中的屬性
 
-除了在設計介面上的視覺化編輯之外，iOS 設計工具還支援編輯 **Properties Pad** 中的屬性。 可用的屬性會根據選取的控制項進行變更，如下列螢幕擷取畫面所示：
+除了在設計介面上的視覺化編輯之外，iOS 設計工具還支援在 **Properties Pad** 中編輯屬性。 可用的屬性會根據選取的控制項進行變更，如下列螢幕擷取畫面所示：
 
 [![按鈕屬性](introduction-images/18a-buttonpropertiespad-vsmac.png "按鈕屬性")](introduction-images/18a-buttonpropertiespad-vsmac-large.png#lightbox)
 
@@ -392,13 +392,13 @@ IOS 設計工具有六個主要區段：
 -----
 
 > [!IMPORTANT]
-> Properties Pad 的 [識別] 區段現在會顯示 **模組** 欄位。 只有在與 Swift 類別交互操作時，才需要填入此區段。 您可以使用它來輸入 Swift 類別的模組名稱，也就是命名空間。
+> [屬性] 面板的 [識別] 區段現在會顯示 **模組** 欄位。 只有在與 Swift 類別交互操作時，才需要填入此區段。 您可以使用它來輸入 Swift 類別的模組名稱，也就是命名空間。
 
 #### <a name="default-values"></a>預設值
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-**Properties Pad** 中的許多屬性都不會顯示任何值或預設值。 不過，應用程式的程式碼仍可能會修改這些值。 **Properties Pad** 不會顯示在程式碼中設定的值。
+**Properties Pad** 中的許多屬性都不會顯示任何值或預設值。 不過，應用程式的程式碼仍可能會修改這些值。 **屬性板** 不會顯示在程式碼中設定的值。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -410,9 +410,9 @@ IOS 設計工具有六個主要區段：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-若要指定各種事件的自訂事件處理常式，請使用 **Properties Pad** 的 [**事件**] 索引標籤。 例如，在下列螢幕擷取畫面中， `HandleClick` 方法會處理按鈕在事件 **內的觸控** ：
+若要指定各種事件的自訂事件處理常式，請使用 [**屬性] 面板** 的 [**事件**] 索引標籤。 例如，在下列螢幕擷取畫面中， `HandleClick` 方法會處理按鈕在事件 **內的觸控** ：
 
-[![Properties Pad，其中包含針對按鈕設定的事件處理常式](introduction-images/19-buttonpropertiespadevents-vsmac.png "Properties Pad，其中包含針對按鈕設定的事件處理常式")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
+[![[屬性] 面板，其中包含針對按鈕設定的事件處理常式](introduction-images/19-buttonpropertiespadevents-vsmac.png "[屬性] 面板，其中包含針對按鈕設定的事件處理常式")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -428,7 +428,7 @@ IOS 設計工具有六個主要區段：
 
 [![無法辨識的選取器例外狀況](introduction-images/20-unrecognizedselector-vsmac.png "無法辨識的選取器例外狀況")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
 
-請注意，在 **Properties Pad** 中指定事件處理常式之後，iOS 設計工具會立即開啟對應的程式碼檔案，並提供插入方法宣告的功能。 
+請注意，在 [ **屬性] 面板** 中指定事件處理常式之後，iOS 設計工具會立即開啟對應的程式碼檔案，並提供插入方法宣告的功能。 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -436,9 +436,9 @@ IOS 設計工具有六個主要區段：
 
 -----
 
-如需使用自訂事件處理常式的範例，請參閱 [Hello，iOS 消費者入門指南](~/ios/get-started/hello-ios/index.md)。
+如需使用自訂事件處理常式的範例，請參閱 [Hello，IOS 入門指南](~/ios/get-started/hello-ios/index.md)。
 
-### <a name="outline-view"></a>大綱檢視
+### <a name="outline-view"></a>大綱視圖
 
 IOS 設計工具也可以將介面的控制項階層顯示為大綱。 選取 [ **檔大綱** ] 索引標籤即可取得大綱，如下所示：
 
@@ -458,9 +458,9 @@ IOS 設計工具也可以將介面的控制項階層顯示為大綱。 選取 [ 
 
 ## <a name="revert-to-xcode"></a>還原為 Xcode
 
-您可以使用 iOS 設計工具和 Xcode Interface Builder 交換。 若要在 Xcode Interface Builder 中開啟分鏡腳本或 xib 檔案，請以滑鼠右鍵按一下檔案，然後選取 [ **開啟方式] > Xcode Interface Builder**，如下列螢幕擷取畫面所示：
+您可以使用 iOS 設計工具和 Xcode 介面產生器交替使用。 若要在 Xcode Interface Builder 中開啟分鏡腳本或 xib 檔案，請以滑鼠右鍵按一下檔案，然後選取 [ **開啟方式 > Xcode 介面** 產生器]，如下列螢幕擷取畫面所示：
 
-[![在 Xcode 中開啟分鏡腳本 Interface Builder](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "在 Xcode 中開啟分鏡腳本 Interface Builder")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
+[![在 Xcode Interface Builder 中開啟分鏡腳本](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "在 Xcode Interface Builder 中開啟分鏡腳本")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
 在 Xcode Interface Builder 中進行編輯之後，請儲存檔案，並返回 Visual Studio for Mac。 這些變更將會同步處理至 Xamarin. iOS 專案。
 
@@ -468,9 +468,9 @@ IOS 設計工具也可以將介面的控制項階層顯示為大綱。 選取 [ 
 
 ## <a name="revert-to-xcode"></a>還原為 Xcode
 
-您可以使用 iOS 設計工具和 Xcode Interface Builder 交換，不過 Xcode Interface Builder 只能在 Mac 上使用。 若要在 Mac 上開啟 Xcode Interface Builder 中的分鏡腳本或 xib 檔案，請在 [Visual Studio for Mac](/visualstudio/mac/)中開啟包含 Xamarin 專案的方案，以滑鼠右鍵按一下檔案，然後選取 [ **開啟方式 > Xcode Interface Builder**，如下列螢幕擷取畫面所示：
+您可以使用 iOS 設計工具和 Xcode 介面產生器，但 Xcode Interface Builder 只能在 Mac 上使用。 若要在 Mac 上的 Xcode Interface Builder 中開啟分鏡腳本或 xib 檔案，請在 [Visual Studio For Mac](/visualstudio/mac/)中開啟包含 Xamarin 專案的方案，以滑鼠右鍵按一下檔案，然後選取 [ **開啟方式] > Xcode 介面** 產生器]，如下列螢幕擷取畫面所示：
 
-[![在 Xcode 中開啟分鏡腳本 Interface Builder](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "在 Xcode 中開啟分鏡腳本 Interface Builder")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
+[![在 Xcode Interface Builder 中開啟分鏡腳本](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "在 Xcode Interface Builder 中開啟分鏡腳本")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
 在 Xcode Interface Builder 中進行編輯之後，請儲存檔案，並返回 Visual Studio for Mac。 這些變更將會同步處理至 Xamarin. iOS 專案。
 
@@ -502,7 +502,7 @@ IOS 設計工具支援 xib 檔案的建立、編輯和管理。 這些是 respre
 - [iOS 設計的控制項逐步解說](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Hello, iOS 多重畫面](~/ios/get-started/hello-ios-multiscreen/index.md)
-- [Android Designer 總覽](~/android/user-interface/android-designer/index.md)
+- [Android 設計工具總覽](~/android/user-interface/android-designer/index.md)
 - [部分類別和方法](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
-- [深入瞭解 Xamarin Designer for iOS-演進 2014 (影片) ](https://www.youtube.com/watch?v=W4H9uLjoEjM)
+- [深入瞭解適用于 iOS 的 Xamarin 設計工具-演進 2014 (影片) ](https://www.youtube.com/watch?v=W4H9uLjoEjM)
 - [使用 iOS 設計工具建立啟動畫面 (影片) ](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)

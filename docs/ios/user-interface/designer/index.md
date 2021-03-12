@@ -1,25 +1,25 @@
 ---
 title: 使用 iOS 設計工具建立使用者介面
-description: 本檔說明如何使用 Xamarin Designer for iOS，利用分鏡腳本和 xib 檔案來建立應用程式的使用者介面。 它會連結到討論工具可用性的檔、其基本功能、可設計的控制項，以及提供其使用方式的逐步解說。
+description: 本檔說明如何使用適用于 iOS 的 Xamarin 設計工具，透過分鏡腳本和 xib 檔案來建立應用程式的使用者介面。 它會連結到討論工具可用性的檔、其基本功能、可設計的控制項，以及提供其使用方式的逐步解說。
 ms.prod: xamarin
 ms.assetid: E35EFB69-EBBA-40E3-ADBE-CB8016F17127
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/31/2018
-ms.openlocfilehash: 07226b22243f3d463ce2630e1f12a94f83ddd64a
-ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
+ms.openlocfilehash: cb0fb1e8d0deeb04c11870935275b7d9f211fa59
+ms.sourcegitcommit: 4bbf54d2bc1df96af69814e2e5dae47be12e0474
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96439442"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102603109"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>使用 iOS 設計工具建立使用者介面
 
-_Xamarin Designer for iOS 是適用于 iOS 分鏡腳本的視覺化設計工具，以及與 Visual Studio for Mac 和 Visual Studio 完全整合的 Interface Builder 格式。IOS 設計工具會維持與分鏡腳本和 xib 格式的完整相容性，如此一來，除了 Xcode 的 Interface Builder 之外，還可以在 Visual Studio for Mac 或 Visual Studio 中編輯檔案。此外，Xamarin Designer for iOS 也支援像是在設計階段于編輯器中轉譯的自訂控制項等 advanced 功能。_
+_適用于 iOS 的 Xamarin 設計工具是適用于 iOS 分鏡腳本的視覺化設計工具，以及與 Visual Studio for Mac 和 Visual Studio 完全整合的介面產生器格式。IOS 設計工具會維持與分鏡腳本和 xib 格式的完整相容性，因此除了 Xcode 的 Interface Builder 之外，還可以在 Visual Studio for Mac 或 Visual Studio 中編輯檔案。此外，適用于 iOS 的 Xamarin 設計工具支援像是在設計階段于編輯器中轉譯的自訂控制項等 advanced 功能。_
 
 > [!WARNING]
-> IOS 設計工具將開始在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 8.8 版中推出。
+> IOS 設計工具在 Visual Studio 2019 16.8 版和 Visual Studio 2019 for Mac 版本8.8 中已淘汰，並已在 Visual Studio 2019 版本16.9 和 Visual Studio for Mac 版本8.9 中移除。
 > 建立 iOS 使用者介面的建議方式是直接在執行 Xcode 的 Mac 上執行。 如需詳細資訊，請參閱 [使用 Xcode 設計使用者介面](../storyboards/index.md)。 
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
@@ -34,9 +34,9 @@ _Xamarin Designer for iOS 是適用于 iOS 分鏡腳本的視覺化設計工具�
 
 ## <a name="availability"></a>可用性
 
-Xamarin Designer for iOS 可在 Windows 上的 Visual Studio for Mac 和 Visual Studio 2017 中取得。
+適用于 iOS 的 Xamarin Designer 適用于 Visual Studio for Mac 和 Windows 上的 Visual Studio 2017。
 
-這些指南假設您已經熟悉 [Xamarin 消費者入門指南](~/ios/get-started/index.md)中所涵蓋的內容。
+這些指南假設您已經熟悉《 [Xamarin 入門指南》](~/ios/get-started/index.md)中所涵蓋的內容。
 
 ## <a name="ios-designer-basics"></a>[iOS 設計工具基本概念](introduction.md)
 
