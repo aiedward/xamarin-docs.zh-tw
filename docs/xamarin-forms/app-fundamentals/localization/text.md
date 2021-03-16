@@ -11,12 +11,12 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cb811972d622ffdcf6042e030528a88fb18abaf7
-ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
+ms.openlocfilehash: 8f355dcd4973f471c99c9144bba80625a5540a2f
+ms.sourcegitcommit: 9e3ebcd0bd96dd7f7d716e105504e97a7f848c01
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "93369801"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103557945"
 ---
 # <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms 字串和影像當地語系化
 
@@ -49,7 +49,7 @@ ms.locfileid: "93369801"
 
 ::: zone pivot="windows"
 
-資源檔會使用 Visual Studio 2019 中的 [ **加入新專案** ] 對話方塊來新增：
+使用 Visual Studio 2019 中的 [ **加入新專案** ] 對話方塊加入資源檔：
 
 ![在 Visual Studio 2019 中新增資源](text-images/pc-add-resource-file.png)
 
@@ -76,9 +76,9 @@ ms.locfileid: "93369801"
 ::: zone-end
 ::: zone pivot="macos"
 
-資源檔會使用 Visual Studio 2019 for Mac 中 **的 [新增** 檔案] 對話方塊來新增：
+資源檔會使用 Visual Studio 2019 for Mac 中的 [ **加入新** 檔案] 對話方塊來新增：
 
-![在適用于 Mac 的 Visual Studio 2019 中新增資源](text-images/mac-add-resource-file.png)
+![在 Visual Studio 2019 for Mac 中新增資源](text-images/mac-add-resource-file.png)
 
 建立預設資源檔之後，您可以在 `data` 資源檔中的專案內建立元素，藉以新增文字 `root` ：
 
@@ -134,7 +134,7 @@ ms.locfileid: "93369801"
 
 ## <a name="specify-the-default-culture"></a>指定預設文化特性
 
-若要讓資源檔正常運作，應用程式必須具有 `NeutralResourcesLanguage` 指定的。 在共用專案中，應自訂 **AssemblyInfo.cs** 檔以指定預設文化特性。 下列程式碼顯示如何 `NeutralResourcesLanguage` 在 **AssemblyInfo.cs** 檔中將設定為 **en-us** ：
+若要讓資源檔正確運作，應用程式必須 `NeutralResourcesLanguage` 指定屬性。 在包含資源檔的專案中，應自訂 **AssemblyInfo.cs** 檔案以指定預設文化特性。 下列程式碼顯示如何 `NeutralResourcesLanguage` 在 **AssemblyInfo.cs** 檔中將設定為 **en-us** ：
 
 ```csharp
 using System.Resources;
@@ -187,7 +187,7 @@ using System.Resources;
 
 ## <a name="localize-text-in-xamarinforms"></a>當地語系化中的文字 Xamarin.Forms
 
-Xamarin.Forms使用產生的類別來當地語系化文字 `AppResources` 。 這個類別是根據預設的資源檔名稱來命名。 由於範例專案資源檔的名稱為 **AppResources.cs**，Visual Studio 會產生一個名為的對應類別 `AppResources` 。 資源檔中的每個資料列都會在類別中產生靜態屬性 `AppResources` 。 下列靜態屬性會在範例應用程式的類別中產生 `AppResources` ：
+Xamarin.Forms使用產生的類別來當地語系化文字 `AppResources` 。 這個類別是根據預設的資源檔名稱來命名。 由於範例專案資源檔的名稱為 **AppResources.cs**，因此 Visual Studio 會產生一個名為的對應類別 `AppResources` 。 資源檔中的每個資料列都會在類別中產生靜態屬性 `AppResources` 。 下列靜態屬性會在範例應用程式的類別中產生 `AppResources` ：
 
 - AddButton
 - NotesLabel

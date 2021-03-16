@@ -10,14 +10,14 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3fe1b7d56e71cac0b7a5a7b4e2bc68710241f13f
-ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
+ms.openlocfilehash: 2a006515fac63dfc09202c0c930104b377d5c179
+ms.sourcegitcommit: f397bfa4c7f36a4993dc341509ba0a41489fdee2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98609153"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103472699"
 ---
-# <a name="no-locxamarinforms-webview"></a>Xamarin.Forms 切換
+# <a name="xamarinforms-webview"></a>Xamarin.Forms 切換
 
 [![下載範例](~/media/shared/download.png) 下載範例](/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
@@ -44,7 +44,7 @@ ms.locfileid: "98609153"
 ```csharp
 var browser = new WebView
 {
-  Source = "http://xamarin.com"
+  Source = "https://dotnet.microsoft.com/apps/xamarin"
 };
 ```
 
@@ -245,7 +245,7 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html")))
 
 #### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-在通用 Windows 平臺 (UWP) 專案中，將 HTML、CSS 和影像放在專案根目錄中，並將 [組建] 動作設定為 [ *內容*]。
+在通用 Windows 平臺上 (UWP) 專案、將 HTML、CSS 和影像放在專案根目錄中，並將 [組建] 動作設定為 [ *內容*]。
 
 `BaseUrl`應設定為 `"ms-appx-web:///"` ：
 
@@ -267,8 +267,8 @@ namespace WorkingWithWebview.UWP
 
 Web 程式支援透過許多可用的方法和屬性進行流覽：
 
-- **GoForward ( # B1** &ndash; 如果 `CanGoForward` 是 true，則呼叫會 `GoForward` 向前流覽至下一個流覽過的頁面。
-- **GoBack ( # B1** &ndash; 若 `CanGoBack` 為 true，則呼叫 `GoBack` 將會流覽到最後一個流覽過的頁面。
+- **GoForward ()** &ndash; 如果 `CanGoForward` 是 true，則呼叫會 `GoForward` 向前流覽至下一個流覽過的頁面。
+- **GoBack ()** &ndash; 若 `CanGoBack` 為 true，則呼叫 `GoBack` 將會流覽到最後一個流覽過的頁面。
 - **>cangoback** &ndash;`true`如果有可流覽的頁面，則為， `false` 如果瀏覽器位於起始 URL，則為。
 - **>cangoforward** &ndash;`true`如果使用者已向後導覽，並可移至已造訪的頁面。
 
@@ -329,7 +329,7 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-這樣就完成了！
+大功告成！
 
 ![Web 瀏覽按鈕](webview-images/in-app-browser.png)
 
@@ -365,7 +365,7 @@ Web 工作會引發下列事件，以協助您回應狀態的變更：
     <StackLayout>
         <!--Loading label should not render by default.-->
         <Label x:Name="labelLoading" Text="Loading..." IsVisible="false" />
-        <WebView HeightRequest="1000" WidthRequest="1000" Source="http://www.xamarin.com" Navigated="webviewNavigated" Navigating="webviewNavigating" />
+        <WebView HeightRequest="1000" WidthRequest="1000" Source="https://dotnet.microsoft.com/apps/xamarin" Navigated="webviewNavigated" Navigating="webviewNavigating" />
     </StackLayout>
 </ContentPage>
 ```
@@ -427,7 +427,7 @@ webView.Reload();
 
 ## <a name="permissions"></a>權限
 
-`WebView`您必須確定已針對每個平臺設定許可權，才能運作。 請注意，在某些平臺上， `WebView` 將會以「偵測模式」運作，而不是在建立以供發行時使用。 這是因為某些許可權（像是在 Android 上存取網際網路的許可權）依預設會在處於 debug 模式時 Visual Studio for Mac 設定。
+`WebView`您必須確定已針對每個平臺設定許可權，才能運作。 請注意，在某些平臺上， `WebView` 將會以「偵測模式」運作，而不是在建立以供發行時使用。 這是因為某些許可權（例如，在 Android 上的網際網路存取）預設會在處於 debug 模式時由 Visual Studio for Mac 設定。
 
 - **UWP** &ndash; 顯示網路內容時，要求 (用戶端 & 伺服器) 功能的網際網路。
 - **Android** &ndash;`INTERNET`只有在顯示來自網路的內容時才需要。 本機內容不需要任何特殊許可權。
@@ -444,7 +444,7 @@ StackLayout with WidthRequest & HeightRequest：
 ```xaml
 <StackLayout>
     <Label Text="test" />
-    <WebView Source="http://www.xamarin.com/"
+    <WebView Source="https://dotnet.microsoft.com/apps/xamarin"
         HeightRequest="1000"
         WidthRequest="1000" />
 </StackLayout>
@@ -459,7 +459,7 @@ RelativeLayout with WidthRequest & HeightRequest：
                                       Type=Constant, Constant=10}"
         RelativeLayout.YConstraint= "{ConstraintExpression
                                       Type=Constant, Constant=20}" />
-    <WebView Source="http://www.xamarin.com/"
+    <WebView Source="https://dotnet.microsoft.com/apps/xamarin"
         RelativeLayout.XConstraint="{ConstraintExpression Type=Constant,
                                      Constant=10}"
         RelativeLayout.YConstraint="{ConstraintExpression Type=Constant,
@@ -473,7 +473,7 @@ AbsoluteLayout *但沒有* WidthRequest & HeightRequest：
 ```xaml
 <AbsoluteLayout>
     <Label Text="test" AbsoluteLayout.LayoutBounds="0,0,100,100" />
-    <WebView Source="http://www.xamarin.com/"
+    <WebView Source="https://dotnet.microsoft.com/apps/xamarin"
       AbsoluteLayout.LayoutBounds="0,150,500,500" />
 </AbsoluteLayout>
 ```
@@ -487,7 +487,7 @@ AbsoluteLayout *但沒有* WidthRequest & HeightRequest：
         <RowDefinition Height="*" />
     </Grid.RowDefinitions>
     <Label Text="test" Grid.Row="0" />
-    <WebView Source="http://www.xamarin.com/" Grid.Row="1" />
+    <WebView Source="https://dotnet.microsoft.com/apps/xamarin" Grid.Row="1" />
 </Grid>
 ```
 
@@ -552,9 +552,9 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 在此範例中，會將單一 `Cookie` 新增至 `CookieContainer` 物件，然後將其設定為屬性的值 `WebView.Cookies` 。 當將  [`WebView`](xref:Xamarin.Forms.WebView) web 要求傳送至指定的 URL 時，cookie 會隨要求傳送。
 
-## <a name="uiwebview-deprecation-and-app-store-rejection-itms-90809"></a>UIWebView 淘汰及 App Store 拒絕 (ITMS-90809) 
+## <a name="uiwebview-deprecation-and-app-store-rejection-itms-90809"></a>UIWebView 淘汰和 App Store 拒絕 (ITMS-90809) 
 
-從2020年4月開始， [Apple 會拒絕](https://developer.apple.com/news/?id=12232019b) 仍使用已淘汰 API 的應用程式 `UIWebView` 。 雖然 Xamarin.Forms 已切換為 `WKWebView` 預設值，但二進位檔中仍有舊版 SDK 的參考 Xamarin.Forms 。 目前的 [iOS 連結器](~/ios/deploy-test/linker.md) 行為並不會移除這種情況，因此 `UIWebView` 當您提交至 App Store 時，已淘汰的 API 仍會顯示為從您的應用程式參考。
+從2020年4月開始， [Apple 會拒絕](https://developer.apple.com/news/?id=12232019b) 仍使用已淘汰 API 的應用程式 `UIWebView` 。 雖然 Xamarin.Forms 已切換為 `WKWebView` 預設值，但二進位檔中仍有舊版 SDK 的參考 Xamarin.Forms 。 目前的 [iOS 連結器](~/ios/deploy-test/linker.md) 行為並不會移除此動作，因此 `UIWebView` 當您提交至 app Store 時，已被取代的 API 仍會顯示為從您的應用程式參考。
 
 > [!IMPORTANT]
 > 在 Xamarin.Forms 5.0 中，已 `WebViewRenderer` 移除類別。 因此， Xamarin.Forms 5.0 不包含控制項的參考 `UIWebView` 。
@@ -564,7 +564,7 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 這項工作的必要條件如下：
 
 - **Xamarin.Forms 4.5 或更高版本**。 Xamarin.Forms 如果您的應用程式使用材質視覺效果，則需要4.6 或更高版本。
-- **13.10.0.17 或更高版本**。 檢查 [Visual Studio 中](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)的 Xamarin 版本。 此版本的 Xamarin 隨附于 Visual Studio for Mac dbms-guide-8.4.1 和 Visual Studio 16.4.3 版。
+- **13.10.0.17 或更高版本**。 請 [在 Visual Studio 中](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)檢查您的 Xamarin. iOS 版本。 此版本的 Xamarin 隨附于 Visual Studio for Mac dbms-guide-8.4.1 和 Visual Studio 16.4.3 版。
 - **移除的參考 `UIWebView`**。 您的程式碼不應該有任何參考 `UIWebView` 或任何使用的類別 `UIWebView` 。
 
 如需偵測和移除參考的詳細資訊 `UIWebView` ，請參閱 [UIWebView](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)取代。
@@ -599,7 +599,7 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 -----
 
-現在，當您建立新的 (版本) 組建並提交到 App Store 時，就不應該對已淘汰的 API 產生任何警告。
+現在，當您建立新的 (版本) 組建並提交至 App Store 時，不應該對已淘汰的 API 產生任何警告。
 
 ## <a name="related-links"></a>相關連結
 

@@ -6,16 +6,16 @@ ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/17/2019
+ms.date: 03/15/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 557c82ac9318faaef5628a15989af2982a7f5ba4
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.openlocfilehash: aa9b43c6a41e48557807270542efa3a1121ed0b5
+ms.sourcegitcommit: 9e3ebcd0bd96dd7f7d716e105504e97a7f848c01
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590411"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103557959"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView 滾動
 
@@ -35,7 +35,17 @@ ms.locfileid: "94590411"
 
 ## <a name="detect-scrolling"></a>偵測滾動
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定義 `Scrolled` 引發的事件以表示發生滾動。 下列 XAML 範例顯示 `CollectionView` 設定事件之事件處理常式的 `Scrolled` ：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定義 `Scrolled` 引發的事件以表示發生滾動。 `ItemsViewScrolledEventArgs`類別（代表伴隨事件的物件 `Scrolled` ）會定義下列屬性：
+
+- `HorizontalDelta`型別為的， `double` 代表水準滾動量的變更。 這是向左滾動時為負值，而向右滾動時則為正值。
+- `VerticalDelta`型別為的， `double` 代表垂直捲動量的變更。 當向上滾動時，此值為負值，而向下滾動時則為正值。
+- `HorizontalOffset`型別 `double` 為的，會定義清單從其來源水準位移的數量。
+- `VerticalOffset`型別 `double` 為的，會定義清單從其原點垂直位移的數量。
+- `FirstVisibleItemIndex`型別 `int` 為的，是清單中可見的第一個專案的索引。
+- `CenterItemIndex`型別為的， `int` 是在清單中顯示之中間專案的索引。
+- `LastVisibleItemIndex`型別 `int` 為的，是清單中可見之最後一個專案的索引。
+
+下列 XAML 範例顯示 `CollectionView` 設定事件之事件處理常式的 `Scrolled` ：
 
 ```xaml
 <CollectionView Scrolled="OnCollectionViewScrolled">
@@ -55,17 +65,9 @@ collectionView.Scrolled += OnCollectionViewScrolled;
 ```csharp
 void OnCollectionViewScrolled(object sender, ItemsViewScrolledEventArgs e)
 {
-    Debug.WriteLine("HorizontalDelta: " + e.HorizontalDelta);
-    Debug.WriteLine("VerticalDelta: " + e.VerticalDelta);
-    Debug.WriteLine("HorizontalOffset: " + e.HorizontalOffset);
-    Debug.WriteLine("VerticalOffset: " + e.VerticalOffset);
-    Debug.WriteLine("FirstVisibleItemIndex: " + e.FirstVisibleItemIndex);
-    Debug.WriteLine("CenterItemIndex: " + e.CenterItemIndex);
-    Debug.WriteLine("LastVisibleItemIndex: " + e.LastVisibleItemIndex);
+    // Custom logic
 }
 ```
-
-在此範例中， `OnCollectionViewScrolled` 事件處理常式 `ItemsViewScrolledEventArgs` 會輸出伴隨于事件的物件值。
 
 > [!IMPORTANT]
 > `Scrolled`引發使用者起始滾動的事件，以及以程式設計方式滾動的事件。
@@ -137,7 +139,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)如果 `position` 呼叫方法時未指定引數，預設會使用成員 `ScrollTo` 。
 
-### <a name="start"></a>Start
+### <a name="start"></a>開始
 
 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應滾動至視圖的開頭：
 
@@ -237,7 +239,7 @@ CollectionView collectionView = new CollectionView
 > [!IMPORTANT]
 > [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)只有當 [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) 屬性設定為或時，才會遵守屬性的值 `Mandatory` `MandatorySingle` 。
 
-#### <a name="start"></a>Start
+#### <a name="start"></a>開始
 
 `SnapPointsAlignment.Start`成員表示對齊點與專案的開頭邊緣對齊。
 
