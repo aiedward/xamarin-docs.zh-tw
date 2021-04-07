@@ -8,13 +8,13 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.custom: video
-ms.date: 01/22/2019
-ms.openlocfilehash: 13b66f3484f274c04282ef1964107fcb53c62e38
-ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
+ms.date: 03/31/2021
+ms.openlocfilehash: 91ca86c20174619f99cbfa87aeee7df8fd9be50f
+ms.sourcegitcommit: 566a8839f3d3beafd7f8639fca471b425ca14997
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98609790"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106564359"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虛擬裝置
 
@@ -190,15 +190,14 @@ _本文說明如何使用 Android 裝置管理員來建立和設定可模擬實�
 ::: zone-end
 ::: zone pivot="macos"
 
+> [!NOTE]
+> 如果您使用具有 Apple 晶片（例如 M1）的 Mac，您將需要 [從 GitHub 安裝適用于 m1 preview 的 Android Emulator](https://github.com/google/android-emulator-m1-preview/releases)。
+
 ## <a name="android-device-manager-on-macos"></a>macOS 上的 Android Device Manager
 
 本指南會說明如何使用 Android Device Manager 建立、複製、自訂和啟動 Android 虛擬裝置。
 
 [![[裝置] 索引標籤中 Android 裝置管理員的螢幕擷取畫面](device-manager-images/mac/01-devices-dialog-sml.png)](device-manager-images/mac/01-devices-dialog.png#lightbox)
-
-> [!NOTE]
-> 本指南僅適用於 Visual Studio for Mac。
-Xamarin Studio 與 Android Device Manager 不相容。
 
 您會使用 Android Device Manager，來建立和設定在 [Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) 中執行的 *Android 虛擬裝置* (AVD)。
 每個 AVD 都是可模擬實體 Android 裝置的模擬器組態。 這讓您能夠在模擬不同實體 Android 裝置的各種組態中，執行並測試應用程式。
@@ -481,7 +480,7 @@ Android SDK 通常會安裝於下列位置：
 
 ::: zone-end
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 此指南介紹適用於 Xamarin 的 Visual Studio Tools 以及適用於 Mac 的 Visual Studio 所提供的 Android Device Manager。 其中說明了必要的功能，例如，啟動和停止 Android 模擬器、選取要執行的 Android 虛擬裝置 (AVD)、建立新的虛擬裝置，以及如何編輯虛擬裝置。 它說明如何編輯設定檔硬體內容，以進一步自訂，並提供常見問題的疑難排解的秘訣。
 
