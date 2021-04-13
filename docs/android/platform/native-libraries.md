@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 1b24648f70041abb092c93f41e999b68e8f26a26
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: ea8c550549109af23b57981373ca4b73842c1714
+ms.sourcegitcommit: 8575f33ff1340365218ddc930fccfc3db402f502
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91453255"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107293873"
 ---
 # <a name="using-native-libraries"></a>使用原生程式庫
 
@@ -44,15 +44,15 @@ Xamarin 支援透過標準 PInvoke 機制使用原生程式庫。 您也可以�
 ## <a name="debugging-native-code-with-visual-studio"></a>使用 Visual Studio 來調試機器碼
 
 如果您是使用 *Visual Studio 2019* 或 *Visual Studio 2017*，則不需要修改您的專案檔，如上所述。
-您可以將專案參考新增至 c + + **動態共用程式庫 (Android) ** 專案，以在您的 Xamarin 方案內建立和偵錯工具。
+您可以將專案參考新增至 c + + **動態共用程式庫 (Android)** 專案，以在您的 Xamarin 方案內建立和偵錯工具。
 
 若要在您的專案中調試原生 c + + 程式碼，請遵循下列步驟：
 
 1. 按兩下 [專案 **屬性** ]，然後選取 [ **Android 選項** ] 頁面。
 2. 向下滾動至 **調試選項**。
-3. 在 **偵錯工具** 下拉式功能表中，選取 **c + +** (，而不是預設的 **.net (Xamarin) **) 。
+3. 在 **偵錯工具** 下拉式功能表中，選取 **c + +** (，而不是預設的 **.net (Xamarin)**) 。
 
-Visual Studio c + + 開發人員可以看到 [SanAngeles_NativeDebug](/samples/xamarin/monodroid-samples/sanangeles-ndk) 範例，以嘗試使用 Xamarin 從 Visual Studio 2019 或 Visual Studio 2017 進行 c + + 的調試;如需詳細資訊，請參閱我們的 [blog 文章](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) 。
+Visual Studio c + + 開發人員可以看到 [SanAngeles_NativeDebug](/samples/xamarin/monodroid-samples/sanangeles-ndk) 範例，以嘗試使用 Xamarin 從 Visual Studio 2019 或 Visual Studio 2017 進行 c + + 的調試;如需詳細資訊，請參閱我們的 [blog 文章](https://devblogs.microsoft.com/xamarin/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) 。
 
 ## <a name="related-links"></a>相關連結
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 49d67db46416584248a9b15db606538f5ebfba79
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bdfcab1688d794b50e5bb9f2ef38f93ae28ceae6
+ms.sourcegitcommit: 8575f33ff1340365218ddc930fccfc3db402f502
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021015"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107293886"
 ---
 # <a name="finding-your-keystores-signature"></a>尋找您的金鑰存放區簽章
 
@@ -29,16 +29,16 @@ Xamarin.Android 會使用同一個 **debug.keystore** 檔案來簽署所有偵�
 
 您可以從 JDK 執行 `keytool.exe` 命令來取得金鑰儲存區的相關資訊。 通常可在下列位置找到此工具：
 
-**C:\\Program Files (x86)\\Java\\jdk*VERSION*\\bin\\keytool.exe**
+**C:\\Program Files (x86)\\Java\\jdk *VERSION*\\bin\\keytool.exe**
 
 將包含 **keytool.exe** 的目錄新增至 `PATH` 環境變數。
-開啟 [命令提示字元]****，然後使用下列命令來執行 `keytool.exe`：
+開啟 [命令提示字元]，然後使用下列命令來執行 `keytool.exe`：
 
 ```cmd
 keytool.exe -list -v -keystore "%LocalAppData%\Xamarin\Mono for Android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
 ```
 
-執行時，**keytool.exe** 應該會輸出下列文字。 [MD5:]**** 和 [SHA1:]**** 標籤會識別個別的簽章：
+執行時，**keytool.exe** 應該會輸出下列文字。 [MD5:] 和 [SHA1:] 標籤會識別個別的簽章：
 
 ```cmd
 Alias name: androiddebugkey
@@ -67,16 +67,20 @@ Certificate fingerprints:
 
 您可以從 JDK 執行 **keytool** 命令來取得金鑰儲存區的相關資訊。 通常可在下列位置找到此工具：
 
+**~/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_ *VERSION*/bin/keytool**
+
+或
+
 **/System/Library/Java/JavaVirtualMachines/*VERSION*.jdk/Contents/Home/bin/keytool**
 
 將包含 **keytool** 的目錄新增至 **PATH** 環境變數。
-開啟**終端機**，然後使用下列命令來執行 **keytool**：
+開啟 **終端機**，然後使用下列命令來執行 **keytool**：
 
 ```bash
 $ keytool -list -v -keystore ~/.local/share/Xamarin/Mono\ for\ Android/debug.keystore -alias androiddebugkey -storepass android -keypass android
 ```
 
-執行時，**keytool** 應該會輸出下列文字。 [MD5:]**** 和 [SHA1:]**** 標籤會識別個別的簽章：
+執行時，**keytool** 應該會輸出下列文字。 [MD5:] 和 [SHA1:] 標籤會識別個別的簽章：
 
 ```bash
 Alias name: androiddebugkey
@@ -114,9 +118,9 @@ KeyIdentifier [
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-使用 Visual Studio [散發]**** 精靈來簽署 Xamarin.Android 應用程式時，產生的金鑰儲存區會位於下列位置：
+使用 Visual Studio [散發] 精靈來簽署 Xamarin.Android 應用程式時，產生的金鑰儲存區會位於下列位置：
 
-**C:\\\\*USERNAME*\\\\\\\\\\*alias*\\*alias*使用者 USERNAME AppData 本地 Xamarin Mono 用於安卓金鑰儲存 別名 .keystore\\**
+**C： \\ 使用者 \\ *名稱* \\ AppData \\ 本機 \\ Xamarin \\ Mono for Android \\ 金鑰儲存區 \\ *別名* \\ *別名*。金鑰儲存區**
 
 例如，如果您遵循[建立新的憑證](~/android/deploy-test/signing/index.md#newcertvs)中的步驟來建立新的簽署金鑰，產生的範例金鑰儲存區就會位於下列位置：
 
@@ -126,9 +130,9 @@ KeyIdentifier [
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-當 Visual Studio for Mac [簽署並散發]**** 精靈簽署您的應用程式時，產生的金鑰儲存區會位於下列位置：
+當 Visual Studio for Mac [簽署並散發] 精靈簽署您的應用程式時，產生的金鑰儲存區會位於下列位置：
 
-***/函式庫/開發人員/Xamarin/鑰匙庫/*別名*/*alias*.keystore**
+**~/Library/Developer/Xamarin/Keystore/*別名* / *別名*。金鑰儲存區**
 
 例如，如果您遵循[建立新的憑證](~/android/deploy-test/signing/index.md#newcertxs)中的步驟來建立新的簽署金鑰，產生的範例金鑰儲存區就會位於下列位置：
 

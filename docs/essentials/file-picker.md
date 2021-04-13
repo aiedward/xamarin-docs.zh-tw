@@ -8,14 +8,14 @@ ms.date: 01/04/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7a9701a1607333022b7356f4485f041d66b410c6
-ms.sourcegitcommit: 3a68a8a48eb5a0ea7d6e0f861e2f7ecefcc49715
+ms.openlocfilehash: c0caa6fa3647e6b4e9e02c0a4baf1a4ff7e0f3f8
+ms.sourcegitcommit: 8575f33ff1340365218ddc930fccfc3db402f502
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98810729"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107293899"
 ---
-# <a name="no-locxamarinessentials-file-picker"></a>Xamarin.Essentials：檔案選擇器
+# <a name="xamarinessentials-file-picker"></a>Xamarin.Essentials：檔案選擇器
 
 **FilePicker** 類別可讓使用者從裝置挑選單一或多個檔案。
 
@@ -67,7 +67,7 @@ async Task<FileResult> PickAndShow(PickOptions options)
 {
     try
     {
-        var result = await FilePicker.PickAsync();
+        var result = await FilePicker.PickAsync(options);
         if (result != null)
         {
             Text = $"File Name: {result.FileName}";
@@ -78,11 +78,15 @@ async Task<FileResult> PickAndShow(PickOptions options)
                 Image = ImageSource.FromStream(() => stream);
             }
         }
+        
+        return result;
     }
     catch (Exception ex)
     {
         // The user canceled or something went wrong
     }
+    
+    return null;
 }
 ```
 
